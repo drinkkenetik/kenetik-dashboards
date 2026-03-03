@@ -4,7 +4,7 @@ Live operational dashboard for the Kenetik Growth System. Auto-published via Git
 
 ## Dashboard
 
-- **[Automation Architecture Dashboard](kenetik-growth-system-dashboard.html)** — Full system state: process statuses, infrastructure connections, build patterns
+- **[Kenetik Growth System Dashboard](kenetik-growth-system-dashboard.html)** — Full system state: process statuses, infrastructure connections, build patterns
 
 ## How This Stays Updated
 
