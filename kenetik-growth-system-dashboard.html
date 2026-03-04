@@ -1257,21 +1257,37 @@
     </div>
 
     <script>
-        // Load SYSTEM_STATE from external JSON file
+        // Load SYSTEM_STATE from two external JSON files:
+        //   system-state.json — lightweight state (statuses, roles, infrastructure)
+        //   system-state-definitions.json — full process definitions (steps, inputs, outputs)
         let SYSTEM_STATE = {};
 
         async function loadSystemState() {
             try {
-                const response = await fetch('./system-state.json');
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                SYSTEM_STATE = await response.json();
+                const [stateRes, defsRes] = await Promise.all([
+                    fetch('./system-state.json'),
+                    fetch('./system-state-definitions.json')
+                ]);
+                if (!stateRes.ok) throw new Error(`State file: HTTP ${stateRes.status}`);
+                if (!defsRes.ok) throw new Error(`Definitions file: HTTP ${defsRes.status}`);
+
+                const state = await stateRes.json();
+                const defs = await defsRes.json();
+
+                // Merge: state is the base, definitions fill in process details
+                SYSTEM_STATE = state;
+                for (const [pid, defn] of Object.entries(defs.processes || {})) {
+                    if (SYSTEM_STATE.processes[pid]) {
+                        Object.assign(SYSTEM_STATE.processes[pid], defn);
+                    }
+                }
                 initDashboard();
             } catch (err) {
-                console.error('Failed to load system-state.json:', err);
-                document.querySelector('.container').innerHTML = 
+                console.error('Failed to load system state:', err);
+                document.querySelector('.container').innerHTML =
                     '<div style="color: #ef4444; padding: 40px; text-align: center;">' +
                     '<h2>Failed to load system state</h2>' +
-                    '<p>Make sure system-state.json is in the same directory as this file.</p>' +
+                    '<p>Make sure system-state.json and system-state-definitions.json are in the same directory as this file.</p>' +
                     '<p style="color: #94a3b8; margin-top: 8px;">Error: ' + err.message + '</p></div>';
             }
         }
