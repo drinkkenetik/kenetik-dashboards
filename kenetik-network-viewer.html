@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenetik Growth System — Network Topology</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 260px;
+    min-width: 260px;
+    background: #1e293b;
+    border-right: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .sidebar-header {
+    padding: 20px 16px 12px;
+    border-bottom: 1px solid #334155;
+  }
+
+  .sidebar-header h1 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: -0.01em;
+  }
+
+  .sidebar-header p {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 4px;
+  }
+
+  .nav-section {
+    padding: 12px 0 4px;
+  }
+
+  .nav-section-title {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    padding: 0 16px 6px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all 0.15s ease;
+    font-size: 13px;
+    color: #94a3b8;
+  }
+
+  .nav-item:hover {
+    background: #334155;
+    color: #e2e8f0;
+  }
+
+  .nav-item.active {
+    background: #1e3a5f;
+    color: #38bdf8;
+    border-left-color: #38bdf8;
+  }
+
+  .nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .nav-label { flex: 1; }
+
+  .nav-count {
+    font-size: 10px;
+    color: #64748b;
+    background: #0f172a;
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+
+  /* ── Main area ── */
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+    min-height: 48px;
+  }
+
+  .toolbar-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f8fafc;
+  }
+
+  .toolbar-subtitle {
+    font-size: 11px;
+    color: #64748b;
+    margin-left: 8px;
+  }
+
+  .toolbar-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 5px 12px;
+    font-size: 12px;
+    border: 1px solid #475569;
+    background: #334155;
+    color: #cbd5e1;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .btn:hover {
+    background: #475569;
+    color: #f8fafc;
+  }
+
+  /* ── Diagram container ── */
+  .diagram-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background: #0f172a;
+    cursor: grab;
+  }
+
+  .diagram-container.dragging {
+    cursor: grabbing;
+  }
+
+  .diagram-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    padding: 24px;
+    min-width: 600px;
+  }
+
+  .diagram-wrapper svg {
+    height: auto;
+  }
+
+  /* Mermaid theme overrides */
+  .diagram-wrapper .node rect,
+  .diagram-wrapper .node circle,
+  .diagram-wrapper .node polygon {
+    stroke-width: 1.5px;
+  }
+
+  .diagram-wrapper .edgeLabel {
+    font-size: 11px !important;
+  }
+
+  /* ── Legend (bottom of sidebar) ── */
+  .legend {
+    margin-top: auto;
+    padding: 12px 16px;
+    border-top: 1px solid #334155;
+  }
+
+  .legend-title {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 8px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+  }
+
+  .legend-swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── Loading state ── */
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: #64748b;
+    font-size: 14px;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #334155;
+    border-top-color: #38bdf8;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h1>Kenetik Growth System</h1>
+    <p>Network Topology Viewer</p>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">System Overview</div>
+    <div class="nav-item active" data-diagram="overview" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#38bdf8"></div>
+      <span class="nav-label">Full Network Overview</span>
+      <span class="nav-count">11 roles</span>
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Intelligence Layer</div>
+    <div class="nav-item" data-diagram="dil" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#3b82f6"></div>
+      <span class="nav-label">DIL — Peter</span>
+      <span class="nav-count">10</span>
+    </div>
+    <div class="nav-item" data-diagram="oil" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#818cf8"></div>
+      <span class="nav-label">OIL — Claude</span>
+      <span class="nav-count">9</span>
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Executive</div>
+    <div class="nav-item" data-diagram="cgo" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#fbbf24"></div>
+      <span class="nav-label">CGO — Devon</span>
+      <span class="nav-count">5</span>
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Strategy & Creative</div>
+    <div class="nav-item" data-diagram="msil" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#4ade80"></div>
+      <span class="nav-label">MSIL — Katie</span>
+      <span class="nav-count">9</span>
+    </div>
+    <div class="nav-item" data-diagram="cs" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#fb923c"></div>
+      <span class="nav-label">CS — Moe</span>
+      <span class="nav-count">9</span>
+    </div>
+    <div class="nav-item" data-diagram="larry" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#fb923c"></div>
+      <span class="nav-label">Larry</span>
+      <span class="nav-count">6</span>
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Execution Layer</div>
+    <div class="nav-item" data-diagram="wel" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#9ca3af"></div>
+      <span class="nav-label">WEL — Brandon</span>
+      <span class="nav-count">9</span>
+    </div>
+    <div class="nav-item" data-diagram="cem" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#9ca3af"></div>
+      <span class="nav-label">CEM — Olivia</span>
+      <span class="nav-count">9</span>
+    </div>
+    <div class="nav-item" data-diagram="pmm" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#9ca3af"></div>
+      <span class="nav-label">PMM — Jake</span>
+      <span class="nav-count">7</span>
+    </div>
+    <div class="nav-item" data-diagram="amm" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#9ca3af"></div>
+      <span class="nav-label">AMM — Marcus</span>
+      <span class="nav-count">7</span>
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Infrastructure</div>
+    <div class="nav-item" data-diagram="pm" onclick="switchDiagram(this)">
+      <div class="nav-dot" style="background:#a8a29e"></div>
+      <span class="nav-label">PM — Claude</span>
+      <span class="nav-count">6</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-title">Color Legend</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#fbbf24"></div> Executive</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#3b82f6"></div> Intelligence</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#4ade80"></div> Strategy</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#fb923c"></div> Creative</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#9ca3af"></div> Execution</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#a8a29e"></div> Infrastructure</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#38bdf8"></div> Focus role (detail)</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="toolbar">
+    <div>
+      <span class="toolbar-title" id="diagramTitle">Full Network Overview</span>
+      <span class="toolbar-subtitle" id="diagramSubtitle">86 processes across 11 roles</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn" onclick="zoomIn()">Zoom +</button>
+      <button class="btn" onclick="zoomOut()">Zoom −</button>
+      <button class="btn" onclick="resetZoom()">Reset</button>
+    </div>
+  </div>
+  <div class="diagram-container" id="diagramContainer">
+    <div class="diagram-wrapper" id="diagramWrapper">
+      <div class="loading"><div class="spinner"></div>Rendering diagram...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Diagram definitions ──
+const diagrams = {
+  overview: {
+    title: "Full Network Overview",
+    subtitle: "86 processes across 11 roles",
+    code: `flowchart TB
+    EXT(["External Sources — 17 data feeds"])
+    INT(["Integration Layer — 7 MCPs + 3 Platforms"])
+
+    subgraph T1["Intelligence Layer"]
+        direction LR
+        DIL["DIL — Peter\\nData Intelligence\\n10 processes"]
+        OIL["OIL — Claude\\nOperations Intelligence\\n9 processes"]
+    end
+
+    CGO["CGO — Devon\\nChief Growth Officer\\n5 processes"]
+
+    subgraph T3["Strategy & Creative"]
+        direction LR
+        MSIL["MSIL — Katie\\nMarketing & Social Intel\\n9 processes"]
+        CS["CS — Moe\\nCreative Strategist\\n9 processes"]
+        LARRY["Larry\\nContent Producer\\n6 processes"]
+    end
+
+    subgraph T4["Execution Layer"]
+        direction LR
+        WEL["WEL — Brandon\\nWeb & Experimentation\\n9 processes"]
+        CEM["CEM — Olivia\\nChannel Execution\\n9 processes"]
+        PMM["PMM — Jake\\nPaid Media\\n7 processes"]
+        AMM["AMM — Marcus\\nAmazon Marketplace\\n7 processes"]
+    end
+
+    PM["PM — Claude\\nProject Manager\\n6 processes"]
+
+    subgraph ART["Shared Artifacts"]
+        direction LR
+        A_CT[("ChangeSet\\nTracker")]
+        A_ECL[("Edge Case\\nLog")]
+        A_LR[("Learning\\nRecord Log")]
+        A_PM[("Performance\\nMemory")]
+        A_SF[("Skill\\nFiles")]
+        A_SOC[("System Opt\\nConfig")]
+        A_CL[("Claims\\nLibrary")]
+    end
+
+    EXT --> INT
+    INT --> DIL
+    INT --> OIL
+
+    DIL -->|"Pulse reports, dashboards, NLQ"| CGO
+    OIL -->|"Optimization status, edge case summaries"| CGO
+    PMM -->|"Paid media pulse"| CGO
+    AMM -->|"Amazon pulse"| CGO
+    PM -->|"Health status, coordination"| CGO
+
+    DIL -->|"VoC, trends, funnel diagnosis"| CS
+    DIL -->|"Trend signals"| MSIL
+    OIL -->|"Guardrails, inventory alerts"| CS
+    OIL -->|"Learning synthesis"| CS
+
+    DIL -->|"Dashboards, attribution"| PMM
+    DIL -->|"Funnel opportunities"| WEL
+    OIL -->|"ChangeSet recs, margin defs"| CEM
+    OIL -->|"Inventory alerts"| PMM
+
+    CGO -->|"Approved ChangeSets, budget, experiments"| CEM
+    CGO -->|"Budget allocation"| PMM
+    CGO -->|"Approved experiments"| WEL
+    CGO -->|"Updated guardrails"| OIL
+
+    MSIL -->|"Calendar, campaigns, creator briefs"| CS
+    MSIL -->|"Social calendar, creator pipeline"| LARRY
+    CS -->|"Brief Objects, compliance, patterns"| LARRY
+    LARRY -->|"Published content, performance data"| CS
+    CS -->|"Content intel feedback"| MSIL
+
+    CS -->|"Graduation ChangeSets"| CEM
+    CS -->|"Freshness alerts, performance data"| PMM
+    CS -->|"Creative briefs for web"| WEL
+    LARRY -->|"Founder content"| CEM
+    MSIL -->|"Campaign ChangeSets"| CEM
+    MSIL -->|"Creator content pipeline"| CEM
+
+    WEL -->|"Deployment signals, SEO pipeline"| CEM
+    WEL -->|"Deployment tracking"| PM
+    CEM -->|"Email/subscription dashboards"| DIL
+    CEM -->|"Graduation to paid"| PMM
+    CEM -->|"Partner listing packets"| AMM
+    PMM -->|"Budget/optimization ChangeSets"| CEM
+    AMM -->|"Listing audit claims check"| CS
+
+    MSIL -->|"Learning notes"| OIL
+    WEL -->|"Learning records"| OIL
+    CEM -->|"Measurement outcomes"| OIL
+    PMM -->|"Experiment results"| OIL
+    CS -->|"Performance insights"| OIL
+    LARRY -->|"Learning records"| OIL
+
+    OIL --> A_CT
+    OIL --> A_ECL
+    OIL --> A_SF
+    OIL --> A_LR
+    OIL --> A_SOC
+    CEM --> A_CT
+    CS --> A_PM
+    PMM --> A_PM
+    CS --> A_CL
+    PM --> A_CT
+
+    classDef cgo fill:#78350f,stroke:#fbbf24,color:#fff
+    classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+    classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef msil fill:#166534,stroke:#4ade80,color:#fff
+    classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef amm fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef pm fill:#44403c,stroke:#a8a29e,color:#fff
+    classDef artifact fill:#374151,stroke:#d1d5db,color:#fff
+    classDef ext fill:#0f172a,stroke:#475569,color:#94a3b8
+    classDef integ fill:#1e293b,stroke:#64748b,color:#cbd5e1
+
+    class CGO cgo
+    class DIL dil
+    class OIL oil
+    class CS cs
+    class LARRY larry
+    class MSIL msil
+    class WEL wel
+    class CEM cem
+    class PMM pmm
+    class AMM amm
+    class PM pm
+    class A_CT,A_ECL,A_LR,A_PM,A_SF,A_SOC,A_CL artifact
+    class EXT ext
+    class INT integ`
+  },
+
+  cgo: {
+    title: "CGO — Devon",
+    subtitle: "Chief Growth Officer · 5 processes",
+    code: `graph LR
+    in_2_4["2.4 Automated Intelligence"]:::dil
+    in_5_5["5.5 Social Listening"]:::msil
+    in_5_9["5.9 Marketing Activity ROI"]:::msil
+    in_8_1["8.1 Daily Paid Media Pulse"]:::pmm
+    in_8_2["8.2 Cross-Platform Dashboard"]:::pmm
+
+    subgraph sg_cgo["Chief Growth Officer — Devon"]
+        p_1_1["1.1 Morning Health Check"]
+        p_1_2["1.2 Weekly Marketing Review"]
+        p_1_3["1.3 Monthly Optimization Cadence"]
+        p_1_4["1.4 Quarterly Strategic Review"]
+        p_1_5["1.5 Executive Copilot — NLQ"]
+    end
+    class sg_cgo thisRole
+
+    out_4b_5["4b.5 Founder Content"]:::larry
+    out_5_1["5.1 Marketing Calendar"]:::msil
+
+    in_2_4 --> p_1_3
+    in_5_5 --> p_1_4
+    in_5_9 --> p_1_4
+    in_8_1 --> p_1_1
+    in_8_2 --> p_1_1
+    p_1_2 --> out_5_1
+
+    classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    classDef msil fill:#166534,stroke:#4ade80,color:#fff
+    classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  },
+
+  dil: {
+    title: "DIL — Peter",
+    subtitle: "Data Intelligence Lead · 10 processes",
+    code: `graph LR
+    in_6_2["6.2 Content & SEO Changes"]:::wel
+    in_7_3["7.3 Klaviyo Email/SMS"]:::cem
+    in_7_4["7.4 Recharge Subscriptions"]:::cem
+    in_7_8["7.8 Partner Listing Packets"]:::cem
+    in_9_6["9.6 Amazon Review Intel"]:::amm
+
+    subgraph sg_dil["Data Intelligence Lead — Peter"]
+        p_2_1["2.1 Unified Data Access"]
+        p_2_10["2.10 Executive Copilot Backend"]
+        p_2_2["2.2 Data Warehouse & Mart"]
+        p_2_3["2.3 Dashboard Delivery"]
+        p_2_4["2.4 Automated Intelligence"]
+        p_2_5["2.5 Anomaly Detection"]
+        p_2_6["2.6 Funnel Diagnosis"]
+        p_2_7["2.7 VoC Analysis"]
+        p_2_8["2.8 Trend Intelligence"]
+        p_2_9["2.9 Attribution & MER"]
+    end
+    class sg_dil thisRole
+
+    out_6_2["6.2 Content & SEO Changes"]:::wel
+    out_6_3["6.3 Experimentation System"]:::wel
+    out_6_5["6.5 Production Monitoring"]:::wel
+    out_6_7["6.7 Opportunity ID"]:::wel
+    out_6_8["6.8 Creative Brief Gen"]:::wel
+    out_8_2["8.2 Cross-Platform Dashboard"]:::pmm
+    out_8_3["8.3 Budget Reallocation"]:::pmm
+
+    in_6_2 --> p_2_1
+    in_7_3 --> p_2_3
+    in_7_4 --> p_2_3
+    in_7_8 --> p_2_1
+    in_9_6 --> p_2_7
+    p_2_8 --> out_6_2
+    p_2_4 --> out_6_3
+    p_2_1 --> out_6_5
+    p_2_7 --> out_6_7
+    p_2_6 --> out_6_8
+    p_2_3 --> out_8_2
+    p_2_9 --> out_8_3
+
+    classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef amm fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  },
+
+  oil: {
+    title: "OIL — Claude",
+    subtitle: "Operations Intelligence Lead · 9 processes",
+    code: `graph LR
+    in_4a_2["4a.2 Hypothesis Design"]:::cs
+    in_4a_4["4a.4 Content Flywheel"]:::cs
+    in_4b_1["4b.1 Autonomous Content"]:::larry
+    in_5_1["5.1 Marketing Calendar"]:::msil
+    in_5_2["5.2 Campaign Orchestration"]:::msil
+    in_5_3["5.3 Social Calendar"]:::msil
+    in_5_4["5.4 Event Activation"]:::msil
+    in_5_9["5.9 Marketing Activity ROI"]:::msil
+    in_6_3["6.3 Experimentation System"]:::wel
+    in_6_6["6.6 Incident Response"]:::wel
+    in_7_1["7.1 ChangeSet Lifecycle"]:::cem
+    in_7_3["7.3 Klaviyo Email/SMS"]:::cem
+    in_7_4["7.4 Recharge Subscriptions"]:::cem
+    in_7_6["7.6 Compliance Engine"]:::cem
+    in_8_5["8.5 Autonomous Optimization"]:::pmm
+
+    subgraph sg_oil["Operations Intelligence Lead — Claude"]
+        p_3_1["3.1 Optimization Hierarchy"]
+        p_3_2["3.2 Daily Inventory Rebalance"]
+        p_3_3["3.3 ChangeSet Recommendations"]
+        p_3_4["3.4 Guardrail Parameters"]
+        p_3_5["3.5 Edge Case Log"]
+        p_3_6["3.6 Channel Margin Definitions"]
+        p_3_7["3.7 Financial System Integration"]
+        p_3_8["3.8 System Learning Protocol"]
+        p_3_9["3.9 Optimization Status Report"]
+    end
+    class sg_oil thisRole
+
+    out_4b_1["4b.1 Autonomous Content"]:::larry
+    out_8_5["8.5 Autonomous Optimization"]:::pmm
+    out_8_6["8.6 Inventory-Aware Spend"]:::pmm
+
+    in_4a_2 --> p_3_8
+    in_4a_4 --> p_3_8
+    in_4b_1 --> p_3_8
+    in_5_1 --> p_3_8
+    in_5_2 --> p_3_8
+    in_5_3 --> p_3_8
+    in_5_4 --> p_3_8
+    in_5_9 --> p_3_8
+    in_6_3 --> p_3_4
+    in_6_6 --> p_3_8
+    in_7_1 --> p_3_8
+    in_7_3 --> p_3_8
+    in_7_4 --> p_3_8
+    in_7_6 --> p_3_5
+    in_8_5 --> p_3_5
+    p_3_8 --> out_4b_1
+    p_3_4 --> out_8_5
+    p_3_6 --> out_8_6
+
+    classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef msil fill:#166534,stroke:#4ade80,color:#fff
+    classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  },
+
+  cs: {
+    title: "CS — Moe",
+    subtitle: "Creative Strategist · 9 processes",
+    code: `graph LR
+    in_3_8["3.8 System Learning Protocol"]:::oil
+    in_4b_1["4b.1 Autonomous Content"]:::larry
+    in_4b_2["4b.2 Multi-Platform Content"]:::larry
+    in_4b_6["4b.6 Performance Measurement"]:::larry
+    in_5_1["5.1 Marketing Calendar"]:::msil
+    in_5_2["5.2 Campaign Orchestration"]:::msil
+    in_5_4["5.4 Event Activation"]:::msil
+    in_5_5["5.5 Social Listening"]:::msil
+    in_5_6["5.6 Creator & Ambassador"]:::msil
+    in_5_8["5.8 Content Production Coord"]:::msil
+    in_6_3["6.3 Experimentation System"]:::wel
+    in_6_7["6.7 Opportunity ID"]:::wel
+    in_7_3["7.3 Klaviyo Email/SMS"]:::cem
+    in_7_7["7.7 Creative Sourcing"]:::cem
+    in_8_1["8.1 Daily Paid Media Pulse"]:::pmm
+
+    subgraph sg_cs["Creative Strategist — Moe"]
+        p_4a_1["4a.1 Content Intelligence Layer"]
+        p_4a_2["4a.2 Hypothesis Design & Testing"]
+        p_4a_3["4a.3 Creative Brief Objects"]
+        p_4a_4["4a.4 Content Flywheel Orchestration"]
+        p_4a_5["4a.5 Graduation Pipeline"]
+        p_4a_6["4a.6 Performance Memory"]
+        p_4a_7["4a.7 Claims Compliance Engine"]
+        p_4a_8["4a.8 Creative Freshness Monitoring"]
+        p_4a_9["4a.9 Cross-Channel Asset Spec"]
+    end
+    class sg_cs thisRole
+
+    out_10_2["10.2 ChangeSet Tracking"]:::pm
+    out_3_8["3.8 System Learning Protocol"]:::oil
+    out_4b_2["4b.2 Multi-Platform Content"]:::larry
+    out_4b_4["4b.4 Locked Architecture"]:::larry
+    out_6_3["6.3 Experimentation System"]:::wel
+    out_6_4["6.4 Optimization Review"]:::wel
+    out_7_9["7.9 Graduation ChangeSet"]:::cem
+    out_8_3["8.3 Budget Reallocation"]:::pmm
+    out_8_5["8.5 Autonomous Optimization"]:::pmm
+
+    p_4a_1 --> p_4a_2
+    p_4a_6 --> p_4a_2
+    p_4a_8 --> p_4a_3
+
+    in_3_8 --> p_4a_2
+    in_4b_1 --> p_4a_6
+    in_4b_2 --> p_4a_6
+    in_4b_6 --> p_4a_1
+    in_5_1 --> p_4a_3
+    in_5_2 --> p_4a_3
+    in_5_4 --> p_4a_3
+    in_5_5 --> p_4a_1
+    in_5_6 --> p_4a_3
+    in_5_8 --> p_4a_6
+    in_6_3 --> p_4a_6
+    in_6_7 --> p_4a_3
+    in_7_3 --> p_4a_6
+    in_7_7 --> p_4a_6
+    in_8_1 --> p_4a_8
+
+    p_4a_7 --> out_10_2
+    p_4a_4 --> out_3_8
+    p_4a_1 --> out_4b_2
+    p_4a_9 --> out_4b_4
+    p_4a_2 --> out_6_3
+    p_4a_3 --> out_6_4
+    p_4a_5 --> out_7_9
+    p_4a_8 --> out_8_3
+    p_4a_6 --> out_8_5
+
+    classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+    classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef msil fill:#166534,stroke:#4ade80,color:#fff
+    classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef pm fill:#44403c,stroke:#a8a29e,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  },
+
+  larry: {
+    title: "Larry",
+    subtitle: "Content Producer · 6 processes",
+    code: `graph LR
+    in_3_8["3.8 System Learning Protocol"]:::oil
+    in_4a_1["4a.1 Content Intelligence"]:::cs
+    in_4a_2["4a.2 Hypothesis Design"]:::cs
+    in_4a_3["4a.3 Creative Brief Objects"]:::cs
+    in_4a_6["4a.6 Performance Memory"]:::cs
+    in_4a_9["4a.9 Cross-Channel Asset Spec"]:::cs
+    in_5_3["5.3 Social Calendar"]:::msil
+    in_5_4["5.4 Event Activation"]:::msil
+    in_Devon["Devon — CGO"]:::cgo
+
+    subgraph sg_larry["Larry — Content Producer"]
+        p_4b_1["4b.1 Autonomous Content Generation"]
+        p_4b_2["4b.2 Multi-Platform Content"]
+        p_4b_3["4b.3 Production Queue"]
+        p_4b_4["4b.4 Locked Architecture Compliance"]
+        p_4b_5["4b.5 Founder & Team Content"]
+        p_4b_6["4b.6 Performance Measurement"]
+    end
+    class sg_larry thisRole
+
+    out_3_8["3.8 System Learning Protocol"]:::oil
+    out_4a_1["4a.1 Content Intelligence"]:::cs
+    out_4a_6["4a.6 Performance Memory"]:::cs
+    out_5_7["5.7 Sprout Social Integration"]:::msil
+    out_7_3["7.3 Klaviyo Email/SMS"]:::cem
+
+    p_4b_4 --> p_4b_2
+
+    in_3_8 --> p_4b_1
+    in_4a_1 --> p_4b_2
+    in_4a_2 --> p_4b_1
+    in_4a_3 --> p_4b_4
+    in_4a_6 --> p_4b_1
+    in_4a_9 --> p_4b_4
+    in_5_3 --> p_4b_3
+    in_5_4 --> p_4b_5
+    in_Devon --> p_4b_5
+
+    p_4b_1 --> out_3_8
+    p_4b_6 --> out_4a_1
+    p_4b_2 --> out_4a_6
+    p_4b_4 --> out_5_7
+    p_4b_5 --> out_7_3
+
+    classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+    classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef msil fill:#166534,stroke:#4ade80,color:#fff
+    classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef cgo fill:#78350f,stroke:#fbbf24,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  },
+
+  msil: {
+    title: "MSIL — Katie",
+    subtitle: "Marketing Systems & Intelligence · 9 processes",
+    code: `graph LR
+    in_1_2["1.2 Weekly Marketing Review"]:::cgo
+    in_2_9["2.9 Attribution & MER"]:::dil
+    in_4a_3["4a.3 Creative Brief Objects"]:::cs
+    in_4b_1["4b.1 Autonomous Content"]:::larry
+    in_4b_4["4b.4 Locked Architecture"]:::larry
+    in_4b_5["4b.5 Founder Content"]:::larry
+    in_7_8["7.8 Partner Listing Packets"]:::cem
+
+    subgraph sg_msil["Marketing Systems & Intelligence — Katie"]
+        p_5_1["5.1 Marketing Calendar"]
+        p_5_2["5.2 Campaign Orchestration"]
+        p_5_3["5.3 Social Calendar Production"]
+        p_5_4["5.4 Event Activation Planning"]
+        p_5_5["5.5 Social Listening & Community"]
+        p_5_6["5.6 Creator & Ambassador Pipeline"]
+        p_5_7["5.7 Sprout Social Integration"]
+        p_5_8["5.8 Content Production Coord"]
+        p_5_9["5.9 Marketing Activity ROI"]
+    end
+    class sg_msil thisRole
+
+    out_1_4["1.4 Quarterly Strategic Review"]:::cgo
+    out_3_8["3.8 System Learning Protocol"]:::oil
+    out_4a_3["4a.3 Creative Brief Objects"]:::cs
+    out_4a_6["4a.6 Performance Memory"]:::cs
+    out_6_7["6.7 Opportunity ID"]:::wel
+    out_7_8["7.8 Partner Listing Packets"]:::cem
+
+    p_5_5 --> p_5_6
+    p_5_6 --> p_5_3
+    p_5_1 --> p_5_8
+    p_5_4 --> p_5_8
+    p_5_9 --> p_5_1
+
+    in_1_2 --> p_5_1
+    in_2_9 --> p_5_1
+    in_4a_3 --> p_5_8
+    in_4b_1 --> p_5_7
+    in_4b_4 --> p_5_7
+    in_4b_5 --> p_5_3
+    in_7_8 --> p_5_9
+
+    p_5_9 --> out_1_4
+    p_5_4 --> out_3_8
+    p_5_6 --> out_4a_3
+    p_5_8 --> out_4a_6
+    p_5_5 --> out_6_7
+    p_5_1 --> out_7_8
+
+    classDef cgo fill:#78350f,stroke:#fbbf24,color:#fff
+    classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+    classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  },
+
+  wel: {
+    title: "WEL — Brandon",
+    subtitle: "Web & Experimentation Lead · 9 processes",
+    code: `graph LR
+    in_2_1["2.1 Unified Data Access"]:::dil
+    in_2_3["2.3 Dashboard Delivery"]:::dil
+    in_2_4["2.4 Automated Intelligence"]:::dil
+    in_2_6["2.6 Funnel Diagnosis"]:::dil
+    in_2_7["2.7 VoC Analysis"]:::dil
+    in_2_8["2.8 Trend Intelligence"]:::dil
+    in_4a_2["4a.2 Hypothesis Design"]:::cs
+    in_4a_3["4a.3 Creative Brief Objects"]:::cs
+    in_5_5["5.5 Social Listening"]:::msil
+
+    subgraph sg_wel["Web & Experimentation Lead — Brandon"]
+        p_6_1["6.1 Shopify Theme Version Control"]
+        p_6_2["6.2 Content & SEO Change Pipeline"]
+        p_6_3["6.3 Experimentation System"]
+        p_6_4["6.4 Optimization Review & Approvals"]
+        p_6_5["6.5 Production Monitoring"]
+        p_6_6["6.6 Incident Response & Safety"]
+        p_6_7["6.7 Opportunity Identification"]
+        p_6_8["6.8 Creative Brief Generation"]
+        p_6_9["6.9 Learning Notes Production"]
+    end
+    class sg_wel thisRole
+
+    out_10_1["10.1 System Health Dashboard"]:::pm
+    out_10_2["10.2 ChangeSet Tracking"]:::pm
+    out_2_1["2.1 Unified Data Access"]:::dil
+    out_3_4["3.4 Guardrail Parameters"]:::oil
+    out_4a_3["4a.3 Creative Brief Objects"]:::cs
+
+    p_6_7 --> p_6_3
+    p_6_3 --> p_6_9
+    p_6_3 --> p_6_1
+    p_6_1 --> p_6_5
+    p_6_5 --> p_6_6
+    p_6_1 --> p_6_6
+    p_6_3 --> p_6_6
+    p_6_3 --> p_6_7
+    p_6_7 --> p_6_8
+    p_6_2 --> p_6_9
+
+    in_2_1 --> p_6_5
+    in_2_3 --> p_6_9
+    in_2_4 --> p_6_3
+    in_2_6 --> p_6_8
+    in_2_7 --> p_6_7
+    in_2_8 --> p_6_2
+    in_4a_2 --> p_6_3
+    in_4a_3 --> p_6_4
+    in_5_5 --> p_6_7
+
+    p_6_1 --> out_10_1
+    p_6_4 --> out_10_2
+    p_6_2 --> out_2_1
+    p_6_3 --> out_3_4
+    p_6_7 --> out_4a_3
+
+    classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+    classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef msil fill:#166534,stroke:#4ade80,color:#fff
+    classDef pm fill:#44403c,stroke:#a8a29e,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  },
+
+  cem: {
+    title: "CEM — Olivia",
+    subtitle: "Channel Execution Manager · 9 processes",
+    code: `graph LR
+    in_3_4["3.4 Guardrail Parameters"]:::oil
+    in_3_6["3.6 Channel Margin Defs"]:::oil
+    in_4a_4["4a.4 Content Flywheel"]:::cs
+    in_4a_5["4a.5 Graduation Pipeline"]:::cs
+    in_4a_6["4a.6 Performance Memory"]:::cs
+    in_4a_8["4a.8 Creative Freshness"]:::cs
+    in_4b_5["4b.5 Founder Content"]:::larry
+    in_5_1["5.1 Marketing Calendar"]:::msil
+    in_5_2["5.2 Campaign Orchestration"]:::msil
+    in_5_4["5.4 Event Activation"]:::msil
+    in_8_1["8.1 Daily Paid Media Pulse"]:::pmm
+    in_8_3["8.3 Budget Reallocation"]:::pmm
+    in_8_6["8.6 Inventory-Aware Spend"]:::pmm
+
+    subgraph sg_cem["Channel Execution Manager — Olivia"]
+        p_7_1["7.1 ChangeSet Lifecycle"]
+        p_7_2["7.2 Economics Estimation"]
+        p_7_3["7.3 Klaviyo Email/SMS"]
+        p_7_4["7.4 Recharge Subscriptions"]
+        p_7_5["7.5 ChangeSet Measurement"]
+        p_7_6["7.6 Compliance Engine"]
+        p_7_7["7.7 Creative Sourcing"]
+        p_7_8["7.8 Partner Listing Packets"]
+        p_7_9["7.9 Graduation ChangeSet"]
+    end
+    class sg_cem thisRole
+
+    out_3_5["3.5 Edge Case Log"]:::oil
+    out_3_8["3.8 System Learning Protocol"]:::oil
+    out_4a_6["4a.6 Performance Memory"]:::cs
+    out_5_9["5.9 Marketing Activity ROI"]:::msil
+
+    p_7_6 --> p_7_1
+    p_7_1 --> p_7_5
+    p_7_1 --> p_7_2
+    p_7_1 --> p_7_6
+    p_7_1 --> p_7_7
+    p_7_7 --> p_7_5
+
+    in_3_4 --> p_7_6
+    in_3_6 --> p_7_8
+    in_4a_4 --> p_7_9
+    in_4a_5 --> p_7_9
+    in_4a_6 --> p_7_7
+    in_4a_8 --> p_7_7
+    in_4b_5 --> p_7_3
+    in_5_1 --> p_7_8
+    in_5_2 --> p_7_1
+    in_5_4 --> p_7_1
+    in_8_1 --> p_7_1
+    in_8_3 --> p_7_1
+    in_8_6 --> p_7_1
+
+    p_7_6 --> out_3_5
+    p_7_1 --> out_3_8
+    p_7_7 --> out_4a_6
+    p_7_8 --> out_5_9
+
+    classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+    classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef msil fill:#166534,stroke:#4ade80,color:#fff
+    classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  },
+
+  pmm: {
+    title: "PMM — Jake",
+    subtitle: "Performance Marketing Manager · 7 processes",
+    code: `graph LR
+    in_2_3["2.3 Dashboard Delivery"]:::dil
+    in_2_9["2.9 Attribution & MER"]:::dil
+    in_3_2["3.2 Daily Inventory Rebalance"]:::oil
+    in_3_4["3.4 Guardrail Parameters"]:::oil
+    in_3_6["3.6 Channel Margin Defs"]:::oil
+    in_4a_6["4a.6 Performance Memory"]:::cs
+    in_4a_8["4a.8 Creative Freshness"]:::cs
+    in_9_1["9.1 Daily Pulse — Amazon"]:::amm
+
+    subgraph sg_pmm["Performance Marketing Manager — Jake"]
+        p_8_1["8.1 Daily Paid Media Pulse"]
+        p_8_2["8.2 Cross-Platform Dashboard"]
+        p_8_3["8.3 Budget Reallocation"]
+        p_8_4["8.4 Creative Freshness Pre-check"]
+        p_8_5["8.5 Autonomous Optimization"]
+        p_8_6["8.6 Inventory-Aware Spend"]
+        p_8_7["8.7 CONSOLIDATED into 3.4"]
+        p_8_8["8.8 Experiment Results to PM"]
+    end
+    class sg_pmm thisRole
+
+    out_1_1["1.1 Morning Health Check"]:::cgo
+    out_3_5["3.5 Edge Case Log"]:::oil
+    out_7_1["7.1 ChangeSet Lifecycle"]:::cem
+
+    p_8_2 --> p_8_3
+    p_8_4 --> p_8_3
+    p_8_3 --> p_8_4
+    p_8_6 --> p_8_3
+
+    in_2_3 --> p_8_2
+    in_2_9 --> p_8_3
+    in_3_2 --> p_8_6
+    in_3_4 --> p_8_5
+    in_3_6 --> p_8_6
+    in_4a_6 --> p_8_5
+    in_4a_8 --> p_8_3
+    in_9_1 --> p_8_6
+
+    p_8_2 --> out_1_1
+    p_8_5 --> out_3_5
+    p_8_1 --> out_7_1
+
+    classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+    classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef amm fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef cgo fill:#78350f,stroke:#fbbf24,color:#fff
+    classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  },
+
+  amm: {
+    title: "AMM — Marcus",
+    subtitle: "Amazon Marketplace Manager · 7 processes",
+    code: `graph LR
+    subgraph sg_amm["Amazon Marketplace Manager — Marcus"]
+        p_9_1["9.1 Daily Pulse & Morning Check"]
+        p_9_2["9.2 Listing Optimization"]
+        p_9_3["9.3 Amazon Listing Audit"]
+        p_9_4["9.4 Search Intelligence"]
+        p_9_5["9.5 Amazon Advertising Budget"]
+        p_9_6["9.6 Amazon Review Intelligence"]
+        p_9_7["9.7 Amazon Competitive Intel"]
+        p_9_8["9.8 CONSOLIDATED into Processes"]
+    end
+    class sg_amm thisRole
+
+    out_2_7["2.7 VoC Analysis"]:::dil
+    out_3_2["3.2 Daily Inventory Rebalance"]:::oil
+    out_3_8["3.8 System Learning Protocol"]:::oil
+
+    p_9_7 --> p_9_3
+    p_9_4 --> p_9_3
+    p_9_3 --> p_9_2
+
+    p_9_6 --> out_2_7
+    p_9_1 --> out_3_2
+    p_9_3 --> out_3_8
+
+    classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  },
+
+  pm: {
+    title: "PM — Claude",
+    subtitle: "Project Manager · 6 processes",
+    code: `graph LR
+    in_4a_7["4a.7 Claims Compliance"]:::cs
+    in_5_8["5.8 Content Production Coord"]:::msil
+    in_6_1["6.1 Shopify Theme Version"]:::wel
+    in_6_4["6.4 Optimization Review"]:::wel
+    in_6_5["6.5 Production Monitoring"]:::wel
+    in_6_6["6.6 Incident Response"]:::wel
+    in_8_5["8.5 Autonomous Optimization"]:::pmm
+
+    subgraph sg_pm["Project Manager — Claude"]
+        p_10_1["10.1 System Health Dashboard"]
+        p_10_2["10.2 ChangeSet Tracking & Dependency"]
+        p_10_3["10.3 Knowledge Governance"]
+        p_10_4["10.4 Cross-Role Coordination"]
+        p_10_5["10.5 CONSOLIDATED into Processes"]
+        p_10_6["10.6 Meeting Cadence & Team Sync"]
+        p_10_7["10.7 Onboarding & Team Members"]
+    end
+    class sg_pm thisRole
+
+    in_4a_7 --> p_10_2
+    in_5_8 --> p_10_2
+    in_6_1 --> p_10_1
+    in_6_4 --> p_10_2
+    in_6_5 --> p_10_2
+    in_6_6 --> p_10_2
+    in_8_5 --> p_10_2
+
+    classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+    classDef msil fill:#166534,stroke:#4ade80,color:#fff
+    classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+    classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px`
+  }
+};
+
+// ── State ──
+let currentZoom = 1;
+let currentDiagram = 'overview';
+
+// ── Initialize Mermaid ──
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'dark',
+  themeVariables: {
+    darkMode: true,
+    background: '#1e293b',
+    primaryColor: '#334155',
+    primaryTextColor: '#e2e8f0',
+    primaryBorderColor: '#475569',
+    lineColor: '#64748b',
+    secondaryColor: '#1e293b',
+    tertiaryColor: '#0f172a',
+    fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif',
+    fontSize: '13px',
+    edgeLabelBackground: '#1e293b'
+  },
+  flowchart: {
+    htmlLabels: true,
+    curve: 'basis',
+    padding: 12,
+    nodeSpacing: 30,
+    rankSpacing: 40
+  }
+});
+
+// ── Render diagram ──
+async function renderDiagram(key) {
+  const wrapper = document.getElementById('diagramWrapper');
+  const titleEl = document.getElementById('diagramTitle');
+  const subtitleEl = document.getElementById('diagramSubtitle');
+  const diagram = diagrams[key];
+
+  titleEl.textContent = diagram.title;
+  subtitleEl.textContent = diagram.subtitle;
+
+  wrapper.innerHTML = '<div class="loading"><div class="spinner"></div>Rendering diagram...</div>';
+
+  try {
+    const id = 'mermaid-' + key + '-' + Date.now();
+    const { svg } = await mermaid.render(id, diagram.code);
+    wrapper.innerHTML = svg;
+    currentZoom = 1;
+    panX = 0;
+    panY = 0;
+    centerDiagram();
+  } catch (err) {
+    wrapper.innerHTML = '<div class="loading" style="color:#ef4444;">Render error: ' + err.message + '</div>';
+    console.error('Mermaid render error:', err);
+  }
+}
+
+// ── Navigation ──
+function switchDiagram(el) {
+  document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+  el.classList.add('active');
+  currentDiagram = el.dataset.diagram;
+  renderDiagram(currentDiagram);
+}
+
+// ── Pan & Zoom state ──
+let panX = 0, panY = 0;
+let isDragging = false;
+let dragStartX = 0, dragStartY = 0;
+let panStartX = 0, panStartY = 0;
+
+const container = document.getElementById('diagramContainer');
+const wrapper = document.getElementById('diagramWrapper');
+
+function applyTransform() {
+  wrapper.style.transform = 'translate(' + panX + 'px, ' + panY + 'px) scale(' + currentZoom + ')';
+}
+
+function centerDiagram() {
+  // Center the diagram in the viewport after render
+  setTimeout(() => {
+    const cRect = container.getBoundingClientRect();
+    const wRect = wrapper.getBoundingClientRect();
+    const naturalW = wRect.width / currentZoom;
+    const naturalH = wRect.height / currentZoom;
+    panX = Math.max(0, (cRect.width - naturalW * currentZoom) / 2);
+    panY = 20;
+    applyTransform();
+  }, 100);
+}
+
+// ── Click-and-drag panning ──
+container.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  dragStartX = e.clientX;
+  dragStartY = e.clientY;
+  panStartX = panX;
+  panStartY = panY;
+  container.classList.add('dragging');
+  e.preventDefault();
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  panX = panStartX + (e.clientX - dragStartX);
+  panY = panStartY + (e.clientY - dragStartY);
+  applyTransform();
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+  container.classList.remove('dragging');
+});
+
+// ── Zoom controls ──
+function zoomIn() {
+  const step = currentZoom < 2 ? 0.25 : currentZoom < 5 ? 0.5 : 1.0;
+  currentZoom = Math.min(currentZoom + step, 15);
+  applyTransform();
+}
+
+function zoomOut() {
+  const step = currentZoom <= 2 ? 0.25 : currentZoom <= 5 ? 0.5 : 1.0;
+  currentZoom = Math.max(currentZoom - step, 0.2);
+  applyTransform();
+}
+
+function resetZoom() {
+  currentZoom = 1;
+  panX = 0;
+  panY = 0;
+  centerDiagram();
+}
+
+// ── Mouse wheel zoom (zoom toward cursor) ──
+container.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  const rect = container.getBoundingClientRect();
+  const mouseX = e.clientX - rect.left;
+  const mouseY = e.clientY - rect.top;
+
+  const oldZoom = currentZoom;
+  const step = currentZoom < 2 ? 0.15 : currentZoom < 5 ? 0.3 : 0.6;
+
+  if (e.deltaY < 0) {
+    currentZoom = Math.min(currentZoom + step, 15);
+  } else {
+    currentZoom = Math.max(currentZoom - step, 0.2);
+  }
+
+  // Adjust pan so zoom centers on cursor position
+  const scale = currentZoom / oldZoom;
+  panX = mouseX - scale * (mouseX - panX);
+  panY = mouseY - scale * (mouseY - panY);
+  applyTransform();
+}, { passive: false });
+
+// ── Keyboard shortcuts ──
+document.addEventListener('keydown', (e) => {
+  if (e.key === '+' || e.key === '=') zoomIn();
+  if (e.key === '-') zoomOut();
+  if (e.key === '0') resetZoom();
+});
+
+// ── Init ──
+renderDiagram('overview');
+</script>
+
+</body>
+</html>

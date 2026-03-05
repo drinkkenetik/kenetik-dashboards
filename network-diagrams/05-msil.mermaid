@@ -1,0 +1,87 @@
+---
+title: "Marketing Systems & Intelligence (MSIL) - Role Flow Diagram"
+---
+
+graph LR
+
+    %% INCOMING: External processes sending data to this role
+    in_1_2["1.2<br/>Weekly Marketing Revie"]
+    class in_1_2 cgo
+    in_2_9["2.9<br/>Attribution & MER Mode"]
+    class in_2_9 dil
+    in_4a_3["4a.3<br/>Creative Brief Object "]
+    class in_4a_3 cs
+    in_4b_1["4b.1<br/>Autonomous Content Gen"]
+    class in_4b_1 larry
+    in_4b_4["4b.4<br/>Locked Architecture Co"]
+    class in_4b_4 larry
+    in_4b_5["4b.5<br/>Founder & Team Content"]
+    class in_4b_5 larry
+    in_7_8["7.8<br/>Partner Listing Packet"]
+    class in_7_8 cem
+
+    %% MSIL PROCESSES
+    subgraph sg_msil["Marketing Systems & Intelligence"]
+        p_5_1["5.1<br/>Marketing Calendar Man"]
+        p_5_2["5.2<br/>Campaign Orchestration"]
+        p_5_3["5.3<br/>Social Calendar Produc"]
+        p_5_4["5.4<br/>Event Activation Plann"]
+        p_5_5["5.5<br/>Social Listening & Com"]
+        p_5_6["5.6<br/>Creator & Ambassador P"]
+        p_5_7["5.7<br/>Sprout Social Integrat"]
+        p_5_8["5.8<br/>Content Production Coo"]
+        p_5_9["5.9<br/>Marketing Activity ROI"]
+    end
+    class sg_msil thisRole
+
+    %% OUTGOING: External processes this role sends data to
+    out_1_4["1.4<br/>Quarterly Strategic Re"]
+    class out_1_4 cgo
+    out_3_8["3.8<br/>System Learning Protoc"]
+    class out_3_8 oil
+    out_4a_3["4a.3<br/>Creative Brief Object "]
+    class out_4a_3 cs
+    out_4a_6["4a.6<br/>Performance Memory & S"]
+    class out_4a_6 cs
+    out_6_7["6.7<br/>Opportunity Identifica"]
+    class out_6_7 wel
+    out_7_8["7.8<br/>Partner Listing Packet"]
+    class out_7_8 cem
+
+    %% INTERNAL FLOWS
+    p_5_5 --> p_5_6
+    p_5_6 --> p_5_3
+    p_5_1 --> p_5_8
+    p_5_4 --> p_5_8
+    p_5_9 --> p_5_1
+
+    %% INCOMING FLOWS
+    in_1_2 --> p_5_1
+    in_2_9 --> p_5_1
+    in_4a_3 --> p_5_8
+    in_4b_1 --> p_5_7
+    in_4b_4 --> p_5_7
+    in_4b_5 --> p_5_3
+    in_7_8 --> p_5_9
+
+    %% OUTGOING FLOWS
+    p_5_9 --> out_1_4
+    p_5_4 --> out_3_8
+    p_5_6 --> out_4a_3
+    p_5_8 --> out_4a_6
+    p_5_5 --> out_6_7
+    p_5_1 --> out_7_8
+
+classDef cgo fill:#78350f,stroke:#fbbf24,color:#fff
+classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+classDef msil fill:#166534,stroke:#4ade80,color:#fff
+classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef amm fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef pm fill:#44403c,stroke:#a8a29e,color:#fff
+classDef artifact fill:#374151,stroke:#d1d5db,color:#fff
+classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px

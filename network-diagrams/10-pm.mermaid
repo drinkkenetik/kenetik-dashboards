@@ -1,0 +1,56 @@
+---
+title: "Product Manager (PM) - Role Flow Diagram"
+---
+
+graph LR
+
+    %% INCOMING: External processes sending data to this role
+    in_4a_7["4a.7<br/>Claims Compliance Engi"]
+    class in_4a_7 cs
+    in_5_8["5.8<br/>Content Production Coo"]
+    class in_5_8 msil
+    in_6_1["6.1<br/>Shopify Theme Version "]
+    class in_6_1 wel
+    in_6_4["6.4<br/>Optimization Review, A"]
+    class in_6_4 wel
+    in_6_5["6.5<br/>Production Monitoring "]
+    class in_6_5 wel
+    in_6_6["6.6<br/>Incident Response, Saf"]
+    class in_6_6 wel
+    in_8_5["8.5<br/>Autonomous Optimizatio"]
+    class in_8_5 pmm
+
+    %% PM PROCESSES
+    subgraph sg_pm["Product Manager"]
+        p_10_1["10.1<br/>System Health Dashboar"]
+        p_10_2["10.2<br/>ChangeSet Tracking & D"]
+        p_10_3["10.3<br/>Knowledge Governance &"]
+        p_10_4["10.4<br/>Cross-Role Coordinatio"]
+        p_10_5["10.5<br/>[CONSOLIDATED into Pro"]
+        p_10_6["10.6<br/>Meeting Cadence & Team"]
+        p_10_7["10.7<br/>Onboarding & Team Memb"]
+    end
+    class sg_pm thisRole
+
+    %% INCOMING FLOWS
+    in_4a_7 --> p_10_2
+    in_5_8 --> p_10_2
+    in_6_1 --> p_10_1
+    in_6_4 --> p_10_2
+    in_6_5 --> p_10_2
+    in_6_6 --> p_10_2
+    in_8_5 --> p_10_2
+
+classDef cgo fill:#78350f,stroke:#fbbf24,color:#fff
+classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+classDef msil fill:#166534,stroke:#4ade80,color:#fff
+classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef amm fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef pm fill:#44403c,stroke:#a8a29e,color:#fff
+classDef artifact fill:#374151,stroke:#d1d5db,color:#fff
+classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px

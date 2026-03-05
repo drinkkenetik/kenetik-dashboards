@@ -1,0 +1,50 @@
+---
+title: "Attribution & Measurement Manager (AMM) - Role Flow Diagram"
+---
+
+graph LR
+
+    %% AMM PROCESSES
+    subgraph sg_amm["Attribution & Measurement Manager"]
+        p_9_1["9.1<br/>Daily Pulse & Morning "]
+        p_9_2["9.2<br/>Listing Optimization &"]
+        p_9_3["9.3<br/>Amazon Listing Audit"]
+        p_9_4["9.4<br/>Search Intelligence & "]
+        p_9_5["9.5<br/>Amazon Advertising Bud"]
+        p_9_6["9.6<br/>Amazon Review Intellig"]
+        p_9_7["9.7<br/>Amazon Competitive Int"]
+        p_9_8["9.8<br/>[CONSOLIDATED into Pro"]
+    end
+    class sg_amm thisRole
+
+    %% OUTGOING: External processes this role sends data to
+    out_2_7["2.7<br/>VoC (Voice of Customer"]
+    class out_2_7 dil
+    out_3_2["3.2<br/>Daily Inventory Rebala"]
+    class out_3_2 oil
+    out_3_8["3.8<br/>System Learning Protoc"]
+    class out_3_8 oil
+
+    %% INTERNAL FLOWS
+    p_9_7 --> p_9_3
+    p_9_4 --> p_9_3
+    p_9_3 --> p_9_2
+
+    %% OUTGOING FLOWS
+    p_9_6 --> out_2_7
+    p_9_1 --> out_3_2
+    p_9_3 --> out_3_8
+
+classDef cgo fill:#78350f,stroke:#fbbf24,color:#fff
+classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+classDef msil fill:#166534,stroke:#4ade80,color:#fff
+classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef amm fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef pm fill:#44403c,stroke:#a8a29e,color:#fff
+classDef artifact fill:#374151,stroke:#d1d5db,color:#fff
+classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px

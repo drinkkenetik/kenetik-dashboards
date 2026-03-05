@@ -1,0 +1,95 @@
+---
+title: "Operations Intelligence Lead (OIL) - Role Flow Diagram"
+---
+
+graph LR
+
+    %% INCOMING: External processes sending data to this role
+    in_4a_2["4a.2<br/>Hypothesis Design & Te"]
+    class in_4a_2 cs
+    in_4a_4["4a.4<br/>Content Flywheel Orche"]
+    class in_4a_4 cs
+    in_4b_1["4b.1<br/>Autonomous Content Gen"]
+    class in_4b_1 larry
+    in_5_1["5.1<br/>Marketing Calendar Man"]
+    class in_5_1 msil
+    in_5_2["5.2<br/>Campaign Orchestration"]
+    class in_5_2 msil
+    in_5_3["5.3<br/>Social Calendar Produc"]
+    class in_5_3 msil
+    in_5_4["5.4<br/>Event Activation Plann"]
+    class in_5_4 msil
+    in_5_9["5.9<br/>Marketing Activity ROI"]
+    class in_5_9 msil
+    in_6_3["6.3<br/>Experimentation System"]
+    class in_6_3 wel
+    in_6_6["6.6<br/>Incident Response, Saf"]
+    class in_6_6 wel
+    in_7_1["7.1<br/>ChangeSet Lifecycle Ma"]
+    class in_7_1 cem
+    in_7_3["7.3<br/>Klaviyo Email/SMS Oper"]
+    class in_7_3 cem
+    in_7_4["7.4<br/>Recharge Subscription "]
+    class in_7_4 cem
+    in_7_6["7.6<br/>Compliance Engine (Sim"]
+    class in_7_6 cem
+    in_8_5["8.5<br/>Autonomous Optimizatio"]
+    class in_8_5 pmm
+
+    %% OIL PROCESSES
+    subgraph sg_oil["Operations Intelligence Lead"]
+        p_3_1["3.1<br/>Optimization Hierarchy"]
+        p_3_2["3.2<br/>Daily Inventory Rebala"]
+        p_3_3["3.3<br/>ChangeSet Recommendati"]
+        p_3_4["3.4<br/>Guardrail Parameter Ma"]
+        p_3_5["3.5<br/>Edge Case Log Manageme"]
+        p_3_6["3.6<br/>Channel Margin Definit"]
+        p_3_7["3.7<br/>Financial System Integ"]
+        p_3_8["3.8<br/>System Learning Protoc"]
+        p_3_9["3.9<br/>Optimization Status Re"]
+    end
+    class sg_oil thisRole
+
+    %% OUTGOING: External processes this role sends data to
+    out_4b_1["4b.1<br/>Autonomous Content Gen"]
+    class out_4b_1 larry
+    out_8_5["8.5<br/>Autonomous Optimizatio"]
+    class out_8_5 pmm
+    out_8_6["8.6<br/>Inventory-Aware Spend "]
+    class out_8_6 pmm
+
+    %% INCOMING FLOWS
+    in_4a_2 --> p_3_8
+    in_4a_4 --> p_3_8
+    in_4b_1 --> p_3_8
+    in_5_1 --> p_3_8
+    in_5_2 --> p_3_8
+    in_5_3 --> p_3_8
+    in_5_4 --> p_3_8
+    in_5_9 --> p_3_8
+    in_6_3 --> p_3_4
+    in_6_6 --> p_3_8
+    in_7_1 --> p_3_8
+    in_7_3 --> p_3_8
+    in_7_4 --> p_3_8
+    in_7_6 --> p_3_5
+    in_8_5 --> p_3_5
+
+    %% OUTGOING FLOWS
+    p_3_8 --> out_4b_1
+    p_3_4 --> out_8_5
+    p_3_6 --> out_8_6
+
+classDef cgo fill:#78350f,stroke:#fbbf24,color:#fff
+classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+classDef msil fill:#166534,stroke:#4ade80,color:#fff
+classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef amm fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef pm fill:#44403c,stroke:#a8a29e,color:#fff
+classDef artifact fill:#374151,stroke:#d1d5db,color:#fff
+classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px

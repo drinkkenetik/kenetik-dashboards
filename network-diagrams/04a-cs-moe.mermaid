@@ -1,0 +1,118 @@
+---
+title: "Content Specialist / MOE (CS) - Role Flow Diagram"
+---
+
+graph LR
+
+    %% INCOMING: External processes sending data to this role
+    in_3_8["3.8<br/>System Learning Protoc"]
+    class in_3_8 oil
+    in_4b_1["4b.1<br/>Autonomous Content Gen"]
+    class in_4b_1 larry
+    in_4b_2["4b.2<br/>Multi-Platform Content"]
+    class in_4b_2 larry
+    in_4b_6["4b.6<br/>Performance Measuremen"]
+    class in_4b_6 larry
+    in_5_1["5.1<br/>Marketing Calendar Man"]
+    class in_5_1 msil
+    in_5_2["5.2<br/>Campaign Orchestration"]
+    class in_5_2 msil
+    in_5_4["5.4<br/>Event Activation Plann"]
+    class in_5_4 msil
+    in_5_5["5.5<br/>Social Listening & Com"]
+    class in_5_5 msil
+    in_5_6["5.6<br/>Creator & Ambassador P"]
+    class in_5_6 msil
+    in_5_8["5.8<br/>Content Production Coo"]
+    class in_5_8 msil
+    in_6_3["6.3<br/>Experimentation System"]
+    class in_6_3 wel
+    in_6_7["6.7<br/>Opportunity Identifica"]
+    class in_6_7 wel
+    in_7_3["7.3<br/>Klaviyo Email/SMS Oper"]
+    class in_7_3 cem
+    in_7_7["7.7<br/>Creative Sourcing & Ch"]
+    class in_7_7 cem
+    in_8_1["8.1<br/>Daily Paid Media Pulse"]
+    class in_8_1 pmm
+
+    %% CS PROCESSES
+    subgraph sg_cs["Content Specialist / MOE"]
+        p_4a_1["4a.1<br/>Content Intelligence L"]
+        p_4a_2["4a.2<br/>Hypothesis Design & Te"]
+        p_4a_3["4a.3<br/>Creative Brief Object "]
+        p_4a_4["4a.4<br/>Content Flywheel Orche"]
+        p_4a_5["4a.5<br/>Graduation Pipeline Ma"]
+        p_4a_6["4a.6<br/>Performance Memory & S"]
+        p_4a_7["4a.7<br/>Claims Compliance Engi"]
+        p_4a_8["4a.8<br/>Creative Freshness Mon"]
+        p_4a_9["4a.9<br/>Cross-Channel Asset Sp"]
+    end
+    class sg_cs thisRole
+
+    %% OUTGOING: External processes this role sends data to
+    out_10_2["10.2<br/>ChangeSet Tracking & D"]
+    class out_10_2 pm
+    out_3_8["3.8<br/>System Learning Protoc"]
+    class out_3_8 oil
+    out_4b_2["4b.2<br/>Multi-Platform Content"]
+    class out_4b_2 larry
+    out_4b_4["4b.4<br/>Locked Architecture Co"]
+    class out_4b_4 larry
+    out_6_3["6.3<br/>Experimentation System"]
+    class out_6_3 wel
+    out_6_4["6.4<br/>Optimization Review, A"]
+    class out_6_4 wel
+    out_7_9["7.9<br/>Graduation ChangeSet P"]
+    class out_7_9 cem
+    out_8_3["8.3<br/>Budget Reallocation Re"]
+    class out_8_3 pmm
+    out_8_5["8.5<br/>Autonomous Optimizatio"]
+    class out_8_5 pmm
+
+    %% INTERNAL FLOWS
+    p_4a_1 --> p_4a_2
+    p_4a_6 --> p_4a_2
+    p_4a_8 --> p_4a_3
+
+    %% INCOMING FLOWS
+    in_3_8 --> p_4a_2
+    in_4b_1 --> p_4a_6
+    in_4b_2 --> p_4a_6
+    in_4b_6 --> p_4a_1
+    in_5_1 --> p_4a_3
+    in_5_2 --> p_4a_3
+    in_5_4 --> p_4a_3
+    in_5_5 --> p_4a_1
+    in_5_6 --> p_4a_3
+    in_5_8 --> p_4a_6
+    in_6_3 --> p_4a_6
+    in_6_7 --> p_4a_3
+    in_7_3 --> p_4a_6
+    in_7_7 --> p_4a_6
+    in_8_1 --> p_4a_8
+
+    %% OUTGOING FLOWS
+    p_4a_7 --> out_10_2
+    p_4a_4 --> out_3_8
+    p_4a_1 --> out_4b_2
+    p_4a_9 --> out_4b_4
+    p_4a_2 --> out_6_3
+    p_4a_3 --> out_6_4
+    p_4a_5 --> out_7_9
+    p_4a_8 --> out_8_3
+    p_4a_6 --> out_8_5
+
+classDef cgo fill:#78350f,stroke:#fbbf24,color:#fff
+classDef dil fill:#1e3a8a,stroke:#3b82f6,color:#fff
+classDef oil fill:#3730a3,stroke:#818cf8,color:#fff
+classDef cs fill:#9a3412,stroke:#fb923c,color:#fff
+classDef larry fill:#9a3412,stroke:#fb923c,color:#fff
+classDef msil fill:#166534,stroke:#4ade80,color:#fff
+classDef wel fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef cem fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef pmm fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef amm fill:#1f2937,stroke:#9ca3af,color:#fff
+classDef pm fill:#44403c,stroke:#a8a29e,color:#fff
+classDef artifact fill:#374151,stroke:#d1d5db,color:#fff
+classDef thisRole fill:#0369a1,stroke:#38bdf8,color:#fff,stroke-width:2px
