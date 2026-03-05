@@ -1,0 +1,18 @@
+# Kenetik Dashboards — Code Owners
+# Public repository for dashboard HTML and system-state JSON.
+#
+# All team members can push dashboard updates.
+# Devon is required reviewer on structural changes.
+#
+# Organization: drinkkenetik
+# Created 2026-03-05.
+
+# Dashboard HTML and state files (team can update)
+*.html                                  @Dataloper @Brain-Optimizer202 @nicklac-kenetik @Dykster @Ketone-Katie
+*.json                                  @Dataloper @Brain-Optimizer202 @nicklac-kenetik @Dykster @Ketone-Katie
+
+# Network diagrams (team can update)
+/network-diagrams/                      @Dataloper @Brain-Optimizer202 @nicklac-kenetik @Dykster @Ketone-Katie
+
+# Repo config (Devon owns)
+README.md                               @Dataloper
