@@ -6933,11 +6933,11 @@
           "actor": "Amazon Marketplace Manager"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "Amazon Seller Central API (sessions, sales, BSR, Buy Box %), Amazon Ads console (ACoS, TACoS, spend, impressions), Cin7 (FBA inventory levels, inbound shipments, stranded inventory), Data Brain mart_amazon (historical trends, baselines), Performance Memory (creative asset fatigue scores)",
+      "outputs": "Daily Amazon pulse report (to CGO Morning Pulse 1.1, Slack), BSR movement alerts, Buy Box loss flags, inventory warning signals (to OIL 3.2 Inventory Rebalance), advertising anomaly flags (ACoS spike, spend pacing), action items for listing or advertising adjustments",
+      "decisionPoints": "Are there BSR drops >5 positions requiring investigation? Is Buy Box share below 95%? Are any ASINs showing ACoS >2x target for 3+ consecutive days? Are FBA stock levels below 14-day supply threshold?",
+      "humanGate": "Amazon Marketplace Manager reviews pulse and escalates RED/YELLOW flags to Katie (CEM) or Devon (CGO)",
+      "specReferences": "CES §6 (Amazon Channel Operations), VT Pulse Review Pattern (shared across 1.1, 8.1, 9.1, 10.1)"
     },
     "9.2": {
       "id": "9.2",
@@ -7029,11 +7029,11 @@
           "actor": "Analytics Engine"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "SP-API listing data (title, bullets, description, backend keywords, images), Search Term Report (keyword performance, impressions, clicks, CVR), Competitive listing analysis (similar ASINs, category benchmarks), Review sentiment data (Amazon customer reviews), CVR baseline (historical per-ASIN), Hypothesis from listing audit (9.3) or search intelligence (9.4), Claims library (compliance check for all listing copy)",
+      "outputs": "Listing diff preview (before/after for title, bullets, description), Image set preview with compliance checks, Keyword analysis (added/removed terms, search volume estimates), Expected impact model (projected CVR improvement), ChangeSet (surface: amazon) for Katie approval, Measurement plan (21 days default, 1000+ sessions minimum, CVR drop >15% = early stop)",
+      "decisionPoints": "Does the listing change comply with claims library (Tier A/B/C)? Is projected CVR improvement worth the risk of current listing performance? Should changes be staged (one element at a time) or combined?",
+      "humanGate": "Katie reviews listing ChangeSet, approves economics estimate, collects Devon approval if pricing change involved",
+      "specReferences": "CES §6.1 (Listing Content Optimization), §6.6 (Amazon-Specific Guardrails), §1.2B (economics estimation)"
     },
     "9.3": {
       "id": "9.3",
@@ -7231,11 +7231,11 @@
           "actor": "Amazon Marketplace Manager"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "Amazon Search Term Report (weekly/monthly), Keyword performance data (impressions, clicks, CVR by keyword), Competitor ASIN targeting data, Category search volume benchmarks, Brand Analytics (if available), Current backend and frontend keywords per ASIN",
+      "outputs": "Keyword strategy recommendations (exact/phrase/broad match distribution), Negative keyword additions (including disease/drug term exclusions per §6.6), Bid adjustment proposals (keyword-level), New keyword opportunities for advertising (9.5) and listing optimization (9.2), Search share of voice analysis",
+      "decisionPoints": "Are there high-volume keywords we're not targeting? Are there wasted-spend keywords to negative? Should keyword strategy shift between defensive (brand) and offensive (category)?",
+      "humanGate": "Amazon Marketplace Manager reviews recommendations; Katie approves keyword strategy changes that affect advertising budget",
+      "specReferences": "CES §6.2A (Amazon Advertising Operations), §6.1 (keyword overlap with listing optimization)"
     },
     "9.5": {
       "id": "9.5",
@@ -7412,11 +7412,11 @@
           "actor": "Forecasting"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "Campaign data from Amazon Ads (Sponsored Products, Brands, Display), Bid structures (default bids, keyword bids), Budget allocations (daily and total by campaign type), ACoS and TACoS targets, Current performance metrics (impressions, clicks, conversions, ACoS), Paid Media Intelligence recommendations (from Data Brain), Inventory levels (to avoid advertising out-of-stock items)",
+      "outputs": "Campaign creation/modification ChangeSets (surface: amazon_ads), Keyword bid adjustments, Budget allocation changes across campaign types, Campaign pause/enable decisions (inventory-driven or performance-driven), Subscribe & Save promotion setup/modification, Measurement plan (14 days default, $300 spend minimum, ACoS >2x target for 5 days = early stop), Expected ROI calculation (Tier 1: projected_conversions x AOV x margin_pct - projected_spend)",
+      "decisionPoints": "Is current ACoS within target range? Should budget shift between SP/SB/SD campaign types? Does inventory support increased advertising? Should we pause campaigns for low-stock ASINs?",
+      "humanGate": "Katie reviews advertising ChangeSets; Devon co-approval required for Subscribe & Save changes or budget increases >$500/day",
+      "specReferences": "CES §6.2A (Amazon Advertising Operations), §6.6 (Amazon-Specific Guardrails), §1.2B (economics estimation Tier 1)"
     },
     "9.6": {
       "id": "9.6",
@@ -7573,11 +7573,11 @@
           "actor": "Weekly Report"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "Amazon customer reviews (star ratings, text, verified purchase status), Review aggregation and sentiment analysis, Product-level review trends (volume, average rating, sentiment trajectory), Competitive review analysis (competitor ASIN review counts and ratings), Support ticket correlation (if available)",
+      "outputs": "VoC synthesis input (to DIL 2.7 Voice of Customer), Product improvement signals (to product team), Listing optimization signals (to 9.2 if review themes suggest messaging gaps), Review response recommendations, Negative review escalation (if pattern detected or star rating dropping), Monthly review health summary",
+      "decisionPoints": "Is average star rating trending down? Are there recurring complaint themes requiring product or listing changes? Do competitor reviews reveal positioning opportunities? Should negative reviews be escalated to Devon?",
+      "humanGate": "Amazon Marketplace Manager reviews sentiment analysis; escalates systemic product issues to Devon (CGO)",
+      "specReferences": "CES §6 (Amazon Channel Operations), Data Brain §8.7 (VoC synthesis integration)"
     },
     "9.7": {
       "id": "9.7",
@@ -7774,11 +7774,11 @@
           "actor": "Hold Decision"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "Competitor ASIN data (pricing, BSR, review count, rating, listing quality), Category benchmark data (average CVR, price points, review thresholds), Share of voice data (search term impression share), Competitive advertising intelligence (if available), New entrant detection, Pricing intelligence (competitor price changes, promotional activity)",
+      "outputs": "Competitive positioning reports (monthly), Pricing recommendations (if competitor pricing shifts detected), Defensive keyword suggestions (brand defense campaigns), Offensive opportunity identification (competitor weaknesses), Market share trend analysis, New entrant alerts (to Katie and Devon)",
+      "decisionPoints": "Has a competitor significantly changed pricing or positioning? Are we losing share of voice on key terms? Should we adjust defensive vs. offensive advertising split? Do new entrants warrant strategic response?",
+      "humanGate": "Amazon Marketplace Manager reviews competitive intelligence; strategic responses require Katie + Devon approval",
+      "specReferences": "CES §6 (Amazon Channel Operations), §6.2A (advertising strategy implications)"
     },
     "9.8": {
       "id": "9.8",
@@ -7935,11 +7935,11 @@
           "actor": "Daily Reporting"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "System health metrics (data pipeline freshness, dashboard availability, API connectivity for Shopify/Meta/TikTok/Seller Central/Metricool, process execution status), Alert aggregation (top 5 alerts last 24h by severity: Critical/High/Medium), Decision queue length (0-5 normal, >10 = bottleneck), Task backlog status (healthy <20 tasks, <2 day wait time), Human input SLA tracking (gates met on schedule)",
+      "outputs": "System health summary + action recommendations (to PM + CGO 1.1), Escalation protocols for critical/high-priority alerts, Decision queue bottleneck identification, Task backlog health report, SLA compliance report",
+      "decisionPoints": "Are there critical/high-priority alerts requiring immediate action? Are decision queues or task backlogs creating bottlenecks? Should any SLAs be adjusted based on patterns?",
+      "humanGate": "Project Manager reviews health dashboard; escalates critical alerts to CGO (Devon)",
+      "specReferences": "VT §10.1 (System Health Dashboard), §10.1a-1g (health metrics)"
     },
     "10.2": {
       "id": "10.2",
@@ -8166,11 +8166,11 @@
           "actor": "Pipeline Log"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "Task creation from all roles (via shortcut, Slack, Portal, system automation), Task sources (decision gates, escalations, manual requests, system-triggered actions), Priority indicators (CRITICAL, HIGH, STANDARD, BACKLOG), Cross-role dependency information",
+      "outputs": "Task assignments routed to responsible role owner, Task tracking status updates (TODO → IN_PROGRESS → DONE), Escalation notifications for overdue tasks or bottlenecks, Handoff tracking for cross-role task dependencies, SLA compliance report (daily/weekly resolution times)",
+      "decisionPoints": "Who is the right owner for this task? What is the correct priority and SLA? Are there blocking dependencies requiring sequencing? Is task overdue requiring escalation?",
+      "humanGate": "Project Manager routes and prioritizes; CRITICAL tasks escalated to Devon (CGO)",
+      "specReferences": "VT §10.2 (Task Coordination & Workflow Management)"
     },
     "10.3": {
       "id": "10.3",
@@ -8392,11 +8392,11 @@
           "actor": "Maintain"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "Process changes from all roles (6+ virtual team members), Spec updates (new versions of Tier 1 specifications), Learning notes accumulated from System Learning Protocol (OIL 3.8), Skill file updates (from all roles via 3.8)",
+      "outputs": "Updated process documentation (guides, workflow diagrams, decision trees, FAQ), Spec reconciliation (VT doc synced to latest spec versions), Skill file library maintenance (brain/skill-files/ directory), Knowledge search index for all roles, Documentation audit log",
+      "decisionPoints": "Should this learning become standing documentation? Are specs becoming out of sync with VT doc (quarterly reconciliation check)?",
+      "humanGate": "Project Manager approves documentation changes; major spec reconciliations reviewed with Devon (CGO)",
+      "specReferences": "VT §10.3 (Knowledge Governance & Documentation), Document Governance v3.8 (cascade protocol)"
     },
     "10.4": {
       "id": "10.4",
@@ -8568,11 +8568,11 @@
           "actor": "Bottleneck History"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "CGO (Devon) session priorities and focus areas, Previous session notes from all roles (ongoing tasks, decision status), System state (current experiment status, active ChangeSets, pending approvals, metrics snapshot), Recent decisions requiring follow-up",
+      "outputs": "Session context document (current state, priorities, active tasks, recent decisions), Team briefing on session focus + priorities, Metric snapshots (current KPIs, recent anomalies, system health), Task queue visibility (pending decisions, overdue items, blocked items)",
+      "decisionPoints": "What are the top priorities for this session? What context from previous sessions is still relevant? What recent decisions need follow-up?",
+      "humanGate": "Project Manager prepares context; Devon (CGO) confirms session priorities",
+      "specReferences": "VT §10.4 (Session Continuity & Context Management)"
     },
     "10.5": {
       "id": "10.5",
@@ -8719,11 +8719,11 @@
           "actor": "Maintain"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "Leadership questions about system performance, optimization status, strategy decisions; External stakeholder requests (board, investors, executive summaries); CFO financial impact questions and budget tracking requests; System dashboards, reports, and metrics from all roles",
+      "outputs": "Executive summaries (for board, investors, executive team), Strategic reports (quarterly business review presentations, strategic pivots), Financial reports (P&L impact of optimizations, ROI tracking, budget compliance), System performance reports (optimization velocity, experiment success rate, deployment safety)",
+      "decisionPoints": "What level of detail is needed for this stakeholder? Should this communication be recurring (standing reports) or ad-hoc?",
+      "humanGate": "Project Manager drafts; Devon (CGO) reviews and approves external-facing communications",
+      "specReferences": "VT §10.6 (External Communication & Stakeholder Updates)"
     },
     "10.7": {
       "id": "10.7",
@@ -8920,11 +8920,11 @@
           "actor": "Departure Checklist"
         }
       ],
-      "inputs": [],
-      "outputs": [],
-      "decisionPoints": [],
-      "humanGate": null,
-      "specReferences": []
+      "inputs": "Performance metrics (pipeline latency, dashboard load times, API response times), Capacity planning data (current vs. projected usage, scaling requirements), Technical debt log (engineering issues, spec gaps, known limitations), New requirements from roles (new data sources, mart types, dashboard views)",
+      "outputs": "Infrastructure roadmap (Q+1 architecture improvements, scaling plans, technical debt payoff), Engineering backlog (prioritized work items), Deployment plan (sequencing for new capabilities, backward compatibility checks), Scale recommendations (investment thresholds for new infrastructure)",
+      "decisionPoints": "Is current infrastructure meeting performance SLAs? What technical debt should be prioritized (effort vs. impact)? What new capabilities are needed (feature vs. debt trade-off)?",
+      "humanGate": "Project Manager drafts roadmap; Devon (CGO) approves infrastructure investment decisions",
+      "specReferences": "VT §10.7 (System Architecture & Infrastructure Evolution)"
     }
   }
 }
