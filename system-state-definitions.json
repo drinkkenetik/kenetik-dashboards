@@ -1206,7 +1206,7 @@
           "actor": "Operations Intelligence Lead (queuing)"
         }
       ],
-      "inputs": "Cin7 (inventory levels, lot tracking, expiration, POs, costs), Historical velocity data (30-day average), Demand forecast (from campaigns or seasonality model, if available), Marketing calendar (from Marketing & Social Intelligence Lead), Cash position and runway (from CFO/QuickBooks)",
+      "inputs": "Cin7 (inventory levels, lot tracking, expiration, POs, costs), Amazon SP-API / Seller Central (FBA stock levels, inbound shipment status, stranded inventory, FBA fees — Phase 0: Amazon Marketplace Manager AMM reports manually; Phase 2: SP-API automated feed), Historical velocity data (30-day average, per-channel: DTC from Cin7, Amazon from FBA data), Demand forecast data, Marketing calendar (upcoming launches, seasonal events), Cash position (QuickBooks in Phase 2, manual flag in Phase 1), Channel velocity ratios (DTC vs. Amazon vs. Wholesale)",
       "outputs": "Operations Intelligence Lead dashboard (/inventory-rebalance view), ChangeSet queue (for ChangeSet generation, Process 3.3), Chief Growth Officer (if CRITICAL triggers), Channel Execution Manager (if rapid action needed)",
       "decisionPoints": "Are there CRITICAL triggers (expiration, cash pressure)? → Escalate for immediate action; Which triggers have highest business impact (revenue at risk, margin at risk, cash impact)? → Prioritize for ChangeSet generation; Do trigger combinations suggest a systemic inventory problem? → Flag for monthly calibration review",
       "humanGate": "Operations Intelligence Lead reviews scan results and escalates CRITICAL items. ChangeSet generation gatekeeping happens in Process 3.3.",
@@ -1898,7 +1898,7 @@
         }
       ],
       "inputs": "Edge Case Log (patterns, decisions, outcomes), ChangeSet outcome data (projected vs. actual), Performance metrics (anomaly detection false-positive rate, ChangeSet accuracy, etc.), Team feedback (from Operations Intelligence Lead, Data Intelligence Lead, Paid Media Manager, etc.)",
-      "outputs": "Skill files (across all roles), System Optimization Config (version bump, change log), All teams (notifications of skill file updates)",
+      "outputs": "Skill files across all roles (CS, Larry, CEM, PMM, AMM, WEL, MSIL, PM), System Optimization Config (version bump, change log), Learning Record Log (permanent structured record §9.10), All teams via Slack (notifications of skill file updates and system config changes)",
       "decisionPoints": "Is the proposed change backed by data? → If unclear, require more validation before approval; Will this change conflict with other skill files? → Assess cross-team implications; Is this change reversible if it backfires? → Plan rollback procedure if necessary",
       "humanGate": "Operations Intelligence Lead identifies updates. Chief Growth Officer + Operations Intelligence Lead approve regular updates. CFO may weigh in on cash-related updates.",
       "specReferences": "Ops Intelligence §9 (full section), §9.6 (review gates)"
@@ -2203,7 +2203,7 @@
         }
       ],
       "inputs": "Content Producer output, Platform APIs, Data Brain performance data, Hypothesis predictions",
-      "outputs": "Paid Media ChangeSets, Performance Memory, Skill File, Audience segments (for retargeting)",
+      "outputs": "Paid Media ChangeSets (to CEM 7.9 Graduation ChangeSet Processing via Graduation Object), Performance Memory (creative performance data store), Skill File update signals (to OIL 3.8 System Learning Protocol), Audience segments for retargeting (to PMM 8.x)",
       "decisionPoints": "Graduation criteria assessment, Recirculation vs retirement, Budget allocation for amplification, Velocity target vs actual",
       "humanGate": "Graduation decision (Devon/Katie), High-value content promotion",
       "specReferences": "Creative Intelligence §5 (Content Flywheel), §5.1 (Flywheel Stages), §5.2 (Flywheel Economics), §5.3 (Flywheel Health Metrics)"
@@ -2264,7 +2264,7 @@
         }
       ],
       "inputs": "Content Flywheel MEASURE data, Claims library, Visual quality standards, Paid media performance benchmarks",
-      "outputs": "Paid Media ChangeSet, Channel Execution, ROI tracking dashboard",
+      "outputs": "Graduation Object (to CEM 7.9 via Creative Intelligence §6.2 Queue schema), Paid Media ChangeSet generation trigger (to CEM for Katie review), Channel Execution deployment (via ChangeSet workflow), ROI tracking dashboard (performance data to Performance Memory)",
       "decisionPoints": "Graduation criteria threshold, Claims compliance routing, Visual quality sufficiency, Approved for paid spend",
       "humanGate": "Graduation approval (Devon/Katie), Claims Tier 2+ review",
       "specReferences": "Creative Intelligence §6 (criteria §6.1, ChangeSet §6.2); Channel Execution §6.A ---"
@@ -2315,7 +2315,7 @@
         }
       ],
       "inputs": "All published content performance metrics, Hypothesis outcomes, Engagement data from platforms",
-      "outputs": "Skill File updates, Content Producer Larry 2.0 template refinement, Strategic planning inputs",
+      "outputs": "Performance Memory data store (continuous performance metric ingestion — Path 1: ungoverned data collection), Skill File update signals via OIL 3.8 System Learning Protocol (interpretive insights — Path 2: governed knowledge synthesis, per Creative Intelligence §6.8), Content Producer Larry 2.0 template refinement, Strategic planning inputs for Creative Strategist (CS 4a.1)",
       "decisionPoints": "Learning threshold detection, Confidence level assessment, Skill file implementation priority",
       "humanGate": "High-impact skill file updates (>10% engagement lift expected), Conflicting pattern resolution",
       "specReferences": "Creative Intelligence §11 (Performance Measurement), §11.2 (NCS), §3.5 (Skill File Structure); Ops Intelligence §9 (System Learning), §9.5 (Skill File Schema)"
@@ -2929,7 +2929,7 @@
         }
       ],
       "inputs": "Published content metadata, Platform APIs (TikTok, Instagram, Facebook), Data Brain intelligence, Hypothesis predictions, Historical performance baselines",
-      "outputs": "Performance Memory, Skill File update signals (via System Learning Protocol 3.8), Content Intelligence Layer feedback, Daily performance digest, Learnings dataset, Learning records",
+      "outputs": "Performance Memory data store (content performance metrics — Path 1), Skill File update signals via OIL 3.8 System Learning Protocol (learning insights — Path 2, per Creative Intelligence §6.8), Content Intelligence Layer feedback (to CS 4a.1), Data Brain marts (creative performance data)",
       "decisionPoints": "Performance learning dataset qualification, High-performer pattern identification, Low-performer failure analysis, Learning threshold detection",
       "humanGate": "High-learning-impact updates to skill file (Creative Strategist reviews via Learning Protocol), Controversy escalation if negative sentiment spike",
       "specReferences": "Creative Intelligence §11 (Performance Measurement), §13 (Creative Learning Loop); Ops Intelligence §9.8 (System Learning Protocol), §C (Learning Record Pattern)"
@@ -3051,7 +3051,7 @@
         }
       ],
       "inputs": "Campaign proposal, Channel strategies, Budget allocations, Creative Brief Objects, Channel capacity data",
-      "outputs": "Channel-specific ChangeSets, Creative Brief Objects, Unified campaign timeline, Performance tracking, Learning archive",
+      "outputs": "Channel-specific ChangeSets (to CEM 7.1 ChangeSet Lifecycle), Creative Brief Objects (to CS 4a.3), Unified campaign timeline, Performance tracking, Learning archive (to OIL 3.8 System Learning Protocol)",
       "decisionPoints": "Multi-channel vs single-channel, Channel participation decision, Mid-campaign performance contingency, ROI assessment",
       "humanGate": "Budget approval (>$25k estimated), Strategic campaign approval (Devon + Katie)",
       "specReferences": "Marketing Planning §4A (Campaign Orchestration), §4A.2 (Campaign Object), §4A.3 (Campaign Timeline)"
@@ -5117,7 +5117,7 @@
         }
       ],
       "inputs": "Deployed ChangeSet data, platform performance APIs, baseline metrics, expected_roi estimate",
-      "outputs": "Outcome determination, rollback actions, learning notes, scale/repeat recommendations",
+      "outputs": "Outcome determination (SUCCESS/INCONCLUSIVE/UNDERPERFORMED/STALE), rollback actions (if underperformed), Performance Memory (Creative Intelligence §6.6, if creative involved), Edge Case Log (OIL 3.5, if override or unexpected outcome), System Learning Protocol (OIL 3.8, learning note for skill file evolution), Decision Log (Project Tracker), Estimation Calibration (Data Brain §1.4a, calibration_delta), scale/repeat/iterate recommendations",
       "decisionPoints": "Measurement window expired; outcome category determination (SUCCESS/INCONCLUSIVE/UNDERPERFORMED/STALE); rollback go/no-go",
       "humanGate": "Katie approves rollback or iteration decision; optional early stop decision",
       "specReferences": "Channel Execution §1.2B (measurement windows), §10"
@@ -5710,8 +5710,8 @@
           "actor": "Analytics"
         }
       ],
-      "inputs": "Organic asset from Creative Intelligence, organic performance metrics, audience insights, paid media benchmarks",
-      "outputs": "Paid media ChangeSet, campaign deployment, performance data, learning notes, content strategy insights",
+      "inputs": "Graduation Object from Creative Intelligence (content_id, platform, post_url, threshold_met, performance_snapshot, hypothesis_id, claim_tier, recommended_paid_channels, estimated_paid_budget — per Creative Intelligence §6.2 Graduation Queue schema), organic performance metrics (save rate, completion rate, engagement velocity), audience insights from organic engagement data, paid media benchmarks from Paid Media Manager (PMM 8.2)",
+      "outputs": "Paid media ChangeSet (surface: paid_meta | paid_tiktok | paid_google, pre-populated from Graduation Object), campaign deployment via MCP, performance data feeding back to Creative Intelligence Performance Memory (§6.6), learning notes to System Learning Protocol (OIL 3.8), content strategy insights for Creative Strategist (CS 4a.1)",
       "decisionPoints": "Asset suitable for paid; creative adaptation needed; all approvals obtained; interim performance check (day 7); measurement complete (day 14)",
       "humanGate": "Channel Execution Manager decides if asset suitable for paid amplification; Katie approves paid campaign; interim decisions at day 7",
       "specReferences": "Channel Execution §6.A; Creative Intelligence §6.2"
@@ -6883,7 +6883,7 @@
         }
       ],
       "inputs": "Closed experiments (6.3), winning variant data, segment performance analysis, creative asset details",
-      "outputs": "Performance Memory objects, Data Brain marts, creative library updates, paid media recommendations, learning notes",
+      "outputs": "Performance Memory data store (paid creative performance metrics — Path 1: ungoverned), Learning notes via OIL 3.8 System Learning Protocol (interpretive insights — Path 2: governed, per Creative Intelligence §6.8), Data Brain marts (experiment results), Creative library updates, Paid media recommendations for future campaigns, Creative Strategist (CS 4a.1, for content strategy evolution)",
       "decisionPoints": "Creative variant involved; segment-level performance patterns; cross-channel potential; competitive insights",
       "humanGate": "Data Scientist/Analytics certifies experiment results; Creative Strategist assesses brand alignment",
       "specReferences": "Website Opt Engine §5.B; Creative Intelligence §11 (Performance Measurement)"
