@@ -614,7 +614,7 @@
         }
       ],
       "inputs": "All marts (yesterday's data for daily pulse); All marts (weekly aggregates), ChangeSet log (for Monday review); mart_experiments, mart_optimization_decisions, mart_inventory_rebalance, ChangeSet log (for Ops snapshot); All marts (monthly aggregates), segment definitions, target metrics (from Chief Growth Officer) (for MBR); Subscription platform data, mart_customers (subscription cohort), support data (churn reason if available) (for subscription report); mart_creative_performance, A/B test results, campaign metadata (for creative diagnostic)",
-      "outputs": "Structured daily summary, email + Slack, Executive Dashboard link (daily pulse); Channel Efficiency Table, weekly growth narrative, recommendations, delivered for Weekly Marketing Review (Monday review); Ops snapshot report, delivered to ops leadership (Ops snapshot); Monthly business review presentation, distributed to leadership (MBR); Subscription health report, distributed to marketing/retention teams (subscription report); Creative diagnostic report, distributed to creative and media teams (creative diagnostic)",
+      "outputs": "Daily Pulse: structured daily summary to CGO 1.1 (Morning Pulse synthesis), email + Slack, Executive Dashboard link; Monday Growth Review: Channel Efficiency Table to CGO 1.2 (Weekly Marketing Review), weekly growth context to all roles; Monthly Growth Review: comprehensive report to CGO 1.3 (Monthly Calibration); Weekly Experiment Digest: summary to WEL 6.3 (experiment lifecycle), CS 4a.2 (hypothesis tracking)",
       "decisionPoints": "Is any change >10%? → Flag as alert (daily pulse); Did any channel efficiency shift? → Flag for discussion (Monday review); Are there anomalies needing escalation? → Flag for immediate review (Ops snapshot); Did we hit targets? → If no, diagnose root cause in meeting (MBR); Is churn above acceptable threshold? → Flag for strategic intervention (subscription); Should underperforming creatives be paused? → Recommend to Paid Media Manager (creative diagnostic)",
       "humanGate": "Data Intelligence Lead owns report generation. Major insights flagged for Chief Growth Officer review.",
       "specReferences": "Data Brain §6.1 (Automated Reporting, incl. Channel Efficiency Table), §6.1A (Recommendation Object)"
@@ -2029,8 +2029,8 @@
           "actor": "Creative Strategist"
         }
       ],
-      "inputs": "Metricool API, Data Brain, Founder observations, Event coordinators, Product team, Market research",
-      "outputs": "Content Production Queue, Creative Brief Objects, Performance Memory",
+      "inputs": "Metricool API (social performance), Data Brain (DIL 2.7 VoC synthesis, DIL 2.8 Trend Intelligence), Founder observations (from CGO Devon), Event coordinators (from MSIL 5.4), Product team, Market research, Social listening (from MSIL 5.5)",
+      "outputs": "Content Production Queue (to Larry 4b.3), Creative Brief Objects (to Larry 4b.1), Performance Memory (data store for creative performance patterns), Content Intelligence Layer signals (to CS 4a.2, 4a.3)",
       "decisionPoints": "Signal urgency assessment, Priority conflicts resolution, Tier 3 strategic direction confirmation",
       "humanGate": "Quarterly strategic signal review (Devon + Katie)",
       "specReferences": "Creative Intelligence §4 (3 signal tiers)"
@@ -2080,8 +2080,8 @@
           "actor": "Creative Strategist"
         }
       ],
-      "inputs": "Content Intelligence Layer signals, Historical hypothesis outcomes, Skill file patterns",
-      "outputs": "Creative Brief Objects (with hypothesis tag), Performance Memory, Skill File updates",
+      "inputs": "Content Intelligence Layer signals (from CS 4a.1), Historical hypothesis outcomes (from CS 4a.6 Performance Memory), Skill file patterns (from OIL 3.8 System Learning Protocol)",
+      "outputs": "Creative Brief Objects with hypothesis tag (to Larry 4b.1/4b.3 production queue), Performance Memory (hypothesis tracking), Skill File update signals (to OIL 3.8 System Learning Protocol)",
       "decisionPoints": "Hypothesis prioritization, A/B design validation, Outcome interpretation, Skill file update triggers",
       "humanGate": "High-resource hypothesis design (Devon review), Controversial or scientific claim hypotheses",
       "specReferences": "Creative Intelligence §3.1 (hypothesis-driven), §7.2 (Hypothesis Structure), §11 (Performance Measurement)"
@@ -2370,8 +2370,8 @@
           "actor": "Creative Strategist, System"
         }
       ],
-      "inputs": "All content submissions, Claims library, Legal guidance, Proof documentation",
-      "outputs": "Approved content for publication, Rejected content with feedback, Claims library updates, Legal audit trail",
+      "inputs": "All content submissions (from Larry 4b.1, Larry 4b.5, MSIL 5.3 social calendar, CEM 7.1 ChangeSet copy), Claims library (shared Tier 2 artifact — CS maintains, all roles consume read-only), Legal guidance, Proof documentation",
+      "outputs": "Approved content for publication (back to submitting role), Rejected content with feedback (to submitting role for revision), Claims library updates (version-controlled shared artifact), Legal audit trail (to PM 10.2 compliance tracking)",
       "decisionPoints": "Claim tier classification, Template match validation, Approval/rejection decision",
       "humanGate": "Tier 2 review (Devon), Tier 3 review (Devon + Legal), New claim template approval",
       "specReferences": "Creative Intelligence §9 (Claims Compliance), §9.1 (Claims Tier System), §9.2 (Compliance Check Flow), §9.6 (Dual-Gate Model)"
@@ -2426,8 +2426,8 @@
           "actor": "Creative Strategist"
         }
       ],
-      "inputs": "Paid media performance data, Asset age data, Platform benchmarks, Performance Memory patterns",
-      "outputs": "Paid-media-pulse alerts, Creative Brief Objects (urgent), Channel Execution spend recommendations",
+      "inputs": "Paid media performance data (from PMM 8.2 dashboard), Asset age data (from Performance Memory), Platform benchmarks, Performance Memory patterns (fatigue trajectories, NCS scores)",
+      "outputs": "Creative Freshness Score written to Performance Memory (shared score consumed by PMM 8.4), paid-media-pulse fatigue alerts (to PMM 8.1), Creative Brief Objects with priority: urgent (to CS 4a.3 and Larry 4b.3 production queue), Channel Execution spend recommendations (to CEM 7.1)",
       "decisionPoints": "Fatigue criteria threshold, Replacement availability, Spend reduction recommendation, Asset pause decision",
       "humanGate": "High-spend asset fatigue decisions (Katie review for >$5k/month assets)",
       "specReferences": "Website Opt Engine §5.A (Creative Freshness Monitoring); Creative Intelligence §5.3 (Flywheel Health Metrics), §6.6 (Performance Memory)"
@@ -2568,8 +2568,8 @@
           "actor": "Larry 2.0 (System)"
         }
       ],
-      "inputs": "Creative Brief Objects, Intelligence Queue, Skill File, Performance Memory (for autonomous hypothesis selection)",
-      "outputs": "Published content on all platforms, Metricool drafts (for review), Performance metrics data, Learning data for skill file update",
+      "inputs": "Creative Brief Objects (from CS 4a.3), Intelligence Queue (from CS 4a.1 Content Intelligence Layer), Skill File (from OIL 3.8 governed updates), Performance Memory for autonomous hypothesis selection (from CS 4a.6)",
+      "outputs": "Published content on all platforms (to MSIL 5.3 social calendar via Metricool/Sprout), Metricool drafts for review (to MSIL 5.7 Sprout integration), Performance metrics data (to CS 4a.6 Performance Memory), Learning data for skill file (to OIL 3.8 System Learning Protocol via 4b.6)",
       "decisionPoints": "Queue processing vs autonomous hypothesis, Tier classification, Claims review routing, Publication scheduling decision",
       "humanGate": "Tier 2-3 claims review (Creative Strategist/Devon), Visual quality check for autonomous output (random 5% sample)",
       "specReferences": "Creative Intelligence §3 (core engine), §3.3 (generation flow), §3.4 (locked architecture)"
@@ -2634,8 +2634,8 @@
           "actor": "Larry 2.0 (System)"
         }
       ],
-      "inputs": "Generated content asset, Platform technical specifications, Optimal timing data, Target segment timezone data",
-      "outputs": "Published content on TikTok, Instagram, Facebook, Pinterest (scheduled), Performance monitoring signals",
+      "inputs": "Generated content asset (from Larry 4b.4 assembly), Platform technical specifications, Optimal timing data (from CS 4a.1 Content Intelligence Layer), Target segment timezone data",
+      "outputs": "Published content on TikTok, Instagram, Facebook, Pinterest (scheduled via Metricool/Sprout, coordinated with MSIL 5.3 social calendar), Performance monitoring signals (to CS 4a.6 Performance Memory)",
       "decisionPoints": "Optimal timing assignment, Staggered schedule design, Cadence verification, Anomaly escalation",
       "humanGate": "Manual timing override for campaign/event content (Katie approval)",
       "specReferences": "Creative Intelligence §8.2 (Platform Strategy), §8.3 (Channel-Specific Asset Specifications); Marketing Planning §7 (Social Media Calendar)"
@@ -2766,8 +2766,8 @@
           "actor": "Larry 2.0 (System)"
         }
       ],
-      "inputs": "Creative Brief Object with hooks/concepts/constraints, Locked architecture template rules, Brand design system, Scene assignment specifications",
-      "outputs": "MP4 video file, Metricool draft upload",
+      "inputs": "Creative Brief Object with hooks/concepts/constraints (from CS 4a.3), Locked architecture template rules (from CS 4a.9), Brand design system, Scene assets",
+      "outputs": "MP4 video file (to Larry 4b.2 scheduling), Metricool draft upload (to MSIL 5.7 Sprout integration for review)",
       "decisionPoints": "Scene description quality validation, Image generation success/retry, Encoding quality sufficiency, Playback test pass/fail",
       "humanGate": "Visual quality spot-check (5% random sample by Charlotte/Nick), Brand aesthetic deviation alert",
       "specReferences": "Creative Intelligence §3.4 (Locked Architecture Templates), §3.3 (Content Generation Flow)"
@@ -2847,8 +2847,8 @@
           "actor": "System (automated)"
         }
       ],
-      "inputs": "Voice memos, Event footage, Team recordings, Founder observations, Strategic insights",
-      "outputs": "Twitter threads, Short-form videos, TikTok clips, Instagram carousels, LinkedIn posts, Newsletter snippets",
+      "inputs": "Voice memos, Event footage (from MSIL 5.4 events), Team recordings, Founder observations (from CGO Devon), Strategic insights",
+      "outputs": "Twitter threads, Short-form videos, TikTok clips, Instagram carousels, LinkedIn posts, Newsletter snippets (to MSIL 5.3 social calendar, to CEM 7.3 Klaviyo for newsletter)",
       "decisionPoints": "Derivative format selection, Claims tier routing, Approval routing, Publication timing coordination",
       "humanGate": "Founder attribution approval (Devon), Accuracy verification for quoted insights, Legal review for strategic claims",
       "specReferences": "Creative Intelligence §8.3 (Channel-Specific Asset Specifications); Marketing Planning §7 (Social Media Calendar)"
@@ -2984,8 +2984,8 @@
           "actor": "System (automated)"
         }
       ],
-      "inputs": "Activity proposals from Product/Sales/Events/Partnerships/Executive, Budget allocations, Segment definitions",
-      "outputs": "Activity assignments, Creative Brief Objects (for content deliverables), Campaign ChangeSets, Learning archive",
+      "inputs": "Activity proposals from Product/Sales/Events/Partnerships/Executive (all roles), Budget allocations (from CGO 1.2/1.4), Segment definitions (from DIL 2.9 attribution)",
+      "outputs": "Activity assignments (to CEM 7.1 as campaign ChangeSets, to Josh/Brandon/Lawrence/Charlotte for channel execution), Creative Brief Objects (to CS 4a.3 for content deliverables), Campaign ChangeSets (to CEM 7.1), Learning archive (to OIL 3.8 System Learning Protocol)",
       "decisionPoints": "Strategic alignment assessment, Budget approval, Resource allocation, ROI comparison vs other uses",
       "humanGate": "High-budget activity approval (>$10k estimated), Strategic activity tie-in (Devon review)",
       "specReferences": "Marketing Planning §4 (Marketing Calendar), §4.1 (Calendar Structure), §1.2 (Marketing Activity schema)"
@@ -3122,7 +3122,7 @@
         }
       ],
       "inputs": "Marketing Calendar activities, Campaign timelines, Content Intelligence Layer, Sprout Social social listening data, Creator partnership schedule, Trending topics",
-      "outputs": "Sprout Social published calendar, Creator project briefs, Content Producer queue, Performance tracking, Weekly learning notes",
+      "outputs": "Sprout Social published calendar, Creator project briefs (to Larry 4b.1 production queue), Content Producer queue (to Larry 4b.3), Performance tracking, Weekly learning notes (to OIL 3.8 System Learning Protocol for skill file evolution)",
       "decisionPoints": "Content type assignment (organic/team/creator), Publication timing, Narrative coherence validation, Performance evaluation",
       "humanGate": "Campaign-critical posts (Katie approval), High-visibility posts (CEO announcement), Influencer/creator content approval",
       "specReferences": "Marketing Planning §7 (Social Media Calendar), §7.1 (Calendar Structure)"
@@ -3197,8 +3197,8 @@
           "actor": "Marketing Lead"
         }
       ],
-      "inputs": "Event proposal, Historical event performance data, Audience research, Budget allocation, Creative Brief templates",
-      "outputs": "Event Brief, Confirmed ROI model, Team assignments, Real-time event coverage, Lead list, Post-event content derivatives, Learning archive",
+      "inputs": "Event proposal (from Nick/team), Historical event performance data (from DIL Data Brain), Audience research, Budget allocation (from CGO), Creative Brief templates (from CS 4a.3)",
+      "outputs": "Event Brief (to CS 4a.3 for creative production, to CEM 7.1 for event ChangeSets, to Larry 4b.5 for content amplification), Confirmed ROI model, Team assignments (to Charlotte, Isaac, Lawrence), Real-time event coverage plan, Lead list, Post-event content derivatives, Learning notes (to OIL 3.8 System Learning Protocol)",
       "decisionPoints": "Event participation decision, Expected ROI viability, Content opportunity assessment, Contingency trigger decisions, Post-event learning documentation",
       "humanGate": "High-cost event approval (>$5k, Devon/Katie), Strategic event approval (founder attendance decision)",
       "specReferences": "Marketing Planning §5 (Event Intelligence), §5.1 (Event ROI Framework), §5.3 (Event Brief Template); Data Brain (Sprout Social integration)"
@@ -3268,8 +3268,8 @@
           "actor": "System (automated)"
         }
       ],
-      "inputs": "Sprout Social API data, Brand mention streams, Competitor activity tracking, Topic trend data",
-      "outputs": "Weekly listening digests, Content Intelligence Layer (for brief signals), Crisis/negative sentiment escalations, Competitive analysis reports, Product feedback routing, Monthly trend reports",
+      "inputs": "Sprout Social API data (via MSIL 5.7 integration), Brand mention streams, Competitor activity tracking, Topic trend data",
+      "outputs": "Weekly listening digests (to CGO 1.1 pulse, CS 4a.1 Content Intelligence Layer), Content Intelligence Layer signals (to CS 4a.1 for brief generation), Crisis/negative sentiment escalations (to CGO, CEM), Competitive intelligence reports (to CGO 1.4 Quarterly Review, AMM 9.7)",
       "decisionPoints": "Content opportunity relevance, Negative sentiment severity assessment, Competitive threat assessment, Counter-positioning strategy",
       "humanGate": "Negative sentiment escalation (Katie/Devon), Crisis response coordination",
       "specReferences": "Marketing Planning §6 (Social Intelligence), §6.1 (Social Listening), §3.3 (Superfiliate Data Map)"
@@ -3339,8 +3339,8 @@
           "actor": "System (automated)"
         }
       ],
-      "inputs": "Social listening data, Competitor creator analysis, Creator outreach/inbound requests, Superfiliate integration, Sales/revenue data for attribution",
-      "outputs": "Superfiliate partnership agreements, Creator onboarding packages, Content calendar coordination (Role 5.3), ROI tracking, Creator ROI dataset, Partnership renewal/sunset decisions",
+      "inputs": "Social listening data (from MSIL 5.5), Competitor creator analysis, Creator outreach/inbound requests, Superfiliate integration data, Sales/revenue data (from DIL Data Brain)",
+      "outputs": "Superfiliate partnership agreements, Creator onboarding packages, Content calendar coordination (to MSIL 5.3 social calendar, Larry 4b.1), ROI tracking (to DIL Data Brain marts), Creator briefs (to CS 4a.3 via /creator-brief shortcut)",
       "decisionPoints": "Creator fit assessment, Tier classification, Partnership expansion/reduction/discontinuation, ROI benchmark setting",
       "humanGate": "High-cost creator partnerships (>$50k value), Exclusive partnership terms (Devon/Katie approval)",
       "specReferences": "Marketing Planning §6.3 (Creator Intelligence), §3.3 (Superfiliate Data Map)"
@@ -3471,8 +3471,8 @@
           "actor": "Marketing Lead"
         }
       ],
-      "inputs": "Marketing Calendar activities, Content deliverable specifications, Creative Brief Objects from production queue, Production timeline data, Capacity metrics",
-      "outputs": "Capacity alerts to Katie (CMO), Prioritization recommendations, Brief SLA tracking, Bottleneck escalations, Post-publication outcome tracking",
+      "inputs": "Marketing Calendar activities (from MSIL 5.1), Content deliverable specifications, Creative Brief Objects from CS 4a.3 production queue, Product launches, Event briefs (from MSIL 5.4)",
+      "outputs": "Capacity alerts to Katie (CEM), Prioritization recommendations (to CS 4a.3 brief queue), Brief SLA tracking, Bottleneck escalations (to PM 10.2), Post-publication performance routing (to CS 4a.6 Performance Memory)",
       "decisionPoints": "Capacity sufficiency assessment, Priority re-ranking when queue backs up, Activity deferral decisions, Bottleneck troubleshooting",
       "humanGate": "Production capacity overload escalation (Katie approval for deferring activities), SLA exception approvals",
       "specReferences": "Marketing Planning §4A.8 (Creative Production Coordination), §2 (success metrics); Ops Intelligence §6 (margin definitions)"
@@ -3548,7 +3548,7 @@
         }
       ],
       "inputs": "Activity completion trigger, Expected outcomes from initial activity planning, Actual performance data (traffic analytics, sales attribution, engagement metrics, customer feedback)",
-      "outputs": "Learning notes in activity archive, Team feedback (Content Producer, Channel Execution, Product), Quarterly pattern analysis, Next-quarter planning inputs",
+      "outputs": "Learning notes in activity archive (to OIL 3.8 System Learning Protocol), Team feedback (to CS Content Producer, CEM Channel Execution, Product), Quarterly pattern analysis (to CGO 1.4 Quarterly Review), Next-quarter planning inputs (to MSIL 5.1 Marketing Calendar)",
       "decisionPoints": "Outcome classification (exceeded/met/underperformed), Root cause identification, ROI assessment vs opportunity cost, Pattern identification for strategy adjustment",
       "humanGate": "High-discrepancy investigation (activity >50% below expected, Katie review), Strategic activity post-mortem (Devon/Katie review if strategic importance)",
       "specReferences": "Marketing Planning §5.4 (Marketing Activity Learning Record Routing), §5.1 (Event ROI Framework); Ops Intelligence §6 (margin-weighted ROI)"
@@ -3638,8 +3638,8 @@
           "actor": "Monitoring System"
         }
       ],
-      "inputs": "Developer feature work, GitHub version control",
-      "outputs": "Production Shopify store, staging environment previews, monitoring alerts",
+      "inputs": "Developer feature work (from WEL team), GitHub version control (PRs, branches), Deployment approval from Katie (CEM, release owner)",
+      "outputs": "Production Shopify store deployment, staging environment previews (to CEM and CGO for review), monitoring alerts (to PM 10.1 System Health), deploy notifications via Slack",
       "decisionPoints": "CI tests pass/fail; drift detection alerts",
       "humanGate": "PR approval by Katie/code owner before merge",
       "specReferences": "Website Opt Engine §3 (full section)"
@@ -3719,8 +3719,8 @@
           "actor": "Monitoring System"
         }
       ],
-      "inputs": "Content request backlog, Shopify templates, SEO guidelines",
-      "outputs": "Published pages, redirects, structured data in page headers, search console signals",
+      "inputs": "Content request backlog (from CS 4a.3 creative briefs, MSIL 5.1 marketing calendar), Shopify templates, SEO guidelines, keyword data (from DIL 2.8 Trend Intelligence)",
+      "outputs": "Published pages (to DIL 2.3 data marts for analytics), redirects, structured data in page headers, search console signals (to DIL 2.1 data pipeline)",
       "decisionPoints": "Structured data validation; SEO hygiene checklist completion",
       "humanGate": "SEO analyst sign-off on schema and link structure",
       "specReferences": "Website Opt Engine §4 (full section, JSON-LD §4.2, linking §4.3, SEO §4.5)"
@@ -3845,8 +3845,8 @@
           "actor": "Engineering"
         }
       ],
-      "inputs": "Hypothesis backlog, collision registry, BigQuery event schemas",
-      "outputs": "Experiment outcomes, learning library (6.9), guardrail alerts, variant deployment",
+      "inputs": "Hypothesis backlog (from WEL 6.7 opportunity scoring, DIL 2.6 funnel diagnosis), collision registry, BigQuery event schemas, experiment design from CS 4a.2 (hypothesis testing strategy)",
+      "outputs": "Experiment outcomes (to OIL 3.8 System Learning Protocol via learning notes, to CS 4a.6 Performance Memory), learning library entries (to WEL 6.9), guardrail alerts (to OIL 3.4), variant deployment (to WEL 6.1)",
       "decisionPoints": "Collision conflicts; stopping conditions (winner/loser/timeout/guardrail); rollout decision",
       "humanGate": "Stopping condition triggers require Katie/Devon approval before rollout",
       "specReferences": "Website Opt Engine §5 (full section, Bayesian §5.5, policy §5.6)"
@@ -3986,8 +3986,8 @@
           "actor": "Portal System"
         }
       ],
-      "inputs": "/growth command, portal submissions, GitHub PRs, design files, creative assets",
-      "outputs": "Deployed changes across all channels, audit trail, deployment notifications",
+      "inputs": "/growth command submissions, portal submissions from all roles, GitHub PRs, design files, creative assets (from CS 4a.3 creative briefs), approval requirements (Devon for claims, Katie for pricing/deploy, Peter for brand voice)",
+      "outputs": "Deployed changes across all channels (via WEL 6.1), audit trail (to PM 10.2 compliance tracking), deployment notifications (to Slack, CGO 1.1)",
       "decisionPoints": "Revision needed during preview; approvals complete; deploy preconditions met; measurement complete",
       "humanGate": "Devon (claims), Katie (pricing/promos/deploy), Peter/Katie/Devon (brand voice)",
       "specReferences": "Website Opt Engine §6 (state machine §6.1, approval gates §6.4)"
@@ -4097,8 +4097,8 @@
           "actor": "Monitoring System"
         }
       ],
-      "inputs": "RUM events, Shopify logs, GA4, synthetic test results, previous deployment baseline",
-      "outputs": "Alerts, incident tickets, health dashboards, investigation reports",
+      "inputs": "RUM events, Shopify logs, GA4 (from DIL 2.1 data pipeline), synthetic test results, previous deployment baseline (from WEL 6.1)",
+      "outputs": "Alerts (to PM 10.1 System Health Dashboard, CGO if critical), incident tickets (to PM 10.2 task tracking), health dashboards (consumer of DIL 2.3 data), investigation reports",
       "decisionPoints": "Alert threshold breach; root cause determination; health baseline comparison",
       "humanGate": "Katie reviews P0 alerts immediately; decides rollback go/no-go",
       "specReferences": "Website Opt Engine §7 (RUM §7.1, alerts §7.4)"
@@ -4228,8 +4228,8 @@
           "actor": "Incident Commander"
         }
       ],
-      "inputs": "P0/P1 alerts, deployment logs, experiment status, monitoring dashboards",
-      "outputs": "Rollback actions, Safe Mode toggle, post-incident learning notes, action item tickets",
+      "inputs": "P0/P1 alerts (from WEL 6.5 production monitoring), deployment logs (from WEL 6.1), experiment status (from WEL 6.3), monitoring dashboards",
+      "outputs": "Rollback actions (via WEL 6.1 deployment pipeline), Safe Mode toggle, post-incident learning notes (to OIL 3.8 System Learning Protocol), action item tickets (to PM 10.2 task tracking)",
       "decisionPoints": "Severity classification; immediate rollback needed; health restored; incident closure",
       "humanGate": "Katie decides rollback go/no-go; Katie controls Safe Mode toggle",
       "specReferences": "Website Opt Engine §8 (safe mode §8.3, rollback §8.5)"
@@ -4304,8 +4304,8 @@
           "actor": "Katie / Team"
         }
       ],
-      "inputs": "Funnel reports, GSC data, VoC research, experiment results, competitive intel, page speed audits",
-      "outputs": "Prioritized optimization backlog, hypothesis queue, experiment planning documents",
+      "inputs": "Funnel reports (from DIL 2.6 funnel diagnosis), GSC data, VoC research (from DIL 2.7), experiment results (from WEL 6.3), competitive intel (from MSIL 5.5 social listening), page speed audits",
+      "outputs": "Prioritized optimization backlog, hypothesis queue (to WEL 6.3 experimentation), experiment planning documents, creative brief requests (to CS 4a.3 via WEL 6.8)",
       "decisionPoints": "Priority score above/below threshold; opportunity ranking vs. strategic focus",
       "humanGate": "Katie approves priority ranking and backlog inclusion",
       "specReferences": "Website Opt Engine §9 (scoring §9.1, sources §9.2)"
@@ -4345,7 +4345,7 @@
           "actor": "Web & Experimentation Lead"
         }
       ],
-      "inputs": "Opportunity scoring reports, SEO gap analysis, funnel diagnosis, source signals",
+      "inputs": "Opportunity scoring reports (from WEL 6.7), SEO gap analysis, funnel diagnosis (from DIL 2.6), source signals from all roles",
       "outputs": "Creative brief request (submitted to Creative Strategist), deployed web assets",
       "decisionPoints": "Identification of creative need; source_signal and priority determination; asset deployment readiness",
       "humanGate": "Katie approves creative brief priority/SLA; Creative Strategist approves final brief schema",
@@ -4421,7 +4421,7 @@
           "actor": "Learning Library"
         }
       ],
-      "inputs": "Closed experiments, completed content changes, measurement results, engagement metrics",
+      "inputs": "Closed experiments (from WEL 6.3), completed content changes (from WEL 6.2), measurement results, engagement metrics (from DIL 2.3 data marts)",
       "outputs": "Learning records (submitted to System Learning Protocol 3.8), searchable archive, team Slack notifications, backlog implications",
       "decisionPoints": "Learning relevance to active projects; follow-up opportunity prioritization",
       "humanGate": "Data Scientist and Change Owner provide narrative and retrospective; System Learning Protocol 3.8 validates routing",
@@ -4592,8 +4592,8 @@
           "actor": "Portal System"
         }
       ],
-      "inputs": "Channel change proposals, ChangeSet creation form, preview requirements, compliance checks",
-      "outputs": "Deployed changes across all channels, measurement data, archived ChangeSet records",
+      "inputs": "Channel change proposals from all roles (OIL 3.3 ChangeSet recommendations, MSIL 5.1/5.2 campaign ChangeSets, PMM 8.3 budget reallocations, AMM 9.2/9.5 Amazon ChangeSets, CS 4a.5 graduation ChangeSets), ChangeSet creation form, preview requirements, compliance checks (from CEM 7.6)",
+      "outputs": "Deployed changes across all channels (via platform APIs), measurement data (to CEM 7.5 measurement & auto-close), archived ChangeSet records (to OIL 3.8 via learning notes), CGO 1.2 (approval queue for strategic/high-risk ChangeSets)",
       "decisionPoints": "Can preview; requires revision; compliance pass/fail; all approvals obtained; deploy timing",
       "humanGate": "Stakeholder review (Katie + domain approver), Compliance Engine validation gates, Final approvals before deploy",
       "specReferences": "Channel Execution §1 (ChangeSet Object schema), §9 (Creator Registry & whitelisting), §10 (Compliance Engine & approval gates)"
@@ -4663,8 +4663,8 @@
           "actor": "Analytics"
         }
       ],
-      "inputs": "ChangeSet data, historical ChangeSet outcomes, market data, contribution margin tables",
-      "outputs": "ChangeSet expected_roi field, economics documentation, calibration data for future estimates",
+      "inputs": "ChangeSet data (from CEM 7.1), historical ChangeSet outcomes (from DIL Data Brain marts), market data, contribution margin tables (from OIL 3.6 channel margin definitions)",
+      "outputs": "ChangeSet expected_roi field (consumed by CGO 1.2 for approval decisions), economics documentation, calibration data for future estimates (to DIL Data Brain estimation models)",
       "decisionPoints": "Tier classification, estimate methodology selection, confidence level assessment",
       "humanGate": "Tier 2 analyst estimation, Tier 3 expert judgment (CFO/CEO), Approver review of estimate reasonableness",
       "specReferences": "Channel Execution §1.2A (Economics Estimate), §2 (Success Definition metrics); Data Brain (historical ChangeSet performance)"
@@ -4820,7 +4820,7 @@
         }
       ],
       "inputs": "ChangeSet creation, segment definitions, email templates, performance targets",
-      "outputs": "Deployed campaigns/flows, performance data, A/B test winners, segment insights, learning notes",
+      "outputs": "Deployed campaigns/flows (via Klaviyo API), performance data (to DIL 2.3 data marts), A/B test winners (to CS 4a.6 Performance Memory), segment insights, learning notes (to OIL 3.8 System Learning Protocol)",
       "decisionPoints": "Campaign vs. flow; A/B test needed; frequency cap conflict; approval; measurement complete",
       "humanGate": "Approver sign-off before send; Katie reviews high-spend campaigns",
       "specReferences": "Channel Execution §3 (Email and SMS — Klaviyo)"
@@ -4971,7 +4971,7 @@
         }
       ],
       "inputs": "Subscription strategy requests, offer configurations, pricing decisions, flow changes, Recharge APIs",
-      "outputs": "Deployed subscription changes, performance data, LTV impacts, churn metrics, learning notes",
+      "outputs": "Deployed subscription changes (via Recharge API), performance data (to DIL 2.3 data marts), LTV impacts (to OIL 3.7 financial integration), churn metrics, learning notes (to OIL 3.8 System Learning Protocol)",
       "decisionPoints": "Operation type; compliance pass; go/no-go; measurement complete",
       "humanGate": "Compliance approval; Katie approval before implementation",
       "specReferences": "Channel Execution §4"
@@ -5242,8 +5242,8 @@
           "actor": "Compliance Engine"
         }
       ],
-      "inputs": "ChangeSet object, System Optimization Config (from Ops Intelligence 3.4), claims library, brand guidelines, channel margin tables",
-      "outputs": "Compliance pass/fail status, specific violation details, override documentation requirements, approval eligibility determination",
+      "inputs": "ChangeSet object (from CEM 7.1), System Optimization Config (from OIL 3.4 guardrail parameters), claims library (shared artifact, maintained by CS 4a.7), brand guidelines, channel margin definitions (from OIL 3.6)",
+      "outputs": "Compliance pass/fail status (to CEM 7.1 ChangeSet lifecycle gate), specific violation details, override documentation requirements (to OIL 3.5 Edge Case Log if override), approval eligibility determination",
       "decisionPoints": "Optimization_rationale documented; guardrails breached; claims present; brand voice aligned; all checks passed",
       "humanGate": "Operations Intelligence Lead maintains guardrail config (3.4); Devon approves claims exceptions; Katie/CXO approves guardrail overrides",
       "specReferences": "Channel Execution §9 (Creator Registry & whitelisting), §10 (Compliance Engine & approval gates); Ops Intelligence §3 (hierarchy), §5 (guardrails), §5.1 (guardrail config)"
@@ -5353,8 +5353,8 @@
           "actor": "Analytics"
         }
       ],
-      "inputs": "ChangeSet creation, asset library, performance memory data, brief request (per Section B)",
-      "outputs": "Linked ChangeSet to creative asset, creative_source_id field, asset performance metrics, closed-loop measurement",
+      "inputs": "ChangeSet creation (from CEM 7.1), asset library (from CS 4a.6 Performance Memory), Performance Memory data (creative freshness scores from CS 4a.8), brief request trigger (to CS 4a.3 if no suitable asset)",
+      "outputs": "Linked ChangeSet to creative asset (creative_source_id field), asset performance metrics (to CS 4a.6 Performance Memory), closed-loop measurement (to CEM 7.5)",
       "decisionPoints": "Asset available in library; asset suitable for use; asset freshness adequate; paid media spend decision; measurement complete",
       "humanGate": "Channel Operator selects asset or submits brief; Creative Strategist approves brief generation (4a.3); Performance Memory provides asset freshness data",
       "specReferences": "Channel Execution §8 (Creative Brief Object); Creative Intelligence §6.5 (Graduated Content Tracking); Section B (Brief Request Pattern); Role 4a.3 (canonical brief generation)"
@@ -5524,8 +5524,8 @@
           "actor": "Analytics"
         }
       ],
-      "inputs": "Product database, pricing rules, partner specifications, claims guidelines, brand assets",
-      "outputs": "Distributed listing packets, partner portal uploads, sell-through data, performance metrics",
+      "inputs": "Product database, pricing rules (from OIL 3.6 margin definitions), partner specifications (from retail partners via Josh), claims guidelines (shared claims library), brand assets, marketing calendar triggers (from MSIL 5.1)",
+      "outputs": "Distributed listing packets (to retail partners via Josh), partner portal uploads, sell-through data (to DIL 2.1 data pipeline), performance metrics (to MSIL 5.9 marketing activity ROI)",
       "decisionPoints": "New vs. existing listing; claims compliant; pricing aligned; QA pass; partner approval; measurement complete",
       "humanGate": "Claims officer approves copy; Pricing manager approves pricing; Katie approves distribution",
       "specReferences": "Channel Execution §7 (Retail Partner Listings), §7.2 (Partner Change Packet)"
@@ -5847,7 +5847,7 @@
         }
       ],
       "inputs": "Platform APIs (Meta, Google, TikTok, Amazon), GA4, inventory data, Performance Memory, baseline benchmarks",
-      "outputs": "Daily pulse report, creative fatigue flags, budget recommendations, inventory constraints, action items",
+      "outputs": "Daily paid media pulse report (to CGO 1.1 Morning Pulse synthesis, Slack), creative fatigue flags (to CS 4a.8 Creative Freshness), budget recommendations (to CEM 7.1 as ChangeSet proposals), inventory constraint alerts (from OIL 3.2), action items for Katie (CEM)",
       "decisionPoints": "Creative fatigue detected; budget pacing off-plan; inventory constraints activated; CPA trend worsening",
       "humanGate": "Cliff/Katie review and decide on recommended actions",
       "specReferences": "Website Opt Engine §9A.4 (Phase 1 capabilities); Ops Intelligence §4 (inventory constraints)"
@@ -6002,8 +6002,8 @@
           "actor": "Analytics Lead"
         }
       ],
-      "inputs": "Platform APIs, GA4, Data Brain attribution marts, inventory data, Performance Memory",
-      "outputs": "Live dashboard, daily digests, trend alerts, reallocation recommendations",
+      "inputs": "Platform APIs (Meta, Google, TikTok, Amazon), GA4, Data Brain attribution marts (from DIL 2.3 dashboard delivery), inventory data (from OIL 3.2), Performance Memory (creative fatigue scores from CS 4a.8)",
+      "outputs": "Live unified paid media dashboard (consumer of DIL 2.3 data marts), daily digests (to CGO 1.1 Morning Pulse), trend alerts, budget reallocation recommendations (to PMM 8.3)",
       "decisionPoints": "Attribution methodology choice; metric definitions; anomaly alerts; reallocation needed",
       "humanGate": "Katie + Cliff review and discuss implications; reallocation decisions route to Channel Execution",
       "specReferences": "Website Opt Engine §9A.3 (unified metrics)"
@@ -6168,8 +6168,8 @@
           "actor": "Analytics"
         }
       ],
-      "inputs": "Dashboard data (8.2), Data Brain attribution, creative freshness flags (8.4), historical reallocation data",
-      "outputs": "Budget reallocation recommendation, ChangeSet creation, incremental revenue tracking",
+      "inputs": "Dashboard data (from PMM 8.2), Data Brain attribution (from DIL 2.9), creative freshness flags (from PMM 8.4, sourced from CS 4a.8 shared Creative Freshness Score), historical reallocation outcomes",
+      "outputs": "Budget reallocation recommendation, ChangeSet creation (to CEM 7.1 for Katie review and approval), incremental revenue tracking (to DIL Data Brain marts)",
       "decisionPoints": "Performance disparity significant; creative fresh for budget increase; auto-changeset vs. manual; approval; measurement complete",
       "humanGate": "Cliff reviews recommendation; Katie approves before deployment",
       "specReferences": "Website Opt Engine §9A.4 (Phase 2), §9A.7 (relationship to Channel Exec); Data Brain §6.1A (Recommendation Objects)"
@@ -6284,8 +6284,8 @@
           "actor": "Katie"
         }
       ],
-      "inputs": "Budget increase recommendation, Performance Memory asset data, creative performance trends",
-      "outputs": "Creative freshness determination, creative brief generation (if fatiguing), budget recommendation hold/reinstate",
+      "inputs": "Budget increase recommendation (from PMM 8.3), Creative Freshness Score from Performance Memory (written by CS 4a.8 Creative Freshness Monitoring), creative performance trends (from Performance Memory)",
+      "outputs": "Creative freshness determination (GO/HOLD), creative brief generation via CS 4a.3 (if fatiguing), budget recommendation hold/reinstate (to PMM 8.3)",
       "decisionPoints": "Creative freshness level (fresh/aging/fatiguing); creative refresh produced; new creative performance adequate",
       "humanGate": "Performance Memory flags fatiguing assets; Creative Strategist produces refresh; Analytics validates new creative performance",
       "specReferences": "Website Opt Engine §5.A (fatigue detection), §9A.7 (creative freshness pre-condition)"
@@ -6475,8 +6475,8 @@
           "actor": "Analytics Lead"
         }
       ],
-      "inputs": "Platform APIs, Performance Memory, guardrail configuration, Katie override authority",
-      "outputs": "Autonomous actions (budget shifts, creative rotations, bid adjustments, pauses), audit trail, Slack alerts",
+      "inputs": "Platform APIs (Meta, Google, TikTok, Amazon), Performance Memory (from CS 4a.6), guardrail configuration (from OIL 3.4 System Optimization Config), Katie override authority (CEM)",
+      "outputs": "Autonomous actions: budget shifts, creative rotations, bid adjustments, pauses (executed via platform APIs), audit trail (to PM 10.2 compliance tracking, to OIL 3.5 Edge Case Log if override), Slack alerts (to CGO and CEM for visibility)",
       "decisionPoints": "Action needed (creative rotation/budget shift/bid adjust/pause); guardrail satisfied; override needed; rule effectiveness at quarterly review",
       "humanGate": "Katie configures guardrails; Katie can override any rule; all actions logged and reversible",
       "specReferences": "Website Opt Engine §9A.4 (Phase 3)"
@@ -6636,8 +6636,8 @@
           "actor": "Data Brain"
         }
       ],
-      "inputs": "Inventory levels (Operations Intelligence), paid media campaigns, product cost/margin data",
-      "outputs": "Campaign pause/resume actions, spend recommendations, creative brief generation, budget constraints",
+      "inputs": "Inventory levels (from OIL 3.2 daily inventory rebalance, including Amazon FBA from AMM 9.1), paid media campaigns (active across all platforms), product cost/margin data (from OIL 3.6 channel margin definitions)",
+      "outputs": "Campaign pause/resume actions (to platform APIs), spend recommendations (to PMM 8.3 budget reallocation), creative brief generation for inventory-urgent content (to CS 4a.3 via Creative Intelligence pipeline), budget constraints (to CEM 7.1 ChangeSet guardrails)",
       "decisionPoints": "Critical stock detected; low stock warning; spend reduction needed; replenishment completed",
       "humanGate": "Katie approves low stock spend reduction; auto-pause triggered for critical stock; resume decision by Paid Media Manager",
       "specReferences": "Website Opt Engine §9A.6; Ops Intelligence §4 (inventory rebalance), §5.1 (thresholds)"
@@ -7090,8 +7090,8 @@
           "actor": "System Note"
         }
       ],
-      "inputs": "Current listing data, competitor listings, search term reports, session/CVR data",
-      "outputs": "Prioritized optimization recommendations → Process 9.2 (Listing Optimization), learning library",
+      "inputs": "Current listing data (from Amazon SP-API/Seller Central), competitor listings (from AMM 9.7 competitive intelligence), search term reports (from AMM 9.4 search intelligence), session/CVR data (from Data Brain marts via DIL 2.3)",
+      "outputs": "Prioritized optimization recommendations (to AMM 9.2 Listing Optimization as ChangeSet proposals), learning library (to OIL 3.8 System Learning Protocol), Katie (CEM) review gate for prioritization",
       "decisionPoints": [],
       "humanGate": "Katie reviews audit findings and prioritizes recommendations",
       "specReferences": "Website Opt Engine §9B.4 (/amazon-listing-audit monthly shortcut), §9B.2 (Amazon Storefront Optimization)"
