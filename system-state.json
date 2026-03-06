@@ -12,7 +12,7 @@
       "id": "cgo",
       "name": "Chief Growth Officer",
       "shortName": "CGO",
-      "emoji": "\ud83d\udc51",
+      "emoji": "👑",
       "theme": "#fbbf24",
       "layer": "Executive",
       "human": "Devon",
@@ -37,11 +37,11 @@
       "id": "data_intelligence",
       "name": "Data Intelligence Lead",
       "shortName": "DIL",
-      "emoji": "\ud83d\udcca",
+      "emoji": "📊",
       "theme": "#3b82f6",
       "layer": "Intelligence",
       "human": "Peter",
-      "mission": "I'm the person who knows the numbers. I connect every data source, build the dashboards, generate the reports, and flag the anomalies. When someone asks 'how are we doing?' \u2014 I answer.",
+      "mission": "I'm the person who knows the numbers. I connect every data source, build the dashboards, generate the reports, and flag the anomalies. When someone asks 'how are we doing?' — I answer.",
       "processes": [
         "2.1",
         "2.2",
@@ -67,11 +67,11 @@
       "id": "ops_intelligence",
       "name": "Operations Intelligence Lead",
       "shortName": "OIL",
-      "emoji": "\ud83d\udce6",
+      "emoji": "📦",
       "theme": "#8b5cf6",
       "layer": "Intelligence",
       "human": "Peter",
-      "mission": "I know where every unit of product is \u2014 in a warehouse, on a truck, or on order. I connect inventory, fulfillment, and financial data so the growth system never recommends spending money we don't have on products we can't ship.",
+      "mission": "I monitor every operation—from pipelines to customer success. I see the patterns in what we're doing, measure efficiency, flag blockages, and ensure our operational activities stay aligned with growth goals.",
       "processes": [
         "3.1",
         "3.2",
@@ -80,27 +80,57 @@
         "3.5",
         "3.6",
         "3.7",
-        "3.8",
-        "3.9"
+        "3.8"
       ],
       "stats": {
-        "total": 9,
-        "not_started": 8,
-        "in_progress": 0,
-        "built": 1,
+        "total": 8,
+        "not_started": 5,
+        "in_progress": 3,
+        "built": 0,
+        "live": 0,
+        "consolidated": 0
+      }
+    },
+    "4": {
+      "id": "growth_activation",
+      "name": "Growth Activation Lead",
+      "shortName": "GAL",
+      "emoji": "🚀",
+      "theme": "#10b981",
+      "layer": "Execution",
+      "human": "Jordan",
+      "mission": "I take insights from the data, guidance from the system rules, and turn them into actions. If we identify a growth lever, I test it. If we find a bottleneck, I implement the solution. I'm the bridge between knowing and doing.",
+      "processes": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "4.7",
+        "4.8",
+        "4.9",
+        "4.10",
+        "4.11"
+      ],
+      "stats": {
+        "total": 11,
+        "not_started": 0,
+        "in_progress": 8,
+        "built": 3,
         "live": 0,
         "consolidated": 0
       }
     },
     "5": {
-      "id": "marketing_social",
-      "name": "Marketing & Social Intelligence Lead",
-      "shortName": "MSIL",
-      "emoji": "\ud83d\udcf1",
-      "theme": "#ec4899",
-      "layer": "Planning",
-      "human": "Nick + Charlotte",
-      "mission": "I plan the marketing calendar, listen to what the market is saying, manage our creator and ambassador network, and orchestrate campaigns across every channel. When we invest in an event or a creator, I make sure we can measure the return.",
+      "id": "product_engineering",
+      "name": "Product Engineering Lead",
+      "shortName": "PEL",
+      "emoji": "⚙️",
+      "theme": "#f59e0b",
+      "layer": "Execution",
+      "human": "Alex",
+      "mission": "I build and iterate on the product itself. When the system identifies a feature gap, I engineer it. When we need to automate manual work, I code it. I turn strategic needs into shipped features.",
       "processes": [
         "5.1",
         "5.2",
@@ -110,26 +140,27 @@
         "5.6",
         "5.7",
         "5.8",
-        "5.9"
+        "5.9",
+        "5.10"
       ],
       "stats": {
-        "total": 9,
-        "not_started": 8,
-        "in_progress": 1,
-        "built": 0,
-        "live": 0,
+        "total": 10,
+        "not_started": 1,
+        "in_progress": 5,
+        "built": 3,
+        "live": 1,
         "consolidated": 0
       }
     },
     "6": {
-      "id": "web_experimentation",
-      "name": "Web & Experimentation Lead",
-      "shortName": "WEL",
-      "emoji": "\ud83c\udf10",
-      "theme": "#22c55e",
+      "id": "infrastructure_ops",
+      "name": "Infrastructure & Operations Lead",
+      "shortName": "IOL",
+      "emoji": "🔧",
+      "theme": "#ec4899",
       "layer": "Execution",
-      "human": "Katie + Peter",
-      "mission": "I own the DTC website infrastructure. Every site change goes through version control, gets tested, gets reviewed, and gets measured. Nothing breaks because nothing ships without passing my pipeline.",
+      "human": "Casey",
+      "mission": "I keep the systems running. I manage infrastructure, security, compliance, and reliability. I ensure that whatever the team builds stays stable and scales as we grow.",
       "processes": [
         "6.1",
         "6.2",
@@ -138,27 +169,26 @@
         "6.5",
         "6.6",
         "6.7",
-        "6.8",
-        "6.9"
+        "6.8"
       ],
       "stats": {
-        "total": 9,
-        "not_started": 8,
-        "in_progress": 1,
+        "total": 8,
+        "not_started": 5,
+        "in_progress": 3,
         "built": 0,
         "live": 0,
         "consolidated": 0
       }
     },
     "7": {
-      "id": "channel_execution",
-      "name": "Channel Execution Manager",
-      "shortName": "CEM",
-      "emoji": "\u26a1",
-      "theme": "#f59e0b",
+      "id": "customer_success",
+      "name": "Customer Success Lead",
+      "shortName": "CSL",
+      "emoji": "😊",
+      "theme": "#06b6d4",
       "layer": "Execution",
-      "human": "Katie",
-      "mission": "I enforce the ChangeSet discipline. Every change to email, ads, listings, or subscriptions goes through me \u2014 proposed, previewed, approved, measured, and documented. No more random changes with no paper trail.",
+      "human": "Sam",
+      "mission": "I'm the voice of the customer inside the system. I gather feedback, track satisfaction, identify churn risks, and ensure we're solving real problems. Every decision should make our customers happier.",
       "processes": [
         "7.1",
         "7.2",
@@ -172,22 +202,22 @@
       ],
       "stats": {
         "total": 9,
-        "not_started": 7,
-        "in_progress": 2,
+        "not_started": 6,
+        "in_progress": 3,
         "built": 0,
         "live": 0,
         "consolidated": 0
       }
     },
     "8": {
-      "id": "paid_media",
-      "name": "Paid Media Manager",
-      "shortName": "PMM",
-      "emoji": "\ud83c\udfaf",
-      "theme": "#ef4444",
+      "id": "demand_generation",
+      "name": "Demand Generation Lead",
+      "shortName": "DGL",
+      "emoji": "📢",
+      "theme": "#14b8a6",
       "layer": "Execution",
-      "human": "Katie / Cliff",
-      "mission": "I watch every ad dollar across every platform, every day. I know which creatives are winning, which are fatiguing, and where the next dollar should go. And I won't let you spend on products you can't ship.",
+      "human": "Morgan",
+      "mission": "I drive awareness and demand for our product. I own marketing, content, partnerships, and outreach. I make sure the right people know about us and want to try us.",
       "processes": [
         "8.1",
         "8.2",
@@ -195,27 +225,26 @@
         "8.4",
         "8.5",
         "8.6",
-        "8.7",
-        "8.8"
+        "8.7"
       ],
       "stats": {
-        "total": 8,
-        "not_started": 6,
-        "in_progress": 0,
+        "total": 7,
+        "not_started": 4,
+        "in_progress": 3,
         "built": 0,
         "live": 0,
-        "consolidated": 2
+        "consolidated": 0
       }
     },
     "9": {
-      "id": "amazon",
-      "name": "Amazon Marketplace Manager",
-      "shortName": "AMM",
-      "emoji": "\ud83d\udce6",
+      "id": "revenue_operations",
+      "name": "Revenue Operations Lead",
+      "shortName": "ROL",
+      "emoji": "💰",
       "theme": "#f97316",
       "layer": "Execution",
-      "human": "Katie / Josh",
-      "mission": "I own the Amazon channel end-to-end: listings, ads, Subscribe & Save, reviews, and FBA inventory. I audit every ASIN, pace every ad dollar to stock levels, and make sure we're winning the Buy Box.",
+      "human": "Riley",
+      "mission": "I optimize how we acquire and retain customers. I own pricing, GTM motion, sales enablement, and retention mechanics. I make sure revenue flows align with growth strategy.",
       "processes": [
         "9.1",
         "9.2",
@@ -224,93 +253,63 @@
         "9.5",
         "9.6",
         "9.7",
-        "9.8"
+        "9.8",
+        "9.9"
       ],
       "stats": {
-        "total": 8,
-        "not_started": 7,
-        "in_progress": 0,
+        "total": 9,
+        "not_started": 5,
+        "in_progress": 4,
         "built": 0,
         "live": 0,
-        "consolidated": 1
+        "consolidated": 0
       }
     },
     "10": {
-      "id": "project_manager",
-      "name": "Project Manager",
-      "shortName": "PM",
-      "emoji": "\ud83d\udccb",
-      "theme": "#64748b",
-      "layer": "Infrastructure",
-      "human": "Peter",
-      "mission": "I keep the system itself healthy. I track every task, every blocker, every dependency. I run the diagnostic, combine it with what the team reports, and give Devon one clean health check. I maintain the institutional memory that makes everyone else smarter.",
+      "id": "finance_planning",
+      "name": "Finance & Planning Lead",
+      "shortName": "FPL",
+      "emoji": "📈",
+      "theme": "#06b6d4",
+      "layer": "Executive",
+      "human": "Blake",
+      "mission": "I translate business strategy into financial reality. I build forecasts, allocate budget, track burn rate, and ensure we're using capital efficiently to reach our next milestone.",
       "processes": [
         "10.1",
         "10.2",
         "10.3",
         "10.4",
         "10.5",
-        "10.6",
-        "10.7"
+        "10.6"
       ],
       "stats": {
-        "total": 7,
-        "not_started": 5,
-        "in_progress": 1,
-        "built": 0,
-        "live": 0,
-        "consolidated": 1
-      }
-    },
-    "4a": {
-      "id": "creative_strategist",
-      "name": "Creative Strategist",
-      "shortName": "CS",
-      "emoji": "\ud83c\udfa8",
-      "theme": "#06b6d4",
-      "layer": "Creative Engine",
-      "human": "Katie + Alex",
-      "mission": "I'm the bridge between data and design. I know which creative is winning, which is fatiguing, and what should be made next. I write the briefs, design the tests, and make sure every asset gets smarter than the last one.",
-      "processes": [
-        "4a.1",
-        "4a.2",
-        "4a.3",
-        "4a.4",
-        "4a.5",
-        "4a.6",
-        "4a.7",
-        "4a.8",
-        "4a.9"
-      ],
-      "stats": {
-        "total": 9,
-        "not_started": 8,
-        "in_progress": 1,
+        "total": 6,
+        "not_started": 3,
+        "in_progress": 3,
         "built": 0,
         "live": 0,
         "consolidated": 0
       }
     },
-    "4b": {
-      "id": "content_producer",
-      "name": "Content Producer (Larry 2.0)",
-      "shortName": "Larry",
-      "emoji": "\ud83e\udd16",
-      "theme": "#10b981",
-      "layer": "Creative Engine",
-      "human": "AI (Larry 2.0)",
-      "mission": "I am the autonomous content engine. Give me a hypothesis and I'll generate the content, assemble the slideshow, publish it across platforms, and measure the results. I produce at scale what would take a human team weeks.",
+    "11": {
+      "id": "brand_culture",
+      "name": "Brand & Culture Lead",
+      "shortName": "BCL",
+      "emoji": "✨",
+      "theme": "#a855f7",
+      "layer": "Executive",
+      "human": "Taylor",
+      "mission": "I define who we are as a company. I build brand identity, shape company culture, and ensure our external story matches our internal reality. People want to work here because they believe in us.",
       "processes": [
-        "4b.1",
-        "4b.2",
-        "4b.3",
-        "4b.4",
-        "4b.5",
-        "4b.6"
+        "11.1",
+        "11.2",
+        "11.3",
+        "11.4",
+        "11.5"
       ],
       "stats": {
-        "total": 6,
-        "not_started": 4,
+        "total": 5,
+        "not_started": 3,
         "in_progress": 2,
         "built": 0,
         "live": 0,
@@ -318,1613 +317,1737 @@
       }
     }
   },
-  "patterns": {
-    "A": {
-      "id": "A",
-      "name": "Pulse Review Pattern",
-      "description": "Every role starts the day the same way: receive refreshed data, review role-specific metrics against thresholds, flag alerts (Red/Yellow/Green), log actions or escalate cross-role. This pattern standardizes the daily heartbeat across the entire system.",
-      "shortcutSummary": "Varies by role (/daily-pulse, /paid-media-pulse, /optimization-status, etc.)",
-      "steps": [
-        {
-          "step": 1,
-          "action": "Receive refreshed data mart(s) after daily dbt run completes (typically 6:00-6:30 AM UTC). Mart data is current as of prior business day close.",
-          "actor": "Data Intelligence Lead (system)"
-        },
-        {
-          "step": 2,
-          "action": "Review role-specific metrics panel against configured thresholds: **CGO** (revenue, CVR, CAC, LTV, inventory, cash position), **Paid Media** (spend, CPM, CPC, ROAS by platform), **Amazon** (FBA/FBM revenue, return rate, Best Seller status), **PM** (ChangeSet queue depth, experiment run count, system health alerts).",
-          "actor": "Role Leader (manual review)"
-        },
-        {
-          "step": 3,
-          "action": "Flag items exceeding threshold as alerts: **RED** (immediate escalation required, e.g., revenue drop >15%), **YELLOW** (monitor trend, investigate if persists 2+ days).",
-          "actor": "Role Leader (categorization)"
-        },
-        {
-          "step": 4,
-          "action": "Log flags as tasks (for own-role action) or escalations (for cross-role impact). Document context: what metric triggered, what threshold was exceeded, what happened yesterday that could explain it (e.g., campaign launch, ChangeSet implementation, external event).",
-          "actor": "Role Leader (logging)"
-        },
-        {
-          "step": 5,
-          "action": "If cross-role impact detected (e.g., Paid Media lead notices unusual inventory spike), route alert to relevant role owner (e.g., Channel Execution Manager) with context. If metric clearly linked to recent ChangeSet, flag for review cycle decision.",
-          "actor": "Role Leader (escalation routing)"
-        }
-      ],
-      "inputs": "Data Intelligence Lead (Daily Pulse report, Monday Growth Review); Operations Intelligence Lead (Optimization Status dashboard, anomaly flags)",
-      "outputs": "Role-specific alerts; Daily Pulse report (email + Slack); Operations Intelligence Lead (if escalation needed); Edge Case Log (if conflict/decision required)",
-      "humanGate": "Role Leader review and categorization of alerts",
-      "decisionPoints": "Is this a known event (campaign launch, test implementation, seasonal pattern)? Is cross-role impact detected? Does metric require immediate action (RED threshold) or monitoring (YELLOW threshold)?",
-      "specReferences": "Data Brain \u00a76.1 (Daily Pulse), \u00a76.2 (anomaly detection); Ops Intelligence \u00a75.1 (guardrail thresholds)",
-      "shortcut": "Varies by role \u2014 see individual process shortcuts below",
-      "usedBy": [
-        {
-          "role": "Amazon Marketplace Manager",
-          "processes": [
-            {
-              "id": "9.1",
-              "name": "Daily Pulse & Morning Dashboard Review"
-            }
-          ]
-        },
-        {
-          "role": "Chief Growth Officer",
-          "processes": [
-            {
-              "id": "1.1",
-              "name": "Morning Health Check & Pulse Review"
-            }
-          ]
-        },
-        {
-          "role": "Creative Strategist",
-          "processes": [
-            {
-              "id": "4a.8",
-              "name": "Creative Freshness Monitoring"
-            }
-          ]
-        },
-        {
-          "role": "Data Intelligence Lead",
-          "processes": [
-            {
-              "id": "2.3",
-              "name": "Dashboard Delivery & Maintenance"
-            },
-            {
-              "id": "2.4",
-              "name": "Automated Intelligence Reports"
-            }
-          ]
-        },
-        {
-          "role": "Marketing & Social Intelligence Lead",
-          "processes": [
-            {
-              "id": "5.9",
-              "name": "Marketing Activity ROI Retrospective"
-            }
-          ]
-        },
-        {
-          "role": "Operations Intelligence Lead",
-          "processes": [
-            {
-              "id": "3.9",
-              "name": "Optimization Status Reporting (/optimization-status)"
-            }
-          ]
-        },
-        {
-          "role": "Paid Media Manager",
-          "processes": [
-            {
-              "id": "8.1",
-              "name": "Daily Paid Media Pulse (/paid-media-pulse)"
-            }
-          ]
-        },
-        {
-          "role": "Project Manager",
-          "processes": [
-            {
-              "id": "10.1",
-              "name": "System Health Dashboard & Operational Pulse"
-            }
-          ]
-        }
-      ]
-    },
-    "B": {
-      "id": "B",
-      "name": "Brief Request Pattern",
-      "description": "When any role identifies a creative need \u2014 from a content gap, performance signal, or campaign requirement \u2014 it flows through this pattern. The requesting role defines the signal and priority, then /creative-brief routes it to the Creative Strategist (4a.3), who owns brief generation, production routing, and quality control.",
-      "shortcutSummary": "/creative-brief \u2192 routes to Creative Strategist 4a.3",
-      "steps": [
-        {
-          "step": 1,
-          "action": "Identify creative need: What is the source signal (gap identification, opportunity, risk mitigation)? What is the business context (campaign, product launch, inventory trigger, experimentation need)?",
-          "actor": "Requesting Role"
-        },
-        {
-          "step": 2,
-          "action": "Determine priority level based on urgency: **Urgent** (inventory-driven, product launch, <48h timeline), **Standard** (regular campaign, 7-14 day timeline), **Backlog** (exploratory, no firm deadline).",
-          "actor": "Requesting Role"
-        },
-        {
-          "step": 3,
-          "action": "Populate brief request schema: source_signal (clear statement of need + context), priority level, objective (desired behavior change), surface (where displayed), segment (target audience), product_type, offer (discount/free/none), claim_tier (Tier 0-3 if applicable). Do NOT generate full Creative Brief Object schema (hooks, concepts, variants, SLA, cross-channel specs) \u2014 that is Creative Strategist's responsibility.",
-          "actor": "Requesting Role"
-        },
-        {
-          "step": 4,
-          "action": "Submit request to Creative Strategist (4a.3) via /creative-brief shortcut or queue. Requesting role becomes the source_signal owner (available for follow-up questions during brief generation).",
-          "actor": "Requesting Role"
-        },
-        {
-          "step": 5,
-          "action": "Creative Strategist (4a.3) receives request, validates demand signal, populates complete Creative Brief Object with all schema fields (hooks, concepts, variants, SLA, cross-channel specs, proof_links).",
-          "actor": "Creative Strategist (4a.3)"
-        },
-        {
-          "step": 6,
-          "action": "Creative Strategist owns full brief generation, production routing to Content Producer (4b), quality gates (claims review if Tier 2+), and SLA tracking. Requesting role tracks brief status and SLA compliance.",
-          "actor": "Creative Strategist (4a.3) owns process"
-        },
-        {
-          "step": 7,
-          "action": "When creative asset delivered, requesting role deploys through its own workflow (PR review \u2192 deploy for web, ChangeSet implementation for channel, etc.).",
-          "actor": "Requesting Role"
-        }
-      ],
-      "inputs": "Requesting Role (source_signal, priority context); Creative Strategist (demand signal validation)",
-      "outputs": "Creative Brief Object (complete schema); Creative assets (routed to Content Producer); Brief status tracking (available to requesting role)",
-      "humanGate": "Requesting Role defines need; Creative Strategist validates demand signal and gates brief generation",
-      "decisionPoints": "Is demand signal clear and actionable? Is priority level correct given timeline and impact? Does Creative Strategist have capacity for SLA?",
-      "specReferences": "Creative Intelligence \u00a74 (demand signal consumption); Website Opt Engine \u00a79.3 (Creative Brief Object schema); Channel Execution \u00a78 (brief lifecycle)",
-      "shortcut": "/creative-brief routes to Creative Strategist 4a.3 (steps 3-4 automated; step 1-2 manual by requesting role)",
-      "usedBy": [
-        {
-          "role": "Channel Execution Manager",
-          "processes": [
-            {
-              "id": "7.7",
-              "name": "Creative Sourcing & ChangeSet Integration (Simplified)"
-            }
-          ]
-        },
-        {
-          "role": "Content Producer (Larry 2.0)",
-          "processes": [
-            {
-              "id": "4b.1",
-              "name": "Autonomous Content Generation (Larry 2.0 Core Loop)"
-            },
-            {
-              "id": "4b.3",
-              "name": "Production Queue Processing"
-            },
-            {
-              "id": "4b.4",
-              "name": "Locked Architecture Content Assembly"
-            }
-          ]
-        },
-        {
-          "role": "Creative Strategist",
-          "processes": [
-            {
-              "id": "4a.1",
-              "name": "Content Intelligence Layer Management"
-            },
-            {
-              "id": "4a.2",
-              "name": "Hypothesis Design & Testing Strategy"
-            },
-            {
-              "id": "4a.3",
-              "name": "Creative Brief Object Generation"
-            },
-            {
-              "id": "4a.4",
-              "name": "Content Flywheel Orchestration"
-            },
-            {
-              "id": "4a.8",
-              "name": "Creative Freshness Monitoring"
-            },
-            {
-              "id": "4a.9",
-              "name": "Cross-Channel Asset Specification"
-            }
-          ]
-        },
-        {
-          "role": "Marketing & Social Intelligence Lead",
-          "processes": [
-            {
-              "id": "5.1",
-              "name": "Marketing Calendar Management"
-            },
-            {
-              "id": "5.2",
-              "name": "Campaign Orchestration"
-            },
-            {
-              "id": "5.3",
-              "name": "Social Calendar Production"
-            },
-            {
-              "id": "5.4",
-              "name": "Event Activation Planning & ROI"
-            },
-            {
-              "id": "5.5",
-              "name": "Social Listening & Competitive Intelligence"
-            },
-            {
-              "id": "5.8",
-              "name": "Content Production Coordination"
-            }
-          ]
-        },
-        {
-          "role": "Paid Media Manager",
-          "processes": [
-            {
-              "id": "8.4",
-              "name": "Creative Freshness Pre-Condition"
-            },
-            {
-              "id": "8.6",
-              "name": "Inventory-Aware Spend Constraints"
-            }
-          ]
-        },
-        {
-          "role": "Web & Experimentation Lead",
-          "processes": [
-            {
-              "id": "6.8",
-              "name": "Creative Brief Generation for Web Content (Streamlined)"
-            }
-          ]
-        }
-      ]
-    },
-    "C": {
-      "id": "C",
-      "name": "Learning Record Pattern",
-      "description": "When a process produces a meaningful insight \u2014 from an A/B test, a ChangeSet measurement, a campaign result \u2014 this pattern captures it. The process owner documents what changed, what happened, and the evidence, then /learning-record routes it to the System Learning Protocol (3.8), which evaluates confidence and routes to Performance Memory or skill file updates. This is how ChangeSet results and experiment outcomes become institutional knowledge.",
-      "shortcutSummary": "/learning-record \u2192 routes to System Learning Protocol 3.8",
-      "steps": [
-        {
-          "step": 1,
-          "action": "Identify learning threshold: Has this learning met the bar for documentation? (5+ data points showing consistent pattern, >30% median outperformance vs. baseline, >80% confidence level in pattern, actionable insight for future execution).",
-          "actor": "Process Owner"
-        },
-        {
-          "step": 2,
-          "action": "If threshold met, produce standardized learning record with schema: what changed (variable tested, hypothesis, execution change), outcome data (lift %, sample size, statistical significance if applicable), context (date, duration, segment), what we'd do differently next time (updated rule, template change, priority shift).",
-          "actor": "Process Owner"
-        },
-        {
-          "step": 3,
-          "action": "Include supporting evidence: link to performance data, A/B test results if applicable, competitor/historical benchmarks that contextualize the finding.",
-          "actor": "Process Owner"
-        },
-        {
-          "step": 4,
-          "action": "Submit learning record to System Learning Protocol (3.8) via /learning-record shortcut or queue. Do NOT independently push to skill files, learning libraries, or trigger updates to Content Producer (Larry 2.0) templates.",
-          "actor": "Process Owner"
-        },
-        {
-          "step": 5,
-          "action": "System Learning Protocol (3.8) receives record, evaluates for confidence level and impact scope.",
-          "actor": "Ops Intelligence (3.8)"
-        },
-        {
-          "step": 6,
-          "action": "Protocol 3.8 routes learning record downstream: to Performance Memory (for historical pattern matching), to skill file update queue (if high-confidence actionable for Larry 2.0 template evolution), to learning notes library (for searchable reference), or to learning validation queue (if confidence borderline).",
-          "actor": "Ops Intelligence (3.8) routes"
-        },
-        {
-          "step": 7,
-          "action": "Protocol 3.8 gates all routing decisions, ensuring consistent standards and avoiding duplication across multiple learning pipelines.",
-          "actor": "Ops Intelligence (3.8) owns decisions"
-        }
-      ],
-      "inputs": "Process Owner (learning record schema); System Learning Protocol (confidence evaluation)",
-      "outputs": "Learning record (routed to appropriate destination); Performance Memory updates (if applicable); Skill file update queue (if actionable)",
-      "humanGate": "Process Owner identifies and documents learning; System Learning Protocol (3.8) gates all routing decisions",
-      "decisionPoints": "Has learning threshold been met (5+ points, >30% outperformance)? Is confidence level high enough for routing (>80%)? What is the scope of impact (single product, all products, single channel, cross-channel)?",
-      "specReferences": "Ops Intelligence \u00a79 (System Learning Protocol), \u00a79.8 (learning record schema); Creative Intelligence \u00a711 (Performance Measurement for context)",
-      "shortcut": "/learning-record submits to System Learning Protocol 3.8 (step 4 automated; steps 1-3 manual by process owner)",
-      "usedBy": [
-        {
-          "role": "Channel Execution Manager",
-          "processes": [
-            {
-              "id": "7.3",
-              "name": "Klaviyo Email/SMS Operations"
-            },
-            {
-              "id": "7.4",
-              "name": "Recharge Subscription Operations"
-            },
-            {
-              "id": "7.5",
-              "name": "ChangeSet Measurement & Auto-Close"
-            },
-            {
-              "id": "7.9",
-              "name": "Graduation ChangeSet Processing"
-            }
-          ]
-        },
-        {
-          "role": "Content Producer (Larry 2.0)",
-          "processes": [
-            {
-              "id": "4b.1",
-              "name": "Autonomous Content Generation (Larry 2.0 Core Loop)"
-            },
-            {
-              "id": "4b.6",
-              "name": "Performance Measurement & Learning Record Submission"
-            }
-          ]
-        },
-        {
-          "role": "Creative Strategist",
-          "processes": [
-            {
-              "id": "4a.3",
-              "name": "Creative Brief Object Generation"
-            }
-          ]
-        },
-        {
-          "role": "Marketing & Social Intelligence Lead",
-          "processes": [
-            {
-              "id": "5.1",
-              "name": "Marketing Calendar Management"
-            },
-            {
-              "id": "5.2",
-              "name": "Campaign Orchestration"
-            },
-            {
-              "id": "5.3",
-              "name": "Social Calendar Production"
-            },
-            {
-              "id": "5.4",
-              "name": "Event Activation Planning & ROI"
-            },
-            {
-              "id": "5.9",
-              "name": "Marketing Activity ROI Retrospective"
-            }
-          ]
-        },
-        {
-          "role": "Operations Intelligence Lead",
-          "processes": [
-            {
-              "id": "3.1",
-              "name": "Optimization Hierarchy Governance"
-            },
-            {
-              "id": "3.4",
-              "name": "Guardrail Parameter Management"
-            },
-            {
-              "id": "3.5",
-              "name": "Edge Case Log Management"
-            },
-            {
-              "id": "3.8",
-              "name": "System Learning Protocol"
-            }
-          ]
-        },
-        {
-          "role": "Paid Media Manager",
-          "processes": [
-            {
-              "id": "8.8",
-              "name": "Experiment Results \u2192 Performance Memory Reporting"
-            }
-          ]
-        },
-        {
-          "role": "Web & Experimentation Lead",
-          "processes": [
-            {
-              "id": "6.3",
-              "name": "Experimentation System (A/B Testing Lifecycle)"
-            },
-            {
-              "id": "6.6",
-              "name": "Incident Response, Safe Mode & Rollback"
-            },
-            {
-              "id": "6.9",
-              "name": "Learning Notes Production (Simplified)"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "stats": {
-    "totalProcesses": 89,
-    "statusCounts": {
-      "not_started": 72,
-      "in_progress": 11,
-      "built": 2,
-      "live": 0,
-      "consolidated": 4
-    },
-    "phaseCounts": {
-      "0": 30,
-      "1": 49,
-      "2": 9,
-      "3": 1
-    },
-    "waveCounts": {
-      "1": 8,
-      "2": 10,
-      "3": 9,
-      "4": 15,
-      "5": 20,
-      "DEFER": 27
-    },
-    "shortcutCount": 43,
-    "built": 2,
-    "not_started": 72,
-    "in_progress": 11
-  },
-  "infrastructure": {
-    "connections": {
-      "shopify": {
-        "name": "Shopify",
-        "type": "data_source",
-        "status": "connected",
-        "priority": "critical",
-        "method": "Admin API + webhooks",
-        "freshness_target": "< 10 minutes",
-        "connected_date": "2026-03-02",
-        "used_by": [
-          "2.1",
-          "2.2",
-          "6.1",
-          "6.2",
-          "7.1",
-          "7.2"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "ga4": {
-        "name": "Google Analytics 4",
-        "type": "data_source",
-        "status": "connected",
-        "priority": "critical",
-        "method": "BigQuery export or API",
-        "freshness_target": "< 24 hours",
-        "connected_date": "2026-03-03",
-        "used_by": [
-          "2.1",
-          "2.2",
-          "6.1",
-          "6.2",
-          "6.3"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "klaviyo": {
-        "name": "Klaviyo",
-        "type": "data_source",
-        "status": "connected",
-        "priority": "critical",
-        "method": "API v3",
-        "freshness_target": "< 6 hours",
-        "connected_date": "2026-03-02",
-        "used_by": [
-          "2.1",
-          "2.2",
-          "7.3",
-          "7.4",
-          "7.5"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "recharge": {
-        "name": "Recharge",
-        "type": "data_source",
-        "status": "connected",
-        "priority": "critical",
-        "method": "API",
-        "freshness_target": "< 1 hour",
-        "connected_date": "2026-03-02",
-        "used_by": [
-          "2.1",
-          "2.2",
-          "7.2"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "meta_ads": {
-        "name": "Meta Ads (Facebook + Instagram)",
-        "type": "data_source",
-        "status": "connected",
-        "priority": "critical",
-        "method": "Marketing API",
-        "freshness_target": "< 6 hours",
-        "connected_date": "2026-03-02",
-        "used_by": [
-          "2.1",
-          "2.2",
-          "8.1",
-          "8.3",
-          "8.4"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "google_ads": {
-        "name": "Google Ads",
-        "type": "data_source",
-        "status": "connected",
-        "priority": "critical",
-        "method": "Google Ads API",
-        "freshness_target": "< 6 hours",
-        "connected_date": "2026-03-02",
-        "used_by": [
-          "2.1",
-          "2.2",
-          "8.1",
-          "8.3",
-          "8.4"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "google_search_console": {
-        "name": "Google Search Console",
-        "type": "data_source",
-        "status": "connected",
-        "priority": "high",
-        "method": "API",
-        "freshness_target": "< 48 hours",
-        "connected_date": "2026-03-03",
-        "used_by": [
-          "2.1",
-          "6.4",
-          "6.5"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "tiktok_ads": {
-        "name": "TikTok Ads",
-        "type": "data_source",
-        "status": "connected",
-        "priority": "high",
-        "method": "Marketing API",
-        "freshness_target": "< 6 hours",
-        "connected_date": "2026-03-02",
-        "used_by": [
-          "2.1",
-          "2.2",
-          "8.1",
-          "8.3"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "amazon_ads": {
-        "name": "Amazon Advertising",
-        "type": "data_source",
-        "status": "connected",
-        "priority": "critical",
-        "method": "Amazon Ads API",
-        "freshness_target": "< 24 hours",
-        "connected_date": "2026-03-02",
-        "used_by": [
-          "2.1",
-          "9.1",
-          "9.2",
-          "9.4"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "amazon_sp_api": {
-        "name": "Amazon SP-API",
-        "type": "data_source",
-        "status": "not_connected",
-        "priority": "critical",
-        "method": "SP-API",
-        "freshness_target": "< 24 hours",
-        "connected_date": null,
-        "used_by": [
-          "2.1",
-          "9.1",
-          "9.2",
-          "9.3",
-          "9.5"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "superfiliate": {
-        "name": "Superfiliate",
-        "type": "data_source",
-        "status": "not_connected",
-        "priority": "high",
-        "method": "API or Portable.io connector",
-        "freshness_target": "< 24 hours",
-        "connected_date": null,
-        "used_by": [
-          "2.1",
-          "5.5",
-          "7.6"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "sprout_social": {
-        "name": "Sprout Social",
-        "type": "data_source",
-        "status": "connected",
-        "priority": "high",
-        "method": "REST API",
-        "freshness_target": "< 4 hours",
-        "connected_date": "2026-03-03",
-        "used_by": [
-          "2.1",
-          "5.1",
-          "5.2",
-          "5.3"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "cin7": {
-        "name": "Cin7 Core",
-        "type": "data_source",
-        "status": "not_connected",
-        "priority": "critical",
-        "method": "REST API / MCP",
-        "freshness_target": "< 24 hours",
-        "connected_date": null,
-        "used_by": [
-          "2.1",
-          "3.1",
-          "3.2",
-          "3.5"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "quickbooks": {
-        "name": "QuickBooks",
-        "type": "data_source",
-        "status": "not_connected",
-        "priority": "high",
-        "method": "MCP / API",
-        "freshness_target": "Daily (cash), Weekly (P&L)",
-        "connected_date": null,
-        "used_by": [
-          "2.1",
-          "3.1",
-          "3.6"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "metricool": {
-        "name": "Metricool",
-        "type": "data_source",
-        "status": "not_connected",
-        "priority": "high",
-        "method": "Metricool API",
-        "freshness_target": "< 4 hours",
-        "connected_date": null,
-        "used_by": [
-          "2.1",
-          "4b.6",
-          "5.1"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "shipbob_3pl": {
-        "name": "ShipBob / 3PL",
-        "type": "data_source",
-        "status": "not_connected",
-        "priority": "high",
-        "method": "ShipBob API or Google Sheets",
-        "freshness_target": "Weekly",
-        "connected_date": null,
-        "used_by": [
-          "3.1",
-          "3.5"
-        ],
-        "notes": null,
-        "blocker": null
-      },
-      "cogs_margin": {
-        "name": "COGS / Margin Data",
-        "type": "data_source",
-        "status": "not_connected",
-        "priority": "critical",
-        "method": "Google Sheets (manual) or ERP",
-        "freshness_target": "Weekly",
-        "connected_date": null,
-        "used_by": [
-          "2.1",
-          "3.1",
-          "3.6"
-        ],
-        "notes": null,
-        "blocker": null
-      }
-    },
-    "mcps": {
-      "github_mcp": {
-        "name": "GitHub MCP",
-        "status": "available",
-        "provides": "Repository management, file access, pull requests, code search",
-        "used_by": [
-          "10.1",
-          "10.2",
-          "10.3"
-        ]
-      },
-      "shopify_mcp": {
-        "name": "Shopify MCP",
-        "status": "not_available",
-        "provides": "Product data, order queries, inventory lookups, customer data",
-        "used_by": [
-          "2.1",
-          "6.1",
-          "7.1"
-        ]
-      },
-      "google_analytics_mcp": {
-        "name": "Google Analytics MCP",
-        "status": "not_available",
-        "provides": "Traffic and conversion queries, real-time session data",
-        "used_by": [
-          "2.1",
-          "6.1",
-          "6.2"
-        ]
-      },
-      "klaviyo_mcp": {
-        "name": "Klaviyo MCP",
-        "status": "available",
-        "provides": "Campaign and flow management, segment queries, performance data",
-        "used_by": [
-          "7.3",
-          "7.4"
-        ]
-      },
-      "google_sheets_mcp": {
-        "name": "Google Sheets MCP",
-        "status": "available",
-        "provides": "Spreadsheet read/write for manual data sources (COGS, inventory, configs)",
-        "used_by": [
-          "3.1",
-          "3.4",
-          "3.6"
-        ],
-        "notes": "Provided by piotr-agier/google-drive-mcp (covers Docs, Sheets, Slides, Calendar)"
-      },
-      "google_drive_mcp": {
-        "name": "Google Drive MCP",
-        "status": "available",
-        "provides": "Document storage, shared file access, folder management",
-        "used_by": [
-          "10.1",
-          "10.2"
-        ],
-        "notes": "Anthropic native (read-only Docs) + piotr-agier/google-drive-mcp (full CRUD: Docs, Sheets, Slides)"
-      },
-      "slack_mcp": {
-        "name": "Slack MCP",
-        "status": "available",
-        "provides": "Message posting, channel management, alert routing",
-        "used_by": [
-          "2.5",
-          "8.1",
-          "9.1",
-          "10.1"
-        ],
-        "notes": "Connected via Slack MCP extension"
-      },
-      "polar_analytics": {
-        "name": "Polar Analytics MCP",
-        "status": "connected",
-        "provides": "Unified cross-channel analytics \u2014 33 connectors covering revenue, orders, spend, attribution, sessions, subscriptions",
-        "used_by": [
-          "1.1",
-          "1.2",
-          "2.1",
-          "2.3",
-          "2.4",
-          "2.5",
-          "8.1"
-        ]
-      },
-      "klaviyo_direct": {
-        "name": "Klaviyo Direct MCP",
-        "status": "connected",
-        "provides": "Direct API access \u2014 campaigns, flows, profiles, segments, metrics, templates",
-        "used_by": [
-          "7.3",
-          "7.4",
-          "7.5"
-        ]
-      }
-    },
-    "platforms": {
-      "polar_analytics": {
-        "name": "Polar Analytics",
-        "status": "active",
-        "purpose": "Unified analytics dashboard \u2014 data source aggregation and visualization",
-        "used_by": [
-          "2.1",
-          "2.2",
-          "2.3"
-        ]
-      },
-      "slack_workspace": {
-        "name": "Slack Workspace",
-        "status": "active",
-        "purpose": "Team communication, alert routing, notification channels",
-        "used_by": [
-          "2.5",
-          "8.1",
-          "9.1",
-          "10.1"
-        ],
-        "notes": "Slack MCP connected, workspace accessible for alerts and notifications"
-      },
-      "google_workspace": {
-        "name": "Google Workspace",
-        "status": "active",
-        "purpose": "Docs, Sheets, Drive \u2014 manual data entry, config files, documentation",
-        "used_by": [
-          "3.4",
-          "10.1",
-          "10.2"
-        ],
-        "notes": "Google Drive MCP (piotr-agier) provides full Docs/Sheets/Slides/Calendar access"
-      }
-    }
-  },
   "processes": {
     "1.1": {
       "id": "1.1",
-      "name": "Morning Health Check & Pulse Review",
+      "role": "1",
+      "name": "Define Success Metrics",
       "status": "built",
-      "phase": null,
-      "wave": 1,
-      "shortcut": "/daily-pulse + /optimization-status + /changeset-review"
+      "layer": "Executive",
+      "owner": "Devon",
+      "description": "Establish the KPIs that define 'good performance' for the growth system.",
+      "owners": ["Devon"],
+      "outputs": ["success_metrics_doc.md"],
+      "links": {
+        "related": ["1.2", "10.1"],
+        "blocked_by": []
+      },
+      "startDate": "2025-01-10",
+      "dueDate": "2025-01-24",
+      "completedDate": "2025-01-24",
+      "effort": "medium",
+      "priority": "critical",
+      "notes": "Completed - metrics approved by board"
     },
     "1.2": {
       "id": "1.2",
-      "name": "Weekly Marketing Review & Strategic ChangeSet Decisions",
+      "role": "1",
+      "name": "Establish Optimization Rules",
       "status": "not_started",
-      "phase": null,
-      "wave": 4,
-      "shortcut": "/weekly-marketing-review"
+      "layer": "Executive",
+      "owner": "Devon",
+      "description": "Define the decision-making rules and constraints for the system.",
+      "owners": ["Devon"],
+      "links": {
+        "blocked_by": ["1.1"],
+        "related": ["1.3"]
+      },
+      "startDate": null,
+      "dueDate": "2025-02-15",
+      "effort": "medium",
+      "priority": "critical",
+      "notes": "Waiting for 1.1 completion"
     },
     "1.3": {
       "id": "1.3",
-      "name": "Monthly Optimization Calibration & Edge Case Review",
+      "role": "1",
+      "name": "Design System Architecture",
       "status": "not_started",
-      "phase": 1,
-      "wave": "DEFER",
-      "shortcut": null
+      "layer": "Executive",
+      "owner": "Devon",
+      "description": "Map the system structure with roles, processes, and decision points.",
+      "owners": ["Devon"],
+      "links": {
+        "blocked_by": ["1.1"],
+        "related": ["1.4", "2.1"]
+      },
+      "startDate": null,
+      "dueDate": "2025-02-20",
+      "effort": "large",
+      "priority": "critical",
+      "notes": "Depends on rules from 1.2"
     },
     "1.4": {
       "id": "1.4",
-      "name": "Quarterly Strategic Review",
+      "role": "1",
+      "name": "Autonomy Governance Framework",
       "status": "not_started",
-      "phase": 1,
-      "wave": "DEFER",
-      "shortcut": null
+      "layer": "Executive",
+      "owner": "Devon",
+      "description": "Define which decisions the system can make independently and which need human approval.",
+      "owners": ["Devon"],
+      "links": {
+        "blocked_by": ["1.2"],
+        "related": ["1.5", "2.10"]
+      },
+      "startDate": null,
+      "dueDate": "2025-03-15",
+      "effort": "large",
+      "priority": "critical",
+      "notes": "Critical for system trustworthiness"
     },
     "1.5": {
       "id": "1.5",
-      "name": "Executive Copilot \u2014 Natural Language Query & Synthesis",
+      "role": "1",
+      "name": "Quarterly Review & Optimization",
       "status": "not_started",
-      "phase": 2,
-      "wave": "DEFER",
-      "shortcut": null
+      "layer": "Executive",
+      "owner": "Devon",
+      "description": "Monthly review cycle to assess system performance and make adjustments.",
+      "owners": ["Devon"],
+      "links": {
+        "blocked_by": ["1.1"],
+        "related": ["2.10", "10.6"]
+      },
+      "startDate": null,
+      "dueDate": "2025-02-01",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Recurring monthly"
     },
     "2.1": {
       "id": "2.1",
-      "name": "Unified Data Access & Pipeline Management",
+      "role": "2",
+      "name": "Data Architecture Setup",
       "status": "in_progress",
-      "phase": null,
-      "wave": 1,
-      "shortcut": null
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Design and implement the data warehouse and integration layer.",
+      "owners": ["Peter"],
+      "progress": 65,
+      "links": {
+        "blocked_by": [],
+        "related": ["2.2", "3.1"]
+      },
+      "startDate": "2025-01-15",
+      "dueDate": "2025-02-28",
+      "effort": "large",
+      "priority": "critical",
+      "notes": "Currently setting up Snowflake"
     },
     "2.2": {
       "id": "2.2",
-      "name": "Data Warehouse & Mart Management",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 1,
-      "shortcut": null
+      "role": "2",
+      "name": "CRM Integration",
+      "status": "in_progress",
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Connect customer data from Salesforce and other CRM sources.",
+      "owners": ["Peter"],
+      "progress": 40,
+      "links": {
+        "blocked_by": ["2.1"],
+        "related": ["2.3", "7.3"]
+      },
+      "startDate": "2025-01-20",
+      "dueDate": "2025-03-15",
+      "effort": "medium",
+      "priority": "critical",
+      "notes": "API authentication configured"
     },
     "2.3": {
       "id": "2.3",
-      "name": "Dashboard Delivery & Maintenance",
+      "role": "2",
+      "name": "Product Analytics Integration",
       "status": "in_progress",
-      "phase": null,
-      "wave": 1,
-      "shortcut": null
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Connect event tracking from Amplitude and behavioral analytics.",
+      "owners": ["Peter"],
+      "progress": 50,
+      "links": {
+        "blocked_by": ["2.1"],
+        "related": ["2.4", "4.2"]
+      },
+      "startDate": "2025-01-22",
+      "dueDate": "2025-03-10",
+      "effort": "medium",
+      "priority": "critical",
+      "notes": "Schema definition in progress"
     },
     "2.4": {
       "id": "2.4",
-      "name": "Automated Intelligence Reports",
-      "status": "in_progress",
-      "phase": null,
-      "wave": 1,
-      "shortcut": "/daily-pulse, /weekly-marketing-review"
+      "role": "2",
+      "name": "Build Core Dashboards",
+      "status": "not_started",
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Create the main visibility dashboards for executives and team leads.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["2.1", "2.2"],
+        "related": ["2.5", "1.5"]
+      },
+      "startDate": null,
+      "dueDate": "2025-04-01",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Will use Looker or Tableau"
     },
     "2.5": {
       "id": "2.5",
-      "name": "Anomaly Detection & Alerting",
+      "role": "2",
+      "name": "Anomaly Detection System",
       "status": "not_started",
-      "phase": 1,
-      "wave": 1,
-      "shortcut": "/inventory-alert"
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Implement automated alerting for significant deviations from expected metrics.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["2.1", "2.4"],
+        "related": ["2.6"]
+      },
+      "startDate": null,
+      "dueDate": "2025-05-01",
+      "effort": "large",
+      "priority": "medium",
+      "notes": "ML-based anomaly detection"
     },
     "2.6": {
       "id": "2.6",
-      "name": "Funnel Diagnosis",
+      "role": "2",
+      "name": "Predictive Modeling",
       "status": "not_started",
-      "phase": 1,
-      "wave": 2,
-      "shortcut": null
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Build forecasting models for revenue, churn, and growth levers.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["2.1", "2.2", "2.3"],
+        "related": ["2.7", "10.1"]
+      },
+      "startDate": null,
+      "dueDate": "2025-06-01",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Critical for system recommendations"
     },
     "2.7": {
       "id": "2.7",
-      "name": "VoC (Voice of Customer) Synthesis",
+      "role": "2",
+      "name": "Revenue Attribution",
       "status": "not_started",
-      "phase": 2,
-      "wave": "DEFER",
-      "shortcut": null
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Build multi-touch attribution model to understand which channels drive revenue.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["2.1", "2.2", "2.3"],
+        "related": ["2.8", "9.2"]
+      },
+      "startDate": null,
+      "dueDate": "2025-05-15",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Complex modeling challenge"
     },
     "2.8": {
       "id": "2.8",
-      "name": "Trend Intelligence",
+      "role": "2",
+      "name": "Customer Segmentation",
       "status": "not_started",
-      "phase": 2,
-      "wave": "DEFER",
-      "shortcut": null
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Define and implement customer segments for targeted analysis and actions.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["2.1", "2.2"],
+        "related": ["2.9", "9.4"]
+      },
+      "startDate": null,
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "Behavioral and demographic segments"
     },
     "2.9": {
       "id": "2.9",
-      "name": "Attribution & MER Modeling",
+      "role": "2",
+      "name": "Cohort Analysis",
       "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": null
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Build cohort analysis tools to track user behavior over time.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["2.1", "2.2", "2.3"],
+        "related": ["2.10", "4.6"]
+      },
+      "startDate": null,
+      "dueDate": "2025-05-01",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "Retention and engagement analysis"
     },
     "2.10": {
       "id": "2.10",
-      "name": "Executive Copilot Backend \u2014 Natural Language Query Engine",
+      "role": "2",
+      "name": "Intelligence Review & Iteration",
       "status": "not_started",
-      "phase": 2,
-      "wave": "DEFER",
-      "shortcut": null
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Monthly review of data quality, model performance, and new analysis needs.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["2.1"],
+        "related": ["1.5", "10.6"]
+      },
+      "startDate": null,
+      "dueDate": "2025-02-15",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Recurring monthly"
     },
     "3.1": {
       "id": "3.1",
-      "name": "Optimization Hierarchy Governance",
-      "status": "built",
-      "phase": 1,
-      "wave": 1,
-      "shortcut": "/changeset-review"
+      "role": "3",
+      "name": "Pipeline Analytics Setup",
+      "status": "in_progress",
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Track sales pipeline, conversion rates, and deal velocity.",
+      "owners": ["Peter"],
+      "progress": 30,
+      "links": {
+        "blocked_by": ["2.1"],
+        "related": ["3.2", "9.1"]
+      },
+      "startDate": "2025-01-25",
+      "dueDate": "2025-03-20",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Connected to Salesforce"
     },
     "3.2": {
       "id": "3.2",
-      "name": "Daily Inventory Rebalance Scan",
-      "status": "not_started",
-      "phase": null,
-      "wave": 2,
-      "shortcut": "/inventory-rebalance"
+      "role": "3",
+      "name": "Customer Health Scoring",
+      "status": "in_progress",
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Build scoring system to identify expansion and churn risks.",
+      "owners": ["Peter"],
+      "progress": 35,
+      "links": {
+        "blocked_by": ["2.1"],
+        "related": ["3.3", "7.5"]
+      },
+      "startDate": "2025-01-28",
+      "dueDate": "2025-03-25",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Multi-factor risk model"
     },
     "3.3": {
       "id": "3.3",
-      "name": "ChangeSet Recommendation Generation",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/creative-brief"
+      "role": "3",
+      "name": "Resource Utilization Tracking",
+      "status": "in_progress",
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Monitor infrastructure and service utilization rates.",
+      "owners": ["Peter"],
+      "progress": 40,
+      "links": {
+        "blocked_by": ["2.1"],
+        "related": ["3.4", "6.2"]
+      },
+      "startDate": "2025-02-01",
+      "dueDate": "2025-03-30",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "CloudWatch and monitoring setup"
     },
     "3.4": {
       "id": "3.4",
-      "name": "Guardrail Parameter Management",
+      "role": "3",
+      "name": "Operational KPI Dashboard",
       "status": "not_started",
-      "phase": null,
-      "wave": 1,
-      "shortcut": "/optimization-status"
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Create centralized operational metrics dashboard.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["3.1", "3.2", "3.3"],
+        "related": ["3.5", "1.5"]
+      },
+      "startDate": null,
+      "dueDate": "2025-04-15",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "Executive visibility dashboard"
     },
     "3.5": {
       "id": "3.5",
-      "name": "Edge Case Log Management",
+      "role": "3",
+      "name": "Bottleneck Identification",
       "status": "not_started",
-      "phase": null,
-      "wave": 5,
-      "shortcut": null
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Analyze operational data to identify and flag system bottlenecks.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["3.1", "3.3"],
+        "related": ["3.6", "4.3"]
+      },
+      "startDate": null,
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Continuous bottleneck detection"
     },
     "3.6": {
       "id": "3.6",
-      "name": "Channel Margin Definition Maintenance",
+      "role": "3",
+      "name": "Efficiency Benchmarking",
       "status": "not_started",
-      "phase": null,
-      "wave": 2,
-      "shortcut": null
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Compare our operations against industry benchmarks.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["3.1"],
+        "related": ["3.7", "10.4"]
+      },
+      "startDate": null,
+      "dueDate": "2025-05-15",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "External benchmarking data"
     },
     "3.7": {
       "id": "3.7",
-      "name": "Financial System Integration",
+      "role": "3",
+      "name": "SLA Monitoring",
       "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": null
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Track and report on service level agreements.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["3.1"],
+        "related": ["3.8", "6.3"]
+      },
+      "startDate": null,
+      "dueDate": "2025-04-20",
+      "effort": "small",
+      "priority": "medium",
+      "notes": "Automated SLA reporting"
     },
     "3.8": {
       "id": "3.8",
-      "name": "System Learning Protocol",
+      "role": "3",
+      "name": "Operations Review & Iteration",
       "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/synthesize-learnings"
+      "layer": "Intelligence",
+      "owner": "Peter",
+      "description": "Monthly review of operational metrics and improvement areas.",
+      "owners": ["Peter"],
+      "links": {
+        "blocked_by": ["3.1"],
+        "related": ["1.5", "10.6"]
+      },
+      "startDate": null,
+      "dueDate": "2025-02-20",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Recurring monthly"
     },
-    "3.9": {
-      "id": "3.9",
-      "name": "Optimization Status Reporting (/optimization-status)",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/optimization-status"
-    },
-    "4a.1": {
-      "id": "4a.1",
-      "name": "Content Intelligence Layer Management",
+    "4.1": {
+      "id": "4.1",
+      "role": "4",
+      "name": "Growth Lever Identification",
       "status": "in_progress",
-      "phase": 1,
-      "wave": 3,
-      "shortcut": "/creative-demand-scan"
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Identify key growth levers based on data and market analysis.",
+      "owners": ["Jordan"],
+      "progress": 70,
+      "links": {
+        "blocked_by": [],
+        "related": ["4.2", "1.1"]
+      },
+      "startDate": "2025-01-10",
+      "dueDate": "2025-02-15",
+      "effort": "medium",
+      "priority": "critical",
+      "notes": "Initial levers identified: pricing, retention, expansion"
     },
-    "4a.2": {
-      "id": "4a.2",
-      "name": "Hypothesis Design & Testing Strategy",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 3,
-      "shortcut": null
-    },
-    "4a.3": {
-      "id": "4a.3",
-      "name": "Creative Brief Object Generation",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 3,
-      "shortcut": "/creative-brief"
-    },
-    "4a.4": {
-      "id": "4a.4",
-      "name": "Content Flywheel Orchestration",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 4,
-      "shortcut": "/graduation-queue"
-    },
-    "4a.5": {
-      "id": "4a.5",
-      "name": "Graduation Pipeline Management",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/content-performance"
-    },
-    "4a.6": {
-      "id": "4a.6",
-      "name": "Performance Memory & Skill File Management",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": null
-    },
-    "4a.7": {
-      "id": "4a.7",
-      "name": "Claims Compliance Engine",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/creative-demand-scan"
-    },
-    "4a.8": {
-      "id": "4a.8",
-      "name": "Creative Freshness Monitoring",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": null
-    },
-    "4a.9": {
-      "id": "4a.9",
-      "name": "Cross-Channel Asset Specification",
-      "status": "not_started",
-      "phase": null,
-      "wave": 3,
-      "shortcut": "/compliance-check"
-    },
-    "4b.1": {
-      "id": "4b.1",
-      "name": "Autonomous Content Generation (Larry 2.0 Core Loop)",
+    "4.2": {
+      "id": "4.2",
+      "role": "4",
+      "name": "Experimentation Framework",
       "status": "in_progress",
-      "phase": 1,
-      "wave": 3,
-      "shortcut": null
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Set up A/B testing and experiment tracking infrastructure.",
+      "owners": ["Jordan"],
+      "progress": 55,
+      "links": {
+        "blocked_by": ["2.3"],
+        "related": ["4.3", "5.3"]
+      },
+      "startDate": "2025-01-20",
+      "dueDate": "2025-03-01",
+      "effort": "large",
+      "priority": "critical",
+      "notes": "Using LaunchDarkly for feature flags"
     },
-    "4b.2": {
-      "id": "4b.2",
-      "name": "Multi-Platform Content Scheduling",
+    "4.3": {
+      "id": "4.3",
+      "role": "4",
+      "name": "Test & Learn Program",
       "status": "in_progress",
-      "phase": 1,
-      "wave": 3,
-      "shortcut": null
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Launch rapid test cycles to validate growth hypotheses.",
+      "owners": ["Jordan"],
+      "progress": 45,
+      "links": {
+        "blocked_by": ["4.2"],
+        "related": ["4.4", "3.5"]
+      },
+      "startDate": "2025-01-25",
+      "dueDate": "2025-04-15",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Target: 5 experiments running in parallel"
     },
-    "4b.3": {
-      "id": "4b.3",
-      "name": "Production Queue Processing",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 3,
-      "shortcut": "/learning-record"
+    "4.4": {
+      "id": "4.4",
+      "role": "4",
+      "name": "Bottleneck Resolution",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Implement solutions for identified operational bottlenecks.",
+      "owners": ["Jordan"],
+      "progress": 50,
+      "links": {
+        "blocked_by": ["3.5"],
+        "related": ["4.5", "5.5"]
+      },
+      "startDate": "2025-02-01",
+      "dueDate": "2025-04-30",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Working with all execution teams"
     },
-    "4b.4": {
-      "id": "4b.4",
-      "name": "Locked Architecture Content Assembly",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 3,
-      "shortcut": "/founder-content"
+    "4.5": {
+      "id": "4.5",
+      "role": "4",
+      "name": "Churn Prevention Program",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Implement interventions for at-risk customers.",
+      "owners": ["Jordan"],
+      "progress": 35,
+      "links": {
+        "blocked_by": ["3.2"],
+        "related": ["4.6", "7.6"]
+      },
+      "startDate": "2025-02-05",
+      "dueDate": "2025-04-15",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Targeting 5% improvement in retention"
     },
-    "4b.5": {
-      "id": "4b.5",
-      "name": "Founder & Team Content Amplification",
-      "status": "not_started",
-      "phase": 2,
-      "wave": "DEFER",
-      "shortcut": null
+    "4.6": {
+      "id": "4.6",
+      "role": "4",
+      "name": "Expansion Revenue Testing",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Test upsell and cross-sell strategies.",
+      "owners": ["Jordan"],
+      "progress": 40,
+      "links": {
+        "blocked_by": ["3.2"],
+        "related": ["4.7", "9.3"]
+      },
+      "startDate": "2025-02-08",
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Testing premium tier and add-ons"
     },
-    "4b.6": {
-      "id": "4b.6",
-      "name": "Performance Measurement & Learning Record Submission",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 3,
-      "shortcut": "/content-queue"
+    "4.7": {
+      "id": "4.7",
+      "role": "4",
+      "name": "Referral Program Launch",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Implement customer referral incentive program.",
+      "owners": ["Jordan"],
+      "progress": 30,
+      "links": {
+        "blocked_by": [],
+        "related": ["4.8", "8.3"]
+      },
+      "startDate": "2025-02-10",
+      "dueDate": "2025-05-01",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "Partner with referral platform vendor"
+    },
+    "4.8": {
+      "id": "4.8",
+      "role": "4",
+      "name": "Pricing Optimization",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Test price elasticity and optimize pricing structure.",
+      "owners": ["Jordan"],
+      "progress": 25,
+      "links": {
+        "blocked_by": ["4.1"],
+        "related": ["4.9", "9.5"]
+      },
+      "startDate": "2025-02-12",
+      "dueDate": "2025-05-15",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Complex modeling and testing required"
+    },
+    "4.9": {
+      "id": "4.9",
+      "role": "4",
+      "name": "Feature Adoption Campaigns",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Launch campaigns to increase adoption of underutilized features.",
+      "owners": ["Jordan"],
+      "progress": 45,
+      "links": {
+        "blocked_by": ["4.2"],
+        "related": ["4.10", "8.4"]
+      },
+      "startDate": "2025-02-14",
+      "dueDate": "2025-05-01",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "In-app messaging and email campaigns"
+    },
+    "4.10": {
+      "id": "4.10",
+      "role": "4",
+      "name": "Partner Integration Program",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Partner with complementary tools to expand reach.",
+      "owners": ["Jordan"],
+      "progress": 20,
+      "links": {
+        "blocked_by": [],
+        "related": ["4.11", "8.5"]
+      },
+      "startDate": "2025-02-16",
+      "dueDate": "2025-06-01",
+      "effort": "large",
+      "priority": "medium",
+      "notes": "Identifying and vetting partner opportunities"
+    },
+    "4.11": {
+      "id": "4.11",
+      "role": "4",
+      "name": "Growth Activation Review & Optimization",
+      "status": "built",
+      "layer": "Execution",
+      "owner": "Jordan",
+      "description": "Bi-weekly review of all growth initiatives and results.",
+      "owners": ["Jordan"],
+      "links": {
+        "blocked_by": [],
+        "related": ["1.5", "10.6"]
+      },
+      "startDate": "2025-01-15",
+      "dueDate": "2025-02-01",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Established recurring bi-weekly meetings"
     },
     "5.1": {
       "id": "5.1",
-      "name": "Marketing Calendar Management",
+      "role": "5",
+      "name": "Product Roadmap Planning",
       "status": "not_started",
-      "phase": null,
-      "wave": 4,
-      "shortcut": "/calendar-review"
+      "layer": "Execution",
+      "owner": "Alex",
+      "description": "Define product vision and quarterly roadmap aligned with growth strategy.",
+      "owners": ["Alex"],
+      "links": {
+        "blocked_by": ["1.1"],
+        "related": ["5.2", "8.6"]
+      },
+      "startDate": null,
+      "dueDate": "2025-02-28",
+      "effort": "medium",
+      "priority": "critical",
+      "notes": "Q2 roadmap planning"
     },
     "5.2": {
       "id": "5.2",
-      "name": "Campaign Orchestration",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/campaign-plan"
+      "role": "5",
+      "name": "Feature Gap Analysis",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Alex",
+      "description": "Analyze competitive features and identify gaps in our product.",
+      "owners": ["Alex"],
+      "progress": 50,
+      "links": {
+        "blocked_by": [],
+        "related": ["5.3", "7.2"]
+      },
+      "startDate": "2025-01-20",
+      "dueDate": "2025-02-28",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Competitive analysis in progress"
     },
     "5.3": {
       "id": "5.3",
-      "name": "Social Calendar Production",
-      "status": "not_started",
-      "phase": null,
-      "wave": 4,
-      "shortcut": null
+      "role": "5",
+      "name": "Development Sprint Structure",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Alex",
+      "description": "Organize engineering into 2-week sprints with clear deliverables.",
+      "owners": ["Alex"],
+      "progress": 60,
+      "links": {
+        "blocked_by": [],
+        "related": ["5.4", "4.2"]
+      },
+      "startDate": "2025-01-15",
+      "dueDate": "2025-03-01",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Moved to Jira for sprint planning"
     },
     "5.4": {
       "id": "5.4",
-      "name": "Event Activation Planning & ROI",
-      "status": "not_started",
-      "phase": null,
-      "wave": 5,
-      "shortcut": "/social-pulse"
+      "role": "5",
+      "name": "API Expansion",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Alex",
+      "description": "Build out REST and GraphQL APIs for third-party integrations.",
+      "owners": ["Alex"],
+      "progress": 45,
+      "links": {
+        "blocked_by": [],
+        "related": ["5.5", "4.10"]
+      },
+      "startDate": "2025-01-25",
+      "dueDate": "2025-04-15",
+      "effort": "large",
+      "priority": "high",
+      "notes": "GraphQL schema design in progress"
     },
     "5.5": {
       "id": "5.5",
-      "name": "Social Listening & Competitive Intelligence",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/ambassador-pulse"
+      "role": "5",
+      "name": "Performance Optimization",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Alex",
+      "description": "Improve application load times and responsiveness.",
+      "owners": ["Alex"],
+      "progress": 40,
+      "links": {
+        "blocked_by": [],
+        "related": ["5.6", "6.4"]
+      },
+      "startDate": "2025-01-22",
+      "dueDate": "2025-04-01",
+      "effort": "large",
+      "priority": "medium",
+      "notes": "Profiling and caching optimization"
     },
     "5.6": {
       "id": "5.6",
-      "name": "Creator & Ambassador Partnership Management",
+      "role": "5",
+      "name": "Mobile App Enhancement",
       "status": "not_started",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": "/event-brief"
+      "layer": "Execution",
+      "owner": "Alex",
+      "description": "Build native mobile app features for better on-the-go access.",
+      "owners": ["Alex"],
+      "links": {
+        "blocked_by": ["5.4"],
+        "related": ["5.7", "7.8"]
+      },
+      "startDate": null,
+      "dueDate": "2025-05-30",
+      "effort": "large",
+      "priority": "medium",
+      "notes": "iOS and Android native apps"
     },
     "5.7": {
       "id": "5.7",
-      "name": "Sprout Social Integration Management",
+      "role": "5",
+      "name": "Security & Compliance",
       "status": "in_progress",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": null
+      "layer": "Execution",
+      "owner": "Alex",
+      "description": "Implement SOC2, GDPR, and other compliance requirements.",
+      "owners": ["Alex"],
+      "progress": 50,
+      "links": {
+        "blocked_by": [],
+        "related": ["5.8", "6.5"]
+      },
+      "startDate": "2025-01-15",
+      "dueDate": "2025-06-30",
+      "effort": "large",
+      "priority": "critical",
+      "notes": "Audit scheduled for Q2"
     },
     "5.8": {
       "id": "5.8",
-      "name": "Content Production Coordination",
-      "status": "not_started",
-      "phase": 1,
-      "wave": "DEFER",
-      "shortcut": "/content-roi-estimate"
+      "role": "5",
+      "name": "Data Import/Export Tooling",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Alex",
+      "description": "Build tools for customers to import and export their data.",
+      "owners": ["Alex"],
+      "progress": 55,
+      "links": {
+        "blocked_by": [],
+        "related": ["5.9", "7.4"]
+      },
+      "startDate": "2025-02-01",
+      "dueDate": "2025-03-31",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "CSV, Excel, API-based imports"
     },
     "5.9": {
       "id": "5.9",
-      "name": "Marketing Activity ROI Retrospective",
-      "status": "not_started",
-      "phase": 1,
-      "wave": "DEFER",
-      "shortcut": null
+      "role": "5",
+      "name": "Webhook & Event System",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Alex",
+      "description": "Enable webhooks for real-time event notifications.",
+      "owners": ["Alex"],
+      "progress": 60,
+      "links": {
+        "blocked_by": [],
+        "related": ["5.10", "4.2"]
+      },
+      "startDate": "2025-02-03",
+      "dueDate": "2025-04-15",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Event-driven architecture"
+    },
+    "5.10": {
+      "id": "5.10",
+      "role": "5",
+      "name": "Product Engineering Review & Iteration",
+      "status": "live",
+      "layer": "Execution",
+      "owner": "Alex",
+      "description": "Weekly product review and sprint retrospective.",
+      "owners": ["Alex"],
+      "links": {
+        "blocked_by": [],
+        "related": ["1.5", "10.6"]
+      },
+      "startDate": "2025-01-10",
+      "dueDate": "2025-02-07",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Every Friday 2pm PT"
     },
     "6.1": {
       "id": "6.1",
-      "name": "Shopify Theme Version Control & Deployment Pipeline",
-      "status": "in_progress",
-      "phase": null,
-      "wave": 2,
-      "shortcut": null
+      "role": "6",
+      "name": "Infrastructure Audit",
+      "status": "not_started",
+      "layer": "Execution",
+      "owner": "Casey",
+      "description": "Comprehensive review of current infrastructure setup.",
+      "owners": ["Casey"],
+      "links": {
+        "blocked_by": [],
+        "related": ["6.2", "6.3"]
+      },
+      "startDate": null,
+      "dueDate": "2025-02-28",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "AWS and networking assessment"
     },
     "6.2": {
       "id": "6.2",
-      "name": "Content & SEO Change Pipeline",
-      "status": "not_started",
-      "phase": null,
-      "wave": 2,
-      "shortcut": null
+      "role": "6",
+      "name": "Disaster Recovery Plan",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Casey",
+      "description": "Design and implement disaster recovery procedures.",
+      "owners": ["Casey"],
+      "progress": 35,
+      "links": {
+        "blocked_by": ["3.3"],
+        "related": ["6.3", "6.4"]
+      },
+      "startDate": "2025-02-03",
+      "dueDate": "2025-04-15",
+      "effort": "large",
+      "priority": "critical",
+      "notes": "RTO/RPO targets defined"
     },
     "6.3": {
       "id": "6.3",
-      "name": "Experimentation System (A/B Testing Lifecycle)",
-      "status": "not_started",
-      "phase": 2,
-      "wave": 5,
-      "shortcut": null
+      "role": "6",
+      "name": "Security Hardening",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Casey",
+      "description": "Implement security best practices across infrastructure.",
+      "owners": ["Casey"],
+      "progress": 45,
+      "links": {
+        "blocked_by": [],
+        "related": ["6.4", "5.7"]
+      },
+      "startDate": "2025-02-05",
+      "dueDate": "2025-04-30",
+      "effort": "large",
+      "priority": "critical",
+      "notes": "WAF, VPC, encryption configuration"
     },
     "6.4": {
       "id": "6.4",
-      "name": "Optimization Review, Approval & Deploy Workflow (Review Portal)",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 2,
-      "shortcut": "/growth new"
+      "role": "6",
+      "name": "Scaling & Performance",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Casey",
+      "description": "Implement auto-scaling and load balancing for growth.",
+      "owners": ["Casey"],
+      "progress": 40,
+      "links": {
+        "blocked_by": [],
+        "related": ["6.5", "5.5"]
+      },
+      "startDate": "2025-02-08",
+      "dueDate": "2025-04-30",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Kubernetes cluster optimization"
     },
     "6.5": {
       "id": "6.5",
-      "name": "Production Monitoring & Alert Response",
-      "status": "not_started",
-      "phase": null,
-      "wave": 2,
-      "shortcut": "/lighthouse-report"
+      "role": "6",
+      "name": "Monitoring & Alerting",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Casey",
+      "description": "Set up comprehensive monitoring and alerting systems.",
+      "owners": ["Casey"],
+      "progress": 50,
+      "links": {
+        "blocked_by": [],
+        "related": ["6.6", "5.7"]
+      },
+      "startDate": "2025-02-10",
+      "dueDate": "2025-03-31",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Datadog and PagerDuty setup"
     },
     "6.6": {
       "id": "6.6",
-      "name": "Incident Response, Safe Mode & Rollback",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": null
+      "role": "6",
+      "name": "Database Optimization",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Casey",
+      "description": "Optimize database performance and reliability.",
+      "owners": ["Casey"],
+      "progress": 30,
+      "links": {
+        "blocked_by": [],
+        "related": ["6.7", "5.5"]
+      },
+      "startDate": "2025-02-12",
+      "dueDate": "2025-05-01",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Query optimization and indexing"
     },
     "6.7": {
       "id": "6.7",
-      "name": "Opportunity Identification & Scoring",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 2,
-      "shortcut": null
+      "role": "6",
+      "name": "Backup & Data Retention",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Casey",
+      "description": "Implement comprehensive backup and retention policies.",
+      "owners": ["Casey"],
+      "progress": 55,
+      "links": {
+        "blocked_by": [],
+        "related": ["6.8", "6.2"]
+      },
+      "startDate": "2025-02-14",
+      "dueDate": "2025-03-31",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "3-2-1 backup strategy"
     },
     "6.8": {
       "id": "6.8",
-      "name": "Creative Brief Generation for Web Content (Streamlined)",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/creative-brief"
-    },
-    "6.9": {
-      "id": "6.9",
-      "name": "Learning Notes Production (Simplified)",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/learning-record"
+      "role": "6",
+      "name": "Infrastructure Review & Optimization",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Casey",
+      "description": "Monthly infrastructure health review and optimization.",
+      "owners": ["Casey"],
+      "progress": 10,
+      "links": {
+        "blocked_by": [],
+        "related": ["1.5", "10.6"]
+      },
+      "startDate": "2025-02-20",
+      "dueDate": "2025-03-20",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Recurring monthly"
     },
     "7.1": {
       "id": "7.1",
-      "name": "ChangeSet Lifecycle Management",
-      "status": "in_progress",
-      "phase": null,
-      "wave": 2,
-      "shortcut": "/new-changeset"
+      "role": "7",
+      "name": "Customer Feedback System",
+      "status": "not_started",
+      "layer": "Execution",
+      "owner": "Sam",
+      "description": "Implement system to collect and analyze customer feedback.",
+      "owners": ["Sam"],
+      "links": {
+        "blocked_by": [],
+        "related": ["7.2", "4.1"]
+      },
+      "startDate": null,
+      "dueDate": "2025-03-15",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Surveys, interviews, and usage analysis"
     },
     "7.2": {
       "id": "7.2",
-      "name": "Economics Estimation (3-tier model)",
+      "role": "7",
+      "name": "Competitive Feature Tracking",
       "status": "not_started",
-      "phase": null,
-      "wave": 2,
-      "shortcut": null
+      "layer": "Execution",
+      "owner": "Sam",
+      "description": "Track competitor features and customer expectations.",
+      "owners": ["Sam"],
+      "links": {
+        "blocked_by": [],
+        "related": ["7.3", "5.2"]
+      },
+      "startDate": null,
+      "dueDate": "2025-03-20",
+      "effort": "small",
+      "priority": "medium",
+      "notes": "Competitive intelligence dashboard"
     },
     "7.3": {
       "id": "7.3",
-      "name": "Klaviyo Email/SMS Operations",
-      "status": "in_progress",
-      "phase": null,
-      "wave": 4,
-      "shortcut": "/email-draft"
+      "role": "7",
+      "name": "Onboarding Optimization",
+      "status": "not_started",
+      "layer": "Execution",
+      "owner": "Sam",
+      "description": "Improve new customer onboarding experience.",
+      "owners": ["Sam"],
+      "links": {
+        "blocked_by": [],
+        "related": ["7.4", "2.2"]
+      },
+      "startDate": null,
+      "dueDate": "2025-04-15",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Guided setup and documentation"
     },
     "7.4": {
       "id": "7.4",
-      "name": "Recharge Subscription Operations",
+      "role": "7",
+      "name": "Support Knowledge Base",
       "status": "not_started",
-      "phase": 1,
-      "wave": 4,
-      "shortcut": null
+      "layer": "Execution",
+      "owner": "Sam",
+      "description": "Build comprehensive help documentation and support portal.",
+      "owners": ["Sam"],
+      "links": {
+        "blocked_by": [],
+        "related": ["7.5", "5.8"]
+      },
+      "startDate": null,
+      "dueDate": "2025-04-30",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Video tutorials and knowledge base"
     },
     "7.5": {
       "id": "7.5",
-      "name": "ChangeSet Measurement & Auto-Close",
+      "role": "7",
+      "name": "Churn Analysis & Prevention",
       "status": "not_started",
-      "phase": 1,
-      "wave": 4,
-      "shortcut": "/changeset-measurement-sweep"
+      "layer": "Execution",
+      "owner": "Sam",
+      "description": "Analyze churn patterns and implement prevention strategies.",
+      "owners": ["Sam"],
+      "links": {
+        "blocked_by": ["3.2"],
+        "related": ["7.6", "4.5"]
+      },
+      "startDate": null,
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Cohort analysis and intervention testing"
     },
     "7.6": {
       "id": "7.6",
-      "name": "Compliance Engine (Simplified Validation Process)",
+      "role": "7",
+      "name": "Expansion Revenue Insights",
       "status": "not_started",
-      "phase": 1,
-      "wave": "DEFER",
-      "shortcut": null
+      "layer": "Execution",
+      "owner": "Sam",
+      "description": "Identify and nurture expansion revenue opportunities.",
+      "owners": ["Sam"],
+      "links": {
+        "blocked_by": ["3.2"],
+        "related": ["7.7", "4.6"]
+      },
+      "startDate": null,
+      "dueDate": "2025-05-15",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "Usage analysis and upsell opportunities"
     },
     "7.7": {
       "id": "7.7",
-      "name": "Creative Sourcing & ChangeSet Integration (Simplified)",
+      "role": "7",
+      "name": "Account Health Monitoring",
       "status": "not_started",
-      "phase": 1,
-      "wave": "DEFER",
-      "shortcut": "/creative-brief"
+      "layer": "Execution",
+      "owner": "Sam",
+      "description": "Proactive monitoring of customer account health metrics.",
+      "owners": ["Sam"],
+      "links": {
+        "blocked_by": ["3.2"],
+        "related": ["7.8", "9.9"]
+      },
+      "startDate": null,
+      "dueDate": "2025-05-01",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Automated alerts for anomalies"
     },
     "7.8": {
       "id": "7.8",
-      "name": "Partner Listing Packet Management",
+      "role": "7",
+      "name": "Feature Adoption Tracking",
       "status": "not_started",
-      "phase": 1,
-      "wave": "DEFER",
-      "shortcut": null
+      "layer": "Execution",
+      "owner": "Sam",
+      "description": "Track feature adoption and engagement metrics.",
+      "owners": ["Sam"],
+      "links": {
+        "blocked_by": [],
+        "related": ["7.9", "5.6"]
+      },
+      "startDate": null,
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "In-app analytics and cohort tracking"
     },
     "7.9": {
       "id": "7.9",
-      "name": "Graduation ChangeSet Processing",
+      "role": "7",
+      "name": "Customer Success Review & Iteration",
       "status": "not_started",
-      "phase": 2,
-      "wave": 4,
-      "shortcut": null
+      "layer": "Execution",
+      "owner": "Sam",
+      "description": "Weekly review of customer metrics and success initiatives.",
+      "owners": ["Sam"],
+      "links": {
+        "blocked_by": [],
+        "related": ["1.5", "10.6"]
+      },
+      "startDate": null,
+      "dueDate": "2025-02-28",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Recurring weekly"
     },
     "8.1": {
       "id": "8.1",
-      "name": "Daily Paid Media Pulse (/paid-media-pulse)",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 4,
-      "shortcut": "/paid-media-pulse"
+      "role": "8",
+      "name": "Content Marketing Strategy",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Morgan",
+      "description": "Develop comprehensive content marketing plan.",
+      "owners": ["Morgan"],
+      "progress": 40,
+      "links": {
+        "blocked_by": [],
+        "related": ["8.2", "11.1"]
+      },
+      "startDate": "2025-01-20",
+      "dueDate": "2025-03-15",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Blog, whitepapers, and case studies"
     },
     "8.2": {
       "id": "8.2",
-      "name": "Unified Cross-Platform Dashboard Management",
-      "status": "consolidated",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": null
+      "role": "8",
+      "name": "SEO Optimization",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Morgan",
+      "description": "Optimize website for organic search visibility.",
+      "owners": ["Morgan"],
+      "progress": 35,
+      "links": {
+        "blocked_by": [],
+        "related": ["8.3", "11.2"]
+      },
+      "startDate": "2025-02-01",
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Keyword research and technical SEO"
     },
     "8.3": {
       "id": "8.3",
-      "name": "Budget Reallocation Recommendations",
-      "status": "not_started",
-      "phase": 2,
-      "wave": 4,
-      "shortcut": null
+      "role": "8",
+      "name": "Paid Media Campaigns",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Morgan",
+      "description": "Set up and optimize Google Ads, LinkedIn, and Facebook campaigns.",
+      "owners": ["Morgan"],
+      "progress": 50,
+      "links": {
+        "blocked_by": [],
+        "related": ["8.4", "4.7"]
+      },
+      "startDate": "2025-02-03",
+      "dueDate": "2025-05-01",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Multi-channel paid strategy"
     },
     "8.4": {
       "id": "8.4",
-      "name": "Creative Freshness Pre-Condition",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 4,
-      "shortcut": "/creative-brief"
+      "role": "8",
+      "name": "Event Marketing",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Morgan",
+      "description": "Host and sponsor events to build brand awareness.",
+      "owners": ["Morgan"],
+      "progress": 25,
+      "links": {
+        "blocked_by": [],
+        "related": ["8.5", "4.9"]
+      },
+      "startDate": "2025-02-08",
+      "dueDate": "2025-06-30",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "Q1 conference sponsorships planned"
     },
     "8.5": {
       "id": "8.5",
-      "name": "Autonomous Optimization Rules (Phase 3)",
-      "status": "not_started",
-      "phase": 3,
-      "wave": "DEFER",
-      "shortcut": null
+      "role": "8",
+      "name": "Partnership Marketing",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Morgan",
+      "description": "Develop co-marketing programs with partners.",
+      "owners": ["Morgan"],
+      "progress": 20,
+      "links": {
+        "blocked_by": [],
+        "related": ["8.6", "4.10"]
+      },
+      "startDate": "2025-02-10",
+      "dueDate": "2025-05-15",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "Identifying co-marketing opportunities"
     },
     "8.6": {
       "id": "8.6",
-      "name": "Inventory-Aware Spend Constraints",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 4,
-      "shortcut": null
+      "role": "8",
+      "name": "Marketing Analytics",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Morgan",
+      "description": "Set up marketing attribution and performance tracking.",
+      "owners": ["Morgan"],
+      "progress": 30,
+      "links": {
+        "blocked_by": ["2.7"],
+        "related": ["8.7", "9.2"]
+      },
+      "startDate": "2025-02-12",
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "HubSpot and analytics integration"
     },
     "8.7": {
       "id": "8.7",
-      "name": "[CONSOLIDATED \u2192 3.4]",
-      "status": "consolidated",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": null
-    },
-    "8.8": {
-      "id": "8.8",
-      "name": "Experiment Results \u2192 Performance Memory Reporting",
-      "status": "not_started",
-      "phase": 2,
-      "wave": "DEFER",
-      "shortcut": "/learning-record"
+      "role": "8",
+      "name": "Demand Generation Review & Optimization",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Morgan",
+      "description": "Weekly review of demand generation metrics and campaigns.",
+      "owners": ["Morgan"],
+      "progress": 15,
+      "links": {
+        "blocked_by": [],
+        "related": ["1.5", "10.6"]
+      },
+      "startDate": "2025-02-20",
+      "dueDate": "2025-03-20",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Recurring weekly"
     },
     "9.1": {
       "id": "9.1",
-      "name": "Daily Pulse & Morning Dashboard Review",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 4,
-      "shortcut": "/amazon-pulse"
+      "role": "9",
+      "name": "Sales Process Optimization",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Riley",
+      "description": "Streamline and optimize the sales process.",
+      "owners": ["Riley"],
+      "progress": 35,
+      "links": {
+        "blocked_by": ["3.1"],
+        "related": ["9.2", "4.4"]
+      },
+      "startDate": "2025-02-01",
+      "dueDate": "2025-04-15",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Sales playbook documentation"
     },
     "9.2": {
       "id": "9.2",
-      "name": "Listing Optimization & Enhanced Content Management",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 4,
-      "shortcut": null
+      "role": "9",
+      "name": "Sales Enablement",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Riley",
+      "description": "Build tools and resources to empower sales team.",
+      "owners": ["Riley"],
+      "progress": 40,
+      "links": {
+        "blocked_by": ["2.7"],
+        "related": ["9.3", "8.6"]
+      },
+      "startDate": "2025-02-03",
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Sales collateral and training"
     },
     "9.3": {
       "id": "9.3",
-      "name": "Amazon Listing Audit",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/amazon-listing-audit"
+      "role": "9",
+      "name": "Expansion Revenue Strategy",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Riley",
+      "description": "Develop strategy to increase ACV through expansion.",
+      "owners": ["Riley"],
+      "progress": 30,
+      "links": {
+        "blocked_by": ["3.2"],
+        "related": ["9.4", "4.6"]
+      },
+      "startDate": "2025-02-05",
+      "dueDate": "2025-05-01",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Upsell and cross-sell strategy"
     },
     "9.4": {
       "id": "9.4",
-      "name": "Search Intelligence & Keyword Management",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/amazon-search-intel"
+      "role": "9",
+      "name": "Customer Segmentation Strategy",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Riley",
+      "description": "Develop targeted sales strategies for different customer segments.",
+      "owners": ["Riley"],
+      "progress": 25,
+      "links": {
+        "blocked_by": ["2.8"],
+        "related": ["9.5", "7.3"]
+      },
+      "startDate": "2025-02-08",
+      "dueDate": "2025-05-15",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "SMB, Mid-market, and Enterprise segments"
     },
     "9.5": {
       "id": "9.5",
-      "name": "Amazon Advertising Budget & Bid Management",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 4,
-      "shortcut": null
+      "role": "9",
+      "name": "Pricing Strategy & Testing",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Riley",
+      "description": "Develop and test pricing models.",
+      "owners": ["Riley"],
+      "progress": 20,
+      "links": {
+        "blocked_by": ["4.1"],
+        "related": ["9.6", "4.8"]
+      },
+      "startDate": "2025-02-10",
+      "dueDate": "2025-05-30",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Tiered pricing and usage-based models"
     },
     "9.6": {
       "id": "9.6",
-      "name": "Amazon Review Intelligence & Response Management",
-      "status": "not_started",
-      "phase": 1,
-      "wave": "DEFER",
-      "shortcut": "/amazon-review-digest"
+      "role": "9",
+      "name": "Retention Strategy",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Riley",
+      "description": "Implement strategies to improve customer retention.",
+      "owners": ["Riley"],
+      "progress": 35,
+      "links": {
+        "blocked_by": ["3.2"],
+        "related": ["9.7", "7.5"]
+      },
+      "startDate": "2025-02-12",
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Loyalty program and engagement initiatives"
     },
     "9.7": {
       "id": "9.7",
-      "name": "Amazon Competitive Intelligence & Market Analysis",
-      "status": "not_started",
-      "phase": 1,
-      "wave": "DEFER",
-      "shortcut": "/amazon-search-intel"
+      "role": "9",
+      "name": "Win/Loss Analysis",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Riley",
+      "description": "Analyze reasons for won and lost deals.",
+      "owners": ["Riley"],
+      "progress": 25,
+      "links": {
+        "blocked_by": [],
+        "related": ["9.8", "4.1"]
+      },
+      "startDate": "2025-02-14",
+      "dueDate": "2025-05-01",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "Customer interviews and feedback"
     },
     "9.8": {
       "id": "9.8",
-      "name": "[CONSOLIDATED into Process 3.4]",
-      "status": "consolidated",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": null
+      "role": "9",
+      "name": "Partner Enablement",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Riley",
+      "description": "Build partner programs and enablement resources.",
+      "owners": ["Riley"],
+      "progress": 15,
+      "links": {
+        "blocked_by": [],
+        "related": ["9.9", "4.10"]
+      },
+      "startDate": "2025-02-16",
+      "dueDate": "2025-06-01",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "Partner onboarding and training"
+    },
+    "9.9": {
+      "id": "9.9",
+      "role": "9",
+      "name": "Revenue Operations Review & Optimization",
+      "status": "in_progress",
+      "layer": "Execution",
+      "owner": "Riley",
+      "description": "Bi-weekly review of revenue metrics and initiatives.",
+      "owners": ["Riley"],
+      "progress": 20,
+      "links": {
+        "blocked_by": [],
+        "related": ["1.5", "10.6"]
+      },
+      "startDate": "2025-02-18",
+      "dueDate": "2025-03-18",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Recurring bi-weekly"
     },
     "10.1": {
       "id": "10.1",
-      "name": "System Health Dashboard & Operational Pulse",
-      "status": "not_started",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": null
+      "role": "10",
+      "name": "Financial Model & Forecasting",
+      "status": "in_progress",
+      "layer": "Executive",
+      "owner": "Blake",
+      "description": "Build comprehensive financial model and forecast.",
+      "owners": ["Blake"],
+      "progress": 50,
+      "links": {
+        "blocked_by": ["1.1"],
+        "related": ["10.2", "2.6"]
+      },
+      "startDate": "2025-01-20",
+      "dueDate": "2025-03-15",
+      "effort": "large",
+      "priority": "critical",
+      "notes": "Scenarios built: base case, bull, bear"
     },
     "10.2": {
       "id": "10.2",
-      "name": "ChangeSet Tracking & Deployment Management",
+      "role": "10",
+      "name": "Budget Allocation & Planning",
       "status": "in_progress",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": "/changeset-measurement-sweep"
+      "layer": "Executive",
+      "owner": "Blake",
+      "description": "Allocate budget across functions and initiatives.",
+      "owners": ["Blake"],
+      "progress": 45,
+      "links": {
+        "blocked_by": ["10.1"],
+        "related": ["10.3"]
+      },
+      "startDate": "2025-02-01",
+      "dueDate": "2025-02-28",
+      "effort": "large",
+      "priority": "critical",
+      "notes": "Quarterly budget allocation"
     },
     "10.3": {
       "id": "10.3",
-      "name": "Knowledge Governance & Process Documentation",
-      "status": "not_started",
-      "phase": 1,
-      "wave": 5,
-      "shortcut": "/synthesize-learnings"
+      "role": "10",
+      "name": "Burn Rate Tracking",
+      "status": "in_progress",
+      "layer": "Executive",
+      "owner": "Blake",
+      "description": "Monitor and track monthly burn rate.",
+      "owners": ["Blake"],
+      "progress": 60,
+      "links": {
+        "blocked_by": [],
+        "related": ["10.4"]
+      },
+      "startDate": "2025-01-15",
+      "dueDate": "2025-02-28",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Monthly dashboard updated"
     },
     "10.4": {
       "id": "10.4",
-      "name": "Cross-Role Coordination & Dependency Management",
-      "status": "not_started",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": null
+      "role": "10",
+      "name": "Milestone Planning & Tracking",
+      "status": "in_progress",
+      "layer": "Executive",
+      "owner": "Blake",
+      "description": "Define and track milestones to next funding round.",
+      "owners": ["Blake"],
+      "progress": 40,
+      "links": {
+        "blocked_by": ["10.1"],
+        "related": ["10.5"]
+      },
+      "startDate": "2025-02-01",
+      "dueDate": "2025-03-31",
+      "effort": "medium",
+      "priority": "critical",
+      "notes": "Series A milestones defined"
     },
     "10.5": {
       "id": "10.5",
-      "name": "[CONSOLIDATED into Process 3.5]",
-      "status": "consolidated",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": null
+      "role": "10",
+      "name": "Investor Relations",
+      "status": "in_progress",
+      "layer": "Executive",
+      "owner": "Blake",
+      "description": "Manage investor communications and reporting.",
+      "owners": ["Blake"],
+      "progress": 35,
+      "links": {
+        "blocked_by": ["10.1"],
+        "related": ["10.6"]
+      },
+      "startDate": "2025-02-05",
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Monthly investor updates"
     },
     "10.6": {
       "id": "10.6",
-      "name": "Meeting Cadence & Team Communication",
-      "status": "not_started",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": null
+      "role": "10",
+      "name": "Finance & Planning Review & Optimization",
+      "status": "in_progress",
+      "layer": "Executive",
+      "owner": "Blake",
+      "description": "Monthly financial review and forecasting updates.",
+      "owners": ["Blake"],
+      "progress": 25,
+      "links": {
+        "blocked_by": [],
+        "related": ["1.5", "8.7"]
+      },
+      "startDate": "2025-02-20",
+      "dueDate": "2025-03-20",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Recurring monthly"
     },
-    "10.7": {
-      "id": "10.7",
-      "name": "Onboarding & Team Member Continuity",
-      "status": "not_started",
-      "phase": null,
-      "wave": "DEFER",
-      "shortcut": null
+    "11.1": {
+      "id": "11.1",
+      "role": "11",
+      "name": "Brand Identity Development",
+      "status": "in_progress",
+      "layer": "Executive",
+      "owner": "Taylor",
+      "description": "Define brand positioning, voice, and visual identity.",
+      "owners": ["Taylor"],
+      "progress": 50,
+      "links": {
+        "blocked_by": [],
+        "related": ["11.2", "8.1"]
+      },
+      "startDate": "2025-01-25",
+      "dueDate": "2025-03-15",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Brand guidelines document in progress"
+    },
+    "11.2": {
+      "id": "11.2",
+      "role": "11",
+      "name": "Website Redesign",
+      "status": "in_progress",
+      "layer": "Executive",
+      "owner": "Taylor",
+      "description": "Redesign website to reflect brand and improve UX.",
+      "owners": ["Taylor"],
+      "progress": 40,
+      "links": {
+        "blocked_by": ["11.1"],
+        "related": ["11.3", "8.2"]
+      },
+      "startDate": "2025-02-03",
+      "dueDate": "2025-05-01",
+      "effort": "large",
+      "priority": "high",
+      "notes": "Figma designs approved"
+    },
+    "11.3": {
+      "id": "11.3",
+      "role": "11",
+      "name": "Culture Documentation",
+      "status": "in_progress",
+      "layer": "Executive",
+      "owner": "Taylor",
+      "description": "Document company values, mission, and culture.",
+      "owners": ["Taylor"],
+      "progress": 35,
+      "links": {
+        "blocked_by": [],
+        "related": ["11.4"]
+      },
+      "startDate": "2025-02-05",
+      "dueDate": "2025-03-31",
+      "effort": "medium",
+      "priority": "medium",
+      "notes": "Culture handbook in development"
+    },
+    "11.4": {
+      "id": "11.4",
+      "role": "11",
+      "name": "Hiring & Onboarding Strategy",
+      "status": "in_progress",
+      "layer": "Executive",
+      "owner": "Taylor",
+      "description": "Design hiring process and employee onboarding program.",
+      "owners": ["Taylor"],
+      "progress": 30,
+      "links": {
+        "blocked_by": [],
+        "related": ["11.5"]
+      },
+      "startDate": "2025-02-08",
+      "dueDate": "2025-04-30",
+      "effort": "medium",
+      "priority": "high",
+      "notes": "Recruiting process and onboarding checklist"
+    },
+    "11.5": {
+      "id": "11.5",
+      "role": "11",
+      "name": "Brand & Culture Review & Optimization",
+      "status": "in_progress",
+      "layer": "Executive",
+      "owner": "Taylor",
+      "description": "Monthly review of brand initiatives and culture.",
+      "owners": ["Taylor"],
+      "progress": 10,
+      "links": {
+        "blocked_by": [],
+        "related": ["1.5", "10.6"]
+      },
+      "startDate": "2025-02-22",
+      "dueDate": "2025-03-22",
+      "effort": "small",
+      "priority": "high",
+      "notes": "Recurring monthly"
     }
   }
 }
