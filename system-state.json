@@ -26,9 +26,9 @@
       ],
       "stats": {
         "total": 5,
-        "not_started": 5,
+        "not_started": 4,
         "in_progress": 0,
-        "built": 0,
+        "built": 1,
         "live": 0,
         "consolidated": 0
       }
@@ -56,8 +56,8 @@
       ],
       "stats": {
         "total": 10,
-        "not_started": 9,
-        "in_progress": 1,
+        "not_started": 7,
+        "in_progress": 3,
         "built": 0,
         "live": 0,
         "consolidated": 0
@@ -114,8 +114,8 @@
       ],
       "stats": {
         "total": 9,
-        "not_started": 9,
-        "in_progress": 0,
+        "not_started": 8,
+        "in_progress": 1,
         "built": 0,
         "live": 0,
         "consolidated": 0
@@ -172,8 +172,8 @@
       ],
       "stats": {
         "total": 9,
-        "not_started": 9,
-        "in_progress": 0,
+        "not_started": 7,
+        "in_progress": 2,
         "built": 0,
         "live": 0,
         "consolidated": 0
@@ -255,8 +255,8 @@
       ],
       "stats": {
         "total": 7,
-        "not_started": 6,
-        "in_progress": 0,
+        "not_started": 5,
+        "in_progress": 1,
         "built": 0,
         "live": 0,
         "consolidated": 1
@@ -284,8 +284,8 @@
       ],
       "stats": {
         "total": 9,
-        "not_started": 9,
-        "in_progress": 0,
+        "not_started": 8,
+        "in_progress": 1,
         "built": 0,
         "live": 0,
         "consolidated": 0
@@ -763,15 +763,15 @@
   "stats": {
     "totalProcesses": 89,
     "statusCounts": {
-      "not_started": 81,
-      "in_progress": 4,
-      "built": 0,
+      "not_started": 72,
+      "in_progress": 11,
+      "built": 2,
       "live": 0,
       "consolidated": 4
     },
     "phaseCounts": {
-      "0": 27,
-      "1": 48,
+      "0": 30,
+      "1": 49,
       "2": 9,
       "3": 1
     },
@@ -784,8 +784,8 @@
       "DEFER": 27
     },
     "shortcutCount": 43,
-    "built": 1,
-    "not_started": 73,
+    "built": 2,
+    "not_started": 72,
     "in_progress": 11
   },
   "infrastructure": {
@@ -1153,12 +1153,28 @@
         "notes": "Connected via Slack MCP extension"
       },
       "polar_analytics": {
+        "name": "Polar Analytics MCP",
         "status": "connected",
-        "note": "33 connectors \u2014 cross-channel revenue, orders, spend, attribution"
+        "provides": "Unified cross-channel analytics \u2014 33 connectors covering revenue, orders, spend, attribution, sessions, subscriptions",
+        "used_by": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.4",
+          "2.5",
+          "8.1"
+        ]
       },
       "klaviyo_direct": {
+        "name": "Klaviyo Direct MCP",
         "status": "connected",
-        "note": "Direct API \u2014 campaigns, flows, profiles, segments, metrics"
+        "provides": "Direct API access \u2014 campaigns, flows, profiles, segments, metrics, templates",
+        "used_by": [
+          "7.3",
+          "7.4",
+          "7.5"
+        ]
       }
     },
     "platforms": {
@@ -1202,7 +1218,7 @@
       "id": "1.1",
       "name": "Morning Health Check & Pulse Review",
       "status": "built",
-      "phase": "operational",
+      "phase": null,
       "wave": 1,
       "shortcut": "/daily-pulse + /optimization-status + /changeset-review"
     },
