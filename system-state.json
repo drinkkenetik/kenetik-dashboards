@@ -2,7 +2,7 @@
   "metadata": {
     "version": "3.2.0",
     "spec_version": "KGS Virtual Team v3.2",
-    "last_updated": "2026-03-08T16:25:59Z",
+    "last_updated": "2026-03-08T22:40:06.340840Z",
     "generated_by": "kgs-dashboard-rebuild",
     "total_roles": 12,
     "total_processes": 98,
@@ -30,8 +30,8 @@
         "1.4",
         "1.5"
       ],
-      "emoji": "\ud83d\udc51",
-      "mission": "Sets optimization rules, defines what 'good' looks like, decides when system earns more autonomy. Synthesizes 13 domain scans into unified daily intelligence through a three-layer architecture (domain scans \u2192 CGO synthesis \u2192 execution).",
+      "emoji": "👑",
+      "mission": "Sets optimization rules, defines what 'good' looks like, decides when system earns more autonomy. Synthesizes 13 domain scans into unified daily intelligence through a three-layer architecture (domain scans → CGO synthesis → execution).",
       "stats": {
         "built": 5
       }
@@ -55,8 +55,8 @@
         "2.9",
         "2.10"
       ],
-      "emoji": "\ud83d\udcca",
-      "mission": "Owns the entire Data Brain \u2014 unified data access, automated intelligence, strategic decision support. 18+ data sources, 14+ marts, 13 dashboards.",
+      "emoji": "📊",
+      "mission": "Owns the entire Data Brain — unified data access, automated intelligence, strategic decision support. 18+ data sources, 14+ marts, 13 dashboards.",
       "stats": {
         "built": 10
       }
@@ -79,11 +79,10 @@
         "3.8",
         "3.9"
       ],
-      "emoji": "\u2696\ufe0f",
+      "emoji": "⚖️",
       "mission": "Governs ALL system recommendations through the 5-level optimization hierarchy, manages inventory rebalance, connects financial systems, maintains 11+ guardrails.",
       "stats": {
-        "not_started": 1,
-        "built": 8
+        "built": 9
       }
     },
     "creative_strategist": {
@@ -104,7 +103,7 @@
         "4a.8",
         "4a.9"
       ],
-      "emoji": "\ud83c\udfaf",
+      "emoji": "🎨",
       "mission": "Manages Content Intelligence Layer, designs hypothesis testing strategy, generates Creative Brief Objects, orchestrates content flywheel, manages performance memory and skill file evolution, ensures claims compliance.",
       "stats": {
         "built": 4,
@@ -126,8 +125,8 @@
         "4b.5",
         "4b.6"
       ],
-      "emoji": "\ud83e\udd16",
-      "mission": "Autonomous content generation engine \u2014 executes Creative Brief Objects, generates multi-platform content, manages production queue, measures performance, feeds learning back to system. Runs as /generate-content KGS command.",
+      "emoji": "🤖",
+      "mission": "Autonomous content generation engine — executes Creative Brief Objects, generates multi-platform content, manages production queue, measures performance, feeds learning back to system. Runs as /generate-content KGS command.",
       "stats": {
         "built": 6
       }
@@ -150,8 +149,8 @@
         "4c.8",
         "4c.9"
       ],
-      "emoji": "\ud83c\udfac",
-      "mission": "Human-operated creative studio \u2014 complements Larry 2.0's autonomous engine. Katie drives Moe through KGS commands for content requiring human judgment: video scripts, carousels, science distillations, athlete content.",
+      "emoji": "🎬",
+      "mission": "Human-operated creative studio — complements Larry 2.0's autonomous engine. Katie drives Moe through KGS commands for content requiring human judgment: video scripts, carousels, science distillations, athlete content.",
       "stats": {
         "not_started": 9
       }
@@ -174,7 +173,7 @@
         "5.8",
         "5.9"
       ],
-      "emoji": "\ud83d\udcc5",
+      "emoji": "📅",
       "mission": "Manages marketing calendar, orchestrates campaigns, manages social media, coordinates events, manages creator partnerships, integrates Sprout Social, coordinates content production, measures campaign ROI.",
       "stats": {
         "built": 9
@@ -198,7 +197,7 @@
         "6.8",
         "6.9"
       ],
-      "emoji": "\ud83e\uddea",
+      "emoji": "🧪",
       "mission": "Manages Shopify theme versioning, content/SEO changes, A/B testing lifecycle, optimization review and deployment, production monitoring, incident response, and opportunity identification.",
       "stats": {
         "built": 9
@@ -222,7 +221,7 @@
         "7.8",
         "7.9"
       ],
-      "emoji": "\ud83d\udcec",
+      "emoji": "📬",
       "mission": "Manages ChangeSet lifecycle across all execution channels (email, SMS, discounts, creative refresh), estimates economics, operates Klaviyo and Recharge, measures ChangeSet outcomes.",
       "stats": {
         "built": 9
@@ -245,7 +244,7 @@
         "8.7",
         "8.8"
       ],
-      "emoji": "\ud83d\udcb0",
+      "emoji": "💰",
       "mission": "Owns all paid media operations across platforms (Google Ads, Meta, TikTok, Amazon Ads), manages budgets, optimizes creative, maintains autonomy rules and guardrails.",
       "stats": {
         "built": 6,
@@ -269,7 +268,7 @@
         "9.7",
         "9.8"
       ],
-      "emoji": "\ud83d\udce6",
+      "emoji": "📦",
       "mission": "Owns all Amazon advertising operations, listing optimization, performance tracking, and guardrails to ensure profitable growth within the Kenetik ecosystem.",
       "stats": {
         "built": 7,
@@ -292,7 +291,7 @@
         "10.6",
         "10.7"
       ],
-      "emoji": "\ud83d\udd27",
+      "emoji": "🔧",
       "mission": "Tracks system health, manages task coordination across all virtual team members, maintains knowledge governance, ensures continuity and quality of all processes.",
       "stats": {
         "built": 6,
@@ -326,7 +325,7 @@
       "layer": "Executive"
     },
     "1.5": {
-      "name": "Executive Copilot \u2014 Natural Language Query & Synthesis",
+      "name": "Executive Copilot — Natural Language Query & Synthesis",
       "role": "cgo",
       "status": "built",
       "layer": "Executive"
@@ -386,7 +385,7 @@
       "layer": "Intelligence"
     },
     "2.10": {
-      "name": "Executive Copilot Backend \u2014 Natural Language Query Engine",
+      "name": "Executive Copilot Backend — Natural Language Query Engine",
       "role": "data_intelligence",
       "status": "built",
       "layer": "Intelligence"
@@ -394,7 +393,7 @@
     "3.1": {
       "name": "Optimization Hierarchy Governance",
       "role": "ops_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "3.2": {
@@ -788,14 +787,14 @@
       "layer": "Execution"
     },
     "8.7": {
-      "name": "Guardrail Integration (\u2192 3.4)",
+      "name": "Guardrail Integration (→ 3.4)",
       "role": "paid_media",
       "status": "not_started",
       "layer": "Execution",
       "consolidated_into": "3.4"
     },
     "8.8": {
-      "name": "Experiment Results \u2192 Performance Memory Reporting",
+      "name": "Experiment Results → Performance Memory Reporting",
       "role": "paid_media",
       "status": "built",
       "layer": "Execution"
@@ -843,7 +842,7 @@
       "layer": "Execution"
     },
     "9.8": {
-      "name": "Guardrail Integration (\u2192 3.4)",
+      "name": "Guardrail Integration (→ 3.4)",
       "role": "amazon",
       "status": "not_started",
       "layer": "Execution",
@@ -874,7 +873,7 @@
       "layer": "Infrastructure"
     },
     "10.5": {
-      "name": "Edge Case Integration (\u2192 3.5)",
+      "name": "Edge Case Integration (→ 3.5)",
       "role": "project_manager",
       "status": "not_started",
       "layer": "Infrastructure",
@@ -1115,7 +1114,7 @@
           "processes": [
             {
               "id": "8.8",
-              "name": "Experiment Results \u2192 Performance Memory Reporting"
+              "name": "Experiment Results → Performance Memory Reporting"
             }
           ]
         }
@@ -1189,67 +1188,67 @@
     },
     "connections": {
       "shopify_to_data_intelligence": {
-        "name": "shopify \u2192 data_intelligence",
+        "name": "shopify → data_intelligence",
         "status": "active",
         "type": "data_source",
         "provides": "data source"
       },
       "klaviyo_to_channel_execution": {
-        "name": "klaviyo \u2192 channel_execution",
+        "name": "klaviyo → channel_execution",
         "status": "active",
         "type": "execution",
         "provides": "execution"
       },
       "google_ads_to_paid_media": {
-        "name": "google_ads \u2192 paid_media",
+        "name": "google_ads → paid_media",
         "status": "active",
         "type": "execution",
         "provides": "execution"
       },
       "meta_ads_to_paid_media": {
-        "name": "meta_ads \u2192 paid_media",
+        "name": "meta_ads → paid_media",
         "status": "active",
         "type": "execution",
         "provides": "execution"
       },
       "recharge_to_channel_execution": {
-        "name": "recharge \u2192 channel_execution",
+        "name": "recharge → channel_execution",
         "status": "active",
         "type": "execution",
         "provides": "execution"
       },
       "cin7_to_ops_intelligence": {
-        "name": "cin7 \u2192 ops_intelligence",
+        "name": "cin7 → ops_intelligence",
         "status": "active",
         "type": "data_source",
         "provides": "data source"
       },
       "sprout_social_to_marketing_social": {
-        "name": "sprout_social \u2192 marketing_social",
+        "name": "sprout_social → marketing_social",
         "status": "active",
         "type": "execution",
         "provides": "execution"
       },
       "amazon_ads_to_amazon": {
-        "name": "amazon_ads \u2192 amazon",
+        "name": "amazon_ads → amazon",
         "status": "active",
         "type": "execution",
         "provides": "execution"
       },
       "flask_services_to_creative_studio": {
-        "name": "flask_services \u2192 creative_studio",
+        "name": "flask_services → creative_studio",
         "status": "active",
         "type": "execution",
         "provides": "execution"
       },
       "cowork_to_content_producer": {
-        "name": "cowork \u2192 content_producer",
+        "name": "cowork → content_producer",
         "status": "active",
         "type": "orchestration",
         "provides": "orchestration"
       },
       "github_to_project_manager": {
-        "name": "github \u2192 project_manager",
+        "name": "github → project_manager",
         "status": "active",
         "type": "infrastructure",
         "provides": "infrastructure"
@@ -1258,7 +1257,7 @@
   },
   "cgo_architecture": {
     "name": "Three-Tier CGO Architecture",
-    "description": "Domain scans \u2192 CGO synthesis \u2192 execution",
+    "description": "Domain scans → CGO synthesis → execution",
     "tiers": [
       {
         "tier": 1,
@@ -1316,7 +1315,7 @@
       {
         "level": 1,
         "name": "Contribution Margin $",
-        "description": "Revenue + Margin \u2014 top priority, all decisions evaluated here first"
+        "description": "Revenue + Margin — top priority, all decisions evaluated here first"
       },
       {
         "level": 2,
@@ -1336,15 +1335,15 @@
       {
         "level": 5,
         "name": "Brand Equity Protection",
-        "description": "Brand protection floor \u2014 never trade brand equity for short-term gains"
+        "description": "Brand protection floor — never trade brand equity for short-term gains"
       }
     ]
   },
   "stats": {
     "total_processes": 98,
     "status_breakdown": {
-      "built": 79,
-      "not_started": 19
+      "built": 80,
+      "not_started": 18
     }
   }
 }
