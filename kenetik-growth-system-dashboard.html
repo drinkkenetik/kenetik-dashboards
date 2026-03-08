@@ -62,63 +62,192 @@
             letter-spacing: 0.5px;
         }
 
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .stat {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 12px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--color-blue);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
-
-        /* Filters */
-        .filters {
+        /* Summary Stats Bar */
+        .stats-bar {
             display: flex;
             gap: 12px;
             margin-bottom: 24px;
+            margin-top: 16px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .stat-card-label {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .stat-card-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-card-bar {
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .stat-card-bar-segment {
+            height: 100%;
+            flex: 1;
+        }
+
+        /* Org Chart */
+        .org-chart {
+            margin-bottom: 24px;
+            padding: 20px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .org-chart-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .org-layer {
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .layer-label {
+            font-size: 11px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .org-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .org-line {
+            text-align: center;
+            color: #333;
+            font-size: 14px;
+            line-height: 1;
+            margin: 2px 0;
+        }
+
+        .org-chip {
+            border-radius: 10px;
+            padding: 6px 14px;
+            min-width: 120px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .org-chip:hover {
+            transform: translateY(-1px);
+        }
+
+        .chip-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .chip-count {
+            font-size: 10px;
+            margin-top: 1px;
+            opacity: 0.7;
+        }
+
+        .org-chip-bar {
+            height: 3px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            display: flex;
+            margin-top: 4px;
+        }
+
+        .org-chip-bar-segment {
+            height: 100%;
+            flex: 1;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            position: sticky;
+            top: 0;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            margin-bottom: 40px;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(11, 13, 17, 0.95);
+        }
+
+        .filter-bar-content {
+            display: flex;
+            gap: 20px;
             flex-wrap: wrap;
             align-items: center;
         }
 
         .filter-group {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             align-items: center;
-            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
         }
 
         .filter-button {
+            padding: 8px 14px;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            color: var(--text-primary);
-            padding: 8px 16px;
             border-radius: 6px;
+            color: var(--text-secondary);
             cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
         }
 
         .filter-button:hover {
             border-color: var(--color-blue);
+            color: var(--color-blue);
         }
 
         .filter-button.active {
@@ -127,432 +256,1004 @@
             color: white;
         }
 
-        .search-box {
+        .search-input {
             flex: 1;
             min-width: 200px;
+            padding: 10px 14px;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            color: var(--text-primary);
-            padding: 8px 12px;
             border-radius: 6px;
+            color: var(--text-primary);
             font-size: 0.9rem;
         }
 
-        .search-box::placeholder {
+        .search-input::placeholder {
             color: var(--text-muted);
         }
 
-        /* Roles Section */
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 32px 0 16px 0;
-            color: var(--text-primary);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
+        .search-input:focus {
+            outline: none;
+            border-color: var(--color-blue);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
         }
 
-        .roles-grid {
+        /* Patterns Section */
+        .patterns-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .patterns-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 16px;
-            margin-bottom: 32px;
+            margin-bottom: 30px;
+        }
+
+        .pattern-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .pattern-card:hover {
+            border-color: var(--color-blue);
+        }
+
+        .pattern-card-top {
+            padding: 16px 18px;
+        }
+
+        .pattern-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .pattern-id {
+            width: 28px;
+            height: 28px;
+            background: var(--color-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .pattern-card h3 {
+            font-size: 1rem;
+            flex: 1;
+        }
+
+        .pattern-usage-count {
+            font-size: 0.7rem;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .pattern-desc {
+            color: #999;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .pattern-shortcut {
+            font-size: 0.75rem;
+            font-family: 'SF Mono', 'Consolas', monospace;
+            color: #4ade80;
+            background: rgba(34, 197, 94, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .pattern-accordion {
+            border-top: 1px solid var(--border);
+        }
+
+        .pattern-accordion-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 18px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            transition: background 0.15s;
+        }
+
+        .pattern-accordion-trigger:hover {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .pattern-accordion-trigger .arrow {
+            transition: transform 0.2s;
+            font-size: 0.7rem;
+        }
+
+        .pattern-accordion-trigger.open .arrow {
+            transform: rotate(180deg);
+        }
+
+        .pattern-accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .pattern-accordion-body.open {
+            max-height: 2000px;
+        }
+
+        .pattern-accordion-content {
+            padding: 0 18px 14px;
+        }
+
+        .pattern-step {
+            display: flex;
+            gap: 8px;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .pattern-step:last-child {
+            border-bottom: none;
+        }
+
+        .pattern-step-num {
+            color: var(--color-blue);
+            font-weight: 700;
+            min-width: 20px;
+            flex-shrink: 0;
+        }
+
+        .pattern-role-group {
+            margin-bottom: 10px;
+        }
+
+        .pattern-role-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .pattern-role-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            margin-bottom: 4px;
+        }
+
+        .pattern-role-procs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .pattern-proc-tag {
+            font-size: 0.7rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .pattern-proc-tag:hover {
+            border-color: var(--color-blue);
+            color: var(--color-blue);
+        }
+
+        /* Role Cards Section */
+        .roles-section {
+            margin-bottom: 60px;
         }
 
         .role-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .role-card-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
             cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .role-card:hover {
-            border-color: var(--color-blue);
-            transform: translateY(-2px);
-        }
-
-        .role-header {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .role-card-header:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .role-header-left {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            flex: 1;
+            min-width: 0;
         }
 
         .role-emoji {
             font-size: 1.8rem;
-        }
-
-        .role-name {
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .role-human {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .role-mission {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            line-height: 1.5;
-            margin-bottom: 12px;
-        }
-
-        .role-stats {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid var(--border);
-        }
-
-        .stat-mini {
-            text-align: center;
-        }
-
-        .stat-mini-value {
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-
-        .stat-mini-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .chip-group {
-            display: flex;
-            gap: 8px;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }
-
-        .chip {
-            background: var(--border);
-            color: var(--text-secondary);
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-        }
-
-        .chip-count {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        /* Process Grid */
-        .processes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-
-        .process-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .process-card:hover {
-            border-color: var(--color-blue);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
-        }
-
-        .process-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
-        }
-
-        .process-id {
-            font-weight: 600;
-            color: var(--color-gold);
-        }
-
-        .process-status {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .status-not_started {
-            background: var(--border);
-            color: var(--text-muted);
-        }
-
-        .status-in_progress {
-            background: rgba(251, 191, 36, 0.2);
-            color: var(--color-gold);
-        }
-
-        .status-built {
-            background: rgba(34, 197, 94, 0.2);
-            color: var(--color-green);
-        }
-
-        .status-live {
-            background: rgba(59, 130, 246, 0.2);
-            color: var(--color-blue);
-        }
-
-        .status-consolidated {
-            background: rgba(16, 185, 129, 0.2);
-            color: var(--color-emerald);
-        }
-
-        .process-name {
-            font-weight: 500;
-            font-size: 0.95rem;
-            margin-bottom: 4px;
-            word-break: break-word;
-        }
-
-        .process-meta {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-
-        .process-notes {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.4;
-            margin-bottom: 8px;
-        }
-
-        .process-shortcut {
-            display: inline-block;
-            background: var(--border);
-            color: var(--color-blue);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.75rem;
-        }
-
-        .progress-bar {
-            background: var(--border);
-            height: 4px;
-            border-radius: 2px;
-            margin-top: 8px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            background: linear-gradient(90deg, var(--color-gold), var(--color-blue));
-            height: 100%;
-            transition: width 0.3s;
-        }
-
-        /* Infrastructure Section */
-        .infrastructure-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-
-        .platform-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 12px;
-        }
-
-        .platform-name {
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .health-indicator {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            margin-right: 6px;
-        }
-
-        .health-operational {
-            background: var(--color-green);
-        }
-
-        .health-offline {
-            background: #ef4444;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .modal-content {
-            background-color: var(--bg-card);
-            margin: 50px auto;
-            padding: 20px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            width: 90%;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .close {
-            color: var(--text-secondary);
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover {
-            color: var(--text-primary);
-        }
-
-        .modal-section {
-            margin-bottom: 16px;
-        }
-
-        .modal-section-title {
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .modal-section-content {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .modal-meta {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .meta-item {
-            padding: 8px;
-            background: var(--bg-primary);
-            border-radius: 4px;
-        }
-
-        .meta-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .meta-value {
-            font-weight: 600;
+            flex-shrink: 0;
             margin-top: 2px;
         }
 
+        .role-header-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .role-header-info h2 {
+            font-size: 1.15rem;
+            margin-bottom: 2px;
+        }
+
+        .role-header-dept {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .role-header-mission {
+            font-size: 0.85rem;
+            color: #999;
+            line-height: 1.5;
+            border-left: 2px solid #2a2d37;
+            padding-left: 12px;
+        }
+
+        .role-expand-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            color: var(--text-muted);
+        }
+
+        .role-card.expanded .role-expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .role-card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .role-card.expanded .role-card-content {
+            max-height: 10000px;
+        }
+
+        .role-stats {
+            padding: 8px 24px;
+            display: flex;
+            gap: 24px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-primary);
+        }
+
+        .role-stat-item {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .role-stat-number {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .role-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+        }
+
+        .process-list {
+            padding: 20px 24px;
+            background: var(--bg-primary);
+        }
+
+        .process-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .process-item.expanded {
+            border-color: var(--color-blue);
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        .process-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .process-row:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .process-status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .process-row-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .process-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .process-desc {
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
+        .process-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .process-tag-phase {
+            padding: 3px 7px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .process-tag-wave {
+            padding: 3px 7px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .shortcut-badge {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            padding: 3px 7px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            font-family: 'SF Mono', 'Consolas', monospace;
+            white-space: nowrap;
+        }
+
+        .process-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .process-item.expanded .process-details {
+            max-height: 5000px;
+        }
+
+        .process-details-content {
+            padding: 16px;
+            border-top: 1px solid var(--border);
+            background: var(--bg-card);
+            margin-top: 12px;
+            border-radius: 0 0 6px 6px;
+        }
+
+        .steps-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+        }
+
+        .steps-table th {
+            background: var(--border);
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .steps-table td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        .steps-table tr:nth-child(odd) {
+            background: var(--bg-primary);
+        }
+
+        .steps-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .step-number {
+            font-weight: 600;
+            color: var(--color-blue);
+            min-width: 40px;
+        }
+
+        .step-action {
+            line-height: 1.5;
+        }
+
+        .process-metadata {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .metadata-item {
+            font-size: 0.85rem;
+        }
+
+        .metadata-label {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .metadata-value {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .roles-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .processes-grid {
-                grid-template-columns: 1fr;
-            }
-
             .header h1 {
-                font-size: 1.4rem;
+                font-size: 1.8rem;
             }
 
-            .filter-button {
-                padding: 6px 12px;
-                font-size: 0.85rem;
+            .stats-bar {
+                grid-template-columns: 1fr;
             }
 
-            .stat-mini {
+            .filter-bar-content {
+                flex-direction: column;
+            }
+
+            .search-input {
+                min-width: 100%;
+            }
+
+            .org-row {
+                padding-bottom: 20px;
+            }
+
+            .org-row::after {
+                height: 20px;
+            }
+
+            .org-chip {
+                min-width: 140px;
                 font-size: 0.9rem;
             }
         }
+
+        /* Infrastructure Status Panel */
+        .infra-panel {
+            margin-bottom: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .infra-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .infra-panel-header:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .infra-panel-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+        }
+
+        .infra-panel-summary {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .infra-summary-pill {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .infra-summary-pill.green {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+        }
+
+        .infra-summary-pill.red {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+        }
+
+        .infra-summary-pill.yellow {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+        }
+
+        .infra-summary-pill.blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+        }
+
+        .infra-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .infra-panel.expanded .infra-expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .infra-panel-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .infra-panel.expanded .infra-panel-body {
+            max-height: 2000px;
+        }
+
+        .infra-panel-content {
+            padding: 0 24px 20px;
+        }
+
+        .infra-category {
+            margin-bottom: 20px;
+        }
+
+        .infra-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .infra-category-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .infra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 8px;
+        }
+
+        .infra-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: border-color 0.15s;
+        }
+
+        .infra-item:hover {
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .infra-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .infra-dot.connected, .infra-dot.available, .infra-dot.active {
+            background: var(--color-green);
+            box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+        }
+
+        .infra-dot.not_connected, .infra-dot.not_available, .infra-dot.inactive {
+            background: #ef4444;
+            box-shadow: 0 0 6px rgba(239, 68, 68, 0.3);
+        }
+
+        .infra-dot.degraded {
+            background: var(--color-gold);
+            box-shadow: 0 0 6px rgba(251, 191, 36, 0.4);
+        }
+
+        .infra-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .infra-item-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .infra-item-meta {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .infra-item-priority {
+            font-size: 0.6rem;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            flex-shrink: 0;
+        }
+
+        .infra-item-priority.critical {
+            background: rgba(239, 68, 68, 0.12);
+            color: #f87171;
+        }
+
+        .infra-item-priority.high {
+            background: rgba(251, 191, 36, 0.12);
+            color: #fbbf24;
+        }
+
+
+        /* Pattern Readiness Indicators */
+        .pattern-readiness {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .pattern-readiness-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .pattern-readiness-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .pattern-readiness-fill.green { background: var(--color-green); }
+        .pattern-readiness-fill.yellow { background: var(--color-gold); }
+        .pattern-readiness-fill.blue { background: var(--color-blue); }
+        .pattern-readiness-fill.gray { background: var(--color-gray); }
+
+        .pattern-readiness-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .pattern-readiness-status {
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        .pattern-readiness-status.not-started {
+            background: rgba(107, 114, 128, 0.15);
+            color: #9ca3af;
+        }
+
+        .pattern-readiness-status.in-progress {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+        }
+
+        .pattern-readiness-status.ready {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+        }
+
+        .pattern-readiness-status.partial {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+        }
+
+        .pattern-proc-tag.built, .pattern-proc-tag.live, .pattern-proc-tag.consolidated {
+            border-color: rgba(34, 197, 94, 0.3);
+            color: #4ade80;
+        }
+
+        .pattern-proc-tag.in_progress {
+            border-color: rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+        }
+
+        .pattern-proc-tag.not_started {
+            border-color: var(--border);
+            color: var(--text-muted);
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <div class="header">
             <h1>Kenetik Growth System</h1>
             <p id="header-subtitle">Virtual Team Dashboard · v3.2</p>
         </div>
 
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-number" id="stat-total">0</div>
-                <div class="stat-label">Total Processes</div>
+        <!-- Org Chart -->
+        <div class="org-chart" id="orgChart">
+            <div class="org-chart-title">The Kenetik Growth System Org Chart</div>
+
+            <!-- Executive Layer -->
+            <div class="org-layer">
+                <div class="layer-label">Executive Layer</div>
+                <div class="org-row">
+                    <div class="org-chip" style="background:#fbbf2418;" onclick="scrollToRole('cgo')" id="chip-cgo">
+                        <div class="chip-title">Chief Growth Officer</div>
+                        <div class="chip-count" id="count-cgo">0 processes</div>
+                        <div class="org-chip-bar" id="bar-cgo"></div>
+                    </div>
+                </div>
+                <div class="org-line">│</div>
             </div>
-            <div class="stat">
-                <div class="stat-number" id="stat-built">0</div>
-                <div class="stat-label">Built</div>
+
+            <!-- Intelligence Layer -->
+            <div class="org-layer">
+                <div class="layer-label">Intelligence Layer — "What should we do?"</div>
+                <div class="org-row">
+                    <div class="org-chip" style="background:#3b82f618;" onclick="scrollToRole('data_intelligence')" id="chip-data_intelligence">
+                        <div class="chip-title">Data Intelligence Lead</div>
+                        <div class="chip-count" id="count-data_intelligence">0 processes</div>
+                        <div class="org-chip-bar" id="bar-data_intelligence"></div>
+                    </div>
+                    <div class="org-chip" style="background:#8b5cf618;" onclick="scrollToRole('ops_intelligence')" id="chip-ops_intelligence">
+                        <div class="chip-title">Operations Intelligence Lead</div>
+                        <div class="chip-count" id="count-ops_intelligence">0 processes</div>
+                        <div class="org-chip-bar" id="bar-ops_intelligence"></div>
+                    </div>
+                    <div class="org-chip" style="background:#ec489918;" onclick="scrollToRole('marketing_social')" id="chip-marketing_social">
+                        <div class="chip-title">Marketing & Social Intelligence Lead</div>
+                        <div class="chip-count" id="count-marketing_social">0 processes</div>
+                        <div class="org-chip-bar" id="bar-marketing_social"></div>
+                    </div>
+                </div>
+                <div class="org-line">│</div>
             </div>
-            <div class="stat">
-                <div class="stat-number" id="stat-in-progress">0</div>
-                <div class="stat-label">In Progress</div>
+
+            <!-- Creative Engine Layer -->
+            <div class="org-layer">
+                <div class="layer-label">Creative Engine — "What should we make?"</div>
+                <div class="org-row">
+                    <div class="org-chip" style="background:#06b6d418;" onclick="scrollToRole('creative_strategist')" id="chip-creative_strategist">
+                        <div class="chip-title">Creative Strategist</div>
+                        <div class="chip-count" id="count-creative_strategist">0 processes</div>
+                        <div class="org-chip-bar" id="bar-creative_strategist"></div>
+                    </div>
+                    <div class="org-chip" style="background:#10b98118;" onclick="scrollToRole('content_producer')" id="chip-content_producer">
+                        <div class="chip-title">Content Producer (Larry 2.0)</div>
+                        <div class="chip-count" id="count-content_producer">0 processes</div>
+                        <div class="org-chip-bar" id="bar-content_producer"></div>
+                    </div>
+                </div>
+                <div class="org-line">│</div>
             </div>
-            <div class="stat">
-                <div class="stat-number" id="stat-not-started">0</div>
-                <div class="stat-label">Not Started</div>
+
+            <!-- Execution Layer -->
+            <div class="org-layer">
+                <div class="layer-label">Execution Layer — "Make it happen."</div>
+                <div class="org-row">
+                    <div class="org-chip" style="background:#22c55e18;" onclick="scrollToRole('web_experimentation')" id="chip-web_experimentation">
+                        <div class="chip-title">Web & Experimentation Lead</div>
+                        <div class="chip-count" id="count-web_experimentation">0 processes</div>
+                        <div class="org-chip-bar" id="bar-web_experimentation"></div>
+                    </div>
+                    <div class="org-chip" style="background:#f59e0b18;" onclick="scrollToRole('channel_execution')" id="chip-channel_execution">
+                        <div class="chip-title">Channel Execution Manager</div>
+                        <div class="chip-count" id="count-channel_execution">0 processes</div>
+                        <div class="org-chip-bar" id="bar-channel_execution"></div>
+                    </div>
+                    <div class="org-chip" style="background:#ef444418;" onclick="scrollToRole('paid_media')" id="chip-paid_media">
+                        <div class="chip-title">Paid Media Manager</div>
+                        <div class="chip-count" id="count-paid_media">0 processes</div>
+                        <div class="org-chip-bar" id="bar-paid_media"></div>
+                    </div>
+                    <div class="org-chip" style="background:#f9731618;" onclick="scrollToRole('amazon')" id="chip-amazon">
+                        <div class="chip-title">Amazon Manager</div>
+                        <div class="chip-count" id="count-amazon">0 processes</div>
+                        <div class="org-chip-bar" id="bar-amazon"></div>
+                    </div>
+                </div>
+                <div class="org-line">│</div>
+            </div>
+
+            <!-- Infrastructure Layer -->
+            <div class="org-layer">
+                <div class="layer-label">Infrastructure Layer — "Keep it running."</div>
+                <div class="org-row">
+                    <div class="org-chip" style="background:#64748b18;" onclick="scrollToRole('project_manager')" id="chip-project_manager">
+                        <div class="chip-title">Project Manager</div>
+                        <div class="chip-count" id="count-project_manager">0 processes</div>
+                        <div class="org-chip-bar" id="bar-project_manager"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="filters">
-            <div class="filter-group">
-                <button class="filter-button active" data-filter="wave" data-value="all">All Layers</button>
-                <button class="filter-button" data-filter="wave" data-value="executive">Executive</button>
-                <button class="filter-button" data-filter="wave" data-value="execution">Execution</button>
+        <!-- Summary Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-card-label">Total Processes</div>
+                <div class="stat-card-value" id="stat-total">0</div>
             </div>
-            <div class="filter-group">
-                <button class="filter-button active" data-filter="phase" data-value="all">All Priorities</button>
-                <button class="filter-button" data-filter="phase" data-value="critical">Critical</button>
-                <button class="filter-button" data-filter="phase" data-value="high">High</button>
-                <button class="filter-button" data-filter="phase" data-value="medium">Medium</button>
+            <div class="stat-card">
+                <div class="stat-card-label">Shortcuts Specced</div>
+                <div class="stat-card-value" id="stat-shortcuts">0</div>
             </div>
-            <div class="filter-group">
-                <button class="filter-button active" data-filter="status" data-value="all">All Statuses</button>
-                <button class="filter-button" data-filter="status" data-value="built">Built</button>
-                <button class="filter-button" data-filter="status" data-value="in_progress">In Progress</button>
-                <button class="filter-button" data-filter="status" data-value="not_started">Not Started</button>
+            <div class="stat-card">
+                <div class="stat-card-label">Implementation Progress</div>
+                <div class="stat-card-value" id="stat-progress">0%</div>
             </div>
-            <input type="text" class="search-box" id="search-input" placeholder="Search processes...">
+            <div class="stat-card">
+                <div class="stat-card-label">Current Focus</div>
+                <div class="stat-card-value" style="font-size: 1.2rem; color: var(--color-gold);">Wave 1</div>
+            </div>
         </div>
 
-        <h2 class="section-title">Roles & Responsibilities</h2>
-        <div class="roles-grid" id="roles-container"></div>
 
-        <h2 class="section-title">Processes</h2>
-        <div class="processes-grid" id="processes-container"></div>
-
-        <h2 class="section-title">Infrastructure & Integrations</h2>
-        <div class="infrastructure-grid" id="infrastructure-container"></div>
-    </div>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-title"></h2>
-            <div id="modal-body"></div>
+        <!-- Infrastructure Status Panel -->
+        <div class="infra-panel" id="infraPanel">
+            <div class="infra-panel-header" onclick="toggleInfraPanel()">
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div class="infra-panel-title">Infrastructure Status</div>
+                    <div class="infra-panel-summary" id="infraSummary"></div>
+                </div>
+                <span class="infra-expand-icon">▼</span>
+            </div>
+            <div class="infra-panel-body">
+                <div class="infra-panel-content" id="infraContent"></div>
+            </div>
         </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="container">
+                <div class="filter-bar-content">
+                    <div class="filter-group" data-group="wave">
+                        <div class="filter-label">Wave</div>
+                        <button class="filter-button active" data-filter="wave" data-value="all" onclick="applyFilter('wave','all',this)">All</button>
+                        <button class="filter-button" data-filter="wave" data-value="1" onclick="applyFilter('wave',1,this)">W1</button>
+                        <button class="filter-button" data-filter="wave" data-value="2" onclick="applyFilter('wave',2,this)">W2</button>
+                        <button class="filter-button" data-filter="wave" data-value="3" onclick="applyFilter('wave',3,this)">W3</button>
+                        <button class="filter-button" data-filter="wave" data-value="4" onclick="applyFilter('wave',4,this)">W4</button>
+                        <button class="filter-button" data-filter="wave" data-value="5" onclick="applyFilter('wave',5,this)">W5</button>
+                        <button class="filter-button" data-filter="wave" data-value="DEFER" onclick="applyFilter('wave','DEFER',this)">DEFER</button>
+                    </div>
+                    <div class="filter-group" data-group="phase">
+                        <div class="filter-label">Phase</div>
+                        <button class="filter-button active" data-filter="phase" data-value="all" onclick="applyFilter('phase','all',this)">All</button>
+                        <button class="filter-button" data-filter="phase" data-value="0" onclick="applyFilter('phase',0,this)">P0</button>
+                        <button class="filter-button" data-filter="phase" data-value="1" onclick="applyFilter('phase',1,this)">P1</button>
+                        <button class="filter-button" data-filter="phase" data-value="2" onclick="applyFilter('phase',2,this)">P2</button>
+                        <button class="filter-button" data-filter="phase" data-value="3" onclick="applyFilter('phase',3,this)">P3</button>
+                    </div>
+                    <div class="filter-group" data-group="status">
+                        <div class="filter-label">Status</div>
+                        <button class="filter-button active" data-filter="status" data-value="all" onclick="applyFilter('status','all',this)">All</button>
+                        <button class="filter-button" data-filter="status" data-value="not_started" onclick="applyFilter('status','not_started',this)">Not Started</button>
+                        <button class="filter-button" data-filter="status" data-value="in_progress" onclick="applyFilter('status','in_progress',this)">In Progress</button>
+                        <button class="filter-button" data-filter="status" data-value="built" onclick="applyFilter('status','built',this)">Built</button>
+                        <button class="filter-button" data-filter="status" data-value="live" onclick="applyFilter('status','live',this)">Live</button>
+                    </div>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search processes, shortcuts, inputs..." oninput="filterBySearch()">
+                </div>
+            </div>
+        </div>
+
+        <!-- Patterns Section -->
+        <div class="patterns-section">
+            <h2 class="section-title">Shared Patterns</h2>
+            <div class="patterns-grid" id="patternsGrid"></div>
+        </div>
+
+        <!-- Roles Section -->
+        <div class="roles-section" id="rolesSection"></div>
     </div>
 
     <script>
@@ -563,12 +1264,11 @@
 
         async function loadSystemState() {
             try {
-                // system-state.json is required; definitions file is optional enrichment
                 const stateRes = await fetch('./system-state.json');
                 if (!stateRes.ok) throw new Error(`State file: HTTP ${stateRes.status}`);
                 SYSTEM_STATE = await stateRes.json();
 
-                // Try to load definitions for extra detail, but don't fail if missing
+                // Definitions file is optional enrichment
                 try {
                     const defsRes = await fetch('./system-state-definitions.json');
                     if (defsRes.ok) {
@@ -602,341 +1302,640 @@
             search: ''
         };
 
-        function initDashboard() {
+
+        // Render infrastructure status panel
+        function renderInfrastructure() {
             const infra = SYSTEM_STATE.infrastructure;
+            if (!infra) return;
 
-            // Compute stats from processes (resilient — never depends on a stats key)
-            const processes = Object.values(SYSTEM_STATE.processes || {});
-            const stats = SYSTEM_STATE.stats || {
-                total_processes: processes.length,
-                built: processes.filter(p => p.status === 'built').length,
-                in_progress: processes.filter(p => p.status === 'in_progress').length,
-                not_started: processes.filter(p => p.status === 'not_started').length,
-                live: processes.filter(p => p.status === 'live').length
-            };
+            // Count statuses across all categories
+            let totalConnected = 0;
+            let totalNotConnected = 0;
+            let totalDegraded = 0;
+            let totalItems = 0;
 
-            // Update header subtitle
+            const connectedStatuses = ['connected', 'available', 'active'];
+            const notConnectedStatuses = ['not_connected', 'not_available', 'inactive'];
+
+            for (const cat of Object.values(infra)) {
+                for (const item of Object.values(cat)) {
+                    totalItems++;
+                    if (connectedStatuses.includes(item.status)) totalConnected++;
+                    else if (item.status === 'degraded') totalDegraded++;
+                    else totalNotConnected++;
+                }
+            }
+
+            // Render summary pills
+            const summaryEl = document.getElementById('infraSummary');
+            let summaryHTML = '';
+            if (totalConnected > 0) summaryHTML += `<span class="infra-summary-pill green">${totalConnected} connected</span>`;
+            if (totalDegraded > 0) summaryHTML += `<span class="infra-summary-pill yellow">${totalDegraded} degraded</span>`;
+            if (totalNotConnected > 0) summaryHTML += `<span class="infra-summary-pill red">${totalNotConnected} not connected</span>`;
+            summaryHTML += `<span class="infra-summary-pill blue">${totalItems} total</span>`;
+            summaryEl.innerHTML = summaryHTML;
+
+            // Render content
+            const contentEl = document.getElementById('infraContent');
+
+            const categories = [
+                { key: 'connections', label: 'Data Connections', showPriority: true },
+                { key: 'mcps', label: 'MCP Servers', showPriority: false },
+                { key: 'platforms', label: 'Platforms', showPriority: false }
+            ];
+
+            let html = '';
+            for (const cat of categories) {
+                const items = infra[cat.key];
+                if (!items) continue;
+
+                // Sort: connected first, then by priority (critical > high), then alphabetical
+                const sorted = Object.entries(items).sort((a, b) => {
+                    const statusOrder = s => connectedStatuses.includes(s) ? 0 : s === 'degraded' ? 1 : 2;
+                    const priorityOrder = p => p === 'critical' ? 0 : p === 'high' ? 1 : 2;
+                    const sa = statusOrder(a[1].status), sb = statusOrder(b[1].status);
+                    if (sa !== sb) return sa - sb;
+                    const pa = priorityOrder(a[1].priority), pb = priorityOrder(b[1].priority);
+                    if (pa !== pb) return pa - pb;
+                    return a[1].name.localeCompare(b[1].name);
+                });
+
+                html += `<div class="infra-category">`;
+                html += `<div class="infra-category-label">${cat.label} (${Object.keys(items).length})</div>`;
+                html += `<div class="infra-grid">`;
+
+                for (const [key, item] of sorted) {
+                    const statusLabel = item.status.replace(/_/g, ' ');
+                    const meta = item.method || item.provides || item.purpose || statusLabel;
+                    const priorityHTML = cat.showPriority && item.priority
+                        ? `<span class="infra-item-priority ${item.priority}">${item.priority}</span>`
+                        : '';
+
+                    html += `
+                        <div class="infra-item" title="${item.name}\nStatus: ${statusLabel}${item.blocker ? '\nBlocker: ' + item.blocker : ''}${item.notes ? '\nNotes: ' + item.notes : ''}">
+                            <div class="infra-dot ${item.status}"></div>
+                            <div class="infra-item-info">
+                                <div class="infra-item-name">${item.name}</div>
+                                <div class="infra-item-meta">${meta}</div>
+                            </div>
+                            ${priorityHTML}
+                        </div>`;
+                }
+
+                html += `</div></div>`;
+            }
+
+            contentEl.innerHTML = html;
+        }
+
+        function toggleInfraPanel() {
+            document.getElementById('infraPanel').classList.toggle('expanded');
+        }
+
+        // Initialize dashboard
+        function initDashboard() {
+            // Update header dynamically
             const roleCount = Object.keys(SYSTEM_STATE.roles || {}).length;
-            document.getElementById('header-subtitle').textContent =
-                `Virtual Team Dashboard · v${SYSTEM_STATE.version || '3.2'} · ${roleCount} roles · ${processes.length} processes`;
+            const procCount = Object.keys(SYSTEM_STATE.processes || {}).length;
+            const subtitleEl = document.getElementById('header-subtitle');
+            if (subtitleEl) subtitleEl.textContent = `Virtual Team Dashboard · v${SYSTEM_STATE.version || '3.2'} · ${roleCount} roles · ${procCount} processes`;
 
-            // Update stats
-            document.getElementById('stat-total').textContent = stats.total_processes || processes.length;
-            document.getElementById('stat-built').textContent = (stats.built || 0) + (stats.live || 0);
-            document.getElementById('stat-in-progress').textContent = stats.in_progress || 0;
-            document.getElementById('stat-not-started').textContent = stats.not_started || 0;
+            renderStats();
+            renderInfrastructure();
+            renderOrgChart();
+            renderPatterns();
+            renderRoles();
+        }
 
-            // Render roles
+        // Render summary stats
+        function renderStats() {
+            // Compute stats dynamically from processes (resilient)
+            const processes = Object.values(SYSTEM_STATE.processes || {});
+            const statusCounts = {
+                not_started: processes.filter(p => p.status === 'not_started').length,
+                in_progress: processes.filter(p => p.status === 'in_progress').length,
+                built: processes.filter(p => p.status === 'built').length,
+                live: processes.filter(p => p.status === 'live').length,
+                consolidated: processes.filter(p => p.status === 'consolidated').length
+            };
+            const totalProcesses = processes.length;
+            const shortcutCount = processes.filter(p => p.shortcut).length;
+
+            document.getElementById('stat-total').textContent = totalProcesses;
+            document.getElementById('stat-shortcuts').textContent = shortcutCount;
+
+            const implemented = statusCounts.built + statusCounts.live + statusCounts.consolidated;
+            const progress = totalProcesses > 0 ? Math.round((implemented / totalProcesses) * 100) : 0;
+            document.getElementById('stat-progress').textContent = progress + '%';
+
+            // Update bar chart
+            const bars = document.querySelectorAll('.stat-card-bar');
+            if (bars.length > 0) {
+                const bar = bars[0];
+                bar.innerHTML = '';
+                const colors = ['#6b7280', '#3b82f6', '#22c55e', '#10b981'];
+                const statuses = ['not_started', 'in_progress', 'built', 'live'];
+
+                statuses.forEach((status, i) => {
+                    const segment = document.createElement('div');
+                    segment.className = 'stat-card-bar-segment';
+                    segment.style.background = colors[i];
+                    segment.style.flex = statusCounts[status] || 0;
+                    bar.appendChild(segment);
+                });
+            }
+        }
+
+        // Compute role stats from processes
+        function computeRoleStats(role) {
+            if (role.stats && role.stats.total) return role.stats;
+            const roleProcs = (role.processes || []).map(pid => SYSTEM_STATE.processes[pid]).filter(Boolean);
+            return {
+                total: roleProcs.length,
+                not_started: roleProcs.filter(p => p.status === 'not_started').length,
+                in_progress: roleProcs.filter(p => p.status === 'in_progress').length,
+                built: roleProcs.filter(p => p.status === 'built').length,
+                live: roleProcs.filter(p => p.status === 'live').length,
+                consolidated: roleProcs.filter(p => p.status === 'consolidated').length
+            };
+        }
+
+        // Render org chart
+        function renderOrgChart() {
             Object.keys(SYSTEM_STATE.roles).forEach(roleId => {
                 const role = SYSTEM_STATE.roles[roleId];
-                renderRole(role);
+                const count = (role.processes || []).length;
+                const countEl = document.getElementById('count-' + role.id);
+                const barEl = document.getElementById('bar-' + role.id);
+
+                if (countEl) countEl.textContent = count + ' processes';
+
+                if (barEl) {
+                    barEl.innerHTML = '';
+                    const stats = computeRoleStats(role);
+                    const statuses = ['not_started', 'in_progress', 'built', 'live'];
+                    const colors = ['#6b7280', '#3b82f6', '#22c55e', '#10b981'];
+
+                    statuses.forEach((status, i) => {
+                        const segment = document.createElement('div');
+                        segment.className = 'org-chip-bar-segment';
+                        segment.style.background = colors[i];
+                        segment.style.flex = stats[status] || 0;
+                        barEl.appendChild(segment);
+                    });
+                }
             });
-
-            // Render processes
-            renderProcesses();
-
-            // Render infrastructure — platforms and connections
-            if (infra) {
-                if (infra.platforms) {
-                    Object.entries(infra.platforms).forEach(([name, platform]) => {
-                        renderPlatform(name, platform);
-                    });
-                }
-                if (infra.connections) {
-                    Object.entries(infra.connections).forEach(([name, conn]) => {
-                        renderPlatform(name, conn);
-                    });
-                }
-            }
-
-            // Setup event listeners
-            setupEventListeners();
         }
 
-        function renderRole(role) {
-            const rolesContainer = document.getElementById('roles-container');
-            // Compute role stats from processes if not already provided
-            let stats = role.stats;
-            if (!stats || !stats.total) {
-                const roleProcesses = (role.processes || []).map(pid => SYSTEM_STATE.processes[pid]).filter(Boolean);
-                stats = {
-                    total: roleProcesses.length,
-                    not_started: roleProcesses.filter(p => p.status === 'not_started').length,
-                    in_progress: roleProcesses.filter(p => p.status === 'in_progress').length,
-                    built: roleProcesses.filter(p => p.status === 'built' || p.status === 'live').length,
-                    live: roleProcesses.filter(p => p.status === 'live').length,
-                    consolidated: roleProcesses.filter(p => p.status === 'consolidated').length
-                };
-            }
-
-            const card = document.createElement('div');
-            card.className = 'role-card';
-            card.innerHTML = `
-                <div class="role-header">
-                    <div class="role-emoji">${role.emoji || ''}</div>
-                    <div>
-                        <div class="role-name">${role.name}</div>
-                        <div class="role-human">${role.human || 'TBD'}</div>
-                    </div>
-                </div>
-                <div class="role-mission">${role.mission || ''}</div>
-                <div class="role-stats">
-                    <div class="stat-mini">
-                        <div class="stat-mini-value">${stats.total}</div>
-                        <div class="stat-mini-label">Total</div>
-                    </div>
-                    <div class="stat-mini">
-                        <div class="stat-mini-value">${stats.built}</div>
-                        <div class="stat-mini-label">Built</div>
-                    </div>
-                    <div class="stat-mini">
-                        <div class="stat-mini-value">${stats.in_progress}</div>
-                        <div class="stat-mini-label">In Progress</div>
-                    </div>
-                </div>
-                <div class="chip-group">
-                    ${(role.processes || []).map(procId => `<span class="chip">${procId}</span>`).join('')}
-                </div>
-            `;
-            rolesContainer.appendChild(card);
-        }
-
+        // Render patterns section
+        // Helper: get process status from SYSTEM_STATE
         function getProcessStatus(processId) {
-            const roleKey = Object.keys(SYSTEM_STATE.roles).find(rk => {
-                const role = SYSTEM_STATE.roles[rk];
-                return role.processes && role.processes.includes(processId);
-            });
+            for (const role of Object.values(SYSTEM_STATE.roles)) {
+                if (!role.processes) continue;
+                // Check if process belongs to this role by iterating process data
+            }
+            // Search through all role processes in the dashboard JSON
+            // Process statuses are tracked per-role, so we need to find which role owns this process
+            const roleKey = processId.split('.')[0];
+            const role = SYSTEM_STATE.roles[roleKey];
+            if (!role) return 'not_started';
+            // The process status is in role.stats but we need individual process status
+            // Check the processes data structure
+            return 'not_started'; // fallback
+        }
 
-            let status = 'not_started';
-            if (roleKey) {
+        // Compute pattern readiness from process data
+        function computePatternReadiness(pattern) {
+            const allProcessIds = pattern.usedBy ? pattern.usedBy.flatMap(g => g.processes.map(p => p.id)) : [];
+            const total = allProcessIds.length;
+            if (total === 0) return { total: 0, built: 0, inProgress: 0, notStarted: 0, pct: 0, statusMap: {} };
+
+            // Build a lookup of all process statuses from the full process data
+            const statusMap = {};
+            let built = 0, inProgress = 0, notStarted = 0;
+
+            for (const procId of allProcessIds) {
+                // Find the process in the processes entries (nested in role data)
+                let status = 'not_started';
+                const roleKey = procId.split('.')[0];
                 const role = SYSTEM_STATE.roles[roleKey];
-                if (role.processes && role.processes.includes(processId)) {
-                    // Get from process definition
-                    if (SYSTEM_STATE.processes && SYSTEM_STATE.processes[processId]) {
-                        status = SYSTEM_STATE.processes[processId].status || status;
+                if (role && role.processDetails) {
+                    const proc = role.processDetails.find(p => p.id === procId);
+                    if (proc) status = proc.status || 'not_started';
+                }
+                // Also check the flat processes object if it exists
+                if (SYSTEM_STATE.processes && SYSTEM_STATE.processes[procId]) {
+                    status = SYSTEM_STATE.processes[procId].status || status;
+                }
+                statusMap[procId] = status;
+                if (['built', 'live', 'consolidated'].includes(status)) built++;
+                else if (status === 'in_progress') inProgress++;
+                else notStarted++;
+            }
+
+            const pct = total > 0 ? Math.round(((built + inProgress * 0.5) / total) * 100) : 0;
+            return { total, built, inProgress, notStarted, pct, statusMap };
+        }
+
+        function renderPatterns() {
+            const container = document.getElementById('patternsGrid');
+            const patterns = Object.values(SYSTEM_STATE.patterns);
+
+            container.innerHTML = patterns.map(pattern => {
+                const totalProcs = pattern.usedBy ? pattern.usedBy.reduce((sum, g) => sum + g.processes.length, 0) : 0;
+                const totalRoles = pattern.usedBy ? pattern.usedBy.length : 0;
+                const readiness = computePatternReadiness(pattern);
+
+                // Determine readiness label and color
+                let readinessLabel, readinessClass, barColor;
+                if (readiness.built === readiness.total && readiness.total > 0) {
+                    readinessLabel = 'Ready';
+                    readinessClass = 'ready';
+                    barColor = 'green';
+                } else if (readiness.built > 0 || readiness.inProgress > 0) {
+                    readinessLabel = `${readiness.built} of ${readiness.total} built`;
+                    readinessClass = readiness.built > 0 ? 'partial' : 'in-progress';
+                    barColor = readiness.built > 0 ? 'yellow' : 'blue';
+                } else {
+                    readinessLabel = 'Not started';
+                    readinessClass = 'not-started';
+                    barColor = 'gray';
+                }
+
+                const stepsHtml = pattern.steps.map(s => `
+                    <div class="pattern-step">
+                        <span class="pattern-step-num">${s.step}</span>
+                        <span>${escapeHtml(s.action)}</span>
+                    </div>
+                `).join('');
+
+                const usedByHtml = pattern.usedBy ? pattern.usedBy.map(group => `
+                    <div class="pattern-role-group">
+                        <div class="pattern-role-name">${escapeHtml(group.role)}</div>
+                        <div class="pattern-role-procs">
+                            ${group.processes.map(p => {
+                                const st = readiness.statusMap[p.id] || 'not_started';
+                                return `<span class="pattern-proc-tag ${st}" title="${escapeHtml(p.name)} (${st.replace(/_/g, ' ')})">${escapeHtml(p.id)}</span>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                `).join('') : '';
+
+                return `
+                    <div class="pattern-card">
+                        <div class="pattern-card-top">
+                            <div class="pattern-card-header">
+                                <div class="pattern-id">${pattern.id}</div>
+                                <h3>${escapeHtml(pattern.name)}</h3>
+                                <span class="pattern-usage-count">${totalProcs} processes</span>
+                            </div>
+                            <div class="pattern-desc">${escapeHtml(pattern.description)}</div>
+                            <div class="pattern-readiness">
+                                <span class="pattern-readiness-status ${readinessClass}">${readinessLabel}</span>
+                                <div class="pattern-readiness-bar">
+                                    <div class="pattern-readiness-fill ${barColor}" style="width: ${readiness.pct}%"></div>
+                                </div>
+                                <span class="pattern-readiness-label">${readiness.pct}%</span>
+                            </div>
+                            ${pattern.shortcutSummary ? `<div class="pattern-shortcut" style="margin-top:8px">${escapeHtml(pattern.shortcutSummary)}</div>` : ''}
+                        </div>
+                        <div class="pattern-accordion">
+                            <div class="pattern-accordion-trigger" onclick="togglePatternAccordion(event)">
+                                <span>${pattern.steps.length} Steps</span>
+                                <span class="arrow">▼</span>
+                            </div>
+                            <div class="pattern-accordion-body">
+                                <div class="pattern-accordion-content">
+                                    ${stepsHtml}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pattern-accordion">
+                            <div class="pattern-accordion-trigger" onclick="togglePatternAccordion(event)">
+                                <span>Used by ${totalRoles} roles — ${readiness.built} built, ${readiness.inProgress} in progress, ${readiness.notStarted} not started</span>
+                                <span class="arrow">▼</span>
+                            </div>
+                            <div class="pattern-accordion-body">
+                                <div class="pattern-accordion-content">
+                                    ${usedByHtml}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function togglePatternAccordion(event) {
+            const trigger = event.currentTarget;
+            const body = trigger.nextElementSibling;
+            trigger.classList.toggle('open');
+            body.classList.toggle('open');
+        }
+
+        // Render role cards
+        function renderRoles() {
+            const container = document.getElementById('rolesSection');
+            const roles = Object.values(SYSTEM_STATE.roles).sort((a, b) => {
+                const layers = ['Executive', 'Intelligence', 'Creative Engine', 'Planning', 'Execution', 'Infrastructure'];
+                const layerA = layers.indexOf(a.layer);
+                const layerB = layers.indexOf(b.layer);
+                return layerA - layerB;
+            });
+
+            container.innerHTML = roles.map(role => {
+                const stats = computeRoleStats(role);
+                return `
+                <div class="role-card" id="role-${role.id}">
+                    <div class="role-card-header" onclick="toggleRole(event)">
+                        <div class="role-header-left">
+                            <div class="role-emoji">${role.emoji || ''}</div>
+                            <div class="role-header-info">
+                                <h2>${escapeHtml(role.name)}</h2>
+                                <div class="role-header-dept">${role.layer || ''}</div>
+                                <div class="role-header-mission">"${escapeHtml(role.mission || '')}"</div>
+                            </div>
+                        </div>
+                        <div class="role-expand-icon">▼</div>
+                    </div>
+                    <div class="role-card-content">
+                        <div class="role-stats">
+                            <div class="role-stat-item">
+                                <div class="role-stat-number">${(role.processes || []).length}</div>
+                                <div class="role-stat-label">Total</div>
+                            </div>
+                            <div class="role-stat-item">
+                                <div class="role-stat-number">${stats.in_progress}</div>
+                                <div class="role-stat-label">In Progress</div>
+                            </div>
+                            <div class="role-stat-item">
+                                <div class="role-stat-number">${stats.built}</div>
+                                <div class="role-stat-label">Built</div>
+                            </div>
+                            <div class="role-stat-item">
+                                <div class="role-stat-number">${stats.live}</div>
+                                <div class="role-stat-label">Live</div>
+                            </div>
+                        </div>
+                        <div class="process-list">
+                            ${renderProcessList(role)}
+                        </div>
+                    </div>
+                </div>
+            `;}).join('');
+
+            updateProcessVisibility();
+        }
+
+        // Render process list for a role
+        function renderProcessList(role) {
+            return (role.processes || []).map(processId => {
+                const process = SYSTEM_STATE.processes[processId];
+                if (!process) return '';
+
+                const statusColor = getStatusColor(process.status);
+                const phaseColor = getPhaseColor(process.phase);
+                const waveColor = getWaveColor(process.wave);
+
+                // Build a short description from inputs or first step
+                let desc = '';
+                if (process.inputs) {
+                    desc = process.inputs.length > 120 ? process.inputs.substring(0, 120) + '...' : process.inputs;
+                } else if (process.steps && process.steps.length > 0) {
+                    desc = process.steps[0].action;
+                    if (desc && desc.length > 120) desc = desc.substring(0, 120) + '...';
+                }
+
+                // Build shortcut label from actual shortcut names
+                let shortcutHtml = '';
+                if (process.shortcut) {
+                    shortcutHtml = `<span class="shortcut-badge">${escapeHtml(process.shortcut)}</span>`;
+                }
+
+                // Build shortcut detail for metadata section
+                let shortcutDetail = '';
+                if (process.shortcut) {
+                    shortcutDetail = `<div class="metadata-item" style="grid-column: 1 / -1;">
+                        <span class="metadata-label">Shortcuts & Automation</span>
+                        <div class="metadata-value">
+                            <strong>${escapeHtml(process.shortcut)}</strong>
+                            ${process.shortcutSteps ? ` — ${escapeHtml(process.shortcutSteps)}` : ''}
+                        </div>
+                    </div>`;
+                }
+
+                return `
+                    <div class="process-item" data-process-id="${processId}">
+                        <div class="process-row" onclick="toggleProcess(event, '${processId}')">
+                            <div class="process-status-dot" style="background: ${statusColor}"></div>
+                            <div class="process-row-info">
+                                <div class="process-name">${escapeHtml(process.name)}</div>
+                                ${desc ? `<div class="process-desc">${escapeHtml(desc)}</div>` : ''}
+                            </div>
+                            <div class="process-tags">
+                                ${shortcutHtml}
+                                ${process.phase !== undefined ? `<span class="process-tag-phase" style="background: ${phaseColor.bg}; color: ${phaseColor.text}">P${process.phase}</span>` : ''}
+                                ${process.wave !== undefined ? `<span class="process-tag-wave" style="background: ${waveColor}">${process.wave === 'DEFER' ? 'DEFER' : 'W' + process.wave}</span>` : ''}
+                            </div>
+                        </div>
+                        <div class="process-details" onclick="event.stopPropagation()">
+                            <div class="process-details-content">
+                                ${(process.steps && process.steps.length > 0) ? `
+                                <h4 style="margin-bottom: 12px;">Process Steps</h4>
+                                <table class="steps-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 60px;">Step</th>
+                                            <th>Action</th>
+                                            <th style="width: 180px;">Actor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${process.steps.map(step => `
+                                            <tr>
+                                                <td class="step-number">${step.step}</td>
+                                                <td class="step-action">${escapeHtml(step.action)}</td>
+                                                <td>${escapeHtml(step.actor || '')}</td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                                ` : `<p style="color: var(--text-muted); font-size: 0.85rem;">Steps will appear once process definitions are loaded.</p>`}
+                                <div class="process-metadata">
+                                    ${shortcutDetail}
+                                    ${process.inputs ? `
+                                        <div class="metadata-item">
+                                            <span class="metadata-label">Inputs</span>
+                                            <div class="metadata-value">${escapeHtml(process.inputs)}</div>
+                                        </div>
+                                    ` : ''}
+                                    ${process.outputs ? `
+                                        <div class="metadata-item">
+                                            <span class="metadata-label">Outputs</span>
+                                            <div class="metadata-value">${escapeHtml(process.outputs)}</div>
+                                        </div>
+                                    ` : ''}
+                                    ${process.humanGate ? `
+                                        <div class="metadata-item">
+                                            <span class="metadata-label">Human Gate</span>
+                                            <div class="metadata-value">${escapeHtml(process.humanGate)}</div>
+                                        </div>
+                                    ` : ''}
+                                    ${process.decisionPoints ? `
+                                        <div class="metadata-item">
+                                            <span class="metadata-label">Decision Points</span>
+                                            <div class="metadata-value">${escapeHtml(process.decisionPoints)}</div>
+                                        </div>
+                                    ` : ''}
+                                    ${process.specReferences ? `
+                                        <div class="metadata-item">
+                                            <span class="metadata-label">Spec References</span>
+                                            <div class="metadata-value">${escapeHtml(process.specReferences)}</div>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Helper functions
+        function getStatusColor(status) {
+            const colors = {
+                'not_started': '#6b7280',
+                'in_progress': '#3b82f6',
+                'built': '#22c55e',
+                'live': '#10b981',
+                'consolidated': '#9ca3af'
+            };
+            return colors[status] || '#6b7280';
+        }
+
+        function getPhaseColor(phase) {
+            const colors = {
+                0: {"text": "#4ade80", "bg": "#22c55e18"},
+                1: {"text": "#60a5fa", "bg": "#3b82f618"},
+                2: {"text": "#c084fc", "bg": "#a855f718"},
+                3: {"text": "#f87171", "bg": "#f4393918"}
+            };
+            return colors[phase] || {"text": "#6b7280", "bg": "#6b728018"};
+        }
+
+        function getWaveColor(wave) {
+            const colors = {
+                1: '#4ade80',
+                2: '#60a5fa',
+                3: '#22d3ee',
+                4: '#fbbf24',
+                5: '#c084fc',
+                'DEFER': '#6b7280'
+            };
+            return colors[wave] || '#6b7280';
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function toggleRole(event) {
+            const card = event.currentTarget.closest('.role-card');
+            card.classList.toggle('expanded');
+        }
+
+        function toggleProcess(event, processId) {
+            const row = event.currentTarget;
+            const item = row.closest('.process-item');
+            item.classList.toggle('expanded');
+        }
+
+        function scrollToRole(roleId) {
+            const roleCard = document.getElementById('role-' + roleId);
+            if (roleCard) {
+                roleCard.classList.add('expanded');
+                roleCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                console.warn('Role card not found for roleId:', roleId);
+            }
+        }
+
+        function applyFilter(type, value, btn) {
+            // Update filter state
+            currentFilters[type] = value;
+
+            // Update active button styling — only within the same filter group
+            document.querySelectorAll('.filter-button[data-filter="' + type + '"]').forEach(b => {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+
+            updateProcessVisibility();
+        }
+
+        function filterBySearch() {
+            currentFilters.search = document.getElementById('searchInput').value.toLowerCase();
+            updateProcessVisibility();
+        }
+
+        function updateProcessVisibility() {
+            const isSearching = currentFilters.search !== '';
+
+            document.querySelectorAll('.process-item').forEach(item => {
+                const processId = item.dataset.processId;
+                const proc = SYSTEM_STATE.processes[processId];
+
+                if (!proc) {
+                    item.classList.add('hidden');
+                    return;
+                }
+
+                // Search across name, inputs, outputs, shortcut, and spec references
+                let searchMatch = true;
+                if (isSearching) {
+                    const haystack = [
+                        proc.name,
+                        proc.inputs || '',
+                        proc.outputs || '',
+                        proc.shortcut || '',
+                        proc.specReferences || '',
+                        proc.decisionPoints || ''
+                    ].join(' ').toLowerCase();
+                    searchMatch = haystack.includes(currentFilters.search);
+                }
+
+                const matches = (
+                    (currentFilters.wave === 'all' || proc.wave == currentFilters.wave) &&
+                    (currentFilters.phase === 'all' || proc.phase == currentFilters.phase) &&
+                    (currentFilters.status === 'all' || proc.status === currentFilters.status) &&
+                    searchMatch
+                );
+
+                if (matches) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Auto-expand role cards that have visible matching processes when searching
+            if (isSearching) {
+                document.querySelectorAll('.role-card').forEach(card => {
+                    const visibleProcesses = card.querySelectorAll('.process-item:not(.hidden)');
+                    if (visibleProcesses.length > 0) {
+                        card.classList.add('expanded');
+                    } else {
+                        card.classList.remove('expanded');
                     }
-                }
-            }
-            return status;
-        }
-
-        function renderProcesses() {
-            const processesContainer = document.getElementById('processes-container');
-            processesContainer.innerHTML = '';
-
-            Object.values(SYSTEM_STATE.processes).forEach(process => {
-                if (matchesFilters(process)) {
-                    renderProcess(process);
-                }
-            });
-        }
-
-        function renderProcess(process) {
-            const processesContainer = document.getElementById('processes-container');
-
-            const card = document.createElement('div');
-            card.className = 'process-card';
-            card.addEventListener('click', () => showProcessModal(process));
-
-            const progressPercent = process.progress || 0;
-            const statusClass = `status-${process.status}`;
-
-            card.innerHTML = `
-                <div class="process-header">
-                    <span class="process-id">${process.id}</span>
-                    <span class="process-status ${statusClass}">${process.status?.replace('_', ' ').toUpperCase()}</span>
-                </div>
-                <div class="process-name">${process.name}</div>
-                <div class="process-meta">${process.layer || ''} • ${process.owner || ''} • ${(process.priority || '').toUpperCase()}</div>
-                ${process.notes ? `<div class="process-notes">${process.notes.substring(0, 100)}${process.notes.length > 100 ? '...' : ''}</div>` : ''}
-                ${process.shortcut ? `<span class="process-shortcut">${process.shortcut}</span>` : ''}
-                ${process.progress !== undefined ? `
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${progressPercent}%"></div>
-                    </div>
-                ` : ''}
-            `;
-
-            processesContainer.appendChild(card);
-        }
-
-        function showProcessModal(process) {
-            const modal = document.getElementById('modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalBody = document.getElementById('modal-body');
-
-            modalTitle.textContent = `${process.id} - ${process.name}`;
-
-            let content = `
-                <div class="modal-meta">
-                    <div class="meta-item">
-                        <div class="meta-label">Status</div>
-                        <div class="meta-value">${process.status?.replace('_', ' ').toUpperCase()}</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Layer</div>
-                        <div class="meta-value">${process.layer || 'TBD'}</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Priority</div>
-                        <div class="meta-value">${(process.priority || 'TBD').toUpperCase()}</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Progress</div>
-                        <div class="meta-value">${process.progress !== undefined ? process.progress + '%' : 'N/A'}</div>
-                    </div>
-                </div>
-            `;
-
-            if (process.shortcut) {
-                content += `
-                    <div class="modal-section">
-                        <div class="modal-section-title">Shortcut</div>
-                        <div class="modal-section-content"><code>${process.shortcut}</code></div>
-                    </div>
-                `;
-            }
-
-            if (process.role) {
-                content += `
-                    <div class="modal-section">
-                        <div class="modal-section-title">Owner</div>
-                        <div class="modal-section-content">${process.role}</div>
-                    </div>
-                `;
-            }
-
-            if (process.buildType) {
-                content += `
-                    <div class="modal-section">
-                        <div class="modal-section-title">Build Type</div>
-                        <div class="modal-section-content">${process.buildType}</div>
-                    </div>
-                `;
-            }
-
-            if (process.notes) {
-                content += `
-                    <div class="modal-section">
-                        <div class="modal-section-title">Notes</div>
-                        <div class="modal-section-content">${process.notes}</div>
-                    </div>
-                `;
-            }
-
-            if (process.description) {
-                content += `
-                    <div class="modal-section">
-                        <div class="modal-section-title">Description</div>
-                        <div class="modal-section-content">${process.description}</div>
-                    </div>
-                `;
-            }
-
-            modalBody.innerHTML = content;
-            modal.style.display = 'block';
-        }
-
-        function renderPlatform(name, platform) {
-            const infraContainer = document.getElementById('infrastructure-container');
-
-            const card = document.createElement('div');
-            card.className = 'platform-card';
-
-            const platformStatus = platform.status || platform.health || 'unknown';
-            const isOperational = ['operational', 'connected', 'active'].includes(platformStatus.toLowerCase());
-            const healthClass = isOperational ? 'health-operational' : 'health-offline';
-            const statusLabel = isOperational ? 'Connected' : platformStatus.charAt(0).toUpperCase() + platformStatus.slice(1);
-
-            card.innerHTML = `
-                <div class="platform-name">
-                    <span class="health-indicator ${healthClass}"></span>
-                    ${name.replace(/_/g, ' ').toUpperCase()}
-                </div>
-                <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                    ${statusLabel}<br>
-                    <span style="color: var(--text-muted); font-size: 0.8rem;">
-                        ${platform.purpose || platform.lastSync ? (platform.purpose || `Last sync: ${new Date(platform.lastSync).toLocaleDateString()}`) : ''}
-                    </span>
-                </div>
-            `;
-
-            infraContainer.appendChild(card);
-        }
-
-        function matchesFilters(process) {
-            // Layer filter (replaces Wave)
-            if (currentFilters.wave !== 'all' && (process.layer || '').toLowerCase() !== currentFilters.wave) {
-                return false;
-            }
-
-            // Priority filter (replaces Phase)
-            if (currentFilters.phase !== 'all' && (process.priority || '') !== currentFilters.phase) {
-                return false;
-            }
-
-            // Status filter
-            if (currentFilters.status !== 'all' && process.status !== currentFilters.status) {
-                return false;
-            }
-
-            // Search filter
-            if (currentFilters.search) {
-                const searchLower = currentFilters.search.toLowerCase();
-                if (!process.id.toLowerCase().includes(searchLower) &&
-                    !process.name.toLowerCase().includes(searchLower) &&
-                    !(process.owner || '').toLowerCase().includes(searchLower)) {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        function setupEventListeners() {
-            // Filter buttons
-            document.querySelectorAll('.filter-button').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const filter = e.target.dataset.filter;
-                    const value = e.target.dataset.value;
-
-                    // Remove active class from same filter group
-                    document.querySelectorAll(`[data-filter="${filter}"]`).forEach(b => {
-                        b.classList.remove('active');
-                    });
-
-                    // Add active class to clicked button
-                    e.target.classList.add('active');
-
-                    // Update filters
-                    currentFilters[filter] = value;
-
-                    // Re-render
-                    renderProcesses();
                 });
-            });
-
-            // Search input
-            document.getElementById('search-input').addEventListener('input', (e) => {
-                currentFilters.search = e.target.value;
-                renderProcesses();
-            });
-
-            // Modal close
-            document.querySelector('.close').addEventListener('click', () => {
-                document.getElementById('modal').style.display = 'none';
-            });
-
-            window.addEventListener('click', (e) => {
-                const modal = document.getElementById('modal');
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
+            }
         }
 
-        // Load on page load
-        loadSystemState();
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', loadSystemState);
     </script>
 </body>
 </html>
