@@ -31,7 +31,10 @@
         "1.5"
       ],
       "emoji": "\ud83d\udc51",
-      "mission": "Sets optimization rules, defines what 'good' looks like, decides when system earns more autonomy. Synthesizes 13 domain scans into unified daily intelligence through a three-layer architecture (domain scans \u2192 CGO synthesis \u2192 execution)."
+      "mission": "Sets optimization rules, defines what 'good' looks like, decides when system earns more autonomy. Synthesizes 13 domain scans into unified daily intelligence through a three-layer architecture (domain scans \u2192 CGO synthesis \u2192 execution).",
+      "stats": {
+        "built": 5
+      }
     },
     "data_intelligence": {
       "id": "data_intelligence",
@@ -53,7 +56,10 @@
         "2.10"
       ],
       "emoji": "\ud83d\udcca",
-      "mission": "Owns the entire Data Brain \u2014 unified data access, automated intelligence, strategic decision support. 18+ data sources, 14+ marts, 13 dashboards."
+      "mission": "Owns the entire Data Brain \u2014 unified data access, automated intelligence, strategic decision support. 18+ data sources, 14+ marts, 13 dashboards.",
+      "stats": {
+        "built": 10
+      }
     },
     "ops_intelligence": {
       "id": "ops_intelligence",
@@ -74,7 +80,11 @@
         "3.9"
       ],
       "emoji": "\u2696\ufe0f",
-      "mission": "Governs ALL system recommendations through the 5-level optimization hierarchy, manages inventory rebalance, connects financial systems, maintains 11+ guardrails."
+      "mission": "Governs ALL system recommendations through the 5-level optimization hierarchy, manages inventory rebalance, connects financial systems, maintains 11+ guardrails.",
+      "stats": {
+        "not_started": 1,
+        "built": 8
+      }
     },
     "creative_strategist": {
       "id": "creative_strategist",
@@ -95,7 +105,11 @@
         "4a.9"
       ],
       "emoji": "\ud83c\udfaf",
-      "mission": "Manages Content Intelligence Layer, designs hypothesis testing strategy, generates Creative Brief Objects, orchestrates content flywheel, manages performance memory and skill file evolution, ensures claims compliance."
+      "mission": "Manages Content Intelligence Layer, designs hypothesis testing strategy, generates Creative Brief Objects, orchestrates content flywheel, manages performance memory and skill file evolution, ensures claims compliance.",
+      "stats": {
+        "built": 4,
+        "not_started": 5
+      }
     },
     "content_producer": {
       "id": "content_producer",
@@ -113,7 +127,10 @@
         "4b.6"
       ],
       "emoji": "\ud83e\udd16",
-      "mission": "Autonomous content generation engine \u2014 executes Creative Brief Objects, generates multi-platform content, manages production queue, measures performance, feeds learning back to system. Runs as /generate-content KGS command."
+      "mission": "Autonomous content generation engine \u2014 executes Creative Brief Objects, generates multi-platform content, manages production queue, measures performance, feeds learning back to system. Runs as /generate-content KGS command.",
+      "stats": {
+        "built": 6
+      }
     },
     "creative_studio": {
       "id": "creative_studio",
@@ -134,7 +151,10 @@
         "4c.9"
       ],
       "emoji": "\ud83c\udfac",
-      "mission": "Human-operated creative studio \u2014 complements Larry 2.0's autonomous engine. Katie drives Moe through KGS commands for content requiring human judgment: video scripts, carousels, science distillations, athlete content."
+      "mission": "Human-operated creative studio \u2014 complements Larry 2.0's autonomous engine. Katie drives Moe through KGS commands for content requiring human judgment: video scripts, carousels, science distillations, athlete content.",
+      "stats": {
+        "not_started": 9
+      }
     },
     "marketing_social": {
       "id": "marketing_social",
@@ -155,7 +175,10 @@
         "5.9"
       ],
       "emoji": "\ud83d\udcc5",
-      "mission": "Manages marketing calendar, orchestrates campaigns, manages social media, coordinates events, manages creator partnerships, integrates Sprout Social, coordinates content production, measures campaign ROI."
+      "mission": "Manages marketing calendar, orchestrates campaigns, manages social media, coordinates events, manages creator partnerships, integrates Sprout Social, coordinates content production, measures campaign ROI.",
+      "stats": {
+        "built": 9
+      }
     },
     "web_experimentation": {
       "id": "web_experimentation",
@@ -176,7 +199,10 @@
         "6.9"
       ],
       "emoji": "\ud83e\uddea",
-      "mission": "Manages Shopify theme versioning, content/SEO changes, A/B testing lifecycle, optimization review and deployment, production monitoring, incident response, and opportunity identification."
+      "mission": "Manages Shopify theme versioning, content/SEO changes, A/B testing lifecycle, optimization review and deployment, production monitoring, incident response, and opportunity identification.",
+      "stats": {
+        "built": 9
+      }
     },
     "channel_execution": {
       "id": "channel_execution",
@@ -197,7 +223,10 @@
         "7.9"
       ],
       "emoji": "\ud83d\udcec",
-      "mission": "Manages ChangeSet lifecycle across all execution channels (email, SMS, discounts, creative refresh), estimates economics, operates Klaviyo and Recharge, measures ChangeSet outcomes."
+      "mission": "Manages ChangeSet lifecycle across all execution channels (email, SMS, discounts, creative refresh), estimates economics, operates Klaviyo and Recharge, measures ChangeSet outcomes.",
+      "stats": {
+        "built": 9
+      }
     },
     "paid_media": {
       "id": "paid_media",
@@ -217,7 +246,11 @@
         "8.8"
       ],
       "emoji": "\ud83d\udcb0",
-      "mission": "Owns all paid media operations across platforms (Google Ads, Meta, TikTok, Amazon Ads), manages budgets, optimizes creative, maintains autonomy rules and guardrails."
+      "mission": "Owns all paid media operations across platforms (Google Ads, Meta, TikTok, Amazon Ads), manages budgets, optimizes creative, maintains autonomy rules and guardrails.",
+      "stats": {
+        "built": 6,
+        "not_started": 2
+      }
     },
     "amazon": {
       "id": "amazon",
@@ -237,7 +270,11 @@
         "9.8"
       ],
       "emoji": "\ud83d\udce6",
-      "mission": "Owns all Amazon advertising operations, listing optimization, performance tracking, and guardrails to ensure profitable growth within the Kenetik ecosystem."
+      "mission": "Owns all Amazon advertising operations, listing optimization, performance tracking, and guardrails to ensure profitable growth within the Kenetik ecosystem.",
+      "stats": {
+        "built": 7,
+        "not_started": 1
+      }
     },
     "project_manager": {
       "id": "project_manager",
@@ -256,98 +293,102 @@
         "10.7"
       ],
       "emoji": "\ud83d\udd27",
-      "mission": "Tracks system health, manages task coordination across all virtual team members, maintains knowledge governance, ensures continuity and quality of all processes."
+      "mission": "Tracks system health, manages task coordination across all virtual team members, maintains knowledge governance, ensures continuity and quality of all processes.",
+      "stats": {
+        "built": 6,
+        "not_started": 1
+      }
     }
   },
   "processes": {
     "1.1": {
       "name": "Morning Health Check & Pulse Review",
       "role": "cgo",
-      "status": "not_started",
+      "status": "built",
       "layer": "Executive"
     },
     "1.2": {
       "name": "Weekly Marketing Review & Strategic ChangeSet Decisions",
       "role": "cgo",
-      "status": "not_started",
+      "status": "built",
       "layer": "Executive"
     },
     "1.3": {
       "name": "Monthly Optimization Calibration & Edge Case Review",
       "role": "cgo",
-      "status": "not_started",
+      "status": "built",
       "layer": "Executive"
     },
     "1.4": {
       "name": "Quarterly Strategic Review",
       "role": "cgo",
-      "status": "not_started",
+      "status": "built",
       "layer": "Executive"
     },
     "1.5": {
       "name": "Executive Copilot \u2014 Natural Language Query & Synthesis",
       "role": "cgo",
-      "status": "not_started",
+      "status": "built",
       "layer": "Executive"
     },
     "2.1": {
       "name": "Unified Data Access & Pipeline Management",
       "role": "data_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "2.2": {
       "name": "Data Warehouse & Mart Management",
       "role": "data_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "2.3": {
       "name": "Dashboard Delivery & Maintenance",
       "role": "data_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "2.4": {
       "name": "Automated Intelligence Reports",
       "role": "data_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "2.5": {
       "name": "Anomaly Detection & Alerting",
       "role": "data_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "2.6": {
       "name": "Funnel Diagnosis",
       "role": "data_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "2.7": {
       "name": "VoC (Voice of Customer) Synthesis",
       "role": "data_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "2.8": {
       "name": "Trend Intelligence",
       "role": "data_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "2.9": {
       "name": "Attribution & MER Modeling",
       "role": "data_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "2.10": {
       "name": "Executive Copilot Backend \u2014 Natural Language Query Engine",
       "role": "data_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "3.1": {
@@ -359,67 +400,67 @@
     "3.2": {
       "name": "Daily Inventory Rebalance Scan",
       "role": "ops_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "3.3": {
       "name": "ChangeSet Recommendation Generation",
       "role": "ops_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "3.4": {
       "name": "Guardrail Parameter Management",
       "role": "ops_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "3.5": {
       "name": "Edge Case Log Management",
       "role": "ops_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "3.6": {
       "name": "Channel Margin Definition Maintenance",
       "role": "ops_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "3.7": {
       "name": "Financial System Integration",
       "role": "ops_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "3.8": {
       "name": "System Learning Protocol",
       "role": "ops_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "3.9": {
       "name": "Optimization Status Reporting",
       "role": "ops_intelligence",
-      "status": "not_started",
+      "status": "built",
       "layer": "Intelligence"
     },
     "4a.1": {
       "name": "Content Intelligence Layer Management",
       "role": "creative_strategist",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4a.2": {
       "name": "Hypothesis Design & Testing Strategy",
       "role": "creative_strategist",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4a.3": {
       "name": "Creative Brief Object Generation",
       "role": "creative_strategist",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4a.4": {
@@ -437,7 +478,7 @@
     "4a.6": {
       "name": "Performance Memory & Skill File Management",
       "role": "creative_strategist",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4a.7": {
@@ -461,37 +502,37 @@
     "4b.1": {
       "name": "Autonomous Content Generation (Larry 2.0 Core Loop)",
       "role": "content_producer",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4b.2": {
       "name": "Multi-Platform Content Scheduling",
       "role": "content_producer",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4b.3": {
       "name": "Production Queue Processing",
       "role": "content_producer",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4b.4": {
       "name": "Locked Architecture Content Assembly",
       "role": "content_producer",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4b.5": {
       "name": "Founder & Team Content Amplification",
       "role": "content_producer",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4b.6": {
       "name": "Performance Measurement & Learning Record Submission",
       "role": "content_producer",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4c.1": {
@@ -551,169 +592,169 @@
     "5.1": {
       "name": "Marketing Calendar Management",
       "role": "marketing_social",
-      "status": "not_started",
+      "status": "built",
       "layer": "Planning"
     },
     "5.2": {
       "name": "Campaign Orchestration",
       "role": "marketing_social",
-      "status": "not_started",
+      "status": "built",
       "layer": "Planning"
     },
     "5.3": {
       "name": "Social Calendar Production",
       "role": "marketing_social",
-      "status": "not_started",
+      "status": "built",
       "layer": "Planning"
     },
     "5.4": {
       "name": "Event Activation Planning & ROI",
       "role": "marketing_social",
-      "status": "not_started",
+      "status": "built",
       "layer": "Planning"
     },
     "5.5": {
       "name": "Social Listening & Competitive Intelligence",
       "role": "marketing_social",
-      "status": "not_started",
+      "status": "built",
       "layer": "Planning"
     },
     "5.6": {
       "name": "Creator & Ambassador Partnership Management",
       "role": "marketing_social",
-      "status": "not_started",
+      "status": "built",
       "layer": "Planning"
     },
     "5.7": {
       "name": "Sprout Social Integration Management",
       "role": "marketing_social",
-      "status": "not_started",
+      "status": "built",
       "layer": "Planning"
     },
     "5.8": {
       "name": "Content Production Coordination",
       "role": "marketing_social",
-      "status": "not_started",
+      "status": "built",
       "layer": "Planning"
     },
     "5.9": {
       "name": "Marketing Activity ROI Retrospective",
       "role": "marketing_social",
-      "status": "not_started",
+      "status": "built",
       "layer": "Planning"
     },
     "6.1": {
       "name": "Shopify Theme Version Control & Deployment Pipeline",
       "role": "web_experimentation",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "6.2": {
       "name": "Content & SEO Change Pipeline",
       "role": "web_experimentation",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "6.3": {
       "name": "Experimentation System (A/B Testing Lifecycle)",
       "role": "web_experimentation",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "6.4": {
       "name": "Optimization Review, Approval & Deploy Workflow",
       "role": "web_experimentation",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "6.5": {
       "name": "Production Monitoring & Alert Response",
       "role": "web_experimentation",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "6.6": {
       "name": "Incident Response, Safe Mode & Rollback",
       "role": "web_experimentation",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "6.7": {
       "name": "Opportunity Identification & Scoring",
       "role": "web_experimentation",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "6.8": {
       "name": "Creative Brief Generation for Web Content",
       "role": "web_experimentation",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "6.9": {
       "name": "Learning Notes Production",
       "role": "web_experimentation",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "7.1": {
       "name": "ChangeSet Lifecycle Management",
       "role": "channel_execution",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "7.2": {
       "name": "Economics Estimation",
       "role": "channel_execution",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "7.3": {
       "name": "Klaviyo Email/SMS Operations",
       "role": "channel_execution",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "7.4": {
       "name": "Recharge Subscription Operations",
       "role": "channel_execution",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "7.5": {
       "name": "ChangeSet Measurement & Auto-Close",
       "role": "channel_execution",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "7.6": {
       "name": "Compliance Engine",
       "role": "channel_execution",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "7.7": {
       "name": "Creative Sourcing & ChangeSet Integration",
       "role": "channel_execution",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "7.8": {
       "name": "Partner Listing Packet Management",
       "role": "channel_execution",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "7.9": {
       "name": "Graduation ChangeSet Processing",
       "role": "channel_execution",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "8.1": {
       "name": "Daily Paid Media Pulse",
       "role": "paid_media",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "8.2": {
@@ -725,25 +766,25 @@
     "8.3": {
       "name": "Budget Reallocation Recommendations",
       "role": "paid_media",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "8.4": {
       "name": "Creative Freshness Pre-Condition",
       "role": "paid_media",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "8.5": {
       "name": "Autonomous Optimization Rules",
       "role": "paid_media",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "8.6": {
       "name": "Inventory-Aware Spend Constraints",
       "role": "paid_media",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "8.7": {
@@ -756,49 +797,49 @@
     "8.8": {
       "name": "Experiment Results \u2192 Performance Memory Reporting",
       "role": "paid_media",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "9.1": {
       "name": "Daily Pulse & Morning Dashboard Review",
       "role": "amazon",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "9.2": {
       "name": "Listing Optimization & Enhanced Content Management",
       "role": "amazon",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "9.3": {
       "name": "Amazon Listing Audit",
       "role": "amazon",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "9.4": {
       "name": "Search Intelligence & Keyword Management",
       "role": "amazon",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "9.5": {
       "name": "Amazon Advertising Budget & Bid Management",
       "role": "amazon",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "9.6": {
       "name": "Amazon Review Intelligence & Response Management",
       "role": "amazon",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "9.7": {
       "name": "Amazon Competitive Intelligence & Market Analysis",
       "role": "amazon",
-      "status": "not_started",
+      "status": "built",
       "layer": "Execution"
     },
     "9.8": {
@@ -811,25 +852,25 @@
     "10.1": {
       "name": "System Health Dashboard & Operational Pulse",
       "role": "project_manager",
-      "status": "not_started",
+      "status": "built",
       "layer": "Infrastructure"
     },
     "10.2": {
       "name": "ChangeSet Tracking & Deployment Management",
       "role": "project_manager",
-      "status": "not_started",
+      "status": "built",
       "layer": "Infrastructure"
     },
     "10.3": {
       "name": "Knowledge Governance & Process Documentation",
       "role": "project_manager",
-      "status": "not_started",
+      "status": "built",
       "layer": "Infrastructure"
     },
     "10.4": {
       "name": "Cross-Role Coordination & Dependency Management",
       "role": "project_manager",
-      "status": "not_started",
+      "status": "built",
       "layer": "Infrastructure"
     },
     "10.5": {
@@ -842,13 +883,13 @@
     "10.6": {
       "name": "Meeting Cadence & Team Communication",
       "role": "project_manager",
-      "status": "not_started",
+      "status": "built",
       "layer": "Infrastructure"
     },
     "10.7": {
       "name": "Onboarding & Team Member Continuity",
       "role": "project_manager",
-      "status": "not_started",
+      "status": "built",
       "layer": "Infrastructure"
     }
   },
@@ -1298,5 +1339,12 @@
         "description": "Brand protection floor \u2014 never trade brand equity for short-term gains"
       }
     ]
+  },
+  "stats": {
+    "total_processes": 98,
+    "status_breakdown": {
+      "built": 79,
+      "not_started": 19
+    }
   }
 }
