@@ -1,0 +1,45 @@
+name: Validate KGS Dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'system-state.json'
+      - 'kenetik-growth-system-dashboard.html'
+      - 'system-state-definitions.json'
+      - 'validate-dashboard.py'
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run KGS Dashboard Validation
+        run: python3 validate-dashboard.py
+
+      - name: Post failure summary
+        if: failure()
+        run: |
+          echo "## ❌ Dashboard Validation Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The KGS dashboard data does not match the v3.2 spec." >> $GITHUB_STEP_SUMMARY
+          echo "Run \`python3 validate-dashboard.py\` locally to see details." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Common causes:**" >> $GITHUB_STEP_SUMMARY
+          echo "- AI agent regenerated entire system-state.json instead of surgical edit" >> $GITHUB_STEP_SUMMARY
+          echo "- Role names, layers, or process counts were changed" >> $GITHUB_STEP_SUMMARY
+          echo "- Processes added/removed without matching role references" >> $GITHUB_STEP_SUMMARY
+
+      - name: Post success summary
+        if: success()
+        run: |
+          echo "## ✅ Dashboard Validation Passed" >> $GITHUB_STEP_SUMMARY
+          echo "All 12 roles, 98 processes, and infrastructure match KGS v3.2 spec." >> $GITHUB_STEP_SUMMARY
