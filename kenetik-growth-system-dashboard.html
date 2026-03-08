@@ -494,7 +494,7 @@
     <div class="container">
         <div class="header">
             <h1>Kenetik Growth System</h1>
-            <p>Virtual Team Dashboard · v3.1 · 11 roles · 90 processes</p>
+            <p id="header-subtitle">Virtual Team Dashboard · v3.2</p>
         </div>
 
         <div class="stats">
@@ -518,12 +518,15 @@
 
         <div class="filters">
             <div class="filter-group">
-                <button class="filter-button active" data-filter="wave" data-value="all">All Waves</button>
-                <button class="filter-button" data-filter="wave" data-value="1">Wave 1</button>
+                <button class="filter-button active" data-filter="wave" data-value="all">All Layers</button>
+                <button class="filter-button" data-filter="wave" data-value="executive">Executive</button>
+                <button class="filter-button" data-filter="wave" data-value="execution">Execution</button>
             </div>
             <div class="filter-group">
-                <button class="filter-button active" data-filter="phase" data-value="all">All Phases</button>
-                <button class="filter-button" data-filter="phase" data-value="1">Phase 1</button>
+                <button class="filter-button active" data-filter="phase" data-value="all">All Priorities</button>
+                <button class="filter-button" data-filter="phase" data-value="critical">Critical</button>
+                <button class="filter-button" data-filter="phase" data-value="high">High</button>
+                <button class="filter-button" data-filter="phase" data-value="medium">Medium</button>
             </div>
             <div class="filter-group">
                 <button class="filter-button active" data-filter="status" data-value="all">All Statuses</button>
@@ -560,30 +563,33 @@
 
         async function loadSystemState() {
             try {
-                const [stateRes, defsRes] = await Promise.all([
-                    fetch('./system-state.json'),
-                    fetch('./system-state-definitions.json')
-                ]);
+                // system-state.json is required; definitions file is optional enrichment
+                const stateRes = await fetch('./system-state.json');
                 if (!stateRes.ok) throw new Error(`State file: HTTP ${stateRes.status}`);
-                if (!defsRes.ok) throw new Error(`Definitions file: HTTP ${defsRes.status}`);
+                SYSTEM_STATE = await stateRes.json();
 
-                const state = await stateRes.json();
-                const defs = await defsRes.json();
-
-                // Merge: state is the base, definitions fill in process details
-                SYSTEM_STATE = state;
-                for (const [pid, defn] of Object.entries(defs.processes || {})) {
-                    if (SYSTEM_STATE.processes[pid]) {
-                        Object.assign(SYSTEM_STATE.processes[pid], defn);
+                // Try to load definitions for extra detail, but don't fail if missing
+                try {
+                    const defsRes = await fetch('./system-state-definitions.json');
+                    if (defsRes.ok) {
+                        const defs = await defsRes.json();
+                        for (const [pid, defn] of Object.entries(defs.processes || {})) {
+                            if (SYSTEM_STATE.processes[pid]) {
+                                Object.assign(SYSTEM_STATE.processes[pid], defn);
+                            }
+                        }
                     }
+                } catch (defErr) {
+                    console.warn('Definitions file not loaded (optional):', defErr.message);
                 }
+
                 initDashboard();
             } catch (err) {
                 console.error('Failed to load system state:', err);
                 document.querySelector('.container').innerHTML =
                     '<div style="color: #ef4444; padding: 40px; text-align: center;">' +
                     '<h2>Failed to load system state</h2>' +
-                    '<p>Make sure system-state.json and system-state-definitions.json are in the same directory as this file.</p>' +
+                    '<p>Make sure system-state.json is in the same directory as this file.</p>' +
                     '<p style="color: #94a3b8; margin-top: 8px;">Error: ' + err.message + '</p></div>';
             }
         }
@@ -609,6 +615,11 @@
                 live: processes.filter(p => p.status === 'live').length
             };
 
+            // Update header subtitle
+            const roleCount = Object.keys(SYSTEM_STATE.roles || {}).length;
+            document.getElementById('header-subtitle').textContent =
+                `Virtual Team Dashboard · v${SYSTEM_STATE.version || '3.2'} · ${roleCount} roles · ${processes.length} processes`;
+
             // Update stats
             document.getElementById('stat-total').textContent = stats.total_processes || processes.length;
             document.getElementById('stat-built').textContent = (stats.built || 0) + (stats.live || 0);
@@ -624,11 +635,18 @@
             // Render processes
             renderProcesses();
 
-            // Render infrastructure
-            if (infra && infra.platforms) {
-                Object.entries(infra.platforms).forEach(([name, platform]) => {
-                    renderPlatform(name, platform);
-                });
+            // Render infrastructure — platforms and connections
+            if (infra) {
+                if (infra.platforms) {
+                    Object.entries(infra.platforms).forEach(([name, platform]) => {
+                        renderPlatform(name, platform);
+                    });
+                }
+                if (infra.connections) {
+                    Object.entries(infra.connections).forEach(([name, conn]) => {
+                        renderPlatform(name, conn);
+                    });
+                }
             }
 
             // Setup event listeners
@@ -637,7 +655,19 @@
 
         function renderRole(role) {
             const rolesContainer = document.getElementById('roles-container');
-            const stats = role.stats || { total: 0, not_started: 0, in_progress: 0, built: 0, live: 0, consolidated: 0 };
+            // Compute role stats from processes if not already provided
+            let stats = role.stats;
+            if (!stats || !stats.total) {
+                const roleProcesses = (role.processes || []).map(pid => SYSTEM_STATE.processes[pid]).filter(Boolean);
+                stats = {
+                    total: roleProcesses.length,
+                    not_started: roleProcesses.filter(p => p.status === 'not_started').length,
+                    in_progress: roleProcesses.filter(p => p.status === 'in_progress').length,
+                    built: roleProcesses.filter(p => p.status === 'built' || p.status === 'live').length,
+                    live: roleProcesses.filter(p => p.status === 'live').length,
+                    consolidated: roleProcesses.filter(p => p.status === 'consolidated').length
+                };
+            }
 
             const card = document.createElement('div');
             card.className = 'role-card';
@@ -717,7 +747,7 @@
                     <span class="process-status ${statusClass}">${process.status?.replace('_', ' ').toUpperCase()}</span>
                 </div>
                 <div class="process-name">${process.name}</div>
-                <div class="process-meta">Wave ${process.wave} • Phase ${process.phase}</div>
+                <div class="process-meta">${process.layer || ''} • ${process.owner || ''} • ${(process.priority || '').toUpperCase()}</div>
                 ${process.notes ? `<div class="process-notes">${process.notes.substring(0, 100)}${process.notes.length > 100 ? '...' : ''}</div>` : ''}
                 ${process.shortcut ? `<span class="process-shortcut">${process.shortcut}</span>` : ''}
                 ${process.progress !== undefined ? `
@@ -744,12 +774,12 @@
                         <div class="meta-value">${process.status?.replace('_', ' ').toUpperCase()}</div>
                     </div>
                     <div class="meta-item">
-                        <div class="meta-label">Wave</div>
-                        <div class="meta-value">${process.wave}</div>
+                        <div class="meta-label">Layer</div>
+                        <div class="meta-value">${process.layer || 'TBD'}</div>
                     </div>
                     <div class="meta-item">
-                        <div class="meta-label">Phase</div>
-                        <div class="meta-value">${process.phase || 'TBD'}</div>
+                        <div class="meta-label">Priority</div>
+                        <div class="meta-value">${(process.priority || 'TBD').toUpperCase()}</div>
                     </div>
                     <div class="meta-item">
                         <div class="meta-label">Progress</div>
@@ -813,18 +843,20 @@
             const card = document.createElement('div');
             card.className = 'platform-card';
 
-            const healthClass = platform.health === 'operational' ? 'health-operational' : 'health-offline';
-            const status = platform.health === 'operational' ? 'Operational' : `Offline (${platform.reason || 'Unknown'})`;
+            const platformStatus = platform.status || platform.health || 'unknown';
+            const isOperational = ['operational', 'connected', 'active'].includes(platformStatus.toLowerCase());
+            const healthClass = isOperational ? 'health-operational' : 'health-offline';
+            const statusLabel = isOperational ? 'Connected' : platformStatus.charAt(0).toUpperCase() + platformStatus.slice(1);
 
             card.innerHTML = `
                 <div class="platform-name">
                     <span class="health-indicator ${healthClass}"></span>
-                    ${name.replace('_', ' ').toUpperCase()}
+                    ${name.replace(/_/g, ' ').toUpperCase()}
                 </div>
                 <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                    ${status}<br>
+                    ${statusLabel}<br>
                     <span style="color: var(--text-muted); font-size: 0.8rem;">
-                        ${platform.lastSync ? `Last sync: ${new Date(platform.lastSync).toLocaleDateString()}` : 'Never synced'}
+                        ${platform.purpose || platform.lastSync ? (platform.purpose || `Last sync: ${new Date(platform.lastSync).toLocaleDateString()}`) : ''}
                     </span>
                 </div>
             `;
@@ -833,13 +865,13 @@
         }
 
         function matchesFilters(process) {
-            // Wave filter
-            if (currentFilters.wave !== 'all' && process.wave != currentFilters.wave) {
+            // Layer filter (replaces Wave)
+            if (currentFilters.wave !== 'all' && (process.layer || '').toLowerCase() !== currentFilters.wave) {
                 return false;
             }
 
-            // Phase filter
-            if (currentFilters.phase !== 'all' && process.phase != currentFilters.phase) {
+            // Priority filter (replaces Phase)
+            if (currentFilters.phase !== 'all' && (process.priority || '') !== currentFilters.phase) {
                 return false;
             }
 
@@ -852,7 +884,8 @@
             if (currentFilters.search) {
                 const searchLower = currentFilters.search.toLowerCase();
                 if (!process.id.toLowerCase().includes(searchLower) &&
-                    !process.name.toLowerCase().includes(searchLower)) {
+                    !process.name.toLowerCase().includes(searchLower) &&
+                    !(process.owner || '').toLowerCase().includes(searchLower)) {
                     return false;
                 }
             }
