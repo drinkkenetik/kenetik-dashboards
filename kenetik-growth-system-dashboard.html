@@ -1431,7 +1431,7 @@
                     chip.className = 'org-chip';
                     chip.id = 'chip-' + role.id;
                     chip.style.background = color + '18';
-                    chip.onclick = () => scrollToRole(role.id);
+                    chip.setAttribute('onclick', `scrollToRole('${role.id}')`);
                     chip.innerHTML = `
                         <div class="chip-title">${role.name}</div>
                         <div class="chip-count">${count} processes</div>
@@ -1892,14 +1892,14 @@
                     roleCard.classList.add('expanded');
                 }
                 // Brief delay to let expansion animation start, then scroll
-                setTimeout(() => {
-                    roleCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setTimeout(function() {
+                    var yOffset = -20;
+                    var y = roleCard.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
                     // Flash highlight
                     roleCard.style.boxShadow = '0 0 0 2px var(--color-blue)';
-                    setTimeout(() => { roleCard.style.boxShadow = ''; }, 2000);
-                }, 100);
-            } else {
-                console.warn('Role card not found for roleId:', roleId);
+                    setTimeout(function() { roleCard.style.boxShadow = ''; }, 2000);
+                }, 150);
             }
         }
 
