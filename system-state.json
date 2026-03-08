@@ -4,8 +4,22 @@
     "subtitle": "Virtual Team Dashboard",
     "version": "3.1",
     "totalRoles": 11,
-    "totalProcesses": 89,
+    "totalProcesses": 88,
     "currentWave": "Wave 1: See the Problem"
+  },
+  "stats": {
+    "totalProcesses": 88,
+    "total_processes": 88,
+    "statusCounts": {
+      "built": 2,
+      "not_started": 28,
+      "in_progress": 57,
+      "live": 1
+    },
+    "built": 2,
+    "in_progress": 57,
+    "not_started": 28,
+    "live": 1
   },
   "roles": {
     "1": {
@@ -16,7 +30,7 @@
       "theme": "#fbbf24",
       "layer": "Executive",
       "human": "Devon",
-      "mission": "I set the optimization rules, define what 'good' looks like, and make sure every decision the system makes aligns with how we actually want to grow this business. I'm the one who decides when the system is ready to do more on its own.",
+      "mission": "I set the optimization rules, define what 'good' looks like, and make sure every decision the system makes aligns with how we actually want to grow this business. I'm the one who decides when the system is ready to do more on its own. I operate as the executive reasoning layer: synthesizing 13 domain scans into unified daily intelligence, producing and prioritizing ChangeSets through a three-layer architecture, synthesizing competitive fragments daily and conducting strategic competitive analysis monthly/quarterly, and routing decisions to Devon/Nick/Katie/Peter within defined authority boundaries.",
       "processes": [
         "1.1",
         "1.2",
@@ -41,7 +55,7 @@
       "theme": "#3b82f6",
       "layer": "Intelligence",
       "human": "Peter",
-      "mission": "I'm the person who knows the numbers. I connect every data source, build the dashboards, generate the reports, and flag the anomalies. When someone asks 'how are we doing?' — I answer.",
+      "mission": "I'm the person who knows the numbers. I connect every data source, build the dashboards, generate the reports, and flag the anomalies. When someone asks 'how are we doing?' — I answer. I build and maintain all data ingestion, modeling, and visualization systems; generate daily/weekly dashboards and ad-hoc reports; establish SLAs on data freshness and quality; integrate all platforms including internal systems, external APIs, and historical records; and synthesize complex datasets for exec-level insight and decision support.",
       "processes": [
         "2.1",
         "2.2",
@@ -64,14 +78,14 @@
       }
     },
     "3": {
-      "id": "ops_intelligence",
-      "name": "Operations Intelligence Lead",
-      "shortName": "OIL",
-      "emoji": "📦",
-      "theme": "#8b5cf6",
-      "layer": "Intelligence",
-      "human": "Peter",
-      "mission": "I monitor every operation—from pipelines to customer success. I see the patterns in what we're doing, measure efficiency, flag blockages, and ensure our operational activities stay aligned with growth goals.",
+      "id": "sales_marketing",
+      "name": "Sales & Marketing Lead",
+      "shortName": "SML",
+      "emoji": "📢",
+      "theme": "#ec4899",
+      "layer": "Growth",
+      "human": "Katie",
+      "mission": "I own the entire customer acquisition funnel from awareness through conversion. I design campaigns, manage channels, track metrics, run tests, and optimize for growth. I'm responsible for positioning, messaging, channel strategy, campaign execution, creative development, performance tracking, testing, and conversion optimization across all marketing channels including brand, demand gen, and conversion.",
       "processes": [
         "3.1",
         "3.2",
@@ -84,22 +98,22 @@
       ],
       "stats": {
         "total": 8,
-        "not_started": 5,
-        "in_progress": 3,
+        "not_started": 3,
+        "in_progress": 5,
         "built": 0,
         "live": 0,
         "consolidated": 0
       }
     },
     "4": {
-      "id": "growth_activation",
-      "name": "Growth Activation Lead",
-      "shortName": "GAL",
-      "emoji": "🚀",
-      "theme": "#10b981",
-      "layer": "Execution",
-      "human": "Jordan",
-      "mission": "I take insights from the data, guidance from the system rules, and turn them into actions. If we identify a growth lever, I test it. If we find a bottleneck, I implement the solution. I'm the bridge between knowing and doing.",
+      "id": "product_dev",
+      "name": "Product Development Lead",
+      "shortName": "PDL",
+      "emoji": "🛠️",
+      "theme": "#8b5cf6",
+      "layer": "Operations",
+      "human": "Nick",
+      "mission": "I translate customer feedback and market needs into product roadmap decisions. I prioritize features, oversee development sprints, manage technical debt, and ensure product quality. I own the product strategy; establish development processes and quality standards; maintain the technical roadmap; oversee all engineering work; manage dependencies and release schedules; and maintain performance/security standards.",
       "processes": [
         "4.1",
         "4.2",
@@ -110,27 +124,26 @@
         "4.7",
         "4.8",
         "4.9",
-        "4.10",
-        "4.11"
+        "4.10"
       ],
       "stats": {
-        "total": 11,
-        "not_started": 0,
-        "in_progress": 8,
-        "built": 3,
+        "total": 10,
+        "not_started": 5,
+        "in_progress": 5,
+        "built": 0,
         "live": 0,
         "consolidated": 0
       }
     },
     "5": {
-      "id": "product_engineering",
-      "name": "Product Engineering Lead",
-      "shortName": "PEL",
-      "emoji": "⚙️",
-      "theme": "#f59e0b",
-      "layer": "Execution",
-      "human": "Alex",
-      "mission": "I build and iterate on the product itself. When the system identifies a feature gap, I engineer it. When we need to automate manual work, I code it. I turn strategic needs into shipped features.",
+      "id": "customer_success",
+      "name": "Customer Success Lead",
+      "shortName": "CSL",
+      "emoji": "💚",
+      "theme": "#10b981",
+      "layer": "Operations",
+      "human": "Katie",
+      "mission": "I ensure every customer achieves their desired outcomes with our product. I manage onboarding, troubleshooting, and growth initiatives. I own all customer lifecycle processes from onboarding through expansion, including implementation, training, support, proactive outreach, and account management. I track NPS, retention, and expansion metrics.",
       "processes": [
         "5.1",
         "5.2",
@@ -145,135 +158,120 @@
       ],
       "stats": {
         "total": 10,
-        "not_started": 1,
+        "not_started": 5,
         "in_progress": 5,
-        "built": 3,
-        "live": 1,
+        "built": 0,
+        "live": 0,
         "consolidated": 0
       }
     },
     "6": {
-      "id": "infrastructure_ops",
-      "name": "Infrastructure & Operations Lead",
-      "shortName": "IOL",
-      "emoji": "🔧",
-      "theme": "#ec4899",
-      "layer": "Execution",
-      "human": "Casey",
-      "mission": "I keep the systems running. I manage infrastructure, security, compliance, and reliability. I ensure that whatever the team builds stays stable and scales as we grow.",
+      "id": "operations",
+      "name": "Operations Lead",
+      "shortName": "OPS",
+      "emoji": "⚙️",
+      "theme": "#06b6d4",
+      "layer": "Operations",
+      "human": "Devon",
+      "mission": "I keep the company running smoothly. I manage budgets, hiring, processes, vendor relationships, and culture. I oversee financial planning, HR/recruiting, vendor management, facilities, and compliance; maintain operational systems; establish internal processes; and manage cross-functional alignment.",
       "processes": [
         "6.1",
         "6.2",
         "6.3",
         "6.4",
-        "6.5",
-        "6.6",
-        "6.7",
-        "6.8"
+        "6.5"
       ],
       "stats": {
-        "total": 8,
+        "total": 5,
         "not_started": 5,
-        "in_progress": 3,
+        "in_progress": 0,
         "built": 0,
         "live": 0,
         "consolidated": 0
       }
     },
     "7": {
-      "id": "customer_success",
-      "name": "Customer Success Lead",
-      "shortName": "CSL",
-      "emoji": "😊",
-      "theme": "#06b6d4",
-      "layer": "Execution",
-      "human": "Sam",
-      "mission": "I'm the voice of the customer inside the system. I gather feedback, track satisfaction, identify churn risks, and ensure we're solving real problems. Every decision should make our customers happier.",
+      "id": "brand_positioning",
+      "name": "Brand & Positioning",
+      "shortName": "BRP",
+      "emoji": "✨",
+      "theme": "#f59e0b",
+      "layer": "Intelligence",
+      "human": "Katie",
+      "mission": "I define how the world sees us. I craft our brand narrative, ensure consistency across channels, and maintain our positioning in the market. I develop brand strategy and messaging, maintain brand guidelines, manage brand evolution, oversee customer perception, and coordinate brand implementation across all touchpoints.",
       "processes": [
         "7.1",
         "7.2",
         "7.3",
         "7.4",
-        "7.5",
-        "7.6",
-        "7.7",
-        "7.8",
-        "7.9"
+        "7.5"
       ],
       "stats": {
-        "total": 9,
-        "not_started": 6,
-        "in_progress": 3,
+        "total": 5,
+        "not_started": 4,
+        "in_progress": 1,
         "built": 0,
         "live": 0,
         "consolidated": 0
       }
     },
     "8": {
-      "id": "demand_generation",
-      "name": "Demand Generation Lead",
-      "shortName": "DGL",
-      "emoji": "📢",
-      "theme": "#14b8a6",
-      "layer": "Execution",
-      "human": "Morgan",
-      "mission": "I drive awareness and demand for our product. I own marketing, content, partnerships, and outreach. I make sure the right people know about us and want to try us.",
+      "id": "partnerships",
+      "name": "Partnerships & Alliances",
+      "shortName": "PA",
+      "emoji": "🤝",
+      "theme": "#6366f1",
+      "layer": "Growth",
+      "human": "Nick",
+      "mission": "I expand our reach through strategic relationships. I identify, negotiate, and manage partnerships that accelerate growth. I own partner strategy, identify opportunities, negotiate terms, manage relationships, oversee co-marketing, and ensure mutual value creation.",
       "processes": [
         "8.1",
         "8.2",
         "8.3",
-        "8.4",
-        "8.5",
-        "8.6",
-        "8.7"
+        "8.4"
       ],
       "stats": {
-        "total": 7,
+        "total": 4,
         "not_started": 4,
-        "in_progress": 3,
+        "in_progress": 0,
         "built": 0,
         "live": 0,
         "consolidated": 0
       }
     },
     "9": {
-      "id": "revenue_operations",
-      "name": "Revenue Operations Lead",
-      "shortName": "ROL",
-      "emoji": "💰",
-      "theme": "#f97316",
-      "layer": "Execution",
-      "human": "Riley",
-      "mission": "I optimize how we acquire and retain customers. I own pricing, GTM motion, sales enablement, and retention mechanics. I make sure revenue flows align with growth strategy.",
+      "id": "competitive_intelligence",
+      "name": "Competitive Intelligence",
+      "shortName": "CI",
+      "emoji": "🔍",
+      "theme": "#ef4444",
+      "layer": "Intelligence",
+      "human": "Peter",
+      "mission": "I monitor the competitive landscape and synthesize insights that inform strategy. I track competitors, analyze market trends, and provide intelligence for decision-making. I monitor competitor activity, analyze positioning and features, track pricing and packaging, synthesize market insights, and report findings to leadership.",
       "processes": [
         "9.1",
         "9.2",
         "9.3",
-        "9.4",
-        "9.5",
-        "9.6",
-        "9.7",
-        "9.8",
-        "9.9"
+        "9.4"
       ],
       "stats": {
-        "total": 9,
-        "not_started": 5,
-        "in_progress": 4,
+        "total": 4,
+        "not_started": 4,
+        "in_progress": 0,
         "built": 0,
         "live": 0,
         "consolidated": 0
       }
     },
     "10": {
-      "id": "finance_planning",
-      "name": "Finance & Planning Lead",
-      "shortName": "FPL",
-      "emoji": "📈",
-      "theme": "#06b6d4",
-      "layer": "Executive",
-      "human": "Blake",
-      "mission": "I translate business strategy into financial reality. I build forecasts, allocate budget, track burn rate, and ensure we're using capital efficiently to reach our next milestone.",
+      "id": "market_development",
+      "name": "Market Development",
+      "shortName": "MD",
+      "emoji": "🌱",
+      "theme": "#14b8a6",
+      "layer": "Growth",
+      "human": "Katie",
+      "mission": "I identify and develop new market opportunities. I evaluate emerging segments, test market fit, and build go-to-market strategies. I analyze market opportunities, develop market entry strategies, manage market testing, and oversee expansion planning.",
       "processes": [
         "10.1",
         "10.2",
@@ -284,33 +282,31 @@
       ],
       "stats": {
         "total": 6,
-        "not_started": 3,
-        "in_progress": 3,
+        "not_started": 6,
+        "in_progress": 0,
         "built": 0,
         "live": 0,
         "consolidated": 0
       }
     },
     "11": {
-      "id": "brand_culture",
-      "name": "Brand & Culture Lead",
-      "shortName": "BCL",
-      "emoji": "✨",
-      "theme": "#a855f7",
-      "layer": "Executive",
-      "human": "Taylor",
-      "mission": "I define who we are as a company. I build brand identity, shape company culture, and ensure our external story matches our internal reality. People want to work here because they believe in us.",
+      "id": "compliance_legal",
+      "name": "Compliance & Legal",
+      "shortName": "CL",
+      "emoji": "⚖️",
+      "theme": "#64748b",
+      "layer": "Operations",
+      "human": "Devon",
+      "mission": "I ensure the company operates within legal and regulatory requirements. I manage contracts, compliance, risk, and legal affairs. I oversee contracts, compliance frameworks, regulatory requirements, risk management, and legal affairs.",
       "processes": [
         "11.1",
         "11.2",
-        "11.3",
-        "11.4",
-        "11.5"
+        "11.3"
       ],
       "stats": {
-        "total": 5,
+        "total": 3,
         "not_started": 3,
-        "in_progress": 2,
+        "in_progress": 0,
         "built": 0,
         "live": 0,
         "consolidated": 0
@@ -320,1734 +316,840 @@
   "processes": {
     "1.1": {
       "id": "1.1",
-      "role": "1",
-      "name": "Define Success Metrics",
+      "title": "Set Annual Growth Targets and Metrics",
+      "role": "Chief Growth Officer",
       "status": "built",
-      "layer": "Executive",
-      "owner": "Devon",
-      "description": "Establish the KPIs that define 'good performance' for the growth system.",
-      "owners": ["Devon"],
-      "outputs": ["success_metrics_doc.md"],
-      "links": {
-        "related": ["1.2", "10.1"],
-        "blocked_by": []
-      },
-      "startDate": "2025-01-10",
-      "dueDate": "2025-01-24",
-      "completedDate": "2025-01-24",
-      "effort": "medium",
-      "priority": "critical",
-      "notes": "Completed - metrics approved by board"
+      "wave": "Wave 1: See the Problem",
+      "description": "Establish quantified annual growth targets, define success metrics, and create the strategic framework that guides all growth initiatives.",
+      "dependencies": [],
+      "priority": "critical"
     },
     "1.2": {
       "id": "1.2",
-      "role": "1",
-      "name": "Establish Optimization Rules",
-      "status": "not_started",
-      "layer": "Executive",
-      "owner": "Devon",
-      "description": "Define the decision-making rules and constraints for the system.",
-      "owners": ["Devon"],
-      "links": {
-        "blocked_by": ["1.1"],
-        "related": ["1.3"]
-      },
-      "startDate": null,
-      "dueDate": "2025-02-15",
-      "effort": "medium",
-      "priority": "critical",
-      "notes": "Waiting for 1.1 completion"
+      "title": "Daily Domain Scanning (13 domains)",
+      "role": "Chief Growth Officer",
+      "status": "in_progress",
+      "wave": "Wave 1: See the Problem",
+      "description": "Synthesize 13 domain scans into unified daily intelligence for decision-making.",
+      "dependencies": ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "2.10"],
+      "priority": "critical"
     },
     "1.3": {
       "id": "1.3",
-      "role": "1",
-      "name": "Design System Architecture",
+      "title": "Weekly Growth Roundtable",
+      "role": "Chief Growth Officer",
       "status": "not_started",
-      "layer": "Executive",
-      "owner": "Devon",
-      "description": "Map the system structure with roles, processes, and decision points.",
-      "owners": ["Devon"],
-      "links": {
-        "blocked_by": ["1.1"],
-        "related": ["1.4", "2.1"]
-      },
-      "startDate": null,
-      "dueDate": "2025-02-20",
-      "effort": "large",
-      "priority": "critical",
-      "notes": "Depends on rules from 1.2"
+      "wave": "Wave 1: See the Problem",
+      "description": "Hold weekly meeting to review performance, discuss findings, and make growth decisions.",
+      "dependencies": ["1.1", "1.2"],
+      "priority": "high"
     },
     "1.4": {
       "id": "1.4",
-      "role": "1",
-      "name": "Autonomy Governance Framework",
+      "title": "Monthly Strategy Review",
+      "role": "Chief Growth Officer",
       "status": "not_started",
-      "layer": "Executive",
-      "owner": "Devon",
-      "description": "Define which decisions the system can make independently and which need human approval.",
-      "owners": ["Devon"],
-      "links": {
-        "blocked_by": ["1.2"],
-        "related": ["1.5", "2.10"]
-      },
-      "startDate": null,
-      "dueDate": "2025-03-15",
-      "effort": "large",
-      "priority": "critical",
-      "notes": "Critical for system trustworthiness"
+      "wave": "Wave 2: Diagnosis",
+      "description": "Conduct monthly deep-dive into growth metrics, trends, and strategic implications.",
+      "dependencies": ["1.1", "1.2", "1.3"],
+      "priority": "high"
     },
     "1.5": {
       "id": "1.5",
-      "role": "1",
-      "name": "Quarterly Review & Optimization",
+      "title": "Quarterly Executive Planning",
+      "role": "Chief Growth Officer",
       "status": "not_started",
-      "layer": "Executive",
-      "owner": "Devon",
-      "description": "Monthly review cycle to assess system performance and make adjustments.",
-      "owners": ["Devon"],
-      "links": {
-        "blocked_by": ["1.1"],
-        "related": ["2.10", "10.6"]
-      },
-      "startDate": null,
-      "dueDate": "2025-02-01",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Recurring monthly"
+      "wave": "Wave 3: Design Solutions",
+      "description": "Align team on quarterly priorities, allocate resources, and finalize strategic initiatives.",
+      "dependencies": ["1.1", "1.2", "1.3", "1.4"],
+      "priority": "high"
     },
     "2.1": {
       "id": "2.1",
-      "role": "2",
-      "name": "Data Architecture Setup",
+      "title": "Data Infrastructure & Warehousing",
+      "role": "Data Intelligence Lead",
       "status": "in_progress",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Design and implement the data warehouse and integration layer.",
-      "owners": ["Peter"],
-      "progress": 65,
-      "links": {
-        "blocked_by": [],
-        "related": ["2.2", "3.1"]
-      },
-      "startDate": "2025-01-15",
-      "dueDate": "2025-02-28",
-      "effort": "large",
-      "priority": "critical",
-      "notes": "Currently setting up Snowflake"
+      "wave": "Wave 1: See the Problem",
+      "description": "Build and maintain centralized data warehouse with all company data sources integrated.",
+      "dependencies": [],
+      "priority": "critical"
     },
     "2.2": {
       "id": "2.2",
-      "role": "2",
-      "name": "CRM Integration",
+      "title": "Daily Metrics Dashboard",
+      "role": "Data Intelligence Lead",
       "status": "in_progress",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Connect customer data from Salesforce and other CRM sources.",
-      "owners": ["Peter"],
-      "progress": 40,
-      "links": {
-        "blocked_by": ["2.1"],
-        "related": ["2.3", "7.3"]
-      },
-      "startDate": "2025-01-20",
-      "dueDate": "2025-03-15",
-      "effort": "medium",
-      "priority": "critical",
-      "notes": "API authentication configured"
+      "wave": "Wave 1: See the Problem",
+      "description": "Maintain real-time dashboard tracking key business metrics across all domains.",
+      "dependencies": ["2.1"],
+      "priority": "critical"
     },
     "2.3": {
       "id": "2.3",
-      "role": "2",
-      "name": "Product Analytics Integration",
+      "title": "Weekly Business Reviews",
+      "role": "Data Intelligence Lead",
       "status": "in_progress",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Connect event tracking from Amplitude and behavioral analytics.",
-      "owners": ["Peter"],
-      "progress": 50,
-      "links": {
-        "blocked_by": ["2.1"],
-        "related": ["2.4", "4.2"]
-      },
-      "startDate": "2025-01-22",
-      "dueDate": "2025-03-10",
-      "effort": "medium",
-      "priority": "critical",
-      "notes": "Schema definition in progress"
+      "wave": "Wave 1: See the Problem",
+      "description": "Generate weekly reports on business performance, identify trends and anomalies.",
+      "dependencies": ["2.1", "2.2"],
+      "priority": "high"
     },
     "2.4": {
       "id": "2.4",
-      "role": "2",
-      "name": "Build Core Dashboards",
-      "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Create the main visibility dashboards for executives and team leads.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["2.1", "2.2"],
-        "related": ["2.5", "1.5"]
-      },
-      "startDate": null,
-      "dueDate": "2025-04-01",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Will use Looker or Tableau"
+      "title": "Financial Reporting & Forecasting",
+      "role": "Data Intelligence Lead",
+      "status": "in_progress",
+      "wave": "Wave 1: See the Problem",
+      "description": "Maintain financial records, generate monthly statements, forecast revenue and costs.",
+      "dependencies": ["2.1"],
+      "priority": "critical"
     },
     "2.5": {
       "id": "2.5",
-      "role": "2",
-      "name": "Anomaly Detection System",
-      "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Implement automated alerting for significant deviations from expected metrics.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["2.1", "2.4"],
-        "related": ["2.6"]
-      },
-      "startDate": null,
-      "dueDate": "2025-05-01",
-      "effort": "large",
-      "priority": "medium",
-      "notes": "ML-based anomaly detection"
+      "title": "Customer Analytics & Cohort Analysis",
+      "role": "Data Intelligence Lead",
+      "status": "in_progress",
+      "wave": "Wave 1: See the Problem",
+      "description": "Track customer metrics, analyze cohorts, measure retention and expansion.",
+      "dependencies": ["2.1", "2.2"],
+      "priority": "high"
     },
     "2.6": {
       "id": "2.6",
-      "role": "2",
-      "name": "Predictive Modeling",
-      "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Build forecasting models for revenue, churn, and growth levers.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["2.1", "2.2", "2.3"],
-        "related": ["2.7", "10.1"]
-      },
-      "startDate": null,
-      "dueDate": "2025-06-01",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Critical for system recommendations"
+      "title": "Marketing Analytics & Attribution",
+      "role": "Data Intelligence Lead",
+      "status": "in_progress",
+      "wave": "Wave 1: See the Problem",
+      "description": "Track marketing spend, measure campaign performance, attribute revenue to campaigns.",
+      "dependencies": ["2.1"],
+      "priority": "high"
     },
     "2.7": {
       "id": "2.7",
-      "role": "2",
-      "name": "Revenue Attribution",
-      "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Build multi-touch attribution model to understand which channels drive revenue.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["2.1", "2.2", "2.3"],
-        "related": ["2.8", "9.2"]
-      },
-      "startDate": null,
-      "dueDate": "2025-05-15",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Complex modeling challenge"
+      "title": "Product Usage Analytics",
+      "role": "Data Intelligence Lead",
+      "status": "in_progress",
+      "wave": "Wave 1: See the Problem",
+      "description": "Track product feature adoption, usage patterns, and user engagement.",
+      "dependencies": ["2.1"],
+      "priority": "high"
     },
     "2.8": {
       "id": "2.8",
-      "role": "2",
-      "name": "Customer Segmentation",
-      "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Define and implement customer segments for targeted analysis and actions.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["2.1", "2.2"],
-        "related": ["2.9", "9.4"]
-      },
-      "startDate": null,
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "Behavioral and demographic segments"
+      "title": "Ad Hoc Analysis & Custom Reports",
+      "role": "Data Intelligence Lead",
+      "status": "in_progress",
+      "wave": "Wave 1: See the Problem",
+      "description": "Respond to ad hoc data requests from leadership with custom analysis and reports.",
+      "dependencies": ["2.1"],
+      "priority": "medium"
     },
     "2.9": {
       "id": "2.9",
-      "role": "2",
-      "name": "Cohort Analysis",
+      "title": "Data Quality & Governance",
+      "role": "Data Intelligence Lead",
       "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Build cohort analysis tools to track user behavior over time.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["2.1", "2.2", "2.3"],
-        "related": ["2.10", "4.6"]
-      },
-      "startDate": null,
-      "dueDate": "2025-05-01",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "Retention and engagement analysis"
+      "wave": "Wave 2: Diagnosis",
+      "description": "Establish data governance policies, maintain data quality standards, and audit data integrity.",
+      "dependencies": ["2.1"],
+      "priority": "high"
     },
     "2.10": {
       "id": "2.10",
-      "role": "2",
-      "name": "Intelligence Review & Iteration",
+      "title": "Predictive Modeling & Forecasting",
+      "role": "Data Intelligence Lead",
       "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Monthly review of data quality, model performance, and new analysis needs.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["2.1"],
-        "related": ["1.5", "10.6"]
-      },
-      "startDate": null,
-      "dueDate": "2025-02-15",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Recurring monthly"
+      "wave": "Wave 3: Design Solutions",
+      "description": "Build predictive models for churn, LTV, and growth scenarios.",
+      "dependencies": ["2.1", "2.2", "2.9"],
+      "priority": "medium"
     },
     "3.1": {
       "id": "3.1",
-      "role": "3",
-      "name": "Pipeline Analytics Setup",
+      "title": "Sales Strategy & Territory Planning",
+      "role": "Sales & Marketing Lead",
       "status": "in_progress",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Track sales pipeline, conversion rates, and deal velocity.",
-      "owners": ["Peter"],
-      "progress": 30,
-      "links": {
-        "blocked_by": ["2.1"],
-        "related": ["3.2", "9.1"]
-      },
-      "startDate": "2025-01-25",
-      "dueDate": "2025-03-20",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Connected to Salesforce"
+      "wave": "Wave 1: See the Problem",
+      "description": "Develop sales territories, define sales approach, and set sales targets.",
+      "dependencies": [],
+      "priority": "high"
     },
     "3.2": {
       "id": "3.2",
-      "role": "3",
-      "name": "Customer Health Scoring",
+      "title": "Demand Generation Campaigns",
+      "role": "Sales & Marketing Lead",
       "status": "in_progress",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Build scoring system to identify expansion and churn risks.",
-      "owners": ["Peter"],
-      "progress": 35,
-      "links": {
-        "blocked_by": ["2.1"],
-        "related": ["3.3", "7.5"]
-      },
-      "startDate": "2025-01-28",
-      "dueDate": "2025-03-25",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Multi-factor risk model"
+      "wave": "Wave 1: See the Problem",
+      "description": "Execute campaigns to build awareness and generate qualified leads.",
+      "dependencies": ["3.1"],
+      "priority": "high"
     },
     "3.3": {
       "id": "3.3",
-      "role": "3",
-      "name": "Resource Utilization Tracking",
+      "title": "Lead Nurturing & Qualification",
+      "role": "Sales & Marketing Lead",
       "status": "in_progress",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Monitor infrastructure and service utilization rates.",
-      "owners": ["Peter"],
-      "progress": 40,
-      "links": {
-        "blocked_by": ["2.1"],
-        "related": ["3.4", "6.2"]
-      },
-      "startDate": "2025-02-01",
-      "dueDate": "2025-03-30",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "CloudWatch and monitoring setup"
+      "wave": "Wave 1: See the Problem",
+      "description": "Develop nurture sequences and qualify leads before sales handoff.",
+      "dependencies": ["3.2"],
+      "priority": "high"
     },
     "3.4": {
       "id": "3.4",
-      "role": "3",
-      "name": "Operational KPI Dashboard",
-      "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Create centralized operational metrics dashboard.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["3.1", "3.2", "3.3"],
-        "related": ["3.5", "1.5"]
-      },
-      "startDate": null,
-      "dueDate": "2025-04-15",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "Executive visibility dashboard"
+      "title": "Brand & Content Marketing",
+      "role": "Sales & Marketing Lead",
+      "status": "in_progress",
+      "wave": "Wave 1: See the Problem",
+      "description": "Develop content strategy, create assets, manage brand presence.",
+      "dependencies": [],
+      "priority": "high"
     },
     "3.5": {
       "id": "3.5",
-      "role": "3",
-      "name": "Bottleneck Identification",
+      "title": "Marketing Performance Tracking",
+      "role": "Sales & Marketing Lead",
       "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Analyze operational data to identify and flag system bottlenecks.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["3.1", "3.3"],
-        "related": ["3.6", "4.3"]
-      },
-      "startDate": null,
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Continuous bottleneck detection"
+      "wave": "Wave 2: Diagnosis",
+      "description": "Track marketing metrics, optimize campaigns, measure ROI.",
+      "dependencies": ["3.1", "3.2", "3.4"],
+      "priority": "high"
     },
     "3.6": {
       "id": "3.6",
-      "role": "3",
-      "name": "Efficiency Benchmarking",
+      "title": "A/B Testing Framework",
+      "role": "Sales & Marketing Lead",
       "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Compare our operations against industry benchmarks.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["3.1"],
-        "related": ["3.7", "10.4"]
-      },
-      "startDate": null,
-      "dueDate": "2025-05-15",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "External benchmarking data"
+      "wave": "Wave 2: Diagnosis",
+      "description": "Establish systematic testing of messaging, creative, and channels.",
+      "dependencies": ["3.4", "3.5"],
+      "priority": "medium"
     },
     "3.7": {
       "id": "3.7",
-      "role": "3",
-      "name": "SLA Monitoring",
+      "title": "Sales Enablement & Training",
+      "role": "Sales & Marketing Lead",
       "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Track and report on service level agreements.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["3.1"],
-        "related": ["3.8", "6.3"]
-      },
-      "startDate": null,
-      "dueDate": "2025-04-20",
-      "effort": "small",
-      "priority": "medium",
-      "notes": "Automated SLA reporting"
+      "wave": "Wave 2: Diagnosis",
+      "description": "Develop sales collateral, training, and playbooks.",
+      "dependencies": ["3.1", "3.4"],
+      "priority": "high"
     },
     "3.8": {
       "id": "3.8",
-      "role": "3",
-      "name": "Operations Review & Iteration",
+      "title": "Channel Partnership Marketing",
+      "role": "Sales & Marketing Lead",
       "status": "not_started",
-      "layer": "Intelligence",
-      "owner": "Peter",
-      "description": "Monthly review of operational metrics and improvement areas.",
-      "owners": ["Peter"],
-      "links": {
-        "blocked_by": ["3.1"],
-        "related": ["1.5", "10.6"]
-      },
-      "startDate": null,
-      "dueDate": "2025-02-20",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Recurring monthly"
+      "wave": "Wave 3: Design Solutions",
+      "description": "Develop co-marketing programs with channel partners.",
+      "dependencies": ["3.1", "3.4"],
+      "priority": "medium"
     },
     "4.1": {
       "id": "4.1",
-      "role": "4",
-      "name": "Growth Lever Identification",
+      "title": "Product Roadmap & Prioritization",
+      "role": "Product Development Lead",
       "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Identify key growth levers based on data and market analysis.",
-      "owners": ["Jordan"],
-      "progress": 70,
-      "links": {
-        "blocked_by": [],
-        "related": ["4.2", "1.1"]
-      },
-      "startDate": "2025-01-10",
-      "dueDate": "2025-02-15",
-      "effort": "medium",
-      "priority": "critical",
-      "notes": "Initial levers identified: pricing, retention, expansion"
+      "wave": "Wave 1: See the Problem",
+      "description": "Develop and maintain product roadmap based on customer needs and business strategy.",
+      "dependencies": [],
+      "priority": "critical"
     },
     "4.2": {
       "id": "4.2",
-      "role": "4",
-      "name": "Experimentation Framework",
+      "title": "Requirements & Specifications",
+      "role": "Product Development Lead",
       "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Set up A/B testing and experiment tracking infrastructure.",
-      "owners": ["Jordan"],
-      "progress": 55,
-      "links": {
-        "blocked_by": ["2.3"],
-        "related": ["4.3", "5.3"]
-      },
-      "startDate": "2025-01-20",
-      "dueDate": "2025-03-01",
-      "effort": "large",
-      "priority": "critical",
-      "notes": "Using LaunchDarkly for feature flags"
+      "wave": "Wave 1: See the Problem",
+      "description": "Define detailed requirements and technical specifications for development.",
+      "dependencies": ["4.1"],
+      "priority": "high"
     },
     "4.3": {
       "id": "4.3",
-      "role": "4",
-      "name": "Test & Learn Program",
+      "title": "Development Sprint Management",
+      "role": "Product Development Lead",
       "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Launch rapid test cycles to validate growth hypotheses.",
-      "owners": ["Jordan"],
-      "progress": 45,
-      "links": {
-        "blocked_by": ["4.2"],
-        "related": ["4.4", "3.5"]
-      },
-      "startDate": "2025-01-25",
-      "dueDate": "2025-04-15",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Target: 5 experiments running in parallel"
+      "wave": "Wave 1: See the Problem",
+      "description": "Manage development sprints, track progress, remove blockers.",
+      "dependencies": ["4.1", "4.2"],
+      "priority": "high"
     },
     "4.4": {
       "id": "4.4",
-      "role": "4",
-      "name": "Bottleneck Resolution",
+      "title": "Quality Assurance & Testing",
+      "role": "Product Development Lead",
       "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Implement solutions for identified operational bottlenecks.",
-      "owners": ["Jordan"],
-      "progress": 50,
-      "links": {
-        "blocked_by": ["3.5"],
-        "related": ["4.5", "5.5"]
-      },
-      "startDate": "2025-02-01",
-      "dueDate": "2025-04-30",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Working with all execution teams"
+      "wave": "Wave 1: See the Problem",
+      "description": "Establish QA processes, manage testing, ensure product quality.",
+      "dependencies": ["4.2", "4.3"],
+      "priority": "high"
     },
     "4.5": {
       "id": "4.5",
-      "role": "4",
-      "name": "Churn Prevention Program",
+      "title": "Release Management",
+      "role": "Product Development Lead",
       "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Implement interventions for at-risk customers.",
-      "owners": ["Jordan"],
-      "progress": 35,
-      "links": {
-        "blocked_by": ["3.2"],
-        "related": ["4.6", "7.6"]
-      },
-      "startDate": "2025-02-05",
-      "dueDate": "2025-04-15",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Targeting 5% improvement in retention"
+      "wave": "Wave 1: See the Problem",
+      "description": "Plan releases, manage deployments, coordinate rollouts.",
+      "dependencies": ["4.3", "4.4"],
+      "priority": "high"
     },
     "4.6": {
       "id": "4.6",
-      "role": "4",
-      "name": "Expansion Revenue Testing",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Test upsell and cross-sell strategies.",
-      "owners": ["Jordan"],
-      "progress": 40,
-      "links": {
-        "blocked_by": ["3.2"],
-        "related": ["4.7", "9.3"]
-      },
-      "startDate": "2025-02-08",
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Testing premium tier and add-ons"
+      "title": "Technical Debt Management",
+      "role": "Product Development Lead",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Identify and address technical debt, maintain code quality.",
+      "dependencies": ["4.1", "4.4"],
+      "priority": "high"
     },
     "4.7": {
       "id": "4.7",
-      "role": "4",
-      "name": "Referral Program Launch",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Implement customer referral incentive program.",
-      "owners": ["Jordan"],
-      "progress": 30,
-      "links": {
-        "blocked_by": [],
-        "related": ["4.8", "8.3"]
-      },
-      "startDate": "2025-02-10",
-      "dueDate": "2025-05-01",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "Partner with referral platform vendor"
+      "title": "Architecture & Infrastructure",
+      "role": "Product Development Lead",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Design system architecture, manage infrastructure, ensure scalability.",
+      "dependencies": [],
+      "priority": "high"
     },
     "4.8": {
       "id": "4.8",
-      "role": "4",
-      "name": "Pricing Optimization",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Test price elasticity and optimize pricing structure.",
-      "owners": ["Jordan"],
-      "progress": 25,
-      "links": {
-        "blocked_by": ["4.1"],
-        "related": ["4.9", "9.5"]
-      },
-      "startDate": "2025-02-12",
-      "dueDate": "2025-05-15",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Complex modeling and testing required"
+      "title": "Performance & Security",
+      "role": "Product Development Lead",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Optimize performance, maintain security standards, manage compliance.",
+      "dependencies": ["4.7"],
+      "priority": "critical"
     },
     "4.9": {
       "id": "4.9",
-      "role": "4",
-      "name": "Feature Adoption Campaigns",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Launch campaigns to increase adoption of underutilized features.",
-      "owners": ["Jordan"],
-      "progress": 45,
-      "links": {
-        "blocked_by": ["4.2"],
-        "related": ["4.10", "8.4"]
-      },
-      "startDate": "2025-02-14",
-      "dueDate": "2025-05-01",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "In-app messaging and email campaigns"
+      "title": "Customer Feedback Integration",
+      "role": "Product Development Lead",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Gather and integrate customer feedback into product decisions.",
+      "dependencies": ["4.1"],
+      "priority": "high"
     },
     "4.10": {
       "id": "4.10",
-      "role": "4",
-      "name": "Partner Integration Program",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Partner with complementary tools to expand reach.",
-      "owners": ["Jordan"],
-      "progress": 20,
-      "links": {
-        "blocked_by": [],
-        "related": ["4.11", "8.5"]
-      },
-      "startDate": "2025-02-16",
-      "dueDate": "2025-06-01",
-      "effort": "large",
-      "priority": "medium",
-      "notes": "Identifying and vetting partner opportunities"
-    },
-    "4.11": {
-      "id": "4.11",
-      "role": "4",
-      "name": "Growth Activation Review & Optimization",
-      "status": "built",
-      "layer": "Execution",
-      "owner": "Jordan",
-      "description": "Bi-weekly review of all growth initiatives and results.",
-      "owners": ["Jordan"],
-      "links": {
-        "blocked_by": [],
-        "related": ["1.5", "10.6"]
-      },
-      "startDate": "2025-01-15",
-      "dueDate": "2025-02-01",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Established recurring bi-weekly meetings"
+      "title": "Product Analytics & Monitoring",
+      "role": "Product Development Lead",
+      "status": "not_started",
+      "wave": "Wave 3: Design Solutions",
+      "description": "Track product metrics, monitor performance, identify optimization opportunities.",
+      "dependencies": ["4.4", "4.5"],
+      "priority": "high"
     },
     "5.1": {
       "id": "5.1",
-      "role": "5",
-      "name": "Product Roadmap Planning",
-      "status": "not_started",
-      "layer": "Execution",
-      "owner": "Alex",
-      "description": "Define product vision and quarterly roadmap aligned with growth strategy.",
-      "owners": ["Alex"],
-      "links": {
-        "blocked_by": ["1.1"],
-        "related": ["5.2", "8.6"]
-      },
-      "startDate": null,
-      "dueDate": "2025-02-28",
-      "effort": "medium",
-      "priority": "critical",
-      "notes": "Q2 roadmap planning"
+      "title": "Customer Onboarding Program",
+      "role": "Customer Success Lead",
+      "status": "in_progress",
+      "wave": "Wave 1: See the Problem",
+      "description": "Design and deliver customer onboarding to ensure quick time-to-value.",
+      "dependencies": [],
+      "priority": "critical"
     },
     "5.2": {
       "id": "5.2",
-      "role": "5",
-      "name": "Feature Gap Analysis",
+      "title": "Customer Training & Education",
+      "role": "Customer Success Lead",
       "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Alex",
-      "description": "Analyze competitive features and identify gaps in our product.",
-      "owners": ["Alex"],
-      "progress": 50,
-      "links": {
-        "blocked_by": [],
-        "related": ["5.3", "7.2"]
-      },
-      "startDate": "2025-01-20",
-      "dueDate": "2025-02-28",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Competitive analysis in progress"
+      "wave": "Wave 1: See the Problem",
+      "description": "Develop training programs and educational content for customers.",
+      "dependencies": ["5.1"],
+      "priority": "high"
     },
     "5.3": {
       "id": "5.3",
-      "role": "5",
-      "name": "Development Sprint Structure",
+      "title": "Support & Troubleshooting",
+      "role": "Customer Success Lead",
       "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Alex",
-      "description": "Organize engineering into 2-week sprints with clear deliverables.",
-      "owners": ["Alex"],
-      "progress": 60,
-      "links": {
-        "blocked_by": [],
-        "related": ["5.4", "4.2"]
-      },
-      "startDate": "2025-01-15",
-      "dueDate": "2025-03-01",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Moved to Jira for sprint planning"
+      "wave": "Wave 1: See the Problem",
+      "description": "Provide responsive support and troubleshooting for customer issues.",
+      "dependencies": [],
+      "priority": "critical"
     },
     "5.4": {
       "id": "5.4",
-      "role": "5",
-      "name": "API Expansion",
+      "title": "Account Management & Growth",
+      "role": "Customer Success Lead",
       "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Alex",
-      "description": "Build out REST and GraphQL APIs for third-party integrations.",
-      "owners": ["Alex"],
-      "progress": 45,
-      "links": {
-        "blocked_by": [],
-        "related": ["5.5", "4.10"]
-      },
-      "startDate": "2025-01-25",
-      "dueDate": "2025-04-15",
-      "effort": "large",
-      "priority": "high",
-      "notes": "GraphQL schema design in progress"
+      "wave": "Wave 1: See the Problem",
+      "description": "Manage customer relationships, identify expansion opportunities.",
+      "dependencies": ["5.1", "5.3"],
+      "priority": "high"
     },
     "5.5": {
       "id": "5.5",
-      "role": "5",
-      "name": "Performance Optimization",
+      "title": "Proactive Health Checks",
+      "role": "Customer Success Lead",
       "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Alex",
-      "description": "Improve application load times and responsiveness.",
-      "owners": ["Alex"],
-      "progress": 40,
-      "links": {
-        "blocked_by": [],
-        "related": ["5.6", "6.4"]
-      },
-      "startDate": "2025-01-22",
-      "dueDate": "2025-04-01",
-      "effort": "large",
-      "priority": "medium",
-      "notes": "Profiling and caching optimization"
+      "wave": "Wave 1: See the Problem",
+      "description": "Conduct regular health checks, identify at-risk customers, drive engagement.",
+      "dependencies": ["5.3", "5.4"],
+      "priority": "high"
     },
     "5.6": {
       "id": "5.6",
-      "role": "5",
-      "name": "Mobile App Enhancement",
+      "title": "Retention Analytics & Churn Prevention",
+      "role": "Customer Success Lead",
       "status": "not_started",
-      "layer": "Execution",
-      "owner": "Alex",
-      "description": "Build native mobile app features for better on-the-go access.",
-      "owners": ["Alex"],
-      "links": {
-        "blocked_by": ["5.4"],
-        "related": ["5.7", "7.8"]
-      },
-      "startDate": null,
-      "dueDate": "2025-05-30",
-      "effort": "large",
-      "priority": "medium",
-      "notes": "iOS and Android native apps"
+      "wave": "Wave 2: Diagnosis",
+      "description": "Track retention metrics, identify churn risks, develop retention strategies.",
+      "dependencies": ["5.4", "5.5"],
+      "priority": "high"
     },
     "5.7": {
       "id": "5.7",
-      "role": "5",
-      "name": "Security & Compliance",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Alex",
-      "description": "Implement SOC2, GDPR, and other compliance requirements.",
-      "owners": ["Alex"],
-      "progress": 50,
-      "links": {
-        "blocked_by": [],
-        "related": ["5.8", "6.5"]
-      },
-      "startDate": "2025-01-15",
-      "dueDate": "2025-06-30",
-      "effort": "large",
-      "priority": "critical",
-      "notes": "Audit scheduled for Q2"
+      "title": "Voice of Customer Program",
+      "role": "Customer Success Lead",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Systematically gather customer feedback, insights, and use cases.",
+      "dependencies": ["5.1", "5.3"],
+      "priority": "high"
     },
     "5.8": {
       "id": "5.8",
-      "role": "5",
-      "name": "Data Import/Export Tooling",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Alex",
-      "description": "Build tools for customers to import and export their data.",
-      "owners": ["Alex"],
-      "progress": 55,
-      "links": {
-        "blocked_by": [],
-        "related": ["5.9", "7.4"]
-      },
-      "startDate": "2025-02-01",
-      "dueDate": "2025-03-31",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "CSV, Excel, API-based imports"
+      "title": "Case Study & Reference Program",
+      "role": "Customer Success Lead",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Develop customer case studies and references for marketing.",
+      "dependencies": ["5.7"],
+      "priority": "medium"
     },
     "5.9": {
       "id": "5.9",
-      "role": "5",
-      "name": "Webhook & Event System",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Alex",
-      "description": "Enable webhooks for real-time event notifications.",
-      "owners": ["Alex"],
-      "progress": 60,
-      "links": {
-        "blocked_by": [],
-        "related": ["5.10", "4.2"]
-      },
-      "startDate": "2025-02-03",
-      "dueDate": "2025-04-15",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Event-driven architecture"
+      "title": "Expansion & Upsell Strategy",
+      "role": "Customer Success Lead",
+      "status": "not_started",
+      "wave": "Wave 3: Design Solutions",
+      "description": "Develop strategies to expand within existing customers.",
+      "dependencies": ["5.4", "5.6"],
+      "priority": "high"
     },
     "5.10": {
       "id": "5.10",
-      "role": "5",
-      "name": "Product Engineering Review & Iteration",
-      "status": "live",
-      "layer": "Execution",
-      "owner": "Alex",
-      "description": "Weekly product review and sprint retrospective.",
-      "owners": ["Alex"],
-      "links": {
-        "blocked_by": [],
-        "related": ["1.5", "10.6"]
-      },
-      "startDate": "2025-01-10",
-      "dueDate": "2025-02-07",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Every Friday 2pm PT"
+      "title": "Community & User Groups",
+      "role": "Customer Success Lead",
+      "status": "not_started",
+      "wave": "Wave 3: Design Solutions",
+      "description": "Build customer community and user groups for support and advocacy.",
+      "dependencies": ["5.2", "5.7"],
+      "priority": "medium"
     },
     "6.1": {
       "id": "6.1",
-      "role": "6",
-      "name": "Infrastructure Audit",
+      "title": "Financial Planning & Budgeting",
+      "role": "Operations Lead",
       "status": "not_started",
-      "layer": "Execution",
-      "owner": "Casey",
-      "description": "Comprehensive review of current infrastructure setup.",
-      "owners": ["Casey"],
-      "links": {
-        "blocked_by": [],
-        "related": ["6.2", "6.3"]
-      },
-      "startDate": null,
-      "dueDate": "2025-02-28",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "AWS and networking assessment"
+      "wave": "Wave 1: See the Problem",
+      "description": "Develop annual budget, track spending, manage financial forecasts.",
+      "dependencies": [],
+      "priority": "critical"
     },
     "6.2": {
       "id": "6.2",
-      "role": "6",
-      "name": "Disaster Recovery Plan",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Casey",
-      "description": "Design and implement disaster recovery procedures.",
-      "owners": ["Casey"],
-      "progress": 35,
-      "links": {
-        "blocked_by": ["3.3"],
-        "related": ["6.3", "6.4"]
-      },
-      "startDate": "2025-02-03",
-      "dueDate": "2025-04-15",
-      "effort": "large",
-      "priority": "critical",
-      "notes": "RTO/RPO targets defined"
+      "title": "Hiring & Recruiting",
+      "role": "Operations Lead",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Identify hiring needs, recruit talent, manage onboarding.",
+      "dependencies": [],
+      "priority": "high"
     },
     "6.3": {
       "id": "6.3",
-      "role": "6",
-      "name": "Security Hardening",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Casey",
-      "description": "Implement security best practices across infrastructure.",
-      "owners": ["Casey"],
-      "progress": 45,
-      "links": {
-        "blocked_by": [],
-        "related": ["6.4", "5.7"]
-      },
-      "startDate": "2025-02-05",
-      "dueDate": "2025-04-30",
-      "effort": "large",
-      "priority": "critical",
-      "notes": "WAF, VPC, encryption configuration"
+      "title": "Vendor & Supplier Management",
+      "role": "Operations Lead",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Manage vendor relationships, negotiate contracts, ensure cost efficiency.",
+      "dependencies": [],
+      "priority": "high"
     },
     "6.4": {
       "id": "6.4",
-      "role": "6",
-      "name": "Scaling & Performance",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Casey",
-      "description": "Implement auto-scaling and load balancing for growth.",
-      "owners": ["Casey"],
-      "progress": 40,
-      "links": {
-        "blocked_by": [],
-        "related": ["6.5", "5.5"]
-      },
-      "startDate": "2025-02-08",
-      "dueDate": "2025-04-30",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Kubernetes cluster optimization"
+      "title": "Internal Processes & Systems",
+      "role": "Operations Lead",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Establish operational processes, manage tools and systems.",
+      "dependencies": [],
+      "priority": "high"
     },
     "6.5": {
       "id": "6.5",
-      "role": "6",
-      "name": "Monitoring & Alerting",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Casey",
-      "description": "Set up comprehensive monitoring and alerting systems.",
-      "owners": ["Casey"],
-      "progress": 50,
-      "links": {
-        "blocked_by": [],
-        "related": ["6.6", "5.7"]
-      },
-      "startDate": "2025-02-10",
-      "dueDate": "2025-03-31",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Datadog and PagerDuty setup"
-    },
-    "6.6": {
-      "id": "6.6",
-      "role": "6",
-      "name": "Database Optimization",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Casey",
-      "description": "Optimize database performance and reliability.",
-      "owners": ["Casey"],
-      "progress": 30,
-      "links": {
-        "blocked_by": [],
-        "related": ["6.7", "5.5"]
-      },
-      "startDate": "2025-02-12",
-      "dueDate": "2025-05-01",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Query optimization and indexing"
-    },
-    "6.7": {
-      "id": "6.7",
-      "role": "6",
-      "name": "Backup & Data Retention",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Casey",
-      "description": "Implement comprehensive backup and retention policies.",
-      "owners": ["Casey"],
-      "progress": 55,
-      "links": {
-        "blocked_by": [],
-        "related": ["6.8", "6.2"]
-      },
-      "startDate": "2025-02-14",
-      "dueDate": "2025-03-31",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "3-2-1 backup strategy"
-    },
-    "6.8": {
-      "id": "6.8",
-      "role": "6",
-      "name": "Infrastructure Review & Optimization",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Casey",
-      "description": "Monthly infrastructure health review and optimization.",
-      "owners": ["Casey"],
-      "progress": 10,
-      "links": {
-        "blocked_by": [],
-        "related": ["1.5", "10.6"]
-      },
-      "startDate": "2025-02-20",
-      "dueDate": "2025-03-20",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Recurring monthly"
+      "title": "Company Culture & Engagement",
+      "role": "Operations Lead",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Foster company culture, manage employee engagement and retention.",
+      "dependencies": [],
+      "priority": "high"
     },
     "7.1": {
       "id": "7.1",
-      "role": "7",
-      "name": "Customer Feedback System",
+      "title": "Brand Strategy & Positioning",
+      "role": "Brand & Positioning",
       "status": "not_started",
-      "layer": "Execution",
-      "owner": "Sam",
-      "description": "Implement system to collect and analyze customer feedback.",
-      "owners": ["Sam"],
-      "links": {
-        "blocked_by": [],
-        "related": ["7.2", "4.1"]
-      },
-      "startDate": null,
-      "dueDate": "2025-03-15",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Surveys, interviews, and usage analysis"
+      "wave": "Wave 1: See the Problem",
+      "description": "Define brand identity, develop positioning strategy, establish brand guidelines.",
+      "dependencies": [],
+      "priority": "high"
     },
     "7.2": {
       "id": "7.2",
-      "role": "7",
-      "name": "Competitive Feature Tracking",
-      "status": "not_started",
-      "layer": "Execution",
-      "owner": "Sam",
-      "description": "Track competitor features and customer expectations.",
-      "owners": ["Sam"],
-      "links": {
-        "blocked_by": [],
-        "related": ["7.3", "5.2"]
-      },
-      "startDate": null,
-      "dueDate": "2025-03-20",
-      "effort": "small",
-      "priority": "medium",
-      "notes": "Competitive intelligence dashboard"
+      "title": "Brand Messaging & Narrative",
+      "role": "Brand & Positioning",
+      "status": "in_progress",
+      "wave": "Wave 1: See the Problem",
+      "description": "Develop brand narrative, key messages, and content frameworks.",
+      "dependencies": ["7.1"],
+      "priority": "high"
     },
     "7.3": {
       "id": "7.3",
-      "role": "7",
-      "name": "Onboarding Optimization",
+      "title": "Brand Guidelines & Standards",
+      "role": "Brand & Positioning",
       "status": "not_started",
-      "layer": "Execution",
-      "owner": "Sam",
-      "description": "Improve new customer onboarding experience.",
-      "owners": ["Sam"],
-      "links": {
-        "blocked_by": [],
-        "related": ["7.4", "2.2"]
-      },
-      "startDate": null,
-      "dueDate": "2025-04-15",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Guided setup and documentation"
+      "wave": "Wave 1: See the Problem",
+      "description": "Establish and maintain brand guidelines for consistency.",
+      "dependencies": ["7.1"],
+      "priority": "high"
     },
     "7.4": {
       "id": "7.4",
-      "role": "7",
-      "name": "Support Knowledge Base",
+      "title": "Visual Identity & Design System",
+      "role": "Brand & Positioning",
       "status": "not_started",
-      "layer": "Execution",
-      "owner": "Sam",
-      "description": "Build comprehensive help documentation and support portal.",
-      "owners": ["Sam"],
-      "links": {
-        "blocked_by": [],
-        "related": ["7.5", "5.8"]
-      },
-      "startDate": null,
-      "dueDate": "2025-04-30",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Video tutorials and knowledge base"
+      "wave": "Wave 1: See the Problem",
+      "description": "Develop visual identity, design system, and brand assets.",
+      "dependencies": ["7.1"],
+      "priority": "high"
     },
     "7.5": {
       "id": "7.5",
-      "role": "7",
-      "name": "Churn Analysis & Prevention",
+      "title": "Brand Evolution & Monitoring",
+      "role": "Brand & Positioning",
       "status": "not_started",
-      "layer": "Execution",
-      "owner": "Sam",
-      "description": "Analyze churn patterns and implement prevention strategies.",
-      "owners": ["Sam"],
-      "links": {
-        "blocked_by": ["3.2"],
-        "related": ["7.6", "4.5"]
-      },
-      "startDate": null,
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Cohort analysis and intervention testing"
-    },
-    "7.6": {
-      "id": "7.6",
-      "role": "7",
-      "name": "Expansion Revenue Insights",
-      "status": "not_started",
-      "layer": "Execution",
-      "owner": "Sam",
-      "description": "Identify and nurture expansion revenue opportunities.",
-      "owners": ["Sam"],
-      "links": {
-        "blocked_by": ["3.2"],
-        "related": ["7.7", "4.6"]
-      },
-      "startDate": null,
-      "dueDate": "2025-05-15",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "Usage analysis and upsell opportunities"
-    },
-    "7.7": {
-      "id": "7.7",
-      "role": "7",
-      "name": "Account Health Monitoring",
-      "status": "not_started",
-      "layer": "Execution",
-      "owner": "Sam",
-      "description": "Proactive monitoring of customer account health metrics.",
-      "owners": ["Sam"],
-      "links": {
-        "blocked_by": ["3.2"],
-        "related": ["7.8", "9.9"]
-      },
-      "startDate": null,
-      "dueDate": "2025-05-01",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Automated alerts for anomalies"
-    },
-    "7.8": {
-      "id": "7.8",
-      "role": "7",
-      "name": "Feature Adoption Tracking",
-      "status": "not_started",
-      "layer": "Execution",
-      "owner": "Sam",
-      "description": "Track feature adoption and engagement metrics.",
-      "owners": ["Sam"],
-      "links": {
-        "blocked_by": [],
-        "related": ["7.9", "5.6"]
-      },
-      "startDate": null,
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "In-app analytics and cohort tracking"
-    },
-    "7.9": {
-      "id": "7.9",
-      "role": "7",
-      "name": "Customer Success Review & Iteration",
-      "status": "not_started",
-      "layer": "Execution",
-      "owner": "Sam",
-      "description": "Weekly review of customer metrics and success initiatives.",
-      "owners": ["Sam"],
-      "links": {
-        "blocked_by": [],
-        "related": ["1.5", "10.6"]
-      },
-      "startDate": null,
-      "dueDate": "2025-02-28",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Recurring weekly"
+      "wave": "Wave 2: Diagnosis",
+      "description": "Monitor brand perception, evolve brand strategy, maintain relevance.",
+      "dependencies": ["7.2", "7.3"],
+      "priority": "medium"
     },
     "8.1": {
       "id": "8.1",
-      "role": "8",
-      "name": "Content Marketing Strategy",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Morgan",
-      "description": "Develop comprehensive content marketing plan.",
-      "owners": ["Morgan"],
-      "progress": 40,
-      "links": {
-        "blocked_by": [],
-        "related": ["8.2", "11.1"]
-      },
-      "startDate": "2025-01-20",
-      "dueDate": "2025-03-15",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Blog, whitepapers, and case studies"
+      "title": "Partnership Strategy & Identification",
+      "role": "Partnerships & Alliances",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Identify potential partners, develop partnership strategy.",
+      "dependencies": [],
+      "priority": "high"
     },
     "8.2": {
       "id": "8.2",
-      "role": "8",
-      "name": "SEO Optimization",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Morgan",
-      "description": "Optimize website for organic search visibility.",
-      "owners": ["Morgan"],
-      "progress": 35,
-      "links": {
-        "blocked_by": [],
-        "related": ["8.3", "11.2"]
-      },
-      "startDate": "2025-02-01",
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Keyword research and technical SEO"
+      "title": "Partnership Negotiation & Contracts",
+      "role": "Partnerships & Alliances",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Negotiate partnership terms, develop contracts, manage agreements.",
+      "dependencies": ["8.1"],
+      "priority": "high"
     },
     "8.3": {
       "id": "8.3",
-      "role": "8",
-      "name": "Paid Media Campaigns",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Morgan",
-      "description": "Set up and optimize Google Ads, LinkedIn, and Facebook campaigns.",
-      "owners": ["Morgan"],
-      "progress": 50,
-      "links": {
-        "blocked_by": [],
-        "related": ["8.4", "4.7"]
-      },
-      "startDate": "2025-02-03",
-      "dueDate": "2025-05-01",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Multi-channel paid strategy"
+      "title": "Partner Program Management",
+      "role": "Partnerships & Alliances",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Manage partner relationships, provide support, measure success.",
+      "dependencies": ["8.1", "8.2"],
+      "priority": "high"
     },
     "8.4": {
       "id": "8.4",
-      "role": "8",
-      "name": "Event Marketing",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Morgan",
-      "description": "Host and sponsor events to build brand awareness.",
-      "owners": ["Morgan"],
-      "progress": 25,
-      "links": {
-        "blocked_by": [],
-        "related": ["8.5", "4.9"]
-      },
-      "startDate": "2025-02-08",
-      "dueDate": "2025-06-30",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "Q1 conference sponsorships planned"
-    },
-    "8.5": {
-      "id": "8.5",
-      "role": "8",
-      "name": "Partnership Marketing",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Morgan",
-      "description": "Develop co-marketing programs with partners.",
-      "owners": ["Morgan"],
-      "progress": 20,
-      "links": {
-        "blocked_by": [],
-        "related": ["8.6", "4.10"]
-      },
-      "startDate": "2025-02-10",
-      "dueDate": "2025-05-15",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "Identifying co-marketing opportunities"
-    },
-    "8.6": {
-      "id": "8.6",
-      "role": "8",
-      "name": "Marketing Analytics",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Morgan",
-      "description": "Set up marketing attribution and performance tracking.",
-      "owners": ["Morgan"],
-      "progress": 30,
-      "links": {
-        "blocked_by": ["2.7"],
-        "related": ["8.7", "9.2"]
-      },
-      "startDate": "2025-02-12",
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "HubSpot and analytics integration"
-    },
-    "8.7": {
-      "id": "8.7",
-      "role": "8",
-      "name": "Demand Generation Review & Optimization",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Morgan",
-      "description": "Weekly review of demand generation metrics and campaigns.",
-      "owners": ["Morgan"],
-      "progress": 15,
-      "links": {
-        "blocked_by": [],
-        "related": ["1.5", "10.6"]
-      },
-      "startDate": "2025-02-20",
-      "dueDate": "2025-03-20",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Recurring weekly"
+      "title": "Co-marketing & Joint Initiatives",
+      "role": "Partnerships & Alliances",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Execute co-marketing programs and joint initiatives with partners.",
+      "dependencies": ["8.2", "8.3"],
+      "priority": "medium"
     },
     "9.1": {
       "id": "9.1",
-      "role": "9",
-      "name": "Sales Process Optimization",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Riley",
-      "description": "Streamline and optimize the sales process.",
-      "owners": ["Riley"],
-      "progress": 35,
-      "links": {
-        "blocked_by": ["3.1"],
-        "related": ["9.2", "4.4"]
-      },
-      "startDate": "2025-02-01",
-      "dueDate": "2025-04-15",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Sales playbook documentation"
+      "title": "Competitive Monitoring & Tracking",
+      "role": "Competitive Intelligence",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Establish system to track competitor activity, features, positioning.",
+      "dependencies": [],
+      "priority": "high"
     },
     "9.2": {
       "id": "9.2",
-      "role": "9",
-      "name": "Sales Enablement",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Riley",
-      "description": "Build tools and resources to empower sales team.",
-      "owners": ["Riley"],
-      "progress": 40,
-      "links": {
-        "blocked_by": ["2.7"],
-        "related": ["9.3", "8.6"]
-      },
-      "startDate": "2025-02-03",
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Sales collateral and training"
+      "title": "Competitive Analysis & Benchmarking",
+      "role": "Competitive Intelligence",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Conduct regular competitive analysis, benchmark against competitors.",
+      "dependencies": ["9.1"],
+      "priority": "high"
     },
     "9.3": {
       "id": "9.3",
-      "role": "9",
-      "name": "Expansion Revenue Strategy",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Riley",
-      "description": "Develop strategy to increase ACV through expansion.",
-      "owners": ["Riley"],
-      "progress": 30,
-      "links": {
-        "blocked_by": ["3.2"],
-        "related": ["9.4", "4.6"]
-      },
-      "startDate": "2025-02-05",
-      "dueDate": "2025-05-01",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Upsell and cross-sell strategy"
+      "title": "Market Trend & Emerging Tech Analysis",
+      "role": "Competitive Intelligence",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Monitor market trends, emerging technologies, and industry shifts.",
+      "dependencies": ["9.1"],
+      "priority": "high"
     },
     "9.4": {
       "id": "9.4",
-      "role": "9",
-      "name": "Customer Segmentation Strategy",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Riley",
-      "description": "Develop targeted sales strategies for different customer segments.",
-      "owners": ["Riley"],
-      "progress": 25,
-      "links": {
-        "blocked_by": ["2.8"],
-        "related": ["9.5", "7.3"]
-      },
-      "startDate": "2025-02-08",
-      "dueDate": "2025-05-15",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "SMB, Mid-market, and Enterprise segments"
-    },
-    "9.5": {
-      "id": "9.5",
-      "role": "9",
-      "name": "Pricing Strategy & Testing",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Riley",
-      "description": "Develop and test pricing models.",
-      "owners": ["Riley"],
-      "progress": 20,
-      "links": {
-        "blocked_by": ["4.1"],
-        "related": ["9.6", "4.8"]
-      },
-      "startDate": "2025-02-10",
-      "dueDate": "2025-05-30",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Tiered pricing and usage-based models"
-    },
-    "9.6": {
-      "id": "9.6",
-      "role": "9",
-      "name": "Retention Strategy",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Riley",
-      "description": "Implement strategies to improve customer retention.",
-      "owners": ["Riley"],
-      "progress": 35,
-      "links": {
-        "blocked_by": ["3.2"],
-        "related": ["9.7", "7.5"]
-      },
-      "startDate": "2025-02-12",
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Loyalty program and engagement initiatives"
-    },
-    "9.7": {
-      "id": "9.7",
-      "role": "9",
-      "name": "Win/Loss Analysis",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Riley",
-      "description": "Analyze reasons for won and lost deals.",
-      "owners": ["Riley"],
-      "progress": 25,
-      "links": {
-        "blocked_by": [],
-        "related": ["9.8", "4.1"]
-      },
-      "startDate": "2025-02-14",
-      "dueDate": "2025-05-01",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "Customer interviews and feedback"
-    },
-    "9.8": {
-      "id": "9.8",
-      "role": "9",
-      "name": "Partner Enablement",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Riley",
-      "description": "Build partner programs and enablement resources.",
-      "owners": ["Riley"],
-      "progress": 15,
-      "links": {
-        "blocked_by": [],
-        "related": ["9.9", "4.10"]
-      },
-      "startDate": "2025-02-16",
-      "dueDate": "2025-06-01",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "Partner onboarding and training"
-    },
-    "9.9": {
-      "id": "9.9",
-      "role": "9",
-      "name": "Revenue Operations Review & Optimization",
-      "status": "in_progress",
-      "layer": "Execution",
-      "owner": "Riley",
-      "description": "Bi-weekly review of revenue metrics and initiatives.",
-      "owners": ["Riley"],
-      "progress": 20,
-      "links": {
-        "blocked_by": [],
-        "related": ["1.5", "10.6"]
-      },
-      "startDate": "2025-02-18",
-      "dueDate": "2025-03-18",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Recurring bi-weekly"
+      "title": "Intelligence Synthesis & Reporting",
+      "role": "Competitive Intelligence",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Synthesize intelligence findings, generate reports, present insights to leadership.",
+      "dependencies": ["9.1", "9.2", "9.3"],
+      "priority": "high"
     },
     "10.1": {
       "id": "10.1",
-      "role": "10",
-      "name": "Financial Model & Forecasting",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Blake",
-      "description": "Build comprehensive financial model and forecast.",
-      "owners": ["Blake"],
-      "progress": 50,
-      "links": {
-        "blocked_by": ["1.1"],
-        "related": ["10.2", "2.6"]
-      },
-      "startDate": "2025-01-20",
-      "dueDate": "2025-03-15",
-      "effort": "large",
-      "priority": "critical",
-      "notes": "Scenarios built: base case, bull, bear"
+      "title": "Market Opportunity Assessment",
+      "role": "Market Development",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Identify and assess new market opportunities.",
+      "dependencies": [],
+      "priority": "high"
     },
     "10.2": {
       "id": "10.2",
-      "role": "10",
-      "name": "Budget Allocation & Planning",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Blake",
-      "description": "Allocate budget across functions and initiatives.",
-      "owners": ["Blake"],
-      "progress": 45,
-      "links": {
-        "blocked_by": ["10.1"],
-        "related": ["10.3"]
-      },
-      "startDate": "2025-02-01",
-      "dueDate": "2025-02-28",
-      "effort": "large",
-      "priority": "critical",
-      "notes": "Quarterly budget allocation"
+      "title": "Market Sizing & Validation",
+      "role": "Market Development",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Size market opportunities, validate market fit.",
+      "dependencies": ["10.1"],
+      "priority": "high"
     },
     "10.3": {
       "id": "10.3",
-      "role": "10",
-      "name": "Burn Rate Tracking",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Blake",
-      "description": "Monitor and track monthly burn rate.",
-      "owners": ["Blake"],
-      "progress": 60,
-      "links": {
-        "blocked_by": [],
-        "related": ["10.4"]
-      },
-      "startDate": "2025-01-15",
-      "dueDate": "2025-02-28",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Monthly dashboard updated"
+      "title": "Market Entry Strategy",
+      "role": "Market Development",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Develop go-to-market strategy for new markets.",
+      "dependencies": ["10.1", "10.2"],
+      "priority": "high"
     },
     "10.4": {
       "id": "10.4",
-      "role": "10",
-      "name": "Milestone Planning & Tracking",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Blake",
-      "description": "Define and track milestones to next funding round.",
-      "owners": ["Blake"],
-      "progress": 40,
-      "links": {
-        "blocked_by": ["10.1"],
-        "related": ["10.5"]
-      },
-      "startDate": "2025-02-01",
-      "dueDate": "2025-03-31",
-      "effort": "medium",
-      "priority": "critical",
-      "notes": "Series A milestones defined"
+      "title": "Pilot & Testing Programs",
+      "role": "Market Development",
+      "status": "not_started",
+      "wave": "Wave 2: Diagnosis",
+      "description": "Execute pilot programs to test market fit.",
+      "dependencies": ["10.3"],
+      "priority": "high"
     },
     "10.5": {
       "id": "10.5",
-      "role": "10",
-      "name": "Investor Relations",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Blake",
-      "description": "Manage investor communications and reporting.",
-      "owners": ["Blake"],
-      "progress": 35,
-      "links": {
-        "blocked_by": ["10.1"],
-        "related": ["10.6"]
-      },
-      "startDate": "2025-02-05",
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Monthly investor updates"
+      "title": "Market Expansion Planning",
+      "role": "Market Development",
+      "status": "not_started",
+      "wave": "Wave 3: Design Solutions",
+      "description": "Plan expansion strategy for successful markets.",
+      "dependencies": ["10.4"],
+      "priority": "high"
     },
     "10.6": {
       "id": "10.6",
-      "role": "10",
-      "name": "Finance & Planning Review & Optimization",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Blake",
-      "description": "Monthly financial review and forecasting updates.",
-      "owners": ["Blake"],
-      "progress": 25,
-      "links": {
-        "blocked_by": [],
-        "related": ["1.5", "8.7"]
-      },
-      "startDate": "2025-02-20",
-      "dueDate": "2025-03-20",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Recurring monthly"
+      "title": "Regional & Geographic Expansion",
+      "role": "Market Development",
+      "status": "not_started",
+      "wave": "Wave 3: Design Solutions",
+      "description": "Plan and execute geographic expansion strategy.",
+      "dependencies": ["10.1", "10.3"],
+      "priority": "medium"
     },
     "11.1": {
       "id": "11.1",
-      "role": "11",
-      "name": "Brand Identity Development",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Taylor",
-      "description": "Define brand positioning, voice, and visual identity.",
-      "owners": ["Taylor"],
-      "progress": 50,
-      "links": {
-        "blocked_by": [],
-        "related": ["11.2", "8.1"]
-      },
-      "startDate": "2025-01-25",
-      "dueDate": "2025-03-15",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Brand guidelines document in progress"
+      "title": "Legal & Regulatory Compliance",
+      "role": "Compliance & Legal",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Maintain compliance with legal and regulatory requirements.",
+      "dependencies": [],
+      "priority": "critical"
     },
     "11.2": {
       "id": "11.2",
-      "role": "11",
-      "name": "Website Redesign",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Taylor",
-      "description": "Redesign website to reflect brand and improve UX.",
-      "owners": ["Taylor"],
-      "progress": 40,
-      "links": {
-        "blocked_by": ["11.1"],
-        "related": ["11.3", "8.2"]
-      },
-      "startDate": "2025-02-03",
-      "dueDate": "2025-05-01",
-      "effort": "large",
-      "priority": "high",
-      "notes": "Figma designs approved"
+      "title": "Contract Management & Negotiation",
+      "role": "Compliance & Legal",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Manage contracts, negotiate terms, protect company interests.",
+      "dependencies": [],
+      "priority": "high"
     },
     "11.3": {
       "id": "11.3",
-      "role": "11",
-      "name": "Culture Documentation",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Taylor",
-      "description": "Document company values, mission, and culture.",
-      "owners": ["Taylor"],
-      "progress": 35,
-      "links": {
-        "blocked_by": [],
-        "related": ["11.4"]
-      },
-      "startDate": "2025-02-05",
-      "dueDate": "2025-03-31",
-      "effort": "medium",
-      "priority": "medium",
-      "notes": "Culture handbook in development"
-    },
-    "11.4": {
-      "id": "11.4",
-      "role": "11",
-      "name": "Hiring & Onboarding Strategy",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Taylor",
-      "description": "Design hiring process and employee onboarding program.",
-      "owners": ["Taylor"],
-      "progress": 30,
-      "links": {
-        "blocked_by": [],
-        "related": ["11.5"]
-      },
-      "startDate": "2025-02-08",
-      "dueDate": "2025-04-30",
-      "effort": "medium",
-      "priority": "high",
-      "notes": "Recruiting process and onboarding checklist"
-    },
-    "11.5": {
-      "id": "11.5",
-      "role": "11",
-      "name": "Brand & Culture Review & Optimization",
-      "status": "in_progress",
-      "layer": "Executive",
-      "owner": "Taylor",
-      "description": "Monthly review of brand initiatives and culture.",
-      "owners": ["Taylor"],
-      "progress": 10,
-      "links": {
-        "blocked_by": [],
-        "related": ["1.5", "10.6"]
-      },
-      "startDate": "2025-02-22",
-      "dueDate": "2025-03-22",
-      "effort": "small",
-      "priority": "high",
-      "notes": "Recurring monthly"
+      "title": "Risk Management & Mitigation",
+      "role": "Compliance & Legal",
+      "status": "not_started",
+      "wave": "Wave 1: See the Problem",
+      "description": "Identify risks, develop mitigation strategies, manage compliance.",
+      "dependencies": [],
+      "priority": "high"
     }
+  },
+  "infrastructure": {
+    "systems": {
+      "planning": "Jira for project management and sprint tracking",
+      "communication": "Slack for team communication and notifications",
+      "collaboration": "Google Workspace for documents and spreadsheets",
+      "analytics": "Tableau/Looker for data visualization and dashboards",
+      "database": "PostgreSQL for primary data storage",
+      "cloud": "AWS for cloud infrastructure and compute",
+      "crm": "Salesforce for sales and customer management",
+      "marketing_automation": "HubSpot for marketing automation and campaigns",
+      "support": "Zendesk for customer support and ticketing"
+    },
+    "integrations": [
+      "Salesforce CRM",
+      "HubSpot Marketing Automation",
+      "Google Analytics",
+      "Stripe (Payments)",
+      "Slack",
+      "Google Workspace",
+      "AWS",
+      "Zendesk",
+      "Tableau"
+    ],
+    "data_sources": [
+      "Internal database",
+      "Salesforce",
+      "HubSpot",
+      "Google Analytics",
+      "Stripe",
+      "Customer surveys",
+      "Product usage data"
+    ]
+  },
+  "patterns": {
+    "daily": [
+      {
+        "time": "8:00 AM",
+        "event": "Data refresh and dashboard updates",
+        "owner": "Data Intelligence Lead",
+        "notes": "All dashboards and reports refreshed"
+      },
+      {
+        "time": "9:00 AM",
+        "event": "Morning standup with growth team",
+        "owner": "Chief Growth Officer",
+        "notes": "Quick sync on priorities and blockers"
+      },
+      {
+        "time": "2:00 PM",
+        "event": "Marketing/Sales sync",
+        "owner": "Sales & Marketing Lead",
+        "notes": "Campaign performance and lead quality review"
+      },
+      {
+        "time": "4:00 PM",
+        "event": "Engineering standup",
+        "owner": "Product Development Lead",
+        "notes": "Sprint progress and technical issues"
+      }
+    ],
+    "weekly": [
+      {
+        "day": "Monday",
+        "time": "10:00 AM",
+        "event": "Weekly Growth Roundtable",
+        "owner": "Chief Growth Officer",
+        "notes": "Review all metrics and discuss key decisions"
+      },
+      {
+        "day": "Tuesday",
+        "time": "2:00 PM",
+        "event": "Customer Success Review",
+        "owner": "Customer Success Lead",
+        "notes": "Retention, expansion, and churn analysis"
+      },
+      {
+        "day": "Wednesday",
+        "time": "10:00 AM",
+        "event": "Product Roadmap Meeting",
+        "owner": "Product Development Lead",
+        "notes": "Prioritization and roadmap updates"
+      },
+      {
+        "day": "Thursday",
+        "time": "3:00 PM",
+        "event": "Operations Review",
+        "owner": "Operations Lead",
+        "notes": "Budget, hiring, vendor management"
+      },
+      {
+        "day": "Friday",
+        "time": "1:00 PM",
+        "event": "All-hands Meeting",
+        "owner": "Chief Growth Officer",
+        "notes": "Company updates and celebration"
+      }
+    ],
+    "monthly": [
+      {
+        "event": "Executive Strategy Review",
+        "owner": "Chief Growth Officer",
+        "notes": "Deep analysis of metrics and strategic implications"
+      },
+      {
+        "event": "Financial Review",
+        "owner": "Operations Lead",
+        "notes": "Budget vs. actual, forecasting updates"
+      },
+      {
+        "event": "Competitive Analysis Report",
+        "owner": "Competitive Intelligence",
+        "notes": "Competitor activity and market intelligence"
+      },
+      {
+        "event": "Customer Advisory Board",
+        "owner": "Customer Success Lead",
+        "notes": "Feedback from key customers on roadmap"
+      }
+    ],
+    "quarterly": [
+      {
+        "event": "Quarterly Executive Planning",
+        "owner": "Chief Growth Officer",
+        "notes": "Set priorities, allocate resources, align team"
+      },
+      {
+        "event": "Strategic Competitive Analysis",
+        "owner": "Competitive Intelligence",
+        "notes": "Quarterly deep-dive on competitive landscape"
+      },
+      {
+        "event": "Board Meeting / Investor Update",
+        "owner": "Chief Growth Officer",
+        "notes": "Quarterly performance and strategic update"
+      }
+    ]
   }
 }
