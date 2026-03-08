@@ -317,19 +317,20 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 8px;
+            flex-wrap: wrap;
         }
 
         .pattern-id {
-            width: 28px;
-            height: 28px;
             background: var(--color-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-radius: 6px;
+            display: inline-block;
+            padding: 2px 10px;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             flex-shrink: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
         }
 
         .pattern-card h3 {
@@ -1886,8 +1887,17 @@
         function scrollToRole(roleId) {
             const roleCard = document.getElementById('role-' + roleId);
             if (roleCard) {
-                roleCard.classList.add('expanded');
-                roleCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Expand the card first
+                if (!roleCard.classList.contains('expanded')) {
+                    roleCard.classList.add('expanded');
+                }
+                // Brief delay to let expansion animation start, then scroll
+                setTimeout(() => {
+                    roleCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Flash highlight
+                    roleCard.style.boxShadow = '0 0 0 2px var(--color-blue)';
+                    setTimeout(() => { roleCard.style.boxShadow = ''; }, 2000);
+                }, 100);
             } else {
                 console.warn('Role card not found for roleId:', roleId);
             }
