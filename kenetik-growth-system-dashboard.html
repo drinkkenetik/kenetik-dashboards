@@ -1077,103 +1077,9 @@
             <p id="header-subtitle">Virtual Team Dashboard · v3.2</p>
         </div>
 
-        <!-- Org Chart -->
+        <!-- Org Chart (dynamically generated from system-state.json) -->
         <div class="org-chart" id="orgChart">
             <div class="org-chart-title">The Kenetik Growth System Org Chart</div>
-
-            <!-- Executive Layer -->
-            <div class="org-layer">
-                <div class="layer-label">Executive Layer</div>
-                <div class="org-row">
-                    <div class="org-chip" style="background:#fbbf2418;" onclick="scrollToRole('cgo')" id="chip-cgo">
-                        <div class="chip-title">Chief Growth Officer</div>
-                        <div class="chip-count" id="count-cgo">0 processes</div>
-                        <div class="org-chip-bar" id="bar-cgo"></div>
-                    </div>
-                </div>
-                <div class="org-line">│</div>
-            </div>
-
-            <!-- Intelligence Layer -->
-            <div class="org-layer">
-                <div class="layer-label">Intelligence Layer — "What should we do?"</div>
-                <div class="org-row">
-                    <div class="org-chip" style="background:#3b82f618;" onclick="scrollToRole('data_intelligence')" id="chip-data_intelligence">
-                        <div class="chip-title">Data Intelligence Lead</div>
-                        <div class="chip-count" id="count-data_intelligence">0 processes</div>
-                        <div class="org-chip-bar" id="bar-data_intelligence"></div>
-                    </div>
-                    <div class="org-chip" style="background:#8b5cf618;" onclick="scrollToRole('ops_intelligence')" id="chip-ops_intelligence">
-                        <div class="chip-title">Operations Intelligence Lead</div>
-                        <div class="chip-count" id="count-ops_intelligence">0 processes</div>
-                        <div class="org-chip-bar" id="bar-ops_intelligence"></div>
-                    </div>
-                    <div class="org-chip" style="background:#ec489918;" onclick="scrollToRole('marketing_social')" id="chip-marketing_social">
-                        <div class="chip-title">Marketing & Social Intelligence Lead</div>
-                        <div class="chip-count" id="count-marketing_social">0 processes</div>
-                        <div class="org-chip-bar" id="bar-marketing_social"></div>
-                    </div>
-                </div>
-                <div class="org-line">│</div>
-            </div>
-
-            <!-- Creative Engine Layer -->
-            <div class="org-layer">
-                <div class="layer-label">Creative Engine — "What should we make?"</div>
-                <div class="org-row">
-                    <div class="org-chip" style="background:#06b6d418;" onclick="scrollToRole('creative_strategist')" id="chip-creative_strategist">
-                        <div class="chip-title">Creative Strategist</div>
-                        <div class="chip-count" id="count-creative_strategist">0 processes</div>
-                        <div class="org-chip-bar" id="bar-creative_strategist"></div>
-                    </div>
-                    <div class="org-chip" style="background:#10b98118;" onclick="scrollToRole('content_producer')" id="chip-content_producer">
-                        <div class="chip-title">Content Producer (Larry 2.0)</div>
-                        <div class="chip-count" id="count-content_producer">0 processes</div>
-                        <div class="org-chip-bar" id="bar-content_producer"></div>
-                    </div>
-                </div>
-                <div class="org-line">│</div>
-            </div>
-
-            <!-- Execution Layer -->
-            <div class="org-layer">
-                <div class="layer-label">Execution Layer — "Make it happen."</div>
-                <div class="org-row">
-                    <div class="org-chip" style="background:#22c55e18;" onclick="scrollToRole('web_experimentation')" id="chip-web_experimentation">
-                        <div class="chip-title">Web & Experimentation Lead</div>
-                        <div class="chip-count" id="count-web_experimentation">0 processes</div>
-                        <div class="org-chip-bar" id="bar-web_experimentation"></div>
-                    </div>
-                    <div class="org-chip" style="background:#f59e0b18;" onclick="scrollToRole('channel_execution')" id="chip-channel_execution">
-                        <div class="chip-title">Channel Execution Manager</div>
-                        <div class="chip-count" id="count-channel_execution">0 processes</div>
-                        <div class="org-chip-bar" id="bar-channel_execution"></div>
-                    </div>
-                    <div class="org-chip" style="background:#ef444418;" onclick="scrollToRole('paid_media')" id="chip-paid_media">
-                        <div class="chip-title">Paid Media Manager</div>
-                        <div class="chip-count" id="count-paid_media">0 processes</div>
-                        <div class="org-chip-bar" id="bar-paid_media"></div>
-                    </div>
-                    <div class="org-chip" style="background:#f9731618;" onclick="scrollToRole('amazon')" id="chip-amazon">
-                        <div class="chip-title">Amazon Manager</div>
-                        <div class="chip-count" id="count-amazon">0 processes</div>
-                        <div class="org-chip-bar" id="bar-amazon"></div>
-                    </div>
-                </div>
-                <div class="org-line">│</div>
-            </div>
-
-            <!-- Infrastructure Layer -->
-            <div class="org-layer">
-                <div class="layer-label">Infrastructure Layer — "Keep it running."</div>
-                <div class="org-row">
-                    <div class="org-chip" style="background:#64748b18;" onclick="scrollToRole('project_manager')" id="chip-project_manager">
-                        <div class="chip-title">Project Manager</div>
-                        <div class="chip-count" id="count-project_manager">0 processes</div>
-                        <div class="org-chip-bar" id="bar-project_manager"></div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Summary Stats Bar -->
@@ -1398,7 +1304,8 @@
             const roleCount = Object.keys(SYSTEM_STATE.roles || {}).length;
             const procCount = Object.keys(SYSTEM_STATE.processes || {}).length;
             const subtitleEl = document.getElementById('header-subtitle');
-            if (subtitleEl) subtitleEl.textContent = `Virtual Team Dashboard · v${SYSTEM_STATE.version || '3.2'} · ${roleCount} roles · ${procCount} processes`;
+            const ver = (SYSTEM_STATE.metadata && SYSTEM_STATE.metadata.version) || SYSTEM_STATE.version || '3.2';
+            if (subtitleEl) subtitleEl.textContent = `Virtual Team Dashboard · v${ver} · ${roleCount} roles · ${procCount} processes`;
 
             renderStats();
             renderInfrastructure();
@@ -1460,30 +1367,90 @@
             };
         }
 
-        // Render org chart
+        // Render org chart dynamically from SYSTEM_STATE
         function renderOrgChart() {
-            Object.keys(SYSTEM_STATE.roles).forEach(roleId => {
-                const role = SYSTEM_STATE.roles[roleId];
-                const count = (role.processes || []).length;
-                const countEl = document.getElementById('count-' + role.id);
-                const barEl = document.getElementById('bar-' + role.id);
+            const container = document.getElementById('orgChart');
+            if (!container) return;
 
-                if (countEl) countEl.textContent = count + ' processes';
+            // Layer definitions with taglines and role accent colors
+            const LAYERS = [
+                { name: 'Executive', tagline: '', color: '#fbbf24' },
+                { name: 'Intelligence', tagline: '"What should we do?"', color: '#3b82f6' },
+                { name: 'Creative Engine', tagline: '"What should we make?"', color: '#06b6d4' },
+                { name: 'Planning', tagline: '"When and where?"', color: '#ec4899' },
+                { name: 'Execution', tagline: '"Make it happen."', color: '#22c55e' },
+                { name: 'Infrastructure', tagline: '"Keep it running."', color: '#64748b' }
+            ];
 
-                if (barEl) {
-                    barEl.innerHTML = '';
+            // Per-role accent colors
+            const ROLE_COLORS = {
+                cgo: '#fbbf24', data_intelligence: '#3b82f6', ops_intelligence: '#8b5cf6',
+                creative_strategist: '#06b6d4', content_producer: '#10b981', creative_studio: '#a855f7',
+                marketing_social: '#ec4899', web_experimentation: '#22c55e', channel_execution: '#f59e0b',
+                paid_media: '#ef4444', amazon: '#f97316', project_manager: '#64748b'
+            };
+
+            // Group roles by layer
+            const rolesByLayer = {};
+            Object.values(SYSTEM_STATE.roles).sort((a, b) => (a.priority || 0) - (b.priority || 0)).forEach(role => {
+                const layer = role.layer || 'Other';
+                if (!rolesByLayer[layer]) rolesByLayer[layer] = [];
+                rolesByLayer[layer].push(role);
+            });
+
+            // Keep title, clear rest
+            container.innerHTML = '<div class="org-chart-title">The Kenetik Growth System Org Chart</div>';
+
+            LAYERS.forEach((layerDef, layerIdx) => {
+                const roles = rolesByLayer[layerDef.name];
+                if (!roles || roles.length === 0) return;
+
+                const layerDiv = document.createElement('div');
+                layerDiv.className = 'org-layer';
+
+                const label = layerDef.tagline
+                    ? `${layerDef.name} Layer — ${layerDef.tagline}`
+                    : `${layerDef.name} Layer`;
+                layerDiv.innerHTML = `<div class="layer-label">${label}</div><div class="org-row"></div>`;
+
+                const row = layerDiv.querySelector('.org-row');
+                roles.forEach(role => {
+                    const color = ROLE_COLORS[role.id] || layerDef.color;
                     const stats = computeRoleStats(role);
-                    const statuses = ['not_started', 'in_progress', 'built', 'live'];
-                    const colors = ['#6b7280', '#3b82f6', '#22c55e', '#10b981'];
+                    const count = (role.processes || []).length;
 
-                    statuses.forEach((status, i) => {
-                        const segment = document.createElement('div');
-                        segment.className = 'org-chip-bar-segment';
-                        segment.style.background = colors[i];
-                        segment.style.flex = stats[status] || 0;
-                        barEl.appendChild(segment);
+                    const chip = document.createElement('div');
+                    chip.className = 'org-chip';
+                    chip.id = 'chip-' + role.id;
+                    chip.style.background = color + '18';
+                    chip.onclick = () => scrollToRole(role.id);
+                    chip.innerHTML = `
+                        <div class="chip-title">${role.name}</div>
+                        <div class="chip-count">${count} processes</div>
+                        <div class="org-chip-bar" id="bar-${role.id}"></div>
+                    `;
+
+                    // Build status bar
+                    const barEl = chip.querySelector('.org-chip-bar');
+                    const statuses = ['not_started', 'in_progress', 'built', 'live', 'consolidated'];
+                    const statusColors = ['#6b7280', '#3b82f6', '#22c55e', '#10b981', '#fbbf24'];
+                    statuses.forEach((s, i) => {
+                        const seg = document.createElement('div');
+                        seg.className = 'org-chip-bar-segment';
+                        seg.style.background = statusColors[i];
+                        seg.style.flex = stats[s] || 0;
+                        barEl.appendChild(seg);
                     });
+
+                    row.appendChild(chip);
+                });
+
+                // Add connector line between layers (except last)
+                if (layerIdx < LAYERS.length - 1 && rolesByLayer[LAYERS[layerIdx + 1]?.name]) {
+                    layerDiv.innerHTML += '<div class="org-line">│</div>';
                 }
+
+                container.appendChild(layerDiv);
             });
         }
 
@@ -1506,7 +1473,7 @@
 
         // Compute pattern readiness from process data
         function computePatternReadiness(pattern) {
-            const allProcessIds = pattern.usedBy ? pattern.usedBy.flatMap(g => g.processes.map(p => p.id)) : [];
+            const allProcessIds = pattern.used_by || (pattern.usedBy ? pattern.usedBy.flatMap(g => g.processes.map(p => p.id)) : []);
             const total = allProcessIds.length;
             if (total === 0) return { total: 0, built: 0, inProgress: 0, notStarted: 0, pct: 0, statusMap: {} };
 
@@ -1539,11 +1506,12 @@
 
         function renderPatterns() {
             const container = document.getElementById('patternsGrid');
-            const patterns = Object.values(SYSTEM_STATE.patterns);
+            if (!container) return;
+            const patterns = SYSTEM_STATE.patterns || {};
 
-            container.innerHTML = patterns.map(pattern => {
-                const totalProcs = pattern.usedBy ? pattern.usedBy.reduce((sum, g) => sum + g.processes.length, 0) : 0;
-                const totalRoles = pattern.usedBy ? pattern.usedBy.length : 0;
+            container.innerHTML = Object.entries(patterns).map(([patternId, pattern]) => {
+                // Support both flat used_by arrays and nested usedBy structures
+                const processIds = pattern.used_by || (pattern.usedBy ? pattern.usedBy.flatMap(g => g.processes.map(p => p.id)) : []);
                 const readiness = computePatternReadiness(pattern);
 
                 // Determine readiness label and color
@@ -1562,32 +1530,21 @@
                     barColor = 'gray';
                 }
 
-                const stepsHtml = pattern.steps.map(s => `
-                    <div class="pattern-step">
-                        <span class="pattern-step-num">${s.step}</span>
-                        <span>${escapeHtml(s.action)}</span>
-                    </div>
-                `).join('');
-
-                const usedByHtml = pattern.usedBy ? pattern.usedBy.map(group => `
-                    <div class="pattern-role-group">
-                        <div class="pattern-role-name">${escapeHtml(group.role)}</div>
-                        <div class="pattern-role-procs">
-                            ${group.processes.map(p => {
-                                const st = readiness.statusMap[p.id] || 'not_started';
-                                return `<span class="pattern-proc-tag ${st}" title="${escapeHtml(p.name)} (${st.replace(/_/g, ' ')})">${escapeHtml(p.id)}</span>`;
-                            }).join('')}
-                        </div>
-                    </div>
-                `).join('') : '';
+                // Build process tags with status
+                const procTagsHtml = processIds.map(pid => {
+                    const proc = SYSTEM_STATE.processes[pid];
+                    const st = proc ? proc.status : 'not_started';
+                    const pname = proc ? proc.name : pid;
+                    return `<span class="pattern-proc-tag ${st}" title="${escapeHtml(pname)} (${st.replace(/_/g, ' ')})">${escapeHtml(pid)}</span>`;
+                }).join('');
 
                 return `
                     <div class="pattern-card">
                         <div class="pattern-card-top">
                             <div class="pattern-card-header">
-                                <div class="pattern-id">${pattern.id}</div>
+                                <div class="pattern-id">${patternId.replace('_', ' ').toUpperCase()}</div>
                                 <h3>${escapeHtml(pattern.name)}</h3>
-                                <span class="pattern-usage-count">${totalProcs} processes</span>
+                                <span class="pattern-usage-count">${processIds.length} processes</span>
                             </div>
                             <div class="pattern-desc">${escapeHtml(pattern.description)}</div>
                             <div class="pattern-readiness">
@@ -1597,27 +1554,15 @@
                                 </div>
                                 <span class="pattern-readiness-label">${readiness.pct}%</span>
                             </div>
-                            ${pattern.shortcutSummary ? `<div class="pattern-shortcut" style="margin-top:8px">${escapeHtml(pattern.shortcutSummary)}</div>` : ''}
                         </div>
                         <div class="pattern-accordion">
                             <div class="pattern-accordion-trigger" onclick="togglePatternAccordion(event)">
-                                <span>${pattern.steps.length} Steps</span>
+                                <span>Constituent Processes</span>
                                 <span class="arrow">▼</span>
                             </div>
                             <div class="pattern-accordion-body">
                                 <div class="pattern-accordion-content">
-                                    ${stepsHtml}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pattern-accordion">
-                            <div class="pattern-accordion-trigger" onclick="togglePatternAccordion(event)">
-                                <span>Used by ${totalRoles} roles — ${readiness.built} built, ${readiness.inProgress} in progress, ${readiness.notStarted} not started</span>
-                                <span class="arrow">▼</span>
-                            </div>
-                            <div class="pattern-accordion-body">
-                                <div class="pattern-accordion-content">
-                                    ${usedByHtml}
+                                    <div class="pattern-role-procs">${procTagsHtml}</div>
                                 </div>
                             </div>
                         </div>
