@@ -598,13 +598,22 @@
 
         function initDashboard() {
             const infra = SYSTEM_STATE.infrastructure;
-            const stats = SYSTEM_STATE.stats;
+
+            // Compute stats from processes (resilient — never depends on a stats key)
+            const processes = Object.values(SYSTEM_STATE.processes || {});
+            const stats = SYSTEM_STATE.stats || {
+                total_processes: processes.length,
+                built: processes.filter(p => p.status === 'built').length,
+                in_progress: processes.filter(p => p.status === 'in_progress').length,
+                not_started: processes.filter(p => p.status === 'not_started').length,
+                live: processes.filter(p => p.status === 'live').length
+            };
 
             // Update stats
-            document.getElementById('stat-total').textContent = stats.total_processes;
-            document.getElementById('stat-built').textContent = stats.built;
-            document.getElementById('stat-in-progress').textContent = stats.in_progress;
-            document.getElementById('stat-not-started').textContent = stats.not_started;
+            document.getElementById('stat-total').textContent = stats.total_processes || processes.length;
+            document.getElementById('stat-built').textContent = (stats.built || 0) + (stats.live || 0);
+            document.getElementById('stat-in-progress').textContent = stats.in_progress || 0;
+            document.getElementById('stat-not-started').textContent = stats.not_started || 0;
 
             // Render roles
             Object.keys(SYSTEM_STATE.roles).forEach(roleId => {
