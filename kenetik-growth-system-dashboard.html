@@ -1152,6 +1152,12 @@
             </div>
         </div>
 
+        <!-- CGO Architecture Section -->
+        <div class="cgo-architecture" id="cgoArchSection" style="display:none;">
+            <h2 class="section-title">CGO Three-Tier Architecture</h2>
+            <div id="cgoArchContent"></div>
+        </div>
+
         <!-- Patterns Section -->
         <div class="patterns-section">
             <h2 class="section-title">Shared Patterns</h2>
@@ -1310,6 +1316,7 @@
             renderStats();
             renderInfrastructure();
             renderOrgChart();
+            renderCGOArchitecture();
             renderPatterns();
             renderRoles();
         }
@@ -1504,6 +1511,54 @@
             return { total, built, inProgress, notStarted, pct, statusMap };
         }
 
+        // Render CGO Three-Tier Architecture
+        function renderCGOArchitecture() {
+            const arch = SYSTEM_STATE.cgo_architecture;
+            if (!arch) { document.getElementById('cgoArchSection').style.display = 'none'; return; }
+            document.getElementById('cgoArchSection').style.display = 'block';
+
+            const container = document.getElementById('cgoArchContent');
+            if (!container) return;
+
+            const tierColors = ['#fbbf24', '#3b82f6', '#22c55e'];
+            const tierIcons = ['📡', '🧠', '⚡'];
+
+            let html = `<div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;">`;
+            (arch.tiers || []).forEach((tier, i) => {
+                const color = tierColors[i] || '#6b7280';
+                html += `
+                    <div style="flex:1;min-width:280px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;border-top:3px solid ${color};">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                            <span style="font-size:1.2rem;">${tierIcons[i]}</span>
+                            <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;color:${color};font-weight:700;">Tier ${tier.tier}</span>
+                        </div>
+                        <div style="font-weight:600;font-size:1rem;margin-bottom:6px;">${escapeHtml(tier.name)}</div>
+                        <div style="color:var(--text-muted);font-size:0.85rem;margin-bottom:10px;">${escapeHtml(tier.description)}</div>
+                        ${tier.scans ? `<div style="display:flex;flex-wrap:wrap;gap:4px;">
+                            ${tier.scans.map(s => `<span style="background:${color}15;color:${color};padding:2px 8px;border-radius:4px;font-size:0.7rem;border:1px solid ${color}30;">${escapeHtml(s)}</span>`).join('')}
+                        </div>` : ''}
+                    </div>`;
+            });
+            html += `</div>`;
+
+            // Decision routing
+            if (arch.decision_routing) {
+                html += `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;">
+                    <div style="font-weight:600;margin-bottom:10px;font-size:0.85rem;color:var(--text-secondary);">Decision Routing</div>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;">
+                    ${arch.decision_routing.map(r => `
+                        <div style="padding:8px 12px;background:var(--bg-primary);border-radius:6px;border:1px solid var(--border);">
+                            <div style="font-weight:600;font-size:0.85rem;color:var(--text-primary);">${escapeHtml(r.human)}</div>
+                            <div style="font-size:0.78rem;color:var(--text-muted);margin-top:2px;">${escapeHtml(r.domain)}</div>
+                        </div>
+                    `).join('')}
+                    </div>
+                </div>`;
+            }
+
+            container.innerHTML = html;
+        }
+
         function renderPatterns() {
             const container = document.getElementById('patternsGrid');
             if (!container) return;
@@ -1512,6 +1567,8 @@
             container.innerHTML = Object.entries(patterns).map(([patternId, pattern]) => {
                 // Support both flat used_by arrays and nested usedBy structures
                 const processIds = pattern.used_by || (pattern.usedBy ? pattern.usedBy.flatMap(g => g.processes.map(p => p.id)) : []);
+                const totalProcs = processIds.length;
+                const totalRoles = pattern.usedBy ? pattern.usedBy.length : 0;
                 const readiness = computePatternReadiness(pattern);
 
                 // Determine readiness label and color
@@ -1530,21 +1587,35 @@
                     barColor = 'gray';
                 }
 
-                // Build process tags with status
-                const procTagsHtml = processIds.map(pid => {
-                    const proc = SYSTEM_STATE.processes[pid];
-                    const st = proc ? proc.status : 'not_started';
-                    const pname = proc ? proc.name : pid;
-                    return `<span class="pattern-proc-tag ${st}" title="${escapeHtml(pname)} (${st.replace(/_/g, ' ')})">${escapeHtml(pid)}</span>`;
-                }).join('');
+                // Build steps HTML
+                const stepsHtml = (pattern.steps || []).map(s => `
+                    <div class="pattern-step">
+                        <span class="pattern-step-num">${s.step}</span>
+                        <span>${escapeHtml(s.action)}</span>
+                    </div>
+                `).join('');
+
+                // Build usedBy HTML with role groups and process tags
+                const usedByHtml = (pattern.usedBy || []).map(group => `
+                    <div class="pattern-role-group">
+                        <div class="pattern-role-name">${escapeHtml(group.role)}</div>
+                        <div class="pattern-role-procs">
+                            ${group.processes.map(p => {
+                                const proc = SYSTEM_STATE.processes[p.id];
+                                const st = proc ? proc.status : 'not_started';
+                                return `<span class="pattern-proc-tag ${st}" title="${escapeHtml(p.name)} (${st.replace(/_/g, ' ')})">${escapeHtml(p.id)}</span>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                `).join('');
 
                 return `
                     <div class="pattern-card">
                         <div class="pattern-card-top">
                             <div class="pattern-card-header">
-                                <div class="pattern-id">${patternId.replace('_', ' ').toUpperCase()}</div>
+                                <div class="pattern-id">${escapeHtml(pattern.id || patternId)}</div>
                                 <h3>${escapeHtml(pattern.name)}</h3>
-                                <span class="pattern-usage-count">${processIds.length} processes</span>
+                                <span class="pattern-usage-count">${totalProcs} processes</span>
                             </div>
                             <div class="pattern-desc">${escapeHtml(pattern.description)}</div>
                             <div class="pattern-readiness">
@@ -1554,18 +1625,32 @@
                                 </div>
                                 <span class="pattern-readiness-label">${readiness.pct}%</span>
                             </div>
+                            ${pattern.shortcutSummary ? `<div class="pattern-shortcut" style="margin-top:8px;color:var(--text-muted);font-size:0.8rem;">${escapeHtml(pattern.shortcutSummary)}</div>` : ''}
                         </div>
+                        ${(pattern.steps && pattern.steps.length > 0) ? `
                         <div class="pattern-accordion">
                             <div class="pattern-accordion-trigger" onclick="togglePatternAccordion(event)">
-                                <span>Constituent Processes</span>
+                                <span>${pattern.steps.length} Steps</span>
                                 <span class="arrow">▼</span>
                             </div>
                             <div class="pattern-accordion-body">
                                 <div class="pattern-accordion-content">
-                                    <div class="pattern-role-procs">${procTagsHtml}</div>
+                                    ${stepsHtml}
                                 </div>
                             </div>
-                        </div>
+                        </div>` : ''}
+                        ${(pattern.usedBy && pattern.usedBy.length > 0) ? `
+                        <div class="pattern-accordion">
+                            <div class="pattern-accordion-trigger" onclick="togglePatternAccordion(event)">
+                                <span>Used by ${totalRoles} roles — ${readiness.built} built, ${readiness.inProgress} in progress, ${readiness.notStarted} not started</span>
+                                <span class="arrow">▼</span>
+                            </div>
+                            <div class="pattern-accordion-body">
+                                <div class="pattern-accordion-content">
+                                    ${usedByHtml}
+                                </div>
+                            </div>
+                        </div>` : ''}
                     </div>
                 `;
             }).join('');
@@ -1597,8 +1682,8 @@
                             <div class="role-emoji">${role.emoji || ''}</div>
                             <div class="role-header-info">
                                 <h2>${escapeHtml(role.name)}</h2>
-                                <div class="role-header-dept">${role.layer || ''}</div>
-                                <div class="role-header-mission">"${escapeHtml(role.mission || '')}"</div>
+                                <div class="role-header-dept">${role.layer || ''}${role.human ? ' · ' + escapeHtml(role.human) : ''}</div>
+                                ${role.mission ? `<div class="role-header-mission">${escapeHtml(role.mission)}</div>` : ''}
                             </div>
                         </div>
                         <div class="role-expand-icon">▼</div>
