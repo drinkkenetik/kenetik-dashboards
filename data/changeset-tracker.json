@@ -1,14 +1,12 @@
 {
-  "schema_version": "2.0",
-  "last_updated": "2026-03-09T12:00:00Z",
-  "next_id": 5,
+  "schema_version": "2.1",
+  "last_updated": "2026-03-09T18:00:00Z",
+  "next_id": 6,
   "summary": {
-    "total": 4,
+    "total": 5,
     "by_status": {
-      "draft": 4,
-      "preview_ready": 0,
+      "draft": 5,
       "needs_feedback": 0,
-      "needs_approval": 0,
       "approved": 0,
       "published": 0,
       "rolled_back": 0,
@@ -16,7 +14,7 @@
     },
     "by_risk": {
       "low": 2,
-      "medium": 1,
+      "medium": 2,
       "critical": 1
     }
   },
@@ -180,6 +178,46 @@
       "learning_note": null,
       "file": "cgo-logs/changesets/CS-2026-004.md",
       "notes": "Two workstreams: Katie excludes March 7 from trends (immediate), Nick investigates Superfiliate attribution gap (87% absorbed by Organic/Direct)."
+    },
+    {
+      "id": "CS-2026-005",
+      "title": "Post-Activation Retention Campaign — Cleetus Cohort Reorder Sequence",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-03-09",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": ["CS-2026-002"],
+      "blocks": [],
+      "spawned_from": null,
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": { "upside": 26000, "expected": 14400, "downside": 4500 },
+        "margin": { "upside": 13000, "expected": 7200, "downside": 2250 },
+        "primary_metric": "reorder_rate",
+        "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"
+      },
+      "routed_to": ["Katie", "Peter"],
+      "routed_via": "slack",
+      "routed_date": "2026-03-09",
+      "approved_by": null,
+      "approved_date": null,
+      "rejected_date": null,
+      "rejection_reason": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "60-day",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "learning_note": null,
+      "file": "cgo-logs/changesets/CS-2026-005.md",
+      "notes": "Time-sensitive: Touch 1 must fire by Mar 21 (Day 14 post-purchase). Depends on CS-2026-002 for cohort segmentation. Peter needed for creative brief (brand bridge from Cleetus → Kenetik)."
     }
   ]
 }
