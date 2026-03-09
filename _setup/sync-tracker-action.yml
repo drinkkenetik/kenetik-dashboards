@@ -1,0 +1,36 @@
+## COPY THIS FILE TO: kenetik-growth-system/.github/workflows/sync-tracker-to-dashboards.yml
+##
+## Prerequisites:
+## 1. PAT with `workflow` scope (update existing token at github.com/settings/tokens)
+## 2. Add secret DASHBOARDS_DEPLOY_TOKEN to kenetik-growth-system repo
+##    (Settings → Secrets → Actions → New repository secret)
+##    Value: a PAT with repo write access to kenetik-dashboards
+
+name: Sync ChangeSet Tracker to Dashboards
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cgo-logs/changesets/tracker.json'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout growth system
+        uses: actions/checkout@v4
+
+      - name: Push tracker.json to dashboards repo
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.DASHBOARDS_DEPLOY_TOKEN }}
+        with:
+          source_file: 'cgo-logs/changesets/tracker.json'
+          destination_repo: 'drinkkenetik/kenetik-dashboards'
+          destination_folder: 'data'
+          destination_branch_create: 'main'
+          rename: 'changeset-tracker.json'
+          user_email: 'cgo-pipeline@kenetik.com'
+          user_name: 'Kenetik CGO Pipeline'
+          commit_message: 'sync: changeset tracker.json updated'
