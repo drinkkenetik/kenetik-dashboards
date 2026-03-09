@@ -39,7 +39,6 @@
             padding: 24px;
         }
 
-        /* Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -96,10 +95,7 @@
             color: var(--accent-light);
         }
 
-        .refresh-btn.spinning {
-            pointer-events: none;
-            opacity: 0.6;
-        }
+        .refresh-btn.spinning { pointer-events: none; opacity: 0.6; }
 
         .filters {
             display: flex;
@@ -137,7 +133,6 @@
             appearance: auto;
         }
 
-        /* KPI Cards */
         .kpis {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -181,7 +176,6 @@
         .kpi-value.danger { color: var(--danger); }
         .kpi-value.info { color: var(--info); }
 
-        /* Charts Section */
         .charts-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -215,7 +209,6 @@
             height: 260px;
         }
 
-        /* Pipeline Kanban */
         .pipeline-section {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -319,7 +312,6 @@
         .badge-medium { background: rgba(245,158,11,0.15); color: var(--warning); }
         .badge-high, .badge-critical { background: rgba(239,68,68,0.15); color: var(--danger); }
 
-        /* Detail Panel (Drill-in) */
         .detail-overlay {
             display: none;
             position: fixed;
@@ -419,11 +411,8 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .impact-table td {
-            padding: 6px 8px;
-        }
+        .impact-table td { padding: 6px 8px; }
 
-        /* Data Table */
         .table-section {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -490,6 +479,7 @@
         }
 
         .status-draft { background: rgba(139,143,163,0.2); color: var(--text-muted); }
+        .status-needs_feedback { background: rgba(245,158,11,0.2); color: var(--warning); }
         .status-approved { background: rgba(59,130,246,0.2); color: var(--info); }
         .status-published { background: rgba(34,197,94,0.15); color: var(--success); }
         .status-closed { background: rgba(99,102,241,0.2); color: var(--accent-light); }
@@ -500,7 +490,6 @@
         .outcome-inconclusive { color: var(--warning); }
         .outcome-cancelled { color: var(--text-muted); }
 
-        /* Footer */
         footer {
             text-align: center;
             color: var(--text-muted);
@@ -508,7 +497,6 @@
             padding: 20px 0;
         }
 
-        /* Empty state */
         .empty-state {
             text-align: center;
             color: var(--text-muted);
@@ -522,7 +510,7 @@
 
     <header>
         <div class="header-left">
-            <h1>ChangeSet Dashboard <span class="schema-badge">Schema v2.0</span></h1>
+            <h1>ChangeSet Dashboard <span class="schema-badge" id="schemaBadge">Schema v2.1</span></h1>
             <div class="subtitle">Kenetik Growth System — Pipeline, Impact &amp; Lifecycle</div>
             <div class="sync-row">
                 <span class="sync-status" id="syncStatus" style="font-size:12px;color:var(--text-muted);">Loading data…</span>
@@ -540,6 +528,7 @@
                 <option value="all">All Statuses</option>
                 <option value="open">Open (non-closed)</option>
                 <option value="draft">Draft</option>
+                <option value="needs_feedback">Needs Feedback</option>
                 <option value="approved">Approved</option>
                 <option value="published">Published</option>
                 <option value="closed">Closed</option>
@@ -604,7 +593,6 @@
     </footer>
 </div>
 
-<!-- Detail Overlay -->
 <div class="detail-overlay" id="detailOverlay" onclick="if(event.target===this)closeDetail()">
     <div class="detail-panel" id="detailPanel"></div>
 </div>
@@ -614,7 +602,7 @@
 // AUTO-FETCH CONFIG
 // ═══════════════════════════════════════════════════
 const DATA_URL = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/changeset-tracker.json';
-const REFRESH_INTERVAL_MS = 5 * 60 * 1000; // Auto-refresh every 5 minutes
+const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
 let TRACKER = null;
 let lastFetchTime = null;
 
@@ -623,13 +611,14 @@ async function fetchTracker() {
     const btn = document.getElementById('refreshBtn');
     btn.classList.add('spinning');
     try {
-        // Cache-bust to ensure fresh data
         const resp = await fetch(DATA_URL + '?t=' + Date.now());
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         TRACKER = await resp.json();
         lastFetchTime = new Date();
         statusEl.textContent = 'Live · Last synced ' + lastFetchTime.toLocaleTimeString();
         statusEl.style.color = 'var(--success)';
+        // Update schema badge dynamically
+        document.getElementById('schemaBadge').textContent = 'Schema v' + (TRACKER.schema_version || '?');
         btn.classList.remove('spinning');
         return true;
     } catch (err) {
@@ -641,7 +630,6 @@ async function fetchTracker() {
     }
 }
 
-// Manual refresh (debounced)
 let refreshLock = false;
 async function manualRefresh() {
     if (refreshLock) return;
@@ -691,10 +679,11 @@ function actualMargin(cs) {
     return cs.actual_impact?.margin_impact ?? 0;
 }
 
-const PIPELINE_ORDER = ['draft','preview_ready','needs_feedback','needs_approval','approved','published','closed'];
+// Schema v2.1 lifecycle statuses
+const PIPELINE_ORDER = ['draft','needs_feedback','approved','published','closed'];
 const PIPELINE_LABELS = {
-    draft: 'Draft', preview_ready: 'Preview', needs_feedback: 'Feedback',
-    needs_approval: 'Approval', approved: 'Approved', published: 'Published', closed: 'Closed'
+    draft: 'Draft', needs_feedback: 'Needs Feedback',
+    approved: 'Approved', published: 'Published', closed: 'Closed'
 };
 
 const SURFACE_COLORS = {
@@ -717,10 +706,8 @@ function setSubtypeFilter(val) {
 function setSurfaceFilter(val) { filters.surface = val; render(); }
 function setStatusFilter(val) { filters.status = val; render(); }
 
-// Populate surface dropdown
 function populateSurfaceDropdown() {
     const sel = document.querySelector('.filter-select');
-    // Clear existing options except the first "All Surfaces"
     while (sel.options.length > 1) sel.remove(1);
     const surfaces = [...new Set(TRACKER.changesets.map(c => c.surface))].sort();
     surfaces.forEach(s => {
@@ -752,7 +739,7 @@ function renderKPIs() {
         <div class="kpi-card">
             <div class="kpi-label">Total ChangeSets</div>
             <div class="kpi-value">${data.length}</div>
-            <div class="kpi-detail">${impl} implementation &middot; ${invest} investigation</div>
+            <div class="kpi-detail">${impl} implementation · ${invest} investigation</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">Open</div>
@@ -762,7 +749,7 @@ function renderKPIs() {
         <div class="kpi-card">
             <div class="kpi-label">Closed</div>
             <div class="kpi-value success">${closed.length}</div>
-            <div class="kpi-detail">${closed.filter(c=>c.outcome==='success').length} success &middot; ${closed.filter(c=>c.outcome==='underperformed').length} underperformed</div>
+            <div class="kpi-detail">${closed.filter(c=>c.outcome==='success').length} success · ${closed.filter(c=>c.outcome==='underperformed').length} underperformed</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">Expected Revenue (Pipeline)</div>
@@ -784,9 +771,9 @@ function renderPipeline() {
     const data = getFiltered();
     const container = document.getElementById('pipeline');
 
-    // Only show columns that have items or are key stages
+    // Show all lifecycle columns — always show the key stages
     const activeStatuses = PIPELINE_ORDER.filter(s => {
-        return ['draft','approved','published','closed'].includes(s) || data.some(c => c.status === s);
+        return ['draft','needs_feedback','approved','published','closed'].includes(s) || data.some(c => c.status === s);
     });
 
     container.innerHTML = activeStatuses.map(status => {
@@ -820,7 +807,6 @@ function renderCharts() {
     const data = getFiltered();
     const closed = data.filter(isClosed);
 
-    // Destroy existing charts
     Object.values(charts).forEach(c => c.destroy());
     charts = {};
 
@@ -877,7 +863,7 @@ function renderCharts() {
         }
     });
 
-    // 2. Impact by Domain (horizontal bar — expected + actual)
+    // 2. Impact by Domain
     const surfaces = [...new Set(data.map(c => c.surface))].sort();
     const expectedBySurface = surfaces.map(s => data.filter(c => c.surface === s).reduce((sum, c) => sum + expectedRev(c), 0));
     const actualBySurface = surfaces.map(s => closed.filter(c => c.surface === s).reduce((sum, c) => sum + actualRev(c), 0));
@@ -937,7 +923,7 @@ function renderCharts() {
         }
     });
 
-    // 4. Outcomes Breakdown (doughnut)
+    // 4. Outcomes Breakdown
     const outcomes = { success: 0, underperformed: 0, inconclusive: 0, rolled_back: 0, cancelled: 0, open: 0 };
     data.forEach(cs => {
         if (cs.outcome && outcomes.hasOwnProperty(cs.outcome)) outcomes[cs.outcome]++;
@@ -973,7 +959,6 @@ function renderCharts() {
 function renderTable() {
     const data = getFiltered();
 
-    // Sort
     data.sort((a, b) => {
         let va, vb;
         if (sortCol === 'expected_revenue') { va = expectedRev(a); vb = expectedRev(b); }
@@ -1001,7 +986,6 @@ function renderTable() {
         </tr>
     `).join('');
 
-    // Sort indicators
     document.querySelectorAll('.data-table th').forEach(th => {
         th.classList.toggle('sorted', th.dataset.sort === sortCol);
         th.textContent = th.textContent.replace(/ [▲▼]$/, '');
@@ -1009,7 +993,6 @@ function renderTable() {
     });
 }
 
-// Table sorting
 document.querySelectorAll('.data-table th[data-sort]').forEach(th => {
     th.addEventListener('click', () => {
         const col = th.dataset.sort;
@@ -1067,7 +1050,7 @@ function openDetail(id) {
                 <tr><td>Downside</td><td>${fmt$(rev.downside)}</td><td>${fmt$(mar.downside)}</td></tr>
             </table>
             <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">
-                Primary metric: <strong>${ei.primary_metric || '—'}</strong> &mdash; Target: ${ei.primary_metric_target || '—'}
+                Primary metric: <strong>${ei.primary_metric || '—'}</strong> — Target: ${ei.primary_metric_target || '—'}
             </div>
         </div>
 
@@ -1084,9 +1067,9 @@ function openDetail(id) {
                 </tr>
             </table>
             <div style="margin-top:8px;font-size:12px">
-                Revenue impact: <strong>${fmt$(ai.revenue_impact)}</strong> &middot;
-                Margin impact: <strong>${fmt$(ai.margin_impact)}</strong> &middot;
-                Confidence: ${ai.confidence || '—'} &middot;
+                Revenue impact: <strong>${fmt$(ai.revenue_impact)}</strong> ·
+                Margin impact: <strong>${fmt$(ai.margin_impact)}</strong> ·
+                Confidence: ${ai.confidence || '—'} ·
                 Stat sig: ${ai.statistical_significance ? 'Yes' : 'No'}
             </div>
         </div>
@@ -1125,7 +1108,7 @@ function render() {
 }
 
 // ═══════════════════════════════════════════════════
-// BOOTSTRAP — fetch data, render, set up auto-refresh
+// BOOTSTRAP
 // ═══════════════════════════════════════════════════
 async function boot() {
     const ok = await fetchTracker();
