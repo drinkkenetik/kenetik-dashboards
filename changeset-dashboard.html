@@ -479,7 +479,6 @@
         }
 
         .status-draft { background: rgba(139,143,163,0.2); color: var(--text-muted); }
-        .status-needs_feedback { background: rgba(245,158,11,0.2); color: var(--warning); }
         .status-approved { background: rgba(59,130,246,0.2); color: var(--info); }
         .status-published { background: rgba(34,197,94,0.15); color: var(--success); }
         .status-closed { background: rgba(99,102,241,0.2); color: var(--accent-light); }
@@ -528,7 +527,6 @@
                 <option value="all">All Statuses</option>
                 <option value="open">Open (non-closed)</option>
                 <option value="draft">Draft</option>
-                <option value="needs_feedback">Needs Feedback</option>
                 <option value="approved">Approved</option>
                 <option value="published">Published</option>
                 <option value="closed">Closed</option>
@@ -679,11 +677,13 @@ function actualMargin(cs) {
     return cs.actual_impact?.margin_impact ?? 0;
 }
 
-// Schema v2.1 lifecycle statuses
-const PIPELINE_ORDER = ['draft','needs_feedback','approved','published','closed'];
+// Correct 4-stage lifecycle: draft → approved → published → closed
+const PIPELINE_ORDER = ['draft','approved','published','closed'];
 const PIPELINE_LABELS = {
-    draft: 'Draft', needs_feedback: 'Needs Feedback',
-    approved: 'Approved', published: 'Published', closed: 'Closed'
+    draft: 'Draft',
+    approved: 'Approved',
+    published: 'Published',
+    closed: 'Closed'
 };
 
 const SURFACE_COLORS = {
@@ -771,17 +771,19 @@ function renderPipeline() {
     const data = getFiltered();
     const container = document.getElementById('pipeline');
 
-    // Show all lifecycle columns — always show the key stages
-    const activeStatuses = PIPELINE_ORDER.filter(s => {
-        return ['draft','needs_feedback','approved','published','closed'].includes(s) || data.some(c => c.status === s);
-    });
+    // Always show the 4 lifecycle columns; also show rolled_back if any exist
+    const activeStatuses = PIPELINE_ORDER.slice();
+    if (data.some(c => c.status === 'rolled_back') && !activeStatuses.includes('rolled_back')) {
+        activeStatuses.push('rolled_back');
+    }
 
     container.innerHTML = activeStatuses.map(status => {
         const items = data.filter(c => c.status === status);
+        const label = PIPELINE_LABELS[status] || status.replace(/_/g, ' ');
         return `
             <div class="pipeline-col">
                 <div class="pipeline-col-header">
-                    ${PIPELINE_LABELS[status] || status}
+                    ${label}
                     <span class="pipeline-col-count">${items.length}</span>
                 </div>
                 ${items.length === 0 ? '<div class="empty-state" style="padding:8px;font-size:11px">None</div>' : ''}
