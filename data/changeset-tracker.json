@@ -1,12 +1,11 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-09T18:00:00Z",
+  "last_updated": "2026-03-09T18:30:00Z",
   "next_id": 6,
   "summary": {
     "total": 5,
     "by_status": {
       "draft": 5,
-      "needs_feedback": 0,
       "approved": 0,
       "published": 0,
       "rolled_back": 0,
