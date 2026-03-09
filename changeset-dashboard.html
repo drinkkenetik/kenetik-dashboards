@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenetik ChangeSet Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --surface-hover: #22262f;
+            --border: #2a2e3a;
+            --text: #e4e4e7;
+            --text-muted: #8b8fa3;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            --investigation: #a855f7;
+            --implementation: #6366f1;
+            --kenetik-green: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .dashboard {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .header-left h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .header-left .subtitle {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .header-left .schema-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .filter-btn:hover { background: var(--surface-hover); }
+        .filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        select.filter-select {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            appearance: auto;
+        }
+
+        /* KPI Cards */
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .kpi-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            transition: all 0.15s;
+        }
+
+        .kpi-card:hover { border-color: var(--accent); }
+
+        .kpi-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .kpi-detail {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .kpi-value.success { color: var(--success); }
+        .kpi-value.warning { color: var(--warning); }
+        .kpi-value.danger { color: var(--danger); }
+        .kpi-value.info { color: var(--info); }
+
+        /* Charts Section */
+        .charts-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .charts-row { grid-template-columns: 1fr; }
+        }
+
+        .chart-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .chart-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 260px;
+        }
+
+        /* Pipeline Kanban */
+        .pipeline-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .pipeline-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pipeline-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+        }
+
+        .pipeline-col {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 12px;
+            min-height: 80px;
+        }
+
+        .pipeline-col-header {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pipeline-col-count {
+            background: var(--border);
+            color: var(--text);
+            font-size: 11px;
+            padding: 1px 7px;
+            border-radius: 10px;
+        }
+
+        .pipeline-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-size: 12px;
+        }
+
+        .pipeline-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .pipeline-card .cs-id {
+            font-weight: 700;
+            font-size: 11px;
+            color: var(--accent-light);
+        }
+
+        .pipeline-card .cs-title {
+            margin-top: 3px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .pipeline-card .cs-meta {
+            display: flex;
+            gap: 6px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-impl { background: rgba(99,102,241,0.2); color: var(--implementation); }
+        .badge-invest { background: rgba(168,85,247,0.2); color: var(--investigation); }
+        .badge-low { background: rgba(34,197,94,0.15); color: var(--success); }
+        .badge-medium { background: rgba(245,158,11,0.15); color: var(--warning); }
+        .badge-high, .badge-critical { background: rgba(239,68,68,0.15); color: var(--danger); }
+
+        /* Detail Panel (Drill-in) */
+        .detail-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .detail-overlay.open { display: flex; }
+
+        .detail-panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 28px;
+        }
+
+        .detail-panel h2 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .detail-panel .detail-id {
+            color: var(--accent-light);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .detail-close {
+            float: right;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        .detail-close:hover { color: var(--text); }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .detail-field label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .detail-field span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .detail-section {
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+        }
+
+        .detail-section h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .impact-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .impact-table th {
+            text-align: left;
+            color: var(--text-muted);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 6px 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .impact-table td {
+            padding: 6px 8px;
+        }
+
+        /* Data Table */
+        .table-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }
+
+        .table-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .data-table th {
+            text-align: left;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            white-space: nowrap;
+            user-select: none;
+        }
+
+        .data-table th:hover { color: var(--text); }
+        .data-table th.sorted { color: var(--accent-light); }
+
+        .data-table td {
+            padding: 10px 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            vertical-align: top;
+        }
+
+        .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+        .data-table .cs-link {
+            color: var(--accent-light);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .data-table .cs-link:hover { text-decoration: underline; }
+
+        .status-pill {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            text-transform: capitalize;
+        }
+
+        .status-draft { background: rgba(139,143,163,0.2); color: var(--text-muted); }
+        .status-approved { background: rgba(59,130,246,0.2); color: var(--info); }
+        .status-published { background: rgba(34,197,94,0.15); color: var(--success); }
+        .status-closed { background: rgba(99,102,241,0.2); color: var(--accent-light); }
+        .status-rolled_back { background: rgba(239,68,68,0.15); color: var(--danger); }
+
+        .outcome-success { color: var(--success); }
+        .outcome-underperformed { color: var(--danger); }
+        .outcome-inconclusive { color: var(--warning); }
+        .outcome-cancelled { color: var(--text-muted); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 11px;
+            padding: 20px 0;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 24px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<div class="dashboard">
+
+    <header>
+        <div class="header-left">
+            <h1>ChangeSet Dashboard <span class="schema-badge">Schema v2.0</span></h1>
+            <div class="subtitle">Kenetik Growth System — Pipeline, Impact & Lifecycle</div>
+            <div class="sync-status" id="syncStatus" style="font-size:12px;color:var(--text-muted);margin-top:4px;">Loading data…</div>
+        </div>
+        <div class="filters">
+            <button class="filter-btn active" onclick="setSubtypeFilter('all')">All</button>
+            <button class="filter-btn" onclick="setSubtypeFilter('implementation')">Implementation</button>
+            <button class="filter-btn" onclick="setSubtypeFilter('investigation')">Investigation</button>
+            <select class="filter-select" onchange="setSurfaceFilter(this.value)">
+                <option value="all">All Surfaces</option>
+            </select>
+            <select class="filter-select" onchange="setStatusFilter(this.value)">
+                <option value="all">All Statuses</option>
+                <option value="open">Open (non-closed)</option>
+                <option value="draft">Draft</option>
+                <option value="approved">Approved</option>
+                <option value="published">Published</option>
+                <option value="closed">Closed</option>
+                <option value="rolled_back">Rolled Back</option>
+            </select>
+        </div>
+    </header>
+
+    <section class="kpis" id="kpis"></section>
+
+    <section class="pipeline-section">
+        <h3>Pipeline</h3>
+        <div class="pipeline-columns" id="pipeline"></div>
+    </section>
+
+    <div class="charts-row">
+        <div class="chart-card">
+            <h3>Closure Trend</h3>
+            <div class="chart-container"><canvas id="closureTrendChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+            <h3>Impact by Domain</h3>
+            <div class="chart-container"><canvas id="impactByDomainChart"></canvas></div>
+        </div>
+    </div>
+
+    <div class="charts-row">
+        <div class="chart-card">
+            <h3>Impact by Primary Metric</h3>
+            <div class="chart-container"><canvas id="impactByMetricChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+            <h3>Outcomes Breakdown</h3>
+            <div class="chart-container"><canvas id="outcomesChart"></canvas></div>
+        </div>
+    </div>
+
+    <section class="table-section">
+        <h3>All ChangeSets</h3>
+        <table class="data-table" id="csTable">
+            <thead>
+                <tr>
+                    <th data-sort="id" class="sorted">ID</th>
+                    <th data-sort="title">Title</th>
+                    <th data-sort="subtype">Type</th>
+                    <th data-sort="surface">Surface</th>
+                    <th data-sort="status">Status</th>
+                    <th data-sort="risk_level">Risk</th>
+                    <th data-sort="owner">Owner</th>
+                    <th data-sort="created">Created</th>
+                    <th data-sort="outcome">Outcome</th>
+                    <th data-sort="expected_revenue">Expected Rev</th>
+                    <th data-sort="actual_revenue">Actual Rev</th>
+                </tr>
+            </thead>
+            <tbody id="csTableBody"></tbody>
+        </table>
+    </section>
+
+    <footer>
+        Kenetik Growth System &middot; ChangeSet Dashboard &middot; Live from <code>drinkkenetik/kenetik-dashboards</code> &middot; Auto-refreshes every 5 min
+    </footer>
+</div>
+
+<!-- Detail Overlay -->
+<div class="detail-overlay" id="detailOverlay" onclick="if(event.target===this)closeDetail()">
+    <div class="detail-panel" id="detailPanel"></div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// AUTO-FETCH CONFIG
+// ═══════════════════════════════════════════════════
+const DATA_URL = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/changeset-tracker.json';
+const REFRESH_INTERVAL_MS = 5 * 60 * 1000; // Auto-refresh every 5 minutes
+let TRACKER = null;
+let lastFetchTime = null;
+
+async function fetchTracker() {
+    const statusEl = document.getElementById('syncStatus');
+    try {
+        // Cache-bust to ensure fresh data
+        const resp = await fetch(DATA_URL + '?t=' + Date.now());
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        TRACKER = await resp.json();
+        lastFetchTime = new Date();
+        statusEl.textContent = 'Live · Last synced ' + lastFetchTime.toLocaleTimeString();
+        statusEl.style.color = 'var(--success)';
+        return true;
+    } catch (err) {
+        console.error('Fetch failed:', err);
+        statusEl.textContent = 'Offline · ' + (lastFetchTime ? 'Last synced ' + lastFetchTime.toLocaleTimeString() : 'Could not load data');
+        statusEl.style.color = 'var(--danger)';
+        return false;
+    }
+}
+
+// ═══════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════
+let filters = { subtype: 'all', surface: 'all', status: 'all' };
+let sortCol = 'id';
+let sortDir = 'asc';
+let charts = {};
+
+// ═══════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════
+function fmt$(n) {
+    if (n == null || isNaN(n)) return '—';
+    return '$' + Number(n).toLocaleString('en-US');
+}
+
+function getFiltered() {
+    return TRACKER.changesets.filter(cs => {
+        if (filters.subtype !== 'all' && cs.subtype !== filters.subtype) return false;
+        if (filters.surface !== 'all' && cs.surface !== filters.surface) return false;
+        if (filters.status === 'open') return cs.status !== 'closed';
+        if (filters.status !== 'all' && cs.status !== filters.status) return false;
+        return true;
+    });
+}
+
+function isOpen(cs) { return !['closed','rolled_back'].includes(cs.status); }
+function isClosed(cs) { return cs.status === 'closed' || cs.status === 'rolled_back'; }
+
+function expectedRev(cs) {
+    return cs.expected_impact?.revenue?.expected ?? 0;
+}
+
+function actualRev(cs) {
+    return cs.actual_impact?.revenue_impact ?? 0;
+}
+
+function actualMargin(cs) {
+    return cs.actual_impact?.margin_impact ?? 0;
+}
+
+const PIPELINE_ORDER = ['draft','preview_ready','needs_feedback','needs_approval','approved','published','closed'];
+const PIPELINE_LABELS = {
+    draft: 'Draft', preview_ready: 'Preview', needs_feedback: 'Feedback',
+    needs_approval: 'Approval', approved: 'Approved', published: 'Published', closed: 'Closed'
+};
+
+const SURFACE_COLORS = {
+    klaviyo: '#6366f1', paid_meta: '#3b82f6', paid_google: '#22c55e',
+    paid_tiktok: '#ef4444', amazon: '#f59e0b', amazon_ads: '#f97316',
+    recharge: '#a855f7', partner: '#ec4899', dtc_website: '#14b8a6',
+    wholesale_retail: '#8b5cf6', practitioner: '#06b6d4'
+};
+
+// ═══════════════════════════════════════════════════
+// FILTERS
+// ═══════════════════════════════════════════════════
+function setSubtypeFilter(val) {
+    filters.subtype = val;
+    document.querySelectorAll('.filters .filter-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    render();
+}
+
+function setSurfaceFilter(val) { filters.surface = val; render(); }
+function setStatusFilter(val) { filters.status = val; render(); }
+
+// Populate surface dropdown
+function populateSurfaceDropdown() {
+    const sel = document.querySelector('.filter-select');
+    const surfaces = [...new Set(TRACKER.changesets.map(c => c.surface))].sort();
+    surfaces.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        sel.appendChild(opt);
+    });
+}
+
+// ═══════════════════════════════════════════════════
+// KPIs
+// ═══════════════════════════════════════════════════
+function renderKPIs() {
+    const data = getFiltered();
+    const open = data.filter(isOpen);
+    const closed = data.filter(isClosed);
+    const totalExpected = data.reduce((s, c) => s + expectedRev(c), 0);
+    const totalActual = closed.reduce((s, c) => s + actualRev(c), 0);
+    const totalActualMargin = closed.reduce((s, c) => s + actualMargin(c), 0);
+    const impl = data.filter(c => c.subtype === 'implementation').length;
+    const invest = data.filter(c => c.subtype === 'investigation').length;
+
+    const avgAge = open.length
+        ? Math.round(open.reduce((s, c) => s + (Date.now() - new Date(c.created)) / 86400000, 0) / open.length)
+        : 0;
+
+    document.getElementById('kpis').innerHTML = `
+        <div class="kpi-card">
+            <div class="kpi-label">Total ChangeSets</div>
+            <div class="kpi-value">${data.length}</div>
+            <div class="kpi-detail">${impl} implementation &middot; ${invest} investigation</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Open</div>
+            <div class="kpi-value info">${open.length}</div>
+            <div class="kpi-detail">Avg ${avgAge} days open</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Closed</div>
+            <div class="kpi-value success">${closed.length}</div>
+            <div class="kpi-detail">${closed.filter(c=>c.outcome==='success').length} success &middot; ${closed.filter(c=>c.outcome==='underperformed').length} underperformed</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Expected Revenue (Pipeline)</div>
+            <div class="kpi-value">${fmt$(totalExpected)}</div>
+            <div class="kpi-detail">Sum of expected impact</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Actual Revenue (Closed)</div>
+            <div class="kpi-value success">${fmt$(totalActual)}</div>
+            <div class="kpi-detail">${fmt$(totalActualMargin)} margin impact</div>
+        </div>
+    `;
+}
+
+// ═══════════════════════════════════════════════════
+// PIPELINE
+// ═══════════════════════════════════════════════════
+function renderPipeline() {
+    const data = getFiltered();
+    const container = document.getElementById('pipeline');
+
+    // Only show columns that have items or are key stages
+    const activeStatuses = PIPELINE_ORDER.filter(s => {
+        return ['draft','approved','published','closed'].includes(s) || data.some(c => c.status === s);
+    });
+
+    container.innerHTML = activeStatuses.map(status => {
+        const items = data.filter(c => c.status === status);
+        return `
+            <div class="pipeline-col">
+                <div class="pipeline-col-header">
+                    ${PIPELINE_LABELS[status] || status}
+                    <span class="pipeline-col-count">${items.length}</span>
+                </div>
+                ${items.length === 0 ? '<div class="empty-state" style="padding:8px;font-size:11px">None</div>' : ''}
+                ${items.map(cs => `
+                    <div class="pipeline-card" onclick="openDetail('${cs.id}')">
+                        <div class="cs-id">${cs.id}</div>
+                        <div class="cs-title">${cs.title}</div>
+                        <div class="cs-meta">
+                            <span class="badge ${cs.subtype === 'investigation' ? 'badge-invest' : 'badge-impl'}">${cs.subtype}</span>
+                            <span class="badge badge-${cs.risk_level}">${cs.risk_level}</span>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }).join('');
+}
+
+// ═══════════════════════════════════════════════════
+// CHARTS
+// ═══════════════════════════════════════════════════
+function renderCharts() {
+    const data = getFiltered();
+    const closed = data.filter(isClosed);
+
+    // Destroy existing charts
+    Object.values(charts).forEach(c => c.destroy());
+    charts = {};
+
+    // 1. Closure Trend (by week)
+    const closureByWeek = {};
+    closed.forEach(cs => {
+        if (cs.closed_date) {
+            const d = new Date(cs.closed_date);
+            const week = new Date(d);
+            week.setDate(d.getDate() - d.getDay());
+            const key = week.toISOString().slice(0, 10);
+            closureByWeek[key] = (closureByWeek[key] || 0) + 1;
+        }
+    });
+
+    const weekKeys = Object.keys(closureByWeek).sort();
+    let cumulative = 0;
+    const cumulativeData = weekKeys.map(k => { cumulative += closureByWeek[k]; return cumulative; });
+
+    charts.closure = new Chart(document.getElementById('closureTrendChart'), {
+        type: 'bar',
+        data: {
+            labels: weekKeys.length ? weekKeys.map(k => new Date(k).toLocaleDateString('en-US', {month:'short', day:'numeric'})) : ['No closed ChangeSets yet'],
+            datasets: [
+                {
+                    label: 'Closed (weekly)',
+                    data: weekKeys.length ? weekKeys.map(k => closureByWeek[k]) : [0],
+                    backgroundColor: 'rgba(99,102,241,0.5)',
+                    borderRadius: 4,
+                    yAxisID: 'y',
+                    order: 2
+                },
+                {
+                    label: 'Cumulative',
+                    data: cumulativeData.length ? cumulativeData : [0],
+                    type: 'line',
+                    borderColor: '#22c55e',
+                    backgroundColor: 'transparent',
+                    tension: 0.3,
+                    pointRadius: 3,
+                    yAxisID: 'y1',
+                    order: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#8b8fa3', font: { size: 11 } } } },
+            scales: {
+                x: { ticks: { color: '#8b8fa3', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                y: { position: 'left', ticks: { color: '#8b8fa3', stepSize: 1 }, grid: { color: 'rgba(255,255,255,0.05)' }, title: { display: true, text: 'Closed', color: '#8b8fa3', font: { size: 10 } } },
+                y1: { position: 'right', ticks: { color: '#22c55e', stepSize: 1 }, grid: { display: false }, title: { display: true, text: 'Cumulative', color: '#22c55e', font: { size: 10 } } }
+            }
+        }
+    });
+
+    // 2. Impact by Domain (horizontal bar — expected + actual)
+    const surfaces = [...new Set(data.map(c => c.surface))].sort();
+    const expectedBySurface = surfaces.map(s => data.filter(c => c.surface === s).reduce((sum, c) => sum + expectedRev(c), 0));
+    const actualBySurface = surfaces.map(s => closed.filter(c => c.surface === s).reduce((sum, c) => sum + actualRev(c), 0));
+
+    charts.domain = new Chart(document.getElementById('impactByDomainChart'), {
+        type: 'bar',
+        data: {
+            labels: surfaces.map(s => s.replace(/_/g, ' ')),
+            datasets: [
+                { label: 'Expected Revenue', data: expectedBySurface, backgroundColor: 'rgba(99,102,241,0.4)', borderRadius: 4 },
+                { label: 'Actual Revenue', data: actualBySurface, backgroundColor: 'rgba(34,197,94,0.6)', borderRadius: 4 }
+            ]
+        },
+        options: {
+            indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+            plugins: {
+                legend: { labels: { color: '#8b8fa3', font: { size: 11 } } },
+                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt$(ctx.raw) } }
+            },
+            scales: {
+                x: { ticks: { color: '#8b8fa3', callback: v => fmt$(v) }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                y: { ticks: { color: '#8b8fa3' }, grid: { display: false } }
+            }
+        }
+    });
+
+    // 3. Impact by Primary Metric
+    const metricMap = {};
+    data.forEach(cs => {
+        const m = cs.expected_impact?.primary_metric || 'unknown';
+        if (!metricMap[m]) metricMap[m] = { expected: 0, actual: 0, count: 0 };
+        metricMap[m].expected += expectedRev(cs);
+        metricMap[m].count++;
+        if (isClosed(cs)) metricMap[m].actual += actualRev(cs);
+    });
+    const metrics = Object.keys(metricMap).sort();
+
+    charts.metric = new Chart(document.getElementById('impactByMetricChart'), {
+        type: 'bar',
+        data: {
+            labels: metrics,
+            datasets: [
+                { label: 'Expected Revenue', data: metrics.map(m => metricMap[m].expected), backgroundColor: 'rgba(99,102,241,0.4)', borderRadius: 4 },
+                { label: 'Actual Revenue', data: metrics.map(m => metricMap[m].actual), backgroundColor: 'rgba(34,197,94,0.6)', borderRadius: 4 }
+            ]
+        },
+        options: {
+            indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+            plugins: {
+                legend: { labels: { color: '#8b8fa3', font: { size: 11 } } },
+                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt$(ctx.raw) + ' (' + metricMap[metrics[ctx.dataIndex]].count + ' CS)' } }
+            },
+            scales: {
+                x: { ticks: { color: '#8b8fa3', callback: v => fmt$(v) }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                y: { ticks: { color: '#8b8fa3' }, grid: { display: false } }
+            }
+        }
+    });
+
+    // 4. Outcomes Breakdown (doughnut)
+    const outcomes = { success: 0, underperformed: 0, inconclusive: 0, rolled_back: 0, cancelled: 0, open: 0 };
+    data.forEach(cs => {
+        if (cs.outcome && outcomes.hasOwnProperty(cs.outcome)) outcomes[cs.outcome]++;
+        else if (isOpen(cs)) outcomes.open++;
+    });
+    const outcomeLabels = Object.keys(outcomes).filter(k => outcomes[k] > 0);
+    const outcomeColors = { success: '#22c55e', underperformed: '#ef4444', inconclusive: '#f59e0b', rolled_back: '#ef4444', cancelled: '#8b8fa3', open: '#6366f1' };
+
+    charts.outcomes = new Chart(document.getElementById('outcomesChart'), {
+        type: 'doughnut',
+        data: {
+            labels: outcomeLabels.map(l => l.replace(/_/g, ' ')),
+            datasets: [{
+                data: outcomeLabels.map(l => outcomes[l]),
+                backgroundColor: outcomeLabels.map(l => outcomeColors[l] || '#6366f1'),
+                borderWidth: 0,
+                hoverOffset: 6
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            cutout: '60%',
+            plugins: {
+                legend: { position: 'right', labels: { color: '#8b8fa3', font: { size: 11 }, padding: 12 } }
+            }
+        }
+    });
+}
+
+// ═══════════════════════════════════════════════════
+// TABLE
+// ═══════════════════════════════════════════════════
+function renderTable() {
+    const data = getFiltered();
+
+    // Sort
+    data.sort((a, b) => {
+        let va, vb;
+        if (sortCol === 'expected_revenue') { va = expectedRev(a); vb = expectedRev(b); }
+        else if (sortCol === 'actual_revenue') { va = actualRev(a); vb = actualRev(b); }
+        else { va = a[sortCol] ?? ''; vb = b[sortCol] ?? ''; }
+        if (typeof va === 'string') { va = va.toLowerCase(); vb = vb.toLowerCase(); }
+        if (va < vb) return sortDir === 'asc' ? -1 : 1;
+        if (va > vb) return sortDir === 'asc' ? 1 : -1;
+        return 0;
+    });
+
+    document.getElementById('csTableBody').innerHTML = data.map(cs => `
+        <tr>
+            <td><span class="cs-link" onclick="openDetail('${cs.id}')">${cs.id}</span></td>
+            <td>${cs.title}</td>
+            <td><span class="badge ${cs.subtype === 'investigation' ? 'badge-invest' : 'badge-impl'}">${cs.subtype}</span></td>
+            <td>${cs.surface.replace(/_/g, ' ')}</td>
+            <td><span class="status-pill status-${cs.status}">${cs.status.replace(/_/g, ' ')}</span></td>
+            <td><span class="badge badge-${cs.risk_level}">${cs.risk_level}</span></td>
+            <td>${cs.owner}</td>
+            <td>${cs.created}</td>
+            <td>${cs.outcome ? `<span class="outcome-${cs.outcome}">${cs.outcome}</span>` : '—'}</td>
+            <td>${expectedRev(cs) ? fmt$(expectedRev(cs)) : '—'}</td>
+            <td>${cs.actual_impact ? fmt$(actualRev(cs)) : '—'}</td>
+        </tr>
+    `).join('');
+
+    // Sort indicators
+    document.querySelectorAll('.data-table th').forEach(th => {
+        th.classList.toggle('sorted', th.dataset.sort === sortCol);
+        th.textContent = th.textContent.replace(/ [▲▼]$/, '');
+        if (th.dataset.sort === sortCol) th.textContent += sortDir === 'asc' ? ' ▲' : ' ▼';
+    });
+}
+
+// Table sorting
+document.querySelectorAll('.data-table th[data-sort]').forEach(th => {
+    th.addEventListener('click', () => {
+        const col = th.dataset.sort;
+        if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+        else { sortCol = col; sortDir = 'asc'; }
+        renderTable();
+    });
+});
+
+// ═══════════════════════════════════════════════════
+// DETAIL PANEL
+// ═══════════════════════════════════════════════════
+function openDetail(id) {
+    const cs = TRACKER.changesets.find(c => c.id === id);
+    if (!cs) return;
+
+    const ei = cs.expected_impact || {};
+    const ai = cs.actual_impact || {};
+    const rev = ei.revenue || {};
+    const mar = ei.margin || {};
+
+    document.getElementById('detailPanel').innerHTML = `
+        <button class="detail-close" onclick="closeDetail()">&times;</button>
+        <div class="detail-id">${cs.id}</div>
+        <h2>${cs.title}</h2>
+
+        <div class="detail-grid" style="margin-top:16px">
+            <div class="detail-field"><label>Subtype</label><span class="badge ${cs.subtype === 'investigation' ? 'badge-invest' : 'badge-impl'}" style="font-size:12px">${cs.subtype}</span></div>
+            <div class="detail-field"><label>Surface</label><span>${cs.surface.replace(/_/g, ' ')}</span></div>
+            <div class="detail-field"><label>Status</label><span class="status-pill status-${cs.status}" style="font-size:12px">${cs.status.replace(/_/g, ' ')}</span></div>
+            <div class="detail-field"><label>Risk</label><span class="badge badge-${cs.risk_level}" style="font-size:12px">${cs.risk_level}</span></div>
+            <div class="detail-field"><label>Owner</label><span>${cs.owner}</span></div>
+            <div class="detail-field"><label>Objective</label><span>${cs.objective_level}</span></div>
+            <div class="detail-field"><label>Category</label><span>${(cs.category || '—').replace(/_/g, ' ')}</span></div>
+            <div class="detail-field"><label>Created</label><span>${cs.created}</span></div>
+            ${cs.approved_date ? `<div class="detail-field"><label>Approved</label><span>${cs.approved_date} by ${cs.approved_by}</span></div>` : ''}
+            ${cs.published_date ? `<div class="detail-field"><label>Published</label><span>${cs.published_date}</span></div>` : ''}
+            ${cs.closed_date ? `<div class="detail-field"><label>Closed</label><span>${cs.closed_date}</span></div>` : ''}
+            ${cs.outcome ? `<div class="detail-field"><label>Outcome</label><span class="outcome-${cs.outcome}" style="font-weight:600">${cs.outcome}</span></div>` : ''}
+            <div class="detail-field"><label>Measurement Window</label><span>${cs.measurement_window}</span></div>
+            ${cs.measurement_due ? `<div class="detail-field"><label>Measurement Due</label><span>${cs.measurement_due}</span></div>` : ''}
+        </div>
+
+        ${cs.dependencies && cs.dependencies.length ? `<div class="detail-field" style="margin-bottom:8px"><label>Dependencies</label><span>${cs.dependencies.join(', ')}</span></div>` : ''}
+        ${cs.blocks && cs.blocks.length ? `<div class="detail-field" style="margin-bottom:8px"><label>Blocks</label><span>${cs.blocks.join(', ')}</span></div>` : ''}
+        ${cs.spawned_from ? `<div class="detail-field" style="margin-bottom:8px"><label>Spawned From</label><span class="cs-link" onclick="openDetail('${cs.spawned_from}')">${cs.spawned_from}</span></div>` : ''}
+        ${cs.spawned_changesets && cs.spawned_changesets.length ? `<div class="detail-field" style="margin-bottom:8px"><label>Spawned ChangeSets</label><span>${cs.spawned_changesets.map(s => `<span class="cs-link" onclick="openDetail('${s}')">${s}</span>`).join(', ')}</span></div>` : ''}
+
+        <div class="detail-section">
+            <h4>Expected Impact</h4>
+            <table class="impact-table">
+                <tr><th></th><th>Revenue</th><th>Margin</th></tr>
+                <tr><td>Upside</td><td>${fmt$(rev.upside)}</td><td>${fmt$(mar.upside)}</td></tr>
+                <tr><td>Expected</td><td style="font-weight:600">${fmt$(rev.expected)}</td><td style="font-weight:600">${fmt$(mar.expected)}</td></tr>
+                <tr><td>Downside</td><td>${fmt$(rev.downside)}</td><td>${fmt$(mar.downside)}</td></tr>
+            </table>
+            <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">
+                Primary metric: <strong>${ei.primary_metric || '—'}</strong> &mdash; Target: ${ei.primary_metric_target || '—'}
+            </div>
+        </div>
+
+        ${ai && ai.primary_metric ? `
+        <div class="detail-section">
+            <h4>Actual Impact</h4>
+            <table class="impact-table">
+                <tr><th>Metric</th><th>Baseline</th><th>Result</th><th>Delta</th></tr>
+                <tr>
+                    <td>${ai.primary_metric}</td>
+                    <td>${ai.primary_metric_baseline ?? '—'}</td>
+                    <td style="font-weight:600">${ai.primary_metric_result ?? '—'}</td>
+                    <td style="font-weight:600;color:${(ai.primary_metric_delta||'').startsWith('+') ? 'var(--success)' : 'var(--danger)'}">${ai.primary_metric_delta ?? '—'}</td>
+                </tr>
+            </table>
+            <div style="margin-top:8px;font-size:12px">
+                Revenue impact: <strong>${fmt$(ai.revenue_impact)}</strong> &middot;
+                Margin impact: <strong>${fmt$(ai.margin_impact)}</strong> &middot;
+                Confidence: ${ai.confidence || '—'} &middot;
+                Stat sig: ${ai.statistical_significance ? 'Yes' : 'No'}
+            </div>
+        </div>
+        ` : ''}
+
+        ${cs.learning_note ? `
+        <div class="detail-section">
+            <h4>Learning Note</h4>
+            <p style="font-size:13px;line-height:1.5">${cs.learning_note}</p>
+        </div>
+        ` : ''}
+
+        <div class="detail-section">
+            <h4>Notes</h4>
+            <p style="font-size:13px;line-height:1.5;color:var(--text-muted)">${cs.notes}</p>
+        </div>
+    `;
+
+    document.getElementById('detailOverlay').classList.add('open');
+}
+
+function closeDetail() {
+    document.getElementById('detailOverlay').classList.remove('open');
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+// ═══════════════════════════════════════════════════
+// RENDER ALL
+// ═══════════════════════════════════════════════════
+function render() {
+    renderKPIs();
+    renderPipeline();
+    renderCharts();
+    renderTable();
+}
+
+// ═══════════════════════════════════════════════════
+// BOOTSTRAP — fetch data, render, set up auto-refresh
+// ═══════════════════════════════════════════════════
+async function boot() {
+    const ok = await fetchTracker();
+    if (ok) {
+        populateSurfaceDropdown();
+        render();
+    }
+}
+
+async function refresh() {
+    const ok = await fetchTracker();
+    if (ok) {
+        populateSurfaceDropdown();
+        render();
+    }
+}
+
+boot();
+setInterval(refresh, REFRESH_INTERVAL_MS);
+</script>
+</body>
+</html>
