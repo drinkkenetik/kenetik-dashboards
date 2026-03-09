@@ -73,6 +73,34 @@
             vertical-align: middle;
         }
 
+        .sync-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .refresh-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .refresh-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent-light);
+        }
+
+        .refresh-btn.spinning {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
         .filters {
             display: flex;
             gap: 10px;
@@ -495,8 +523,11 @@
     <header>
         <div class="header-left">
             <h1>ChangeSet Dashboard <span class="schema-badge">Schema v2.0</span></h1>
-            <div class="subtitle">Kenetik Growth System — Pipeline, Impact & Lifecycle</div>
-            <div class="sync-status" id="syncStatus" style="font-size:12px;color:var(--text-muted);margin-top:4px;">Loading data…</div>
+            <div class="subtitle">Kenetik Growth System — Pipeline, Impact &amp; Lifecycle</div>
+            <div class="sync-row">
+                <span class="sync-status" id="syncStatus" style="font-size:12px;color:var(--text-muted);">Loading data…</span>
+                <button class="refresh-btn" id="refreshBtn" onclick="manualRefresh()" title="Refresh now">↻ Refresh</button>
+            </div>
         </div>
         <div class="filters">
             <button class="filter-btn active" onclick="setSubtypeFilter('all')">All</button>
@@ -589,6 +620,8 @@ let lastFetchTime = null;
 
 async function fetchTracker() {
     const statusEl = document.getElementById('syncStatus');
+    const btn = document.getElementById('refreshBtn');
+    btn.classList.add('spinning');
     try {
         // Cache-bust to ensure fresh data
         const resp = await fetch(DATA_URL + '?t=' + Date.now());
@@ -597,13 +630,24 @@ async function fetchTracker() {
         lastFetchTime = new Date();
         statusEl.textContent = 'Live · Last synced ' + lastFetchTime.toLocaleTimeString();
         statusEl.style.color = 'var(--success)';
+        btn.classList.remove('spinning');
         return true;
     } catch (err) {
         console.error('Fetch failed:', err);
         statusEl.textContent = 'Offline · ' + (lastFetchTime ? 'Last synced ' + lastFetchTime.toLocaleTimeString() : 'Could not load data');
         statusEl.style.color = 'var(--danger)';
+        btn.classList.remove('spinning');
         return false;
     }
+}
+
+// Manual refresh (debounced)
+let refreshLock = false;
+async function manualRefresh() {
+    if (refreshLock) return;
+    refreshLock = true;
+    await refresh();
+    setTimeout(() => { refreshLock = false; }, 2000);
 }
 
 // ═══════════════════════════════════════════════════
@@ -676,6 +720,8 @@ function setStatusFilter(val) { filters.status = val; render(); }
 // Populate surface dropdown
 function populateSurfaceDropdown() {
     const sel = document.querySelector('.filter-select');
+    // Clear existing options except the first "All Surfaces"
+    while (sel.options.length > 1) sel.remove(1);
     const surfaces = [...new Set(TRACKER.changesets.map(c => c.surface))].sort();
     surfaces.forEach(s => {
         const opt = document.createElement('option');
