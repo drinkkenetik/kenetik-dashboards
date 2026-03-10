@@ -152,8 +152,8 @@
       "emoji": "🎬",
       "mission": "Human-operated creative studio — complements Larry 2.0's autonomous engine. Katie drives Moe through KGS commands for content requiring human judgment: video scripts, carousels, science distillations, athlete content.",
       "stats": {
-        "built": 5,
-        "not_started": 4
+        "built": 6,
+        "not_started": 3
       }
     },
     "marketing_social": {
@@ -345,7 +345,7 @@
     "4c.3": {"name": "Carousel Content Generation", "role": "creative_studio", "status": "built", "layer": "Creative Engine"},
     "4c.4": {"name": "Science Distillation", "role": "creative_studio", "status": "built", "layer": "Creative Engine"},
     "4c.5": {"name": "Content Calendar Planning", "role": "creative_studio", "status": "built", "layer": "Creative Engine"},
-    "4c.6": {"name": "Athlete Content Generation", "role": "creative_studio", "status": "not_started", "layer": "Creative Engine"},
+    "4c.6": {"name": "Athlete Content Generation", "role": "creative_studio", "status": "built", "layer": "Creative Engine"},
     "4c.7": {"name": "Video Production (Flask Service)", "role": "creative_studio", "status": "not_started", "layer": "Creative Engine"},
     "4c.8": {"name": "Visual Compositing (Flask Service)", "role": "creative_studio", "status": "not_started", "layer": "Creative Engine"},
     "4c.9": {"name": "Asset Library Management (Flask Service)", "role": "creative_studio", "status": "not_started", "layer": "Creative Engine"},
@@ -407,8 +407,8 @@
   "stats": {
     "total_processes": 98,
     "status_breakdown": {
-      "built": 85,
-      "not_started": 13
+      "built": 86,
+      "not_started": 12
     }
   }
 }
