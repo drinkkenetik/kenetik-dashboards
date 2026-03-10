@@ -152,8 +152,8 @@
       "emoji": "🎬",
       "mission": "Human-operated creative studio — complements Larry 2.0's autonomous engine. Katie drives Moe through KGS commands for content requiring human judgment: video scripts, carousels, science distillations, athlete content.",
       "stats": {
-        "built": 1,
-        "not_started": 8
+        "built": 2,
+        "not_started": 7
       }
     },
     "marketing_social": {
@@ -544,7 +544,7 @@
     "4c.2": {
       "name": "Video Script Generation",
       "role": "creative_studio",
-      "status": "not_started",
+      "status": "built",
       "layer": "Creative Engine"
     },
     "4c.3": {
@@ -893,11 +893,458 @@
       "layer": "Infrastructure"
     }
   },
+  "patterns": {
+    "pattern_a": {
+      "id": "Pattern A",
+      "name": "Pulse Review Pattern",
+      "description": "Standardized daily operational health check where role leaders review role-specific metrics dashboards against configured thresholds and log alerts for investigation.",
+      "status": "not_started",
+      "shortcutSummary": "/daily-pulse, /paid-media-pulse, /amazon-pulse, /project-pulse",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Receive refreshed data mart(s) after daily dbt run completes (typically 6:00-6:30 AM UTC)",
+          "actor": "Data Intelligence Lead (system)"
+        },
+        {
+          "step": 2,
+          "action": "Review role-specific metrics panel against configured thresholds",
+          "actor": "Role Leader (manual review)"
+        },
+        {
+          "step": 3,
+          "action": "Flag items exceeding threshold as alerts: RED (immediate escalation) or YELLOW (monitor trend)",
+          "actor": "Role Leader (categorization)"
+        },
+        {
+          "step": 4,
+          "action": "Log flags as tasks (own-role action) or escalations (cross-role impact) with full context",
+          "actor": "Role Leader (logging)"
+        },
+        {
+          "step": 5,
+          "action": "If cross-role impact detected, route alert to relevant role owner with context",
+          "actor": "Role Leader (escalation routing)"
+        }
+      ],
+      "usedBy": [
+        {
+          "role": "Chief Growth Officer",
+          "processes": [
+            {
+              "id": "1.1",
+              "name": "Morning Health Check & Pulse Review"
+            }
+          ]
+        },
+        {
+          "role": "Paid Media Manager",
+          "processes": [
+            {
+              "id": "8.1",
+              "name": "Daily Paid Media Pulse"
+            }
+          ]
+        },
+        {
+          "role": "Amazon Marketplace Manager",
+          "processes": [
+            {
+              "id": "9.1",
+              "name": "Daily Pulse & Morning Dashboard Review"
+            }
+          ]
+        },
+        {
+          "role": "Project Manager",
+          "processes": [
+            {
+              "id": "10.1",
+              "name": "System Health Dashboard & Operational Pulse"
+            }
+          ]
+        }
+      ]
+    },
+    "pattern_b": {
+      "id": "Pattern B",
+      "name": "Brief Request Pattern",
+      "description": "Standardized process for any role that needs creative assets to submit requests to Creative Strategist (4a.3) instead of generating full Creative Brief Objects themselves.",
+      "status": "not_started",
+      "shortcutSummary": "/creative-brief routes to Creative Strategist 4a.3",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Identify creative need: source signal (gap, opportunity, risk mitigation) and business context",
+          "actor": "Requesting Role"
+        },
+        {
+          "step": 2,
+          "action": "Determine priority: Urgent (<48h), Standard (7-14 days), Backlog (no firm deadline)",
+          "actor": "Requesting Role"
+        },
+        {
+          "step": 3,
+          "action": "Populate brief request schema: source_signal, priority, objective, surface, segment, product_type, offer, claim_tier",
+          "actor": "Requesting Role"
+        },
+        {
+          "step": 4,
+          "action": "Submit request to Creative Strategist (4a.3) via /creative-brief shortcut",
+          "actor": "Requesting Role"
+        },
+        {
+          "step": 5,
+          "action": "Creative Strategist receives, validates demand signal, populates complete Creative Brief Object",
+          "actor": "Creative Strategist (4a.3)"
+        },
+        {
+          "step": 6,
+          "action": "Creative Strategist routes to Content Producer (4b), manages quality gates and SLA tracking",
+          "actor": "Creative Strategist (4a.3)"
+        },
+        {
+          "step": 7,
+          "action": "When asset delivered, requesting role deploys through its own workflow",
+          "actor": "Requesting Role"
+        }
+      ],
+      "usedBy": [
+        {
+          "role": "Operations Intelligence Lead",
+          "processes": [
+            {
+              "id": "3.3",
+              "name": "ChangeSet Recommendation Generation"
+            }
+          ]
+        },
+        {
+          "role": "Web & Experimentation Lead",
+          "processes": [
+            {
+              "id": "6.8",
+              "name": "Creative Brief Generation for Web Content"
+            }
+          ]
+        },
+        {
+          "role": "Channel Execution Manager",
+          "processes": [
+            {
+              "id": "7.7",
+              "name": "Creative Sourcing & ChangeSet Integration"
+            }
+          ]
+        },
+        {
+          "role": "Paid Media Manager",
+          "processes": [
+            {
+              "id": "8.4",
+              "name": "Creative Freshness Pre-Condition"
+            }
+          ]
+        }
+      ]
+    },
+    "pattern_c": {
+      "id": "Pattern C",
+      "name": "Learning Record Pattern",
+      "description": "Standardized process for roles that generate learning insights to submit learning records to System Learning Protocol (3.8) instead of independently pushing to skill files or learning libraries.",
+      "status": "not_started",
+      "shortcutSummary": "/learning-record submits to System Learning Protocol 3.8",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Identify learning threshold: 5+ data points, >30% outperformance, >80% confidence, actionable insight",
+          "actor": "Process Owner"
+        },
+        {
+          "step": 2,
+          "action": "Produce standardized learning record: what changed, outcome data, context, what we'd do differently",
+          "actor": "Process Owner"
+        },
+        {
+          "step": 3,
+          "action": "Include supporting evidence: performance data links, A/B results, competitor/historical benchmarks",
+          "actor": "Process Owner"
+        },
+        {
+          "step": 4,
+          "action": "Submit learning record to System Learning Protocol (3.8) via /learning-record shortcut",
+          "actor": "Process Owner"
+        },
+        {
+          "step": 5,
+          "action": "Protocol 3.8 receives record, evaluates confidence level and impact scope",
+          "actor": "Ops Intelligence (3.8)"
+        },
+        {
+          "step": 6,
+          "action": "Protocol 3.8 routes: to Performance Memory, skill file queue, learning notes library, or validation queue",
+          "actor": "Ops Intelligence (3.8)"
+        },
+        {
+          "step": 7,
+          "action": "Protocol 3.8 gates all routing decisions, ensuring consistent standards",
+          "actor": "Ops Intelligence (3.8)"
+        }
+      ],
+      "usedBy": [
+        {
+          "role": "Content Producer (Larry 2.0)",
+          "processes": [
+            {
+              "id": "4b.6",
+              "name": "Performance Measurement & Learning Record Submission"
+            }
+          ]
+        },
+        {
+          "role": "Web & Experimentation Lead",
+          "processes": [
+            {
+              "id": "6.9",
+              "name": "Learning Notes Production"
+            }
+          ]
+        },
+        {
+          "role": "Paid Media Manager",
+          "processes": [
+            {
+              "id": "8.8",
+              "name": "Experiment Results → Performance Memory Reporting"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "infrastructure": {
+    "mcps": {
+      "shopify": {
+        "name": "Shopify",
+        "status": "connected",
+        "type": "commerce"
+      },
+      "klaviyo": {
+        "name": "Klaviyo",
+        "status": "connected",
+        "type": "email_sms"
+      },
+      "google_ads": {
+        "name": "Google Ads",
+        "status": "connected",
+        "type": "advertising"
+      },
+      "meta_ads": {
+        "name": "Meta Ads",
+        "status": "connected",
+        "type": "advertising"
+      },
+      "tiktok_ads": {
+        "name": "TikTok Ads",
+        "status": "planned",
+        "type": "advertising"
+      },
+      "amazon_ads": {
+        "name": "Amazon Advertising",
+        "status": "planned",
+        "type": "advertising"
+      },
+      "sprout_social": {
+        "name": "Sprout Social",
+        "status": "planned",
+        "type": "social"
+      },
+      "cin7": {
+        "name": "Cin7",
+        "status": "planned",
+        "type": "inventory"
+      },
+      "recharge": {
+        "name": "Recharge",
+        "status": "connected",
+        "type": "subscriptions"
+      }
+    },
+    "platforms": {
+      "cowork": {
+        "name": "Cowork (Claude)",
+        "status": "active",
+        "description": "AI agent orchestration"
+      },
+      "github": {
+        "name": "GitHub",
+        "status": "active",
+        "description": "Code, specs, dashboards"
+      },
+      "flask_services": {
+        "name": "Flask Engineering Services",
+        "status": "planned",
+        "description": "Kling AI, HeyGen, Creatomate, Cloudinary"
+      }
+    },
+    "connections": {
+      "shopify_to_data_intelligence": {
+        "name": "shopify → data_intelligence",
+        "status": "active",
+        "type": "data_source",
+        "provides": "data source"
+      },
+      "klaviyo_to_channel_execution": {
+        "name": "klaviyo → channel_execution",
+        "status": "active",
+        "type": "execution",
+        "provides": "execution"
+      },
+      "google_ads_to_paid_media": {
+        "name": "google_ads → paid_media",
+        "status": "active",
+        "type": "execution",
+        "provides": "execution"
+      },
+      "meta_ads_to_paid_media": {
+        "name": "meta_ads → paid_media",
+        "status": "active",
+        "type": "execution",
+        "provides": "execution"
+      },
+      "recharge_to_channel_execution": {
+        "name": "recharge → channel_execution",
+        "status": "active",
+        "type": "execution",
+        "provides": "execution"
+      },
+      "cin7_to_ops_intelligence": {
+        "name": "cin7 → ops_intelligence",
+        "status": "active",
+        "type": "data_source",
+        "provides": "data source"
+      },
+      "sprout_social_to_marketing_social": {
+        "name": "sprout_social → marketing_social",
+        "status": "active",
+        "type": "execution",
+        "provides": "execution"
+      },
+      "amazon_ads_to_amazon": {
+        "name": "amazon_ads → amazon",
+        "status": "active",
+        "type": "execution",
+        "provides": "execution"
+      },
+      "flask_services_to_creative_studio": {
+        "name": "flask_services → creative_studio",
+        "status": "active",
+        "type": "execution",
+        "provides": "execution"
+      },
+      "cowork_to_content_producer": {
+        "name": "cowork → content_producer",
+        "status": "active",
+        "type": "orchestration",
+        "provides": "orchestration"
+      },
+      "github_to_project_manager": {
+        "name": "github → project_manager",
+        "status": "active",
+        "type": "infrastructure",
+        "provides": "infrastructure"
+      }
+    }
+  },
+  "cgo_architecture": {
+    "name": "Three-Tier CGO Architecture",
+    "description": "Domain scans → CGO synthesis → execution",
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "Domain Scans",
+        "description": "13 automated domain scans feed raw intelligence daily",
+        "scans": [
+          "Revenue & margin trends",
+          "Cash position & burn rate",
+          "Inventory health & velocity",
+          "Paid media auction dynamics",
+          "Amazon BSR & pricing shifts",
+          "Email/SMS performance (Klaviyo)",
+          "Subscription health (Recharge)",
+          "Web conversion & experiment results",
+          "Social share of voice",
+          "Creator/ambassador pipeline",
+          "Competitive intelligence",
+          "VoC & customer sentiment",
+          "Content performance & creative fatigue"
+        ]
+      },
+      {
+        "tier": 2,
+        "name": "CGO Synthesis",
+        "description": "CGO synthesizes 13 scans into unified intelligence, produces prioritized ChangeSets through optimization hierarchy"
+      },
+      {
+        "tier": 3,
+        "name": "Execution",
+        "description": "ChangeSets route to execution roles (Web, Channel, Paid Media, Amazon) through governance workflow"
+      }
+    ],
+    "decision_routing": [
+      {
+        "human": "Devon (CEO)",
+        "domain": "Strategic decisions, cross-domain trade-offs, hierarchy changes, guardrail adjustments"
+      },
+      {
+        "human": "Nick",
+        "domain": "Social media, creator/ambassador partnerships, marketing calendar"
+      },
+      {
+        "human": "Katie",
+        "domain": "Website/CRO, paid media, email marketing, customer service"
+      },
+      {
+        "human": "Peter",
+        "domain": "Content creation, creative briefs, ad creative copy, science distillation"
+      }
+    ]
+  },
+  "optimization_hierarchy": {
+    "name": "5-Level Optimization Hierarchy",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Contribution Margin $",
+        "description": "Revenue + Margin — top priority, all decisions evaluated here first"
+      },
+      {
+        "level": 2,
+        "name": "Cash Conversion",
+        "description": "Cash flow and conversion efficiency"
+      },
+      {
+        "level": 3,
+        "name": "Customer Quality / LTV",
+        "description": "Long-term customer value and quality"
+      },
+      {
+        "level": 4,
+        "name": "Rate of Learning",
+        "description": "Speed of system learning and improvement"
+      },
+      {
+        "level": 5,
+        "name": "Brand Equity Protection",
+        "description": "Brand protection floor — never trade brand equity for short-term gains"
+      }
+    ]
+  },
   "stats": {
     "total_processes": 98,
     "status_breakdown": {
-      "built": 81,
-      "not_started": 17
+      "built": 82,
+      "not_started": 16
     }
   }
 }
