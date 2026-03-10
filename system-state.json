@@ -248,8 +248,8 @@
       "emoji": "💰",
       "mission": "Owns all paid media operations across platforms (Google Ads, Meta, TikTok, Amazon Ads), manages budgets, optimizes creative, maintains autonomy rules and guardrails.",
       "stats": {
-        "built": 6,
-        "not_started": 2
+        "built": 7,
+        "not_started": 1
       }
     },
     "amazon": {
@@ -377,7 +377,7 @@
     "7.8": {"name": "Partner Listing Packet Management", "role": "channel_execution", "status": "built", "layer": "Execution"},
     "7.9": {"name": "Graduation ChangeSet Processing", "role": "channel_execution", "status": "built", "layer": "Execution"},
     "8.1": {"name": "Daily Paid Media Pulse", "role": "paid_media", "status": "built", "layer": "Execution"},
-    "8.2": {"name": "Unified Cross-Platform Dashboard Management", "role": "paid_media", "status": "not_started", "layer": "Execution"},
+    "8.2": {"name": "Unified Cross-Platform Dashboard Management", "role": "paid_media", "status": "built", "layer": "Execution"},
     "8.3": {"name": "Budget Reallocation Recommendations", "role": "paid_media", "status": "built", "layer": "Execution"},
     "8.4": {"name": "Creative Freshness Pre-Condition", "role": "paid_media", "status": "built", "layer": "Execution"},
     "8.5": {"name": "Autonomous Optimization Rules", "role": "paid_media", "status": "built", "layer": "Execution"},
@@ -407,8 +407,8 @@
   "stats": {
     "total_processes": 98,
     "status_breakdown": {
-      "built": 91,
-      "not_started": 7
+      "built": 92,
+      "not_started": 6
     }
   }
 }
