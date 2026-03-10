@@ -152,8 +152,8 @@
       "emoji": "🎬",
       "mission": "Human-operated creative studio — complements Larry 2.0's autonomous engine. Katie drives Moe through KGS commands for content requiring human judgment: video scripts, carousels, science distillations, athlete content.",
       "stats": {
-        "built": 1,
-        "not_started": 8
+        "built": 3,
+        "not_started": 6
       }
     },
     "marketing_social": {
@@ -340,8 +340,8 @@
     "4b.4": {"name": "Locked Architecture Content Assembly", "role": "content_producer", "status": "built", "layer": "Creative Engine"},
     "4b.5": {"name": "Founder & Team Content Amplification", "role": "content_producer", "status": "built", "layer": "Creative Engine"},
     "4b.6": {"name": "Performance Measurement & Learning Record Submission", "role": "content_producer", "status": "built", "layer": "Creative Engine"},
-    "4c.1": {"name": "Caption & Hook Generation", "role": "creative_studio", "status": "not_started", "layer": "Creative Engine"},
-    "4c.2": {"name": "Video Script Generation", "role": "creative_studio", "status": "not_started", "layer": "Creative Engine"},
+    "4c.1": {"name": "Caption & Hook Generation", "role": "creative_studio", "status": "built", "layer": "Creative Engine"},
+    "4c.2": {"name": "Video Script Generation", "role": "creative_studio", "status": "built", "layer": "Creative Engine"},
     "4c.3": {"name": "Carousel Content Generation", "role": "creative_studio", "status": "built", "layer": "Creative Engine"},
     "4c.4": {"name": "Science Distillation", "role": "creative_studio", "status": "not_started", "layer": "Creative Engine"},
     "4c.5": {"name": "Content Calendar Planning", "role": "creative_studio", "status": "not_started", "layer": "Creative Engine"},
@@ -407,8 +407,8 @@
   "stats": {
     "total_processes": 98,
     "status_breakdown": {
-      "built": 81,
-      "not_started": 17
+      "built": 83,
+      "not_started": 15
     }
   }
 }
