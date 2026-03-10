@@ -2,7 +2,7 @@
   "metadata": {
     "version": "3.2.0",
     "spec_version": "KGS Virtual Team v3.2",
-    "last_updated": "2026-03-10T00:00:00.000000Z",
+    "last_updated": "2026-03-10T21:18:26Z",
     "generated_by": "kgs-dashboard-rebuild",
     "total_roles": 12,
     "total_processes": 98,
@@ -106,8 +106,8 @@
       "emoji": "🎨",
       "mission": "Manages Content Intelligence Layer, designs hypothesis testing strategy, generates Creative Brief Objects, orchestrates content flywheel, manages performance memory and skill file evolution, ensures claims compliance.",
       "stats": {
-        "built": 5,
-        "not_started": 4
+        "built": 6,
+        "not_started": 3
       }
     },
     "content_producer": {
@@ -329,7 +329,7 @@
     "4a.2": {"name": "Hypothesis Design & Testing Strategy", "role": "creative_strategist", "status": "built", "layer": "Creative Engine"},
     "4a.3": {"name": "Creative Brief Object Generation", "role": "creative_strategist", "status": "built", "layer": "Creative Engine"},
     "4a.4": {"name": "Content Flywheel Orchestration", "role": "creative_strategist", "status": "built", "layer": "Creative Engine"},
-    "4a.5": {"name": "Graduation Pipeline Management", "role": "creative_strategist", "status": "not_started", "layer": "Creative Engine"},
+    "4a.5": {"name": "Graduation Pipeline Management", "role": "creative_strategist", "status": "built", "layer": "Creative Engine"},
     "4a.6": {"name": "Performance Memory & Skill File Management", "role": "creative_strategist", "status": "built", "layer": "Creative Engine"},
     "4a.7": {"name": "Claims Compliance Engine", "role": "creative_strategist", "status": "not_started", "layer": "Creative Engine"},
     "4a.8": {"name": "Creative Freshness Monitoring", "role": "creative_strategist", "status": "not_started", "layer": "Creative Engine"},
@@ -407,8 +407,8 @@
   "stats": {
     "total_processes": 98,
     "status_breakdown": {
-      "built": 87,
-      "not_started": 11
+      "built": 88,
+      "not_started": 10
     }
   }
 }
