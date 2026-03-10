@@ -106,8 +106,8 @@
       "emoji": "🎨",
       "mission": "Manages Content Intelligence Layer, designs hypothesis testing strategy, generates Creative Brief Objects, orchestrates content flywheel, manages performance memory and skill file evolution, ensures claims compliance.",
       "stats": {
-        "built": 7,
-        "not_started": 2
+        "built": 8,
+        "not_started": 1
       }
     },
     "content_producer": {
@@ -332,7 +332,7 @@
     "4a.5": {"name": "Graduation Pipeline Management", "role": "creative_strategist", "status": "built", "layer": "Creative Engine"},
     "4a.6": {"name": "Performance Memory & Skill File Management", "role": "creative_strategist", "status": "built", "layer": "Creative Engine"},
     "4a.7": {"name": "Claims Compliance Engine", "role": "creative_strategist", "status": "built", "layer": "Creative Engine"},
-    "4a.8": {"name": "Creative Freshness Monitoring", "role": "creative_strategist", "status": "not_started", "layer": "Creative Engine"},
+    "4a.8": {"name": "Creative Freshness Monitoring", "role": "creative_strategist", "status": "built", "layer": "Creative Engine"},
     "4a.9": {"name": "Cross-Channel Asset Specification", "role": "creative_strategist", "status": "not_started", "layer": "Creative Engine"},
     "4b.1": {"name": "Autonomous Content Generation (Larry 2.0 Core Loop)", "role": "content_producer", "status": "built", "layer": "Creative Engine"},
     "4b.2": {"name": "Multi-Platform Content Scheduling", "role": "content_producer", "status": "built", "layer": "Creative Engine"},
@@ -407,8 +407,8 @@
   "stats": {
     "total_processes": 98,
     "status_breakdown": {
-      "built": 89,
-      "not_started": 9
+      "built": 90,
+      "not_started": 8
     }
   }
 }
