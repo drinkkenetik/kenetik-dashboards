@@ -1,12 +1,12 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-11T23:00:00Z",
+  "last_updated": "2026-03-11T22:00:00Z",
   "next_id": 11,
   "summary": {
     "total": 10,
     "by_status": {
-      "draft": 6,
-      "approved": 1,
+      "draft": 7,
+      "approved": 0,
       "published": 3,
       "rolled_back": 0,
       "closed": 0
@@ -346,10 +346,10 @@
     },
     {
       "id": "CS-2026-009",
-      "title": "BWR Post-Purchase Flow — Science-Backed Kenetik Protocol",
+      "title": "BWR Post-Purchase Flow — Endurance Training Bundle Protocol",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "draft",
       "risk_level": "low",
       "owner": "Katie + Brandon",
       "created": "2026-03-11",
@@ -360,16 +360,16 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {"upside": 6000, "expected": 3200, "downside": 800},
-        "margin": {"upside": 3000, "expected": 1600, "downside": 400},
+        "revenue": {"upside": 2400, "expected": 1200, "downside": 400},
+        "margin": {"upside": 1200, "expected": 600, "downside": 200},
         "primary_metric": "reorder_rate",
-        "primary_metric_target": ">12% reorder rate + >4% subscription conversion from BWR code purchasers"
+        "primary_metric_target": ">12% reorder rate + >4% subscription conversion from BWR bundle purchasers"
       },
       "routed_to": ["Katie", "Brandon"],
       "routed_via": "slack",
       "routed_date": "2026-03-11",
-      "approved_by": "Brandon (self-approve, Low risk)",
-      "approved_date": "2026-03-11",
+      "approved_by": null,
+      "approved_date": null,
       "rejected_date": null,
       "rejection_reason": null,
       "published_date": null,
@@ -382,7 +382,7 @@
       "closed_date": null,
       "learning_note": null,
       "file": "cgo-logs/changesets/CS-2026-009.md",
-      "notes": "BWR post-purchase flow. Refined: 5 emails + 1 SMS (consolidated from 8). Trigger: any order with BWR discount code. Protocol: 2 drinks/day (Robberechts 2026 study). Economics updated for 2/day consumption. Open rate target >40%. Approved by Brandon (Low risk self-approve). Devon claims review still required before science content goes live."
+      "notes": "BWR (Belgian Waffle Ride) event-specific post-purchase flow. 8-email + 1 SMS sequence delivering science-backed Kenetik protocol (Robberechts 2026 study) timed to peak at BWR May 2-3. Triggered by BWR discount code on Endurance Training Bundle. First event-specific protocol flow — pilot for Leadville/Unbound/LTGP template."
     },
     {
       "id": "CS-2026-010",
