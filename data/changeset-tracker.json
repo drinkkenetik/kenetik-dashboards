@@ -16,12 +16,17 @@
       "medium": 2,
       "high": 2,
       "critical": 1
+    },
+    "by_subtype": {
+      "implementation": 7,
+      "investigation": 1,
+      "quick": 0
     }
   },
   "changesets": [
     {
       "id": "CS-2026-001",
-      "title": "Welcome Series Emergency — Influencer Welcome Track",
+      "title": "Welcome Series Emergency \u2014 Influencer Welcome Track",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
@@ -30,17 +35,29 @@
       "created": "2026-03-08",
       "objective_level": "L3",
       "category": "email_sms",
-      "dependencies": ["CS-2026-002"],
+      "dependencies": [
+        "CS-2026-002"
+      ],
       "blocks": [],
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 3900, "expected": 2600, "downside": 1300 },
-        "margin": { "upside": 1950, "expected": 1300, "downside": 650 },
+        "revenue": {
+          "upside": 3900,
+          "expected": 2600,
+          "downside": 1300
+        },
+        "margin": {
+          "upside": 1950,
+          "expected": 1300,
+          "downside": 650
+        },
         "primary_metric": "rpr",
         "primary_metric_target": "+$0.15 RPR on influencer cohort"
       },
-      "routed_to": ["Katie"],
+      "routed_to": [
+        "Katie"
+      ],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": null,
@@ -71,16 +88,28 @@
       "objective_level": "L4",
       "category": "infrastructure",
       "dependencies": [],
-      "blocks": ["CS-2026-001"],
+      "blocks": [
+        "CS-2026-001"
+      ],
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 0, "expected": 0, "downside": 0 },
-        "margin": { "upside": 0, "expected": 0, "downside": 0 },
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
         "primary_metric": "segment_accuracy",
         "primary_metric_target": ">95% correct classification of influencer subscribers"
       },
-      "routed_to": ["Katie"],
+      "routed_to": [
+        "Katie"
+      ],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": "Katie",
@@ -97,7 +126,7 @@
       "closed_date": null,
       "learning_note": null,
       "file": "cgo-logs/changesets/CS-2026-002.md",
-      "notes": "Fast-track approved by Katie (Low risk self-approval). Change packet generated for manual Klaviyo segment builds. Segment A priority — unblocks CS-2026-001."
+      "notes": "Fast-track approved by Katie (Low risk self-approval). Change packet generated for manual Klaviyo segment builds. Segment A priority \u2014 unblocks CS-2026-001."
     },
     {
       "id": "CS-2026-003",
@@ -115,12 +144,23 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 900, "expected": 600, "downside": 300 },
-        "margin": { "upside": 450, "expected": 300, "downside": 150 },
+        "revenue": {
+          "upside": 900,
+          "expected": 600,
+          "downside": 300
+        },
+        "margin": {
+          "upside": 450,
+          "expected": 300,
+          "downside": 150
+        },
         "primary_metric": "flash_sale_revenue",
         "primary_metric_target": "+$600 per flash sale from SMS-first sequencing"
       },
-      "routed_to": ["Katie", "Nick"],
+      "routed_to": [
+        "Katie",
+        "Nick"
+      ],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": null,
@@ -141,7 +181,7 @@
     },
     {
       "id": "CS-2026-004",
-      "title": "Paid Media Attribution — March 7 Exclusion & Superfiliate Investigation",
+      "title": "Paid Media Attribution \u2014 March 7 Exclusion & Superfiliate Investigation",
       "subtype": "investigation",
       "surface": "paid_google",
       "status": "published",
@@ -155,12 +195,23 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 5000, "expected": 0, "downside": 0 },
-        "margin": { "upside": 2500, "expected": 0, "downside": 0 },
+        "revenue": {
+          "upside": 5000,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 2500,
+          "expected": 0,
+          "downside": 0
+        },
         "primary_metric": "attribution_accuracy",
         "primary_metric_target": ">90% Superfiliate attribution capture rate using Shopify tags + promo code"
       },
-      "routed_to": ["Katie", "Nick"],
+      "routed_to": [
+        "Katie",
+        "Nick"
+      ],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": "Nick",
@@ -177,11 +228,11 @@
       "closed_date": null,
       "learning_note": null,
       "file": "cgo-logs/changesets/CS-2026-004.md",
-      "notes": "Published 2026-03-10. Session 5 update: Superfiliate attribution gap partially resolved — 601 orders attributed via custom_5144 Polar dimension."
+      "notes": "Published 2026-03-10. Session 5 update: Superfiliate attribution gap partially resolved \u2014 601 orders attributed via custom_5144 Polar dimension."
     },
     {
       "id": "CS-2026-005",
-      "title": "Post-Activation Retention Campaign — Cleetus Cohort Reorder Sequence",
+      "title": "Post-Activation Retention Campaign \u2014 Cleetus Cohort Reorder Sequence",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
@@ -190,17 +241,32 @@
       "created": "2026-03-09",
       "objective_level": "L3",
       "category": "email_sms",
-      "dependencies": ["CS-2026-002"],
+      "dependencies": [
+        "CS-2026-002"
+      ],
       "blocks": [],
       "spawned_from": null,
-      "spawned_changesets": ["CS-2026-007"],
+      "spawned_changesets": [
+        "CS-2026-007"
+      ],
       "expected_impact": {
-        "revenue": { "upside": 26000, "expected": 14400, "downside": 4500 },
-        "margin": { "upside": 13000, "expected": 7200, "downside": 2250 },
+        "revenue": {
+          "upside": 26000,
+          "expected": 14400,
+          "downside": 4500
+        },
+        "margin": {
+          "upside": 13000,
+          "expected": 7200,
+          "downside": 2250
+        },
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"
       },
-      "routed_to": ["Katie", "Peter"],
+      "routed_to": [
+        "Katie",
+        "Peter"
+      ],
       "routed_via": "slack",
       "routed_date": "2026-03-09",
       "approved_by": null,
@@ -221,7 +287,7 @@
     },
     {
       "id": "CS-2026-006",
-      "title": "Science Content Pipeline — Cell BHB Metabolic Fitness Paper",
+      "title": "Science Content Pipeline \u2014 Cell BHB Metabolic Fitness Paper",
       "subtype": "implementation",
       "surface": "content",
       "status": "draft",
@@ -235,12 +301,23 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 500, "expected": 200, "downside": 0 },
-        "margin": { "upside": 250, "expected": 100, "downside": 0 },
+        "revenue": {
+          "upside": 500,
+          "expected": 200,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 250,
+          "expected": 100,
+          "downside": 0
+        },
         "primary_metric": "content_engagement",
         "primary_metric_target": ">3% social engagement rate, >2.5% email CTR, >500 web sessions (30-day)"
       },
-      "routed_to": ["Nick", "Charlotte"],
+      "routed_to": [
+        "Nick",
+        "Charlotte"
+      ],
       "routed_via": "slack",
       "routed_date": "2026-03-10",
       "approved_by": null,
@@ -270,17 +347,32 @@
       "created": "2026-03-10",
       "objective_level": "L2",
       "category": "email_sms",
-      "dependencies": ["CS-2026-001", "CS-2026-002"],
+      "dependencies": [
+        "CS-2026-001",
+        "CS-2026-002"
+      ],
       "blocks": [],
       "spawned_from": "CS-2026-005",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 35250, "expected": 14400, "downside": 4500 },
-        "margin": { "upside": 17625, "expected": 7200, "downside": 2250 },
+        "revenue": {
+          "upside": 35250,
+          "expected": 14400,
+          "downside": 4500
+        },
+        "margin": {
+          "upside": 17625,
+          "expected": 7200,
+          "downside": 2250
+        },
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"
       },
-      "routed_to": ["Katie", "Nick", "Peter"],
+      "routed_to": [
+        "Katie",
+        "Nick",
+        "Peter"
+      ],
       "routed_via": "slack",
       "routed_date": "2026-03-10",
       "approved_by": null,
@@ -310,17 +402,32 @@
       "created": "2026-03-10",
       "objective_level": "L2",
       "category": "creative",
-      "dependencies": ["CS-2026-006"],
+      "dependencies": [
+        "CS-2026-006"
+      ],
       "blocks": [],
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 5000, "expected": 2000, "downside": 500 },
-        "margin": { "upside": 2500, "expected": 1000, "downside": 250 },
+        "revenue": {
+          "upside": 5000,
+          "expected": 2000,
+          "downside": 500
+        },
+        "margin": {
+          "upside": 2500,
+          "expected": 1000,
+          "downside": 250
+        },
         "primary_metric": "content_engagement",
         "primary_metric_target": ">3% social engagement rate on brain fuel content, >500 web sessions (30-day)"
       },
-      "routed_to": ["Nick", "Charlotte", "Matt", "Brandon"],
+      "routed_to": [
+        "Nick",
+        "Charlotte",
+        "Matt",
+        "Brandon"
+      ],
       "routed_via": "slack",
       "routed_date": "2026-03-10",
       "approved_by": null,

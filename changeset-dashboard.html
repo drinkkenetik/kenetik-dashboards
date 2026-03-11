@@ -21,6 +21,7 @@
             --info: #3b82f6;
             --investigation: #a855f7;
             --implementation: #6366f1;
+            --quick: #14b8a6;
             --kenetik-green: #22c55e;
         }
 
@@ -308,6 +309,7 @@
 
         .badge-impl { background: rgba(99,102,241,0.2); color: var(--implementation); }
         .badge-invest { background: rgba(168,85,247,0.2); color: var(--investigation); }
+        .badge-quick { background: rgba(20,184,166,0.2); color: var(--quick); }
         .badge-low { background: rgba(34,197,94,0.15); color: var(--success); }
         .badge-medium { background: rgba(245,158,11,0.15); color: var(--warning); }
         .badge-high, .badge-critical { background: rgba(239,68,68,0.15); color: var(--danger); }
@@ -520,6 +522,7 @@
             <button class="filter-btn active" onclick="setSubtypeFilter('all')">All</button>
             <button class="filter-btn" onclick="setSubtypeFilter('implementation')">Implementation</button>
             <button class="filter-btn" onclick="setSubtypeFilter('investigation')">Investigation</button>
+            <button class="filter-btn" onclick="setSubtypeFilter('quick')">Quick</button>
             <select class="filter-select" onchange="setSurfaceFilter(this.value)">
                 <option value="all">All Surfaces</option>
             </select>
@@ -640,6 +643,11 @@ async function manualRefresh() {
 // STATE
 // ═══════════════════════════════════════════════════
 let filters = { subtype: 'all', surface: 'all', status: 'all' };
+
+function subtypeBadge(subtype) {
+    const cls = subtype === 'investigation' ? 'badge-invest' : subtype === 'quick' ? 'badge-quick' : 'badge-impl';
+    return `<span class="badge ${cls}">${subtype}</span>`;
+}
 let sortCol = 'id';
 let sortDir = 'asc';
 let charts = {};
@@ -730,6 +738,7 @@ function renderKPIs() {
     const totalActualMargin = closed.reduce((s, c) => s + actualMargin(c), 0);
     const impl = data.filter(c => c.subtype === 'implementation').length;
     const invest = data.filter(c => c.subtype === 'investigation').length;
+    const quick = data.filter(c => c.subtype === 'quick').length;
 
     const avgAge = open.length
         ? Math.round(open.reduce((s, c) => s + (Date.now() - new Date(c.created)) / 86400000, 0) / open.length)
@@ -739,7 +748,7 @@ function renderKPIs() {
         <div class="kpi-card">
             <div class="kpi-label">Total ChangeSets</div>
             <div class="kpi-value">${data.length}</div>
-            <div class="kpi-detail">${impl} implementation · ${invest} investigation</div>
+            <div class="kpi-detail">${impl} impl · ${invest} invest${quick ? ' · ' + quick + ' quick' : ''}</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">Open</div>
@@ -792,7 +801,7 @@ function renderPipeline() {
                         <div class="cs-id">${cs.id}</div>
                         <div class="cs-title">${cs.title}</div>
                         <div class="cs-meta">
-                            <span class="badge ${cs.subtype === 'investigation' ? 'badge-invest' : 'badge-impl'}">${cs.subtype}</span>
+                            ${subtypeBadge(cs.subtype)}
                             <span class="badge badge-${cs.risk_level}">${cs.risk_level}</span>
                         </div>
                     </div>
@@ -976,7 +985,7 @@ function renderTable() {
         <tr>
             <td><span class="cs-link" onclick="openDetail('${cs.id}')">${cs.id}</span></td>
             <td>${cs.title}</td>
-            <td><span class="badge ${cs.subtype === 'investigation' ? 'badge-invest' : 'badge-impl'}">${cs.subtype}</span></td>
+            <td>${subtypeBadge(cs.subtype)}</td>
             <td>${cs.surface.replace(/_/g, ' ')}</td>
             <td><span class="status-pill status-${cs.status}">${cs.status.replace(/_/g, ' ')}</span></td>
             <td><span class="badge badge-${cs.risk_level}">${cs.risk_level}</span></td>
@@ -1022,7 +1031,7 @@ function openDetail(id) {
         <h2>${cs.title}</h2>
 
         <div class="detail-grid" style="margin-top:16px">
-            <div class="detail-field"><label>Subtype</label><span class="badge ${cs.subtype === 'investigation' ? 'badge-invest' : 'badge-impl'}" style="font-size:12px">${cs.subtype}</span></div>
+            <div class="detail-field"><label>Subtype</label>${subtypeBadge(cs.subtype)}</div>
             <div class="detail-field"><label>Surface</label><span>${cs.surface.replace(/_/g, ' ')}</span></div>
             <div class="detail-field"><label>Status</label><span class="status-pill status-${cs.status}" style="font-size:12px">${cs.status.replace(/_/g, ' ')}</span></div>
             <div class="detail-field"><label>Risk</label><span class="badge badge-${cs.risk_level}" style="font-size:12px">${cs.risk_level}</span></div>
