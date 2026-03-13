@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-13T18:30:00Z",
+  "last_updated": "2026-03-13T19:45:00Z",
   "next_id": 23,
   "lifecycle_sweep": {
     "session": "2026-03-13-CGO-REVIEW",
@@ -11,8 +11,9 @@
     "flags": [
       "CS-2026-007: APPROVED by CGO 2026-03-13 — proceed to /changeset-execute",
       "CS-2026-005: APPROVED by CGO 2026-03-13 — proceed to /changeset-execute",
+      "CS-2026-011: APPROVED 2026-03-13 — low-risk email, hierarchy review complete",
       "CS-2026-007: UNBLOCKED — CS-2026-005 approved, ready for review",
-      "6 draft ChangeSets in approval queue (down from 7)",
+      "5 draft ChangeSets in approval queue (down from 6)",
       "tracker.json data integrity repaired — PR #130 overwrote original 10 entries, restored from SHA 7fa51f7f + merged with April email campaign entries (CS-011-022)"
     ],
     "new_changeset_generation": "UNBLOCKED — CS-2026-005 approved. Amazon connector and BAW creator collabs still pending."
@@ -20,8 +21,8 @@
   "summary": {
     "total": 22,
     "by_status": {
-      "draft": 17,
-      "approved": 2,
+      "draft": 16,
+      "approved": 3,
       "published": 3,
       "rolled_back": 0,
       "closed": 0
@@ -380,7 +381,7 @@
       "title": "April Email: THE SCIENCE IS NO JOKE",
       "subtype": "email_campaign",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-12",
@@ -396,10 +397,11 @@
         "segment_size": "~51,643"
       },
       "routed_to": ["Katie"],
-      "approved_by": null,
+      "approved_by": "Katie",
+      "approved_date": "2026-03-13",
       "published_date": null,
       "file": null,
-      "notes": "April 2026 Email Campaign entry. Created by /generate-monthly-email-calendar (PR #131)."
+      "notes": "APPROVED 2026-03-13. Low-risk science credibility email (Machado 2022 qEEG, Tier A). Hierarchy: L3, no trade-offs, no overrides. Fast-track eligible. Dependency: Devon claims sign-off on Machado citation before Klaviyo build."
     },
     {
       "id": "CS-2026-012",
