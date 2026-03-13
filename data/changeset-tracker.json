@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-13T14:00:00Z",
+  "last_updated": "2026-03-13T18:30:00Z",
   "next_id": 23,
   "lifecycle_sweep": {
     "session": "2026-03-13-CGO-REVIEW",
@@ -9,6 +9,7 @@
     "measurement_due": 0,
     "auto_closed": 0,
     "flags": [
+      "CS-2026-007: APPROVED by CGO 2026-03-13 — proceed to /changeset-execute",
       "CS-2026-005: APPROVED by CGO 2026-03-13 — proceed to /changeset-execute",
       "CS-2026-007: UNBLOCKED — CS-2026-005 approved, ready for review",
       "6 draft ChangeSets in approval queue (down from 7)",
@@ -19,8 +20,8 @@
   "summary": {
     "total": 22,
     "by_status": {
-      "draft": 18,
-      "approved": 1,
+      "draft": 17,
+      "approved": 2,
       "published": 3,
       "rolled_back": 0,
       "closed": 0
@@ -50,31 +51,17 @@
       "created": "2026-03-08",
       "objective_level": "L3",
       "category": "email_sms",
-      "dependencies": [
-        "CS-2026-002"
-      ],
+      "dependencies": ["CS-2026-002"],
       "blocks": [],
       "spawned_from": null,
-      "spawned_changesets": [
-        "CS-2026-010"
-      ],
+      "spawned_changesets": ["CS-2026-010"],
       "expected_impact": {
-        "revenue": {
-          "upside": 3900,
-          "expected": 2600,
-          "downside": 1300
-        },
-        "margin": {
-          "upside": 1950,
-          "expected": 1300,
-          "downside": 650
-        },
+        "revenue": {"upside": 3900, "expected": 2600, "downside": 1300},
+        "margin": {"upside": 1950, "expected": 1300, "downside": 650},
         "primary_metric": "rpr",
         "primary_metric_target": "+$0.15 RPR on influencer cohort"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": "Devon (for Peter), Nick, Katie",
@@ -102,28 +89,16 @@
       "objective_level": "L4",
       "category": "infrastructure",
       "dependencies": [],
-      "blocks": [
-        "CS-2026-001"
-      ],
+      "blocks": ["CS-2026-001"],
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
+        "revenue": {"upside": 0, "expected": 0, "downside": 0},
+        "margin": {"upside": 0, "expected": 0, "downside": 0},
         "primary_metric": "segment_accuracy",
         "primary_metric_target": ">95% correct classification of influencer subscribers"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": "Katie",
@@ -155,23 +130,12 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 900,
-          "expected": 600,
-          "downside": 300
-        },
-        "margin": {
-          "upside": 450,
-          "expected": 300,
-          "downside": 150
-        },
+        "revenue": {"upside": 900, "expected": 600, "downside": 300},
+        "margin": {"upside": 450, "expected": 300, "downside": 150},
         "primary_metric": "flash_sale_revenue",
         "primary_metric_target": "+$600 per flash sale from SMS-first sequencing"
       },
-      "routed_to": [
-        "Katie",
-        "Nick"
-      ],
+      "routed_to": ["Katie", "Nick"],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": null,
@@ -201,27 +165,14 @@
       "dependencies": [],
       "blocks": [],
       "spawned_from": null,
-      "spawned_changesets": [
-        "CS-2026-010"
-      ],
+      "spawned_changesets": ["CS-2026-010"],
       "expected_impact": {
-        "revenue": {
-          "upside": 5000,
-          "expected": 0,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 2500,
-          "expected": 0,
-          "downside": 0
-        },
+        "revenue": {"upside": 5000, "expected": 0, "downside": 0},
+        "margin": {"upside": 2500, "expected": 0, "downside": 0},
         "primary_metric": "attribution_accuracy",
         "primary_metric_target": ">90% Superfiliate attribution capture rate"
       },
-      "routed_to": [
-        "Katie",
-        "Nick"
-      ],
+      "routed_to": ["Katie", "Nick"],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": "Nick",
@@ -248,32 +199,17 @@
       "created": "2026-03-09",
       "objective_level": "L3",
       "category": "email_sms",
-      "dependencies": [
-        "CS-2026-002"
-      ],
+      "dependencies": ["CS-2026-002"],
       "blocks": [],
       "spawned_from": null,
-      "spawned_changesets": [
-        "CS-2026-007"
-      ],
+      "spawned_changesets": ["CS-2026-007"],
       "expected_impact": {
-        "revenue": {
-          "upside": 26000,
-          "expected": 14400,
-          "downside": 4500
-        },
-        "margin": {
-          "upside": 13000,
-          "expected": 7200,
-          "downside": 2250
-        },
+        "revenue": {"upside": 26000, "expected": 14400, "downside": 4500},
+        "margin": {"upside": 13000, "expected": 7200, "downside": 2250},
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"
       },
-      "routed_to": [
-        "Katie",
-        "Peter"
-      ],
+      "routed_to": ["Katie", "Peter"],
       "routed_via": "slack",
       "routed_date": "2026-03-09",
       "approved_by": "Devon",
@@ -305,23 +241,12 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 500,
-          "expected": 200,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 250,
-          "expected": 100,
-          "downside": 0
-        },
+        "revenue": {"upside": 500, "expected": 200, "downside": 0},
+        "margin": {"upside": 250, "expected": 100, "downside": 0},
         "primary_metric": "content_engagement",
         "primary_metric_target": ">3% social engagement rate, >2.5% email CTR, >500 web sessions (30-day)"
       },
-      "routed_to": [
-        "Nick",
-        "Charlotte"
-      ],
+      "routed_to": ["Nick", "Charlotte"],
       "routed_via": "slack",
       "routed_date": "2026-03-10",
       "approved_by": null,
@@ -335,45 +260,30 @@
       "title": "Post-Cleetus Cohort Retention Playbook",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "high",
       "owner": "Katie + Nick",
       "created": "2026-03-10",
       "objective_level": "L2",
       "category": "email_sms",
-      "dependencies": [
-        "CS-2026-001",
-        "CS-2026-002"
-      ],
+      "dependencies": ["CS-2026-001", "CS-2026-002"],
       "blocks": [],
       "spawned_from": "CS-2026-005",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 35250,
-          "expected": 14400,
-          "downside": 4500
-        },
-        "margin": {
-          "upside": 17625,
-          "expected": 7200,
-          "downside": 2250
-        },
+        "revenue": {"upside": 35250, "expected": 14400, "downside": 4500},
+        "margin": {"upside": 17625, "expected": 7200, "downside": 2250},
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"
       },
-      "routed_to": [
-        "Katie",
-        "Nick",
-        "Peter"
-      ],
+      "routed_to": ["Katie", "Nick", "Peter"],
       "routed_via": "slack",
       "routed_date": "2026-03-10",
-      "approved_by": null,
-      "approved_date": null,
+      "approved_by": "Devon",
+      "approved_date": "2026-03-13",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-007.md",
-      "notes": "UNBLOCKED — CS-2026-005 approved 2026-03-13. ~4,700 Cleetus customers need tailored nurture."
+      "notes": "APPROVED by CGO 2026-03-13 via /changeset-review. Hierarchy: L2 (Cash Conversion). Conditions: (1) Peter brand voice gate on Touch 1+3, (2) CS-2026-006 soft dependency monitored, (3) Day 30 checkpoint — auto-close if reorder <3%. Proceed to /changeset-execute."
     },
     {
       "id": "CS-2026-008",
@@ -386,32 +296,17 @@
       "created": "2026-03-10",
       "objective_level": "L2",
       "category": "creative",
-      "dependencies": [
-        "CS-2026-006"
-      ],
+      "dependencies": ["CS-2026-006"],
       "blocks": [],
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 5000,
-          "expected": 2000,
-          "downside": 500
-        },
-        "margin": {
-          "upside": 2500,
-          "expected": 1000,
-          "downside": 250
-        },
+        "revenue": {"upside": 5000, "expected": 2000, "downside": 500},
+        "margin": {"upside": 2500, "expected": 1000, "downside": 250},
         "primary_metric": "content_engagement",
         "primary_metric_target": ">3% social engagement rate on brain fuel content"
       },
-      "routed_to": [
-        "Nick",
-        "Charlotte",
-        "Matt",
-        "Brandon"
-      ],
+      "routed_to": ["Nick", "Charlotte", "Matt", "Brandon"],
       "routed_via": "slack",
       "routed_date": "2026-03-10",
       "approved_by": null,
@@ -436,23 +331,12 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 2400,
-          "expected": 1200,
-          "downside": 400
-        },
-        "margin": {
-          "upside": 1200,
-          "expected": 600,
-          "downside": 200
-        },
+        "revenue": {"upside": 2400, "expected": 1200, "downside": 400},
+        "margin": {"upside": 1200, "expected": 600, "downside": 200},
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">12% reorder + >4% subscription conversion from BWR bundle"
       },
-      "routed_to": [
-        "Katie",
-        "Brandon"
-      ],
+      "routed_to": ["Katie", "Brandon"],
       "routed_via": "slack",
       "routed_date": "2026-03-11",
       "approved_by": null,
@@ -477,23 +361,12 @@
       "spawned_from": "CS-2026-001",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 5000,
-          "expected": 2600,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 2500,
-          "expected": 1300,
-          "downside": 0
-        },
+        "revenue": {"upside": 5000, "expected": 2600, "downside": 0},
+        "margin": {"upside": 2500, "expected": 1300, "downside": 0},
         "primary_metric": "investigation_completion",
         "primary_metric_target": "All 5 investigation questions answered with evidence"
       },
-      "routed_to": [
-        "Katie",
-        "Devon"
-      ],
+      "routed_to": ["Katie", "Devon"],
       "routed_via": "slack",
       "routed_date": "2026-03-11",
       "approved_by": null,
@@ -522,9 +395,7 @@
         "primary_metric_target": "47-50% open, 8-10% CTR",
         "segment_size": "~51,643"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -550,9 +421,7 @@
         "primary_metric_target": "44-46% open, 6-8% CTR",
         "segment_size": "~47,441"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -578,9 +447,7 @@
         "primary_metric_target": "44-47% open, 5-7% CTR",
         "segment_size": "~80,000+"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -606,9 +473,7 @@
         "primary_metric_target": "45-50% open, 8-12% CTR",
         "segment_size": "~8,200"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -634,9 +499,7 @@
         "primary_metric_target": "44-47% open, 7-9% CTR",
         "segment_size": "~12,500"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -662,9 +525,7 @@
         "primary_metric_target": "40-43% open, 4-6% CTR",
         "segment_size": "~25,000"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -690,9 +551,7 @@
         "primary_metric_target": "42-46% open, 6-8% CTR",
         "segment_size": "~40,500"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -718,9 +577,7 @@
         "primary_metric_target": "38-43% open, 6-10% CTR",
         "segment_size": "~4,500"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -746,9 +603,7 @@
         "primary_metric_target": "41-45% open, 5-7% CTR",
         "segment_size": "~45,000"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -774,9 +629,7 @@
         "primary_metric_target": "45-50% open, 10-15% CTR",
         "segment_size": "~65,000+"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -802,9 +655,7 @@
         "primary_metric_target": "40-44% open, 4-6% CTR",
         "segment_size": "~80,000+"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
@@ -830,9 +681,7 @@
         "primary_metric_target": "42-46% open, 7-10% CTR",
         "segment_size": "~20,000"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": null,
       "published_date": null,
       "file": null,
