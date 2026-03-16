@@ -1,10 +1,10 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-14T00:15:00Z",
+  "last_updated": "2026-03-15T12:00:00Z",
   "next_id": 23,
   "lifecycle_sweep": {
-    "session": "2026-03-13-CALENDAR-REALIGNMENT",
-    "sweep_date": "2026-03-13",
+    "session": "2026-03-15-CONFLICT-RESOLUTION",
+    "sweep_date": "2026-03-15",
     "stale_detected": 0,
     "measurement_due": 0,
     "auto_closed": 0,
@@ -15,15 +15,16 @@
       "CS-2026-011: APPROVED by Katie 2026-03-13 (PR #135)",
       "CS-2026-007: APPROVED by CGO 2026-03-13 — proceed to /changeset-execute",
       "CS-2026-005: CLOSED as cancelled — superseded by CS-2026-007 (overlap consolidation)",
-      "CS-2026-015: APPROVED by Katie 2026-03-13 — L1 with L5 conditional pass (50% bundle, event-anchored, one-time)"
+      "CS-2026-015: APPROVED by Katie 2026-03-13 — L1 with L5 conditional pass (50% bundle, event-anchored, one-time)",
+      "CS-2026-012: APPROVED by Devon 2026-03-15 — resolved from PR #138 conflict"
     ],
     "new_changeset_generation": "UNBLOCKED — April email calendar realigned with v3 spreadsheet."
   },
   "summary": {
     "total": 22,
     "by_status": {
-      "draft": 15,
-      "approved": 3,
+      "draft": 14,
+      "approved": 4,
       "published": 3,
       "rolled_back": 0,
       "closed": 1
@@ -409,7 +410,7 @@
       "title": "April Email: WIN AN UNBOUND ENTRY + CUSTOM CAM JONES GEAR",
       "subtype": "email_campaign",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
@@ -425,10 +426,11 @@
         "segment_size": "~52,000"
       },
       "routed_to": ["Katie"],
-      "approved_by": null,
+      "approved_by": "Devon",
+      "approved_date": "2026-03-15",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-012.md",
-      "notes": "REALIGNED from April 2026 Email Calendar v3. Send: 4/3 (Fri). Type: Event/Activation. SMS pairing: Yes (same day, full SMS list)."
+      "notes": "APPROVED by Devon 2026-03-15. REALIGNED from April 2026 Email Calendar v3. Send: 4/3 (Fri). Type: Event/Activation. SMS pairing: Yes (same day, full SMS list). Resolved from PR #138 tracker conflict."
     },
     {
       "id": "CS-2026-013",
