@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-16T19:00:00Z",
+  "last_updated": "2026-03-16T19:30:00Z",
   "next_id": 27,
   "lifecycle_sweep": {
     "session": "2026-03-16-session-10",
@@ -16,15 +16,16 @@
       "CS-2026-005: CLOSED (confirmed, no change).",
       "CS-2026-025: NEW — Attribution Remediation Sprint (rec-041, Themes 2/4 from synthesis)",
       "CS-2026-026: NEW — BAW Content Velocity Emergency (Theme 4, rec-021/028/pat-006)",
-      "EXPRESS BATCH: 9 ChangeSets auto-approved (CS-009, 016-023). Updated Express tier criteria (subtype=quick removed per CGO directive)."
+      "EXPRESS BATCH: 9 ChangeSets auto-approved (CS-009, 016-023). Updated Express tier criteria (subtype=quick removed per CGO directive).",
+      "CS-2026-006: APPROVED by Devon (Standard tier). L5 brand equity. Expedite — 6 days behind timeline."
     ],
     "new_changeset_generation": "2 new ChangeSets generated from Session 10 synthesis."
   },
   "summary": {
     "total": 26,
     "by_status": {
-      "draft": 7,
-      "approved": 15,
+      "draft": 6,
+      "approved": 16,
       "published": 3,
       "rolled_back": 0,
       "closed": 1
@@ -84,7 +85,32 @@
     {"id": "CS-2026-003", "title": "SMS-First Flash Sale Channel Strategy", "subtype": "implementation", "surface": "klaviyo", "status": "approved", "risk_level": "medium", "owner": "Katie + Nick", "created": "2026-03-08", "objective_level": "L4", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": null, "spawned_changesets": [], "expected_impact": {"revenue": {"upside": 900, "expected": 600, "downside": 300}, "margin": {"upside": 450, "expected": 300, "downside": 150}, "primary_metric": "flash_sale_revenue", "primary_metric_target": "+$600 per flash sale from SMS-first sequencing"}, "routed_to": ["Katie", "Nick"], "routed_via": "slack", "routed_date": "2026-03-08", "approved_by": "Katie", "approved_date": "2026-03-13", "published_date": null, "measurement_start_date": null, "measurement_end_date": null, "measurement_window": "7-day per flash sale, A/B test required", "measurement_due": null, "actual_impact": null, "outcome": null, "closed_date": null, "file": "cgo-logs/changesets/CS-2026-003.md", "notes": "Session 9: REFRAMED L1→L4 per Katie (Mar 13). Economics corrected — email RPR 69% higher than SMS at attribution maturation. Test vehicle: BAW 2nd send. PR #133."},
     {"id": "CS-2026-004", "title": "Paid Media Attribution — March 7 Exclusion & Superfiliate Investigation", "subtype": "investigation", "surface": "paid_google", "status": "published", "risk_level": "low", "owner": "Katie + Nick", "created": "2026-03-08", "objective_level": "L4", "category": "investigation", "dependencies": [], "blocks": [], "spawned_from": null, "spawned_changesets": ["CS-2026-010"], "expected_impact": {"revenue": {"upside": 5000, "expected": 0, "downside": 0}, "margin": {"upside": 2500, "expected": 0, "downside": 0}, "primary_metric": "attribution_accuracy", "primary_metric_target": ">90% Superfiliate attribution capture rate"}, "routed_to": ["Katie", "Nick"], "routed_via": "slack", "routed_date": "2026-03-08", "approved_by": "Nick", "approved_date": "2026-03-10", "published_date": "2026-03-10", "measurement_start_date": "2026-03-10", "measurement_end_date": "2026-04-09", "measurement_window": "14-day paid media, 30-day Superfiliate investigation", "measurement_due": "2026-04-09", "actual_impact": null, "outcome": null, "closed_date": null, "file": "cgo-logs/changesets/CS-2026-004.md", "notes": "Published 2026-03-10. Superfiliate gap partially resolved — 601 orders via custom_5144."},
     {"id": "CS-2026-005", "title": "Post-Activation Retention Campaign — Cleetus Cohort Reorder Sequence", "subtype": "implementation", "surface": "klaviyo", "status": "closed", "risk_level": "high", "owner": "Katie", "created": "2026-03-09", "objective_level": "L3", "category": "email_sms", "dependencies": ["CS-2026-002"], "blocks": [], "spawned_from": null, "spawned_changesets": ["CS-2026-007"], "expected_impact": {"revenue": {"upside": 26000, "expected": 14400, "downside": 4500}, "margin": {"upside": 13000, "expected": 7200, "downside": 2250}, "primary_metric": "reorder_rate", "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"}, "routed_to": ["Katie", "Peter"], "routed_via": "slack", "routed_date": "2026-03-09", "approved_by": "Devon", "approved_date": "2026-03-13", "published_date": null, "measurement_start_date": null, "measurement_end_date": null, "measurement_window": "60-day", "measurement_due": null, "actual_impact": null, "outcome": "cancelled", "closed_date": "2026-03-13", "file": "cgo-logs/changesets/CS-2026-005.md", "notes": "CLOSED 2026-03-13 — cancelled/superseded by CS-2026-007."},
-    {"id": "CS-2026-006", "title": "Science Content Pipeline — Cell BHB Metabolic Fitness Paper", "subtype": "implementation", "surface": "content", "status": "draft", "risk_level": "low", "owner": "Nick + Charlotte", "created": "2026-03-10", "objective_level": "L5", "category": "creative", "dependencies": [], "blocks": [], "spawned_from": null, "spawned_changesets": [], "expected_impact": {"revenue": {"upside": 500, "expected": 200, "downside": 0}, "margin": {"upside": 250, "expected": 100, "downside": 0}, "primary_metric": "content_engagement", "primary_metric_target": ">3% social engagement rate, >2.5% email CTR, >500 web sessions (30-day)"}, "routed_to": ["Nick", "Charlotte"], "routed_via": "slack", "routed_date": "2026-03-10", "approved_by": null, "approved_date": null, "published_date": null, "file": "cgo-logs/changesets/CS-2026-006.md", "notes": "Feeds into CS-2026-008 (Brain Fuel sprint)."},
+    {
+      "id": "CS-2026-006",
+      "title": "Science Content Pipeline — Cell BHB Metabolic Fitness Paper",
+      "subtype": "implementation",
+      "surface": "content",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Nick + Charlotte",
+      "created": "2026-03-10",
+      "objective_level": "L5",
+      "category": "creative",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": null,
+      "spawned_changesets": [],
+      "expected_impact": {"revenue": {"upside": 500, "expected": 200, "downside": 0}, "margin": {"upside": 250, "expected": 100, "downside": 0}, "primary_metric": "content_engagement", "primary_metric_target": ">3% social engagement rate, >2.5% email CTR, >500 web sessions (30-day)"},
+      "routed_to": ["Nick", "Charlotte"],
+      "routed_via": "slack",
+      "routed_date": "2026-03-10",
+      "approved_by": "Devon",
+      "approved_date": "2026-03-16",
+      "review_tier": "standard",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-006.md",
+      "notes": "APPROVED by Devon 2026-03-16 (Standard tier). L5 brand equity via Cell Magazine distillation. 6 days behind — expedite. Route email blocks to CS-2026-007 (not closed CS-005). Feeds CS-2026-008."
+    },
     {"id": "CS-2026-007", "title": "Post-Cleetus Cohort Retention Playbook", "subtype": "implementation", "surface": "klaviyo", "status": "approved", "risk_level": "high", "owner": "Katie + Nick", "created": "2026-03-10", "objective_level": "L2", "category": "email_sms", "dependencies": ["CS-2026-001", "CS-2026-002"], "blocks": [], "spawned_from": "CS-2026-005", "spawned_changesets": [], "expected_impact": {"revenue": {"upside": 35250, "expected": 14400, "downside": 4500}, "margin": {"upside": 17625, "expected": 7200, "downside": 2250}, "primary_metric": "reorder_rate", "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"}, "routed_to": ["Katie", "Nick", "Peter"], "routed_via": "slack", "routed_date": "2026-03-10", "approved_by": "Devon", "approved_date": "2026-03-13", "published_date": null, "file": "cgo-logs/changesets/CS-2026-007.md", "notes": "Session 10: EXECUTE TODAY. Mar 21 retention window = 5 days. SMS-first recommended (rec-037). Email CTR at 0.52-0.83% makes email-only risky."},
     {"id": "CS-2026-008", "title": "Brain Fuel Positioning Sprint", "subtype": "implementation", "surface": "content", "status": "draft", "risk_level": "medium", "owner": "Nick + Charlotte + Matt", "created": "2026-03-10", "objective_level": "L2", "category": "creative", "dependencies": ["CS-2026-006"], "blocks": [], "spawned_from": null, "spawned_changesets": [], "expected_impact": {"revenue": {"upside": 5000, "expected": 2000, "downside": 500}, "margin": {"upside": 2500, "expected": 1000, "downside": 250}, "primary_metric": "content_engagement", "primary_metric_target": ">3% social engagement rate on brain fuel content"}, "routed_to": ["Nick", "Charlotte", "Matt", "Brandon"], "routed_via": "slack", "routed_date": "2026-03-10", "approved_by": null, "approved_date": null, "published_date": null, "file": "cgo-logs/changesets/CS-2026-008.md", "notes": "Session 10: BAW Day 1. PMID 41834498 cancer-protective + PMID 41817106 clinical RCT strengthen evidence. PMID 41773904 claims validation OVERDUE (rec-019). CS-2026-026 provides tactical execution vehicle."},
     {
