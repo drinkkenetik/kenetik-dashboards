@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-15T12:05:00Z",
+  "last_updated": "2026-03-15T12:10:00Z",
   "next_id": 23,
   "lifecycle_sweep": {
     "session": "2026-03-15-CONFLICT-RESOLUTION",
@@ -17,15 +17,16 @@
       "CS-2026-005: CLOSED as cancelled — superseded by CS-2026-007 (overlap consolidation)",
       "CS-2026-015: APPROVED by Katie 2026-03-13 — L1 with L5 conditional pass (50% bundle, event-anchored, one-time)",
       "CS-2026-012: APPROVED by Devon 2026-03-15 — resolved from PR #138 conflict",
-      "CS-2026-013: APPROVED by Devon 2026-03-15 — resolved from PR #141 conflict"
+      "CS-2026-013: APPROVED by Devon 2026-03-15 — resolved from PR #141 conflict",
+      "CS-2026-014: APPROVED by Katie 2026-03-15 — resolved from PR #142 conflict"
     ],
     "new_changeset_generation": "UNBLOCKED — April email calendar realigned with v3 spreadsheet."
   },
   "summary": {
     "total": 22,
     "by_status": {
-      "draft": 13,
-      "approved": 5,
+      "draft": 12,
+      "approved": 6,
       "published": 3,
       "rolled_back": 0,
       "closed": 1
@@ -92,16 +93,17 @@
     {"id": "CS-2026-010", "title": "Klaviyo Property Definition Audit — Superfiliate Source Attribution", "subtype": "investigation", "surface": "klaviyo", "status": "draft", "risk_level": "low", "owner": "Katie + Devon", "created": "2026-03-11", "objective_level": "L4", "category": "investigation", "dependencies": [], "blocks": [], "spawned_from": "CS-2026-001", "spawned_changesets": [], "expected_impact": {"revenue": {"upside": 5000, "expected": 2600, "downside": 0}, "margin": {"upside": 2500, "expected": 1300, "downside": 0}, "primary_metric": "investigation_completion", "primary_metric_target": "All 5 investigation questions answered with evidence"}, "routed_to": ["Katie", "Devon"], "routed_via": "slack", "routed_date": "2026-03-11", "approved_by": null, "approved_date": null, "published_date": null, "file": "cgo-logs/changesets/CS-2026-010.md", "notes": "Investigation scope. Audits Klaviyo property definitions and Superfiliate data flow."},
     {"id": "CS-2026-011", "title": "April Email: THE SCIENCE IS NO JOKE", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-12", "objective_level": "L3", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "47-50% open, 8-10% CTR", "segment_size": "~51,643"}, "routed_to": ["Katie"], "approved_by": "Katie", "approved_date": "2026-03-13", "published_date": null, "file": "cgo-logs/changesets/CS-2026-011.md", "notes": "APPROVED 2026-03-13 via fast-track governance (PR #135). Calendar entry #1 of 12."},
     {"id": "CS-2026-012", "title": "April Email: WIN AN UNBOUND ENTRY + CUSTOM CAM JONES GEAR", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L3", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "45-50% open, 8-12% CTR (giveaway + athlete)", "segment_size": "~52,000"}, "routed_to": ["Katie"], "approved_by": "Devon", "approved_date": "2026-03-15", "published_date": null, "file": "cgo-logs/changesets/CS-2026-012.md", "notes": "APPROVED by Devon 2026-03-15. Send: 4/3 (Fri). Type: Event/Activation. SMS pairing: Yes."},
+    {"id": "CS-2026-013", "title": "April Email: YOUR SPRING DEEP WORK PROTOCOL", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L3", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "42-46% open, 3-5% CTR (protocol/lifestyle)", "segment_size": "~51,643"}, "routed_to": ["Katie"], "approved_by": "Devon", "approved_date": "2026-03-15", "published_date": null, "file": "cgo-logs/changesets/CS-2026-013.md", "notes": "APPROVED by Devon 2026-03-15. Send: 4/7 (Tue). Type: Lifestyle/Community. No SMS."},
     {
-      "id": "CS-2026-013",
-      "title": "April Email: YOUR SPRING DEEP WORK PROTOCOL",
+      "id": "CS-2026-014",
+      "title": "April Email: SHOTS: YOUR ANYWHERE RESET",
       "subtype": "email_campaign",
       "surface": "klaviyo",
       "status": "approved",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
-      "objective_level": "L3",
+      "objective_level": "L1",
       "category": "email_sms",
       "dependencies": [],
       "blocks": [],
@@ -109,17 +111,16 @@
       "spawned_changesets": [],
       "expected_impact": {
         "primary_metric": "open_rate",
-        "primary_metric_target": "42-46% open, 3-5% CTR (protocol/lifestyle)",
-        "segment_size": "~51,643"
+        "primary_metric_target": "44-48% open, 4-6% CTR (product feature)",
+        "segment_size": "~52,575"
       },
       "routed_to": ["Katie"],
-      "approved_by": "Devon",
+      "approved_by": "Katie",
       "approved_date": "2026-03-15",
       "published_date": null,
-      "file": "cgo-logs/changesets/CS-2026-013.md",
-      "notes": "APPROVED by Devon 2026-03-15. REALIGNED from April 2026 Email Calendar v3. Send: 4/7 (Tue). Type: Lifestyle/Community. No SMS. Resolved from PR #141 tracker conflict."
+      "file": "cgo-logs/changesets/CS-2026-014.md",
+      "notes": "APPROVED by Katie 2026-03-15. REALIGNED from April 2026 Email Calendar v3. Send: 4/10 (Fri). Type: Promotional/Product. No SMS. Resolved from PR #142 tracker conflict."
     },
-    {"id": "CS-2026-014", "title": "April Email: SHOTS: YOUR ANYWHERE RESET", "subtype": "email_campaign", "surface": "klaviyo", "status": "draft", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L1", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "44-48% open, 4-6% CTR (product feature)", "segment_size": "~52,575"}, "routed_to": ["Katie"], "approved_by": null, "published_date": null, "file": "cgo-logs/changesets/CS-2026-014.md", "notes": "REALIGNED from April 2026 Email Calendar v3. Send: 4/10 (Fri). Type: Promotional/Product. No SMS."},
     {"id": "CS-2026-015", "title": "April Email: SEA OTTER CLASSIC: ENDURANCE TRAINING BUNDLE", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L1", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "45-50% open, 6-10% CTR (event + 50% off bundle)", "segment_size": "~51,847"}, "routed_to": ["Katie"], "approved_by": "Katie", "approved_date": "2026-03-13", "published_date": null, "file": "cgo-logs/changesets/CS-2026-015.md", "notes": "APPROVED by Katie 2026-03-13 via /changeset-review. L1 with L5 conditional pass. SMS pairing approved."},
     {"id": "CS-2026-016", "title": "April Email: SLEEP BETTER, THINK CLEARER", "subtype": "email_campaign", "surface": "klaviyo", "status": "draft", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L3", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "50-65% open, 0.5-1.5% CTR (science — build stronger CTA)", "segment_size": "~51,643"}, "routed_to": ["Katie"], "approved_by": null, "published_date": null, "file": "cgo-logs/changesets/CS-2026-016.md", "notes": "REALIGNED from April 2026 Email Calendar v3. Send: 4/16 (Thu). Type: Educational/Science. No SMS."},
     {"id": "CS-2026-017", "title": "April Email: RACE DAY FUEL + LIMITED EDITION PIT CREW COOZIE", "subtype": "email_campaign", "surface": "klaviyo", "status": "draft", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L1", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "45-50% open, 8-12% CTR (product + GWP + exclusivity)", "segment_size": "~52,000+"}, "routed_to": ["Katie"], "approved_by": null, "published_date": null, "file": "cgo-logs/changesets/CS-2026-017.md", "notes": "REALIGNED from April 2026 Email Calendar v3. Send: 4/17 (Fri). Type: Promotional/Product. SMS pairing: Yes. Free Pit Crew Coozie GWP."},
