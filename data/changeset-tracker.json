@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-13T23:00:00Z",
+  "last_updated": "2026-03-14T00:15:00Z",
   "next_id": 23,
   "lifecycle_sweep": {
     "session": "2026-03-13-CALENDAR-REALIGNMENT",
@@ -14,15 +14,16 @@
       "Source of truth: Kenetik_April_2026_Email_Calendar_v3.xlsx",
       "CS-2026-011: APPROVED by Katie 2026-03-13 (PR #135)",
       "CS-2026-007: APPROVED by CGO 2026-03-13 — proceed to /changeset-execute",
-      "CS-2026-005: CLOSED as cancelled — superseded by CS-2026-007 (overlap consolidation)"
+      "CS-2026-005: CLOSED as cancelled — superseded by CS-2026-007 (overlap consolidation)",
+      "CS-2026-015: APPROVED by Katie 2026-03-13 — L1 with L5 conditional pass (50% bundle, event-anchored, one-time)"
     ],
     "new_changeset_generation": "UNBLOCKED — April email calendar realigned with v3 spreadsheet."
   },
   "summary": {
     "total": 22,
     "by_status": {
-      "draft": 16,
-      "approved": 2,
+      "draft": 15,
+      "approved": 3,
       "published": 3,
       "rolled_back": 0,
       "closed": 1
@@ -57,8 +58,8 @@
       "spawned_from": null,
       "spawned_changesets": ["CS-2026-010"],
       "expected_impact": {
-        "revenue": { "upside": 3900, "expected": 2600, "downside": 1300 },
-        "margin": { "upside": 1950, "expected": 1300, "downside": 650 },
+        "revenue": {"upside": 3900, "expected": 2600, "downside": 1300},
+        "margin": {"upside": 1950, "expected": 1300, "downside": 650},
         "primary_metric": "rpr",
         "primary_metric_target": "+$0.15 RPR on influencer cohort"
       },
@@ -94,8 +95,8 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 0, "expected": 0, "downside": 0 },
-        "margin": { "upside": 0, "expected": 0, "downside": 0 },
+        "revenue": {"upside": 0, "expected": 0, "downside": 0},
+        "margin": {"upside": 0, "expected": 0, "downside": 0},
         "primary_metric": "segment_accuracy",
         "primary_metric_target": ">95% correct classification of influencer subscribers"
       },
@@ -131,8 +132,8 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 900, "expected": 600, "downside": 300 },
-        "margin": { "upside": 450, "expected": 300, "downside": 150 },
+        "revenue": {"upside": 900, "expected": 600, "downside": 300},
+        "margin": {"upside": 450, "expected": 300, "downside": 150},
         "primary_metric": "flash_sale_revenue",
         "primary_metric_target": "+$600 per flash sale from SMS-first sequencing"
       },
@@ -168,8 +169,8 @@
       "spawned_from": null,
       "spawned_changesets": ["CS-2026-010"],
       "expected_impact": {
-        "revenue": { "upside": 5000, "expected": 0, "downside": 0 },
-        "margin": { "upside": 2500, "expected": 0, "downside": 0 },
+        "revenue": {"upside": 5000, "expected": 0, "downside": 0},
+        "margin": {"upside": 2500, "expected": 0, "downside": 0},
         "primary_metric": "attribution_accuracy",
         "primary_metric_target": ">90% Superfiliate attribution capture rate"
       },
@@ -205,8 +206,8 @@
       "spawned_from": null,
       "spawned_changesets": ["CS-2026-007"],
       "expected_impact": {
-        "revenue": { "upside": 26000, "expected": 14400, "downside": 4500 },
-        "margin": { "upside": 13000, "expected": 7200, "downside": 2250 },
+        "revenue": {"upside": 26000, "expected": 14400, "downside": 4500},
+        "margin": {"upside": 13000, "expected": 7200, "downside": 2250},
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"
       },
@@ -242,8 +243,8 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 500, "expected": 200, "downside": 0 },
-        "margin": { "upside": 250, "expected": 100, "downside": 0 },
+        "revenue": {"upside": 500, "expected": 200, "downside": 0},
+        "margin": {"upside": 250, "expected": 100, "downside": 0},
         "primary_metric": "content_engagement",
         "primary_metric_target": ">3% social engagement rate, >2.5% email CTR, >500 web sessions (30-day)"
       },
@@ -272,8 +273,8 @@
       "spawned_from": "CS-2026-005",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 35250, "expected": 14400, "downside": 4500 },
-        "margin": { "upside": 17625, "expected": 7200, "downside": 2250 },
+        "revenue": {"upside": 35250, "expected": 14400, "downside": 4500},
+        "margin": {"upside": 17625, "expected": 7200, "downside": 2250},
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"
       },
@@ -302,8 +303,8 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 5000, "expected": 2000, "downside": 500 },
-        "margin": { "upside": 2500, "expected": 1000, "downside": 250 },
+        "revenue": {"upside": 5000, "expected": 2000, "downside": 500},
+        "margin": {"upside": 2500, "expected": 1000, "downside": 250},
         "primary_metric": "content_engagement",
         "primary_metric_target": ">3% social engagement rate on brain fuel content"
       },
@@ -332,8 +333,8 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 2400, "expected": 1200, "downside": 400 },
-        "margin": { "upside": 1200, "expected": 600, "downside": 200 },
+        "revenue": {"upside": 2400, "expected": 1200, "downside": 400},
+        "margin": {"upside": 1200, "expected": 600, "downside": 200},
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">12% reorder + >4% subscription conversion from BWR bundle"
       },
@@ -362,8 +363,8 @@
       "spawned_from": "CS-2026-001",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": { "upside": 5000, "expected": 2600, "downside": 0 },
-        "margin": { "upside": 2500, "expected": 1300, "downside": 0 },
+        "revenue": {"upside": 5000, "expected": 2600, "downside": 0},
+        "margin": {"upside": 2500, "expected": 1300, "downside": 0},
         "primary_metric": "investigation_completion",
         "primary_metric_target": "All 5 investigation questions answered with evidence"
       },
@@ -486,7 +487,7 @@
       "title": "April Email: SEA OTTER CLASSIC: ENDURANCE TRAINING BUNDLE",
       "subtype": "email_campaign",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
@@ -502,10 +503,11 @@
         "segment_size": "~51,847"
       },
       "routed_to": ["Katie"],
-      "approved_by": null,
+      "approved_by": "Katie",
+      "approved_date": "2026-03-13",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-015.md",
-      "notes": "REALIGNED from April 2026 Email Calendar v3. Send: 4/14 (Tue). Type: Event/Activation. SMS pairing: Yes (2hrs after email). 50% off Endurance Training Bundle ($69.99)."
+      "notes": "APPROVED by Katie 2026-03-13 via /changeset-review. Hierarchy: L1 (Contribution Margin). 50% off Endurance Training Bundle ($69.99) — L5 CONDITIONAL PASS: event-anchored (Sea Otter Classic 4/16), bundle structure (not core SKU slash), merch included, 1x/90 SKU rule satisfied. Conditions: (1) Devon pre-approved Poffé 2019 claims + bundle pricing — CLEARED, (2) ONE-TIME event offer only — no repeat/extension within 90 days, (3) Promotional density noted: CS-2026-017 (GWP) follows 3 days later on 4/17. SMS pairing approved (19,544 subs, 2hrs post-email). Expected revenue: ~$7K-$11.4K combined channels."
     },
     {
       "id": "CS-2026-016",
