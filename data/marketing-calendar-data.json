@@ -1,1 +1,33 @@
-PLACEHOLDER - will read from file
+{
+  "last_updated": "2026-03-17T11:57:32Z",
+  "marketing_calendar": [
+    {
+      "q": null,
+      "campaign_id": "ASHTON-0131",
+      "activity_name": "Ashton Post",
+      "type": "alist_promo",
+      "date_start": "2026-01-31",
+      "date_end": "2026-01-31",
+      "owner": "Nick",
+      "status": "complete",
+      "budget": null,
+      "wedge": "A",
+      "segments_targeted": null,
+      "notes": "https://www.instagram.com/reel/DUL7h5bEnvI/"
+    },
+    {
+      "q": "Q1",
+      "campaign_id": "ROMAN-0203",
+      "activity_name": "Roman Free 3 Pack (shots)",
+      "type": "alist_promo",
+      "date_start": "2026-02-03",
+      "date_end": "2026-02-03",
+      "owner": "Nick",
+      "status": "complete",
+      "budget": null,
+      "wedge": "B",
+      "segments_targeted": null,
+      "notes": "500 Free Shot Sample Packs with code ROMAN_FREE3PACK\nIncluded in Roman's YoutTube Video"
+    }
+  ]
+}
