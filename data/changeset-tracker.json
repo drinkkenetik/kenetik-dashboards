@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-18T13:30:00Z",
+  "last_updated": "2026-03-18T18:00:00Z",
   "next_id": 30,
   "lifecycle_sweep": {
     "session": "2026-03-17-session-11",
@@ -17,7 +17,8 @@
       "CS-2026-025: Attribution Remediation Sprint — Mar 19 joint checkpoint in 2 days.",
       "EXPRESS BATCH (CS-011 through CS-022): April send dates. No action required this week.",
       "No stale ChangeSets detected. No auto-close candidates.",
-      "CS-2026-029: Matt Hughes reel graduation ChangeSet created. Express auto-approved."
+      "CS-2026-029: Matt Hughes reel graduation ChangeSet created. Express auto-approved.",
+      "CS-2026-028: PUBLISHED 2026-03-18. FB prospecting 50% cut, split reallocation to Leadville + Pmax. 14-day measurement through Apr 1."
     ],
     "new_changeset_generation": "3 new ChangeSets generated from Session 11 (CS-2026-027, CS-2026-028, CS-2026-029)."
   },
@@ -25,8 +26,8 @@
     "total": 29,
     "by_status": {
       "draft": 0,
-      "approved": 22,
-      "published": 5,
+      "approved": 21,
+      "published": 6,
       "rolled_back": 0,
       "closed": 2
     },
@@ -222,7 +223,50 @@
     {"id": "CS-2026-025", "title": "Attribution Remediation Sprint", "subtype": "investigation", "surface": "multi_platform", "status": "approved", "risk_level": "medium", "owner": "Katie + Nick", "created": "2026-03-16", "objective_level": "L4", "category": "investigation", "dependencies": [], "blocks": [], "spawned_from": "rec-041", "spawned_changesets": [], "expected_impact": {"revenue": {"upside": 0, "expected": 0, "downside": 0}, "margin": {"upside": 0, "expected": 0, "downside": 0}, "primary_metric": "undefined_channel_pct", "primary_metric_target": "<7% of revenue (from 22-26% baseline)"}, "routed_to": ["Katie", "Nick", "Cliff"], "routed_via": "pipeline", "routed_date": "2026-03-16", "approved_by": "Devon", "approved_date": "2026-03-16", "review_tier": "full", "published_date": null, "file": "cgo-logs/changesets/CS-2026-025.md", "notes": "Session 11: URGENCY ELEVATED per rec-044. 5 domains independently surfaced data integrity issues. Mar 19 joint checkpoint in 2 days. Pre-checkpoint: audit UTM deployment across Shopify, Superfiliate, Recharge, Google Ads."},
     {"id": "CS-2026-026", "title": "BAW Content Velocity Emergency", "subtype": "implementation", "surface": "content", "status": "approved", "risk_level": "high", "owner": "Nick + Charlotte", "created": "2026-03-16", "objective_level": "L2", "category": "creative", "dependencies": [], "blocks": [], "spawned_from": "synthesis-theme-4", "spawned_changesets": ["CS-2026-027"], "expected_impact": {"revenue": {"upside": 3000, "expected": 1500, "downside": 500}, "margin": {"upside": 1500, "expected": 750, "downside": 250}, "primary_metric": "content_velocity", "primary_metric_target": ">=10 BAW posts published Mar 16-22 (from 0/20 baseline)"}, "routed_to": ["Nick", "Charlotte", "Katie", "Brandon"], "routed_via": "pipeline", "routed_date": "2026-03-16", "approved_by": "Devon", "approved_date": "2026-03-16", "review_tier": "full", "published_date": null, "measurement_start_date": "2026-03-16", "measurement_end_date": "2026-03-22", "measurement_window": "7-day (Mar 16-22)", "measurement_due": "2026-03-23", "actual_impact": null, "outcome": null, "closed_date": null, "file": "cgo-logs/changesets/CS-2026-026.md", "notes": "Session 11: BAW Day 2. IG viral spike suggests organic momentum. CS-2026-027 spawned for Tier A fast-track. CS-2026-029 spawned for Matt Hughes reel graduation. Measurement due Mar 23 (6 days)."},
     {"id": "CS-2026-027", "title": "BAW Tier A Content Fast-Track Protocol", "subtype": "implementation", "surface": "content", "status": "approved", "risk_level": "medium", "owner": "Charlotte + Cliff", "created": "2026-03-17", "objective_level": "L2", "category": "creative", "dependencies": ["CS-2026-026"], "blocks": [], "spawned_from": "rec-042", "spawned_changesets": [], "expected_impact": {"revenue": {"upside": 2000, "expected": 1000, "downside": 250}, "margin": {"upside": 1000, "expected": 500, "downside": 125}, "primary_metric": "baw_tier_a_posts", "primary_metric_target": ">=5 Tier A posts published by Mar 19"}, "routed_to": ["Charlotte", "Cliff"], "routed_via": "pipeline", "routed_date": "2026-03-17", "approved_by": "Express Auto-Approve", "approved_date": "2026-03-17", "review_tier": "express", "published_date": null, "measurement_start_date": "2026-03-17", "measurement_end_date": "2026-03-22", "measurement_window": "5-day (Mar 17-22, aligned with BAW)", "measurement_due": "2026-03-23", "actual_impact": null, "outcome": null, "closed_date": null, "file": "cgo-logs/changesets/CS-2026-027.md", "notes": "Express auto-approved 2026-03-17. Tier A-only fast-track bypasses full claims queue. Conservative interpretation: if in doubt, it's Tier B → standard queue. Co-measured with CS-2026-026."},
-    {"id": "CS-2026-028", "title": "FB Prospecting → Google Pmax Budget Redirect", "subtype": "implementation", "surface": "paid_google", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-17", "objective_level": "L1", "category": "paid_media", "dependencies": [], "blocks": [], "spawned_from": "rec-045", "spawned_changesets": [], "expected_impact": {"revenue": {"upside": 3000, "expected": 2250, "downside": 1500}, "margin": {"upside": 1500, "expected": 1125, "downside": 750}, "primary_metric": "blended_paid_roas", "primary_metric_target": ">=1.5x on redirected spend (from 0.59x FB baseline)"}, "routed_to": ["Katie"], "routed_via": "pipeline", "routed_date": "2026-03-17", "approved_by": "Express Auto-Approve", "approved_date": "2026-03-17", "review_tier": "express", "published_date": null, "measurement_start_date": null, "measurement_end_date": null, "measurement_window": "14-day from implementation", "measurement_due": null, "actual_impact": null, "outcome": null, "closed_date": null, "file": "cgo-logs/changesets/CS-2026-028.md", "notes": "Express auto-approved 2026-03-17. FB prospecting 0.59x ROAS = value-destructive. Redirect ~$1.5K/wk to Google Pmax (1.50x). Gate: no FB resume until >=3 fresh creatives deployed."},
+    {
+      "id": "CS-2026-028",
+      "title": "FB Prospecting Budget Reallocation — Meta Leadville + Google Pmax",
+      "subtype": "implementation",
+      "surface": "paid_google",
+      "status": "published",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-17",
+      "objective_level": "L1",
+      "category": "paid_media",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-045",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {"upside": 3000, "expected": 2250, "downside": 1500},
+        "margin": {"upside": 1500, "expected": 1125, "downside": 750},
+        "primary_metric": "blended_paid_roas",
+        "primary_metric_target": ">=1.5x on reallocated spend (from 0.59x FB baseline)"
+      },
+      "routed_to": ["Katie"],
+      "routed_via": "pipeline",
+      "routed_date": "2026-03-17",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-17",
+      "review_tier": "express",
+      "published_date": "2026-03-18",
+      "published_by": "Katie",
+      "measurement_start_date": "2026-03-18",
+      "measurement_end_date": "2026-04-01",
+      "measurement_window": "14-day from implementation",
+      "measurement_due": "2026-04-01",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-028.md",
+      "publish_confirmation": {
+        "surface": "paid_google",
+        "confirmation_id": "manual-platform-changes-2026-03-18",
+        "published_at": "2026-03-18T18:00:00Z"
+      },
+      "notes": "PUBLISHED 2026-03-18. EXECUTION DEVIATED FROM ORIGINAL BRIEF: (1) FB prospecting cut 50% not fully paused — preserves algorithm continuity; (2) Budget split 50/50 between Meta Leadville Sweepstakes and Google Pmax, not 100% to Pmax; (3) All Meta campaigns shifted to 7DC attribution model; (4) Polar Meta reporting has known bug — in-platform reporting is primary measurement source until Polar fix confirmed. Brief updated to reflect actual execution. Measurement through Apr 1."
+    },
     {"id": "CS-2026-029", "title": "Graduation: Matt Hughes Reel → Paid Social Amplification", "subtype": "graduation", "surface": "paid_social", "status": "approved", "risk_level": "low", "owner": "Katie + Nick", "created": "2026-03-17", "objective_level": "L1", "category": "paid_media", "dependencies": ["CS-2026-025"], "blocks": [], "spawned_from": "graduation-pipeline/matt-hughes-reel-mar16", "spawned_changesets": [], "expected_impact": {"revenue": {"upside": 3000, "expected": 1500, "downside": 500}, "margin": {"upside": 1500, "expected": 750, "downside": -250}, "primary_metric": "paid_roas", "primary_metric_target": ">=1.5x ROAS on graduated creative"}, "routed_to": ["Katie", "Nick"], "routed_via": "pipeline", "routed_date": "2026-03-17", "approved_by": "Express Auto-Approve", "approved_date": "2026-03-17", "review_tier": "express", "published_date": null, "measurement_start_date": null, "measurement_end_date": null, "measurement_window": "14-day from paid launch", "measurement_due": null, "actual_impact": null, "outcome": null, "closed_date": null, "file": "cgo-logs/changesets/CS-2026-029.md", "notes": "First graduation ChangeSet. Roman/Matt Hughes reel: 452K engagement, 5.2M reach, 8.7% ER. Exceeds graduation on ER (>5%) and universal reach (170x). Claims: Tier 0 auto-pass. Budget: $500/wk test on Meta. Depends on CS-2026-025 for UTM attribution."}
   ]
 }
