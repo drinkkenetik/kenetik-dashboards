@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-20T21:10:00Z",
+  "last_updated": "2026-03-20T22:30:00Z",
   "next_id": 33,
   "lifecycle_sweep": {
     "session": "2026-03-20-session-14",
@@ -20,7 +20,7 @@
       "CS-2026-027: BAW Tier A Fast-Track — co-measured with CS-2026-026. Measurement due Mar 23 (3 days).",
       "CS-2026-028: Published. Google ROAS breakout. 14-day measurement through Apr 1.",
       "CS-2026-029: Approved, BLOCKED by CS-2026-025. Ready for immediate launch post-checkpoint.",
-      "CS-2026-030: APPROVED by Katie 2026-03-20. Execution: targeted campaign sends (not a flow). Ready for /changeset-execute.",
+      "CS-2026-030: PUBLISHED 2026-03-20 via /changeset-execute. BAW subscription conversion campaign. SMS+Email targeted sends to BAW one-time purchasers. 7-day measurement through Mar 27.",
       "CS-2026-032: REJECTED — Domain 06 data error. See rejection notes.",
       "EXPRESS BATCH (CS-012 through CS-022): April send dates. No action this week.",
       "No stale ChangeSets detected (closest: CS-2026-011 at 7 days). No auto-close candidates."
@@ -31,8 +31,8 @@
     "total": 32,
     "by_status": {
       "draft": 1,
-      "approved": 22,
-      "published": 6,
+      "approved": 21,
+      "published": 7,
       "rolled_back": 0,
       "closed": 3
     },
@@ -969,7 +969,7 @@
       "title": "BAW Subscription Conversion Push",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "published",
       "risk_level": "low",
       "owner": "Katie + Nick",
       "created": "2026-03-19",
@@ -991,9 +991,22 @@
       "approved_by": "Katie",
       "approved_date": "2026-03-20",
       "review_tier": "standard",
-      "published_date": null,
+      "published_date": "2026-03-20",
+      "published_by": "Katie (via /changeset-execute)",
+      "measurement_start_date": "2026-03-20",
+      "measurement_end_date": "2026-03-27",
+      "measurement_window": "7-day",
+      "measurement_due": "2026-03-27",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-030.md",
-      "notes": "APPROVED by Katie 2026-03-20 via /changeset-review (Standard tier). Execution: targeted campaign sends, NOT a flow. Hierarchy: L1, all 5 levels positive, no trade-offs, no overrides. Ready for /changeset-execute."
+      "publish_confirmation": {
+        "surface": "klaviyo",
+        "confirmation_id": "changeset-execute-2026-03-20",
+        "published_at": "2026-03-20T22:30:00Z"
+      },
+      "notes": "PUBLISHED 2026-03-20 via /changeset-execute. Targeted campaign sends (not a flow) to BAW one-time purchasers offering 30% off first subscription. SMS Day 1 → Email 4hr later → SMS Day 2 reminder. 7-day measurement through Mar 27. Katie notified via Slack DM."
     },
     {
       "id": "CS-2026-031",
