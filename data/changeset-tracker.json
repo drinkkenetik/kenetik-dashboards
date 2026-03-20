@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-20T20:00:00Z",
+  "last_updated": "2026-03-20T21:00:00Z",
   "next_id": 33,
   "lifecycle_sweep": {
     "session": "2026-03-20-session-14",
@@ -11,27 +11,27 @@
     "auto_closed": 0,
     "flags": [
       "CS-2026-001/002/004: Published, measuring. No measurement due until Apr 8-10.",
-      "CS-2026-003: Published 2026-03-20 (corrected from 3/19). Natural segmentation approach (replaced 3-cell A/B per UE review). 7-day measurement through Mar 27. Results expected Mar 27.",
-      "CS-2026-006: 4 days in approved state (approved Mar 16). Claims unblocked \u2014 approaching stale. Watch item.",
+      "CS-2026-003: Published 2026-03-20 (corrected from 3/19). Natural segmentation approach (replaced 3-cell A/B per UE review). SMS 11AM → Email 2PM with SMS-converter exclusion. BAW flash sale sent 2026-03-20. 7-day measurement through Mar 27. Results expected Mar 27.",
+      "CS-2026-006: 4 days in approved state (approved Mar 16). Claims unblocked — approaching stale. Watch item.",
       "CS-2026-007: Published. Mar 21 retention window TOMORROW. 60-day measurement through May 17.",
-      "CS-2026-011: 7 days in approved (Mar 13). Approaching stale threshold. April send date \u2014 no immediate action required.",
-      "CS-2026-025: Attribution checkpoint was Mar 19 \u2014 outcome NOT YET COMMUNICATED. Day 1 overdue. Critical blocker for CS-2026-029.",
-      "CS-2026-026: BAW Content Velocity \u2014 4/10 posts. Measurement due Mar 23 (3 days). AT RISK.",
-      "CS-2026-027: BAW Tier A Fast-Track \u2014 co-measured with CS-2026-026. Measurement due Mar 23 (3 days).",
+      "CS-2026-011: 7 days in approved (Mar 13). Approaching stale threshold. April send date — no immediate action required.",
+      "CS-2026-025: Attribution checkpoint was Mar 19 — outcome NOT YET COMMUNICATED. Day 1 overdue. Critical blocker for CS-2026-029.",
+      "CS-2026-026: BAW Content Velocity — 4/10 posts. Measurement due Mar 23 (3 days). AT RISK.",
+      "CS-2026-027: BAW Tier A Fast-Track — co-measured with CS-2026-026. Measurement due Mar 23 (3 days).",
       "CS-2026-028: Published. Google ROAS breakout. 14-day measurement through Apr 1.",
       "CS-2026-029: Approved, BLOCKED by CS-2026-025. Ready for immediate launch post-checkpoint.",
-      "CS-2026-030: Draft. BAW Subscription Conversion Push. Needs review by EOD Mar 20.",
-      "CS-2026-032: REJECTED \u2014 Domain 06 data error. See rejection notes.",
+      "CS-2026-030: APPROVED by Devon 2026-03-20. Execution note: targeted campaign sends (not a flow). Ready for /changeset-execute.",
+      "CS-2026-032: REJECTED — Domain 06 data error. See rejection notes.",
       "EXPRESS BATCH (CS-012 through CS-022): April send dates. No action this week.",
       "No stale ChangeSets detected (closest: CS-2026-011 at 7 days). No auto-close candidates."
     ],
-    "new_changeset_generation": "2 new ChangeSets generated from Session 14 synthesis: CS-2026-031 (Email Flow CTA Emergency Redesign) and CS-2026-032 (Payment Failure Root Cause Audit & Recovery). CS-2026-032 subsequently REJECTED during /changeset-review \u2014 bad data."
+    "new_changeset_generation": "2 new ChangeSets generated from Session 14 synthesis: CS-2026-031 (Email Flow CTA Emergency Redesign) and CS-2026-032 (Payment Failure Root Cause Audit & Recovery). CS-2026-032 subsequently REJECTED during /changeset-review — bad data."
   },
   "summary": {
     "total": 32,
     "by_status": {
-      "draft": 2,
-      "approved": 21,
+      "draft": 1,
+      "approved": 22,
       "published": 6,
       "rolled_back": 0,
       "closed": 3
@@ -53,7 +53,7 @@
   "changesets": [
     {
       "id": "CS-2026-001",
-      "title": "Welcome Series Emergency \u2014 Influencer Welcome Track",
+      "title": "Welcome Series Emergency — Influencer Welcome Track",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "published",
@@ -62,31 +62,17 @@
       "created": "2026-03-08",
       "objective_level": "L3",
       "category": "email_sms",
-      "dependencies": [
-        "CS-2026-002"
-      ],
+      "dependencies": ["CS-2026-002"],
       "blocks": [],
       "spawned_from": null,
-      "spawned_changesets": [
-        "CS-2026-010"
-      ],
+      "spawned_changesets": ["CS-2026-010"],
       "expected_impact": {
-        "revenue": {
-          "upside": 3900,
-          "expected": 2600,
-          "downside": 1300
-        },
-        "margin": {
-          "upside": 1950,
-          "expected": 1300,
-          "downside": 650
-        },
+        "revenue": { "upside": 3900, "expected": 2600, "downside": 1300 },
+        "margin": { "upside": 1950, "expected": 1300, "downside": 650 },
         "primary_metric": "rpr",
         "primary_metric_target": "+$0.15 RPR on influencer cohort"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": "Devon (for Peter), Nick, Katie",
@@ -114,28 +100,16 @@
       "objective_level": "L4",
       "category": "infrastructure",
       "dependencies": [],
-      "blocks": [
-        "CS-2026-001"
-      ],
+      "blocks": ["CS-2026-001"],
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
+        "revenue": { "upside": 0, "expected": 0, "downside": 0 },
+        "margin": { "upside": 0, "expected": 0, "downside": 0 },
         "primary_metric": "segment_accuracy",
         "primary_metric_target": ">95% correct classification of influencer subscribers"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": "Katie",
@@ -167,23 +141,12 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 900,
-          "expected": 600,
-          "downside": 300
-        },
-        "margin": {
-          "upside": 450,
-          "expected": 300,
-          "downside": 150
-        },
+        "revenue": { "upside": 900, "expected": 600, "downside": 300 },
+        "margin": { "upside": 450, "expected": 300, "downside": 150 },
         "primary_metric": "flash_sale_revenue",
         "primary_metric_target": "+$600 per flash sale from SMS-first sequencing"
       },
-      "routed_to": [
-        "Katie",
-        "Nick"
-      ],
+      "routed_to": ["Katie", "Nick"],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": "Katie",
@@ -203,11 +166,11 @@
         "confirmation_id": "changepacket-delivered-2026-03-20",
         "published_at": "2026-03-20T11:00:00Z"
       },
-      "notes": "Refined 2026-03-20. Test design replaced: 3-cell A/B \u2192 natural segmentation (UE review). SMS 11AM \u2192 Email 2PM with SMS-converter exclusion. BAW flash sale sent 2026-03-20. 7-day measurement through Mar 27. Decision framework added (4 scenarios)."
+      "notes": "Refined 2026-03-20. Test design replaced: 3-cell A/B → natural segmentation (UE review). SMS 11AM → Email 2PM with SMS-converter exclusion. BAW flash sale sent 2026-03-20. 7-day measurement through Mar 27. Decision framework added (4 scenarios)."
     },
     {
       "id": "CS-2026-004",
-      "title": "Paid Media Attribution \u2014 March 7 Exclusion & Superfiliate Investigation",
+      "title": "Paid Media Attribution — March 7 Exclusion & Superfiliate Investigation",
       "subtype": "investigation",
       "surface": "paid_google",
       "status": "published",
@@ -219,27 +182,14 @@
       "dependencies": [],
       "blocks": [],
       "spawned_from": null,
-      "spawned_changesets": [
-        "CS-2026-010"
-      ],
+      "spawned_changesets": ["CS-2026-010"],
       "expected_impact": {
-        "revenue": {
-          "upside": 5000,
-          "expected": 0,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 2500,
-          "expected": 0,
-          "downside": 0
-        },
+        "revenue": { "upside": 5000, "expected": 0, "downside": 0 },
+        "margin": { "upside": 2500, "expected": 0, "downside": 0 },
         "primary_metric": "attribution_accuracy",
         "primary_metric_target": ">90% Superfiliate attribution capture rate"
       },
-      "routed_to": [
-        "Katie",
-        "Nick"
-      ],
+      "routed_to": ["Katie", "Nick"],
       "routed_via": "slack",
       "routed_date": "2026-03-08",
       "approved_by": "Nick",
@@ -257,7 +207,7 @@
     },
     {
       "id": "CS-2026-005",
-      "title": "Post-Activation Retention Campaign \u2014 Cleetus Cohort Reorder Sequence",
+      "title": "Post-Activation Retention Campaign — Cleetus Cohort Reorder Sequence",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "closed",
@@ -266,32 +216,17 @@
       "created": "2026-03-09",
       "objective_level": "L3",
       "category": "email_sms",
-      "dependencies": [
-        "CS-2026-002"
-      ],
+      "dependencies": ["CS-2026-002"],
       "blocks": [],
       "spawned_from": null,
-      "spawned_changesets": [
-        "CS-2026-007"
-      ],
+      "spawned_changesets": ["CS-2026-007"],
       "expected_impact": {
-        "revenue": {
-          "upside": 26000,
-          "expected": 14400,
-          "downside": 4500
-        },
-        "margin": {
-          "upside": 13000,
-          "expected": 7200,
-          "downside": 2250
-        },
+        "revenue": { "upside": 26000, "expected": 14400, "downside": 4500 },
+        "margin": { "upside": 13000, "expected": 7200, "downside": 2250 },
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"
       },
-      "routed_to": [
-        "Katie",
-        "Peter"
-      ],
+      "routed_to": ["Katie", "Peter"],
       "routed_via": "slack",
       "routed_date": "2026-03-09",
       "approved_by": "Devon",
@@ -305,11 +240,11 @@
       "outcome": "cancelled",
       "closed_date": "2026-03-13",
       "file": "cgo-logs/changesets/CS-2026-005.md",
-      "notes": "CLOSED 2026-03-13 \u2014 cancelled/superseded by CS-2026-007."
+      "notes": "CLOSED 2026-03-13 — cancelled/superseded by CS-2026-007."
     },
     {
       "id": "CS-2026-006",
-      "title": "Science Content Pipeline \u2014 Cell BHB Metabolic Fitness Paper",
+      "title": "Science Content Pipeline — Cell BHB Metabolic Fitness Paper",
       "subtype": "implementation",
       "surface": "content",
       "status": "approved",
@@ -323,23 +258,12 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 500,
-          "expected": 200,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 250,
-          "expected": 100,
-          "downside": 0
-        },
+        "revenue": { "upside": 500, "expected": 200, "downside": 0 },
+        "margin": { "upside": 250, "expected": 100, "downside": 0 },
         "primary_metric": "content_engagement",
         "primary_metric_target": ">3% social engagement rate, >2.5% email CTR, >500 web sessions (30-day)"
       },
-      "routed_to": [
-        "Nick",
-        "Charlotte"
-      ],
+      "routed_to": ["Nick", "Charlotte"],
       "routed_via": "slack",
       "routed_date": "2026-03-10",
       "approved_by": "Devon",
@@ -360,32 +284,17 @@
       "created": "2026-03-10",
       "objective_level": "L2",
       "category": "email_sms",
-      "dependencies": [
-        "CS-2026-001",
-        "CS-2026-002"
-      ],
+      "dependencies": ["CS-2026-001", "CS-2026-002"],
       "blocks": [],
       "spawned_from": "CS-2026-005",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 35250,
-          "expected": 14400,
-          "downside": 4500
-        },
-        "margin": {
-          "upside": 17625,
-          "expected": 7200,
-          "downside": 2250
-        },
+        "revenue": { "upside": 35250, "expected": 14400, "downside": 4500 },
+        "margin": { "upside": 17625, "expected": 7200, "downside": 2250 },
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">8% reorder rate at Day 60 for Cleetus cohort"
       },
-      "routed_to": [
-        "Katie",
-        "Nick",
-        "Peter"
-      ],
+      "routed_to": ["Katie", "Nick", "Peter"],
       "routed_via": "slack",
       "routed_date": "2026-03-10",
       "approved_by": "Devon",
@@ -412,34 +321,17 @@
       "created": "2026-03-10",
       "objective_level": "L2",
       "category": "creative",
-      "dependencies": [
-        "CS-2026-006"
-      ],
+      "dependencies": ["CS-2026-006"],
       "blocks": [],
       "spawned_from": null,
-      "spawned_changesets": [
-        "CS-2026-026"
-      ],
+      "spawned_changesets": ["CS-2026-026"],
       "expected_impact": {
-        "revenue": {
-          "upside": 5000,
-          "expected": 2000,
-          "downside": 500
-        },
-        "margin": {
-          "upside": 2500,
-          "expected": 1000,
-          "downside": 250
-        },
+        "revenue": { "upside": 5000, "expected": 2000, "downside": 500 },
+        "margin": { "upside": 2500, "expected": 1000, "downside": 250 },
         "primary_metric": "content_engagement",
         "primary_metric_target": ">3% social engagement rate on brain fuel content"
       },
-      "routed_to": [
-        "Nick",
-        "Charlotte",
-        "Matt",
-        "Brandon"
-      ],
+      "routed_to": ["Nick", "Charlotte", "Matt", "Brandon"],
       "routed_via": "slack",
       "routed_date": "2026-03-10",
       "approved_by": null,
@@ -448,11 +340,11 @@
       "outcome": "superseded",
       "closed_date": "2026-03-16",
       "file": "cgo-logs/changesets/CS-2026-008.md",
-      "notes": "CLOSED 2026-03-16 \u2014 superseded by CS-2026-026."
+      "notes": "CLOSED 2026-03-16 — superseded by CS-2026-026."
     },
     {
       "id": "CS-2026-009",
-      "title": "BWR Post-Purchase Flow \u2014 Endurance Training Bundle Protocol",
+      "title": "BWR Post-Purchase Flow — Endurance Training Bundle Protocol",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "approved",
@@ -466,23 +358,12 @@
       "spawned_from": null,
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 2400,
-          "expected": 1200,
-          "downside": 400
-        },
-        "margin": {
-          "upside": 1200,
-          "expected": 600,
-          "downside": 200
-        },
+        "revenue": { "upside": 2400, "expected": 1200, "downside": 400 },
+        "margin": { "upside": 1200, "expected": 600, "downside": 200 },
         "primary_metric": "reorder_rate",
         "primary_metric_target": ">12% reorder + >4% subscription conversion from BWR bundle"
       },
-      "routed_to": [
-        "Katie",
-        "Brandon"
-      ],
+      "routed_to": ["Katie", "Brandon"],
       "routed_via": "slack",
       "routed_date": "2026-03-11",
       "approved_by": "Express Auto-Approve",
@@ -495,7 +376,7 @@
     },
     {
       "id": "CS-2026-010",
-      "title": "Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
+      "title": "Klaviyo Property Definition Audit — Superfiliate Source Attribution",
       "subtype": "investigation",
       "surface": "klaviyo",
       "status": "approved",
@@ -509,23 +390,12 @@
       "spawned_from": "CS-2026-001",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 5000,
-          "expected": 2600,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 2500,
-          "expected": 1300,
-          "downside": 0
-        },
+        "revenue": { "upside": 5000, "expected": 2600, "downside": 0 },
+        "margin": { "upside": 2500, "expected": 1300, "downside": 0 },
         "primary_metric": "investigation_completion",
         "primary_metric_target": "All 5 investigation questions answered with evidence"
       },
-      "routed_to": [
-        "Katie",
-        "Devon"
-      ],
+      "routed_to": ["Katie", "Devon"],
       "routed_via": "slack",
       "routed_date": "2026-03-11",
       "approved_by": "Devon",
@@ -555,14 +425,12 @@
         "primary_metric_target": "47-50% open, 8-10% CTR",
         "segment_size": "~51,643"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Katie",
       "approved_date": "2026-03-13",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-011.md",
-      "notes": "7 days in approved. April 1 send date \u2014 no immediate action."
+      "notes": "7 days in approved. April 1 send date — no immediate action."
     },
     {
       "id": "CS-2026-012",
@@ -583,9 +451,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "45-50% open, 8-12% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Devon",
       "approved_date": "2026-03-15",
       "published_date": null,
@@ -611,9 +477,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "42-46% open, 3-5% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Devon",
       "approved_date": "2026-03-15",
       "published_date": null,
@@ -639,9 +503,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "44-48% open, 4-6% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Katie",
       "approved_date": "2026-03-15",
       "published_date": null,
@@ -667,9 +529,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "45-50% open, 6-10% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Katie",
       "approved_date": "2026-03-13",
       "published_date": null,
@@ -695,9 +555,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "50-65% open, 0.5-1.5% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
@@ -724,9 +582,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "45-50% open, 8-12% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
@@ -753,9 +609,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "50-60% open, 0.5-1.5% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
@@ -782,9 +636,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "42-48% open, 1-2% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
@@ -803,9 +655,7 @@
       "created": "2026-03-13",
       "objective_level": "L1",
       "category": "email_sms",
-      "dependencies": [
-        "CS-2026-017"
-      ],
+      "dependencies": ["CS-2026-017"],
       "blocks": [],
       "spawned_from": "april-2026-email-calendar-v3",
       "spawned_changesets": [],
@@ -813,9 +663,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "45-50% open, 6-10% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
@@ -842,9 +690,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "44-48% open, 3-5% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
@@ -854,7 +700,7 @@
     },
     {
       "id": "CS-2026-022",
-      "title": "April Email: MAY IS LOADING \u2014 STOCK UP",
+      "title": "April Email: MAY IS LOADING — STOCK UP",
       "subtype": "email_campaign",
       "surface": "klaviyo",
       "status": "approved",
@@ -871,9 +717,7 @@
         "primary_metric": "open_rate",
         "primary_metric_target": "42-46% open, 4-6% CTR"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
@@ -897,23 +741,12 @@
       "spawned_from": "rec-030",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 2400,
-          "expected": 1200,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 1200,
-          "expected": 600,
-          "downside": 0
-        },
+        "revenue": { "upside": 2400, "expected": 1200, "downside": 0 },
+        "margin": { "upside": 1200, "expected": 600, "downside": 0 },
         "primary_metric": "campaign_ctr",
         "primary_metric_target": ">=1.0% CTR (from 0.57% baseline)"
       },
-      "routed_to": [
-        "Katie",
-        "Nick"
-      ],
+      "routed_to": ["Katie", "Nick"],
       "routed_via": "slack",
       "routed_date": "2026-03-16",
       "approved_by": "Express Auto-Approve",
@@ -934,30 +767,17 @@
       "created": "2026-03-16",
       "objective_level": "L3",
       "category": "subscription",
-      "dependencies": [
-        "CS-2026-007"
-      ],
+      "dependencies": ["CS-2026-007"],
       "blocks": [],
       "spawned_from": "rec-034",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 4800,
-          "expected": 2400,
-          "downside": 800
-        },
-        "margin": {
-          "upside": 2400,
-          "expected": 1200,
-          "downside": 400
-        },
+        "revenue": { "upside": 4800, "expected": 2400, "downside": 800 },
+        "margin": { "upside": 2400, "expected": 1200, "downside": 400 },
         "primary_metric": "voluntary_churn_rate",
         "primary_metric_target": "<=2.5% monthly (from ~2.9% baseline)"
       },
-      "routed_to": [
-        "Katie",
-        "Garrett"
-      ],
+      "routed_to": ["Katie", "Garrett"],
       "routed_via": "slack",
       "routed_date": "2026-03-16",
       "approved_by": "Devon",
@@ -983,24 +803,12 @@
       "spawned_from": "rec-041",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
+        "revenue": { "upside": 0, "expected": 0, "downside": 0 },
+        "margin": { "upside": 0, "expected": 0, "downside": 0 },
         "primary_metric": "undefined_channel_pct",
         "primary_metric_target": "<7% of revenue (from 22-26% baseline)"
       },
-      "routed_to": [
-        "Katie",
-        "Nick",
-        "Cliff"
-      ],
+      "routed_to": ["Katie", "Nick", "Cliff"],
       "routed_via": "pipeline",
       "routed_date": "2026-03-16",
       "approved_by": "Devon",
@@ -1008,7 +816,7 @@
       "review_tier": "full",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-025.md",
-      "notes": "Session 14: Mar 19 checkpoint PASSED \u2014 outcome NOT YET COMMUNICATED. Undefined channel WORSENED to 23.7% (from 19%). Day 1 overdue on checkpoint documentation. Blocks CS-2026-029."
+      "notes": "Session 14: Mar 19 checkpoint PASSED — outcome NOT YET COMMUNICATED. Undefined channel WORSENED to 23.7% (from 19%). Day 1 overdue on checkpoint documentation. Blocks CS-2026-029."
     },
     {
       "id": "CS-2026-026",
@@ -1024,30 +832,14 @@
       "dependencies": [],
       "blocks": [],
       "spawned_from": "synthesis-theme-4",
-      "spawned_changesets": [
-        "CS-2026-027",
-        "CS-2026-030"
-      ],
+      "spawned_changesets": ["CS-2026-027", "CS-2026-030"],
       "expected_impact": {
-        "revenue": {
-          "upside": 3000,
-          "expected": 1500,
-          "downside": 500
-        },
-        "margin": {
-          "upside": 1500,
-          "expected": 750,
-          "downside": 250
-        },
+        "revenue": { "upside": 3000, "expected": 1500, "downside": 500 },
+        "margin": { "upside": 1500, "expected": 750, "downside": 250 },
         "primary_metric": "content_velocity",
         "primary_metric_target": ">=10 BAW posts published Mar 16-22 (from 0/20 baseline)"
       },
-      "routed_to": [
-        "Nick",
-        "Charlotte",
-        "Katie",
-        "Brandon"
-      ],
+      "routed_to": ["Nick", "Charlotte", "Katie", "Brandon"],
       "routed_via": "pipeline",
       "routed_date": "2026-03-16",
       "approved_by": "Devon",
@@ -1062,7 +854,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-026.md",
-      "notes": "Session 14: Still 4/10 posts (unchanged from Session 13). 2 days remain. Measurement due Mar 23 (3 days). AT RISK \u2014 Charlotte bandwidth + 5/5 ambassadors inactive."
+      "notes": "Session 14: Still 4/10 posts (unchanged from Session 13). 2 days remain. Measurement due Mar 23 (3 days). AT RISK — Charlotte bandwidth + 5/5 ambassadors inactive."
     },
     {
       "id": "CS-2026-027",
@@ -1075,30 +867,17 @@
       "created": "2026-03-17",
       "objective_level": "L2",
       "category": "creative",
-      "dependencies": [
-        "CS-2026-026"
-      ],
+      "dependencies": ["CS-2026-026"],
       "blocks": [],
       "spawned_from": "rec-042",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 2000,
-          "expected": 1000,
-          "downside": 250
-        },
-        "margin": {
-          "upside": 1000,
-          "expected": 500,
-          "downside": 125
-        },
+        "revenue": { "upside": 2000, "expected": 1000, "downside": 250 },
+        "margin": { "upside": 1000, "expected": 500, "downside": 125 },
         "primary_metric": "baw_tier_a_posts",
         "primary_metric_target": ">=5 Tier A posts published by Mar 19"
       },
-      "routed_to": [
-        "Charlotte",
-        "Cliff"
-      ],
+      "routed_to": ["Charlotte", "Cliff"],
       "routed_via": "pipeline",
       "routed_date": "2026-03-17",
       "approved_by": "Express Auto-Approve",
@@ -1117,7 +896,7 @@
     },
     {
       "id": "CS-2026-028",
-      "title": "FB Prospecting Budget Reallocation \u2014 Meta Leadville + Google Pmax",
+      "title": "FB Prospecting Budget Reallocation — Meta Leadville + Google Pmax",
       "subtype": "implementation",
       "surface": "paid_google",
       "status": "published",
@@ -1131,22 +910,12 @@
       "spawned_from": "rec-045",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 3000,
-          "expected": 2250,
-          "downside": 1500
-        },
-        "margin": {
-          "upside": 1500,
-          "expected": 1125,
-          "downside": 750
-        },
+        "revenue": { "upside": 3000, "expected": 2250, "downside": 1500 },
+        "margin": { "upside": 1500, "expected": 1125, "downside": 750 },
         "primary_metric": "blended_paid_roas",
         "primary_metric_target": ">=1.5x on reallocated spend"
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "routed_via": "pipeline",
       "routed_date": "2026-03-17",
       "approved_by": "Express Auto-Approve",
@@ -1162,11 +931,11 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-028.md",
-      "notes": "Session 14: Domain 04 scan incomplete \u2014 cannot verify channel-level performance. Blended ROAS 12.71x."
+      "notes": "Session 14: Domain 04 scan incomplete — cannot verify channel-level performance. Blended ROAS 12.71x."
     },
     {
       "id": "CS-2026-029",
-      "title": "Graduation: Matt Hughes Reel \u2192 Paid Social Amplification",
+      "title": "Graduation: Matt Hughes Reel → Paid Social Amplification",
       "subtype": "graduation",
       "surface": "paid_social",
       "status": "approved",
@@ -1175,30 +944,17 @@
       "created": "2026-03-17",
       "objective_level": "L1",
       "category": "paid_media",
-      "dependencies": [
-        "CS-2026-025"
-      ],
+      "dependencies": ["CS-2026-025"],
       "blocks": [],
       "spawned_from": "graduation-pipeline/matt-hughes-reel-mar16",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 3000,
-          "expected": 1500,
-          "downside": 500
-        },
-        "margin": {
-          "upside": 1500,
-          "expected": 750,
-          "downside": -250
-        },
+        "revenue": { "upside": 3000, "expected": 1500, "downside": 500 },
+        "margin": { "upside": 1500, "expected": 750, "downside": -250 },
         "primary_metric": "paid_roas",
         "primary_metric_target": ">=1.5x ROAS on graduated creative"
       },
-      "routed_to": [
-        "Katie",
-        "Nick"
-      ],
+      "routed_to": ["Katie", "Nick"],
       "routed_via": "pipeline",
       "routed_date": "2026-03-17",
       "approved_by": "Express Auto-Approve",
@@ -1206,51 +962,38 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-029.md",
-      "notes": "Session 14: Still BLOCKED by CS-2026-025. Checkpoint was Mar 19 \u2014 outcome overdue. Also consider justjosephd BAW reel as second graduation candidate (4.01% ER)."
+      "notes": "Session 14: Still BLOCKED by CS-2026-025. Checkpoint was Mar 19 — outcome overdue. Also consider justjosephd BAW reel as second graduation candidate (4.01% ER)."
     },
     {
       "id": "CS-2026-030",
       "title": "BAW Subscription Conversion Push",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "low",
       "owner": "Katie + Nick",
       "created": "2026-03-19",
       "objective_level": "L1",
       "category": "email_sms",
-      "dependencies": [
-        "CS-2026-026"
-      ],
+      "dependencies": ["CS-2026-026"],
       "blocks": [],
       "spawned_from": "rec-056",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 3600,
-          "expected": 1800,
-          "downside": 600
-        },
-        "margin": {
-          "upside": 1800,
-          "expected": 900,
-          "downside": 300
-        },
+        "revenue": { "upside": 3600, "expected": 1800, "downside": 600 },
+        "margin": { "upside": 1800, "expected": 900, "downside": 300 },
         "primary_metric": "new_subscriptions",
         "primary_metric_target": "10-25 new subscriptions from BAW one-time purchasers by Mar 22"
       },
-      "routed_to": [
-        "Katie",
-        "Nick"
-      ],
+      "routed_to": ["Katie", "Nick"],
       "routed_via": "pipeline",
       "routed_date": "2026-03-19",
-      "approved_by": null,
-      "approved_date": null,
-      "review_tier": null,
+      "approved_by": "Devon",
+      "approved_date": "2026-03-20",
+      "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-030.md",
-      "notes": "Session 14: Still DRAFT. Needs review by EOD Mar 20. Domain 06 shows +40% activation surge \u2014 conversion window is open."
+      "notes": "APPROVED by Devon 2026-03-20 via /changeset-review (Standard tier). CGO execution note: use targeted campaign sends, NOT a flow. Hierarchy: L1, all 5 levels positive, no trade-offs, no overrides. Ready for /changeset-execute."
     },
     {
       "id": "CS-2026-031",
@@ -1268,22 +1011,12 @@
       "spawned_from": "rec-064",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 5000,
-          "expected": 2500,
-          "downside": 800
-        },
-        "margin": {
-          "upside": 2500,
-          "expected": 1250,
-          "downside": 400
-        },
+        "revenue": { "upside": 5000, "expected": 2500, "downside": 800 },
+        "margin": { "upside": 2500, "expected": 1250, "downside": 400 },
         "primary_metric": "flow_click_rate",
         "primary_metric_target": "Reduce zero-click flows from 55.7% to <23%. Avg flow click rate >=13% (from 8.5%)."
       },
-      "routed_to": [
-        "Katie"
-      ],
+      "routed_to": ["Katie"],
       "routed_via": "pipeline",
       "routed_date": "2026-03-20",
       "approved_by": null,
@@ -1298,7 +1031,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-031.md",
-      "notes": "NEW \u2014 Session 14. 121/217 flows (55.7%) have zero clicks. Distinct from CS-2026-023 (campaign-level). Structural revenue leak. Requires /changeset-review."
+      "notes": "NEW — Session 14. 121/217 flows (55.7%) have zero clicks. Distinct from CS-2026-023 (campaign-level). Structural revenue leak. Requires /changeset-review."
     },
     {
       "id": "CS-2026-032",
@@ -1316,23 +1049,12 @@
       "spawned_from": "rec-066",
       "spawned_changesets": [],
       "expected_impact": {
-        "revenue": {
-          "upside": 7200,
-          "expected": 3600,
-          "downside": 1200
-        },
-        "margin": {
-          "upside": 3600,
-          "expected": 1800,
-          "downside": 600
-        },
+        "revenue": { "upside": 7200, "expected": 3600, "downside": 1200 },
+        "margin": { "upside": 3600, "expected": 1800, "downside": 600 },
         "primary_metric": "payment_failure_rate",
         "primary_metric_target": "Reduce weekly payment failures from 100 to <=50. Reactivation rate from 2.2% to >=10%."
       },
-      "routed_to": [
-        "Garrett",
-        "Katie"
-      ],
+      "routed_to": ["Garrett", "Katie"],
       "routed_via": "pipeline",
       "routed_date": "2026-03-20",
       "approved_by": null,
@@ -1347,7 +1069,7 @@
       "outcome": "rejected",
       "closed_date": "2026-03-20",
       "file": "cgo-logs/changesets/CS-2026-032.md",
-      "notes": "REJECTED 2026-03-20 during /changeset-review. Domain 06 scan data error: pipeline reported 100 payment failures/week and 2.2% reactivation rate, but Katie confirmed actuals are ~19 people entering failed payment system per week with only 14 net failures, and existing Recharge automated recovery already achieves 57-64% recovery rate. The '100/week' figure counted individual retry EVENTS (not unique customers), and the '2.2%' was computed against new activations (wrong denominator). Premise invalidated \u2014 no new ChangeSet needed. Domain 06 calibration note logged: subscription scan must deduplicate payment failure events to unique customers and account for existing dunning/recovery infrastructure."
+      "notes": "REJECTED 2026-03-20 during /changeset-review. Domain 06 scan data error: pipeline reported 100 payment failures/week and 2.2% reactivation rate, but Katie confirmed actuals are ~19 people entering failed payment system per week with only 14 net failures, and existing Recharge automated recovery already achieves 57-64% recovery rate. The '100/week' figure counted individual retry EVENTS (not unique customers), and the '2.2%' was computed against new activations (wrong denominator). Premise invalidated — no new ChangeSet needed. Domain 06 calibration note logged: subscription scan must deduplicate payment failure events to unique customers and account for existing dunning/recovery infrastructure."
     }
   ]
 }
