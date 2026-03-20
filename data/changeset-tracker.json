@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-20T12:00:00Z",
+  "last_updated": "2026-03-20T18:00:00Z",
   "next_id": 33,
   "lifecycle_sweep": {
     "session": "2026-03-20-session-14",
@@ -21,19 +21,20 @@
       "CS-2026-028: Published. Google ROAS breakout. 14-day measurement through Apr 1.",
       "CS-2026-029: Approved, BLOCKED by CS-2026-025. Ready for immediate launch post-checkpoint.",
       "CS-2026-030: Draft. BAW Subscription Conversion Push. Needs review by EOD Mar 20.",
+      "CS-2026-032: REJECTED — Domain 06 data error. See rejection notes.",
       "EXPRESS BATCH (CS-012 through CS-022): April send dates. No action this week.",
       "No stale ChangeSets detected (closest: CS-2026-011 at 7 days). No auto-close candidates."
     ],
-    "new_changeset_generation": "2 new ChangeSets generated from Session 14 synthesis: CS-2026-031 (Email Flow CTA Emergency Redesign) and CS-2026-032 (Payment Failure Root Cause Audit & Recovery)."
+    "new_changeset_generation": "2 new ChangeSets generated from Session 14 synthesis: CS-2026-031 (Email Flow CTA Emergency Redesign) and CS-2026-032 (Payment Failure Root Cause Audit & Recovery). CS-2026-032 subsequently REJECTED during /changeset-review — bad data."
   },
   "summary": {
     "total": 32,
     "by_status": {
-      "draft": 3,
+      "draft": 2,
       "approved": 21,
       "published": 6,
       "rolled_back": 0,
-      "closed": 2
+      "closed": 3
     },
     "by_risk": {
       "low": 21,
@@ -214,7 +215,7 @@
     {"id": "CS-2026-012", "title": "April Email: WIN AN UNBOUND ENTRY + CUSTOM CAM JONES GEAR", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L3", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "45-50% open, 8-12% CTR"}, "routed_to": ["Katie"], "approved_by": "Devon", "approved_date": "2026-03-15", "published_date": null, "file": "cgo-logs/changesets/CS-2026-012.md", "notes": "Send: 4/3."},
     {"id": "CS-2026-013", "title": "April Email: YOUR SPRING DEEP WORK PROTOCOL", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L3", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "42-46% open, 3-5% CTR"}, "routed_to": ["Katie"], "approved_by": "Devon", "approved_date": "2026-03-15", "published_date": null, "file": "cgo-logs/changesets/CS-2026-013.md", "notes": "Send: 4/7."},
     {"id": "CS-2026-014", "title": "April Email: SHOTS: YOUR ANYWHERE RESET", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L1", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "44-48% open, 4-6% CTR"}, "routed_to": ["Katie"], "approved_by": "Katie", "approved_date": "2026-03-15", "published_date": null, "file": "cgo-logs/changesets/CS-2026-014.md", "notes": "Send: 4/10."},
-    {"id": "CS-2026-015", "title": "April Email: SEA OTTER CLASSIC: ENDURANCE TRAINING BUNDLE", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L1", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "45-50% open, 6-10% CTR"}, "routed_to": ["Katie"], "approved_by": "Katie", "approved_date": "2026-03-13", "published_date": null, "file": "cgo-logs/changesets/CS-2026-015.md", "notes": "Send: 4/16. SMS pairing."},
+    {"id": "CS-2026-015", "title": "April Email: SEA OTTER CLASSIC: ENDURANCE TRAINING BUNDLE", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L1", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "45-50% open, 6-10% CTR"}, "routed_to": ["Katie"], "approved_by": "Katie", "approved_date": "2026-03-13", "published_date": null, "file": "cgo-logs/changesets/CS-2026-011.md", "notes": "Send: 4/16. SMS pairing."},
     {"id": "CS-2026-016", "title": "April Email: SLEEP BETTER, THINK CLEARER", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L3", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "50-65% open, 0.5-1.5% CTR"}, "routed_to": ["Katie"], "approved_by": "Express Auto-Approve", "approved_date": "2026-03-16", "review_tier": "express", "published_date": null, "file": "cgo-logs/changesets/CS-2026-016.md", "notes": "Send: 4/16."},
     {"id": "CS-2026-017", "title": "April Email: RACE DAY FUEL + LIMITED EDITION PIT CREW COOZIE", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L1", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "45-50% open, 8-12% CTR"}, "routed_to": ["Katie"], "approved_by": "Express Auto-Approve", "approved_date": "2026-03-16", "review_tier": "express", "published_date": null, "file": "cgo-logs/changesets/CS-2026-017.md", "notes": "Send: 4/17. SMS pairing."},
     {"id": "CS-2026-018", "title": "April Email: THE MIDLIFE BRAIN WINDOW", "subtype": "email_campaign", "surface": "klaviyo", "status": "approved", "risk_level": "low", "owner": "Katie", "created": "2026-03-13", "objective_level": "L3", "category": "email_sms", "dependencies": [], "blocks": [], "spawned_from": "april-2026-email-calendar-v3", "spawned_changesets": [], "expected_impact": {"primary_metric": "open_rate", "primary_metric_target": "50-60% open, 0.5-1.5% CTR"}, "routed_to": ["Katie"], "approved_by": "Express Auto-Approve", "approved_date": "2026-03-16", "review_tier": "express", "published_date": null, "file": "cgo-logs/changesets/CS-2026-018.md", "notes": "Send: 4/21."},
@@ -341,7 +342,7 @@
       "title": "Payment Failure Root Cause Audit & Recovery Program",
       "subtype": "implementation",
       "surface": "recharge",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Garrett + Katie",
       "created": "2026-03-20",
@@ -362,17 +363,17 @@
       "routed_date": "2026-03-20",
       "approved_by": null,
       "approved_date": null,
-      "review_tier": null,
+      "review_tier": "standard",
       "published_date": null,
       "measurement_start_date": null,
       "measurement_end_date": null,
-      "measurement_window": "30-day from Phase 2 implementation",
+      "measurement_window": null,
       "measurement_due": null,
       "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "outcome": "rejected",
+      "closed_date": "2026-03-20",
       "file": "cgo-logs/changesets/CS-2026-032.md",
-      "notes": "NEW — Session 14. 100 payment failures/week = 2x voluntary cancellations. Involuntary churn is #1 subscription headwind. Reactivation rate critically low at 2.2%. Requires /changeset-review."
+      "notes": "REJECTED 2026-03-20 during /changeset-review. Domain 06 scan data error: pipeline reported 100 payment failures/week and 2.2% reactivation rate, but Katie confirmed actuals are ~19 people entering failed payment system per week with only 14 net failures, and existing Recharge automated recovery already achieves 57-64% recovery rate. The '100/week' figure counted individual retry EVENTS (not unique customers), and the '2.2%' was computed against new activations (wrong denominator). Premise invalidated — no new ChangeSet needed. Domain 06 calibration note logged: subscription scan must deduplicate payment failure events to unique customers and account for existing dunning/recovery infrastructure."
     }
   ]
 }
