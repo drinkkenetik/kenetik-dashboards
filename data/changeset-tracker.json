@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-20T21:05:00Z",
+  "last_updated": "2026-03-20T21:10:00Z",
   "next_id": 33,
   "lifecycle_sweep": {
     "session": "2026-03-20-session-14",
@@ -20,7 +20,7 @@
       "CS-2026-027: BAW Tier A Fast-Track — co-measured with CS-2026-026. Measurement due Mar 23 (3 days).",
       "CS-2026-028: Published. Google ROAS breakout. 14-day measurement through Apr 1.",
       "CS-2026-029: Approved, BLOCKED by CS-2026-025. Ready for immediate launch post-checkpoint.",
-      "CS-2026-030: APPROVED by Devon 2026-03-20. Katie execution note: targeted campaign sends (not a flow). Ready for /changeset-execute.",
+      "CS-2026-030: APPROVED by Katie 2026-03-20. Execution: targeted campaign sends (not a flow). Ready for /changeset-execute.",
       "CS-2026-032: REJECTED — Domain 06 data error. See rejection notes.",
       "EXPRESS BATCH (CS-012 through CS-022): April send dates. No action this week.",
       "No stale ChangeSets detected (closest: CS-2026-011 at 7 days). No auto-close candidates."
@@ -988,12 +988,12 @@
       "routed_to": ["Katie", "Nick"],
       "routed_via": "pipeline",
       "routed_date": "2026-03-19",
-      "approved_by": "Devon",
+      "approved_by": "Katie",
       "approved_date": "2026-03-20",
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-030.md",
-      "notes": "APPROVED by Devon 2026-03-20 via /changeset-review (Standard tier). Katie execution note: use targeted campaign sends, NOT a flow. Hierarchy: L1, all 5 levels positive, no trade-offs, no overrides. Ready for /changeset-execute."
+      "notes": "APPROVED by Katie 2026-03-20 via /changeset-review (Standard tier). Execution: targeted campaign sends, NOT a flow. Hierarchy: L1, all 5 levels positive, no trade-offs, no overrides. Ready for /changeset-execute."
     },
     {
       "id": "CS-2026-031",
