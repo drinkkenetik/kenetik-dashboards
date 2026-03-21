@@ -1,36 +1,41 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-20T22:30:00Z",
-  "next_id": 33,
+  "last_updated": "2026-03-21T14:00:00Z",
+  "next_id": 35,
   "lifecycle_sweep": {
-    "session": "2026-03-20-session-14",
-    "sweep_date": "2026-03-20",
-    "stale_detected": 0,
+    "session": "2026-03-21-session-15",
+    "sweep_date": "2026-03-21",
+    "stale_detected": 5,
     "measurement_due": 0,
     "measurement_approaching": 2,
     "auto_closed": 0,
     "flags": [
-      "CS-2026-001/002/004: Published, measuring. No measurement due until Apr 8-10.",
-      "CS-2026-003: Published 2026-03-20 (corrected from 3/19). Natural segmentation approach (replaced 3-cell A/B per UE review). SMS 11AM → Email 2PM with SMS-converter exclusion. BAW flash sale sent 2026-03-20. 7-day measurement through Mar 27. Results expected Mar 27.",
-      "CS-2026-006: 4 days in approved state (approved Mar 16). Claims unblocked — approaching stale. Watch item.",
-      "CS-2026-007: Published. Mar 21 retention window TOMORROW. 60-day measurement through May 17.",
-      "CS-2026-011: 7 days in approved (Mar 13). Approaching stale threshold. April send date — no immediate action required.",
-      "CS-2026-025: Attribution checkpoint was Mar 19 — outcome NOT YET COMMUNICATED. Day 1 overdue. Critical blocker for CS-2026-029.",
-      "CS-2026-026: BAW Content Velocity — 4/10 posts. Measurement due Mar 23 (3 days). AT RISK.",
-      "CS-2026-027: BAW Tier A Fast-Track — co-measured with CS-2026-026. Measurement due Mar 23 (3 days).",
-      "CS-2026-028: Published. Google ROAS breakout. 14-day measurement through Apr 1.",
+      "STALE: CS-2026-001 (10 days, published, measuring through Apr 10 — no interim update needed but flagged for visibility)",
+      "STALE: CS-2026-002 (12 days, published, measuring through Apr 8 — no interim update needed but flagged for visibility)",
+      "STALE: CS-2026-004 (11 days, published, measuring through Apr 9 — no interim update needed but flagged for visibility)",
+      "STALE: CS-2026-011 (8 days, approved, Apr 1 send date — no action required until week of Mar 30)",
+      "STALE: CS-2026-015 (8 days, approved, Apr 16 send date — no action required until week of Apr 13)",
+      "MEASUREMENT APPROACHING: CS-2026-026 (BAW Content Velocity) — due Mar 23 (2 days). AT RISK: 4/10 posts as of Session 14. Ambassador network 90% silent. Unlikely to hit 10-post target.",
+      "MEASUREMENT APPROACHING: CS-2026-027 (BAW Tier A Fast-Track) — co-measured with CS-2026-026, due Mar 23 (2 days).",
+      "CHECKPOINT OVERDUE: CS-2026-025 (Attribution Sprint) — Day 2 overdue. No outcome communicated. Blocks CS-2026-029. Escalation to Devon per rec-063.",
+      "CS-2026-003: Published 2026-03-20. SMS natural segmentation. 7-day measurement through Mar 27.",
+      "CS-2026-006: 5 days in approved. Claims unblocked. Deferred to post-BAW (Mar 23+). Watch for stale threshold.",
+      "CS-2026-007: Published. Mar 21 retention window TODAY. 60-day measurement through May 17.",
+      "CS-2026-028: Published. Google ROAS breakout 8.88x sustained. 14-day measurement through Apr 1.",
       "CS-2026-029: Approved, BLOCKED by CS-2026-025. Ready for immediate launch post-checkpoint.",
-      "CS-2026-030: PUBLISHED 2026-03-20 via /changeset-execute. BAW subscription conversion campaign. SMS+Email targeted sends to BAW one-time purchasers. 7-day measurement through Mar 27.",
-      "CS-2026-032: REJECTED — Domain 06 data error. See rejection notes.",
-      "EXPRESS BATCH (CS-012 through CS-022): April send dates. No action this week.",
-      "No stale ChangeSets detected (closest: CS-2026-011 at 7 days). No auto-close candidates."
+      "CS-2026-030: Published 2026-03-20 via /changeset-execute. 7-day measurement through Mar 27.",
+      "CS-2026-031: Draft. 125/226 flow variants (55%) zero clicks. Structural email revenue leak. Needs /changeset-review.",
+      "CS-2026-032: REJECTED (Session 14). Data error — payment failure count was retry events, not unique customers.",
+      "EXPRESS BATCH (CS-012 through CS-022): April send dates. No action this week except CS-2026-011 and CS-2026-015 flagged stale.",
+      "NEW: CS-2026-033 (Mobile Site & Brand Search Investigation) — D09 mobile clicks -32%, brand CTR -4.3pp. Nick + Cliff.",
+      "NEW: CS-2026-034 (Ambassador Network Re-Engagement & Tiering) — D08 revenue -55%, 90% inactive. Lawrence + Nick."
     ],
-    "new_changeset_generation": "2 new ChangeSets generated from Session 14 synthesis: CS-2026-031 (Email Flow CTA Emergency Redesign) and CS-2026-032 (Payment Failure Root Cause Audit & Recovery). CS-2026-032 subsequently REJECTED during /changeset-review — bad data."
+    "new_changeset_generation": "2 new ChangeSets generated from Session 15 synthesis: CS-2026-033 (Mobile Site & Brand Search Performance Investigation) and CS-2026-034 (Ambassador Network Re-Engagement & Tiering Strategy)."
   },
   "summary": {
-    "total": 32,
+    "total": 34,
     "by_status": {
-      "draft": 1,
+      "draft": 3,
       "approved": 21,
       "published": 7,
       "rolled_back": 0,
@@ -38,13 +43,13 @@
     },
     "by_risk": {
       "low": 21,
-      "medium": 7,
+      "medium": 9,
       "high": 3,
       "critical": 1
     },
     "by_subtype": {
-      "implementation": 14,
-      "investigation": 5,
+      "implementation": 15,
+      "investigation": 6,
       "quick": 0,
       "email_campaign": 12,
       "graduation": 1
@@ -86,7 +91,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-001.md",
-      "notes": "Session 7: Published 2026-03-11. Top SMS variant $13.18 RPR confirmed. Measuring through Apr 10."
+      "notes": "Session 15: 10 days since publish. Measuring through Apr 10. Stale flag — no interim update but no action needed until measurement window."
     },
     {
       "id": "CS-2026-002",
@@ -123,7 +128,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-002.md",
-      "notes": "Published 2026-03-09. Dependency resolved with CS-2026-001."
+      "notes": "Session 15: 12 days since publish. Stale flag. Measuring through Apr 8."
     },
     {
       "id": "CS-2026-003",
@@ -166,7 +171,7 @@
         "confirmation_id": "changepacket-delivered-2026-03-20",
         "published_at": "2026-03-20T11:00:00Z"
       },
-      "notes": "Refined 2026-03-20. Test design replaced: 3-cell A/B → natural segmentation (UE review). SMS 11AM → Email 2PM with SMS-converter exclusion. BAW flash sale sent 2026-03-20. 7-day measurement through Mar 27. Decision framework added (4 scenarios)."
+      "notes": "Session 15: 1 day since publish. BAW flash sale sent. 7-day measurement through Mar 27. D02 confirms SMS 27.5% click rate vs email 0.6%. Early signal: SMS channel dominance."
     },
     {
       "id": "CS-2026-004",
@@ -203,7 +208,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-004.md",
-      "notes": "Published 2026-03-10. Superfiliate gap partially resolved."
+      "notes": "Session 15: 11 days since publish. Stale flag. Measuring through Apr 9."
     },
     {
       "id": "CS-2026-005",
@@ -271,7 +276,7 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-006.md",
-      "notes": "Session 14: 4 days in approved. Claims UNBLOCKED (Session 13). Brandon review complete. Charlotte bandwidth constraint may delay. Defer to post-BAW (Mar 23+)."
+      "notes": "Session 15: 5 days in approved. D16 provides 4 new HIGH-confidence BHB papers to expand scope. Defer to post-BAW (Mar 23+)."
     },
     {
       "id": "CS-2026-007",
@@ -308,7 +313,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-007.md",
-      "notes": "Session 14: Mar 21 retention window TOMORROW. Subscription cancellations stable (51 vs 54 prior). Net +85 subs. Churn trend continuing downward."
+      "notes": "Session 15: Mar 21 retention window TODAY. D06: activations +25.8% but charges -9.7% — activation-to-charge gap may affect cohort. Katie to capture all retention data."
     },
     {
       "id": "CS-2026-008",
@@ -422,15 +427,14 @@
       "spawned_changesets": [],
       "expected_impact": {
         "primary_metric": "open_rate",
-        "primary_metric_target": "47-50% open, 8-10% CTR",
-        "segment_size": "~51,643"
+        "primary_metric_target": "47-50% open, 8-10% CTR"
       },
       "routed_to": ["Katie"],
       "approved_by": "Katie",
       "approved_date": "2026-03-13",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-011.md",
-      "notes": "7 days in approved. April 1 send date — no immediate action."
+      "notes": "Session 15: 8 days in approved (STALE flag). April 1 send date — no immediate action. IMPORTANT: CS-2026-031 (flow CTA fix) should be resolved before this send to maximize email performance."
     },
     {
       "id": "CS-2026-012",
@@ -534,7 +538,7 @@
       "approved_date": "2026-03-13",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-011.md",
-      "notes": "Send: 4/16. SMS pairing."
+      "notes": "Session 15: 8 days in approved (STALE flag). Send: 4/16. SMS pairing."
     },
     {
       "id": "CS-2026-016",
@@ -754,7 +758,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-023.md",
-      "notes": "Session 14: Campaign CTR improved slightly to 0.68% (from 0.57%). Matt Hughes narrative 47.6% open, 0.72% CTR validates story-driven approach. CS-2026-031 created for flow-level CTA fix (distinct scope)."
+      "notes": "Session 15: D02 confirms campaign CTR still 0.58-0.73%. SMS 27.5% click rate provides stark contrast. CTA rendering issue suspected."
     },
     {
       "id": "CS-2026-024",
@@ -785,7 +789,7 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-024.md",
-      "notes": "Depends on CS-2026-007 retention signal."
+      "notes": "Depends on CS-2026-007 retention signal. D06 today: activation-to-charge gap adds urgency."
     },
     {
       "id": "CS-2026-025",
@@ -816,7 +820,7 @@
       "review_tier": "full",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-025.md",
-      "notes": "Session 14: Mar 19 checkpoint PASSED — outcome NOT YET COMMUNICATED. Undefined channel WORSENED to 23.7% (from 19%). Day 1 overdue on checkpoint documentation. Blocks CS-2026-029."
+      "notes": "Session 15: CHECKPOINT DAY 2 OVERDUE. D01: undefined/Superfiliate = 28.5% of revenue ($28,773). Blocks CS-2026-029. Escalation to Devon triggered per rec-063."
     },
     {
       "id": "CS-2026-026",
@@ -854,7 +858,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-026.md",
-      "notes": "Session 14: Still 4/10 posts (unchanged from Session 13). 2 days remain. Measurement due Mar 23 (3 days). AT RISK — Charlotte bandwidth + 5/5 ambassadors inactive."
+      "notes": "Session 15: MEASUREMENT APPROACHING (2 days). D07: BAW validated — Facebook 6.54% ER, 92.5K impressions Mar 19. But D13: content calendar shows 10 entries still in idea status. D07: 90% ambassadors silent. AT RISK of not hitting 10-post target."
     },
     {
       "id": "CS-2026-027",
@@ -892,7 +896,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-027.md",
-      "notes": "Session 14: Co-measured with CS-2026-026. Measurement due Mar 23."
+      "notes": "Session 15: MEASUREMENT APPROACHING (2 days). Co-measured with CS-2026-026."
     },
     {
       "id": "CS-2026-028",
@@ -931,7 +935,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-028.md",
-      "notes": "Session 14: Domain 04 scan incomplete — cannot verify channel-level performance. Blended ROAS 12.71x."
+      "notes": "Session 15: D04 confirms thesis — Paid Search 8.88x ROAS (+87% WoW) vs Paid Social 3.82x (-8%). FB prospecting 'ka_prospecting_lg_shot' at 0.047x ROAS. Budget reallocation validated."
     },
     {
       "id": "CS-2026-029",
@@ -962,7 +966,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-029.md",
-      "notes": "Session 14: Still BLOCKED by CS-2026-025. Checkpoint was Mar 19 — outcome overdue. Also consider justjosephd BAW reel as second graduation candidate (4.01% ER)."
+      "notes": "Session 15: Still BLOCKED by CS-2026-025 (Day 2 overdue). D07: 4 additional graduation candidates now available (IG reel 24.9K, 2 FB reels 15K+)."
     },
     {
       "id": "CS-2026-030",
@@ -1006,7 +1010,7 @@
         "confirmation_id": "changeset-execute-2026-03-20",
         "published_at": "2026-03-20T22:30:00Z"
       },
-      "notes": "PUBLISHED 2026-03-20 via /changeset-execute. Targeted campaign sends (not a flow) to BAW one-time purchasers offering 30% off first subscription. SMS Day 1 → Email 4hr later → SMS Day 2 reminder. 7-day measurement through Mar 27. Katie notified via Slack DM."
+      "notes": "Session 15: Published, measuring through Mar 27. D06: subscription activations +25.8% — BAW conversion push may be contributing."
     },
     {
       "id": "CS-2026-031",
@@ -1044,7 +1048,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-031.md",
-      "notes": "NEW — Session 14. 121/217 flows (55.7%) have zero clicks. Distinct from CS-2026-023 (campaign-level). Structural revenue leak. Requires /changeset-review."
+      "notes": "Session 15: D02 confirms 125/226 flow variants (55%) zero clicks. Email open rates healthy (33-48%), proving CTA/link rendering failure. Urgent /changeset-review needed."
     },
     {
       "id": "CS-2026-032",
@@ -1082,7 +1086,69 @@
       "outcome": "rejected",
       "closed_date": "2026-03-20",
       "file": "cgo-logs/changesets/CS-2026-032.md",
-      "notes": "REJECTED 2026-03-20 during /changeset-review. Domain 06 scan data error: pipeline reported 100 payment failures/week and 2.2% reactivation rate, but Katie confirmed actuals are ~19 people entering failed payment system per week with only 14 net failures, and existing Recharge automated recovery already achieves 57-64% recovery rate. The '100/week' figure counted individual retry EVENTS (not unique customers), and the '2.2%' was computed against new activations (wrong denominator). Premise invalidated — no new ChangeSet needed. Domain 06 calibration note logged: subscription scan must deduplicate payment failure events to unique customers and account for existing dunning/recovery infrastructure."
+      "notes": "REJECTED 2026-03-20. Data error: 100/wk was retry events not unique customers. Actual: ~19 entering failed payment, 14 net, existing Recharge recovery 57-64%. No ChangeSet needed."
+    },
+    {
+      "id": "CS-2026-033",
+      "title": "Mobile Site & Brand Search Performance Investigation",
+      "subtype": "investigation",
+      "surface": "website",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Nick + Cliff",
+      "created": "2026-03-21",
+      "objective_level": "L3",
+      "category": "website_cro",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "session-15-synthesis-theme-5",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": { "upside": 2000, "expected": 1000, "downside": 0 },
+        "margin": { "upside": 1000, "expected": 500, "downside": 0 },
+        "primary_metric": "mobile_clicks_weekly",
+        "primary_metric_target": "Recover mobile clicks from 1,413 to 1,800+ within 14 days of fix"
+      },
+      "routed_to": ["Nick", "Cliff"],
+      "routed_via": "pipeline",
+      "routed_date": "2026-03-21",
+      "approved_by": null,
+      "approved_date": null,
+      "review_tier": null,
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-033.md",
+      "notes": "NEW — Session 15. D09: mobile clicks -32.1%, brand CTR -4.3pp. Desktop stable (-5.9%). Mobile = 73% of traffic. Needs /changeset-review."
+    },
+    {
+      "id": "CS-2026-034",
+      "title": "Ambassador Network Re-Engagement & Tiering Strategy",
+      "subtype": "implementation",
+      "surface": "superfiliate",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Lawrence + Nick",
+      "created": "2026-03-21",
+      "objective_level": "L2",
+      "category": "creator_ambassador",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "session-15-synthesis-theme-4",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": { "upside": 5000, "expected": 2500, "downside": 500 },
+        "margin": { "upside": 2500, "expected": 1250, "downside": 250 },
+        "primary_metric": "active_posting_ambassador_pct",
+        "primary_metric_target": ">=28% posting weekly (from 10% baseline)"
+      },
+      "routed_to": ["Lawrence", "Nick"],
+      "routed_via": "pipeline",
+      "routed_date": "2026-03-21",
+      "approved_by": null,
+      "approved_date": null,
+      "review_tier": null,
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-034.md",
+      "notes": "NEW — Session 15. D08: creator revenue -55%, orders -89%. 90% of 250 creators inactive. Null code attribution 41.7%. Needs /changeset-review."
     }
   ]
 }
