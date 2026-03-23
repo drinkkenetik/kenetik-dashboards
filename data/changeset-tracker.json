@@ -1,1 +1,29 @@
-PLACEHOLDER_CONTENT_HERE
+{
+  "schema_version": "2.1",
+  "last_updated": "2026-03-23T20:00:00Z",
+  "next_id": 36,
+  "lifecycle_sweep": {
+    "session": "2026-03-22-session-16",
+    "sweep_date": "2026-03-22",
+    "stale_detected": 7,
+    "measurement_due": 2,
+    "measurement_approaching": 3,
+    "auto_closed": 0,
+    "flags": [
+      "STALE: CS-2026-001 (11 days, published, measuring through Apr 10 — no action needed)",
+      "STALE: CS-2026-002 (13 days, published, measuring through Apr 8 — no action needed)",
+      "STALE: CS-2026-004 (12 days, published, measuring through Apr 9 — no action needed)",
+      "STALE: CS-2026-006 (6 days, approved, post-BAW activation window NOW OPEN — ready for execution)",
+      "STALE: CS-2026-011 (9 days, approved, Apr 1 send date — action needed week of Mar 30)",
+      "STALE: CS-2026-015 (9 days, approved, Apr 16 send date — no action needed until week of Apr 13)",
+      "STALE: CS-2026-023 (6 days, approved, campaign CTA A/B test — should execute alongside CS-2026-031 flow CTA fix)",
+      "MEASUREMENT DUE TOMORROW: CS-2026-026 (BAW Content Velocity) — due Mar 23. BAW concluded today Mar 22. CAPTURE DATA NOW.",
+      "MEASUREMENT DUE TOMORROW: CS-2026-027 (BAW Tier A Fast-Track) — co-measured with CS-2026-026, due Mar 23.",
+      "MEASUREMENT APPROACHING: CS-2026-003 (SMS Flash Sale) — due Mar 27 (5 days). SMS 27.7% click rate confirmed.",
+      "MEASUREMENT APPROACHING: CS-2026-030 (BAW Subscription Push) — due Mar 27 (5 days). Subscription activations +9.1%.",
+      "MEASUREMENT APPROACHING: CS-2026-028 (FB Budget Reallocation) — due Apr 1 (10 days). Google ROAS 9.11x confirmed.",
+      "CHECKPOINT OVERDUE: CS-2026-025 (Attribution Sprint) — Day 6+ overdue. Undefined revenue WORSENED to 28.5%. Blocks CS-2026-029. rec-079 escalation: Devon executive call if no resolution by EOD Mar 22.",
+      "CS-2026-007: Published. Mar 21 retention window PASSED. Awaiting Katie data pull. 60-day measurement through May 17."
+    ]
+  }
+}
