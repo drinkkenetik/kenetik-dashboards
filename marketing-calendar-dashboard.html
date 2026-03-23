@@ -1,1 +1,1135 @@
-FILE_CONTENT_2_PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenetik Content Calendar</title>
+    <style>
+        :root {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --surface-hover: #22262f;
+            --border: #2a2e3a;
+            --text: #e4e4e7;
+            --text-muted: #8b8fa3;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            --kenetik-green: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .dashboard {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        /* ── Auth Gate ── */
+        .auth-gate {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .auth-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .auth-box h2 { font-size: 20px; margin-bottom: 8px; }
+        .auth-box p { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; line-height: 1.5; }
+
+        .auth-input {
+            width: 100%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .auth-input:focus { outline: none; border-color: var(--accent); }
+
+        .auth-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .auth-btn:hover { background: var(--accent-light); }
+        .auth-error { color: var(--danger); font-size: 12px; margin-top: 8px; display: none; }
+
+        /* ── Header ── */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .header-left h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .header-left .subtitle {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .sync-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .refresh-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .refresh-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent-light);
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        select.filter-select {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            appearance: auto;
+        }
+
+        .search-input {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            width: 220px;
+        }
+
+        .search-input:focus { outline: none; border-color: var(--accent); }
+
+        /* ── KPIs ── */
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .kpi-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            transition: all 0.15s;
+        }
+
+        .kpi-card:hover { border-color: var(--accent); }
+
+        .kpi-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .kpi-detail {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .kpi-value.success { color: var(--success); }
+        .kpi-value.warning { color: var(--warning); }
+        .kpi-value.danger { color: var(--danger); }
+        .kpi-value.info { color: var(--info); }
+
+        /* ── Bulk Actions ── */
+        .bulk-bar {
+            display: none;
+            background: var(--surface);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 12px 20px;
+            margin-bottom: 16px;
+            align-items: center;
+            gap: 16px;
+            animation: slideIn 0.2s ease;
+        }
+
+        .bulk-bar.visible { display: flex; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bulk-count {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-light);
+        }
+
+        .bulk-btn {
+            background: var(--danger);
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .bulk-btn:hover { opacity: 0.85; }
+
+        .bulk-btn-cancel {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .bulk-btn-cancel:hover { border-color: var(--text-muted); color: var(--text); }
+
+        /* ── Table ── */
+        .table-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }
+
+        .table-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .table-header-row h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .entry-count {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .data-table th {
+            text-align: left;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            white-space: nowrap;
+            user-select: none;
+            position: sticky;
+            top: 0;
+            background: var(--surface);
+        }
+
+        .data-table th:hover { color: var(--text); }
+        .data-table th.sorted { color: var(--accent-light); }
+        .data-table th.no-sort { cursor: default; }
+        .data-table th.no-sort:hover { color: var(--text-muted); }
+
+        .data-table td {
+            padding: 10px 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            vertical-align: top;
+        }
+
+        .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+        .data-table tr.selected td { background: rgba(99,102,241,0.08); }
+
+        .data-table .copy-cell {
+            max-width: 280px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .data-table .copy-cell:hover {
+            white-space: normal;
+            overflow: visible;
+        }
+
+        /* ── Status pills ── */
+        .status-pill {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            text-transform: capitalize;
+        }
+
+        .status-draft { background: rgba(139,143,163,0.2); color: var(--text-muted); }
+        .status-planned { background: rgba(59,130,246,0.2); color: var(--info); }
+        .status-scheduled { background: rgba(168,85,247,0.2); color: #a855f7; }
+        .status-published { background: rgba(34,197,94,0.15); color: var(--success); }
+        .status-in_progress, .status-in-progress { background: rgba(245,158,11,0.15); color: var(--warning); }
+        .status-cancelled { background: rgba(239,68,68,0.15); color: var(--danger); }
+
+        .platform-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .platform-instagram { background: rgba(225,48,108,0.2); color: #e1306c; }
+        .platform-tiktok { background: rgba(239,68,68,0.2); color: #ef4444; }
+        .platform-linkedin { background: rgba(59,130,246,0.2); color: #3b82f6; }
+        .platform-facebook { background: rgba(59,130,246,0.2); color: #1877f2; }
+        .platform-twitter, .platform-x { background: rgba(255,255,255,0.1); color: var(--text); }
+        .platform-youtube { background: rgba(255,0,0,0.15); color: #ff0000; }
+        .platform-email { background: rgba(168,85,247,0.2); color: #a855f7; }
+        .platform-blog { background: rgba(20,184,166,0.2); color: #14b8a6; }
+        .platform-default { background: rgba(139,143,163,0.2); color: var(--text-muted); }
+
+        /* ── Row actions ── */
+        .row-checkbox {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            accent-color: var(--accent);
+        }
+
+        .delete-single {
+            background: none;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            font-size: 14px;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: all 0.15s;
+            opacity: 0.4;
+        }
+
+        .data-table tr:hover .delete-single { opacity: 1; }
+        .delete-single:hover { color: var(--danger); border-color: var(--danger); }
+
+        /* ── Confirm Modal ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.open { display: flex; }
+
+        .modal-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            max-width: 480px;
+            width: 90%;
+        }
+
+        .modal-box h3 { font-size: 18px; margin-bottom: 12px; }
+        .modal-box p { color: var(--text-muted); font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
+
+        .modal-box .entry-list {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .modal-box .entry-list div { padding: 3px 0; }
+        .modal-box .entry-list .entry-id { color: var(--accent-light); font-weight: 600; }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .modal-cancel {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .modal-cancel:hover { border-color: var(--text-muted); }
+
+        .modal-confirm-delete {
+            background: var(--danger);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .modal-confirm-delete:hover { opacity: 0.85; }
+        .modal-confirm-delete:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* ── Detail Panel ── */
+        .detail-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .detail-overlay.open { display: flex; }
+
+        .detail-panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 28px;
+        }
+
+        .detail-panel h2 { font-size: 18px; margin-bottom: 4px; }
+
+        .detail-close {
+            float: right;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        .detail-close:hover { color: var(--text); }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .detail-field label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .detail-field span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .detail-section {
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+        }
+
+        .detail-section h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .detail-copy {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+            white-space: pre-wrap;
+        }
+
+        /* ── Toast ── */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 20px;
+            font-size: 13px;
+            z-index: 300;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast.success { border-color: var(--success); }
+        .toast.error { border-color: var(--danger); }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 11px;
+            padding: 20px 0;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+<!-- Auth Gate -->
+<div id="authGate" class="auth-gate">
+    <div class="auth-box">
+        <h2>Content Calendar Dashboard</h2>
+        <p>Enter a GitHub Personal Access Token with <code>repo</code> scope to connect to the Kenetik Growth System data.</p>
+        <input type="password" class="auth-input" id="tokenInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autofocus>
+        <button class="auth-btn" onclick="authenticate()">Connect</button>
+        <div class="auth-error" id="authError"></div>
+    </div>
+</div>
+
+<!-- Main Dashboard (hidden until auth) -->
+<div class="dashboard" id="mainDashboard" style="display:none;">
+
+    <header>
+        <div class="header-left">
+            <h1>Content Calendar</h1>
+            <div class="subtitle">Kenetik Growth System — Content Planning &amp; Tracking</div>
+            <div class="sync-row">
+                <span id="syncStatus" style="font-size:12px;color:var(--text-muted);">Loading data...</span>
+                <button class="refresh-btn" onclick="manualRefresh()">&#8635; Refresh</button>
+            </div>
+        </div>
+        <div class="filters">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search copy, creator, ID..." oninput="render()">
+            <select class="filter-select" id="statusFilter" onchange="render()">
+                <option value="all">All Statuses</option>
+            </select>
+            <select class="filter-select" id="platformFilter" onchange="render()">
+                <option value="all">All Platforms</option>
+            </select>
+            <select class="filter-select" id="typeFilter" onchange="render()">
+                <option value="all">All Content Types</option>
+            </select>
+            <select class="filter-select" id="creatorFilter" onchange="render()">
+                <option value="all">All Creators</option>
+            </select>
+        </div>
+    </header>
+
+    <section class="kpis" id="kpis"></section>
+
+    <!-- Bulk action bar -->
+    <div class="bulk-bar" id="bulkBar">
+        <span class="bulk-count" id="bulkCount">0 selected</span>
+        <button class="bulk-btn" onclick="confirmBulkDelete()">Delete Selected</button>
+        <button class="bulk-btn-cancel" onclick="clearSelection()">Cancel</button>
+    </div>
+
+    <section class="table-section">
+        <div class="table-header-row">
+            <h3>Content Calendar Entries</h3>
+            <span class="entry-count" id="entryCount"></span>
+        </div>
+        <table class="data-table" id="calTable">
+            <thead>
+                <tr>
+                    <th class="no-sort" style="width:36px"><input type="checkbox" class="row-checkbox" id="selectAll" onchange="toggleSelectAll()"></th>
+                    <th data-sort="entry_id">ID</th>
+                    <th data-sort="date_publish">Date</th>
+                    <th data-sort="platform">Platform</th>
+                    <th data-sort="content_type">Type</th>
+                    <th data-sort="status">Status</th>
+                    <th data-sort="copy">Copy</th>
+                    <th data-sort="creator">Creator</th>
+                    <th data-sort="content_category">Category</th>
+                    <th data-sort="engagement_rate">Eng. Rate</th>
+                    <th data-sort="impressions">Impressions</th>
+                    <th class="no-sort" style="width:36px"></th>
+                </tr>
+            </thead>
+            <tbody id="calTableBody"></tbody>
+        </table>
+    </section>
+
+    <footer>
+        Kenetik Growth System &middot; Content Calendar Dashboard &middot; Data from <code>drinkkenetik/kenetik-growth-system</code> &middot; Auto-refreshes every 5 min
+    </footer>
+</div>
+
+<!-- Detail Overlay -->
+<div class="detail-overlay" id="detailOverlay" onclick="if(event.target===this)closeDetail()">
+    <div class="detail-panel" id="detailPanel"></div>
+</div>
+
+<!-- Delete Confirm Modal -->
+<div class="modal-overlay" id="deleteModal" onclick="if(event.target===this)closeDeleteModal()">
+    <div class="modal-box">
+        <h3>Confirm Delete</h3>
+        <p id="deleteMsg">Are you sure you want to delete these entries? This will update the JSON on GitHub directly.</p>
+        <div class="entry-list" id="deleteList"></div>
+        <div class="modal-actions">
+            <button class="modal-cancel" onclick="closeDeleteModal()">Cancel</button>
+            <button class="modal-confirm-delete" id="confirmDeleteBtn" onclick="executeDelete()">Delete</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// CONFIG
+const OWNER = 'drinkkenetik';
+const REPO = 'kenetik-growth-system';
+const DATA_PATH = 'data/marketing-calendar/marketing-calendar-data.json';
+const API_BASE = 'https://api.github.com';
+const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
+
+let TOKEN = null;
+let DATA = null;
+let FILE_SHA = null;
+let selectedIds = new Set();
+let pendingDeleteIds = [];
+let sortCol = 'date_publish';
+let sortDir = 'desc';
+
+// AUTH
+function authenticate() {
+    const input = document.getElementById('tokenInput');
+    const err = document.getElementById('authError');
+    const token = input.value.trim();
+    if (!token) { err.textContent = 'Please enter a token.'; err.style.display = 'block'; return; }
+    TOKEN = token;
+    err.style.display = 'none';
+    boot();
+}
+
+document.getElementById('tokenInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') authenticate();
+});
+
+// GITHUB API
+async function ghFetch(path, opts) {
+    opts = opts || {};
+    var resp = await fetch(API_BASE + path, Object.assign({}, opts, {
+        headers: Object.assign({
+            'Authorization': 'token ' + TOKEN,
+            'Accept': 'application/vnd.github.v3+json'
+        }, opts.headers || {})
+    }));
+    if (!resp.ok) throw new Error('GitHub API ' + resp.status + ': ' + (await resp.text()));
+    return resp.json();
+}
+
+async function fetchData() {
+    var statusEl = document.getElementById('syncStatus');
+    try {
+        var file = await ghFetch('/repos/' + OWNER + '/' + REPO + '/contents/' + DATA_PATH);
+        FILE_SHA = file.sha;
+        var content = atob(file.content.replace(/\n/g, ''));
+        var bytes = new Uint8Array(content.length);
+        for (var i = 0; i < content.length; i++) bytes[i] = content.charCodeAt(i);
+        var decoded = new TextDecoder('utf-8').decode(bytes);
+        DATA = JSON.parse(decoded);
+        statusEl.textContent = 'Live \u00b7 Last synced ' + new Date().toLocaleTimeString();
+        statusEl.style.color = 'var(--success)';
+        return true;
+    } catch (err) {
+        console.error('Fetch failed:', err);
+        if (err.message.indexOf('401') !== -1 || err.message.indexOf('403') !== -1) {
+            document.getElementById('authError').textContent = 'Invalid or expired token. Check repo scope.';
+            document.getElementById('authError').style.display = 'block';
+            document.getElementById('authGate').style.display = 'flex';
+            document.getElementById('mainDashboard').style.display = 'none';
+            return false;
+        }
+        statusEl.textContent = 'Error loading data: ' + err.message;
+        statusEl.style.color = 'var(--danger)';
+        return false;
+    }
+}
+
+async function pushData() {
+    var content = JSON.stringify(DATA, null, 2);
+    var encoder = new TextEncoder();
+    var bytes = encoder.encode(content);
+    var binary = '';
+    bytes.forEach(function(b) { binary += String.fromCharCode(b); });
+    var b64 = btoa(binary);
+
+    var resp = await fetch(API_BASE + '/repos/' + OWNER + '/' + REPO + '/contents/' + DATA_PATH, {
+        method: 'PUT',
+        headers: {
+            'Authorization': 'token ' + TOKEN,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            message: 'content calendar: delete entries via dashboard',
+            content: b64,
+            sha: FILE_SHA,
+            committer: {
+                name: 'Kenetik Content Calendar',
+                email: 'content-calendar@kenetik.com'
+            }
+        })
+    });
+
+    if (!resp.ok) {
+        var body = await resp.text();
+        throw new Error('Push failed: ' + resp.status + ' ' + body);
+    }
+
+    var result = await resp.json();
+    FILE_SHA = result.content.sha;
+    return true;
+}
+
+// HELPERS
+function getEntries() { return (DATA && DATA.content_calendar) ? DATA.content_calendar : []; }
+
+function getFiltered() {
+    var statusF = document.getElementById('statusFilter').value;
+    var platformF = document.getElementById('platformFilter').value;
+    var typeF = document.getElementById('typeFilter').value;
+    var creatorF = document.getElementById('creatorFilter').value;
+    var search = document.getElementById('searchInput').value.toLowerCase().trim();
+
+    return getEntries().filter(function(e) {
+        if (statusF !== 'all' && (e.status || '').toLowerCase() !== statusF) return false;
+        if (platformF !== 'all' && (e.platform || '').toLowerCase() !== platformF) return false;
+        if (typeF !== 'all' && (e.content_type || '').toLowerCase() !== typeF) return false;
+        if (creatorF !== 'all' && (e.creator || '') !== creatorF) return false;
+        if (search) {
+            var haystack = [e.entry_id, e.copy, e.creator, e.content_category, e.visual_brief, e.performance_notes].filter(Boolean).join(' ').toLowerCase();
+            if (haystack.indexOf(search) === -1) return false;
+        }
+        return true;
+    });
+}
+
+function platformClass(p) {
+    var key = (p || '').toLowerCase().replace(/\s/g, '');
+    var map = { instagram: 'instagram', tiktok: 'tiktok', linkedin: 'linkedin', facebook: 'facebook', twitter: 'twitter', x: 'x', youtube: 'youtube', email: 'email', blog: 'blog' };
+    return 'platform-' + (map[key] || 'default');
+}
+
+function statusClass(s) {
+    return 'status-' + (s || 'draft').toLowerCase().replace(/\s/g, '_');
+}
+
+function fmtNum(n) {
+    if (n == null || n === '' || isNaN(n)) return '\u2014';
+    return Number(n).toLocaleString('en-US');
+}
+
+function fmtPct(n) {
+    if (n == null || n === '' || isNaN(n)) return '\u2014';
+    var val = Number(n);
+    return (val > 0 && val < 1 ? val * 100 : val).toFixed(1) + '%';
+}
+
+function showToast(msg, type) {
+    type = type || 'success';
+    var el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className = 'toast ' + type + ' show';
+    setTimeout(function() { el.classList.remove('show'); }, 3500);
+}
+
+// POPULATE FILTER DROPDOWNS
+function populateFilters() {
+    var entries = getEntries();
+    var statuses = Array.from(new Set(entries.map(function(e) { return (e.status || '').toLowerCase(); }))).filter(Boolean).sort();
+    var platforms = Array.from(new Set(entries.map(function(e) { return (e.platform || '').toLowerCase(); }))).filter(Boolean).sort();
+    var types = Array.from(new Set(entries.map(function(e) { return (e.content_type || '').toLowerCase(); }))).filter(Boolean).sort();
+    var creators = Array.from(new Set(entries.map(function(e) { return e.creator; }).filter(Boolean))).sort();
+
+    fillSelect('statusFilter', statuses, true);
+    fillSelect('platformFilter', platforms, true);
+    fillSelect('typeFilter', types, true);
+    fillSelect('creatorFilter', creators, false);
+}
+
+function fillSelect(id, values, capitalize) {
+    var sel = document.getElementById(id);
+    var current = sel.value;
+    while (sel.options.length > 1) sel.remove(1);
+    values.forEach(function(v) {
+        var opt = document.createElement('option');
+        opt.value = v;
+        opt.textContent = capitalize ? v.replace(/_/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); }) : v;
+        sel.appendChild(opt);
+    });
+    sel.value = current;
+}
+
+// KPIs
+function renderKPIs() {
+    var data = getFiltered();
+    var published = data.filter(function(e) { return (e.status || '').toLowerCase() === 'published'; });
+    var planned = data.filter(function(e) { return ['planned', 'draft', 'scheduled'].indexOf((e.status || '').toLowerCase()) !== -1; });
+    var withMetrics = data.filter(function(e) { return e.impressions && Number(e.impressions) > 0; });
+    var avgEng = '\u2014';
+    if (withMetrics.length) {
+        var sum = withMetrics.reduce(function(s, e) {
+            var rate = Number(e.engagement_rate) || 0;
+            if (rate > 0 && rate < 1) rate *= 100;
+            return s + rate;
+        }, 0);
+        avgEng = (sum / withMetrics.length).toFixed(1) + '%';
+    }
+
+    var totalImpressions = data.reduce(function(s, e) { return s + (Number(e.impressions) || 0); }, 0);
+    var platformCounts = {};
+    data.forEach(function(e) { var p = e.platform || 'Unknown'; platformCounts[p] = (platformCounts[p] || 0) + 1; });
+    var topPlatform = Object.entries(platformCounts).sort(function(a, b) { return b[1] - a[1]; })[0];
+
+    document.getElementById('kpis').innerHTML =
+        '<div class="kpi-card"><div class="kpi-label">Total Entries</div><div class="kpi-value">' + data.length + '</div><div class="kpi-detail">' + getEntries().length + ' total in calendar</div></div>' +
+        '<div class="kpi-card"><div class="kpi-label">Published</div><div class="kpi-value success">' + published.length + '</div><div class="kpi-detail">' + planned.length + ' planned/scheduled</div></div>' +
+        '<div class="kpi-card"><div class="kpi-label">Total Impressions</div><div class="kpi-value info">' + fmtNum(totalImpressions) + '</div><div class="kpi-detail">' + withMetrics.length + ' posts with metrics</div></div>' +
+        '<div class="kpi-card"><div class="kpi-label">Avg Engagement</div><div class="kpi-value">' + avgEng + '</div><div class="kpi-detail">Across ' + withMetrics.length + ' measured posts</div></div>' +
+        '<div class="kpi-card"><div class="kpi-label">Top Platform</div><div class="kpi-value" style="font-size:22px">' + (topPlatform ? topPlatform[0] : '\u2014') + '</div><div class="kpi-detail">' + (topPlatform ? topPlatform[1] + ' entries' : '') + '</div></div>';
+}
+
+// TABLE
+function renderTable() {
+    var data = getFiltered();
+
+    data.sort(function(a, b) {
+        var va = a[sortCol] != null ? a[sortCol] : '';
+        var vb = b[sortCol] != null ? b[sortCol] : '';
+        if (['impressions', 'reach', 'clicks', 'saves', 'engagement_rate'].indexOf(sortCol) !== -1) {
+            va = Number(va) || 0;
+            vb = Number(vb) || 0;
+        }
+        if (typeof va === 'string') { va = va.toLowerCase(); vb = (vb + '').toLowerCase(); }
+        if (va < vb) return sortDir === 'asc' ? -1 : 1;
+        if (va > vb) return sortDir === 'asc' ? 1 : -1;
+        return 0;
+    });
+
+    document.getElementById('entryCount').textContent = data.length + ' entries shown';
+
+    document.getElementById('calTableBody').innerHTML = data.map(function(e) {
+        var checked = selectedIds.has(e.entry_id) ? 'checked' : '';
+        var selClass = selectedIds.has(e.entry_id) ? 'selected' : '';
+        var copyEsc = (e.copy || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+        return '<tr class="' + selClass + '">' +
+            '<td><input type="checkbox" class="row-checkbox" ' + checked + ' onchange="toggleSelect(\'' + e.entry_id + '\', this.checked)"></td>' +
+            '<td><span style="color:var(--accent-light);cursor:pointer;font-weight:600;font-size:11px" onclick="openDetail(\'' + e.entry_id + '\')">' + e.entry_id + '</span></td>' +
+            '<td style="white-space:nowrap">' + (e.date_publish || '\u2014') + '</td>' +
+            '<td><span class="platform-badge ' + platformClass(e.platform) + '">' + (e.platform || '\u2014') + '</span></td>' +
+            '<td>' + ((e.content_type || '\u2014').replace(/_/g, ' ')) + '</td>' +
+            '<td><span class="status-pill ' + statusClass(e.status) + '">' + ((e.status || 'draft').replace(/_/g, ' ')) + '</span></td>' +
+            '<td class="copy-cell" title="' + copyEsc + '">' + (e.copy || '\u2014') + '</td>' +
+            '<td>' + (e.creator || '\u2014') + '</td>' +
+            '<td>' + ((e.content_category || '\u2014').replace(/_/g, ' ')) + '</td>' +
+            '<td>' + fmtPct(e.engagement_rate) + '</td>' +
+            '<td>' + fmtNum(e.impressions) + '</td>' +
+            '<td><button class="delete-single" onclick="confirmSingleDelete(\'' + e.entry_id + '\')" title="Delete this entry">\u2715</button></td>' +
+            '</tr>';
+    }).join('');
+
+    document.querySelectorAll('.data-table th[data-sort]').forEach(function(th) {
+        th.classList.toggle('sorted', th.dataset.sort === sortCol);
+    });
+
+    updateBulkBar();
+}
+
+// Sort handler
+document.querySelectorAll('#calTable th[data-sort]').forEach(function(th) {
+    th.addEventListener('click', function() {
+        var col = th.dataset.sort;
+        if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+        else { sortCol = col; sortDir = col === 'date_publish' ? 'desc' : 'asc'; }
+        renderTable();
+    });
+});
+
+// SELECTION & BULK DELETE
+function toggleSelect(id, checked) {
+    if (checked) selectedIds.add(id);
+    else selectedIds.delete(id);
+    renderTable();
+}
+
+function toggleSelectAll() {
+    var checked = document.getElementById('selectAll').checked;
+    var data = getFiltered();
+    if (checked) data.forEach(function(e) { selectedIds.add(e.entry_id); });
+    else selectedIds.clear();
+    renderTable();
+}
+
+function clearSelection() {
+    selectedIds.clear();
+    document.getElementById('selectAll').checked = false;
+    renderTable();
+}
+
+function updateBulkBar() {
+    var bar = document.getElementById('bulkBar');
+    if (selectedIds.size > 0) {
+        bar.classList.add('visible');
+        document.getElementById('bulkCount').textContent = selectedIds.size + ' selected';
+    } else {
+        bar.classList.remove('visible');
+    }
+}
+
+// DELETE FLOW
+function confirmSingleDelete(id) {
+    pendingDeleteIds = [id];
+    showDeleteModal();
+}
+
+function confirmBulkDelete() {
+    pendingDeleteIds = Array.from(selectedIds);
+    showDeleteModal();
+}
+
+function showDeleteModal() {
+    var entries = getEntries();
+    var listEl = document.getElementById('deleteList');
+    listEl.innerHTML = pendingDeleteIds.map(function(id) {
+        var e = entries.find(function(x) { return x.entry_id === id; });
+        return '<div><span class="entry-id">' + id + '</span> \u2014 ' + (e ? (e.platform || '') + ' \u00b7 ' + (e.date_publish || '') + ' \u00b7 ' + (e.copy || '').slice(0, 60) : 'Unknown') + '</div>';
+    }).join('');
+    document.getElementById('deleteMsg').textContent = 'Delete ' + pendingDeleteIds.length + ' entr' + (pendingDeleteIds.length === 1 ? 'y' : 'ies') + '? This will commit the change to GitHub directly.';
+    document.getElementById('deleteModal').classList.add('open');
+}
+
+function closeDeleteModal() {
+    document.getElementById('deleteModal').classList.remove('open');
+    pendingDeleteIds = [];
+}
+
+async function executeDelete() {
+    var btn = document.getElementById('confirmDeleteBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Deleting...';
+
+    try {
+        var idsToDelete = new Set(pendingDeleteIds);
+        DATA.content_calendar = DATA.content_calendar.filter(function(e) { return !idsToDelete.has(e.entry_id); });
+        DATA.last_updated = new Date().toISOString().slice(0, 10);
+
+        await pushData();
+
+        pendingDeleteIds.forEach(function(id) { selectedIds.delete(id); });
+        closeDeleteModal();
+        populateFilters();
+        render();
+        showToast('Deleted ' + idsToDelete.size + ' entr' + (idsToDelete.size === 1 ? 'y' : 'ies') + ' and pushed to GitHub.', 'success');
+    } catch (err) {
+        console.error('Delete failed:', err);
+        showToast('Delete failed: ' + err.message, 'error');
+        await fetchData();
+        render();
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Delete';
+    }
+}
+
+// DETAIL PANEL
+function openDetail(id) {
+    var e = getEntries().find(function(x) { return x.entry_id === id; });
+    if (!e) return;
+
+    var metricsHtml = '';
+    if (e.impressions || e.reach || e.engagement_rate || e.clicks || e.saves) {
+        metricsHtml = '<div class="detail-section"><h4>Performance Metrics</h4><div class="detail-grid">' +
+            '<div class="detail-field"><label>Sprout Post ID</label><span>' + (e.sprout_post_id || '\u2014') + '</span></div>' +
+            '<div class="detail-field"><label>Impressions</label><span>' + fmtNum(e.impressions) + '</span></div>' +
+            '<div class="detail-field"><label>Reach</label><span>' + fmtNum(e.reach) + '</span></div>' +
+            '<div class="detail-field"><label>Engagement Rate</label><span>' + fmtPct(e.engagement_rate) + '</span></div>' +
+            '<div class="detail-field"><label>Clicks</label><span>' + fmtNum(e.clicks) + '</span></div>' +
+            '<div class="detail-field"><label>Saves</label><span>' + fmtNum(e.saves) + '</span></div>' +
+            '</div>' +
+            (e.performance_notes ? '<div style="margin-top:8px;font-size:13px;color:var(--text-muted)"><strong>Notes:</strong> ' + e.performance_notes + '</div>' : '') +
+            '</div>';
+    }
+
+    document.getElementById('detailPanel').innerHTML =
+        '<button class="detail-close" onclick="closeDetail()">&times;</button>' +
+        '<div style="color:var(--accent-light);font-size:13px;font-weight:600;margin-bottom:4px">' + e.entry_id + '</div>' +
+        '<h2>' + (e.platform || '') + ' \u2014 ' + ((e.content_type || '').replace(/_/g, ' ')) + '</h2>' +
+        '<div class="detail-grid" style="margin-top:16px">' +
+            '<div class="detail-field"><label>Date</label><span>' + (e.date_publish || '\u2014') + '</span></div>' +
+            '<div class="detail-field"><label>Day</label><span>' + (e.day_of_week || '\u2014') + '</span></div>' +
+            '<div class="detail-field"><label>Platform</label><span class="platform-badge ' + platformClass(e.platform) + '">' + (e.platform || '\u2014') + '</span></div>' +
+            '<div class="detail-field"><label>Content Type</label><span>' + ((e.content_type || '\u2014').replace(/_/g, ' ')) + '</span></div>' +
+            '<div class="detail-field"><label>Status</label><span class="status-pill ' + statusClass(e.status) + '">' + ((e.status || 'draft').replace(/_/g, ' ')) + '</span></div>' +
+            '<div class="detail-field"><label>Creator</label><span>' + (e.creator || '\u2014') + '</span></div>' +
+            '<div class="detail-field"><label>Category</label><span>' + ((e.content_category || '\u2014').replace(/_/g, ' ')) + '</span></div>' +
+            '<div class="detail-field"><label>Segment Target</label><span>' + ((e.segment_target || '\u2014').replace(/_/g, ' ')) + '</span></div>' +
+            '<div class="detail-field"><label>Claims Compliance</label><span>' + (e.claims_compliance || '\u2014') + '</span></div>' +
+            '<div class="detail-field"><label>Linked Activity</label><span>' + (e.linked_activity_id || '\u2014') + '</span></div>' +
+            (e.priority ? '<div class="detail-field"><label>Priority</label><span>' + e.priority + '</span></div>' : '') +
+            (e.assigned_to ? '<div class="detail-field"><label>Assigned To</label><span>' + e.assigned_to + '</span></div>' : '') +
+            (e.production_status ? '<div class="detail-field"><label>Production Status</label><span>' + e.production_status + '</span></div>' : '') +
+            (e.content_source ? '<div class="detail-field"><label>Content Source</label><span>' + e.content_source + '</span></div>' : '') +
+        '</div>' +
+        '<div class="detail-section"><h4>Copy</h4><div class="detail-copy">' + (e.copy || '(No copy provided)') + '</div></div>' +
+        (e.visual_brief ? '<div class="detail-section"><h4>Visual Brief</h4><div class="detail-copy">' + e.visual_brief + '</div></div>' : '') +
+        metricsHtml +
+        (e.utm_link ? '<div class="detail-section"><h4>UTM Link</h4><div style="font-size:13px;word-break:break-all"><a href="' + e.utm_link + '" target="_blank" style="color:var(--accent-light)">' + e.utm_link + '</a></div></div>' : '');
+
+    document.getElementById('detailOverlay').classList.add('open');
+}
+
+function closeDetail() {
+    document.getElementById('detailOverlay').classList.remove('open');
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeDetail();
+        closeDeleteModal();
+    }
+});
+
+// RENDER ALL
+function render() {
+    renderKPIs();
+    renderTable();
+}
+
+// BOOTSTRAP
+async function boot() {
+    var ok = await fetchData();
+    if (ok) {
+        document.getElementById('authGate').style.display = 'none';
+        document.getElementById('mainDashboard').style.display = 'block';
+        populateFilters();
+        render();
+        setInterval(async function() { await fetchData(); populateFilters(); render(); }, REFRESH_INTERVAL_MS);
+    }
+}
+
+async function manualRefresh() {
+    var ok = await fetchData();
+    if (ok) { populateFilters(); render(); }
+}
+</script>
+</body>
+</html>
