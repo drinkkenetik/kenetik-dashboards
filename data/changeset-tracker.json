@@ -1,38 +1,33 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-24T13:29:44.925Z",
+  "last_updated": "2026-03-24T15:00:00.000Z",
   "next_id": 40,
   "lifecycle_sweep": {
-    "session": "2026-03-22-session-16",
-    "sweep_date": "2026-03-22",
-    "stale_detected": 7,
-    "measurement_due": 2,
+    "session": "2026-03-24-session-18",
+    "sweep_date": "2026-03-24",
+    "stale_detected": 8,
+    "measurement_overdue": 2,
     "measurement_approaching": 3,
     "auto_closed": 0,
     "flags": [
-      "STALE: CS-2026-001 (11 days, published, measuring through Apr 10 — no action needed)",
-      "STALE: CS-2026-002 (13 days, published, measuring through Apr 8 — no action needed)",
-      "STALE: CS-2026-004 (12 days, published, measuring through Apr 9 — no action needed)",
-      "STALE: CS-2026-006 (6 days, approved, post-BAW activation window NOW OPEN — ready for execution)",
-      "STALE: CS-2026-011 (9 days, approved, Apr 1 send date — action needed week of Mar 30)",
-      "STALE: CS-2026-015 (9 days, approved, Apr 16 send date — no action needed until week of Apr 13)",
-      "STALE: CS-2026-023 (6 days, approved, campaign CTA A/B test — should execute alongside CS-2026-031 flow CTA fix)",
-      "MEASUREMENT DUE TOMORROW: CS-2026-026 (BAW Content Velocity) — due Mar 23. BAW concluded today Mar 22. CAPTURE DATA NOW.",
-      "MEASUREMENT DUE TOMORROW: CS-2026-027 (BAW Tier A Fast-Track) — co-measured with CS-2026-026, due Mar 23.",
-      "MEASUREMENT APPROACHING: CS-2026-003 (SMS Flash Sale) — due Mar 27 (5 days). SMS 27.7% click rate confirmed.",
-      "MEASUREMENT APPROACHING: CS-2026-030 (BAW Subscription Push) — due Mar 27 (5 days). Subscription activations +9.1%.",
-      "MEASUREMENT APPROACHING: CS-2026-028 (FB Budget Reallocation) — due Apr 1 (10 days). Google ROAS 9.11x confirmed.",
-      "CHECKPOINT OVERDUE: CS-2026-025 (Attribution Sprint) — Day 6+ overdue. Undefined revenue WORSENED to 28.5%. Blocks CS-2026-029. rec-079 escalation: Devon executive call if no resolution by EOD Mar 22.",
-      "CS-2026-007: Published. Mar 21 retention window PASSED. Awaiting Katie data pull. 60-day measurement through May 17.",
-      "CS-2026-029: Approved, BLOCKED by CS-2026-025 (Day 6+). IG BAW reel (83.8K imp) joins Matt Hughes as graduation candidate.",
-      "CS-2026-031: APPROVED 2026-03-23 by Katie. Rescoped from 100+ emails to ~15 high-priority messages based on Klaviyo API audit.",
-      "CS-2026-033: Draft. Mobile clicks WORSENED to -39.7% (from -32.1% S15). Brand queries -34.7% to -47.1%. Needs review + activation.",
-      "CS-2026-034: Draft. Creator orders WORSENED to -89.9%. Dormancy 84%. Lawrence scorecards + Nick strategic decision due Monday.",
-      "EXPRESS BATCH (CS-012 through CS-022): April send dates. CS-2026-011 and CS-2026-015 flagged stale.",
-      "NEW PATTERN DETECTED: pat-010 Mobile + Brand Search Erosion. No new ChangeSet needed — CS-2026-033 covers investigation.",
-      "CALENDAR SAFETY NET: No untracked marketing activities detected. April email calendar (CS-011–022) fully tracked. BAW concluded. Post-BAW gap is operational (rec-082), not a ChangeSet gap."
+      "STALE: CS-2026-001 (13 days, published, measuring through Apr 10 \u2014 no action needed)",
+      "STALE: CS-2026-002 (15 days, published, measuring through Apr 8 \u2014 no action needed)",
+      "STALE: CS-2026-004 (14 days, published, measuring through Apr 9 \u2014 no action needed)",
+      "STALE: CS-2026-009 (8 days, approved, BWR event May 2-3 \u2014 low urgency)",
+      "STALE: CS-2026-010 (8 days, approved, Klaviyo audit \u2014 coordinate with CS-025)",
+      "STALE: CS-2026-011 (10 days, approved, Apr 1 send \u2014 ACTION NEEDED by Mar 30)",
+      "STALE: CS-2026-023 (8+ days, approved, CTA test \u2014 execute alongside CS-031)",
+      "STALE: CS-2026-024 (8+ days, approved, pause/skip \u2014 dependent on CS-007)",
+      "CHECKPOINT OVERDUE: CS-2026-025 (Day 8+) \u2014 CRITICAL. Undefined revenue 22%. Devon executive decision REQUIRED.",
+      "MEASUREMENT OVERDUE: CS-2026-026 (BAW Content Velocity) \u2014 due Mar 23, now 1 day late.",
+      "MEASUREMENT OVERDUE: CS-2026-027 (BAW Tier A Fast-Track) \u2014 due Mar 23, now 1 day late.",
+      "MEASUREMENT APPROACHING: CS-2026-003 (SMS Flash Sale) \u2014 due Mar 27 (3 days).",
+      "MEASUREMENT APPROACHING: CS-2026-030 (BAW Subscription Push) \u2014 due Mar 27 (3 days).",
+      "MEASUREMENT APPROACHING: CS-2026-028 (FB Budget Realloc) \u2014 due Apr 1 (8 days). Google ROAS declined to 6.12x.",
+      "CALENDAR SAFETY NET: No untracked activities detected.",
+      "NO NEW CHANGESETS: Existing CS-033/034/035 cover all synthesis gaps. CS-029/036/037 ready for graduation."
     ],
-    "new_changeset_generation": "No new ChangeSets generated. Existing drafts CS-2026-033, CS-2026-034, CS-2026-035 remain. CS-2026-031 promoted to approved."
+    "new_changeset_generation": "No new ChangeSets generated. CS-029/036/037 ready for graduation. CS-031 approved for flow CTA. CS-033 approved for mobile investigation."
   },
   "summary": {
     "total": 37,
@@ -60,7 +55,7 @@
   "changesets": [
     {
       "id": "CS-2026-001",
-      "title": "Welcome Series Emergency — Influencer Welcome Track",
+      "title": "Welcome Series Emergency \u2014 Influencer Welcome Track",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "published",
@@ -210,11 +205,11 @@
         "confirmation_id": "changepacket-delivered-2026-03-20",
         "published_at": "2026-03-20T11:00:00Z"
       },
-      "notes": "Session 16: 2 days since publish. Measuring through Mar 27. SMS 27.7% click rate confirmed (D02). Early signal strongly positive."
+      "notes": "Session 18: Measuring through Mar 27 (3d). SMS 27.7% click rate confirmed. pat-003."
     },
     {
       "id": "CS-2026-004",
-      "title": "Paid Media Attribution — March 7 Exclusion & Superfiliate Investigation",
+      "title": "Paid Media Attribution \u2014 March 7 Exclusion & Superfiliate Investigation",
       "subtype": "investigation",
       "surface": "paid_google",
       "status": "published",
@@ -264,7 +259,7 @@
     },
     {
       "id": "CS-2026-005",
-      "title": "Post-Activation Retention Campaign — Cleetus Cohort Reorder Sequence",
+      "title": "Post-Activation Retention Campaign \u2014 Cleetus Cohort Reorder Sequence",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "closed",
@@ -307,11 +302,11 @@
       "outcome": "cancelled",
       "closed_date": "2026-03-13",
       "file": "cgo-logs/changesets/CS-2026-005.md",
-      "notes": "CLOSED 2026-03-13 — cancelled/superseded by CS-2026-007."
+      "notes": "CLOSED 2026-03-13 \u2014 cancelled/superseded by CS-2026-007."
     },
     {
       "id": "CS-2026-006",
-      "title": "Science Content Pipeline — Cell BHB Metabolic Fitness Paper",
+      "title": "Science Content Pipeline \u2014 Cell BHB Metabolic Fitness Paper",
       "subtype": "implementation",
       "surface": "content",
       "status": "published",
@@ -460,11 +455,11 @@
       "outcome": "superseded",
       "closed_date": "2026-03-16",
       "file": "cgo-logs/changesets/CS-2026-008.md",
-      "notes": "CLOSED 2026-03-16 — superseded by CS-2026-026."
+      "notes": "CLOSED 2026-03-16 \u2014 superseded by CS-2026-026."
     },
     {
       "id": "CS-2026-009",
-      "title": "BWR Post-Purchase Flow — Endurance Training Bundle Protocol",
+      "title": "BWR Post-Purchase Flow \u2014 Endurance Training Bundle Protocol",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "approved",
@@ -506,7 +501,7 @@
     },
     {
       "id": "CS-2026-010",
-      "title": "Klaviyo Property Definition Audit — Superfiliate Source Attribution",
+      "title": "Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
       "subtype": "investigation",
       "surface": "klaviyo",
       "status": "approved",
@@ -572,7 +567,7 @@
       "approved_date": "2026-03-13",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-011.md",
-      "notes": "April 1 send date — prep needed by Mar 30."
+      "notes": "Session 18: STALE 10d. Apr 1 send \u2014 Katie prep by Mar 30. April email calendar."
     },
     {
       "id": "CS-2026-012",
@@ -864,7 +859,7 @@
     },
     {
       "id": "CS-2026-022",
-      "title": "April Email: MAY IS LOADING — STOCK UP",
+      "title": "April Email: MAY IS LOADING \u2014 STOCK UP",
       "subtype": "email_campaign",
       "surface": "klaviyo",
       "status": "approved",
@@ -1018,7 +1013,7 @@
       "review_tier": "full",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-025.md",
-      "notes": "CHECKPOINT DAY 7+ OVERDUE. Undefined channel at 28.5%. Blocks CS-2026-029. HIGHEST PRIORITY BLOCKER."
+      "notes": "Session 18: Day 8+ OVERDUE. Undefined revenue 22% ($20.2K). CRITICAL blocker. Devon executive decision required. rec-100."
     },
     {
       "id": "CS-2026-026",
@@ -1072,7 +1067,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-026.md",
-      "notes": "MEASUREMENT DUE TODAY Mar 23. BAW concluded. Data capture required."
+      "notes": "Session 18: MEASUREMENT 1 DAY OVERDUE (due Mar 23). BAW data capture still needed."
     },
     {
       "id": "CS-2026-027",
@@ -1123,11 +1118,11 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-027.md",
-      "notes": "MEASUREMENT DUE TODAY Mar 23. Co-measured with CS-2026-026."
+      "notes": "Session 18: MEASUREMENT 1 DAY OVERDUE (due Mar 23). Co-measured with CS-026."
     },
     {
       "id": "CS-2026-028",
-      "title": "FB Prospecting Budget Reallocation — Meta Leadville + Google Pmax",
+      "title": "FB Prospecting Budget Reallocation \u2014 Meta Leadville + Google Pmax",
       "subtype": "implementation",
       "surface": "paid_google",
       "status": "published",
@@ -1172,11 +1167,11 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-028.md",
-      "notes": "Google ROAS 9.11x confirmed. FB Prospecting pause recommended."
+      "notes": "Session 18: Measuring through Apr 1 (8d). Google ROAS declined to 6.12x (was 9.11x). Investigate."
     },
     {
       "id": "CS-2026-029",
-      "title": "Graduation: Matt Hughes Reel → Paid Social Amplification",
+      "title": "Graduation: Matt Hughes Reel \u2192 Paid Social Amplification",
       "subtype": "graduation",
       "surface": "paid_social",
       "status": "approved",
@@ -1214,7 +1209,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-029.md",
-      "notes": "UNBLOCKED 2026-03-23 by Peter (CGO). Attribution dependency removed — proceed with paid amplification while CS-2026-025 resolves in parallel. IG BAW reel + FB testimonial both ready."
+      "notes": "Session 18: UNBLOCKED. Matt Hughes reel 57.7K imp. Ready for paid amplification. P7 priority."
     },
     {
       "id": "CS-2026-030",
@@ -1271,11 +1266,11 @@
         "confirmation_id": "changeset-execute-2026-03-20",
         "published_at": "2026-03-20T22:30:00Z"
       },
-      "notes": "Measuring through Mar 27. Subscription activations healthy."
+      "notes": "Session 18: Measuring through Mar 27 (3d). Activations -18.8% WoW but rev/activation +34.4%."
     },
     {
       "id": "CS-2026-031",
-      "title": "Email Flow CTA Redesign — High-Volume Low-CTR Messages",
+      "title": "Email Flow CTA Redesign \u2014 High-Volume Low-CTR Messages",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "approved",
@@ -1312,7 +1307,7 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-031.md",
-      "notes": "APPROVED 2026-03-23 by Katie (CGO). Rescoped brief v2 reviewed and approved."
+      "notes": "Session 18: APPROVED. 55% zero-click flows. Deploy targeting top flows first. rec-104."
     },
     {
       "id": "CS-2026-032",
@@ -1394,7 +1389,7 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-033.md",
-      "notes": "APPROVED 2026-03-23 by Peter (CGO). Standard review. L1 priority — 62.8% CVR collapse, mobile clicks -39.7%, brand queries -34.7% to -47.1%. No trade-offs, no overrides. Nick + Cliff to begin investigation immediately."
+      "notes": "Session 18: APPROVED. CVR collapse -39.6% BOTH devices. P1 priority. rec-099."
     },
     {
       "id": "CS-2026-034",
@@ -1436,7 +1431,7 @@
       "review_tier": null,
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-034.md",
-      "notes": "Creator orders WORSENED to -89.9%. Dormancy 84%. Lawrence scorecards + Nick strategic decision due Monday."
+      "notes": "Session 18: Decision due TODAY. 88% dormancy. Lawrence scorecards required. rec-106."
     },
     {
       "id": "CS-2026-035",
@@ -1452,11 +1447,12 @@
       "expected_impact": "3x campaign click rate, 2x revenue per recipient.",
       "measurement_plan": "Compare next 3 promotional sends with SMS-first vs control. 14-day measurement window.",
       "measurement_window_end": "2026-04-06",
-      "autonomy_tier": 1
+      "autonomy_tier": 1,
+      "notes": "Session 18: Draft. SMS 27.7% vs email 0.68%. Awaiting CS-003 Mar 27 measurement."
     },
     {
       "id": "CS-2026-036",
-      "title": "Graduation: Matt Hughes IG Reel — Paid Amplification",
+      "title": "Graduation: Matt Hughes IG Reel \u2014 Paid Amplification",
       "type": "graduation",
       "status": "approved",
       "priority": "HIGH",
@@ -1496,11 +1492,11 @@
       ],
       "routed_via": "pipeline",
       "routed_date": "2026-03-23",
-      "notes": "APPROVED 2026-03-23 by Peter (CGO). IG Reel: 57,417 imp, 5.6% ER, 162 saves, 56,807 video views. Graduation thresholds met: IG engagement >5%, reach 5.3x avg. GO for paid amplification."
+      "notes": "Session 18: APPROVED. IG Reel graduation. Ready for paid amplification."
     },
     {
       "id": "CS-2026-037",
-      "title": "Graduation: Matt Hughes FB Testimonial — Viral Paid Amplification",
+      "title": "Graduation: Matt Hughes FB Testimonial \u2014 Viral Paid Amplification",
       "type": "graduation",
       "status": "approved",
       "priority": "URGENT",
@@ -1540,11 +1536,11 @@
       ],
       "routed_via": "pipeline",
       "routed_date": "2026-03-23",
-      "notes": "APPROVED 2026-03-23 by Peter (CGO). VIRAL ALERT: FB Testimonial: 75,435 imp, 2.51% ER, 34,271 video views. Reach 35.5x avg — massive viral signal. GO for immediate paid amplification before momentum decays."
+      "notes": "Session 18: APPROVED. VIRAL FB Testimonial. Priority graduation \u2014 execute first."
     },
     {
       "changeset_id": "CS-2026-038",
-      "title": "Can Collab with Ashton? — website",
+      "title": "Can Collab with Ashton? \u2014 website",
       "subtype": "investigation",
       "category": "other",
       "surface": "website",
@@ -1583,7 +1579,7 @@
     },
     {
       "changeset_id": "CS-2026-039",
-      "title": "Unbound Gravel — social_tiktok",
+      "title": "Unbound Gravel \u2014 social_tiktok",
       "subtype": "quick",
       "category": "other",
       "surface": "social_tiktok",
