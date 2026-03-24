@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-23T20:00:00Z",
-  "next_id": 38,
+  "last_updated": "2026-03-24T13:27:02.550Z",
+  "next_id": 39,
   "lifecycle_sweep": {
     "session": "2026-03-22-session-16",
     "sweep_date": "2026-03-22",
@@ -37,7 +37,7 @@
   "summary": {
     "total": 37,
     "by_status": {
-      "draft": 2,
+      "draft": 3,
       "approved": 24,
       "published": 8,
       "rolled_back": 0,
@@ -45,13 +45,13 @@
     },
     "by_risk": {
       "low": 21,
-      "medium": 9,
+      "medium": 10,
       "high": 3,
       "critical": 1
     },
     "by_subtype": {
       "implementation": 15,
-      "investigation": 6,
+      "investigation": 7,
       "quick": 0,
       "email_campaign": 12,
       "graduation": 3
@@ -1541,6 +1541,45 @@
       "routed_via": "pipeline",
       "routed_date": "2026-03-23",
       "notes": "APPROVED 2026-03-23 by Peter (CGO). VIRAL ALERT: FB Testimonial: 75,435 imp, 2.51% ER, 34,271 video views. Reach 35.5x avg — massive viral signal. GO for immediate paid amplification before momentum decays."
+    },
+    {
+      "changeset_id": "CS-2026-038",
+      "title": "Can Collab with Ashton? — website",
+      "subtype": "investigation",
+      "category": "other",
+      "surface": "website",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Nick",
+      "date_created": "2026-03-24",
+      "linked_calendar_activity": null,
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": "revenue should move"
+      },
+      "review_tier": "standard",
+      "hypothesis": "We have a HUGE product/innovation gap between June (TRX shots) and October (tentatively planned for the maple syrup shots). August is typically a SLOW month as people go back to school/summer ends. Can we keep buzz alive by activating around Ashton this month?",
+      "measurement_plan": "sales of the flavor",
+      "rollback_plan": "",
+      "source": "calendar_dashboard",
+      "approved_by": null,
+      "published_date": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "learning_note": null,
+      "spawned_changesets": null,
+      "spawned_from": null
     }
   ],
   "last_sweep": {
