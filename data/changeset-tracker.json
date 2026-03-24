@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-24T13:27:02.550Z",
-  "next_id": 39,
+  "last_updated": "2026-03-24T13:29:44.925Z",
+  "next_id": 40,
   "lifecycle_sweep": {
     "session": "2026-03-22-session-16",
     "sweep_date": "2026-03-22",
@@ -37,14 +37,14 @@
   "summary": {
     "total": 37,
     "by_status": {
-      "draft": 3,
+      "draft": 4,
       "approved": 24,
       "published": 8,
       "rolled_back": 0,
       "closed": 3
     },
     "by_risk": {
-      "low": 21,
+      "low": 22,
       "medium": 10,
       "high": 3,
       "critical": 1
@@ -52,7 +52,7 @@
     "by_subtype": {
       "implementation": 15,
       "investigation": 7,
-      "quick": 0,
+      "quick": 1,
       "email_campaign": 12,
       "graduation": 3
     }
@@ -1570,6 +1570,45 @@
       "review_tier": "standard",
       "hypothesis": "We have a HUGE product/innovation gap between June (TRX shots) and October (tentatively planned for the maple syrup shots). August is typically a SLOW month as people go back to school/summer ends. Can we keep buzz alive by activating around Ashton this month?",
       "measurement_plan": "sales of the flavor",
+      "rollback_plan": "",
+      "source": "calendar_dashboard",
+      "approved_by": null,
+      "published_date": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "learning_note": null,
+      "spawned_changesets": null,
+      "spawned_from": null
+    },
+    {
+      "changeset_id": "CS-2026-039",
+      "title": "Unbound Gravel — social_tiktok",
+      "subtype": "quick",
+      "category": "other",
+      "surface": "social_tiktok",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Brandon",
+      "date_created": "2026-03-24",
+      "linked_calendar_activity": "UNBOUND-05282026",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": "need to track the ROI from this event"
+      },
+      "review_tier": "express",
+      "hypothesis": "We are already committed to this event",
+      "measurement_plan": "onsite sales? impressions from social posts? online lift that weekend?",
       "rollback_plan": "",
       "source": "calendar_dashboard",
       "approved_by": null,
