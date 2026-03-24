@@ -1,1 +1,13 @@
-cat /sessions/exciting-kind-pasteur/tracker_updated.json
+{
+  "schema_version": "2.1",
+  "last_updated": "2026-03-24T17:00:00.000Z",
+  "next_id": 40,
+  "lifecycle_sweep": {
+    "session": "2026-03-24-session-18",
+    "sweep_date": "2026-03-24",
+    "stale_detected": 8,
+    "measurement_overdue": 2,
+    "measurement_approaching": 3,
+    "auto_closed": 0
+  }
+}
