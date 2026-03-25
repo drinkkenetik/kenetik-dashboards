@@ -10,22 +10,65 @@
     "measurement_approaching": 3,
     "auto_closed": 0,
     "flags": [
-      "STALE: CS-2026-001 (13 days, published, measuring through Apr 10 — no action needed)",
-      "STALE: CS-2026-002 (15 days, published, measuring through Apr 8 — no action needed)",
-      "STALE: CS-2026-004 (14 days, published, measuring through Apr 9 — no action needed)",
-      "STALE: CS-2026-009 (8 days, approved, BWR event May 2-3 — low urgency)",
-      "STALE: CS-2026-010 (8 days, approved, Klaviyo audit — coordinate with CS-025)",
-      "STALE: CS-2026-011 (10 days, approved, Apr 1 send — ACTION NEEDED by Mar 30)",
-      "STALE: CS-2026-024 (8+ days, approved, pause/skip — dependent on CS-007)",
-      "CHECKPOINT OVERDUE: CS-2026-025 (Day 8+) — CRITICAL. Undefined revenue 22%. Devon executive decision REQUIRED.",
-      "MEASUREMENT OVERDUE: CS-2026-026 (BAW Content Velocity) — due Mar 23, now 1 day late.",
-      "MEASUREMENT OVERDUE: CS-2026-027 (BAW Tier A Fast-Track) — due Mar 23, now 1 day late.",
-      "MEASUREMENT APPROACHING: CS-2026-003 (SMS Flash Sale) — due Mar 27 (3 days).",
-      "MEASUREMENT APPROACHING: CS-2026-030 (BAW Subscription Push) — due Mar 27 (3 days).",
-      "MEASUREMENT APPROACHING: CS-2026-028 (FB Budget Realloc) — due Apr 1 (8 days). Google ROAS declined to 6.12x.",
+      "STALE: CS-2026-001 (13 days, published, measuring through Apr 10 \u2014 no action needed)",
+      "STALE: CS-2026-002 (15 days, published, measuring through Apr 8 \u2014 no action needed)",
+      "STALE: CS-2026-004 (14 days, published, measuring through Apr 9 \u2014 no action needed)",
+      "STALE: CS-2026-009 (8 days, approved, BWR event May 2-3 \u2014 low urgency)",
+      "STALE: CS-2026-010 (8 days, approved, Klaviyo audit \u2014 coordinate with CS-025)",
+      "STALE: CS-2026-011 (10 days, approved, Apr 1 send \u2014 ACTION NEEDED by Mar 30)",
+      "STALE: CS-2026-024 (8+ days, approved, pause/skip \u2014 dependent on CS-007)",
+      "CHECKPOINT OVERDUE: CS-2026-025 (Day 8+) \u2014 CRITICAL. Undefined revenue 22%. Devon executive decision REQUIRED.",
+      "MEASUREMENT OVERDUE: CS-2026-026 (BAW Content Velocity) \u2014 due Mar 23, now 1 day late.",
+      "MEASUREMENT OVERDUE: CS-2026-027 (BAW Tier A Fast-Track) \u2014 due Mar 23, now 1 day late.",
+      "MEASUREMENT APPROACHING: CS-2026-003 (SMS Flash Sale) \u2014 due Mar 27 (3 days).",
+      "MEASUREMENT APPROACHING: CS-2026-030 (BAW Subscription Push) \u2014 due Mar 27 (3 days).",
+      "MEASUREMENT APPROACHING: CS-2026-028 (FB Budget Realloc) \u2014 due Apr 1 (8 days). Google ROAS declined to 6.12x.",
       "CALENDAR SAFETY NET: No untracked activities detected.",
       "NO NEW CHANGESETS: Existing CS-033/034/035 cover all synthesis gaps. CS-029/036/037 ready for graduation."
     ],
     "new_changeset_generation": "No new ChangeSets generated. CS-029/036/037 ready for graduation. CS-031 approved for flow CTA. CS-033 approved for mobile investigation."
-  }
+  },
+  "summary": {
+    "total": 40,
+    "by_status": {
+      "published": 12,
+      "closed": 3,
+      "approved": 20,
+      "draft": 5
+    },
+    "by_risk": {
+      "critical": 1,
+      "low": 24,
+      "medium": 11,
+      "high": 2,
+      "unknown": 2
+    },
+    "by_subtype": {
+      "implementation": 18,
+      "investigation": 7,
+      "email_campaign": 12,
+      "graduation": 2,
+      "quick": 1
+    }
+  },
+  "changesets": [
+    {
+      "id": "CS-2026-001",
+      "title": "SMS Flash Sale Waitlist Signup Blitz",
+      "subtype": "email_campaign",
+      "surface": "email",
+      "status": "published",
+      "owner": "Katie",
+      "risk": "low",
+      "created": "2026-03-10",
+      "category": "acquisition",
+      "lifecycle_sweep": {
+        "stale_since": 13,
+        "measuring_through": "2026-04-10",
+        "action": "WATCHING"
+      }
+    }
+  ],
+  "queue_actions": [],
+  "last_sweep_date": "2026-03-25"
 }
