@@ -1,58 +1,53 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-30T18:00:00.000Z",
+  "last_updated": "2026-03-30T22:00:00.000Z",
   "next_id": 45,
   "lifecycle_sweep": {
-    "session": "2026-03-27-session-21",
-    "sweep_date": "2026-03-27",
-    "stale_detected": 15,
-    "measurement_overdue": 2,
-    "measurement_due_today": 2,
-    "measurement_approaching": 1,
+    "session": "2026-03-30-session-22",
+    "sweep_date": "2026-03-30",
+    "stale_detected": 2,
+    "measurement_overdue": 0,
+    "measurement_due_today": 0,
+    "measurement_approaching": 0,
     "auto_closed": 0,
     "flags": [
-      "STALE: CS-009 (11d, approved, Katie+Brandon -- BWR event May 2-3, low urgency)",
-      "STALE: CS-010 (11d, approved, Katie+Devon -- Klaviyo audit, coordinate with CS-025)",
-      "STALE: CS-011 through CS-022 (11-13d, approved, all Katie -- April email calendar. CS-011 Apr 1 deadline in 4 DAYS.)",
-      "STALE: CS-024 (11d, approved, Katie -- Subscription pause/skip)",
-      "MEASUREMENT OVERDUE: CS-026 (BAW Content Velocity) -- due Mar 23, now 4 days late. Nick owns.",
-      "MEASUREMENT OVERDUE: CS-027 (BAW Tier A Fast-Track) -- due Mar 23, now 4 days late. Charlotte+Cliff own.",
-      "MEASUREMENT DUE TODAY: CS-003 (SMS Flash Sale) -- due Mar 27. Katie+Nick own.",
-      "MEASUREMENT DUE TODAY: CS-030 (BAW Subscription Push) -- due Mar 27. Katie+Nick own.",
-      "MEASUREMENT APPROACHING: CS-025 (Attribution Sprint) -- due Mar 30 but hard deadline Mar 28. CRITICAL.",
-      "CALENDAR SAFETY NET: 60 untracked activities detected but portfolio at 37/40 capacity with 15 stale. Creating new ChangeSets would worsen bottleneck. Redistribution must happen first.",
-      "NO NEW CHANGESETS: Portfolio at capacity. Katie 70% concentration. Priority is unblocking existing portfolio through redistribution (rec-130).",
+      "STALE: CS-2026-027 (13d, approved, Charlotte+Cliff -- BAW Tier A Fast-Track)",
+      "STALE: CS-2026-029 (13d, approved, Katie+Nick -- Matt Hughes Reel Graduation)",
+      "NOTE: Domain 12 reports 20 active items stale but tracker shows most are in draft status (not approved/executing). Draft items are pre-pipeline and don't trigger stale detection.",
+      "PORTFOLIO: 42 total, 30 draft, 5 published, 2 approved, 4 proposed, 1 closed. Portfolio heavily backlogged with drafts.",
+      "KATIE CONCENTRATION: ~26 of 42 entries owned by Katie (62%). Redistribution recommended per rec-138.",
+      "NO NEW CHANGESETS: Portfolio at 42 entries with 30 drafts. Priority is unblocking existing portfolio through redistribution before adding new work.",
       "AUTONOMOUS MODE: shadow -- classification only, no auto-advance."
     ],
-    "new_changeset_generation": "No new ChangeSets generated. Portfolio at 37/40 capacity with 15 stale 11-16d. Katie bottleneck at 70%. Redistribution required before any new work."
+    "new_changeset_generation": "No new ChangeSets generated. Portfolio at 42 entries with 30 in draft. Katie redistribution (rec-138) must occur before new ChangeSet creation. Existing draft backlog sufficient to drive 4+ weeks of execution."
   },
   "summary": {
     "total": 42,
     "by_status": {
-      "approved": 2,
+      "published": 5,
       "closed_success": 1,
       "draft": 30,
-      "proposed": 4,
-      "published": 5
+      "approved": 2,
+      "proposed": 4
     },
     "by_risk": {
       "critical": 2,
-      "high": 2,
       "low": 24,
-      "medium": 14
+      "medium": 14,
+      "high": 2
     },
     "by_subtype": {
-      "email_campaign": 13,
-      "graduation": 5,
       "implementation": 17,
       "investigation": 6,
+      "email_campaign": 13,
+      "graduation": 5,
       "quick": 1
     }
   },
   "changesets": [
     {
       "id": "CS-2026-001",
-      "title": "Welcome Series Emergency — Influencer Welcome Track",
+      "title": "Welcome Series Emergency \u2014 Influencer Welcome Track",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "published",
@@ -207,7 +202,7 @@
     },
     {
       "id": "CS-2026-004",
-      "title": "Paid Media Attribution — March 7 Exclusion & Superfiliate Investigation",
+      "title": "Paid Media Attribution \u2014 March 7 Exclusion & Superfiliate Investigation",
       "subtype": "investigation",
       "surface": "paid_google",
       "status": "published",
@@ -350,7 +345,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-006.md",
-      "notes": "Published Mar 14. High risk — Devon approved. Blocks CS-2026-024 (pause/skip).",
+      "notes": "Published Mar 14. High risk \u2014 Devon approved. Blocks CS-2026-024 (pause/skip).",
       "risk": "low"
     },
     {
@@ -494,7 +489,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-009.md",
-      "notes": "BWR event May 2-3. Low urgency — execute by mid-April.",
+      "notes": "BWR event May 2-3. Low urgency \u2014 execute by mid-April.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -503,7 +498,7 @@
     },
     {
       "id": "CS-2026-010",
-      "title": "Klaviyo Property Definition Audit — Superfiliate Source Attribution",
+      "title": "Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
       "subtype": "investigation",
       "surface": "klaviyo",
       "status": "draft",
@@ -1055,7 +1050,7 @@
     },
     {
       "id": "CS-2026-022",
-      "title": "MAY IS LOADING — STOCK UP",
+      "title": "MAY IS LOADING \u2014 STOCK UP",
       "subtype": "email_campaign",
       "surface": "klaviyo",
       "status": "draft",
@@ -1360,7 +1355,7 @@
     },
     {
       "id": "CS-2026-028",
-      "title": "FB Prospecting Budget Reallocation — Meta Leadville + Google Pmax",
+      "title": "FB Prospecting Budget Reallocation \u2014 Meta Leadville + Google Pmax",
       "subtype": "implementation",
       "surface": "paid_google",
       "status": "published",
@@ -1409,7 +1404,7 @@
     },
     {
       "id": "CS-2026-029",
-      "title": "Graduation: Matt Hughes Reel → Paid Social Amplification",
+      "title": "Graduation: Matt Hughes Reel \u2192 Paid Social Amplification",
       "subtype": "graduation",
       "surface": "paid_meta",
       "status": "approved",
@@ -1513,7 +1508,7 @@
     },
     {
       "id": "CS-2026-031",
-      "title": "Email Flow CTA Redesign — High-Volume Low-CTR Messages",
+      "title": "Email Flow CTA Redesign \u2014 High-Volume Low-CTR Messages",
       "subtype": "implementation",
       "surface": "klavioy",
       "status": "draft",
