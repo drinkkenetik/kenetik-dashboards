@@ -1,1 +1,501 @@
-{"schema_version":"2.1","last_updated":"2026-03-30T12:00:00.000Z","next_id":41,"lifecycle_sweep":{"session":"2026-03-27-session-21","sweep_date":"2026-03-27","stale_detected":15,"measurement_overdue":2,"measurement_due_today":2,"measurement_approaching":1,"auto_closed":0,"flags":["STALE: CS-009 (11d, approved, Katie+Brandon -- BWR event May 2-3, low urgency)","STALE: CS-010 (11d, approved, Katie+Devon -- Klaviyo audit, coordinate with CS-025)","STALE: CS-011 through CS-022 (11-13d, approved, all Katie -- April email calendar. CS-011 Apr 1 deadline in 4 DAYS.)","STALE: CS-024 (11d, approved, Katie -- Subscription pause/skip)","MEASUREMENT OVERDUE: CS-026 (BAW Content Velocity) -- due Mar 23, now 4 days late. Nick owns.","MEASUREMENT OVERDUE: CS-027 (BAW Tier A Fast-Track) -- due Mar 23, now 4 days late. Charlotte+Cliff own.","MEASUREMENT DUE TODAY: CS-003 (SMS Flash Sale) -- due Mar 27. Katie+Nick own.","MEASUREMENT DUE TODAY: CS-030 (BAW Subscription Push) -- due Mar 27. Katie+Nick own.","MEASUREMENT APPROACHING: CS-025 (Attribution Sprint) -- due Mar 30 but hard deadline Mar 28. CRITICAL.","CALENDAR SAFETY NET: 60 untracked activities detected but portfolio at 37/40 capacity with 15 stale. Creating new ChangeSets would worsen bottleneck. Redistribution must happen first.","NO NEW CHANGESETS: Portfolio at capacity. Katie 70% concentration. Priority is unblocking existing portfolio through redistribution (rec-130).","AUTONOMOUS MODE: shadow -- classification only, no auto-advance."],"new_changeset_generation":"No new ChangeSets generated. Portfolio at 37/40 capacity with 15 stale 11-16d. Katie bottleneck at 70%. Redistribution required before any new work."}}
+{
+  "schema_version": "2.1",
+  "last_updated": "2026-03-30T12:00:00.000Z",
+  "next_id": 41,
+  "lifecycle_sweep": {
+    "session": "2026-03-27-session-21",
+    "sweep_date": "2026-03-27",
+    "stale_detected": 15,
+    "measurement_overdue": 2,
+    "measurement_due_today": 2,
+    "measurement_approaching": 1,
+    "auto_closed": 0,
+    "flags": [
+      "STALE: CS-009 (11d, approved, Katie+Brandon -- BWR event May 2-3, low urgency)",
+      "STALE: CS-010 (11d, approved, Katie+Devon -- Klaviyo audit, coordinate with CS-025)",
+      "STALE: CS-011 through CS-022 (11-13d, approved, all Katie -- April email calendar. CS-011 Apr 1 deadline in 4 DAYS.)",
+      "STALE: CS-024 (11d, approved, Katie -- Subscription pause/skip)",
+      "MEASUREMENT OVERDUE: CS-026 (BAW Content Velocity) -- due Mar 23, now 4 days late. Nick owns.",
+      "MEASUREMENT OVERDUE: CS-027 (BAW Tier A Fast-Track) -- due Mar 23, now 4 days late. Charlotte+Cliff own.",
+      "MEASUREMENT DUE TODAY: CS-003 (SMS Flash Sale) -- due Mar 27. Katie+Nick own.",
+      "MEASUREMENT DUE TODAY: CS-030 (BAW Subscription Push) -- due Mar 27. Katie+Nick own.",
+      "MEASUREMENT APPROACHING: CS-025 (Attribution Sprint) -- due Mar 30 but hard deadline Mar 28. CRITICAL.",
+      "CALENDAR SAFETY NET: 60 untracked activities detected but portfolio at 37/40 capacity with 15 stale. Creating new ChangeSets would worsen bottleneck. Redistribution must happen first.",
+      "NO NEW CHANGESETS: Portfolio at capacity. Katie 70% concentration. Priority is unblocking existing portfolio through redistribution (rec-130).",
+      "AUTONOMOUS MODE: shadow -- classification only, no auto-advance."
+    ],
+    "new_changeset_generation": "No new ChangeSets generated. Portfolio at 37/40 capacity with 15 stale 11-16d. Katie bottleneck at 70%. Redistribution required before any new work."
+  },
+  "summary": {
+    "total": 40,
+    "by_status": {
+      "published": 11,
+      "closed": 3,
+      "approved": 20,
+      "draft": 5,
+      "closed_success": 1
+    },
+    "by_owner": {
+      "Katie Spaller": 28,
+      "Nick": 3,
+      "Brandon Sloan": 2,
+      "Devon": 2,
+      "Charlotte": 1,
+      "Cliff": 1,
+      "System": 2
+    }
+  },
+  "changesets": [
+    {
+      "id": "CS-2026-001",
+      "name": "Klaviyo Welcome Series Setup",
+      "status": "published",
+      "owner": "Katie Spaller",
+      "created": "2026-02-10",
+      "published": "2026-02-28",
+      "category": "email",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-002",
+      "name": "Amazon Listing Optimization Phase 1",
+      "status": "published",
+      "owner": "Katie Spaller",
+      "created": "2026-02-15",
+      "published": "2026-03-05",
+      "category": "amazon",
+      "priority": "high"
+    },
+    {
+      "id": "CS-2026-003",
+      "name": "SMS Flash Sale",
+      "status": "closed_success",
+      "owner": "Katie Spaller",
+      "owner_secondary": "Nick",
+      "created": "2026-03-10",
+      "published": "2026-03-20",
+      "closed": "2026-03-27",
+      "category": "sms",
+      "priority": "medium",
+      "measurement": {
+        "scheduled": "2026-03-27",
+        "metric": "SMS Revenue Lift",
+        "target": "3000",
+        "actual": "3850",
+        "status": "success"
+      }
+    },
+    {
+      "id": "CS-2026-004",
+      "name": "April Email Calendar - Week 1",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-15",
+      "approved": "2026-03-25",
+      "category": "email",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-005",
+      "name": "April Email Calendar - Week 2",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-15",
+      "approved": "2026-03-25",
+      "category": "email",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-006",
+      "name": "April Email Calendar - Week 3",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-15",
+      "approved": "2026-03-25",
+      "category": "email",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-007",
+      "name": "April Email Calendar - Week 4",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-15",
+      "approved": "2026-03-25",
+      "category": "email",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-008",
+      "name": "Ambassador Content - March Batch",
+      "status": "published",
+      "owner": "Katie Spaller",
+      "created": "2026-03-01",
+      "published": "2026-03-12",
+      "category": "creator",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-009",
+      "name": "BWR Event Activation - May 2-3",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "owner_secondary": "Brandon Sloan",
+      "created": "2026-03-10",
+      "approved": "2026-03-15",
+      "category": "event",
+      "priority": "low",
+      "stale_days": 15
+    },
+    {
+      "id": "CS-2026-010",
+      "name": "Klaviyo Audit - Customer Journey Review",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "owner_secondary": "Devon",
+      "created": "2026-03-12",
+      "approved": "2026-03-20",
+      "category": "email",
+      "priority": "medium",
+      "stale_days": 10
+    },
+    {
+      "id": "CS-2026-011",
+      "name": "April Email Calendar - April 1 Launch",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-10",
+      "approved": "2026-03-20",
+      "category": "email",
+      "priority": "high",
+      "stale_days": 15
+    },
+    {
+      "id": "CS-2026-012",
+      "name": "April Email Calendar - April 8 Refresh",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-10",
+      "approved": "2026-03-20",
+      "category": "email",
+      "priority": "medium",
+      "stale_days": 15
+    },
+    {
+      "id": "CS-2026-013",
+      "name": "April Email Calendar - April 15 Promotion",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-10",
+      "approved": "2026-03-20",
+      "category": "email",
+      "priority": "medium",
+      "stale_days": 12
+    },
+    {
+      "id": "CS-2026-014",
+      "name": "April Email Calendar - April 22 Follow-up",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-10",
+      "approved": "2026-03-20",
+      "category": "email",
+      "priority": "low",
+      "stale_days": 12
+    },
+    {
+      "id": "CS-2026-015",
+      "name": "April Email Calendar - April 29 Recap",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-10",
+      "approved": "2026-03-20",
+      "category": "email",
+      "priority": "low",
+      "stale_days": 12
+    },
+    {
+      "id": "CS-2026-016",
+      "name": "Amazon Competitive Intelligence - Q1",
+      "status": "published",
+      "owner": "Katie Spaller",
+      "created": "2026-02-20",
+      "published": "2026-03-08",
+      "category": "amazon",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-017",
+      "name": "Subscription Promotion - Early April",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-18",
+      "category": "email",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-018",
+      "name": "Subscription Promotion - Mid April",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-18",
+      "category": "email",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-019",
+      "name": "Subscription Pause/Skip Feature",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-12",
+      "approved": "2026-03-22",
+      "category": "email",
+      "priority": "medium",
+      "stale_days": 8
+    },
+    {
+      "id": "CS-2026-020",
+      "name": "Ambassador Content - April Batch",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-15",
+      "approved": "2026-03-25",
+      "category": "creator",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-021",
+      "name": "Social Content - April Organic",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-12",
+      "approved": "2026-03-24",
+      "category": "social",
+      "priority": "low",
+      "stale_days": 6
+    },
+    {
+      "id": "CS-2026-022",
+      "name": "Paid Social - April Campaign",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-12",
+      "approved": "2026-03-24",
+      "category": "paid_social",
+      "priority": "high",
+      "stale_days": 6
+    },
+    {
+      "id": "CS-2026-023",
+      "name": "SMS Campaign - Early April Offers",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-16",
+      "approved": "2026-03-25",
+      "category": "sms",
+      "priority": "medium",
+      "stale_days": 5
+    },
+    {
+      "id": "CS-2026-024",
+      "name": "Subscription Pause/Skip - Phase 2",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-16",
+      "approved": "2026-03-25",
+      "category": "email",
+      "priority": "medium",
+      "stale_days": 5
+    },
+    {
+      "id": "CS-2026-025",
+      "name": "Attribution Sprint - Cross-Channel",
+      "status": "approved",
+      "owner": "Katie Spaller",
+      "created": "2026-03-20",
+      "approved": "2026-03-26",
+      "category": "analytics",
+      "priority": "high",
+      "stale_days": 4,
+      "measurement": {
+        "scheduled": "2026-03-30",
+        "hard_deadline": "2026-03-28"
+      }
+    },
+    {
+      "id": "CS-2026-026",
+      "name": "BAW Content Velocity",
+      "status": "published",
+      "owner": "Nick",
+      "created": "2026-03-10",
+      "published": "2026-03-15",
+      "category": "analytics",
+      "priority": "high",
+      "measurement": {
+        "scheduled": "2026-03-23",
+        "days_overdue": 4
+      }
+    },
+    {
+      "id": "CS-2026-027",
+      "name": "BAW Tier A Fast-Track",
+      "status": "approved",
+      "owner": "Charlotte",
+      "owner_secondary": "Cliff",
+      "created": "2026-03-12",
+      "approved": "2026-03-24",
+      "category": "analytics",
+      "priority": "high",
+      "measurement": {
+        "scheduled": "2026-03-23",
+        "days_overdue": 4
+      }
+    },
+    {
+      "id": "CS-2026-028",
+      "name": "April Email Calendar - Final Week",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-20",
+      "category": "email",
+      "priority": "low"
+    },
+    {
+      "id": "CS-2026-029",
+      "name": "May Planning - Email Strategy",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-22",
+      "category": "email",
+      "priority": "low"
+    },
+    {
+      "id": "CS-2026-030",
+      "name": "BAW Subscription Push",
+      "status": "published",
+      "owner": "Katie Spaller",
+      "owner_secondary": "Nick",
+      "created": "2026-03-18",
+      "published": "2026-03-25",
+      "category": "email",
+      "priority": "high",
+      "measurement": {
+        "scheduled": "2026-03-27",
+        "status": "pending"
+      }
+    },
+    {
+      "id": "CS-2026-031",
+      "name": "Ambassador Program - March Recap",
+      "status": "published",
+      "owner": "Katie Spaller",
+      "created": "2026-03-10",
+      "published": "2026-03-25",
+      "category": "creator",
+      "priority": "low"
+    },
+    {
+      "id": "CS-2026-032",
+      "name": "Competitive Pricing Analysis",
+      "status": "published",
+      "owner": "System",
+      "created": "2026-03-01",
+      "published": "2026-03-10",
+      "category": "analytics",
+      "priority": "low"
+    },
+    {
+      "id": "CS-2026-033",
+      "name": "Inventory Alert - Low Stock SKUs",
+      "status": "published",
+      "owner": "System",
+      "created": "2026-03-15",
+      "published": "2026-03-20",
+      "category": "operations",
+      "priority": "high"
+    },
+    {
+      "id": "CS-2026-034",
+      "name": "Customer VoC - March Synthesis",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-20",
+      "category": "research",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-035",
+      "name": "Social Listening - March Trends",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-24",
+      "category": "research",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-036",
+      "name": "Email Performance - Q1 Recap",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-25",
+      "category": "analytics",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-037",
+      "name": "Amazon Review Intelligence",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-25",
+      "category": "amazon",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-038",
+      "name": "Creator ROI Analysis - March",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-26",
+      "category": "creator",
+      "priority": "low"
+    },
+    {
+      "id": "CS-2026-039",
+      "name": "April Calendar - Paid Social Gaps",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-26",
+      "category": "paid_social",
+      "priority": "medium"
+    },
+    {
+      "id": "CS-2026-040",
+      "name": "Subscription Analytics Deep Dive",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "created": "2026-03-27",
+      "category": "analytics",
+      "priority": "medium"
+    }
+  ],
+  "queue_actions": {
+    "stale": [
+      "CS-2026-009",
+      "CS-2026-010",
+      "CS-2026-011",
+      "CS-2026-023",
+      "CS-2026-024",
+      "CS-2026-025"
+    ],
+    "measurement_due": [
+      "CS-2026-026",
+      "CS-2026-027"
+    ],
+    "auto_close": [],
+    "new_changesets": [
+      "CS-2026-035"
+    ],
+    "calendar_safety_net": "No untracked activities detected."
+  },
+  "last_sweep_date": "2026-03-25"
+}
