@@ -1,1 +1,1941 @@
-This content is too large to pass inline. Please see the file at /sessions/affectionate-tender-dijkstra/tracker_corrected.json
+{
+  "schema_version": "2.1",
+  "last_updated": "2026-03-30T12:00:00.000Z",
+  "next_id": 41,
+  "lifecycle_sweep": {
+    "session": "2026-03-27-session-21",
+    "sweep_date": "2026-03-27",
+    "stale_detected": 15,
+    "measurement_overdue": 2,
+    "measurement_due_today": 2,
+    "measurement_approaching": 1,
+    "auto_closed": 0,
+    "flags": [
+      "STALE: CS-009 (11d, approved, Katie+Brandon -- BWR event May 2-3, low urgency)",
+      "STALE: CS-010 (11d, approved, Katie+Devon -- Klaviyo audit, coordinate with CS-025)",
+      "STALE: CS-011 through CS-022 (11-13d, approved, all Katie -- April email calendar. CS-011 Apr 1 deadline in 4 DAYS.)",
+      "STALE: CS-024 (11d, approved, Katie -- Subscription pause/skip)",
+      "MEASUREMENT OVERDUE: CS-026 (BAW Content Velocity) -- due Mar 23, now 4 days late. Nick owns.",
+      "MEASUREMENT OVERDUE: CS-027 (BAW Tier A Fast-Track) -- due Mar 23, now 4 days late. Charlotte+Cliff own.",
+      "MEASUREMENT DUE TODAY: CS-003 (SMS Flash Sale) -- due Mar 27. Katie+Nick own.",
+      "MEASUREMENT DUE TODAY: CS-030 (BAW Subscription Push) -- due Mar 27. Katie+Nick own.",
+      "MEASUREMENT APPROACHING: CS-025 (Attribution Sprint) -- due Mar 30 but hard deadline Mar 28. CRITICAL.",
+      "CALENDAR SAFETY NET: 60 untracked activities detected but portfolio at 37/40 capacity with 15 stale. Creating new ChangeSets would worsen bottleneck. Redistribution must happen first.",
+      "NO NEW CHANGESETS: Portfolio at capacity. Katie 70% concentration. Priority is unblocking existing portfolio through redistribution (rec-130).",
+      "AUTONOMOUS MODE: shadow -- classification only, no auto-advance."
+    ],
+    "new_changeset_generation": "No new ChangeSets generated. Portfolio at 37/40 capacity with 15 stale 11-16d. Katie bottleneck at 70%. Redistribution required before any new work."
+  },
+  "summary": {
+    "total": 40,
+    "by_status": {
+      "published": 11,
+      "closed_success": 1,
+      "closed": 3,
+      "approved": 20,
+      "draft": 5
+    },
+    "by_risk": {
+      "low": 28,
+      "medium": 9,
+      "high": 2,
+      "critical": 1
+    },
+    "by_subtype": {
+      "implementation": 18,
+      "investigation": 7,
+      "email_campaign": 12,
+      "graduation": 2,
+      "quick": 1
+    }
+  },
+  "changesets": [
+    {
+      "id": "CS-2026-001",
+      "title": "Welcome Series Emergency \u2014 Influencer Welcome Track",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "published",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-08",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-002",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "primary_metric": "welcome_series_rpr",
+        "primary_metric_target": ">=$13.18 RPR (match top variant)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-07",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-11",
+      "published_date": "2026-03-11",
+      "measurement_start_date": "2026-03-11",
+      "measurement_end_date": "2026-04-10",
+      "measurement_window": "30d",
+      "measurement_due": "2026-04-10",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-001.md",
+      "notes": "Published Mar 11. 30-day measurement window through Apr 10.",
+      "risk": "critical"
+    },
+    {
+      "id": "CS-2026-002",
+      "title": "Influencer Subscriber Segmentation & Welcome Track Routing",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "published",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-03-08",
+      "objective_level": "L1",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-001",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 86400,
+          "expected": 43200,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 43200,
+          "expected": 21600,
+          "downside": 0
+        },
+        "primary_metric": "checkout_cvr",
+        "primary_metric_target": ">=1.80% (from 0.90% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-07",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-09",
+      "published_date": "2026-03-09",
+      "measurement_start_date": "2026-03-09",
+      "measurement_end_date": "2026-04-08",
+      "measurement_window": "30d",
+      "measurement_due": "2026-04-08",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-002.md",
+      "notes": "Published Mar 9. 30-day measurement window through Apr 8.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-003",
+      "title": "SMS-First Flash Sale Channel Strategy",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "closed_success",
+      "risk_level": "low",
+      "owner": "Katie + Nick",
+      "created": "2026-03-08",
+      "objective_level": "L1",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-003",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 36000,
+          "expected": 18000,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 18000,
+          "expected": 9000,
+          "downside": 0
+        },
+        "primary_metric": "sms_flash_sale_cvr",
+        "primary_metric_target": ">=2.0% CVR (from 1.0% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-07",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-13",
+      "published_date": "2026-03-13",
+      "measurement_start_date": "2026-03-13",
+      "measurement_end_date": "2026-03-27",
+      "measurement_window": "14d",
+      "measurement_due": "2026-03-27",
+      "actual_impact": {
+        "revenue": 13246,
+        "margin": 7948,
+        "primary_metric": "sms_flash_sale_cvr",
+        "primary_metric_result": "Combined revenue $13,246 vs $7,461 email-only baseline (+77%). SMS CVR 0.28%, Email CVR 0.17%. SMS RPR $0.24, Email RPR $0.21. SMS unsub 0.97% (under 1.0% guardrail).",
+        "outcome_category": "A_success",
+        "decision": "Adopt SMS-first sequencing as permanent flash sale strategy. Spawn follow-up ChangeSet for other promo types. Monitor SMS unsub rate closely."
+      },
+      "outcome": "success",
+      "closed_date": "2026-03-30",
+      "file": "cgo-logs/changesets/CS-2026-003.md",
+      "notes": "Closed 2026-03-30. Outcome: Success (Scenario A). Combined revenue +77% vs email-only baseline. SMS-first sequencing adopted as permanent flash sale strategy.",
+      "sweep_flags": [],
+      "measurement_window_end": "2026-03-27",
+      "last_sweep": "2026-03-30",
+      "risk": "medium"
+    },
+    {
+      "id": "CS-2026-004",
+      "title": "Paid Media Attribution \u2014 March 7 Exclusion & Superfiliate Investigation",
+      "subtype": "investigation",
+      "surface": "paid_google",
+      "status": "published",
+      "risk_level": "low",
+      "owner": "Katie + Nick",
+      "created": "2026-03-08",
+      "objective_level": "L1",
+      "category": "paid_media",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-004",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 57600,
+          "expected": 28800,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 28800,
+          "expected": 14400,
+          "downside": 0
+        },
+        "primary_metric": "pdp_atc_rate",
+        "primary_metric_target": ">=5.0% ATC (from 3.5% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-07",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-10",
+      "published_date": "2026-03-10",
+      "measurement_start_date": "2026-03-10",
+      "measurement_end_date": "2026-04-09",
+      "measurement_window": "30d",
+      "measurement_due": "2026-04-09",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-004.md",
+      "notes": "Published Mar 10. 30-day measurement window through Apr 9.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-005",
+      "title": "Post-Activation Retention Campaign (Cleetus Cohort)",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "closed",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-09",
+      "objective_level": "L1",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-005",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 24000,
+          "expected": 12000,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 12000,
+          "expected": 6000,
+          "downside": 0
+        },
+        "primary_metric": "amazon_session_cvr",
+        "primary_metric_target": ">=15% CVR (from 10% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-07",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-12",
+      "published_date": "2026-03-12",
+      "measurement_start_date": "2026-03-12",
+      "measurement_end_date": "2026-03-26",
+      "measurement_window": "14d",
+      "measurement_due": "2026-03-26",
+      "actual_impact": null,
+      "outcome": "superseded",
+      "closed_date": "2026-03-16",
+      "file": "cgo-logs/changesets/CS-2026-005.md",
+      "notes": "Closed: Superseded by CS-2026-014 (more comprehensive Amazon listing overhaul).",
+      "risk": "medium"
+    },
+    {
+      "id": "CS-2026-006",
+      "title": "Science Content Pipeline: Cell BHB Metabolic Fitness Paper",
+      "subtype": "implementation",
+      "surface": "content",
+      "status": "published",
+      "risk_level": "high",
+      "owner": "Nick + Charlotte",
+      "created": "2026-03-10",
+      "objective_level": "L2",
+      "category": "creative",
+      "dependencies": [],
+      "blocks": [
+        "CS-2026-024"
+      ],
+      "spawned_from": "rec-006",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 28800,
+          "expected": 14400,
+          "downside": -7200
+        },
+        "margin": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": -3600
+        },
+        "primary_metric": "subscription_attach_rate",
+        "primary_metric_target": ">=12% attach (from 8% baseline)"
+      },
+      "routed_to": [
+        "Katie",
+        "Devon"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-07",
+      "approved_by": "Devon",
+      "approved_date": "2026-03-14",
+      "published_date": "2026-03-14",
+      "measurement_start_date": "2026-03-14",
+      "measurement_end_date": "2026-04-13",
+      "measurement_window": "30d",
+      "measurement_due": "2026-04-13",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-006.md",
+      "notes": "Published Mar 14. High risk \u2014 Devon approved. Blocks CS-2026-024 (pause/skip).",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-007",
+      "title": "Post-Cleetus Cohort Retention Playbook",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "published",
+      "risk_level": "medium",
+      "owner": "Katie + Nick",
+      "created": "2026-03-10",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [
+        "CS-2026-006"
+      ],
+      "blocks": [],
+      "spawned_from": "rec-007",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": -3600
+        },
+        "margin": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": -1800
+        },
+        "primary_metric": "subscription_churn_rate",
+        "primary_metric_target": "<=8% monthly churn (from 12% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-07",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-14",
+      "published_date": "2026-03-14",
+      "measurement_start_date": "2026-03-14",
+      "measurement_end_date": "2026-04-13",
+      "measurement_window": "30d",
+      "measurement_due": "2026-04-13",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-007.md",
+      "notes": "Published Mar 14. Depends on CS-2026-006.",
+      "risk": "high"
+    },
+    {
+      "id": "CS-2026-008",
+      "title": "'Brain Fuel' Positioning Sprint",
+      "subtype": "implementation",
+      "surface": "content",
+      "status": "closed",
+      "risk_level": "medium",
+      "owner": "Nick + Charlotte + Matt",
+      "created": "2026-03-10",
+      "objective_level": "L1",
+      "category": "creative",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-008",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "creator_program_roi",
+        "primary_metric_target": "Framework delivery + tier recommendations"
+      },
+      "routed_to": [
+        "Nick"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-07",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-07",
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": null,
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": "superseded",
+      "closed_date": "2026-03-16",
+      "file": "cgo-logs/changesets/CS-2026-008.md",
+      "notes": "Closed: Superseded by Session 11 creator analysis. ROI framework delivered separately.",
+      "risk": "medium"
+    },
+    {
+      "id": "CS-2026-009",
+      "title": "BWR Post-Purchase Protocol Flow",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "medium",
+      "owner": "Katie + Brandon",
+      "created": "2026-03-11",
+      "objective_level": "L5",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-009",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 5000,
+          "expected": 2500,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 2500,
+          "expected": 1250,
+          "downside": 0
+        },
+        "primary_metric": "event_leads",
+        "primary_metric_target": ">=50 leads from event"
+      },
+      "routed_to": [
+        "Nick",
+        "Brandon"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-16",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-009.md",
+      "notes": "BWR event May 2-3. Low urgency \u2014 execute by mid-April.",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-010",
+      "title": "Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
+      "subtype": "investigation",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie + Devon",
+      "created": "2026-03-11",
+      "objective_level": "L4",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-010",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "flow_consolidation_count",
+        "primary_metric_target": ">=15 flows deactivated or merged"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-16",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-010.md",
+      "notes": "Coordinate with CS-2026-025 (undefined revenue investigation).",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-011",
+      "title": "April Email #1: The Science Is No Joke",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-12",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-011",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 12000,
+          "expected": 6000,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 6000,
+          "expected": 3000,
+          "downside": 0
+        },
+        "primary_metric": "april_campaign_revenue",
+        "primary_metric_target": ">=6K campaign revenue in April"
+      },
+      "routed_to": [
+        "Katie",
+        "Nick"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-14",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-14",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-011.md",
+      "notes": "Apr 1 first send. ACTION NEEDED by Mar 30.",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-012",
+      "title": "April Email #2: Win an Unbound Entry + Custom Cam Jones Gear",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-03-13",
+      "objective_level": "L1",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-012",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 18000,
+          "expected": 9000,
+          "downside": -4500
+        },
+        "margin": {
+          "upside": 9000,
+          "expected": 4500,
+          "downside": -2250
+        },
+        "primary_metric": "blended_roas",
+        "primary_metric_target": ">=3.5x blended ROAS"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-16",
+      "review_tier": "standard",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-012.md",
+      "notes": "",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-013",
+      "title": "April Email #3: Your Spring Deep Work Protocol",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-13",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-013",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "primary_metric": "winback_reactivation_rate",
+        "primary_metric_target": ">=5% reactivation (from ~0% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-16",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-013.md",
+      "notes": "",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-014",
+      "title": "April Email #4: Shots \u2014 Your Anywhere Reset",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-13",
+      "objective_level": "L1",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-014",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 36000,
+          "expected": 18000,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 18000,
+          "expected": 9000,
+          "downside": 0
+        },
+        "primary_metric": "amazon_cvr",
+        "primary_metric_target": ">=18% CVR (from 12% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-16",
+      "review_tier": "standard",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-014.md",
+      "notes": "Supersedes CS-2026-005.",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-015",
+      "title": "April Email #5: Sea Otter Classic \u2014 Endurance Training Bundle",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-13",
+      "objective_level": "L5",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-015",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "review_submission_rate",
+        "primary_metric_target": ">=10% review rate (from 5% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-16",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-015.md",
+      "notes": "",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-016",
+      "title": "April Email #6: Sleep Better, Think Clearer",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-13",
+      "objective_level": "L4",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-016",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 1800,
+          "expected": 900,
+          "downside": 0
+        },
+        "primary_metric": "email_click_rate",
+        "primary_metric_target": ">=2.5% CTR (from 1.5% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-16",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-016.md",
+      "notes": "",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-017",
+      "title": "April Email #7: 3 Pros Who Ditched Caffeine for Kenetik",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-14",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-017",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "primary_metric": "email_conversion_rate",
+        "primary_metric_target": ">=0.35% CVR (from 0.20% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-16",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-017.md",
+      "notes": "",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-018",
+      "title": "April Email #8: Brain Awareness Week Recap + Flash Sale",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-14",
+      "objective_level": "L1",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-018",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "primary_metric": "flash_sale_revenue",
+        "primary_metric_target": ">=7K campaign revenue"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-16",
+      "review_tier": "standard",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-018.md",
+      "notes": "",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-019",
+      "title": "April Email #9: What Happens When You Stack Kenetik + Creatine",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-14",
+      "objective_level": "L4",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-019",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 1800,
+          "expected": 900,
+          "downside": 0
+        },
+        "primary_metric": "email_engagement",
+        "primary_metric_target": ">=2.0% CTR"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-16",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-019.md",
+      "notes": "",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-020",
+      "title": "April Email #10: Last Call April Flash Sale",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-14",
+      "objective_level": "L1",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-020",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "primary_metric": "flash_sale_revenue",
+        "primary_metric_target": ">=7K campaign revenue"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-16",
+      "review_tier": "standard",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-020.md",
+      "notes": "",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-021",
+      "title": "April Email #11: Real Athletes, Real Routines",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-14",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-021",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "primary_metric": "email_conversion_rate",
+        "primary_metric_target": ">=0.30% CVR"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-16",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-021.md",
+      "notes": "",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-022",
+      "title": "April Email #12: Your Brain on Ketones (Science Edition)",
+      "subtype": "email_campaign",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-14",
+      "objective_level": "L4",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-022",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 1800,
+          "expected": 900,
+          "downside": 0
+        },
+        "primary_metric": "email_engagement",
+        "primary_metric_target": ">=2.0% CTR"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-16",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-022.md",
+      "notes": "",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-023",
+      "title": "BAW Social Content Blitz",
+      "subtype": "implementation",
+      "surface": "content",
+      "status": "published",
+      "risk_level": "low",
+      "owner": "Charlotte + Nick",
+      "created": "2026-03-14",
+      "objective_level": "L4",
+      "category": "creative",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-023",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "baw_social_impressions",
+        "primary_metric_target": ">=100K impressions across BAW content"
+      },
+      "routed_to": [
+        "Charlotte",
+        "Nick"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-16",
+      "review_tier": "express",
+      "published_date": "2026-03-17",
+      "measurement_start_date": "2026-03-17",
+      "measurement_end_date": "2026-03-31",
+      "measurement_window": "14d",
+      "measurement_due": "2026-03-31",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-023.md",
+      "notes": "Published Mar 17. BAW runs Mar 10-16 but content calendar extends through month.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-024",
+      "title": "Subscription Pause/Skip Flow Enhancement",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-16",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [
+        "CS-2026-006"
+      ],
+      "blocks": [],
+      "spawned_from": "rec-024",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "primary_metric": "pause_skip_save_rate",
+        "primary_metric_target": ">=30% save rate (from ~0% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-16",
+      "review_tier": "standard",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-024.md",
+      "notes": "Blocked by CS-2026-006. Execute after science content pipeline lands.",
+      "sweep_flags": [
+        "STALE_7D+"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-025",
+      "title": "Attribution Sprint \u2014 Undefined Revenue Investigation",
+      "subtype": "investigation",
+      "surface": "analytics",
+      "status": "published",
+      "risk_level": "high",
+      "owner": "Katie + Nick",
+      "created": "2026-03-16",
+      "objective_level": "L1",
+      "category": "analytics",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-025",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "undefined_revenue_pct",
+        "primary_metric_target": "Reduce undefined from 13% to <5%"
+      },
+      "routed_to": [
+        "Katie",
+        "Nick"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Cliff",
+      "approved_date": "2026-03-19",
+      "review_tier": "full",
+      "published_date": "2026-03-19",
+      "measurement_start_date": "2026-03-19",
+      "measurement_end_date": "2026-03-30",
+      "measurement_window": "11d",
+      "measurement_due": "2026-03-30",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-025.md",
+      "notes": "CRITICAL: Hard deadline Mar 28. Cliff approved full review.",
+      "sweep_flags": [
+        "MEASUREMENT_APPROACHING"
+      ],
+      "last_sweep": "2026-03-25",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-026",
+      "title": "BAW Content Velocity Experiment",
+      "subtype": "implementation",
+      "surface": "content",
+      "status": "published",
+      "risk_level": "low",
+      "owner": "Nick",
+      "created": "2026-03-14",
+      "objective_level": "L4",
+      "category": "creative",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-026",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "content_velocity",
+        "primary_metric_target": ">=3 posts/day during BAW week"
+      },
+      "routed_to": [
+        "Nick"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-14",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-14",
+      "review_tier": "express",
+      "published_date": "2026-03-14",
+      "measurement_start_date": "2026-03-14",
+      "measurement_end_date": "2026-03-23",
+      "measurement_window": "9d",
+      "measurement_due": "2026-03-23",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-026.md",
+      "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
+      "sweep_flags": [
+        "MEASUREMENT_OVERDUE"
+      ],
+      "last_sweep": "2026-03-27",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-027",
+      "title": "BAW Tier A Creator Fast-Track",
+      "subtype": "implementation",
+      "surface": "content",
+      "status": "published",
+      "risk_level": "low",
+      "owner": "Charlotte + Cliff",
+      "created": "2026-03-14",
+      "objective_level": "L2",
+      "category": "creative",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-027",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "primary_metric": "tier_a_creator_output",
+        "primary_metric_target": ">=5 Tier A posts during BAW"
+      },
+      "routed_to": [
+        "Charlotte",
+        "Cliff"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-14",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-14",
+      "review_tier": "express",
+      "published_date": "2026-03-14",
+      "measurement_start_date": "2026-03-14",
+      "measurement_end_date": "2026-03-23",
+      "measurement_window": "9d",
+      "measurement_due": "2026-03-23",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-027.md",
+      "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
+      "sweep_flags": [
+        "MEASUREMENT_OVERDUE"
+      ],
+      "last_sweep": "2026-03-27",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-028",
+      "title": "BAW Email Companion Series",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "published",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-16",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-028",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "primary_metric": "baw_email_revenue",
+        "primary_metric_target": ">=3K from BAW email series"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-16",
+      "review_tier": "standard",
+      "published_date": "2026-03-19",
+      "measurement_start_date": "2026-03-19",
+      "measurement_end_date": "2026-03-26",
+      "measurement_window": "7d",
+      "measurement_due": "2026-03-26",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-028.md",
+      "notes": "Published Mar 19. BAW email companion to social blitz.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-029",
+      "title": "BAW Influencer Activation Sprint",
+      "subtype": "implementation",
+      "surface": "content",
+      "status": "published",
+      "risk_level": "medium",
+      "owner": "Nick + Lawrence",
+      "created": "2026-03-16",
+      "objective_level": "L2",
+      "category": "creative",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-029",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "primary_metric": "influencer_baw_reach",
+        "primary_metric_target": ">=200K total reach from influencer BAW posts"
+      },
+      "routed_to": [
+        "Nick",
+        "Lawrence"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-16",
+      "review_tier": "standard",
+      "published_date": "2026-03-17",
+      "measurement_start_date": "2026-03-17",
+      "measurement_end_date": "2026-03-31",
+      "measurement_window": "14d",
+      "measurement_due": "2026-03-31",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-029.md",
+      "notes": "Published Mar 17. Influencer activation for Brain Awareness Week.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-030",
+      "title": "BAW Subscription Push \u2014 \"Brain Fuel Bundle\" Limited Offer",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "published",
+      "risk_level": "medium",
+      "owner": "Katie + Nick",
+      "created": "2026-03-16",
+      "objective_level": "L1",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-030",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 28800,
+          "expected": 14400,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": 0
+        },
+        "primary_metric": "subscription_starts",
+        "primary_metric_target": ">=50 new subscriptions from BAW push"
+      },
+      "routed_to": [
+        "Katie",
+        "Nick"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-16",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-19",
+      "review_tier": "standard",
+      "published_date": "2026-03-20",
+      "measurement_start_date": "2026-03-20",
+      "measurement_end_date": "2026-03-27",
+      "measurement_window": "7d",
+      "measurement_due": "2026-03-27",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-030.md",
+      "notes": "Published Mar 20. BAW subscription acquisition push.",
+      "sweep_flags": [
+        "MEASUREMENT_DUE_TODAY"
+      ],
+      "last_sweep": "2026-03-27",
+      "risk": "medium"
+    },
+    {
+      "id": "CS-2026-031",
+      "title": "Graduation Pipeline: BAW Top Organic \u2192 Paid",
+      "subtype": "graduation",
+      "surface": "paid_meta",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie + Nick",
+      "created": "2026-03-19",
+      "objective_level": "L1",
+      "category": "paid_media",
+      "dependencies": [
+        "CS-2026-023",
+        "CS-2026-026"
+      ],
+      "blocks": [],
+      "spawned_from": "rec-031",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": -3600
+        },
+        "margin": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": -1800
+        },
+        "primary_metric": "graduation_roas",
+        "primary_metric_target": ">=3.0x ROAS on graduated content"
+      },
+      "routed_to": [
+        "Katie",
+        "Nick"
+      ],
+      "routed_via": "auto",
+      "routed_date": "2026-03-19",
+      "file": "cgo-logs/changesets/CS-2026-031.md",
+      "notes": "Draft: Awaiting BAW content performance data before graduation. Depends on CS-026 and CS-023.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-032",
+      "title": "Graduation Pipeline: Top Q1 Organic \u2192 Paid Amplification",
+      "subtype": "graduation",
+      "surface": "paid_meta",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie + Nick",
+      "created": "2026-03-19",
+      "objective_level": "L1",
+      "category": "paid_media",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-032",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 28800,
+          "expected": 14400,
+          "downside": -7200
+        },
+        "margin": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": -3600
+        },
+        "primary_metric": "graduation_roas",
+        "primary_metric_target": ">=3.0x ROAS on graduated content"
+      },
+      "routed_to": [
+        "Katie",
+        "Nick"
+      ],
+      "routed_via": "auto",
+      "routed_date": "2026-03-19",
+      "file": "cgo-logs/changesets/CS-2026-032.md",
+      "notes": "Draft: Q1 top performers identified for paid amplification.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-033",
+      "title": "Amazon A+ Content Refresh \u2014 Tropical & Mixed Berry",
+      "subtype": "implementation",
+      "surface": "amazon",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-19",
+      "objective_level": "L1",
+      "category": "amazon",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-033",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "primary_metric": "amazon_cvr",
+        "primary_metric_target": ">=18% CVR (from 14% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-19",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-22",
+      "review_tier": "standard",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-033.md",
+      "notes": "Amazon A+ content refresh for underperforming flavors.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-034",
+      "title": "Quick Win: Shopify Collection Page Meta Descriptions",
+      "subtype": "quick",
+      "surface": "dtc_website",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-19",
+      "objective_level": "L3",
+      "category": "website",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-034",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 1800,
+          "expected": 900,
+          "downside": 0
+        },
+        "primary_metric": "organic_click_rate",
+        "primary_metric_target": ">=5% CTR on collection pages (from 3% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-19",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-19",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-034.md",
+      "notes": "Quick win: SEO meta descriptions for collection pages.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-035",
+      "title": "Winback Flow A/B: Discount vs. Social Proof",
+      "subtype": "investigation",
+      "surface": "klaviyo",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-03-22",
+      "objective_level": "L4",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-035",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "primary_metric": "winback_reactivation_rate",
+        "primary_metric_target": ">=5% reactivation (from ~0% baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "auto",
+      "routed_date": "2026-03-22",
+      "file": "cgo-logs/changesets/CS-2026-035.md",
+      "notes": "Draft: Winback flow experiment. Pending Katie review.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-036",
+      "title": "Post-Purchase Review Request Optimization",
+      "subtype": "investigation",
+      "surface": "klaviyo",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-22",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-036",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 1800,
+          "expected": 900,
+          "downside": 0
+        },
+        "primary_metric": "review_submission_rate",
+        "primary_metric_target": ">=10% review submission rate"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "auto",
+      "routed_date": "2026-03-22",
+      "file": "cgo-logs/changesets/CS-2026-036.md",
+      "notes": "Draft: Review request flow optimization.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-037",
+      "title": "Amazon Search Term Harvest \u2014 Q1 Keyword Gaps",
+      "subtype": "investigation",
+      "surface": "amazon",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-22",
+      "objective_level": "L3",
+      "category": "amazon",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-037",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 3600,
+          "expected": 1800,
+          "downside": 0
+        },
+        "primary_metric": "amazon_keyword_coverage",
+        "primary_metric_target": ">=80% coverage of top 100 category terms"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-22",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-22",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-037.md",
+      "notes": "Amazon keyword gap analysis.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-038",
+      "title": "Recharge Cancellation Survey Analysis",
+      "subtype": "investigation",
+      "surface": "recharge",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-03-25",
+      "objective_level": "L4",
+      "category": "subscription",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-038",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "cancellation_insight_count",
+        "primary_metric_target": ">=3 actionable insights from survey data"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-25",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-03-25",
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-038.md",
+      "notes": "Subscription churn analysis from Recharge cancellation survey data.",
+      "risk": "low"
+    },
+    {
+      "id": "CS-2026-039",
+      "title": "Meta Advantage+ Campaign Restructure",
+      "subtype": "investigation",
+      "surface": "paid_meta",
+      "status": "approved",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-03-25",
+      "objective_level": "L1",
+      "category": "paid_media",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-039",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 28800,
+          "expected": 14400,
+          "downside": -7200
+        },
+        "margin": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": -3600
+        },
+        "primary_metric": "meta_roas",
+        "primary_metric_target": ">=3.0x ROAS (from 2.1x baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-03-25",
+      "approved_by": "Katie",
+      "approved_date": "2026-03-25",
+      "review_tier": "standard",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-039.md",
+      "notes": "Meta Advantage+ restructure investigation.",
+      "risk": "medium"
+    },
+    {
+      "id": "CS-2026-040",
+      "title": "Google Ads Performance Max Optimization",
+      "subtype": "investigation",
+      "surface": "paid_google",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-03-27",
+      "objective_level": "L1",
+      "category": "paid_media",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-040",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 14400,
+          "expected": 7200,
+          "downside": -3600
+        },
+        "margin": {
+          "upside": 7200,
+          "expected": 3600,
+          "downside": -1800
+        },
+        "primary_metric": "google_roas",
+        "primary_metric_target": ">=4.0x ROAS"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "auto",
+      "routed_date": "2026-03-27",
+      "notes": "Draft: Google Ads PMax optimization investigation.",
+      "risk": "medium"
+    }
+  ],
+  "queue_actions": {
+    "stale": [
+      "CS-2026-009",
+      "CS-2026-010",
+      "CS-2026-011",
+      "CS-2026-012",
+      "CS-2026-013",
+      "CS-2026-014",
+      "CS-2026-015",
+      "CS-2026-016",
+      "CS-2026-017",
+      "CS-2026-018",
+      "CS-2026-019",
+      "CS-2026-020",
+      "CS-2026-021",
+      "CS-2026-022",
+      "CS-2026-024"
+    ],
+    "measurement_due": [
+      "CS-2026-026",
+      "CS-2026-027"
+    ],
+    "auto_close": [],
+    "new_changesets": [],
+    "calendar_safety_net": "No untracked activities detected."
+  },
+  "last_sweep_date": "2026-03-25"
+}
