@@ -483,7 +483,10 @@
       ],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "measurement_window": "60-day from launch"
+      "measurement_window": "60-day from launch",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-010",
@@ -531,7 +534,10 @@
       ],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "measurement_window": "7-day investigation"
+      "measurement_window": "7-day investigation",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-011",
@@ -576,7 +582,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-012",
@@ -622,7 +631,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-013",
@@ -668,7 +680,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-014",
@@ -714,7 +729,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-015",
@@ -760,7 +778,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-016",
@@ -852,7 +873,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-018",
@@ -898,7 +922,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-019",
@@ -944,7 +971,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-020",
@@ -990,7 +1020,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-021",
@@ -1036,7 +1069,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-022",
@@ -1082,7 +1118,10 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-023",
@@ -1180,7 +1219,10 @@
       ],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "measurement_window": "30-day from launch"
+      "measurement_window": "30-day from launch",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-025",
@@ -1234,7 +1276,10 @@
         "MEASUREMENT_APPROACHING"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "MEASUREMENT_OVERDUE",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "3d overdue - attribution sprint, Devon executive decision required"
     },
     {
       "id": "CS-2026-026",
@@ -1288,7 +1333,10 @@
         "MEASUREMENT_OVERDUE"
       ],
       "last_sweep": "2026-03-27",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "MEASUREMENT_OVERDUE",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "8d overdue - BAW content velocity, Nick+Charlotte own"
     },
     {
       "id": "CS-2026-027",
@@ -1342,7 +1390,10 @@
         "MEASUREMENT_OVERDUE"
       ],
       "last_sweep": "2026-03-27",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "MEASUREMENT_OVERDUE",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "8d overdue - BAW Tier A fast-track, Charlotte+Cliff own"
     },
     {
       "id": "CS-2026-028",
@@ -1495,7 +1546,10 @@
         "MEASUREMENT_DUE_TODAY"
       ],
       "last_sweep": "2026-03-27",
-      "risk": "medium"
+      "risk": "medium",
+      "sweep_flag": "MEASUREMENT_OVERDUE",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "3d overdue - BAW subscription push, Katie+Nick own"
     },
     {
       "id": "CS-2026-031",
@@ -1671,7 +1725,10 @@
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-034.md",
       "notes": "Quick win: SEO meta descriptions for collection pages.",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-035",
@@ -1757,7 +1814,10 @@
       "outcome": null,
       "review_tier": "express",
       "file": "cgo-logs/changesets/CS-2026-036.md",
-      "notes": "Ready for graduation."
+      "notes": "Ready for graduation.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-037",
@@ -1805,7 +1865,10 @@
       "outcome": null,
       "review_tier": "express",
       "file": "cgo-logs/changesets/CS-2026-037.md",
-      "notes": "Amazon keyword gap analysis."
+      "notes": "Amazon keyword gap analysis.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-038",
@@ -1847,7 +1910,10 @@
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-038/brief.md",
       "notes": "Subscription churn analysis from Recharge cancellation survey data.",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-039",
@@ -1889,7 +1955,10 @@
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-039/brief.md",
       "notes": "Meta Advantage+ restructure investigation.",
-      "risk": "medium"
+      "risk": "medium",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-03-31",
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
     },
     {
       "id": "CS-2026-040",
@@ -2148,5 +2217,18 @@
     "new_changesets": [],
     "calendar_safety_net": "No untracked activities detected."
   },
-  "last_sweep_date": "2026-03-25"
+  "last_sweep_date": "2026-03-25",
+  "last_sweep": "2026-03-31",
+  "last_sweep_session": 23,
+  "sweep_summary_session_23": {
+    "date": "2026-03-31",
+    "stale_approved_count": 19,
+    "measurement_overdue_count": 4,
+    "new_changesets_generated": 0,
+    "new_changesets_reason": "Portfolio saturated at 44 entries (19 approved stale, 6 drafts, 4 measurements overdue). Synthesis rec-147 recommends bulk-close 15+ stale drafts before generating new. Calendar safety net skipped \u2014 adding drafts to saturated portfolio is counterproductive.",
+    "portfolio_status": "RED \u2014 frozen",
+    "total_entries": 44,
+    "katie_concentration": "70% (estimated 26/37 active)",
+    "autonomous_mode": "shadow"
+  }
 }
