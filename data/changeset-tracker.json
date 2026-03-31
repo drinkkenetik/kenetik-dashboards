@@ -43,10 +43,14 @@
       "created": "2026-03-08",
       "objective_level": "L3",
       "category": "email_sms",
-      "dependencies": [],
+      "dependencies": [
+        "CS-2026-002"
+      ],
       "blocks": [],
       "spawned_from": "rec-002",
-      "spawned_changesets": [],
+      "spawned_changesets": [
+        "CS-2026-010"
+      ],
       "expected_impact": {
         "revenue": {
           "upside": 14400,
@@ -92,7 +96,9 @@
       "objective_level": "L1",
       "category": "email_sms",
       "dependencies": [],
-      "blocks": [],
+      "blocks": [
+        "CS-2026-001"
+      ],
       "spawned_from": "rec-001",
       "spawned_changesets": [],
       "expected_impact": {
@@ -201,7 +207,9 @@
       "dependencies": [],
       "blocks": [],
       "spawned_from": "rec-004",
-      "spawned_changesets": [],
+      "spawned_changesets": [
+        "CS-2026-010"
+      ],
       "expected_impact": {
         "revenue": {
           "upside": 57600,
@@ -247,10 +255,14 @@
       "created": "2026-03-09",
       "objective_level": "L1",
       "category": "email_sms",
-      "dependencies": [],
+      "dependencies": [
+        "CS-2026-002"
+      ],
       "blocks": [],
       "spawned_from": "rec-005",
-      "spawned_changesets": [],
+      "spawned_changesets": [
+        "CS-2026-007"
+      ],
       "expected_impact": {
         "revenue": {
           "upside": 24000,
@@ -276,7 +288,7 @@
       "measurement_start_date": "2026-03-12",
       "measurement_end_date": "2026-03-26",
       "measurement_window": "14d",
-      "measurement_due": null,
+      "measurement_due": "2026-03-26",
       "actual_impact": null,
       "outcome": "superseded",
       "closed_date": "2026-03-16",
@@ -327,7 +339,7 @@
       "measurement_start_date": "2026-03-14",
       "measurement_end_date": "2026-04-13",
       "measurement_window": "30d",
-      "measurement_due": null,
+      "measurement_due": "2026-04-13",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
@@ -398,10 +410,14 @@
       "created": "2026-03-10",
       "objective_level": "L1",
       "category": "creative",
-      "dependencies": [],
+      "dependencies": [
+        "CS-2026-006"
+      ],
       "blocks": [],
       "spawned_from": "rec-008",
-      "spawned_changesets": [],
+      "spawned_changesets": [
+        "CS-2026-026"
+      ],
       "expected_impact": {
         "revenue": {
           "upside": 0,
@@ -626,7 +642,7 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-012.md",
-      "notes": "",
+      "notes": "Send: 4/3.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -675,7 +691,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-013.md",
-      "notes": "",
+      "notes": "Send: 4/7.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -773,7 +789,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-015.md",
-      "notes": "",
+      "notes": "Send: 4/16. SMS pairing.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -822,7 +838,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-016.md",
-      "notes": "",
+      "notes": "Send: 4/16.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -868,7 +884,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-017.md",
-      "notes": "",
+      "notes": "Send: 4/17. SMS pairing. BLOCKED by rec-026 (koozie supplier quotes OVERDUE).",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -917,7 +933,7 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-018.md",
-      "notes": "",
+      "notes": "Send: 4/21.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -966,7 +982,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-019.md",
-      "notes": "",
+      "notes": "Send: 4/22. Earth Day.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -987,7 +1003,9 @@
       "created": "2026-03-13",
       "objective_level": "L1",
       "category": "email_sms",
-      "dependencies": [],
+      "dependencies": [
+        "CS-2026-017"
+      ],
       "blocks": [],
       "spawned_from": "rec-020",
       "spawned_changesets": [],
@@ -1015,7 +1033,7 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-020.md",
-      "notes": "",
+      "notes": "Send: 4/24.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -1064,7 +1082,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-021.md",
-      "notes": "",
+      "notes": "Send: 4/27.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -1113,7 +1131,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-022.md",
-      "notes": "",
+      "notes": "Send: 4/30.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -1164,7 +1182,7 @@
       "measurement_start_date": "2026-03-17",
       "measurement_end_date": "2026-03-31",
       "measurement_window": "14d",
-      "measurement_due": null,
+      "measurement_due": "2026-03-31",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
@@ -1266,7 +1284,7 @@
       "measurement_start_date": "2026-03-19",
       "measurement_end_date": "2026-03-30",
       "measurement_window": "11d",
-      "measurement_due": null,
+      "measurement_due": "2026-03-30",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
@@ -1295,7 +1313,10 @@
       "dependencies": [],
       "blocks": [],
       "spawned_from": "rec-026",
-      "spawned_changesets": [],
+      "spawned_changesets": [
+        "CS-2026-027",
+        "CS-2026-030"
+      ],
       "expected_impact": {
         "revenue": {
           "upside": 0,
@@ -1323,7 +1344,7 @@
       "measurement_start_date": "2026-03-14",
       "measurement_end_date": "2026-03-23",
       "measurement_window": "9d",
-      "measurement_due": null,
+      "measurement_due": "2026-03-23",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
@@ -1349,7 +1370,9 @@
       "created": "2026-03-17",
       "objective_level": "L2",
       "category": "creative",
-      "dependencies": [],
+      "dependencies": [
+        "CS-2026-026"
+      ],
       "blocks": [],
       "spawned_from": "rec-027",
       "spawned_changesets": [],
@@ -1455,7 +1478,9 @@
       "created": "2026-03-17",
       "objective_level": "L2",
       "category": "creative",
-      "dependencies": [],
+      "dependencies": [
+        "CS-2026-025"
+      ],
       "blocks": [],
       "spawned_from": "rec-029",
       "spawned_changesets": [],
@@ -1505,7 +1530,9 @@
       "created": "2026-03-19",
       "objective_level": "L1",
       "category": "email_sms",
-      "dependencies": [],
+      "dependencies": [
+        "CS-2026-026"
+      ],
       "blocks": [],
       "spawned_from": "rec-030",
       "spawned_changesets": [],
@@ -1536,7 +1563,7 @@
       "measurement_start_date": "2026-03-20",
       "measurement_end_date": "2026-03-27",
       "measurement_window": "7d",
-      "measurement_due": null,
+      "measurement_due": "2026-03-27",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
