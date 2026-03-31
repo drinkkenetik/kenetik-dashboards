@@ -25,10 +25,9 @@
     "total": 42,
     "by_status": {
       "published": 5,
-      "closed_success": 1,
-      "draft": 30,
-      "approved": 2,
-      "proposed": 4
+      "closed": 1,
+      "draft": 34,
+      "approved": 2
     },
     "by_risk": {
       "critical": 2,
@@ -37,10 +36,8 @@
       "high": 2
     },
     "by_subtype": {
-      "implementation": 17,
+      "implementation": 35,
       "investigation": 6,
-      "email_campaign": 13,
-      "graduation": 5,
       "quick": 1
     }
   },
@@ -146,7 +143,7 @@
       "title": "SMS-First Flash Sale Channel Strategy",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "closed_success",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Katie + Nick",
       "created": "2026-03-08",
@@ -546,7 +543,7 @@
     {
       "id": "CS-2026-011",
       "title": "THE SCIENCE IS NO JOKE",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -591,7 +588,7 @@
     {
       "id": "CS-2026-012",
       "title": "WIN AN UNBOUND ENTRY + CUSTOM CAM JONES GEAR",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -637,7 +634,7 @@
     {
       "id": "CS-2026-013",
       "title": "YOUR SPRING DEEP WORK PROTOCOL",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -683,7 +680,7 @@
     {
       "id": "CS-2026-014",
       "title": "SHOTS: YOUR ANYWHERE RESET",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -729,7 +726,7 @@
     {
       "id": "CS-2026-015",
       "title": "SEA OTTER CLASSIC: ENDURANCE TRAINING BUNDLE",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -775,7 +772,7 @@
     {
       "id": "CS-2026-016",
       "title": "SLEEP BETTER, THINK CLEARER",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -821,7 +818,7 @@
     {
       "id": "CS-2026-017",
       "title": "RACE DAY FUEL + LIMITED EDITION PIT CREW COOZIE",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -867,7 +864,7 @@
     {
       "id": "CS-2026-018",
       "title": "THE MIDLIFE BRAIN WINDOW",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -913,7 +910,7 @@
     {
       "id": "CS-2026-019",
       "title": "CLEAN FUEL FOR A CLEANER PLANET",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -959,7 +956,7 @@
     {
       "id": "CS-2026-020",
       "title": "TALLADEGA RACE DAY: LAST CALL FOR PIT CREW COOZIE",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -1005,7 +1002,7 @@
     {
       "id": "CS-2026-021",
       "title": "WHAT CHANGED AFTER 14 DAYS",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -1051,7 +1048,7 @@
     {
       "id": "CS-2026-022",
       "title": "MAY IS LOADING \u2014 STOCK UP",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -1405,7 +1402,7 @@
     {
       "id": "CS-2026-029",
       "title": "Graduation: Matt Hughes Reel \u2192 Paid Social Amplification",
-      "subtype": "graduation",
+      "subtype": "implementation",
       "surface": "paid_meta",
       "status": "approved",
       "risk_level": "low",
@@ -1455,7 +1452,7 @@
     {
       "id": "CS-2026-030",
       "title": "BAW Subscription Conversion Push",
-      "subtype": "email_campaign",
+      "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
       "risk_level": "low",
@@ -1835,9 +1832,9 @@
     {
       "id": "CS-2026-041",
       "title": "Graduation: Matt Hughes IG Reel (Brain Recovery)",
-      "subtype": "graduation",
+      "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "proposed",
+      "status": "draft",
       "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-03-30",
@@ -1877,15 +1874,15 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-041.md",
-      "notes": "Graduation candidate: Matt Hughes IG Reel, 5.5% engagement rate, 4.8x reach.",
+      "notes": "Graduation candidate: Matt Hughes IG Reel, 5.5% engagement rate, 4.8x reach. [migrated from proposed status]",
       "risk": "medium"
     },
     {
       "id": "CS-2026-042",
       "title": "Graduation: JustJosephD x Brain Awareness Week IG Reel",
-      "subtype": "graduation",
+      "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "proposed",
+      "status": "draft",
       "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-03-30",
@@ -1925,15 +1922,15 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-042.md",
-      "notes": "Graduation candidate: JustJosephD x BAW, 3.9x reach, creator collab format.",
+      "notes": "Graduation candidate: JustJosephD x BAW, 3.9x reach, creator collab format. [migrated from proposed status]",
       "risk": "medium"
     },
     {
       "id": "CS-2026-043",
       "title": "Graduation + VIRAL ALERT: Matt Hughes TikTok (Brain Recovery)",
-      "subtype": "graduation",
+      "subtype": "implementation",
       "surface": "paid_tiktok",
-      "status": "proposed",
+      "status": "draft",
       "risk_level": "critical",
       "owner": "Katie",
       "created": "2026-03-30",
@@ -1973,15 +1970,15 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-043.md",
-      "notes": "URGENT: 16.7x rolling 30-day average. Deploy within 48 hours for viral momentum.",
+      "notes": "URGENT: 16.7x rolling 30-day average. Deploy within 48 hours for viral momentum. [migrated from proposed status]",
       "risk": "critical"
     },
     {
       "id": "CS-2026-044",
       "title": "Graduation: FB 'Caffeine Addiction' Story Series + VIRAL Matt Hughes Scan",
-      "subtype": "graduation",
+      "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "proposed",
+      "status": "draft",
       "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-03-30",
@@ -2021,7 +2018,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-044.md",
-      "notes": "Consolidated graduation: caffeine story (7.6% engagement) + Matt Hughes scan (35.9x rolling avg).",
+      "notes": "Consolidated graduation: caffeine story (7.6% engagement) + Matt Hughes scan (35.9x rolling avg). [migrated from proposed status]",
       "risk": "medium"
     }
   ],
