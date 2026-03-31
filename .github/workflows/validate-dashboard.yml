@@ -8,11 +8,14 @@ on:
       - 'kenetik-growth-system-dashboard.html'
       - 'system-state-definitions.json'
       - 'validate-dashboard.py'
+      - 'data/changeset-tracker.json'
+      - 'changeset-dashboard.html'
+      - 'validate-changeset-tracker.py'
   pull_request:
     branches: [main]
 
 jobs:
-  validate:
+  validate-system-state:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -43,3 +46,35 @@ jobs:
         run: |
           echo "## ✅ Dashboard Validation Passed" >> $GITHUB_STEP_SUMMARY
           echo "All 12 roles, 98 processes, and infrastructure match KGS v3.2 spec." >> $GITHUB_STEP_SUMMARY
+
+  validate-changeset-tracker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate changeset-tracker.json
+        run: python3 validate-changeset-tracker.py
+
+      - name: Post failure summary
+        if: failure()
+        run: |
+          echo "## ❌ ChangeSet Tracker Validation Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "changeset-tracker.json does not match schema v2.1." >> $GITHUB_STEP_SUMMARY
+          echo "Run \`python3 validate-changeset-tracker.py\` locally to see details." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Common causes:**" >> $GITHUB_STEP_SUMMARY
+          echo "- File was truncated during push (use git clone+push, NOT MCP push_files)" >> $GITHUB_STEP_SUMMARY
+          echo "- Invalid status used (valid: draft, needs_feedback, approved, published, rolled_back, closed)" >> $GITHUB_STEP_SUMMARY
+          echo "- Invalid subtype used (valid: implementation, investigation, quick)" >> $GITHUB_STEP_SUMMARY
+          echo "- Compound statuses like closed_success used instead of status=closed + outcome field" >> $GITHUB_STEP_SUMMARY
+
+      - name: Post success summary
+        if: success()
+        run: |
+          echo "## ✅ ChangeSet Tracker Validation Passed" >> $GITHUB_STEP_SUMMARY
