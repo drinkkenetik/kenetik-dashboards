@@ -481,6 +481,8 @@
         }
 
         .status-draft { background: rgba(139,143,163,0.2); color: var(--text-muted); }
+        .status-proposed { background: rgba(245,158,11,0.15); color: var(--warning); }
+        .status-needs_feedback { background: rgba(239,68,68,0.15); color: var(--danger); }
         .status-approved { background: rgba(59,130,246,0.2); color: var(--info); }
         .status-published { background: rgba(34,197,94,0.15); color: var(--success); }
         .status-closed { background: rgba(99,102,241,0.2); color: var(--accent-light); }
@@ -530,6 +532,7 @@
                 <option value="all">All Statuses</option>
                 <option value="open">Open (non-closed)</option>
                 <option value="draft">Draft</option>
+                <option value="proposed">Proposed</option>
                 <option value="approved">Approved</option>
                 <option value="published">Published</option>
                 <option value="closed">Closed</option>
@@ -614,11 +617,29 @@ async function fetchTracker() {
     try {
         const resp = await fetch(DATA_URL + '?t=' + Date.now());
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        TRACKER = await resp.json();
+        const text = await resp.text();
+        // Guard against truncated JSON from MCP push_files
+        let parsed;
+        try {
+            parsed = JSON.parse(text);
+        } catch (parseErr) {
+            throw new Error('Invalid JSON (likely truncated during push): ' + parseErr.message + ' — file length: ' + text.length + ' chars');
+        }
+        // Validate required structure
+        if (!parsed || !Array.isArray(parsed.changesets)) {
+            throw new Error('Invalid tracker structure: missing changesets array (keys: ' + Object.keys(parsed || {}).join(',') + ')');
+        }
+        // Normalize statuses on load: closed_success/closed_underperformed/etc → closed
+        parsed.changesets.forEach(cs => {
+            if (cs.status && cs.status.startsWith('closed_')) {
+                cs.outcome = cs.outcome || cs.status.replace('closed_', '');
+                cs.status = 'closed';
+            }
+        });
+        TRACKER = parsed;
         lastFetchTime = new Date();
-        statusEl.textContent = 'Live · Last synced ' + lastFetchTime.toLocaleTimeString();
+        statusEl.textContent = 'Live · ' + TRACKER.changesets.length + ' ChangeSets · Last synced ' + lastFetchTime.toLocaleTimeString();
         statusEl.style.color = 'var(--success)';
-        // Update schema badge dynamically
         document.getElementById('schemaBadge').textContent = 'Schema v' + (TRACKER.schema_version || '?');
         btn.classList.remove('spinning');
         return true;
@@ -627,6 +648,10 @@ async function fetchTracker() {
         statusEl.textContent = 'Offline · ' + (lastFetchTime ? 'Last synced ' + lastFetchTime.toLocaleTimeString() : 'Could not load data');
         statusEl.style.color = 'var(--danger)';
         btn.classList.remove('spinning');
+        // Show visible error banner if no data loaded at all
+        if (!TRACKER) {
+            document.getElementById('kpis').innerHTML = '<div class="kpi-card" style="grid-column:1/-1;text-align:center;padding:40px"><div class="kpi-label" style="color:var(--danger)">DATA LOAD FAILED</div><div style="font-size:14px;margin-top:8px;color:var(--text)">' + err.message + '</div><div class="kpi-detail" style="margin-top:12px">Check that <code>data/changeset-tracker.json</code> is valid JSON in the repo.<br>This usually means a recent push truncated the file.</div></div>';
+        }
         return false;
     }
 }
@@ -646,7 +671,7 @@ let filters = { subtype: 'all', surface: 'all', status: 'all' };
 
 function subtypeBadge(subtype) {
     const cls = subtype === 'investigation' ? 'badge-invest' : subtype === 'quick' ? 'badge-quick' : 'badge-impl';
-    return `<span class="badge ${cls}">${subtype}</span>`;
+    return `<span class="badge ${cls}">${subtype || 'unknown'}</span>`;
 }
 let sortCol = 'id';
 let sortDir = 'asc';
@@ -660,18 +685,22 @@ function fmt$(n) {
     return '$' + Number(n).toLocaleString('en-US');
 }
 
+function isClosed(cs) {
+    return cs.status === 'closed' || cs.status.startsWith('closed_') || cs.status === 'rolled_back';
+}
+
+function isOpen(cs) { return !isClosed(cs); }
+
 function getFiltered() {
     return TRACKER.changesets.filter(cs => {
         if (filters.subtype !== 'all' && cs.subtype !== filters.subtype) return false;
         if (filters.surface !== 'all' && cs.surface !== filters.surface) return false;
-        if (filters.status === 'open') return cs.status !== 'closed';
+        if (filters.status === 'open') return !isClosed(cs);
+        if (filters.status === 'closed') return isClosed(cs);
         if (filters.status !== 'all' && cs.status !== filters.status) return false;
         return true;
     });
 }
-
-function isOpen(cs) { return !['closed','rolled_back'].includes(cs.status); }
-function isClosed(cs) { return cs.status === 'closed' || cs.status === 'rolled_back'; }
 
 function expectedRev(cs) {
     return cs.expected_impact?.revenue?.expected ?? 0;
@@ -685,10 +714,12 @@ function actualMargin(cs) {
     return cs.actual_impact?.margin_impact ?? 0;
 }
 
-// Correct 4-stage lifecycle: draft → approved → published → closed
-const PIPELINE_ORDER = ['draft','approved','published','closed'];
+// Full lifecycle: draft → proposed → needs_feedback → approved → published → closed
+const PIPELINE_ORDER = ['draft','proposed','needs_feedback','approved','published','closed'];
 const PIPELINE_LABELS = {
     draft: 'Draft',
+    proposed: 'Proposed',
+    needs_feedback: 'Needs Feedback',
     approved: 'Approved',
     published: 'Published',
     closed: 'Closed'
@@ -780,14 +811,20 @@ function renderPipeline() {
     const data = getFiltered();
     const container = document.getElementById('pipeline');
 
-    // Always show the 4 lifecycle columns; also show rolled_back if any exist
+    // Build active statuses: always show core stages, plus rolled_back if any exist
     const activeStatuses = PIPELINE_ORDER.slice();
     if (data.some(c => c.status === 'rolled_back') && !activeStatuses.includes('rolled_back')) {
         activeStatuses.push('rolled_back');
     }
+    // Only show proposed/needs_feedback columns if items exist in those statuses
+    const filteredStatuses = activeStatuses.filter(s => {
+        if (s === 'proposed' || s === 'needs_feedback') return data.some(c => c.status === s);
+        return true;
+    });
 
-    container.innerHTML = activeStatuses.map(status => {
-        const items = data.filter(c => c.status === status);
+    container.innerHTML = filteredStatuses.map(status => {
+        // For the 'closed' column, also catch closed_* variants
+        const items = data.filter(c => status === 'closed' ? isClosed(c) : c.status === status);
         const label = PIPELINE_LABELS[status] || status.replace(/_/g, ' ');
         return `
             <div class="pipeline-col">
@@ -802,7 +839,7 @@ function renderPipeline() {
                         <div class="cs-title">${cs.title}</div>
                         <div class="cs-meta">
                             ${subtypeBadge(cs.subtype)}
-                            <span class="badge badge-${cs.risk_level}">${cs.risk_level}</span>
+                            <span class="badge badge-${cs.risk_level || 'low'}">${cs.risk_level || 'low'}</span>
                         </div>
                     </div>
                 `).join('')}
@@ -986,11 +1023,11 @@ function renderTable() {
             <td><span class="cs-link" onclick="openDetail('${cs.id}')">${cs.id}</span></td>
             <td>${cs.title}</td>
             <td>${subtypeBadge(cs.subtype)}</td>
-            <td>${cs.surface.replace(/_/g, ' ')}</td>
-            <td><span class="status-pill status-${cs.status}">${cs.status.replace(/_/g, ' ')}</span></td>
-            <td><span class="badge badge-${cs.risk_level}">${cs.risk_level}</span></td>
-            <td>${cs.owner}</td>
-            <td>${cs.created}</td>
+            <td>${(cs.surface || '').replace(/_/g, ' ')}</td>
+            <td><span class="status-pill status-${cs.status}">${(cs.status || '').replace(/_/g, ' ')}</span></td>
+            <td><span class="badge badge-${cs.risk_level || 'low'}">${cs.risk_level || 'low'}</span></td>
+            <td>${cs.owner || '—'}</td>
+            <td>${cs.created || '—'}</td>
             <td>${cs.outcome ? `<span class="outcome-${cs.outcome}">${cs.outcome}</span>` : '—'}</td>
             <td>${expectedRev(cs) ? fmt$(expectedRev(cs)) : '—'}</td>
             <td>${cs.actual_impact ? fmt$(actualRev(cs)) : '—'}</td>
@@ -1032,18 +1069,18 @@ function openDetail(id) {
 
         <div class="detail-grid" style="margin-top:16px">
             <div class="detail-field"><label>Subtype</label>${subtypeBadge(cs.subtype)}</div>
-            <div class="detail-field"><label>Surface</label><span>${cs.surface.replace(/_/g, ' ')}</span></div>
-            <div class="detail-field"><label>Status</label><span class="status-pill status-${cs.status}" style="font-size:12px">${cs.status.replace(/_/g, ' ')}</span></div>
-            <div class="detail-field"><label>Risk</label><span class="badge badge-${cs.risk_level}" style="font-size:12px">${cs.risk_level}</span></div>
-            <div class="detail-field"><label>Owner</label><span>${cs.owner}</span></div>
-            <div class="detail-field"><label>Objective</label><span>${cs.objective_level}</span></div>
+            <div class="detail-field"><label>Surface</label><span>${(cs.surface || '').replace(/_/g, ' ')}</span></div>
+            <div class="detail-field"><label>Status</label><span class="status-pill status-${cs.status}" style="font-size:12px">${(cs.status || '').replace(/_/g, ' ')}</span></div>
+            <div class="detail-field"><label>Risk</label><span class="badge badge-${cs.risk_level || 'low'}" style="font-size:12px">${cs.risk_level || 'low'}</span></div>
+            <div class="detail-field"><label>Owner</label><span>${cs.owner || '—'}</span></div>
+            <div class="detail-field"><label>Objective</label><span>${cs.objective_level || '—'}</span></div>
             <div class="detail-field"><label>Category</label><span>${(cs.category || '—').replace(/_/g, ' ')}</span></div>
-            <div class="detail-field"><label>Created</label><span>${cs.created}</span></div>
-            ${cs.approved_date ? `<div class="detail-field"><label>Approved</label><span>${cs.approved_date} by ${cs.approved_by}</span></div>` : ''}
+            <div class="detail-field"><label>Created</label><span>${cs.created || '—'}</span></div>
+            ${cs.approved_date ? `<div class="detail-field"><label>Approved</label><span>${cs.approved_date} by ${cs.approved_by || '—'}</span></div>` : ''}
             ${cs.published_date ? `<div class="detail-field"><label>Published</label><span>${cs.published_date}</span></div>` : ''}
             ${cs.closed_date ? `<div class="detail-field"><label>Closed</label><span>${cs.closed_date}</span></div>` : ''}
             ${cs.outcome ? `<div class="detail-field"><label>Outcome</label><span class="outcome-${cs.outcome}" style="font-weight:600">${cs.outcome}</span></div>` : ''}
-            <div class="detail-field"><label>Measurement Window</label><span>${cs.measurement_window}</span></div>
+            <div class="detail-field"><label>Measurement Window</label><span>${cs.measurement_window || '—'}</span></div>
             ${cs.measurement_due ? `<div class="detail-field"><label>Measurement Due</label><span>${cs.measurement_due}</span></div>` : ''}
         </div>
 
@@ -1095,7 +1132,7 @@ function openDetail(id) {
 
         <div class="detail-section">
             <h4>Notes</h4>
-            <p style="font-size:13px;line-height:1.5;color:var(--text-muted)">${cs.notes}</p>
+            <p style="font-size:13px;line-height:1.5;color:var(--text-muted)">${cs.notes || '—'}</p>
         </div>
     `;
 
@@ -1109,13 +1146,19 @@ function closeDetail() {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
 
 // ═══════════════════════════════════════════════════
-// RENDER ALL
+// RENDER ALL — wrapped in try/catch to prevent blank screen
 // ═══════════════════════════════════════════════════
 function render() {
-    renderKPIs();
-    renderPipeline();
-    renderCharts();
-    renderTable();
+    try {
+        renderKPIs();
+        renderPipeline();
+        renderCharts();
+        renderTable();
+    } catch (err) {
+        console.error('Render error:', err);
+        document.getElementById('syncStatus').textContent = 'Render error: ' + err.message;
+        document.getElementById('syncStatus').style.color = 'var(--danger)';
+    }
 }
 
 // ═══════════════════════════════════════════════════
