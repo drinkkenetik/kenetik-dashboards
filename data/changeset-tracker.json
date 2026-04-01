@@ -1699,7 +1699,7 @@
       "title": "Mobile Site & Brand Search Performance Investigation",
       "subtype": "investigation",
       "surface": "website",
-      "status": "published",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Nick + Cliff",
       "created": "2026-03-21",
@@ -1734,8 +1734,11 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-033.md",
-      "notes": "Amazon A+ content refresh for underperforming flavors.",
-      "risk": "low"
+      "notes": "Investigation complete: CVR decline is universal across devices (mobile -76.4%, desktop -72.2%), not mobile-specific. Root cause is post-promotional demand cliff from Leadville Sweepstakes + Brain Awareness Week 2026, compounded by brand search volume decline from content drought. Remaining action: Cliff manual CWV check to formally close technical angle.",
+      "risk": "low",
+      "outcome": "hypothesis_not_supported",
+      "investigation_completed": "2026-04-01",
+      "investigator": "Katie Spaller"
     },
     {
       "id": "CS-2026-034",
