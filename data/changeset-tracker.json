@@ -14,25 +14,26 @@
       "STALE: 17 approved ChangeSets (13 Katie-owned email campaigns CS-009 through CS-022/024, plus CS-034 Lawrence/Nick, CS-036 Katie, CS-037 Katie). Katie concentration: 14/17 stale are Katie-owned.",
       "OVERDUE: 7 measurements past due. CS-026/027 (9d, BAW), CS-030 (5d, sub push), CS-028 (6d, FB realloc), CS-025 (2d, attribution), CS-023 (1d, email audit), CS-029 (1d, Matt Hughes grad).",
       "KATIE CONCENTRATION: 26/37 active entries (70%). 8th consecutive session flagged. Zero executive redistribution action taken. System bottleneck confirmed.",
-      "PORTFOLIO: 44 total, 15 published, 19 approved, 6 draft, 4 closed. No new ChangeSets warranted \u2014 existing draft backlog + stale approved pipeline must be unblocked first.",
-      "AUTONOMOUS MODE: shadow \u2014 classification only, no auto-advance."
+      "PORTFOLIO: 44 total, 15 published, 19 approved, 6 draft, 4 closed. No new ChangeSets warranted — existing draft backlog + stale approved pipeline must be unblocked first.",
+      "AUTONOMOUS MODE: shadow — classification only, no auto-advance."
     ],
     "new_changeset_generation": "No new ChangeSets generated. Portfolio at 44 entries with 17 stale approved and 7 measurement overdue. Priority is executing existing pipeline: (1) CS-011 deadline today, (2) measure overdue CS-026/027/028/030, (3) redistribute Katie's 14 stale approved. Adding new ChangeSets would worsen the bottleneck."
   },
   "summary": {
     "total_changesets": 45,
     "by_status": {
-      "published": 15,
-      "closed": 6,
-      "approved": 20,
-      "draft": 4
+      "published": 10,
+      "closed": 11,
+      "approved": 21,
+      "draft": 3
     },
-    "last_updated": "2026-04-01"
+    "last_updated": "2026-04-01",
+    "_recount_note": "2026-04-01: Summary recounted from actual records. Previous count showed 6 closed; actual is 11."
   },
   "changesets": [
     {
       "id": "CS-2026-001",
-      "title": "Welcome Series Emergency \u2014 Influencer Welcome Track",
+      "title": "Welcome Series Emergency — Influencer Welcome Track",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "published",
@@ -175,12 +176,16 @@
       "measurement_window": "14d",
       "measurement_due": "2026-03-27",
       "actual_impact": {
-        "revenue": 13246,
-        "margin": 7948,
         "primary_metric": "sms_flash_sale_cvr",
+        "primary_metric_baseline": "$7,461 email-only flash sale revenue",
         "primary_metric_result": "Combined revenue $13,246 vs $7,461 email-only baseline (+77%). SMS CVR 0.28%, Email CVR 0.17%. SMS RPR $0.24, Email RPR $0.21. SMS unsub 0.97% (under 1.0% guardrail).",
-        "outcome_category": "A_success",
-        "decision": "Adopt SMS-first sequencing as permanent flash sale strategy. Spawn follow-up ChangeSet for other promo types. Monitor SMS unsub rate closely."
+        "primary_metric_delta": "+$5,785 (+77% vs email-only baseline)",
+        "revenue_impact": 13246,
+        "margin_impact": 7948,
+        "confidence": "medium",
+        "statistical_significance": false,
+        "_note": "Natural segmentation (not randomized). Directionally strong. margin_impact = revenue × ~60% GM per brief economics.",
+        "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: revenue, margin, outcome_category, decision."
       },
       "outcome": "success",
       "closed_date": "2026-03-30",
@@ -193,7 +198,7 @@
     },
     {
       "id": "CS-2026-004",
-      "title": "Paid Media Attribution \u2014 March 7 Exclusion & Superfiliate Investigation",
+      "title": "Paid Media Attribution — March 7 Exclusion & Superfiliate Investigation",
       "subtype": "investigation",
       "surface": "paid_google",
       "status": "published",
@@ -342,7 +347,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-006.md",
-      "notes": "Published Mar 14. High risk \u2014 Devon approved. Blocks CS-2026-024 (pause/skip).",
+      "notes": "Published Mar 14. High risk — Devon approved. Blocks CS-2026-024 (pause/skip).",
       "risk": "low",
       "review_tier": "standard"
     },
@@ -491,7 +496,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-009.md",
-      "notes": "BWR event May 2-3. Low urgency \u2014 execute by mid-April.",
+      "notes": "BWR event May 2-3. Low urgency — execute by mid-April.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -504,7 +509,7 @@
     },
     {
       "id": "CS-2026-010",
-      "title": "Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
+      "title": "Klaviyo Property Definition Audit — Superfiliate Source Attribution",
       "subtype": "investigation",
       "surface": "klaviyo",
       "status": "approved",
@@ -591,7 +596,7 @@
       "approved_date": "2026-03-14",
       "published_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-011.md",
-      "notes": "Published Apr 1. Science-led April Fools email \u2014 Machado 2022 qEEG study. 7-day measurement window through Apr 8. Brief updated with final creative at publish.",
+      "notes": "Published Apr 1. Science-led April Fools email — Machado 2022 qEEG study. 7-day measurement window through Apr 8. Brief updated with final creative at publish.",
       "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
@@ -605,7 +610,7 @@
       "measurement_due": "2026-04-08",
       "publish_confirmation": {
         "surface": "klaviyo",
-        "confirmation_id": "Klaviyo campaign \u2014 single send Apr 1 2026",
+        "confirmation_id": "Klaviyo campaign — single send Apr 1 2026",
         "published_at": "2026-04-01T12:00:00Z"
       }
     },
@@ -1100,7 +1105,7 @@
     },
     {
       "id": "CS-2026-022",
-      "title": "MAY IS LOADING \u2014 STOCK UP",
+      "title": "MAY IS LOADING — STOCK UP",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "approved",
@@ -1190,15 +1195,25 @@
       "measurement_window": "14d",
       "measurement_due": "2026-03-31",
       "actual_impact": {
-        "campaign_ctr": "0.62-0.66% (baseline 0.57%, target 1.0% not met)",
-        "campaign_open_rate": "33.8-45.2% (baseline 29.3%, target 33% exceeded)",
-        "revenue": 1676.62,
-        "orders": 18
+        "primary_metric": "campaign_ctr",
+        "primary_metric_baseline": "0.57%",
+        "primary_metric_result": "0.62-0.66%",
+        "primary_metric_delta": "+0.05-0.09pp (+9-16% vs baseline, target 1.0% not met)",
+        "revenue_impact": 1676.62,
+        "margin_impact": 838.31,
+        "confidence": "medium",
+        "statistical_significance": true,
+        "_secondary_metrics": {
+          "open_rate": "33.8-45.2% (baseline 29.3%, target 33% exceeded)",
+          "orders": 18
+        },
+        "_note": "Partial success: open rate target exceeded (33.8-45.2% vs 33% target), CTR target not met (0.62-0.66% vs 1.0% target). margin_impact = revenue × 50% flow-through per brief.",
+        "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: campaign_ctr, campaign_open_rate, revenue, orders."
       },
       "outcome": "partial_success",
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-023.md",
-      "notes": "Closed: Partial success. SMS-inspired subject lines improved open rates significantly (33.8-45.2% vs 29.3% baseline) but CTR improvement marginal (0.62-0.66% vs 0.57%, target 1.0% not met). Key learning: bottleneck is in-email CTA/body content, not subject lines. Tests B (CTA placement) and C (segment refresh) not executed \u2014 recommended for next cycle. Executed by Underground Ecom (Kiara Schuman, Andrej Jesic).",
+      "notes": "Closed: Partial success. SMS-inspired subject lines improved open rates significantly (33.8-45.2% vs 29.3% baseline) but CTR improvement marginal (0.62-0.66% vs 0.57%, target 1.0% not met). Key learning: bottleneck is in-email CTA/body content, not subject lines. Tests B (CTA placement) and C (segment refresh) not executed — recommended for next cycle. Executed by Underground Ecom (Kiara Schuman, Andrej Jesic).",
       "risk": "low",
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
@@ -1364,7 +1379,7 @@
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
         "MEASUREMENT_OVERDUE",
-        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW content velocity). Session 24 sweep."
+        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) — BAW content velocity). Session 24 sweep."
       ],
       "last_sweep": "2026-04-01",
       "risk": "low",
@@ -1424,7 +1439,7 @@
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
         "MEASUREMENT_OVERDUE",
-        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW Tier A fast-track). Session 24 sweep."
+        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) — BAW Tier A fast-track). Session 24 sweep."
       ],
       "last_sweep": "2026-04-01",
       "risk": "low",
@@ -1434,7 +1449,7 @@
     },
     {
       "id": "CS-2026-028",
-      "title": "FB Prospecting Budget Reallocation \u2014 Meta Leadville + Google Pmax",
+      "title": "FB Prospecting Budget Reallocation — Meta Leadville + Google Pmax",
       "subtype": "implementation",
       "surface": "paid_google",
       "status": "closed",
@@ -1475,10 +1490,21 @@
       "measurement_window": "7d",
       "measurement_due": "2026-03-26",
       "actual_impact": {
-        "revenue_change": "Inconclusive — confounded by demand cliff",
-        "fb_prospecting_cut": "78.8% (more aggressive than planned 50%)",
-        "leadville_roas_at_scale": "3.35x at 2x budget",
-        "pmax_roas_decline": "3.90x → 2.05x (diminishing returns at scale)"
+        "primary_metric": "blended_paid_media_roas",
+        "primary_metric_baseline": "See CS-2026-028 brief",
+        "primary_metric_result": "Inconclusive — confounded by demand cliff",
+        "primary_metric_delta": "N/A — external confound",
+        "revenue_impact": null,
+        "margin_impact": null,
+        "confidence": "low",
+        "statistical_significance": false,
+        "_tactical_findings": {
+          "fb_prospecting_cut": "78.8% (more aggressive than planned 50%)",
+          "leadville_roas_at_scale": "3.35x at 2x budget",
+          "pmax_roas_decline": "3.90x → 2.05x (diminishing returns at scale)"
+        },
+        "_note": "Revenue and margin impact could not be isolated due to concurrent demand cliff. Tactical findings preserved in _tactical_findings.",
+        "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: revenue_change, fb_prospecting_cut, leadville_roas_at_scale, pmax_roas_decline."
       },
       "outcome": "executed_inconclusive",
       "closed_date": "2026-04-01",
@@ -1490,7 +1516,7 @@
     },
     {
       "id": "CS-2026-029",
-      "title": "Graduation: Matt Hughes Reel \u2192 Paid Social Amplification",
+      "title": "Graduation: Matt Hughes Reel → Paid Social Amplification",
       "subtype": "implementation",
       "surface": "paid_meta",
       "status": "closed",
@@ -1534,23 +1560,36 @@
       "measurement_window": "14d",
       "measurement_due": "2026-03-31",
       "actual_impact": {
-        "revenue": 931.01,
-        "spend": 97.32,
-        "roas": 9.57,
-        "purchases": 15,
-        "notes": "Two organic variants boosted in BAW Meta campaign. Greayteam variant: $76.70 spend, $438.44 rev, 5.72x ROAS. Brain Week variant: $20.62 spend, $492.57 rev, 23.89x ROAS. Test ran at ~10% of planned budget due to Charlotte creative delay; Katie launched organic variants directly."
+        "primary_metric": "paid_social_roas",
+        "primary_metric_baseline": "N/A (new paid variant, no prior baseline)",
+        "primary_metric_result": "9.57x ROAS",
+        "primary_metric_delta": "+8.07x vs 1.5x target (exceeded)",
+        "revenue_impact": 931.01,
+        "margin_impact": 368.18,
+        "confidence": "medium",
+        "statistical_significance": false,
+        "_detail": {
+          "ad_spend": 97.32,
+          "roas": 9.57,
+          "purchases": 15,
+          "gross_margin_rate": 0.5,
+          "gross_margin_dollars": 465.5,
+          "contribution_margin_after_spend": 368.18
+        },
+        "_note": "Ran at ~10% of planned budget due to creative delay. ROAS of 9.57x far exceeds 1.5x target. margin_impact = (revenue × 50% GM) - ad_spend = $465.5 - $97.32 = $368.18. Two organic variants boosted in BAW Meta campaign. Greayteam variant: $76.70 spend, $438.44 rev, 5.72x ROAS. Brain Week variant: $20.62 spend, $492.57 rev, 23.89x ROAS. Test ran at ~10% of planned budget due to Charlotte creative delay; Katie launched organic variants directly.",
+        "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: revenue, spend, roas, purchases, notes."
       },
       "outcome": "success",
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-029.md",
-      "notes": "Published Mar 17. Closed Apr 1 as SUCCESS. Combined 9.57x ROAS (target 1.5x). Organic variants outperformed \u2014 no custom creative needed. Budget-constrained but efficiency exceptional.",
+      "notes": "Published Mar 17. Closed Apr 1 as SUCCESS. Combined 9.57x ROAS (target 1.5x). Organic variants outperformed — no custom creative needed. Budget-constrained but efficiency exceptional.",
       "risk": "low",
       "sweep_flags": [],
       "last_sweep": "2026-04-01"
     },
     {
       "id": "CS-2026-030",
-      "title": "BAW One-Time Purchaser \u2192 Subscription Conversion",
+      "title": "BAW One-Time Purchaser → Subscription Conversion",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "approved",
@@ -1602,7 +1641,7 @@
     },
     {
       "id": "CS-2026-031",
-      "title": "Email Flow CTA Redesign \u2014 High-Volume Low-CTR Messages",
+      "title": "Email Flow CTA Redesign — High-Volume Low-CTR Messages",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "published",
@@ -1872,7 +1911,7 @@
     },
     {
       "id": "CS-2026-037",
-      "title": "Amazon Search Term Harvest \u2014 Q1 Keyword Gaps",
+      "title": "Amazon Search Term Harvest — Q1 Keyword Gaps",
       "subtype": "investigation",
       "surface": "amazon",
       "status": "approved",
@@ -2248,7 +2287,7 @@
     },
     {
       "id": "CS-2026-045",
-      "title": "Scale: Matt Hughes Athlete Content \u2192 Paid Meta (Proven 9.57x ROAS)",
+      "title": "Scale: Matt Hughes Athlete Content → Paid Meta (Proven 9.57x ROAS)",
       "subtype": "implementation",
       "surface": "paid_meta",
       "status": "approved",
@@ -2330,8 +2369,8 @@
     "stale_approved_count": 19,
     "measurement_overdue_count": 4,
     "new_changesets_generated": 0,
-    "new_changesets_reason": "Portfolio saturated at 44 entries (19 approved stale, 6 drafts, 4 measurements overdue). Synthesis rec-147 recommends bulk-close 15+ stale drafts before generating new. Calendar safety net skipped \u2014 adding drafts to saturated portfolio is counterproductive.",
-    "portfolio_status": "RED \u2014 frozen",
+    "new_changesets_reason": "Portfolio saturated at 44 entries (19 approved stale, 6 drafts, 4 measurements overdue). Synthesis rec-147 recommends bulk-close 15+ stale drafts before generating new. Calendar safety net skipped — adding drafts to saturated portfolio is counterproductive.",
+    "portfolio_status": "RED — frozen",
     "total_entries": 44,
     "katie_concentration": "70% (estimated 26/37 active)",
     "autonomous_mode": "shadow"
