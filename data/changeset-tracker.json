@@ -1152,7 +1152,7 @@
       "title": "Email Campaign Content Audit & A/B Test",
       "subtype": "investigation",
       "surface": "klaviyo",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-16",
@@ -1189,16 +1189,20 @@
       "measurement_end_date": "2026-03-31",
       "measurement_window": "14d",
       "measurement_due": "2026-03-31",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "campaign_ctr": "0.62-0.66% (baseline 0.57%, target 1.0% not met)",
+        "campaign_open_rate": "33.8-45.2% (baseline 29.3%, target 33% exceeded)",
+        "revenue": 1676.62,
+        "orders": 18
+      },
+      "outcome": "partial_success",
+      "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-023.md",
-      "notes": "Published Mar 17. BAW runs Mar 10-16 but content calendar extends through month.",
+      "notes": "Closed: Partial success. SMS-inspired subject lines improved open rates significantly (33.8-45.2% vs 29.3% baseline) but CTR improvement marginal (0.62-0.66% vs 0.57%, target 1.0% not met). Key learning: bottleneck is in-email CTA/body content, not subject lines. Tests B (CTA placement) and C (segment refresh) not executed \u2014 recommended for next cycle. Executed by Underground Ecom (Kiara Schuman, Andrej Jesic).",
       "risk": "low",
-      "sweep_flags": [
-        "MEASUREMENT OVERDUE (1d past measurement deadline (Mar 31)). Session 24 sweep."
-      ],
-      "last_sweep": "2026-04-01"
+      "sweep_flags": [],
+      "last_sweep": "2026-04-01",
+      "sweep_flag": null
     },
     {
       "id": "CS-2026-024",
