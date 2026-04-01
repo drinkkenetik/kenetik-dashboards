@@ -1550,34 +1550,32 @@
     },
     {
       "id": "CS-2026-030",
-      "title": "BAW Subscription Conversion Push",
+      "title": "BAW One-Time Purchaser \u2192 Subscription Conversion",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "published",
+      "status": "approved",
       "risk_level": "low",
       "owner": "Katie + Nick",
       "created": "2026-03-19",
       "objective_level": "L1",
       "category": "email_sms",
-      "dependencies": [
-        "CS-2026-026"
-      ],
+      "dependencies": [],
       "blocks": [],
       "spawned_from": "rec-030",
       "spawned_changesets": [],
       "expected_impact": {
         "revenue": {
-          "upside": 28800,
-          "expected": 14400,
-          "downside": 0
+          "upside": 8640,
+          "expected": 5184,
+          "downside": 1152
         },
         "margin": {
-          "upside": 14400,
-          "expected": 7200,
-          "downside": 0
+          "upside": 8640,
+          "expected": 5184,
+          "downside": 1152
         },
         "primary_metric": "subscription_starts",
-        "primary_metric_target": ">=50 new subscriptions from BAW push"
+        "primary_metric_target": "8-20 new subscriptions from BAW one-time purchaser segment"
       },
       "routed_to": [
         "Katie",
@@ -1586,27 +1584,21 @@
       "routed_via": "slack",
       "routed_date": "2026-03-16",
       "approved_by": "Katie",
-      "approved_date": "2026-03-19",
+      "approved_date": "2026-04-01",
       "review_tier": "standard",
-      "published_date": "2026-03-20",
-      "measurement_start_date": "2026-03-20",
-      "measurement_end_date": "2026-03-27",
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
       "measurement_window": "7d",
-      "measurement_due": "2026-03-27",
+      "measurement_due": null,
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-030.md",
-      "notes": "Published Mar 20. BAW subscription acquisition push.",
-      "sweep_flags": [
-        "MEASUREMENT_DUE_TODAY",
-        "MEASUREMENT OVERDUE (5d past measurement deadline (Mar 27) \u2014 BAW subscription push). Session 24 sweep."
-      ],
+      "notes": "Revised 2026-04-01: Repositioned from BAW urgency promo (window expired) to repurchase-window subscription conversion. Target launch Apr 3. Approved via standard hierarchy review — positive at all 5 levels, no trade-offs. Segment: BAW discount code one-time purchasers without active subscription.",
+      "sweep_flags": [],
       "last_sweep": "2026-04-01",
-      "risk": "medium",
-      "sweep_flag": "MEASUREMENT_OVERDUE",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "3d overdue - BAW subscription push, Katie+Nick own"
+      "risk": "low"
     },
     {
       "id": "CS-2026-031",
