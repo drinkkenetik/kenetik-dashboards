@@ -13,7 +13,6 @@
     "flags": [
       "STALE: 17 approved ChangeSets (13 Katie-owned email campaigns CS-009 through CS-022/024, plus CS-034 Lawrence/Nick, CS-036 Katie, CS-037 Katie). Katie concentration: 14/17 stale are Katie-owned.",
       "OVERDUE: 7 measurements past due. CS-026/027 (9d, BAW), CS-030 (5d, sub push), CS-028 (6d, FB realloc), CS-025 (2d, attribution), CS-023 (1d, email audit), CS-029 (1d, Matt Hughes grad).",
-      "CRITICAL: CS-011 send deadline TODAY \u2014 no draft exists. Katie owns. Synthesis rec-157 recommends reassignment to Nick/Alex.",
       "KATIE CONCENTRATION: 26/37 active entries (70%). 8th consecutive session flagged. Zero executive redistribution action taken. System bottleneck confirmed.",
       "PORTFOLIO: 44 total, 15 published, 19 approved, 6 draft, 4 closed. No new ChangeSets warranted \u2014 existing draft backlog + stale approved pipeline must be unblocked first.",
       "AUTONOMOUS MODE: shadow \u2014 classification only, no auto-advance."
@@ -21,12 +20,12 @@
     "new_changeset_generation": "No new ChangeSets generated. Portfolio at 44 entries with 17 stale approved and 7 measurement overdue. Priority is executing existing pipeline: (1) CS-011 deadline today, (2) measure overdue CS-026/027/028/030, (3) redistribute Katie's 14 stale approved. Adding new ChangeSets would worsen the bottleneck."
   },
   "summary": {
-    "total_changesets": 44,
+    "total_changesets": 45,
     "by_status": {
       "published": 15,
-      "closed": 4,
-      "approved": 19,
-      "draft": 6
+      "closed": 6,
+      "approved": 20,
+      "draft": 4
     },
     "last_updated": "2026-04-01"
   },
@@ -559,7 +558,7 @@
       "title": "THE SCIENCE IS NO JOKE",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "published",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-12",
@@ -590,17 +589,25 @@
       "routed_date": "2026-03-14",
       "approved_by": "Katie",
       "approved_date": "2026-03-14",
-      "published_date": null,
+      "published_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-011.md",
-      "notes": "Apr 1 first send. ACTION NEEDED by Mar 30.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "Published Apr 1. Science-led April Fools email \u2014 Machado 2022 qEEG study. 7-day measurement window through Apr 8. Brief updated with final creative at publish.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": null,
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": null,
+      "published_by": "Katie",
+      "measurement_start_date": "2026-04-01",
+      "measurement_end_date": "2026-04-08",
+      "measurement_window": "7d",
+      "measurement_due": "2026-04-08",
+      "publish_confirmation": {
+        "surface": "klaviyo",
+        "confirmation_id": "Klaviyo campaign \u2014 single send Apr 1 2026",
+        "published_at": "2026-04-01T12:00:00Z"
+      }
     },
     {
       "id": "CS-2026-012",
