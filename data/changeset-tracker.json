@@ -2185,9 +2185,13 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-043.md",
-      "notes": "Reframed as TikTok platform test (first paid TikTok for Kenetik). Budget reduced from $750 to $500. Viral window passed but content strong. Approved by Katie 2026-04-01.",
+      "notes": "Reframed as TikTok platform test (first paid TikTok for Kenetik). Budget reduced from $750 to $500. BLOCKED: TikTok Business Center connected to wrong page (7390402868932558864). Need Nick to approve auth request connecting correct @kenetik page (7080550158419379246). Katie sent QR code via Slack Apr 1. Resume execution once page is connected.",
       "risk": "critical",
-      "review_tier": "standard"
+      "review_tier": "standard",
+      "sweep_flags": [
+        "EXECUTION BLOCKED: TikTok Business Center page mismatch. Waiting on Nick to approve page authorization."
+      ],
+      "last_sweep": "2026-04-01"
     },
     {
       "id": "CS-2026-044",
