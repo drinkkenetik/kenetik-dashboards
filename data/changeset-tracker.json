@@ -1701,7 +1701,7 @@
       "surface": "website",
       "status": "closed",
       "risk_level": "medium",
-      "owner": "Nick + Cliff",
+      "owner": "Katie",
       "created": "2026-03-21",
       "objective_level": "L1",
       "category": "amazon",
@@ -1724,8 +1724,7 @@
         "primary_metric_target": ">=18% CVR (from 14% baseline)"
       },
       "routed_to": [
-        "Nick",
-        "Cliff"
+        "Katie"
       ],
       "routed_via": "slack",
       "routed_date": "2026-03-19",
