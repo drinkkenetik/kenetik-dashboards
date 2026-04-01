@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-01",
-  "next_id": 45,
+  "next_id": 46,
   "lifecycle_sweep": {
     "session": "2026-04-01-session-24",
     "sweep_date": "2026-04-01",
@@ -2049,7 +2049,7 @@
       "title": "Graduation: Matt Hughes IG Reel (Brain Recovery)",
       "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-03-30",
@@ -2086,10 +2086,10 @@
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "outcome": "stale",
+      "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-041.md",
-      "notes": "Graduation candidate: Matt Hughes IG Reel, 5.5% engagement rate, 4.8x reach. [migrated from proposed status]",
+      "notes": "Superseded by CS-2026-029 (same IG reel, already tested in paid with 9.57x ROAS). Learnings folded into scale ChangeSet CS-2026-045.",
       "risk": "medium"
     },
     {
@@ -2142,11 +2142,11 @@
     },
     {
       "id": "CS-2026-043",
-      "title": "Graduation + VIRAL ALERT: Matt Hughes TikTok (Brain Recovery)",
+      "title": "TikTok Platform Test: Matt Hughes Brain Recovery Spark Ad",
       "subtype": "implementation",
       "surface": "paid_tiktok",
-      "status": "draft",
-      "risk_level": "critical",
+      "status": "approved",
+      "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-03-30",
       "objective_level": "L2",
@@ -2157,25 +2157,25 @@
       "spawned_changesets": [],
       "expected_impact": {
         "revenue": {
-          "upside": null,
-          "expected": null,
-          "downside": null
+          "upside": 2500,
+          "expected": 1000,
+          "downside": 0
         },
         "margin": {
-          "upside": null,
-          "expected": null,
-          "downside": null
+          "upside": 1250,
+          "expected": 500,
+          "downside": -500
         },
-        "primary_metric": "CPV, completion rate, CTR",
-        "primary_metric_target": "Viral amplification benchmarks"
+        "primary_metric": "CPV, completion rate, CTR, website sessions",
+        "primary_metric_target": "TikTok Spark Ad benchmarks; secondary: any attributable purchases"
       },
       "routed_to": [
         "Katie"
       ],
       "routed_via": "system",
       "routed_date": "2026-03-30",
-      "approved_by": null,
-      "approved_date": null,
+      "approved_by": "Katie",
+      "approved_date": "2026-04-01",
       "published_date": null,
       "measurement_start_date": null,
       "measurement_end_date": null,
@@ -2185,8 +2185,9 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-043.md",
-      "notes": "URGENT: 16.7x rolling 30-day average. Deploy within 48 hours for viral momentum. [migrated from proposed status]",
-      "risk": "critical"
+      "notes": "Reframed as TikTok platform test (first paid TikTok for Kenetik). Budget reduced from $750 to $500. Viral window passed but content strong. Approved by Katie 2026-04-01.",
+      "risk": "critical",
+      "review_tier": "standard"
     },
     {
       "id": "CS-2026-044",
@@ -2235,6 +2236,55 @@
       "file": "cgo-logs/changesets/CS-2026-044.md",
       "notes": "Consolidated graduation: caffeine story (7.6% engagement) + Matt Hughes scan (35.9x rolling avg). [migrated from proposed status]",
       "risk": "medium"
+    },
+    {
+      "id": "CS-2026-045",
+      "title": "Scale: Matt Hughes Athlete Content \u2192 Paid Meta (Proven 9.57x ROAS)",
+      "subtype": "implementation",
+      "surface": "paid_meta",
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-04-01",
+      "objective_level": "L2",
+      "category": "paid_media",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "CS-2026-029",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 9600,
+          "expected": 4800,
+          "downside": 1000
+        },
+        "margin": {
+          "upside": 4800,
+          "expected": 2400,
+          "downside": -500
+        },
+        "primary_metric": "ROAS",
+        "primary_metric_target": ">=1.5x ROAS (CS-2026-029 delivered 9.57x)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "system",
+      "routed_date": "2026-04-01",
+      "approved_by": "Katie",
+      "approved_date": "2026-04-01",
+      "review_tier": "standard",
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-045.md",
+      "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant.",
+      "risk": "low"
     }
   ],
   "queue_actions": {
