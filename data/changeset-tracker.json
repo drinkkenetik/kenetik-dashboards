@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-01T07:30:00.000Z",
+  "last_updated": "2026-04-01",
   "next_id": 45,
   "lifecycle_sweep": {
     "session": "2026-04-01-session-24",
@@ -1482,7 +1482,7 @@
       "title": "Graduation: Matt Hughes Reel \u2192 Paid Social Amplification",
       "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie + Nick",
       "created": "2026-03-17",
@@ -1522,15 +1522,19 @@
       "measurement_end_date": "2026-03-31",
       "measurement_window": "14d",
       "measurement_due": "2026-03-31",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "revenue": 931.01,
+        "spend": 97.32,
+        "roas": 9.57,
+        "purchases": 15,
+        "notes": "Two organic variants boosted in BAW Meta campaign. Greayteam variant: $76.70 spend, $438.44 rev, 5.72x ROAS. Brain Week variant: $20.62 spend, $492.57 rev, 23.89x ROAS. Test ran at ~10% of planned budget due to Charlotte creative delay; Katie launched organic variants directly."
+      },
+      "outcome": "success",
+      "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-029.md",
-      "notes": "Published Mar 17. Influencer activation for Brain Awareness Week.",
+      "notes": "Published Mar 17. Closed Apr 1 as SUCCESS. Combined 9.57x ROAS (target 1.5x). Organic variants outperformed \u2014 no custom creative needed. Budget-constrained but efficiency exceptional.",
       "risk": "low",
-      "sweep_flags": [
-        "MEASUREMENT OVERDUE (1d past measurement deadline (Mar 31) \u2014 Matt Hughes graduation). Session 24 sweep."
-      ],
+      "sweep_flags": [],
       "last_sweep": "2026-04-01"
     },
     {
