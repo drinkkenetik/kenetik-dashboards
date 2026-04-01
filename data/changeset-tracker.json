@@ -1437,7 +1437,7 @@
       "title": "FB Prospecting Budget Reallocation \u2014 Meta Leadville + Google Pmax",
       "subtype": "implementation",
       "surface": "paid_google",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-17",
@@ -1474,15 +1474,18 @@
       "measurement_end_date": "2026-03-26",
       "measurement_window": "7d",
       "measurement_due": "2026-03-26",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "revenue_change": "Inconclusive — confounded by demand cliff",
+        "fb_prospecting_cut": "78.8% (more aggressive than planned 50%)",
+        "leadville_roas_at_scale": "3.35x at 2x budget",
+        "pmax_roas_decline": "3.90x → 2.05x (diminishing returns at scale)"
+      },
+      "outcome": "executed_inconclusive",
+      "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-028.md",
-      "notes": "Published Mar 19. BAW email companion to social blitz.",
+      "notes": "Reallocation executed correctly. Measurement inconclusive — baseline included peak Leadville Sweepstakes + BAW promotional period, creating invalid comparison. Demand cliff (documented in CS-033) drove universal conversion declines across all channels. Key learning: Pmax has a scaling ceiling; Leadville absorbed budget well at 3.35x ROAS. Creative gate for FB prospecting remains in effect.",
       "risk": "low",
-      "sweep_flags": [
-        "MEASUREMENT OVERDUE (6d past measurement deadline (Mar 26) \u2014 FB budget reallocation). Session 24 sweep."
-      ],
+      "sweep_flags": [],
       "last_sweep": "2026-04-01"
     },
     {
