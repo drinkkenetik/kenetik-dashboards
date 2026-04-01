@@ -2190,11 +2190,11 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-043.md",
-      "notes": "Reframed as TikTok platform test (first paid TikTok for Kenetik). Budget reduced from $750 to $500. BLOCKED: TikTok Business Center connected to wrong page (7390402868932558864). Need Nick to approve auth request connecting correct @kenetik page (7080550158419379246). Katie sent QR code via Slack Apr 1. Resume execution once page is connected.",
+      "notes": "Reframed as TikTok platform test (first paid TikTok for Kenetik). Budget reduced from $750 to $500. BLOCKED: TikTok account structure still unresolved despite Nick's QR code approval. Katie messaged Nick Apr 1 to schedule dedicated call with TikTok rep to resolve full account structure. Resume execution after call.",
       "risk": "critical",
       "review_tier": "standard",
       "sweep_flags": [
-        "EXECUTION BLOCKED: TikTok Business Center page mismatch. Waiting on Nick to approve page authorization."
+        "EXECUTION BLOCKED: TikTok account structure unresolved. Nick scheduling call with TikTok rep."
       ],
       "last_sweep": "2026-04-01"
     },
