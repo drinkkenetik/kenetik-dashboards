@@ -1,25 +1,24 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-03-30T22:00:00.000Z",
+  "last_updated": "2026-04-01T07:30:00.000Z",
   "next_id": 45,
   "lifecycle_sweep": {
-    "session": "2026-03-30-session-22",
-    "sweep_date": "2026-03-30",
-    "stale_detected": 2,
-    "measurement_overdue": 0,
+    "session": "2026-04-01-session-24",
+    "sweep_date": "2026-04-01",
+    "stale_detected": 17,
+    "measurement_overdue": 7,
     "measurement_due_today": 0,
     "measurement_approaching": 0,
     "auto_closed": 0,
     "flags": [
-      "STALE: CS-2026-027 (13d, approved, Charlotte+Cliff -- BAW Tier A Fast-Track)",
-      "STALE: CS-2026-029 (13d, approved, Katie+Nick -- Matt Hughes Reel Graduation)",
-      "NOTE: Domain 12 reports 20 active items stale but tracker shows most are in draft status (not approved/executing). Draft items are pre-pipeline and don't trigger stale detection.",
-      "PORTFOLIO: 42 total, 30 draft, 5 published, 2 approved, 4 proposed, 1 closed. Portfolio heavily backlogged with drafts.",
-      "KATIE CONCENTRATION: ~26 of 42 entries owned by Katie (62%). Redistribution recommended per rec-138.",
-      "NO NEW CHANGESETS: Portfolio at 42 entries with 30 drafts. Priority is unblocking existing portfolio through redistribution before adding new work.",
-      "AUTONOMOUS MODE: shadow -- classification only, no auto-advance."
+      "STALE: 17 approved ChangeSets (13 Katie-owned email campaigns CS-009 through CS-022/024, plus CS-034 Lawrence/Nick, CS-036 Katie, CS-037 Katie). Katie concentration: 14/17 stale are Katie-owned.",
+      "OVERDUE: 7 measurements past due. CS-026/027 (9d, BAW), CS-030 (5d, sub push), CS-028 (6d, FB realloc), CS-025 (2d, attribution), CS-023 (1d, email audit), CS-029 (1d, Matt Hughes grad).",
+      "CRITICAL: CS-011 send deadline TODAY \u2014 no draft exists. Katie owns. Synthesis rec-157 recommends reassignment to Nick/Alex.",
+      "KATIE CONCENTRATION: 26/37 active entries (70%). 8th consecutive session flagged. Zero executive redistribution action taken. System bottleneck confirmed.",
+      "PORTFOLIO: 44 total, 15 published, 19 approved, 6 draft, 4 closed. No new ChangeSets warranted \u2014 existing draft backlog + stale approved pipeline must be unblocked first.",
+      "AUTONOMOUS MODE: shadow \u2014 classification only, no auto-advance."
     ],
-    "new_changeset_generation": "No new ChangeSets generated. Portfolio at 42 entries with 30 in draft. Katie redistribution (rec-138) must occur before new ChangeSet creation. Existing draft backlog sufficient to drive 4+ weeks of execution."
+    "new_changeset_generation": "No new ChangeSets generated. Portfolio at 44 entries with 17 stale approved and 7 measurement overdue. Priority is executing existing pipeline: (1) CS-011 deadline today, (2) measure overdue CS-026/027/028/030, (3) redistribute Katie's 14 stale approved. Adding new ChangeSets would worsen the bottleneck."
   },
   "summary": {
     "total_changesets": 44,
@@ -29,7 +28,7 @@
       "approved": 19,
       "draft": 6
     },
-    "last_updated": "2026-03-31"
+    "last_updated": "2026-04-01"
   },
   "changesets": [
     {
@@ -1188,7 +1187,11 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-023.md",
       "notes": "Published Mar 17. BAW runs Mar 10-16 but content calendar extends through month.",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flags": [
+        "MEASUREMENT OVERDUE (1d past measurement deadline (Mar 31)). Session 24 sweep."
+      ],
+      "last_sweep": "2026-04-01"
     },
     {
       "id": "CS-2026-024",
@@ -1291,9 +1294,10 @@
       "file": "cgo-logs/changesets/CS-2026-025.md",
       "notes": "CRITICAL: Hard deadline Mar 28. Cliff approved full review.",
       "sweep_flags": [
-        "MEASUREMENT_APPROACHING"
+        "MEASUREMENT_APPROACHING",
+        "MEASUREMENT OVERDUE (2d past measurement deadline (Mar 30) \u2014 attribution sprint). Session 24 sweep."
       ],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-01",
       "risk": "low",
       "sweep_flag": "MEASUREMENT_OVERDUE",
       "sweep_date": "2026-03-31",
@@ -1351,9 +1355,10 @@
       "file": "cgo-logs/changesets/CS-2026-026.md",
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
-        "MEASUREMENT_OVERDUE"
+        "MEASUREMENT_OVERDUE",
+        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW content velocity). Session 24 sweep."
       ],
-      "last_sweep": "2026-03-27",
+      "last_sweep": "2026-04-01",
       "risk": "low",
       "sweep_flag": "MEASUREMENT_OVERDUE",
       "sweep_date": "2026-03-31",
@@ -1410,9 +1415,10 @@
       "file": "cgo-logs/changesets/CS-2026-027.md",
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
-        "MEASUREMENT_OVERDUE"
+        "MEASUREMENT_OVERDUE",
+        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW Tier A fast-track). Session 24 sweep."
       ],
-      "last_sweep": "2026-03-27",
+      "last_sweep": "2026-04-01",
       "risk": "low",
       "sweep_flag": "MEASUREMENT_OVERDUE",
       "sweep_date": "2026-03-31",
@@ -1465,7 +1471,11 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-028.md",
       "notes": "Published Mar 19. BAW email companion to social blitz.",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flags": [
+        "MEASUREMENT OVERDUE (6d past measurement deadline (Mar 26) \u2014 FB budget reallocation). Session 24 sweep."
+      ],
+      "last_sweep": "2026-04-01"
     },
     {
       "id": "CS-2026-029",
@@ -1517,7 +1527,11 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-029.md",
       "notes": "Published Mar 17. Influencer activation for Brain Awareness Week.",
-      "risk": "low"
+      "risk": "low",
+      "sweep_flags": [
+        "MEASUREMENT OVERDUE (1d past measurement deadline (Mar 31) \u2014 Matt Hughes graduation). Session 24 sweep."
+      ],
+      "last_sweep": "2026-04-01"
     },
     {
       "id": "CS-2026-030",
@@ -1570,9 +1584,10 @@
       "file": "cgo-logs/changesets/CS-2026-030.md",
       "notes": "Published Mar 20. BAW subscription acquisition push.",
       "sweep_flags": [
-        "MEASUREMENT_DUE_TODAY"
+        "MEASUREMENT_DUE_TODAY",
+        "MEASUREMENT OVERDUE (5d past measurement deadline (Mar 27) \u2014 BAW subscription push). Session 24 sweep."
       ],
-      "last_sweep": "2026-03-27",
+      "last_sweep": "2026-04-01",
       "risk": "medium",
       "sweep_flag": "MEASUREMENT_OVERDUE",
       "sweep_date": "2026-03-31",
