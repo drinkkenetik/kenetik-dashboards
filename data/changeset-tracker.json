@@ -2203,7 +2203,7 @@
       "title": "Graduation: FB 'Caffeine Addiction' Story Series + VIRAL Matt Hughes Scan",
       "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-03-30",
@@ -2240,10 +2240,10 @@
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "outcome": "invalid",
+      "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-044.md",
-      "notes": "Consolidated graduation: caffeine story (7.6% engagement) + Matt Hughes scan (35.9x rolling avg). [migrated from proposed status]",
+      "notes": "CLOSED — Invalid. Source content (Ashton Hall videos) were paid ads, not organic posts. Graduation pipeline does not apply. Social media manager confirmed these were never posted organically. Devon notified. CS-045 created for proper Matt Hughes graduation. Graduation scan should filter out paid-distributed content.",
       "risk": "medium"
     },
     {
