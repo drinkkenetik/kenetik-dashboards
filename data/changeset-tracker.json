@@ -84,7 +84,8 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-001.md",
       "notes": "Published Mar 11. 30-day measurement window through Apr 10.",
-      "risk": "critical"
+      "risk": "critical",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-002",
@@ -134,7 +135,8 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-002.md",
       "notes": "Published Mar 9. 30-day measurement window through Apr 8.",
-      "risk": "low"
+      "risk": "low",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-003",
@@ -197,7 +199,8 @@
       "sweep_flags": [],
       "measurement_window_end": "2026-03-27",
       "last_sweep": "2026-03-30",
-      "risk": "medium"
+      "risk": "medium",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-004",
@@ -300,7 +303,8 @@
       "closed_date": "2026-03-16",
       "file": "cgo-logs/changesets/CS-2026-005.md",
       "notes": "Closed: Superseded by CS-2026-014 (more comprehensive Amazon listing overhaul).",
-      "risk": "medium"
+      "risk": "medium",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-006",
@@ -403,7 +407,8 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-007.md",
       "notes": "Published Mar 14. Depends on CS-2026-006.",
-      "risk": "high"
+      "risk": "high",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-008",
@@ -508,7 +513,8 @@
       "measurement_window": "60-day from launch",
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close.",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-010",
@@ -559,7 +565,8 @@
       "measurement_window": "7-day investigation",
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close.",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-011",
@@ -615,7 +622,8 @@
         "surface": "klaviyo",
         "confirmation_id": "Klaviyo campaign \u2014 single send Apr 1 2026",
         "published_at": "2026-04-01T12:00:00Z"
-      }
+      },
+      "scheduled_send_date": "2026-04-01"
     },
     {
       "id": "CS-2026-012",
@@ -662,7 +670,8 @@
       "risk": "low",
       "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Rescheduled to ~4/7 pending Unbound asset finalization."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Rescheduled to ~4/7 pending Unbound asset finalization.",
+      "scheduled_send_date": "2026-04-07"
     },
     {
       "id": "CS-2026-013",
@@ -710,7 +719,8 @@
       "sweep_flag": "",
       "sweep_date": "2026-03-31",
       "sweep_note": "Cleared 4/2: Published and scheduled for 4/3 send.",
-      "measurement_due": "2026-04-10"
+      "measurement_due": "2026-04-10",
+      "scheduled_send_date": "2026-04-03"
     },
     {
       "id": "CS-2026-014",
@@ -757,7 +767,8 @@
       "risk": "low",
       "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Tentative send ~4/10."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Tentative send ~4/10.",
+      "scheduled_send_date": "2026-04-10"
     },
     {
       "id": "CS-2026-015",
@@ -804,7 +815,8 @@
       "risk": "low",
       "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/16."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/16.",
+      "scheduled_send_date": "2026-04-16"
     },
     {
       "id": "CS-2026-016",
@@ -850,7 +862,8 @@
         "STALE_7D+"
       ],
       "last_sweep": "2026-03-25",
-      "risk": "low"
+      "risk": "low",
+      "scheduled_send_date": "2026-04-16"
     },
     {
       "id": "CS-2026-017",
@@ -897,7 +910,8 @@
       "risk": "low",
       "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Blocked on koozie asset finalization."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Blocked on koozie asset finalization.",
+      "scheduled_send_date": "2026-04-17"
     },
     {
       "id": "CS-2026-018",
@@ -944,7 +958,8 @@
       "risk": "low",
       "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/21."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/21.",
+      "scheduled_send_date": "2026-04-21"
     },
     {
       "id": "CS-2026-019",
@@ -991,7 +1006,8 @@
       "risk": "low",
       "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/22."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/22.",
+      "scheduled_send_date": "2026-04-22"
     },
     {
       "id": "CS-2026-020",
@@ -1040,7 +1056,8 @@
       "risk": "low",
       "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Blocked by CS-2026-017 koozie dependency."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Blocked by CS-2026-017 koozie dependency.",
+      "scheduled_send_date": "2026-04-24"
     },
     {
       "id": "CS-2026-021",
@@ -1087,7 +1104,8 @@
       "risk": "low",
       "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/27."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/27.",
+      "scheduled_send_date": "2026-04-27"
     },
     {
       "id": "CS-2026-022",
@@ -1134,7 +1152,8 @@
       "risk": "low",
       "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/30."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/30.",
+      "scheduled_send_date": "2026-04-30"
     },
     {
       "id": "CS-2026-023",
@@ -1201,7 +1220,8 @@
       "risk": "low",
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
-      "sweep_flag": null
+      "sweep_flag": null,
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-024",
@@ -1253,7 +1273,8 @@
       "measurement_window": "30-day from launch",
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close.",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-025",
@@ -1621,7 +1642,8 @@
       "notes": "Revised 2026-04-01: Repositioned from BAW urgency promo (window expired) to repurchase-window subscription conversion. Target launch Apr 3. Approved via standard hierarchy review \u2014 positive at all 5 levels, no trade-offs. Segment: BAW discount code one-time purchasers without active subscription.",
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
-      "risk": "low"
+      "risk": "low",
+      "scheduled_send_date": "2026-04-03"
     },
     {
       "id": "CS-2026-031",
@@ -1666,7 +1688,8 @@
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-22",
       "measurement_window": "14-day from implementation",
-      "review_tier": "express"
+      "review_tier": "express",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-032",
@@ -1840,7 +1863,8 @@
       "routed_date": "2026-03-22",
       "file": "cgo-logs/changesets/CS-2026-035.md",
       "notes": "Draft: Winback flow experiment. Pending Katie review.",
-      "risk": "low"
+      "risk": "low",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-036",
@@ -1891,7 +1915,8 @@
       "notes": "Ready for graduation.",
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close.",
+      "scheduled_send_date": null
     },
     {
       "id": "CS-2026-037",
