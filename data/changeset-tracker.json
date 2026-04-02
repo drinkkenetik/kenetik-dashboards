@@ -25,9 +25,9 @@
   "summary": {
     "total_changesets": 45,
     "by_status": {
-      "published": 11,
+      "published": 12,
       "closed": 11,
-      "approved": 20,
+      "approved": 19,
       "draft": 3
     },
     "last_updated": "2026-04-02",
@@ -2299,7 +2299,7 @@
       "title": "Scale: Matt Hughes Athlete Content \u2192 Paid Meta (Proven 9.57x ROAS)",
       "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "approved",
+      "status": "published",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-04-01",
@@ -2331,17 +2331,18 @@
       "approved_by": "Katie",
       "approved_date": "2026-04-01",
       "review_tier": "standard",
-      "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
+      "published_date": "2026-04-03",
+      "measurement_start_date": "2026-04-03",
+      "measurement_end_date": "2026-04-17",
       "measurement_window": "14d",
-      "measurement_due": null,
+      "measurement_due": "2026-04-17",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-045.md",
-      "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant.",
-      "risk": "low"
+      "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING \u2014 Katie to update after Meta publish.",
+      "risk": "low",
+      "ad_platform_refs": null
     }
   ],
   "queue_actions": {
