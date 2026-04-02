@@ -25,9 +25,9 @@
   "summary": {
     "total_changesets": 45,
     "by_status": {
-      "published": 10,
+      "published": 11,
       "closed": 11,
-      "approved": 21,
+      "approved": 20,
       "draft": 3
     },
     "last_updated": "2026-04-02",
@@ -656,22 +656,20 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-012.md",
-      "notes": "Send: 4/3.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "RESCHEDULED: Send ~4/7 (Tue). BLOCKED: Unbound sweepstakes prizes not finalized by team. Drafts ready with Underground Ecom, awaiting final assets. Original send date: 4/3.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Rescheduled to ~4/7 pending Unbound asset finalization."
     },
     {
       "id": "CS-2026-013",
       "title": "YOUR SPRING DEEP WORK PROTOCOL",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "published",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
@@ -703,17 +701,16 @@
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
-      "published_date": null,
+      "published_date": "2026-04-02",
       "file": "cgo-logs/changesets/CS-2026-013.md",
-      "notes": "Send: 4/7.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "Published 4/2. Scheduled send: 4/3. Pulled forward from 4/7 \u2014 swapped with CS-2026-012 (Unbound blocked). Draft finalized with Underground Ecom. 7-day measurement window through 4/10.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Cleared 4/2: Published and scheduled for 4/3 send.",
+      "measurement_due": "2026-04-10"
     },
     {
       "id": "CS-2026-014",
@@ -754,15 +751,13 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-014.md",
-      "notes": "Supersedes CS-2026-005.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "Send: TBD (~4/10). Draft in progress with Underground Ecom. Supersedes CS-2026-005.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Tentative send ~4/10."
     },
     {
       "id": "CS-2026-015",
@@ -803,15 +798,13 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-015.md",
-      "notes": "Send: 4/16. SMS pairing.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "Send: 4/16. SMS pairing. Draft in progress with Underground Ecom.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/16."
     },
     {
       "id": "CS-2026-016",
@@ -898,15 +891,13 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-017.md",
-      "notes": "Send: 4/17. SMS pairing. BLOCKED by rec-026 (koozie supplier quotes OVERDUE).",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized \u2014 supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Blocked on koozie asset finalization."
     },
     {
       "id": "CS-2026-018",
@@ -947,15 +938,13 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-018.md",
-      "notes": "Send: 4/21.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "Send: 4/21. Draft in progress with Underground Ecom.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/21."
     },
     {
       "id": "CS-2026-019",
@@ -996,15 +985,13 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-019.md",
-      "notes": "Send: 4/22. Earth Day.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "Send: 4/22 (Earth Day). Draft in progress with Underground Ecom.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/22."
     },
     {
       "id": "CS-2026-020",
@@ -1047,15 +1034,13 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-020.md",
-      "notes": "Send: 4/24.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "Send: 4/24 (tentative). Depends on CS-2026-017 koozie asset finalization. Draft in progress with Underground Ecom.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Blocked by CS-2026-017 koozie dependency."
     },
     {
       "id": "CS-2026-021",
@@ -1096,15 +1081,13 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-021.md",
-      "notes": "Send: 4/27.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "Send: 4/27. Draft in progress with Underground Ecom.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/27."
     },
     {
       "id": "CS-2026-022",
@@ -1145,15 +1128,13 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-022.md",
-      "notes": "Send: 4/30.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "Send: 4/30. Draft in progress with Underground Ecom.",
+      "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": "",
       "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/30."
     },
     {
       "id": "CS-2026-023",
