@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-02",
+  "last_updated": "2026-04-03",
   "next_id": 47,
   "lifecycle_sweep": {
     "session": "2026-04-02-session-25",
@@ -2357,8 +2357,8 @@
     },
     {
       "id": "CS-2026-046",
-      "title": "Checkout Infrastructure Emergency Diagnostic",
-      "subtype": "investigation",
+      "title": "Homepage Product Grid ATC Bug \u2014 Emergency Fix",
+      "subtype": "bug_fix",
       "surface": "shopify",
       "status": "published",
       "risk_level": "critical",
@@ -2389,8 +2389,8 @@
       ],
       "routed_via": "slack",
       "routed_date": "2026-04-03",
-      "file": "cgo-logs/changesets/CS-2026-046.md",
-      "notes": "P0 emergency. All checkout stages -30-37% cross-device. Account login -58.9%. Session 26 pat-014.",
+      "file": "cgo-logs/changesets/CS-2026-046/brief.md",
+      "notes": "Root cause: Mar 23 template rewrite broke JS class selectors. Fix deployed Apr 3. ATC rate recovering from ~12% toward 35% baseline. Measurement window Apr 3-10.",
       "measurement_window": "7d from fix deployment",
       "autonomy_tier": 2,
       "shadow_classification": "Tier 2 \u2014 critical risk, multi-surface investigation, not eligible for autonomous execution",
@@ -2406,6 +2406,14 @@
         "surface": "shopify",
         "confirmation_id": "Investigation kickoff \u2014 Slack notification to Katie, Nick, Cliff",
         "published_at": "2026-04-03T06:45:00Z"
+      },
+      "actual_impact": {
+        "status": "measuring",
+        "fix_deployed": "2026-04-03",
+        "pre_bug_atc_rate": "35.1%",
+        "broken_period_atc_rate": "~12%",
+        "post_fix_partial": "24.5% (partial day)",
+        "estimated_revenue_loss": "$100K-$130K over 11-day broken period"
       }
     }
   ],
