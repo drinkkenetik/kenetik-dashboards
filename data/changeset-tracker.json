@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-02",
-  "next_id": 46,
+  "next_id": 47,
   "lifecycle_sweep": {
     "session": "2026-04-02-session-25",
     "sweep_date": "2026-04-02",
@@ -508,12 +508,12 @@
       "sweep_flags": [
         "STALE_7D+"
       ],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
       "measurement_window": "60-day from launch",
       "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close.",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d with no scheduled send date. Recommend: close as abandoned or reassign from Katie + Brandon.",
       "scheduled_send_date": null
     },
     {
@@ -560,12 +560,12 @@
       "sweep_flags": [
         "STALE_7D+"
       ],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
       "measurement_window": "7-day investigation",
       "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close.",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d with no scheduled send date. Recommend: close as abandoned or reassign from Katie + Devon.",
       "scheduled_send_date": null
     },
     {
@@ -666,11 +666,11 @@
       "file": "cgo-logs/changesets/CS-2026-012.md",
       "notes": "RESCHEDULED: Send ~4/7 (Tue). BLOCKED: Unbound sweepstakes prizes not finalized by team. Drafts ready with Underground Ecom, awaiting final assets. Original send date: 4/3.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Rescheduled to ~4/7 pending Unbound asset finalization.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d, send in 4d (2026-04-07). Monitor for on-time execution.",
       "scheduled_send_date": "2026-04-07"
     },
     {
@@ -763,11 +763,11 @@
       "file": "cgo-logs/changesets/CS-2026-014.md",
       "notes": "Send: TBD (~4/10). Draft in progress with Underground Ecom. Supersedes CS-2026-005.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Tentative send ~4/10.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d, send in 7d (2026-04-10). Monitor for on-time execution.",
       "scheduled_send_date": "2026-04-10"
     },
     {
@@ -811,11 +811,11 @@
       "file": "cgo-logs/changesets/CS-2026-015.md",
       "notes": "Send: 4/16. SMS pairing. Draft in progress with Underground Ecom.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/16.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d but has scheduled send 2026-04-16 (13d away). Active in Underground Ecom pipeline.",
       "scheduled_send_date": "2026-04-16"
     },
     {
@@ -906,11 +906,11 @@
       "file": "cgo-logs/changesets/CS-2026-017.md",
       "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized \u2014 supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Blocked on koozie asset finalization.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d but has scheduled send 2026-04-17 (14d away). Active in Underground Ecom pipeline.",
       "scheduled_send_date": "2026-04-17"
     },
     {
@@ -954,11 +954,11 @@
       "file": "cgo-logs/changesets/CS-2026-018.md",
       "notes": "Send: 4/21. Draft in progress with Underground Ecom.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/21.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d but has scheduled send 2026-04-21 (18d away). Active in Underground Ecom pipeline.",
       "scheduled_send_date": "2026-04-21"
     },
     {
@@ -1002,11 +1002,11 @@
       "file": "cgo-logs/changesets/CS-2026-019.md",
       "notes": "Send: 4/22 (Earth Day). Draft in progress with Underground Ecom.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/22.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d but has scheduled send 2026-04-22 (19d away). Active in Underground Ecom pipeline.",
       "scheduled_send_date": "2026-04-22"
     },
     {
@@ -1052,11 +1052,11 @@
       "file": "cgo-logs/changesets/CS-2026-020.md",
       "notes": "Send: 4/24 (tentative). Depends on CS-2026-017 koozie asset finalization. Draft in progress with Underground Ecom.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Blocked by CS-2026-017 koozie dependency.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d but has scheduled send 2026-04-24 (21d away). Active in Underground Ecom pipeline.",
       "scheduled_send_date": "2026-04-24"
     },
     {
@@ -1100,11 +1100,11 @@
       "file": "cgo-logs/changesets/CS-2026-021.md",
       "notes": "Send: 4/27. Draft in progress with Underground Ecom.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/27.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d but has scheduled send 2026-04-27 (24d away). Active in Underground Ecom pipeline.",
       "scheduled_send_date": "2026-04-27"
     },
     {
@@ -1148,11 +1148,11 @@
       "file": "cgo-logs/changesets/CS-2026-022.md",
       "notes": "Send: 4/30. Draft in progress with Underground Ecom.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Active campaign calendar with Underground Ecom. Send date 4/30.",
+      "sweep_flag": "STALE_APPROVED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d but has scheduled send 2026-04-30 (27d away). Active in Underground Ecom pipeline.",
       "scheduled_send_date": "2026-04-30"
     },
     {
@@ -1268,12 +1268,12 @@
       "sweep_flags": [
         "STALE_7D+"
       ],
-      "last_sweep": "2026-03-25",
+      "last_sweep": "2026-04-03",
       "risk": "low",
       "measurement_window": "30-day from launch",
       "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close.",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 18d with no scheduled send date. Recommend: close as abandoned or reassign from Katie.",
       "scheduled_send_date": null
     },
     {
@@ -1336,7 +1336,7 @@
       "title": "BAW Content Velocity Emergency",
       "subtype": "implementation",
       "surface": "content",
-      "status": "published",
+      "status": "closed",
       "risk_level": "high",
       "owner": "Nick + Charlotte",
       "created": "2026-03-16",
@@ -1377,27 +1377,30 @@
       "measurement_end_date": "2026-03-23",
       "measurement_window": "9d",
       "measurement_due": "2026-03-23",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "status": "unmeasured",
+        "reason": "Measurement window expired without data collection. BAW content produced but velocity metrics not tracked."
+      },
+      "outcome": "force_closed_no_measurement",
+      "closed_date": "2026-04-03",
       "file": "cgo-logs/changesets/CS-2026-026.md",
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
         "MEASUREMENT_OVERDUE",
         "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW content velocity). Session 24 sweep."
       ],
-      "last_sweep": "2026-04-01",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "MEASUREMENT_OVERDUE",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "8d overdue - BAW content velocity, Nick+Charlotte own"
+      "sweep_flag": "FORCE_CLOSED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Force-closed Session 26. BAW Content Velocity \u2014 11d overdue measurement. No outcome data in briefs. Owner: Nick + Charlotte."
     },
     {
       "id": "CS-2026-027",
       "title": "BAW Tier A Content Fast-Track Protocol",
       "subtype": "implementation",
       "surface": "content",
-      "status": "published",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Charlotte + Cliff",
       "created": "2026-03-17",
@@ -1437,20 +1440,23 @@
       "measurement_end_date": "2026-03-23",
       "measurement_window": "9d",
       "measurement_due": "2026-03-23",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "status": "unmeasured",
+        "reason": "Measurement window expired without data collection. Tier A fast-track execution status unknown."
+      },
+      "outcome": "force_closed_no_measurement",
+      "closed_date": "2026-04-03",
       "file": "cgo-logs/changesets/CS-2026-027.md",
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
         "MEASUREMENT_OVERDUE",
         "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW Tier A fast-track). Session 24 sweep."
       ],
-      "last_sweep": "2026-04-01",
+      "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "MEASUREMENT_OVERDUE",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "8d overdue - BAW Tier A fast-track, Charlotte+Cliff own"
+      "sweep_flag": "FORCE_CLOSED",
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Force-closed Session 26. BAW Tier A Fast-Track \u2014 11d overdue measurement. No outcome data. Owner: Charlotte + Cliff."
     },
     {
       "id": "CS-2026-028",
@@ -1824,8 +1830,9 @@
       "notes": "Quick win: SEO meta descriptions for collection pages.",
       "risk": "low",
       "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Stale 15d with no scheduled send date. Recommend: close as abandoned or reassign from Lawrence + Nick.",
+      "last_sweep": "2026-04-03"
     },
     {
       "id": "CS-2026-035",
@@ -1914,9 +1921,10 @@
       "file": "cgo-logs/changesets/CS-2026-036.md",
       "notes": "Ready for graduation.",
       "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close.",
-      "scheduled_send_date": null
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Approved 12d without execution. Owner: Katie.",
+      "scheduled_send_date": null,
+      "last_sweep": "2026-04-03"
     },
     {
       "id": "CS-2026-037",
@@ -1966,8 +1974,9 @@
       "file": "cgo-logs/changesets/CS-2026-037.md",
       "notes": "Amazon keyword gap analysis.",
       "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Approved 12d without execution. Owner: Katie.",
+      "last_sweep": "2026-04-03"
     },
     {
       "id": "CS-2026-038",
@@ -2011,8 +2020,9 @@
       "notes": "Subscription churn analysis from Recharge cancellation survey data.",
       "risk": "low",
       "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Approved 9d without execution. Owner: Devon.",
+      "last_sweep": "2026-04-03"
     },
     {
       "id": "CS-2026-039",
@@ -2056,8 +2066,9 @@
       "notes": "Meta Advantage+ restructure investigation.",
       "risk": "medium",
       "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Approved >7d without execution. Katie capacity bottleneck (pat-009). Recommend: redistribute or close."
+      "sweep_date": "2026-04-03",
+      "sweep_note": "Approved 9d without execution. Owner: Devon.",
+      "last_sweep": "2026-04-03"
     },
     {
       "id": "CS-2026-040",
@@ -2343,6 +2354,47 @@
       "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING \u2014 Katie to update after Meta publish.",
       "risk": "low",
       "ad_platform_refs": null
+    },
+    {
+      "id": "CS-2026-046",
+      "title": "Checkout Infrastructure Emergency Diagnostic",
+      "subtype": "investigation",
+      "surface": "shopify",
+      "status": "draft",
+      "risk_level": "critical",
+      "owner": "Nick + Cliff",
+      "created": "2026-04-03",
+      "objective_level": "L1",
+      "category": "website_cro",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-177",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 25000,
+          "expected": 12500,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 12500,
+          "expected": 6250,
+          "downside": 0
+        },
+        "primary_metric": "checkout_cvr",
+        "primary_metric_target": "Restore to baseline (>4.2% mobile, >5.3% desktop)"
+      },
+      "routed_to": [
+        "Nick",
+        "Cliff"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-03",
+      "file": "cgo-logs/changesets/CS-2026-046.md",
+      "notes": "P0 emergency. All checkout stages -30-37% cross-device. Account login -58.9%. Session 26 pat-014.",
+      "measurement_window": "7d from fix deployment",
+      "autonomy_tier": 2,
+      "shadow_classification": "Tier 2 \u2014 critical risk, multi-surface investigation, not eligible for autonomous execution"
     }
   ],
   "queue_actions": {
