@@ -2362,7 +2362,7 @@
       "surface": "shopify",
       "status": "approved",
       "risk_level": "critical",
-      "owner": "Nick + Cliff",
+      "owner": "Katie",
       "created": "2026-04-03",
       "objective_level": "L1",
       "category": "website_cro",
@@ -2385,8 +2385,7 @@
         "primary_metric_target": "Restore to baseline (>4.2% mobile, >5.3% desktop)"
       },
       "routed_to": [
-        "Nick",
-        "Cliff"
+        "Katie"
       ],
       "routed_via": "slack",
       "routed_date": "2026-04-03",
