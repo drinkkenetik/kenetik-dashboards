@@ -25,10 +25,10 @@
   "summary": {
     "total_changesets": 45,
     "by_status": {
-      "published": 13,
-      "closed": 11,
-      "approved": 19,
-      "draft": 2
+      "published": 11,
+      "closed": 15,
+      "approved": 17,
+      "draft": 3
     },
     "last_updated": "2026-04-03",
     "_recount_note": "2026-04-01: Summary recounted from actual records. Previous count showed 6 closed; actual is 11."
@@ -1983,7 +1983,7 @@
       "title": "Ashton Activation (Seasonal Gap)",
       "subtype": "investigation",
       "surface": "website",
-      "status": "approved",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Devon",
       "created": "2026-03-24",
@@ -2017,19 +2017,21 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-038/brief.md",
-      "notes": "Subscription churn analysis from Recharge cancellation survey data.",
+      "notes": "Subscription churn analysis from Recharge cancellation survey data. Deferred by Brandon 2026-04-03. Revisit in May for summer planning.",
       "risk": "low",
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Approved 9d without execution. Owner: Devon.",
-      "last_sweep": "2026-04-03"
+      "last_sweep": "2026-04-03",
+      "closed_date": "2026-04-03",
+      "outcome": "deferred"
     },
     {
       "id": "CS-2026-039",
       "title": "Event Tracking (TikTok/Social Commitment)",
       "subtype": "quick",
       "surface": "social_tiktok",
-      "status": "approved",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Devon",
       "created": "2026-03-24",
@@ -2063,12 +2065,14 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-039/brief.md",
-      "notes": "Meta Advantage+ restructure investigation.",
+      "notes": "Meta Advantage+ restructure investigation. Deferred by Brandon 2026-04-03. Revisit in May closer to UNBOUND (May 28).",
       "risk": "medium",
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Approved 9d without execution. Owner: Devon.",
-      "last_sweep": "2026-04-03"
+      "last_sweep": "2026-04-03",
+      "closed_date": "2026-04-03",
+      "outcome": "deferred"
     },
     {
       "id": "CS-2026-040",
