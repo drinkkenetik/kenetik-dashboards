@@ -27,10 +27,10 @@
     "by_status": {
       "published": 12,
       "closed": 11,
-      "approved": 19,
-      "draft": 3
+      "approved": 20,
+      "draft": 2
     },
-    "last_updated": "2026-04-02",
+    "last_updated": "2026-04-03",
     "_recount_note": "2026-04-01: Summary recounted from actual records. Previous count showed 6 closed; actual is 11."
   },
   "changesets": [
@@ -2360,7 +2360,7 @@
       "title": "Checkout Infrastructure Emergency Diagnostic",
       "subtype": "investigation",
       "surface": "shopify",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "critical",
       "owner": "Nick + Cliff",
       "created": "2026-04-03",
@@ -2394,7 +2394,10 @@
       "notes": "P0 emergency. All checkout stages -30-37% cross-device. Account login -58.9%. Session 26 pat-014.",
       "measurement_window": "7d from fix deployment",
       "autonomy_tier": 2,
-      "shadow_classification": "Tier 2 \u2014 critical risk, multi-surface investigation, not eligible for autonomous execution"
+      "shadow_classification": "Tier 2 \u2014 critical risk, multi-surface investigation, not eligible for autonomous execution",
+      "approved_by": "Devon",
+      "approved_date": "2026-04-03",
+      "review_tier": "full"
     }
   ],
   "queue_actions": {
