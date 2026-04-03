@@ -25,9 +25,9 @@
   "summary": {
     "total_changesets": 45,
     "by_status": {
-      "published": 12,
+      "published": 13,
       "closed": 11,
-      "approved": 20,
+      "approved": 19,
       "draft": 2
     },
     "last_updated": "2026-04-03",
@@ -2360,7 +2360,7 @@
       "title": "Checkout Infrastructure Emergency Diagnostic",
       "subtype": "investigation",
       "surface": "shopify",
-      "status": "approved",
+      "status": "published",
       "risk_level": "critical",
       "owner": "Katie",
       "created": "2026-04-03",
@@ -2396,7 +2396,17 @@
       "shadow_classification": "Tier 2 \u2014 critical risk, multi-surface investigation, not eligible for autonomous execution",
       "approved_by": "Devon",
       "approved_date": "2026-04-03",
-      "review_tier": "full"
+      "review_tier": "full",
+      "published_date": "2026-04-03",
+      "published_by": "Katie",
+      "measurement_start": "2026-04-03",
+      "measurement_window_days": 7,
+      "measurement_due": "2026-04-10",
+      "publish_confirmation": {
+        "surface": "shopify",
+        "confirmation_id": "Investigation kickoff \u2014 Slack notification to Katie, Nick, Cliff",
+        "published_at": "2026-04-03T06:45:00Z"
+      }
     }
   ],
   "queue_actions": {
