@@ -85,7 +85,10 @@
       "file": "cgo-logs/changesets/CS-2026-001.md",
       "notes": "Published Mar 11. 30-day measurement window through Apr 10.",
       "risk": "critical",
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-002",
@@ -136,7 +139,10 @@
       "file": "cgo-logs/changesets/CS-2026-002.md",
       "notes": "Published Mar 9. 30-day measurement window through Apr 8.",
       "risk": "low",
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-003",
@@ -200,7 +206,10 @@
       "measurement_window_end": "2026-03-27",
       "last_sweep": "2026-03-30",
       "risk": "medium",
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-004",
@@ -251,7 +260,10 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-004.md",
       "notes": "Published Mar 10. 30-day measurement window through Apr 9.",
-      "risk": "low"
+      "risk": "low",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-005",
@@ -304,7 +316,10 @@
       "file": "cgo-logs/changesets/CS-2026-005.md",
       "notes": "Closed: Superseded by CS-2026-014 (more comprehensive Amazon listing overhaul).",
       "risk": "medium",
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-006",
@@ -357,7 +372,10 @@
       "notes": "Published Mar 14. High risk — Devon approved. Blocks CS-2026-024 (pause/skip).",
       "risk": "low",
       "review_tier": "standard",
-      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup"
+      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-007",
@@ -409,7 +427,10 @@
       "file": "cgo-logs/changesets/CS-2026-007.md",
       "notes": "Published Mar 14. Depends on CS-2026-006.",
       "risk": "high",
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-008",
@@ -464,7 +485,10 @@
       "file": "cgo-logs/changesets/CS-2026-008.md",
       "notes": "Closed: Superseded by Session 11 creator analysis. ROI framework delivered separately.",
       "risk": "medium",
-      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup"
+      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-009",
@@ -516,7 +540,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d with no scheduled send date. Recommend: close as abandoned or reassign from Katie + Brandon.",
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-010",
@@ -568,7 +595,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d with no scheduled send date. Recommend: close as abandoned or reassign from Katie + Devon.",
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-011",
@@ -625,7 +655,10 @@
         "confirmation_id": "Klaviyo campaign — single send Apr 1 2026",
         "published_at": "2026-04-01T12:00:00Z"
       },
-      "scheduled_send_date": "2026-04-01"
+      "scheduled_send_date": "2026-04-01",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-012",
@@ -673,7 +706,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d, send in 4d (2026-04-07). Monitor for on-time execution.",
-      "scheduled_send_date": "2026-04-07"
+      "scheduled_send_date": "2026-04-07",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-013",
@@ -722,7 +758,10 @@
       "sweep_date": "2026-03-31",
       "sweep_note": "Cleared 4/2: Published and scheduled for 4/3 send.",
       "measurement_due": "2026-04-10",
-      "scheduled_send_date": "2026-04-03"
+      "scheduled_send_date": "2026-04-03",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-014",
@@ -770,7 +809,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d, send in 7d (2026-04-10). Monitor for on-time execution.",
-      "scheduled_send_date": "2026-04-10"
+      "scheduled_send_date": "2026-04-10",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-015",
@@ -818,7 +860,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d but has scheduled send 2026-04-16 (13d away). Active in Underground Ecom pipeline.",
-      "scheduled_send_date": "2026-04-16"
+      "scheduled_send_date": "2026-04-16",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-016",
@@ -865,7 +910,10 @@
       ],
       "last_sweep": "2026-03-25",
       "risk": "low",
-      "scheduled_send_date": "2026-04-16"
+      "scheduled_send_date": "2026-04-16",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-017",
@@ -913,7 +961,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d but has scheduled send 2026-04-17 (14d away). Active in Underground Ecom pipeline.",
-      "scheduled_send_date": "2026-04-17"
+      "scheduled_send_date": "2026-04-17",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-018",
@@ -961,7 +1012,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d but has scheduled send 2026-04-21 (18d away). Active in Underground Ecom pipeline.",
-      "scheduled_send_date": "2026-04-21"
+      "scheduled_send_date": "2026-04-21",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-019",
@@ -1009,7 +1063,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d but has scheduled send 2026-04-22 (19d away). Active in Underground Ecom pipeline.",
-      "scheduled_send_date": "2026-04-22"
+      "scheduled_send_date": "2026-04-22",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-020",
@@ -1059,7 +1116,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d but has scheduled send 2026-04-24 (21d away). Active in Underground Ecom pipeline.",
-      "scheduled_send_date": "2026-04-24"
+      "scheduled_send_date": "2026-04-24",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-021",
@@ -1107,7 +1167,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d but has scheduled send 2026-04-27 (24d away). Active in Underground Ecom pipeline.",
-      "scheduled_send_date": "2026-04-27"
+      "scheduled_send_date": "2026-04-27",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-022",
@@ -1155,7 +1218,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d but has scheduled send 2026-04-30 (27d away). Active in Underground Ecom pipeline.",
-      "scheduled_send_date": "2026-04-30"
+      "scheduled_send_date": "2026-04-30",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-023",
@@ -1223,7 +1289,10 @@
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
       "sweep_flag": null,
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-024",
@@ -1276,7 +1345,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d with no scheduled send date. Recommend: close as abandoned or reassign from Katie.",
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-025",
@@ -1332,7 +1404,10 @@
       "sweep_flag": null,
       "sweep_date": "2026-03-31",
       "sweep_note": "3d overdue - attribution sprint, Devon executive decision required",
-      "_surface_note": "Mapped from \"multi_platform\" during 2026-04-05 schema cleanup"
+      "_surface_note": "Mapped from \"multi_platform\" during 2026-04-05 schema cleanup",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-026",
@@ -1397,7 +1472,10 @@
       "sweep_flag": "FORCE_CLOSED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Force-closed Session 26. BAW Content Velocity — 11d overdue measurement. No outcome data in briefs. Owner: Nick + Charlotte.",
-      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup"
+      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-027",
@@ -1461,7 +1539,10 @@
       "sweep_flag": "FORCE_CLOSED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Force-closed Session 26. BAW Tier A Fast-Track — 11d overdue measurement. No outcome data. Owner: Charlotte + Cliff.",
-      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup"
+      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-028",
@@ -1528,7 +1609,10 @@
       "notes": "Reallocation executed correctly. Measurement inconclusive — baseline included peak Leadville Sweepstakes + BAW promotional period, creating invalid comparison. Demand cliff (documented in CS-033) drove universal conversion declines across all channels. Key learning: Pmax has a scaling ceiling; Leadville absorbed budget well at 3.35x ROAS. Creative gate for FB prospecting remains in effect.",
       "risk": "low",
       "sweep_flags": [],
-      "last_sweep": "2026-04-01"
+      "last_sweep": "2026-04-01",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-029",
@@ -1601,7 +1685,10 @@
       "notes": "Published Mar 17. Closed Apr 1 as SUCCESS. Combined 9.57x ROAS (target 1.5x). Organic variants outperformed — no custom creative needed. Budget-constrained but efficiency exceptional.",
       "risk": "low",
       "sweep_flags": [],
-      "last_sweep": "2026-04-01"
+      "last_sweep": "2026-04-01",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-030",
@@ -1654,7 +1741,10 @@
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
       "risk": "low",
-      "scheduled_send_date": "2026-04-03"
+      "scheduled_send_date": "2026-04-03",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-031",
@@ -1700,7 +1790,10 @@
       "approved_date": "2026-03-22",
       "measurement_window": "14-day from implementation",
       "review_tier": "express",
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-032",
@@ -1745,7 +1838,10 @@
       "approved_date": "2026-03-22",
       "closed_date": "2026-03-22",
       "measurement_window": "30-day from Phase 2 implementation",
-      "review_tier": "express"
+      "review_tier": "express",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-033",
@@ -1791,7 +1887,10 @@
       "outcome": "hypothesis_not_supported",
       "investigation_completed": "2026-04-01",
       "investigator": "Katie Spaller",
-      "_surface_note": "Mapped from \"website\" during 2026-04-05 schema cleanup"
+      "_surface_note": "Mapped from \"website\" during 2026-04-05 schema cleanup",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-034",
@@ -1839,7 +1938,10 @@
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 15d with no scheduled send date. Recommend: close as abandoned or reassign from Lawrence + Nick.",
       "last_sweep": "2026-04-03",
-      "_surface_note": "Mapped from \"superfiliate\" during 2026-04-05 schema cleanup"
+      "_surface_note": "Mapped from \"superfiliate\" during 2026-04-05 schema cleanup",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-035",
@@ -1878,7 +1980,10 @@
       "file": "cgo-logs/changesets/CS-2026-035.md",
       "notes": "Draft: Winback flow experiment. Pending Katie review.",
       "risk": "low",
-      "scheduled_send_date": null
+      "scheduled_send_date": null,
+      "autonomy_tier": 1,
+      "execution_target_date": null,
+      "executed_date": null
     },
     {
       "id": "CS-2026-036",
@@ -1931,7 +2036,10 @@
       "sweep_date": "2026-04-03",
       "sweep_note": "Approved 12d without execution. Owner: Katie.",
       "scheduled_send_date": null,
-      "last_sweep": "2026-04-03"
+      "last_sweep": "2026-04-03",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-037",
@@ -1983,7 +2091,10 @@
       "sweep_flag": "STALE_APPROVED",
       "sweep_date": "2026-04-03",
       "sweep_note": "Approved 12d without execution. Owner: Katie.",
-      "last_sweep": "2026-04-03"
+      "last_sweep": "2026-04-03",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-038",
@@ -2032,7 +2143,10 @@
       "last_sweep": "2026-04-03",
       "closed_date": "2026-04-03",
       "outcome": "deferred",
-      "_surface_note": "Mapped from \"website\" during 2026-04-05 schema cleanup"
+      "_surface_note": "Mapped from \"website\" during 2026-04-05 schema cleanup",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-039",
@@ -2081,7 +2195,10 @@
       "last_sweep": "2026-04-03",
       "closed_date": "2026-04-03",
       "outcome": "deferred",
-      "_surface_note": "Mapped from \"social_tiktok\" during 2026-04-05 schema cleanup"
+      "_surface_note": "Mapped from \"social_tiktok\" during 2026-04-05 schema cleanup",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-040",
@@ -2120,7 +2237,10 @@
       "routed_date": "2026-03-27",
       "notes": "Draft: Google Ads PMax optimization investigation.",
       "risk": "medium",
-      "_surface_note": "Mapped from \"superfiliate\" during 2026-04-05 schema cleanup"
+      "_surface_note": "Mapped from \"superfiliate\" during 2026-04-05 schema cleanup",
+      "autonomy_tier": 2,
+      "execution_target_date": null,
+      "executed_date": null
     },
     {
       "id": "CS-2026-041",
@@ -2168,7 +2288,10 @@
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-041.md",
       "notes": "Superseded by CS-2026-029 (same IG reel, already tested in paid with 9.57x ROAS). Learnings folded into scale ChangeSet CS-2026-045.",
-      "risk": "medium"
+      "risk": "medium",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-042",
@@ -2216,7 +2339,10 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-042.md",
       "notes": "Graduation candidate: JustJosephD x BAW, 3.9x reach, creator collab format. [migrated from proposed status]",
-      "risk": "medium"
+      "risk": "medium",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-043",
@@ -2269,7 +2395,10 @@
       "sweep_flags": [
         "EXECUTION BLOCKED: TikTok account structure unresolved. Nick scheduling call with TikTok rep."
       ],
-      "last_sweep": "2026-04-01"
+      "last_sweep": "2026-04-01",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-044",
@@ -2318,7 +2447,10 @@
       "file": "cgo-logs/changesets/CS-2026-044.md",
       "notes": "CLOSED — Invalid. Source content (Ashton Hall videos) were paid ads, not organic posts. Graduation pipeline does not apply. Social media manager confirmed these were never posted organically. Devon notified. CS-045 created for proper Matt Hughes graduation. Graduation scan should filter out paid-distributed content.",
       "risk": "medium",
-      "_outcome_note": "Graduation premise was wrong — videos were paid ads, not organic"
+      "_outcome_note": "Graduation premise was wrong — videos were paid ads, not organic",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-045",
@@ -2368,7 +2500,10 @@
       "file": "cgo-logs/changesets/CS-2026-045.md",
       "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING — Katie to update after Meta publish.",
       "risk": "low",
-      "ad_platform_refs": null
+      "ad_platform_refs": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-046",
@@ -2431,7 +2566,9 @@
         "estimated_revenue_loss": "$100K-$130K over 11-day broken period"
       },
       "_surface_note": "Mapped from \"shopify\" during 2026-04-05 schema cleanup",
-      "_subtype_note": "Mapped from \"bug_fix\" during 2026-04-05 schema cleanup"
+      "_subtype_note": "Mapped from \"bug_fix\" during 2026-04-05 schema cleanup",
+      "execution_target_date": null,
+      "executed_date": null
     }
   ],
   "queue_actions": {
@@ -2473,5 +2610,39 @@
     "total_entries": 44,
     "katie_concentration": "70% (estimated 26/37 active)",
     "autonomous_mode": "shadow"
+  },
+  "shadow_scorecard": {
+    "mode": "shadow",
+    "activated_date": "2026-03-22",
+    "total_classified": {
+      "tier_0": 0,
+      "tier_1": 1,
+      "tier_2": 2
+    },
+    "would_have_auto_advanced": 1,
+    "would_have_auto_executed": 0,
+    "auto_review_log": [
+      {
+        "cs_id": "CS-2026-035",
+        "tier": 1,
+        "auto_review_verdict": "pass",
+        "auto_review_date": "2026-03-25",
+        "manual_review_decision": null,
+        "manual_review_date": null,
+        "concordance": "pending"
+      }
+    ],
+    "concordance_summary": {
+      "total_resolved": 0,
+      "concordant": 0,
+      "discordant": 0,
+      "false_alarm": 0,
+      "pending": 1,
+      "concordance_rate": null,
+      "discordance_count": 0
+    },
+    "confidence": "insufficient_data",
+    "recommendation": "Need ≥5 Tier 0/1 ChangeSets to complete manual review for concordance comparison before Phase B activation. Currently 1 Tier 1 entry pending review (CS-2026-035).",
+    "last_updated": "2026-04-05"
   }
 }
