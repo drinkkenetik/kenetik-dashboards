@@ -990,6 +990,8 @@ function surfaceBadge(surface) {
 }
 
 // ── Status-aware urgency classification ──
+// Primary source: cs.urgency field from tracker.json (computed by sweep).
+// Fallback: client-side computation if field missing (backward compat).
 // Mirrors the lifecycle sweep (Process 10.3) stale definitions:
 //   draft:         stale after 7 calendar days
 //   needs_feedback: stale after 14 calendar days
@@ -1002,6 +1004,17 @@ function getUrgencyLevel(cs) {
     const age = cs.created ? Math.round((today - new Date(cs.created)) / 86400000) : 0;
     const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
     const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
+    const daysUntilTarget = (ssd || etd) ? Math.round(((ssd || etd) - today) / 86400000) : null;
+
+    // If tracker.json has a pre-computed urgency field, use it as primary source
+    // (normalizing underscore to hyphen for CSS class compatibility)
+    if (cs.urgency && cs.urgency !== 'ok' && cs.urgency !== 'closed' && cs.urgency !== 'archived') {
+        const level = cs.urgency.replace(/_/g, '-');
+        return { level, daysUntil: daysUntilTarget, age };
+    }
+    if (cs.urgency === 'ok' || cs.urgency === 'closed' || cs.urgency === 'archived') {
+        return { level: 'none', daysUntil: daysUntilTarget, age };
+    }
     const md = cs.measurement_due ? new Date(cs.measurement_due) : null;
     const targetDate = ssd || etd;
     const daysUntil = targetDate ? Math.round((targetDate - today) / 86400000) : null;
