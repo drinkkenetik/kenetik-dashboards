@@ -830,7 +830,7 @@
 
 
     <section class="time-status-section">
-        <h3>Time-in-Status · Aging Items</h3>
+        <h3>Time-in-Status · Measurement &amp; Aging</h3>
         <div class="time-avg-row" id="timeAvgRow"></div>
         <div class="stale-list" id="staleList"></div>
     </section>
@@ -959,6 +959,55 @@ let filters = { subtype: 'all', surface: 'all', status: 'all' };
 function subtypeBadge(subtype) {
     const cls = subtype === 'investigation' ? 'badge-invest' : subtype === 'quick' ? 'badge-quick' : 'badge-impl';
     return `<span class="badge ${cls}">${subtype || 'unknown'}</span>`;
+}
+
+function surfaceBadge(surface) {
+    if (!surface) return '';
+    const colors = {
+        klaviyo: '#6366f1', paid_meta: '#3b82f6', paid_google: '#22c55e',
+        paid_tiktok: '#ef4444', amazon: '#f59e0b', amazon_ads: '#f97316',
+        recharge: '#a855f7', partner: '#ec4899', dtc_website: '#14b8a6',
+        wholesale_retail: '#8b5cf6', practitioner: '#06b6d4'
+    };
+    const color = colors[surface] || '#6b7280';
+    const label = surface.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    return `<span class="badge" style="background:${color}22;color:${color};border:1px solid ${color}44">${label}</span>`;
+}
+
+function urgencyBadge(cs) {
+    const today = new Date(); today.setHours(0,0,0,0);
+    const age = cs.created ? Math.round((today - new Date(cs.created)) / 86400000) : 0;
+    const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
+    const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
+    const targetDate = ssd || etd;
+    const daysUntil = targetDate ? Math.round((targetDate - today) / 86400000) : null;
+
+    // Overdue
+    if (daysUntil !== null && daysUntil < 0) {
+        return `<span class="badge badge-critical">OVERDUE ${Math.abs(daysUntil)}d</span>`;
+    }
+    // Due within 3 days
+    if (daysUntil !== null && daysUntil <= 3) {
+        return `<span class="badge badge-high">DUE ${daysUntil}d</span>`;
+    }
+    // Due within 7 days
+    if (daysUntil !== null && daysUntil <= 7) {
+        return `<span class="badge badge-medium">DUE ${daysUntil}d</span>`;
+    }
+    // High expected impact (>$5000)
+    const rev = cs.expected_impact?.revenue?.expected ?? 0;
+    if (rev >= 5000) {
+        return `<span class="badge badge-medium">HIGH IMPACT</span>`;
+    }
+    // Stale (>14d with no target date)
+    if (age > 14 && daysUntil === null) {
+        return `<span class="badge" style="background:rgba(245,158,11,0.15);color:var(--warning)">STALE ${age}d</span>`;
+    }
+    // Low urgency / on track
+    if (daysUntil !== null) {
+        return `<span class="badge badge-low">${daysUntil}d out</span>`;
+    }
+    return '';
 }
 let sortCol = 'id';
 let sortDir = 'asc';
@@ -1119,15 +1168,12 @@ function renderApprovedSubgroups(items) {
             const dateVal = cs.scheduled_send_date || cs.execution_target_date || '';
             const created = cs.created || '';
             const dateDisplay = dateField === 'date' ? (dateVal ? new Date(dateVal).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : '') : (created ? Math.round((Date.now()-new Date(created))/86400000)+'d' : '');
-            return `<div class="subgroup-item" onclick="openDetail('${cs.id}')"><span class="sg-id">${cs.id}</span> ${(cs.title||'').substring(0,35)}${(cs.title||'').length>35?'...':''} <span class="sg-date">${dateDisplay}</span></div>`;
+            const surfaceLabel = cs.surface ? `<span style="font-size:9px;color:var(--text-muted);opacity:0.7">${(cs.surface||'').replace(/_/g,' ')}</span>` : '';
+            return `<div class="subgroup-item" onclick="openDetail('${cs.id}')"><span class="sg-id">${cs.id}</span> ${surfaceLabel} ${(cs.title||'').substring(0,30)}${(cs.title||'').length>30?'...':''} <span class="sg-date">${dateDisplay}</span></div>`;
         }).join('');
     }
 
     return `<div class="approved-subgroups">
-        <div class="approved-subgroup scheduled">
-            <div class="subgroup-header scheduled">Scheduled <span class="subgroup-count">${groups.scheduled.length}</span></div>
-            <div class="subgroup-items">${renderSubItems(groups.scheduled, 'date')}</div>
-        </div>
         <div class="approved-subgroup overdue">
             <div class="subgroup-header overdue">Overdue <span class="subgroup-count">${groups.overdue.length}</span></div>
             <div class="subgroup-items">${renderSubItems(groups.overdue, 'date')}</div>
@@ -1135,6 +1181,10 @@ function renderApprovedSubgroups(items) {
         <div class="approved-subgroup unworked">
             <div class="subgroup-header unworked">Unworked <span class="subgroup-count">${groups.unworked.length}</span></div>
             <div class="subgroup-items">${renderSubItems(groups.unworked, 'age')}</div>
+        </div>
+        <div class="approved-subgroup scheduled">
+            <div class="subgroup-header scheduled">Scheduled <span class="subgroup-count">${groups.scheduled.length}</span></div>
+            <div class="subgroup-items">${renderSubItems(groups.scheduled, 'date')}</div>
         </div>
     </div>`;
 }
@@ -1170,8 +1220,8 @@ function renderPipeline() {
                         <div class="cs-id">${cs.id}</div>
                         <div class="cs-title">${cs.title}</div>
                         <div class="cs-meta">
-                            ${subtypeBadge(cs.subtype)}
-                            <span class="badge badge-${cs.risk_level || 'low'}">${cs.risk_level || 'low'}</span>
+                            ${surfaceBadge(cs.surface)}
+                            ${urgencyBadge(cs)}
                         </div>
                     </div>
                 `).join('') : ''}
@@ -1556,7 +1606,7 @@ function renderAutonomy() {
         </div>`;
     }).join('');
 
-    // Shadow Scorecard
+    // Shadow Scorecard — redesigned for actionable autonomy tuning
     const sc = TRACKER.shadow_scorecard;
     if (!sc) {
         document.getElementById('scorecardContent').innerHTML = '<div class="empty-state">No scorecard data</div>';
@@ -1564,39 +1614,104 @@ function renderAutonomy() {
     }
 
     const conc = sc.concordance_summary || {};
-    const concRate = conc.concordance_rate != null ? (conc.concordance_rate * 100).toFixed(0) + '%' : 'Insufficient data';
+    const log = sc.auto_review_log || [];
     const isPhaseB = sc.mode === 'active';
     const phaseClass = isPhaseB ? 'phase-b' : 'phase-a';
     const phaseLabel = isPhaseB ? 'Phase B — Active Autonomy' : 'Phase A — Shadow Mode';
 
+    // Calculate readiness metrics
+    const totalClassified = (sc.total_classified?.tier_0 || 0) + (sc.total_classified?.tier_1 || 0) + (sc.total_classified?.tier_2 || 0);
+    const autoAdvanced = sc.would_have_auto_advanced || 0;
+    const autoExecuted = sc.would_have_auto_executed || 0;
+    const concordant = conc.concordant || 0;
+    const discordant = conc.discordant || 0;
+    const pending = conc.pending || 0;
+    const totalResolved = conc.total_resolved || 0;
+    const concRate = totalResolved > 0 ? ((concordant / totalResolved) * 100).toFixed(0) + '%' : '—';
+    const concColor = totalResolved === 0 ? 'var(--text-muted)' : concordant / totalResolved >= 0.9 ? 'var(--success)' : concordant / totalResolved >= 0.7 ? 'var(--warning)' : 'var(--danger)';
+
+    // Phase B readiness: need ≥5 resolved concordance checks at ≥90%
+    const phaseB_threshold = 5;
+    const phaseB_accuracy = 0.9;
+    const readiness = Math.min(100, Math.round((totalResolved / phaseB_threshold) * 100));
+    const readinessColor = readiness >= 100 && (totalResolved === 0 || concordant / totalResolved >= phaseB_accuracy) ? 'var(--success)' : readiness >= 60 ? 'var(--warning)' : 'var(--text-muted)';
+
+    // Build the decision log table
+    let logHtml = '';
+    if (log.length) {
+        logHtml = `<div style="margin-top:14px;border-top:1px solid var(--border);padding-top:12px">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:8px">Shadow Decision Log — What Automation Would Have Done</div>
+            <table style="width:100%;border-collapse:collapse;font-size:12px">
+                <tr style="border-bottom:1px solid var(--border)">
+                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">CS</th>
+                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Tier</th>
+                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Auto Verdict</th>
+                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Manual Decision</th>
+                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Match?</th>
+                </tr>
+                ${log.map(entry => {
+                    const matchIcon = entry.concordance === 'concordant' ? '<span style="color:var(--success)">Yes</span>' :
+                        entry.concordance === 'discordant' ? '<span style="color:var(--danger)">No</span>' :
+                        '<span style="color:var(--warning)">Pending</span>';
+                    const manualDecision = entry.manual_review_decision || '<span style="color:var(--warning);font-style:italic">awaiting review</span>';
+                    return `<tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+                        <td style="padding:5px 6px"><span class="cs-link" onclick="openDetail('${entry.cs_id}')">${entry.cs_id}</span></td>
+                        <td style="padding:5px 6px">T${entry.tier}</td>
+                        <td style="padding:5px 6px;color:${entry.auto_review_verdict === 'pass' ? 'var(--success)' : 'var(--danger)'}">${entry.auto_review_verdict}</td>
+                        <td style="padding:5px 6px">${manualDecision}</td>
+                        <td style="padding:5px 6px">${matchIcon}</td>
+                    </tr>`;
+                }).join('')}
+            </table>
+        </div>`;
+    }
+
     document.getElementById('scorecardContent').innerHTML = `
-        <div class="scorecard-metric">
-            <span class="scorecard-metric-label">Mode</span>
-            <span class="scorecard-metric-value" style="text-transform:capitalize">${sc.mode || '—'}</span>
+        <div class="phase-indicator ${phaseClass}" style="margin-bottom:14px">
+            <strong>${phaseLabel}</strong>
+            ${sc.activated_date ? ` · Since ${sc.activated_date}` : ''}
         </div>
-        <div class="scorecard-metric">
-            <span class="scorecard-metric-label">Activated</span>
-            <span class="scorecard-metric-value">${sc.activated_date || '—'}</span>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px">
+            <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--border)">
+                <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:4px">Concordance</div>
+                <div style="font-size:22px;font-weight:700;color:${concColor}">${concRate}</div>
+                <div style="font-size:10px;color:var(--text-muted)">${concordant}/${totalResolved} match${totalResolved === 0 ? 'es' : ''}</div>
+            </div>
+            <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--border)">
+                <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:4px">Pending Review</div>
+                <div style="font-size:22px;font-weight:700;color:${pending > 0 ? 'var(--warning)' : 'var(--text-muted)'}">${pending}</div>
+                <div style="font-size:10px;color:var(--text-muted)">need manual verdict</div>
+            </div>
+            <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--border)">
+                <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:4px">Would Auto-Act</div>
+                <div style="font-size:22px;font-weight:700;color:var(--accent-light)">${autoAdvanced + autoExecuted}</div>
+                <div style="font-size:10px;color:var(--text-muted)">${autoAdvanced} advance · ${autoExecuted} execute</div>
+            </div>
         </div>
-        <div class="scorecard-metric">
-            <span class="scorecard-metric-label">Concordance Rate</span>
-            <span class="scorecard-metric-value">${concRate}</span>
+
+        <div style="margin-bottom:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                <span style="font-size:11px;color:var(--text-muted)">Phase B Readiness</span>
+                <span style="font-size:11px;font-weight:600;color:${readinessColor}">${readiness}%</span>
+            </div>
+            <div style="height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden">
+                <div style="height:100%;width:${readiness}%;background:${readinessColor};border-radius:4px;transition:width 0.3s"></div>
+            </div>
+            <div style="font-size:10px;color:var(--text-muted);margin-top:4px">
+                ${totalResolved}/${phaseB_threshold} concordance checks completed · Need ${phaseB_threshold} at ≥90% accuracy
+            </div>
         </div>
-        <div class="scorecard-metric">
-            <span class="scorecard-metric-label">Resolved / Pending</span>
-            <span class="scorecard-metric-value">${conc.total_resolved || 0} resolved · ${conc.pending || 0} pending</span>
-        </div>
-        <div class="scorecard-metric">
-            <span class="scorecard-metric-label">Would Have Auto-Advanced</span>
-            <span class="scorecard-metric-value">${sc.would_have_auto_advanced || 0}</span>
-        </div>
-        <div class="scorecard-metric">
-            <span class="scorecard-metric-label">Confidence</span>
-            <span class="scorecard-metric-value" style="text-transform:capitalize">${(sc.confidence || '—').replace(/_/g, ' ')}</span>
-        </div>
-        <div class="phase-indicator ${phaseClass}">
-            <strong>${phaseLabel}</strong><br>
-            ${sc.recommendation || ''}
+
+        ${discordant > 0 ? `<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:8px;padding:10px 12px;margin-bottom:12px">
+            <div style="font-size:11px;font-weight:700;color:var(--danger);margin-bottom:4px">Discordance Alert</div>
+            <div style="font-size:12px;color:var(--text)">${discordant} decision${discordant > 1 ? 's' : ''} where automation disagreed with manual review. Investigate before advancing to Phase B.</div>
+        </div>` : ''}
+
+        ${logHtml}
+
+        <div style="margin-top:12px;font-size:11px;color:var(--text-muted);line-height:1.5;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px">
+            <strong>Next steps:</strong> ${sc.recommendation || 'Complete more manual reviews on shadow-classified ChangeSets to build concordance data.'}
         </div>
     `;
 }
@@ -1632,8 +1747,21 @@ function renderTimeInStatus() {
 
     document.getElementById('timeAvgRow').innerHTML = avgRow || '<div class="empty-state">No active items</div>';
 
-    // Stale items (>7d in approved, >14d in any status)
+    // Published items in measurement window — show separately, not as stale
+    const measurementItems = active
+        .filter(cs => cs.status === 'published' && cs.measurement_due)
+        .map(cs => {
+            const dueDate = new Date(cs.measurement_due);
+            const daysUntilDue = Math.round((dueDate - today) / 86400000);
+            return { ...cs, daysUntilDue, dueDate };
+        })
+        .sort((a,b) => a.daysUntilDue - b.daysUntilDue);
+
+    const measurementIds = new Set(measurementItems.map(cs => cs.id));
+
+    // Stale items (>7d in approved, >14d in any status) — EXCLUDE items in measurement window
     const staleItems = active
+        .filter(cs => !measurementIds.has(cs.id))
         .map(cs => {
             if (!cs.created) return null;
             const age = Math.round((today - new Date(cs.created)) / 86400000);
@@ -1642,16 +1770,42 @@ function renderTimeInStatus() {
         .filter(cs => cs && ((cs.status === 'approved' && cs.age > 7) || cs.age > 14))
         .sort((a,b) => b.age - a.age);
 
-    document.getElementById('staleList').innerHTML = staleItems.length
-        ? '<div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Items needing attention (>7d approved or >14d active)</div>' +
-          staleItems.map(cs => {
+    let html = '';
+
+    // Measurement window section
+    if (measurementItems.length) {
+        html += '<div style="font-size:11px;color:var(--info);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Awaiting Measurement (' + measurementItems.length + ')</div>';
+        html += measurementItems.map(cs => {
+            const overdue = cs.daysUntilDue < 0;
+            const dueSoon = cs.daysUntilDue <= 3;
+            const dueLabel = overdue ? `<span style="color:var(--danger);font-weight:700">MEASUREMENT OVERDUE ${Math.abs(cs.daysUntilDue)}d</span>` :
+                dueSoon ? `<span style="color:var(--warning);font-weight:600">Due in ${cs.daysUntilDue}d</span>` :
+                `<span style="color:var(--text-muted)">Due in ${cs.daysUntilDue}d</span>`;
+            return `<div class="stale-item">
+                <span><span class="cs-link" onclick="openDetail('${cs.id}')" style="cursor:pointer">${cs.id}</span> · ${(cs.title||'').substring(0,40)}${(cs.title||'').length>40?'...':''} · <span class="status-pill status-published" style="font-size:10px">measuring</span> · ${cs.measurement_window || ''}</span>
+                ${dueLabel}
+            </div>`;
+        }).join('');
+        html += '<div style="height:12px"></div>';
+    }
+
+    // Stale items section
+    if (staleItems.length) {
+        html += '<div style="font-size:11px;color:var(--danger);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Needs Attention (' + staleItems.length + ')</div>';
+        html += staleItems.map(cs => {
             const cls = cs.age > 21 ? 'hot' : cs.age > 14 ? 'warm' : '';
             return `<div class="stale-item">
                 <span><span class="cs-link" onclick="openDetail('${cs.id}')" style="cursor:pointer">${cs.id}</span> · ${(cs.title||'').substring(0,45)}${(cs.title||'').length>45?'...':''} · <span class="status-pill status-${cs.status}" style="font-size:10px">${cs.status}</span> · ${cs.owner||'—'}</span>
                 <span class="stale-age ${cls}">${cs.age}d</span>
             </div>`;
-          }).join('')
-        : '<div class="empty-state" style="font-size:12px">No stale items — queue is healthy</div>';
+        }).join('');
+    }
+
+    if (!measurementItems.length && !staleItems.length) {
+        html = '<div class="empty-state" style="font-size:12px">No stale items — queue is healthy</div>';
+    }
+
+    document.getElementById('staleList').innerHTML = html;
 }
 
 // ═══════════════════════════════════════════════════
