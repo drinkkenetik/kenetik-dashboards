@@ -276,6 +276,9 @@
         .pipeline-card.urgency-stale { border-left-color: var(--danger); }
         .pipeline-card.urgency-blocked { border-left-color: var(--warning); }
         .pipeline-card.urgency-due-soon { border-left-color: var(--warning); }
+        .pipeline-card.urgency-needs-review { border-left-color: var(--danger); }
+        .pipeline-card.urgency-measure-due { border-left-color: var(--warning); }
+        .pipeline-card.urgency-measuring { border-left-color: var(--info); }
         .pipeline-card.urgency-on-track { border-left-color: var(--success); }
 
         .pipeline-card:hover {
@@ -561,6 +564,7 @@
         .subgroup-item.urgency-overdue { border-left-color: var(--danger); }
         .subgroup-item.urgency-stale { border-left-color: var(--danger); }
         .subgroup-item.urgency-blocked { border-left-color: var(--warning); }
+        .subgroup-item.urgency-needs-review { border-left-color: var(--danger); }
         .subgroup-item:hover { color: var(--accent-light); }
         .subgroup-item:last-child { border-bottom: none; }
         .subgroup-item .sg-id { font-weight: 600; color: var(--accent-light); }
@@ -985,33 +989,75 @@ function surfaceBadge(surface) {
     return `<span class="badge" style="background:${color}22;color:${color};border:1px solid ${color}44">${label}</span>`;
 }
 
+// ── Status-aware urgency classification ──
+// Mirrors the lifecycle sweep (Process 10.3) stale definitions:
+//   draft:         stale after 7 calendar days
+//   needs_feedback: stale after 14 calendar days
+//   approved:      stale only if no scheduled_send_date/execution_target_date AND >5 days
+//                  overdue if target date is past; on-track if future
+//   published:     never "stale" — either measuring (has measurement_due) or awaiting review
+//   closed/rolled_back: n/a
 function getUrgencyLevel(cs) {
     const today = new Date(); today.setHours(0,0,0,0);
     const age = cs.created ? Math.round((today - new Date(cs.created)) / 86400000) : 0;
     const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
     const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
+    const md = cs.measurement_due ? new Date(cs.measurement_due) : null;
     const targetDate = ssd || etd;
     const daysUntil = targetDate ? Math.round((targetDate - today) / 86400000) : null;
     const isBlocked = (cs.sweep_flags || []).some(f => f.toUpperCase().includes('BLOCK'));
+    const status = cs.status || '';
 
+    // Blocked is always blocked, regardless of status
     if (isBlocked) return { level: 'blocked', daysUntil, age };
-    if (daysUntil !== null && daysUntil < 0) return { level: 'overdue', daysUntil, age };
-    if (daysUntil !== null && daysUntil <= 3) return { level: 'due-soon', daysUntil, age };
-    if (daysUntil === null && age > 7) return { level: 'stale', daysUntil, age };
-    if (daysUntil !== null) return { level: 'on-track', daysUntil, age };
+
+    // Published: measuring or awaiting review — never stale
+    if (status === 'published') {
+        if (cs.requires_human_review) return { level: 'needs-review', daysUntil, age };
+        if (md) {
+            const daysUntilMeasure = Math.round((md - today) / 86400000);
+            if (daysUntilMeasure < 0) return { level: 'measure-due', daysUntil: daysUntilMeasure, age };
+            return { level: 'measuring', daysUntil: daysUntilMeasure, age };
+        }
+        return { level: 'none', daysUntil, age };
+    }
+
+    // Approved: check target dates first, then unworked threshold
+    if (status === 'approved') {
+        if (daysUntil !== null && daysUntil < 0) return { level: 'overdue', daysUntil, age };
+        if (daysUntil !== null && daysUntil <= 3) return { level: 'due-soon', daysUntil, age };
+        if (daysUntil !== null) return { level: 'on-track', daysUntil, age };
+        // No target date — stale after 5 days (sweep uses 3 biz days ≈ 5 calendar)
+        if (age > 5) return { level: 'stale', daysUntil, age };
+        return { level: 'none', daysUntil, age };
+    }
+
+    // Draft: stale after 7 days
+    if (status === 'draft') {
+        if (age > 7) return { level: 'stale', daysUntil, age };
+        return { level: 'none', daysUntil, age };
+    }
+
+    // Needs feedback: stale after 14 days
+    if (status === 'needs_feedback') {
+        if (age > 14) return { level: 'stale', daysUntil, age };
+        return { level: 'none', daysUntil, age };
+    }
+
     return { level: 'none', daysUntil, age };
 }
 
 function urgencyBadge(cs) {
     const u = getUrgencyLevel(cs);
-    const rev = cs.expected_impact?.revenue?.expected ?? 0;
 
     if (u.level === 'blocked') return `<span class="badge badge-medium">BLOCKED</span>`;
     if (u.level === 'overdue') return `<span class="badge badge-critical">OVERDUE ${Math.abs(u.daysUntil)}d</span>`;
     if (u.level === 'due-soon') return `<span class="badge badge-high">DUE ${u.daysUntil}d</span>`;
     if (u.level === 'stale') return `<span class="badge" style="background:rgba(239,68,68,0.15);color:var(--danger)">STALE ${u.age}d</span>`;
+    if (u.level === 'needs-review') return `<span class="badge badge-high">REVIEW NEEDED</span>`;
+    if (u.level === 'measure-due') return `<span class="badge badge-medium">MEASURE DUE</span>`;
+    if (u.level === 'measuring') return `<span class="badge badge-low">MEASURING ${u.daysUntil}d</span>`;
     if (u.level === 'on-track' && u.daysUntil <= 7) return `<span class="badge badge-medium">DUE ${u.daysUntil}d</span>`;
-    if (rev >= 5000) return `<span class="badge badge-medium">HIGH IMPACT</span>`;
     if (u.level === 'on-track') return `<span class="badge badge-low">${u.daysUntil}d out</span>`;
     return '';
 }
