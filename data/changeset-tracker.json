@@ -12,13 +12,13 @@
     "auto_closed": 0,
     "flags": [
       "STALE: 18 approved ChangeSets >7d without publication. 13 are >14d (close candidates). Katie concentration: ~14/18 stale are Katie-owned email campaigns.",
-      "OVERDUE: 2 measurements past due. CS-026 (10d, BAW Content Velocity), CS-027 (10d, BAW Tier A Fast-Track). SEVERE — recommend closure or restart.",
+      "OVERDUE: 2 measurements past due. CS-026 (10d, BAW Content Velocity), CS-027 (10d, BAW Tier A Fast-Track). SEVERE \u2014 recommend closure or restart.",
       "APPROACHING: 5 measurement windows within 11d. CS-002 (Apr 8), CS-004 (Apr 9), CS-011 (Apr 8), CS-001 (Apr 10), CS-006/007 (Apr 13).",
-      "CORRECTIONS from prior session: D12 domain brief claimed tracker.json shows 0 active entries — this was a data read error. Tracker has 34 non-closed entries (10 published, 21 approved, 3 draft).",
+      "CORRECTIONS from prior session: D12 domain brief claimed tracker.json shows 0 active entries \u2014 this was a data read error. Tracker has 34 non-closed entries (10 published, 21 approved, 3 draft).",
       "CLOSURES confirmed: CS-023 (partial success), CS-025 (structural gap), CS-028 (inconclusive), CS-029 (success 9.57x ROAS), CS-033 (demand cliff diagnosis). All already closed in tracker by Session 24.",
       "KATIE CONCENTRATION: Estimated 26/34 active entries (~76%). 9th consecutive session flagged. Zero executive redistribution action taken.",
-      "PORTFOLIO: 45 total (11 closed, 10 published, 21 approved, 3 draft). No new ChangeSets warranted — 18 stale + 2 overdue must be resolved first.",
-      "AUTONOMOUS MODE: shadow — classification only, no auto-advance."
+      "PORTFOLIO: 45 total (11 closed, 10 published, 21 approved, 3 draft). No new ChangeSets warranted \u2014 18 stale + 2 overdue must be resolved first.",
+      "AUTONOMOUS MODE: shadow \u2014 classification only, no auto-advance."
     ],
     "new_changeset_generation": "No new ChangeSets generated. Portfolio at 45 entries with 18 stale approved and 2 measurement overdue (CS-026/027 at 10d SEVERE). Priority is: (1) close or restart CS-026/027, (2) redistribute Katie's stale approved queue, (3) prepare for 5 approaching measurement windows (CS-002/004/011 by Apr 9). Adding new ChangeSets would worsen the execution bottleneck.",
     "last_urgency_recompute": "2026-04-06"
@@ -32,12 +32,12 @@
       "draft": 7
     },
     "last_updated": "2026-04-06",
-    "_recount_note": "2026-04-05: Schema cleanup — surface normalization, summary recount (46 entries). 2026-04-01: Summary recounted from actual records. Previous count showed 6 closed; actual is 11."
+    "_recount_note": "2026-04-05: Schema cleanup \u2014 surface normalization, summary recount (46 entries). 2026-04-01: Summary recounted from actual records. Previous count showed 6 closed; actual is 11."
   },
   "changesets": [
     {
       "id": "CS-2026-001",
-      "title": "Welcome Series Emergency — Influencer Welcome Track",
+      "title": "Welcome Series Emergency \u2014 Influencer Welcome Track",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "published",
@@ -199,7 +199,7 @@
         "margin_impact": 7948,
         "confidence": "medium",
         "statistical_significance": false,
-        "_note": "Natural segmentation (not randomized). Directionally strong. margin_impact = revenue × ~60% GM per brief economics.",
+        "_note": "Natural segmentation (not randomized). Directionally strong. margin_impact = revenue \u00d7 ~60% GM per brief economics.",
         "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: revenue, margin, outcome_category, decision."
       },
       "outcome": "success",
@@ -218,7 +218,7 @@
     },
     {
       "id": "CS-2026-004",
-      "title": "Paid Media Attribution — March 7 Exclusion & Superfiliate Investigation",
+      "title": "Paid Media Attribution \u2014 March 7 Exclusion & Superfiliate Investigation",
       "subtype": "investigation",
       "surface": "paid_google",
       "status": "published",
@@ -377,7 +377,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-006.md",
-      "notes": "Published Mar 14. High risk — Devon approved. Blocks CS-2026-024 (pause/skip).",
+      "notes": "Published Mar 14. High risk \u2014 Devon approved. Blocks CS-2026-024 (pause/skip).",
       "risk": "low",
       "review_tier": "standard",
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
@@ -541,7 +541,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-009.md",
-      "notes": "BWR event May 2-3. Low urgency — execute by mid-April.",
+      "notes": "BWR event May 2-3. Low urgency \u2014 execute by mid-April.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -561,7 +561,7 @@
     },
     {
       "id": "CS-2026-010",
-      "title": "Klaviyo Property Definition Audit — Superfiliate Source Attribution",
+      "title": "Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
       "subtype": "investigation",
       "surface": "klaviyo",
       "status": "closed",
@@ -631,12 +631,12 @@
         "margin_impact": null,
         "confidence": "high",
         "statistical_significance": true,
-        "_note": "Investigation subtype — no direct revenue. Spawned CS-2026-049 (Shopify Flow implementation) which carries the revenue impact.",
-        "L1_margin_actual": "null — investigation, no direct revenue",
-        "L3_customer_quality_actual": "confirmed — Superfiliate customer attribution gap prevents targeted retention flows. Fix designed.",
-        "L4_learning_actual": "Hypothesis supported: all 6 Superfiliate metrics fire on creator profiles only. $source contains form IDs not traffic source. Shopify order tags don't propagate to Klaviyo profile tags. Only working attribution: discount code matching on Placed Order events. Fix: Shopify Flow → Klaviyo custom property."
+        "_note": "Investigation subtype \u2014 no direct revenue. Spawned CS-2026-049 (Shopify Flow implementation) which carries the revenue impact.",
+        "L1_margin_actual": "null \u2014 investigation, no direct revenue",
+        "L3_customer_quality_actual": "confirmed \u2014 Superfiliate customer attribution gap prevents targeted retention flows. Fix designed.",
+        "L4_learning_actual": "Hypothesis supported: all 6 Superfiliate metrics fire on creator profiles only. $source contains form IDs not traffic source. Shopify order tags don't propagate to Klaviyo profile tags. Only working attribution: discount code matching on Placed Order events. Fix: Shopify Flow \u2192 Klaviyo custom property."
       },
-      "learning_note": "For [Superfiliate-acquired customers] on [Klaviyo], [property audit] revealed [all Superfiliate data lives on creator profiles, not customer profiles]. $source contains Klaviyo form IDs, not traffic attribution. Superfiliate Campaign Conversion fires on creators only with empty event properties. Shopify order tags don't propagate to profile-level Shopify Tags. Only working path: discount codes on Placed Order events. Fix: Shopify Flow triggered by 'superfiliate conversion approved' order tag → write acquisition_source + referring_creator to Klaviyo customer profiles.",
+      "learning_note": "For [Superfiliate-acquired customers] on [Klaviyo], [property audit] revealed [all Superfiliate data lives on creator profiles, not customer profiles]. $source contains Klaviyo form IDs, not traffic attribution. Superfiliate Campaign Conversion fires on creators only with empty event properties. Shopify order tags don't propagate to profile-level Shopify Tags. Only working path: discount codes on Placed Order events. Fix: Shopify Flow triggered by 'superfiliate conversion approved' order tag \u2192 write acquisition_source + referring_creator to Klaviyo customer profiles.",
       "urgency": "closed"
     },
     {
@@ -677,7 +677,7 @@
       "approved_date": "2026-03-14",
       "published_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-011.md",
-      "notes": "Published Apr 1. Science-led April Fools email — Machado 2022 qEEG study. 7-day measurement window through Apr 8. Brief updated with final creative at publish.",
+      "notes": "Published Apr 1. Science-led April Fools email \u2014 Machado 2022 qEEG study. 7-day measurement window through Apr 8. Brief updated with final creative at publish.",
       "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
@@ -691,7 +691,7 @@
       "measurement_due": "2026-04-08",
       "publish_confirmation": {
         "surface": "klaviyo",
-        "confirmation_id": "Klaviyo campaign — single send Apr 1 2026",
+        "confirmation_id": "Klaviyo campaign \u2014 single send Apr 1 2026",
         "published_at": "2026-04-01T12:00:00Z"
       },
       "scheduled_send_date": "2026-04-01",
@@ -794,7 +794,7 @@
       "review_tier": "express",
       "published_date": "2026-04-02",
       "file": "cgo-logs/changesets/CS-2026-013.md",
-      "notes": "Published 4/2. Scheduled send: 4/3. Pulled forward from 4/7 — swapped with CS-2026-012 (Unbound blocked). Draft finalized with Underground Ecom. 7-day measurement window through 4/10.",
+      "notes": "Published 4/2. Scheduled send: 4/3. Pulled forward from 4/7 \u2014 swapped with CS-2026-012 (Unbound blocked). Draft finalized with Underground Ecom. 7-day measurement window through 4/10.",
       "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
@@ -955,7 +955,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-016.md",
-      "notes": "Scheduled send: 4/16. Brief status: DRAFT — needs Devon approval on Robberechts 2023 claim framing before send. Corrected from published (email not yet sent).",
+      "notes": "Scheduled send: 4/16. Brief status: DRAFT \u2014 needs Devon approval on Robberechts 2023 claim framing before send. Corrected from published (email not yet sent).",
       "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
@@ -1006,7 +1006,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-017.md",
-      "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized — supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative.",
+      "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized \u2014 supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative.",
       "sweep_flags": [],
       "last_sweep": "2026-04-03",
       "risk": "low",
@@ -1241,7 +1241,7 @@
     },
     {
       "id": "CS-2026-022",
-      "title": "MAY IS LOADING — STOCK UP",
+      "title": "MAY IS LOADING \u2014 STOCK UP",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "approved",
@@ -1348,13 +1348,13 @@
           "open_rate": "33.8-45.2% (baseline 29.3%, target 33% exceeded)",
           "orders": 18
         },
-        "_note": "Partial success: open rate target exceeded (33.8-45.2% vs 33% target), CTR target not met (0.62-0.66% vs 1.0% target). margin_impact = revenue × 50% flow-through per brief.",
+        "_note": "Partial success: open rate target exceeded (33.8-45.2% vs 33% target), CTR target not met (0.62-0.66% vs 1.0% target). margin_impact = revenue \u00d7 50% flow-through per brief.",
         "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: campaign_ctr, campaign_open_rate, revenue, orders."
       },
       "outcome": "partial_success",
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-023.md",
-      "notes": "Closed: Partial success. SMS-inspired subject lines improved open rates significantly (33.8-45.2% vs 29.3% baseline) but CTR improvement marginal (0.62-0.66% vs 0.57%, target 1.0% not met). Key learning: bottleneck is in-email CTA/body content, not subject lines. Tests B (CTA placement) and C (segment refresh) not executed — recommended for next cycle. Executed by Underground Ecom (Kiara Schuman, Andrej Jesic).",
+      "notes": "Closed: Partial success. SMS-inspired subject lines improved open rates significantly (33.8-45.2% vs 29.3% baseline) but CTR improvement marginal (0.62-0.66% vs 0.57%, target 1.0% not met). Key learning: bottleneck is in-email CTA/body content, not subject lines. Tests B (CTA placement) and C (segment refresh) not executed \u2014 recommended for next cycle. Executed by Underground Ecom (Kiara Schuman, Andrej Jesic).",
       "risk": "low",
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
@@ -1540,13 +1540,13 @@
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
         "MEASUREMENT_OVERDUE",
-        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) — BAW content velocity). Session 24 sweep."
+        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW content velocity). Session 24 sweep."
       ],
       "last_sweep": "2026-04-03",
       "risk": "low",
       "sweep_flag": "FORCE_CLOSED",
       "sweep_date": "2026-04-03",
-      "sweep_note": "Force-closed Session 26. BAW Content Velocity — 11d overdue measurement. No outcome data in briefs. Owner: Nick + Charlotte.",
+      "sweep_note": "Force-closed Session 26. BAW Content Velocity \u2014 11d overdue measurement. No outcome data in briefs. Owner: Nick + Charlotte.",
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
@@ -1608,13 +1608,13 @@
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
         "MEASUREMENT_OVERDUE",
-        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) — BAW Tier A fast-track). Session 24 sweep."
+        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW Tier A fast-track). Session 24 sweep."
       ],
       "last_sweep": "2026-04-03",
       "risk": "low",
       "sweep_flag": "FORCE_CLOSED",
       "sweep_date": "2026-04-03",
-      "sweep_note": "Force-closed Session 26. BAW Tier A Fast-Track — 11d overdue measurement. No outcome data. Owner: Charlotte + Cliff.",
+      "sweep_note": "Force-closed Session 26. BAW Tier A Fast-Track \u2014 11d overdue measurement. No outcome data. Owner: Charlotte + Cliff.",
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
@@ -1623,7 +1623,7 @@
     },
     {
       "id": "CS-2026-028",
-      "title": "FB Prospecting Budget Reallocation — Meta Leadville + Google Pmax",
+      "title": "FB Prospecting Budget Reallocation \u2014 Meta Leadville + Google Pmax",
       "subtype": "implementation",
       "surface": "paid_google",
       "status": "closed",
@@ -1666,8 +1666,8 @@
       "actual_impact": {
         "primary_metric": "blended_paid_media_roas",
         "primary_metric_baseline": "See CS-2026-028 brief",
-        "primary_metric_result": "Inconclusive — confounded by demand cliff",
-        "primary_metric_delta": "N/A — external confound",
+        "primary_metric_result": "Inconclusive \u2014 confounded by demand cliff",
+        "primary_metric_delta": "N/A \u2014 external confound",
         "revenue_impact": null,
         "margin_impact": null,
         "confidence": "low",
@@ -1675,7 +1675,7 @@
         "_tactical_findings": {
           "fb_prospecting_cut": "78.8% (more aggressive than planned 50%)",
           "leadville_roas_at_scale": "3.35x at 2x budget",
-          "pmax_roas_decline": "3.90x → 2.05x (diminishing returns at scale)"
+          "pmax_roas_decline": "3.90x \u2192 2.05x (diminishing returns at scale)"
         },
         "_note": "Revenue and margin impact could not be isolated due to concurrent demand cliff. Tactical findings preserved in _tactical_findings.",
         "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: revenue_change, fb_prospecting_cut, leadville_roas_at_scale, pmax_roas_decline."
@@ -1683,7 +1683,7 @@
       "outcome": "executed_inconclusive",
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-028.md",
-      "notes": "Reallocation executed correctly. Measurement inconclusive — baseline included peak Leadville Sweepstakes + BAW promotional period, creating invalid comparison. Demand cliff (documented in CS-033) drove universal conversion declines across all channels. Key learning: Pmax has a scaling ceiling; Leadville absorbed budget well at 3.35x ROAS. Creative gate for FB prospecting remains in effect.",
+      "notes": "Reallocation executed correctly. Measurement inconclusive \u2014 baseline included peak Leadville Sweepstakes + BAW promotional period, creating invalid comparison. Demand cliff (documented in CS-033) drove universal conversion declines across all channels. Key learning: Pmax has a scaling ceiling; Leadville absorbed budget well at 3.35x ROAS. Creative gate for FB prospecting remains in effect.",
       "risk": "low",
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
@@ -1694,7 +1694,7 @@
     },
     {
       "id": "CS-2026-029",
-      "title": "Graduation: Matt Hughes Reel → Paid Social Amplification",
+      "title": "Graduation: Matt Hughes Reel \u2192 Paid Social Amplification",
       "subtype": "implementation",
       "surface": "paid_meta",
       "status": "closed",
@@ -1754,13 +1754,13 @@
           "gross_margin_dollars": 465.5,
           "contribution_margin_after_spend": 368.18
         },
-        "_note": "Ran at ~10% of planned budget due to creative delay. ROAS of 9.57x far exceeds 1.5x target. margin_impact = (revenue × 50% GM) - ad_spend = $465.5 - $97.32 = $368.18. Two organic variants boosted in BAW Meta campaign. Greayteam variant: $76.70 spend, $438.44 rev, 5.72x ROAS. Brain Week variant: $20.62 spend, $492.57 rev, 23.89x ROAS. Test ran at ~10% of planned budget due to Charlotte creative delay; Katie launched organic variants directly.",
+        "_note": "Ran at ~10% of planned budget due to creative delay. ROAS of 9.57x far exceeds 1.5x target. margin_impact = (revenue \u00d7 50% GM) - ad_spend = $465.5 - $97.32 = $368.18. Two organic variants boosted in BAW Meta campaign. Greayteam variant: $76.70 spend, $438.44 rev, 5.72x ROAS. Brain Week variant: $20.62 spend, $492.57 rev, 23.89x ROAS. Test ran at ~10% of planned budget due to Charlotte creative delay; Katie launched organic variants directly.",
         "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: revenue, spend, roas, purchases, notes."
       },
       "outcome": "success",
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-029.md",
-      "notes": "Published Mar 17. Closed Apr 1 as SUCCESS. Combined 9.57x ROAS (target 1.5x). Organic variants outperformed — no custom creative needed. Budget-constrained but efficiency exceptional.",
+      "notes": "Published Mar 17. Closed Apr 1 as SUCCESS. Combined 9.57x ROAS (target 1.5x). Organic variants outperformed \u2014 no custom creative needed. Budget-constrained but efficiency exceptional.",
       "risk": "low",
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
@@ -1771,7 +1771,7 @@
     },
     {
       "id": "CS-2026-030",
-      "title": "BAW One-Time Purchaser → Subscription Conversion",
+      "title": "BAW One-Time Purchaser \u2192 Subscription Conversion",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "published",
@@ -1808,27 +1808,27 @@
       "approved_date": "2026-04-01",
       "review_tier": "standard",
       "published_date": "2026-04-06",
-      "measurement_start_date": null,
-      "measurement_end_date": null,
+      "measurement_start_date": "2026-04-06",
+      "measurement_end_date": "2026-04-13",
       "measurement_window": "7d",
-      "measurement_due": null,
+      "measurement_due": "2026-04-13",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-030.md",
-      "notes": "Revised 2026-04-01: Repositioned from BAW urgency promo (window expired) to repurchase-window subscription conversion. Target launch Apr 3. Approved via standard hierarchy review — positive at all 5 levels, no trade-offs. Segment: BAW discount code one-time purchasers without active subscription. | 2026-04-06: Advanced to published. Klaviyo build in progress — Katie building segment + 3-touch flow today. executed_date pending confirmation. Measurement window (7d) starts from executed_date.",
+      "notes": "Revised 2026-04-01: Repositioned from BAW urgency promo (window expired) to repurchase-window subscription conversion. Target launch Apr 3. Approved via standard hierarchy review \u2014 positive at all 5 levels, no trade-offs. Segment: BAW discount code one-time purchasers without active subscription. | 2026-04-06: Advanced to published. Klaviyo build in progress \u2014 Katie building segment + 3-touch flow today. executed_date pending confirmation. Measurement window (7d) starts from executed_date. | 2026-04-06: Execution confirmed. Flow live in Klaviyo, segment-triggered, past profiles added. Measurement window: Apr 6-13 (7d).",
       "sweep_flags": [],
       "last_sweep": "2026-04-06",
       "risk": "low",
       "scheduled_send_date": "2026-04-03",
       "execution_target_date": "2026-04-06",
-      "executed_date": null,
+      "executed_date": "2026-04-06",
       "autonomy_tier": null,
       "urgency": null
     },
     {
       "id": "CS-2026-031",
-      "title": "Email Flow CTA Redesign — High-Volume Low-CTR Messages",
+      "title": "Email Flow CTA Redesign \u2014 High-Volume Low-CTR Messages",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
@@ -1861,7 +1861,7 @@
       "routed_via": "auto",
       "routed_date": "2026-03-19",
       "file": "cgo-logs/changesets/CS-2026-031.md",
-      "notes": "Rescoped Mar 23 after Klaviyo API audit. Real scope: ~15 high-volume low-CTR flow emails (not 121 flows). Brief still in Draft — needs /changeset-review before advancing. Corrected metadata: was incorrectly tagged paid_media/L1/graduation_roas.",
+      "notes": "Rescoped Mar 23 after Klaviyo API audit. Real scope: ~15 high-volume low-CTR flow emails (not 121 flows). Brief still in Draft \u2014 needs /changeset-review before advancing. Corrected metadata: was incorrectly tagged paid_media/L1/graduation_roas.",
       "risk": "medium",
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-22",
@@ -2130,7 +2130,7 @@
     },
     {
       "id": "CS-2026-037",
-      "title": "Amazon Search Term Harvest — Q1 Keyword Gaps",
+      "title": "Amazon Search Term Harvest \u2014 Q1 Keyword Gaps",
       "subtype": "investigation",
       "surface": "amazon",
       "status": "approved",
@@ -2541,9 +2541,9 @@
       "outcome": "invalid_premise",
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-044.md",
-      "notes": "CLOSED — Invalid. Source content (Ashton Hall videos) were paid ads, not organic posts. Graduation pipeline does not apply. Social media manager confirmed these were never posted organically. Devon notified. CS-045 created for proper Matt Hughes graduation. Graduation scan should filter out paid-distributed content.",
+      "notes": "CLOSED \u2014 Invalid. Source content (Ashton Hall videos) were paid ads, not organic posts. Graduation pipeline does not apply. Social media manager confirmed these were never posted organically. Devon notified. CS-045 created for proper Matt Hughes graduation. Graduation scan should filter out paid-distributed content.",
       "risk": "medium",
-      "_outcome_note": "Graduation premise was wrong — videos were paid ads, not organic",
+      "_outcome_note": "Graduation premise was wrong \u2014 videos were paid ads, not organic",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
@@ -2551,7 +2551,7 @@
     },
     {
       "id": "CS-2026-045",
-      "title": "Scale: Matt Hughes Athlete Content → Paid Meta (Proven 9.57x ROAS)",
+      "title": "Scale: Matt Hughes Athlete Content \u2192 Paid Meta (Proven 9.57x ROAS)",
       "subtype": "implementation",
       "surface": "paid_meta",
       "status": "published",
@@ -2595,7 +2595,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-045.md",
-      "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING — Katie to update after Meta publish.",
+      "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING \u2014 Katie to update after Meta publish.",
       "risk": "low",
       "ad_platform_refs": null,
       "execution_target_date": null,
@@ -2605,7 +2605,7 @@
     },
     {
       "id": "CS-2026-046",
-      "title": "Homepage Product Grid ATC Bug — Emergency Fix",
+      "title": "Homepage Product Grid ATC Bug \u2014 Emergency Fix",
       "subtype": "quick",
       "surface": "dtc_website",
       "status": "published",
@@ -2641,7 +2641,7 @@
       "notes": "Root cause: Mar 23 template rewrite broke JS class selectors. Fix deployed Apr 3. ATC rate recovering from ~12% toward 35% baseline. Measurement window Apr 3-10.",
       "measurement_window": "7d from fix deployment",
       "autonomy_tier": 2,
-      "shadow_classification": "Tier 2 — critical risk, multi-surface investigation, not eligible for autonomous execution",
+      "shadow_classification": "Tier 2 \u2014 critical risk, multi-surface investigation, not eligible for autonomous execution",
       "approved_by": "Devon",
       "approved_date": "2026-04-03",
       "review_tier": "full",
@@ -2652,7 +2652,7 @@
       "measurement_due": "2026-04-10",
       "publish_confirmation": {
         "surface": "shopify",
-        "confirmation_id": "Investigation kickoff — Slack notification to Katie, Nick, Cliff",
+        "confirmation_id": "Investigation kickoff \u2014 Slack notification to Katie, Nick, Cliff",
         "published_at": "2026-04-03T06:45:00Z"
       },
       "actual_impact": {
@@ -2671,7 +2671,7 @@
     },
     {
       "id": "CS-2026-047",
-      "title": "Brain Health Content Bundle — Trend Capture + Gut-Brain Science",
+      "title": "Brain Health Content Bundle \u2014 Trend Capture + Gut-Brain Science",
       "status": "draft",
       "owner": "Charlotte + Brandon",
       "approver": "Nick",
@@ -2698,7 +2698,7 @@
     },
     {
       "id": "CS-2026-048",
-      "title": "Graduation: TT Ashton Hall 'Longevity > Hype' → Paid Amplification",
+      "title": "Graduation: TT Ashton Hall 'Longevity > Hype' \u2192 Paid Amplification",
       "subtype": "implementation",
       "surface": "paid_meta",
       "status": "draft",
@@ -2741,7 +2741,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-048.md",
-      "notes": "Moe weekly graduation scan 2026-04-06. TT Ashton Hall 'longevity > hype' post — 5.7% engagement rate (threshold: 5%). Creator content, strong engagement signal. Draft for Katie review.",
+      "notes": "Moe weekly graduation scan 2026-04-06. TT Ashton Hall 'longevity > hype' post \u2014 5.7% engagement rate (threshold: 5%). Creator content, strong engagement signal. Draft for Katie review.",
       "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": null,
@@ -2751,7 +2751,7 @@
     },
     {
       "id": "CS-2026-049",
-      "title": "Shopify Flow → Klaviyo Superfiliate Customer Attribution",
+      "title": "Shopify Flow \u2192 Klaviyo Superfiliate Customer Attribution",
       "subtype": "implementation",
       "surface": "dtc_website",
       "status": "draft",
@@ -2777,11 +2777,11 @@
         },
         "primary_metric": "profiles_with_acquisition_source",
         "primary_metric_target": ">90% of Superfiliate orders matched",
-        "L1_margin": "$1,300/mo expected — enables targeted retention flows for creator-acquired cohorts",
-        "L2_cash": "neutral — DTC revenue, standard cash cycle",
-        "L3_customer_quality": "positive — enables per-creator cohort targeting, unlocks Superfiliate-specific retention flows",
+        "L1_margin": "$1,300/mo expected \u2014 enables targeted retention flows for creator-acquired cohorts",
+        "L2_cash": "neutral \u2014 DTC revenue, standard cash cycle",
+        "L3_customer_quality": "positive \u2014 enables per-creator cohort targeting, unlocks Superfiliate-specific retention flows",
         "L4_learning": "Will profile-level Superfiliate attribution enable measurably better retention outcomes vs discount-code-only segmentation?",
-        "L5_brand_check": "pass — backend data operation, no customer-facing impact"
+        "L5_brand_check": "pass \u2014 backend data operation, no customer-facing impact"
       },
       "routed_to": [
         "Katie",
@@ -2831,8 +2831,8 @@
     "stale_approved_count": 19,
     "measurement_overdue_count": 4,
     "new_changesets_generated": 0,
-    "new_changesets_reason": "Portfolio saturated at 44 entries (19 approved stale, 6 drafts, 4 measurements overdue). Synthesis rec-147 recommends bulk-close 15+ stale drafts before generating new. Calendar safety net skipped — adding drafts to saturated portfolio is counterproductive.",
-    "portfolio_status": "RED — frozen",
+    "new_changesets_reason": "Portfolio saturated at 44 entries (19 approved stale, 6 drafts, 4 measurements overdue). Synthesis rec-147 recommends bulk-close 15+ stale drafts before generating new. Calendar safety net skipped \u2014 adding drafts to saturated portfolio is counterproductive.",
+    "portfolio_status": "RED \u2014 frozen",
     "total_entries": 44,
     "katie_concentration": "70% (estimated 26/37 active)",
     "autonomous_mode": "shadow"
@@ -2868,7 +2868,7 @@
       "discordance_count": 0
     },
     "confidence": "insufficient_data",
-    "recommendation": "Need ≥5 Tier 0/1 ChangeSets to complete manual review for concordance comparison before Phase B activation. Currently 1 Tier 1 entry pending review (CS-2026-035).",
+    "recommendation": "Need \u22655 Tier 0/1 ChangeSets to complete manual review for concordance comparison before Phase B activation. Currently 1 Tier 1 entry pending review (CS-2026-035).",
     "last_updated": "2026-04-05"
   },
   "sweep_results": {
@@ -2905,6 +2905,6 @@
     },
     "auto_closed": 0,
     "new_changesets": 1,
-    "notes": "16 stale approved (all 21d except CS-034 18d, CS-036/037 15d). 3 measurement windows approaching Apr 8-9. 1 new CS created (CS-2026-047 Brain Health Content Bundle). No auto-closes — no measurement-overdue published items with available data (Polar offline blocks verification)."
+    "notes": "16 stale approved (all 21d except CS-034 18d, CS-036/037 15d). 3 measurement windows approaching Apr 8-9. 1 new CS created (CS-2026-047 Brain Health Content Bundle). No auto-closes \u2014 no measurement-overdue published items with available data (Polar offline blocks verification)."
   }
 }
