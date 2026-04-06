@@ -5,7 +5,7 @@
   "lifecycle_sweep": {
     "session": "2026-04-02-session-25",
     "sweep_date": "2026-04-02",
-    "stale_detected": 18,
+    "stale_detected": 9,
     "measurement_overdue": 2,
     "measurement_due_today": 0,
     "measurement_approaching": 5,
@@ -20,7 +20,8 @@
       "PORTFOLIO: 45 total (11 closed, 10 published, 21 approved, 3 draft). No new ChangeSets warranted \u2014 18 stale + 2 overdue must be resolved first.",
       "AUTONOMOUS MODE: shadow \u2014 classification only, no auto-advance."
     ],
-    "new_changeset_generation": "No new ChangeSets generated. Portfolio at 45 entries with 18 stale approved and 2 measurement overdue (CS-026/027 at 10d SEVERE). Priority is: (1) close or restart CS-026/027, (2) redistribute Katie's stale approved queue, (3) prepare for 5 approaching measurement windows (CS-002/004/011 by Apr 9). Adding new ChangeSets would worsen the execution bottleneck."
+    "new_changeset_generation": "No new ChangeSets generated. Portfolio at 45 entries with 18 stale approved and 2 measurement overdue (CS-026/027 at 10d SEVERE). Priority is: (1) close or restart CS-026/027, (2) redistribute Katie's stale approved queue, (3) prepare for 5 approaching measurement windows (CS-002/004/011 by Apr 9). Adding new ChangeSets would worsen the execution bottleneck.",
+    "last_urgency_recompute": "2026-04-06"
   },
   "summary": {
     "total_changesets": 49,
@@ -88,7 +89,8 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "measuring"
     },
     {
       "id": "CS-2026-002",
@@ -143,7 +145,8 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "measurement_approaching": true
+      "measurement_approaching": true,
+      "urgency": "measuring"
     },
     {
       "id": "CS-2026-003",
@@ -210,7 +213,8 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-004",
@@ -265,7 +269,8 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "measurement_approaching": true
+      "measurement_approaching": true,
+      "urgency": "measuring"
     },
     {
       "id": "CS-2026-005",
@@ -321,7 +326,8 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-006",
@@ -377,7 +383,8 @@
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "measuring"
     },
     {
       "id": "CS-2026-007",
@@ -432,7 +439,8 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "measuring"
     },
     {
       "id": "CS-2026-008",
@@ -490,7 +498,8 @@
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-009",
@@ -547,7 +556,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-010",
@@ -626,7 +636,8 @@
         "L3_customer_quality_actual": "confirmed \u2014 Superfiliate customer attribution gap prevents targeted retention flows. Fix designed.",
         "L4_learning_actual": "Hypothesis supported: all 6 Superfiliate metrics fire on creator profiles only. $source contains form IDs not traffic source. Shopify order tags don't propagate to Klaviyo profile tags. Only working attribution: discount code matching on Placed Order events. Fix: Shopify Flow \u2192 Klaviyo custom property."
       },
-      "learning_note": "For [Superfiliate-acquired customers] on [Klaviyo], [property audit] revealed [all Superfiliate data lives on creator profiles, not customer profiles]. $source contains Klaviyo form IDs, not traffic attribution. Superfiliate Campaign Conversion fires on creators only with empty event properties. Shopify order tags don't propagate to profile-level Shopify Tags. Only working path: discount codes on Placed Order events. Fix: Shopify Flow triggered by 'superfiliate conversion approved' order tag \u2192 write acquisition_source + referring_creator to Klaviyo customer profiles."
+      "learning_note": "For [Superfiliate-acquired customers] on [Klaviyo], [property audit] revealed [all Superfiliate data lives on creator profiles, not customer profiles]. $source contains Klaviyo form IDs, not traffic attribution. Superfiliate Campaign Conversion fires on creators only with empty event properties. Shopify order tags don't propagate to profile-level Shopify Tags. Only working path: discount codes on Placed Order events. Fix: Shopify Flow triggered by 'superfiliate conversion approved' order tag \u2192 write acquisition_source + referring_creator to Klaviyo customer profiles.",
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-011",
@@ -687,7 +698,8 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "measurement_approaching": true
+      "measurement_approaching": true,
+      "urgency": "measuring"
     },
     {
       "id": "CS-2026-012",
@@ -740,7 +752,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "due_soon"
     },
     {
       "id": "CS-2026-013",
@@ -792,7 +805,8 @@
       "scheduled_send_date": "2026-04-03",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "measuring"
     },
     {
       "id": "CS-2026-014",
@@ -845,7 +859,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "on_track"
     },
     {
       "id": "CS-2026-015",
@@ -898,7 +913,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "on_track"
     },
     {
       "id": "CS-2026-016",
@@ -948,7 +964,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "on_track"
     },
     {
       "id": "CS-2026-017",
@@ -1001,7 +1018,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "on_track"
     },
     {
       "id": "CS-2026-018",
@@ -1054,7 +1072,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "on_track"
     },
     {
       "id": "CS-2026-019",
@@ -1107,7 +1126,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "on_track"
     },
     {
       "id": "CS-2026-020",
@@ -1162,7 +1182,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "on_track"
     },
     {
       "id": "CS-2026-021",
@@ -1215,7 +1236,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "on_track"
     },
     {
       "id": "CS-2026-022",
@@ -1268,7 +1290,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "on_track"
     },
     {
       "id": "CS-2026-023",
@@ -1339,7 +1362,8 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-024",
@@ -1397,7 +1421,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21
+      "stale_days": 21,
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-025",
@@ -1456,7 +1481,8 @@
       "_surface_note": "Mapped from \"multi_platform\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-026",
@@ -1524,7 +1550,8 @@
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-027",
@@ -1591,7 +1618,8 @@
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-028",
@@ -1661,7 +1689,8 @@
       "last_sweep": "2026-04-01",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-029",
@@ -1737,7 +1766,8 @@
       "last_sweep": "2026-04-01",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-030",
@@ -1793,7 +1823,8 @@
       "scheduled_send_date": "2026-04-03",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "overdue"
     },
     {
       "id": "CS-2026-031",
@@ -1839,7 +1870,8 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-032",
@@ -1887,7 +1919,8 @@
       "review_tier": "express",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-033",
@@ -1936,7 +1969,8 @@
       "_surface_note": "Mapped from \"website\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-034",
@@ -1989,7 +2023,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 18
+      "stale_days": 18,
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-035",
@@ -2031,7 +2066,8 @@
       "scheduled_send_date": null,
       "autonomy_tier": 1,
       "execution_target_date": null,
-      "executed_date": null
+      "executed_date": null,
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-036",
@@ -2089,7 +2125,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 15
+      "stale_days": 15,
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-037",
@@ -2146,7 +2183,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 15
+      "stale_days": 15,
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-038",
@@ -2198,7 +2236,8 @@
       "_surface_note": "Mapped from \"website\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-039",
@@ -2250,7 +2289,8 @@
       "_surface_note": "Mapped from \"social_tiktok\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-040",
@@ -2292,7 +2332,8 @@
       "_surface_note": "Mapped from \"superfiliate\" during 2026-04-05 schema cleanup",
       "autonomy_tier": 2,
       "execution_target_date": null,
-      "executed_date": null
+      "executed_date": null,
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-041",
@@ -2343,7 +2384,8 @@
       "risk": "medium",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-042",
@@ -2394,7 +2436,8 @@
       "risk": "medium",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "ok"
     },
     {
       "id": "CS-2026-043",
@@ -2450,7 +2493,8 @@
       "last_sweep": "2026-04-01",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "blocked"
     },
     {
       "id": "CS-2026-044",
@@ -2502,7 +2546,8 @@
       "_outcome_note": "Graduation premise was wrong \u2014 videos were paid ads, not organic",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "closed"
     },
     {
       "id": "CS-2026-045",
@@ -2555,7 +2600,8 @@
       "ad_platform_refs": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "measuring"
     },
     {
       "id": "CS-2026-046",
@@ -2620,7 +2666,8 @@
       "_surface_note": "Mapped from \"shopify\" during 2026-04-05 schema cleanup",
       "_subtype_note": "Mapped from \"bug_fix\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
-      "executed_date": null
+      "executed_date": null,
+      "urgency": "measuring"
     },
     {
       "id": "CS-2026-047",
@@ -2646,7 +2693,8 @@
         "D18 brain health 72/100"
       ],
       "created_by": "pipeline-session-27",
-      "created": "2026-04-06"
+      "created": "2026-04-06",
+      "urgency": "ok"
     },
     {
       "id": "CS-2026-048",
@@ -2698,7 +2746,8 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "ok"
     },
     {
       "id": "CS-2026-049",
@@ -2749,34 +2798,30 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "urgency": "ok"
     }
   ],
   "queue_actions": {
     "stale": [
       "CS-2026-009",
-      "CS-2026-010",
-      "CS-2026-011",
-      "CS-2026-012",
-      "CS-2026-013",
-      "CS-2026-014",
-      "CS-2026-015",
-      "CS-2026-016",
-      "CS-2026-017",
-      "CS-2026-018",
-      "CS-2026-019",
-      "CS-2026-020",
-      "CS-2026-021",
-      "CS-2026-022",
-      "CS-2026-024"
+      "CS-2026-024",
+      "CS-2026-030",
+      "CS-2026-031",
+      "CS-2026-034",
+      "CS-2026-035",
+      "CS-2026-036",
+      "CS-2026-037",
+      "CS-2026-040"
     ],
-    "measurement_due": [
-      "CS-2026-026",
-      "CS-2026-027"
-    ],
+    "measurement_due": [],
     "auto_close": [],
     "new_changesets": [],
-    "calendar_safety_net": "No untracked activities detected."
+    "calendar_safety_net": "No untracked activities detected.",
+    "blocked": [
+      "CS-2026-043"
+    ],
+    "needs_review": []
   },
   "last_sweep_date": "2026-03-25",
   "last_sweep": "2026-04-06",
