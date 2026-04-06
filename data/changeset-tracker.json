@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-06",
-  "next_id": 49,
+  "next_id": 50,
   "lifecycle_sweep": {
     "session": "2026-04-02-session-25",
     "sweep_date": "2026-04-02",
@@ -23,12 +23,12 @@
     "new_changeset_generation": "No new ChangeSets generated. Portfolio at 45 entries with 18 stale approved and 2 measurement overdue (CS-026/027 at 10d SEVERE). Priority is: (1) close or restart CS-026/027, (2) redistribute Katie's stale approved queue, (3) prepare for 5 approaching measurement windows (CS-002/004/011 by Apr 9). Adding new ChangeSets would worsen the execution bottleneck."
   },
   "summary": {
-    "total_changesets": 48,
+    "total_changesets": 49,
     "by_status": {
-      "published": 10,
-      "closed": 15,
+      "published": 9,
+      "closed": 16,
       "approved": 17,
-      "draft": 6
+      "draft": 7
     },
     "last_updated": "2026-04-06",
     "_recount_note": "2026-04-05: Schema cleanup \u2014 surface normalization, summary recount (46 entries). 2026-04-01: Summary recounted from actual records. Previous count showed 6 closed; actual is 11."
@@ -554,7 +554,7 @@
       "title": "Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
       "subtype": "investigation",
       "surface": "klaviyo",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie + Devon",
       "created": "2026-03-11",
@@ -563,7 +563,9 @@
       "dependencies": [],
       "blocks": [],
       "spawned_from": "rec-010",
-      "spawned_changesets": [],
+      "spawned_changesets": [
+        "CS-2026-049"
+      ],
       "expected_impact": {
         "revenue": {
           "upside": 0,
@@ -607,7 +609,24 @@
         "surface": "klaviyo",
         "confirmation_id": "investigation-kickoff-2026-04-06",
         "published_at": "2026-04-06T12:00:00Z"
-      }
+      },
+      "outcome": "success",
+      "closed_date": "2026-04-06",
+      "actual_impact": {
+        "primary_metric": "investigation_questions_answered",
+        "primary_metric_baseline": "0 of 5 answered",
+        "primary_metric_result": "5 of 5 answered with evidence",
+        "primary_metric_delta": "+5 (100% completion)",
+        "revenue_impact": null,
+        "margin_impact": null,
+        "confidence": "high",
+        "statistical_significance": true,
+        "_note": "Investigation subtype \u2014 no direct revenue. Spawned CS-2026-049 (Shopify Flow implementation) which carries the revenue impact.",
+        "L1_margin_actual": "null \u2014 investigation, no direct revenue",
+        "L3_customer_quality_actual": "confirmed \u2014 Superfiliate customer attribution gap prevents targeted retention flows. Fix designed.",
+        "L4_learning_actual": "Hypothesis supported: all 6 Superfiliate metrics fire on creator profiles only. $source contains form IDs not traffic source. Shopify order tags don't propagate to Klaviyo profile tags. Only working attribution: discount code matching on Placed Order events. Fix: Shopify Flow \u2192 Klaviyo custom property."
+      },
+      "learning_note": "For [Superfiliate-acquired customers] on [Klaviyo], [property audit] revealed [all Superfiliate data lives on creator profiles, not customer profiles]. $source contains Klaviyo form IDs, not traffic attribution. Superfiliate Campaign Conversion fires on creators only with empty event properties. Shopify order tags don't propagate to profile-level Shopify Tags. Only working path: discount codes on Placed Order events. Fix: Shopify Flow triggered by 'superfiliate conversion approved' order tag \u2192 write acquisition_source + referring_creator to Klaviyo customer profiles."
     },
     {
       "id": "CS-2026-011",
@@ -2676,6 +2695,57 @@
       "file": "cgo-logs/changesets/CS-2026-048.md",
       "notes": "Moe weekly graduation scan 2026-04-06. TT Ashton Hall 'longevity > hype' post \u2014 5.7% engagement rate (threshold: 5%). Creator content, strong engagement signal. Draft for Katie review.",
       "risk": "low",
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
+    },
+    {
+      "id": "CS-2026-049",
+      "title": "Shopify Flow \u2192 Klaviyo Superfiliate Customer Attribution",
+      "subtype": "implementation",
+      "surface": "dtc_website",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie + Devon",
+      "created": "2026-04-06",
+      "objective_level": "L3",
+      "category": "attribution",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "CS-2026-010",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 5000,
+          "expected": 2600,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 2500,
+          "expected": 1300,
+          "downside": 0
+        },
+        "primary_metric": "profiles_with_acquisition_source",
+        "primary_metric_target": ">90% of Superfiliate orders matched",
+        "L1_margin": "$1,300/mo expected \u2014 enables targeted retention flows for creator-acquired cohorts",
+        "L2_cash": "neutral \u2014 DTC revenue, standard cash cycle",
+        "L3_customer_quality": "positive \u2014 enables per-creator cohort targeting, unlocks Superfiliate-specific retention flows",
+        "L4_learning": "Will profile-level Superfiliate attribution enable measurably better retention outcomes vs discount-code-only segmentation?",
+        "L5_brand_check": "pass \u2014 backend data operation, no customer-facing impact"
+      },
+      "routed_to": [
+        "Katie",
+        "Devon"
+      ],
+      "routed_via": "changeset",
+      "routed_date": "2026-04-06",
+      "approved_by": null,
+      "approved_date": null,
+      "review_tier": "express",
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-049.md",
+      "notes": "Spawned from CS-2026-010 investigation findings. Shopify Flow writes acquisition_source + referring_creator to Klaviyo customer profiles.",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
