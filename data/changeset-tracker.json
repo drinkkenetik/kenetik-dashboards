@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-03",
-  "next_id": 47,
+  "next_id": 48,
   "lifecycle_sweep": {
     "session": "2026-04-02-session-25",
     "sweep_date": "2026-04-02",
@@ -142,7 +142,8 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "measurement_approaching": true
     },
     {
       "id": "CS-2026-003",
@@ -263,7 +264,8 @@
       "risk": "low",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "measurement_approaching": true
     },
     {
       "id": "CS-2026-005",
@@ -543,7 +545,9 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-010",
@@ -598,7 +602,9 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-011",
@@ -658,7 +664,8 @@
       "scheduled_send_date": "2026-04-01",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "measurement_approaching": true
     },
     {
       "id": "CS-2026-012",
@@ -709,7 +716,9 @@
       "scheduled_send_date": "2026-04-07",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-013",
@@ -812,7 +821,9 @@
       "scheduled_send_date": "2026-04-10",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-015",
@@ -863,7 +874,9 @@
       "scheduled_send_date": "2026-04-16",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-016",
@@ -911,7 +924,9 @@
       "scheduled_send_date": "2026-04-16",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-017",
@@ -962,7 +977,9 @@
       "scheduled_send_date": "2026-04-17",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-018",
@@ -1013,7 +1030,9 @@
       "scheduled_send_date": "2026-04-21",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-019",
@@ -1064,7 +1083,9 @@
       "scheduled_send_date": "2026-04-22",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-020",
@@ -1117,7 +1138,9 @@
       "scheduled_send_date": "2026-04-24",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-021",
@@ -1168,7 +1191,9 @@
       "scheduled_send_date": "2026-04-27",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-022",
@@ -1219,7 +1244,9 @@
       "scheduled_send_date": "2026-04-30",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-023",
@@ -1346,7 +1373,9 @@
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 21
     },
     {
       "id": "CS-2026-025",
@@ -1936,7 +1965,9 @@
       "_surface_note": "Mapped from \"superfiliate\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 18
     },
     {
       "id": "CS-2026-035",
@@ -2034,7 +2065,9 @@
       "last_sweep": "2026-04-03",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 15
     },
     {
       "id": "CS-2026-037",
@@ -2089,7 +2122,9 @@
       "last_sweep": "2026-04-03",
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "stale_flag": true,
+      "stale_days": 15
     },
     {
       "id": "CS-2026-038",
@@ -2564,6 +2599,32 @@
       "_subtype_note": "Mapped from \"bug_fix\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null
+    },
+    {
+      "id": "CS-2026-047",
+      "title": "Brain Health Content Bundle \u2014 Trend Capture + Gut-Brain Science",
+      "status": "draft",
+      "date_created": "2026-04-06",
+      "owner": "Charlotte + Brandon",
+      "approver": "Nick",
+      "surface": "social_organic",
+      "subtype": "content_campaign",
+      "priority": "P1",
+      "description": "Create 3-piece content bundle capturing brain health trend (72/100 score, 7-10 day window): (1) YouTube 8-12min flow state science, (2) LinkedIn 5-slide burnout + cognition carousel, (3) TikTok/Reels 15-30sec deep work teaser. Leverage Ishioh et al. gut-brain BHB pathway paper for differentiation. Messaging: 'Ketone fuel for unstoppable focus.'",
+      "expected_impact": "Capture trending conversation before competitors. Replicate April 2 science post outperformance (2.7% ER, 40x baseline). Establish Kenetik cognitive performance positioning.",
+      "measurement_plan": "ER >2% on each piece, combined impressions >50K in 7d, graduation candidacy for paid amplification",
+      "measurement_window_end": "2026-04-20",
+      "linked_synthesis": "2026-04-06-s1",
+      "linked_recommendations": [
+        "P5",
+        "rec-190"
+      ],
+      "source_signals": [
+        "DS-04 (brain health trend)",
+        "D16 Ishioh gut-brain paper",
+        "D18 brain health 72/100"
+      ],
+      "created_by": "pipeline-session-27"
     }
   ],
   "queue_actions": {
@@ -2593,7 +2654,7 @@
     "calendar_safety_net": "No untracked activities detected."
   },
   "last_sweep_date": "2026-03-25",
-  "last_sweep": "2026-03-31",
+  "last_sweep": "2026-04-06",
   "last_sweep_session": 23,
   "sweep_summary_session_23": {
     "date": "2026-03-31",
@@ -2639,5 +2700,41 @@
     "confidence": "insufficient_data",
     "recommendation": "Need \u22655 Tier 0/1 ChangeSets to complete manual review for concordance comparison before Phase B activation. Currently 1 Tier 1 entry pending review (CS-2026-035).",
     "last_updated": "2026-04-05"
+  },
+  "sweep_results": {
+    "date": "2026-04-06",
+    "session": "s1",
+    "stale_approved": 16,
+    "stale_ids": [
+      "CS-2026-009",
+      "CS-2026-010",
+      "CS-2026-012",
+      "CS-2026-014",
+      "CS-2026-015",
+      "CS-2026-016",
+      "CS-2026-017",
+      "CS-2026-018",
+      "CS-2026-019",
+      "CS-2026-020",
+      "CS-2026-021",
+      "CS-2026-022",
+      "CS-2026-024",
+      "CS-2026-034",
+      "CS-2026-036",
+      "CS-2026-037"
+    ],
+    "measurement_approaching": [
+      "CS-2026-002",
+      "CS-2026-004",
+      "CS-2026-011"
+    ],
+    "measurement_approaching_dates": {
+      "CS-2026-002": "2026-04-08",
+      "CS-2026-004": "2026-04-09",
+      "CS-2026-011": "2026-04-08"
+    },
+    "auto_closed": 0,
+    "new_changesets": 1,
+    "notes": "16 stale approved (all 21d except CS-034 18d, CS-036/037 15d). 3 measurement windows approaching Apr 8-9. 1 new CS created (CS-2026-047 Brain Health Content Bundle). No auto-closes \u2014 no measurement-overdue published items with available data (Polar offline blocks verification)."
   }
 }
