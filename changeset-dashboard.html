@@ -506,6 +506,268 @@
             padding: 24px;
             font-size: 13px;
         }
+
+        /* ── Approved Queue Sub-Groups ── */
+        .approved-subgroups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .approved-subgroup {
+            border-radius: 6px;
+            padding: 8px 10px;
+            border: 1px solid var(--border);
+        }
+        .approved-subgroup.scheduled { background: rgba(34,197,94,0.08); border-color: rgba(34,197,94,0.25); }
+        .approved-subgroup.overdue { background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.25); }
+        .approved-subgroup.unworked { background: rgba(139,143,163,0.08); border-color: rgba(139,143,163,0.25); }
+        .subgroup-header {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .subgroup-header.scheduled { color: var(--success); }
+        .subgroup-header.overdue { color: var(--danger); }
+        .subgroup-header.unworked { color: var(--text-muted); }
+        .subgroup-count {
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .subgroup-items {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .subgroup-item {
+            font-size: 11px;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            line-height: 1.3;
+            cursor: pointer;
+        }
+        .subgroup-item:hover { color: var(--accent-light); }
+        .subgroup-item:last-child { border-bottom: none; }
+        .subgroup-item .sg-id { font-weight: 600; color: var(--accent-light); }
+        .subgroup-item .sg-date { color: var(--text-muted); font-size: 10px; }
+
+        /* ── Owner Load Section ── */
+        .owner-load-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .owner-load-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .owner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+        }
+        .owner-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            transition: all 0.15s;
+        }
+        .owner-card:hover { border-color: var(--accent); }
+        .owner-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .owner-name {
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .owner-total {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-light);
+        }
+        .owner-bars {
+            display: flex;
+            gap: 4px;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .owner-bar-seg {
+            height: 100%;
+            border-radius: 2px;
+        }
+        .owner-stats-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        .owner-stat-item { display: flex; gap: 3px; align-items: center; }
+        .owner-stat-dot { width: 6px; height: 6px; border-radius: 50%; }
+        .owner-overdue-flag {
+            color: var(--danger);
+            font-weight: 600;
+        }
+        .owner-age {
+            color: var(--text-muted);
+            font-size: 10px;
+            margin-top: 4px;
+        }
+
+        /* ── Autonomy & Scorecard Section ── */
+        .autonomy-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        @media (max-width: 900px) {
+            .autonomy-section { grid-template-columns: 1fr; }
+        }
+        .autonomy-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .autonomy-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tier-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .tier-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tier-label {
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 90px;
+            color: var(--text);
+        }
+        .tier-bar-track {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .tier-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        .tier-count {
+            font-size: 12px;
+            font-weight: 700;
+            min-width: 24px;
+            text-align: right;
+        }
+        .scorecard-metric {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 13px;
+        }
+        .scorecard-metric:last-child { border-bottom: none; }
+        .scorecard-metric-label { color: var(--text-muted); }
+        .scorecard-metric-value { font-weight: 600; }
+        .phase-indicator {
+            margin-top: 14px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        .phase-a { background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); color: var(--warning); }
+        .phase-b { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: var(--success); }
+
+        /* ── Time-in-Status ── */
+        .time-status-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .time-status-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .time-avg-row {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .time-avg-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 16px;
+            text-align: center;
+            min-width: 100px;
+        }
+        .time-avg-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+        .time-avg-value {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .time-avg-value.stale { color: var(--danger); }
+        .stale-list {
+            font-size: 12px;
+        }
+        .stale-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            align-items: center;
+        }
+        .stale-item:last-child { border-bottom: none; }
+        .stale-item .stale-age {
+            font-weight: 700;
+            min-width: 50px;
+            text-align: right;
+        }
+        .stale-item .stale-age.hot { color: var(--danger); }
+        .stale-item .stale-age.warm { color: var(--warning); }
     </style>
 </head>
 <body>
@@ -546,6 +808,31 @@
     <section class="pipeline-section">
         <h3>Pipeline</h3>
         <div class="pipeline-columns" id="pipeline"></div>
+    </section>
+
+
+    <section class="owner-load-section">
+        <h3>Owner Load Balancing</h3>
+        <div class="owner-grid" id="ownerGrid"></div>
+    </section>
+
+
+    <section class="autonomy-section">
+        <div class="autonomy-card">
+            <h3>Autonomy Tier Distribution</h3>
+            <div class="tier-bars" id="tierBars"></div>
+        </div>
+        <div class="autonomy-card">
+            <h3>Shadow Scorecard</h3>
+            <div id="scorecardContent"></div>
+        </div>
+    </section>
+
+
+    <section class="time-status-section">
+        <h3>Time-in-Status · Aging Items</h3>
+        <div class="time-avg-row" id="timeAvgRow"></div>
+        <div class="stale-list" id="staleList"></div>
     </section>
 
     <div class="charts-row">
@@ -593,7 +880,7 @@
     </section>
 
     <footer>
-        Kenetik Growth System &middot; ChangeSet Dashboard &middot; Live from <code>drinkkenetik/kenetik-dashboards</code> &middot; Auto-refreshes every 5 min
+        Kenetik Growth System &middot; ChangeSet Dashboard v2.0 &middot; Live from <code>drinkkenetik/kenetik-dashboards</code> &middot; Auto-refreshes every 5 min
     </footer>
 </div>
 
@@ -807,33 +1094,78 @@ function renderKPIs() {
 // ═══════════════════════════════════════════════════
 // PIPELINE
 // ═══════════════════════════════════════════════════
+function classifyApproved(cs) {
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
+    const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
+    if (ssd) return ssd >= today ? 'scheduled' : 'overdue';
+    if (etd) return etd >= today ? 'scheduled' : 'overdue';
+    return 'unworked';
+}
+
+function renderApprovedSubgroups(items) {
+    const groups = { scheduled: [], overdue: [], unworked: [] };
+    items.forEach(cs => { groups[classifyApproved(cs)].push(cs); });
+    // Sort scheduled by date
+    groups.scheduled.sort((a,b) => (a.scheduled_send_date||a.execution_target_date||'').localeCompare(b.scheduled_send_date||b.execution_target_date||''));
+    groups.overdue.sort((a,b) => (a.scheduled_send_date||a.execution_target_date||'').localeCompare(b.scheduled_send_date||b.execution_target_date||''));
+    // Sort unworked by age (oldest first)
+    groups.unworked.sort((a,b) => (a.created||'').localeCompare(b.created||''));
+
+    function renderSubItems(list, dateField) {
+        if (!list.length) return '<div style="font-size:11px;color:var(--text-muted);padding:4px 0">None</div>';
+        return list.map(cs => {
+            const dateVal = cs.scheduled_send_date || cs.execution_target_date || '';
+            const created = cs.created || '';
+            const dateDisplay = dateField === 'date' ? (dateVal ? new Date(dateVal).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : '') : (created ? Math.round((Date.now()-new Date(created))/86400000)+'d' : '');
+            return `<div class="subgroup-item" onclick="openDetail('${cs.id}')"><span class="sg-id">${cs.id}</span> ${(cs.title||'').substring(0,35)}${(cs.title||'').length>35?'...':''} <span class="sg-date">${dateDisplay}</span></div>`;
+        }).join('');
+    }
+
+    return `<div class="approved-subgroups">
+        <div class="approved-subgroup scheduled">
+            <div class="subgroup-header scheduled">Scheduled <span class="subgroup-count">${groups.scheduled.length}</span></div>
+            <div class="subgroup-items">${renderSubItems(groups.scheduled, 'date')}</div>
+        </div>
+        <div class="approved-subgroup overdue">
+            <div class="subgroup-header overdue">Overdue <span class="subgroup-count">${groups.overdue.length}</span></div>
+            <div class="subgroup-items">${renderSubItems(groups.overdue, 'date')}</div>
+        </div>
+        <div class="approved-subgroup unworked">
+            <div class="subgroup-header unworked">Unworked <span class="subgroup-count">${groups.unworked.length}</span></div>
+            <div class="subgroup-items">${renderSubItems(groups.unworked, 'age')}</div>
+        </div>
+    </div>`;
+}
+
 function renderPipeline() {
     const data = getFiltered();
     const container = document.getElementById('pipeline');
 
-    // Build active statuses: always show core stages, plus rolled_back if any exist
     const activeStatuses = PIPELINE_ORDER.slice();
     if (data.some(c => c.status === 'rolled_back') && !activeStatuses.includes('rolled_back')) {
         activeStatuses.push('rolled_back');
     }
-    // Only show proposed/needs_feedback columns if items exist in those statuses
     const filteredStatuses = activeStatuses.filter(s => {
         if (s === 'proposed' || s === 'needs_feedback') return data.some(c => c.status === s);
         return true;
     });
 
     container.innerHTML = filteredStatuses.map(status => {
-        // For the 'closed' column, also catch closed_* variants
         const items = data.filter(c => status === 'closed' ? isClosed(c) : c.status === status);
         const label = PIPELINE_LABELS[status] || status.replace(/_/g, ' ');
+        const isApproved = status === 'approved';
+
         return `
-            <div class="pipeline-col">
+            <div class="pipeline-col" ${isApproved ? 'style="grid-column: span 2; min-width: 300px;"' : ''}>
                 <div class="pipeline-col-header">
                     ${label}
                     <span class="pipeline-col-count">${items.length}</span>
                 </div>
-                ${items.length === 0 ? '<div class="empty-state" style="padding:8px;font-size:11px">None</div>' : ''}
-                ${items.map(cs => `
+                ${isApproved && items.length > 0 ? renderApprovedSubgroups(items) : ''}
+                ${!isApproved && items.length === 0 ? '<div class="empty-state" style="padding:8px;font-size:11px">None</div>' : ''}
+                ${!isApproved ? items.map(cs => `
                     <div class="pipeline-card" onclick="openDetail('${cs.id}')">
                         <div class="cs-id">${cs.id}</div>
                         <div class="cs-title">${cs.title}</div>
@@ -842,7 +1174,7 @@ function renderPipeline() {
                             <span class="badge badge-${cs.risk_level || 'low'}">${cs.risk_level || 'low'}</span>
                         </div>
                     </div>
-                `).join('')}
+                `).join('') : ''}
             </div>
         `;
     }).join('');
@@ -1145,6 +1477,183 @@ function closeDetail() {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
 
+
+// ═══════════════════════════════════════════════════
+// OWNER LOAD BALANCING
+// ═══════════════════════════════════════════════════
+function renderOwnerLoad() {
+    const data = getFiltered();
+    const owners = {};
+    const statusColors = { draft: '#8b8fa3', proposed: '#f59e0b', needs_feedback: '#ef4444', approved: '#3b82f6', published: '#22c55e' };
+    const today = new Date(); today.setHours(0,0,0,0);
+
+    data.filter(isOpen).forEach(cs => {
+        const owner = cs.owner || 'Unassigned';
+        if (!owners[owner]) owners[owner] = { total: 0, byStatus: {}, overdue: 0, oldest: null, items: [] };
+        const o = owners[owner];
+        o.total++;
+        o.byStatus[cs.status] = (o.byStatus[cs.status] || 0) + 1;
+        if (!o.oldest || cs.created < o.oldest) o.oldest = cs.created;
+        // Check overdue
+        const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
+        const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
+        if ((ssd && ssd < today) || (etd && etd < today)) o.overdue++;
+    });
+
+    const sorted = Object.entries(owners).sort((a,b) => b[1].total - a[1].total);
+
+    document.getElementById('ownerGrid').innerHTML = sorted.map(([name, o]) => {
+        const maxTotal = sorted[0][1].total || 1;
+        const barSegments = Object.entries(o.byStatus).map(([status, count]) => {
+            const color = statusColors[status] || '#6b7280';
+            const pct = (count / o.total * 100).toFixed(1);
+            return `<div class="owner-bar-seg" style="background:${color};flex:${count}" title="${status}: ${count}"></div>`;
+        }).join('');
+
+        const statsRow = Object.entries(o.byStatus).map(([status, count]) => {
+            const color = statusColors[status] || '#6b7280';
+            return `<span class="owner-stat-item"><span class="owner-stat-dot" style="background:${color}"></span>${count} ${status}</span>`;
+        }).join('');
+
+        const oldestAge = o.oldest ? Math.round((Date.now() - new Date(o.oldest)) / 86400000) : 0;
+        const overdueHtml = o.overdue > 0 ? `<span class="owner-overdue-flag">${o.overdue} overdue</span>` : '';
+
+        return `<div class="owner-card">
+            <div class="owner-card-header">
+                <span class="owner-name">${name}</span>
+                <span class="owner-total">${o.total}</span>
+            </div>
+            <div class="owner-bars">${barSegments}</div>
+            <div class="owner-stats-row">${statsRow} ${overdueHtml}</div>
+            <div class="owner-age">Oldest: ${oldestAge}d</div>
+        </div>`;
+    }).join('') || '<div class="empty-state">No open ChangeSets</div>';
+}
+
+// ═══════════════════════════════════════════════════
+// AUTONOMY TIER + SHADOW SCORECARD
+// ═══════════════════════════════════════════════════
+function renderAutonomy() {
+    const data = getFiltered();
+    const tiers = { 0: 0, 1: 0, 2: 0, unclassified: 0 };
+    const tierLabels = { 0: 'Tier 0 · Auto', 1: 'Tier 1 · Light Review', 2: 'Tier 2 · Full Review', unclassified: 'Unclassified' };
+    const tierColors = { 0: '#22c55e', 1: '#3b82f6', 2: '#f59e0b', unclassified: '#6b7280' };
+
+    data.forEach(cs => {
+        const at = cs.autonomy_tier;
+        if (at != null && tiers.hasOwnProperty(at)) tiers[at]++;
+        else if (isOpen(cs)) tiers.unclassified++;
+    });
+
+    const maxTier = Math.max(...Object.values(tiers), 1);
+
+    document.getElementById('tierBars').innerHTML = Object.entries(tiers).map(([tier, count]) => {
+        const pct = (count / maxTier * 100).toFixed(0);
+        return `<div class="tier-row">
+            <span class="tier-label">${tierLabels[tier]}</span>
+            <div class="tier-bar-track"><div class="tier-bar-fill" style="width:${pct}%;background:${tierColors[tier]}"></div></div>
+            <span class="tier-count" style="color:${tierColors[tier]}">${count}</span>
+        </div>`;
+    }).join('');
+
+    // Shadow Scorecard
+    const sc = TRACKER.shadow_scorecard;
+    if (!sc) {
+        document.getElementById('scorecardContent').innerHTML = '<div class="empty-state">No scorecard data</div>';
+        return;
+    }
+
+    const conc = sc.concordance_summary || {};
+    const concRate = conc.concordance_rate != null ? (conc.concordance_rate * 100).toFixed(0) + '%' : 'Insufficient data';
+    const isPhaseB = sc.mode === 'active';
+    const phaseClass = isPhaseB ? 'phase-b' : 'phase-a';
+    const phaseLabel = isPhaseB ? 'Phase B — Active Autonomy' : 'Phase A — Shadow Mode';
+
+    document.getElementById('scorecardContent').innerHTML = `
+        <div class="scorecard-metric">
+            <span class="scorecard-metric-label">Mode</span>
+            <span class="scorecard-metric-value" style="text-transform:capitalize">${sc.mode || '—'}</span>
+        </div>
+        <div class="scorecard-metric">
+            <span class="scorecard-metric-label">Activated</span>
+            <span class="scorecard-metric-value">${sc.activated_date || '—'}</span>
+        </div>
+        <div class="scorecard-metric">
+            <span class="scorecard-metric-label">Concordance Rate</span>
+            <span class="scorecard-metric-value">${concRate}</span>
+        </div>
+        <div class="scorecard-metric">
+            <span class="scorecard-metric-label">Resolved / Pending</span>
+            <span class="scorecard-metric-value">${conc.total_resolved || 0} resolved · ${conc.pending || 0} pending</span>
+        </div>
+        <div class="scorecard-metric">
+            <span class="scorecard-metric-label">Would Have Auto-Advanced</span>
+            <span class="scorecard-metric-value">${sc.would_have_auto_advanced || 0}</span>
+        </div>
+        <div class="scorecard-metric">
+            <span class="scorecard-metric-label">Confidence</span>
+            <span class="scorecard-metric-value" style="text-transform:capitalize">${(sc.confidence || '—').replace(/_/g, ' ')}</span>
+        </div>
+        <div class="phase-indicator ${phaseClass}">
+            <strong>${phaseLabel}</strong><br>
+            ${sc.recommendation || ''}
+        </div>
+    `;
+}
+
+// ═══════════════════════════════════════════════════
+// TIME-IN-STATUS
+// ═══════════════════════════════════════════════════
+function renderTimeInStatus() {
+    const data = getFiltered();
+    const today = new Date(); today.setHours(0,0,0,0);
+    const active = data.filter(isOpen);
+
+    // Average age by status
+    const statusAges = {};
+    active.forEach(cs => {
+        if (!cs.created) return;
+        const age = Math.round((today - new Date(cs.created)) / 86400000);
+        if (!statusAges[cs.status]) statusAges[cs.status] = [];
+        statusAges[cs.status].push(age);
+    });
+
+    const statusOrder = ['draft', 'approved', 'published'];
+    const avgRow = statusOrder.filter(s => statusAges[s]).map(status => {
+        const ages = statusAges[status];
+        const avg = Math.round(ages.reduce((a,b) => a+b, 0) / ages.length);
+        const cls = avg > 21 ? 'stale' : '';
+        return `<div class="time-avg-card">
+            <div class="time-avg-label">${status}</div>
+            <div class="time-avg-value ${cls}">${avg}d</div>
+            <div style="font-size:10px;color:var(--text-muted)">${ages.length} items</div>
+        </div>`;
+    }).join('');
+
+    document.getElementById('timeAvgRow').innerHTML = avgRow || '<div class="empty-state">No active items</div>';
+
+    // Stale items (>7d in approved, >14d in any status)
+    const staleItems = active
+        .map(cs => {
+            if (!cs.created) return null;
+            const age = Math.round((today - new Date(cs.created)) / 86400000);
+            return { ...cs, age };
+        })
+        .filter(cs => cs && ((cs.status === 'approved' && cs.age > 7) || cs.age > 14))
+        .sort((a,b) => b.age - a.age);
+
+    document.getElementById('staleList').innerHTML = staleItems.length
+        ? '<div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Items needing attention (>7d approved or >14d active)</div>' +
+          staleItems.map(cs => {
+            const cls = cs.age > 21 ? 'hot' : cs.age > 14 ? 'warm' : '';
+            return `<div class="stale-item">
+                <span><span class="cs-link" onclick="openDetail('${cs.id}')" style="cursor:pointer">${cs.id}</span> · ${(cs.title||'').substring(0,45)}${(cs.title||'').length>45?'...':''} · <span class="status-pill status-${cs.status}" style="font-size:10px">${cs.status}</span> · ${cs.owner||'—'}</span>
+                <span class="stale-age ${cls}">${cs.age}d</span>
+            </div>`;
+          }).join('')
+        : '<div class="empty-state" style="font-size:12px">No stale items — queue is healthy</div>';
+}
+
 // ═══════════════════════════════════════════════════
 // RENDER ALL — wrapped in try/catch to prevent blank screen
 // ═══════════════════════════════════════════════════
@@ -1152,6 +1661,9 @@ function render() {
     try {
         renderKPIs();
         renderPipeline();
+        renderOwnerLoad();
+        renderAutonomy();
+        renderTimeInStatus();
         renderCharts();
         renderTable();
     } catch (err) {
