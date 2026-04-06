@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-03",
-  "next_id": 48,
+  "last_updated": "2026-04-06",
+  "next_id": 49,
   "lifecycle_sweep": {
     "session": "2026-04-02-session-25",
     "sweep_date": "2026-04-02",
@@ -23,14 +23,14 @@
     "new_changeset_generation": "No new ChangeSets generated. Portfolio at 45 entries with 18 stale approved and 2 measurement overdue (CS-026/027 at 10d SEVERE). Priority is: (1) close or restart CS-026/027, (2) redistribute Katie's stale approved queue, (3) prepare for 5 approaching measurement windows (CS-002/004/011 by Apr 9). Adding new ChangeSets would worsen the execution bottleneck."
   },
   "summary": {
-    "total_changesets": 46,
+    "total_changesets": 48,
     "by_status": {
-      "published": 11,
+      "published": 9,
       "closed": 15,
-      "approved": 17,
-      "draft": 3
+      "approved": 18,
+      "draft": 6
     },
-    "last_updated": "2026-04-05",
+    "last_updated": "2026-04-06",
     "_recount_note": "2026-04-05: Schema cleanup \u2014 surface normalization, summary recount (46 entries). 2026-04-01: Summary recounted from actual records. Previous count showed 6 closed; actual is 11."
   },
   "changesets": [
@@ -2625,6 +2625,58 @@
         "D18 brain health 72/100"
       ],
       "created_by": "pipeline-session-27"
+    },
+    {
+      "id": "CS-2026-048",
+      "title": "Graduation: TT Ashton Hall 'Longevity > Hype' \u2192 Paid Amplification",
+      "subtype": "graduation",
+      "surface": "paid_meta",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-04-06",
+      "objective_level": "L3",
+      "category": "paid_social",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "moe-weekly-graduation-scan-2026-04-06",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 2000,
+          "expected": 800,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 1000,
+          "expected": 400,
+          "downside": 0
+        },
+        "primary_metric": "roas",
+        "primary_metric_target": ">=1.5x ROAS"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-06",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-048.md",
+      "notes": "Moe weekly graduation scan 2026-04-06. TT Ashton Hall 'longevity > hype' post \u2014 5.7% engagement rate (threshold: 5%). Creator content, strong engagement signal. Draft for Katie review.",
+      "risk": "low",
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     }
   ],
   "queue_actions": {
