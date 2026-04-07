@@ -2291,12 +2291,12 @@
     },
     {
       "id": "CS-2026-040",
-      "title": "Creator Reactivation Campaign (3-Tier)",
+      "title": "Creator Reactivation Campaign (3-Tier) \u2014 Aligned with April Code Boosts",
       "subtype": "implementation",
       "surface": "partner",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "medium",
-      "owner": "Lawrence + Katie",
+      "owner": "Lawrence + Nick",
       "created": "2026-03-25",
       "objective_level": "L1",
       "category": "paid_media",
@@ -2324,13 +2324,13 @@
       ],
       "routed_via": "auto",
       "routed_date": "2026-03-27",
-      "notes": "Draft: Google Ads PMax optimization investigation.",
+      "notes": "Revised Apr 7. 3-tier reactivation sequenced with code boosts: Brand Champs (Apr 7-11 outreach, Apr 13 boost), Premier Partners (Apr 14-18 outreach, Apr 20 boost), Affiliates (Apr 14-25 outreach, Apr 27 boost). 222 of 250 creators dormant. Target: 20-25 reactivations by May 7.",
       "risk": "medium",
       "_surface_note": "Mapped from \"superfiliate\" during 2026-04-05 schema cleanup",
       "autonomy_tier": 2,
-      "execution_target_date": null,
+      "execution_target_date": "2026-04-07",
       "executed_date": null,
-      "urgency": "stale"
+      "urgency": "active"
     },
     {
       "id": "CS-2026-041",
