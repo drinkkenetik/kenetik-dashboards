@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-07",
-  "next_id": 53,
+  "next_id": 54,
   "lifecycle_sweep": {
     "session": "2026-04-07-session-28",
     "sweep_date": "2026-04-07",
@@ -21,15 +21,15 @@
     "last_urgency_recompute": "2026-04-07"
   },
   "summary": {
-    "total_changesets": 52,
+    "total_changesets": 53,
     "by_status": {
-      "published": 12,
-      "closed": 17,
+      "published": 11,
+      "closed": 18,
       "approved": 14,
-      "draft": 9
+      "draft": 10
     },
     "last_updated": "2026-04-07",
-    "_recount_note": "2026-04-07: CS-2026-036 published (investigation kickoff). Moved approved\u2192published.",
+    "_recount_note": "2026-04-07: CS-2026-036 closed (investigation complete). CS-2026-053 created (draft).",
     "total": 52
   },
   "changesets": [
@@ -2092,7 +2092,7 @@
       "title": "Post-Purchase Review Request Optimization",
       "subtype": "investigation",
       "surface": "klaviyo",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-22",
@@ -2101,7 +2101,9 @@
       "dependencies": [],
       "blocks": [],
       "spawned_from": "rec-036",
-      "spawned_changesets": [],
+      "spawned_changesets": [
+        "CS-2026-053"
+      ],
       "expected_impact": {
         "revenue": {
           "upside": 3600,
@@ -2116,7 +2118,18 @@
         "primary_metric": "review_submission_rate",
         "primary_metric_target": ">=10% review submission rate"
       },
-      "actual_impact": null,
+      "actual_impact": {
+        "primary_metric": "review_submission_rate",
+        "primary_metric_baseline": "3.7% (12-month average)",
+        "primary_metric_result": "N/A \u2014 investigation, not implementation",
+        "primary_metric_delta": "N/A",
+        "revenue_impact": 0,
+        "margin_impact": null,
+        "confidence": "high",
+        "statistical_significance": null,
+        "_note": "Investigation subtype \u2014 no direct revenue. Spawned CS-2026-053.",
+        "L4_learning_actual": "Review submission rate is 3.7% (declining from 6.4% peak). Winning variant gets only 29% traffic. No LoyaltyLion incentive. SMS 33.5% click but 0.6% CVR."
+      },
       "routed_to": [
         "Katie"
       ],
@@ -2125,12 +2138,12 @@
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-22",
       "published_date": "2026-04-07",
-      "closed_date": null,
+      "closed_date": "2026-04-07",
       "measurement_window": "14 days",
       "measurement_start_date": "2026-04-07",
       "measurement_end_date": "2026-04-21",
       "measurement_due": "2026-04-21",
-      "outcome": null,
+      "outcome": "success",
       "review_tier": "express",
       "file": "cgo-logs/changesets/CS-2026-036.md",
       "notes": "Ready for graduation.",
@@ -2151,7 +2164,8 @@
         "surface": "klaviyo",
         "confirmation_id": "Investigation kickoff \u2014 audit of flow Rcgah9",
         "published_at": "2026-04-07T18:00:00Z"
-      }
+      },
+      "learning_note": "For [post-purchase review requests] on [Klaviyo], investigation found submission rate is 3.7% and declining. Key insight: 'Copy of' variant outperforms original by 39% RPR but only gets 29% of traffic. LoyaltyLion incentive missing. SMS clicks don't convert. Spawned CS-2026-053."
     },
     {
       "id": "CS-2026-037",
@@ -2997,6 +3011,63 @@
       "actual_impact": null,
       "outcome": null,
       "archived": false
+    },
+    {
+      "id": "CS-2026-053",
+      "title": "Review Request Flow Optimization (Variant Scale + Incentive + SMS Fix)",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-04-07",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "CS-2026-036",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 1500,
+          "expected": 750,
+          "downside": 200
+        },
+        "margin": {
+          "upside": 750,
+          "expected": 375,
+          "downside": 100
+        },
+        "primary_metric": "review_submission_rate",
+        "primary_metric_target": ">=8% review submission rate",
+        "L1_margin": "$375/mo expected \u2014 direct RPR lift + indirect PDP conversion from higher review volume",
+        "L2_cash": "neutral \u2014 DTC revenue, standard cash cycle",
+        "L3_customer_quality": "positive \u2014 LoyaltyLion points reciprocity + review writers have 2-3x higher repeat rate",
+        "L4_learning": "Does LoyaltyLion points incentive meaningfully lift review submission rate?",
+        "L5_brand_check": "pass"
+      },
+      "actual_impact": null,
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "manual",
+      "routed_date": "2026-04-07",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "closed_date": null,
+      "measurement_window": "14 days",
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_due": null,
+      "outcome": null,
+      "review_tier": "express",
+      "file": "cgo-logs/changesets/CS-2026-053.md",
+      "notes": "Spawned from CS-2026-036 investigation. Scale winning variant + LoyaltyLion incentive + SMS fix.",
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null
     }
   ],
   "queue_actions": {
