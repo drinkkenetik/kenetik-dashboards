@@ -1,38 +1,35 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-06",
-  "next_id": 50,
+  "last_updated": "2026-04-07",
+  "next_id": 52,
   "lifecycle_sweep": {
-    "session": "2026-04-02-session-25",
-    "sweep_date": "2026-04-02",
-    "stale_detected": 9,
-    "measurement_overdue": 2,
+    "session": "2026-04-07-session-28",
+    "sweep_date": "2026-04-07",
+    "stale_detected": 15,
+    "measurement_overdue": 0,
     "measurement_due_today": 0,
-    "measurement_approaching": 5,
+    "measurement_approaching": 6,
     "auto_closed": 0,
     "flags": [
-      "STALE: 18 approved ChangeSets >7d without publication. 13 are >14d (close candidates). Katie concentration: ~14/18 stale are Katie-owned email campaigns.",
-      "OVERDUE: 2 measurements past due. CS-026 (10d, BAW Content Velocity), CS-027 (10d, BAW Tier A Fast-Track). SEVERE \u2014 recommend closure or restart.",
-      "APPROACHING: 5 measurement windows within 11d. CS-002 (Apr 8), CS-004 (Apr 9), CS-011 (Apr 8), CS-001 (Apr 10), CS-006/007 (Apr 13).",
-      "CORRECTIONS from prior session: D12 domain brief claimed tracker.json shows 0 active entries \u2014 this was a data read error. Tracker has 34 non-closed entries (10 published, 21 approved, 3 draft).",
-      "CLOSURES confirmed: CS-023 (partial success), CS-025 (structural gap), CS-028 (inconclusive), CS-029 (success 9.57x ROAS), CS-033 (demand cliff diagnosis). All already closed in tracker by Session 24.",
-      "KATIE CONCENTRATION: Estimated 26/34 active entries (~76%). 9th consecutive session flagged. Zero executive redistribution action taken.",
-      "PORTFOLIO: 45 total (11 closed, 10 published, 21 approved, 3 draft). No new ChangeSets warranted \u2014 18 stale + 2 overdue must be resolved first.",
-      "AUTONOMOUS MODE: shadow \u2014 classification only, no auto-advance."
+      "STALE: 15 approved ChangeSets >7d without publication. Portfolio execution bottleneck persists.",
+      "MEASUREMENT_APPROACHING: 6 measurement windows within 7d (CS-001 Apr 10, CS-002 Apr 8, CS-004 Apr 9, CS-011 Apr 8, CS-013 Apr 10, CS-046 Apr 10)",
+      "NEW_CHANGESETS: 2 added (CS-2026-050 SAW Wk2 Content Sprint, CS-2026-051 FB Retargeting Reallocation). Portfolio now 51 entries.",
+      "URGENCY: 15 stale approved require Devon binary decision (approve/close/modify) by Apr 9 to unblock execution.",
+      "AUTONOMOUS_MODE: shadow \u2014 classification only, no auto-advance"
     ],
-    "new_changeset_generation": "No new ChangeSets generated. Portfolio at 45 entries with 18 stale approved and 2 measurement overdue (CS-026/027 at 10d SEVERE). Priority is: (1) close or restart CS-026/027, (2) redistribute Katie's stale approved queue, (3) prepare for 5 approaching measurement windows (CS-002/004/011 by Apr 9). Adding new ChangeSets would worsen the execution bottleneck.",
-    "last_urgency_recompute": "2026-04-06"
+    "new_changeset_generation": "2 new ChangeSets: CS-2026-050 (SAW Wk2 Content Sprint), CS-2026-051 (FB Retargeting Reallocation). Portfolio at 51 entries. 15 stale approved require Devon binary decision by Apr 9.",
+    "last_urgency_recompute": "2026-04-07"
   },
   "summary": {
-    "total_changesets": 49,
+    "total_changesets": 51,
     "by_status": {
       "published": 10,
       "closed": 16,
       "approved": 16,
-      "draft": 7
+      "draft": 9
     },
-    "last_updated": "2026-04-06",
-    "_recount_note": "2026-04-05: Schema cleanup \u2014 surface normalization, summary recount (46 entries). 2026-04-01: Summary recounted from actual records. Previous count showed 6 closed; actual is 11."
+    "last_updated": "2026-04-07",
+    "_recount_note": "2026-04-07: Added CS-2026-050 and CS-2026-051. Draft count increased from 7 to 9."
   },
   "changesets": [
     {
@@ -2800,6 +2797,113 @@
       "executed_date": null,
       "autonomy_tier": null,
       "urgency": "ok"
+    },
+    {
+      "id": "CS-2026-050",
+      "title": "Stress Awareness Week 2 Content Sprint",
+      "subtype": "implementation",
+      "surface": "sprout_social",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Charlotte + Nick",
+      "created": "2026-04-07",
+      "objective_level": "L3",
+      "category": "creative",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-192",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "ig_engagement_rate",
+        "primary_metric_target": ">=0.3% IG ER (from 0.06% baseline)"
+      },
+      "routed_to": [
+        "Charlotte",
+        "Nick"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-07",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "7d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-050.md",
+      "notes": "P1-CRITICAL: Calendar void Apr 6-12. Deploy SAW Wk2 content TODAY.",
+      "risk": "low",
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-07",
+      "executed_date": null,
+      "autonomy_tier": null,
+      "urgency": "critical"
+    },
+    {
+      "id": "CS-2026-051",
+      "title": "Facebook Retargeting-to-Whitelisting Reallocation",
+      "subtype": "implementation",
+      "surface": "paid_meta",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-04-07",
+      "objective_level": "L1",
+      "category": "paid_media",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-194",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 4000,
+          "expected": 2000,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 2400,
+          "expected": 1200,
+          "downside": 0
+        },
+        "primary_metric": "fb_blended_pixel_roas",
+        "primary_metric_target": ">=2.0x FB ROAS (from 1.36x baseline)"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-07",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-051.md",
+      "notes": "General retargeting 0.87x FATIGUED. Creator whitelisting 14.46x. 1,660% ROAS spread.",
+      "risk": "low",
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null,
+      "urgency": "high"
     }
   ],
   "queue_actions": {
