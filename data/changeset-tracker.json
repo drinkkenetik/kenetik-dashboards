@@ -539,7 +539,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-009.md",
-      "notes": "BWR event May 2-3. Low urgency \u2014 execute by mid-April.",
+      "notes": "BWR event May 2-3. Katie building flow in Klaviyo on April 8. Claims gate: Emails 2, 4, 5 need Devon approval for science content.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -550,12 +550,12 @@
       "sweep_date": "2026-04-03",
       "sweep_note": "Stale 18d with no scheduled send date. Recommend: close as abandoned or reassign from Katie + Brandon.",
       "scheduled_send_date": null,
-      "execution_target_date": null,
+      "execution_target_date": "2026-04-08",
       "executed_date": null,
       "autonomy_tier": null,
-      "stale_flag": true,
+      "stale_flag": false,
       "stale_days": 21,
-      "urgency": "stale"
+      "urgency": "scheduled"
     },
     {
       "id": "CS-2026-010",
