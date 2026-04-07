@@ -23,14 +23,14 @@
   "summary": {
     "total_changesets": 52,
     "by_status": {
-      "published": 11,
+      "published": 12,
       "closed": 16,
-      "approved": 15,
+      "approved": 14,
       "needs_feedback": 1,
       "draft": 9
     },
     "last_updated": "2026-04-07",
-    "_recount_note": "2026-04-07: CS-2026-012 published (Unbound sweepstakes email). Moved approved\u2192published."
+    "_recount_note": "2026-04-07: CS-2026-036 published (investigation kickoff). Moved approved\u2192published."
   },
   "changesets": [
     {
@@ -2091,7 +2091,7 @@
       "title": "Post-Purchase Review Request Optimization",
       "subtype": "investigation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "published",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-22",
@@ -2123,27 +2123,34 @@
       "routed_date": "2026-03-22",
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-22",
-      "published_date": null,
+      "published_date": "2026-04-07",
       "closed_date": null,
-      "measurement_window": "",
-      "measurement_start_date": null,
-      "measurement_end_date": null,
-      "measurement_due": null,
+      "measurement_window": "14 days",
+      "measurement_start_date": "2026-04-07",
+      "measurement_end_date": "2026-04-21",
+      "measurement_due": "2026-04-21",
       "outcome": null,
       "review_tier": "express",
       "file": "cgo-logs/changesets/CS-2026-036.md",
       "notes": "Ready for graduation.",
-      "sweep_flag": "STALE_APPROVED",
+      "sweep_flag": null,
       "sweep_date": "2026-04-03",
-      "sweep_note": "Approved 12d without execution. Owner: Katie.",
+      "sweep_note": "Executed 2026-04-07 \u2014 investigation kicked off.",
       "scheduled_send_date": null,
       "last_sweep": "2026-04-03",
       "execution_target_date": null,
-      "executed_date": null,
+      "executed_date": "2026-04-07",
       "autonomy_tier": null,
-      "stale_flag": true,
-      "stale_days": 15,
-      "urgency": "stale"
+      "stale_flag": false,
+      "stale_days": 0,
+      "urgency": null,
+      "published_by": "Katie",
+      "measurement_start": "2026-04-07",
+      "publish_confirmation": {
+        "surface": "klaviyo",
+        "confirmation_id": "Investigation kickoff \u2014 audit of flow Rcgah9",
+        "published_at": "2026-04-07T18:00:00Z"
+      }
     },
     {
       "id": "CS-2026-037",
