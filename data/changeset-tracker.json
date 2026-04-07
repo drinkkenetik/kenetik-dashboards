@@ -25,12 +25,12 @@
     "by_status": {
       "published": 11,
       "closed": 18,
-      "approved": 14,
-      "draft": 10
+      "approved": 15,
+      "draft": 9
     },
     "last_updated": "2026-04-07",
-    "_recount_note": "2026-04-07: CS-2026-036 closed (investigation complete). CS-2026-053 created (draft).",
-    "total": 52
+    "_recount_note": "2026-04-07: CS-2026-035 approved (SMS-First Promotional Strategy Experiment). 2026-04-07: CS-2026-036 closed (investigation complete). CS-2026-053 created (draft).",
+    "total": 53
   },
   "changesets": [
     {
@@ -2049,7 +2049,7 @@
       "title": "SMS-First Promotional Strategy Experiment",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-23",
@@ -2071,7 +2071,12 @@
           "downside": 0
         },
         "primary_metric": "winback_reactivation_rate",
-        "primary_metric_target": ">=5% reactivation (from ~0% baseline)"
+        "primary_metric_target": ">=5% reactivation (from ~0% baseline)",
+        "L1_margin": "$1,800 expected contribution margin ($3,600 revenue x 50% DTC margin). SMS has lower per-send cost than email at Kenetik volume.",
+        "L2_cash": "neutral \u2014 DTC Klaviyo revenue, standard cash cycle",
+        "L3_customer_quality": "positive \u2014 re-engages lapsed subscribers via preferred channel (SMS), testing >=5% winback reactivation from ~0% baseline",
+        "L4_learning": "Will SMS-first sends (4h before email) increase promotional campaign click rate by 3x and RPR by 2x vs simultaneous sends?",
+        "L5_brand_check": "pass \u2014 promotional content only, no health claims, fully reversible experiment"
       },
       "routed_to": [
         "Katie"
@@ -2085,7 +2090,10 @@
       "autonomy_tier": 1,
       "execution_target_date": null,
       "executed_date": null,
-      "urgency": "stale"
+      "urgency": null,
+      "approved_by": "Katie (on behalf of Devon)",
+      "approved_date": "2026-04-07",
+      "review_tier": "standard"
     },
     {
       "id": "CS-2026-036",
@@ -3119,23 +3127,23 @@
         "tier": 1,
         "auto_review_verdict": "pass",
         "auto_review_date": "2026-03-25",
-        "manual_review_decision": null,
-        "manual_review_date": null,
-        "concordance": "pending"
+        "manual_review_decision": "approved",
+        "manual_review_date": "2026-04-07",
+        "concordance": "concordant"
       }
     ],
     "concordance_summary": {
-      "total_resolved": 0,
-      "concordant": 0,
+      "total_resolved": 1,
+      "concordant": 1,
       "discordant": 0,
       "false_alarm": 0,
-      "pending": 1,
-      "concordance_rate": null,
+      "pending": 0,
+      "concordance_rate": 1.0,
       "discordance_count": 0
     },
     "confidence": "insufficient_data",
-    "recommendation": "Need \u22655 Tier 0/1 ChangeSets to complete manual review for concordance comparison before Phase B activation. Currently 1 Tier 1 entry pending review (CS-2026-035).",
-    "last_updated": "2026-04-05"
+    "recommendation": "1/5 resolved (all concordant). Need >=5 Tier 0/1 ChangeSets resolved before Phase B activation.",
+    "last_updated": "2026-04-07"
   },
   "sweep_results": {
     "date": "2026-04-06",
