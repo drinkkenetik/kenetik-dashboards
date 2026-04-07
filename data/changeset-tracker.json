@@ -24,13 +24,13 @@
     "total_changesets": 52,
     "by_status": {
       "published": 12,
-      "closed": 16,
+      "closed": 17,
       "approved": 14,
-      "needs_feedback": 1,
       "draft": 9
     },
     "last_updated": "2026-04-07",
-    "_recount_note": "2026-04-07: CS-2026-036 published (investigation kickoff). Moved approved\u2192published."
+    "_recount_note": "2026-04-07: CS-2026-036 published (investigation kickoff). Moved approved\u2192published.",
+    "total": 52
   },
   "changesets": [
     {
@@ -1377,7 +1377,7 @@
       "title": "Subscription Pause/Skip Feature Test",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "closed_partial",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-16",
@@ -1439,7 +1439,8 @@
       "hypothesis": "Introducing a prominent pause/skip option in the subscription management flow and pre-churn touchpoints will reduce voluntary churn by \u226515% while retaining LTV",
       "closed_date": "2026-04-07",
       "closed_reason": "partially_complete",
-      "successor": "CS-2026-052"
+      "successor": "CS-2026-052",
+      "outcome": "partially_complete"
     },
     {
       "id": "CS-2026-025",
