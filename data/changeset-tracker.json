@@ -738,7 +738,7 @@
       "review_tier": "standard",
       "published_date": "2026-04-07",
       "file": "cgo-logs/changesets/CS-2026-012.md",
-      "notes": "RESCHEDULED: Send ~4/7 (Tue). BLOCKED: Unbound sweepstakes prizes not finalized by team. Drafts ready with Underground Ecom, awaiting final assets. Original send date: 4/3. PUBLISHED 2026-04-07: Unbound sweepstakes email scheduled for afternoon send.",
+      "notes": "RESCHEDULED: Send ~4/7 (Tue). BLOCKED: Unbound sweepstakes prizes not finalized by team. Drafts ready with Underground Ecom, awaiting final assets. Original send date: 4/3. PUBLISHED 2026-04-07: Unbound sweepstakes email scheduled for afternoon send. SMS paired send also live (same day per brief \u00a77). Email scheduled 2:15pm EST.",
       "sweep_flags": [],
       "last_sweep": "2026-04-03",
       "risk": "low",
@@ -758,8 +758,8 @@
       "measurement_window_days": 7,
       "publish_confirmation": {
         "surface": "klaviyo",
-        "confirmation_id": "PENDING \u2014 Katie to confirm Klaviyo campaign ID",
-        "published_at": "2026-04-07T12:00:00Z"
+        "confirmation_id": "Klaviyo campaign scheduled for 2:15pm EST (18:15 UTC) 2026-04-07",
+        "published_at": "2026-04-07T18:15:00Z"
       }
     },
     {
