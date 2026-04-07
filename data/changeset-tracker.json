@@ -21,13 +21,13 @@
     "last_urgency_recompute": "2026-04-07"
   },
   "summary": {
-    "total_changesets": 52,
+    "total_changesets": 51,
     "by_status": {
       "published": 11,
       "closed": 16,
       "approved": 15,
-      "draft": 9,
-      "needs_feedback": 1
+      "needs_feedback": 1,
+      "draft": 8
     },
     "last_updated": "2026-04-07",
     "_recount_note": "2026-04-07: CS-2026-012 published (Unbound sweepstakes email). Moved approved\u2192published."
@@ -1377,7 +1377,7 @@
       "title": "Subscription Pause/Skip Feature Test",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "needs_feedback",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-16",
@@ -1391,17 +1391,22 @@
       "spawned_changesets": [],
       "expected_impact": {
         "revenue": {
-          "upside": 14400,
-          "expected": 7200,
-          "downside": 0
+          "upside": 57600,
+          "expected": 28800,
+          "downside": 9600
         },
         "margin": {
-          "upside": 7200,
-          "expected": 3600,
-          "downside": 0
+          "upside": 28800,
+          "expected": 14400,
+          "downside": 4800
         },
-        "primary_metric": "pause_skip_save_rate",
-        "primary_metric_target": ">=30% save rate (from ~0% baseline)"
+        "primary_metric": "voluntary_churn_rate",
+        "primary_metric_target": "\u22642.5% monthly voluntary churn (\u226515% reduction from ~2.9% baseline)",
+        "L1_margin": "$1,200/mo expected contribution margin ($2,400 prevented-churn revenue \u00d7 50% DTC margin)",
+        "L2_cash": "positive \u2014 subscription revenue is recurring DTC, improves cash predictability by retaining subscribers vs one-time re-acquisition",
+        "L3_customer_quality": "strongly positive \u2014 pause/skip preserves customer relationship; pausers resume at 3-5x rate of cancellers, preserving compounding subscription LTV",
+        "L4_learning": "Will prominent pause/skip options reduce voluntary churn by \u226515% without increasing delayed cancellation? Secondary: what is actual resume rate after pause?",
+        "L5_brand_check": "pass \u2014 no discounting, no health claims, no pricing change; pause/skip is a customer-service improvement"
       },
       "routed_to": [
         "Katie"
@@ -1410,10 +1415,10 @@
       "routed_date": "2026-03-16",
       "approved_by": "Katie",
       "approved_date": "2026-03-16",
-      "review_tier": "standard",
+      "review_tier": "full",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-024.md",
-      "notes": "Blocked by CS-2026-006. Execute after science content pipeline lands.",
+      "notes": "Blocked by CS-2026-006. Execute after science content pipeline lands. 2026-04-07 Review: Three gaps identified before CGO approval: (1) Confirm current Recharge pause/skip state \u2014 what's already enabled in the cancellation prevention flow? Scope may shrink significantly if pause/skip or retention offers already exist. (2) Resolve voluntary vs involuntary churn data gap \u2014 the '23% too much product' figure cannot be reproduced from the current Recharge data feed (Apr 3 domain scan: 'No data to segregate voluntary vs involuntary in the Recharge feed'). Measurement plan requires a reliable voluntary churn signal. (3) Update scope and payload_before/payload_after based on findings \u2014 if features already exist, this becomes a messaging/flow refinement, not a feature buildout.",
       "sweep_flags": [
         "STALE_7D+"
       ],
@@ -1429,7 +1434,9 @@
       "autonomy_tier": null,
       "stale_flag": true,
       "stale_days": 21,
-      "urgency": "stale"
+      "urgency": "stale",
+      "last_status_change": "2026-04-07",
+      "hypothesis": "Introducing a prominent pause/skip option in the subscription management flow and pre-churn touchpoints will reduce voluntary churn by \u226515% while retaining LTV"
     },
     {
       "id": "CS-2026-025",
@@ -2914,61 +2921,17 @@
       "executed_date": null,
       "autonomy_tier": null,
       "urgency": "high"
-    },
-    {
-      "changeset_id": "CS-2026-024",
-      "summary": "Subscription Pause/Skip Feature Test \u2014 introduce pause/skip options in Recharge portal and pre-churn Klaviyo flows to reduce voluntary churn by \u226515%",
-      "surface": "recharge",
-      "subtype": "implementation",
-      "status": "needs_feedback",
-      "owner": "Katie",
-      "created_date": "2026-03-16",
-      "source_session": 9,
-      "review_tier": "full",
-      "risk_level": "low-medium",
-      "revision_notes": "2026-04-07 Review: Three gaps identified before CGO approval: (1) Confirm current Recharge pause/skip state \u2014 what's already enabled in the cancellation prevention flow? Scope may shrink significantly if pause/skip or retention offers already exist. (2) Resolve voluntary vs involuntary churn data gap \u2014 the '23% too much product' figure cannot be reproduced from the current Recharge data feed (Apr 3 domain scan: 'No data to segregate voluntary vs involuntary in the Recharge feed'). Measurement plan requires a reliable voluntary churn signal. (3) Update scope and payload_before/payload_after based on findings \u2014 if features already exist, this becomes a messaging/flow refinement, not a feature buildout.",
-      "revision_date": "2026-04-07",
-      "hypothesis": "Introducing a prominent pause/skip option in the subscription management flow and pre-churn touchpoints will reduce voluntary churn by \u226515% while retaining LTV",
-      "expected_impact": {
-        "revenue": {
-          "upside": 57600,
-          "expected": 28800,
-          "downside": 9600
-        },
-        "margin": {
-          "upside": 28800,
-          "expected": 14400,
-          "downside": 4800
-        },
-        "primary_metric": "voluntary_churn_rate",
-        "primary_metric_target": "\u22642.5% monthly voluntary churn (\u226515% reduction from ~2.9% baseline)",
-        "L1_margin": "$1,200/mo expected contribution margin ($2,400 prevented-churn revenue \u00d7 50% DTC margin)",
-        "L2_cash": "positive \u2014 subscription revenue is recurring DTC, improves cash predictability by retaining subscribers vs one-time re-acquisition",
-        "L3_customer_quality": "strongly positive \u2014 pause/skip preserves customer relationship; pausers resume at 3-5x rate of cancellers, preserving compounding subscription LTV",
-        "L4_learning": "Will prominent pause/skip options reduce voluntary churn by \u226515% without increasing delayed cancellation? Secondary: what is actual resume rate after pause?",
-        "L5_brand_check": "pass \u2014 no discounting, no health claims, no pricing change; pause/skip is a customer-service improvement"
-      },
-      "approved_by": null,
-      "approved_date": null,
-      "published_date": null,
-      "executed_date": null,
-      "measurement_start": null,
-      "measurement_due": null,
-      "linked_calendar_activity": null,
-      "objective_level": "L3",
-      "category": "retention"
     }
   ],
   "queue_actions": {
     "stale": [
       "CS-2026-009",
-      "CS-2026-030",
+      "CS-2026-024",
       "CS-2026-031",
       "CS-2026-034",
       "CS-2026-035",
       "CS-2026-036",
-      "CS-2026-037",
-      "CS-2026-040"
+      "CS-2026-037"
     ],
     "measurement_due": [],
     "auto_close": [],
