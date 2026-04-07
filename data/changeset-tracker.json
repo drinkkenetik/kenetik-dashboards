@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-07",
-  "next_id": 52,
+  "next_id": 53,
   "lifecycle_sweep": {
     "session": "2026-04-07-session-28",
     "sweep_date": "2026-04-07",
@@ -21,13 +21,13 @@
     "last_urgency_recompute": "2026-04-07"
   },
   "summary": {
-    "total_changesets": 51,
+    "total_changesets": 52,
     "by_status": {
       "published": 11,
       "closed": 16,
       "approved": 15,
       "needs_feedback": 1,
-      "draft": 8
+      "draft": 9
     },
     "last_updated": "2026-04-07",
     "_recount_note": "2026-04-07: CS-2026-012 published (Unbound sweepstakes email). Moved approved\u2192published."
@@ -1377,7 +1377,7 @@
       "title": "Subscription Pause/Skip Feature Test",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "needs_feedback",
+      "status": "closed_partial",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-16",
@@ -1388,7 +1388,9 @@
       ],
       "blocks": [],
       "spawned_from": "rec-024",
-      "spawned_changesets": [],
+      "spawned_changesets": [
+        "CS-2026-052"
+      ],
       "expected_impact": {
         "revenue": {
           "upside": 57600,
@@ -1418,10 +1420,8 @@
       "review_tier": "full",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-024.md",
-      "notes": "Blocked by CS-2026-006. Execute after science content pipeline lands. 2026-04-07 Review: Three gaps identified before CGO approval: (1) Confirm current Recharge pause/skip state \u2014 what's already enabled in the cancellation prevention flow? Scope may shrink significantly if pause/skip or retention offers already exist. (2) Resolve voluntary vs involuntary churn data gap \u2014 the '23% too much product' figure cannot be reproduced from the current Recharge data feed (Apr 3 domain scan: 'No data to segregate voluntary vs involuntary in the Recharge feed'). Measurement plan requires a reliable voluntary churn signal. (3) Update scope and payload_before/payload_after based on findings \u2014 if features already exist, this becomes a messaging/flow refinement, not a feature buildout.",
-      "sweep_flags": [
-        "STALE_7D+"
-      ],
+      "notes": "CLOSED \u2014 PARTIALLY COMPLETE. Scope item 1 (Recharge pause/skip config) was already live before ChangeSet creation. Scope items 2-4 (proactive flows) not built: no reliable signal to identify at-risk subscribers proactively, and adding net-new touchpoints risks increasing churn rather than reducing it. Voluntary churn data confirmed accessible via Recharge Churn tool > Cancellation Prevents > Performance > Cancellation Survey Response. Successor ChangeSet to optimize existing upcoming order notification emails instead.",
+      "sweep_flags": [],
       "last_sweep": "2026-04-03",
       "risk": "low",
       "measurement_window": "30-day from launch",
@@ -1432,11 +1432,14 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "stale_flag": true,
+      "stale_flag": false,
       "stale_days": 21,
-      "urgency": "stale",
+      "urgency": "none",
       "last_status_change": "2026-04-07",
-      "hypothesis": "Introducing a prominent pause/skip option in the subscription management flow and pre-churn touchpoints will reduce voluntary churn by \u226515% while retaining LTV"
+      "hypothesis": "Introducing a prominent pause/skip option in the subscription management flow and pre-churn touchpoints will reduce voluntary churn by \u226515% while retaining LTV",
+      "closed_date": "2026-04-07",
+      "closed_reason": "partially_complete",
+      "successor": "CS-2026-052"
     },
     {
       "id": "CS-2026-025",
@@ -2921,6 +2924,71 @@
       "executed_date": null,
       "autonomy_tier": null,
       "urgency": "high"
+    },
+    {
+      "id": "CS-2026-052",
+      "title": "Upcoming Subscription Order Email Optimization",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-04-07",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "CS-2026-024",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 57600,
+          "expected": 28800,
+          "downside": 7200
+        },
+        "margin": {
+          "upside": 28800,
+          "expected": 14400,
+          "downside": 3600
+        },
+        "primary_metric": "voluntary_churn_rate_too_much_product",
+        "primary_metric_target": "<=18% of voluntary churn reasons (from 23% baseline)",
+        "L1_margin": "$1,200/mo expected contribution margin from prevented churn",
+        "L2_cash": "positive \u2014 retained subscribers = recurring DTC revenue with predictable cash timing",
+        "L3_customer_quality": "positive \u2014 subscribers who skip and return have higher LTV than cancellers; L3 reinforces L1 via compounding subscription LTV",
+        "L4_learning": "Does embedding value reinforcement and skip/reschedule CTAs in transactional upcoming order email reduce 'too much product' churn?",
+        "L5_brand_check": "pass \u2014 no discounting, no health claims beyond Tier A, customer-service improvement only"
+      },
+      "review_tier": "full",
+      "linked_calendar_activity": null,
+      "execution_target_date": null,
+      "scheduled_send_date": null,
+      "executed_date": null,
+      "autonomy_tier": null,
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-07",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "file": "cgo-logs/changesets/CS-2026-052.md",
+      "notes": "Successor to CS-2026-024 (closed). Refines existing upcoming order notification with value content and skip/reschedule CTAs instead of adding new proactive flows.",
+      "stale_flag": false,
+      "stale_days": 0,
+      "urgency": "normal",
+      "last_status_change": "2026-04-07",
+      "hypothesis": "Optimizing the upcoming subscription order email with value reinforcement and prominent skip/reschedule CTAs will reduce 'too much product' voluntary churn by >=15%",
+      "sweep_flags": [],
+      "last_sweep": null,
+      "risk": "low",
+      "measurement_window": "30-day from launch",
+      "closed_date": null,
+      "learning_note": null,
+      "actual_impact": null,
+      "outcome": null,
+      "archived": false
     }
   ],
   "queue_actions": {
