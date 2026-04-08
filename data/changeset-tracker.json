@@ -1,36 +1,35 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-07",
-  "next_id": 54,
+  "last_updated": "2026-04-08",
+  "next_id": 56,
   "lifecycle_sweep": {
-    "session": "2026-04-07-session-28",
-    "sweep_date": "2026-04-07",
-    "stale_detected": 15,
+    "session": "2026-04-08-session-29",
+    "sweep_date": "2026-04-08",
+    "stale_detected": 13,
     "measurement_overdue": 0,
-    "measurement_due_today": 0,
-    "measurement_approaching": 6,
+    "measurement_due_today": 2,
+    "measurement_approaching": 4,
     "auto_closed": 0,
     "flags": [
-      "STALE: 15 approved ChangeSets >7d without publication. Portfolio execution bottleneck persists.",
-      "MEASUREMENT_APPROACHING: 6 measurement windows within 7d (CS-001 Apr 10, CS-002 Apr 8, CS-004 Apr 9, CS-011 Apr 8, CS-013 Apr 10, CS-046 Apr 10)",
-      "NEW_CHANGESETS: 2 added (CS-2026-050 SAW Wk2 Content Sprint, CS-2026-051 FB Retargeting Reallocation). Portfolio now 51 entries.",
-      "URGENCY: 15 stale approved require Devon binary decision (approve/close/modify) by Apr 9 to unblock execution.",
+      "STALE: 13 approved ChangeSets >7d without publication.",
+      "MEASUREMENT_DUE_TODAY: 2 \u2014 CS-2026-002, CS-2026-011.",
+      "MEASUREMENT_APPROACHING: 4 \u2014 CS-2026-001, CS-2026-004, CS-2026-013, CS-2026-046.",
       "AUTONOMOUS_MODE: shadow \u2014 classification only, no auto-advance"
     ],
-    "new_changeset_generation": "2 new ChangeSets: CS-2026-050 (SAW Wk2 Content Sprint), CS-2026-051 (FB Retargeting Reallocation). Portfolio at 51 entries. 15 stale approved require Devon binary decision by Apr 9.",
-    "last_urgency_recompute": "2026-04-07"
+    "new_changeset_generation": "2 new ChangeSets: CS-2026-054 (Creator Onboarding Activation Funnel), CS-2026-055 (Content Hypothesis Testing Sprint).",
+    "last_urgency_recompute": "2026-04-08"
   },
   "summary": {
-    "total_changesets": 53,
+    "total_changesets": 55,
     "by_status": {
       "published": 11,
       "closed": 18,
       "approved": 15,
-      "draft": 9
+      "draft": 11
     },
-    "last_updated": "2026-04-07",
-    "_recount_note": "2026-04-07: CS-2026-035 approved (SMS-First Promotional Strategy Experiment). 2026-04-07: CS-2026-036 closed (investigation complete). CS-2026-053 created (draft).",
-    "total": 53
+    "last_updated": "2026-04-08",
+    "_recount_note": "2026-04-08: Session 29. 2 new CS (054, 055). 2 measurements due EOD. 13 stale approved.",
+    "total": 55
   },
   "changesets": [
     {
@@ -88,7 +87,7 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "measuring"
+      "urgency": "measurement_approaching"
     },
     {
       "id": "CS-2026-002",
@@ -144,7 +143,7 @@
       "executed_date": null,
       "autonomy_tier": null,
       "measurement_approaching": true,
-      "urgency": "measuring"
+      "urgency": "measurement_due_today"
     },
     {
       "id": "CS-2026-003",
@@ -268,7 +267,7 @@
       "executed_date": null,
       "autonomy_tier": null,
       "measurement_approaching": true,
-      "urgency": "measuring"
+      "urgency": "measurement_approaching"
     },
     {
       "id": "CS-2026-005",
@@ -555,7 +554,7 @@
       "autonomy_tier": null,
       "stale_flag": false,
       "stale_days": 21,
-      "urgency": "scheduled"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-010",
@@ -697,7 +696,7 @@
       "executed_date": null,
       "autonomy_tier": null,
       "measurement_approaching": true,
-      "urgency": "measuring"
+      "urgency": "measurement_due_today"
     },
     {
       "id": "CS-2026-012",
@@ -813,7 +812,7 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "measuring"
+      "urgency": "measurement_approaching"
     },
     {
       "id": "CS-2026-014",
@@ -867,7 +866,7 @@
       "autonomy_tier": null,
       "stale_flag": true,
       "stale_days": 21,
-      "urgency": "on_track"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-015",
@@ -921,7 +920,7 @@
       "autonomy_tier": null,
       "stale_flag": true,
       "stale_days": 21,
-      "urgency": "on_track"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-016",
@@ -972,7 +971,7 @@
       "autonomy_tier": null,
       "stale_flag": true,
       "stale_days": 21,
-      "urgency": "on_track"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-017",
@@ -1026,7 +1025,7 @@
       "autonomy_tier": null,
       "stale_flag": true,
       "stale_days": 21,
-      "urgency": "on_track"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-018",
@@ -1080,7 +1079,7 @@
       "autonomy_tier": null,
       "stale_flag": true,
       "stale_days": 21,
-      "urgency": "on_track"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-019",
@@ -1134,7 +1133,7 @@
       "autonomy_tier": null,
       "stale_flag": true,
       "stale_days": 21,
-      "urgency": "on_track"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-020",
@@ -1190,7 +1189,7 @@
       "autonomy_tier": null,
       "stale_flag": true,
       "stale_days": 21,
-      "urgency": "on_track"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-021",
@@ -1244,7 +1243,7 @@
       "autonomy_tier": null,
       "stale_flag": true,
       "stale_days": 21,
-      "urgency": "on_track"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-022",
@@ -1298,7 +1297,7 @@
       "autonomy_tier": null,
       "stale_flag": true,
       "stale_days": 21,
-      "urgency": "on_track"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-023",
@@ -2380,7 +2379,7 @@
       "autonomy_tier": 2,
       "execution_target_date": "2026-04-07",
       "executed_date": null,
-      "urgency": "active"
+      "urgency": "stale"
     },
     {
       "id": "CS-2026-041",
@@ -2714,7 +2713,7 @@
       "_subtype_note": "Mapped from \"bug_fix\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "urgency": "measuring"
+      "urgency": "measurement_approaching"
     },
     {
       "id": "CS-2026-047",
@@ -3076,6 +3075,116 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
+    },
+    {
+      "id": "CS-2026-054",
+      "title": "Creator Onboarding Activation Funnel \u2014 14-Day New Enrollee Sequence",
+      "subtype": "implementation",
+      "surface": "superfiliate",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Charlotte",
+      "created": "2026-04-08",
+      "objective_level": "L3",
+      "category": "creator_program",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-199",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 8000,
+          "expected": 4000,
+          "downside": 1000
+        },
+        "margin": {
+          "upside": 4000,
+          "expected": 2000,
+          "downside": 500
+        },
+        "primary_metric": "creator_activation_rate",
+        "primary_metric_target": "30-50% activation rate for Feb-Mar dormant cohort"
+      },
+      "routed_to": [
+        "Charlotte",
+        "Lawrence",
+        "Nick"
+      ],
+      "routed_via": "pipeline",
+      "routed_date": "2026-04-08",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "30d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-054.md",
+      "notes": "Auto-generated from rec-199. Onboarding activation (distinct from CS-040 reactivation).",
+      "risk": "medium",
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-22",
+      "executed_date": null,
+      "autonomy_tier": 2,
+      "urgency": "new"
+    },
+    {
+      "id": "CS-2026-055",
+      "title": "Content Hypothesis Testing Sprint \u2014 H-002 + H-003 (7-Day Apr 8-15)",
+      "subtype": "experiment",
+      "surface": "sprout",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Charlotte",
+      "created": "2026-04-08",
+      "objective_level": "L3",
+      "category": "content",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "rec-201",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 3000,
+          "expected": 1500,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 1500,
+          "expected": 750,
+          "downside": 0
+        },
+        "primary_metric": "engagement_rate",
+        "primary_metric_target": "H-002: testimonial vs mechanism ER delta >30%; H-003: product-in-context ER above 1.5%"
+      },
+      "routed_to": [
+        "Charlotte",
+        "Brandon",
+        "Nick"
+      ],
+      "routed_via": "pipeline",
+      "routed_date": "2026-04-08",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "7d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-055.md",
+      "notes": "Auto-generated from rec-201. Unblocks content learning loop. 7-day window Apr 8-15.",
+      "risk": "low",
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-08",
+      "executed_date": null,
+      "autonomy_tier": 2,
+      "urgency": "new"
     }
   ],
   "queue_actions": {
