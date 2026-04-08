@@ -22,8 +22,8 @@
   "summary": {
     "total_changesets": 55,
     "by_status": {
-      "published": 10,
-      "closed": 19,
+      "published": 9,
+      "closed": 20,
       "approved": 15,
       "draft": 11
     },
@@ -678,7 +678,7 @@
       "title": "THE SCIENCE IS NO JOKE",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-12",
@@ -733,7 +733,41 @@
       "executed_date": null,
       "autonomy_tier": null,
       "measurement_approaching": true,
-      "urgency": "measurement_due_today"
+      "urgency": "measurement_due_today",
+      "outcome": "underperformed",
+      "closed_date": "2026-04-08",
+      "actual_impact": {
+        "primary_metric": "campaign_revenue",
+        "primary_metric_baseline": "$0 (no April 1 campaign scheduled)",
+        "primary_metric_result": "$1,183.61 from 15 orders ($78.91 AOV)",
+        "primary_metric_delta": "-$4,816.39 vs $6K target (-80.3%); however, within normal range ($874–$2,123) for comparable non-promotional content emails",
+        "revenue_impact": 1183.61,
+        "margin_impact": 591.81,
+        "confidence": "high",
+        "statistical_significance": true,
+        "_detail": {
+          "campaign_id": "01KN4SPK5YYDN6QZC0YMDD4X7J",
+          "campaign_name": "UE | C1/M19 - The Science is no joke",
+          "send_time": "2026-04-01T18:00:00Z",
+          "recipients": 17128,
+          "delivered": 17123,
+          "open_rate": 0.4653,
+          "click_rate": 0.0071,
+          "ctor": 0.0152,
+          "conversions": 15,
+          "aov": 78.91,
+          "rpr": 0.0691,
+          "unsubscribe_rate": 0.0021,
+          "bounce_rate": 0.0003,
+          "spam_rate": 6e-05,
+          "benchmark_note": "Against 7 comparable non-promo content emails (Mar-Apr 2026): open rate #1 (46.5% vs 41.5% avg), click rate #1 (0.71% vs 0.64% avg), CTOR top 3 (1.52% vs 1.56% avg). Revenue mid-range ($1,184 vs $1,908 avg for revenue-generating sends)."
+        },
+        "_note": "margin_impact = $1,183.61 × 50% DTC Shopify margin = $591.81. Classified as underperformed vs original $6K target, but targets were misset — $6K and 8% CTR were promotional-campaign benchmarks applied to a non-promotional science engagement email. Actual performance led comparable content emails on engagement metrics.",
+        "L1_margin_actual": "Below vs original target ($592 vs $3,000). However, target was based on promotional benchmarks — comparable content email margin range is $437–$1,061.",
+        "L3_customer_quality_actual": "Inconclusive — 15 conversions too few to assess quality. $78.91 AOV is consistent with standard DTC orders.",
+        "L4_learning_actual": "Hypothesis partially supported: science subject lines generate top-of-class opens (46.5%, #1 in set). CTOR of 1.52% is in line with content emails, not elevated. Key insight: science credibility hooks open emails effectively but don't differentially drive clicks vs other content themes. The original 8% CTR target was based on promotional campaigns with offers, not content emails. Future science emails should be benchmarked against content-email baselines (~0.6% click rate, ~1.5% CTOR, ~$1K-$2K revenue for ~17K sends)."
+      },
+      "learning_note": "Science-led April Fools email sent to 17K (not 51K — standard suppressions) → $1,184 revenue, 46.5% open rate (#1 in class), 0.71% click rate (#1 in class), 1.52% CTOR → Revenue underperformed vs $6K target but target was misset: $6K and 8% CTR were promo benchmarks, not content-email benchmarks. Actual performance led all comparable non-promo sends on engagement. Correct baseline for non-promo science emails: ~$1K-$2K revenue, ~0.6% click rate, ~1.5% CTOR."
     },
     {
       "id": "CS-2026-012",
