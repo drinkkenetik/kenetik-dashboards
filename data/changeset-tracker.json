@@ -3134,7 +3134,7 @@
     {
       "id": "CS-2026-055",
       "title": "Content Hypothesis Testing Sprint \u2014 H-002 + H-003 (7-Day Apr 8-15)",
-      "subtype": "experiment",
+      "subtype": "investigation",
       "surface": "sprout",
       "status": "draft",
       "risk_level": "low",
