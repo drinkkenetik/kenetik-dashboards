@@ -911,8 +911,8 @@
           "expected": 9000,
           "downside": 0
         },
-        "primary_metric": "amazon_cvr",
-        "primary_metric_target": ">=18% CVR (from 12% baseline)"
+        "primary_metric": "email_rpr",
+        "primary_metric_target": ">=RPR benchmark for product spotlight sends"
       },
       "routed_to": [
         "Katie"
