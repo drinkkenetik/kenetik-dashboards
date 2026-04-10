@@ -3527,7 +3527,7 @@
     {
       "id": "CS-2026-058",
       "title": "Stress Awareness Month \u2014 De-Stress PR Kit Creator Activation",
-      "subtype": "event",
+      "subtype": "implementation",
       "surface": "organic_social",
       "status": "draft",
       "risk_level": "medium",
@@ -3548,7 +3548,7 @@
     {
       "id": "CS-2026-059",
       "title": "ARCA Kansas \u2014 Cleetus Pit Crew Koozie Product Launch",
-      "subtype": "event",
+      "subtype": "implementation",
       "surface": "wholesale_retail",
       "status": "draft",
       "risk_level": "medium",
@@ -3569,7 +3569,7 @@
     {
       "id": "CS-2026-060",
       "title": "ARCA Talladega \u2014 Shake and Bake Bundle Launch",
-      "subtype": "event",
+      "subtype": "implementation",
       "surface": "wholesale_retail",
       "status": "draft",
       "risk_level": "medium",
@@ -3590,7 +3590,7 @@
     {
       "id": "CS-2026-061",
       "title": "Matt Hughes FB Reel -> Paid Meta Graduation",
-      "subtype": "graduation",
+      "subtype": "implementation",
       "surface": "meta_ads",
       "status": "draft",
       "risk_level": "medium",
