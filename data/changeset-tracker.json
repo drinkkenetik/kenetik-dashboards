@@ -22,8 +22,8 @@
   "summary": {
     "total_changesets": 62,
     "by_status": {
-      "published": 10,
-      "closed": 20,
+      "published": 9,
+      "closed": 21,
       "approved": 14,
       "draft": 18
     },
@@ -37,7 +37,7 @@
       "title": "Welcome Series Emergency \u2014 Influencer Welcome Track",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "published",
+      "status": "closed",
       "risk_level": "critical",
       "owner": "Katie",
       "created": "2026-03-08",
@@ -77,9 +77,65 @@
       "measurement_end_date": "2026-04-10",
       "measurement_window": "30d",
       "measurement_due": "2026-04-10",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "welcome_series_rpr",
+        "primary_metric_baseline": "$0.07 RPR (General Welcome Email #1, Tjj8uP)",
+        "primary_metric_result": "$0.20 RPR (50 recipients across all intercept messages)",
+        "primary_metric_delta": "+186% vs baseline, but N=50 (far below 1,000 minimum sample)",
+        "revenue_impact": 9.99,
+        "margin_impact": 5.99,
+        "confidence": "low",
+        "statistical_significance": false,
+        "_detail": {
+          "intercept_c3_general": {
+            "recipients": 18,
+            "open_rate": 0.0,
+            "cvr": 0.0,
+            "unsub_rate": 0.0,
+            "rpr": 0.0,
+            "revenue": 0.0
+          },
+          "intercept_c4_general": {
+            "recipients": 29,
+            "open_rate": 0.276,
+            "cvr": 0.034,
+            "unsub_rate": 0.0,
+            "rpr": 0.34,
+            "revenue": 9.99
+          },
+          "intercept_c4_prod_opt": {
+            "recipients": 2,
+            "open_rate": 1.0,
+            "cvr": 0.0,
+            "unsub_rate": 0.0,
+            "rpr": 0.0,
+            "revenue": 0.0
+          },
+          "intercept_c4_ageless": {
+            "recipients": 1,
+            "open_rate": 0.0,
+            "cvr": 0.0,
+            "unsub_rate": 0.0,
+            "rpr": 0.0,
+            "revenue": 0.0
+          },
+          "total_intercepted": 50,
+          "target_cohort_size": 1113,
+          "reach_rate": "4.5%",
+          "general_email3_comparison": {
+            "recipients": 850,
+            "cvr": 0.001,
+            "unsub_rate": 0.009,
+            "rpr": 0.04
+          }
+        },
+        "_note": "margin_impact computed as $9.99 \u00d7 60% DTC margin \u2248 $5.99. Only 50 of 1,113 target profiles were intercepted \u2014 most had already passed the Email #3/#4 interception points by publish date (Mar 11, 2-4 days after flow entry). Hypothesis untestable at this sample size.",
+        "L1_margin_actual": "Below \u2014 $5.99 actual vs $3,600 expected. Not meaningful due to 4.5% reach (execution timing issue, not content issue).",
+        "L3_customer_quality_actual": "Inconclusive \u2014 0% unsub rate on 50 recipients is directionally positive vs 0.9% General baseline, but sample too small. Cohort has moved on.",
+        "L4_learning_actual": "Hypothesis not testable. Key learnings: (1) Mid-flow conditional splits must be deployed within hours of cohort entry, not days. (2) $source property debunked for attribution \u2014 need Superfiliate or UTM-based tracking for future influencer routing. (3) Top-of-flow or campaign-based intercepts are needed for time-sensitive cohorts."
+      },
+      "outcome": "inconclusive",
+      "closed_date": "2026-04-10",
       "file": "cgo-logs/changesets/CS-2026-001.md",
       "notes": "Published Mar 11. 30-day measurement window through Apr 10.",
       "risk": "critical",
@@ -87,9 +143,7 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "measurement_approaching",
-      "measurement_outcome": "data_needed",
-      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session."
+      "learning_note": "Influencer welcome intercept deployed 2-4 days after cohort entered flow \u2192 only 50/1,113 profiles reached (4.5%) \u2192 hypothesis inconclusive. Key learning: mid-flow intercepts for time-sensitive cohorts must deploy same-day. Future influencer onboarding needs top-of-flow routing or standalone campaigns with proper Cleetus attribution tracking."
     },
     {
       "id": "CS-2026-002",
