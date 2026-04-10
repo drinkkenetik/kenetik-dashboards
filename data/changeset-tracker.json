@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-08",
-  "next_id": 56,
+  "last_updated": "2026-04-10",
+  "next_id": 63,
   "lifecycle_sweep": {
     "session": "2026-04-08-session-29",
     "sweep_date": "2026-04-08",
@@ -20,16 +20,16 @@
     "last_urgency_recompute": "2026-04-08"
   },
   "summary": {
-    "total_changesets": 55,
+    "total_changesets": 62,
     "by_status": {
       "published": 10,
       "closed": 20,
       "approved": 14,
-      "draft": 11
+      "draft": 18
     },
-    "last_updated": "2026-04-09",
-    "_recount_note": "2026-04-09: CS-2026-014 published (Shots email scheduled in Klaviyo for 4/10 14:00 EDT).",
-    "total": 55
+    "last_updated": "2026-04-10",
+    "_recount_note": "2026-04-10: Phase 3 sweep \u2014 13 stale flagged, 4 meas due/data_needed. 7 new drafts CS-056..062.",
+    "total": 62
   },
   "changesets": [
     {
@@ -87,7 +87,9 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "measurement_approaching"
+      "urgency": "measurement_approaching",
+      "measurement_outcome": "data_needed",
+      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session."
     },
     {
       "id": "CS-2026-002",
@@ -304,7 +306,9 @@
       "executed_date": null,
       "autonomy_tier": null,
       "measurement_approaching": true,
-      "urgency": "measurement_approaching"
+      "urgency": "measurement_approaching",
+      "measurement_outcome": "data_needed",
+      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session."
     },
     {
       "id": "CS-2026-005",
@@ -418,7 +422,8 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "measuring"
+      "urgency": "measuring",
+      "measurement_approaching": true
     },
     {
       "id": "CS-2026-007",
@@ -474,7 +479,8 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "measuring"
+      "urgency": "measuring",
+      "measurement_approaching": true
     },
     {
       "id": "CS-2026-008",
@@ -590,8 +596,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": false,
-      "stale_days": 21,
-      "urgency": "stale"
+      "stale_days": 25,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-010",
@@ -883,7 +892,9 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "measurement_approaching"
+      "urgency": "measurement_approaching",
+      "measurement_outcome": "data_needed",
+      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session."
     },
     {
       "id": "CS-2026-014",
@@ -999,8 +1010,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21,
-      "urgency": "stale"
+      "stale_days": 25,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-016",
@@ -1050,8 +1064,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21,
-      "urgency": "stale"
+      "stale_days": 25,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-017",
@@ -1104,8 +1121,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21,
-      "urgency": "stale"
+      "stale_days": 25,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-018",
@@ -1158,8 +1178,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21,
-      "urgency": "stale"
+      "stale_days": 25,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-019",
@@ -1212,8 +1235,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21,
-      "urgency": "stale"
+      "stale_days": 25,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-020",
@@ -1268,8 +1294,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21,
-      "urgency": "stale"
+      "stale_days": 25,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-021",
@@ -1322,8 +1351,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21,
-      "urgency": "stale"
+      "stale_days": 25,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-022",
@@ -1376,8 +1408,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 21,
-      "urgency": "stale"
+      "stale_days": 25,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-023",
@@ -1921,7 +1956,8 @@
       "execution_target_date": "2026-04-06",
       "executed_date": "2026-04-06",
       "autonomy_tier": null,
-      "urgency": null
+      "urgency": null,
+      "measurement_approaching": true
     },
     {
       "id": "CS-2026-031",
@@ -2120,8 +2156,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 18,
-      "urgency": "stale"
+      "stale_days": 22,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-035",
@@ -2309,8 +2348,11 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": true,
-      "stale_days": 15,
-      "urgency": "stale"
+      "stale_days": 19,
+      "urgency": "stale",
+      "stale": true,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-038",
@@ -2459,7 +2501,11 @@
       "autonomy_tier": 2,
       "execution_target_date": "2026-04-07",
       "executed_date": null,
-      "urgency": "stale"
+      "urgency": "stale",
+      "stale": true,
+      "stale_days": 16,
+      "triage_recommendation": "requires_human_review",
+      "triage_action": "consider_closing_as_abandoned"
     },
     {
       "id": "CS-2026-041",
@@ -2620,7 +2666,10 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "blocked"
+      "urgency": "blocked",
+      "stale": true,
+      "stale_days": 9,
+      "triage_recommendation": "requires_human_review"
     },
     {
       "id": "CS-2026-044",
@@ -2793,7 +2842,9 @@
       "_subtype_note": "Mapped from \"bug_fix\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
-      "urgency": "measurement_approaching"
+      "urgency": "measurement_approaching",
+      "measurement_outcome": "data_needed",
+      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session."
     },
     {
       "id": "CS-2026-047",
@@ -3265,6 +3316,164 @@
       "executed_date": null,
       "autonomy_tier": 2,
       "urgency": "new"
+    },
+    {
+      "id": "CS-2026-056",
+      "title": "D04 Polar Campaign-Level ATC + Checkout Metrics Pull",
+      "subtype": "implementation",
+      "surface": "data_pipeline",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Devon",
+      "created": "2026-04-10",
+      "objective_level": "L2",
+      "category": "system_improvement",
+      "spawned_from": "L-003",
+      "file": "cgo-logs/changesets/CS-2026-056.md",
+      "linked_pm_entry": "L-003",
+      "source": "performance_memory_candidate",
+      "autonomy_tier": "Tier 1",
+      "shadow_classification": {
+        "verdict": "PASS",
+        "action": "CLASSIFY ONLY"
+      }
+    },
+    {
+      "id": "CS-2026-057",
+      "title": "D07/D13 Content Drought \u2014 Sprout Published-Post Verification",
+      "subtype": "implementation",
+      "surface": "data_pipeline",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Devon",
+      "created": "2026-04-10",
+      "objective_level": "L2",
+      "category": "system_improvement",
+      "spawned_from": "L-005",
+      "file": "cgo-logs/changesets/CS-2026-057.md",
+      "linked_pm_entry": "L-005",
+      "source": "performance_memory_candidate",
+      "autonomy_tier": "Tier 1",
+      "shadow_classification": {
+        "verdict": "PASS",
+        "action": "CLASSIFY ONLY"
+      }
+    },
+    {
+      "id": "CS-2026-058",
+      "title": "Stress Awareness Month \u2014 De-Stress PR Kit Creator Activation",
+      "subtype": "event",
+      "surface": "organic_social",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Charlotte",
+      "created": "2026-04-10",
+      "objective_level": "L3",
+      "category": "event_activation",
+      "spawned_from": "calendar_safety_net",
+      "file": "cgo-logs/changesets/CS-2026-058.md",
+      "linked_calendar_activity": "STRESS-MON-040126-BEAT-02",
+      "source": "calendar_safety_net",
+      "autonomy_tier": "Tier 2",
+      "shadow_classification": {
+        "verdict": "TIER 2",
+        "action": "CLASSIFY ONLY"
+      }
+    },
+    {
+      "id": "CS-2026-059",
+      "title": "ARCA Kansas \u2014 Cleetus Pit Crew Koozie Product Launch",
+      "subtype": "event",
+      "surface": "wholesale_retail",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Nick",
+      "created": "2026-04-10",
+      "objective_level": "L1",
+      "category": "event_activation",
+      "spawned_from": "calendar_safety_net",
+      "file": "cgo-logs/changesets/CS-2026-059.md",
+      "linked_calendar_activity": "ARCA-KAN-041726-BEAT-03",
+      "source": "calendar_safety_net",
+      "autonomy_tier": "Tier 2",
+      "shadow_classification": {
+        "verdict": "TIER 2",
+        "action": "CLASSIFY ONLY"
+      }
+    },
+    {
+      "id": "CS-2026-060",
+      "title": "ARCA Talladega \u2014 Shake and Bake Bundle Launch",
+      "subtype": "event",
+      "surface": "wholesale_retail",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Nick",
+      "created": "2026-04-10",
+      "objective_level": "L1",
+      "category": "event_activation",
+      "spawned_from": "calendar_safety_net",
+      "file": "cgo-logs/changesets/CS-2026-060.md",
+      "linked_calendar_activity": "ARCA-TAL-042426-BEAT-03",
+      "source": "calendar_safety_net",
+      "autonomy_tier": "Tier 2",
+      "shadow_classification": {
+        "verdict": "TIER 2",
+        "action": "CLASSIFY ONLY"
+      }
+    },
+    {
+      "id": "CS-2026-061",
+      "title": "Matt Hughes FB Reel -> Paid Meta Graduation",
+      "subtype": "graduation",
+      "surface": "meta_ads",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-04-10",
+      "objective_level": "L1",
+      "category": "paid_amplification",
+      "spawned_from": "DS-04",
+      "expected_impact": {
+        "revenue_low": 3500,
+        "revenue_high": 10500,
+        "roas_target": 3.5
+      },
+      "measurement_window": "14 days",
+      "measurement_due": "2026-04-26",
+      "file": "cgo-logs/changesets/CS-2026-061.md",
+      "source": "synthesis_recommendation",
+      "autonomy_tier": "Tier 1",
+      "shadow_classification": {
+        "verdict": "CONDITIONAL PASS",
+        "action": "CLASSIFY ONLY"
+      }
+    },
+    {
+      "id": "CS-2026-062",
+      "title": "Apr 5 Cohort \u2014 Retention Intervention Package",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-04-10",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "spawned_from": "DS-05",
+      "expected_impact": {
+        "revenue_low": 2200,
+        "revenue_high": 4500
+      },
+      "measurement_window": "25 days",
+      "measurement_due": "2026-05-05",
+      "file": "cgo-logs/changesets/CS-2026-062.md",
+      "source": "synthesis_recommendation",
+      "autonomy_tier": "Tier 1",
+      "shadow_classification": {
+        "verdict": "PASS",
+        "action": "CLASSIFY ONLY"
+      }
     }
   ],
   "queue_actions": {
@@ -3286,9 +3495,9 @@
     ],
     "needs_review": []
   },
-  "last_sweep_date": "2026-03-25",
-  "last_sweep": "2026-04-06",
-  "last_sweep_session": 23,
+  "last_sweep_date": "2026-04-10",
+  "last_sweep": "2026-04-10",
+  "last_sweep_session": 30,
   "sweep_summary_session_23": {
     "date": "2026-03-31",
     "stale_approved_count": 19,
@@ -3305,10 +3514,10 @@
     "activated_date": "2026-03-22",
     "total_classified": {
       "tier_0": 0,
-      "tier_1": 1,
-      "tier_2": 2
+      "tier_1": 5,
+      "tier_2": 5
     },
-    "would_have_auto_advanced": 1,
+    "would_have_auto_advanced": 4,
     "would_have_auto_executed": 0,
     "auto_review_log": [
       {
@@ -3319,6 +3528,62 @@
         "manual_review_decision": "approved",
         "manual_review_date": "2026-04-07",
         "concordance": "concordant"
+      },
+      {
+        "cs_id": "CS-2026-056",
+        "classified_date": "2026-04-10",
+        "tier": 1,
+        "auto_review_verdict": "pass",
+        "manual_review_decision": null,
+        "concordance": "pending"
+      },
+      {
+        "cs_id": "CS-2026-057",
+        "classified_date": "2026-04-10",
+        "tier": 1,
+        "auto_review_verdict": "pass",
+        "manual_review_decision": null,
+        "concordance": "pending"
+      },
+      {
+        "cs_id": "CS-2026-058",
+        "classified_date": "2026-04-10",
+        "tier": 2,
+        "auto_review_verdict": "n/a",
+        "manual_review_decision": null,
+        "concordance": "pending"
+      },
+      {
+        "cs_id": "CS-2026-059",
+        "classified_date": "2026-04-10",
+        "tier": 2,
+        "auto_review_verdict": "n/a",
+        "manual_review_decision": null,
+        "concordance": "pending"
+      },
+      {
+        "cs_id": "CS-2026-060",
+        "classified_date": "2026-04-10",
+        "tier": 2,
+        "auto_review_verdict": "n/a",
+        "manual_review_decision": null,
+        "concordance": "pending"
+      },
+      {
+        "cs_id": "CS-2026-061",
+        "classified_date": "2026-04-10",
+        "tier": 1,
+        "auto_review_verdict": "conditional_pass",
+        "manual_review_decision": null,
+        "concordance": "pending"
+      },
+      {
+        "cs_id": "CS-2026-062",
+        "classified_date": "2026-04-10",
+        "tier": 1,
+        "auto_review_verdict": "pass",
+        "manual_review_decision": null,
+        "concordance": "pending"
       }
     ],
     "concordance_summary": {
@@ -3326,13 +3591,13 @@
       "concordant": 1,
       "discordant": 0,
       "false_alarm": 0,
-      "pending": 0,
+      "pending": 7,
       "concordance_rate": 1.0,
       "discordance_count": 0
     },
     "confidence": "insufficient_data",
     "recommendation": "1/5 resolved (all concordant). Need >=5 Tier 0/1 ChangeSets resolved before Phase B activation.",
-    "last_updated": "2026-04-07"
+    "last_updated": "2026-04-10"
   },
   "sweep_results": {
     "date": "2026-04-06",
