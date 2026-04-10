@@ -22,8 +22,8 @@
   "summary": {
     "total_changesets": 62,
     "by_status": {
-      "published": 9,
-      "closed": 21,
+      "published": 8,
+      "closed": 22,
       "approved": 14,
       "draft": 18
     },
@@ -311,7 +311,7 @@
       "title": "Paid Media Attribution \u2014 March 7 Exclusion & Superfiliate Investigation",
       "subtype": "investigation",
       "surface": "paid_google",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie + Nick",
       "created": "2026-03-08",
@@ -350,19 +350,39 @@
       "measurement_end_date": "2026-04-09",
       "measurement_window": "30d",
       "measurement_due": "2026-04-09",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "superfiliate_attribution_capture_rate",
+        "primary_metric_baseline": "14% (229/1,682 Superfiliate-tracked conversions attributed in Polar via click attribution on Mar 7)",
+        "primary_metric_result": "~100% capture via deterministic Shopify order tags + promo codes in custom_5144 channel grouping",
+        "primary_metric_delta": "+86pp (from 14% to ~100% for tagged orders)",
+        "revenue_impact": 0,
+        "margin_impact": null,
+        "confidence": "high",
+        "statistical_significance": true,
+        "_detail": {
+          "superfiliate_orders_measurement_window": 300,
+          "superfiliate_net_sales_measurement_window": 16046,
+          "paid_search_roas_baseline": 5.26,
+          "paid_search_roas_measurement": 6.66,
+          "paid_search_spend_baseline": 12669,
+          "paid_search_spend_measurement": 10379,
+          "custom_5144_channel_grouping": "live \u2014 uses Shopify tags (Superfiliate conversion approved/rejected) + promo codes (CLEETUS, DOC, ROMAN)",
+          "spawned_cs010_outcome": "closed_success"
+        },
+        "_note": "margin_impact = null \u2014 investigation subtype per \u00a73. No direct revenue impact. Value is in preventing bad decisions (paid media baselines protected) and enabling future creator ROI measurement (Superfiliate attribution now operational).",
+        "L1_margin_actual": "On-target \u2014 investigation, no direct margin impact as projected",
+        "L3_customer_quality_actual": "Positive indirect \u2014 enables accurate Superfiliate customer segmentation for future lifecycle targeting (CS-2026-010 resolved Klaviyo property gap)",
+        "L4_learning_actual": "Hypothesis strongly supported \u2014 deterministic Shopify order tags + promo codes capture ~100% of Superfiliate-tagged orders vs 14% via click attribution. Tag-based attribution is the correct approach for influencer/creator channels where click paths are unreliable."
+      },
+      "outcome": "success",
+      "closed_date": "2026-04-10",
       "file": "cgo-logs/changesets/CS-2026-004.md",
       "notes": "Published Mar 10. 30-day measurement window through Apr 9.",
       "risk": "low",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "measurement_approaching": true,
-      "urgency": "measurement_approaching",
-      "measurement_outcome": "data_needed",
-      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session."
+      "learning_note": "Excluded March 7 Cleetus activation outlier from paid media trends and built Polar custom channel grouping (custom_5144) using Shopify order tags + promo codes \u2192 Paid search ROAS stabilized at 6.66x (vs 5.26x baseline), Superfiliate attribution capture went from 14% to ~100% for tagged orders \u2192 Tag-based deterministic attribution is the correct model for influencer/creator channels; click-based attribution severely undercounts (87% gap). This finding applies to all future creator partnerships."
     },
     {
       "id": "CS-2026-005",
