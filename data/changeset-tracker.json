@@ -12,9 +12,9 @@
     "auto_closed": 0,
     "flags": [
       "STALE: 13 approved ChangeSets >7d without publication.",
-      "MEASUREMENT_DUE_TODAY: 2 \u2014 CS-2026-002, CS-2026-011.",
-      "MEASUREMENT_APPROACHING: 4 \u2014 CS-2026-001, CS-2026-004, CS-2026-013, CS-2026-046.",
-      "AUTONOMOUS_MODE: shadow \u2014 classification only, no auto-advance"
+      "MEASUREMENT_DUE_TODAY: 2 — CS-2026-002, CS-2026-011.",
+      "MEASUREMENT_APPROACHING: 4 — CS-2026-001, CS-2026-004, CS-2026-013, CS-2026-046.",
+      "AUTONOMOUS_MODE: shadow — classification only, no auto-advance"
     ],
     "new_changeset_generation": "2 new ChangeSets: CS-2026-054 (Creator Onboarding Activation Funnel), CS-2026-055 (Content Hypothesis Testing Sprint).",
     "last_urgency_recompute": "2026-04-08",
@@ -24,19 +24,19 @@
   "summary": {
     "total_changesets": 62,
     "by_status": {
-      "published": 8,
-      "closed": 22,
+      "published": 7,
+      "closed": 23,
       "approved": 14,
       "draft": 18
     },
     "last_updated": "2026-04-10",
-    "_recount_note": "2026-04-10: Phase 3 sweep \u2014 13 stale flagged, 4 meas due/data_needed. 7 new drafts CS-056..062.",
+    "_recount_note": "2026-04-10: Phase 3 sweep — 13 stale flagged, 4 meas due/data_needed. 7 new drafts CS-056..062.",
     "total": 62
   },
   "changesets": [
     {
       "id": "CS-2026-001",
-      "title": "Welcome Series Emergency \u2014 Influencer Welcome Track",
+      "title": "Welcome Series Emergency — Influencer Welcome Track",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "closed",
@@ -131,10 +131,10 @@
             "rpr": 0.04
           }
         },
-        "_note": "margin_impact computed as $9.99 \u00d7 60% DTC margin \u2248 $5.99. Only 50 of 1,113 target profiles were intercepted \u2014 most had already passed the Email #3/#4 interception points by publish date (Mar 11, 2-4 days after flow entry). Hypothesis untestable at this sample size.",
-        "L1_margin_actual": "Below \u2014 $5.99 actual vs $3,600 expected. Not meaningful due to 4.5% reach (execution timing issue, not content issue).",
-        "L3_customer_quality_actual": "Inconclusive \u2014 0% unsub rate on 50 recipients is directionally positive vs 0.9% General baseline, but sample too small. Cohort has moved on.",
-        "L4_learning_actual": "Hypothesis not testable. Key learnings: (1) Mid-flow conditional splits must be deployed within hours of cohort entry, not days. (2) $source property debunked for attribution \u2014 need Superfiliate or UTM-based tracking for future influencer routing. (3) Top-of-flow or campaign-based intercepts are needed for time-sensitive cohorts."
+        "_note": "margin_impact computed as $9.99 × 60% DTC margin ≈ $5.99. Only 50 of 1,113 target profiles were intercepted — most had already passed the Email #3/#4 interception points by publish date (Mar 11, 2-4 days after flow entry). Hypothesis untestable at this sample size.",
+        "L1_margin_actual": "Below — $5.99 actual vs $3,600 expected. Not meaningful due to 4.5% reach (execution timing issue, not content issue).",
+        "L3_customer_quality_actual": "Inconclusive — 0% unsub rate on 50 recipients is directionally positive vs 0.9% General baseline, but sample too small. Cohort has moved on.",
+        "L4_learning_actual": "Hypothesis not testable. Key learnings: (1) Mid-flow conditional splits must be deployed within hours of cohort entry, not days. (2) $source property debunked for attribution — need Superfiliate or UTM-based tracking for future influencer routing. (3) Top-of-flow or campaign-based intercepts are needed for time-sensitive cohorts."
       },
       "outcome": "inconclusive",
       "closed_date": "2026-04-10",
@@ -145,7 +145,7 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "learning_note": "Influencer welcome intercept deployed 2-4 days after cohort entered flow \u2192 only 50/1,113 profiles reached (4.5%) \u2192 hypothesis inconclusive. Key learning: mid-flow intercepts for time-sensitive cohorts must deploy same-day. Future influencer onboarding needs top-of-flow routing or standalone campaigns with proper Cleetus attribution tracking."
+      "learning_note": "Influencer welcome intercept deployed 2-4 days after cohort entered flow → only 50/1,113 profiles reached (4.5%) → hypothesis inconclusive. Key learning: mid-flow intercepts for time-sensitive cohorts must deploy same-day. Future influencer onboarding needs top-of-flow routing or standalone campaigns with proper Cleetus attribution tracking."
     },
     {
       "id": "CS-2026-002",
@@ -209,7 +209,7 @@
             "name": "Influencer-Acquired - All Creators",
             "profiles": 0,
             "status": "active_but_empty",
-            "note": "$source filter not matching \u2014 Superfiliate property not populating in Klaviyo"
+            "note": "$source filter not matching — Superfiliate property not populating in Klaviyo"
           },
           "segment_c_v3etsc": {
             "name": "Cleetus 3/7 Promo - Free Pack, No Repeat Purchase",
@@ -222,15 +222,15 @@
             "status": "active"
           }
         },
-        "_note": "margin_impact = null \u2014 infrastructure ChangeSet with no direct revenue path. Revenue impact flows through downstream CS-2026-001 (Welcome Series). Brief economics explicitly state 'Indirect \u2014 enables CS-2026-001 ($2,600 expected)'. Tracker expected_impact ($43,200) was overstated vs. brief.",
-        "L1_margin_actual": "On-target \u2014 $0 direct as expected for infrastructure. Indirect margin contribution will be measured via CS-2026-001.",
-        "L3_customer_quality_actual": "Confirmed \u2014 segments successfully isolate non-converters (1,102) from free-pack-only (5,243) from repeat buyers, enabling differentiated treatment.",
-        "L4_learning_actual": "Hypothesis supported \u2014 subscriber-level segmentation reveals the Cleetus cohort is 2.4x larger than the purchaser-only view (6,345+ vs ~2,600 estimated). 1,102 subscribers never purchased at all, proving purchaser-only segments miss ~17% of the cohort. All Creators segment ($source filter) exposed a data quality gap: Superfiliate doesn't tag Klaviyo $source consistently."
+        "_note": "margin_impact = null — infrastructure ChangeSet with no direct revenue path. Revenue impact flows through downstream CS-2026-001 (Welcome Series). Brief economics explicitly state 'Indirect — enables CS-2026-001 ($2,600 expected)'. Tracker expected_impact ($43,200) was overstated vs. brief.",
+        "L1_margin_actual": "On-target — $0 direct as expected for infrastructure. Indirect margin contribution will be measured via CS-2026-001.",
+        "L3_customer_quality_actual": "Confirmed — segments successfully isolate non-converters (1,102) from free-pack-only (5,243) from repeat buyers, enabling differentiated treatment.",
+        "L4_learning_actual": "Hypothesis supported — subscriber-level segmentation reveals the Cleetus cohort is 2.4x larger than the purchaser-only view (6,345+ vs ~2,600 estimated). 1,102 subscribers never purchased at all, proving purchaser-only segments miss ~17% of the cohort. All Creators segment ($source filter) exposed a data quality gap: Superfiliate doesn't tag Klaviyo $source consistently."
       },
       "outcome": "success",
       "closed_date": "2026-04-08",
       "file": "cgo-logs/changesets/CS-2026-002.md",
-      "notes": "Closed Apr 8 as success. 30-day measurement complete. Infrastructure delivered, CS-2026-001 unblocked. All Creators segment empty ($source issue) \u2014 flagged for future investigation.",
+      "notes": "Closed Apr 8 as success. 30-day measurement complete. Infrastructure delivered, CS-2026-001 unblocked. All Creators segment empty ($source issue) — flagged for future investigation.",
       "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": null,
@@ -238,7 +238,7 @@
       "autonomy_tier": null,
       "measurement_approaching": true,
       "urgency": "measurement_due_today",
-      "learning_note": "Built 3 Klaviyo segments for Cleetus influencer cohort \u2192 2 of 3 populated correctly (6,345+ profiles), 1 empty due to $source data gap \u2192 Subscriber-level segmentation captures 2.4x more profiles than purchaser-only; Superfiliate $source tagging needs investigation for future creator activations."
+      "learning_note": "Built 3 Klaviyo segments for Cleetus influencer cohort → 2 of 3 populated correctly (6,345+ profiles), 1 empty due to $source data gap → Subscriber-level segmentation captures 2.4x more profiles than purchaser-only; Superfiliate $source tagging needs investigation for future creator activations."
     },
     {
       "id": "CS-2026-003",
@@ -291,7 +291,7 @@
         "margin_impact": 7948,
         "confidence": "medium",
         "statistical_significance": false,
-        "_note": "Natural segmentation (not randomized). Directionally strong. margin_impact = revenue \u00d7 ~60% GM per brief economics.",
+        "_note": "Natural segmentation (not randomized). Directionally strong. margin_impact = revenue × ~60% GM per brief economics.",
         "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: revenue, margin, outcome_category, decision."
       },
       "outcome": "success",
@@ -310,7 +310,7 @@
     },
     {
       "id": "CS-2026-004",
-      "title": "Paid Media Attribution \u2014 March 7 Exclusion & Superfiliate Investigation",
+      "title": "Paid Media Attribution — March 7 Exclusion & Superfiliate Investigation",
       "subtype": "investigation",
       "surface": "paid_google",
       "status": "closed",
@@ -368,13 +368,13 @@
           "paid_search_roas_measurement": 6.66,
           "paid_search_spend_baseline": 12669,
           "paid_search_spend_measurement": 10379,
-          "custom_5144_channel_grouping": "live \u2014 uses Shopify tags (Superfiliate conversion approved/rejected) + promo codes (CLEETUS, DOC, ROMAN)",
+          "custom_5144_channel_grouping": "live — uses Shopify tags (Superfiliate conversion approved/rejected) + promo codes (CLEETUS, DOC, ROMAN)",
           "spawned_cs010_outcome": "closed_success"
         },
-        "_note": "margin_impact = null \u2014 investigation subtype per \u00a73. No direct revenue impact. Value is in preventing bad decisions (paid media baselines protected) and enabling future creator ROI measurement (Superfiliate attribution now operational).",
-        "L1_margin_actual": "On-target \u2014 investigation, no direct margin impact as projected",
-        "L3_customer_quality_actual": "Positive indirect \u2014 enables accurate Superfiliate customer segmentation for future lifecycle targeting (CS-2026-010 resolved Klaviyo property gap)",
-        "L4_learning_actual": "Hypothesis strongly supported \u2014 deterministic Shopify order tags + promo codes capture ~100% of Superfiliate-tagged orders vs 14% via click attribution. Tag-based attribution is the correct approach for influencer/creator channels where click paths are unreliable."
+        "_note": "margin_impact = null — investigation subtype per §3. No direct revenue impact. Value is in preventing bad decisions (paid media baselines protected) and enabling future creator ROI measurement (Superfiliate attribution now operational).",
+        "L1_margin_actual": "On-target — investigation, no direct margin impact as projected",
+        "L3_customer_quality_actual": "Positive indirect — enables accurate Superfiliate customer segmentation for future lifecycle targeting (CS-2026-010 resolved Klaviyo property gap)",
+        "L4_learning_actual": "Hypothesis strongly supported — deterministic Shopify order tags + promo codes capture ~100% of Superfiliate-tagged orders vs 14% via click attribution. Tag-based attribution is the correct approach for influencer/creator channels where click paths are unreliable."
       },
       "outcome": "success",
       "closed_date": "2026-04-10",
@@ -384,7 +384,7 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "learning_note": "Excluded March 7 Cleetus activation outlier from paid media trends and built Polar custom channel grouping (custom_5144) using Shopify order tags + promo codes \u2192 Paid search ROAS stabilized at 6.66x (vs 5.26x baseline), Superfiliate attribution capture went from 14% to ~100% for tagged orders \u2192 Tag-based deterministic attribution is the correct model for influencer/creator channels; click-based attribution severely undercounts (87% gap). This finding applies to all future creator partnerships."
+      "learning_note": "Excluded March 7 Cleetus activation outlier from paid media trends and built Polar custom channel grouping (custom_5144) using Shopify order tags + promo codes → Paid search ROAS stabilized at 6.66x (vs 5.26x baseline), Superfiliate attribution capture went from 14% to ~100% for tagged orders → Tag-based deterministic attribution is the correct model for influencer/creator channels; click-based attribution severely undercounts (87% gap). This finding applies to all future creator partnerships."
     },
     {
       "id": "CS-2026-005",
@@ -491,7 +491,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-006.md",
-      "notes": "Published Mar 14. High risk \u2014 Devon approved. Blocks CS-2026-024 (pause/skip).",
+      "notes": "Published Mar 14. High risk — Devon approved. Blocks CS-2026-024 (pause/skip).",
       "risk": "low",
       "review_tier": "standard",
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
@@ -680,7 +680,7 @@
     },
     {
       "id": "CS-2026-010",
-      "title": "Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
+      "title": "Klaviyo Property Definition Audit — Superfiliate Source Attribution",
       "subtype": "investigation",
       "surface": "klaviyo",
       "status": "closed",
@@ -750,12 +750,12 @@
         "margin_impact": null,
         "confidence": "high",
         "statistical_significance": true,
-        "_note": "Investigation subtype \u2014 no direct revenue. Spawned CS-2026-049 (Shopify Flow implementation) which carries the revenue impact.",
-        "L1_margin_actual": "null \u2014 investigation, no direct revenue",
-        "L3_customer_quality_actual": "confirmed \u2014 Superfiliate customer attribution gap prevents targeted retention flows. Fix designed.",
-        "L4_learning_actual": "Hypothesis supported: all 6 Superfiliate metrics fire on creator profiles only. $source contains form IDs not traffic source. Shopify order tags don't propagate to Klaviyo profile tags. Only working attribution: discount code matching on Placed Order events. Fix: Shopify Flow \u2192 Klaviyo custom property."
+        "_note": "Investigation subtype — no direct revenue. Spawned CS-2026-049 (Shopify Flow implementation) which carries the revenue impact.",
+        "L1_margin_actual": "null — investigation, no direct revenue",
+        "L3_customer_quality_actual": "confirmed — Superfiliate customer attribution gap prevents targeted retention flows. Fix designed.",
+        "L4_learning_actual": "Hypothesis supported: all 6 Superfiliate metrics fire on creator profiles only. $source contains form IDs not traffic source. Shopify order tags don't propagate to Klaviyo profile tags. Only working attribution: discount code matching on Placed Order events. Fix: Shopify Flow → Klaviyo custom property."
       },
-      "learning_note": "For [Superfiliate-acquired customers] on [Klaviyo], [property audit] revealed [all Superfiliate data lives on creator profiles, not customer profiles]. $source contains Klaviyo form IDs, not traffic attribution. Superfiliate Campaign Conversion fires on creators only with empty event properties. Shopify order tags don't propagate to profile-level Shopify Tags. Only working path: discount codes on Placed Order events. Fix: Shopify Flow triggered by 'superfiliate conversion approved' order tag \u2192 write acquisition_source + referring_creator to Klaviyo customer profiles.",
+      "learning_note": "For [Superfiliate-acquired customers] on [Klaviyo], [property audit] revealed [all Superfiliate data lives on creator profiles, not customer profiles]. $source contains Klaviyo form IDs, not traffic attribution. Superfiliate Campaign Conversion fires on creators only with empty event properties. Shopify order tags don't propagate to profile-level Shopify Tags. Only working path: discount codes on Placed Order events. Fix: Shopify Flow triggered by 'superfiliate conversion approved' order tag → write acquisition_source + referring_creator to Klaviyo customer profiles.",
       "urgency": "closed"
     },
     {
@@ -796,7 +796,7 @@
       "approved_date": "2026-03-14",
       "published_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-011.md",
-      "notes": "Published Apr 1. Science-led April Fools email \u2014 Machado 2022 qEEG study. 7-day measurement window through Apr 8. Brief updated with final creative at publish.",
+      "notes": "Published Apr 1. Science-led April Fools email — Machado 2022 qEEG study. 7-day measurement window through Apr 8. Brief updated with final creative at publish.",
       "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
@@ -810,7 +810,7 @@
       "measurement_due": "2026-04-08",
       "publish_confirmation": {
         "surface": "klaviyo",
-        "confirmation_id": "Klaviyo campaign \u2014 single send Apr 1 2026",
+        "confirmation_id": "Klaviyo campaign — single send Apr 1 2026",
         "published_at": "2026-04-01T12:00:00Z"
       },
       "scheduled_send_date": "2026-04-01",
@@ -825,7 +825,7 @@
         "primary_metric": "campaign_revenue",
         "primary_metric_baseline": "$0 (no April 1 campaign scheduled)",
         "primary_metric_result": "$1,183.61 from 15 orders ($78.91 AOV)",
-        "primary_metric_delta": "-$4,816.39 vs $6K target (-80.3%); however, within normal range ($874\u2013$2,123) for comparable non-promotional content emails",
+        "primary_metric_delta": "-$4,816.39 vs $6K target (-80.3%); however, within normal range ($874–$2,123) for comparable non-promotional content emails",
         "revenue_impact": 1183.61,
         "margin_impact": 591.81,
         "confidence": "high",
@@ -847,12 +847,12 @@
           "spam_rate": 6e-05,
           "benchmark_note": "Against 7 comparable non-promo content emails (Mar-Apr 2026): open rate #1 (46.5% vs 41.5% avg), click rate #1 (0.71% vs 0.64% avg), CTOR top 3 (1.52% vs 1.56% avg). Revenue mid-range ($1,184 vs $1,908 avg for revenue-generating sends)."
         },
-        "_note": "margin_impact = $1,183.61 \u00d7 50% DTC Shopify margin = $591.81. Classified as underperformed vs original $6K target, but targets were misset \u2014 $6K and 8% CTR were promotional-campaign benchmarks applied to a non-promotional science engagement email. Actual performance led comparable content emails on engagement metrics.",
-        "L1_margin_actual": "Below vs original target ($592 vs $3,000). However, target was based on promotional benchmarks \u2014 comparable content email margin range is $437\u2013$1,061.",
-        "L3_customer_quality_actual": "Inconclusive \u2014 15 conversions too few to assess quality. $78.91 AOV is consistent with standard DTC orders.",
+        "_note": "margin_impact = $1,183.61 × 50% DTC Shopify margin = $591.81. Classified as underperformed vs original $6K target, but targets were misset — $6K and 8% CTR were promotional-campaign benchmarks applied to a non-promotional science engagement email. Actual performance led comparable content emails on engagement metrics.",
+        "L1_margin_actual": "Below vs original target ($592 vs $3,000). However, target was based on promotional benchmarks — comparable content email margin range is $437–$1,061.",
+        "L3_customer_quality_actual": "Inconclusive — 15 conversions too few to assess quality. $78.91 AOV is consistent with standard DTC orders.",
         "L4_learning_actual": "Hypothesis partially supported: science subject lines generate top-of-class opens (46.5%, #1 in set). CTOR of 1.52% is in line with content emails, not elevated. Key insight: science credibility hooks open emails effectively but don't differentially drive clicks vs other content themes. The original 8% CTR target was based on promotional campaigns with offers, not content emails. Future science emails should be benchmarked against content-email baselines (~0.6% click rate, ~1.5% CTOR, ~$1K-$2K revenue for ~17K sends)."
       },
-      "learning_note": "Science-led April Fools email sent to 17K (not 51K \u2014 standard suppressions) \u2192 $1,184 revenue, 46.5% open rate (#1 in class), 0.71% click rate (#1 in class), 1.52% CTOR \u2192 Revenue underperformed vs $6K target but target was misset: $6K and 8% CTR were promo benchmarks, not content-email benchmarks. Actual performance led all comparable non-promo sends on engagement. Correct baseline for non-promo science emails: ~$1K-$2K revenue, ~0.6% click rate, ~1.5% CTOR."
+      "learning_note": "Science-led April Fools email sent to 17K (not 51K — standard suppressions) → $1,184 revenue, 46.5% open rate (#1 in class), 0.71% click rate (#1 in class), 1.52% CTOR → Revenue underperformed vs $6K target but target was misset: $6K and 8% CTR were promo benchmarks, not content-email benchmarks. Actual performance led all comparable non-promo sends on engagement. Correct baseline for non-promo science emails: ~$1K-$2K revenue, ~0.6% click rate, ~1.5% CTOR."
     },
     {
       "id": "CS-2026-012",
@@ -893,7 +893,7 @@
       "review_tier": "standard",
       "published_date": "2026-04-07",
       "file": "cgo-logs/changesets/CS-2026-012.md",
-      "notes": "RESCHEDULED: Send ~4/7 (Tue). BLOCKED: Unbound sweepstakes prizes not finalized by team. Drafts ready with Underground Ecom, awaiting final assets. Original send date: 4/3. PUBLISHED 2026-04-07: Unbound sweepstakes email scheduled for afternoon send. SMS paired send also live (same day per brief \u00a77). Email scheduled 2:15pm EST.",
+      "notes": "RESCHEDULED: Send ~4/7 (Tue). BLOCKED: Unbound sweepstakes prizes not finalized by team. Drafts ready with Underground Ecom, awaiting final assets. Original send date: 4/3. PUBLISHED 2026-04-07: Unbound sweepstakes email scheduled for afternoon send. SMS paired send also live (same day per brief §7). Email scheduled 2:15pm EST.",
       "sweep_flags": [],
       "last_sweep": "2026-04-03",
       "risk": "low",
@@ -922,7 +922,7 @@
       "title": "YOUR SPRING DEEP WORK PROTOCOL",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
@@ -956,7 +956,7 @@
       "review_tier": "express",
       "published_date": "2026-04-02",
       "file": "cgo-logs/changesets/CS-2026-013.md",
-      "notes": "Published 4/2. Scheduled send: 4/3. Pulled forward from 4/7 \u2014 swapped with CS-2026-012 (Unbound blocked). Draft finalized with Underground Ecom. 7-day measurement window through 4/10.",
+      "notes": "Published 4/2. Scheduled send: 4/3. Pulled forward from 4/7 — swapped with CS-2026-012 (Unbound blocked). Draft finalized with Underground Ecom. 7-day measurement window through 4/10.",
       "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
@@ -966,17 +966,16 @@
       "measurement_due": "2026-04-10",
       "scheduled_send_date": "2026-04-03",
       "execution_target_date": null,
-      "executed_date": null,
+      "executed_date": "2026-04-03",
       "autonomy_tier": null,
-      "urgency": "measurement_approaching",
-      "measurement_outcome": "inconclusive",
-      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session.",
+      "measurement_outcome": "underperformed",
+      "measurement_outcome_note": "Closed 2026-04-10. Revenue -60.4% vs expected. Protocol framing strong opens, weak conversion.",
       "measurement_result": {
         "primary_kpi": "winback_reactivation_rate",
         "baseline": "~0% (no prior winback on this segment)",
         "target": ">=5% reactivation",
         "actual": "0.088% conversion rate (16 orders / 18,213 recipients)",
-        "delta": "well below target but metric mismatch \u2014 brief is Lifestyle/Community email, not winback",
+        "delta": "well below target but metric mismatch — brief is Lifestyle/Community email, not winback",
         "secondary_kpis": {
           "open_rate": "43.0%",
           "click_rate": "0.62% (113 unique clicks)",
@@ -989,10 +988,47 @@
         "statistical_significance": "sufficient sample, but wrong metric assigned",
         "confidence": "low",
         "analysis_date": "2026-04-10",
-        "notes": "Tracker primary_metric (winback_reactivation_rate) doesn't match brief \u2014 this is a Lifestyle/Community email to Engaged 3M + Prospects Engaged, not a winback segment. Campaign performed in normal range for engagement emails. Metric needs correction before meaningful measurement."
+        "notes": "Tracker primary_metric (winback_reactivation_rate) doesn't match brief — this is a Lifestyle/Community email to Engaged 3M + Prospects Engaged, not a winback segment. Campaign performed in normal range for engagement emails. Metric needs correction before meaningful measurement."
       },
       "requires_human_review": true,
-      "review_flagged_date": "2026-04-10"
+      "review_flagged_date": "2026-04-10",
+      "outcome": "underperformed",
+      "closed_date": "2026-04-10",
+      "actual_impact": {
+        "primary_metric": "winback_reactivation_rate",
+        "primary_metric_baseline": "~0% (lapsed/engaged non-buyers)",
+        "primary_metric_result": "0.088%",
+        "primary_metric_delta": "-4.91pp vs 5% target",
+        "revenue_impact": 1425.23,
+        "margin_impact": 712.62,
+        "confidence": "high",
+        "statistical_significance": true,
+        "_detail": {
+          "recipients": 18213,
+          "delivered": 18206,
+          "delivery_rate": 0.9996,
+          "open_rate": 0.4299,
+          "opens_unique": 7826,
+          "click_rate": 0.0062,
+          "click_to_open_rate": 0.0144,
+          "clicks_unique": 113,
+          "conversion_rate": 0.00088,
+          "conversions": 16,
+          "revenue": 1425.23,
+          "aov": 89.08,
+          "rpr": 0.078,
+          "unsubscribe_rate": 0.0026,
+          "unsubscribes": 48,
+          "estimated_send_size_from_brief": 51643,
+          "actual_send_size": 18213,
+          "send_size_reduction_pct": 64.7
+        },
+        "_note": "margin_impact computed as $1,425.23 x 50% DTC margin = $712.62. Revenue miss driven by two factors: (1) actual send size was 18,213 vs projected 51,643 (65% suppressed), and (2) low CVR of 0.088% vs 5% target. Protocol/how-to framing drove strong 43% open rate but 1.44% CTOR was poor.",
+        "L1_margin_actual": "Below — $712.62 vs $1,800 expected (-60.4%). Driven by both send-size reduction and low CVR.",
+        "L3_customer_quality_actual": "Too early — only 16 conversions, insufficient cohort to assess quality. $89.08 AOV is healthy.",
+        "L4_learning_actual": "Hypothesis not supported. Protocol framing drove strong opens (43%) but extremely low click-through (0.62%) and conversion (0.088%). Product must be embedded in protocol steps, not appended as separate CTA. Segment economics must account for suppression (~18K reachable, not 51K)."
+      },
+      "learning_note": "Protocol-framed email ('3 Steps for Better Focus') sent to Engaged 3M + Prospects Engaged → 43% open rate but 0.62% CTR and 0.088% CVR ($1,425 revenue vs $3,600 expected) → Protocol/how-to framing creates strong curiosity-driven opens but fails to convert when product is positioned as an add-on rather than integral to the protocol. Future emails should embed product directly into protocol steps. Additionally, segment-level economics must account for suppression: actual reachable audience was 18K, not 51K."
     },
     {
       "id": "CS-2026-014",
@@ -1153,7 +1189,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-016.md",
-      "notes": "Scheduled send: 4/16. Brief status: DRAFT \u2014 needs Devon approval on Robberechts 2023 claim framing before send. Corrected from published (email not yet sent).",
+      "notes": "Scheduled send: 4/16. Brief status: DRAFT — needs Devon approval on Robberechts 2023 claim framing before send. Corrected from published (email not yet sent).",
       "sweep_flags": [],
       "last_sweep": "2026-03-25",
       "risk": "low",
@@ -1207,7 +1243,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-017.md",
-      "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized \u2014 supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative.",
+      "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized — supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative.",
       "sweep_flags": [],
       "last_sweep": "2026-04-03",
       "risk": "low",
@@ -1457,7 +1493,7 @@
     },
     {
       "id": "CS-2026-022",
-      "title": "MAY IS LOADING \u2014 STOCK UP",
+      "title": "MAY IS LOADING — STOCK UP",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "approved",
@@ -1567,13 +1603,13 @@
           "open_rate": "33.8-45.2% (baseline 29.3%, target 33% exceeded)",
           "orders": 18
         },
-        "_note": "Partial success: open rate target exceeded (33.8-45.2% vs 33% target), CTR target not met (0.62-0.66% vs 1.0% target). margin_impact = revenue \u00d7 50% flow-through per brief.",
+        "_note": "Partial success: open rate target exceeded (33.8-45.2% vs 33% target), CTR target not met (0.62-0.66% vs 1.0% target). margin_impact = revenue × 50% flow-through per brief.",
         "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: campaign_ctr, campaign_open_rate, revenue, orders."
       },
       "outcome": "partial_success",
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-023.md",
-      "notes": "Closed: Partial success. SMS-inspired subject lines improved open rates significantly (33.8-45.2% vs 29.3% baseline) but CTR improvement marginal (0.62-0.66% vs 0.57%, target 1.0% not met). Key learning: bottleneck is in-email CTA/body content, not subject lines. Tests B (CTA placement) and C (segment refresh) not executed \u2014 recommended for next cycle. Executed by Underground Ecom (Kiara Schuman, Andrej Jesic).",
+      "notes": "Closed: Partial success. SMS-inspired subject lines improved open rates significantly (33.8-45.2% vs 29.3% baseline) but CTR improvement marginal (0.62-0.66% vs 0.57%, target 1.0% not met). Key learning: bottleneck is in-email CTA/body content, not subject lines. Tests B (CTA placement) and C (segment refresh) not executed — recommended for next cycle. Executed by Underground Ecom (Kiara Schuman, Andrej Jesic).",
       "risk": "low",
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
@@ -1615,12 +1651,12 @@
           "downside": 4800
         },
         "primary_metric": "voluntary_churn_rate",
-        "primary_metric_target": "\u22642.5% monthly voluntary churn (\u226515% reduction from ~2.9% baseline)",
-        "L1_margin": "$1,200/mo expected contribution margin ($2,400 prevented-churn revenue \u00d7 50% DTC margin)",
-        "L2_cash": "positive \u2014 subscription revenue is recurring DTC, improves cash predictability by retaining subscribers vs one-time re-acquisition",
-        "L3_customer_quality": "strongly positive \u2014 pause/skip preserves customer relationship; pausers resume at 3-5x rate of cancellers, preserving compounding subscription LTV",
-        "L4_learning": "Will prominent pause/skip options reduce voluntary churn by \u226515% without increasing delayed cancellation? Secondary: what is actual resume rate after pause?",
-        "L5_brand_check": "pass \u2014 no discounting, no health claims, no pricing change; pause/skip is a customer-service improvement"
+        "primary_metric_target": "≤2.5% monthly voluntary churn (≥15% reduction from ~2.9% baseline)",
+        "L1_margin": "$1,200/mo expected contribution margin ($2,400 prevented-churn revenue × 50% DTC margin)",
+        "L2_cash": "positive — subscription revenue is recurring DTC, improves cash predictability by retaining subscribers vs one-time re-acquisition",
+        "L3_customer_quality": "strongly positive — pause/skip preserves customer relationship; pausers resume at 3-5x rate of cancellers, preserving compounding subscription LTV",
+        "L4_learning": "Will prominent pause/skip options reduce voluntary churn by ≥15% without increasing delayed cancellation? Secondary: what is actual resume rate after pause?",
+        "L5_brand_check": "pass — no discounting, no health claims, no pricing change; pause/skip is a customer-service improvement"
       },
       "routed_to": [
         "Katie"
@@ -1632,7 +1668,7 @@
       "review_tier": "full",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-024.md",
-      "notes": "CLOSED \u2014 PARTIALLY COMPLETE. Scope item 1 (Recharge pause/skip config) was already live before ChangeSet creation. Scope items 2-4 (proactive flows) not built: no reliable signal to identify at-risk subscribers proactively, and adding net-new touchpoints risks increasing churn rather than reducing it. Voluntary churn data confirmed accessible via Recharge Churn tool > Cancellation Prevents > Performance > Cancellation Survey Response. Successor ChangeSet to optimize existing upcoming order notification emails instead.",
+      "notes": "CLOSED — PARTIALLY COMPLETE. Scope item 1 (Recharge pause/skip config) was already live before ChangeSet creation. Scope items 2-4 (proactive flows) not built: no reliable signal to identify at-risk subscribers proactively, and adding net-new touchpoints risks increasing churn rather than reducing it. Voluntary churn data confirmed accessible via Recharge Churn tool > Cancellation Prevents > Performance > Cancellation Survey Response. Successor ChangeSet to optimize existing upcoming order notification emails instead.",
       "sweep_flags": [],
       "last_sweep": "2026-04-03",
       "risk": "low",
@@ -1648,7 +1684,7 @@
       "stale_days": 21,
       "urgency": "none",
       "last_status_change": "2026-04-07",
-      "hypothesis": "Introducing a prominent pause/skip option in the subscription management flow and pre-churn touchpoints will reduce voluntary churn by \u226515% while retaining LTV",
+      "hypothesis": "Introducing a prominent pause/skip option in the subscription management flow and pre-churn touchpoints will reduce voluntary churn by ≥15% while retaining LTV",
       "closed_date": "2026-04-07",
       "closed_reason": "partially_complete",
       "successor": "CS-2026-052",
@@ -1770,13 +1806,13 @@
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
         "MEASUREMENT_OVERDUE",
-        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW content velocity). Session 24 sweep."
+        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) — BAW content velocity). Session 24 sweep."
       ],
       "last_sweep": "2026-04-03",
       "risk": "low",
       "sweep_flag": "FORCE_CLOSED",
       "sweep_date": "2026-04-03",
-      "sweep_note": "Force-closed Session 26. BAW Content Velocity \u2014 11d overdue measurement. No outcome data in briefs. Owner: Nick + Charlotte.",
+      "sweep_note": "Force-closed Session 26. BAW Content Velocity — 11d overdue measurement. No outcome data in briefs. Owner: Nick + Charlotte.",
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
@@ -1838,13 +1874,13 @@
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
         "MEASUREMENT_OVERDUE",
-        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW Tier A fast-track). Session 24 sweep."
+        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) — BAW Tier A fast-track). Session 24 sweep."
       ],
       "last_sweep": "2026-04-03",
       "risk": "low",
       "sweep_flag": "FORCE_CLOSED",
       "sweep_date": "2026-04-03",
-      "sweep_note": "Force-closed Session 26. BAW Tier A Fast-Track \u2014 11d overdue measurement. No outcome data. Owner: Charlotte + Cliff.",
+      "sweep_note": "Force-closed Session 26. BAW Tier A Fast-Track — 11d overdue measurement. No outcome data. Owner: Charlotte + Cliff.",
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
@@ -1853,7 +1889,7 @@
     },
     {
       "id": "CS-2026-028",
-      "title": "FB Prospecting Budget Reallocation \u2014 Meta Leadville + Google Pmax",
+      "title": "FB Prospecting Budget Reallocation — Meta Leadville + Google Pmax",
       "subtype": "implementation",
       "surface": "paid_google",
       "status": "closed",
@@ -1896,8 +1932,8 @@
       "actual_impact": {
         "primary_metric": "blended_paid_media_roas",
         "primary_metric_baseline": "See CS-2026-028 brief",
-        "primary_metric_result": "Inconclusive \u2014 confounded by demand cliff",
-        "primary_metric_delta": "N/A \u2014 external confound",
+        "primary_metric_result": "Inconclusive — confounded by demand cliff",
+        "primary_metric_delta": "N/A — external confound",
         "revenue_impact": null,
         "margin_impact": null,
         "confidence": "low",
@@ -1905,7 +1941,7 @@
         "_tactical_findings": {
           "fb_prospecting_cut": "78.8% (more aggressive than planned 50%)",
           "leadville_roas_at_scale": "3.35x at 2x budget",
-          "pmax_roas_decline": "3.90x \u2192 2.05x (diminishing returns at scale)"
+          "pmax_roas_decline": "3.90x → 2.05x (diminishing returns at scale)"
         },
         "_note": "Revenue and margin impact could not be isolated due to concurrent demand cliff. Tactical findings preserved in _tactical_findings.",
         "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: revenue_change, fb_prospecting_cut, leadville_roas_at_scale, pmax_roas_decline."
@@ -1913,7 +1949,7 @@
       "outcome": "executed_inconclusive",
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-028.md",
-      "notes": "Reallocation executed correctly. Measurement inconclusive \u2014 baseline included peak Leadville Sweepstakes + BAW promotional period, creating invalid comparison. Demand cliff (documented in CS-033) drove universal conversion declines across all channels. Key learning: Pmax has a scaling ceiling; Leadville absorbed budget well at 3.35x ROAS. Creative gate for FB prospecting remains in effect.",
+      "notes": "Reallocation executed correctly. Measurement inconclusive — baseline included peak Leadville Sweepstakes + BAW promotional period, creating invalid comparison. Demand cliff (documented in CS-033) drove universal conversion declines across all channels. Key learning: Pmax has a scaling ceiling; Leadville absorbed budget well at 3.35x ROAS. Creative gate for FB prospecting remains in effect.",
       "risk": "low",
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
@@ -1924,7 +1960,7 @@
     },
     {
       "id": "CS-2026-029",
-      "title": "Graduation: Matt Hughes Reel \u2192 Paid Social Amplification",
+      "title": "Graduation: Matt Hughes Reel → Paid Social Amplification",
       "subtype": "implementation",
       "surface": "paid_meta",
       "status": "closed",
@@ -1984,13 +2020,13 @@
           "gross_margin_dollars": 465.5,
           "contribution_margin_after_spend": 368.18
         },
-        "_note": "Ran at ~10% of planned budget due to creative delay. ROAS of 9.57x far exceeds 1.5x target. margin_impact = (revenue \u00d7 50% GM) - ad_spend = $465.5 - $97.32 = $368.18. Two organic variants boosted in BAW Meta campaign. Greayteam variant: $76.70 spend, $438.44 rev, 5.72x ROAS. Brain Week variant: $20.62 spend, $492.57 rev, 23.89x ROAS. Test ran at ~10% of planned budget due to Charlotte creative delay; Katie launched organic variants directly.",
+        "_note": "Ran at ~10% of planned budget due to creative delay. ROAS of 9.57x far exceeds 1.5x target. margin_impact = (revenue × 50% GM) - ad_spend = $465.5 - $97.32 = $368.18. Two organic variants boosted in BAW Meta campaign. Greayteam variant: $76.70 spend, $438.44 rev, 5.72x ROAS. Brain Week variant: $20.62 spend, $492.57 rev, 23.89x ROAS. Test ran at ~10% of planned budget due to Charlotte creative delay; Katie launched organic variants directly.",
         "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: revenue, spend, roas, purchases, notes."
       },
       "outcome": "success",
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-029.md",
-      "notes": "Published Mar 17. Closed Apr 1 as SUCCESS. Combined 9.57x ROAS (target 1.5x). Organic variants outperformed \u2014 no custom creative needed. Budget-constrained but efficiency exceptional.",
+      "notes": "Published Mar 17. Closed Apr 1 as SUCCESS. Combined 9.57x ROAS (target 1.5x). Organic variants outperformed — no custom creative needed. Budget-constrained but efficiency exceptional.",
       "risk": "low",
       "sweep_flags": [],
       "last_sweep": "2026-04-01",
@@ -2001,7 +2037,7 @@
     },
     {
       "id": "CS-2026-030",
-      "title": "BAW One-Time Purchaser \u2192 Subscription Conversion",
+      "title": "BAW One-Time Purchaser → Subscription Conversion",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "published",
@@ -2046,7 +2082,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-030.md",
-      "notes": "Revised 2026-04-01: Repositioned from BAW urgency promo (window expired) to repurchase-window subscription conversion. Target launch Apr 3. Approved via standard hierarchy review \u2014 positive at all 5 levels, no trade-offs. Segment: BAW discount code one-time purchasers without active subscription. | 2026-04-06: Advanced to published. Klaviyo build in progress \u2014 Katie building segment + 3-touch flow today. executed_date pending confirmation. Measurement window (7d) starts from executed_date. | 2026-04-06: Execution confirmed. Flow live in Klaviyo, segment-triggered, past profiles added. Measurement window: Apr 6-13 (7d).",
+      "notes": "Revised 2026-04-01: Repositioned from BAW urgency promo (window expired) to repurchase-window subscription conversion. Target launch Apr 3. Approved via standard hierarchy review — positive at all 5 levels, no trade-offs. Segment: BAW discount code one-time purchasers without active subscription. | 2026-04-06: Advanced to published. Klaviyo build in progress — Katie building segment + 3-touch flow today. executed_date pending confirmation. Measurement window (7d) starts from executed_date. | 2026-04-06: Execution confirmed. Flow live in Klaviyo, segment-triggered, past profiles added. Measurement window: Apr 6-13 (7d).",
       "sweep_flags": [],
       "last_sweep": "2026-04-06",
       "risk": "low",
@@ -2059,7 +2095,7 @@
     },
     {
       "id": "CS-2026-031",
-      "title": "Email Flow CTA Redesign \u2014 High-Volume Low-CTR Messages",
+      "title": "Email Flow CTA Redesign — High-Volume Low-CTR Messages",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
@@ -2092,7 +2128,7 @@
       "routed_via": "auto",
       "routed_date": "2026-03-19",
       "file": "cgo-logs/changesets/CS-2026-031.md",
-      "notes": "Rescoped Mar 23 after Klaviyo API audit. Real scope: ~15 high-volume low-CTR flow emails (not 121 flows). Brief still in Draft \u2014 needs /changeset-review before advancing. Corrected metadata: was incorrectly tagged paid_media/L1/graduation_roas.",
+      "notes": "Rescoped Mar 23 after Klaviyo API audit. Real scope: ~15 high-volume low-CTR flow emails (not 121 flows). Brief still in Draft — needs /changeset-review before advancing. Corrected metadata: was incorrectly tagged paid_media/L1/graduation_roas.",
       "risk": "medium",
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-22",
@@ -2289,10 +2325,10 @@
         "primary_metric": "winback_reactivation_rate",
         "primary_metric_target": ">=5% reactivation (from ~0% baseline)",
         "L1_margin": "$1,800 expected contribution margin ($3,600 revenue x 50% DTC margin). SMS has lower per-send cost than email at Kenetik volume.",
-        "L2_cash": "neutral \u2014 DTC Klaviyo revenue, standard cash cycle",
-        "L3_customer_quality": "positive \u2014 re-engages lapsed subscribers via preferred channel (SMS), testing >=5% winback reactivation from ~0% baseline",
+        "L2_cash": "neutral — DTC Klaviyo revenue, standard cash cycle",
+        "L3_customer_quality": "positive — re-engages lapsed subscribers via preferred channel (SMS), testing >=5% winback reactivation from ~0% baseline",
         "L4_learning": "Will SMS-first sends (4h before email) increase promotional campaign click rate by 3x and RPR by 2x vs simultaneous sends?",
-        "L5_brand_check": "pass \u2014 promotional content only, no health claims, fully reversible experiment"
+        "L5_brand_check": "pass — promotional content only, no health claims, fully reversible experiment"
       },
       "routed_to": [
         "Katie"
@@ -2345,13 +2381,13 @@
       "actual_impact": {
         "primary_metric": "review_submission_rate",
         "primary_metric_baseline": "3.7% (12-month average)",
-        "primary_metric_result": "N/A \u2014 investigation, not implementation",
+        "primary_metric_result": "N/A — investigation, not implementation",
         "primary_metric_delta": "N/A",
         "revenue_impact": 0,
         "margin_impact": null,
         "confidence": "high",
         "statistical_significance": null,
-        "_note": "Investigation subtype \u2014 no direct revenue. Spawned CS-2026-053.",
+        "_note": "Investigation subtype — no direct revenue. Spawned CS-2026-053.",
         "L4_learning_actual": "Review submission rate is 3.7% (declining from 6.4% peak). Winning variant gets only 29% traffic. No LoyaltyLion incentive. SMS 33.5% click but 0.6% CVR."
       },
       "routed_to": [
@@ -2373,7 +2409,7 @@
       "notes": "Ready for graduation.",
       "sweep_flag": null,
       "sweep_date": "2026-04-03",
-      "sweep_note": "Executed 2026-04-07 \u2014 investigation kicked off.",
+      "sweep_note": "Executed 2026-04-07 — investigation kicked off.",
       "scheduled_send_date": null,
       "last_sweep": "2026-04-03",
       "execution_target_date": null,
@@ -2386,14 +2422,14 @@
       "measurement_start": "2026-04-07",
       "publish_confirmation": {
         "surface": "klaviyo",
-        "confirmation_id": "Investigation kickoff \u2014 audit of flow Rcgah9",
+        "confirmation_id": "Investigation kickoff — audit of flow Rcgah9",
         "published_at": "2026-04-07T18:00:00Z"
       },
       "learning_note": "For [post-purchase review requests] on [Klaviyo], investigation found submission rate is 3.7% and declining. Key insight: 'Copy of' variant outperforms original by 39% RPR but only gets 29% of traffic. LoyaltyLion incentive missing. SMS clicks don't convert. Spawned CS-2026-053."
     },
     {
       "id": "CS-2026-037",
-      "title": "Amazon Search Term Harvest \u2014 Q1 Keyword Gaps",
+      "title": "Amazon Search Term Harvest — Q1 Keyword Gaps",
       "subtype": "investigation",
       "surface": "amazon",
       "status": "approved",
@@ -2560,7 +2596,7 @@
     },
     {
       "id": "CS-2026-040",
-      "title": "Creator Reactivation Campaign (3-Tier) \u2014 Aligned with April Code Boosts",
+      "title": "Creator Reactivation Campaign (3-Tier) — Aligned with April Code Boosts",
       "subtype": "implementation",
       "surface": "partner",
       "status": "approved",
@@ -2814,9 +2850,9 @@
       "outcome": "invalid_premise",
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-044.md",
-      "notes": "CLOSED \u2014 Invalid. Source content (Ashton Hall videos) were paid ads, not organic posts. Graduation pipeline does not apply. Social media manager confirmed these were never posted organically. Devon notified. CS-045 created for proper Matt Hughes graduation. Graduation scan should filter out paid-distributed content.",
+      "notes": "CLOSED — Invalid. Source content (Ashton Hall videos) were paid ads, not organic posts. Graduation pipeline does not apply. Social media manager confirmed these were never posted organically. Devon notified. CS-045 created for proper Matt Hughes graduation. Graduation scan should filter out paid-distributed content.",
       "risk": "medium",
-      "_outcome_note": "Graduation premise was wrong \u2014 videos were paid ads, not organic",
+      "_outcome_note": "Graduation premise was wrong — videos were paid ads, not organic",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
@@ -2824,7 +2860,7 @@
     },
     {
       "id": "CS-2026-045",
-      "title": "Scale: Matt Hughes Athlete Content \u2192 Paid Meta (Proven 9.57x ROAS)",
+      "title": "Scale: Matt Hughes Athlete Content → Paid Meta (Proven 9.57x ROAS)",
       "subtype": "implementation",
       "surface": "paid_meta",
       "status": "published",
@@ -2868,7 +2904,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-045.md",
-      "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING \u2014 Katie to update after Meta publish.",
+      "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING — Katie to update after Meta publish.",
       "risk": "low",
       "ad_platform_refs": null,
       "execution_target_date": null,
@@ -2878,7 +2914,7 @@
     },
     {
       "id": "CS-2026-046",
-      "title": "Homepage Product Grid ATC Bug \u2014 Emergency Fix",
+      "title": "Homepage Product Grid ATC Bug — Emergency Fix",
       "subtype": "quick",
       "surface": "dtc_website",
       "status": "published",
@@ -2914,7 +2950,7 @@
       "notes": "Root cause: Mar 23 template rewrite broke JS class selectors. Fix deployed Apr 3. ATC rate recovering from ~12% toward 35% baseline. Measurement window Apr 3-10.",
       "measurement_window": "7d from fix deployment",
       "autonomy_tier": 2,
-      "shadow_classification": "Tier 2 \u2014 critical risk, multi-surface investigation, not eligible for autonomous execution",
+      "shadow_classification": "Tier 2 — critical risk, multi-surface investigation, not eligible for autonomous execution",
       "approved_by": "Devon",
       "approved_date": "2026-04-03",
       "review_tier": "full",
@@ -2925,7 +2961,7 @@
       "measurement_due": "2026-04-10",
       "publish_confirmation": {
         "surface": "shopify",
-        "confirmation_id": "Investigation kickoff \u2014 Slack notification to Katie, Nick, Cliff",
+        "confirmation_id": "Investigation kickoff — Slack notification to Katie, Nick, Cliff",
         "published_at": "2026-04-03T06:45:00Z"
       },
       "actual_impact": {
@@ -2942,7 +2978,7 @@
       "executed_date": null,
       "urgency": "measurement_approaching",
       "measurement_outcome": "underperformed",
-      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session.",
+      "measurement_outcome_note": "Measurement due 2026-04-10 — data pull required. Retry next session.",
       "measurement_result": {
         "primary_kpi": "checkout_cvr",
         "baseline_broken_period": "ATC 12%, CVR 2.5%, ~95 orders/day, ~$7.5K/day (Mar 27-Apr 2)",
@@ -3003,7 +3039,7 @@
           }
         },
         "sample_size": "10,219 sessions over 7 days",
-        "statistical_significance": "yes \u2014 sufficient sample, clear pattern",
+        "statistical_significance": "yes — sufficient sample, clear pattern",
         "confidence": "high",
         "analysis_date": "2026-04-10",
         "notes": "ATC rate did NOT recover to pre-bug levels. Post-fix average ATC (~12.3%) is essentially unchanged from broken period (~12%). Apr 5 spike (28.1% ATC) was driven by email campaign traffic, not organic homepage recovery. Possible causes: fix was partial, second bug exists, or traffic mix shifted away from homepage. Revenue improved marginally vs broken period ($60K/8d vs $46K/7d) but still ~60% below pre-bug run rate."
@@ -3013,7 +3049,7 @@
     },
     {
       "id": "CS-2026-047",
-      "title": "Brain Health Content Bundle \u2014 Trend Capture + Gut-Brain Science",
+      "title": "Brain Health Content Bundle — Trend Capture + Gut-Brain Science",
       "status": "draft",
       "owner": "Charlotte + Brandon",
       "approver": "Nick",
@@ -3040,7 +3076,7 @@
     },
     {
       "id": "CS-2026-048",
-      "title": "Graduation: TT Ashton Hall 'Longevity > Hype' \u2192 Paid Amplification",
+      "title": "Graduation: TT Ashton Hall 'Longevity > Hype' → Paid Amplification",
       "subtype": "implementation",
       "surface": "paid_meta",
       "status": "draft",
@@ -3083,7 +3119,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-048.md",
-      "notes": "Moe weekly graduation scan 2026-04-06. TT Ashton Hall 'longevity > hype' post \u2014 5.7% engagement rate (threshold: 5%). Creator content, strong engagement signal. Draft for Katie review.",
+      "notes": "Moe weekly graduation scan 2026-04-06. TT Ashton Hall 'longevity > hype' post — 5.7% engagement rate (threshold: 5%). Creator content, strong engagement signal. Draft for Katie review.",
       "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": null,
@@ -3093,7 +3129,7 @@
     },
     {
       "id": "CS-2026-049",
-      "title": "Shopify Flow \u2192 Klaviyo Superfiliate Customer Attribution",
+      "title": "Shopify Flow → Klaviyo Superfiliate Customer Attribution",
       "subtype": "implementation",
       "surface": "dtc_website",
       "status": "draft",
@@ -3119,11 +3155,11 @@
         },
         "primary_metric": "profiles_with_acquisition_source",
         "primary_metric_target": ">90% of Superfiliate orders matched",
-        "L1_margin": "$1,300/mo expected \u2014 enables targeted retention flows for creator-acquired cohorts",
-        "L2_cash": "neutral \u2014 DTC revenue, standard cash cycle",
-        "L3_customer_quality": "positive \u2014 enables per-creator cohort targeting, unlocks Superfiliate-specific retention flows",
+        "L1_margin": "$1,300/mo expected — enables targeted retention flows for creator-acquired cohorts",
+        "L2_cash": "neutral — DTC revenue, standard cash cycle",
+        "L3_customer_quality": "positive — enables per-creator cohort targeting, unlocks Superfiliate-specific retention flows",
         "L4_learning": "Will profile-level Superfiliate attribution enable measurably better retention outcomes vs discount-code-only segmentation?",
-        "L5_brand_check": "pass \u2014 backend data operation, no customer-facing impact"
+        "L5_brand_check": "pass — backend data operation, no customer-facing impact"
       },
       "routed_to": [
         "Katie",
@@ -3279,10 +3315,10 @@
         "primary_metric": "voluntary_churn_rate_too_much_product",
         "primary_metric_target": "<=18% of voluntary churn reasons (from 23% baseline)",
         "L1_margin": "$1,200/mo expected contribution margin from prevented churn",
-        "L2_cash": "positive \u2014 retained subscribers = recurring DTC revenue with predictable cash timing",
-        "L3_customer_quality": "positive \u2014 subscribers who skip and return have higher LTV than cancellers; L3 reinforces L1 via compounding subscription LTV",
+        "L2_cash": "positive — retained subscribers = recurring DTC revenue with predictable cash timing",
+        "L3_customer_quality": "positive — subscribers who skip and return have higher LTV than cancellers; L3 reinforces L1 via compounding subscription LTV",
         "L4_learning": "Does embedding value reinforcement and skip/reschedule CTAs in transactional upcoming order email reduce 'too much product' churn?",
-        "L5_brand_check": "pass \u2014 no discounting, no health claims beyond Tier A, customer-service improvement only"
+        "L5_brand_check": "pass — no discounting, no health claims beyond Tier A, customer-service improvement only"
       },
       "review_tier": "full",
       "linked_calendar_activity": null,
@@ -3343,9 +3379,9 @@
         },
         "primary_metric": "review_submission_rate",
         "primary_metric_target": ">=8% review submission rate",
-        "L1_margin": "$375/mo expected \u2014 direct RPR lift + indirect PDP conversion from higher review volume",
-        "L2_cash": "neutral \u2014 DTC revenue, standard cash cycle",
-        "L3_customer_quality": "positive \u2014 LoyaltyLion points reciprocity + review writers have 2-3x higher repeat rate",
+        "L1_margin": "$375/mo expected — direct RPR lift + indirect PDP conversion from higher review volume",
+        "L2_cash": "neutral — DTC revenue, standard cash cycle",
+        "L3_customer_quality": "positive — LoyaltyLion points reciprocity + review writers have 2-3x higher repeat rate",
         "L4_learning": "Does LoyaltyLion points incentive meaningfully lift review submission rate?",
         "L5_brand_check": "pass"
       },
@@ -3374,7 +3410,7 @@
     },
     {
       "id": "CS-2026-054",
-      "title": "Creator Onboarding Activation Funnel \u2014 14-Day New Enrollee Sequence",
+      "title": "Creator Onboarding Activation Funnel — 14-Day New Enrollee Sequence",
       "subtype": "implementation",
       "surface": "superfiliate",
       "status": "draft",
@@ -3429,7 +3465,7 @@
     },
     {
       "id": "CS-2026-055",
-      "title": "Content Hypothesis Testing Sprint \u2014 H-002 + H-003 (7-Day Apr 8-15)",
+      "title": "Content Hypothesis Testing Sprint — H-002 + H-003 (7-Day Apr 8-15)",
       "subtype": "investigation",
       "surface": "sprout",
       "status": "draft",
@@ -3505,7 +3541,7 @@
     },
     {
       "id": "CS-2026-057",
-      "title": "D07/D13 Content Drought \u2014 Sprout Published-Post Verification",
+      "title": "D07/D13 Content Drought — Sprout Published-Post Verification",
       "subtype": "implementation",
       "surface": "data_pipeline",
       "status": "draft",
@@ -3526,7 +3562,7 @@
     },
     {
       "id": "CS-2026-058",
-      "title": "Stress Awareness Month \u2014 De-Stress PR Kit Creator Activation",
+      "title": "Stress Awareness Month — De-Stress PR Kit Creator Activation",
       "subtype": "implementation",
       "surface": "organic_social",
       "status": "draft",
@@ -3547,7 +3583,7 @@
     },
     {
       "id": "CS-2026-059",
-      "title": "ARCA Kansas \u2014 Cleetus Pit Crew Koozie Product Launch",
+      "title": "ARCA Kansas — Cleetus Pit Crew Koozie Product Launch",
       "subtype": "implementation",
       "surface": "wholesale_retail",
       "status": "draft",
@@ -3568,7 +3604,7 @@
     },
     {
       "id": "CS-2026-060",
-      "title": "ARCA Talladega \u2014 Shake and Bake Bundle Launch",
+      "title": "ARCA Talladega — Shake and Bake Bundle Launch",
       "subtype": "implementation",
       "surface": "wholesale_retail",
       "status": "draft",
@@ -3616,7 +3652,7 @@
     },
     {
       "id": "CS-2026-062",
-      "title": "Apr 5 Cohort \u2014 Retention Intervention Package",
+      "title": "Apr 5 Cohort — Retention Intervention Package",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
@@ -3668,8 +3704,8 @@
     "stale_approved_count": 19,
     "measurement_overdue_count": 4,
     "new_changesets_generated": 0,
-    "new_changesets_reason": "Portfolio saturated at 44 entries (19 approved stale, 6 drafts, 4 measurements overdue). Synthesis rec-147 recommends bulk-close 15+ stale drafts before generating new. Calendar safety net skipped \u2014 adding drafts to saturated portfolio is counterproductive.",
-    "portfolio_status": "RED \u2014 frozen",
+    "new_changesets_reason": "Portfolio saturated at 44 entries (19 approved stale, 6 drafts, 4 measurements overdue). Synthesis rec-147 recommends bulk-close 15+ stale drafts before generating new. Calendar safety net skipped — adding drafts to saturated portfolio is counterproductive.",
+    "portfolio_status": "RED — frozen",
     "total_entries": 44,
     "katie_concentration": "70% (estimated 26/37 active)",
     "autonomous_mode": "shadow"
@@ -3798,6 +3834,6 @@
     },
     "auto_closed": 0,
     "new_changesets": 1,
-    "notes": "16 stale approved (all 21d except CS-034 18d, CS-036/037 15d). 3 measurement windows approaching Apr 8-9. 1 new CS created (CS-2026-047 Brain Health Content Bundle). No auto-closes \u2014 no measurement-overdue published items with available data (Polar offline blocks verification)."
+    "notes": "16 stale approved (all 21d except CS-034 18d, CS-036/037 15d). 3 measurement windows approaching Apr 8-9. 1 new CS created (CS-2026-047 Brain Health Content Bundle). No auto-closes — no measurement-overdue published items with available data (Polar offline blocks verification)."
   }
 }
