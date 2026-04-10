@@ -17,7 +17,9 @@
       "AUTONOMOUS_MODE: shadow \u2014 classification only, no auto-advance"
     ],
     "new_changeset_generation": "2 new ChangeSets: CS-2026-054 (Creator Onboarding Activation Funnel), CS-2026-055 (Content Hypothesis Testing Sprint).",
-    "last_urgency_recompute": "2026-04-08"
+    "last_urgency_recompute": "2026-04-08",
+    "last_run": "2026-04-10",
+    "last_mode": "measure-only"
   },
   "summary": {
     "total_changesets": 62,
@@ -967,8 +969,30 @@
       "executed_date": null,
       "autonomy_tier": null,
       "urgency": "measurement_approaching",
-      "measurement_outcome": "data_needed",
-      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session."
+      "measurement_outcome": "inconclusive",
+      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session.",
+      "measurement_result": {
+        "primary_kpi": "winback_reactivation_rate",
+        "baseline": "~0% (no prior winback on this segment)",
+        "target": ">=5% reactivation",
+        "actual": "0.088% conversion rate (16 orders / 18,213 recipients)",
+        "delta": "well below target but metric mismatch \u2014 brief is Lifestyle/Community email, not winback",
+        "secondary_kpis": {
+          "open_rate": "43.0%",
+          "click_rate": "0.62% (113 unique clicks)",
+          "revenue": "$1,425.23",
+          "rpr": "$0.078",
+          "aov": "$89.08",
+          "unsubscribe_rate": "0.264%"
+        },
+        "sample_size": 18213,
+        "statistical_significance": "sufficient sample, but wrong metric assigned",
+        "confidence": "low",
+        "analysis_date": "2026-04-10",
+        "notes": "Tracker primary_metric (winback_reactivation_rate) doesn't match brief \u2014 this is a Lifestyle/Community email to Engaged 3M + Prospects Engaged, not a winback segment. Campaign performed in normal range for engagement emails. Metric needs correction before meaningful measurement."
+      },
+      "requires_human_review": true,
+      "review_flagged_date": "2026-04-10"
     },
     {
       "id": "CS-2026-014",
@@ -2917,8 +2941,75 @@
       "execution_target_date": null,
       "executed_date": null,
       "urgency": "measurement_approaching",
-      "measurement_outcome": "data_needed",
-      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session."
+      "measurement_outcome": "underperformed",
+      "measurement_outcome_note": "Measurement due 2026-04-10 \u2014 data pull required. Retry next session.",
+      "measurement_result": {
+        "primary_kpi": "checkout_cvr",
+        "baseline_broken_period": "ATC 12%, CVR 2.5%, ~95 orders/day, ~$7.5K/day (Mar 27-Apr 2)",
+        "baseline_pre_bug": "ATC 35.1%, CVR 5.4%, 239 orders/day, ~$21K/day (Mar 20)",
+        "target": "ATC >30%, CVR >4.5% within 7 days",
+        "actual": "ATC 12.3% avg (excl Apr 5 spike), CVR 2.3% avg, ~96 orders/day, ~$8.1K/day",
+        "delta": "ATC -59% vs pre-bug target; CVR -49% vs pre-bug target; no meaningful recovery from broken period",
+        "daily_data": {
+          "apr3": {
+            "sessions": 1044,
+            "atc_rate": "15.3%",
+            "cvr": "2.1%",
+            "orders": 95,
+            "revenue": 6315
+          },
+          "apr4": {
+            "sessions": 1061,
+            "atc_rate": "8.3%",
+            "cvr": "1.7%",
+            "orders": 72,
+            "revenue": 4949
+          },
+          "apr5_spike": {
+            "sessions": 2460,
+            "atc_rate": "28.1%",
+            "cvr": "5.4%",
+            "orders": 199,
+            "revenue": 15939,
+            "note": "email-driven spike, not organic recovery"
+          },
+          "apr6": {
+            "sessions": 1778,
+            "atc_rate": "15.2%",
+            "cvr": "2.5%",
+            "orders": 115,
+            "revenue": 8498
+          },
+          "apr7": {
+            "sessions": 1754,
+            "atc_rate": "13.4%",
+            "cvr": "2.3%",
+            "orders": 110,
+            "revenue": 7989
+          },
+          "apr8": {
+            "sessions": 1075,
+            "atc_rate": "9.9%",
+            "cvr": "1.9%",
+            "orders": 92,
+            "revenue": 5412
+          },
+          "apr9": {
+            "sessions": 1047,
+            "atc_rate": "11.6%",
+            "cvr": "3.2%",
+            "orders": 89,
+            "revenue": 7409
+          }
+        },
+        "sample_size": "10,219 sessions over 7 days",
+        "statistical_significance": "yes \u2014 sufficient sample, clear pattern",
+        "confidence": "high",
+        "analysis_date": "2026-04-10",
+        "notes": "ATC rate did NOT recover to pre-bug levels. Post-fix average ATC (~12.3%) is essentially unchanged from broken period (~12%). Apr 5 spike (28.1% ATC) was driven by email campaign traffic, not organic homepage recovery. Possible causes: fix was partial, second bug exists, or traffic mix shifted away from homepage. Revenue improved marginally vs broken period ($60K/8d vs $46K/7d) but still ~60% below pre-bug run rate."
+      },
+      "requires_human_review": true,
+      "review_flagged_date": "2026-04-10"
     },
     {
       "id": "CS-2026-047",
