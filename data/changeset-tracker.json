@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-13",
-  "next_id": 67,
+  "next_id": 68,
   "lifecycle_sweep": {
     "session": "S31",
     "sweep_date": "2026-04-08",
@@ -26,14 +26,20 @@
     "notes": "S31 lifecycle sweep: 13 stale approved (CS-009, 015-022, 034, 037, 040, 043) flagged for 72h binary decision; 3 measurement-due-today CSs (CS-006/-007/-030) require manual Klaviyo/Polar data pulls; 3 new CSs generated from synthesis priorities (cohort quality, mobile/LP redesign, claims audit)."
   },
   "summary": {
-    "total": 66,
+    "total": 67,
     "by_status": {
       "closed": 23,
       "published": 7,
       "approved": 14,
-      "draft": 22
+      "draft": 23
     },
-    "last_updated": "2026-04-13"
+    "last_updated": "2026-04-13",
+    "by_risk": {
+      "medium": 1
+    },
+    "by_subtype": {
+      "implementation": 1
+    }
   },
   "changesets": [
     {
@@ -4031,6 +4037,69 @@
         "platform": "facebook",
         "publish_date": "2026-03-20"
       }
+    },
+    {
+      "id": "CS-2026-067",
+      "title": "Roman Feb Free-3-Pack Cohort Winback \u2014 Cans Variety Pivot",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-04-13",
+      "objective_level": "L3",
+      "category": "email_sms",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": null,
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 17500,
+          "expected": 8500,
+          "downside": 2000
+        },
+        "margin": {
+          "upside": 8750,
+          "expected": 4250,
+          "downside": 1000
+        },
+        "primary_metric": "repeat_purchase_rate_60d",
+        "primary_metric_target": "Track A >=6% / Track B >=8% (from 0% baseline)",
+        "L1_margin": "+$4,250 expected (Variety 12pk, 50% margin on incremental)",
+        "L2_cash": "Positive \u2014 subscription attach shifts to 30d cadence",
+        "L3_customer_quality": "Positive \u2014 cans-fit correction + creator voice = LTV unlock ($300+ cans sub vs $30 shots one-off)",
+        "L4_learning": "Hypothesis: creator-voiced product-fit reframe beats generic welcome for creator-acquired cohorts; cohort offer asymmetry (status vs discount) prevents fairness backlash",
+        "L5_brand_check": "Pass pending Nick tone review + Devon claims review"
+      },
+      "review_tier": "standard",
+      "routed_to": [
+        "Katie",
+        "Nick",
+        "Devon",
+        "Peter"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-13",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "60d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-067.md",
+      "notes": "Cohort: 1,460 profiles total (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). 3 open placeholders: (1) Roman can flavor \u2014 Nick, (2) Variety inventory \u2014 Ops, (3) Insert card feasibility \u2014 Peter. Precedent: CS-2026-007.",
+      "risk": "medium",
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-20",
+      "executed_date": null,
+      "autonomy_tier": null,
+      "linked_calendar_activity": "ROMAN-020326",
+      "learning_note": null
     }
   ],
   "queue_actions": {
