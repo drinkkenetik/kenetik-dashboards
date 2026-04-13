@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-13",
-  "next_id": 66,
+  "next_id": 67,
   "lifecycle_sweep": {
     "session": "S31",
     "sweep_date": "2026-04-08",
@@ -26,12 +26,12 @@
     "notes": "S31 lifecycle sweep: 13 stale approved (CS-009, 015-022, 034, 037, 040, 043) flagged for 72h binary decision; 3 measurement-due-today CSs (CS-006/-007/-030) require manual Klaviyo/Polar data pulls; 3 new CSs generated from synthesis priorities (cohort quality, mobile/LP redesign, claims audit)."
   },
   "summary": {
-    "total": 65,
+    "total": 66,
     "by_status": {
       "closed": 23,
       "published": 7,
       "approved": 14,
-      "draft": 21
+      "draft": 22
     }
   },
   "changesets": [
@@ -3923,6 +3923,70 @@
       "triage_recommendation": "needs_approval",
       "source": "synthesis",
       "linked_calendar_activity": null
+    },
+    {
+      "id": "CS-2026-066",
+      "title": "Graduation: FB 4AM Morning Routine Athlete Reel",
+      "subtype": "implementation",
+      "surface": "paid_meta",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-04-13",
+      "objective_level": "L2",
+      "category": "paid_media",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 2500,
+          "expected": 1500,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 1250,
+          "expected": 750,
+          "downside": -500
+        },
+        "primary_metric": "ThruPlay rate + CTR + CPM",
+        "primary_metric_target": "CPM <= account avg; ThruPlay >=15%; CTR >=1.5%",
+        "L1_margin": "$750 expected contribution margin on $500 test; breakeven at 2x ROAS",
+        "L2_cash": "neutral \u2014 DTC revenue, standard cash cycle",
+        "L3_customer_quality": "positive \u2014 clean-focus hook attracts cognitive-performance segment; higher LTV per CS-2026-029 learnings",
+        "L4_learning": "Does a lifestyle/narrative athlete hook (no named creator) outperform creator-led graduation content at equivalent budget?",
+        "L5_brand_check": "pass \u2014 Tier 0/1 claims aligned with CALM CLARITY brand voice"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "system",
+      "routed_date": "2026-04-13",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-066.md",
+      "notes": "Graduation candidate: FB 4AM athlete reel (sprout-sync-2daeea84). ER 11.39%, 3.4x reach, NCS 64.4. Sourced from Moe weekly graduation scan 2026-04-13.",
+      "risk": "medium",
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null,
+      "urgency": "ok",
+      "review_tier": "STANDARD",
+      "organic_source": {
+        "post_id": "sprout-sync-2daeea84",
+        "sprout_post_url": "https://www.facebook.com/reel/4330287533905988/",
+        "platform": "facebook",
+        "publish_date": "2026-03-20"
+      }
     }
   ],
   "queue_actions": {
