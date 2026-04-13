@@ -4092,7 +4092,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-067.md",
-      "notes": "Cohort: 1,460 profiles total (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). 3 open placeholders: (1) Roman can flavor \u2014 Nick, (2) Variety inventory \u2014 Ops, (3) Insert card feasibility \u2014 Peter. Precedent: CS-2026-007.",
+      "notes": "Cohort: 1,460 profiles (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). Placeholder 1 (Roman flavor) = Blackberry Lemonade (Nick 4/13, pending final Roman confirm). Placeholder 2 (Variety inventory) = cleared (Ops 4/13). Placeholder 3 (insert card) still open \u2014 Peter. Precedent: CS-2026-007.",
       "risk": "medium",
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-20",
