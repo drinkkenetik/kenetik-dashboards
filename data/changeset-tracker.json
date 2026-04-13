@@ -32,7 +32,8 @@
       "published": 7,
       "approved": 14,
       "draft": 22
-    }
+    },
+    "last_updated": "2026-04-13"
   },
   "changesets": [
     {
@@ -668,10 +669,9 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-009.md",
-      "notes": "BWR event May 2-3. Katie building flow in Klaviyo on April 8. Claims gate: Emails 2, 4, 5 need Devon approval for science content.",
+      "notes": "2026-04-13: Katie pushed 8 plain-text email drafts to Klaviyo via MCP as automation pipeline test. Template IDs: E1 TyGFEZ, E2 VJfQKV (claims review), E3 V2BxMU, E4 TBiVRS (claims review), E5 RJfMZZ (claims review), E6 X2Ucc4, E7 TgMUui, E8 WBKUt6. Status stays approved \u2014 claims gate on E2/E4/E5 still open with Devon, flow/segment/schedule remain manual (MCP has no endpoints). Stale flag reset.",
       "sweep_flags": [
-        "STALE_7D+",
-        "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h"
+        "AUTOMATION_TEST_2026-04-13"
       ],
       "last_sweep": "2026-04-13",
       "risk": "low",
@@ -684,11 +684,55 @@
       "executed_date": null,
       "autonomy_tier": null,
       "stale_flag": false,
-      "stale_days": 28,
-      "urgency": "stale",
-      "stale": true,
-      "triage_recommendation": "requires_human_review",
-      "triage_action": "consider_closing_as_abandoned"
+      "stale_days": 0,
+      "urgency": "active",
+      "stale": false,
+      "triage_recommendation": "in_progress",
+      "triage_action": "awaiting_devon_claims_review",
+      "artifacts": {
+        "klaviyo_templates": {
+          "E1_day_0": {
+            "id": "TyGFEZ",
+            "name": "[CS-2026-009] BWR Flow \u2014 E1 Day 0: Your BWR Prep Starts Now",
+            "claims_gate": false
+          },
+          "E2_day_3": {
+            "id": "VJfQKV",
+            "name": "[CS-2026-009] BWR Flow \u2014 E2 Day 3: The Science [CLAIMS REVIEW \u2014 DEVON]",
+            "claims_gate": true
+          },
+          "E3_day_10": {
+            "id": "V2BxMU",
+            "name": "[CS-2026-009] BWR Flow \u2014 E3 Day 10: Building the Foundation",
+            "claims_gate": false
+          },
+          "E4_day_21": {
+            "id": "TBiVRS",
+            "name": "[CS-2026-009] BWR Flow \u2014 E4 Day 21: Adaptation Window [CLAIMS REVIEW \u2014 DEVON]",
+            "claims_gate": true
+          },
+          "E5_day_35": {
+            "id": "RJfMZZ",
+            "name": "[CS-2026-009] BWR Flow \u2014 E5 Day 35: Intensification Phase [CLAIMS REVIEW \u2014 DEVON]",
+            "claims_gate": true
+          },
+          "E6_day_42": {
+            "id": "X2Ucc4",
+            "name": "[CS-2026-009] BWR Flow \u2014 E6 Day 42: 2 Weeks Out \u2014 Taper Smart",
+            "claims_gate": false
+          },
+          "E7_day_49": {
+            "id": "TgMUui",
+            "name": "[CS-2026-009] BWR Flow \u2014 E7 Day 49: Race Day Protocol",
+            "claims_gate": false
+          },
+          "E8_day_56": {
+            "id": "WBKUt6",
+            "name": "[CS-2026-009] BWR Flow \u2014 E8 Day 56: Keep the Momentum",
+            "claims_gate": false
+          }
+        }
+      }
     },
     {
       "id": "CS-2026-010",
