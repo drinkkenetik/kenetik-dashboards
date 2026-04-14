@@ -29,8 +29,8 @@
     "total": 67,
     "by_status": {
       "closed": 24,
-      "published": 8,
-      "approved": 12,
+      "published": 9,
+      "approved": 11,
       "draft": 26
     },
     "last_updated": "2026-04-14",
@@ -1170,11 +1170,11 @@
       "title": "SEA OTTER CLASSIC: ENDURANCE TRAINING BUNDLE",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "published",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
-      "objective_level": "L5",
+      "objective_level": "L1",
       "category": "email_sms",
       "dependencies": [],
       "blocks": [],
@@ -1191,8 +1191,8 @@
           "expected": 0,
           "downside": 0
         },
-        "primary_metric": "review_submission_rate",
-        "primary_metric_target": ">=10% review rate (from 5% baseline)"
+        "primary_metric": "bundle_revenue",
+        "primary_metric_target": "Endurance Training Bundle orders + revenue from ~51,847 email sends"
       },
       "routed_to": [
         "Katie"
@@ -1202,28 +1202,37 @@
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
-      "published_date": null,
+      "published_date": "2026-04-14",
       "file": "cgo-logs/changesets/CS-2026-015.md",
-      "notes": "Send: 4/16. SMS pairing. Draft in progress with Underground Ecom.",
+      "notes": "Sea Otter Classic event email (4/14 send) + SMS pairing. Endurance Training Bundle 50% off ($69.99). Pushing to endurance bundle PDP.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h"
       ],
       "last_sweep": "2026-04-13",
       "risk": "low",
-      "sweep_flag": "stale_approved",
+      "sweep_flag": null,
       "sweep_date": "2026-04-14",
-      "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "scheduled_send_date": "2026-04-16",
+      "sweep_note": null,
+      "scheduled_send_date": "2026-04-14",
       "execution_target_date": null,
-      "executed_date": null,
+      "executed_date": "2026-04-14",
       "autonomy_tier": null,
-      "stale_flag": true,
-      "stale_days": 28,
-      "urgency": "stale",
-      "stale": true,
-      "triage_recommendation": "requires_human_review",
-      "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-14"
+      "stale_flag": false,
+      "stale_days": 0,
+      "urgency": null,
+      "stale": false,
+      "triage_recommendation": null,
+      "triage_action": null,
+      "last_updated": "2026-04-14",
+      "published_by": "Katie",
+      "measurement_start": "2026-04-14",
+      "measurement_due": "2026-04-21",
+      "measurement_window_days": 7,
+      "publish_confirmation": {
+        "surface": "klaviyo",
+        "confirmation_id": "Scheduled in Klaviyo \u2014 email + SMS pairing, evening 2026-04-14",
+        "published_at": "2026-04-14T20:00:00Z"
+      }
     },
     {
       "id": "CS-2026-016",
