@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-13",
-  "next_id": 71,
+  "last_updated": "2026-04-15",
+  "next_id": 76,
   "lifecycle_sweep": {
     "session": "S31",
     "sweep_date": "2026-04-08",
@@ -494,12 +494,12 @@
       "measurement_start_date": "2026-03-14",
       "measurement_end_date": "2026-04-13",
       "measurement_window": "30d",
-      "measurement_due": "2026-04-13",
+      "measurement_due": true,
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-006.md",
-      "notes": "Published Mar 14. High risk \u2014 Devon approved. Blocks CS-2026-024 (pause/skip).",
+      "notes": "Published Mar 14. High risk \u2014 Devon approved. Blocks CS-2026-024 (pause/skip). | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
       "risk": "low",
       "review_tier": "standard",
       "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
@@ -516,7 +516,7 @@
       "sweep_flag": "measurement_due",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-007",
@@ -561,12 +561,12 @@
       "measurement_start_date": "2026-03-14",
       "measurement_end_date": "2026-04-13",
       "measurement_window": "30d",
-      "measurement_due": "2026-04-13",
+      "measurement_due": true,
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-007.md",
-      "notes": "Published Mar 14. Depends on CS-2026-006.",
+      "notes": "Published Mar 14. Depends on CS-2026-006. | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
       "risk": "high",
       "scheduled_send_date": null,
       "execution_target_date": null,
@@ -582,7 +582,7 @@
       "sweep_flag": "measurement_due",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-008",
@@ -683,7 +683,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-009.md",
-      "notes": "2026-04-13: Katie pushed 8 plain-text email drafts to Klaviyo via MCP as automation pipeline test. Template IDs: E1 TyGFEZ, E2 VJfQKV (claims review), E3 V2BxMU, E4 TBiVRS (claims review), E5 RJfMZZ (claims review), E6 X2Ucc4, E7 TgMUui, E8 WBKUt6. Status stays approved \u2014 claims gate on E2/E4/E5 still open with Devon, flow/segment/schedule remain manual (MCP has no endpoints). Stale flag reset.",
+      "notes": "2026-04-13: Katie pushed 8 plain-text email drafts to Klaviyo via MCP as automation pipeline test. Template IDs: E1 TyGFEZ, E2 VJfQKV (claims review), E3 V2BxMU, E4 TBiVRS (claims review), E5 RJfMZZ (claims review), E6 X2Ucc4, E7 TgMUui, E8 WBKUt6. Status stays approved \u2014 claims gate on E2/E4/E5 still open with Devon, flow/segment/schedule remain manual (MCP has no endpoints). Stale flag reset. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "AUTOMATION_TEST_2026-04-13"
       ],
@@ -747,7 +747,7 @@
           }
         }
       },
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-010",
@@ -964,7 +964,7 @@
       "review_tier": "standard",
       "published_date": "2026-04-07",
       "file": "cgo-logs/changesets/CS-2026-012.md",
-      "notes": "RESCHEDULED: Send ~4/7 (Tue). BLOCKED: Unbound sweepstakes prizes not finalized by team. Drafts ready with Underground Ecom, awaiting final assets. Original send date: 4/3. PUBLISHED 2026-04-07: Unbound sweepstakes email scheduled for afternoon send. SMS paired send also live (same day per brief \u00a77). Email scheduled 2:15pm EST.",
+      "notes": "RESCHEDULED: Send ~4/7 (Tue). BLOCKED: Unbound sweepstakes prizes not finalized by team. Drafts ready with Underground Ecom, awaiting final assets. Original send date: 4/3. PUBLISHED 2026-04-07: Unbound sweepstakes email scheduled for afternoon send. SMS paired send also live (same day per brief \u00a77). Email scheduled 2:15pm EST. | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
       "sweep_flags": [],
       "last_sweep": "2026-04-03",
       "risk": "low",
@@ -980,14 +980,14 @@
       "urgency": null,
       "published_by": "Katie",
       "measurement_start": "2026-04-07",
-      "measurement_due": "2026-04-14",
+      "measurement_due": true,
       "measurement_window_days": 7,
       "publish_confirmation": {
         "surface": "klaviyo",
         "confirmation_id": "Klaviyo campaign scheduled for 2:15pm EST (18:15 UTC) 2026-04-07",
         "published_at": "2026-04-07T18:15:00Z"
       },
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-013",
@@ -1141,7 +1141,7 @@
       "review_tier": "standard",
       "published_date": "2026-04-09",
       "file": "cgo-logs/changesets/CS-2026-014.md",
-      "notes": "Scheduled in Klaviyo 2026-04-09 for send 2026-04-10 14:00 EDT. Final creative: Shots travel angle (Walsh 2021 CBF). Supersedes CS-2026-005.",
+      "notes": "Scheduled in Klaviyo 2026-04-09 for send 2026-04-10 14:00 EDT. Final creative: Shots travel angle (Walsh 2021 CBF). Supersedes CS-2026-005. | 2026-04-15 sweep: measurement window closes <=3d; prepare decision.",
       "sweep_flags": [],
       "last_sweep": "2026-04-03",
       "risk": "low",
@@ -1163,7 +1163,8 @@
         "surface": "klaviyo",
         "confirmation_id": "Scheduled in Klaviyo - send 2026-04-10 14:00 EDT",
         "published_at": "2026-04-09T18:00:00Z"
-      }
+      },
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-015",
@@ -1273,7 +1274,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-016.md",
-      "notes": "Scheduled send: 4/16. Brief status: DRAFT \u2014 needs Devon approval on Robberechts 2023 claim framing before send. Corrected from published (email not yet sent).",
+      "notes": "Scheduled send: 4/16. Brief status: DRAFT \u2014 needs Devon approval on Robberechts 2023 claim framing before send. Corrected from published (email not yet sent). | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h"
       ],
@@ -1292,7 +1293,7 @@
       "sweep_flag": "stale_approved",
       "sweep_date": "2026-04-14",
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-017",
@@ -1333,7 +1334,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-017.md",
-      "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized \u2014 supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative.",
+      "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized \u2014 supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h"
       ],
@@ -1352,7 +1353,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-018",
@@ -1393,7 +1394,7 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-018.md",
-      "notes": "Send: 4/21. Draft in progress with Underground Ecom.",
+      "notes": "Send: 4/21. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h"
       ],
@@ -1412,7 +1413,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-019",
@@ -1453,7 +1454,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-019.md",
-      "notes": "Send: 4/22 (Earth Day). Draft in progress with Underground Ecom.",
+      "notes": "Send: 4/22 (Earth Day). Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h"
       ],
@@ -1472,7 +1473,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-020",
@@ -1515,7 +1516,7 @@
       "review_tier": "standard",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-020.md",
-      "notes": "Send: 4/24 (tentative). Depends on CS-2026-017 koozie asset finalization. Draft in progress with Underground Ecom.",
+      "notes": "Send: 4/24 (tentative). Depends on CS-2026-017 koozie asset finalization. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h"
       ],
@@ -1534,7 +1535,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-021",
@@ -1575,7 +1576,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-021.md",
-      "notes": "Send: 4/27. Draft in progress with Underground Ecom.",
+      "notes": "Send: 4/27. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h"
       ],
@@ -1594,7 +1595,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-022",
@@ -1635,7 +1636,7 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-022.md",
-      "notes": "Send: 4/30. Draft in progress with Underground Ecom.",
+      "notes": "Send: 4/30. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h"
       ],
@@ -1654,7 +1655,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-023",
@@ -2185,12 +2186,12 @@
       "measurement_start_date": "2026-04-06",
       "measurement_end_date": "2026-04-13",
       "measurement_window": "7d",
-      "measurement_due": "2026-04-13",
+      "measurement_due": true,
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-030.md",
-      "notes": "Revised 2026-04-01: Repositioned from BAW urgency promo (window expired) to repurchase-window subscription conversion. Target launch Apr 3. Approved via standard hierarchy review \u2014 positive at all 5 levels, no trade-offs. Segment: BAW discount code one-time purchasers without active subscription. | 2026-04-06: Advanced to published. Klaviyo build in progress \u2014 Katie building segment + 3-touch flow today. executed_date pending confirmation. Measurement window (7d) starts from executed_date. | 2026-04-06: Execution confirmed. Flow live in Klaviyo, segment-triggered, past profiles added. Measurement window: Apr 6-13 (7d).",
+      "notes": "Revised 2026-04-01: Repositioned from BAW urgency promo (window expired) to repurchase-window subscription conversion. Target launch Apr 3. Approved via standard hierarchy review \u2014 positive at all 5 levels, no trade-offs. Segment: BAW discount code one-time purchasers without active subscription. | 2026-04-06: Advanced to published. Klaviyo build in progress \u2014 Katie building segment + 3-touch flow today. executed_date pending confirmation. Measurement window (7d) starts from executed_date. | 2026-04-06: Execution confirmed. Flow live in Klaviyo, segment-triggered, past profiles added. Measurement window: Apr 6-13 (7d). | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
       "sweep_flags": [
         "S31 2026-04-13: measurement window closed \u2014 manual data pull required (pipeline could not auto-measure)"
       ],
@@ -2206,7 +2207,7 @@
       "sweep_flag": "measurement_due",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-031",
@@ -2455,7 +2456,7 @@
       "routed_via": "auto",
       "routed_date": "2026-03-22",
       "file": "cgo-logs/changesets/CS-2026-035.md",
-      "notes": "Draft: Winback flow experiment. Pending Katie review.",
+      "notes": "Draft: Winback flow experiment. Pending Katie review. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "risk": "low",
       "scheduled_send_date": null,
       "autonomy_tier": 1,
@@ -2468,7 +2469,7 @@
       "sweep_flag": "stale_approved",
       "sweep_date": "2026-04-14",
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-036",
@@ -2596,7 +2597,7 @@
       "outcome": null,
       "review_tier": "express",
       "file": "cgo-logs/changesets/CS-2026-037.md",
-      "notes": "Amazon keyword gap analysis.",
+      "notes": "Amazon keyword gap analysis. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flag": "stale_approved",
       "sweep_date": "2026-04-14",
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
@@ -2613,7 +2614,7 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 22d \u2014 requires binary execute-or-close decision in 72h"
       ],
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-038",
@@ -2927,7 +2928,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-043.md",
-      "notes": "Reframed as TikTok platform test (first paid TikTok for Kenetik). Budget reduced from $750 to $500. BLOCKED: TikTok account structure still unresolved despite Nick's QR code approval. Katie messaged Nick Apr 1 to schedule dedicated call with TikTok rep to resolve full account structure. Resume execution after call.",
+      "notes": "Reframed as TikTok platform test (first paid TikTok for Kenetik). Budget reduced from $750 to $500. BLOCKED: TikTok account structure still unresolved despite Nick's QR code approval. Katie messaged Nick Apr 1 to schedule dedicated call with TikTok rep to resolve full account structure. Resume execution after call. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "risk": "critical",
       "review_tier": "standard",
       "sweep_flags": [
@@ -2945,7 +2946,7 @@
       "sweep_flag": "stale_approved",
       "sweep_date": "2026-04-14",
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-044",
@@ -3046,13 +3047,14 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-045.md",
-      "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING \u2014 Katie to update after Meta publish.",
+      "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING \u2014 Katie to update after Meta publish. | 2026-04-15 sweep: measurement window closes <=3d; prepare decision.",
       "risk": "low",
       "ad_platform_refs": null,
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "measuring"
+      "urgency": "measuring",
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-046",
@@ -3089,7 +3091,7 @@
       "routed_via": "slack",
       "routed_date": "2026-04-03",
       "file": "cgo-logs/changesets/CS-2026-046/brief.md",
-      "notes": "Root cause: Mar 23 template rewrite broke JS class selectors. Fix deployed Apr 3. ATC rate recovering from ~12% toward 35% baseline. Measurement window Apr 3-10.",
+      "notes": "Root cause: Mar 23 template rewrite broke JS class selectors. Fix deployed Apr 3. ATC rate recovering from ~12% toward 35% baseline. Measurement window Apr 3-10. | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
       "measurement_window": "7d from fix deployment",
       "autonomy_tier": 2,
       "shadow_classification": "Tier 2 \u2014 critical risk, multi-surface investigation, not eligible for autonomous execution",
@@ -3100,7 +3102,7 @@
       "published_by": "Katie",
       "measurement_start": "2026-04-03",
       "measurement_window_days": 7,
-      "measurement_due": "2026-04-10",
+      "measurement_due": true,
       "publish_confirmation": {
         "surface": "shopify",
         "confirmation_id": "Investigation kickoff \u2014 Slack notification to Katie, Nick, Cliff",
@@ -3191,7 +3193,7 @@
       "sweep_flag": "measurement_due",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-15"
     },
     {
       "id": "CS-2026-047",
@@ -4206,6 +4208,142 @@
       "shadow_classification": "Tier 0 \u2014 single surface, <$50 weekly impact, standard feed optimization. Would auto-execute if autonomous mode enabled.",
       "source": "synthesis_rec-187",
       "last_updated": "2026-04-14"
+    },
+    {
+      "id": "CS-2026-071",
+      "title": "Ashton Hall Pause + Blended ROAS Reallocation",
+      "subtype": "quick",
+      "surface": "paid_media",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie Spaller",
+      "created": "2026-04-15",
+      "objective_level": "L1",
+      "category": "creative_rotation",
+      "dependencies": [],
+      "blocks": [
+        "CS-2026-045"
+      ],
+      "spawned_from": "2026-04-15-s1 synthesis",
+      "spawned_changesets": [],
+      "expected_impact": "+80-100 bps blended ROAS in 7d",
+      "routed_to": "Katie",
+      "routed_via": "CGO synthesis",
+      "routed_date": "2026-04-15",
+      "measurement_end_date": "2026-04-22",
+      "measurement_window": "7d",
+      "file": "cgo-logs/changesets/CS-2026-071.md",
+      "autonomy_tier": 1,
+      "notes": "Created by S33 synthesis.",
+      "last_updated": "2026-04-15"
+    },
+    {
+      "id": "CS-2026-072",
+      "title": "Expected To Purchase Flow Audit \u2014 Hard-Gate Violation",
+      "subtype": "investigation",
+      "surface": "lifecycle",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie Spaller",
+      "created": "2026-04-15",
+      "objective_level": "L1",
+      "category": "flow_audit",
+      "dependencies": [],
+      "blocks": [
+        "CS-2026-073"
+      ],
+      "spawned_from": "2026-04-15-s1 synthesis",
+      "spawned_changesets": [],
+      "expected_impact": "Restore 2.5%+ CTR to 3806 recipients",
+      "routed_to": "Katie",
+      "routed_via": "CGO synthesis",
+      "routed_date": "2026-04-15",
+      "measurement_end_date": "2026-04-29",
+      "measurement_window": "14d",
+      "file": "cgo-logs/changesets/CS-2026-072.md",
+      "autonomy_tier": 0,
+      "notes": "Created by S33 synthesis; hard-gate violation.",
+      "last_updated": "2026-04-15"
+    },
+    {
+      "id": "CS-2026-073",
+      "title": "Winback Offer Variant Test (Email + SMS Mirror)",
+      "subtype": "implementation",
+      "surface": "lifecycle",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Katie Spaller",
+      "created": "2026-04-15",
+      "objective_level": "L2",
+      "category": "offer_test",
+      "dependencies": [
+        "CS-2026-072"
+      ],
+      "blocks": [],
+      "spawned_from": "2026-04-15-s1 synthesis",
+      "spawned_changesets": [],
+      "expected_impact": "2x winback CTR",
+      "routed_to": "Katie",
+      "routed_via": "CGO synthesis",
+      "routed_date": "2026-04-15",
+      "measurement_end_date": "2026-05-01",
+      "measurement_window": "14d",
+      "file": "cgo-logs/changesets/CS-2026-073.md",
+      "autonomy_tier": 1,
+      "notes": "Created by S33 synthesis.",
+      "last_updated": "2026-04-15"
+    },
+    {
+      "id": "CS-2026-074",
+      "title": "Founder Allegation Response Protocol Activation",
+      "subtype": "investigation",
+      "surface": "reputation",
+      "status": "draft",
+      "risk_level": "high",
+      "owner": "Devon Price",
+      "created": "2026-04-15",
+      "objective_level": "L5",
+      "category": "crisis_protocol",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "2026-04-15-s1 synthesis",
+      "spawned_changesets": [],
+      "expected_impact": "Contained reputation exposure",
+      "routed_to": "Devon + Peter",
+      "routed_via": "CGO synthesis",
+      "routed_date": "2026-04-15",
+      "measurement_end_date": "2026-04-22",
+      "measurement_window": "7d",
+      "file": "cgo-logs/changesets/CS-2026-074.md",
+      "autonomy_tier": 0,
+      "notes": "CRITICAL P0 crisis protocol. Created by S33 synthesis.",
+      "last_updated": "2026-04-15"
+    },
+    {
+      "id": "CS-2026-075",
+      "title": "Subscription Attach Rate RCA (March->April +254%)",
+      "subtype": "investigation",
+      "surface": "subscription",
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Lifecycle lead",
+      "created": "2026-04-15",
+      "objective_level": "L1",
+      "category": "rca",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "2026-04-15-s1 synthesis L-022",
+      "spawned_changesets": [],
+      "expected_impact": "Identify/protect single largest LTV lever in portfolio",
+      "routed_to": "Lifecycle + Katie",
+      "routed_via": "CGO synthesis",
+      "routed_date": "2026-04-15",
+      "measurement_end_date": "2026-04-29",
+      "measurement_window": "14d",
+      "file": "cgo-logs/changesets/CS-2026-075.md",
+      "autonomy_tier": 1,
+      "notes": "Spawned from L-022. Created by S33 synthesis.",
+      "last_updated": "2026-04-15"
     }
   ],
   "queue_actions": {
