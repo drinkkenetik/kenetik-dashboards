@@ -28,10 +28,10 @@
   "summary": {
     "total": 75,
     "by_status": {
-      "closed": 24,
+      "closed": 26,
       "published": 9,
-      "approved": 11,
-      "draft": 31
+      "approved": 16,
+      "draft": 24
     },
     "last_updated": "2026-04-15",
     "by_risk": {
@@ -3225,7 +3225,9 @@
       "created_by": "pipeline-session-27",
       "created": "2026-04-06",
       "urgency": "ok",
-      "risk_level": "medium"
+      "risk_level": "medium",
+      "dependencies": [],
+      "notes": " | 2026-04-15: Unblocked \u2014 CS-065 closed as superseded."
     },
     {
       "id": "CS-2026-048",
@@ -3285,7 +3287,7 @@
       "title": "Shopify Flow \u2192 Klaviyo Superfiliate Customer Attribution",
       "subtype": "implementation",
       "surface": "dtc_website",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "low",
       "owner": "Katie + Devon",
       "created": "2026-04-06",
@@ -3320,12 +3322,12 @@
       ],
       "routed_via": "changeset",
       "routed_date": "2026-04-06",
-      "approved_by": null,
-      "approved_date": null,
+      "approved_by": "Devon",
+      "approved_date": "2026-04-15",
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-049.md",
-      "notes": "Spawned from CS-2026-010 investigation findings. Shopify Flow writes acquisition_source + referring_creator to Klaviyo customer profiles.",
+      "notes": "Spawned from CS-2026-010 investigation findings. Shopify Flow writes acquisition_source + referring_creator to Klaviyo customer profiles. | 2026-04-15: Devon approved. Katie to build Shopify Flow + backfill. Devon to validate Superfiliate order tag format.",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
@@ -3378,7 +3380,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-050.md",
-      "notes": "P1-CRITICAL: Calendar void Apr 6-12. Deploy SAW Wk2 content TODAY.",
+      "notes": "P1-CRITICAL: Calendar void Apr 6-12. Deploy SAW Wk2 content TODAY. | 2026-04-15: Unblocked \u2014 CS-065 closed as superseded.",
       "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-07",
@@ -3676,7 +3678,7 @@
       "title": "D04 Polar Campaign-Level ATC + Checkout Metrics Pull",
       "subtype": "implementation",
       "surface": "data_pipeline",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "low",
       "owner": "Devon",
       "created": "2026-04-10",
@@ -3686,14 +3688,17 @@
       "file": "cgo-logs/changesets/CS-2026-056.md",
       "linked_pm_entry": "L-003",
       "source": "performance_memory_candidate",
-      "autonomy_tier": 1
+      "autonomy_tier": 1,
+      "approved_by": "Devon",
+      "approved_date": "2026-04-15",
+      "notes": " | 2026-04-15: Devon approved. Expand D04 Polar pull to include campaign-level ATC + checkout metrics."
     },
     {
       "id": "CS-2026-057",
       "title": "D07/D13 Content Drought \u2014 Sprout Published-Post Verification",
       "subtype": "implementation",
       "surface": "data_pipeline",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "low",
       "owner": "Devon",
       "created": "2026-04-10",
@@ -3703,7 +3708,10 @@
       "file": "cgo-logs/changesets/CS-2026-057.md",
       "linked_pm_entry": "L-005",
       "source": "performance_memory_candidate",
-      "autonomy_tier": 1
+      "autonomy_tier": 1,
+      "approved_by": "Devon",
+      "approved_date": "2026-04-15",
+      "notes": " | 2026-04-15: Devon approved. Update D07/D13 scans to cross-reference Sprout published post counts before declaring content drought."
     },
     {
       "id": "CS-2026-058",
@@ -3720,7 +3728,9 @@
       "file": "cgo-logs/changesets/CS-2026-058.md",
       "linked_calendar_activity": "STRESS-MON-040126-BEAT-02",
       "source": "calendar_safety_net",
-      "autonomy_tier": 2
+      "autonomy_tier": 2,
+      "dependencies": [],
+      "notes": " | 2026-04-15: Unblocked \u2014 CS-065 closed as superseded."
     },
     {
       "id": "CS-2026-059",
@@ -3806,7 +3816,7 @@
       "title": "Cohort Quality Decline Investigation \u2014 Feb 2026 M1 Repeat",
       "subtype": "investigation",
       "surface": "retention",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "high",
       "owner": "Devon",
       "co_owners": [
@@ -3851,10 +3861,10 @@
       "measurement_window": "30d",
       "measurement_due": null,
       "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "outcome": "redundant",
+      "closed_date": "2026-04-15",
       "file": "cgo-logs/changesets/CS-2026-063.md",
-      "notes": "Three domains converge on cohort quality decline: D01 Feb M1 -33% YoY (12.8% vs 18.4% 6mo avg), D09 new sessions -16.3% WoW, D04 prospecting weakness. Hypothesis: Feb 2026 acquisition-channel mix (Unbound Sweep + ARCA + creator launches) brought low-retention customers. Investigation: segment Feb cohort by acquisition source, compare M1 repeat by channel; decide whether to suppress low-quality channels or build channel-specific onboarding.",
+      "notes": "Three domains converge on cohort quality decline: D01 Feb M1 -33% YoY (12.8% vs 18.4% 6mo avg), D09 new sessions -16.3% WoW, D04 prospecting weakness. Hypothesis: Feb 2026 acquisition-channel mix (Unbound Sweep + ARCA + creator launches) brought low-retention customers. Investigation: segment Feb cohort by acquisition source, compare M1 repeat by channel; decide whether to suppress low-quality channels or build channel-specific onboarding. | 2026-04-15: Devon closed as REDUNDANT. Feb cohort decline explained by Cleetus/Roman free-3-pack loss-leader (D14: 5,475 users, 0.4% sub conversion). Remediation already scoped in CS-067.",
       "risk": "high",
       "review_tier": "standard",
       "sweep_flags": [],
@@ -3940,7 +3950,7 @@
       "title": "Claims Audit \u2014 KME Endurance & MCT:Glucose Ratio (Martyn/Frenser 2026)",
       "subtype": "investigation",
       "surface": "brand_compliance",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "high",
       "owner": "Brandon",
       "co_owners": [
@@ -3952,11 +3962,7 @@
       "objective_level": "L3",
       "category": "compliance",
       "dependencies": [],
-      "blocks": [
-        "CS-2026-047",
-        "CS-2026-050",
-        "CS-2026-058"
-      ],
+      "blocks": [],
       "spawned_from": "synthesis-2026-04-13-s1",
       "spawned_changesets": [],
       "expected_impact": {
@@ -3989,10 +3995,10 @@
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "outcome": "superseded",
+      "closed_date": "2026-04-15",
       "file": "cgo-logs/changesets/CS-2026-065.md",
-      "notes": "D16 Martyn et al. 2026 (J Appl Physiol, PMID 41962970, n=8 RCT) directly contradicts universal KME endurance claims \u2014 benefit is metabolic-state-conditional, not universal. D16 Frenser 2026 (Sci Rep, PMID 41957196) documents MCT:glucose ketogenesis threshold (1.5g glucose per 1g MCT); carb-forward Kenetik SKUs may violate. D17 FTC enforcement wave on MetaTrim + Jelly Lean BHB claims creates regulatory context. Scope: (1) audit all social/email/paid KME performance claims for metabolic-state specificity; (2) review MCT:glucose ratio across SKUs; (3) update claims-compliance.md with science-contradiction workflow. Blocks unsafe content advancement on 10 idea-status posts.",
+      "notes": "D16 Martyn et al. 2026 (J Appl Physiol, PMID 41962970, n=8 RCT) directly contradicts universal KME endurance claims \u2014 benefit is metabolic-state-conditional, not universal. D16 Frenser 2026 (Sci Rep, PMID 41957196) documents MCT:glucose ketogenesis threshold (1.5g glucose per 1g MCT); carb-forward Kenetik SKUs may violate. D17 FTC enforcement wave on MetaTrim + Jelly Lean BHB claims creates regulatory context. Scope: (1) audit all social/email/paid KME performance claims for metabolic-state specificity; (2) review MCT:glucose ratio across SKUs; (3) update claims-compliance.md with science-contradiction workflow. Blocks unsafe content advancement on 10 idea-status posts. | 2026-04-15: Devon closed as SUPERSEDED. Premises invalidated \u2014 Kenetik uses D-BHB (no MCT) and does not claim \"improves endurance.\" Martyn/Frenser 2026 papers logged in claims-compliance.md for internal awareness. Root-cause fix in Tier-1 spec update.",
       "risk": "high",
       "review_tier": "executive",
       "sweep_flags": [],
@@ -4076,7 +4082,7 @@
       "title": "Roman Feb Free-3-Pack Cohort Winback \u2014 Cans Variety Pivot",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-04-13",
@@ -4114,8 +4120,8 @@
       ],
       "routed_via": "slack",
       "routed_date": "2026-04-13",
-      "approved_by": null,
-      "approved_date": null,
+      "approved_by": "Devon",
+      "approved_date": "2026-04-15",
       "published_date": null,
       "measurement_start_date": null,
       "measurement_end_date": null,
@@ -4125,7 +4131,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-067.md",
-      "notes": "Cohort: 1,460 profiles (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). All 3 placeholders resolved 4/13: (1) Roman flavor = Blackberry Lemonade per Nick, pending final Roman confirm; (2) Variety inventory cleared by Ops; (3) Insert card resolved to digital BTS video unlock per Peter. Roman script/vibe brief drafted for Nick \u2014 shoot deadline 4/17 for 4/20 T0. Precedent: CS-2026-007.",
+      "notes": "Cohort: 1,460 profiles (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). All 3 placeholders resolved 4/13: (1) Roman flavor = Blackberry Lemonade per Nick, pending final Roman confirm; (2) Variety inventory cleared by Ops; (3) Insert card resolved to digital BTS video unlock per Peter. Roman script/vibe brief drafted for Nick \u2014 shoot deadline 4/17 for 4/20 T0. Precedent: CS-2026-007. | 2026-04-15: Devon approved. Proceeding normally. CS-074 routine watchlist, no operational impact. Remaining: Devon claims review, Nick tone review, Roman shoot by 4/17. Execution target 4/20.",
       "risk": "medium",
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-20",
@@ -4272,8 +4278,8 @@
       "title": "Founder Allegation Response Protocol Activation",
       "subtype": "investigation",
       "surface": "reputation",
-      "status": "draft",
-      "risk_level": "high",
+      "status": "approved",
+      "risk_level": "low",
       "owner": "Devon Price",
       "created": "2026-04-15",
       "objective_level": "L5",
@@ -4290,8 +4296,10 @@
       "measurement_window": "7d",
       "file": "cgo-logs/changesets/CS-2026-074.md",
       "autonomy_tier": 0,
-      "notes": "CRITICAL P0 crisis protocol. Created by S33 synthesis.",
-      "last_updated": "2026-04-15"
+      "notes": "CRITICAL P0 crisis protocol. Created by S33 synthesis. | 2026-04-15: Devon approved as routine watchlist only. Downgraded to low risk. No legal engagement, no escalation mechanics, no blocking of dependent CSs. Standard D18 Sprout Listening watch. This is routine social noise.",
+      "last_updated": "2026-04-15",
+      "approved_by": "Devon",
+      "approved_date": "2026-04-15"
     },
     {
       "id": "CS-2026-075",
