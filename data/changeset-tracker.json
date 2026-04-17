@@ -3,13 +3,17 @@
   "last_updated": "2026-04-16",
   "next_id": 80,
   "lifecycle_sweep": {
-    "session": "S31",
-    "sweep_date": "2026-04-08",
-    "stale_detected": 13,
-    "measurement_overdue": 0,
-    "measurement_due_today": 2,
-    "measurement_approaching": 4,
-    "auto_closed": 0,
+    "last_sweep_date": "2026-04-13",
+    "last_sweep_session": "S31",
+    "last_sweep_result": "partial_mcp_failure",
+    "last_sweep_counts": {
+      "stale_flagged": 13,
+      "measurement_overdue": 0,
+      "measurement_due_today": 2,
+      "measurement_approaching": 4,
+      "auto_closed": 0,
+      "new_changesets_generated": 2
+    },
     "flags": [
       "STALE: 13 approved ChangeSets >7d without publication.",
       "MEASUREMENT_DUE_TODAY: 2 \u2014 CS-2026-002, CS-2026-011.",
@@ -18,12 +22,20 @@
     ],
     "new_changeset_generation": "2 new ChangeSets: CS-2026-054 (Creator Onboarding Activation Funnel), CS-2026-055 (Content Hypothesis Testing Sprint).",
     "last_urgency_recompute": "2026-04-08",
-    "last_run": "2026-04-13",
     "last_mode": "measure-only",
-    "stale_approved_flagged": 13,
-    "measurement_due_flagged": 3,
-    "new_changesets_generated": 3,
-    "notes": "S31 lifecycle sweep: 13 stale approved (CS-009, 015-022, 034, 037, 040, 043) flagged for 72h binary decision; 3 measurement-due-today CSs (CS-006/-007/-030) require manual Klaviyo/Polar data pulls; 3 new CSs generated from synthesis priorities (cohort quality, mobile/LP redesign, claims audit)."
+    "notes": "S31 lifecycle sweep: 13 stale approved (CS-009, 015-022, 034, 037, 040, 043) flagged for 72h binary decision; 3 measurement-due-today CSs (CS-006/-007/-030) require manual Klaviyo/Polar data pulls; 3 new CSs generated from synthesis priorities (cohort quality, mobile/LP redesign, claims audit).",
+    "data_corruption_repairs_2026_04_16": {
+      "count": 6,
+      "source": "fix-plan 2026-04-16 sweep auto-measurement recovery",
+      "ids": [
+        "CS-2026-006",
+        "CS-2026-007",
+        "CS-2026-012",
+        "CS-2026-030",
+        "CS-2026-040",
+        "CS-2026-046"
+      ]
+    }
   },
   "summary": {
     "total": 76,
@@ -499,7 +511,7 @@
       "measurement_start_date": "2026-03-14",
       "measurement_end_date": "2026-04-13",
       "measurement_window": "30d",
-      "measurement_due": true,
+      "measurement_due": "2026-04-13",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
@@ -516,13 +528,14 @@
       "last_sweep": "2026-04-16",
       "sweep_flags": [
         "S31 2026-04-13: measurement window closed \u2014 manual data pull required (pipeline could not auto-measure)",
-        "measurement_overdue"
+        "measurement_overdue",
+        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
       ],
       "triage_recommendation": "measurement_data_pull",
-      "sweep_flag": "measurement_due",
+      "sweep_flag": "measurement_overdue",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-16"
     },
     {
       "id": "CS-2026-007",
@@ -567,7 +580,7 @@
       "measurement_start_date": "2026-03-14",
       "measurement_end_date": "2026-04-13",
       "measurement_window": "30d",
-      "measurement_due": true,
+      "measurement_due": "2026-04-13",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
@@ -583,13 +596,14 @@
       "last_sweep": "2026-04-16",
       "sweep_flags": [
         "S31 2026-04-13: measurement window closed \u2014 manual data pull required (pipeline could not auto-measure)",
-        "measurement_overdue"
+        "measurement_overdue",
+        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
       ],
       "triage_recommendation": "measurement_data_pull",
-      "sweep_flag": "measurement_due",
+      "sweep_flag": "measurement_overdue",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-16"
     },
     {
       "id": "CS-2026-008",
@@ -976,7 +990,7 @@
       "sweep_flags": [],
       "last_sweep": "2026-04-03",
       "risk": "low",
-      "sweep_flag": "measurement_due",
+      "sweep_flag": "measurement_approaching",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
       "scheduled_send_date": "2026-04-07",
@@ -988,14 +1002,17 @@
       "urgency": null,
       "published_by": "Katie",
       "measurement_start": "2026-04-07",
-      "measurement_due": true,
+      "measurement_due": "2026-04-21",
       "measurement_window_days": 7,
       "publish_confirmation": {
         "surface": "klaviyo",
         "confirmation_id": "Klaviyo campaign scheduled for 2:15pm EST (18:15 UTC) 2026-04-07",
         "published_at": "2026-04-07T18:15:00Z"
       },
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-16",
+      "measurement_start_date": "2026-04-07",
+      "measurement_end_date": "2026-04-21",
+      "measurement_window": "14d"
     },
     {
       "id": "CS-2026-013",
@@ -2201,7 +2218,7 @@
       "measurement_start_date": "2026-04-06",
       "measurement_end_date": "2026-04-13",
       "measurement_window": "7d",
-      "measurement_due": true,
+      "measurement_due": "2026-04-13",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
@@ -2209,7 +2226,8 @@
       "notes": "Revised 2026-04-01: Repositioned from BAW urgency promo (window expired) to repurchase-window subscription conversion. Target launch Apr 3. Approved via standard hierarchy review \u2014 positive at all 5 levels, no trade-offs. Segment: BAW discount code one-time purchasers without active subscription. | 2026-04-06: Advanced to published. Klaviyo build in progress \u2014 Katie building segment + 3-touch flow today. executed_date pending confirmation. Measurement window (7d) starts from executed_date. | 2026-04-06: Execution confirmed. Flow live in Klaviyo, segment-triggered, past profiles added. Measurement window: Apr 6-13 (7d). | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
       "sweep_flags": [
         "S31 2026-04-13: measurement window closed \u2014 manual data pull required (pipeline could not auto-measure)",
-        "measurement_overdue"
+        "measurement_overdue",
+        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -2220,10 +2238,10 @@
       "urgency": null,
       "measurement_approaching": true,
       "triage_recommendation": "measurement_data_pull",
-      "sweep_flag": "measurement_due",
+      "sweep_flag": "measurement_overdue",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-16"
     },
     {
       "id": "CS-2026-031",
@@ -2793,12 +2811,16 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 19d \u2014 requires binary execute-or-close decision in 72h"
       ],
-      "sweep_flag": null,
+      "sweep_flag": "measurement_approaching",
       "sweep_date": "2026-04-14",
       "sweep_note": "Updated 2026-04-14 per Lawrence. Tier 2 (PPs) and Tier 3 (Affiliates) actively executing. Dashboard updated daily.",
-      "last_updated": "2026-04-14",
+      "last_updated": "2026-04-16",
       "published_date": "2026-04-14",
-      "stale_flag": false
+      "stale_flag": false,
+      "measurement_start_date": "2026-04-14",
+      "measurement_end_date": "2026-04-28",
+      "measurement_window": "14d",
+      "measurement_due": "2026-04-28"
     },
     {
       "id": "CS-2026-041",
@@ -3118,7 +3140,7 @@
       "routed_date": "2026-04-03",
       "file": "cgo-logs/changesets/CS-2026-046/brief.md",
       "notes": "Root cause: Mar 23 template rewrite broke JS class selectors. Fix deployed Apr 3. ATC rate recovering from ~12% toward 35% baseline. Measurement window Apr 3-10. | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
-      "measurement_window": "7d from fix deployment",
+      "measurement_window": "7d",
       "autonomy_tier": 2,
       "approved_by": "Devon",
       "approved_date": "2026-04-03",
@@ -3127,7 +3149,7 @@
       "published_by": "Katie",
       "measurement_start": "2026-04-03",
       "measurement_window_days": 7,
-      "measurement_due": true,
+      "measurement_due": "2026-04-10",
       "publish_confirmation": {
         "surface": "shopify",
         "confirmation_id": "Investigation kickoff \u2014 Slack notification to Katie, Nick, Cliff",
@@ -3215,10 +3237,15 @@
       },
       "requires_human_review": true,
       "review_flagged_date": "2026-04-10",
-      "sweep_flag": "measurement_due",
+      "sweep_flag": "measurement_overdue",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-16",
+      "measurement_start_date": "2026-04-03",
+      "measurement_end_date": "2026-04-10",
+      "sweep_flags": [
+        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
+      ]
     },
     {
       "id": "CS-2026-047",
@@ -4473,20 +4500,6 @@
       "CS-2026-043"
     ],
     "needs_review": []
-  },
-  "last_sweep_date": "2026-04-13",
-  "last_sweep": "2026-04-10",
-  "last_sweep_session": "S31",
-  "sweep_summary_session_23": {
-    "date": "2026-03-31",
-    "stale_approved_count": 19,
-    "measurement_overdue_count": 4,
-    "new_changesets_generated": 0,
-    "new_changesets_reason": "Portfolio saturated at 44 entries (19 approved stale, 6 drafts, 4 measurements overdue). Synthesis rec-147 recommends bulk-close 15+ stale drafts before generating new. Calendar safety net skipped \u2014 adding drafts to saturated portfolio is counterproductive.",
-    "portfolio_status": "RED \u2014 frozen",
-    "total_entries": 44,
-    "katie_concentration": "70% (estimated 26/37 active)",
-    "autonomous_mode": "shadow"
   },
   "shadow_scorecard": {
     "mode": "shadow",
