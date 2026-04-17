@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-16",
-  "next_id": 80,
+  "next_id": 81,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-13",
     "last_sweep_session": "S31",
@@ -38,24 +38,24 @@
     }
   },
   "summary": {
-    "total": 76,
+    "total": 77,
     "by_status": {
       "closed": 26,
       "published": 9,
       "approved": 16,
-      "draft": 25
+      "draft": 26
     },
     "last_updated": "2026-04-16",
     "by_risk": {
       "critical": 2,
-      "low": 44,
+      "low": 45,
       "medium": 25,
       "high": 5
     },
     "by_subtype": {
       "implementation": 57,
       "investigation": 15,
-      "quick": 4
+      "quick": 5
     }
   },
   "changesets": [
@@ -4473,6 +4473,65 @@
       "autonomy_tier": null,
       "file": "cgo-logs/changesets/CS-2026-079.md",
       "notes": "Drafted 2026-04-16. Resolution Path: Refine \u2014 extends existing sweep derived-state hygiene. Paired diagnostic: stale concordance_summary hides Phase B readiness. Approved inline by Devon before draft: 'yes, open a changeset to rewire the rebuild into /changeset lifecycle sweep'.",
+      "sweep_flags": [],
+      "urgency": "standard",
+      "revision_notes": null,
+      "revision_date": null,
+      "rejection_notes": null,
+      "learning_note": null,
+      "spawned_changesets": null
+    },
+    {
+      "id": "CS-2026-080",
+      "title": "Cleetus Pit Crew Coozie Lander \u2014 Add 'Sweeps Bundle Transparent' Section Variant",
+      "status": "draft",
+      "subtype": "quick",
+      "category": "infrastructure",
+      "surface": "dtc_website",
+      "owner": "Katie",
+      "risk": "low",
+      "review_tier": "express",
+      "created": "2026-04-16",
+      "last_updated": "2026-04-16",
+      "hypothesis": "Adding a transparent-background variant of the cw-sweeps-bundle Shopify section (chances counter removed, body/image columns swapped) to Cleetus' Pit Crew Koozie lander will let the bundle feature the Cleetus Pit Crew Bundle ($59.88 Variety 12-Pack + free Pit Crew Koozie) in a clean, non-sweepstakes layout matching the lander's creative treatment, without regressing the live Leadville sweeps page.",
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "Section renders correctly on Cleetus lander across mobile + desktop (visual QA pass)",
+        "primary_metric_target": "Pass at merge/deploy",
+        "L1_margin": "neutral",
+        "L2_cash": "neutral",
+        "L3_customer_quality": "neutral",
+        "L4_learning": "positive \u2014 enables on-brand product surfacing on partner-driven lander, feeding pattern-level learning on motorsport partnership landers",
+        "L5_brand_check": "pass"
+      },
+      "objective_level": "L4",
+      "spawned_from": null,
+      "linked_calendar_activity": "ARCA-KAN-041726-BEAT-03",
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-17",
+      "executed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "At merge/deploy (single pass/fail visual QA gate)",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "autonomy_tier": null,
+      "file": "cgo-logs/changesets/CS-2026-080.md",
+      "notes": "Drafted 2026-04-16 by Katie. Theme branch `sweeps-bundle-transparent` in drinkkenetik/kenetik-shopify-theme, commit 3ebc719. Resolution Path: Add \u2014 parallel section variant `cw-sweeps-bundle-transparent.liquid` to avoid regressing live Leadville sweeps page. Related parent program: CS-2026-059 (wholesale_retail/organic_social). Calendar link: ARCA-KAN-041726-BEAT-03 (Cleetus Pit Crew Koozie Product Launch, 4/17). Revenue measurement lives on the parent program; this CS is infrastructure-only (visual QA gate).",
       "sweep_flags": [],
       "urgency": "standard",
       "revision_notes": null,
