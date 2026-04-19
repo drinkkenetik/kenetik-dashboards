@@ -4866,23 +4866,21 @@
     },
     {
       "id": "CS-2026-086",
-      "title": "Team Signal Restoration: Ceremony-First + Producer Consolidation",
+      "title": "Team Signal Coverage Fix: Step 9 extension for unsolicited team inbound DMs",
       "status": "draft",
       "subtype": "implementation",
       "category": "internal_infra",
       "surface": "internal_infra",
-      "owner": "Devon + team_lead (phase 1) + eng-TBD (phase 2)",
+      "owner": "Devon + eng-TBD",
       "risk_level": "low",
       "risk": "low",
-      "review_tier": "full",
+      "review_tier": "standard",
       "created": "2026-04-19",
       "last_updated": "2026-04-19",
-      "hypothesis": "Two-phase delivery \u2014 (1) Week 1 15-min weekly ceremony filing team-signal PM entries via template; (2) Weeks 2-3 (regression path) consolidated team-ingest service merging Slack-listener + retro-capture + 1:1-summarizer, writing through CS-2026-084 gate \u2014 restores C1-D3 to historical C1=84.4% baseline and lifts composite +2-3 pts. Ship D5 ceremony day 1 regardless of Phase 1 disambiguation outcome.",
+      "hypothesis": "Phase 1 disambiguation audit (2026-04-19) falsified the original producer model. Actual producer is synthesis-instructions.md Step 9 + task-b-synthesis.md Step 5b \u2014 wired, healthy, under-covered. Regression cause: Step 9 does not scan unsolicited inbound DMs to Devon (the channel L-001/L-002 used). Surgical fix: add Step 9a.2 to scan unsolicited DMs against team-roster config + narrow keyword broadening + one-time backfill sweep. Expected: C1-D3 0\u2192\u22653 in next eval; contributes +2\u20133 pts to portfolio.",
       "objective_level": "L4",
       "spawned_from": "PM-DRIVE-TO-A-2026-04-19 (Phase 2c)",
-      "dependencies": [
-        "CS-2026-084"
-      ],
+      "dependencies": [],
       "blocks": [],
       "expected_impact": {
         "revenue": {
@@ -4896,14 +4894,14 @@
           "downside": 0
         },
         "primary_metric": "c1_d3_team_signal_dimension_score",
-        "primary_metric_target": "dim 0->3+ within 2 eval cycles; C1 composite 61.1%->77.7%+",
+        "primary_metric_target": "dim 0->3+ within 1 eval cycle; C1 composite 61.1%->77%+",
         "L1_margin": "null",
         "L2_cash": "null",
         "L3_customer_quality": "indirect \u2014 team-signal captures customer-facing-team early warning",
-        "L4_learning": "Restores category of silently missing signal",
+        "L4_learning": "Closes the inbound-DM coverage gap in the Step 9 producer. Producer now structurally complete across known signal channels (keyword-matched channel corrections + prior-dispatch DM replies + unsolicited team inbound).",
         "L5_brand_check": "N/A"
       },
-      "linked_calendar_activity": "KGS-TEAM-SIGNAL-WEEKLY",
+      "linked_calendar_activity": null,
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-26",
       "executed_date": null,
@@ -4917,13 +4915,13 @@
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
-      "autonomy_tier": 1,
+      "autonomy_tier": 0,
       "file": "cgo-logs/changesets/CS-2026-086.md",
-      "notes": "Spawned from Phase 2c PM-DRIVE-TO-A portfolio. Cluster D primary (regression framing) + D5 companion ships first. Phase 1 disambiguation audit required by Day 5 to determine Phase 2 path. Phase 2 hard dependency on CS-2026-084 live in flag-policy. D5 ceremony robust to either regression or never-real framing. 5-level review APPROVE with sequencing. Fallback D4 (retro-only producer) if Phase 2 budget breach or never-real deprioritization.",
+      "notes": "Rewritten post-audit (2026-04-19). Original bifurcated scope (ceremony + team-ingest service) invalidated by audit finding that producer model was fictional and actual producer is Step 9\u2192Step 5b with an inbound-DM coverage gap. Single-fix form. Passes 5-level review + would pass proposed Level-0 anti-pattern cross-check (EC-2026-004 v2.1.2). S effort. Pairs with CS-2026-084 + CS-2026-085 in PM-DRIVE-TO-A-2026-04-19 portfolio.",
       "sweep_flags": [],
       "urgency": "standard",
-      "revision_notes": null,
-      "revision_date": null,
+      "revision_notes": "2026-04-19 v2 rewrite: removed D5 weekly ceremony (Spec-without-runtime-enforcement anti-pattern). Removed Phase 2 team-ingest service (producer consolidation not needed \u2014 no fragmented producers existed). Removed CS-084 dependency (Step 5b write path already correct). Now single-fix ChangeSet: Step 9a.2 extension + team-roster config + narrow keyword broadening + backfill sweep. See audit 2026-04-Wk4-cluster-d-phase1-disambiguation.md and EC-2026-004.",
+      "revision_date": "2026-04-19",
       "rejection_notes": null,
       "learning_note": null,
       "spawned_changesets": null
@@ -5188,5 +5186,11 @@
     "auto_closed": 0,
     "new_changesets": 1,
     "notes": "16 stale approved (all 21d except CS-034 18d, CS-036/037 15d). 3 measurement windows approaching Apr 8-9. 1 new CS created (CS-2026-047 Brain Health Content Bundle). No auto-closes \u2014 no measurement-overdue published items with available data (Polar offline blocks verification)."
-  }
+  },
+  "lifecycle_sweep_notes": [
+    {
+      "date": "2026-04-19",
+      "note": "CS-2026-086 rewritten v2 post Cluster D disambiguation audit. Scope changed from bifurcated ceremony+infra to single Step-9a.2 coverage fix. CS-084 dependency removed. Autonomy tier lowered to 0. Risk low. Review tier standard. Method gaps logged as EC-2026-004 (Level-0 anti-pattern cross-check; disjunction-vs-conjunction at pre-emit)."
+    }
+  ]
 }
