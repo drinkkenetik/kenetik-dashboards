@@ -3,52 +3,28 @@
   "last_updated": "2026-04-20",
   "next_id": 95,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-04-17",
-    "last_sweep_session": "S35",
-    "last_sweep_result": "ok",
+    "last_sweep_date": "2026-04-20",
+    "last_sweep_session": "2026-04-20-manual",
+    "last_sweep_result": "completed",
     "last_sweep_counts": {
-      "stale_flagged": 19,
-      "measurement_overdue": 4,
-      "measurement_due_today": 2,
-      "measurement_approaching": 0,
+      "total_scanned": 94,
+      "measurement_overdue": 5,
+      "measured": 5,
       "auto_closed": 0,
-      "new_changesets_generated": 3
+      "flagged_human_review": 5,
+      "stale_detected": 0,
+      "nudges_sent": 0
     },
-    "flags": [
-      "STALE_APPROVED: 2 \u2014 ['CS-2026-035','CS-2026-037'] (no execution dates set)",
-      "OVERDUE_APPROVED: 2 \u2014 ['CS-2026-009','CS-2026-016'] (past target/scheduled dates)",
-      "BLOCKED: CS-2026-043 (awaits CS-045 decision), CS-2026-083 (awaits CS-077 Brandon sign-off)",
-      "DRAFT_NUDGES: 15 drafts aging 3-28d",
-      "MEASUREMENT_OVERDUE_OR_DUE_TODAY: ['CS-2026-006','CS-2026-007','CS-2026-014','CS-2026-030','CS-2026-045','CS-2026-046']",
-      "CS-2026-045 Matt Hughes scale decision: measurement window CLOSES TODAY",
-      "CS-2026-046 already flagged requires_human_review from prior sweep",
-      "NEW_CHANGESETS: CS-2026-081, CS-2026-082, CS-2026-083",
-      "NEW_CHANGESETS_2026-04-19: CS-2026-084 (PM-WG), CS-2026-085 (SCHED), CS-2026-086 (TEAM) \u2014 portfolio PM-DRIVE-TO-A-2026-04-19 from Phase 2c RCA integration"
-    ],
-    "new_changeset_generation": "CS-2026-081, CS-2026-082, CS-2026-083 created by S35 synthesis.",
-    "last_urgency_recompute": "2026-04-08",
-    "last_mode": "full",
-    "notes": "S35 full sweep. 4 prior corrections applied pre-sweep (Sprout, calendar freshness, PubMed, TikTok ingestion). Measurement-due items (CS-006/007/030/014/045/046) flagged for human review \u2014 full measurement analysis scheduled for Katie + Nick 4/18 EOD per synthesis rec-214. No auto-closes this sweep (no success outcomes verified). 3 new CSes spawned from synthesis priorities. | 2026-04-19: 3 new ChangeSets filed from KGS RCA Phase 2c (portfolio PM-DRIVE-TO-A). Bundled via primitive-family convergence across 5 cluster RCAs. Projected composite lift +22-26 pts, baseline 64.9% D -> 87.4% A (+2.4 pt margin). See cgo-logs/rca-runs/2026-04-19-pm-phase2c-changesets.md + kgs-pm-phase2d-prediction.md.",
-    "data_corruption_repairs_2026_04_16": {
-      "count": 6,
-      "source": "fix-plan 2026-04-16 sweep auto-measurement recovery",
-      "ids": [
-        "CS-2026-006",
-        "CS-2026-007",
-        "CS-2026-012",
-        "CS-2026-030",
-        "CS-2026-040",
-        "CS-2026-046"
-      ]
-    }
+    "mcp_available": true,
+    "data_validation_repairs": 0
   },
   "summary": {
     "total": 87,
     "by_status": {
-      "approved": 15,
       "closed": 26,
-      "draft": 33,
-      "published": 13
+      "published": 13,
+      "approved": 15,
+      "draft": 40
     },
     "last_updated": "2026-04-20",
     "by_risk": {
@@ -61,7 +37,8 @@
       "implementation": 63,
       "investigation": 16,
       "quick": 5
-    }
+    },
+    "total_changesets": 94
   },
   "changesets": [
     {
@@ -540,7 +517,38 @@
       "sweep_flag": "measurement_overdue",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-16"
+      "last_updated": "2026-04-16",
+      "measurement_result": {
+        "outcome": "inconclusive",
+        "measured_date": "2026-04-20",
+        "measurement_source": "Layer 1 \u2014 kenetik-cohort-data.json + Layer 3 manual fallback",
+        "primary_kpi": {
+          "metric": "subscription_attach_rate",
+          "baseline": "8%",
+          "target": ">=12% attach rate",
+          "actual": "[DATA NEEDED \u2014 no content-specific subscription attribution in Layer 1]",
+          "delta": "N/A"
+        },
+        "secondary_kpis": [
+          {
+            "metric": "social_engagement_rate",
+            "actual": "[DATA NEEDED \u2014 requires Sprout Social content-level data]",
+            "target": ">3%",
+            "delta": "N/A"
+          },
+          {
+            "metric": "email_feature_ctr",
+            "actual": "[DATA NEEDED \u2014 requires campaign-level click tracking]",
+            "target": ">2.5%",
+            "delta": "N/A"
+          }
+        ],
+        "sample_size": null,
+        "confidence": "low",
+        "notes": "Science content pipeline (Cell BHB paper distillation) was published Mar 14. Brief explicitly noted 'No direct content-to-revenue attribution available' and 'Primary value is strategic, not direct-response.' Cohort data shows overall retention trends but cannot isolate content impact on subscription attach rate. The expected_impact metrics in tracker (subscription_attach_rate >=12%) don't match the brief's actual measurement plan (social engagement, email CTR). This is a measurement plan mismatch that should be corrected.",
+        "requires_human_review": true,
+        "recommended_action": "Reframe measurement: (1) Pull Sprout Social engagement data for science posts published Mar 14+. (2) Pull Klaviyo CTR for newsletter featuring BHB content. (3) Consider closing as 'investigation' outcome since primary value was strategic."
+      }
     },
     {
       "id": "CS-2026-007",
@@ -608,7 +616,56 @@
       "sweep_flag": "measurement_overdue",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-16"
+      "last_updated": "2026-04-16",
+      "measurement_result": {
+        "outcome": "inconclusive",
+        "measured_date": "2026-04-20",
+        "measurement_source": "Layer 2 \u2014 Klaviyo MCP flow report",
+        "primary_kpi": {
+          "metric": "subscription_churn_rate",
+          "baseline": "12% monthly churn",
+          "target": "<=8% monthly churn",
+          "actual": "[DATA NEEDED \u2014 requires Recharge churn data]",
+          "delta": "N/A"
+        },
+        "secondary_kpis": [
+          {
+            "metric": "flow_revenue",
+            "actual": "$1,967.60",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "flow_recipients",
+            "actual": "14,268",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "flow_conversion_rate",
+            "actual": "0.17%",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "flow_open_rate",
+            "actual": "32.7%",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "flow_RPR",
+            "actual": "$0.138",
+            "target": "N/A",
+            "delta": "N/A"
+          }
+        ],
+        "sample_size": 14268,
+        "confidence": "low",
+        "notes": "Cleetus post-purchase flow is live and generating engagement (32.7% open rate) and modest revenue ($1,968 from 25 conversions). However, the primary metric (subscription churn rate) cannot be measured from Klaviyo flow data alone \u2014 requires Recharge subscription retention data for the Cleetus cohort specifically. Flow engagement is healthy but conversion rate (0.17%) is low.",
+        "requires_human_review": true,
+        "recommended_action": "Pull Recharge data for Cleetus cohort churn rate (Mar 16 - Apr 20). Compare against 12% baseline. If churn data unavailable, consider reframing primary KPI to flow conversion rate."
+      }
     },
     {
       "id": "CS-2026-008",
@@ -1197,7 +1254,56 @@
         "confirmation_id": "Scheduled in Klaviyo - send 2026-04-10 14:00 EDT",
         "published_at": "2026-04-09T18:00:00Z"
       },
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "measurement_result": {
+        "outcome": "underperformed",
+        "measured_date": "2026-04-20",
+        "measurement_source": "Layer 2 \u2014 Klaviyo MCP campaign report",
+        "primary_kpi": {
+          "metric": "email_rpr",
+          "baseline": "N/A (new campaign)",
+          "target": ">=RPR benchmark for product spotlight sends",
+          "actual": "$0.068 RPR",
+          "delta": "N/A"
+        },
+        "secondary_kpis": [
+          {
+            "metric": "revenue",
+            "actual": "$1,293.07",
+            "target": "$18,000 expected",
+            "delta": "-92.8%"
+          },
+          {
+            "metric": "open_rate",
+            "actual": "35.96%",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "click_rate",
+            "actual": "0.56%",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "conversions",
+            "actual": "14",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "recipients",
+            "actual": "19,016",
+            "target": "~52,575 estimated",
+            "delta": "-63.8% smaller audience"
+          }
+        ],
+        "sample_size": 19016,
+        "confidence": "high",
+        "notes": "Campaign sent to 19K (vs 52K estimated). RPR of $0.068 and $1,293 revenue are well below $18K expected. Open rate (36%) healthy, but click-to-conversion funnel is weak (0.56% CTR, 0.074% CVR). Revenue shortfall driven by both smaller send size and lower conversion.",
+        "requires_human_review": true,
+        "recommended_action": "Review segment targeting (sent to 36% of planned audience). Test stronger CTAs or bundle offer for shots format."
+      }
     },
     {
       "id": "CS-2026-015",
@@ -2270,7 +2376,62 @@
       "sweep_flag": "measurement_overdue",
       "sweep_date": "2026-04-14",
       "sweep_note": "Measurement data pull required. Session 32 flagged.",
-      "last_updated": "2026-04-16"
+      "last_updated": "2026-04-16",
+      "measurement_result": {
+        "outcome": "underperformed",
+        "measured_date": "2026-04-20",
+        "measurement_source": "Layer 2 \u2014 Klaviyo MCP flow report",
+        "primary_kpi": {
+          "metric": "subscription_starts",
+          "baseline": "0",
+          "target": "8-20 new subscriptions",
+          "actual": "3 conversions",
+          "delta": "-62.5% vs minimum target"
+        },
+        "secondary_kpis": [
+          {
+            "metric": "flow_revenue",
+            "actual": "$266.28",
+            "target": "$5,184 expected",
+            "delta": "-94.9%"
+          },
+          {
+            "metric": "flow_recipients",
+            "actual": "495",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "flow_conversion_rate",
+            "actual": "0.61%",
+            "target": ">=1.5% SMS CVR",
+            "delta": "-59.3%"
+          },
+          {
+            "metric": "email_open_rate",
+            "actual": "43.3%",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "sms_click_rate",
+            "actual": "27-39%",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "AOV",
+            "actual": "$88.76",
+            "target": "N/A",
+            "delta": "N/A"
+          }
+        ],
+        "sample_size": 495,
+        "confidence": "medium",
+        "notes": "BAW sub-conversion flow reached 495 recipients over 14 days. 3 conversions ($266) vs 8-20 target. SMS click rates are strong (28-39%) but conversion to subscription is weak. Email has good open rate (43%) but minimal clicks (0.98%). Small sample size limits confidence but direction is clear \u2014 below target. The flow concept (BAW one-time \u2192 subscription) has merit but execution needs iteration.",
+        "requires_human_review": true,
+        "recommended_action": "Consider: (1) stronger subscription offer (e.g., first month discount), (2) timing optimization (test sending earlier in depletion window), (3) segment expansion if eligible pool was smaller than expected."
+      }
     },
     {
       "id": "CS-2026-031",
@@ -3140,7 +3301,62 @@
       "sweep_flags": [
         "closing_soon"
       ],
-      "last_sweep": "2026-04-16"
+      "last_sweep": "2026-04-16",
+      "measurement_result": {
+        "outcome": "underperformed",
+        "measured_date": "2026-04-20",
+        "measurement_source": "Layer 1 \u2014 paid-media-state.json",
+        "primary_kpi": {
+          "metric": "ROAS",
+          "baseline": "CS-2026-029 delivered 9.57x",
+          "target": ">=1.5x ROAS",
+          "actual": "0.38x ROAS",
+          "delta": "-74.7% vs target"
+        },
+        "secondary_kpis": [
+          {
+            "metric": "total_spend_7d",
+            "actual": "$288.45",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "total_revenue_7d",
+            "actual": "$109.31",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "purchases_7d",
+            "actual": "3",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "active_ads",
+            "actual": "6 ads across 3 campaigns",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "best_ad_roas",
+            "actual": "0.49x (re-edit / retargeting)",
+            "target": "N/A",
+            "delta": "N/A"
+          },
+          {
+            "metric": "ctr_best",
+            "actual": "2.82% (re-edit)",
+            "target": "N/A",
+            "delta": "N/A"
+          }
+        ],
+        "sample_size": 23683,
+        "confidence": "high",
+        "notes": "Matt Hughes athlete content across 6 ad variants delivered 0.38x ROAS on $288 spend \u2014 well below 1.5x target and triggering the kill criteria (<0.8x at Day 7). Best performer (re-edit / retargeting) has decent CTR (2.82%) but 0.49x ROAS. Prospecting and interest-based adsets generated zero purchases. Content generates clicks but fails to convert. The 9.57x predecessor (CS-029) was likely retargeting-only; scaling to prospecting didn't hold.",
+        "requires_human_review": true,
+        "recommended_action": "Kill trigger hit. Pause lowest performers immediately. Retain re-edit in retargeting only (0.49x may improve with tighter audience). Do not scale to prospecting. Learning: athlete content for Matt Hughes doesn't transfer from retargeting to prospecting."
+      }
     },
     {
       "id": "CS-2026-046",
