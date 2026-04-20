@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-19",
-  "next_id": 87,
+  "last_updated": "2026-04-20",
+  "next_id": 94,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-17",
     "last_sweep_session": "S35",
@@ -712,7 +712,13 @@
       "notes": "2026-04-13: Katie pushed 8 plain-text email drafts to Klaviyo via MCP as automation pipeline test. Template IDs: E1 TyGFEZ, E2 VJfQKV (claims review), E3 V2BxMU, E4 TBiVRS (claims review), E5 RJfMZZ (claims review), E6 X2Ucc4, E7 TgMUui, E8 WBKUt6. Status stays approved \u2014 claims gate on E2/E4/E5 still open with Devon, flow/segment/schedule remain manual (MCP has no endpoints). Stale flag reset. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "AUTOMATION_TEST_2026-04-13",
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -774,7 +780,7 @@
           }
         }
       },
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-20",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
@@ -1309,7 +1315,13 @@
       "notes": "Scheduled send: 4/16. Brief status: DRAFT \u2014 needs Devon approval on Robberechts 2023 claim framing before send. Corrected from published (email not yet sent). | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1326,7 +1338,7 @@
       "sweep_flag": "stale_approved",
       "sweep_date": "2026-04-14",
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-20",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
@@ -1372,7 +1384,13 @@
       "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized \u2014 supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1389,7 +1407,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-20",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
@@ -1435,7 +1453,13 @@
       "notes": "Send: 4/21. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1452,7 +1476,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-20",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
@@ -1498,7 +1522,13 @@
       "notes": "Send: 4/22 (Earth Day). Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1515,7 +1545,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-20",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
@@ -1563,7 +1593,13 @@
       "notes": "Send: 4/24 (tentative). Depends on CS-2026-017 koozie asset finalization. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1580,7 +1616,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-20",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
@@ -1626,7 +1662,13 @@
       "notes": "Send: 4/27. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1643,7 +1685,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-20",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
@@ -1689,7 +1731,13 @@
       "notes": "Send: 4/30. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1706,7 +1754,7 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-20",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
@@ -2675,9 +2723,15 @@
       "triage_action": "consider_closing_as_abandoned",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 22d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
       ],
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-20",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
@@ -3003,7 +3057,13 @@
       "sweep_flags": [
         "EXECUTION BLOCKED: TikTok account structure unresolved. Nick scheduling call with TikTok rep.",
         "S31 sweep 2026-04-13: stale 12d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
       ],
       "last_sweep": "2026-04-16",
       "execution_target_date": null,
@@ -3016,7 +3076,7 @@
       "sweep_flag": "stale_approved",
       "sweep_date": "2026-04-14",
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-20",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
@@ -3410,7 +3470,16 @@
       "autonomy_tier": null,
       "urgency": "ok",
       "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
+      "last_updated": "2026-04-20"
     },
     {
       "id": "CS-2026-050",
@@ -3771,7 +3840,16 @@
       "approved_date": "2026-04-15",
       "notes": " | 2026-04-15: Devon approved. Expand D04 Polar pull to include campaign-level ATC + checkout metrics.",
       "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
+      "last_updated": "2026-04-20"
     },
     {
       "id": "CS-2026-057",
@@ -3793,7 +3871,16 @@
       "approved_date": "2026-04-15",
       "notes": " | 2026-04-15: Devon approved. Update D07/D13 scans to cross-reference Sprout published post counts before declaring content drought.",
       "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "session": "2026-04-20-s1",
+          "set_date": "2026-04-20",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
+      "last_updated": "2026-04-20"
     },
     {
       "id": "CS-2026-058",
@@ -4955,6 +5042,442 @@
       "urgency": "standard",
       "revision_notes": "2026-04-19 v2 rewrite: removed D5 weekly ceremony (Spec-without-runtime-enforcement anti-pattern). Removed Phase 2 team-ingest service (producer consolidation not needed \u2014 no fragmented producers existed). Removed CS-084 dependency (Step 5b write path already correct). Now single-fix ChangeSet: Step 9a.2 extension + team-roster config + narrow keyword broadening + backfill sweep. See audit 2026-04-Wk4-cluster-d-phase1-disambiguation.md and EC-2026-004.",
       "revision_date": "2026-04-19",
+      "rejection_notes": null,
+      "learning_note": null,
+      "spawned_changesets": null
+    },
+    {
+      "id": "CS-2026-087",
+      "title": "CamJones Unbound IG Organic-to-Paid Graduation Test",
+      "status": "draft",
+      "subtype": "implementation",
+      "category": "paid_social_graduation",
+      "surface": "paid_meta",
+      "owner": "Katie",
+      "risk_level": "medium",
+      "risk": "medium",
+      "review_tier": "standard",
+      "created": "2026-04-20",
+      "last_updated": "2026-04-20",
+      "hypothesis": "CamJones Unbound IG reel \u2014 the D17 organic winner this week \u2014 will hold ROAS above the paid-social breakeven threshold when boosted into Freedom Segment prospecting. Early signal comes from Matt Hughes reel graduation (737k impressions, strong CVR pull-through). Testing CamJones validates the endurance-authority graduation pattern on IG specifically (where organic endurance holds, unlike FB per L-036).",
+      "objective_level": "L4",
+      "spawned_from": "rec-224",
+      "dependencies": [],
+      "blocks": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 18500,
+          "expected": 9200,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 11100,
+          "expected": 5500,
+          "downside": 0
+        },
+        "primary_metric": "ig_boost_roas_14d",
+        "primary_metric_target": ">=2.2x (breakeven) | stretch >=3.0x",
+        "L1_margin": "positive expected \u2014 $2.5k test spend at 3.0x = $7.5k GR; at 2.2x = $5.5k (breakeven). Creative is already paid (organic rev-share agreement), so incremental cost is media only.",
+        "L2_cash": "neutral \u2014 $2.5k test budget fits within reallocated paid-social bucket (see CS-2026-089).",
+        "L3_customer_quality": "positive \u2014 CamJones audience is endurance/gravel, high overlap with Freedom Segment core.",
+        "L4_learning": "Validates IG-specific endurance graduation. Pairs with CS-2026-088 (Freedom500 FB) for platform comparison.",
+        "L5_brand_check": "pass \u2014 creative is already live organic, voice and claims compliant."
+      },
+      "linked_calendar_activity": "WHISKEY50-042626",
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-23",
+      "executed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "autonomy_tier": 2,
+      "file": "cgo-logs/changesets/CS-2026-087.md",
+      "notes": "Spawned from 2026-04-20 synthesis rec-224. Creative graduation follows Matt Hughes template (CS-2026-043). IG-only to avoid FB endurance fatigue (L-036). Whiskey 50 race on 4/26 provides natural content pairing and urgency window. Budget source: CS-2026-089 reallocation.",
+      "sweep_flags": [],
+      "urgency": "medium",
+      "revision_notes": null,
+      "revision_date": null,
+      "rejection_notes": null,
+      "learning_note": null,
+      "spawned_changesets": null
+    },
+    {
+      "id": "CS-2026-088",
+      "title": "Freedom500 FB Reel Creative Graduation \u2014 ARCA Talladega Pairing",
+      "status": "draft",
+      "subtype": "implementation",
+      "category": "paid_social_graduation",
+      "surface": "paid_meta",
+      "owner": "Katie",
+      "risk_level": "medium",
+      "risk": "medium",
+      "review_tier": "standard",
+      "created": "2026-04-20",
+      "last_updated": "2026-04-20",
+      "hypothesis": "Freedom500 FB reel graduates to paid placement paired with ARCA Talladega race activation (4/24). Tests whether motorsport/freedom creative holds on FB despite endurance fatigue (L-036), by using freedom-positioning rather than endurance-positioning hooks. If it clears 2.5x ROAS in 14d, we unlock a second FB graduation channel beyond athlete-authority.",
+      "objective_level": "L4",
+      "spawned_from": "rec-226",
+      "dependencies": [
+        "CS-2026-043"
+      ],
+      "blocks": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 14200,
+          "expected": 7000,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 8500,
+          "expected": 4200,
+          "downside": -600
+        },
+        "primary_metric": "fb_boost_roas_14d",
+        "primary_metric_target": ">=2.5x | stretch >=3.5x",
+        "L1_margin": "positive expected \u2014 $2k test budget. Downside case assumes 1.5x (below breakeven) = -$600 margin hit.",
+        "L2_cash": "neutral \u2014 within paid-social reallocation envelope.",
+        "L3_customer_quality": "neutral-positive \u2014 Freedom/motorsport audience shows higher AOV historically but lower subscription attach. Monitor sub-attach %.",
+        "L4_learning": "Resolves the FB endurance fatigue question (L-036): is it endurance positioning that's fatigued, or FB as a channel? Freedom framing is the cleanest test.",
+        "L5_brand_check": "pass \u2014 Cleetus partnership creative already approved; brand voice aligned."
+      },
+      "linked_calendar_activity": "ARCA-TAL-042426",
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-24",
+      "executed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "autonomy_tier": 2,
+      "file": "cgo-logs/changesets/CS-2026-088.md",
+      "notes": "Spawned from 2026-04-20 synthesis rec-226. ARCA Talladega on 4/24 is natural context. Hypothesis directly tests L-036 (FB endurance fatigue): freedom framing should NOT carry the endurance taint. If ROAS clears, we hold FB for freedom/motorsport wedge and keep endurance on IG+TikTok only.",
+      "sweep_flags": [],
+      "urgency": "medium",
+      "revision_notes": null,
+      "revision_date": null,
+      "rejection_notes": null,
+      "learning_note": null,
+      "spawned_changesets": null
+    },
+    {
+      "id": "CS-2026-089",
+      "title": "Paid Social Reallocation \u2014 Pause Underperforming Whitelisting + Cleetus Segments; Shift to Google Prospecting",
+      "status": "draft",
+      "subtype": "implementation",
+      "category": "budget_reallocation",
+      "surface": "paid_meta + paid_google",
+      "owner": "Katie",
+      "risk_level": "high",
+      "risk": "high",
+      "review_tier": "full",
+      "created": "2026-04-20",
+      "last_updated": "2026-04-20",
+      "hypothesis": "Whitelisting and sub-segments of Cleetus paid are underperforming (<1.5x ROAS for 14+ days per D17). Pausing them and shifting ~$4.5k/week to Google prospecting (now 9.16x ROAS in its third session, D04) yields a net MER improvement of ~0.4 points while preserving upper-funnel reach through surviving Cleetus segments.",
+      "objective_level": "L2",
+      "spawned_from": "rec-223",
+      "dependencies": [],
+      "blocks": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 41000,
+          "expected": 22500,
+          "downside": 8000
+        },
+        "margin": {
+          "upside": 24600,
+          "expected": 13500,
+          "downside": 4800
+        },
+        "primary_metric": "blended_paid_mer_7d_post_shift",
+        "primary_metric_target": ">=3.3x blended | Google segment ROAS >=6x sustained",
+        "L1_margin": "strongly positive expected \u2014 reallocation math assumes underperformers at 1.2x hold (losing ~$900/wk in margin) vs Google at 6x (gaining ~$3,400/wk in margin). Net +$2.5k/wk margin.",
+        "L2_cash": "positive \u2014 no net spend change, better cash efficiency.",
+        "L3_customer_quality": "neutral-positive \u2014 Google prospecting pulls higher-intent traffic (L-018-adjacent signal).",
+        "L4_learning": "Tests the durability of Google prospecting at scaled spend (~3x current bid). Validates or flags diminishing-returns curve.",
+        "L5_brand_check": "pass \u2014 no creative or messaging change; budget shift only."
+      },
+      "linked_calendar_activity": null,
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-22",
+      "executed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "autonomy_tier": 3,
+      "file": "cgo-logs/changesets/CS-2026-089.md",
+      "notes": "Spawned from 2026-04-20 synthesis rec-223 (P3). Requires Devon approval \u2014 crosses budget-reallocation threshold. Budget source for CS-087 ($2.5k) and CS-088 ($2k) comes from this reallocation envelope. Google 9.16x 3-session streak must hold; if D04 regresses in next scan, this CS is re-reviewed.",
+      "sweep_flags": [],
+      "urgency": "high",
+      "revision_notes": null,
+      "revision_date": null,
+      "rejection_notes": null,
+      "learning_note": null,
+      "spawned_changesets": null
+    },
+    {
+      "id": "CS-2026-090",
+      "title": "Value-Framing Email + PDP Reinforcement \u2014 'Why Kenetik Costs What It Costs'",
+      "status": "draft",
+      "subtype": "implementation",
+      "category": "messaging_lifecycle",
+      "surface": "klaviyo_email + shopify_pdp",
+      "owner": "Nicole + Lawrence",
+      "risk_level": "medium",
+      "risk": "medium",
+      "review_tier": "standard",
+      "created": "2026-04-20",
+      "last_updated": "2026-04-20",
+      "hypothesis": "Explicit value-framing content (formulation cost, third-party testing, clinical BHB dose, made-in-USA manufacturing) deployed as a lifecycle email and a PDP value module blunts Ketone-IQ's APRIL26 30%-subs price play. Measured via two cohorts: Klaviyo open-rate + 7-day post-open CVR for the email, and Shots PDP ATC-rate delta for the PDP module.",
+      "objective_level": "L5",
+      "spawned_from": "rec-227",
+      "dependencies": [],
+      "blocks": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 12800,
+          "expected": 5400,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 7700,
+          "expected": 3200,
+          "downside": 0
+        },
+        "primary_metric": "shots_pdp_atc_rate_delta_7d",
+        "primary_metric_target": ">=+8% ATC rate vs 14d baseline | email 7d attributed CVR >=3.2%",
+        "L1_margin": "positive expected \u2014 content is in-house (no creative spend). Revenue gain from AOV defense (prevents trade-down) plus reduced subscriber price objections.",
+        "L2_cash": "neutral.",
+        "L3_customer_quality": "positive \u2014 educated buyers show lower voluntary churn (D09 pattern). Value-framing should strengthen LTV.",
+        "L4_learning": "Tests whether price-anchored content is effective when competitor launches a discount push, or whether price competition requires counter-pricing.",
+        "L5_brand_check": "pass \u2014 Peter to review value claims for compliance (no clinical claims in email; only ingredient + sourcing transparency)."
+      },
+      "linked_calendar_activity": null,
+      "scheduled_send_date": "2026-04-25",
+      "execution_target_date": "2026-04-25",
+      "executed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "autonomy_tier": 3,
+      "file": "cgo-logs/changesets/CS-2026-090.md",
+      "notes": "Spawned from 2026-04-20 synthesis rec-227 (P5 Ketone-IQ counter). Direct response to Ketone-IQ APRIL26 30% sub discount + Tony Robbins YouTube push flagged by D13 (5th consecutive session below 40% share of voice). Nicole owns email copy + flow; Lawrence owns PDP module build. Peter claims review required pre-send.",
+      "sweep_flags": [],
+      "urgency": "high",
+      "revision_notes": null,
+      "revision_date": null,
+      "rejection_notes": null,
+      "learning_note": null,
+      "spawned_changesets": null
+    },
+    {
+      "id": "CS-2026-091",
+      "title": "Amazon Ads L-018 Data Pipeline \u2014 Sponsored Products + Brands Search-Term Report Ingestion",
+      "status": "draft",
+      "subtype": "implementation",
+      "category": "data_infrastructure",
+      "surface": "data_warehouse",
+      "owner": "Garrett",
+      "risk_level": "low",
+      "risk": "low",
+      "review_tier": "standard",
+      "created": "2026-04-20",
+      "last_updated": "2026-04-20",
+      "hypothesis": "Ingesting Amazon Sponsored Products + Sponsored Brands search-term reports into the warehouse unblocks the rec-225 Amazon ads diagnostic work referenced in today's daily-pulse (L-018). Pipeline cadence: daily incremental. Target table: amazon_ads.search_terms_daily with standard ad-attribution joins.",
+      "objective_level": "L4",
+      "spawned_from": "rec-225",
+      "dependencies": [],
+      "blocks": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "pipeline_freshness_daily",
+        "primary_metric_target": "ingestion SLA <4h post-source-refresh",
+        "L1_margin": "neutral \u2014 infrastructure work. Indirect margin via unblocked ad diagnostic.",
+        "L2_cash": "neutral.",
+        "L3_customer_quality": "neutral.",
+        "L4_learning": "Unblocks Amazon ads ROAS diagnosis + search-term waste analysis. Expected to surface $5-10k/mo of reallocation opportunity once live.",
+        "L5_brand_check": "pass."
+      },
+      "linked_calendar_activity": null,
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-27",
+      "executed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "7d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "autonomy_tier": 1,
+      "file": "cgo-logs/changesets/CS-2026-091.md",
+      "notes": "Spawned from 2026-04-20 synthesis rec-225. L-018 referenced in daily-pulse but dashboard shows 'data unavailable'. Garrett owns ingestion. Downstream consumers: Katie (search-term optimization), Devon (Amazon MER visibility).",
+      "sweep_flags": [],
+      "urgency": "medium",
+      "revision_notes": null,
+      "revision_date": null,
+      "rejection_notes": null,
+      "learning_note": null,
+      "spawned_changesets": null
+    },
+    {
+      "id": "CS-2026-092",
+      "title": "Investigate + Remediate Amazon Listing Text Auto-Publishing to TikTok/IG (PM L-037)",
+      "status": "draft",
+      "subtype": "investigation",
+      "category": "content_operations",
+      "surface": "publishing_pipeline",
+      "owner": "Garrett + Charlotte",
+      "risk_level": "medium",
+      "risk": "medium",
+      "review_tier": "standard",
+      "created": "2026-04-20",
+      "last_updated": "2026-04-20",
+      "hypothesis": "An unaudited publishing workflow is injecting Amazon product-listing copy (e.g. 'KENETIK Caffeine-Free Focus Drink...') into the TikTok and Instagram publishing queue. 6+ near-zero-engagement posts from Mar 31 \u2013 Apr 2 confirm the pollution. Investigation deliverable: identify the source integration (Sprout Social? Zapier? direct API?), pause the source, backfill a remediation list of polluted posts, and establish a pre-publish content filter to prevent recurrence.",
+      "objective_level": "L4",
+      "spawned_from": "PM-L-037",
+      "dependencies": [],
+      "blocks": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "polluted_posts_remaining",
+        "primary_metric_target": "0 new polluted posts within 48h of source identification",
+        "L1_margin": "neutral directly; indirect benefit by restoring posting-frequency integrity and protecting algorithmic signal quality.",
+        "L2_cash": "neutral.",
+        "L3_customer_quality": "positive \u2014 stops pollution of social-first audiences with retail-copy messaging that is off-voice and off-context.",
+        "L4_learning": "Reveals upstream integration fragility. Defines publishing-pipeline governance gap to close systematically.",
+        "L5_brand_check": "fail-current \u2014 listing copy violates social brand voice. CS remediates."
+      },
+      "linked_calendar_activity": null,
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-22",
+      "executed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "7d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "autonomy_tier": 1,
+      "file": "cgo-logs/changesets/CS-2026-092.md",
+      "notes": "Spawned from PM L-037 (changeset_candidate=true, action_taken=None). Urgent \u2014 pollution is active and recurring. Garrett owns integration audit; Charlotte owns social queue cleanup. Sets PM L-037 action_taken upon close.",
+      "sweep_flags": [],
+      "urgency": "high",
+      "revision_notes": null,
+      "revision_date": null,
+      "rejection_notes": null,
+      "learning_note": null,
+      "spawned_changesets": null
+    },
+    {
+      "id": "CS-2026-093",
+      "title": "FB Paid Creative Brief Update \u2014 Eliminate Endurance Hooks, Redirect to Protocol Class + Stimulant Refugee (PM L-036)",
+      "status": "draft",
+      "subtype": "implementation",
+      "category": "creative_brief_update",
+      "surface": "paid_meta",
+      "owner": "Charlotte + Katie",
+      "risk_level": "low",
+      "risk": "low",
+      "review_tier": "standard",
+      "created": "2026-04-20",
+      "last_updated": "2026-04-20",
+      "hypothesis": "FB paid creative briefs are updated to eliminate endurance/adventure framing (which has collapsed from 5.69x to 0.58x median per L-036) and instead lead with Protocol Class (3.9x median) and Stimulant Refugee (3.3x median) segment framings. Applies to FB-only; IG and TikTok briefs remain unchanged (platform-specific fatigue).",
+      "objective_level": "L4",
+      "spawned_from": "PM-L-036",
+      "dependencies": [],
+      "blocks": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 22000,
+          "expected": 12000,
+          "downside": 4000
+        },
+        "margin": {
+          "upside": 13200,
+          "expected": 7200,
+          "downside": 2400
+        },
+        "primary_metric": "fb_median_roas_14d_post_brief_update",
+        "primary_metric_target": ">=2.8x (vs 0.58x endurance-only median)",
+        "L1_margin": "positive expected \u2014 no new spend, creative output shift only. Margin gain is via higher hit-rate on FB creative volume.",
+        "L2_cash": "neutral.",
+        "L3_customer_quality": "positive \u2014 Protocol Class + Stimulant Refugee segments convert at higher LTV than endurance (see D09 cohort data).",
+        "L4_learning": "Confirms whether a platform-specific creative redirect reverses fatigue within 14 days.",
+        "L5_brand_check": "pass \u2014 segment framings already documented in brain/segments/."
+      },
+      "linked_calendar_activity": null,
+      "scheduled_send_date": null,
+      "execution_target_date": "2026-04-24",
+      "executed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "autonomy_tier": 2,
+      "file": "cgo-logs/changesets/CS-2026-093.md",
+      "notes": "Spawned from PM L-036 (changeset_candidate=true, action_taken=None). Companion to CS-2026-088 \u2014 CS-088 tests whether freedom framing survives FB while this CS redirects the broader brief away from endurance. Sets PM L-036 action_taken upon publish.",
+      "sweep_flags": [],
+      "urgency": "medium",
+      "revision_notes": null,
+      "revision_date": null,
       "rejection_notes": null,
       "learning_note": null,
       "spawned_changesets": null
