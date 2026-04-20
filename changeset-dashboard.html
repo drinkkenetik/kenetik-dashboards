@@ -1192,7 +1192,11 @@ function getUrgencyLevel(cs) {
     if (isBlocked) return { level: 'blocked', daysUntil, age };
 
     if (status === 'published') {
-        if (cs.measurement_result && cs.measurement_result.requires_human_review) return { level: 'needs-review', daysUntil, age };
+        // Measured items take priority over measurement_due date checks
+        if (cs.measurement_result) {
+            if (cs.measurement_result.requires_human_review) return { level: 'needs-review', daysUntil, age };
+            return { level: 'measured', daysUntil, age };
+        }
         if (cs.requires_human_review) return { level: 'needs-review', daysUntil, age };
         if (md) {
             const daysUntilMeasure = Math.round((md - today) / 86400000);
@@ -1230,8 +1234,9 @@ function urgencyBadge(cs) {
     if (u.level === 'due-soon') return `<span class="badge badge-high">DUE ${u.daysUntil}d</span>`;
     if (u.level === 'stale') return `<span class="badge" style="background:rgba(239,68,68,0.15);color:var(--danger)">STALE ${u.age}d</span>`;
     if (u.level === 'needs-review') return `<span class="badge badge-high">REVIEW NEEDED</span>`;
+    if (u.level === 'measured') return `<span class="badge badge-medium" style="background:rgba(34,197,94,0.15);color:var(--success)">MEASURED</span>`;
     if (u.level === 'measure-due') return `<span class="badge badge-medium">MEASURE DUE</span>`;
-    if (u.level === 'measuring') return `<span class="badge badge-low">MEASURING ${u.daysUntil}d</span>`;
+    if (u.level === 'measuring') return `<span class="badge badge-low">MEASURING ${u.daysUntil != null ? u.daysUntil + 'd' : ''}</span>`;
     if (u.level === 'on-track' && u.daysUntil <= 7) return `<span class="badge badge-medium">DUE ${u.daysUntil}d</span>`;
     if (u.level === 'on-track') return `<span class="badge badge-low">${u.daysUntil}d out</span>`;
     return '';
@@ -1244,7 +1249,7 @@ function urgencyClass(cs) {
 // Urgency sort priority (lower = more urgent)
 function urgencySortOrder(cs) {
     const level = getUrgencyLevel(cs).level;
-    const order = { 'needs-review': 0, 'measure-due': 1, 'overdue': 2, 'blocked': 3, 'stale': 4, 'due-soon': 5, 'measuring': 6, 'on-track': 7, 'none': 8 };
+    const order = { 'needs-review': 0, 'measured': 1, 'measure-due': 2, 'overdue': 3, 'blocked': 4, 'stale': 5, 'due-soon': 6, 'measuring': 7, 'on-track': 8, 'none': 9 };
     return order[level] ?? 9;
 }
 
@@ -1494,7 +1499,7 @@ function renderPublishedUrgency(items) {
 
     // Group into urgency bands — use a set to ensure every item renders exactly once
     const placed = new Set();
-    const needsReview = sorted.filter(c => { const l = getUrgencyLevel(c).level; return l === 'needs-review'; });
+    const needsReview = sorted.filter(c => { const l = getUrgencyLevel(c).level; return l === 'needs-review' || l === 'measured'; });
     needsReview.forEach(c => placed.add(c.id));
     const blocked = sorted.filter(c => { const l = getUrgencyLevel(c).level; return l === 'blocked' && !placed.has(c.id); });
     blocked.forEach(c => placed.add(c.id));
