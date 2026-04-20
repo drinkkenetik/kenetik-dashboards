@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-20",
-  "next_id": 94,
+  "next_id": 95,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-17",
     "last_sweep_session": "S35",
@@ -43,22 +43,22 @@
     }
   },
   "summary": {
-    "total": 86,
+    "total": 87,
     "by_status": {
       "approved": 15,
       "closed": 26,
-      "draft": 32,
+      "draft": 33,
       "published": 13
     },
-    "last_updated": "2026-04-19",
+    "last_updated": "2026-04-20",
     "by_risk": {
       "critical": 2,
       "low": 46,
-      "medium": 28,
+      "medium": 29,
       "high": 7
     },
     "by_subtype": {
-      "implementation": 62,
+      "implementation": 63,
       "investigation": 16,
       "quick": 5
     }
@@ -5481,6 +5481,72 @@
       "rejection_notes": null,
       "learning_note": null,
       "spawned_changesets": null
+    },
+    {
+      "id": "CS-2026-094",
+      "title": "Graduation: Matt Hughes 'What He's Doing Now' IG Reel \u2192 Paid IG Amplification",
+      "subtype": "implementation",
+      "surface": "paid_meta",
+      "status": "draft",
+      "risk_level": "medium",
+      "risk": "medium",
+      "owner": "Katie",
+      "created": "2026-04-20",
+      "last_updated": "2026-04-20",
+      "objective_level": "L1",
+      "category": "paid_social_graduation",
+      "review_tier": "standard",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "moe-weekly-graduation-scan-2026-04-20",
+      "spawned_changesets": [],
+      "hypothesis": "The Matt Hughes 'brain recovery / motor skill rebuild' IG Reel (DW4P8rjunhz, published 2026-04-08) reached 204,802 organic impressions \u2014 36x the 30-day IG average (5,645) \u2014 with 102 saves and a 2.19% ER. This reach signal replicates the pattern that delivered 9.57x ROAS on CS-2026-029 (Matt Hughes FB Reel graduation). We believe boosting this creative on IG Reels will hold \u22653.5x pixel ROAS at a $500/day test budget, consistent with the FB graduation in CS-2026-061 and the endurance-authority pattern validated in CS-2026-087.",
+      "expected_impact": {
+        "revenue": {
+          "upside": 10500,
+          "expected": 5250,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 5250,
+          "expected": 2625,
+          "downside": 0
+        },
+        "primary_metric": "ig_pixel_roas_14d",
+        "primary_metric_target": ">=3.5x pixel ROAS | stretch >=5.0x",
+        "L1_margin": "$2,625 expected contribution margin at $500/day \u00d7 14d \u00d7 3.5x ROAS \u00d7 50% DTC margin. Creative already organic \u2014 incremental cost is media only.",
+        "L2_cash": "neutral \u2014 standard DTC cash cycle. Test budget fits within existing paid-social bucket (no reallocation required beyond CS-2026-089).",
+        "L3_customer_quality": "positive \u2014 Matt Hughes audience is endurance/cognitive-performance, strong Freedom Segment overlap. Brain recovery narrative reinforces scientific credibility wedge.",
+        "L4_learning": "Validates IG-specific graduation for Matt Hughes science-authority content. Complements CS-2026-061 (FB) for cross-platform lift comparison. Confirms whether the 36x reach multiplier is a durable leading indicator for paid ROAS on IG Reels.",
+        "L5_brand_check": "pass \u2014 creative is already live organic, voice and claims (motor skill / cognitive recovery references) consistent with Tier A/B claims matrix. Confirm Tier A documentation before scale."
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-20",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_start_date": null,
+      "measurement_end_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": null,
+      "file": "cgo-logs/changesets/CS-2026-094.md",
+      "notes": "Moe weekly graduation scan 2026-04-20. IG Reel DW4P8rjunhz (Matt Hughes 'What he is doing now is harder than any fight he ever won'): 204,802 impressions, 102 saves, 2.19% ER \u2014 reach is 36x 30d IG avg (5,645). Distinct from CS-2026-061 (FB Reel 1271683487723842, same caption, 1.5M reach). Draft for Katie review.",
+      "urgency": "medium",
+      "revision_notes": null,
+      "revision_date": null,
+      "rejection_notes": null,
+      "learning_note": null,
+      "sweep_flags": []
     }
   ],
   "queue_actions": {
