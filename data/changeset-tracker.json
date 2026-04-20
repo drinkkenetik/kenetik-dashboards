@@ -43,13 +43,12 @@
     }
   },
   "summary": {
-    "total": 83,
+    "total": 86,
     "by_status": {
+      "approved": 15,
       "closed": 26,
-      "published": 9,
-      "approved": 16,
-      "draft": 31,
-      "executed": 1
+      "draft": 32,
+      "published": 13
     },
     "last_updated": "2026-04-19",
     "by_risk": {
@@ -2477,7 +2476,7 @@
       "title": "SMS-First Promotional Strategy Experiment",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "executed",
+      "status": "published",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-23",
@@ -2531,7 +2530,8 @@
       ],
       "last_sweep": "2026-04-16",
       "measurement_start_date": "2026-04-19",
-      "measurement_due": "2026-05-03"
+      "measurement_due": "2026-05-03",
+      "published_date": "2026-04-19"
     },
     {
       "id": "CS-2026-036",
@@ -4774,7 +4774,7 @@
     {
       "id": "CS-2026-084",
       "title": "PM Write-Gate: Unified Validated-Write API for cross-surface-pm.json",
-      "status": "executed",
+      "status": "published",
       "subtype": "implementation",
       "category": "internal_infra",
       "surface": "internal_infra",
@@ -4816,7 +4816,7 @@
       "executed_date": "2026-04-19",
       "approved_by": null,
       "approved_date": null,
-      "published_date": null,
+      "published_date": "2026-04-19",
       "measurement_start_date": "2026-04-19",
       "measurement_end_date": null,
       "measurement_window": "14d",
@@ -4838,7 +4838,7 @@
     {
       "id": "CS-2026-085",
       "title": "Workflow Scheduler: Unified Module for Archival Trigger, Stale-State Monitor, Execution Queue",
-      "status": "executed",
+      "status": "published",
       "subtype": "implementation",
       "category": "internal_infra",
       "surface": "internal_infra",
@@ -4878,7 +4878,7 @@
       "executed_date": "2026-04-19",
       "approved_by": null,
       "approved_date": null,
-      "published_date": null,
+      "published_date": "2026-04-19",
       "measurement_start_date": "2026-04-19",
       "measurement_end_date": null,
       "measurement_window": "14d",
@@ -4900,7 +4900,7 @@
     {
       "id": "CS-2026-086",
       "title": "Team Signal Coverage Fix: Step 9 extension for unsolicited team inbound DMs",
-      "status": "executed",
+      "status": "published",
       "subtype": "implementation",
       "category": "internal_infra",
       "surface": "internal_infra",
