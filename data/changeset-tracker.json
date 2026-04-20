@@ -713,12 +713,7 @@
       "sweep_flags": [
         "AUTOMATION_TEST_2026-04-13",
         "stale_approved",
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1316,12 +1311,7 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1385,12 +1375,7 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1454,12 +1439,7 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1523,12 +1503,7 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1594,12 +1569,7 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1663,12 +1633,7 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1732,12 +1697,7 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -2724,12 +2684,7 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 22d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_updated": "2026-04-20",
       "nudge_count": 1,
@@ -3058,12 +3013,7 @@
         "EXECUTION BLOCKED: TikTok account structure unresolved. Nick scheduling call with TikTok rep.",
         "S31 sweep 2026-04-13: stale 12d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_sweep": "2026-04-16",
       "execution_target_date": null,
@@ -3472,12 +3422,7 @@
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
       "sweep_flags": [
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_updated": "2026-04-20"
     },
@@ -3842,12 +3787,7 @@
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
       "sweep_flags": [
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_updated": "2026-04-20"
     },
@@ -3873,12 +3813,7 @@
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
       "sweep_flags": [
-        {
-          "flag": "stale_approved_gt_7d",
-          "session": "2026-04-20-s1",
-          "set_date": "2026-04-20",
-          "action": "owner_nudge_queued_phase_4"
-        }
+        "stale_approved_gt_7d"
       ],
       "last_updated": "2026-04-20"
     },

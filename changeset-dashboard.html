@@ -985,7 +985,7 @@ function surfaceBadge(surface) {
         wholesale_retail: '#8b5cf6', practitioner: '#06b6d4'
     };
     const color = colors[surface] || '#6b7280';
-    const label = surface.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    const label = (surface || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
     return `<span class="badge" style="background:${color}22;color:${color};border:1px solid ${color}44">${label}</span>`;
 }
 
@@ -1018,7 +1018,10 @@ function getUrgencyLevel(cs) {
     const md = cs.measurement_due ? new Date(cs.measurement_due) : null;
     const targetDate = ssd || etd;
     const daysUntil = targetDate ? Math.round((targetDate - today) / 86400000) : null;
-    const isBlocked = (cs.sweep_flags || []).some(f => f.toUpperCase().includes('BLOCK'));
+    const isBlocked = (cs.sweep_flags || []).some(f => {
+        const s = typeof f === 'string' ? f : (f && f.flag ? f.flag : String(f));
+        return s.toUpperCase().includes('BLOCK');
+    });
     const status = cs.status || '';
 
     // Blocked is always blocked, regardless of status
@@ -1157,7 +1160,7 @@ function populateSurfaceDropdown() {
     surfaces.forEach(s => {
         const opt = document.createElement('option');
         opt.value = s;
-        opt.textContent = s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        opt.textContent = (s || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
         sel.appendChild(opt);
     });
 }
