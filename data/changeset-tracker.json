@@ -48,7 +48,8 @@
       "closed": 26,
       "published": 9,
       "approved": 16,
-      "draft": 32
+      "draft": 31,
+      "executed": 1
     },
     "last_updated": "2026-04-19",
     "by_risk": {
@@ -774,7 +775,9 @@
           }
         }
       },
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-010",
@@ -1324,7 +1327,9 @@
       "sweep_flag": "stale_approved",
       "sweep_date": "2026-04-14",
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-017",
@@ -1385,7 +1390,9 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-018",
@@ -1446,7 +1453,9 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-019",
@@ -1507,7 +1516,9 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-020",
@@ -1570,7 +1581,9 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-021",
@@ -1631,7 +1644,9 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-022",
@@ -1692,7 +1707,9 @@
       "stale": true,
       "triage_recommendation": "requires_human_review",
       "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-023",
@@ -2460,7 +2477,7 @@
       "title": "SMS-First Promotional Strategy Experiment",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "executed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-23",
@@ -2495,12 +2512,12 @@
       "routed_via": "auto",
       "routed_date": "2026-03-22",
       "file": "cgo-logs/changesets/CS-2026-035.md",
-      "notes": "Draft: Winback flow experiment. Pending Katie review. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
+      "notes": "Draft: Winback flow experiment. Pending Katie review. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-19: auto-advanced by workflow_scheduler.e2 (tenant v1.0.0); measurement window 14d.",
       "risk": "low",
       "scheduled_send_date": null,
       "autonomy_tier": 1,
       "execution_target_date": null,
-      "executed_date": null,
+      "executed_date": "2026-04-19",
       "urgency": null,
       "approved_by": "Katie (on behalf of Devon)",
       "approved_date": "2026-04-07",
@@ -2508,11 +2525,13 @@
       "sweep_flag": "stale_approved",
       "sweep_date": "2026-04-14",
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-19",
       "sweep_flags": [
         "stale_approved"
       ],
-      "last_sweep": "2026-04-16"
+      "last_sweep": "2026-04-16",
+      "measurement_start_date": "2026-04-19",
+      "measurement_due": "2026-05-03"
     },
     {
       "id": "CS-2026-036",
@@ -2658,7 +2677,9 @@
         "S31 sweep 2026-04-13: stale 22d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved"
       ],
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-038",
@@ -2995,7 +3016,9 @@
       "sweep_flag": "stale_approved",
       "sweep_date": "2026-04-14",
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "last_updated": "2026-04-15"
+      "last_updated": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-044",
@@ -3385,7 +3408,9 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "ok"
+      "urgency": "ok",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-050",
@@ -3744,7 +3769,9 @@
       "autonomy_tier": 1,
       "approved_by": "Devon",
       "approved_date": "2026-04-15",
-      "notes": " | 2026-04-15: Devon approved. Expand D04 Polar pull to include campaign-level ATC + checkout metrics."
+      "notes": " | 2026-04-15: Devon approved. Expand D04 Polar pull to include campaign-level ATC + checkout metrics.",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-057",
@@ -3764,7 +3791,9 @@
       "autonomy_tier": 1,
       "approved_by": "Devon",
       "approved_date": "2026-04-15",
-      "notes": " | 2026-04-15: Devon approved. Update D07/D13 scans to cross-reference Sprout published post counts before declaring content drought."
+      "notes": " | 2026-04-15: Devon approved. Update D07/D13 scans to cross-reference Sprout published post counts before declaring content drought.",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-058",
@@ -4191,7 +4220,9 @@
       "executed_date": null,
       "autonomy_tier": null,
       "linked_calendar_activity": "ROMAN-020326",
-      "learning_note": null
+      "learning_note": null,
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-068",
@@ -4352,7 +4383,9 @@
       "notes": "CRITICAL P0 crisis protocol. Created by S33 synthesis. | 2026-04-15: Devon approved as routine watchlist only. Downgraded to low risk. No legal engagement, no escalation mechanics, no blocking of dependent CSs. Standard D18 Sprout Listening watch. This is routine social noise.",
       "last_updated": "2026-04-15",
       "approved_by": "Devon",
-      "approved_date": "2026-04-15"
+      "approved_date": "2026-04-15",
+      "nudge_count": 1,
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
     {
       "id": "CS-2026-075",
@@ -4741,7 +4774,7 @@
     {
       "id": "CS-2026-084",
       "title": "PM Write-Gate: Unified Validated-Write API for cross-surface-pm.json",
-      "status": "draft",
+      "status": "executed",
       "subtype": "implementation",
       "category": "internal_infra",
       "surface": "internal_infra",
@@ -4780,20 +4813,20 @@
       "linked_calendar_activity": null,
       "scheduled_send_date": null,
       "execution_target_date": "2026-05-03",
-      "executed_date": null,
+      "executed_date": "2026-04-19",
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
+      "measurement_start_date": "2026-04-19",
       "measurement_end_date": null,
       "measurement_window": "14d",
-      "measurement_due": null,
+      "measurement_due": "2026-05-03",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-084.md",
-      "notes": "Spawned from Phase 2c PM-DRIVE-TO-A portfolio. Bundles Cluster A (confidence inflation) + Cluster B (entry_type regression) primaries + A5/B5 reconciler companions via P002 Guardrail-as-input primitive. 5-level review APPROVE. Promotes Provisional Co-emit-lifecycle-marker pattern to Established on ship (3/3 applications). Rollout: day 1-5 gate+classifier shadow, day 6-10 flag-policy cutover + reconciler, day 11-14 strict-policy after 48h clean telemetry.",
+      "notes": "Spawned from Phase 2c PM-DRIVE-TO-A portfolio. Bundles Cluster A (confidence inflation) + Cluster B (entry_type regression) primaries + A5/B5 reconciler companions via P002 Guardrail-as-input primitive. 5-level review APPROVE. Promotes Provisional Co-emit-lifecycle-marker pattern to Established on ship (3/3 applications). Rollout: day 1-5 gate+classifier shadow, day 6-10 flag-policy cutover + reconciler, day 11-14 strict-policy after 48h clean telemetry. | 2026-04-19: SHIPPED. scripts/pm_write_gate.py (validated-write API), scripts/pm_reconciler.py (batch backfill), cgo-daily-pipeline/config/pm-write-gate-policy.json (flag policy, shadow=false). Reconciler APPLIED: 30 entry_type backfills + 21 confidence downgrades (18 Cluster-A inflated strongs + 3 additional single-source moderates). Backup: data/performance-memory/cross-surface-pm.json.bak-20260419T235328Z. Gate smoke-test: selftest 4/4 green (validation, downgrade, rejection, classifier); shadow append correctly blocked live write. E5 scanner confirms PM_ENTRY_TYPE_MISSING cleared (30->0). Policy rollout: flag today, strict after 48h clean telemetry.",
       "sweep_flags": [],
       "urgency": "high",
       "revision_notes": null,
@@ -4805,7 +4838,7 @@
     {
       "id": "CS-2026-085",
       "title": "Workflow Scheduler: Unified Module for Archival Trigger, Stale-State Monitor, Execution Queue",
-      "status": "draft",
+      "status": "executed",
       "subtype": "implementation",
       "category": "internal_infra",
       "surface": "internal_infra",
@@ -4842,20 +4875,20 @@
       "linked_calendar_activity": null,
       "scheduled_send_date": null,
       "execution_target_date": "2026-05-03",
-      "executed_date": null,
+      "executed_date": "2026-04-19",
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
+      "measurement_start_date": "2026-04-19",
       "measurement_end_date": null,
       "measurement_window": "14d",
-      "measurement_due": null,
+      "measurement_due": "2026-05-03",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-085.md",
-      "notes": "Spawned from Phase 2c PM-DRIVE-TO-A portfolio. Bundles Cluster C primary (archival synthesis) + Cluster E primary + E5 companion + C5 reconciler via shared workflow-scheduler infrastructure. Confound check vs Cluster C passed (distinct primitives; shared infra). 5-level review APPROVE with conditions (risk-classifier rules required before E2 live cutover). Ship order: E5 day 1 standalone, scheduler core + C1 tenant days 3-7, E2 shadow days 8-10, E2 live days 11-12, C5 reconciliation days 13-14. P003 circuit breaker 2nd major application.",
+      "notes": "Spawned from Phase 2c PM-DRIVE-TO-A portfolio. Bundles Cluster C primary (archival synthesis) + Cluster E primary + E5 companion + C5 reconciler via shared workflow-scheduler infrastructure. Confound check vs Cluster C passed (distinct primitives; shared infra). 5-level review APPROVE with conditions (risk-classifier rules required before E2 live cutover). Ship order: E5 day 1 standalone, scheduler core + C1 tenant days 3-7, E2 shadow days 8-10, E2 live days 11-12, C5 reconciliation days 13-14. P003 circuit breaker 2nd major application. | 2026-04-19: Tenant E5 (stale-state scanner) SHIPPED standalone per plan. scripts/e5_stale_state_scanner.py implements 4 tracker rules + 2 PM rules + P003 circuit breaker (5%/24h) + dedupe with 3-scan escalation. Dry-run smoke test: 61 violations detected against live tracker+PM (1 STALE_APPROVED_OVERDUE, 10 DRAFT_STALE, 6 MEASUREMENT_OVERDUE, 14 STALE_APPROVED_UNDATED, 30 PM_ENTRY_TYPE_MISSING). Remaining tenants (C1 archival, E2 execution queue, C5 reconciler) queued. | 2026-04-19: FULL SHIP. scripts/workflow_scheduler.py (core + registry + shared P003 circuit breaker), scripts/wf_tenant_c1.py (PM archival hook + C5 backlog reconciler), scripts/wf_tenant_e2.py (ChangeSet execution queue + risk classifier). C1 live: archived 5 acted-on entries (L-022/023/033/034/035). C5 live: physically moved 5 entries active->archived_entries (30->25 active / 7->12 archived). E2 live: 16 approved CSes scanned, 1 auto-advanced (CS-035 klaviyo tier-1 Devon-approved), 15 routed to manual-push-hold with nudge (including CS-056 + CS-057 proof-point). E5 already shipped in commit 96216b6. Manual-push queue written to cgo-logs/workflow-scheduler/manual-push-queue.jsonl. Rollout note: CS-085 spec called for E2 48h shadow before live; compressed here given same-session validation + Devon directive. Circuit breaker healthy across all tenants.",
       "sweep_flags": [],
       "urgency": "high",
       "revision_notes": null,
@@ -4867,7 +4900,7 @@
     {
       "id": "CS-2026-086",
       "title": "Team Signal Coverage Fix: Step 9 extension for unsolicited team inbound DMs",
-      "status": "draft",
+      "status": "executed",
       "subtype": "implementation",
       "category": "internal_infra",
       "surface": "internal_infra",
@@ -4904,14 +4937,14 @@
       "linked_calendar_activity": null,
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-26",
-      "executed_date": null,
-      "approved_by": null,
-      "approved_date": null,
-      "published_date": null,
-      "measurement_start_date": null,
+      "executed_date": "2026-04-19",
+      "approved_by": "Devon",
+      "approved_date": "2026-04-19",
+      "published_date": "2026-04-19",
+      "measurement_start_date": "2026-04-19",
       "measurement_end_date": null,
       "measurement_window": "28d",
-      "measurement_due": null,
+      "measurement_due": "2026-05-03",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
@@ -5191,6 +5224,10 @@
     {
       "date": "2026-04-19",
       "note": "CS-2026-086 rewritten v2 post Cluster D disambiguation audit. Scope changed from bifurcated ceremony+infra to single Step-9a.2 coverage fix. CS-084 dependency removed. Autonomy tier lowered to 0. Risk low. Review tier standard. Method gaps logged as EC-2026-004 (Level-0 anti-pattern cross-check; disjunction-vs-conjunction at pre-emit)."
+    },
+    {
+      "date": "2026-04-19",
+      "note": "CS-2026-086 v2 executed: Step 9a.2 inserted into synthesis-instructions.md; team-roster.json created; 7 additional correction-shape keywords added to Step 9a; backfill sweep harness + review template shipped (scripts/step9a2_backfill_sweep.py). Measurement window 14d."
     }
   ]
 }
