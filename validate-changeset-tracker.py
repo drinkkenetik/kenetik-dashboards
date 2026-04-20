@@ -79,7 +79,7 @@ def validate(path='data/changeset-tracker.json'):
         if subtype and subtype not in VALID_SUBTYPES:
             errors.append(f"{cs_id}: invalid subtype '{subtype}' — valid: {sorted(VALID_SUBTYPES)}")
 
-    # 6. sweep_flags type validation (must be array of strings, not objects)
+    # 6. sweep_flags validation (array of strings or objects with required 'flag' field)
     for cs in changesets:
         cs_id = cs.get('id', '?')
         flags = cs.get('sweep_flags', [])
@@ -87,8 +87,13 @@ def validate(path='data/changeset-tracker.json'):
             errors.append(f"{cs_id}: sweep_flags is not an array")
         else:
             for j, flag in enumerate(flags):
-                if not isinstance(flag, str):
-                    errors.append(f"{cs_id}: sweep_flags[{j}] is {type(flag).__name__}, expected string")
+                if isinstance(flag, str):
+                    pass  # legacy format, accepted
+                elif isinstance(flag, dict):
+                    if 'flag' not in flag or not isinstance(flag.get('flag'), str):
+                        errors.append(f"{cs_id}: sweep_flags[{j}] is object but missing required 'flag' string field")
+                else:
+                    errors.append(f"{cs_id}: sweep_flags[{j}] is {type(flag).__name__}, expected string or object with 'flag' field")
 
     # 7. Duplicate ID check
     ids = [cs.get('id') for cs in changesets]
