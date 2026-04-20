@@ -8,8 +8,9 @@ Checks:
 3. Every changeset has required fields
 4. All statuses are spec-valid
 5. All subtypes are spec-valid
-6. Summary counts match actual data
+6. sweep_flags are strings (not objects)
 7. No duplicate changeset IDs
+8. Summary counts match actual data
 """
 
 import json
@@ -78,7 +79,18 @@ def validate(path='data/changeset-tracker.json'):
         if subtype and subtype not in VALID_SUBTYPES:
             errors.append(f"{cs_id}: invalid subtype '{subtype}' — valid: {sorted(VALID_SUBTYPES)}")
 
-    # 6. Duplicate ID check
+    # 6. sweep_flags type validation (must be array of strings, not objects)
+    for cs in changesets:
+        cs_id = cs.get('id', '?')
+        flags = cs.get('sweep_flags', [])
+        if not isinstance(flags, list):
+            errors.append(f"{cs_id}: sweep_flags is not an array")
+        else:
+            for j, flag in enumerate(flags):
+                if not isinstance(flag, str):
+                    errors.append(f"{cs_id}: sweep_flags[{j}] is {type(flag).__name__}, expected string")
+
+    # 7. Duplicate ID check
     ids = [cs.get('id') for cs in changesets]
     dupes = [id for id, count in Counter(ids).items() if count > 1]
     if dupes:
