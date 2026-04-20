@@ -134,6 +134,7 @@
             appearance: auto;
         }
 
+        /* ── KPIs ── */
         .kpis {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -210,6 +211,7 @@
             height: 260px;
         }
 
+        /* ── Pipeline Section ── */
         .pipeline-section {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -229,8 +231,15 @@
 
         .pipeline-columns {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: 2fr 2fr 1.5fr;
             gap: 12px;
+        }
+
+        @media (max-width: 1100px) {
+            .pipeline-columns { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 700px) {
+            .pipeline-columns { grid-template-columns: 1fr; }
         }
 
         .pipeline-col {
@@ -530,7 +539,7 @@
             border: 1px solid var(--border);
         }
         .approved-subgroup.scheduled { background: rgba(34,197,94,0.08); border-color: rgba(34,197,94,0.25); }
-        .approved-subgroup.overdue { background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.25); }
+        .approved-subgroup.overdue { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.4); }
         .approved-subgroup.unworked { background: rgba(139,143,163,0.08); border-color: rgba(139,143,163,0.25); }
         .subgroup-header {
             font-size: 10px;
@@ -569,6 +578,139 @@
         .subgroup-item:last-child { border-bottom: none; }
         .subgroup-item .sg-id { font-weight: 600; color: var(--accent-light); }
         .subgroup-item .sg-date { color: var(--text-muted); font-size: 10px; }
+
+        /* ── Draft Compact List ── */
+        .draft-surface-group {
+            margin-bottom: 8px;
+        }
+        .draft-surface-header {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            padding: 4px 6px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+            transition: background 0.1s;
+        }
+        .draft-surface-header:hover { background: rgba(255,255,255,0.04); }
+        .draft-surface-header .draft-toggle { font-size: 9px; color: var(--text-muted); }
+        .draft-items { max-height: 0; overflow: hidden; transition: max-height 0.2s ease; }
+        .draft-items.expanded { max-height: 600px; overflow-y: auto; }
+        .draft-compact-item {
+            font-size: 11px;
+            padding: 5px 6px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            border-left: 2px solid transparent;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.1s;
+        }
+        .draft-compact-item:hover { background: rgba(255,255,255,0.03); color: var(--accent-light); }
+        .draft-compact-item.urgency-stale { border-left-color: var(--danger); }
+        .draft-compact-item .dci-left {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            min-width: 0;
+            flex: 1;
+        }
+        .draft-compact-item .dci-id { font-weight: 600; color: var(--accent-light); white-space: nowrap; }
+        .draft-compact-item .dci-title { color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .draft-compact-item .dci-age { font-size: 10px; color: var(--text-muted); white-space: nowrap; }
+        .draft-compact-item .dci-stale { font-size: 9px; font-weight: 700; color: var(--danger); white-space: nowrap; }
+
+        /* ── Published Urgency Groups ── */
+        .published-group {
+            margin-bottom: 10px;
+        }
+        .published-group-header {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 0 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .published-group-header.urgent { color: var(--danger); }
+        .published-group-header.active { color: var(--info); }
+        .published-group-header.healthy { color: var(--success); }
+        .published-group-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+        }
+
+        /* ── Closed Section (compact table below pipeline) ── */
+        .closed-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .closed-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 0;
+            transition: margin 0.2s;
+        }
+        .closed-section-header.expanded { margin-bottom: 14px; }
+        .closed-section-header h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+        .closed-section-header .closed-summary-pills {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .closed-toggle-icon {
+            font-size: 12px;
+            color: var(--text-muted);
+            transition: transform 0.2s;
+        }
+        .closed-toggle-icon.expanded { transform: rotate(180deg); }
+        .closed-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .closed-content.expanded { max-height: 2000px; overflow-y: auto; }
+        .closed-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        .closed-table th {
+            text-align: left;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            padding: 6px 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        .closed-table td {
+            padding: 8px 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .closed-table tr:hover td { background: rgba(255,255,255,0.02); }
+        .closed-table .cs-link {
+            color: var(--accent-light);
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .closed-table .cs-link:hover { text-decoration: underline; }
 
         /* ── Owner Load Section ── */
         .owner-load-section {
@@ -783,6 +925,24 @@
         }
         .stale-item .stale-age.hot { color: var(--danger); }
         .stale-item .stale-age.warm { color: var(--warning); }
+
+        /* ── Pipeline Funnel Mini ── */
+        .pipeline-funnel {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 6px;
+        }
+        .funnel-stage {
+            height: 4px;
+            border-radius: 2px;
+            transition: width 0.3s;
+        }
+        .funnel-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
     </style>
 </head>
 <body>
@@ -821,8 +981,19 @@
     <section class="kpis" id="kpis"></section>
 
     <section class="pipeline-section">
-        <h3>Pipeline</h3>
+        <h3>Active Pipeline</h3>
         <div class="pipeline-columns" id="pipeline"></div>
+    </section>
+
+    <section class="closed-section" id="closedSection">
+        <div class="closed-section-header" id="closedHeader" onclick="toggleClosed()">
+            <h3>Closed &amp; Rolled Back <span id="closedCountBadge" style="font-size:12px;font-weight:400;color:var(--text-muted)"></span></h3>
+            <div class="closed-summary-pills">
+                <span id="closedSummaryPills"></span>
+                <span class="closed-toggle-icon" id="closedToggle">▼</span>
+            </div>
+        </div>
+        <div class="closed-content" id="closedContent"></div>
     </section>
 
 
@@ -895,7 +1066,7 @@
     </section>
 
     <footer>
-        Kenetik Growth System &middot; ChangeSet Dashboard v2.0 &middot; Live from <code>drinkkenetik/kenetik-dashboards</code> &middot; Auto-refreshes every 5 min
+        Kenetik Growth System &middot; ChangeSet Dashboard v3.0 &middot; Live from <code>drinkkenetik/kenetik-dashboards</code> &middot; Auto-refreshes every 5 min
     </footer>
 </div>
 
@@ -911,6 +1082,7 @@ const DATA_URL = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboa
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
 let TRACKER = null;
 let lastFetchTime = null;
+let closedExpanded = false;
 
 async function fetchTracker() {
     const statusEl = document.getElementById('syncStatus');
@@ -920,18 +1092,15 @@ async function fetchTracker() {
         const resp = await fetch(DATA_URL + '?t=' + Date.now());
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         const text = await resp.text();
-        // Guard against truncated JSON from MCP push_files
         let parsed;
         try {
             parsed = JSON.parse(text);
         } catch (parseErr) {
             throw new Error('Invalid JSON (likely truncated during push): ' + parseErr.message + ' — file length: ' + text.length + ' chars');
         }
-        // Validate required structure
         if (!parsed || !Array.isArray(parsed.changesets)) {
             throw new Error('Invalid tracker structure: missing changesets array (keys: ' + Object.keys(parsed || {}).join(',') + ')');
         }
-        // Normalize statuses on load: closed_success/closed_underperformed/etc → closed
         parsed.changesets.forEach(cs => {
             if (cs.status && cs.status.startsWith('closed_')) {
                 cs.outcome = cs.outcome || cs.status.replace('closed_', '');
@@ -950,7 +1119,6 @@ async function fetchTracker() {
         statusEl.textContent = 'Offline · ' + (lastFetchTime ? 'Last synced ' + lastFetchTime.toLocaleTimeString() : 'Could not load data');
         statusEl.style.color = 'var(--danger)';
         btn.classList.remove('spinning');
-        // Show visible error banner if no data loaded at all
         if (!TRACKER) {
             document.getElementById('kpis').innerHTML = '<div class="kpi-card" style="grid-column:1/-1;text-align:center;padding:40px"><div class="kpi-label" style="color:var(--danger)">DATA LOAD FAILED</div><div style="font-size:14px;margin-top:8px;color:var(--text)">' + err.message + '</div><div class="kpi-detail" style="margin-top:12px">Check that <code>data/changeset-tracker.json</code> is valid JSON in the repo.<br>This usually means a recent push truncated the file.</div></div>';
         }
@@ -982,23 +1150,20 @@ function surfaceBadge(surface) {
         klaviyo: '#6366f1', paid_meta: '#3b82f6', paid_google: '#22c55e',
         paid_tiktok: '#ef4444', amazon: '#f59e0b', amazon_ads: '#f97316',
         recharge: '#a855f7', partner: '#ec4899', dtc_website: '#14b8a6',
-        wholesale_retail: '#8b5cf6', practitioner: '#06b6d4'
+        wholesale_retail: '#8b5cf6', practitioner: '#06b6d4',
+        social_organic: '#f472b6', sprout_social: '#f472b6',
+        data_pipeline: '#94a3b8'
     };
     const color = colors[surface] || '#6b7280';
     const label = (surface || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
     return `<span class="badge" style="background:${color}22;color:${color};border:1px solid ${color}44">${label}</span>`;
 }
 
+function surfaceLabel(surface) {
+    return (surface || 'unknown').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
 // ── Status-aware urgency classification ──
-// Primary source: cs.urgency field from tracker.json (computed by sweep).
-// Fallback: client-side computation if field missing (backward compat).
-// Mirrors the lifecycle sweep (Process 10.3) stale definitions:
-//   draft:         stale after 7 calendar days
-//   needs_feedback: stale after 14 calendar days
-//   approved:      stale only if no scheduled_send_date/execution_target_date AND >5 days
-//                  overdue if target date is past; on-track if future
-//   published:     never "stale" — either measuring (has measurement_due) or awaiting review
-//   closed/rolled_back: n/a
 function getUrgencyLevel(cs) {
     const today = new Date(); today.setHours(0,0,0,0);
     const age = cs.created ? Math.round((today - new Date(cs.created)) / 86400000) : 0;
@@ -1006,8 +1171,6 @@ function getUrgencyLevel(cs) {
     const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
     const daysUntilTarget = (ssd || etd) ? Math.round(((ssd || etd) - today) / 86400000) : null;
 
-    // If tracker.json has a pre-computed urgency field, use it as primary source
-    // (normalizing underscore to hyphen for CSS class compatibility)
     if (cs.urgency && cs.urgency !== 'ok' && cs.urgency !== 'closed' && cs.urgency !== 'archived') {
         const level = cs.urgency.replace(/_/g, '-');
         return { level, daysUntil: daysUntilTarget, age };
@@ -1024,11 +1187,10 @@ function getUrgencyLevel(cs) {
     });
     const status = cs.status || '';
 
-    // Blocked is always blocked, regardless of status
     if (isBlocked) return { level: 'blocked', daysUntil, age };
 
-    // Published: measuring or awaiting review — never stale
     if (status === 'published') {
+        if (cs.measurement_result && cs.measurement_result.requires_human_review) return { level: 'needs-review', daysUntil, age };
         if (cs.requires_human_review) return { level: 'needs-review', daysUntil, age };
         if (md) {
             const daysUntilMeasure = Math.round((md - today) / 86400000);
@@ -1038,23 +1200,19 @@ function getUrgencyLevel(cs) {
         return { level: 'none', daysUntil, age };
     }
 
-    // Approved: check target dates first, then unworked threshold
     if (status === 'approved') {
         if (daysUntil !== null && daysUntil < 0) return { level: 'overdue', daysUntil, age };
         if (daysUntil !== null && daysUntil <= 3) return { level: 'due-soon', daysUntil, age };
         if (daysUntil !== null) return { level: 'on-track', daysUntil, age };
-        // No target date — stale after 5 days (sweep uses 3 biz days ≈ 5 calendar)
         if (age > 5) return { level: 'stale', daysUntil, age };
         return { level: 'none', daysUntil, age };
     }
 
-    // Draft: stale after 7 days
     if (status === 'draft') {
         if (age > 7) return { level: 'stale', daysUntil, age };
         return { level: 'none', daysUntil, age };
     }
 
-    // Needs feedback: stale after 14 days
     if (status === 'needs_feedback') {
         if (age > 14) return { level: 'stale', daysUntil, age };
         return { level: 'none', daysUntil, age };
@@ -1065,7 +1223,6 @@ function getUrgencyLevel(cs) {
 
 function urgencyBadge(cs) {
     const u = getUrgencyLevel(cs);
-
     if (u.level === 'blocked') return `<span class="badge badge-medium">BLOCKED</span>`;
     if (u.level === 'overdue') return `<span class="badge badge-critical">OVERDUE ${Math.abs(u.daysUntil)}d</span>`;
     if (u.level === 'due-soon') return `<span class="badge badge-high">DUE ${u.daysUntil}d</span>`;
@@ -1081,6 +1238,14 @@ function urgencyBadge(cs) {
 function urgencyClass(cs) {
     return 'urgency-' + getUrgencyLevel(cs).level;
 }
+
+// Urgency sort priority (lower = more urgent)
+function urgencySortOrder(cs) {
+    const level = getUrgencyLevel(cs).level;
+    const order = { 'needs-review': 0, 'measure-due': 1, 'overdue': 2, 'blocked': 3, 'stale': 4, 'due-soon': 5, 'measuring': 6, 'on-track': 7, 'none': 8 };
+    return order[level] ?? 9;
+}
+
 let sortCol = 'id';
 let sortDir = 'asc';
 let charts = {};
@@ -1094,7 +1259,7 @@ function fmt$(n) {
 }
 
 function isClosed(cs) {
-    return cs.status === 'closed' || cs.status.startsWith('closed_') || cs.status === 'rolled_back';
+    return cs.status === 'closed' || (cs.status && cs.status.startsWith('closed_')) || cs.status === 'rolled_back';
 }
 
 function isOpen(cs) { return !isClosed(cs); }
@@ -1122,8 +1287,6 @@ function actualMargin(cs) {
     return cs.actual_impact?.margin_impact ?? 0;
 }
 
-// Full lifecycle: draft → proposed → needs_feedback → approved → published → closed
-const PIPELINE_ORDER = ['draft','proposed','needs_feedback','approved','published','closed'];
 const PIPELINE_LABELS = {
     draft: 'Draft',
     proposed: 'Proposed',
@@ -1166,13 +1329,14 @@ function populateSurfaceDropdown() {
 }
 
 // ═══════════════════════════════════════════════════
-// KPIs
+// KPIs — with pipeline conversion context
 // ═══════════════════════════════════════════════════
 function renderKPIs() {
     const data = getFiltered();
     const open = data.filter(isOpen);
     const closed = data.filter(isClosed);
-    const totalExpected = data.reduce((s, c) => s + expectedRev(c), 0);
+    const published = data.filter(c => c.status === 'published');
+    const totalExpected = open.reduce((s, c) => s + expectedRev(c), 0);
     const totalActual = closed.reduce((s, c) => s + actualRev(c), 0);
     const totalActualMargin = closed.reduce((s, c) => s + actualMargin(c), 0);
     const impl = data.filter(c => c.subtype === 'implementation').length;
@@ -1183,37 +1347,51 @@ function renderKPIs() {
         ? Math.round(open.reduce((s, c) => s + (Date.now() - new Date(c.created)) / 86400000, 0) / open.length)
         : 0;
 
+    // Needs attention count
+    const needsAttention = data.filter(c => {
+        const u = getUrgencyLevel(c).level;
+        return u === 'needs-review' || u === 'measure-due' || u === 'overdue' || u === 'stale';
+    }).length;
+
+    const successCount = closed.filter(c => c.outcome === 'success').length;
+    const underCount = closed.filter(c => c.outcome === 'underperformed').length;
+    const inconclusiveCount = closed.filter(c => c.outcome === 'inconclusive').length;
+
     document.getElementById('kpis').innerHTML = `
         <div class="kpi-card">
-            <div class="kpi-label">Total ChangeSets</div>
-            <div class="kpi-value">${data.length}</div>
-            <div class="kpi-detail">${impl} impl · ${invest} invest${quick ? ' · ' + quick + ' quick' : ''}</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Open</div>
+            <div class="kpi-label">Active Pipeline</div>
             <div class="kpi-value info">${open.length}</div>
-            <div class="kpi-detail">Avg ${avgAge} days open</div>
+            <div class="kpi-detail">${data.filter(c=>c.status==='draft').length} draft · ${data.filter(c=>c.status==='approved').length} approved · ${published.length} live</div>
+        </div>
+        <div class="kpi-card" ${needsAttention > 0 ? 'style="border-color:rgba(239,68,68,0.4)"' : ''}>
+            <div class="kpi-label">Needs Attention</div>
+            <div class="kpi-value ${needsAttention > 0 ? 'danger' : 'success'}">${needsAttention}</div>
+            <div class="kpi-detail">${needsAttention > 0 ? 'Overdue, stale, or review needed' : 'Pipeline is healthy'}</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">Closed</div>
-            <div class="kpi-value success">${closed.length}</div>
-            <div class="kpi-detail">${closed.filter(c=>c.outcome==='success').length} success · ${closed.filter(c=>c.outcome==='underperformed').length} underperformed</div>
+            <div class="kpi-value">${closed.length}</div>
+            <div class="kpi-detail" style="display:flex;gap:8px;flex-wrap:wrap">
+                ${successCount ? `<span style="color:var(--success)">${successCount} success</span>` : ''}
+                ${underCount ? `<span style="color:var(--danger)">${underCount} under</span>` : ''}
+                ${inconclusiveCount ? `<span style="color:var(--warning)">${inconclusiveCount} inconc</span>` : ''}
+            </div>
         </div>
         <div class="kpi-card">
-            <div class="kpi-label">Expected Revenue (Pipeline)</div>
+            <div class="kpi-label">Pipeline Expected Rev</div>
             <div class="kpi-value">${fmt$(totalExpected)}</div>
-            <div class="kpi-detail">Sum of expected impact</div>
+            <div class="kpi-detail">${open.length} open · Avg ${avgAge}d age</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">Actual Revenue (Closed)</div>
             <div class="kpi-value success">${fmt$(totalActual)}</div>
-            <div class="kpi-detail">${fmt$(totalActualMargin)} margin impact</div>
+            <div class="kpi-detail">${fmt$(totalActualMargin)} margin · ${closed.length ? Math.round(successCount/closed.length*100) : 0}% success rate</div>
         </div>
     `;
 }
 
 // ═══════════════════════════════════════════════════
-// PIPELINE
+// PIPELINE — Draft (compact), Approved (sub-groups), Published (urgency-sorted)
 // ═══════════════════════════════════════════════════
 function classifyApproved(cs) {
     const today = new Date();
@@ -1228,10 +1406,8 @@ function classifyApproved(cs) {
 function renderApprovedSubgroups(items) {
     const groups = { scheduled: [], overdue: [], unworked: [] };
     items.forEach(cs => { groups[classifyApproved(cs)].push(cs); });
-    // Sort scheduled by date
     groups.scheduled.sort((a,b) => (a.scheduled_send_date||a.execution_target_date||'').localeCompare(b.scheduled_send_date||b.execution_target_date||''));
     groups.overdue.sort((a,b) => (a.scheduled_send_date||a.execution_target_date||'').localeCompare(b.scheduled_send_date||b.execution_target_date||''));
-    // Sort unworked by age (oldest first)
     groups.unworked.sort((a,b) => (a.created||'').localeCompare(b.created||''));
 
     function renderSubItems(list, dateField) {
@@ -1261,45 +1437,216 @@ function renderApprovedSubgroups(items) {
     </div>`;
 }
 
+function renderDraftCompact(items) {
+    // Group by surface
+    const groups = {};
+    items.forEach(cs => {
+        const s = cs.surface || 'unassigned';
+        if (!groups[s]) groups[s] = [];
+        groups[s].push(cs);
+    });
+
+    // Sort surfaces: those with stale items first, then by count
+    const surfaceKeys = Object.keys(groups).sort((a, b) => {
+        const aStale = groups[a].filter(c => getUrgencyLevel(c).level === 'stale').length;
+        const bStale = groups[b].filter(c => getUrgencyLevel(c).level === 'stale').length;
+        if (aStale !== bStale) return bStale - aStale;
+        return groups[b].length - groups[a].length;
+    });
+
+    const today = new Date(); today.setHours(0,0,0,0);
+    const staleCount = items.filter(c => getUrgencyLevel(c).level === 'stale').length;
+
+    return surfaceKeys.map(surface => {
+        const list = groups[surface];
+        const groupStale = list.filter(c => getUrgencyLevel(c).level === 'stale').length;
+        const label = surfaceLabel(surface);
+        const hasStale = groupStale > 0;
+
+        return `<div class="draft-surface-group">
+            <div class="draft-surface-header" onclick="this.nextElementSibling.classList.toggle('expanded');this.querySelector('.draft-toggle').textContent=this.nextElementSibling.classList.contains('expanded')?'▲':'▼'">
+                <span>${label} <span style="color:var(--text-muted);font-weight:400">(${list.length})</span>${hasStale ? ` <span style="color:var(--danger);font-size:9px;font-weight:700">${groupStale} STALE</span>` : ''}</span>
+                <span class="draft-toggle">▼</span>
+            </div>
+            <div class="draft-items">
+                ${list.sort((a,b) => urgencySortOrder(a) - urgencySortOrder(b)).map(cs => {
+                    const age = cs.created ? Math.round((today - new Date(cs.created)) / 86400000) : 0;
+                    const isStale = getUrgencyLevel(cs).level === 'stale';
+                    return `<div class="draft-compact-item ${isStale ? 'urgency-stale' : ''}" onclick="openDetail('${cs.id}')">
+                        <div class="dci-left">
+                            <span class="dci-id">${cs.id}</span>
+                            <span class="dci-title">${cs.title || ''}</span>
+                        </div>
+                        <span class="dci-age">${age}d</span>
+                        ${isStale ? '<span class="dci-stale">STALE</span>' : ''}
+                    </div>`;
+                }).join('')}
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function renderPublishedUrgency(items) {
+    // Sort by urgency (most urgent first)
+    const sorted = [...items].sort((a, b) => urgencySortOrder(a) - urgencySortOrder(b));
+
+    // Group into urgency bands
+    const needsReview = sorted.filter(c => getUrgencyLevel(c).level === 'needs-review');
+    const measureDue = sorted.filter(c => getUrgencyLevel(c).level === 'measure-due');
+    const measuring = sorted.filter(c => {
+        const l = getUrgencyLevel(c).level;
+        return l === 'measuring' || l === 'none';
+    });
+
+    let html = '';
+
+    if (needsReview.length) {
+        html += `<div class="published-group">
+            <div class="published-group-header urgent"><span class="published-group-dot" style="background:var(--danger)"></span>Review Needed (${needsReview.length})</div>
+            ${needsReview.map(cs => renderPipelineCard(cs)).join('')}
+        </div>`;
+    }
+
+    if (measureDue.length) {
+        html += `<div class="published-group">
+            <div class="published-group-header urgent"><span class="published-group-dot" style="background:var(--warning)"></span>Measure Due (${measureDue.length})</div>
+            ${measureDue.map(cs => renderPipelineCard(cs)).join('')}
+        </div>`;
+    }
+
+    if (measuring.length) {
+        html += `<div class="published-group">
+            <div class="published-group-header active"><span class="published-group-dot" style="background:var(--info)"></span>Measuring (${measuring.length})</div>
+            ${measuring.map(cs => renderPipelineCard(cs)).join('')}
+        </div>`;
+    }
+
+    return html || '<div class="empty-state" style="padding:8px;font-size:11px">None</div>';
+}
+
+function renderPipelineCard(cs) {
+    return `<div class="pipeline-card ${urgencyClass(cs)}" onclick="openDetail('${cs.id}')">
+        <div class="cs-id">${cs.id}</div>
+        <div class="cs-title">${cs.title}</div>
+        <div class="cs-meta">
+            ${surfaceBadge(cs.surface)}
+            ${urgencyBadge(cs)}
+        </div>
+    </div>`;
+}
+
 function renderPipeline() {
     const data = getFiltered();
     const container = document.getElementById('pipeline');
 
-    const activeStatuses = PIPELINE_ORDER.slice();
-    if (data.some(c => c.status === 'rolled_back') && !activeStatuses.includes('rolled_back')) {
-        activeStatuses.push('rolled_back');
-    }
-    const filteredStatuses = activeStatuses.filter(s => {
-        if (s === 'proposed' || s === 'needs_feedback') return data.some(c => c.status === s);
-        return true;
-    });
+    const drafts = data.filter(c => c.status === 'draft');
+    const approved = data.filter(c => c.status === 'approved');
+    const published = data.filter(c => c.status === 'published');
+    const needsFeedback = data.filter(c => c.status === 'needs_feedback');
 
-    container.innerHTML = filteredStatuses.map(status => {
-        const items = data.filter(c => status === 'closed' ? isClosed(c) : c.status === status);
-        const label = PIPELINE_LABELS[status] || status.replace(/_/g, ' ');
-        const isApproved = status === 'approved';
+    // Build the 3-column layout: Draft | Approved | Published
+    let html = '';
 
-        return `
-            <div class="pipeline-col" ${isApproved ? 'style="grid-column: span 2; min-width: 300px;"' : ''}>
-                <div class="pipeline-col-header">
-                    ${label}
-                    <span class="pipeline-col-count">${items.length}</span>
-                </div>
-                ${isApproved && items.length > 0 ? renderApprovedSubgroups(items) : ''}
-                ${!isApproved && items.length === 0 ? '<div class="empty-state" style="padding:8px;font-size:11px">None</div>' : ''}
-                ${!isApproved ? items.map(cs => `
-                    <div class="pipeline-card ${urgencyClass(cs)}" onclick="openDetail('${cs.id}')">
-                        <div class="cs-id">${cs.id}</div>
-                        <div class="cs-title">${cs.title}</div>
-                        <div class="cs-meta">
-                            ${surfaceBadge(cs.surface)}
-                            ${urgencyBadge(cs)}
-                        </div>
-                    </div>
-                `).join('') : ''}
+    // Draft column (compact)
+    html += `<div class="pipeline-col">
+        <div class="pipeline-col-header">
+            Draft
+            <span class="pipeline-col-count">${drafts.length}</span>
+        </div>
+        ${drafts.length ? renderDraftCompact(drafts) : '<div class="empty-state" style="padding:8px;font-size:11px">None</div>'}
+    </div>`;
+
+    // Approved column (sub-grouped)
+    html += `<div class="pipeline-col">
+        <div class="pipeline-col-header">
+            Approved
+            <span class="pipeline-col-count">${approved.length}</span>
+        </div>
+        ${approved.length > 0 ? renderApprovedSubgroups(approved) : '<div class="empty-state" style="padding:8px;font-size:11px">None</div>'}
+        ${needsFeedback.length > 0 ? `
+            <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border)">
+                <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--danger);margin-bottom:6px">Needs Feedback (${needsFeedback.length})</div>
+                ${needsFeedback.map(cs => renderPipelineCard(cs)).join('')}
             </div>
-        `;
+        ` : ''}
+    </div>`;
+
+    // Published column (urgency-sorted)
+    html += `<div class="pipeline-col">
+        <div class="pipeline-col-header">
+            Published
+            <span class="pipeline-col-count">${published.length}</span>
+        </div>
+        ${renderPublishedUrgency(published)}
+    </div>`;
+
+    container.innerHTML = html;
+}
+
+// ═══════════════════════════════════════════════════
+// CLOSED SECTION — compact table below pipeline
+// ═══════════════════════════════════════════════════
+function toggleClosed() {
+    closedExpanded = !closedExpanded;
+    document.getElementById('closedContent').classList.toggle('expanded', closedExpanded);
+    document.getElementById('closedToggle').classList.toggle('expanded', closedExpanded);
+    document.getElementById('closedHeader').classList.toggle('expanded', closedExpanded);
+}
+
+function renderClosed() {
+    const data = getFiltered();
+    const closed = data.filter(isClosed);
+
+    // Summary pills
+    const successCount = closed.filter(c => c.outcome === 'success').length;
+    const underCount = closed.filter(c => c.outcome === 'underperformed').length;
+    const inconclusiveCount = closed.filter(c => c.outcome === 'inconclusive').length;
+    const rolledBack = closed.filter(c => c.status === 'rolled_back').length;
+    const totalActual = closed.reduce((s, c) => s + actualRev(c), 0);
+
+    document.getElementById('closedCountBadge').textContent = `(${closed.length})`;
+
+    let pills = '';
+    if (successCount) pills += `<span class="badge badge-low">${successCount} success</span>`;
+    if (underCount) pills += `<span class="badge badge-high">${underCount} under</span>`;
+    if (inconclusiveCount) pills += `<span class="badge badge-medium">${inconclusiveCount} inconc</span>`;
+    if (rolledBack) pills += `<span class="badge badge-high">${rolledBack} rolled back</span>`;
+    if (totalActual) pills += `<span style="font-size:12px;color:var(--success);font-weight:600;margin-left:4px">${fmt$(totalActual)}</span>`;
+    document.getElementById('closedSummaryPills').innerHTML = pills;
+
+    // Sort closed: most recent first
+    const sorted = [...closed].sort((a, b) => (b.closed_date || b.created || '').localeCompare(a.closed_date || a.created || ''));
+
+    const rows = sorted.map(cs => {
+        const outcomeClass = cs.outcome ? `outcome-${cs.outcome}` : '';
+        const outcomeLabel = cs.outcome ? cs.outcome.replace(/_/g, ' ') : (cs.status === 'rolled_back' ? 'rolled back' : '—');
+        return `<tr>
+            <td><span class="cs-link" onclick="openDetail('${cs.id}')">${cs.id}</span></td>
+            <td style="max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${cs.title}</td>
+            <td>${surfaceBadge(cs.surface)}</td>
+            <td><span class="${outcomeClass}" style="font-weight:600;text-transform:capitalize">${outcomeLabel}</span></td>
+            <td>${cs.owner || '—'}</td>
+            <td>${cs.closed_date || '—'}</td>
+            <td>${actualRev(cs) ? fmt$(actualRev(cs)) : '—'}</td>
+        </tr>`;
     }).join('');
+
+    document.getElementById('closedContent').innerHTML = `
+        <table class="closed-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Surface</th>
+                    <th>Outcome</th>
+                    <th>Owner</th>
+                    <th>Closed</th>
+                    <th>Revenue</th>
+                </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+        </table>
+    `;
 }
 
 // ═══════════════════════════════════════════════════
@@ -1373,7 +1720,7 @@ function renderCharts() {
     charts.domain = new Chart(document.getElementById('impactByDomainChart'), {
         type: 'bar',
         data: {
-            labels: surfaces.map(s => s.replace(/_/g, ' ')),
+            labels: surfaces.map(s => (s||'').replace(/_/g, ' ')),
             datasets: [
                 { label: 'Expected Revenue', data: expectedBySurface, backgroundColor: 'rgba(99,102,241,0.4)', borderRadius: 4 },
                 { label: 'Actual Revenue', data: actualBySurface, backgroundColor: 'rgba(34,197,94,0.6)', borderRadius: 4 }
@@ -1505,7 +1852,7 @@ document.querySelectorAll('.data-table th[data-sort]').forEach(th => {
 });
 
 // ═══════════════════════════════════════════════════
-// DETAIL PANEL
+// DETAIL PANEL — with measurement result display
 // ═══════════════════════════════════════════════════
 function openDetail(id) {
     const cs = TRACKER.changesets.find(c => c.id === id);
@@ -1513,8 +1860,45 @@ function openDetail(id) {
 
     const ei = cs.expected_impact || {};
     const ai = cs.actual_impact || {};
+    const mr = cs.measurement_result || null;
     const rev = ei.revenue || {};
     const mar = ei.margin || {};
+
+    // Measurement result section
+    let measurementHtml = '';
+    if (mr) {
+        const outcomeColor = mr.outcome === 'success' ? 'var(--success)' : mr.outcome === 'underperformed' ? 'var(--danger)' : 'var(--warning)';
+        const pk = mr.primary_kpi || {};
+
+        let secondaryHtml = '';
+        if (mr.secondary_kpis && mr.secondary_kpis.length) {
+            secondaryHtml = mr.secondary_kpis.map(k =>
+                `<tr><td>${k.metric}</td><td>${k.target || '—'}</td><td>${k.actual || '—'}</td><td>${k.delta || '—'}</td></tr>`
+            ).join('');
+        }
+
+        measurementHtml = `
+        <div class="detail-section">
+            <h4>Measurement Result</h4>
+            <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
+                <span style="font-size:16px;font-weight:700;color:${outcomeColor};text-transform:uppercase">${mr.outcome}</span>
+                <span style="font-size:12px;color:var(--text-muted)">Measured ${mr.measured_date || '—'} · Confidence: ${mr.confidence || '—'}</span>
+            </div>
+            <table class="impact-table">
+                <tr><th>Metric</th><th>Target</th><th>Actual</th><th>Delta</th></tr>
+                <tr style="font-weight:600">
+                    <td>${pk.metric || '—'}</td>
+                    <td>${pk.target || '—'}</td>
+                    <td>${pk.actual || '—'}</td>
+                    <td>${pk.delta || '—'}</td>
+                </tr>
+                ${secondaryHtml}
+            </table>
+            ${mr.notes ? `<div style="margin-top:10px;font-size:12px;color:var(--text-muted);line-height:1.5;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px">${mr.notes}</div>` : ''}
+            ${mr.recommended_action ? `<div style="margin-top:8px;font-size:12px;line-height:1.5"><strong style="color:var(--warning)">Recommended:</strong> ${mr.recommended_action}</div>` : ''}
+            <div style="margin-top:6px;font-size:10px;color:var(--text-muted)">Source: ${mr.measurement_source || '—'}${mr.sample_size ? ' · Sample: ' + Number(mr.sample_size).toLocaleString() : ''}</div>
+        </div>`;
+    }
 
     document.getElementById('detailPanel').innerHTML = `
         <button class="detail-close" onclick="closeDetail()">&times;</button>
@@ -1555,6 +1939,8 @@ function openDetail(id) {
                 Primary metric: <strong>${ei.primary_metric || '—'}</strong> — Target: ${ei.primary_metric_target || '—'}
             </div>
         </div>
+
+        ${measurementHtml}
 
         ${ai && ai.primary_metric ? `
         <div class="detail-section">
@@ -1616,7 +2002,6 @@ function renderOwnerLoad() {
         o.total++;
         o.byStatus[cs.status] = (o.byStatus[cs.status] || 0) + 1;
         if (!o.oldest || cs.created < o.oldest) o.oldest = cs.created;
-        // Check overdue
         const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
         const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
         if ((ssd && ssd < today) || (etd && etd < today)) o.overdue++;
@@ -1625,10 +2010,8 @@ function renderOwnerLoad() {
     const sorted = Object.entries(owners).sort((a,b) => b[1].total - a[1].total);
 
     document.getElementById('ownerGrid').innerHTML = sorted.map(([name, o]) => {
-        const maxTotal = sorted[0][1].total || 1;
         const barSegments = Object.entries(o.byStatus).map(([status, count]) => {
             const color = statusColors[status] || '#6b7280';
-            const pct = (count / o.total * 100).toFixed(1);
             return `<div class="owner-bar-seg" style="background:${color};flex:${count}" title="${status}: ${count}"></div>`;
         }).join('');
 
@@ -1678,7 +2061,6 @@ function renderAutonomy() {
         </div>`;
     }).join('');
 
-    // Shadow Scorecard — redesigned for actionable autonomy tuning
     const sc = TRACKER.shadow_scorecard;
     if (!sc) {
         document.getElementById('scorecardContent').innerHTML = '<div class="empty-state">No scorecard data</div>';
@@ -1691,7 +2073,6 @@ function renderAutonomy() {
     const phaseClass = isPhaseB ? 'phase-b' : 'phase-a';
     const phaseLabel = isPhaseB ? 'Phase B — Active Autonomy' : 'Phase A — Shadow Mode';
 
-    // Calculate readiness metrics
     const totalClassified = (sc.total_classified?.tier_0 || 0) + (sc.total_classified?.tier_1 || 0) + (sc.total_classified?.tier_2 || 0);
     const autoAdvanced = sc.would_have_auto_advanced || 0;
     const autoExecuted = sc.would_have_auto_executed || 0;
@@ -1702,30 +2083,28 @@ function renderAutonomy() {
     const concRate = totalResolved > 0 ? ((concordant / totalResolved) * 100).toFixed(0) + '%' : '—';
     const concColor = totalResolved === 0 ? 'var(--text-muted)' : concordant / totalResolved >= 0.9 ? 'var(--success)' : concordant / totalResolved >= 0.7 ? 'var(--warning)' : 'var(--danger)';
 
-    // Phase B readiness: need ≥5 resolved concordance checks at ≥90%
     const phaseB_threshold = 5;
     const phaseB_accuracy = 0.9;
     const readiness = Math.min(100, Math.round((totalResolved / phaseB_threshold) * 100));
     const readinessColor = readiness >= 100 && (totalResolved === 0 || concordant / totalResolved >= phaseB_accuracy) ? 'var(--success)' : readiness >= 60 ? 'var(--warning)' : 'var(--text-muted)';
 
-    // Build the decision log table
     let logHtml = '';
     if (log.length) {
         logHtml = `<div style="margin-top:14px;border-top:1px solid var(--border);padding-top:12px">
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:8px">Shadow Decision Log — What Automation Would Have Done</div>
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:8px">Shadow Decision Log</div>
             <table style="width:100%;border-collapse:collapse;font-size:12px">
                 <tr style="border-bottom:1px solid var(--border)">
                     <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">CS</th>
                     <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Tier</th>
                     <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Auto Verdict</th>
-                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Manual Decision</th>
+                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Manual</th>
                     <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Match?</th>
                 </tr>
                 ${log.map(entry => {
                     const matchIcon = entry.concordance === 'concordant' ? '<span style="color:var(--success)">Yes</span>' :
                         entry.concordance === 'discordant' ? '<span style="color:var(--danger)">No</span>' :
                         '<span style="color:var(--warning)">Pending</span>';
-                    const manualDecision = entry.manual_review_decision || '<span style="color:var(--warning);font-style:italic">awaiting review</span>';
+                    const manualDecision = entry.manual_review_decision || '<span style="color:var(--warning);font-style:italic">awaiting</span>';
                     return `<tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
                         <td style="padding:5px 6px"><span class="cs-link" onclick="openDetail('${entry.cs_id}')">${entry.cs_id}</span></td>
                         <td style="padding:5px 6px">T${entry.tier}</td>
@@ -1777,7 +2156,7 @@ function renderAutonomy() {
 
         ${discordant > 0 ? `<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:8px;padding:10px 12px;margin-bottom:12px">
             <div style="font-size:11px;font-weight:700;color:var(--danger);margin-bottom:4px">Discordance Alert</div>
-            <div style="font-size:12px;color:var(--text)">${discordant} decision${discordant > 1 ? 's' : ''} where automation disagreed with manual review. Investigate before advancing to Phase B.</div>
+            <div style="font-size:12px;color:var(--text)">${discordant} decision${discordant > 1 ? 's' : ''} where automation disagreed with manual review.</div>
         </div>` : ''}
 
         ${logHtml}
@@ -1796,7 +2175,6 @@ function renderTimeInStatus() {
     const today = new Date(); today.setHours(0,0,0,0);
     const active = data.filter(isOpen);
 
-    // Average age by status
     const statusAges = {};
     active.forEach(cs => {
         if (!cs.created) return;
@@ -1819,7 +2197,6 @@ function renderTimeInStatus() {
 
     document.getElementById('timeAvgRow').innerHTML = avgRow || '<div class="empty-state">No active items</div>';
 
-    // Published items in measurement window — show separately, not as stale
     const measurementItems = active
         .filter(cs => cs.status === 'published' && cs.measurement_due)
         .map(cs => {
@@ -1831,7 +2208,6 @@ function renderTimeInStatus() {
 
     const measurementIds = new Set(measurementItems.map(cs => cs.id));
 
-    // Stale items (>7d in approved, >14d in any status) — EXCLUDE items in measurement window
     const staleItems = active
         .filter(cs => !measurementIds.has(cs.id))
         .map(cs => {
@@ -1844,13 +2220,14 @@ function renderTimeInStatus() {
 
     let html = '';
 
-    // Measurement window section
     if (measurementItems.length) {
         html += '<div style="font-size:11px;color:var(--info);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Awaiting Measurement (' + measurementItems.length + ')</div>';
         html += measurementItems.map(cs => {
             const overdue = cs.daysUntilDue < 0;
             const dueSoon = cs.daysUntilDue <= 3;
-            const dueLabel = overdue ? `<span style="color:var(--danger);font-weight:700">MEASUREMENT OVERDUE ${Math.abs(cs.daysUntilDue)}d</span>` :
+            const hasResult = cs.measurement_result != null;
+            const dueLabel = hasResult ? `<span style="color:var(--warning);font-weight:600">MEASURED — awaiting close decision</span>` :
+                overdue ? `<span style="color:var(--danger);font-weight:700">OVERDUE ${Math.abs(cs.daysUntilDue)}d</span>` :
                 dueSoon ? `<span style="color:var(--warning);font-weight:600">Due in ${cs.daysUntilDue}d</span>` :
                 `<span style="color:var(--text-muted)">Due in ${cs.daysUntilDue}d</span>`;
             return `<div class="stale-item">
@@ -1861,7 +2238,6 @@ function renderTimeInStatus() {
         html += '<div style="height:12px"></div>';
     }
 
-    // Stale items section
     if (staleItems.length) {
         html += '<div style="font-size:11px;color:var(--danger);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Needs Attention (' + staleItems.length + ')</div>';
         html += staleItems.map(cs => {
@@ -1881,12 +2257,13 @@ function renderTimeInStatus() {
 }
 
 // ═══════════════════════════════════════════════════
-// RENDER ALL — wrapped in try/catch to prevent blank screen
+// RENDER ALL
 // ═══════════════════════════════════════════════════
 function render() {
     try {
         renderKPIs();
         renderPipeline();
+        renderClosed();
         renderOwnerLoad();
         renderAutonomy();
         renderTimeInStatus();
