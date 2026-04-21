@@ -1,10 +1,10 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-21",
-  "next_id": 95,
+  "last_updated": "2026-04-21T19:00:00Z",
+  "next_id": 98,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-04-20",
-    "last_sweep_session": "2026-04-20-manual",
+    "last_sweep_date": "2026-04-21T19:00:00Z",
+    "last_sweep_session": 37,
     "last_sweep_result": "completed",
     "last_sweep_counts": {
       "total_scanned": 94,
@@ -16,15 +16,79 @@
       "nudges_sent": 0
     },
     "mcp_available": true,
-    "data_validation_repairs": 0
+    "data_validation_repairs": 0,
+    "stale_approved_gt_7d": [
+      {
+        "id": "CS-2026-009",
+        "age_days": 36,
+        "owner": "Katie + Brandon"
+      },
+      {
+        "id": "CS-2026-019",
+        "age_days": 36,
+        "owner": "Katie"
+      },
+      {
+        "id": "CS-2026-020",
+        "age_days": 36,
+        "owner": "Katie"
+      },
+      {
+        "id": "CS-2026-021",
+        "age_days": 36,
+        "owner": "Katie"
+      },
+      {
+        "id": "CS-2026-022",
+        "age_days": 36,
+        "owner": "Katie"
+      },
+      {
+        "id": "CS-2026-037",
+        "age_days": 30,
+        "owner": "Katie"
+      },
+      {
+        "id": "CS-2026-043",
+        "age_days": 20,
+        "owner": "Katie"
+      }
+    ],
+    "stale_approved_count": 7,
+    "measurement_overdue": [
+      {
+        "id": "CS-2026-006",
+        "overdue_days": 8,
+        "owner": "Nick + Charlotte"
+      },
+      {
+        "id": "CS-2026-046",
+        "overdue_days": 11,
+        "owner": "Katie"
+      }
+    ],
+    "measurement_overdue_count": 2,
+    "needs_feedback": [
+      {
+        "id": "CS-2026-089",
+        "owner": "Katie",
+        "note": "CGO-level approval pending for Meta-to-Google reallocation (tier 3)"
+      }
+    ],
+    "needs_feedback_count": 1,
+    "new_changesets_session_37": [
+      "CS-2026-095",
+      "CS-2026-096",
+      "CS-2026-097"
+    ]
   },
   "summary": {
-    "total": 94,
+    "total": 97,
     "by_status": {
       "closed": 36,
       "published": 12,
       "approved": 13,
-      "draft": 32,
+      "draft": 35,
       "needs_feedback": 1
     },
     "last_updated": "2026-04-21",
@@ -5943,6 +6007,168 @@
       "rejection_notes": null,
       "learning_note": null,
       "sweep_flags": []
+    },
+    {
+      "id": "CS-2026-095",
+      "title": "Desktop PDP Component-Level Diagnostic Sprint (Homepage/Shots/Concentrate)",
+      "subtype": "diagnostic",
+      "surface": "shopify_theme",
+      "status": "draft",
+      "risk_level": "low_medium",
+      "owner": "Lawrence + Garrett",
+      "created": "2026-04-21",
+      "objective_level": "L2",
+      "category": "website_cro",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "synthesis-2026-04-21-s1-rec-228",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 21000,
+          "expected": 13500,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 10500,
+          "expected": 6750,
+          "downside": 0
+        },
+        "primary_metric": "desktop_cvr_delta_wow",
+        "primary_metric_target": ">=0% WoW (recovery to baseline)"
+      },
+      "routed_to": [
+        "Lawrence",
+        "Garrett"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-21",
+      "approved_by": "",
+      "approved_date": "",
+      "published_date": "",
+      "measurement_start_date": "",
+      "measurement_end_date": "",
+      "measurement_window": "14d",
+      "measurement_due": "",
+      "actual_impact": {},
+      "outcome": "",
+      "closed_date": "",
+      "file": "cgo-logs/changesets/CS-2026-095.md",
+      "notes": "D09 Desktop CVR -15.7% gate triggered (Homepage -44%, Shots PDP -71%, Concentrate -28%). Diagnose-first then Remove if component isolated. Mobile CVR flat rules out content/copy issues.",
+      "risk": "Low diagnosis phase, low-medium rollback phase",
+      "scheduled_send_date": "",
+      "execution_target_date": "2026-04-23",
+      "executed_date": "",
+      "autonomy_tier": 2,
+      "learning_note": ""
+    },
+    {
+      "id": "CS-2026-096",
+      "title": "Trevor Viral Moment Sponsorship Graduation (Contingent on Devon 48h Decision)",
+      "subtype": "contingent_graduation",
+      "surface": "creator_partnership",
+      "status": "draft",
+      "risk_level": "high",
+      "owner": "Katie + Devon + Brandon",
+      "created": "2026-04-21",
+      "objective_level": "L3",
+      "category": "creator_sponsorship",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "synthesis-2026-04-21-s1-rec-229",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 45000,
+          "expected": 18000,
+          "downside": -10000
+        },
+        "margin": {
+          "upside": 22500,
+          "expected": 9000,
+          "downside": -10000
+        },
+        "primary_metric": "sponsorship_content_brand_lift_and_direct_sales",
+        "primary_metric_target": "Sentiment delta +5pts, EMV >=$50k, paid ROAS >=2.5x"
+      },
+      "routed_to": [
+        "Devon"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-21",
+      "approved_by": "",
+      "approved_date": "",
+      "published_date": "",
+      "measurement_start_date": "",
+      "measurement_end_date": "",
+      "measurement_window": "14d_post_graduation",
+      "measurement_due": "",
+      "actual_impact": {},
+      "outcome": "",
+      "closed_date": "",
+      "file": "cgo-logs/changesets/CS-2026-096.md",
+      "notes": "D10 viral IG reel DXXITMzkSd_ with 40+ @bekenetik sponsorship tags (TBI/stroke recovery). Gate 1: Devon 48h sponsorship decision. Gate 2: Brandon claims compliance (no Tier A/B TBI/stroke claims permitted). Auto-closes if Gate 1 declines.",
+      "risk": "High claims risk (TBI/stroke proximity); Medium PR risk if 48h silence",
+      "scheduled_send_date": "",
+      "execution_target_date": "2026-04-23",
+      "executed_date": "",
+      "autonomy_tier": 3,
+      "learning_note": ""
+    },
+    {
+      "id": "CS-2026-097",
+      "title": "Content Production Capacity Ramp \u2014 Structural D13 P0 Resolution",
+      "subtype": "structural",
+      "surface": "content_operations",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Charlotte + Nicole",
+      "created": "2026-04-21",
+      "objective_level": "L3",
+      "category": "content_operations",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "synthesis-2026-04-21-s1-rec-230-step8a-escalation",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 85000,
+          "expected": 42000,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 42500,
+          "expected": 21000,
+          "downside": 0
+        },
+        "primary_metric": "d13_score",
+        "primary_metric_target": ">=60 for 4 consecutive sessions"
+      },
+      "routed_to": [
+        "Charlotte",
+        "Nicole",
+        "Devon"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-21",
+      "approved_by": "",
+      "approved_date": "",
+      "published_date": "",
+      "measurement_start_date": "",
+      "measurement_end_date": "",
+      "measurement_window": "4_sessions",
+      "measurement_due": "",
+      "actual_impact": {},
+      "outcome": "",
+      "closed_date": "",
+      "file": "cgo-logs/changesets/CS-2026-097.md",
+      "notes": "Step 8a P0 structural escalation \u2014 D13 consecutive_below_40 = 6. Owner-surface contracts + production queue SLA + concentration circuit-breaker. Devon weekly check-in. Kill gate: no improvement to >=50 within 3 sessions triggers war-room.",
+      "risk": "Medium change-management; Low customer-facing",
+      "scheduled_send_date": "",
+      "execution_target_date": "2026-04-28",
+      "executed_date": "",
+      "autonomy_tier": 2,
+      "learning_note": ""
     }
   ],
   "queue_actions": {
