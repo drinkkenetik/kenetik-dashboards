@@ -4136,14 +4136,16 @@
       "linked_calendar_activity": "ARCA-KAN-041726-BEAT-03",
       "source": "calendar_safety_net",
       "autonomy_tier": 2,
-      "outcome": "complete",
+      "outcome": "partial",
       "closed_date": "2026-04-20",
-      "learning_note": "Cleetus Pit Crew Koozie launched at ARCA Kansas (4/17-4/18) as the inaugural SKU for the 'Cleetus Pit Crew Bundle' ($59.88 Variety 12-Pack + free koozie). Koozie mocks shipped via Alex Das, product shipped to Cleetus ahead of race weekend (ARCA-KAN-041726-BEAT-05). Koozie bundle now carries into ARCA Talladega 4/24-25 (per ARCA-TAL-042426-BEAT-04) and subsequent 2026 Cleetus race weekends through the ARCA season. Learning: single-bundle strategy across multiple race weekends beats per-event promotional SKUs — reduces SKU sprawl, maintains merchandising clarity, lets Cleetus reuse talking points. Actual sell-through outcome TBD — Katie to pull Kansas weekend sales data; if signal is strong, open a new follow-on changeset to scale the bundle to additional creators.",
+      "learning_note": "Kansas execution was partial — SKU launched and inventory shipped, but the Cleetus on-camera koozie promo did NOT happen because Kenetik opted out of Kansas car sponsorship and the planned video activation was tied to that sponsorship. Without the A-list activation layer, the bundle launched cold in merchandising. Learning: A-list activations that are structurally tied to another deal (car sponsorship, tour partnership, etc.) need a backup plan if the parent deal falls through. For bundles/SKUs with short sell-through windows, decouple the merchandising launch from the sponsorship where possible, or build a standalone activation path (unboxing from home, story content, paid media) that doesn't depend on event-day attendance. Talladega 4/24-25 is now the real first-activation test for the Pit Crew Bundle.",
       "actual_impact": {
-        "primary_metric": "koozie_bundle_units_sold_kansas_weekend",
-        "primary_metric_result": "TBD — Katie to pull sell-through from Shopify on Cleetus Pit Crew Bundle SKU for 4/17-4/18",
+        "primary_metric": "cleetus_on_camera_activation_kansas",
+        "primary_metric_result": "Not executed — Kenetik opted out of Kansas car sponsorship; Cleetus did not post a dedicated koozie promo video during Kansas weekend (4/17-4/18).",
+        "secondary_metric": "pit_crew_bundle_sku_live",
+        "secondary_metric_result": "Live on Shopify; product shipped to Cleetus; no dedicated traffic driver at Kansas.",
         "confidence": "medium",
-        "_note": "Bundle executed successfully at event. Sell-through measurement pending; closing changeset on execution success but flagging that the sales read should feed the next Talladega-window bundle decision."
+        "_note": "Bundle launched as a SKU but missed the A-list activation layer at Kansas. Talladega 4/24-25 is now the real first-activation test (see ARCA-TAL-042426-BEAT-04). Sell-through from Kansas weekend will be quiet baseline only."
       },
       "measurement_end_date": "2026-04-20"
     },
