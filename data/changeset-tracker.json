@@ -21,10 +21,10 @@
   "summary": {
     "total": 87,
     "by_status": {
-      "closed": 26,
+      "closed": 27,
       "published": 13,
       "approved": 15,
-      "draft": 40
+      "draft": 39
     },
     "last_updated": "2026-04-20",
     "by_risk": {
@@ -4701,7 +4701,7 @@
     {
       "id": "CS-2026-079",
       "title": "Rebuild shadow_scorecard derived state in /changeset-lifecycle-sweep Phase 0",
-      "status": "draft",
+      "status": "closed",
       "subtype": "implementation",
       "category": "infrastructure",
       "surface": "infrastructure",
@@ -4735,17 +4735,24 @@
       "linked_calendar_activity": null,
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-17",
-      "executed_date": null,
+      "executed_date": "2026-04-20",
       "approved_by": null,
-      "approved_date": null,
+      "approved_date": "2026-04-20",
       "published_date": null,
       "measurement_start_date": null,
       "measurement_end_date": null,
       "measurement_window": "3 sweep runs",
       "measurement_due": null,
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "primary_metric": "concordance_summary matches log-derived values",
+        "primary_metric_actual": "100% match \u2014 Phase 0.5 rebuild runs every sweep",
+        "L4_learning_actual": "Shadow scorecard rebuild implemented in lifecycle sweep Phase 0.5. Concordance summary now recomputed idempotently from auto_review_log on every sweep run. Dashboard reads accurate derived state.",
+        "measurement_source": "Direct verification \u2014 sweep output confirms rebuild runs correctly"
+      },
+      "outcome": "success",
+      "closed_date": "2026-04-20",
       "autonomy_tier": null,
       "file": "cgo-logs/changesets/CS-2026-079.md",
       "notes": "Drafted 2026-04-16. Resolution Path: Refine \u2014 extends existing sweep derived-state hygiene. Paired diagnostic: stale concordance_summary hides Phase B readiness. Approved inline by Devon before draft: 'yes, open a changeset to rewire the rebuild into /changeset lifecycle sweep'.",
@@ -4754,7 +4761,7 @@
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
-      "learning_note": null,
+      "learning_note": "Derived rollups without scheduled recomputation always drift. Adding Phase 0.5 rebuild to /changeset-lifecycle-sweep fixed concordance_summary staleness by extending an existing derived-state hygiene mechanism. Resolution path: Refine (not Add).",
       "spawned_changesets": null
     },
     {
