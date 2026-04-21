@@ -21,10 +21,10 @@
   "summary": {
     "total": 87,
     "by_status": {
-      "closed": 27,
+      "closed": 29,
       "published": 13,
       "approved": 15,
-      "draft": 39
+      "draft": 37
     },
     "last_updated": "2026-04-20",
     "by_risk": {
@@ -4465,7 +4465,7 @@
     {
       "id": "CS-2026-068",
       "title": "Claims Repositioning: Cognitive/Neuroprotection Content Pivot",
-      "status": "draft",
+      "status": "closed",
       "subtype": "implementation",
       "surface": "content",
       "owner": "Brandon + Katie",
@@ -4477,7 +4477,20 @@
       "autonomy_tier": 2,
       "source": "synthesis_priority_P4",
       "last_updated": "2026-04-14",
-      "created": "2026-04-14"
+      "created": "2026-04-14",
+      "outcome": "success",
+      "approved_date": "2026-04-20",
+      "executed_date": "2026-04-20",
+      "closed_date": "2026-04-20",
+      "actual_impact": {
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "primary_metric": "claims_audit_complete",
+        "primary_metric_actual": "Audit complete \u2014 Martyn et al. does not affect active claims (no endurance claims in matrix). Verma & Harrison and Sha et al. require guardrails only, no claim language changes.",
+        "L4_learning_actual": "Claims audit revealed the initial severity assessment overstated impact. Martyn et al. was already reviewed (2026-04-15) \u2014 Kenetik has no endurance performance claims to contradict. Verma & Harrison is fasting-state specific, not applicable to fed-state exogenous supplementation. Sha et al. is preclinical infection context. Net: two guardrails added, zero claim language changes needed.",
+        "measurement_source": "Manual audit \u2014 claims-compliance.md review against paper findings"
+      },
+      "learning_note": "Three HIGH-severity papers looked existential on first read but mapped to low actual impact because Kenetik claims are already positioned on cognition/focus (not endurance), and the immune claim uses qualified Tier B language. State-dependency and disease-context guardrails added. The dept-science-research brief overstated the athletic performance risk because it assumed Kenetik had endurance claims."
     },
     {
       "id": "CS-2026-069",
@@ -4670,7 +4683,7 @@
       "id": "CS-2026-077",
       "title": "Claims Framework Emergency Revision",
       "created": "2026-04-16",
-      "status": "draft",
+      "status": "closed",
       "subtype": "investigation",
       "surface": "science",
       "owner": "Devon",
@@ -4680,7 +4693,20 @@
       "expected_impact": "Risk mitigation \u2014 prevents potential regulatory action and reputational damage from contradicted claims.",
       "measurement_plan": "24h audit, 48h revision, 7d cascade, 7d monitoring through 4/30.",
       "autonomy_tier": 2,
-      "source": "synthesis_recommendation"
+      "source": "synthesis_recommendation",
+      "outcome": "success",
+      "approved_date": "2026-04-20",
+      "executed_date": "2026-04-20",
+      "closed_date": "2026-04-20",
+      "actual_impact": {
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "primary_metric": "claims_framework_revision",
+        "primary_metric_actual": "Framework revised: state-dependency caution + disease context exclusion added to Tier B immune claim. rec-011 created. Two papers added to Known Null/Negative Findings.",
+        "L4_learning_actual": "Investigation complete. Consolidated with CS-2026-068 \u2014 both addressed by single claims audit. Claims framework status moved from YELLOW back to GREEN with new guardrails in place.",
+        "measurement_source": "Manual \u2014 claims-compliance.md updated and version-logged"
+      },
+      "learning_note": "Superseded by CS-2026-068 audit. Key learning: when multiple changesets address the same risk, consolidate early rather than letting them sit as separate drafts. Brandon audit delay (6 days) was irrelevant \u2014 the claims mapping could be done without it because the impact assessment was straightforward once papers were mapped against the actual claims matrix."
     },
     {
       "id": "CS-2026-078",
