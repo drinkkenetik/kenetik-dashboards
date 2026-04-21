@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-20",
+  "last_updated": "2026-04-21",
   "next_id": 95,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-20",
@@ -19,10 +19,10 @@
     "data_validation_repairs": 0
   },
   "summary": {
-    "total": 87,
+    "total": 94,
     "by_status": {
-      "closed": 29,
-      "published": 13,
+      "closed": 30,
+      "published": 12,
       "approved": 15,
       "draft": 37
     },
@@ -3249,7 +3249,7 @@
       "title": "Scale: Matt Hughes Athlete Content \u2192 Paid Meta (Proven 9.57x ROAS)",
       "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-04-01",
@@ -3286,9 +3286,37 @@
       "measurement_end_date": "2026-04-17",
       "measurement_window": "14d",
       "measurement_due": "2026-04-17",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "ROAS",
+        "primary_metric_baseline": "CS-2026-029 delivered 9.57x on $97 retargeting spend during Brain Awareness Week",
+        "primary_metric_result": "0.38x blended ROAS",
+        "primary_metric_delta": "-74.7% vs 1.5x target; -96% vs 9.57x predecessor",
+        "revenue_impact": 109.31,
+        "margin_impact": -233.8,
+        "confidence": "high",
+        "statistical_significance": true,
+        "_detail": {
+          "ad_spend": 288.45,
+          "purchases": 3,
+          "active_ads": "6 ads across 3 campaigns (prospecting + interest + retargeting)",
+          "best_ad": {
+            "type": "re-edit / retargeting",
+            "roas": 0.49,
+            "ctr": "2.82%"
+          },
+          "prospecting_and_interest_purchases": 0,
+          "sample_size_impressions": 23683,
+          "measurement_source": "Layer 1 \u2014 data/paid-media/paid-media-state.json",
+          "measurement_window": "14d (Apr 3 - Apr 17)",
+          "kill_trigger_hit_date": "2026-04-10 (Day 7)"
+        },
+        "_note": "margin_impact computed per \u00a73 paid_meta formula: (revenue_impact \u00d7 DTC 50%) \u2212 ad_spend = ($109.31 \u00d7 0.50) \u2212 $288.45 = -$233.80. Prospecting and interest adsets were paused operationally on/around 2026-04-10 after kill trigger hit. Retargeting retained with new Matt Hughes content being loaded into it.",
+        "L1_margin_actual": "Below \u2014 projected $2,400 expected / $-500 downside; actual -$233.80 net loss. Well below even the downside scenario.",
+        "L3_customer_quality_actual": "Too early / not meaningful \u2014 only 3 purchasers, sample insufficient to assess cohort retention or LTV.",
+        "L4_learning_actual": "Hypothesis NOT supported. Matt Hughes athlete content does NOT transfer from retargeting to prospecting. CS-2026-029's 9.57x was an audience \u00d7 timing effect (retargeting within Brain Awareness Week with warm intent), not a creative \u00d7 audience effect. Athlete content reinforces existing intent but does not generate it in cold/interest audiences. Keep Matt Hughes content in retargeting only going forward."
+      },
+      "outcome": "underperformed",
+      "closed_date": "2026-04-21",
       "file": "cgo-logs/changesets/CS-2026-045.md",
       "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING \u2014 Katie to update after Meta publish. | 2026-04-15 sweep: measurement window closes <=3d; prepare decision.",
       "risk": "low",
@@ -3297,10 +3325,8 @@
       "executed_date": null,
       "autonomy_tier": null,
       "urgency": "measuring",
-      "last_updated": "2026-04-15",
-      "sweep_flags": [
-        "closing_soon"
-      ],
+      "last_updated": "2026-04-21",
+      "sweep_flags": [],
       "last_sweep": "2026-04-16",
       "measurement_result": {
         "outcome": "underperformed",
@@ -3356,7 +3382,8 @@
         "notes": "Matt Hughes athlete content across 6 ad variants delivered 0.38x ROAS on $288 spend \u2014 well below 1.5x target and triggering the kill criteria (<0.8x at Day 7). Best performer (re-edit / retargeting) has decent CTR (2.82%) but 0.49x ROAS. Prospecting and interest-based adsets generated zero purchases. Content generates clicks but fails to convert. The 9.57x predecessor (CS-029) was likely retargeting-only; scaling to prospecting didn't hold.",
         "requires_human_review": true,
         "recommended_action": "Kill trigger hit. Pause lowest performers immediately. Retain re-edit in retargeting only (0.49x may improve with tighter audience). Do not scale to prospecting. Learning: athlete content for Matt Hughes doesn't transfer from retargeting to prospecting."
-      }
+      },
+      "learning_note": "Scaled CS-029's 9.57x retargeting winner to full budget across prospecting + interest + retargeting \u2192 prospecting/interest generated 0 purchases and blended ROAS collapsed to 0.38x on $288 spend \u2192 CS-029's 9.57x was an audience\u00d7timing effect (retargeting inside Brain Awareness Week), not a creative\u00d7audience effect that generalizes to cold traffic. Athlete content reinforces existing intent; it does not generate it. Retain Matt Hughes content in retargeting only."
     },
     {
       "id": "CS-2026-046",
