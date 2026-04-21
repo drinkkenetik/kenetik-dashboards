@@ -21,12 +21,12 @@
   "summary": {
     "total": 94,
     "by_status": {
-      "closed": 30,
-      "published": 12,
+      "closed": 31,
+      "published": 11,
       "approved": 15,
       "draft": 37
     },
-    "last_updated": "2026-04-20",
+    "last_updated": "2026-04-21",
     "by_risk": {
       "critical": 2,
       "low": 46,
@@ -1197,7 +1197,7 @@
       "title": "SHOTS: YOUR ANYWHERE RESET",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
@@ -1231,7 +1231,7 @@
       "review_tier": "standard",
       "published_date": "2026-04-09",
       "file": "cgo-logs/changesets/CS-2026-014.md",
-      "notes": "Scheduled in Klaviyo 2026-04-09 for send 2026-04-10 14:00 EDT. Final creative: Shots travel angle (Walsh 2021 CBF). Supersedes CS-2026-005. | 2026-04-15 sweep: measurement window closes <=3d; prepare decision.",
+      "notes": "Scheduled in Klaviyo 2026-04-09 for send 2026-04-10 14:00 EDT. Final creative: Shots travel angle (Walsh 2021 CBF). Supersedes CS-2026-005. | 2026-04-15 sweep: measurement window closes <=3d; prepare decision. | 2026-04-21 closed by Katie as underperformed: $1,293.07 rev vs $18K expected (-92.8%). Katie flagged $18K baseline never validated for pure-content product spotlight; iterate in May email calendar.",
       "sweep_flags": [],
       "last_sweep": "2026-04-03",
       "risk": "low",
@@ -1254,7 +1254,7 @@
         "confirmation_id": "Scheduled in Klaviyo - send 2026-04-10 14:00 EDT",
         "published_at": "2026-04-09T18:00:00Z"
       },
-      "last_updated": "2026-04-15",
+      "last_updated": "2026-04-21",
       "measurement_result": {
         "outcome": "underperformed",
         "measured_date": "2026-04-20",
@@ -1303,7 +1303,40 @@
         "notes": "Campaign sent to 19K (vs 52K estimated). RPR of $0.068 and $1,293 revenue are well below $18K expected. Open rate (36%) healthy, but click-to-conversion funnel is weak (0.56% CTR, 0.074% CVR). Revenue shortfall driven by both smaller send size and lower conversion.",
         "requires_human_review": true,
         "recommended_action": "Review segment targeting (sent to 36% of planned audience). Test stronger CTAs or bundle offer for shots format."
-      }
+      },
+      "outcome": "underperformed",
+      "closed_date": "2026-04-21",
+      "closed_by": "Katie",
+      "actual_impact": {
+        "primary_metric": "email_rpr",
+        "primary_metric_baseline": "N/A (new campaign, no direct predecessor)",
+        "primary_metric_result": "$0.068 RPR",
+        "primary_metric_delta": "N/A \u2014 missed product-spotlight RPR benchmark",
+        "revenue_impact": 1293.07,
+        "margin_impact": 646.53,
+        "confidence": "high",
+        "statistical_significance": true,
+        "_detail": {
+          "recipients": 19016,
+          "recipients_planned": 52575,
+          "audience_delta_pct": -63.8,
+          "open_rate": "35.96%",
+          "click_rate": "0.56%",
+          "conversion_rate": "0.074%",
+          "conversions": 14,
+          "revenue_target_expected": 18000,
+          "revenue_delta_pct": -92.8,
+          "measurement_source": "Layer 2 \u2014 Klaviyo MCP campaign report",
+          "measurement_window_days": 7,
+          "measurement_start": "2026-04-10",
+          "measurement_end": "2026-04-17"
+        },
+        "_note": "margin_impact computed as revenue_impact x DTC_margin (50%) per changeset-common-functions.md \u00a73 (klaviyo surface, DTC Shopify destination). Revenue shortfall driven by compounding factors: (1) send size cut to 36% of planned (19,016 vs 52,575) \u2014 root cause in segment build pending trace, (2) CTR 0.56% and CVR 0.074% below product-spotlight norms. Katie flagged that the $18K projection was never validated by a pure-content (non-bundle, non-promo) product-spotlight email \u2014 baseline needs recalibration before next iteration.",
+        "L1_margin_actual": "$646.54 actual contribution margin \u2014 below projected $9,000 (-92.8%)",
+        "L3_customer_quality_actual": "Too early \u2014 only 14 converters; cohort too small to meaningfully assess LTV or validate Wedge A (Shots Interest + Travel/Convenience) tagging impact.",
+        "L4_learning_actual": "Not supported \u2014 travel/anywhere-reset framing for Shots did not clear product-spotlight RPR benchmark. Open rate (35.96%) was healthy so subject/preview worked; drop-off was at click (0.56%) and conversion (0.074%). Pure-content product-spotlight emails (no bundle / no urgency / no promo) need lower baseline projections \u2014 the $18K target was not anchored on a validated comparable."
+      },
+      "learning_note": "Sent SHOTS 'Your Anywhere Reset' product spotlight to 19,016 (vs 52,575 planned); travel/TSA framing with no bundle or urgency hook. -> Open rate healthy (35.96%) but CTR (0.56%) and CVR (0.074%) collapsed revenue pull-through to $1,293.07 vs $18,000 expected (-92.8%). -> Pure-content product-spotlight emails (no bundle/urgency/promo) need lower baseline projections anchored on validated comparables; travel angle alone did not drive click/convert. Next iteration in May email calendar should test bundle or urgency hook and audit the segment-build step that reduced sends by 64%."
     },
     {
       "id": "CS-2026-015",
