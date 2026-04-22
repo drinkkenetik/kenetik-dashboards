@@ -102,9 +102,9 @@
     "by_status": {
       "published": 14,
       "needs_feedback": 1,
-      "draft": 35,
+      "draft": 34,
       "approved": 11,
-      "closed": 40
+      "closed": 41
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -4053,7 +4053,7 @@
       "title": "Facebook Retargeting-to-Whitelisting Reallocation",
       "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-04-07",
@@ -4089,17 +4089,39 @@
       "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "fb_blended_pixel_roas",
+        "primary_metric_baseline": "disputed \u2014 CS claimed 1.36x; actuals require campaign-level pull",
+        "primary_metric_result": "N/A \u2014 CS plan never executed as written",
+        "primary_metric_delta": "N/A",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_note": "Closed stale. Directional whitelisting-favoring adjustments did occur during the Apr 7-21 window but were driven by corrected campaign-level data, not this CS's plan. Performance of those adjustments lives in FB campaign-level reporting, not here. revenue_impact=0 and margin_impact=0 reflect that THIS CS contributed no attributable delta.",
+        "L1_margin_actual": "0 attributable to this CS (see _note)",
+        "L3_customer_quality_actual": "not tested via this CS",
+        "L4_learning_actual": "Hypothesis (shift budget from fatigued retargeting to whitelisting) was directionally correct, but the specific numbers used to justify the exact $43/day reallocation were unreliable. Meta-learning: paid-media CSes spawned from D04/D08 domain scans need campaign-level validation of ROAS numbers BEFORE the CS is drafted, not 15 days later when execution is overdue. This is the same pattern captured in L-006 ('FB ROAS 0.89x Session 26 was incorrect -- actual 2.59x. Always verify Polar aggregate vs campaign-level data') \u2014 CS-2026-051 is another confirming data point for L-006."
+      },
+      "outcome": "stale",
+      "closed_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-051.md",
-      "notes": "General retargeting 0.87x FATIGUED. Creator whitelisting 14.46x. 1,660% ROAS spread.",
+      "notes": "General retargeting 0.87x FATIGUED. Creator whitelisting 14.46x. 1,660% ROAS spread. | 2026-04-22 CLOSED stale by Katie. Window (Apr 7-21) passed. Directional budget shifts were made during window but based on corrected campaign-level data, not this CS's plan \u2014 CS data (0.87x/14.46x/1,660% spread) did not hold against campaign-level validation. $0 attributable to this CS. Ties to L-006 pattern.",
       "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "high"
+      "urgency": "none",
+      "closed_by": "Katie",
+      "closed_reason": "Measurement window passed (CS was scoped Apr 7 - Apr 21). Directional budget adjustments were made in line with the recommendation's general thrust \u2014 shift spend toward creator whitelisting \u2014 but the specific plan in this CS was NOT followed as written. The data underpinning the CS (general retargeting 0.87x, creator whitelisting 14.46x on $9 spend, 1,660% spread) did not hold up against campaign-level validation, so the $43/day reallocation plan was not executed as specified. Actual paid media adjustments and performance for the Apr 7-21 window are tracked under the relevant FB campaigns, not attributable to this CS.",
+      "learning_note": "For paid_meta Facebook retargeting-to-whitelisting reallocation, the CS recommended a specific $300/week shift based on D04 domain scan numbers (0.87x general retargeting, 14.46x creator whitelisting on $9 spend). Katie made directional adjustments inline with the thrust but did not execute the specific plan because campaign-level data didn't match the CS inputs. CS sat 15 days in draft without sweep flags before being closed stale. Key insight: paid-media CSes spawned from aggregate domain scans need a campaign-level data-reconciliation step BEFORE draft. Also: drafts taking partial/informal action should be closed promptly with that acknowledgment, not left to accumulate \u2014 stale detection currently appears to not fire on drafts (CS sat 15d with empty sweep_flags). Ties to existing L-006 pattern.",
+      "sweep_flags": [
+        "closed_stale_partial_action_2026-04-22"
+      ],
+      "triage_action": "closed",
+      "triage_recommendation": "none",
+      "last_updated": "2026-04-22"
     },
     {
       "id": "CS-2026-052",
