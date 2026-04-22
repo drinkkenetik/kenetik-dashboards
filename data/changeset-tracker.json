@@ -4725,16 +4725,24 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-067.md",
-      "notes": "Cohort: 1,460 profiles (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). All 3 placeholders resolved 4/13: (1) Roman flavor = Blackberry Lemonade per Nick, pending final Roman confirm; (2) Variety inventory cleared by Ops; (3) Insert card resolved to digital BTS video unlock per Peter. Roman script/vibe brief drafted for Nick \u2014 shoot deadline 4/17 for 4/20 T0. Precedent: CS-2026-007. | 2026-04-15: Devon approved. Proceeding normally. CS-074 routine watchlist, no operational impact. Remaining: Devon claims review, Nick tone review, Roman shoot by 4/17. Execution target 4/20.",
+      "notes": "Cohort: 1,460 profiles (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). All 3 placeholders resolved 4/13: (1) Roman flavor = Blackberry Lemonade per Nick, pending final Roman confirm; (2) Variety inventory cleared by Ops; (3) Insert card resolved to digital BTS video unlock per Peter. Roman script/vibe brief drafted for Nick \u2014 shoot deadline 4/17 for 4/20 T0. Precedent: CS-2026-007. | 2026-04-15: Devon approved. Proceeding normally. CS-074 routine watchlist, no operational impact. Remaining: Devon claims review, Nick tone review, Roman shoot by 4/17. Execution target 4/20. | 2026-04-22 (Katie): Execution deferred \u2014 blocked on Roman thank-you video (Track B T4 digital unlock, see roman-script-brief.md). Shoot missed the 2026-04-17 deadline. Cleared execution_target_date; will re-target when video lands. Status remains approved. Log source: /changeset-execute.",
       "risk": "medium",
       "scheduled_send_date": null,
-      "execution_target_date": "2026-04-20",
+      "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
       "linked_calendar_activity": "ROMAN-020326",
       "learning_note": null,
       "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
+      "sweep_flags": [
+        {
+          "flag": "blocked_on_creative",
+          "set_date": "2026-04-22",
+          "session": "/changeset-execute CS-2026-067",
+          "action": "Execution deferred by Katie. Blocked on Roman thank-you video (Track B T4 post-purchase unlock). Re-run /changeset-execute when video delivered."
+        }
+      ]
     },
     {
       "id": "CS-2026-068",
