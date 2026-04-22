@@ -102,8 +102,8 @@
     "by_status": {
       "closed": 37,
       "published": 14,
-      "approved": 11,
-      "draft": 38,
+      "approved": 12,
+      "draft": 37,
       "needs_feedback": 1
     },
     "last_updated": "2026-04-22",
@@ -2688,7 +2688,7 @@
       "title": "Email Flow CTA Redesign \u2014 High-Volume Low-CTR Messages",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "approved",
       "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-03-20",
@@ -2710,7 +2710,12 @@
           "downside": 0
         },
         "primary_metric": "email_click_rate",
-        "primary_metric_target": ">=2.0% avg CTR on Tier 1 messages (from 0.47% baseline)"
+        "primary_metric_target": ">=2.0% avg CTR on Tier 1 messages (from 0.47% baseline)",
+        "L1_margin": "$3,600 expected contribution margin / $7,200 upside (klaviyo \u00d7 DTC 50% margin per \u00a73). Downside $0 \u2014 losing A/B variants are removed with no net revenue regression. Formula: expected_revenue $7,200 \u00d7 0.50 = $3,600.",
+        "L2_cash": "neutral \u2014 DTC revenue, standard cash cycle. No upfront capital; Klaviyo A/B is in-plan SaaS; in-house CTA redesign work.",
+        "L3_customer_quality": "positive, reinforces L1 \u2014 Tier-1 flows drive repeat/subscription attach (post-purchase) and M6+ reactivation (winback) for plateauing 2025-01 to 2025-04 cohorts. Welcome Series lift directly targets M1 retention, which Apr 22 scan flags as weakest recent cohort signal (Feb 2026 M1 at 12.8%).",
+        "L4_learning": "Tests whether four-lever CTA redesign (above-fold placement, high-contrast button, direct product link, urgency/benefit copy) lifts flow CTR in a pattern-extractable way across 5 flow families. Null outcome routes next investigation to audience/trigger layer \u2014 also a useful signal.",
+        "L5_brand_check": "pass \u2014 CTA design + copy + placement only. No claims added; no voice changes. Katie approves all variant B copy solo per operator workflow."
       },
       "routed_to": [
         "Katie"
@@ -2718,17 +2723,18 @@
       "routed_via": "auto",
       "routed_date": "2026-03-19",
       "file": "cgo-logs/changesets/CS-2026-031.md",
-      "notes": "Rescoped Mar 23 after Klaviyo API audit. Real scope: ~15 high-volume low-CTR flow emails (not 121 flows). Brief still in Draft \u2014 needs /changeset-review before advancing. Corrected metadata: was incorrectly tagged paid_media/L1/graduation_roas.",
+      "notes": "Governance refresh 2026-04-22: L1\u2013L5 populated, Resolution Path added (Add \u2014 A/B variants), factual grounding YAML added, Apr 22 baseline refreshed. Re-tiered EXPRESS \u2192 STANDARD per \u00a76 (subtype=implementation, risk=medium, rev=$7.2K fail Express criteria). EC-2026-006 filed for \u00a76 enforcement gap. Status flipped draft \u2192 approved. Originally rescoped Mar 23 after Klaviyo API audit.",
       "risk": "medium",
-      "approved_by": "Express Auto-Approve",
-      "approved_date": "2026-03-22",
+      "approved_by": "Katie (operator, 2026-04-22 governance refresh \u2014 corrected from prior Express Auto-Approve per EC-2026-006)",
+      "approved_date": "2026-04-22",
       "measurement_window": "14-day from implementation",
-      "review_tier": "express",
+      "review_tier": "standard",
       "scheduled_send_date": null,
-      "execution_target_date": null,
+      "execution_target_date": "2026-04-28",
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "stale"
+      "urgency": null,
+      "measurement_window_days": 14
     },
     {
       "id": "CS-2026-032",
