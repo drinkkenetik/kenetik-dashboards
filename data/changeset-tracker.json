@@ -100,11 +100,11 @@
   "summary": {
     "total": 101,
     "by_status": {
-      "approved": 11,
-      "draft": 30,
-      "published": 12,
+      "draft": 29,
+      "needs_feedback": 3,
+      "approved": 12,
       "closed": 45,
-      "needs_feedback": 3
+      "published": 12
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -5073,7 +5073,7 @@
     {
       "id": "CS-2026-070",
       "title": "Google PMAX Shopping Feed Audit & Restructure",
-      "status": "draft",
+      "status": "approved",
       "subtype": "quick",
       "surface": "paid-google",
       "owner": "Katie",
@@ -5083,8 +5083,12 @@
       "measurement_plan": "24h: feed audit complete, issues documented. 48h: restructured campaign live. 7d: ROAS measurement vs 0.40x baseline.",
       "autonomy_tier": 0,
       "source": "synthesis_rec-187",
-      "last_updated": "2026-04-14",
-      "created": "2026-04-14"
+      "last_updated": "2026-04-22",
+      "created": "2026-04-14",
+      "approved_by": "Express Auto-Approve",
+      "approved_date": "2026-04-22",
+      "review_tier": "express",
+      "notes": " | 2026-04-22 /changeset-review: EXPRESS AUTO-APPROVE. All 11 Express checklist items passed (rollback was implied, not explicit \u2014 acceptable for low-risk feed optimization). Flagged for execution: (a) document campaign settings BEFORE restructure for clean revert; (b) if feed audit + bid restructure both fail to move ROAS, escalate to RCA rather than iterate; (c) capture learning on whether feed-quality or bid-strategy was the actual root cause (diagnostic value). Deferred hygiene to next synthesis pass: canonical surface name (paid-google \u2192 paid_google per \u00a78), inline [src:] markers, L1-L5 formal population."
     },
     {
       "id": "CS-2026-071",
