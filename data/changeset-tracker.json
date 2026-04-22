@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-22",
-  "next_id": 101,
+  "next_id": 102,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-22T15:15:00Z",
     "last_sweep_session": 38,
@@ -98,24 +98,24 @@
     ]
   },
   "summary": {
-    "total": 100,
+    "total": 101,
     "by_status": {
       "closed": 37,
       "published": 13,
       "approved": 11,
-      "draft": 38,
+      "draft": 39,
       "needs_feedback": 1
     },
     "last_updated": "2026-04-22",
     "by_risk": {
       "critical": 2,
-      "low": 46,
-      "medium": 32,
-      "high": 7
+      "low": 51,
+      "medium": 39,
+      "high": 9
     },
     "by_subtype": {
-      "implementation": 66,
-      "investigation": 16,
+      "implementation": 75,
+      "investigation": 21,
       "quick": 5
     },
     "total_changesets": 100,
@@ -5099,7 +5099,8 @@
       "revision_date": null,
       "rejection_notes": null,
       "learning_note": "Derived rollups without scheduled recomputation always drift. Adding Phase 0.5 rebuild to /changeset-lifecycle-sweep fixed concordance_summary staleness by extending an existing derived-state hygiene mechanism. Resolution path: Refine (not Add).",
-      "spawned_changesets": null
+      "spawned_changesets": null,
+      "risk_level": "low"
     },
     {
       "id": "CS-2026-080",
@@ -5158,7 +5159,8 @@
       "revision_date": null,
       "rejection_notes": null,
       "learning_note": null,
-      "spawned_changesets": null
+      "spawned_changesets": null,
+      "risk_level": "low"
     },
     {
       "id": "CS-2026-081",
@@ -5732,7 +5734,7 @@
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
-      "autonomy_tier": 3,
+      "autonomy_tier": null,
       "file": "cgo-logs/changesets/CS-2026-089.md",
       "notes": "Spawned from 2026-04-20 synthesis rec-223 with explicit Meta-to-Google target pivot (justified in \u00a71b Resolution Path). High-risk autonomy-tier 3; requires Devon approval (CGO-level budget reallocation). Circuit-breakers enforce Google deterioration rollback at runtime rather than dashboard observation (closes P003 anti-pattern gap). CS-2026-051 is parent scope (FB retargeting-to-whitelisting reallocation, draft). Blocks CS-2026-087 (CamJones IG, approved 2026-04-21) and CS-2026-088 (Freedom500 FB, draft) \u2014 budget source for both. Whiskey 50 activation window 2026-04-26 is timing-critical; this CS must approve and execute within 5 days. Revised 2026-04-21 per /changeset-review FULL-tier findings (all 8 items addressed).",
       "sweep_flags": [],
@@ -5795,7 +5797,7 @@
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
-      "autonomy_tier": 3,
+      "autonomy_tier": null,
       "file": "cgo-logs/changesets/CS-2026-090.md",
       "notes": "Spawned from 2026-04-20 synthesis rec-227 (P5 Ketone-IQ counter). Direct response to Ketone-IQ APRIL26 30% sub discount + Tony Robbins YouTube push flagged by D13 (5th consecutive session below 40% share of voice). Nicole owns email copy + flow; Lawrence owns PDP module build. Peter claims review required pre-send.",
       "sweep_flags": [],
@@ -6397,6 +6399,55 @@
       "executed_date": "",
       "autonomy_tier": 2,
       "learning_note": ""
+    },
+    {
+      "id": "CS-2026-101",
+      "title": "Maverick Inbox Placement 30-Day Test Evaluation",
+      "surface": "klaviyo",
+      "category": "email_sms",
+      "subtype": "investigation",
+      "status": "draft",
+      "owner": "Katie",
+      "created": "2026-04-22",
+      "risk_level": "low",
+      "review_tier": "standard",
+      "linked_calendar_activity": null,
+      "execution_target_date": "2026-05-14",
+      "scheduled_send_date": null,
+      "executed_date": null,
+      "autonomy_tier": null,
+      "spawned_from": null,
+      "expected_impact": {
+        "revenue": {
+          "upside": 12000,
+          "expected": 8750,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 5000,
+          "expected": 3375,
+          "downside": -1000
+        },
+        "primary_metric": "campaign_rpr_treatment_vs_control",
+        "primary_metric_target": ">=+30% RPR lift on Maverick treatment arm vs control",
+        "L1_margin": "$3,375 expected contribution margin impact (klaviyo \u00d7 DTC 50% margin, net of ~$1,000 software cost) [ASSUMED \u2014 software cost, verify]",
+        "L2_cash": "neutral \u2014 DTC revenue, standard cash cycle; monthly SaaS cost minor cash drag",
+        "L3_customer_quality": "positive \u2014 higher inbox placement improves sustained engagement with engaged/UE audiences; indirect LTV reinforcement via reduced sender-reputation decay",
+        "L4_learning": "Does inbox-placement optimization (vendor A/B layer on top of Klaviyo) produce the vendor-claimed 30\u201340% campaign revenue lift in Kenetik's send context, and which mechanism(s) drive any observed effect?",
+        "L5_brand_check": "pass \u2014 Maverick modifies technical send attributes and/or subject/preheader within Katie-controlled bounds; no product or health claims altered"
+      },
+      "measurement_window_days": 30,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "learning_note": null,
+      "spawned_changesets": null,
+      "revision_notes": null,
+      "revision_date": null,
+      "rejection_notes": null
     }
   ],
   "queue_actions": {
