@@ -100,11 +100,11 @@
   "summary": {
     "total": 101,
     "by_status": {
-      "closed": 42,
-      "approved": 11,
-      "needs_feedback": 1,
       "published": 14,
-      "draft": 33
+      "closed": 42,
+      "draft": 32,
+      "needs_feedback": 2,
+      "approved": 11
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -4215,7 +4215,7 @@
       "title": "Review Request Flow Optimization (Variant Scale + Incentive + SMS Fix)",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "needs_feedback",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-04-07",
@@ -4261,11 +4261,14 @@
       "outcome": null,
       "review_tier": "express",
       "file": "cgo-logs/changesets/CS-2026-053.md",
-      "notes": "Spawned from CS-2026-036 investigation. Scale winning variant + LoyaltyLion incentive + SMS fix.",
+      "notes": "Spawned from CS-2026-036 investigation. Scale winning variant + LoyaltyLion incentive + SMS fix. | 2026-04-22 /changeset-review: REVISE. Substance solid (low-risk, reversible, PM-supported). Required fixes: tier hygiene (express\u2192standard per \u00a76, re: EC-2026-006), impact value convention (monthly\u2192annualized), Resolution Path rewrite (boilerplate), inline [src:] markers, benchmark citations. Recommended: L1 math reconciliation, A/B holdout on LoyaltyLion copy. See revision_notes for full feedback.",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
-      "autonomy_tier": null
+      "autonomy_tier": null,
+      "revision_notes": "=== /changeset-review revision 2026-04-22 (Katie) ===\n\nREQUIRED (address before re-submission):\n\nR1. Tracker hygiene \u2014 review_tier: fix 'express' \u2192 'standard' per \u00a76. This CS is subtype=implementation + expected revenue $9K/yr (not \u2265$10K for FULL, not <$2K for EXPRESS). Same \u00a76 enforcement gap as EC-2026-006 (CS-2026-031). Reference EC-2026-006 if filing another note.\n\nR2. Tracker hygiene \u2014 expected_impact.revenue.expected: current value 750 appears to be monthly; convention across the tracker is annualized. Update to 9000 (matches brief's '$750/mo ($9,000/yr)'). Same treatment for upside (1500 \u2192 18000) and downside (200 \u2192 2400), and margin fields at 50% (375\u21924500, 750\u21929000, 100\u21921200).\n\nR3. Resolution Path documentation \u2014 the table cells are boilerplate. Actual changes are Remove (variant split) + Add (LoyaltyLion incentive + rule) + Refine (SMS link audit). Rewrite the Diagnose cell with the specific CS-2026-036 findings (3.7% submission rate declining from 6.4% peak; 'Copy of' variant outperforms original on 90d; SMS UX gap). Rewrite Remove/Refine/Add cells to describe what each of the three changes does. Update Resolution Path label to reflect multi-step.\n\nR4. Factual grounding \u2014 add inline [src: cgo-logs/changesets/CS-2026-036.md#...] markers on the specific metric claims per \u00a710c: 33.7% open, 3.2% click, 9.6% CTO, $1.19 RPR, 3.7% submission rate, etc.\n\nR5. UNGROUNDED industry-benchmark claims \u2014 either cite the benchmark source for '2-4x review volume' (LoyaltyLion benchmark? Klaviyo case study? specific Kenetik data?) and '2-3x higher repeat rate for review writers,' or flag them as [UNGROUNDED \u2014 requires external verification]. These support L1 indirect-lift math and L3 reasoning, so they're load-bearing.\n\nRECOMMENDED (strongly consider):\n\nC1. L1 breakdown math \u2014 the component breakdown in \u00a73 sums to $702-$1,502/mo margin (direct $502 + indirect $150-$700 + SMS $50-$300), which is materially above the $375/mo expected value. Either the expected is a conservative dilution assumption (document it) or the bottom-up was computed separately from the summary. Reconcile.\n\nC2. L4 learning quality \u2014 consider a 20/80 A/B holdout on the LoyaltyLion incentive copy (not on variant scaling, which is already proven). Isolating the incentive effect from the variant effect produces a much cleaner L4 answer about 'does LoyaltyLion incentive lift review submission?' than a blended pre/post. 14-day window with the baseline from CS-2026-036 is okay-but-noisy without a control.\n\nOPTIONAL:\n\nO1. Clarify in the brief that the ~$502/mo variant-scaling component is effectively already proven (90d of 'Copy of' variant outperforming) \u2014 that change is near-deterministic. The unknowns (and hence the learning) are the LoyaltyLion and SMS-fix components. This reframing tightens the hypothesis.\n\n--- Substantive review (preserved for reference) ---\n\nResolution Path audit: pass (after R3 addressed)\nL0 Anti-pattern check: no match \u2014 pass\nL1 math: reasonable but inconsistent (see C1)\nL2: neutral DTC \u2014 agree\nL3: positive \u2014 agree, cross-dimensional L3\u2192L1 reasoning present\nL4: valuable hypothesis, weak method without A/B (see C2)\nL5: pass \u2014 no claims, standard LoyaltyLion disclosure\nConflict check: clear \u2014 no active CS touches flow Rcgah9\nPM support: strong \u2014 L-028 directly corroborates baseline + variant winner\nReversibility: <25 min, fully reversible \u2014 low execution risk\n\nOverall: the substance is solid. The required items are tracker-hygiene + documentation quality, not safety. Address R1-R5 and resubmit via /changeset-review CS-2026-053.",
+      "revision_date": "2026-04-22",
+      "last_updated": "2026-04-22"
     },
     {
       "id": "CS-2026-054",
