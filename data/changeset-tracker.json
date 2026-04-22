@@ -102,8 +102,8 @@
     "by_status": {
       "closed": 37,
       "published": 13,
-      "approved": 11,
-      "draft": 39,
+      "approved": 12,
+      "draft": 38,
       "needs_feedback": 1
     },
     "last_updated": "2026-04-22",
@@ -6406,7 +6406,7 @@
       "surface": "klaviyo",
       "category": "email_sms",
       "subtype": "investigation",
-      "status": "draft",
+      "status": "approved",
       "owner": "Katie",
       "created": "2026-04-22",
       "risk_level": "low",
@@ -6424,21 +6424,21 @@
           "downside": 0
         },
         "margin": {
-          "upside": 5000,
-          "expected": 3375,
-          "downside": -1000
+          "upside": 6000,
+          "expected": 4375,
+          "downside": 0
         },
         "primary_metric": "campaign_rpr_treatment_vs_control",
         "primary_metric_target": ">=+30% RPR lift on Maverick treatment arm vs control",
-        "L1_margin": "$3,375 expected contribution margin impact (klaviyo \u00d7 DTC 50% margin, net of ~$1,000 software cost) [ASSUMED \u2014 software cost, verify]",
-        "L2_cash": "neutral \u2014 DTC revenue, standard cash cycle; monthly SaaS cost minor cash drag",
+        "L1_margin": "$4,375 expected contribution margin during 30-day free-trial test window (klaviyo \u00d7 DTC 50% margin, $0 software cost). Post-test steady-state if retained: $500/month Starter plan = ~$3,875/month net margin at Expected scenario.",
+        "L2_cash": "neutral \u2014 DTC revenue, standard cash cycle; $0 cost during test, $500/month post-test (minor cash drag, absorbed by expected lift)",
         "L3_customer_quality": "positive \u2014 higher inbox placement improves sustained engagement with engaged/UE audiences; indirect LTV reinforcement via reduced sender-reputation decay",
         "L4_learning": "Does inbox-placement optimization (vendor A/B layer on top of Klaviyo) produce the vendor-claimed 30\u201340% campaign revenue lift in Kenetik's send context, and which mechanism(s) drive any observed effect?",
-        "L5_brand_check": "pass \u2014 Maverick modifies technical send attributes and/or subject/preheader within Katie-controlled bounds; no product or health claims altered"
+        "L5_brand_check": "pass \u2014 CONFIRMED 2026-04-22 governance review: Maverick scope is technical-only (headers, DKIM/SPF, authentication). No customer-facing copy modification. First 8-day guardrails clean per Katie."
       },
       "measurement_window_days": 30,
-      "approved_by": null,
-      "approved_date": null,
+      "approved_by": "Katie (operator \u2014 STANDARD tier, zero-cost test already live; Devon gate at 2026-05-14 retention decision)",
+      "approved_date": "2026-04-22",
       "published_date": null,
       "actual_impact": null,
       "outcome": null,
