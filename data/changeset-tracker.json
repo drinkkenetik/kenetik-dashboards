@@ -100,11 +100,11 @@
   "summary": {
     "total": 101,
     "by_status": {
-      "draft": 29,
       "needs_feedback": 3,
+      "closed": 46,
+      "published": 12,
       "approved": 12,
-      "closed": 45,
-      "published": 12
+      "draft": 28
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -4892,7 +4892,7 @@
       "title": "Graduation: FB 4AM Morning Routine Athlete Reel",
       "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-04-13",
@@ -4933,23 +4933,60 @@
       "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "ThruPlay rate + CTR + CPM",
+        "primary_metric_baseline": "n/a \u2014 organic reel, never graduated as this CS",
+        "primary_metric_result": "N/A \u2014 CS never shipped. Existing Ashton Hall paid rotation continues unchanged.",
+        "primary_metric_delta": "N/A",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_detail": {
+          "existing_ashton_hall_ads_verified_2026-04-22": 13,
+          "representative_ads": [
+            "video_ashton focus ad | interests_2a: fitness + wellness | active",
+            "video_ashton talking hook | retargeting | active",
+            "video_ashton 1 ad | retargeting | active",
+            "video_ashton 2 ad | retargeting | active",
+            "video_ashton boxing hook | retargeting | active",
+            "static_ashtonhall-1/-2/-3 | interests_2a: fitness + wellness | active",
+            "video_wl_cleetus_dayton recap with romand and ashton | lal / 7dc | active"
+          ],
+          "data_source": "data/paid-media/paid-media-state.json (2026-04-22)",
+          "scan_dedupe_gap_detail": "The brief's self-check ('Paid Status: organic_only - Clean') was based on tracker.json lookup for prior graduation CSes, not on paid-media-state.json lookup for existing ads. Ashton Hall ads were set up directly without a formal graduation CS, so the tracker check returned 'clean' while the ads were actively running."
+        },
+        "_note": "Third superseded graduation today (CS-2026-048 Ashton TT \u2192 CS-2026-061 Matt Hughes Meta \u2192 this CS Ashton FB). Same root-cause gap each time: graduation scan doesn't query paid-media-state.json. Pattern is emphatic; the TASKS item should move from 'nice to have' to 'priority' in the next synthesis pass.",
+        "L1_margin_actual": "0 attributable to this CS",
+        "L3_customer_quality_actual": "not tested via this CS",
+        "L4_learning_actual": "Hypothesis not tested \u2014 test was already running. Refinement to the meta-learning: even CSes that explicitly claim to have done a dedupe check are missing the paid-media-state query. The brief's 'Paid Status: organic_only - Clean (not in paid)' was false \u2014 the check only covered prior graduation CSes in tracker.json, not active ads in paid-media-state.json. Fix needs to replace 'check tracker for prior graduation CS' with 'check paid-media-state for any active ad whose content_links or content hash matches this organic post'."
+      },
+      "outcome": "superseded",
+      "closed_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-066.md",
-      "notes": "Graduation candidate: FB 4AM athlete reel (sprout-sync-2daeea84). ER 11.39%, 3.4x reach, NCS 64.4. Sourced from Moe weekly graduation scan 2026-04-13.",
+      "notes": "Graduation candidate: FB 4AM athlete reel (sprout-sync-2daeea84). ER 11.39%, 3.4x reach, NCS 64.4. Sourced from Moe weekly graduation scan 2026-04-13. | 2026-04-22 CLOSED superseded by Katie \u2014 4AM Morning Routine reel is already live in the Ashton Hall Meta campaign (13 active ads). Third graduation-dedupe miss today (after CS-2026-048, CS-2026-061). Brief's self-check claimed 'Paid Status: organic_only' but that check only covered tracker.json, not paid-media-state.json.",
       "risk": "medium",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "ok",
+      "urgency": "none",
       "review_tier": "STANDARD",
       "organic_source": {
         "post_id": "sprout-sync-2daeea84",
         "sprout_post_url": "https://www.facebook.com/reel/4330287533905988/",
         "platform": "facebook",
         "publish_date": "2026-03-20"
-      }
+      },
+      "closed_by": "Katie",
+      "closed_reason": "Third graduation-dedupe miss today. The \"4AM Morning Routine\" athlete reel (sprout-sync-2daeea84) flagged for Meta graduation is already live as an ad in the Ashton Hall Meta campaign. Ashton Hall content is running across 13 active/paused Meta ads spanning interests_2a (fitness + wellness), retargeting, and lal / 7dc adsets \u2014 with multiple creative variants (focus ad, talking hook, ashton 1 / 2, boxing hook, and 3 static images). The organic \u2192 paid graduation already happened. Notable: this brief EXPLICITLY claimed \"Paid Status: organic_only - Clean (not in paid)\" and cross-referenced tracker.json for prior graduation ChangeSets \u2014 but the scan never queried paid-media-state.json for already-running ads, which is why a direct duplicate passed through.",
+      "learning_note": "For FB '4AM Morning Routine' athlete reel (sprout-sync-2daeea84) \u2192 paid Meta on paid_meta, graduation was recommended for content already live as the Ashton Hall Meta ad set \u2014 13 active/paused ads spanning interests, retargeting, and lookalike adsets. Brief claimed 'Paid Status: organic_only - Clean' based on a tracker.json-only dedupe check. Third superseded graduation today. Refined meta-learning: the dedupe check in Moe's graduation scan currently looks for prior graduation CSes in tracker.json, but the real question is whether the organic content is already running paid \u2014 which requires a paid-media-state.json query (and requires content_links population on the paid-state side, since the ads were set up without graduation CSes). Both halves needed: scan-side query AND paid-media-state writer populating content_links. Three data points in one day now (CS-048 TT Ashton, CS-061 FB Matt Hughes, CS-066 FB Ashton).",
+      "sweep_flags": [
+        "closed_superseded_2026-04-22",
+        "graduation_dedupe_gap"
+      ],
+      "triage_action": "closed",
+      "triage_recommendation": "none",
+      "last_updated": "2026-04-22"
     },
     {
       "id": "CS-2026-067",
