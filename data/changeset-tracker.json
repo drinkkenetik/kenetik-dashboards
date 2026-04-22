@@ -100,11 +100,11 @@
   "summary": {
     "total": 101,
     "by_status": {
-      "published": 14,
+      "draft": 28,
       "closed": 46,
-      "needs_feedback": 3,
-      "approved": 10,
-      "draft": 28
+      "published": 15,
+      "approved": 9,
+      "needs_feedback": 3
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -2122,7 +2122,7 @@
       "title": "MAY IS LOADING \u2014 STOCK UP",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "published",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
@@ -2154,32 +2154,46 @@
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
-      "published_date": null,
+      "published_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-022.md",
-      "notes": "Send: 4/30. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
+      "notes": "Send: 4/30. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 /changeset-execute: PUBLISHED (scheduled). Send date moved from tracker's 4/30 to Wednesday 2026-04-29 per Katie. Katie building in Klaviyo now. Pre-publish safety checks passed: guardrails clear (Low risk, reversible, no discount beyond existing subscription offer), clean Klaviyo cadence (CS-019 4/22; CS-020 4/24; CS-021 4/26; CS-022 2026-04-29; 3-day spacing), no dependencies, claims gate N/A (Product Facts only \u2014 no external science claim). Measurement window pre-pinned: 2026-04-29 \u2192 2026-05-06 (7d, no Mode 1.5 rerun required). /changeset-measurement picks up on 2026-05-06.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        "stale_approved_gt_7d"
+        "stale_approved_gt_7d",
+        "published_2026-04-22_scheduled_send_2026-04-29"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
       "sweep_flag": "stale_approved",
       "sweep_date": "2026-04-14",
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "scheduled_send_date": "2026-04-30",
+      "scheduled_send_date": "2026-04-29",
       "execution_target_date": null,
-      "executed_date": null,
+      "executed_date": "2026-04-29",
       "autonomy_tier": null,
-      "stale_flag": true,
+      "stale_flag": false,
       "stale_days": 28,
-      "urgency": "stale",
-      "stale": true,
-      "triage_recommendation": "requires_human_review",
-      "triage_action": "consider_closing_as_abandoned",
-      "last_updated": "2026-04-20",
+      "urgency": "active",
+      "stale": false,
+      "triage_recommendation": "in_measurement_window",
+      "triage_action": "in_measurement_window",
+      "last_updated": "2026-04-22",
       "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
+      "published_by": "Katie",
+      "measurement_start": "2026-04-29",
+      "measurement_start_date": "2026-04-29",
+      "measurement_due": "2026-05-06",
+      "measurement_end_date": "2026-05-06",
+      "measurement_window_days": 7,
+      "publish_confirmation": {
+        "surface": "klaviyo",
+        "confirmation_id": "(pending \u2014 Katie to add Klaviyo campaign ID after build)",
+        "published_at": "2026-04-22T00:00:00Z",
+        "scheduling_mode": "scheduled_future_send",
+        "send_target": "2026-04-29"
+      }
     },
     {
       "id": "CS-2026-023",
