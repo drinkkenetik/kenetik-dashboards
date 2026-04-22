@@ -100,11 +100,11 @@
   "summary": {
     "total": 101,
     "by_status": {
-      "closed": 39,
       "published": 14,
       "needs_feedback": 1,
+      "draft": 35,
       "approved": 11,
-      "draft": 36
+      "closed": 40
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -3860,7 +3860,7 @@
       "title": "Graduation: TT Ashton Hall 'Longevity > Hype' \u2192 Paid Amplification",
       "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-04-06",
@@ -3896,17 +3896,39 @@
       "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "roas",
+        "primary_metric_baseline": "n/a (content was already in paid rotation)",
+        "primary_metric_result": "N/A \u2014 CS never shipped. Existing paid rotation continues unchanged.",
+        "primary_metric_delta": "N/A",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_note": "Closed as superseded \u2014 the proposed change was already in effect at flag time. revenue_impact=0 and margin_impact=0 reflect that THIS CS contributed nothing; the underlying video's existing paid performance is tracked by its original campaign, not this closed CS.",
+        "L1_margin_actual": "0 \u2014 CS contributed no new paid spend or revenue",
+        "L3_customer_quality_actual": "not tested via this CS",
+        "L4_learning_actual": "Hypothesis not tested because the test was already running elsewhere. Meta-learning: graduation scans must dedupe against currently-live paid creatives before recommending a candidate, or they produce false positives that consume review capacity without adding value."
+      },
+      "outcome": "superseded",
+      "closed_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-048.md",
-      "notes": "Moe weekly graduation scan 2026-04-06. TT Ashton Hall 'longevity > hype' post \u2014 5.7% engagement rate (threshold: 5%). Creator content, strong engagement signal. Draft for Katie review.",
+      "notes": "Moe weekly graduation scan 2026-04-06. TT Ashton Hall 'longevity > hype' post \u2014 5.7% engagement rate (threshold: 5%). Creator content, strong engagement signal. Draft for Katie review. | 2026-04-22 CLOSED superseded by Katie. False-positive graduation flag \u2014 video was already in paid rotation at scan time. Meta-learning: add dedupe check against live paid creatives to Moe's weekly graduation scan.",
       "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "ok"
+      "urgency": "none",
+      "closed_by": "Katie",
+      "closed_reason": "False-positive graduation flag. The TT Ashton Hall \"Longevity > Hype\" video (TikTok post 7622720005091740941, published 2026-03-29) was already in Kenetik paid rotation on 2026-04-06 when Moe's weekly graduation scan flagged it as a candidate. Moe's scan did not cross-check the list of currently-live paid creatives before recommending graduation, producing a duplicate ask. No new paid amplification was needed; the work this CS proposed was already happening.",
+      "learning_note": "For TT Ashton Hall 'Longevity > Hype' on paid_meta, the graduation scan recommended amplification of content that was already in paid rotation. Draft sat for 16 days before the duplication was caught and the CS closed. Key insight: Moe's weekly graduation-scan command must cross-reference the currently-live paid creative set (from ad-platform-refs or paid-media-state.json) and exclude any organic post whose content is already running paid. Without this dedupe step, scans produce false positives that burn review capacity, clutter the draft queue, and delay triage of genuinely novel candidates.",
+      "sweep_flags": [
+        "closed_superseded_2026-04-22"
+      ],
+      "triage_action": "closed",
+      "triage_recommendation": "none",
+      "last_updated": "2026-04-22"
     },
     {
       "id": "CS-2026-049",
