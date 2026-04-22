@@ -100,11 +100,11 @@
   "summary": {
     "total": 101,
     "by_status": {
-      "closed": 37,
       "published": 14,
-      "approved": 12,
+      "closed": 38,
       "draft": 37,
-      "needs_feedback": 1
+      "needs_feedback": 1,
+      "approved": 11
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -851,7 +851,7 @@
       "title": "BWR Endurance Training Bundle Post-Purchase Flow",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie + Brandon",
       "created": "2026-03-11",
@@ -886,12 +886,13 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-009.md",
-      "notes": "2026-04-13: Katie pushed 8 plain-text email drafts to Klaviyo via MCP as automation pipeline test. Template IDs: E1 TyGFEZ, E2 VJfQKV (claims review), E3 V2BxMU, E4 TBiVRS (claims review), E5 RJfMZZ (claims review), E6 X2Ucc4, E7 TgMUui, E8 WBKUt6. Status stays approved \u2014 claims gate on E2/E4/E5 still open with Devon, flow/segment/schedule remain manual (MCP has no endpoints). Stale flag reset. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 execute halted by Katie. Build state UNVERIFIED: no visual confirmation the 8 email drafts from the 04-13 automation test are still in Klaviyo \u2014 Katie to check template IDs TyGFEZ/VJfQKV/V2BxMU/TBiVRS/RJfMZZ/X2Ucc4/TgMUui/WBKUt6 in-platform. Confirmed NOT built: segment, flow wiring, welcome suppression, QA, retroactive sends. Claims gate: Brandon approved E2/E4/E5 Tier A language (study interpretation per brief \u00a75), Devon hard-gate sign-off still outstanding per claims-compliance.md. BWR event 2026-05-02/03 = 10-11 days out; original 8-week protocol math no longer works for new entrants. Kill/compress/rush decision needed from Katie+Brandon before further build. Status unchanged: approved.",
+      "notes": "2026-04-13: Katie pushed 8 plain-text email drafts to Klaviyo via MCP as automation pipeline test. Template IDs: E1 TyGFEZ, E2 VJfQKV (claims review), E3 V2BxMU, E4 TBiVRS (claims review), E5 RJfMZZ (claims review), E6 X2Ucc4, E7 TgMUui, E8 WBKUt6. Status stays approved \u2014 claims gate on E2/E4/E5 still open with Devon, flow/segment/schedule remain manual (MCP has no endpoints). Stale flag reset. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 execute halted by Katie. Build state UNVERIFIED: no visual confirmation the 8 email drafts from the 04-13 automation test are still in Klaviyo \u2014 Katie to check template IDs TyGFEZ/VJfQKV/V2BxMU/TBiVRS/RJfMZZ/X2Ucc4/TgMUui/WBKUt6 in-platform. Confirmed NOT built: segment, flow wiring, welcome suppression, QA, retroactive sends. Claims gate: Brandon approved E2/E4/E5 Tier A language (study interpretation per brief \u00a75), Devon hard-gate sign-off still outstanding per claims-compliance.md. BWR event 2026-05-02/03 = 10-11 days out; original 8-week protocol math no longer works for new entrants. Kill/compress/rush decision needed from Katie+Brandon before further build. Status unchanged: approved. | 2026-04-22 CLOSED incomplete by Katie via /changeset-execute. Timeline no longer viable for 2026 BWR. No revenue, no measurement. Meta-learning captured in learning_note.",
       "sweep_flags": [
         "AUTOMATION_TEST_2026-04-13",
         "stale_approved",
         "stale_approved_gt_7d",
-        "execution_blocked_2026-04-22"
+        "execution_blocked_2026-04-22",
+        "closed_incomplete_2026-04-22"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -905,10 +906,10 @@
       "autonomy_tier": null,
       "stale_flag": false,
       "stale_days": 0,
-      "urgency": "critical",
+      "urgency": "none",
       "stale": false,
-      "triage_recommendation": "decision_required",
-      "triage_action": "awaiting_cgo_decision_kill_compress_or_rush",
+      "triage_recommendation": "none",
+      "triage_action": "closed",
       "artifacts": {
         "klaviyo_templates": {
           "E1_day_0": {
@@ -955,7 +956,26 @@
       },
       "last_updated": "2026-04-22",
       "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
+      "outcome": "incomplete",
+      "closed_date": "2026-04-22",
+      "closed_by": "Katie",
+      "closed_reason": "Timeline no longer viable. BWR event is 2026-05-02/03 (10-11 days out). Claims gate: Brandon approved study interpretation on E2/E4/E5, but Devon hard-gate sign-off never obtained. Segment, flow wiring, welcome suppression, QA, retroactive sends were all never built. Klaviyo template state (8 IDs pushed 2026-04-13 as plain-text drafts) is unverified and moot. Original 8-week protocol math no longer fits for any new entrant. Closed incomplete rather than rushed to preserve L4 learning quality for a future full-cycle run (2027 BWR, Leadville, Unbound, LTGP).",
+      "actual_impact": {
+        "primary_metric": "event_leads",
+        "primary_metric_baseline": "0 (no prior flow)",
+        "primary_metric_result": "N/A \u2014 flow never launched",
+        "primary_metric_delta": "N/A",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_note": "Closed incomplete. No send ever occurred, so no measurement. margin_impact=0 reflects zero actual revenue, not a measurement error.",
+        "L1_margin_actual": "0 \u2014 flow never shipped",
+        "L3_customer_quality_actual": "not tested \u2014 flow never shipped",
+        "L4_learning_actual": "Hypothesis not tested. Meta-learning: event-triggered post-purchase flows require claims-approved build complete \u22653 weeks before event date. 2026 BWR build started 2026-03-11, ~8 weeks pre-event; claims gate + manual build sequencing consumed runway. For future event flows (Leadville, Unbound, LTGP, 2027 BWR): start build + claims routing the same week the event is added to the marketing calendar, not the week the ChangeSet is drafted."
+      },
+      "learning_note": "For BWR Endurance Training Bundle purchasers on Klaviyo, an 8-week science-backed post-purchase protocol flow was scoped but never shipped. Execution was halted 2026-04-22 when build (segment, flow wiring, suppression, QA, retroactive sends) was still not complete and Devon's claims hard-gate approval was still outstanding, with BWR event only 10-11 days away. Key insight: event-triggered lifecycle flows need claims-approved build complete \u22653 weeks pre-event, which means routing claims review and kicking off build the same week the event lands on the marketing calendar."
     },
     {
       "id": "CS-2026-010",
