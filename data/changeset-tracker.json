@@ -100,11 +100,11 @@
   "summary": {
     "total": 101,
     "by_status": {
-      "published": 14,
-      "needs_feedback": 1,
-      "draft": 34,
+      "closed": 42,
       "approved": 11,
-      "closed": 41
+      "needs_feedback": 1,
+      "published": 14,
+      "draft": 33
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -4128,7 +4128,7 @@
       "title": "Upcoming Subscription Order Email Optimization",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-04-07",
@@ -4137,7 +4137,9 @@
       "dependencies": [],
       "blocks": [],
       "spawned_from": "CS-2026-024",
-      "spawned_changesets": [],
+      "spawned_changesets": [
+        "CS-2026-100 (absorbed this CS)"
+      ],
       "expected_impact": {
         "revenue": {
           "upside": 57600,
@@ -4172,21 +4174,41 @@
       "approved_date": null,
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-052.md",
-      "notes": "Successor to CS-2026-024 (closed). Refines existing upcoming order notification with value content and skip/reschedule CTAs instead of adding new proactive flows.",
+      "notes": "Successor to CS-2026-024 (closed). Refines existing upcoming order notification with value content and skip/reschedule CTAs instead of adding new proactive flows. | 2026-04-22 /changeset-review: conflict caught with CS-2026-100 (same flow). Scope absorbed into CS-2026-100 per Katie's decision. Closed superseded.",
       "stale_flag": false,
       "stale_days": 0,
-      "urgency": "normal",
+      "urgency": "none",
       "last_status_change": "2026-04-07",
       "hypothesis": "Optimizing the upcoming subscription order email with value reinforcement and prominent skip/reschedule CTAs will reduce 'too much product' voluntary churn by >=15%",
-      "sweep_flags": [],
+      "sweep_flags": [
+        "closed_superseded_by_100_2026-04-22"
+      ],
       "last_sweep": null,
       "risk": "low",
       "measurement_window": "30-day from launch",
-      "closed_date": null,
-      "learning_note": null,
-      "actual_impact": null,
-      "outcome": null,
-      "archived": false
+      "closed_date": "2026-04-22",
+      "learning_note": "For Upcoming Subscription Order Flow on klaviyo, two draft CSes (CS-2026-052 general refinement, CS-2026-100 Mar 2026 cohort branch) were converging on the same flow. /changeset-review surfaced the conflict. CS-2026-052 closed superseded and its scope absorbed into CS-2026-100 as the all-subscriber base layer. Key insight: /changeset-review's conflict check on the same surface caught what weekly synthesis and lifecycle sweep didn't \u2014 worth making the conflict check more explicit in synthesis instructions when creating or extending flow-scoped CSes.",
+      "actual_impact": {
+        "primary_metric": "voluntary_churn_rate_too_much_product",
+        "primary_metric_baseline": "n/a \u2014 scope absorbed into CS-2026-100",
+        "primary_metric_result": "N/A \u2014 never shipped as standalone CS",
+        "primary_metric_delta": "N/A",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_note": "Closed superseded. The work lives under CS-2026-100 now. revenue_impact=0 and margin_impact=0 reflect that THIS CS contributed nothing as a standalone; impact attribution flows through CS-2026-100 once executed.",
+        "L1_margin_actual": "0 attributable (see _note)",
+        "L3_customer_quality_actual": "not tested via this CS",
+        "L4_learning_actual": "Hypothesis absorbed into CS-2026-100. Meta-learning: during /changeset-review, cross-CS conflict check caught that CS-2026-052 (general refinement) and CS-2026-100 (Mar 2026 cohort branch) both targeted the same Klaviyo flow. Consolidating the all-subscriber refinement as CS-2026-100's base layer avoids stepping on the same flow twice. Worth noting: the conflict would have been caught earlier if draft-stale detection fired (see open TASKS item on lifecycle sweep gap)."
+      },
+      "outcome": "superseded",
+      "archived": false,
+      "closed_by": "Katie",
+      "closed_reason": "Superseded by CS-2026-100, which has been updated in the same session to absorb CS-2026-052's all-subscriber scope as its base layer. The general Upcoming Subscription Order Flow refinement \u2014 value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary churn disaggregation \u2014 is now the foundation of CS-2026-100, with the Mar 2026 cohort branch layered on top. Executing two CSes against the same Klaviyo flow was the wrong shape; one coordinated change is cleaner.",
+      "triage_action": "closed",
+      "triage_recommendation": "none",
+      "last_updated": "2026-04-22"
     },
     {
       "id": "CS-2026-053",
@@ -6436,7 +6458,7 @@
     },
     {
       "id": "CS-2026-100",
-      "title": "Mar 2026 Cohort First-Renewal Save \u2014 Upcoming Subscription Order Flow Extension",
+      "title": "Upcoming Subscription Order Flow \u2014 Broad Refinement + Mar 2026 Cohort Branch",
       "subtype": "implementation",
       "surface": "klaviyo",
       "status": "draft",
@@ -6453,17 +6475,18 @@
       "spawned_changesets": [],
       "expected_impact": {
         "revenue": {
-          "upside": 74000,
-          "expected": 38000,
-          "downside": 8000
+          "upside": 102800,
+          "expected": 52400,
+          "downside": 11600
         },
         "margin": {
-          "upside": 32000,
-          "expected": 16000,
-          "downside": 3500
+          "upside": 46400,
+          "expected": 23200,
+          "downside": 5300
         },
         "primary_metric": "mar_2026_cohort_m1_retention",
-        "primary_metric_target": ">=18% (vs Feb 2026 baseline 12.8%)"
+        "primary_metric_target": ">=18% (vs Feb 2026 baseline 12.8%)",
+        "_impact_note": "Expanded 2026-04-22 to absorb CS-2026-052's all-subscriber refinement scope. Added $14.4K/yr expected margin ($7.2K/yr downside, $28.8K/yr upside) on top of the original Mar 2026 cohort save projection. Addition reflects refinement benefit to non-Mar cohorts only; Mar cohort benefit was already modeled in the original CS-2026-100 scope."
       },
       "routed_to": [
         "Katie",
@@ -6485,13 +6508,17 @@
       "outcome": "",
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-100.md",
-      "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946.",
+      "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946. | 2026-04-22 EXPANDED: Absorbed CS-2026-052 (closed superseded same session). Scope now includes all-subscriber refinement of the Upcoming Subscription Order Flow (value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary split + pause-instead-of-cancel messaging) as the base layer, with the Mar 2026 cohort branch + variants as the overlay. All cohorts benefit from the base refinement, not just Mar 2026.",
       "risk": "Medium execution velocity + L-045 dependency; Low claims + brand voice",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-25",
       "executed_date": "",
       "autonomy_tier": 2,
-      "learning_note": ""
+      "learning_note": "",
+      "absorbed_changesets": [
+        "CS-2026-052"
+      ],
+      "last_updated": "2026-04-22"
     },
     {
       "id": "CS-2026-101",
