@@ -100,10 +100,10 @@
   "summary": {
     "total": 101,
     "by_status": {
-      "closed": 44,
-      "published": 12,
       "approved": 11,
-      "draft": 31,
+      "draft": 30,
+      "published": 12,
+      "closed": 45,
       "needs_feedback": 3
     },
     "last_updated": "2026-04-22",
@@ -4602,7 +4602,7 @@
       "title": "Matt Hughes FB Reel -> Paid Meta Graduation",
       "subtype": "implementation",
       "surface": "meta_ads",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-04-10",
@@ -4618,7 +4618,46 @@
       "measurement_due": "2026-04-26",
       "file": "cgo-logs/changesets/CS-2026-061.md",
       "source": "synthesis_recommendation",
-      "autonomy_tier": 1
+      "autonomy_tier": 1,
+      "outcome": "superseded",
+      "closed_date": "2026-04-22",
+      "closed_by": "Katie",
+      "closed_reason": "False-positive graduation flag. Matt Hughes FB Reel content is ALREADY live in paid Meta rotation across 6 active ads spanning the exact targeting stack CS-2026-061 proposes: retargeting (3 variants), lookalike (\"lal / 7dc\"), interest (\"interest / 7dc\"), and retargeting stack (\"retargeting stack / 7dc\"). The organic\u2192paid graduation the CS proposes already happened. Second false-positive graduation today (CS-2026-048 Ashton Hall TT closed earlier).",
+      "actual_impact": {
+        "primary_metric": "meta_pixel_roas",
+        "primary_metric_baseline": "3.77x (disputed \u2014 aggregate Polar figure per L-006)",
+        "primary_metric_result": "N/A \u2014 CS never shipped",
+        "primary_metric_delta": "N/A",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_detail": {
+          "existing_ads_verified_2026-04-22": [
+            "video_matt hughes - original reel | matt hughes / brain recovery / retargeting | active",
+            "video_matt hughes - re-edit | matt hughes / brain recovery / retargeting | active",
+            "video_matt hughes - roman edit | matt hughes / brain recovery / retargeting | active",
+            "video_matt hughes - roman edit | retargeting stack / 7dc | active",
+            "video_matt hughes - roman edit | interest / 7dc | active",
+            "video_matt hughes - roman edit | lal / 7dc | active"
+          ],
+          "data_source": "data/paid-media/paid-media-state.json (2026-04-22)"
+        },
+        "_note": "Closed superseded \u2014 proposed graduation already live. content_links/organic_source are null on all 6 existing ads, which is the root-cause dedupe gap (same as CS-2026-048).",
+        "L1_margin_actual": "0 attributable",
+        "L3_customer_quality_actual": "not tested",
+        "L4_learning_actual": "Meta-learning reinforced: second graduation-dedupe miss today. Dedupe gap needs two-sided fix (scan-time query + paid-media-state content_links backfill)."
+      },
+      "learning_note": "For Matt Hughes FB Reel \u2192 paid Meta on meta_ads (non-canonical, should be paid_meta per \u00a78), graduation was recommended for content already running in 6 active paid Meta ads covering retargeting + lookalike + interest. Second superseded graduation today. Same root cause as CS-2026-048: Moe's weekly scan doesn't dedupe against paid-media-state.json, AND paid-media-state's content_links/organic_source fields are null on the existing ads \u2014 both halves need fixing.",
+      "sweep_flags": [
+        "closed_superseded_2026-04-22",
+        "graduation_dedupe_gap"
+      ],
+      "triage_action": "closed",
+      "triage_recommendation": "none",
+      "urgency": "none",
+      "last_updated": "2026-04-22",
+      "notes": " | 2026-04-22 /changeset-review: CLOSED superseded. Matt Hughes content already live in 6 paid Meta ads. Same pattern as CS-2026-048 closed earlier today. Second dedupe-gap data point."
     },
     {
       "id": "CS-2026-062",
