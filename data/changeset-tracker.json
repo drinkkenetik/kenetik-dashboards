@@ -101,8 +101,8 @@
     "total": 101,
     "by_status": {
       "closed": 37,
-      "published": 13,
-      "approved": 12,
+      "published": 14,
+      "approved": 11,
       "draft": 38,
       "needs_feedback": 1
     },
@@ -6406,7 +6406,7 @@
       "surface": "klaviyo",
       "category": "email_sms",
       "subtype": "investigation",
-      "status": "approved",
+      "status": "published",
       "owner": "Katie",
       "created": "2026-04-22",
       "risk_level": "low",
@@ -6414,7 +6414,7 @@
       "linked_calendar_activity": null,
       "execution_target_date": "2026-05-14",
       "scheduled_send_date": null,
-      "executed_date": null,
+      "executed_date": "2026-04-14",
       "autonomy_tier": null,
       "spawned_from": null,
       "expected_impact": {
@@ -6439,7 +6439,7 @@
       "measurement_window_days": 30,
       "approved_by": "Katie (operator \u2014 STANDARD tier, zero-cost test already live; Devon gate at 2026-05-14 retention decision)",
       "approved_date": "2026-04-22",
-      "published_date": null,
+      "published_date": "2026-04-14",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
@@ -6447,7 +6447,17 @@
       "spawned_changesets": null,
       "revision_notes": null,
       "revision_date": null,
-      "rejection_notes": null
+      "rejection_notes": null,
+      "published_by": "Katie",
+      "measurement_start": "2026-04-14",
+      "measurement_due": "2026-05-14",
+      "publish_confirmation": {
+        "surface": "klaviyo",
+        "confirmation_id": "Maverick-Klaviyo integration enabled in Klaviyo admin; per-campaign A/B test infrastructure active. Backdated publish \u2014 test running in-market since 2026-04-14.",
+        "published_at": "2026-04-14T00:00:00Z"
+      },
+      "ad_platform_refs": null,
+      "organic_source": null
     }
   ],
   "queue_actions": {
