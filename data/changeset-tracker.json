@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-22",
+  "last_updated": "2026-04-22T16:24:52Z",
   "next_id": 102,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-22T15:15:00Z",
@@ -100,11 +100,11 @@
   "summary": {
     "total": 101,
     "by_status": {
-      "draft": 31,
+      "closed": 44,
+      "published": 12,
       "approved": 11,
-      "published": 14,
-      "needs_feedback": 3,
-      "closed": 42
+      "draft": 31,
+      "needs_feedback": 3
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -1158,7 +1158,7 @@
       "title": "WIN AN UNBOUND ENTRY + CUSTOM CAM JONES GEAR",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
@@ -1218,7 +1218,53 @@
       "last_updated": "2026-04-16",
       "measurement_start_date": "2026-04-07",
       "measurement_end_date": "2026-04-21",
-      "measurement_window": "14d"
+      "measurement_window": "14d",
+      "actual_impact": {
+        "primary_metric": "blended_roas",
+        "primary_metric_baseline": "3.5x target (upside $18k / expected $9k revenue)",
+        "primary_metric_result": "$3,000.32 email-attributed revenue on 20,354 recipients; est. prize cost ~$800-$1,300 (Unbound entry + custom Cam Jones gear). Gross email ROAS = ~2.3-3.8x depending on true prize cost \u2014 below or at bottom of 3.5x target.",
+        "primary_metric_delta": "Revenue $3,000 vs expected $9,000 (33% of expected; 17% of upside; above downside of -$4,500).",
+        "revenue_impact": 3000.32,
+        "margin_impact": 1500.16,
+        "confidence": "medium",
+        "statistical_significance": true,
+        "_detail": {
+          "campaign_id_klaviyo": "01KNM6DCCB20Z6D0DA7DEMG1Z3",
+          "campaign_name": "UE | C2/M19 - Win an unbound entry + custom Cam Jones Gear",
+          "send_time": "2026-04-07T18:15:00Z",
+          "recipients": 20354,
+          "delivered": 20338,
+          "delivery_rate": 0.99921,
+          "opens_unique": 8367,
+          "open_rate": 0.4114,
+          "clicks_unique": 220,
+          "click_rate": 0.01082,
+          "click_to_open_rate": 0.02629,
+          "conversions": 27,
+          "conversion_uniques": 26,
+          "conversion_rate": 0.00128,
+          "conversion_value": 3000.32,
+          "revenue_per_recipient": 0.14752,
+          "average_order_value": 111.12,
+          "unsubscribes": 73,
+          "unsubscribe_rate": 0.00359,
+          "spam_complaints": 4,
+          "bounced": 16,
+          "audiences_included": [
+            "Engaged (3 Months)",
+            "UE | Prospects Engaged",
+            "UE | Engaged 120 Days",
+            "UE | Engaged 140 Days"
+          ]
+        },
+        "_note": "Measurement backfilled 2026-04-22 after CS-012/CS-015 missed-measurement post-mortem (queue_actions stale-snapshot bug \u2014 fixed in commit 0380b09). Revenue tracker from Shopify Placed Order metric (XyLZUw), 15-day conversion window 2026-04-07 \u2192 2026-04-22. Prize cost not independently confirmed \u2014 assuming $800-$1,300 range based on Unbound entry + custom gear.",
+        "L1_margin_actual": "Underperformed \u2014 $1.5k contribution margin vs expected $4.5k. Gross email margin is positive but ROAS target (3.5x) was missed once prize cost is subtracted.",
+        "L3_customer_quality_actual": "Mixed \u2014 strong open rate (41.1%) validates that the Cam Jones + Unbound narrative hooks the endurance audience, but weak click rate (1.08%) and 73 unsubs (0.36%) suggest the sweepstakes offer under-converted interest into action. Entry mechanic may have had friction.",
+        "L4_learning_actual": "Hypothesis partially supported \u2014 sweepstakes drives opens but not clicks. Unique insight: custom-gear offers resonate narratively (41% open) but fail on CTA clarity (2.6% CTOR vs ~5% bundle-mail benchmark per CS-015). Next sweepstakes test: simplify entry path (one-click vs multi-step) and validate 2-3 conversion windows to separate immediate vs long-tail attribution (some conversions may post after the 14d window)."
+      },
+      "outcome": "underperformed",
+      "closed_date": "2026-04-22",
+      "measurement_method": "klaviyo_mcp_backfill_2026-04-22"
     },
     {
       "id": "CS-2026-013",
@@ -1484,7 +1530,7 @@
       "title": "SEA OTTER CLASSIC: ENDURANCE TRAINING BUNDLE",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
@@ -1546,7 +1592,51 @@
         "surface": "klaviyo",
         "confirmation_id": "Scheduled in Klaviyo \u2014 email + SMS pairing, evening 2026-04-14",
         "published_at": "2026-04-14T20:00:00Z"
-      }
+      },
+      "actual_impact": {
+        "primary_metric": "bundle_revenue",
+        "primary_metric_baseline": "Qualitative target: drive Endurance Training Bundle orders + revenue from Sea Otter Classic race moment. Expected_impact fields set to $0 by preparer (indicating qualitative measurement).",
+        "primary_metric_result": "$4,996.49 email-attributed revenue on 16,544 recipients (not 51,847 planned \u2014 a tighter engagement segment was used); 61 unique conversions of Endurance Training Bundle at $80.59 AOV.",
+        "primary_metric_delta": "Positive revenue attribution from a zero-dollar expected_impact baseline; engagement metrics above Klaviyo benchmark (46% open vs ~30% industry; 2.17% click vs ~1.5%).",
+        "revenue_impact": 4996.49,
+        "margin_impact": 2498.25,
+        "confidence": "high",
+        "statistical_significance": true,
+        "_detail": {
+          "campaign_id_klaviyo": "01KP35H9FV31WJ78DYWRFX9WKS",
+          "campaign_name": "UE | C5/M19 - Sea Otter Classic: Endurance Training Bundle",
+          "send_time": "2026-04-14T18:00:00Z",
+          "recipients": 16544,
+          "delivered": 16535,
+          "delivery_rate": 0.99946,
+          "opens_unique": 7630,
+          "open_rate": 0.46145,
+          "clicks_unique": 358,
+          "click_rate": 0.02165,
+          "click_to_open_rate": 0.04692,
+          "conversions": 62,
+          "conversion_uniques": 61,
+          "conversion_rate": 0.00369,
+          "conversion_value": 4996.49,
+          "revenue_per_recipient": 0.30218,
+          "average_order_value": 80.59,
+          "unsubscribes": 31,
+          "unsubscribe_rate": 0.00187,
+          "spam_complaints": 1,
+          "bounced": 9,
+          "audiences_included": [
+            "Engaged (3 Months)",
+            "UE | Prospects Engaged"
+          ]
+        },
+        "_note": "Measurement backfilled 2026-04-22 after CS-012/CS-015 missed-measurement post-mortem (queue_actions stale-snapshot bug \u2014 fixed in commit 0380b09). Revenue from Shopify Placed Order metric (XyLZUw), 7-day conversion window 2026-04-14 \u2192 2026-04-22. Audience targeted was 16,544 (Engaged 3M + Prospects Engaged) \u2014 narrower than the 51,847 planned superset; the tighter targeting likely drove the strong engagement metrics.",
+        "L1_margin_actual": "Success \u2014 $2.5k contribution margin from a campaign with essentially zero variable cost. RPR $0.30 is 2x Kenetik email average.",
+        "L3_customer_quality_actual": "Strong \u2014 46.1% open rate, 4.7% CTOR, 0.19% unsub rate are all above Kenetik email median. Indicates Sea Otter race-moment framing + Endurance Training Bundle offer resonated with the engaged segment.",
+        "L4_learning_actual": "Hypothesis supported \u2014 tying a product bundle to a race-moment (Sea Otter Classic) drives meaningfully better engagement than unanchored promotional sends. Learning to propagate: pair race-weekend sends with endurance-specific bundle offers; tighter engaged segments outperform broad sends on ROAS. Also: qualitative expected_impact ($0) should be replaced with ballpark targets (e.g., '>= $3k revenue, >= 50 orders') going forward so the measurement outcome classification has a quantitative anchor."
+      },
+      "outcome": "success",
+      "closed_date": "2026-04-22",
+      "measurement_method": "klaviyo_mcp_backfill_2026-04-22"
     },
     {
       "id": "CS-2026-016",
@@ -6615,10 +6705,6 @@
     ],
     "measurement_due": [
       "CS-2026-006",
-      "CS-2026-007",
-      "CS-2026-014",
-      "CS-2026-030",
-      "CS-2026-045",
       "CS-2026-046"
     ],
     "auto_close": [],
