@@ -100,11 +100,11 @@
   "summary": {
     "total": 101,
     "by_status": {
+      "closed": 39,
       "published": 14,
-      "closed": 38,
-      "draft": 37,
       "needs_feedback": 1,
-      "approved": 11
+      "approved": 11,
+      "draft": 36
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -3352,7 +3352,7 @@
       "title": "Graduation: JustJosephD x Brain Awareness Week IG Reel",
       "subtype": "implementation",
       "surface": "paid_meta",
-      "status": "draft",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Katie",
       "created": "2026-03-30",
@@ -3388,16 +3388,38 @@
       "measurement_end_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "CPM, engagement rate, video completion",
+        "primary_metric_baseline": "no paid baseline (organic only)",
+        "primary_metric_result": "N/A \u2014 never launched",
+        "primary_metric_delta": "N/A",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_note": "Closed incomplete. Never approved, never published, no paid spend, no paid measurement. Organic performance on the source reel remains in Sprout/cross-surface-pm.json.",
+        "L1_margin_actual": "0 \u2014 never shipped",
+        "L3_customer_quality_actual": "not tested",
+        "L4_learning_actual": "Graduation-decision latency meta-learning: cultural-moment graduations (awareness weeks, holidays, named events) have a much shorter decision-to-launch runway than evergreen graduations. Organic post landed 2026-03-19, Moe's weekly scan flagged it 2026-03-30 (11 days post-publish), sat in draft 23 days before close. The BAW moment was already over by the time it reached draft. Evergreen graduations can sit in queue; moment-tied ones cannot."
+      },
+      "outcome": "incomplete",
+      "closed_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-042.md",
-      "notes": "Graduation candidate: JustJosephD x BAW, 3.9x reach, creator collab format. [migrated from proposed status]",
+      "notes": "Graduation candidate: JustJosephD x BAW, 3.9x reach, creator collab format. [migrated from proposed status] | 2026-04-22 CLOSED incomplete by Katie \u2014 BAW cultural window passed, never approved/launched. Meta-learning captured.",
       "risk": "medium",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "urgency": "ok"
+      "urgency": "none",
+      "closed_by": "Katie",
+      "closed_reason": "No longer relevant. Source post (JustJosephD x Brain Awareness Week IG Reel, posted 2026-03-19) was tied to Brain Awareness Week 2026 (mid-March). Graduation candidate sat in draft from 2026-03-30 through 2026-04-22 (~3 weeks) without approval or launch. Cultural timeliness window has closed \u2014 paid amplification of BAW-tagged content in late April would read as off-calendar. Organic reach (3.9x avg) already captured in Sprout/performance memory; no further value in forcing a paid run.",
+      "learning_note": "For JustJosephD x Brain Awareness Week IG Reel on paid_meta, a graduation ChangeSet was scoped 11 days after the organic post landed and sat in draft for 23 days before being closed. Brain Awareness Week ended before the amplification launched. Key insight: graduation candidates tied to a cultural moment need a same-week decide/launch cycle; the standard weekly-scan graduation pipeline is tuned for evergreen content and is too slow for moment-tied organic winners. Tag graduation candidates with a cultural-window expiry date at the scan step so the queue can prioritize them.",
+      "sweep_flags": [
+        "closed_incomplete_2026-04-22"
+      ],
+      "triage_action": "closed",
+      "triage_recommendation": "none",
+      "last_updated": "2026-04-22"
     },
     {
       "id": "CS-2026-043",
