@@ -100,11 +100,11 @@
   "summary": {
     "total": 101,
     "by_status": {
+      "draft": 31,
+      "approved": 11,
       "published": 14,
-      "closed": 42,
-      "draft": 32,
-      "needs_feedback": 2,
-      "approved": 11
+      "needs_feedback": 3,
+      "closed": 42
     },
     "last_updated": "2026-04-22",
     "by_risk": {
@@ -4535,7 +4535,7 @@
       "title": "Apr 5 Cohort \u2014 Retention Intervention Package",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "draft",
+      "status": "needs_feedback",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-04-10",
@@ -4550,7 +4550,11 @@
       "measurement_due": "2026-05-05",
       "file": "cgo-logs/changesets/CS-2026-062.md",
       "source": "synthesis_recommendation",
-      "autonomy_tier": 1
+      "autonomy_tier": 1,
+      "revision_notes": "=== /changeset-review revision 2026-04-22 (Katie) ===\n\nDECISION: Compress to 1 combined touch, revise. The 3-touch sequence is no longer executable \u2014 2 of 3 planned send dates (Apr 12, Apr 19) have passed. Restructure for the remaining runway.\n\nREQUIRED RESTRUCTURE:\n\nS1. Compress to 1 touch. Target send: Apr 26\u201328, 2026 (7\u20139 days before the cohort's 30-day LTV window closes May 5). Combine the Touch 2 subscribe CTA with the Touch 3 last-chance framing into a single email + SMS:\n  - Email subject framing: 'Running low? Subscribers save 20% and never     run out.' (blends social proof + subscribe offer + urgency)\n  - SMS pairing: short reminder 24h after email for SMS-consenting     subset of the cohort\n  - Drop Touch 1 entirely \u2014 'you've had it for 17+ days' framing is     context-off and doesn't land.\n\nS2. Revise expected impact to reflect the compressed scope (expect 30\u201350% of the original 3-touch projection since consistent-multi-touch compounding is lost). Suggested revised figures (your judgment):\n  - Revenue: low $700 / expected $1,400 / high $2,250 (30-50% of the     $2,200\u2013$4,500 original)\n  - Margin at 50%: low $350 / expected $700 / high $1,125\n\nREQUIRED HYGIENE (same issues as CS-2026-053, CS-2026-052):\n\nR1. Populate L1\u2013L5 in tracker `expected_impact`. Current tracker has only { revenue_low: 2200, revenue_high: 4500 } and no L-fields. Per \u00a72 schema, the tracker needs L1_margin, L2_cash, L3_customer_quality, L4_learning, L5_brand_check fields. The brief has enough prose to reconstruct these; formalize them.\n\nR2. Normalize `expected_impact` schema. Current uses `revenue_low` / `revenue_high` \u2014 non-standard. Per \u00a72: use `revenue.upside` / `revenue.expected` / `revenue.downside` + `margin` structure, matching other tracker entries. Also add `review_tier: \"standard\"` per \u00a76 (expected revenue $3K-$4.5K, single surface, low risk, implementation, not pricing \u2192 STANDARD).\n\nR3. Resolution Path rewrite. Current table is boilerplate (same template defect as CS-2026-053). With the compressed scope:\n  - Diagnose: 'Apr 5 cohort (pat-015, DTC $12K single-day estimated,     acquisition source unattributed \u2014 RCA pending) is 17 days into a     30-day LTV window with no cohort-specific retention intervention     deployed. Standard FTP flow is firing but is not optimized for this     cohort's characteristics.'\n  - Remove: Considered suppressing from FTP flow; not chosen (would     strip useful touches). See C1 below for the cleaner Refine path.\n  - Refine: RECOMMEND THIS PATH \u2014 instead of Add, branch the First     Time Post Purchase flow with an Apr-5-cohort variant message at     the T+21d touch, rather than a parallel sequence. Cleaner     measurement + no email fatigue (see M1 below).\n  - Add: No \u2014 prior draft chose Add without considering Refine; the     FTP flow exists and can be branched.\n\nR4. Inline [src:] markers per \u00a710c on specific numeric claims:\n  - '150-300 new orders at ~$12K revenue' \u2192 [src: pat-015 or     cross-surface-pm.json]\n  - '~12-18% baseline repeat rate for non-Cleetus cohorts' \u2192 cite     source (Shopify cohort data? past CS? L-042/L-043?)\n  - '~$100 AOV' \u2192 cite Shopify / Recharge baseline\n  - '20% subscription discount' \u2192 confirm this is the current Kenetik     offer per subscription-ops or products-formats.md\n\nMAJOR CONCERNS TO ADDRESS (M1-M3):\n\nM1. FTP flow contamination with CS-2026-031 (approved). CS-2026-031 includes CTA redesigns on First Time Post Purchase messages (Emails #2, #3, #4). Apr 5 cohort is already in FTP. If CS-2026-062 fires a parallel sequence AND CS-2026-031 changes CTAs on FTP messages during the same window, measurement on both reads is contaminated.\n  - Resolution option A: branch FTP with an Apr-5-cohort variant (R3     Refine path) \u2014 no parallel flow, no contamination.\n  - Resolution option B: document measurement isolation (dedicated     cohort segment, Apr-5-specific attribution) so CS-2026-031's FTP     changes don't contaminate this CS's read. Weaker but workable.\n\nM2. RCA depth escalation. pat-015 (Apr 5 spike source) is 'unattributed (RCA pending)' per the brief. The CS messaging is explicitly source-dependent: 'If source identified via RCA, can customize messaging to match acquisition context.' Per \u00a710b depth escalation: either attach an `rca_reference:` pointing to an Apollo-style RCA on pat-015, or add an inline waiver justifying shallow diagnosis (e.g., 'the compressed 1-touch message is source-agnostic \u2014 subscribe-or-lose is the same ask regardless of acquisition channel'). The waiver is reasonable for the compressed scope; add it to Step 2b.\n\nM3. PM priors aren't cited. L-042 (3-touch Klaviyo flow to BAW one-time buyers \u2192 495 recipients \u2192 3 subs) and L-043 (5-touch Klaviyo flow to ~4,797 CLEETUS-FREE3PACK Mar cohort) are the closest priors. Cite them for calibration of expected adoption rate \u2014 they'd inform whether 15% repeat / 8% subscription attach is optimistic or conservative for a single-touch compressed send.\n\n--- TIMING ---\n\nSend target: Apr 26\u201328 (allows 7\u20139 days for conversion attribution before measurement window closes May 5).\nMeasurement window: shortens from 25 days \u2192 7\u20139 days. Document this compression explicitly so CS-2026-062's measurement isn't compared to the original full-window expectation.\n\n--- SUBSTANTIVE REVIEW (preserved) ---\n\nL0 Anti-pattern: no match \u2014 pass\nL1-L5: not populated (see R1)\nResolution Path: boilerplate + wrong choice (Add; should be Refine \u2014 see R3/M1)\nFactual grounding: partial \u2014 pat-015 cited, others UNGROUNDED (see R4)\nConflict check: CS-2026-031 contamination risk (see M1)\nDepth escalation: RCA triggers fire (see M2)\nPM priors: L-042, L-043 not cited (see M3)\n\nAddress S1, S2, R1-R4, M1-M3 and resubmit via /changeset-review CS-2026-062.",
+      "revision_date": "2026-04-22",
+      "last_updated": "2026-04-22",
+      "notes": " | 2026-04-22 /changeset-review: REVISE. 3-touch sequence no longer executable \u2014 2 of 3 touches past planned send dates. Compress to 1 combined touch (subscribe CTA + last-chance) targeting Apr 26-28. Also: populate L1-L5, normalize schema, rewrite Resolution Path (Add \u2192 Refine, branch FTP instead of parallel flow), resolve CS-2026-031 FTP contamination, waive or attach RCA on pat-015. See revision_notes."
     },
     {
       "id": "CS-2026-063",
