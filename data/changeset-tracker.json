@@ -855,7 +855,7 @@
       "risk_level": "low",
       "owner": "Katie + Brandon",
       "created": "2026-03-11",
-      "objective_level": "L5",
+      "objective_level": "L3",
       "category": "email_sms",
       "dependencies": [],
       "blocks": [],
@@ -886,11 +886,12 @@
       "review_tier": "express",
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-009.md",
-      "notes": "2026-04-13: Katie pushed 8 plain-text email drafts to Klaviyo via MCP as automation pipeline test. Template IDs: E1 TyGFEZ, E2 VJfQKV (claims review), E3 V2BxMU, E4 TBiVRS (claims review), E5 RJfMZZ (claims review), E6 X2Ucc4, E7 TgMUui, E8 WBKUt6. Status stays approved \u2014 claims gate on E2/E4/E5 still open with Devon, flow/segment/schedule remain manual (MCP has no endpoints). Stale flag reset. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
+      "notes": "2026-04-13: Katie pushed 8 plain-text email drafts to Klaviyo via MCP as automation pipeline test. Template IDs: E1 TyGFEZ, E2 VJfQKV (claims review), E3 V2BxMU, E4 TBiVRS (claims review), E5 RJfMZZ (claims review), E6 X2Ucc4, E7 TgMUui, E8 WBKUt6. Status stays approved \u2014 claims gate on E2/E4/E5 still open with Devon, flow/segment/schedule remain manual (MCP has no endpoints). Stale flag reset. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 execute halted by Katie. Build state UNVERIFIED: no visual confirmation the 8 email drafts from the 04-13 automation test are still in Klaviyo \u2014 Katie to check template IDs TyGFEZ/VJfQKV/V2BxMU/TBiVRS/RJfMZZ/X2Ucc4/TgMUui/WBKUt6 in-platform. Confirmed NOT built: segment, flow wiring, welcome suppression, QA, retroactive sends. Claims gate: Brandon approved E2/E4/E5 Tier A language (study interpretation per brief \u00a75), Devon hard-gate sign-off still outstanding per claims-compliance.md. BWR event 2026-05-02/03 = 10-11 days out; original 8-week protocol math no longer works for new entrants. Kill/compress/rush decision needed from Katie+Brandon before further build. Status unchanged: approved.",
       "sweep_flags": [
         "AUTOMATION_TEST_2026-04-13",
         "stale_approved",
-        "stale_approved_gt_7d"
+        "stale_approved_gt_7d",
+        "execution_blocked_2026-04-22"
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -904,10 +905,10 @@
       "autonomy_tier": null,
       "stale_flag": false,
       "stale_days": 0,
-      "urgency": "active",
+      "urgency": "critical",
       "stale": false,
-      "triage_recommendation": "in_progress",
-      "triage_action": "awaiting_devon_claims_review",
+      "triage_recommendation": "decision_required",
+      "triage_action": "awaiting_cgo_decision_kill_compress_or_rush",
       "artifacts": {
         "klaviyo_templates": {
           "E1_day_0": {
@@ -952,7 +953,7 @@
           }
         }
       },
-      "last_updated": "2026-04-20",
+      "last_updated": "2026-04-22",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
     },
