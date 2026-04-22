@@ -2000,7 +2000,7 @@
       "review_tier": "standard",
       "published_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-020.md",
-      "notes": "Send: 4/24 (tentative). Depends on CS-2026-017 koozie asset finalization. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 /changeset-execute: PUBLISHED (scheduled). Katie building in Klaviyo now, send scheduled for Friday 2026-04-24. All pre-publish safety checks passed: guardrails clear, no conflicts on Klaviyo cadence (CS-019 sent today, CS-021 scheduled 4/27, CS-022 scheduled 4/30), dependency CS-2026-017 published 4/17 with same Poff\u00e9 2023 citation (claims gate cleared transitively). executed_date stays null \u2014 Katie to rerun /changeset-execute CS-2026-020 post-send Friday to flip executed_date and start 7-day measurement window (measurement_due = send_date + 7d).",
+      "notes": "Send: 4/24 (tentative). Depends on CS-2026-017 koozie asset finalization. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 /changeset-execute: PUBLISHED (scheduled). Katie building in Klaviyo now, send scheduled for Friday 2026-04-24. All pre-publish safety checks passed: guardrails clear, no conflicts on Klaviyo cadence (CS-019 sent today, CS-021 scheduled 4/27, CS-022 scheduled 4/30), dependency CS-2026-017 published 4/17 with same Poff\u00e9 2023 citation (claims gate cleared transitively). executed_date stays null \u2014 Katie to rerun /changeset-execute CS-2026-020 post-send Friday to flip executed_date and start 7-day measurement window (measurement_due = send_date + 7d). | 2026-04-22 PER KATIE: set executed_date=2026-04-24 and measurement_due=2026-05-01 at scheduling time so no Mode 1.5 rerun is required. Measurement window runs 2026-04-24 -> 2026-05-01 regardless of when the send is actually confirmed.",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
@@ -2014,14 +2014,14 @@
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
       "scheduled_send_date": "2026-04-24",
       "execution_target_date": null,
-      "executed_date": null,
+      "executed_date": "2026-04-24",
       "autonomy_tier": null,
       "stale_flag": false,
       "stale_days": 28,
       "urgency": "active",
       "stale": false,
       "triage_recommendation": "in_measurement_window",
-      "triage_action": "awaiting_send_then_confirm",
+      "triage_action": "in_measurement_window",
       "last_updated": "2026-04-22",
       "nudge_count": 1,
       "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
@@ -2033,7 +2033,11 @@
         "published_at": "2026-04-22T00:00:00Z",
         "scheduling_mode": "scheduled_future_send",
         "send_target": "2026-04-24"
-      }
+      },
+      "measurement_start": "2026-04-24",
+      "measurement_start_date": "2026-04-24",
+      "measurement_due": "2026-05-01",
+      "measurement_end_date": "2026-05-01"
     },
     {
       "id": "CS-2026-021",
