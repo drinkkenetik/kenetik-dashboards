@@ -1,18 +1,18 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-21T19:00:00Z",
-  "next_id": 98,
+  "last_updated": "2026-04-22",
+  "next_id": 101,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-04-21T19:00:00Z",
-    "last_sweep_session": 37,
+    "last_sweep_date": "2026-04-22T15:15:00Z",
+    "last_sweep_session": 38,
     "last_sweep_result": "completed",
     "last_sweep_counts": {
-      "total_scanned": 94,
+      "total_scanned": 100,
       "measurement_overdue": 5,
-      "measured": 5,
+      "measured": 0,
       "auto_closed": 0,
       "flagged_human_review": 5,
-      "stale_detected": 0,
+      "stale_detected": 7,
       "nudges_sent": 0
     },
     "mcp_available": true,
@@ -20,37 +20,37 @@
     "stale_approved_gt_7d": [
       {
         "id": "CS-2026-009",
-        "age_days": 36,
+        "age_days": 37,
         "owner": "Katie + Brandon"
       },
       {
         "id": "CS-2026-019",
-        "age_days": 36,
+        "age_days": 37,
         "owner": "Katie"
       },
       {
         "id": "CS-2026-020",
-        "age_days": 36,
+        "age_days": 37,
         "owner": "Katie"
       },
       {
         "id": "CS-2026-021",
-        "age_days": 36,
+        "age_days": 37,
         "owner": "Katie"
       },
       {
         "id": "CS-2026-022",
-        "age_days": 36,
+        "age_days": 37,
         "owner": "Katie"
       },
       {
         "id": "CS-2026-037",
-        "age_days": 30,
+        "age_days": 31,
         "owner": "Katie"
       },
       {
         "id": "CS-2026-043",
-        "age_days": 20,
+        "age_days": 21,
         "owner": "Katie"
       }
     ],
@@ -58,12 +58,27 @@
     "measurement_overdue": [
       {
         "id": "CS-2026-006",
-        "overdue_days": 8,
+        "overdue_days": 9,
         "owner": "Nick + Charlotte"
       },
       {
         "id": "CS-2026-046",
-        "overdue_days": 11,
+        "overdue_days": 12,
+        "owner": "Katie"
+      },
+      {
+        "id": "CS-2026-047",
+        "overdue_days": 2,
+        "owner": "Katie"
+      },
+      {
+        "id": "CS-2026-012",
+        "overdue_days": 1,
+        "owner": "Katie"
+      },
+      {
+        "id": "CS-2026-015",
+        "overdue_days": 1,
         "owner": "Katie"
       }
     ],
@@ -83,28 +98,28 @@
     ]
   },
   "summary": {
-    "total": 97,
+    "total": 100,
     "by_status": {
       "closed": 36,
       "published": 12,
       "approved": 13,
-      "draft": 35,
+      "draft": 38,
       "needs_feedback": 1
     },
-    "last_updated": "2026-04-21",
+    "last_updated": "2026-04-22",
     "by_risk": {
       "critical": 2,
       "low": 46,
-      "medium": 29,
+      "medium": 32,
       "high": 7
     },
     "by_subtype": {
-      "implementation": 63,
+      "implementation": 66,
       "investigation": 16,
       "quick": 5
     },
-    "total_changesets": 94,
-    "last_counted": "2026-04-20"
+    "total_changesets": 100,
+    "last_counted": "2026-04-22"
   },
   "changesets": [
     {
@@ -6107,7 +6122,7 @@
       "outcome": "",
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-096.md",
-      "notes": "D10 viral IG reel DXXITMzkSd_ with 40+ @bekenetik sponsorship tags (TBI/stroke recovery). Gate 1: Devon 48h sponsorship decision. Gate 2: Brandon claims compliance (no Tier A/B TBI/stroke claims permitted). Auto-closes if Gate 1 declines. Autonomy tier is 2 with the two gates enforced as block-before-execute guardrails — see brief §Two-Gate Structure and §Autonomy Tier.",
+      "notes": "D10 viral IG reel DXXITMzkSd_ with 40+ @bekenetik sponsorship tags (TBI/stroke recovery). Gate 1: Devon 48h sponsorship decision. Gate 2: Brandon claims compliance (no Tier A/B TBI/stroke claims permitted). Auto-closes if Gate 1 declines. Autonomy tier is 2 with the two gates enforced as block-before-execute guardrails \u2014 see brief \u00a7Two-Gate Structure and \u00a7Autonomy Tier.",
       "risk": "High claims risk (TBI/stroke proximity); Medium PR risk if 48h silence",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-23",
@@ -6166,6 +6181,184 @@
       "risk": "Medium change-management; Low customer-facing",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-28",
+      "executed_date": "",
+      "autonomy_tier": 2,
+      "learning_note": ""
+    },
+    {
+      "id": "CS-2026-098",
+      "title": "\"2PM Crash \u00d7 Joelle Debban \u00d7 Leadville\" Composite Reel",
+      "subtype": "implementation",
+      "surface": "social_content",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Nick + Charlotte",
+      "created": "2026-04-22",
+      "objective_level": "L3",
+      "category": "content_creative",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "synthesis-2026-04-22-s1-rec-234a-composite-production-unit",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 18000,
+          "expected": 6500,
+          "downside": 500
+        },
+        "margin": {
+          "upside": 9000,
+          "expected": 3250,
+          "downside": 250
+        },
+        "primary_metric": "short_form_engagement_rate",
+        "primary_metric_target": ">=4.5% IG / >=8% TikTok within 48h of publish"
+      },
+      "routed_to": [
+        "Nick",
+        "Charlotte",
+        "Lawrence",
+        "Brandon",
+        "Katie",
+        "Devon"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-22",
+      "approved_by": "",
+      "approved_date": "",
+      "published_date": "",
+      "measurement_start_date": "",
+      "measurement_end_date": "",
+      "measurement_window": "48h_organic_7d_brand_search",
+      "measurement_due": "2026-05-01",
+      "actual_impact": {},
+      "outcome": "",
+      "closed_date": "",
+      "file": "cgo-logs/changesets/CS-2026-098.md",
+      "notes": "Composite production unit collapsing DS-04-A (2PM Crash) + DS-04-B (Leadville) + Joelle Debban testimonial into ONE 30-60s reel. Target publish TikTok + IG Reels 2026-04-24 EOD inside 48h trend windows. Brandon claims-gate; Lawrence secures Joelle UGC rights 24h.",
+      "risk": "Medium claims + rights; Low trend-window + brand-voice",
+      "scheduled_send_date": "",
+      "execution_target_date": "2026-04-24",
+      "executed_date": "",
+      "autonomy_tier": 2,
+      "learning_note": "L-051 composite production unit reference case"
+    },
+    {
+      "id": "CS-2026-099",
+      "title": "GP-LAUNCH-2026 Golden Pear ChangeSet Linkage (Hard Gate 2 Remediation)",
+      "subtype": "implementation",
+      "surface": "cross_channel_launch",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Katie + Nick",
+      "created": "2026-04-22",
+      "objective_level": "L2",
+      "category": "product_launch",
+      "dependencies": [],
+      "blocks": [
+        "paid_spend_gp_launch"
+      ],
+      "spawned_from": "synthesis-2026-04-22-s1-hard-gate-2-breach",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 28000,
+          "expected": 14000,
+          "downside": 4000
+        },
+        "margin": {
+          "upside": 12000,
+          "expected": 5500,
+          "downside": 1500
+        },
+        "primary_metric": "gp_launch_2026_new_orders_7d",
+        "primary_metric_target": ">=400 new customer orders attributed to GP-LAUNCH-2026 in first 7d"
+      },
+      "routed_to": [
+        "Katie",
+        "Nick",
+        "Peter",
+        "Lawrence",
+        "Garrett",
+        "Cliff",
+        "Devon"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-22",
+      "approved_by": "",
+      "approved_date": "",
+      "published_date": "",
+      "measurement_start_date": "",
+      "measurement_end_date": "",
+      "measurement_window": "7d_post_first_send",
+      "measurement_due": "2026-04-29",
+      "actual_impact": {},
+      "outcome": "",
+      "closed_date": "",
+      "file": "cgo-logs/changesets/CS-2026-099.md",
+      "notes": "Retrofit Hard Gate 2 linkage on in-flight GP-LAUNCH-2026 activating TODAY across organic + email + SMS + influencer + paid. Paid spend blocked until creative + UTMs + pixels verified. Systemic fix for 68/70 orphaned belongs to CS-2026-097.",
+      "risk": "Medium attribution + paid delay; Low launch quality",
+      "scheduled_send_date": "2026-04-22",
+      "execution_target_date": "2026-04-22",
+      "executed_date": "",
+      "autonomy_tier": 2,
+      "learning_note": ""
+    },
+    {
+      "id": "CS-2026-100",
+      "title": "Mar 2026 Cohort First-Renewal Save \u2014 Upcoming Subscription Order Flow Extension",
+      "subtype": "implementation",
+      "surface": "klaviyo",
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-04-22",
+      "objective_level": "L3",
+      "category": "lifecycle_retention",
+      "dependencies": [
+        "L-045-voluntary-involuntary-split"
+      ],
+      "blocks": [],
+      "spawned_from": "synthesis-2026-04-22-s1-rec-234c-mar-cohort-cascade",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 74000,
+          "expected": 38000,
+          "downside": 8000
+        },
+        "margin": {
+          "upside": 32000,
+          "expected": 16000,
+          "downside": 3500
+        },
+        "primary_metric": "mar_2026_cohort_m1_retention",
+        "primary_metric_target": ">=18% (vs Feb 2026 baseline 12.8%)"
+      },
+      "routed_to": [
+        "Katie",
+        "Brandon",
+        "Garrett",
+        "Nick",
+        "Devon"
+      ],
+      "routed_via": "slack",
+      "routed_date": "2026-04-22",
+      "approved_by": "",
+      "approved_date": "",
+      "published_date": "",
+      "measurement_start_date": "",
+      "measurement_end_date": "",
+      "measurement_window": "30d_post_first_renewal_wave",
+      "measurement_due": "2026-06-05",
+      "actual_impact": {},
+      "outcome": "",
+      "closed_date": "",
+      "file": "cgo-logs/changesets/CS-2026-100.md",
+      "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946.",
+      "risk": "Medium execution velocity + L-045 dependency; Low claims + brand voice",
+      "scheduled_send_date": "",
+      "execution_target_date": "2026-04-25",
       "executed_date": "",
       "autonomy_tier": 2,
       "learning_note": ""
@@ -6439,6 +6632,36 @@
     {
       "date": "2026-04-19",
       "note": "CS-2026-086 v2 executed: Step 9a.2 inserted into synthesis-instructions.md; team-roster.json created; 7 additional correction-shape keywords added to Step 9a; backfill sweep harness + review template shipped (scripts/step9a2_backfill_sweep.py). Measurement window 14d."
+    },
+    {
+      "session": 38,
+      "date": "2026-04-22",
+      "sweep_timestamp": "2026-04-22T15:15:00Z",
+      "summary": "Phase 3 lifecycle sweep. 3 new CSes added (098/099/100). next_id 98->101. Stale approved 7 (unchanged from S37, ages +1). Measurement overdue rose 2->5 per D12 brief correction. Pipeline net: +3 new / -0 closed / -0 auto-closed this session (non-atomic closes routed to Phase 4 DMs).",
+      "new_cses": [
+        "CS-2026-098",
+        "CS-2026-099",
+        "CS-2026-100"
+      ],
+      "refines_existing": [
+        "CS-2026-095 (scope expansion)",
+        "CS-2026-097 (check-in pull-forward)",
+        "CS-2026-037 (owner reassign)",
+        "CS-2026-089 (Devon escalation)",
+        "CS-2026-091 (HG8 reinforcement)"
+      ],
+      "hard_gate_2_breach_count": 68,
+      "hard_gate_3_triggered": true,
+      "step_8a_active_domains": [
+        "D13 (consecutive_below_40=7)"
+      ],
+      "step_8a_watch_domains": [
+        "D06 (consecutive_below_40=2)"
+      ],
+      "pattern_layer_escalations": [
+        "pat-012 Devon tier-3 latency 15+ sessions, self-executing via CS-096 48h auto-close"
+      ],
+      "data_primacy_corrections_applied": 7
     }
   ]
 }
