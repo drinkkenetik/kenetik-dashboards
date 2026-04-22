@@ -101,8 +101,8 @@
     "total": 100,
     "by_status": {
       "closed": 37,
-      "published": 12,
-      "approved": 12,
+      "published": 13,
+      "approved": 11,
       "draft": 38,
       "needs_feedback": 1
     },
@@ -1760,7 +1760,7 @@
       "title": "CLEAN FUEL FOR A CLEANER PLANET",
       "subtype": "implementation",
       "surface": "klaviyo",
-      "status": "approved",
+      "status": "published",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-03-13",
@@ -1792,13 +1792,31 @@
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-16",
       "review_tier": "express",
-      "published_date": null,
+      "published_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-019.md",
-      "notes": "Send: 4/22 (Earth Day). Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
+      "notes": "Send: 4/22 (Earth Day). Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 (Katie): Published via /changeset-execute. Scheduled send 2pm ET (18:00 UTC) to Engaged 3M + Prospects Engaged (~51,643). Final creative (Earth Day / Clean Fuel / Clean Planet) attached. Claims scan clean \u2014 all Tier A product facts. Measurement window 4/22\u21924/29.",
       "sweep_flags": [
-        "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved",
-        "stale_approved_gt_7d"
+        {
+          "flag": "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
+          "resolved_date": "2026-04-22",
+          "resolved_by": "published"
+        },
+        {
+          "flag": "stale_approved",
+          "resolved_date": "2026-04-22",
+          "resolved_by": "published"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "resolved_date": "2026-04-22",
+          "resolved_by": "published"
+        },
+        {
+          "flag": "published_on_schedule",
+          "set_date": "2026-04-22",
+          "session": "/changeset-execute CS-2026-019",
+          "action": "Scheduled 2pm ET send 2026-04-22. Stale-approved flags resolved by execution."
+        }
       ],
       "last_sweep": "2026-04-16",
       "risk": "low",
@@ -1807,17 +1825,28 @@
       "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
       "scheduled_send_date": "2026-04-22",
       "execution_target_date": null,
-      "executed_date": null,
+      "executed_date": "2026-04-22",
       "autonomy_tier": null,
-      "stale_flag": true,
-      "stale_days": 28,
-      "urgency": "stale",
-      "stale": true,
-      "triage_recommendation": "requires_human_review",
-      "triage_action": "consider_closing_as_abandoned",
+      "stale_flag": false,
+      "stale_days": 0,
+      "urgency": "measuring",
+      "stale": false,
+      "triage_recommendation": "in_measurement",
+      "triage_action": "await_7d_measurement",
       "last_updated": "2026-04-20",
       "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
+      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
+      "published_by": "Katie",
+      "measurement_start": "2026-04-22",
+      "measurement_due": "2026-04-29",
+      "measurement_window_days": 7,
+      "publish_confirmation": {
+        "surface": "klaviyo",
+        "confirmation_id": "Klaviyo campaign scheduled 2026-04-22 14:00 ET for send to Engaged 3M + Prospects Engaged (~51,643). Final creative attached to CS-2026-019 via cowork /changeset-execute run by Katie.",
+        "published_at": "2026-04-22T18:00:00Z"
+      },
+      "ad_platform_refs": null,
+      "organic_source": null
     },
     {
       "id": "CS-2026-020",
