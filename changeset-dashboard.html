@@ -581,11 +581,11 @@
         .subgroup-item .sg-id { font-weight: 600; color: var(--accent-light); }
         .subgroup-item .sg-date { color: var(--text-muted); font-size: 10px; }
 
-        /* ── Draft Compact List ── */
-        .draft-surface-group {
+        /* ── Dept Group (used in Draft, Approved, Published columns) ── */
+        .draft-dept-group {
             margin-bottom: 8px;
         }
-        .draft-surface-header {
+        .draft-dept-header {
             font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
@@ -598,11 +598,24 @@
             align-items: center;
             border-radius: 4px;
             transition: background 0.1s;
+            border-left: 3px solid transparent;
         }
-        .draft-surface-header:hover { background: rgba(255,255,255,0.04); }
-        .draft-surface-header .draft-toggle { font-size: 9px; color: var(--text-muted); }
+        .draft-dept-header:hover { background: rgba(255,255,255,0.04); }
+        .draft-dept-header .draft-toggle { font-size: 9px; color: var(--text-muted); }
         .draft-items { max-height: 0; overflow: hidden; transition: max-height 0.2s ease; }
         .draft-items.expanded { max-height: 600px; overflow-y: auto; }
+        /* Platform chip — tiny secondary label showing the platform[] array */
+        .platform-chip {
+            font-size: 9px;
+            font-weight: 500;
+            padding: 1px 5px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.04);
+            color: var(--text-muted);
+            border: 1px solid rgba(255,255,255,0.06);
+            white-space: nowrap;
+        }
+        .platform-chips { display: inline-flex; gap: 3px; flex-wrap: wrap; }
         .draft-compact-item {
             font-size: 11px;
             padding: 5px 6px;
@@ -964,8 +977,8 @@
             <button class="filter-btn" onclick="setSubtypeFilter('implementation')">Implementation</button>
             <button class="filter-btn" onclick="setSubtypeFilter('investigation')">Investigation</button>
             <button class="filter-btn" onclick="setSubtypeFilter('quick')">Quick</button>
-            <select class="filter-select" onchange="setSurfaceFilter(this.value)">
-                <option value="all">All Surfaces</option>
+            <select class="filter-select" onchange="setDepartmentFilter(this.value)">
+                <option value="all">All Departments</option>
             </select>
             <select class="filter-select" onchange="setStatusFilter(this.value)">
                 <option value="all">All Statuses</option>
@@ -1029,7 +1042,7 @@
             <div class="chart-container"><canvas id="closureTrendChart"></canvas></div>
         </div>
         <div class="chart-card">
-            <h3>Impact by Domain</h3>
+            <h3>Impact by Department</h3>
             <div class="chart-container"><canvas id="impactByDomainChart"></canvas></div>
         </div>
     </div>
@@ -1053,7 +1066,7 @@
                     <th data-sort="id" class="sorted">ID</th>
                     <th data-sort="title">Title</th>
                     <th data-sort="subtype">Type</th>
-                    <th data-sort="surface">Surface</th>
+                    <th data-sort="department">Department</th>
                     <th data-sort="status">Status</th>
                     <th data-sort="risk_level">Risk</th>
                     <th data-sort="owner">Owner</th>
@@ -1139,30 +1152,50 @@ async function manualRefresh() {
 // ═══════════════════════════════════════════════════
 // STATE
 // ═══════════════════════════════════════════════════
-let filters = { subtype: 'all', surface: 'all', status: 'all' };
+let filters = { subtype: 'all', department: 'all', status: 'all' };
 
 function subtypeBadge(subtype) {
     const cls = subtype === 'investigation' ? 'badge-invest' : subtype === 'quick' ? 'badge-quick' : 'badge-impl';
     return `<span class="badge ${cls}">${subtype || 'unknown'}</span>`;
 }
 
-function surfaceBadge(surface) {
-    if (!surface) return '';
-    const colors = {
-        klaviyo: '#6366f1', paid_meta: '#3b82f6', paid_google: '#22c55e',
-        paid_tiktok: '#ef4444', amazon: '#f59e0b', amazon_ads: '#f97316',
-        recharge: '#a855f7', partner: '#ec4899', dtc_website: '#14b8a6',
-        wholesale_retail: '#8b5cf6', practitioner: '#06b6d4',
-        social_organic: '#f472b6', sprout_social: '#f472b6',
-        data_pipeline: '#94a3b8'
-    };
-    const color = colors[surface] || '#6b7280';
-    const label = (surface || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+// ── Department color map (10 canonical values from department enum) ──
+const DEPARTMENT_COLORS = {
+    'paid-media':          '#3b82f6',
+    'lifecycle-marketing': '#6366f1',
+    'DTC-website':         '#14b8a6',
+    'amazon':              '#f59e0b',
+    'social-media':        '#f472b6',
+    'content':             '#a855f7',
+    'creator-affiliate':   '#ec4899',
+    'science-research':    '#06b6d4',
+    'wholesale':           '#8b5cf6',
+    'operations':          '#94a3b8'
+};
+
+function departmentColor(dept) {
+    return DEPARTMENT_COLORS[dept] || '#6b7280';
+}
+
+function departmentLabel(dept) {
+    if (!dept) return 'Unassigned';
+    // Preserve "DTC" casing, title-case the rest, convert hyphens to spaces
+    return dept
+        .split('-')
+        .map(part => part === 'DTC' ? 'DTC' : part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ');
+}
+
+function departmentBadge(dept) {
+    if (!dept) return '';
+    const color = departmentColor(dept);
+    const label = departmentLabel(dept);
     return `<span class="badge" style="background:${color}22;color:${color};border:1px solid ${color}44">${label}</span>`;
 }
 
-function surfaceLabel(surface) {
-    return (surface || 'unknown').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+function platformChips(platforms) {
+    if (!platforms || !Array.isArray(platforms) || !platforms.length) return '';
+    return `<span class="platform-chips">${platforms.map(p => `<span class="platform-chip">${p}</span>`).join('')}</span>`;
 }
 
 // ── Status-aware urgency classification ──
@@ -1274,7 +1307,7 @@ function isOpen(cs) { return !isClosed(cs); }
 function getFiltered() {
     return TRACKER.changesets.filter(cs => {
         if (filters.subtype !== 'all' && cs.subtype !== filters.subtype) return false;
-        if (filters.surface !== 'all' && cs.surface !== filters.surface) return false;
+        if (filters.department !== 'all' && cs.department !== filters.department) return false;
         if (filters.status === 'open') return !isClosed(cs);
         if (filters.status === 'closed') return isClosed(cs);
         if (filters.status !== 'all' && cs.status !== filters.status) return false;
@@ -1303,13 +1336,6 @@ const PIPELINE_LABELS = {
     closed: 'Closed'
 };
 
-const SURFACE_COLORS = {
-    klaviyo: '#6366f1', paid_meta: '#3b82f6', paid_google: '#22c55e',
-    paid_tiktok: '#ef4444', amazon: '#f59e0b', amazon_ads: '#f97316',
-    recharge: '#a855f7', partner: '#ec4899', dtc_website: '#14b8a6',
-    wholesale_retail: '#8b5cf6', practitioner: '#06b6d4'
-};
-
 // ═══════════════════════════════════════════════════
 // FILTERS
 // ═══════════════════════════════════════════════════
@@ -1320,17 +1346,17 @@ function setSubtypeFilter(val) {
     render();
 }
 
-function setSurfaceFilter(val) { filters.surface = val; render(); }
+function setDepartmentFilter(val) { filters.department = val; render(); }
 function setStatusFilter(val) { filters.status = val; render(); }
 
-function populateSurfaceDropdown() {
+function populateDepartmentDropdown() {
     const sel = document.querySelector('.filter-select');
     while (sel.options.length > 1) sel.remove(1);
-    const surfaces = [...new Set(TRACKER.changesets.map(c => c.surface))].sort();
-    surfaces.forEach(s => {
+    const depts = [...new Set(TRACKER.changesets.map(c => c.department).filter(Boolean))].sort();
+    depts.forEach(d => {
         const opt = document.createElement('option');
-        opt.value = s;
-        opt.textContent = (s || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        opt.value = d;
+        opt.textContent = departmentLabel(d);
         sel.appendChild(opt);
     });
 }
@@ -1410,132 +1436,156 @@ function classifyApproved(cs) {
     return 'unworked';
 }
 
+// ── Shared: group a list of CSes by department, return ordered dept keys ──
+function groupByDepartment(items) {
+    const groups = {};
+    items.forEach(cs => {
+        const d = cs.department || 'unassigned';
+        if (!groups[d]) groups[d] = [];
+        groups[d].push(cs);
+    });
+    // Sort depts: urgency-heavy first, then count desc
+    const deptKeys = Object.keys(groups).sort((a, b) => {
+        const urgencyLevels = new Set(['stale','overdue','blocked','needs-review','measure-due','due-soon']);
+        const aUrgent = groups[a].filter(c => urgencyLevels.has(getUrgencyLevel(c).level)).length;
+        const bUrgent = groups[b].filter(c => urgencyLevels.has(getUrgencyLevel(c).level)).length;
+        if (aUrgent !== bUrgent) return bUrgent - aUrgent;
+        return groups[b].length - groups[a].length;
+    });
+    return { groups, deptKeys };
+}
+
+// ── Shared: render a department group as a collapsible block with compact items ──
+// variant: 'draft' (age), 'approved' (date), 'published' (urgency badge)
+function renderDeptGroup(dept, list, variant, opts) {
+    opts = opts || {};
+    const defaultExpanded = !!opts.defaultExpanded;
+    const today = new Date(); today.setHours(0,0,0,0);
+    const urgencyLevels = new Set(['stale','overdue','blocked','needs-review','measure-due','due-soon']);
+    const urgentCount = list.filter(c => urgencyLevels.has(getUrgencyLevel(c).level)).length;
+    const label = departmentLabel(dept);
+    const color = departmentColor(dept);
+    const isUnassigned = dept === 'unassigned';
+    const borderStyle = isUnassigned ? '' : `border-left-color:${color}`;
+
+    // Sort items: urgency first, then by date-field most relevant to the variant
+    const sorted = [...list].sort((a,b) => {
+        const ua = urgencySortOrder(a), ub = urgencySortOrder(b);
+        if (ua !== ub) return ua - ub;
+        if (variant === 'approved') {
+            return (a.scheduled_send_date||a.execution_target_date||'').localeCompare(b.scheduled_send_date||b.execution_target_date||'');
+        }
+        if (variant === 'published') {
+            return (a.measurement_due||'').localeCompare(b.measurement_due||'');
+        }
+        return (a.created||'').localeCompare(b.created||'');
+    });
+
+    const items = sorted.map(cs => {
+        const age = cs.created ? Math.round((today - new Date(cs.created)) / 86400000) : 0;
+        const urgency = getUrgencyLevel(cs);
+        const isStale = urgency.level === 'stale';
+        const isUrgent = urgencyLevels.has(urgency.level);
+
+        // Date / age display per variant
+        let rightMeta = '';
+        if (variant === 'approved') {
+            const d = cs.scheduled_send_date || cs.execution_target_date;
+            rightMeta = d ? new Date(d).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : `${age}d`;
+        } else if (variant === 'published') {
+            if (urgency.level === 'measuring' && urgency.daysUntil != null) rightMeta = `${urgency.daysUntil}d`;
+            else if (urgency.level === 'measure-due') rightMeta = `${Math.abs(urgency.daysUntil||0)}d late`;
+            else rightMeta = `${age}d`;
+        } else {
+            rightMeta = `${age}d`;
+        }
+
+        const urgencyFlag = isUrgent ? `<span class="dci-stale" style="color:${urgency.level==='stale'?'var(--danger)':urgency.level==='overdue'?'var(--danger)':urgency.level==='needs-review'?'var(--danger)':'var(--warning)'}">${urgency.level.toUpperCase().replace('-',' ')}</span>` : '';
+        const platformsHtml = platformChips(cs.platforms);
+
+        return `<div class="draft-compact-item ${isStale ? 'urgency-stale' : ''}" onclick="openDetail('${cs.id}')">
+            <div class="dci-left">
+                <span class="dci-id">${cs.id}</span>
+                <span class="dci-title">${cs.title || ''}</span>
+                ${platformsHtml}
+            </div>
+            <span class="dci-age">${rightMeta}</span>
+            ${urgencyFlag}
+        </div>`;
+    }).join('');
+
+    const countBadge = `<span style="color:var(--text-muted);font-weight:400">(${list.length})</span>`;
+    const urgentBadge = urgentCount ? ` <span style="color:var(--danger);font-size:9px;font-weight:700">${urgentCount} URGENT</span>` : '';
+    const toggleGlyph = defaultExpanded ? '▲' : '▼';
+    const expandedClass = defaultExpanded ? ' expanded' : '';
+
+    return `<div class="draft-dept-group">
+        <div class="draft-dept-header" style="${borderStyle}" onclick="this.nextElementSibling.classList.toggle('expanded');this.querySelector('.draft-toggle').textContent=this.nextElementSibling.classList.contains('expanded')?'▲':'▼'">
+            <span>${label} ${countBadge}${urgentBadge}</span>
+            <span class="draft-toggle">${toggleGlyph}</span>
+        </div>
+        <div class="draft-items${expandedClass}">${items}</div>
+    </div>`;
+}
+
 function renderApprovedSubgroups(items) {
     const groups = { scheduled: [], overdue: [], unworked: [] };
     items.forEach(cs => { groups[classifyApproved(cs)].push(cs); });
-    groups.scheduled.sort((a,b) => (a.scheduled_send_date||a.execution_target_date||'').localeCompare(b.scheduled_send_date||b.execution_target_date||''));
-    groups.overdue.sort((a,b) => (a.scheduled_send_date||a.execution_target_date||'').localeCompare(b.scheduled_send_date||b.execution_target_date||''));
-    groups.unworked.sort((a,b) => (a.created||'').localeCompare(b.created||''));
 
-    function renderSubItems(list, dateField) {
-        if (!list.length) return '<div style="font-size:11px;color:var(--text-muted);padding:4px 0">None</div>';
-        return list.map(cs => {
-            const dateVal = cs.scheduled_send_date || cs.execution_target_date || '';
-            const created = cs.created || '';
-            const dateDisplay = dateField === 'date' ? (dateVal ? new Date(dateVal).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : '') : (created ? Math.round((Date.now()-new Date(created))/86400000)+'d' : '');
-            const surfaceLabel = cs.surface ? `<span style="font-size:9px;color:var(--text-muted);opacity:0.7">${(cs.surface||'').replace(/_/g,' ')}</span>` : '';
-            return `<div class="subgroup-item ${urgencyClass(cs)}" onclick="openDetail('${cs.id}')"><span class="sg-id">${cs.id}</span> ${surfaceLabel} ${(cs.title||'').substring(0,30)}${(cs.title||'').length>30?'...':''} <span class="sg-date">${dateDisplay}</span></div>`;
-        }).join('');
+    function renderBucket(label, list, cssCls, defaultExpand) {
+        if (!list.length) {
+            return `<div class="approved-subgroup ${cssCls}">
+                <div class="subgroup-header ${cssCls}">${label} <span class="subgroup-count">0</span></div>
+                <div class="subgroup-items"><div style="font-size:11px;color:var(--text-muted);padding:4px 0">None</div></div>
+            </div>`;
+        }
+        const { groups: byDept, deptKeys } = groupByDepartment(list);
+        const content = deptKeys.map(d => renderDeptGroup(d, byDept[d], 'approved', { defaultExpanded: defaultExpand })).join('');
+        return `<div class="approved-subgroup ${cssCls}">
+            <div class="subgroup-header ${cssCls}">${label} <span class="subgroup-count">${list.length}</span></div>
+            <div class="subgroup-items">${content}</div>
+        </div>`;
     }
 
     return `<div class="approved-subgroups">
-        <div class="approved-subgroup overdue">
-            <div class="subgroup-header overdue">Overdue <span class="subgroup-count">${groups.overdue.length}</span></div>
-            <div class="subgroup-items">${renderSubItems(groups.overdue, 'date')}</div>
-        </div>
-        <div class="approved-subgroup unworked">
-            <div class="subgroup-header unworked">Unworked <span class="subgroup-count">${groups.unworked.length}</span></div>
-            <div class="subgroup-items">${renderSubItems(groups.unworked, 'age')}</div>
-        </div>
-        <div class="approved-subgroup scheduled">
-            <div class="subgroup-header scheduled">Scheduled <span class="subgroup-count">${groups.scheduled.length}</span></div>
-            <div class="subgroup-items">${renderSubItems(groups.scheduled, 'date')}</div>
-        </div>
+        ${renderBucket('Overdue', groups.overdue, 'overdue', true)}
+        ${renderBucket('Unworked', groups.unworked, 'unworked', false)}
+        ${renderBucket('Scheduled', groups.scheduled, 'scheduled', false)}
     </div>`;
 }
 
 function renderDraftCompact(items) {
-    // Group by surface
-    const groups = {};
-    items.forEach(cs => {
-        const s = cs.surface || 'unassigned';
-        if (!groups[s]) groups[s] = [];
-        groups[s].push(cs);
-    });
-
-    // Sort surfaces: those with stale items first, then by count
-    const surfaceKeys = Object.keys(groups).sort((a, b) => {
-        const aStale = groups[a].filter(c => getUrgencyLevel(c).level === 'stale').length;
-        const bStale = groups[b].filter(c => getUrgencyLevel(c).level === 'stale').length;
-        if (aStale !== bStale) return bStale - aStale;
-        return groups[b].length - groups[a].length;
-    });
-
-    const today = new Date(); today.setHours(0,0,0,0);
-    const staleCount = items.filter(c => getUrgencyLevel(c).level === 'stale').length;
-
-    return surfaceKeys.map(surface => {
-        const list = groups[surface];
-        const groupStale = list.filter(c => getUrgencyLevel(c).level === 'stale').length;
-        const label = surfaceLabel(surface);
-        const hasStale = groupStale > 0;
-
-        return `<div class="draft-surface-group">
-            <div class="draft-surface-header" onclick="this.nextElementSibling.classList.toggle('expanded');this.querySelector('.draft-toggle').textContent=this.nextElementSibling.classList.contains('expanded')?'▲':'▼'">
-                <span>${label} <span style="color:var(--text-muted);font-weight:400">(${list.length})</span>${hasStale ? ` <span style="color:var(--danger);font-size:9px;font-weight:700">${groupStale} STALE</span>` : ''}</span>
-                <span class="draft-toggle">▼</span>
-            </div>
-            <div class="draft-items">
-                ${list.sort((a,b) => urgencySortOrder(a) - urgencySortOrder(b)).map(cs => {
-                    const age = cs.created ? Math.round((today - new Date(cs.created)) / 86400000) : 0;
-                    const isStale = getUrgencyLevel(cs).level === 'stale';
-                    return `<div class="draft-compact-item ${isStale ? 'urgency-stale' : ''}" onclick="openDetail('${cs.id}')">
-                        <div class="dci-left">
-                            <span class="dci-id">${cs.id}</span>
-                            <span class="dci-title">${cs.title || ''}</span>
-                        </div>
-                        <span class="dci-age">${age}d</span>
-                        ${isStale ? '<span class="dci-stale">STALE</span>' : ''}
-                    </div>`;
-                }).join('')}
-            </div>
-        </div>`;
-    }).join('');
+    const { groups, deptKeys } = groupByDepartment(items);
+    if (!deptKeys.length) return '<div class="empty-state" style="padding:8px;font-size:11px">None</div>';
+    return deptKeys.map(d => renderDeptGroup(d, groups[d], 'draft', { defaultExpanded: false })).join('');
 }
 
 function renderPublishedUrgency(items) {
-    // Sort by urgency (most urgent first)
-    const sorted = [...items].sort((a, b) => urgencySortOrder(a) - urgencySortOrder(b));
-
-    // Group into urgency bands — use a set to ensure every item renders exactly once
+    // Partition into urgency bands — each CS goes into exactly one band
     const placed = new Set();
-    const needsReview = sorted.filter(c => { const l = getUrgencyLevel(c).level; return l === 'needs-review' || l === 'measured'; });
+    const needsReview = items.filter(c => { const l = getUrgencyLevel(c).level; return l === 'needs-review' || l === 'measured'; });
     needsReview.forEach(c => placed.add(c.id));
-    const blocked = sorted.filter(c => { const l = getUrgencyLevel(c).level; return l === 'blocked' && !placed.has(c.id); });
+    const blocked = items.filter(c => { const l = getUrgencyLevel(c).level; return l === 'blocked' && !placed.has(c.id); });
     blocked.forEach(c => placed.add(c.id));
-    const measureDue = sorted.filter(c => { const l = getUrgencyLevel(c).level; return l === 'measure-due' && !placed.has(c.id); });
+    const measureDue = items.filter(c => { const l = getUrgencyLevel(c).level; return l === 'measure-due' && !placed.has(c.id); });
     measureDue.forEach(c => placed.add(c.id));
-    const measuring = sorted.filter(c => !placed.has(c.id));
+    const measuring = items.filter(c => !placed.has(c.id));
 
-    let html = '';
-
-    if (needsReview.length) {
-        html += `<div class="published-group">
-            <div class="published-group-header urgent"><span class="published-group-dot" style="background:var(--danger)"></span>Review Needed (${needsReview.length})</div>
-            ${needsReview.map(cs => renderPipelineCard(cs)).join('')}
+    function renderBand(label, list, dotColor, headerCls, defaultExpand) {
+        if (!list.length) return '';
+        const { groups, deptKeys } = groupByDepartment(list);
+        const content = deptKeys.map(d => renderDeptGroup(d, groups[d], 'published', { defaultExpanded: defaultExpand })).join('');
+        return `<div class="published-group">
+            <div class="published-group-header ${headerCls}"><span class="published-group-dot" style="background:${dotColor}"></span>${label} (${list.length})</div>
+            ${content}
         </div>`;
     }
 
-    if (blocked.length) {
-        html += `<div class="published-group">
-            <div class="published-group-header urgent"><span class="published-group-dot" style="background:var(--warning)"></span>Blocked (${blocked.length})</div>
-            ${blocked.map(cs => renderPipelineCard(cs)).join('')}
-        </div>`;
-    }
-
-    if (measureDue.length) {
-        html += `<div class="published-group">
-            <div class="published-group-header urgent"><span class="published-group-dot" style="background:var(--warning)"></span>Measure Due (${measureDue.length})</div>
-            ${measureDue.map(cs => renderPipelineCard(cs)).join('')}
-        </div>`;
-    }
-
-    if (measuring.length) {
-        html += `<div class="published-group">
-            <div class="published-group-header active"><span class="published-group-dot" style="background:var(--info)"></span>Measuring (${measuring.length})</div>
-            ${measuring.map(cs => renderPipelineCard(cs)).join('')}
-        </div>`;
-    }
+    const html =
+        renderBand('Review Needed', needsReview, 'var(--danger)', 'urgent', true) +
+        renderBand('Blocked', blocked, 'var(--warning)', 'urgent', true) +
+        renderBand('Measure Due', measureDue, 'var(--warning)', 'urgent', true) +
+        renderBand('Measuring', measuring, 'var(--info)', 'active', false);
 
     return html || '<div class="empty-state" style="padding:8px;font-size:11px">None</div>';
 }
@@ -1545,7 +1595,8 @@ function renderPipelineCard(cs) {
         <div class="cs-id">${cs.id}</div>
         <div class="cs-title">${cs.title}</div>
         <div class="cs-meta">
-            ${surfaceBadge(cs.surface)}
+            ${departmentBadge(cs.department)}
+            ${platformChips(cs.platforms)}
             ${urgencyBadge(cs)}
         </div>
     </div>`;
@@ -1639,7 +1690,7 @@ function renderClosed() {
         return `<tr>
             <td><span class="cs-link" onclick="openDetail('${cs.id}')">${cs.id}</span></td>
             <td style="max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${cs.title}</td>
-            <td>${surfaceBadge(cs.surface)}</td>
+            <td>${departmentBadge(cs.department)} ${platformChips(cs.platforms)}</td>
             <td><span class="${outcomeClass}" style="font-weight:600;text-transform:capitalize">${outcomeLabel}</span></td>
             <td>${cs.owner || '—'}</td>
             <td>${cs.closed_date || '—'}</td>
@@ -1653,7 +1704,7 @@ function renderClosed() {
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
-                    <th>Surface</th>
+                    <th>Department</th>
                     <th>Outcome</th>
                     <th>Owner</th>
                     <th>Closed</th>
@@ -1728,18 +1779,18 @@ function renderCharts() {
         }
     });
 
-    // 2. Impact by Domain
-    const surfaces = [...new Set(data.map(c => c.surface))].sort();
-    const expectedBySurface = surfaces.map(s => data.filter(c => c.surface === s).reduce((sum, c) => sum + expectedRev(c), 0));
-    const actualBySurface = surfaces.map(s => closed.filter(c => c.surface === s).reduce((sum, c) => sum + actualRev(c), 0));
+    // 2. Impact by Department
+    const depts = [...new Set(data.map(c => c.department).filter(Boolean))].sort();
+    const expectedByDept = depts.map(d => data.filter(c => c.department === d).reduce((sum, c) => sum + expectedRev(c), 0));
+    const actualByDept = depts.map(d => closed.filter(c => c.department === d).reduce((sum, c) => sum + actualRev(c), 0));
 
     charts.domain = new Chart(document.getElementById('impactByDomainChart'), {
         type: 'bar',
         data: {
-            labels: surfaces.map(s => (s||'').replace(/_/g, ' ')),
+            labels: depts.map(d => departmentLabel(d)),
             datasets: [
-                { label: 'Expected Revenue', data: expectedBySurface, backgroundColor: 'rgba(99,102,241,0.4)', borderRadius: 4 },
-                { label: 'Actual Revenue', data: actualBySurface, backgroundColor: 'rgba(34,197,94,0.6)', borderRadius: 4 }
+                { label: 'Expected Revenue', data: expectedByDept, backgroundColor: 'rgba(99,102,241,0.4)', borderRadius: 4 },
+                { label: 'Actual Revenue', data: actualByDept, backgroundColor: 'rgba(34,197,94,0.6)', borderRadius: 4 }
             ]
         },
         options: {
@@ -1840,7 +1891,7 @@ function renderTable() {
             <td><span class="cs-link" onclick="openDetail('${cs.id}')">${cs.id}</span></td>
             <td>${cs.title}</td>
             <td>${subtypeBadge(cs.subtype)}</td>
-            <td>${(cs.surface || '').replace(/_/g, ' ')}</td>
+            <td>${departmentBadge(cs.department)} ${platformChips(cs.platforms)}</td>
             <td><span class="status-pill status-${cs.status}">${(cs.status || '').replace(/_/g, ' ')}</span></td>
             <td><span class="badge badge-${cs.risk_level || 'low'}">${cs.risk_level || 'low'}</span></td>
             <td>${cs.owner || '—'}</td>
@@ -1923,7 +1974,8 @@ function openDetail(id) {
 
         <div class="detail-grid" style="margin-top:16px">
             <div class="detail-field"><label>Subtype</label>${subtypeBadge(cs.subtype)}</div>
-            <div class="detail-field"><label>Surface</label><span>${(cs.surface || '').replace(/_/g, ' ')}</span></div>
+            <div class="detail-field"><label>Department</label>${departmentBadge(cs.department)}</div>
+            <div class="detail-field"><label>Platforms</label><span>${(cs.platforms||[]).join(', ') || '—'}</span></div>
             <div class="detail-field"><label>Status</label><span class="status-pill status-${cs.status}" style="font-size:12px">${(cs.status || '').replace(/_/g, ' ')}</span></div>
             <div class="detail-field"><label>Risk</label><span class="badge badge-${cs.risk_level || 'low'}" style="font-size:12px">${cs.risk_level || 'low'}</span></div>
             <div class="detail-field"><label>Owner</label><span>${cs.owner || '—'}</span></div>
@@ -2298,7 +2350,7 @@ function render() {
 async function boot() {
     const ok = await fetchTracker();
     if (ok) {
-        populateSurfaceDropdown();
+        populateDepartmentDropdown();
         render();
     }
 }
@@ -2306,7 +2358,7 @@ async function boot() {
 async function refresh() {
     const ok = await fetchTracker();
     if (ok) {
-        populateSurfaceDropdown();
+        populateDepartmentDropdown();
         render();
     }
 }
