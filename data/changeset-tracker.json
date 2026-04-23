@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-23T15:21:39Z",
+  "last_updated": "2026-04-23T18:02:18Z",
   "next_id": 102,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-22T15:15:00Z",
@@ -2994,7 +2994,7 @@
       ],
       "status": "closed",
       "risk_level": "medium",
-      "owner": "Garrett + Katie",
+      "owner": "Katie Spaller",
       "created": "2026-03-20",
       "objective_level": "L1",
       "category": "paid_media",
@@ -6430,7 +6430,7 @@
       "platforms": [
         "daily-pipeline"
       ],
-      "owner": "Garrett",
+      "owner": "Devon Price + Katie Spaller",
       "risk_level": "low",
       "risk": "low",
       "review_tier": "standard",
@@ -6495,7 +6495,7 @@
       "platforms": [
         "system-health"
       ],
-      "owner": "Garrett + Charlotte",
+      "owner": "Nick Lacagnina + Charlotte Thamm",
       "risk_level": "medium",
       "risk": "medium",
       "review_tier": "standard",
@@ -6694,7 +6694,7 @@
       ],
       "status": "draft",
       "risk_level": "low",
-      "owner": "Lawrence + Garrett",
+      "owner": "Katie Spaller",
       "created": "2026-04-21",
       "objective_level": "L2",
       "category": "website_cro",
