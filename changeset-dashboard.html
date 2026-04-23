@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenetik ChangeSet Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
     <style>
         :root {
             --bg: #0f1117;
@@ -493,6 +494,57 @@
             transition: background 0.15s;
         }
         .brief-link-lg:hover { background: rgba(59,130,246,0.15); }
+
+        /* Brief narrative sections — the "what is this CS actually about" block */
+        .brief-narrative {
+            margin-top: 14px;
+            padding: 14px 16px;
+            background: rgba(99,102,241,0.06);
+            border: 1px solid rgba(99,102,241,0.25);
+            border-radius: 8px;
+        }
+        .brief-narrative-loading {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-style: italic;
+            padding: 8px 0;
+        }
+        .brief-narrative-error {
+            font-size: 12px;
+            color: var(--text-muted);
+            padding: 8px 0;
+        }
+        .brief-section {
+            margin-bottom: 14px;
+        }
+        .brief-section:last-child { margin-bottom: 0; }
+        .brief-section-heading {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--accent-light);
+            margin-bottom: 6px;
+        }
+        .brief-section-body {
+            font-size: 13px;
+            line-height: 1.55;
+            color: var(--text);
+        }
+        .brief-section-body p { margin: 0 0 8px 0; }
+        .brief-section-body p:last-child { margin-bottom: 0; }
+        .brief-section-body ul, .brief-section-body ol {
+            margin: 4px 0 8px 0;
+            padding-left: 20px;
+        }
+        .brief-section-body li { margin-bottom: 3px; }
+        .brief-section-body strong { color: var(--text); font-weight: 600; }
+        .brief-section-body code {
+            background: rgba(255,255,255,0.06);
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
 
         .detail-close {
             float: right;
@@ -1220,10 +1272,125 @@
 // ═══════════════════════════════════════════════════
 const DATA_URL = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/changeset-tracker.json';
 const BRIEF_BASE_URL = 'https://github.com/drinkkenetik/kenetik-growth-system/blob/main/';
+const BRIEF_RAW_BASE = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/briefs/';
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
 let TRACKER = null;
 let lastFetchTime = null;
 let closedExpanded = false;
+const briefCache = new Map();
+
+// Fetch raw brief markdown by CS id (e.g. "CS-2026-074"). Returns string or null.
+async function fetchBrief(csId) {
+    if (briefCache.has(csId)) return briefCache.get(csId);
+    const url = BRIEF_RAW_BASE + csId + '.md';
+    try {
+        const resp = await fetch(url + '?t=' + Date.now());
+        if (!resp.ok) { briefCache.set(csId, null); return null; }
+        const md = await resp.text();
+        briefCache.set(csId, md);
+        return md;
+    } catch (e) {
+        briefCache.set(csId, null);
+        return null;
+    }
+}
+
+// Parse brief markdown into { frontmatter: { key: value }, sections: [{ heading, body }] }.
+// Frontmatter is the leading block of "**Key:** value" lines before the first H2.
+function parseBrief(md) {
+    if (!md) return { frontmatter: {}, sections: [] };
+    const lines = md.split('\n');
+    const frontmatter = {};
+    const sections = [];
+    let i = 0;
+    // Skip H1 title
+    while (i < lines.length && !lines[i].trim().startsWith('# ')) i++;
+    if (i < lines.length) i++;
+    // Read frontmatter lines until first H2 or blank-then-non-frontmatter
+    while (i < lines.length && !lines[i].startsWith('## ')) {
+        const m = lines[i].match(/^\*\*([^*]+):\*\*\s*(.*)$/);
+        if (m) frontmatter[m[1].trim()] = m[2].trim();
+        i++;
+    }
+    // Read sections
+    let currentHeading = null;
+    let currentBody = [];
+    const flush = () => {
+        if (currentHeading !== null) {
+            sections.push({ heading: currentHeading, body: currentBody.join('\n').trim() });
+        }
+    };
+    while (i < lines.length) {
+        const line = lines[i];
+        if (line.startsWith('## ')) {
+            flush();
+            currentHeading = line.replace(/^##\s+/, '').trim();
+            currentBody = [];
+        } else if (currentHeading !== null) {
+            currentBody.push(line);
+        }
+        i++;
+    }
+    flush();
+    return { frontmatter, sections };
+}
+
+// Render a parsed brief's key narrative sections as HTML. Picks the sections
+// that answer: what's the bet, what will we do, how will we know it worked.
+function renderBriefNarrative(parsed) {
+    if (!parsed || !parsed.sections.length) return '';
+    // Priority order — only include sections that exist in the brief
+    const priority = [
+        'Hypothesis',
+        'The Bet',
+        'Problem',
+        'Context',
+        'Actions',
+        'Action',
+        'Scope',
+        'Change',
+        'Proposed Change',
+        'Success Criteria',
+        'Expected Outcome',
+        'Measurement Plan',
+        'Measurement Window',
+        'Measurement',
+        'Circuit-Breakers',
+        'Circuit Breakers',
+        'Guardrails',
+        'Risks',
+        'Approval Note',
+        'Dependencies',
+        'Spawned From'
+    ];
+    const seen = new Set();
+    const picked = [];
+    // First pass: priority-ordered
+    for (const name of priority) {
+        const hit = parsed.sections.find(s => s.heading.toLowerCase() === name.toLowerCase() && !seen.has(s.heading));
+        if (hit) { picked.push(hit); seen.add(hit.heading); }
+    }
+    // Second pass: any remaining sections not in priority list, in original order
+    for (const s of parsed.sections) {
+        if (!seen.has(s.heading)) { picked.push(s); seen.add(s.heading); }
+    }
+    if (!picked.length) return '';
+    const renderMd = (body) => {
+        if (!body) return '<em style="color:var(--text-muted)">(empty)</em>';
+        if (typeof marked !== 'undefined' && marked.parse) {
+            return marked.parse(body);
+        }
+        // Fallback: escape + basic line breaks
+        const esc = body.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        return '<p>' + esc.replace(/\n\n+/g,'</p><p>').replace(/\n/g,'<br>') + '</p>';
+    };
+    return picked.map(s => `
+        <div class="brief-section">
+            <div class="brief-section-heading">${s.heading}</div>
+            <div class="brief-section-body">${renderMd(s.body)}</div>
+        </div>
+    `).join('');
+}
 
 async function fetchTracker() {
     const statusEl = document.getElementById('syncStatus');
@@ -2068,6 +2235,9 @@ function openDetail(id) {
     const rev = ei.revenue || {};
     const mar = ei.margin || {};
 
+    // Kick off brief fetch immediately (non-blocking)
+    const briefPromise = fetchBrief(cs.id);
+
     // Measurement result section
     let measurementHtml = '';
     if (mr) {
@@ -2143,14 +2313,6 @@ function openDetail(id) {
               </div>`).join('')}</div>`
         : '';
 
-    // Hypothesis (most important single field for understanding the bet)
-    const hypothesisHtml = cs.hypothesis
-        ? `<div class="detail-section">
-               <h4>Hypothesis</h4>
-               <p style="font-size:13px;line-height:1.55">${cs.hypothesis}</p>
-           </div>`
-        : '';
-
     // Compact at-a-glance meta row (the things you actually scan first)
     const urgencyLabel = cs.urgency ? cs.urgency.replace(/_/g, ' ') : '';
     const urgencyChip = urgencyLabel ? `<span class="meta-chip meta-chip-warn">urgency: ${urgencyLabel}</span>` : '';
@@ -2178,6 +2340,10 @@ function openDetail(id) {
         ${revisionHtml}
         ${sweepFlagHtml}
 
+        <div class="brief-narrative" id="briefNarrative-${cs.id}">
+            <div class="brief-narrative-loading">Loading brief…</div>
+        </div>
+
         <div class="detail-grid" style="margin-top:14px">
             <div class="detail-field"><label>Owner</label><span>${cs.owner || '—'}</span></div>
             <div class="detail-field"><label>Platforms</label><span>${(cs.platforms||[]).join(', ') || '—'}</span></div>
@@ -2198,8 +2364,6 @@ function openDetail(id) {
             ${cs.blocks && cs.blocks.length ? `<div><label>Blocks</label> ${cs.blocks.map(d => /^CS-/.test(d) ? `<span class="cs-link" onclick="openDetail('${d}')">${d}</span>` : d).join(', ')}</div>` : ''}
         </div>
         ` : ''}
-
-        ${hypothesisHtml}
 
         <div class="detail-section">
             <h4>Expected Impact</h4>
@@ -2255,6 +2419,35 @@ function openDetail(id) {
     `;
 
     document.getElementById('detailOverlay').classList.add('open');
+
+    // Fill in brief narrative once fetched. We fall back to cs.hypothesis if the
+    // brief can't be fetched (e.g. not yet mirrored into /data/briefs/).
+    briefPromise.then(md => {
+        const container = document.getElementById('briefNarrative-' + cs.id);
+        if (!container) return; // popup was closed or reopened on a different CS
+        if (md) {
+            const parsed = parseBrief(md);
+            const html = renderBriefNarrative(parsed);
+            if (html) {
+                container.innerHTML = html;
+                return;
+            }
+        }
+        // Fallback: show hypothesis from tracker if we have it, else a link prompt
+        if (cs.hypothesis) {
+            container.innerHTML = `
+                <div class="brief-section">
+                    <div class="brief-section-heading">Hypothesis</div>
+                    <div class="brief-section-body"><p>${cs.hypothesis}</p></div>
+                </div>
+                ${briefUrl ? `<div class="brief-narrative-error">Full brief not yet mirrored to dashboard — <a href="${briefUrl}" target="_blank" rel="noopener" style="color:var(--accent-light)">view on GitHub ↗</a></div>` : ''}
+            `;
+        } else if (briefUrl) {
+            container.innerHTML = `<div class="brief-narrative-error">No narrative available in tracker. <a href="${briefUrl}" target="_blank" rel="noopener" style="color:var(--accent-light)">Open full brief in GitHub ↗</a></div>`;
+        } else {
+            container.innerHTML = `<div class="brief-narrative-error">No brief linked for this ChangeSet.</div>`;
+        }
+    });
 }
 
 function closeDetail() {
