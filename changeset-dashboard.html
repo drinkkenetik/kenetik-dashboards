@@ -2287,6 +2287,20 @@ function openDetail(id) {
         ? `<div class="detail-alert detail-alert-warn"><strong>Sweep flags:</strong> ${sweepFlagStrings.map(f => `<span class="sweep-chip">${f}</span>`).join(' ')}</div>`
         : '';
 
+    // Taxonomy divergence detail — when sweep Phase 0.9 has flagged tracker ≠ brief.
+    // Makes the flag actionable without opening the brief to diff manually.
+    const td = cs.taxonomy_divergence;
+    const taxonomyDivergenceHtml = (td && td.tracker && td.brief)
+        ? `<div class="detail-alert detail-alert-warn" style="font-size:12px">
+               <div style="font-weight:700;margin-bottom:6px">Taxonomy divergence (tracker vs brief)${td.detected ? ' · detected ' + td.detected : ''}</div>
+               <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-family:ui-monospace,monospace;font-size:11px">
+                   <span style="color:var(--text-muted)">tracker:</span><span>${td.tracker.department || '—'} / [${(td.tracker.platforms||[]).join(', ')}]</span>
+                   <span style="color:var(--text-muted)">brief:</span><span>${td.brief.department || '—'} / [${(td.brief.platforms||[]).join(', ')}]</span>
+               </div>
+               <div style="margin-top:6px;font-size:11px;color:var(--text-muted)">Brief is authoritative by default — confirm and correct the tracker (or edit the brief if the brief is wrong).</div>
+           </div>`
+        : '';
+
     // Revision notes — highlighted for needs_feedback
     const revisionHtml = cs.revision_notes
         ? `<div class="detail-alert detail-alert-danger">
@@ -2339,6 +2353,7 @@ function openDetail(id) {
 
         ${revisionHtml}
         ${sweepFlagHtml}
+        ${taxonomyDivergenceHtml}
 
         <div class="brief-narrative" id="briefNarrative-${cs.id}">
             <div class="brief-narrative-loading">Loading brief…</div>
