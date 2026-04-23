@@ -1722,20 +1722,17 @@ function platformChips(platforms) {
 }
 
 // ── Status-aware urgency classification ──
+// Single source of truth: urgency is derived from status + dates + measurement fields.
+// The tracker's cs.urgency field is intentionally NOT consulted here — it conflates
+// priority (high/medium/normal) with lifecycle urgency (measuring/stale/measure-due),
+// which caused the top "Needs Attention" card and the owner panel to diverge on drafts
+// whose cs.urgency was a priority string. Computing from status+dates keeps both panels
+// aligned on one classification.
 function getUrgencyLevel(cs) {
     const today = new Date(); today.setHours(0,0,0,0);
     const age = cs.created ? Math.round((today - new Date(cs.created)) / 86400000) : 0;
     const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
     const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
-    const daysUntilTarget = (ssd || etd) ? Math.round(((ssd || etd) - today) / 86400000) : null;
-
-    if (cs.urgency && cs.urgency !== 'ok' && cs.urgency !== 'closed' && cs.urgency !== 'archived') {
-        const level = cs.urgency.replace(/_/g, '-');
-        return { level, daysUntil: daysUntilTarget, age };
-    }
-    if (cs.urgency === 'ok' || cs.urgency === 'closed' || cs.urgency === 'archived') {
-        return { level: 'none', daysUntil: daysUntilTarget, age };
-    }
     const md = cs.measurement_due ? new Date(cs.measurement_due) : null;
     const targetDate = ssd || etd;
     const daysUntil = targetDate ? Math.round((targetDate - today) / 86400000) : null;
@@ -1745,15 +1742,22 @@ function getUrgencyLevel(cs) {
     });
     const status = cs.status || '';
 
+    // Closed/archived states never pull on the pipeline.
+    if (status === 'closed' || status === 'archived' || status === 'superseded' || status === 'rolled_back') {
+        return { level: 'none', daysUntil, age };
+    }
+
     if (isBlocked) return { level: 'blocked', daysUntil, age };
 
     if (status === 'published') {
-        // Measured items take priority over measurement_due date checks
-        if (cs.measurement_result) {
-            if (cs.measurement_result.requires_human_review) return { level: 'needs-review', daysUntil, age };
-            return { level: 'measured', daysUntil, age };
-        }
-        if (cs.requires_human_review) return { level: 'needs-review', daysUntil, age };
+        // Top-level requires_human_review applies regardless of whether measurement_result exists.
+        // (Previously this flag was shadowed when measurement_result was present, which caused CS-046
+        // to show as 'measured' in the top card while the owner panel correctly flagged it.)
+        const humanReviewNeeded =
+            cs.requires_human_review === true ||
+            (cs.measurement_result && cs.measurement_result.requires_human_review === true);
+        if (humanReviewNeeded) return { level: 'needs-review', daysUntil, age };
+        if (cs.measurement_result) return { level: 'measured', daysUntil, age };
         if (md) {
             const daysUntilMeasure = Math.round((md - today) / 86400000);
             if (daysUntilMeasure < 0) return { level: 'measure-due', daysUntil: daysUntilMeasure, age };
@@ -1762,21 +1766,21 @@ function getUrgencyLevel(cs) {
         return { level: 'none', daysUntil, age };
     }
 
-    if (status === 'approved') {
+    // needs_feedback always pulls on the owner — someone is waiting on a response.
+    if (status === 'needs_feedback') return { level: 'needs-review', daysUntil, age };
+
+    // Pre-execution statuses share the same overdue/due-soon/stale logic.
+    // An execution_target_date in the past makes a pre-execution CS overdue —
+    // the owner owes either a ship, a reschedule, or a close-out.
+    const preExecution = new Set(['approved','draft','recommended','proposed','in-review','in_review']);
+    if (preExecution.has(status)) {
         if (daysUntil !== null && daysUntil < 0) return { level: 'overdue', daysUntil, age };
         if (daysUntil !== null && daysUntil <= 3) return { level: 'due-soon', daysUntil, age };
         if (daysUntil !== null) return { level: 'on-track', daysUntil, age };
-        if (age > 5) return { level: 'stale', daysUntil, age };
-        return { level: 'none', daysUntil, age };
-    }
-
-    if (status === 'draft') {
-        if (age > 7) return { level: 'stale', daysUntil, age };
-        return { level: 'none', daysUntil, age };
-    }
-
-    if (status === 'needs_feedback') {
-        if (age > 14) return { level: 'stale', daysUntil, age };
+        // No target date → fall back to age-based staleness.
+        // Drafts get 14 days of runway; approved/recommended/proposed only 7 (they should be moving).
+        const staleThreshold = status === 'draft' ? 14 : 7;
+        if (age > staleThreshold) return { level: 'stale', daysUntil, age };
         return { level: 'none', daysUntil, age };
     }
 
@@ -1903,11 +1907,10 @@ function renderKPIs() {
         ? Math.round(open.reduce((s, c) => s + (Date.now() - new Date(c.created)) / 86400000, 0) / open.length)
         : 0;
 
-    // Needs attention count
-    const needsAttention = data.filter(c => {
-        const u = getUrgencyLevel(c).level;
-        return u === 'needs-review' || u === 'measure-due' || u === 'overdue' || u === 'stale';
-    }).length;
+    // Needs attention count — aligned with owner panel Focus Now bucketing.
+    // Both panels filter on the same set of urgency levels from getUrgencyLevel().
+    const needsAttentionLevels = new Set(['overdue','blocked','needs-review','measure-due','stale']);
+    const needsAttention = data.filter(c => needsAttentionLevels.has(getUrgencyLevel(c).level)).length;
 
     const successCount = closed.filter(c => c.outcome === 'success').length;
     const underCount = closed.filter(c => c.outcome === 'underperformed').length;
@@ -2772,32 +2775,27 @@ function buildOwnerMap() {
     const today = new Date(); today.setHours(0,0,0,0);
 
     // Open
-    // Pre-execution statuses: overdue means "execution date in the past and CS hasn't shipped."
-    // Published CSes are NEVER overdue — their execution_target_date is a historical fact,
-    // and measurement is handled by lifecycle sweep, not the owner's focus queue.
-    const preExecutionStatuses = new Set(['draft','approved','needs_feedback','recommended','proposed','in-review','in_review']);
+    // Source of truth for urgency classification: getUrgencyLevel(cs).
+    // Both the top "Needs Attention" KPI card and the owner panel derive from this single
+    // function, so the counts always agree by construction. The mapping below translates
+    // the urgency level into the owner-panel bucket names (overdue / needsFeedback / aging / healthy).
     data.filter(isOpen).forEach(cs => {
         const primaries = parseOwners(cs.owner);
         const shared = primaries.length > 1;
-        const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
-        const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
-        // Gate isOverdue on pre-execution status — a published CS's execution date is history, not a deadline.
-        const isOverdue = preExecutionStatuses.has(cs.status) && ((ssd && ssd < today) || (etd && etd < today));
-        // Published CSes can still pull on the owner if their measurement requires human review.
-        const needsReview = cs.status === 'published' && (
-            cs.requires_human_review === true ||
-            (cs.measurement_result && cs.measurement_result.requires_human_review === true)
-        );
         const ageDays = cs.created ? Math.round((Date.now() - new Date(cs.created)) / 86400000) : 0;
-        const isAgedDraft = cs.status === 'draft' && ageDays > 14;
-
-        // Classify into one urgency bucket per CS — priority order matches computeOwnerFocus.
-        // An overdue CS stays in "overdue" even if it also has needs_feedback / aged-draft flags,
-        // so each CS contributes exactly one segment to the bar.
+        const urgency = getUrgencyLevel(cs);
+        const level = urgency.level;
+        // Map urgency level → owner panel bucket (keeps the 4-segment bar semantics).
+        // overdue → past execution date; needsFeedback → human review / feedback owed;
+        // aging → old-but-not-overdue drafts/approveds; healthy → on-track/none/measuring/measured.
         let urgencyBucket = 'healthy';
-        if (isOverdue) urgencyBucket = 'overdue';
-        else if (cs.status === 'needs_feedback' || needsReview) urgencyBucket = 'needsFeedback';
-        else if (isAgedDraft) urgencyBucket = 'aging';
+        if (level === 'overdue' || level === 'blocked') urgencyBucket = 'overdue';
+        else if (level === 'needs-review' || level === 'measure-due') urgencyBucket = 'needsFeedback';
+        else if (level === 'stale') urgencyBucket = 'aging';
+        // Legacy flags for card totals + drawer sorting.
+        const isOverdue = level === 'overdue' || level === 'blocked';
+        const needsReview = level === 'needs-review' || level === 'measure-due';
+        const isAgedDraft = level === 'stale';
 
         primaries.forEach(name => {
             if (!owners[name]) owners[name] = {
@@ -2817,10 +2815,10 @@ function buildOwnerMap() {
             o.byStatus[cs.status] = (o.byStatus[cs.status] || 0) + 1;
             o.byUrgency[urgencyBucket]++;
             if (isOverdue) o.overdue++;
-            if (cs.status === 'needs_feedback' || needsReview) o.needsFeedback++;
+            if (needsReview) o.needsFeedback++;
             if (isAgedDraft) o.agedDrafts++;
             if (ageDays > o.oldestAge) o.oldestAge = ageDays;
-            o.openItems.push({ cs, shared, isOverdue, needsReview, ageDays });
+            o.openItems.push({ cs, shared, isOverdue, needsReview, isAgedDraft, ageDays });
         });
     });
 
@@ -2946,21 +2944,22 @@ function openOwnerDrawer(encodedName) {
     const o = owners[name];
     if (!o) return;
 
-    // Partition open items into "Focus now" and "In progress"
+    // Partition open items into "Focus now" and "In progress" using the same urgency
+    // classification as the top KPI card (getUrgencyLevel → isOverdue/needsReview/isAgedDraft flags
+    // set in buildOwnerMap). Any CS flagged as overdue, needing review, or aged goes into Focus Now.
     const focusNow = [], inProgress = [];
     o.openItems.forEach(entry => {
-        const { cs, isOverdue, needsReview, ageDays } = entry;
-        if (isOverdue || needsReview || cs.status === 'needs_feedback' || (cs.status === 'draft' && ageDays > 14)) {
+        if (entry.isOverdue || entry.needsReview || entry.isAgedDraft) {
             focusNow.push(entry);
         } else {
             inProgress.push(entry);
         }
     });
-    // Sort focus queue by urgency (overdue first, then needs-review, then needs_feedback, then oldest)
+    // Sort focus queue by urgency (overdue first, then needs-review, then aged)
     const urgencyRank = entry => {
         if (entry.isOverdue) return 0;
         if (entry.needsReview) return 1;
-        if (entry.cs.status === 'needs_feedback') return 2;
+        if (entry.isAgedDraft) return 2;
         return 3;
     };
     focusNow.sort((a, b) => urgencyRank(a) - urgencyRank(b) || b.ageDays - a.ageDays);
