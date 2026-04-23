@@ -2772,12 +2772,22 @@ function buildOwnerMap() {
     const today = new Date(); today.setHours(0,0,0,0);
 
     // Open
+    // Pre-execution statuses: overdue means "execution date in the past and CS hasn't shipped."
+    // Published CSes are NEVER overdue — their execution_target_date is a historical fact,
+    // and measurement is handled by lifecycle sweep, not the owner's focus queue.
+    const preExecutionStatuses = new Set(['draft','approved','needs_feedback','recommended','proposed','in-review','in_review']);
     data.filter(isOpen).forEach(cs => {
         const primaries = parseOwners(cs.owner);
         const shared = primaries.length > 1;
         const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
         const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
-        const isOverdue = (ssd && ssd < today) || (etd && etd < today);
+        // Gate isOverdue on pre-execution status — a published CS's execution date is history, not a deadline.
+        const isOverdue = preExecutionStatuses.has(cs.status) && ((ssd && ssd < today) || (etd && etd < today));
+        // Published CSes can still pull on the owner if their measurement requires human review.
+        const needsReview = cs.status === 'published' && (
+            cs.requires_human_review === true ||
+            (cs.measurement_result && cs.measurement_result.requires_human_review === true)
+        );
         const ageDays = cs.created ? Math.round((Date.now() - new Date(cs.created)) / 86400000) : 0;
         const isAgedDraft = cs.status === 'draft' && ageDays > 14;
 
@@ -2786,7 +2796,7 @@ function buildOwnerMap() {
         // so each CS contributes exactly one segment to the bar.
         let urgencyBucket = 'healthy';
         if (isOverdue) urgencyBucket = 'overdue';
-        else if (cs.status === 'needs_feedback') urgencyBucket = 'needsFeedback';
+        else if (cs.status === 'needs_feedback' || needsReview) urgencyBucket = 'needsFeedback';
         else if (isAgedDraft) urgencyBucket = 'aging';
 
         primaries.forEach(name => {
@@ -2807,10 +2817,10 @@ function buildOwnerMap() {
             o.byStatus[cs.status] = (o.byStatus[cs.status] || 0) + 1;
             o.byUrgency[urgencyBucket]++;
             if (isOverdue) o.overdue++;
-            if (cs.status === 'needs_feedback') o.needsFeedback++;
+            if (cs.status === 'needs_feedback' || needsReview) o.needsFeedback++;
             if (isAgedDraft) o.agedDrafts++;
             if (ageDays > o.oldestAge) o.oldestAge = ageDays;
-            o.openItems.push({ cs, shared, isOverdue, ageDays });
+            o.openItems.push({ cs, shared, isOverdue, needsReview, ageDays });
         });
     });
 
@@ -2939,18 +2949,19 @@ function openOwnerDrawer(encodedName) {
     // Partition open items into "Focus now" and "In progress"
     const focusNow = [], inProgress = [];
     o.openItems.forEach(entry => {
-        const { cs, isOverdue, ageDays } = entry;
-        if (isOverdue || cs.status === 'needs_feedback' || (cs.status === 'draft' && ageDays > 14)) {
+        const { cs, isOverdue, needsReview, ageDays } = entry;
+        if (isOverdue || needsReview || cs.status === 'needs_feedback' || (cs.status === 'draft' && ageDays > 14)) {
             focusNow.push(entry);
         } else {
             inProgress.push(entry);
         }
     });
-    // Sort focus queue by urgency (overdue first, then needs_feedback, then oldest)
+    // Sort focus queue by urgency (overdue first, then needs-review, then needs_feedback, then oldest)
     const urgencyRank = entry => {
         if (entry.isOverdue) return 0;
-        if (entry.cs.status === 'needs_feedback') return 1;
-        return 2;
+        if (entry.needsReview) return 1;
+        if (entry.cs.status === 'needs_feedback') return 2;
+        return 3;
     };
     focusNow.sort((a, b) => urgencyRank(a) - urgencyRank(b) || b.ageDays - a.ageDays);
     inProgress.sort((a, b) => b.ageDays - a.ageDays);
@@ -2972,6 +2983,9 @@ function openOwnerDrawer(encodedName) {
             const days = due ? Math.round((today - new Date(due)) / 86400000) : 0;
             meta = `overdue ${days}d`;
             metaCls = 'overdue';
+        } else if (entry.needsReview) {
+            meta = 'measurement review';
+            metaCls = 'review';
         } else if (cs.status === 'needs_feedback') {
             meta = 'needs review';
             metaCls = 'review';
