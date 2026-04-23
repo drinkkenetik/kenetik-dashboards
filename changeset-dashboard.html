@@ -1007,9 +1007,12 @@
             gap: 6px;
             letter-spacing: 0.1px;
         }
+        /* Chip color semantics match the owner-bar urgency palette so the
+           segment color and the focus-line label reinforce each other:
+           red=overdue, yellow=awaiting review, orange=aging drafts, green=on track. */
         .owner-focus.level-attention { color: var(--danger); }
-        .owner-focus.level-review    { color: var(--warning); }
-        .owner-focus.level-aging     { color: var(--accent-light); }
+        .owner-focus.level-review    { color: #eab308; }
+        .owner-focus.level-aging     { color: var(--warning); }
         .owner-focus.level-ontrack   { color: var(--success); }
         .owner-focus .dot {
             width: 6px; height: 6px;
@@ -2703,13 +2706,29 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(
 // OWNER LOAD BALANCING — "My Work" view
 // ═══════════════════════════════════════════════════
 
-// Status palette shared by the card bar + drawer badges
+// Status palette used by drawer badges (kept for legacy call-sites inside the drawer)
 const OWNER_STATUS_COLORS = {
     draft: '#8b8fa3',
     proposed: '#f59e0b',
     needs_feedback: '#ef4444',
     approved: '#3b82f6',
     published: '#22c55e'
+};
+
+// Urgency palette — colors the owner-card bar by "what's pulling on this owner"
+// rather than by workflow stage. Red = overdue, orange = aging drafts,
+// yellow = awaiting review, green = healthy. Matches the focus-chip levels.
+const OWNER_URGENCY_COLORS = {
+    overdue:       '#ef4444', // red — same as --danger
+    aging:         '#f59e0b', // orange — same as --warning
+    needsFeedback: '#eab308', // yellow
+    healthy:       '#22c55e'  // green — same as --success
+};
+const OWNER_URGENCY_LABELS = {
+    overdue:       'overdue',
+    aging:         'aging draft',
+    needsFeedback: 'awaiting review',
+    healthy:       'on track'
 };
 
 // Parse an owner cell — may be "Nick", "Nick + Charlotte", "Nick (T1), Nick+Lawrence+Derek (T2), Lawrence (T3)",
@@ -2762,11 +2781,20 @@ function buildOwnerMap() {
         const ageDays = cs.created ? Math.round((Date.now() - new Date(cs.created)) / 86400000) : 0;
         const isAgedDraft = cs.status === 'draft' && ageDays > 14;
 
+        // Classify into one urgency bucket per CS — priority order matches computeOwnerFocus.
+        // An overdue CS stays in "overdue" even if it also has needs_feedback / aged-draft flags,
+        // so each CS contributes exactly one segment to the bar.
+        let urgencyBucket = 'healthy';
+        if (isOverdue) urgencyBucket = 'overdue';
+        else if (cs.status === 'needs_feedback') urgencyBucket = 'needsFeedback';
+        else if (isAgedDraft) urgencyBucket = 'aging';
+
         primaries.forEach(name => {
             if (!owners[name]) owners[name] = {
                 name,
                 total: 0,
                 byStatus: {},
+                byUrgency: { overdue: 0, needsFeedback: 0, aging: 0, healthy: 0 },
                 overdue: 0,
                 needsFeedback: 0,
                 agedDrafts: 0,
@@ -2777,6 +2805,7 @@ function buildOwnerMap() {
             const o = owners[name];
             o.total++;
             o.byStatus[cs.status] = (o.byStatus[cs.status] || 0) + 1;
+            o.byUrgency[urgencyBucket]++;
             if (isOverdue) o.overdue++;
             if (cs.status === 'needs_feedback') o.needsFeedback++;
             if (isAgedDraft) o.agedDrafts++;
@@ -2794,7 +2823,9 @@ function buildOwnerMap() {
         const shared = primaries.length > 1;
         primaries.forEach(name => {
             if (!owners[name]) owners[name] = {
-                name, total: 0, byStatus: {}, overdue: 0, needsFeedback: 0,
+                name, total: 0, byStatus: {},
+                byUrgency: { overdue: 0, needsFeedback: 0, aging: 0, healthy: 0 },
+                overdue: 0, needsFeedback: 0,
                 agedDrafts: 0, oldestAge: 0, openItems: [], closedItems: []
             };
             owners[name].closedItems.push({ cs, shared });
@@ -2836,13 +2867,22 @@ function renderOwnerLoad() {
         (totalOverdue > 0 ? ` · <span style="color:var(--danger);font-weight:600">${totalOverdue} overdue</span>` : '') +
         ` · Click a card for details`;
 
-    // Render active cards
+    // Render active cards — bar segments colored by urgency, not workflow status,
+    // so a glance at the bar tells you "is this person on fire, aging out, waiting
+    // on review, or clean?" rather than the status mix of their queue.
     document.getElementById('ownerGrid').innerHTML = active.map(o => {
         const focus = computeOwnerFocus(o);
-        const barSegments = Object.entries(o.byStatus).map(([status, count]) => {
-            const color = OWNER_STATUS_COLORS[status] || '#6b7280';
-            return `<div class="owner-bar-seg" style="background:${color};flex:${count}" title="${status}: ${count}"></div>`;
-        }).join('');
+        // Render in priority order (overdue → needsFeedback → aging → healthy) so
+        // the most urgent segment is always on the left of the bar.
+        const URGENCY_ORDER = ['overdue', 'needsFeedback', 'aging', 'healthy'];
+        const barSegments = URGENCY_ORDER
+            .filter(bucket => o.byUrgency[bucket] > 0)
+            .map(bucket => {
+                const count = o.byUrgency[bucket];
+                const color = OWNER_URGENCY_COLORS[bucket];
+                const label = OWNER_URGENCY_LABELS[bucket];
+                return `<div class="owner-bar-seg" style="background:${color};flex:${count}" title="${label}: ${count}"></div>`;
+            }).join('');
         const safeName = o.name.replace(/"/g, '&quot;');
         return `<div class="owner-card level-${focus.level}" onclick="openOwnerDrawer('${encodeURIComponent(o.name)}')">
             <div class="owner-card-arrow">→</div>
@@ -2959,7 +2999,14 @@ function openOwnerDrawer(encodedName) {
         : '<div class="drawer-empty">No CSes closed in the last 30 days.</div>';
 
     const focus = computeOwnerFocus(o);
-    const focusChip = `<span style="color:var(--${focus.level === 'attention' ? 'danger' : focus.level === 'review' ? 'warning' : focus.level === 'aging' ? 'accent-light' : 'success'});font-weight:600">${focus.label}</span>`;
+    // Match the bar's urgency palette: red=overdue, yellow=awaiting review,
+    // orange=aging drafts, green=on track. Literal hex for "yellow" because
+    // there's no --yellow CSS variable in this file.
+    const focusColor = focus.level === 'attention' ? 'var(--danger)'
+                     : focus.level === 'review'    ? '#eab308'
+                     : focus.level === 'aging'     ? 'var(--warning)'
+                     :                                'var(--success)';
+    const focusChip = `<span style="color:${focusColor};font-weight:600">${focus.label}</span>`;
 
     document.getElementById('ownerDrawer').innerHTML = `
         <button class="drawer-close" onclick="closeOwnerDrawer()">×</button>
