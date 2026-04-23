@@ -5,10 +5,13 @@ Validate changeset-tracker.json against the ChangeSet Tracker Schema v2.1.
 Checks:
 1. Valid JSON (not truncated)
 2. Required top-level structure (schema_version, changesets array, summary)
-3. Every changeset has required fields
+3. Every changeset has required fields (id, title, status, department, platforms, created)
 4. All statuses are spec-valid
 5. All subtypes are spec-valid
-6. sweep_flags are strings (not objects)
+5a. department is one of the 10 canonical enum values
+5b. platforms[] is a non-empty array of strings (unknown values warn, not error)
+5c. Legacy 'surface' field must not reappear (retired by AP-001)
+6. sweep_flags are strings or objects with required 'flag' field
 7. No duplicate changeset IDs
 8. Summary counts match actual data
 """
@@ -19,7 +22,24 @@ from collections import Counter
 
 VALID_STATUSES = {'draft', 'needs_feedback', 'approved', 'published', 'rolled_back', 'closed'}
 VALID_SUBTYPES = {'implementation', 'investigation', 'quick'}
-REQUIRED_FIELDS = {'id', 'title', 'status', 'surface', 'created'}
+REQUIRED_FIELDS = {'id', 'title', 'status', 'department', 'platforms', 'created'}
+
+# Canonical department enum (post-AP-001 schema)
+VALID_DEPARTMENTS = {
+    'paid-media', 'lifecycle-marketing', 'DTC-website', 'amazon',
+    'social-media', 'content', 'creator-affiliate', 'science-research',
+    'wholesale', 'operations'
+}
+
+# Known platforms — non-exhaustive, used for soft (warning) validation so new
+# platforms don't fail the build. Add more as new channels come online.
+KNOWN_PLATFORMS = {
+    'meta-ads', 'google-ads', 'tiktok-ads', 'amazon-ads',
+    'klaviyo', 'shopify', 'recharge',
+    'instagram-organic', 'sprout-social', 'content-production',
+    'superfiliate', 'pubmed',
+    'system-health', 'daily-pipeline', 'changeset-process'
+}
 
 def validate(path='data/changeset-tracker.json'):
     errors = []
@@ -78,6 +98,37 @@ def validate(path='data/changeset-tracker.json'):
         subtype = cs.get('subtype')
         if subtype and subtype not in VALID_SUBTYPES:
             errors.append(f"{cs_id}: invalid subtype '{subtype}' — valid: {sorted(VALID_SUBTYPES)}")
+
+    # 5a. Department enum validation (AP-001 retired 'surface' in favor of department + platforms[])
+    for cs in changesets:
+        cs_id = cs.get('id', '?')
+        dept = cs.get('department')
+        if dept is not None and dept not in VALID_DEPARTMENTS:
+            errors.append(f"{cs_id}: invalid department '{dept}' — valid: {sorted(VALID_DEPARTMENTS)}")
+
+    # 5b. Platforms validation — must be a non-empty array of strings; unknown values warn
+    for cs in changesets:
+        cs_id = cs.get('id', '?')
+        platforms = cs.get('platforms')
+        if platforms is None:
+            continue  # already caught by REQUIRED_FIELDS above
+        if not isinstance(platforms, list):
+            errors.append(f"{cs_id}: platforms must be an array, got {type(platforms).__name__}")
+            continue
+        if not platforms:
+            errors.append(f"{cs_id}: platforms array is empty — must list at least one platform")
+            continue
+        for j, p in enumerate(platforms):
+            if not isinstance(p, str):
+                errors.append(f"{cs_id}: platforms[{j}] is {type(p).__name__}, expected string")
+            elif p not in KNOWN_PLATFORMS:
+                warnings.append(f"{cs_id}: platforms[{j}]='{p}' is not in the known platform list (add to KNOWN_PLATFORMS if intentional)")
+
+    # 5c. Legacy surface field must not reappear (AP-001 retirement)
+    for cs in changesets:
+        cs_id = cs.get('id', '?')
+        if 'surface' in cs:
+            errors.append(f"{cs_id}: legacy 'surface' field is retired (AP-001) — use 'department' + 'platforms[]'")
 
     # 6. sweep_flags validation (array of strings or objects with required 'flag' field)
     for cs in changesets:
