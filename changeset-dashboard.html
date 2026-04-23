@@ -231,7 +231,7 @@
 
         .pipeline-columns {
             display: grid;
-            grid-template-columns: 1fr 2fr 2fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 12px;
         }
 
@@ -1529,8 +1529,13 @@ function renderDeptGroup(dept, list, variant, opts) {
 }
 
 function renderApprovedSubgroups(items) {
-    const groups = { scheduled: [], overdue: [], unworked: [] };
-    items.forEach(cs => { groups[classifyApproved(cs)].push(cs); });
+    // Overdue merges into Unworked — overdue status still shows via per-card urgency badge
+    const groups = { scheduled: [], unworked: [] };
+    items.forEach(cs => {
+        const bucket = classifyApproved(cs);
+        if (bucket === 'overdue') groups.unworked.push(cs);
+        else groups[bucket].push(cs);
+    });
 
     function renderBucket(label, list, cssCls, defaultExpand) {
         if (!list.length) {
@@ -1548,8 +1553,7 @@ function renderApprovedSubgroups(items) {
     }
 
     return `<div class="approved-subgroups">
-        ${renderBucket('Overdue', groups.overdue, 'overdue', true)}
-        ${renderBucket('Unworked', groups.unworked, 'unworked', false)}
+        ${renderBucket('Unworked', groups.unworked, 'unworked', true)}
         ${renderBucket('Scheduled', groups.scheduled, 'scheduled', false)}
     </div>`;
 }
