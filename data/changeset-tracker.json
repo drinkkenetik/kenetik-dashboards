@@ -5596,11 +5596,11 @@
       "created": "2026-04-16",
       "status": "draft",
       "subtype": "implementation",
-      "department": "operations",
+      "department": "creator-affiliate",
       "platforms": [
-        "system-health"
+        "sprout-social"
       ],
-      "owner": "Nicole Sanchez",
+      "owner": "Nick Lacagnina",
       "risk_level": "medium",
       "hypothesis": "Auto-generated from calendar safety net — Sea Otter Classic (4/16-4/19) requires structured tracking and measurement.",
       "expected_impact": "[PIPELINE GAP: needs estimation]",
@@ -6365,12 +6365,12 @@
         "klaviyo",
         "shopify"
       ],
-      "owner": "Nicole Sanchez + Lawrence Giarrizzo",
+      "owner": "Katie Spaller + Lawrence Giarrizzo",
       "risk_level": "medium",
       "risk": "medium",
       "review_tier": "standard",
       "created": "2026-04-20",
-      "last_updated": "2026-04-20",
+      "last_updated": "2026-04-23",
       "hypothesis": "Explicit value-framing content (formulation cost, third-party testing, clinical BHB dose, made-in-USA manufacturing) deployed as a lifecycle email and a PDP value module blunts Ketone-IQ's APRIL26 30%-subs price play. Measured via two cohorts: Klaviyo open-rate + 7-day post-open CVR for the email, and Shots PDP ATC-rate delta for the PDP module.",
       "objective_level": "L5",
       "spawned_from": "rec-227",
@@ -6411,7 +6411,7 @@
       "closed_date": null,
       "autonomy_tier": null,
       "file": "cgo-logs/changesets/CS-2026-090.md",
-      "notes": "Spawned from 2026-04-20 synthesis rec-227 (P5 Ketone-IQ counter). Direct response to Ketone-IQ APRIL26 30% sub discount + Tony Robbins YouTube push flagged by D13 (5th consecutive session below 40% share of voice). Nicole owns email copy + flow; Lawrence owns PDP module build. Peter claims review required pre-send.",
+      "notes": "Spawned from 2026-04-20 synthesis rec-227 (P5 Ketone-IQ counter). Direct response to Ketone-IQ APRIL26 30% sub discount + Tony Robbins YouTube push flagged by D13 (5th consecutive session below 40% share of voice). Katie owns email copy + flow (email/SMS is Katie's surface per Content Routing); Lawrence owns PDP module build. Peter claims review required pre-send. Apr 23: reassigned from Nicole Sanchez to Katie Spaller per team-roles.md Content Routing — Sales Support is not the owner of Klaviyo/Shopify surfaces.",
       "sweep_flags": [],
       "urgency": "high",
       "revision_notes": null,
