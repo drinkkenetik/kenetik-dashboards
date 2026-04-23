@@ -371,6 +371,129 @@
             margin-bottom: 16px;
         }
 
+        .detail-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+            padding-right: 32px; /* leave room for the absolute close button */
+        }
+        .detail-header-row .detail-id { margin-bottom: 0; }
+
+        .brief-link {
+            font-size: 12px;
+            color: var(--accent-light);
+            text-decoration: none;
+            padding: 4px 10px;
+            border: 1px solid var(--accent-light);
+            border-radius: 5px;
+            white-space: nowrap;
+            transition: background 0.15s;
+        }
+        .brief-link:hover { background: rgba(59,130,246,0.12); }
+
+        .detail-meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+            margin: 12px 0 4px 0;
+        }
+        .meta-chip {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .meta-chip-warn { color: var(--warning); border-color: rgba(245,158,11,0.35); background: rgba(245,158,11,0.08); }
+
+        .detail-alert {
+            margin-top: 12px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid;
+            font-size: 12px;
+            line-height: 1.45;
+        }
+        .detail-alert-danger { background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.35); color: var(--text); }
+        .detail-alert-warn   { background: rgba(245,158,11,0.08); border-color: rgba(245,158,11,0.3); color: var(--text); }
+
+        .sweep-chip {
+            display: inline-block;
+            font-size: 10px;
+            padding: 2px 6px;
+            background: rgba(245,158,11,0.18);
+            border-radius: 3px;
+            margin: 0 3px;
+            font-family: monospace;
+        }
+
+        .detail-timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.015);
+        }
+        .timeline-entry {
+            flex: 1 1 auto;
+            min-width: 120px;
+        }
+        .timeline-label {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+        .timeline-date {
+            font-size: 12px;
+            color: var(--text);
+        }
+
+        .detail-relations {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 12px;
+        }
+        .detail-relations label {
+            display: inline;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-muted);
+            margin-right: 4px;
+        }
+
+        .detail-brief-footer {
+            margin-top: 20px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .brief-link-lg {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-light);
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--accent-light);
+            border-radius: 6px;
+            transition: background 0.15s;
+        }
+        .brief-link-lg:hover { background: rgba(59,130,246,0.15); }
+
         .detail-close {
             float: right;
             background: none;
@@ -543,6 +666,7 @@
         .approved-subgroup.scheduled { background: rgba(34,197,94,0.08); border-color: rgba(34,197,94,0.25); }
         .approved-subgroup.overdue { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.4); }
         .approved-subgroup.unworked { background: rgba(139,143,163,0.08); border-color: rgba(139,143,163,0.25); }
+        .approved-subgroup.needs-feedback { background: rgba(239,68,68,0.10); border-color: rgba(239,68,68,0.35); }
         .subgroup-header {
             font-size: 10px;
             font-weight: 700;
@@ -556,6 +680,7 @@
         .subgroup-header.scheduled { color: var(--success); }
         .subgroup-header.overdue { color: var(--danger); }
         .subgroup-header.unworked { color: var(--text-muted); }
+        .subgroup-header.needs-feedback { color: var(--danger); }
         .subgroup-count {
             font-size: 14px;
             font-weight: 700;
@@ -1094,6 +1219,7 @@
 // AUTO-FETCH CONFIG
 // ═══════════════════════════════════════════════════
 const DATA_URL = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/changeset-tracker.json';
+const BRIEF_BASE_URL = 'https://github.com/drinkkenetik/kenetik-growth-system/blob/main/';
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
 let TRACKER = null;
 let lastFetchTime = null;
@@ -1558,6 +1684,18 @@ function renderApprovedSubgroups(items) {
     </div>`;
 }
 
+function renderNeedsFeedbackGroup(items) {
+    if (!items.length) return '';
+    const { groups: byDept, deptKeys } = groupByDepartment(items);
+    const content = deptKeys.map(d => renderDeptGroup(d, byDept[d], 'approved', { defaultExpanded: true })).join('');
+    return `<div class="approved-subgroups" style="margin-top:8px">
+        <div class="approved-subgroup needs-feedback">
+            <div class="subgroup-header needs-feedback">Needs Feedback <span class="subgroup-count">${items.length}</span></div>
+            <div class="subgroup-items">${content}</div>
+        </div>
+    </div>`;
+}
+
 function renderDraftCompact(items) {
     const { groups, deptKeys } = groupByDepartment(items);
     if (!deptKeys.length) return '<div class="empty-state" style="padding:8px;font-size:11px">None</div>';
@@ -1634,12 +1772,7 @@ function renderPipeline() {
             <span class="pipeline-col-count">${approved.length}</span>
         </div>
         ${approved.length > 0 ? renderApprovedSubgroups(approved) : '<div class="empty-state" style="padding:8px;font-size:11px">None</div>'}
-        ${needsFeedback.length > 0 ? `
-            <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border)">
-                <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--danger);margin-bottom:6px">Needs Feedback (${needsFeedback.length})</div>
-                ${needsFeedback.map(cs => renderPipelineCard(cs)).join('')}
-            </div>
-        ` : ''}
+        ${needsFeedback.length > 0 ? renderNeedsFeedbackGroup(needsFeedback) : ''}
     </div>`;
 
     // Published column (urgency-sorted)
@@ -1971,33 +2104,102 @@ function openDetail(id) {
         </div>`;
     }
 
+    // Brief link — every CS has cs.file pointing to the markdown in kenetik-growth-system
+    const briefUrl = cs.file ? (BRIEF_BASE_URL + cs.file) : null;
+    const briefLink = briefUrl
+        ? `<a href="${briefUrl}" target="_blank" rel="noopener" class="brief-link">View full brief <span style="font-size:10px;opacity:0.7">↗</span></a>`
+        : '';
+
+    // Sweep flags — normalize to string list
+    const sweepFlagsRaw = Array.isArray(cs.sweep_flags) ? cs.sweep_flags : [];
+    const sweepFlagStrings = sweepFlagsRaw.map(f => typeof f === 'string' ? f : (f && f.flag) || '').filter(Boolean);
+    const sweepFlagHtml = sweepFlagStrings.length
+        ? `<div class="detail-alert detail-alert-warn"><strong>Sweep flags:</strong> ${sweepFlagStrings.map(f => `<span class="sweep-chip">${f}</span>`).join(' ')}</div>`
+        : '';
+
+    // Revision notes — highlighted for needs_feedback
+    const revisionHtml = cs.revision_notes
+        ? `<div class="detail-alert detail-alert-danger">
+               <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px">Revision Requested${cs.revision_date ? ' · ' + cs.revision_date : ''}</div>
+               <pre style="font-size:12px;line-height:1.5;white-space:pre-wrap;font-family:inherit;margin:0">${cs.revision_notes}</pre>
+           </div>`
+        : '';
+
+    // Timeline: Routed → Approved → Published → Measurement Due → Closed
+    const timelineEntries = [];
+    if (cs.created)                 timelineEntries.push({ label: 'Created',         date: cs.created });
+    if (cs.routed_date)             timelineEntries.push({ label: 'Routed',          date: cs.routed_date, meta: cs.routed_via ? ` (${cs.routed_via})` : '' });
+    if (cs.execution_target_date)   timelineEntries.push({ label: 'Target Execute',  date: cs.execution_target_date });
+    if (cs.scheduled_send_date)     timelineEntries.push({ label: 'Scheduled Send',  date: cs.scheduled_send_date });
+    if (cs.approved_date)           timelineEntries.push({ label: 'Approved',        date: cs.approved_date, meta: cs.approved_by ? ` by ${cs.approved_by}` : '' });
+    if (cs.published_date)          timelineEntries.push({ label: 'Published',       date: cs.published_date });
+    if (cs.measurement_due)         timelineEntries.push({ label: 'Measurement Due', date: cs.measurement_due });
+    if (cs.closed_date)             timelineEntries.push({ label: 'Closed',          date: cs.closed_date });
+    const timelineHtml = timelineEntries.length
+        ? `<div class="detail-timeline">${timelineEntries.map(e => `
+              <div class="timeline-entry">
+                  <div class="timeline-label">${e.label}</div>
+                  <div class="timeline-date">${e.date}${e.meta||''}</div>
+              </div>`).join('')}</div>`
+        : '';
+
+    // Hypothesis (most important single field for understanding the bet)
+    const hypothesisHtml = cs.hypothesis
+        ? `<div class="detail-section">
+               <h4>Hypothesis</h4>
+               <p style="font-size:13px;line-height:1.55">${cs.hypothesis}</p>
+           </div>`
+        : '';
+
+    // Compact at-a-glance meta row (the things you actually scan first)
+    const urgencyLabel = cs.urgency ? cs.urgency.replace(/_/g, ' ') : '';
+    const urgencyChip = urgencyLabel ? `<span class="meta-chip meta-chip-warn">urgency: ${urgencyLabel}</span>` : '';
+    const autonomyChip = cs.autonomy_tier != null ? `<span class="meta-chip">autonomy T${cs.autonomy_tier}</span>` : '';
+    const reviewChip = cs.review_tier ? `<span class="meta-chip">review: ${cs.review_tier}</span>` : '';
+
     document.getElementById('detailPanel').innerHTML = `
         <button class="detail-close" onclick="closeDetail()">&times;</button>
-        <div class="detail-id">${cs.id}</div>
+        <div class="detail-header-row">
+            <div class="detail-id">${cs.id}</div>
+            ${briefLink}
+        </div>
         <h2>${cs.title}</h2>
 
-        <div class="detail-grid" style="margin-top:16px">
-            <div class="detail-field"><label>Subtype</label>${subtypeBadge(cs.subtype)}</div>
-            <div class="detail-field"><label>Department</label>${departmentBadge(cs.department)}</div>
-            <div class="detail-field"><label>Platforms</label><span>${(cs.platforms||[]).join(', ') || '—'}</span></div>
-            <div class="detail-field"><label>Status</label><span class="status-pill status-${cs.status}" style="font-size:12px">${(cs.status || '').replace(/_/g, ' ')}</span></div>
-            <div class="detail-field"><label>Risk</label><span class="badge badge-${cs.risk_level || 'low'}" style="font-size:12px">${cs.risk_level || 'low'}</span></div>
-            <div class="detail-field"><label>Owner</label><span>${cs.owner || '—'}</span></div>
-            <div class="detail-field"><label>Objective</label><span>${cs.objective_level || '—'}</span></div>
-            <div class="detail-field"><label>Category</label><span>${(cs.category || '—').replace(/_/g, ' ')}</span></div>
-            <div class="detail-field"><label>Created</label><span>${cs.created || '—'}</span></div>
-            ${cs.approved_date ? `<div class="detail-field"><label>Approved</label><span>${cs.approved_date} by ${cs.approved_by || '—'}</span></div>` : ''}
-            ${cs.published_date ? `<div class="detail-field"><label>Published</label><span>${cs.published_date}</span></div>` : ''}
-            ${cs.closed_date ? `<div class="detail-field"><label>Closed</label><span>${cs.closed_date}</span></div>` : ''}
-            ${cs.outcome ? `<div class="detail-field"><label>Outcome</label><span class="outcome-${cs.outcome}" style="font-weight:600">${cs.outcome}</span></div>` : ''}
-            <div class="detail-field"><label>Measurement Window</label><span>${cs.measurement_window || '—'}</span></div>
-            ${cs.measurement_due ? `<div class="detail-field"><label>Measurement Due</label><span>${cs.measurement_due}</span></div>` : ''}
+        <div class="detail-meta-row">
+            <span class="status-pill status-${cs.status}" style="font-size:12px">${(cs.status || '').replace(/_/g, ' ')}</span>
+            ${subtypeBadge(cs.subtype)}
+            ${departmentBadge(cs.department)}
+            <span class="badge badge-${cs.risk_level || 'low'}" style="font-size:11px">risk: ${cs.risk_level || 'low'}</span>
+            ${urgencyChip}
+            ${autonomyChip}
+            ${reviewChip}
         </div>
 
-        ${cs.dependencies && cs.dependencies.length ? `<div class="detail-field" style="margin-bottom:8px"><label>Dependencies</label><span>${cs.dependencies.join(', ')}</span></div>` : ''}
-        ${cs.blocks && cs.blocks.length ? `<div class="detail-field" style="margin-bottom:8px"><label>Blocks</label><span>${cs.blocks.join(', ')}</span></div>` : ''}
-        ${cs.spawned_from ? `<div class="detail-field" style="margin-bottom:8px"><label>Spawned From</label><span class="cs-link" onclick="openDetail('${cs.spawned_from}')">${cs.spawned_from}</span></div>` : ''}
-        ${cs.spawned_changesets && cs.spawned_changesets.length ? `<div class="detail-field" style="margin-bottom:8px"><label>Spawned ChangeSets</label><span>${cs.spawned_changesets.map(s => `<span class="cs-link" onclick="openDetail('${s}')">${s}</span>`).join(', ')}</span></div>` : ''}
+        ${revisionHtml}
+        ${sweepFlagHtml}
+
+        <div class="detail-grid" style="margin-top:14px">
+            <div class="detail-field"><label>Owner</label><span>${cs.owner || '—'}</span></div>
+            <div class="detail-field"><label>Platforms</label><span>${(cs.platforms||[]).join(', ') || '—'}</span></div>
+            <div class="detail-field"><label>Objective</label><span>${cs.objective_level || '—'}</span></div>
+            <div class="detail-field"><label>Category</label><span>${(cs.category || '—').replace(/_/g, ' ')}</span></div>
+            <div class="detail-field"><label>Routed To</label><span>${Array.isArray(cs.routed_to) ? cs.routed_to.join(', ') : (cs.routed_to || '—')}</span></div>
+            <div class="detail-field"><label>Measurement Window</label><span>${cs.measurement_window || '—'}</span></div>
+            ${cs.outcome ? `<div class="detail-field"><label>Outcome</label><span class="outcome-${cs.outcome}" style="font-weight:600">${cs.outcome}</span></div>` : ''}
+        </div>
+
+        ${timelineHtml}
+
+        ${(cs.dependencies && cs.dependencies.length) || (cs.blocks && cs.blocks.length) || cs.spawned_from || (cs.spawned_changesets && cs.spawned_changesets.length) ? `
+        <div class="detail-section detail-relations">
+            ${cs.spawned_from ? `<div><label>Spawned From</label> <span class="cs-link" onclick="openDetail('${cs.spawned_from}')">${cs.spawned_from}</span></div>` : ''}
+            ${cs.spawned_changesets && cs.spawned_changesets.length ? `<div><label>Spawned</label> ${cs.spawned_changesets.map(s => `<span class="cs-link" onclick="openDetail('${s}')">${s}</span>`).join(', ')}</div>` : ''}
+            ${cs.dependencies && cs.dependencies.length ? `<div><label>Depends On</label> ${cs.dependencies.map(d => /^CS-/.test(d) ? `<span class="cs-link" onclick="openDetail('${d}')">${d}</span>` : d).join(', ')}</div>` : ''}
+            ${cs.blocks && cs.blocks.length ? `<div><label>Blocks</label> ${cs.blocks.map(d => /^CS-/.test(d) ? `<span class="cs-link" onclick="openDetail('${d}')">${d}</span>` : d).join(', ')}</div>` : ''}
+        </div>
+        ` : ''}
+
+        ${hypothesisHtml}
 
         <div class="detail-section">
             <h4>Expected Impact</h4>
@@ -2046,6 +2248,10 @@ function openDetail(id) {
             <h4>Notes</h4>
             <p style="font-size:13px;line-height:1.5;color:var(--text-muted)">${cs.notes || '—'}</p>
         </div>
+
+        ${briefUrl ? `<div class="detail-brief-footer">
+            <a href="${briefUrl}" target="_blank" rel="noopener" class="brief-link-lg">Open full brief in GitHub <span style="font-size:11px">↗</span></a>
+        </div>` : ''}
     `;
 
     document.getElementById('detailOverlay').classList.add('open');
