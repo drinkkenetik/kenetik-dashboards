@@ -7285,7 +7285,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-115.md",
-      "notes": "First T2 validation cycle for autonomous CRO loop. Seeds seeded_hypothesis into drinkkenetik/kenetik-shopify-theme auto-optimize/state.json. Guardrails kept at -20%/-20%/+20% tier-1 on 7-day aggregate per Katie's 2026-04-24 decision. Variant rendering gated by Slack approval at awaiting_approval phase \u2014 state.json seed alone does not expose variant to traffic. Success defined as full phase-machine cycle + all Slack notifications + clean return to idle.",
+      "notes": "First T2 validation cycle for autonomous CRO loop. Seeds seeded_hypothesis into drinkkenetik/kenetik-shopify-theme auto-optimize/state.json. Guardrails kept at -20%/-20%/+20% tier-1 on 7-day aggregate per Katie's 2026-04-24 decision. Variant rendering gated by Slack approval at awaiting_approval phase \u2014 state.json seed alone does not expose variant to traffic. Success defined as full phase-machine cycle + all Slack notifications + clean return to idle. | AMENDMENT 2026-04-24: Surface config pdp-atc-theme.yaml rewritten v1.0\u2192v2.0 to map fair_game_files/elements to the actual live cw-product render path (cw-01-product-banner buy-box + cw-hp-* below-fold sections). v1.0 referenced generic Shopify files disabled on the live template \u2014 variant would have deployed with no visible change.",
       "execution_target_date": "2026-04-24",
       "executed_date": "2026-04-24",
       "autonomy_tier": "tier_1",
