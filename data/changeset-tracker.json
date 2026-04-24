@@ -166,8 +166,6 @@
       "approved_by": "Katie",
       "approved_date": "2026-03-11",
       "published_date": "2026-03-11",
-      "measurement_start_date": "2026-03-11",
-      "measurement_end_date": "2026-04-10",
       "measurement_window": "30d",
       "measurement_due": "2026-04-10",
       "actual_impact": {
@@ -231,7 +229,6 @@
       "closed_date": "2026-04-10",
       "file": "cgo-logs/changesets/CS-2026-001.md",
       "notes": "Published Mar 11. 30-day measurement window through Apr 10.",
-      "risk": "critical",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
@@ -280,8 +277,6 @@
       "approved_by": "Katie",
       "approved_date": "2026-03-09",
       "published_date": "2026-03-09",
-      "measurement_start_date": "2026-03-09",
-      "measurement_end_date": "2026-04-08",
       "measurement_window": "30d",
       "measurement_due": "2026-04-08",
       "actual_impact": {
@@ -325,7 +320,6 @@
       "closed_date": "2026-04-08",
       "file": "cgo-logs/changesets/CS-2026-002.md",
       "notes": "Closed Apr 8 as success. 30-day measurement complete. Infrastructure delivered, CS-2026-001 unblocked. All Creators segment empty ($source issue) — flagged for future investigation.",
-      "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
@@ -374,8 +368,6 @@
       "approved_by": "Katie",
       "approved_date": "2026-03-13",
       "published_date": "2026-03-13",
-      "measurement_start_date": "2026-03-13",
-      "measurement_end_date": "2026-03-27",
       "measurement_window": "14d",
       "measurement_due": "2026-03-27",
       "actual_impact": {
@@ -396,8 +388,6 @@
       "notes": "Closed 2026-03-30. Outcome: Success (Scenario A). Combined revenue +77% vs email-only baseline. SMS-first sequencing adopted as permanent flash sale strategy.",
       "sweep_flags": [],
       "measurement_window_end": "2026-03-27",
-      "last_sweep": "2026-03-30",
-      "risk": "medium",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
@@ -446,8 +436,6 @@
       "approved_by": "Katie",
       "approved_date": "2026-03-10",
       "published_date": "2026-03-10",
-      "measurement_start_date": "2026-03-10",
-      "measurement_end_date": "2026-04-09",
       "measurement_window": "30d",
       "measurement_due": "2026-04-09",
       "actual_impact": {
@@ -478,7 +466,6 @@
       "closed_date": "2026-04-10",
       "file": "cgo-logs/changesets/CS-2026-004.md",
       "notes": "Published Mar 10. 30-day measurement window through Apr 9.",
-      "risk": "low",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
@@ -528,8 +515,6 @@
       "approved_by": "Katie",
       "approved_date": "2026-03-12",
       "published_date": "2026-03-12",
-      "measurement_start_date": "2026-03-12",
-      "measurement_end_date": "2026-03-26",
       "measurement_window": "14d",
       "measurement_due": "2026-03-26",
       "actual_impact": null,
@@ -537,7 +522,6 @@
       "closed_date": "2026-03-16",
       "file": "cgo-logs/changesets/CS-2026-005.md",
       "notes": "Closed: Superseded by CS-2026-014 (more comprehensive Amazon listing overhaul).",
-      "risk": "medium",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
@@ -588,8 +572,6 @@
       "approved_by": "Devon",
       "approved_date": "2026-03-14",
       "published_date": "2026-03-14",
-      "measurement_start_date": "2026-03-14",
-      "measurement_end_date": "2026-04-13",
       "measurement_window": "30d",
       "measurement_due": "2026-04-13",
       "actual_impact": null,
@@ -597,23 +579,16 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-006.md",
       "notes": "Published Mar 14. High risk — Devon approved. Blocks CS-2026-024 (pause/skip). | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
-      "risk": "low",
       "review_tier": "standard",
-      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
       "measurement_approaching": true,
-      "last_sweep": "2026-04-16",
       "sweep_flags": [
         "S31 2026-04-13: measurement window closed — manual data pull required (pipeline could not auto-measure)",
         "measurement_overdue",
         "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
       ],
-      "triage_recommendation": "measurement_data_pull",
-      "sweep_flag": "measurement_overdue",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Measurement data pull required. Session 32 flagged.",
       "last_updated": "2026-04-16",
       "measurement_result": {
         "outcome": "inconclusive",
@@ -690,8 +665,6 @@
       "approved_by": "Katie",
       "approved_date": "2026-03-14",
       "published_date": "2026-03-14",
-      "measurement_start_date": "2026-03-14",
-      "measurement_end_date": "2026-04-13",
       "measurement_window": "30d",
       "measurement_due": "2026-04-13",
       "actual_impact": {
@@ -736,22 +709,16 @@
       "closed_date": "2026-04-21",
       "file": "cgo-logs/changesets/CS-2026-007.md",
       "notes": "Published Mar 14. Depends on CS-2026-006. | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h. | 2026-04-21 closed by Katie (owner: Katie + Nick) as underperformed; flow stays LIVE as evergreen. $1,968 flow rev / 25 convs over 36d; cohort 30d LTV $25.37 (-44% vs Feb 2026); new-sub rate 0.3% (vs 0.5-0.8% historical). Flow beats General-flow RPR +130% but missed aggressive reorder/sub-conv targets. Structural learning: deep-discount cohorts have LTV ceilings email alone cannot break. Follow-up: revisit m1 repeat rate when Mar 2026 cohort data populates.",
-      "risk": "high",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
       "measurement_approaching": true,
-      "last_sweep": "2026-04-16",
       "sweep_flags": [
         "S31 2026-04-13: measurement window closed — manual data pull required (pipeline could not auto-measure)",
         "measurement_overdue",
         "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
       ],
-      "triage_recommendation": "measurement_data_pull",
-      "sweep_flag": "measurement_overdue",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Measurement data pull required. Session 32 flagged.",
       "last_updated": "2026-04-21",
       "measurement_result": {
         "outcome": "inconclusive",
@@ -802,7 +769,6 @@
         "requires_human_review": true,
         "recommended_action": "Pull Recharge data for Cleetus cohort churn rate (Mar 16 - Apr 20). Compare against 12% baseline. If churn data unavailable, consider reframing primary KPI to flow conversion rate."
       },
-      "closed_by": "Katie",
       "learning_note": "Launched 5-touch Klaviyo flow (email + SMS) targeting ~4,797 CLEETUS-FREE3PACK Mar 2026 cohort with Cleetus-voiced education-first arc (Day 3 intro → Day 7 science → Day 10 Matt Hughes → Day 14 15%-off ask → Day 21 subscription CTA). -> Flow generated $1,968 / 25 conversions over 36 days (14,268 sends, 32.7% open, 0.17% CVR, $0.138 RPR). Cohort 30d LTV $25.37 (-44% vs Feb 2026, -61% vs 2025-09 Cleetus cohort). New-sub rate 0.3% (below 0.5-0.8% historical). -> Flow beats General-flow RPR baseline (+130%) so stays live as evergreen for future cohort entries, but did NOT hit the aggressive 8% reorder / <=8% churn / 5% sub-conversion projection for deep-discount acquisition. Structural learning: deep-discount cohorts (80% Cleetus-FREE3PACK, sub-$13 AOV) have LTV ceilings an email flow alone cannot break. Next cohort-recovery playbooks should either add paid-retargeting layer OR set conservative targets calibrated to the now-known deep-discount benchmarks (~$25 30d LTV, ~0.3% new-sub rate)."
     },
     {
@@ -851,8 +817,6 @@
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-07",
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "30-day",
       "measurement_due": null,
       "actual_impact": null,
@@ -860,8 +824,6 @@
       "closed_date": "2026-03-16",
       "file": "cgo-logs/changesets/CS-2026-008.md",
       "notes": "Closed: Superseded by Session 11 creator analysis. ROI framework delivered separately.",
-      "risk": "medium",
-      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -917,72 +879,15 @@
         "execution_blocked_2026-04-22",
         "closed_incomplete_2026-04-22"
       ],
-      "last_sweep": "2026-04-16",
-      "risk": "low",
       "measurement_window": "60-day from launch",
-      "sweep_flag": "stale_approved",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-08",
       "executed_date": null,
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 0,
       "stale": false,
-      "triage_recommendation": "none",
-      "triage_action": "closed",
-      "artifacts": {
-        "klaviyo_templates": {
-          "E1_day_0": {
-            "id": "TyGFEZ",
-            "name": "[CS-2026-009] BWR Flow — E1 Day 0: Your BWR Prep Starts Now",
-            "claims_gate": false
-          },
-          "E2_day_3": {
-            "id": "VJfQKV",
-            "name": "[CS-2026-009] BWR Flow — E2 Day 3: The Science [CLAIMS REVIEW — DEVON]",
-            "claims_gate": true
-          },
-          "E3_day_10": {
-            "id": "V2BxMU",
-            "name": "[CS-2026-009] BWR Flow — E3 Day 10: Building the Foundation",
-            "claims_gate": false
-          },
-          "E4_day_21": {
-            "id": "TBiVRS",
-            "name": "[CS-2026-009] BWR Flow — E4 Day 21: Adaptation Window [CLAIMS REVIEW — DEVON]",
-            "claims_gate": true
-          },
-          "E5_day_35": {
-            "id": "RJfMZZ",
-            "name": "[CS-2026-009] BWR Flow — E5 Day 35: Intensification Phase [CLAIMS REVIEW — DEVON]",
-            "claims_gate": true
-          },
-          "E6_day_42": {
-            "id": "X2Ucc4",
-            "name": "[CS-2026-009] BWR Flow — E6 Day 42: 2 Weeks Out — Taper Smart",
-            "claims_gate": false
-          },
-          "E7_day_49": {
-            "id": "TgMUui",
-            "name": "[CS-2026-009] BWR Flow — E7 Day 49: Race Day Protocol",
-            "claims_gate": false
-          },
-          "E8_day_56": {
-            "id": "WBKUt6",
-            "name": "[CS-2026-009] BWR Flow — E8 Day 56: Keep the Momentum",
-            "claims_gate": false
-          }
-        }
-      },
       "last_updated": "2026-04-22",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
       "outcome": "incomplete",
       "closed_date": "2026-04-22",
-      "closed_by": "Katie",
-      "closed_reason": "Timeline no longer viable. BWR event is 2026-05-02/03 (10-11 days out). Claims gate: Brandon approved study interpretation on E2/E4/E5, but Devon hard-gate sign-off never obtained. Segment, flow wiring, welcome suppression, QA, retroactive sends were all never built. Klaviyo template state (8 IDs pushed 2026-04-13 as plain-text drafts) is unverified and moot. Original 8-week protocol math no longer fits for any new entrant. Closed incomplete rather than rushed to preserve L4 learning quality for a future full-cycle run (2027 BWR, Leadville, Unbound, LTGP).",
       "actual_impact": {
         "primary_metric": "event_leads",
         "primary_metric_baseline": "0 (no prior flow)",
@@ -1045,24 +950,12 @@
       "published_date": "2026-04-06",
       "file": "cgo-logs/changesets/CS-2026-010.md",
       "notes": "Coordinate with CS-2026-025 (undefined revenue investigation).",
-      "last_sweep": "2026-04-03",
-      "risk": "low",
       "measurement_window": "7d",
-      "sweep_date": "2026-04-03",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": "2026-04-06",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "measurement_start_date": "2026-04-06",
-      "measurement_end_date": "2026-04-13",
       "measurement_due": "2026-04-13",
-      "published_by": "Katie",
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "investigation-kickoff-2026-04-06",
-        "published_at": "2026-04-06T12:00:00Z"
-      },
       "outcome": "success",
       "closed_date": "2026-04-06",
       "actual_impact": {
@@ -1124,21 +1017,8 @@
       "file": "cgo-logs/changesets/CS-2026-011.md",
       "notes": "Published Apr 1. Science-led April Fools email — Machado 2022 qEEG study. 7-day measurement window through Apr 8. Brief updated with final creative at publish.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
-      "risk": "low",
-      "sweep_flag": null,
-      "sweep_date": "2026-03-31",
-      "sweep_note": null,
-      "published_by": "Katie",
-      "measurement_start_date": "2026-04-01",
-      "measurement_end_date": "2026-04-08",
       "measurement_window": "7d",
       "measurement_due": "2026-04-08",
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "Klaviyo campaign — single send Apr 1 2026",
-        "published_at": "2026-04-01T12:00:00Z"
-      },
       "scheduled_send_date": "2026-04-01",
       "execution_target_date": null,
       "executed_date": null,
@@ -1223,29 +1103,12 @@
       "file": "cgo-logs/changesets/CS-2026-012.md",
       "notes": "RESCHEDULED: Send ~4/7 (Tue). BLOCKED: Unbound sweepstakes prizes not finalized by team. Drafts ready with Underground Ecom, awaiting final assets. Original send date: 4/3. PUBLISHED 2026-04-07: Unbound sweepstakes email scheduled for afternoon send. SMS paired send also live (same day per brief §7). Email scheduled 2:15pm EST. | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
       "sweep_flags": [],
-      "last_sweep": "2026-04-03",
-      "risk": "low",
-      "sweep_flag": "measurement_approaching",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Measurement data pull required. Session 32 flagged.",
       "scheduled_send_date": "2026-04-07",
       "execution_target_date": null,
       "executed_date": "2026-04-07",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 0,
-      "published_by": "Katie",
-      "measurement_start": "2026-04-07",
       "measurement_due": "2026-04-21",
-      "measurement_window_days": 7,
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "Klaviyo campaign scheduled for 2:15pm EST (18:15 UTC) 2026-04-07",
-        "published_at": "2026-04-07T18:15:00Z"
-      },
       "last_updated": "2026-04-16",
-      "measurement_start_date": "2026-04-07",
-      "measurement_end_date": "2026-04-21",
       "measurement_window": "14d",
       "actual_impact": {
         "primary_metric": "blended_roas",
@@ -1291,8 +1154,7 @@
         "L4_learning_actual": "Hypothesis partially supported — sweepstakes drives opens but not clicks. Unique insight: custom-gear offers resonate narratively (41% open) but fail on CTA clarity (2.6% CTOR vs ~5% bundle-mail benchmark per CS-015). Next sweepstakes test: simplify entry path (one-click vs multi-step) and validate 2-3 conversion windows to separate immediate vs long-tail attribution (some conversions may post after the 14d window)."
       },
       "outcome": "underperformed",
-      "closed_date": "2026-04-22",
-      "measurement_method": "klaviyo_mcp_backfill_2026-04-22"
+      "closed_date": "2026-04-22"
     },
     {
       "id": "CS-2026-013",
@@ -1338,18 +1200,12 @@
       "file": "cgo-logs/changesets/CS-2026-013.md",
       "notes": "Published 4/2. Scheduled send: 4/3. Pulled forward from 4/7 — swapped with CS-2026-012 (Unbound blocked). Draft finalized with Underground Ecom. 7-day measurement window through 4/10.",
       "sweep_flags": [],
-      "last_sweep": "2026-03-25",
-      "risk": "low",
-      "sweep_flag": "",
-      "sweep_date": "2026-03-31",
-      "sweep_note": "Cleared 4/2: Published and scheduled for 4/3 send.",
       "measurement_due": "2026-04-10",
       "scheduled_send_date": "2026-04-03",
       "execution_target_date": null,
       "executed_date": "2026-04-03",
       "autonomy_tier": null,
       "measurement_outcome": "underperformed",
-      "measurement_outcome_note": "Closed 2026-04-10. Revenue -60.4% vs expected. Protocol framing strong opens, weak conversion.",
       "measurement_result": {
         "primary_kpi": "winback_reactivation_rate",
         "baseline": "~0% (no prior winback on this segment)",
@@ -1371,7 +1227,6 @@
         "notes": "Tracker primary_metric (winback_reactivation_rate) doesn't match brief — this is a Lifestyle/Community email to Engaged 3M + Prospects Engaged, not a winback segment. Campaign performed in normal range for engagement emails. Metric needs correction before meaningful measurement."
       },
       "requires_human_review": true,
-      "review_flagged_date": "2026-04-10",
       "outcome": "underperformed",
       "closed_date": "2026-04-10",
       "actual_impact": {
@@ -1454,26 +1309,11 @@
       "file": "cgo-logs/changesets/CS-2026-014.md",
       "notes": "Scheduled in Klaviyo 2026-04-09 for send 2026-04-10 14:00 EDT. Final creative: Shots travel angle (Walsh 2021 CBF). Supersedes CS-2026-005. | 2026-04-15 sweep: measurement window closes <=3d; prepare decision. | 2026-04-21 closed by Katie as underperformed: $1,293.07 rev vs $18K expected (-92.8%). Katie flagged $18K baseline never validated for pure-content product spotlight; iterate in May email calendar.",
       "sweep_flags": [],
-      "last_sweep": "2026-04-03",
-      "risk": "low",
-      "sweep_flag": null,
-      "sweep_date": "2026-04-03",
-      "sweep_note": "Published 2026-04-09. Scheduled send 2026-04-10 14:00 EDT.",
       "scheduled_send_date": "2026-04-10",
       "execution_target_date": "2026-04-10",
       "executed_date": "2026-04-10",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 0,
-      "published_by": "Katie",
-      "measurement_start": "2026-04-10",
       "measurement_due": "2026-04-17",
-      "measurement_window_days": 7,
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "Scheduled in Klaviyo - send 2026-04-10 14:00 EDT",
-        "published_at": "2026-04-09T18:00:00Z"
-      },
       "last_updated": "2026-04-21",
       "measurement_result": {
         "outcome": "underperformed",
@@ -1526,7 +1366,6 @@
       },
       "outcome": "underperformed",
       "closed_date": "2026-04-21",
-      "closed_by": "Katie",
       "actual_impact": {
         "primary_metric": "email_rpr",
         "primary_metric_baseline": "N/A (new campaign, no direct predecessor)",
@@ -1604,30 +1443,13 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 28d — requires binary execute-or-close decision in 72h"
       ],
-      "last_sweep": "2026-04-13",
-      "risk": "low",
-      "sweep_flag": null,
-      "sweep_date": "2026-04-14",
-      "sweep_note": null,
       "scheduled_send_date": "2026-04-14",
       "execution_target_date": null,
       "executed_date": "2026-04-14",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 0,
       "stale": false,
-      "triage_recommendation": null,
-      "triage_action": null,
       "last_updated": "2026-04-14",
-      "published_by": "Katie",
-      "measurement_start": "2026-04-14",
       "measurement_due": "2026-04-21",
-      "measurement_window_days": 7,
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "Scheduled in Klaviyo — email + SMS pairing, evening 2026-04-14",
-        "published_at": "2026-04-14T20:00:00Z"
-      },
       "actual_impact": {
         "primary_metric": "bundle_revenue",
         "primary_metric_baseline": "Qualitative target: drive Endurance Training Bundle orders + revenue from Sea Otter Classic race moment. Expected_impact fields set to $0 by preparer (indicating qualitative measurement).",
@@ -1670,8 +1492,7 @@
         "L4_learning_actual": "Hypothesis supported — tying a product bundle to a race-moment (Sea Otter Classic) drives meaningfully better engagement than unanchored promotional sends. Learning to propagate: pair race-weekend sends with endurance-specific bundle offers; tighter engaged segments outperform broad sends on ROAS. Also: qualitative expected_impact ($0) should be replaced with ballpark targets (e.g., '>= $3k revenue, >= 50 orders') going forward so the measurement outcome classification has a quantitative anchor."
       },
       "outcome": "success",
-      "closed_date": "2026-04-22",
-      "measurement_method": "klaviyo_mcp_backfill_2026-04-22"
+      "closed_date": "2026-04-22"
     },
     {
       "id": "CS-2026-016",
@@ -1714,36 +1535,17 @@
       "approved_date": "2026-03-16",
       "review_tier": "express",
       "published_date": "2026-04-16",
-      "published_by": "Katie",
-      "measurement_start": "2026-04-16",
       "measurement_due": "2026-04-23",
-      "measurement_window_days": 7,
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "Sent via Klaviyo on 2026-04-16 — final creative: 'PROTECT YOUR REM SLEEP' / 'FUEL YOUR CALM' / 'TRY IT TONIGHT' CTA, Watermelon Lime hero, Robberechts 2023 citation block",
-        "published_at": "2026-04-16T20:00:00Z"
-      },
       "ad_platform_refs": null,
       "file": "cgo-logs/changesets/CS-2026-016.md",
       "notes": "Sent 2026-04-16 (retro-confirmed by Katie 2026-04-21). Final creative diverged from brief subject lines: deployed headline 'PROTECT YOUR REM SLEEP' with 'FUEL YOUR CALM' / 'TRY IT TONIGHT' CTAs, Watermelon Lime hero. Robberechts 2023 claims block (3% sleep efficiency, 26% REM drop prevention) included with reference footer. Measurement window 2026-04-16 → 2026-04-23.",
       "sweep_flags": [],
-      "last_sweep": "2026-04-21",
-      "risk": "low",
       "scheduled_send_date": "2026-04-16",
       "execution_target_date": "2026-04-16",
       "executed_date": "2026-04-16",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 0,
       "stale": false,
-      "triage_recommendation": "in_measurement",
-      "triage_action": "await_measurement",
-      "sweep_flag": null,
-      "sweep_date": "2026-04-21",
-      "sweep_note": "Retroactively confirmed published — sent 2026-04-16. Measurement window active.",
-      "last_updated": "2026-04-21",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
+      "last_updated": "2026-04-21"
     },
     {
       "id": "CS-2026-017",
@@ -1793,32 +1595,13 @@
         "stale_approved",
         "stale_approved_gt_7d"
       ],
-      "last_sweep": "2026-04-16",
-      "risk": "low",
-      "sweep_flag": "stale_approved",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Executed 2026-04-17 after Session 32/33 redistribution. Live; measurement due 2026-04-24.",
       "scheduled_send_date": "2026-04-17",
       "execution_target_date": null,
       "executed_date": "2026-04-17",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 0,
       "stale": false,
-      "triage_recommendation": "measurement_in_progress",
-      "triage_action": "auto_measure_on_2026-04-24",
       "last_updated": "2026-04-21",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
-      "published_by": "Katie",
-      "measurement_start": "2026-04-17",
       "measurement_due": "2026-04-24",
-      "measurement_window_days": 7,
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "Sent 2026-04-17 (email) + SMS paired 2hr later; final creative captured in brief Section 11",
-        "published_at": "2026-04-17T16:00:00Z"
-      },
       "ad_platform_refs": null,
       "organic_source": null,
       "measurement_plan": {
@@ -1878,32 +1661,13 @@
         "stale_approved_gt_7d",
         "executed_2026-04-21_via_changeset_execute"
       ],
-      "last_sweep": "2026-04-16",
-      "risk": "low",
-      "sweep_flag": null,
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
       "scheduled_send_date": "2026-04-21",
       "execution_target_date": null,
       "executed_date": "2026-04-21",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 0,
       "stale": false,
-      "triage_recommendation": null,
-      "triage_action": null,
       "last_updated": "2026-04-21",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
-      "published_by": "Katie",
-      "measurement_start": "2026-04-21",
       "measurement_due": "2026-04-28",
-      "measurement_window_days": 7,
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "Cowork execution session 2026-04-21 — Katie confirmed Klaviyo campaign scheduled for send today; final creative matches CS-2026-018 brief (Midlife Brain Window, Antal 2025 citation)",
-        "published_at": "2026-04-21T16:55:53Z"
-      },
       "ad_platform_refs": null,
       "organic_source": null
     },
@@ -1973,32 +1737,13 @@
           "action": "Scheduled 2pm ET send 2026-04-22. Stale-approved flags resolved by execution."
         }
       ],
-      "last_sweep": "2026-04-16",
-      "risk": "low",
-      "sweep_flag": "stale_approved",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
       "scheduled_send_date": "2026-04-22",
       "execution_target_date": null,
       "executed_date": "2026-04-22",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 0,
       "stale": false,
-      "triage_recommendation": "in_measurement",
-      "triage_action": "await_7d_measurement",
       "last_updated": "2026-04-20",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
-      "published_by": "Katie",
-      "measurement_start": "2026-04-22",
       "measurement_due": "2026-04-29",
-      "measurement_window_days": 7,
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "Klaviyo campaign scheduled 2026-04-22 14:00 ET for send to Engaged 3M + Prospects Engaged (~51,643). Final creative attached to CS-2026-019 via cowork /changeset-execute run by Katie.",
-        "published_at": "2026-04-22T18:00:00Z"
-      },
       "ad_platform_refs": null,
       "organic_source": null
     },
@@ -2053,36 +1798,13 @@
         "stale_approved_gt_7d",
         "published_2026-04-22_scheduled_send_4-24"
       ],
-      "last_sweep": "2026-04-16",
-      "risk": "low",
-      "sweep_flag": "stale_approved",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
       "scheduled_send_date": "2026-04-24",
       "execution_target_date": null,
       "executed_date": "2026-04-24",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 28,
       "stale": false,
-      "triage_recommendation": "in_measurement_window",
-      "triage_action": "in_measurement_window",
       "last_updated": "2026-04-22",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
-      "published_by": "Katie",
-      "measurement_window_days": 7,
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "(pending — Katie to add Klaviyo campaign ID after build)",
-        "published_at": "2026-04-22T00:00:00Z",
-        "scheduling_mode": "scheduled_future_send",
-        "send_target": "2026-04-24"
-      },
-      "measurement_start": "2026-04-24",
-      "measurement_start_date": "2026-04-24",
-      "measurement_due": "2026-05-01",
-      "measurement_end_date": "2026-05-01"
+      "measurement_due": "2026-05-01"
     },
     {
       "id": "CS-2026-021",
@@ -2133,36 +1855,13 @@
         "stale_approved_gt_7d",
         "published_2026-04-22_scheduled_send_2026-04-26"
       ],
-      "last_sweep": "2026-04-16",
-      "risk": "low",
-      "sweep_flag": "stale_approved",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
       "scheduled_send_date": "2026-04-26",
       "execution_target_date": null,
       "executed_date": "2026-04-26",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 28,
       "stale": false,
-      "triage_recommendation": "in_measurement_window",
-      "triage_action": "in_measurement_window",
       "last_updated": "2026-04-22",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
-      "published_by": "Katie",
-      "measurement_start": "2026-04-26",
-      "measurement_start_date": "2026-04-26",
-      "measurement_due": "2026-05-03",
-      "measurement_end_date": "2026-05-03",
-      "measurement_window_days": 7,
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "(pending — Katie to add Klaviyo campaign ID after build)",
-        "published_at": "2026-04-22T00:00:00Z",
-        "scheduling_mode": "scheduled_future_send",
-        "send_target": "2026-04-26"
-      }
+      "measurement_due": "2026-05-03"
     },
     {
       "id": "CS-2026-022",
@@ -2213,36 +1912,13 @@
         "stale_approved_gt_7d",
         "published_2026-04-22_scheduled_send_2026-04-29"
       ],
-      "last_sweep": "2026-04-16",
-      "risk": "low",
-      "sweep_flag": "stale_approved",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
       "scheduled_send_date": "2026-04-29",
       "execution_target_date": null,
       "executed_date": "2026-04-29",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 28,
       "stale": false,
-      "triage_recommendation": "in_measurement_window",
-      "triage_action": "in_measurement_window",
       "last_updated": "2026-04-22",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
-      "published_by": "Katie",
-      "measurement_start": "2026-04-29",
-      "measurement_start_date": "2026-04-29",
-      "measurement_due": "2026-05-06",
-      "measurement_end_date": "2026-05-06",
-      "measurement_window_days": 7,
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "(pending — Katie to add Klaviyo campaign ID after build)",
-        "published_at": "2026-04-22T00:00:00Z",
-        "scheduling_mode": "scheduled_future_send",
-        "send_target": "2026-04-29"
-      }
+      "measurement_due": "2026-05-06"
     },
     {
       "id": "CS-2026-023",
@@ -2285,8 +1961,6 @@
       "approved_date": "2026-03-16",
       "review_tier": "express",
       "published_date": "2026-03-17",
-      "measurement_start_date": "2026-03-17",
-      "measurement_end_date": "2026-03-31",
       "measurement_window": "14d",
       "measurement_due": "2026-03-31",
       "actual_impact": {
@@ -2309,10 +1983,7 @@
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-023.md",
       "notes": "Closed: Partial success. SMS-inspired subject lines improved open rates significantly (33.8-45.2% vs 29.3% baseline) but CTR improvement marginal (0.62-0.66% vs 0.57%, target 1.0% not met). Key learning: bottleneck is in-email CTA/body content, not subject lines. Tests B (CTA placement) and C (segment refresh) not executed — recommended for next cycle. Executed by Underground Ecom (Kiara Schuman, Andrej Jesic).",
-      "risk": "low",
       "sweep_flags": [],
-      "last_sweep": "2026-04-01",
-      "sweep_flag": null,
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
@@ -2371,23 +2042,13 @@
       "file": "cgo-logs/changesets/CS-2026-024.md",
       "notes": "CLOSED — PARTIALLY COMPLETE. Scope item 1 (Recharge pause/skip config) was already live before ChangeSet creation. Scope items 2-4 (proactive flows) not built: no reliable signal to identify at-risk subscribers proactively, and adding net-new touchpoints risks increasing churn rather than reducing it. Voluntary churn data confirmed accessible via Recharge Churn tool > Cancellation Prevents > Performance > Cancellation Survey Response. Successor ChangeSet to optimize existing upcoming order notification emails instead.",
       "sweep_flags": [],
-      "last_sweep": "2026-04-03",
-      "risk": "low",
       "measurement_window": "30-day from launch",
-      "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-04-03",
-      "sweep_note": "Stale 18d with no scheduled send date. Recommend: close as abandoned or reassign from Katie.",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 21,
-      "last_status_change": "2026-04-07",
       "hypothesis": "Introducing a prominent pause/skip option in the subscription management flow and pre-churn touchpoints will reduce voluntary churn by ≥15% while retaining LTV",
       "closed_date": "2026-04-07",
-      "closed_reason": "partially_complete",
-      "successor": "CS-2026-052",
       "outcome": "partially_complete"
     },
     {
@@ -2432,8 +2093,6 @@
       "approved_date": "2026-03-19",
       "review_tier": "full",
       "published_date": "2026-03-19",
-      "measurement_start_date": "2026-03-19",
-      "measurement_end_date": "2026-03-30",
       "measurement_window": "11d",
       "measurement_due": "2026-03-30",
       "actual_impact": null,
@@ -2442,12 +2101,6 @@
       "file": "cgo-logs/changesets/CS-2026-025.md",
       "notes": "Closed: Meta vs Polar attribution gap is structural (U-shaped model, first/last click). Cannot be resolved in a single sprint. Katie consulting with Ashley at Digital Fuel Capital on how to optimize ads while factoring in this gap. Individual scope items (UTM hygiene, Superfiliate tracking) may be pursued as smaller standalone efforts.",
       "sweep_flags": [],
-      "last_sweep": "2026-04-01",
-      "risk": "low",
-      "sweep_flag": null,
-      "sweep_date": "2026-03-31",
-      "sweep_note": "3d overdue - attribution sprint, Devon executive decision required",
-      "_surface_note": "Mapped from \"multi_platform\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -2497,8 +2150,6 @@
       "approved_date": "2026-03-14",
       "review_tier": "express",
       "published_date": "2026-03-14",
-      "measurement_start_date": "2026-03-14",
-      "measurement_end_date": "2026-03-23",
       "measurement_window": "9d",
       "measurement_due": "2026-03-23",
       "actual_impact": {
@@ -2513,12 +2164,6 @@
         "MEASUREMENT_OVERDUE",
         "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) — BAW content velocity). Session 24 sweep."
       ],
-      "last_sweep": "2026-04-03",
-      "risk": "low",
-      "sweep_flag": "FORCE_CLOSED",
-      "sweep_date": "2026-04-03",
-      "sweep_note": "Force-closed Session 26. BAW Content Velocity — 11d overdue measurement. No outcome data in briefs. Owner: Nick + Charlotte.",
-      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -2567,8 +2212,6 @@
       "approved_date": "2026-03-14",
       "review_tier": "express",
       "published_date": "2026-03-14",
-      "measurement_start_date": "2026-03-14",
-      "measurement_end_date": "2026-03-23",
       "measurement_window": "9d",
       "measurement_due": "2026-03-23",
       "actual_impact": {
@@ -2583,12 +2226,6 @@
         "MEASUREMENT_OVERDUE",
         "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) — BAW Tier A fast-track). Session 24 sweep."
       ],
-      "last_sweep": "2026-04-03",
-      "risk": "low",
-      "sweep_flag": "FORCE_CLOSED",
-      "sweep_date": "2026-04-03",
-      "sweep_note": "Force-closed Session 26. BAW Tier A Fast-Track — 11d overdue measurement. No outcome data. Owner: Charlotte + Cliff.",
-      "_surface_note": "Mapped from \"content\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -2634,8 +2271,6 @@
       "approved_date": "2026-03-16",
       "review_tier": "standard",
       "published_date": "2026-03-19",
-      "measurement_start_date": "2026-03-19",
-      "measurement_end_date": "2026-03-26",
       "measurement_window": "7d",
       "measurement_due": "2026-03-26",
       "actual_impact": {
@@ -2659,9 +2294,7 @@
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-028.md",
       "notes": "Reallocation executed correctly. Measurement inconclusive — baseline included peak Leadville Sweepstakes + BAW promotional period, creating invalid comparison. Demand cliff (documented in CS-033) drove universal conversion declines across all channels. Key learning: Pmax has a scaling ceiling; Leadville absorbed budget well at 3.35x ROAS. Creative gate for FB prospecting remains in effect.",
-      "risk": "low",
       "sweep_flags": [],
-      "last_sweep": "2026-04-01",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -2710,8 +2343,6 @@
       "approved_date": "2026-03-16",
       "review_tier": "standard",
       "published_date": "2026-03-17",
-      "measurement_start_date": "2026-03-17",
-      "measurement_end_date": "2026-03-31",
       "measurement_window": "14d",
       "measurement_due": "2026-03-31",
       "actual_impact": {
@@ -2738,9 +2369,7 @@
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-029.md",
       "notes": "Published Mar 17. Closed Apr 1 as SUCCESS. Combined 9.57x ROAS (target 1.5x). Organic variants outperformed — no custom creative needed. Budget-constrained but efficiency exceptional.",
-      "risk": "low",
       "sweep_flags": [],
-      "last_sweep": "2026-04-01",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -2787,8 +2416,6 @@
       "approved_date": "2026-04-01",
       "review_tier": "standard",
       "published_date": "2026-04-06",
-      "measurement_start_date": "2026-04-06",
-      "measurement_end_date": "2026-04-13",
       "measurement_window": "7d",
       "measurement_due": "2026-04-13",
       "actual_impact": {
@@ -2831,17 +2458,11 @@
         "measurement_overdue",
         "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
       ],
-      "last_sweep": "2026-04-16",
-      "risk": "low",
       "scheduled_send_date": "2026-04-03",
       "execution_target_date": "2026-04-06",
       "executed_date": "2026-04-06",
       "autonomy_tier": null,
       "measurement_approaching": true,
-      "triage_recommendation": "measurement_data_pull",
-      "sweep_flag": "measurement_overdue",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Measurement data pull required. Session 32 flagged.",
       "last_updated": "2026-04-21",
       "measurement_result": {
         "outcome": "underperformed",
@@ -2898,7 +2519,6 @@
         "requires_human_review": true,
         "recommended_action": "Consider: (1) stronger subscription offer (e.g., first month discount), (2) timing optimization (test sending earlier in depletion window), (3) segment expansion if eligible pool was smaller than expected."
       },
-      "closed_by": "Katie",
       "learning_note": "Launched 3-touch Klaviyo flow (SMS > Email > SMS-reminder) targeting BAW one-time buyers 3 weeks post-purchase with 'running low - subscribe' framing; flow reached 495 recipients. -> 3 subscriptions ($266.28 first-order rev / $1,296 projected 6-mo LTV) vs 8-20 target / $5,184 expected LTV (-62.5% vs floor on primary metric; -75% LTV-adjusted). Top-of-funnel strong (SMS 27-39% CTR, email 43.3% open) but flow CVR 0.61% vs 1.5% target. Segment was +65% larger than estimated. -> Timing + framing validated (engagement strong) but the subscription offer itself did not convert warm buyers. The miss is a conversion problem, not an audience problem. Next iteration: test stronger first-order sub incentive (30-50% first month) and/or earlier-in-depletion timing. Flow is net-positive at near-zero cost, but below projected scale."
     },
     {
@@ -2945,7 +2565,6 @@
       "routed_date": "2026-03-19",
       "file": "cgo-logs/changesets/CS-2026-031.md",
       "notes": "Governance refresh 2026-04-22: L1–L5 populated, Resolution Path added (Add — A/B variants), factual grounding YAML added, Apr 22 baseline refreshed. Re-tiered EXPRESS → STANDARD per §6 (subtype=implementation, risk=medium, rev=$7.2K fail Express criteria). EC-2026-006 filed for §6 enforcement gap. Status flipped draft → approved. Originally rescoped Mar 23 after Klaviyo API audit.",
-      "risk": "medium",
       "approved_by": "Katie (operator, 2026-04-22 governance refresh — corrected from prior Express Auto-Approve per EC-2026-006)",
       "approved_date": "2026-04-22",
       "measurement_window": "14-day from implementation",
@@ -2953,8 +2572,7 @@
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-28",
       "executed_date": null,
-      "autonomy_tier": null,
-      "measurement_window_days": 14
+      "autonomy_tier": null
     },
     {
       "id": "CS-2026-032",
@@ -2996,7 +2614,6 @@
       "routed_date": "2026-03-19",
       "file": "cgo-logs/changesets/CS-2026-032.md",
       "notes": "Draft: Q1 top performers identified for paid amplification.",
-      "risk": "low",
       "outcome": "deferred",
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-22",
@@ -3050,11 +2667,7 @@
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-033.md",
       "notes": "Investigation complete: CVR decline is universal across devices (mobile -76.4%, desktop -72.2%), not mobile-specific. Root cause is post-promotional demand cliff from Leadville Sweepstakes + Brain Awareness Week 2026, compounded by brand search volume decline from content drought. Remaining action: Cliff manual CWV check to formally close technical angle.",
-      "risk": "low",
       "outcome": "hypothesis_not_supported",
-      "investigation_completed": "2026-04-01",
-      "investigator": "Katie Spaller",
-      "_surface_note": "Mapped from \"website\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -3103,20 +2716,10 @@
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-034.md",
       "notes": "Closed: superseded by CS-2026-040 (Creator Reactivation Campaign 3-Tier). Original notes had data mismatch referencing SEO meta descriptions, which belongs to a different changeset.",
-      "risk": "low",
-      "sweep_flag": null,
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Closed 2026-04-14. Superseded by CS-2026-040 which covers all ambassador re-engagement work.",
-      "last_sweep": "2026-04-14",
-      "_surface_note": "Mapped from \"superfiliate\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 0,
       "stale": true,
-      "triage_recommendation": "requires_human_review",
-      "triage_action": "consider_closing_as_abandoned",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 25d — requires binary execute-or-close decision in 72h"
       ],
@@ -3166,7 +2769,6 @@
       "routed_date": "2026-03-22",
       "file": "cgo-logs/changesets/CS-2026-035.md",
       "notes": "Draft: Winback flow experiment. Pending Katie review. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-19: auto-advanced by workflow_scheduler.e2 (tenant v1.0.0); measurement window 14d.",
-      "risk": "low",
       "scheduled_send_date": null,
       "autonomy_tier": 1,
       "execution_target_date": null,
@@ -3174,15 +2776,10 @@
       "approved_by": "Katie (on behalf of Devon)",
       "approved_date": "2026-04-07",
       "review_tier": "standard",
-      "sweep_flag": "stale_approved",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
       "last_updated": "2026-04-19",
       "sweep_flags": [
         "stale_approved"
       ],
-      "last_sweep": "2026-04-16",
-      "measurement_start_date": "2026-04-19",
       "measurement_due": "2026-05-03",
       "published_date": "2026-04-19"
     },
@@ -3242,30 +2839,15 @@
       "published_date": "2026-04-07",
       "closed_date": "2026-04-07",
       "measurement_window": "14 days",
-      "measurement_start_date": "2026-04-07",
-      "measurement_end_date": "2026-04-21",
       "measurement_due": "2026-04-21",
       "outcome": "success",
       "review_tier": "express",
       "file": "cgo-logs/changesets/CS-2026-036.md",
       "notes": "Ready for graduation.",
-      "sweep_flag": null,
-      "sweep_date": "2026-04-03",
-      "sweep_note": "Executed 2026-04-07 — investigation kicked off.",
       "scheduled_send_date": null,
-      "last_sweep": "2026-04-03",
       "execution_target_date": null,
       "executed_date": "2026-04-07",
       "autonomy_tier": null,
-      "stale_flag": false,
-      "stale_days": 0,
-      "published_by": "Katie",
-      "measurement_start": "2026-04-07",
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "Investigation kickoff — audit of flow Rcgah9",
-        "published_at": "2026-04-07T18:00:00Z"
-      },
       "learning_note": "For [post-purchase review requests] on [Klaviyo], investigation found submission rate is 3.7% and declining. Key insight: 'Copy of' variant outperforms original by 39% RPR but only gets 29% of traffic. LoyaltyLion incentive missing. SMS clicks don't convert. Spawned CS-2026-053."
     },
     {
@@ -3311,33 +2893,21 @@
       "published_date": null,
       "closed_date": null,
       "measurement_window": "",
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_due": null,
       "outcome": null,
       "review_tier": "express",
       "file": "cgo-logs/changesets/CS-2026-037.md",
       "notes": "Amazon keyword gap analysis. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
-      "sweep_flag": "stale_approved",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "last_sweep": "2026-04-16",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "stale_flag": true,
-      "stale_days": 22,
       "stale": true,
-      "triage_recommendation": "requires_human_review",
-      "triage_action": "consider_closing_as_abandoned",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 22d — requires binary execute-or-close decision in 72h",
         "stale_approved",
         "stale_approved_gt_7d"
       ],
-      "last_updated": "2026-04-20",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
+      "last_updated": "2026-04-20"
     },
     {
       "id": "CS-2026-038",
@@ -3382,14 +2952,8 @@
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-038/brief.md",
       "notes": "Subscription churn analysis from Recharge cancellation survey data. Deferred by Brandon 2026-04-03. Revisit in May for summer planning.",
-      "risk": "low",
-      "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-04-03",
-      "sweep_note": "Approved 9d without execution. Owner: Devon.",
-      "last_sweep": "2026-04-03",
       "closed_date": "2026-04-03",
       "outcome": "deferred",
-      "_surface_note": "Mapped from \"website\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -3437,14 +3001,8 @@
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-039/brief.md",
       "notes": "Meta Advantage+ restructure investigation. Deferred by Brandon 2026-04-03. Revisit in May closer to UNBOUND (May 28).",
-      "risk": "medium",
-      "sweep_flag": "STALE_APPROVED",
-      "sweep_date": "2026-04-03",
-      "sweep_note": "Approved 9d without execution. Owner: Devon.",
-      "last_sweep": "2026-04-03",
       "closed_date": "2026-04-03",
       "outcome": "deferred",
-      "_surface_note": "Mapped from \"social_tiktok\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -3488,27 +3046,15 @@
       "routed_via": "auto",
       "routed_date": "2026-03-27",
       "notes": "Revised Apr 7. Nick owns Tier 1 (Brand Champs, Apr 7-11). Nick+Lawrence tag-team Tier 2 (Premier Partners, Apr 14-18). Lawrence owns Tier 3 (Affiliates, Apr 14-25). Progress tracked in Reengagement Dashboard. Target: 20-25 reactivations by May 7. Apr 23: Derek removed from Tier 2 per AP-003 roster discipline — not in team-roles.md, no KGS access.",
-      "risk": "medium",
-      "_surface_note": "Mapped from \"superfiliate\" during 2026-04-05 schema cleanup",
       "autonomy_tier": 2,
       "execution_target_date": "2026-04-07",
       "executed_date": "2026-04-14",
       "stale": true,
-      "stale_days": 0,
-      "triage_recommendation": "requires_human_review",
-      "triage_action": "consider_closing_as_abandoned",
-      "last_sweep": "2026-04-14",
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 19d — requires binary execute-or-close decision in 72h"
       ],
-      "sweep_flag": "measurement_approaching",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Updated 2026-04-14 per Lawrence. Tier 2 (PPs) and Tier 3 (Affiliates) actively executing. Dashboard updated daily.",
       "last_updated": "2026-04-16",
       "published_date": "2026-04-14",
-      "stale_flag": false,
-      "measurement_start_date": "2026-04-14",
-      "measurement_end_date": "2026-04-28",
       "measurement_window": "14d",
       "measurement_due": "2026-04-28"
     },
@@ -3552,8 +3098,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": null,
@@ -3561,7 +3105,6 @@
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-041.md",
       "notes": "Superseded by CS-2026-029 (same IG reel, already tested in paid with 9.57x ROAS). Learnings folded into scale ChangeSet CS-2026-045.",
-      "risk": "medium",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -3606,8 +3149,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": {
@@ -3628,18 +3169,13 @@
       "closed_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-042.md",
       "notes": "Graduation candidate: JustJosephD x BAW, 3.9x reach, creator collab format. [migrated from proposed status] | 2026-04-22 CLOSED incomplete by Katie — BAW cultural window passed, never approved/launched. Meta-learning captured.",
-      "risk": "medium",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "closed_by": "Katie",
-      "closed_reason": "No longer relevant. Source post (JustJosephD x Brain Awareness Week IG Reel, posted 2026-03-19) was tied to Brain Awareness Week 2026 (mid-March). Graduation candidate sat in draft from 2026-03-30 through 2026-04-22 (~3 weeks) without approval or launch. Cultural timeliness window has closed — paid amplification of BAW-tagged content in late April would read as off-calendar. Organic reach (3.9x avg) already captured in Sprout/performance memory; no further value in forcing a paid run.",
       "learning_note": "For JustJosephD x Brain Awareness Week IG Reel on paid_meta, a graduation ChangeSet was scoped 11 days after the organic post landed and sat in draft for 23 days before being closed. Brain Awareness Week ended before the amplification launched. Key insight: graduation candidates tied to a cultural moment need a same-week decide/launch cycle; the standard weekly-scan graduation pipeline is tuned for evergreen content and is too slow for moment-tied organic winners. Tag graduation candidates with a cultural-window expiry date at the scan step so the queue can prioritize them.",
       "sweep_flags": [
         "closed_incomplete_2026-04-22"
       ],
-      "triage_action": "closed",
-      "triage_recommendation": "none",
       "last_updated": "2026-04-22"
     },
     {
@@ -3682,8 +3218,6 @@
       "approved_by": "Katie",
       "approved_date": "2026-04-01",
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": null,
@@ -3691,25 +3225,15 @@
       "closed_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-043.md",
       "notes": "Reframed as TikTok platform test (first paid TikTok for Kenetik). Budget reduced from $750 to $500. BLOCKED: TikTok account structure still unresolved despite Nick's QR code approval. Katie messaged Nick Apr 1 to schedule dedicated call with TikTok rep to resolve full account structure. Resume execution after call. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 CLOSED by Katie: Major blocker on TikTok account structure unresolved. Nick was messaged in Slack a while ago but no clear path to resolution. Will revisit when team has bandwidth to resolve account structure with TikTok rep. Outcome: deferred.",
-      "risk": "critical",
       "review_tier": "standard",
       "sweep_flags": [
         "CLOSED 2026-04-22: Deferred — TikTok account structure blocker unresolved. Will revisit when bandwidth available."
       ],
-      "last_sweep": "2026-04-16",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
       "stale": false,
-      "stale_days": 12,
-      "triage_recommendation": null,
-      "sweep_flag": null,
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Approved >7d without execution. Session 32 sweep flagged for delegation/kill decision.",
-      "last_updated": "2026-04-22",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
-      "closed_by": "Katie"
+      "last_updated": "2026-04-22"
     },
     {
       "id": "CS-2026-044",
@@ -3751,8 +3275,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": null,
@@ -3760,8 +3282,6 @@
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-044.md",
       "notes": "CLOSED — Invalid. Source content (Ashton Hall videos) were paid ads, not organic posts. Graduation pipeline does not apply. Social media manager confirmed these were never posted organically. Devon notified. CS-045 created for proper Matt Hughes graduation. Graduation scan should filter out paid-distributed content.",
-      "risk": "medium",
-      "_outcome_note": "Graduation premise was wrong — videos were paid ads, not organic",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -3807,8 +3327,6 @@
       "approved_date": "2026-04-01",
       "review_tier": "standard",
       "published_date": "2026-04-03",
-      "measurement_start_date": "2026-04-03",
-      "measurement_end_date": "2026-04-17",
       "measurement_window": "14d",
       "measurement_due": "2026-04-17",
       "actual_impact": {
@@ -3844,14 +3362,12 @@
       "closed_date": "2026-04-21",
       "file": "cgo-logs/changesets/CS-2026-045.md",
       "notes": "Scale ChangeSet from CS-2026-029 success (9.57x ROAS). Full budget deployment of proven Matt Hughes athlete content. Includes Brain Scan FB post from CS-2026-044 Theme B as additional variant. Published Apr 3. Variants A (Brain Recovery Reel) + B (Brain Scan Post) launching at $500/wk. Day 7 checkpoint Apr 10. Ad platform refs PENDING — Katie to update after Meta publish. | 2026-04-15 sweep: measurement window closes <=3d; prepare decision.",
-      "risk": "low",
       "ad_platform_refs": null,
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
       "last_updated": "2026-04-21",
       "sweep_flags": [],
-      "last_sweep": "2026-04-16",
       "measurement_result": {
         "outcome": "underperformed",
         "measured_date": "2026-04-20",
@@ -3954,15 +3470,7 @@
       "approved_date": "2026-04-03",
       "review_tier": "full",
       "published_date": "2026-04-03",
-      "published_by": "Katie",
-      "measurement_start": "2026-04-03",
-      "measurement_window_days": 7,
       "measurement_due": "2026-04-10",
-      "publish_confirmation": {
-        "platform": "shopify",
-        "confirmation_id": "Investigation kickoff — Slack notification to Katie, Nick, Cliff",
-        "published_at": "2026-04-03T06:45:00Z"
-      },
       "actual_impact": {
         "status": "measuring",
         "fix_deployed": "2026-04-03",
@@ -3971,12 +3479,9 @@
         "post_fix_partial": "24.5% (partial day)",
         "estimated_revenue_loss": "$100K-$130K over 11-day broken period"
       },
-      "_surface_note": "Mapped from \"shopify\" during 2026-04-05 schema cleanup",
-      "_subtype_note": "Mapped from \"bug_fix\" during 2026-04-05 schema cleanup",
       "execution_target_date": null,
       "executed_date": null,
       "measurement_outcome": "underperformed",
-      "measurement_outcome_note": "Measurement due 2026-04-10 — data pull required. Retry next session.",
       "measurement_result": {
         "primary_kpi": "checkout_cvr",
         "baseline_broken_period": "ATC 12%, CVR 2.5%, ~95 orders/day, ~$7.5K/day (Mar 27-Apr 2)",
@@ -4043,13 +3548,7 @@
         "notes": "ATC rate did NOT recover to pre-bug levels. Post-fix average ATC (~12.3%) is essentially unchanged from broken period (~12%). Apr 5 spike (28.1% ATC) was driven by email campaign traffic, not organic homepage recovery. Possible causes: fix was partial, second bug exists, or traffic mix shifted away from homepage. Revenue improved marginally vs broken period ($60K/8d vs $46K/7d) but still ~60% below pre-bug run rate."
       },
       "requires_human_review": true,
-      "review_flagged_date": "2026-04-10",
-      "sweep_flag": "measurement_overdue",
-      "sweep_date": "2026-04-14",
-      "sweep_note": "Measurement data pull required. Session 32 flagged.",
       "last_updated": "2026-04-16",
-      "measurement_start_date": "2026-04-03",
-      "measurement_end_date": "2026-04-10",
       "sweep_flags": [
         "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
       ]
@@ -4059,32 +3558,36 @@
       "title": "Brain Health Content Bundle — Trend Capture + Gut-Brain Science",
       "status": "draft",
       "owner": "Charlotte Thamm + Brandon Dyksterhouse",
-      "approver": "Nick",
       "department": "social-media",
       "platforms": [
         "instagram-organic"
       ],
       "subtype": "implementation",
-      "priority": "P1",
-      "description": "Create 3-piece content bundle capturing brain health trend (72/100 score, 7-10 day window): (1) YouTube 8-12min flow state science, (2) LinkedIn 5-slide burnout + cognition carousel, (3) TikTok/Reels 15-30sec deep work teaser. Leverage Ishioh et al. gut-brain BHB pathway paper for differentiation. Messaging: 'Ketone fuel for unstoppable focus.'",
-      "expected_impact": "Capture trending conversation before competitors. Replicate April 2 science post outperformance (2.7% ER, 40x baseline). Establish Kenetik cognitive performance positioning.",
-      "measurement_plan": "ER >2% on each piece, combined impressions >50K in 7d, graduation candidacy for paid amplification",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "measurement_plan": {
+        "primary_metric": null,
+        "baseline": null,
+        "target": null,
+        "sample_size_plan": null
+      },
       "measurement_window_end": "2026-04-20",
-      "linked_synthesis": "2026-04-06-s1",
-      "linked_recommendations": [
-        "P5",
-        "rec-190"
-      ],
-      "source_signals": [
-        "DS-04 (brain health trend)",
-        "D16 Ishioh gut-brain paper",
-        "D18 brain health 72/100"
-      ],
-      "created_by": "pipeline-session-27",
       "created": "2026-04-06",
       "risk_level": "medium",
       "dependencies": [],
-      "notes": " | 2026-04-15: Unblocked — CS-065 closed as superseded."
+      "notes": "| 2026-04-15: Unblocked — CS-065 closed as superseded.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Capture trending conversation before competitors. Replicate April 2 science post outperformance (2.7% ER, 40x baseline). Establish Kenetik cognitive performance positioning.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: ER >2% on each piece, combined impressions >50K in 7d, graduation candidacy for paid amplification]"
     },
     {
       "id": "CS-2026-048",
@@ -4126,8 +3629,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": {
@@ -4148,19 +3649,14 @@
       "closed_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-048.md",
       "notes": "Moe weekly graduation scan 2026-04-06. TT Ashton Hall 'longevity > hype' post — 5.7% engagement rate (threshold: 5%). Creator content, strong engagement signal. Draft for Katie review. | 2026-04-22 CLOSED superseded by Katie. False-positive graduation flag — video was already in paid rotation at scan time. Meta-learning: add dedupe check against live paid creatives to Moe's weekly graduation scan.",
-      "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "closed_by": "Katie",
-      "closed_reason": "False-positive graduation flag. The TT Ashton Hall \"Longevity > Hype\" video (TikTok post 7622720005091740941, published 2026-03-29) was already in Kenetik paid rotation on 2026-04-06 when Moe's weekly graduation scan flagged it as a candidate. Moe's scan did not cross-check the list of currently-live paid creatives before recommending graduation, producing a duplicate ask. No new paid amplification was needed; the work this CS proposed was already happening.",
       "learning_note": "For TT Ashton Hall 'Longevity > Hype' on paid_meta, the graduation scan recommended amplification of content that was already in paid rotation. Draft sat for 16 days before the duplication was caught and the CS closed. Key insight: Moe's weekly graduation-scan command must cross-reference the currently-live paid creative set (from ad-platform-refs or paid-media-state.json) and exclude any organic post whose content is already running paid. Without this dedupe step, scans produce false positives that burn review capacity, clutter the draft queue, and delay triage of genuinely novel candidates.",
       "sweep_flags": [
         "closed_superseded_2026-04-22"
       ],
-      "triage_action": "closed",
-      "triage_recommendation": "none",
       "last_updated": "2026-04-22"
     },
     {
@@ -4216,8 +3712,6 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
       "sweep_flags": [
         "stale_approved_gt_7d"
       ],
@@ -4264,8 +3758,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": "2026-04-20",
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": {
@@ -4278,7 +3770,6 @@
       "closed_date": "2026-04-20",
       "file": "cgo-logs/changesets/CS-2026-050.md",
       "notes": "P1-CRITICAL: Calendar void Apr 6-12. Deploy SAW Wk2 content TODAY. | 2026-04-15: Unblocked — CS-065 closed as superseded.",
-      "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-07",
       "executed_date": null,
@@ -4325,8 +3816,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": {
@@ -4347,19 +3836,14 @@
       "closed_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-051.md",
       "notes": "General retargeting 0.87x FATIGUED. Creator whitelisting 14.46x. 1,660% ROAS spread. | 2026-04-22 CLOSED stale by Katie. Window (Apr 7-21) passed. Directional budget shifts were made during window but based on corrected campaign-level data, not this CS's plan — CS data (0.87x/14.46x/1,660% spread) did not hold against campaign-level validation. $0 attributable to this CS. Ties to L-006 pattern.",
-      "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "closed_by": "Katie",
-      "closed_reason": "Measurement window passed (CS was scoped Apr 7 - Apr 21). Directional budget adjustments were made in line with the recommendation's general thrust — shift spend toward creator whitelisting — but the specific plan in this CS was NOT followed as written. The data underpinning the CS (general retargeting 0.87x, creator whitelisting 14.46x on $9 spend, 1,660% spread) did not hold up against campaign-level validation, so the $43/day reallocation plan was not executed as specified. Actual paid media adjustments and performance for the Apr 7-21 window are tracked under the relevant FB campaigns, not attributable to this CS.",
       "learning_note": "For paid_meta Facebook retargeting-to-whitelisting reallocation, the CS recommended a specific $300/week shift based on D04 domain scan numbers (0.87x general retargeting, 14.46x creator whitelisting on $9 spend). Katie made directional adjustments inline with the thrust but did not execute the specific plan because campaign-level data didn't match the CS inputs. CS sat 15 days in draft without sweep flags before being closed stale. Key insight: paid-media CSes spawned from aggregate domain scans need a campaign-level data-reconciliation step BEFORE draft. Also: drafts taking partial/informal action should be closed promptly with that acknowledgment, not left to accumulate — stale detection currently appears to not fire on drafts (CS sat 15d with empty sweep_flags). Ties to existing L-006 pattern.",
       "sweep_flags": [
         "closed_stale_partial_action_2026-04-22"
       ],
-      "triage_action": "closed",
-      "triage_recommendation": "none",
       "last_updated": "2026-04-22"
     },
     {
@@ -4417,15 +3901,10 @@
       "published_date": null,
       "file": "cgo-logs/changesets/CS-2026-052.md",
       "notes": "Successor to CS-2026-024 (closed). Refines existing upcoming order notification with value content and skip/reschedule CTAs instead of adding new proactive flows. | 2026-04-22 /changeset-review: conflict caught with CS-2026-100 (same flow). Scope absorbed into CS-2026-100 per Katie's decision. Closed superseded.",
-      "stale_flag": false,
-      "stale_days": 0,
-      "last_status_change": "2026-04-07",
       "hypothesis": "Optimizing the upcoming subscription order email with value reinforcement and prominent skip/reschedule CTAs will reduce 'too much product' voluntary churn by >=15%",
       "sweep_flags": [
         "closed_superseded_by_100_2026-04-22"
       ],
-      "last_sweep": null,
-      "risk": "low",
       "measurement_window": "30-day from launch",
       "closed_date": "2026-04-22",
       "learning_note": "For Upcoming Subscription Order Flow on klaviyo, two draft CSes (CS-2026-052 general refinement, CS-2026-100 Mar 2026 cohort branch) were converging on the same flow. /changeset-review surfaced the conflict. CS-2026-052 closed superseded and its scope absorbed into CS-2026-100 as the all-subscriber base layer. Key insight: /changeset-review's conflict check on the same surface caught what weekly synthesis and lifecycle sweep didn't — worth making the conflict check more explicit in synthesis instructions when creating or extending flow-scoped CSes.",
@@ -4445,10 +3924,6 @@
       },
       "outcome": "superseded",
       "archived": false,
-      "closed_by": "Katie",
-      "closed_reason": "Superseded by CS-2026-100, which has been updated in the same session to absorb CS-2026-052's all-subscriber scope as its base layer. The general Upcoming Subscription Order Flow refinement — value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary churn disaggregation — is now the foundation of CS-2026-100, with the Mar 2026 cohort branch layered on top. Executing two CSes against the same Klaviyo flow was the wrong shape; one coordinated change is cleaner.",
-      "triage_action": "closed",
-      "triage_recommendation": "none",
       "last_updated": "2026-04-22"
     },
     {
@@ -4499,8 +3974,6 @@
       "published_date": null,
       "closed_date": null,
       "measurement_window": "14 days",
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_due": null,
       "outcome": null,
       "review_tier": "express",
@@ -4556,8 +4029,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "30d",
       "measurement_due": null,
       "actual_impact": null,
@@ -4565,7 +4036,6 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-054.md",
       "notes": "Auto-generated from rec-199. Onboarding activation (distinct from CS-040 reactivation).\n2026-04-23: Apr 23 owner scrub (AP-003): superfiliate creator-affiliate ops routes to Nick (Dir Social Commerce) + Lawrence (Creator Partnerships), not Charlotte.",
-      "risk": "medium",
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-22",
       "executed_date": null,
@@ -4614,8 +4084,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": null,
@@ -4623,7 +4091,6 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-055.md",
       "notes": "Auto-generated from rec-201. Unblocks content learning loop. 7-day window Apr 8-15.",
-      "risk": "low",
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-08",
       "executed_date": null,
@@ -4646,13 +4113,11 @@
       "spawned_from": "L-003",
       "file": "cgo-logs/changesets/CS-2026-056.md",
       "linked_pm_entry": "L-003",
-      "source": "performance_memory_candidate",
+      "source": "synthesis",
       "autonomy_tier": 1,
       "approved_by": "Devon",
       "approved_date": "2026-04-15",
       "notes": " | 2026-04-15: Devon approved. Expand D04 Polar pull to include campaign-level ATC + checkout metrics.",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
       "sweep_flags": [
         "stale_approved_gt_7d"
       ],
@@ -4675,13 +4140,11 @@
       "spawned_from": "L-005",
       "file": "cgo-logs/changesets/CS-2026-057.md",
       "linked_pm_entry": "L-005",
-      "source": "performance_memory_candidate",
+      "source": "synthesis",
       "autonomy_tier": 1,
       "approved_by": "Devon",
       "approved_date": "2026-04-15",
       "notes": " | 2026-04-15: Devon approved. Update D07/D13 scans to cross-reference Sprout published post counts before declaring content drought.",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
       "sweep_flags": [
         "stale_approved_gt_7d"
       ],
@@ -4741,8 +4204,7 @@
         "secondary_metric_result": "Live on Shopify; product shipped to Cleetus; no dedicated traffic driver at Kansas.",
         "confidence": "medium",
         "_note": "Bundle launched as a SKU but missed the A-list activation layer at Kansas. Talladega 4/24-25 is now the real first-activation test (see ARCA-TAL-042426-BEAT-04). Sell-through from Kansas weekend will be quiet baseline only."
-      },
-      "measurement_end_date": "2026-04-20"
+      }
     },
     {
       "id": "CS-2026-060",
@@ -4773,8 +4235,7 @@
         "primary_metric_result": "cancelled before launch",
         "confidence": "n/a",
         "_note": "Superseded by CS-2026-059 (Pit Crew Bundle continuing to Talladega)."
-      },
-      "measurement_end_date": "2026-04-20"
+      }
     },
     {
       "id": "CS-2026-061",
@@ -4799,12 +4260,10 @@
       "measurement_window": "14 days",
       "measurement_due": "2026-04-26",
       "file": "cgo-logs/changesets/CS-2026-061.md",
-      "source": "synthesis_recommendation",
+      "source": "synthesis",
       "autonomy_tier": 1,
       "outcome": "superseded",
       "closed_date": "2026-04-22",
-      "closed_by": "Katie",
-      "closed_reason": "False-positive graduation flag. Matt Hughes FB Reel content is ALREADY live in paid Meta rotation across 6 active ads spanning the exact targeting stack CS-2026-061 proposes: retargeting (3 variants), lookalike (\"lal / 7dc\"), interest (\"interest / 7dc\"), and retargeting stack (\"retargeting stack / 7dc\"). The organic→paid graduation the CS proposes already happened. Second false-positive graduation today (CS-2026-048 Ashton Hall TT closed earlier).",
       "actual_impact": {
         "primary_metric": "meta_pixel_roas",
         "primary_metric_baseline": "3.77x (disputed — aggregate Polar figure per L-006)",
@@ -4835,8 +4294,6 @@
         "closed_superseded_2026-04-22",
         "graduation_dedupe_gap"
       ],
-      "triage_action": "closed",
-      "triage_recommendation": "none",
       "last_updated": "2026-04-22",
       "notes": " | 2026-04-22 /changeset-review: CLOSED superseded. Matt Hughes content already live in 6 paid Meta ads. Same pattern as CS-2026-048 closed earlier today. Second dedupe-gap data point."
     },
@@ -4862,7 +4319,7 @@
       "measurement_window": "25 days",
       "measurement_due": "2026-05-05",
       "file": "cgo-logs/changesets/CS-2026-062.md",
-      "source": "synthesis_recommendation",
+      "source": "synthesis",
       "autonomy_tier": 1,
       "revision_notes": "=== /changeset-review revision 2026-04-22 (Katie) ===\n\nDECISION: Compress to 1 combined touch, revise. The 3-touch sequence is no longer executable — 2 of 3 planned send dates (Apr 12, Apr 19) have passed. Restructure for the remaining runway.\n\nREQUIRED RESTRUCTURE:\n\nS1. Compress to 1 touch. Target send: Apr 26–28, 2026 (7–9 days before the cohort's 30-day LTV window closes May 5). Combine the Touch 2 subscribe CTA with the Touch 3 last-chance framing into a single email + SMS:\n  - Email subject framing: 'Running low? Subscribers save 20% and never     run out.' (blends social proof + subscribe offer + urgency)\n  - SMS pairing: short reminder 24h after email for SMS-consenting     subset of the cohort\n  - Drop Touch 1 entirely — 'you've had it for 17+ days' framing is     context-off and doesn't land.\n\nS2. Revise expected impact to reflect the compressed scope (expect 30–50% of the original 3-touch projection since consistent-multi-touch compounding is lost). Suggested revised figures (your judgment):\n  - Revenue: low $700 / expected $1,400 / high $2,250 (30-50% of the     $2,200–$4,500 original)\n  - Margin at 50%: low $350 / expected $700 / high $1,125\n\nREQUIRED HYGIENE (same issues as CS-2026-053, CS-2026-052):\n\nR1. Populate L1–L5 in tracker `expected_impact`. Current tracker has only { revenue_low: 2200, revenue_high: 4500 } and no L-fields. Per §2 schema, the tracker needs L1_margin, L2_cash, L3_customer_quality, L4_learning, L5_brand_check fields. The brief has enough prose to reconstruct these; formalize them.\n\nR2. Normalize `expected_impact` schema. Current uses `revenue_low` / `revenue_high` — non-standard. Per §2: use `revenue.upside` / `revenue.expected` / `revenue.downside` + `margin` structure, matching other tracker entries. Also add `review_tier: \"standard\"` per §6 (expected revenue $3K-$4.5K, single surface, low risk, implementation, not pricing → STANDARD).\n\nR3. Resolution Path rewrite. Current table is boilerplate (same template defect as CS-2026-053). With the compressed scope:\n  - Diagnose: 'Apr 5 cohort (pat-015, DTC $12K single-day estimated,     acquisition source unattributed — RCA pending) is 17 days into a     30-day LTV window with no cohort-specific retention intervention     deployed. Standard FTP flow is firing but is not optimized for this     cohort's characteristics.'\n  - Remove: Considered suppressing from FTP flow; not chosen (would     strip useful touches). See C1 below for the cleaner Refine path.\n  - Refine: RECOMMEND THIS PATH — instead of Add, branch the First     Time Post Purchase flow with an Apr-5-cohort variant message at     the T+21d touch, rather than a parallel sequence. Cleaner     measurement + no email fatigue (see M1 below).\n  - Add: No — prior draft chose Add without considering Refine; the     FTP flow exists and can be branched.\n\nR4. Inline [src:] markers per §10c on specific numeric claims:\n  - '150-300 new orders at ~$12K revenue' → [src: pat-015 or     cross-surface-pm.json]\n  - '~12-18% baseline repeat rate for non-Cleetus cohorts' → cite     source (Shopify cohort data? past CS? L-042/L-043?)\n  - '~$100 AOV' → cite Shopify / Recharge baseline\n  - '20% subscription discount' → confirm this is the current Kenetik     offer per subscription-ops or products-formats.md\n\nMAJOR CONCERNS TO ADDRESS (M1-M3):\n\nM1. FTP flow contamination with CS-2026-031 (approved). CS-2026-031 includes CTA redesigns on First Time Post Purchase messages (Emails #2, #3, #4). Apr 5 cohort is already in FTP. If CS-2026-062 fires a parallel sequence AND CS-2026-031 changes CTAs on FTP messages during the same window, measurement on both reads is contaminated.\n  - Resolution option A: branch FTP with an Apr-5-cohort variant (R3     Refine path) — no parallel flow, no contamination.\n  - Resolution option B: document measurement isolation (dedicated     cohort segment, Apr-5-specific attribution) so CS-2026-031's FTP     changes don't contaminate this CS's read. Weaker but workable.\n\nM2. RCA depth escalation. pat-015 (Apr 5 spike source) is 'unattributed (RCA pending)' per the brief. The CS messaging is explicitly source-dependent: 'If source identified via RCA, can customize messaging to match acquisition context.' Per §10b depth escalation: either attach an `rca_reference:` pointing to an Apollo-style RCA on pat-015, or add an inline waiver justifying shallow diagnosis (e.g., 'the compressed 1-touch message is source-agnostic — subscribe-or-lose is the same ask regardless of acquisition channel'). The waiver is reasonable for the compressed scope; add it to Step 2b.\n\nM3. PM priors aren't cited. L-042 (3-touch Klaviyo flow to BAW one-time buyers → 495 recipients → 3 subs) and L-043 (5-touch Klaviyo flow to ~4,797 CLEETUS-FREE3PACK Mar cohort) are the closest priors. Cite them for calibration of expected adoption rate — they'd inform whether 15% repeat / 8% subscription attach is optimistic or conservative for a single-touch compressed send.\n\n--- TIMING ---\n\nSend target: Apr 26–28 (allows 7–9 days for conversion attribution before measurement window closes May 5).\nMeasurement window: shortens from 25 days → 7–9 days. Document this compression explicitly so CS-2026-062's measurement isn't compared to the original full-window expectation.\n\n--- SUBSTANTIVE REVIEW (preserved) ---\n\nL0 Anti-pattern: no match — pass\nL1-L5: not populated (see R1)\nResolution Path: boilerplate + wrong choice (Add; should be Refine — see R3/M1)\nFactual grounding: partial — pat-015 cited, others UNGROUNDED (see R4)\nConflict check: CS-2026-031 contamination risk (see M1)\nDepth escalation: RCA triggers fire (see M2)\nPM priors: L-042, L-043 not cited (see M3)\n\nAddress S1, S2, R1-R4, M1-M3 and resubmit via /changeset-review CS-2026-062.",
       "revision_date": "2026-04-22",
@@ -4880,11 +4337,6 @@
       "status": "closed",
       "risk_level": "high",
       "owner": "Devon Price",
-      "co_owners": [
-        "Katie",
-        "Nick",
-        "Brandon"
-      ],
       "created": "2026-04-13",
       "objective_level": "L3",
       "category": "operations",
@@ -4917,8 +4369,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "30d",
       "measurement_due": null,
       "actual_impact": null,
@@ -4926,16 +4376,12 @@
       "closed_date": "2026-04-15",
       "file": "cgo-logs/changesets/CS-2026-063.md",
       "notes": "Three domains converge on cohort quality decline: D01 Feb M1 -33% YoY (12.8% vs 18.4% 6mo avg), D09 new sessions -16.3% WoW, D04 prospecting weakness. Hypothesis: Feb 2026 acquisition-channel mix (Unbound Sweep + ARCA + creator launches) brought low-retention customers. Investigation: segment Feb cohort by acquisition source, compare M1 repeat by channel; decide whether to suppress low-quality channels or build channel-specific onboarding. | 2026-04-15: Devon closed as REDUNDANT. Feb cohort decline explained by Cleetus/Roman free-3-pack loss-leader (D14: 5,475 users, 0.4% sub conversion). Remediation already scoped in CS-067.",
-      "risk": "high",
       "review_tier": "standard",
       "sweep_flags": [],
-      "last_sweep": "2026-04-13",
       "execution_target_date": "2026-04-20",
       "executed_date": null,
       "autonomy_tier": null,
       "stale": false,
-      "stale_days": 0,
-      "triage_recommendation": "needs_approval",
       "source": "synthesis",
       "linked_calendar_activity": null
     },
@@ -4950,10 +4396,6 @@
       "status": "draft",
       "risk_level": "medium",
       "owner": "Katie Spaller",
-      "co_owners": [
-        "Charlotte",
-        "Peter"
-      ],
       "created": "2026-04-13",
       "objective_level": "L2",
       "category": "web_experimentation",
@@ -4985,8 +4427,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
@@ -4994,16 +4434,12 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-064.md",
       "notes": "D09 mobile bounce +5.5pp WoW (64.3%) while desktop flat. Mobile = 79% of traffic. Creator LPs (Ashton 0.24%/92% bounce, Roman 1.34%/72%, Cleetus 2.64%/81%) are paid-spend traffic sinks. Two-part investigation: (1) GA4 landing-page × source segmentation + Lighthouse mobile perf + layout shift audit by Apr 15; (2) A/B test creator LPs vs homepage redirect by Apr 22. Pairs with P4 Meta waste cut to avoid wasting fresh creative on broken LPs.",
-      "risk": "medium",
       "review_tier": "standard",
       "sweep_flags": [],
-      "last_sweep": "2026-04-13",
       "execution_target_date": "2026-04-22",
       "executed_date": null,
       "autonomy_tier": null,
       "stale": false,
-      "stale_days": 0,
-      "triage_recommendation": "needs_approval",
       "source": "synthesis",
       "linked_calendar_activity": null
     },
@@ -5018,11 +4454,6 @@
       "status": "closed",
       "risk_level": "high",
       "owner": "Brandon Dyksterhouse",
-      "co_owners": [
-        "Devon",
-        "Charlotte",
-        "Katie"
-      ],
       "created": "2026-04-13",
       "objective_level": "L3",
       "category": "compliance",
@@ -5055,8 +4486,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": null,
@@ -5064,16 +4493,12 @@
       "closed_date": "2026-04-15",
       "file": "cgo-logs/changesets/CS-2026-065.md",
       "notes": "D16 Martyn et al. 2026 (J Appl Physiol, PMID 41962970, n=8 RCT) directly contradicts universal KME endurance claims — benefit is metabolic-state-conditional, not universal. D16 Frenser 2026 (Sci Rep, PMID 41957196) documents MCT:glucose ketogenesis threshold (1.5g glucose per 1g MCT); carb-forward Kenetik SKUs may violate. D17 FTC enforcement wave on MetaTrim + Jelly Lean BHB claims creates regulatory context. Scope: (1) audit all social/email/paid KME performance claims for metabolic-state specificity; (2) review MCT:glucose ratio across SKUs; (3) update claims-compliance.md with science-contradiction workflow. Blocks unsafe content advancement on 10 idea-status posts. | 2026-04-15: Devon closed as SUPERSEDED. Premises invalidated — Kenetik uses D-BHB (no MCT) and does not claim \"improves endurance.\" Martyn/Frenser 2026 papers logged in claims-compliance.md for internal awareness. Root-cause fix in Tier-1 spec update.",
-      "risk": "high",
       "review_tier": "executive",
       "sweep_flags": [],
-      "last_sweep": "2026-04-13",
       "execution_target_date": "2026-04-20",
       "executed_date": null,
       "autonomy_tier": null,
       "stale": false,
-      "stale_days": 0,
-      "triage_recommendation": "needs_approval",
       "source": "synthesis",
       "linked_calendar_activity": null
     },
@@ -5122,8 +4547,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": {
@@ -5158,7 +4581,6 @@
       "closed_date": "2026-04-22",
       "file": "cgo-logs/changesets/CS-2026-066.md",
       "notes": "Graduation candidate: FB 4AM athlete reel (sprout-sync-2daeea84). ER 11.39%, 3.4x reach, NCS 64.4. Sourced from Moe weekly graduation scan 2026-04-13. | 2026-04-22 CLOSED superseded by Katie — 4AM Morning Routine reel is already live in the Ashton Hall Meta campaign (13 active ads). Third graduation-dedupe miss today (after CS-2026-048, CS-2026-061). Brief's self-check claimed 'Paid Status: organic_only' but that check only covered tracker.json, not paid-media-state.json.",
-      "risk": "medium",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
@@ -5169,15 +4591,11 @@
         "platform": "facebook",
         "publish_date": "2026-03-20"
       },
-      "closed_by": "Katie",
-      "closed_reason": "Third graduation-dedupe miss today. The \"4AM Morning Routine\" athlete reel (sprout-sync-2daeea84) flagged for Meta graduation is already live as an ad in the Ashton Hall Meta campaign. Ashton Hall content is running across 13 active/paused Meta ads spanning interests_2a (fitness + wellness), retargeting, and lal / 7dc adsets — with multiple creative variants (focus ad, talking hook, ashton 1 / 2, boxing hook, and 3 static images). The organic → paid graduation already happened. Notable: this brief EXPLICITLY claimed \"Paid Status: organic_only - Clean (not in paid)\" and cross-referenced tracker.json for prior graduation ChangeSets — but the scan never queried paid-media-state.json for already-running ads, which is why a direct duplicate passed through.",
       "learning_note": "For FB '4AM Morning Routine' athlete reel (sprout-sync-2daeea84) → paid Meta on paid_meta, graduation was recommended for content already live as the Ashton Hall Meta ad set — 13 active/paused ads spanning interests, retargeting, and lookalike adsets. Brief claimed 'Paid Status: organic_only - Clean' based on a tracker.json-only dedupe check. Third superseded graduation today. Refined meta-learning: the dedupe check in Moe's graduation scan currently looks for prior graduation CSes in tracker.json, but the real question is whether the organic content is already running paid — which requires a paid-media-state.json query (and requires content_links population on the paid-state side, since the ads were set up without graduation CSes). Both halves needed: scan-side query AND paid-media-state writer populating content_links. Three data points in one day now (CS-048 TT Ashton, CS-061 FB Matt Hughes, CS-066 FB Ashton).",
       "sweep_flags": [
         "closed_superseded_2026-04-22",
         "graduation_dedupe_gap"
       ],
-      "triage_action": "closed",
-      "triage_recommendation": "none",
       "last_updated": "2026-04-22"
     },
     {
@@ -5229,8 +4647,6 @@
       "approved_by": "Devon",
       "approved_date": "2026-04-15",
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "60d",
       "measurement_due": null,
       "actual_impact": null,
@@ -5238,15 +4654,12 @@
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-067.md",
       "notes": "Cohort: 1,460 profiles (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). All 3 placeholders resolved 4/13: (1) Roman flavor = Blackberry Lemonade per Nick, pending final Roman confirm; (2) Variety inventory cleared by Ops; (3) Insert card resolved to digital BTS video unlock per Peter. Roman script/vibe brief drafted for Nick — shoot deadline 4/17 for 4/20 T0. Precedent: CS-2026-007. | 2026-04-15: Devon approved. Proceeding normally. CS-074 routine watchlist, no operational impact. Remaining: Devon claims review, Nick tone review, Roman shoot by 4/17. Execution target 4/20. | 2026-04-22 (Katie): Execution deferred — blocked on Roman thank-you video (Track B T4 digital unlock, see roman-script-brief.md). Shoot missed the 2026-04-17 deadline. Cleared execution_target_date; will re-target when video lands. Status remains approved. Log source: /changeset-execute.",
-      "risk": "medium",
       "scheduled_send_date": null,
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
       "linked_calendar_activity": "ROMAN-020326",
       "learning_note": null,
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00",
       "sweep_flags": [
         {
           "flag": "blocked_on_creative",
@@ -5268,11 +4681,29 @@
       "owner": "Brandon Dyksterhouse + Katie Spaller",
       "risk_level": "medium",
       "hypothesis": "Martyn+Tominec RCTs invalidate Tier B endurance claims. Pivoting to Tier A/C cognitive/neuroprotection angles (supported by Geda, Ishioh, Gada, Zhou publications) will maintain science credibility and align with trending consumer demand (caffeine-free cognitive 78/100, Happy Panda 50% sell-out).",
-      "expected_impact": "Repositions 3+ content pieces from vulnerable endurance claims to defensible cognitive angle. Prevents regulatory risk from competitor citation of negative RCTs within 2-4 weeks.",
-      "measurement_plan": "48h: Brandon audit complete. 72h: 3 content pieces (blog, carousel, email) drafted with evidence-tier validation. 7d: engagement rate vs endurance content baseline. 14d: conversion attribution.",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "measurement_plan": {
+        "primary_metric": null,
+        "baseline": null,
+        "target": null,
+        "sample_size_plan": null
+      },
       "linked_pm_entry": "L-017",
       "autonomy_tier": 2,
-      "source": "synthesis_priority_P4",
+      "source": "synthesis",
       "last_updated": "2026-04-14",
       "created": "2026-04-14",
       "outcome": "success",
@@ -5287,7 +4718,8 @@
         "L4_learning_actual": "Claims audit revealed the initial severity assessment overstated impact. Martyn et al. was already reviewed (2026-04-15) — Kenetik has no endurance performance claims to contradict. Verma & Harrison is fasting-state specific, not applicable to fed-state exogenous supplementation. Sha et al. is preclinical infection context. Net: two guardrails added, zero claim language changes needed.",
         "measurement_source": "Manual audit — claims-compliance.md review against paper findings"
       },
-      "learning_note": "Three HIGH-severity papers looked existential on first read but mapped to low actual impact because Kenetik claims are already positioned on cognition/focus (not endurance), and the immune claim uses qualified Tier B language. State-dependency and disease-context guardrails added. The dept-science-research brief overstated the athletic performance risk because it assumed Kenetik had endurance claims."
+      "learning_note": "Three HIGH-severity papers looked existential on first read but mapped to low actual impact because Kenetik claims are already positioned on cognition/focus (not endurance), and the immune claim uses qualified Tier B language. State-dependency and disease-context guardrails added. The dept-science-research brief overstated the athletic performance risk because it assumed Kenetik had endurance claims.",
+      "notes": "[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Repositions 3+ content pieces from vulnerable endurance claims to defensible cognitive angle. Prevents regulatory risk from competitor citation of negative RCTs within 2-4 weeks.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: 48h: Brandon audit complete. 72h: 3 content pieces (blog, carousel, email) drafted with evidence-tier validation. 7d: engagement rate vs endurance content baseline. 14d: conversion attribution.]"
     },
     {
       "id": "CS-2026-069",
@@ -5301,12 +4733,31 @@
       "owner": "Brandon Dyksterhouse + Charlotte Thamm",
       "risk_level": "low",
       "hypothesis": "VoC data (D10) and trend signals (D18) flag consumer confusion between diabetic ketoacidosis and nutritional ketosis. Educational content addressing this misconception will reduce purchase hesitation in health-conscious segment and preempt negative sentiment.",
-      "expected_impact": "FAQ + social content reducing T1D-related support tickets by 30%. Establishes defensive content moat.",
-      "measurement_plan": "7d: content published on 2+ platforms. 14d: engagement rate. 30d: support ticket volume on ketone safety questions.",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "measurement_plan": {
+        "primary_metric": null,
+        "baseline": null,
+        "target": null,
+        "sample_size_plan": null
+      },
       "autonomy_tier": 1,
-      "source": "synthesis_rec-189",
+      "source": "synthesis",
       "last_updated": "2026-04-14",
-      "created": "2026-04-14"
+      "created": "2026-04-14",
+      "notes": "[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: FAQ + social content reducing T1D-related support tickets by 30%. Establishes defensive content moat.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: 7d: content published on 2+ platforms. 14d: engagement rate. 30d: support ticket volume on ketone safety questions.]"
     },
     {
       "id": "CS-2026-070",
@@ -5320,16 +4771,34 @@
       "owner": "Katie Spaller",
       "risk_level": "low",
       "hypothesis": "Google PMAX Shopping showing 0.40x ROAS on $251 spend, likely due to feed quality issues (missing attributes, poor titles, incorrect categorization). Feed audit + objective restructure should recover to >2.0x ROAS within 7d.",
-      "expected_impact": "Recover $251/wk spend to >2.0x ROAS (from 0.40x). Low absolute impact but diagnostic value for Google Shopping channel.",
-      "measurement_plan": "24h: feed audit complete, issues documented. 48h: restructured campaign live. 7d: ROAS measurement vs 0.40x baseline.",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "measurement_plan": {
+        "primary_metric": null,
+        "baseline": null,
+        "target": null,
+        "sample_size_plan": null
+      },
       "autonomy_tier": 0,
-      "source": "synthesis_rec-187",
+      "source": "synthesis",
       "last_updated": "2026-04-22",
       "created": "2026-04-14",
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-04-22",
       "review_tier": "express",
-      "notes": " | 2026-04-22 /changeset-review: EXPRESS AUTO-APPROVE. All 11 Express checklist items passed (rollback was implied, not explicit — acceptable for low-risk feed optimization). Flagged for execution: (a) document campaign settings BEFORE restructure for clean revert; (b) if feed audit + bid restructure both fail to move ROAS, escalate to RCA rather than iterate; (c) capture learning on whether feed-quality or bid-strategy was the actual root cause (diagnostic value). Deferred hygiene to next synthesis pass: canonical surface name (paid-google → paid_google per §8), inline [src:] markers, L1-L5 formal population."
+      "notes": "| 2026-04-22 /changeset-review: EXPRESS AUTO-APPROVE. All 11 Express checklist items passed (rollback was implied, not explicit — acceptable for low-risk feed optimization). Flagged for execution: (a) document campaign settings BEFORE restructure for clean revert; (b) if feed audit + bid restructure both fail to move ROAS, escalate to RCA rather than iterate; (c) capture learning on whether feed-quality or bid-strategy was the actual root cause (diagnostic value). Deferred hygiene to next synthesis pass: canonical surface name (paid-google → paid_google per §8), inline [src:] markers, L1-L5 formal population.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Recover $251/wk spend to >2.0x ROAS (from 0.40x). Low absolute impact but diagnostic value for Google Shopping channel.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: 24h: feed audit complete, issues documented. 48h: restructured campaign live. 7d: ROAS measurement vs 0.40x baseline.]"
     },
     {
       "id": "CS-2026-071",
@@ -5351,15 +4820,29 @@
       ],
       "spawned_from": "2026-04-15-s1 synthesis",
       "spawned_changesets": [],
-      "expected_impact": "+80-100 bps blended ROAS in 7d",
-      "routed_to": "Katie",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "routed_to": [
+        "Katie Spaller"
+      ],
       "routed_via": "CGO synthesis",
       "routed_date": "2026-04-15",
-      "measurement_end_date": "2026-04-22",
       "measurement_window": "7d",
       "file": "cgo-logs/changesets/CS-2026-071.md",
       "autonomy_tier": 1,
-      "notes": "Created by S33 synthesis.",
+      "notes": "Created by S33 synthesis.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: +80-100 bps blended ROAS in 7d]",
       "last_updated": "2026-04-15"
     },
     {
@@ -5382,15 +4865,29 @@
       ],
       "spawned_from": "2026-04-15-s1 synthesis",
       "spawned_changesets": [],
-      "expected_impact": "Restore 2.5%+ CTR to 3806 recipients",
-      "routed_to": "Katie",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "routed_to": [
+        "Katie Spaller"
+      ],
       "routed_via": "CGO synthesis",
       "routed_date": "2026-04-15",
-      "measurement_end_date": "2026-04-29",
       "measurement_window": "14d",
       "file": "cgo-logs/changesets/CS-2026-072.md",
       "autonomy_tier": 0,
-      "notes": "Created by S33 synthesis; hard-gate violation.",
+      "notes": "Created by S33 synthesis; hard-gate violation.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Restore 2.5%+ CTR to 3806 recipients]",
       "last_updated": "2026-04-15"
     },
     {
@@ -5413,15 +4910,29 @@
       "blocks": [],
       "spawned_from": "2026-04-15-s1 synthesis",
       "spawned_changesets": [],
-      "expected_impact": "2x winback CTR",
-      "routed_to": "Katie",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "routed_to": [
+        "Katie Spaller"
+      ],
       "routed_via": "CGO synthesis",
       "routed_date": "2026-04-15",
-      "measurement_end_date": "2026-05-01",
       "measurement_window": "14d",
       "file": "cgo-logs/changesets/CS-2026-073.md",
       "autonomy_tier": 1,
-      "notes": "Created by S33 synthesis.",
+      "notes": "Created by S33 synthesis.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: 2x winback CTR]",
       "last_updated": "2026-04-15"
     },
     {
@@ -5442,20 +4953,33 @@
       "blocks": [],
       "spawned_from": "2026-04-15-s1 synthesis",
       "spawned_changesets": [],
-      "expected_impact": "Contained reputation exposure",
-      "routed_to": "Devon + Peter",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "routed_to": [
+        "Devon Price",
+        "Peter Bayne"
+      ],
       "routed_via": "CGO synthesis",
       "routed_date": "2026-04-15",
-      "measurement_end_date": "2026-04-22",
       "measurement_window": "7d",
       "file": "cgo-logs/changesets/CS-2026-074.md",
       "autonomy_tier": 0,
-      "notes": "CRITICAL P0 crisis protocol. Created by S33 synthesis. | 2026-04-15: Devon approved as routine watchlist only. Downgraded to low risk. No legal engagement, no escalation mechanics, no blocking of dependent CSs. Standard D18 Sprout Listening watch. This is routine social noise.",
+      "notes": "CRITICAL P0 crisis protocol. Created by S33 synthesis. | 2026-04-15: Devon approved as routine watchlist only. Downgraded to low risk. No legal engagement, no escalation mechanics, no blocking of dependent CSs. Standard D18 Sprout Listening watch. This is routine social noise.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Contained reputation exposure]",
       "last_updated": "2026-04-15",
       "approved_by": "Devon",
-      "approved_date": "2026-04-15",
-      "nudge_count": 1,
-      "last_nudged_at": "2026-04-19T23:58:39.276902+00:00"
+      "approved_date": "2026-04-15"
     },
     {
       "id": "CS-2026-075",
@@ -5475,15 +4999,29 @@
       "blocks": [],
       "spawned_from": "2026-04-15-s1 synthesis L-022",
       "spawned_changesets": [],
-      "expected_impact": "Identify/protect single largest LTV lever in portfolio",
-      "routed_to": "Lifecycle + Katie",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "routed_to": [
+        "Katie Spaller"
+      ],
       "routed_via": "CGO synthesis",
       "routed_date": "2026-04-15",
-      "measurement_end_date": "2026-04-29",
       "measurement_window": "14d",
       "file": "cgo-logs/changesets/CS-2026-075.md",
       "autonomy_tier": 1,
-      "notes": "Spawned from L-022. Created by S33 synthesis.\n2026-04-23: Apr 23 owner scrub (AP-003): 'Lifecycle lead' placeholder resolved to Katie Spaller — recharge/subscription owner per Content Routing.",
+      "notes": "Spawned from L-022. Created by S33 synthesis.\n2026-04-23: Apr 23 owner scrub (AP-003): 'Lifecycle lead' placeholder resolved to Katie Spaller — recharge/subscription owner per Content Routing.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Identify/protect single largest LTV lever in portfolio]",
       "last_updated": "2026-04-23"
     },
     {
@@ -5499,10 +5037,29 @@
       "owner": "Katie Spaller",
       "risk_level": "medium",
       "hypothesis": "Desktop ATC -29.1% while mobile ATC only -11.6% indicates cart-level infrastructure issue, not traffic quality. Root cause diagnosis needed within 48h.",
-      "expected_impact": "Recovery of desktop conversion would reverse -24.4% new customer order decline — estimated $5K-$15K/week revenue at stake.",
-      "measurement_plan": "48h diagnosis window, then 5d recovery observation. Target: desktop ATC within 10% of prior baseline.",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "measurement_plan": {
+        "primary_metric": null,
+        "baseline": null,
+        "target": null,
+        "sample_size_plan": null
+      },
       "autonomy_tier": 2,
-      "source": "synthesis_recommendation"
+      "source": "synthesis",
+      "notes": "[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Recovery of desktop conversion would reverse -24.4% new customer order decline — estimated $5K-$15K/week revenue at stake.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: 48h diagnosis window, then 5d recovery observation. Target: desktop ATC within 10% of prior baseline.]"
     },
     {
       "id": "CS-2026-077",
@@ -5515,13 +5072,30 @@
         "pubmed"
       ],
       "owner": "Devon Price",
-      "co_owner": "Brandon",
       "risk_level": "high",
       "hypothesis": "3 HIGH-severity publications contradict current claims positioning. Brandon co-authored one. Framework revision needed before content cascade creates regulatory exposure.",
-      "expected_impact": "Risk mitigation — prevents potential regulatory action and reputational damage from contradicted claims.",
-      "measurement_plan": "24h audit, 48h revision, 7d cascade, 7d monitoring through 4/30.",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "measurement_plan": {
+        "primary_metric": null,
+        "baseline": null,
+        "target": null,
+        "sample_size_plan": null
+      },
       "autonomy_tier": 2,
-      "source": "synthesis_recommendation",
+      "source": "synthesis",
       "outcome": "success",
       "approved_date": "2026-04-20",
       "executed_date": "2026-04-20",
@@ -5534,7 +5108,8 @@
         "L4_learning_actual": "Investigation complete. Consolidated with CS-2026-068 — both addressed by single claims audit. Claims framework status moved from YELLOW back to GREEN with new guardrails in place.",
         "measurement_source": "Manual — claims-compliance.md updated and version-logged"
       },
-      "learning_note": "Superseded by CS-2026-068 audit. Key learning: when multiple changesets address the same risk, consolidate early rather than letting them sit as separate drafts. Brandon audit delay (6 days) was irrelevant — the claims mapping could be done without it because the impact assessment was straightforward once papers were mapped against the actual claims matrix."
+      "learning_note": "Superseded by CS-2026-068 audit. Key learning: when multiple changesets address the same risk, consolidate early rather than letting them sit as separate drafts. Brandon audit delay (6 days) was irrelevant — the claims mapping could be done without it because the impact assessment was straightforward once papers were mapped against the actual claims matrix.",
+      "notes": "[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Risk mitigation — prevents potential regulatory action and reputational damage from contradicted claims.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: 24h audit, 48h revision, 7d cascade, 7d monitoring through 4/30.]"
     },
     {
       "id": "CS-2026-078",
@@ -5549,11 +5124,30 @@
       "owner": "Nick Lacagnina",
       "risk_level": "medium",
       "hypothesis": "Auto-generated from calendar safety net — Sea Otter Classic (4/16-4/19) requires structured tracking and measurement.",
-      "expected_impact": "[PIPELINE GAP: needs estimation]",
-      "measurement_plan": "To be defined during review. Recommended 7-day post-event window through 4/26.",
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "primary_metric": null,
+        "primary_metric_target": null
+      },
+      "measurement_plan": {
+        "primary_metric": null,
+        "baseline": null,
+        "target": null,
+        "sample_size_plan": null
+      },
       "linked_calendar_activity": "SEA-OTTER-041626",
       "autonomy_tier": 2,
-      "source": "calendar_safety_net"
+      "source": "calendar_safety_net",
+      "notes": "[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: [PIPELINE GAP: needs estimation]]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: To be defined during review. Recommended 7-day post-event window through 4/26.]"
     },
     {
       "id": "CS-2026-079",
@@ -5566,7 +5160,6 @@
         "changeset-process"
       ],
       "owner": "Devon Price",
-      "risk": "low",
       "review_tier": "express",
       "created": "2026-04-16",
       "last_updated": "2026-04-16",
@@ -5599,8 +5192,6 @@
       "approved_by": null,
       "approved_date": "2026-04-20",
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "3 sweep runs",
       "measurement_due": null,
       "actual_impact": {
@@ -5635,7 +5226,6 @@
         "shopify"
       ],
       "owner": "Katie Spaller",
-      "risk": "low",
       "review_tier": "express",
       "created": "2026-04-16",
       "last_updated": "2026-04-16",
@@ -5668,8 +5258,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "At merge/deploy (single pass/fail visual QA gate)",
       "measurement_due": null,
       "actual_impact": null,
@@ -5698,7 +5286,6 @@
       ],
       "owner": "Peter Bayne + Josh Goodale",
       "risk_level": "high",
-      "risk": "high",
       "review_tier": "full",
       "created": "2026-04-17",
       "last_updated": "2026-04-17",
@@ -5733,8 +5320,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "21d",
       "measurement_due": null,
       "actual_impact": null,
@@ -5762,7 +5347,6 @@
       ],
       "owner": "Katie Spaller + Peter Bayne",
       "risk_level": "high",
-      "risk": "high",
       "review_tier": "full",
       "created": "2026-04-17",
       "last_updated": "2026-04-23",
@@ -5800,8 +5384,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
@@ -5829,7 +5411,6 @@
       ],
       "owner": "Katie Spaller + Peter Bayne",
       "risk_level": "medium",
-      "risk": "medium",
       "review_tier": "full",
       "created": "2026-04-17",
       "last_updated": "2026-04-23",
@@ -5868,8 +5449,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
@@ -5897,7 +5476,6 @@
       ],
       "owner": "Devon Price",
       "risk_level": "medium",
-      "risk": "medium",
       "review_tier": "full",
       "created": "2026-04-19",
       "last_updated": "2026-04-23",
@@ -5934,8 +5512,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": "2026-04-19",
-      "measurement_start_date": "2026-04-19",
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": "2026-05-03",
       "actual_impact": null,
@@ -5963,7 +5539,6 @@
       ],
       "owner": "Devon Price",
       "risk_level": "medium",
-      "risk": "medium",
       "review_tier": "full",
       "created": "2026-04-19",
       "last_updated": "2026-04-23",
@@ -5998,8 +5573,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": "2026-04-19",
-      "measurement_start_date": "2026-04-19",
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": "2026-05-03",
       "actual_impact": null,
@@ -6027,7 +5600,6 @@
       ],
       "owner": "Devon Price",
       "risk_level": "low",
-      "risk": "low",
       "review_tier": "standard",
       "created": "2026-04-19",
       "last_updated": "2026-04-23",
@@ -6062,8 +5634,6 @@
       "approved_by": "Devon",
       "approved_date": "2026-04-19",
       "published_date": "2026-04-19",
-      "measurement_start_date": "2026-04-19",
-      "measurement_end_date": null,
       "measurement_window": "28d",
       "measurement_due": "2026-05-03",
       "actual_impact": null,
@@ -6091,7 +5661,6 @@
       ],
       "owner": "Katie Spaller",
       "risk_level": "medium",
-      "risk": "medium",
       "review_tier": "standard",
       "created": "2026-04-20",
       "last_updated": "2026-04-21",
@@ -6129,8 +5698,6 @@
       "approved_by": "Katie",
       "approved_date": "2026-04-21",
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
@@ -6165,7 +5732,6 @@
       ],
       "owner": "Katie Spaller + Peter Bayne",
       "risk_level": "medium",
-      "risk": "medium",
       "review_tier": "standard",
       "created": "2026-04-20",
       "last_updated": "2026-04-23",
@@ -6202,8 +5768,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
@@ -6232,7 +5796,6 @@
       ],
       "owner": "Katie Spaller",
       "risk_level": "high",
-      "risk": "high",
       "review_tier": "full",
       "created": "2026-04-20",
       "last_updated": "2026-04-21",
@@ -6271,8 +5834,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
@@ -6286,8 +5847,7 @@
       "revision_date": "2026-04-21",
       "rejection_notes": null,
       "learning_note": null,
-      "spawned_changesets": null,
-      "parent_scope": "CS-2026-051"
+      "spawned_changesets": null
     },
     {
       "id": "CS-2026-090",
@@ -6302,7 +5862,6 @@
       ],
       "owner": "Katie Spaller",
       "risk_level": "medium",
-      "risk": "medium",
       "review_tier": "standard",
       "created": "2026-04-20",
       "last_updated": "2026-04-23",
@@ -6337,8 +5896,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
@@ -6366,7 +5923,6 @@
       ],
       "owner": "Devon Price + Katie Spaller",
       "risk_level": "low",
-      "risk": "low",
       "review_tier": "standard",
       "created": "2026-04-20",
       "last_updated": "2026-04-20",
@@ -6401,8 +5957,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": null,
@@ -6430,7 +5984,6 @@
       ],
       "owner": "Devon Price",
       "risk_level": "medium",
-      "risk": "medium",
       "review_tier": "standard",
       "created": "2026-04-20",
       "last_updated": "2026-04-20",
@@ -6465,8 +6018,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
       "actual_impact": null,
@@ -6494,7 +6045,6 @@
       ],
       "owner": "Katie Spaller + Peter Bayne",
       "risk_level": "low",
-      "risk": "low",
       "review_tier": "standard",
       "created": "2026-04-20",
       "last_updated": "2026-04-23",
@@ -6529,8 +6079,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
@@ -6556,7 +6104,6 @@
       ],
       "status": "draft",
       "risk_level": "medium",
-      "risk": "medium",
       "owner": "Katie Spaller",
       "created": "2026-04-20",
       "last_updated": "2026-04-20",
@@ -6595,8 +6142,6 @@
       "approved_by": null,
       "approved_date": null,
       "published_date": null,
-      "measurement_start_date": null,
-      "measurement_end_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
@@ -6655,8 +6200,6 @@
       "approved_by": "",
       "approved_date": "",
       "published_date": "",
-      "measurement_start_date": "",
-      "measurement_end_date": "",
       "measurement_window": "14d",
       "measurement_due": "",
       "actual_impact": {},
@@ -6664,7 +6207,6 @@
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-095.md",
       "notes": "D09 Desktop CVR -15.7% gate triggered (Homepage -44%, Shots PDP -71%, Concentrate -28%). Diagnose-first then Remove if component isolated. Mobile CVR flat rules out content/copy issues.",
-      "risk": "Low diagnosis phase, low-medium rollback phase",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-23",
       "executed_date": "",
@@ -6711,8 +6253,6 @@
       "approved_by": "",
       "approved_date": "",
       "published_date": "",
-      "measurement_start_date": "",
-      "measurement_end_date": "",
       "measurement_window": "14d_post_graduation",
       "measurement_due": "",
       "actual_impact": {},
@@ -6720,7 +6260,6 @@
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-096.md",
       "notes": "D10 viral IG reel DXXITMzkSd_ with 40+ @bekenetik sponsorship tags (TBI/stroke recovery). Gate 1: Devon 48h sponsorship decision. Gate 2: Brandon claims compliance (no Tier A/B TBI/stroke claims permitted). Auto-closes if Gate 1 declines. Autonomy tier is 2 with the two gates enforced as block-before-execute guardrails — see brief §Two-Gate Structure and §Autonomy Tier.\n2026-04-23: Apr 23 owner scrub (AP-003): creator sponsorship on superfiliate = Nick; exec sponsorship decision = Devon; science review = Brandon. Katie not required (no paid-media spend on this CS).",
-      "risk": "High claims risk (TBI/stroke proximity); Medium PR risk if 48h silence",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-23",
       "executed_date": "",
@@ -6770,8 +6309,6 @@
       "approved_by": "",
       "approved_date": "",
       "published_date": "",
-      "measurement_start_date": "",
-      "measurement_end_date": "",
       "measurement_window": "4_sessions",
       "measurement_due": "",
       "actual_impact": {},
@@ -6779,7 +6316,6 @@
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-097.md",
       "notes": "Step 8a P0 structural escalation — D13 consecutive_below_40 = 6. Owner-surface contracts + production queue SLA + concentration circuit-breaker. Devon weekly check-in. Kill gate: no improvement to >=50 within 3 sessions triggers war-room.",
-      "risk": "Medium change-management; Low customer-facing",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-28",
       "executed_date": "",
@@ -6831,8 +6367,6 @@
       "approved_by": "",
       "approved_date": "",
       "published_date": "",
-      "measurement_start_date": "",
-      "measurement_end_date": "",
       "measurement_window": "48h_organic_7d_brand_search",
       "measurement_due": "2026-05-01",
       "actual_impact": {},
@@ -6840,7 +6374,6 @@
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-098.md",
       "notes": "Composite production unit collapsing DS-04-A (2PM Crash) + DS-04-B (Leadville) + Joelle Debban testimonial into ONE 30-60s reel. Target publish TikTok + IG Reels 2026-04-24 EOD inside 48h trend windows. Brandon claims-gate; Lawrence secures Joelle UGC rights 24h.",
-      "risk": "Medium claims + rights; Low trend-window + brand-voice",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-24",
       "executed_date": "",
@@ -6895,8 +6428,6 @@
       "approved_by": "",
       "approved_date": "",
       "published_date": "",
-      "measurement_start_date": "",
-      "measurement_end_date": "",
       "measurement_window": "7d_post_first_send",
       "measurement_due": "2026-04-29",
       "actual_impact": {},
@@ -6904,7 +6435,6 @@
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-099.md",
       "notes": "Retrofit Hard Gate 2 linkage on in-flight GP-LAUNCH-2026 activating TODAY across organic + email + SMS + influencer + paid. Paid spend blocked until creative + UTMs + pixels verified. Systemic fix for 68/70 orphaned belongs to CS-2026-097.",
-      "risk": "Medium attribution + paid delay; Low launch quality",
       "scheduled_send_date": "2026-04-22",
       "execution_target_date": "2026-04-22",
       "executed_date": "",
@@ -6958,8 +6488,6 @@
       "approved_by": "",
       "approved_date": "",
       "published_date": "",
-      "measurement_start_date": "",
-      "measurement_end_date": "",
       "measurement_window": "30d_post_first_renewal_wave",
       "measurement_due": "2026-06-05",
       "actual_impact": {},
@@ -6967,15 +6495,11 @@
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-100.md",
       "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946. | 2026-04-22 EXPANDED: Absorbed CS-2026-052 (closed superseded same session). Scope now includes all-subscriber refinement of the Upcoming Subscription Order Flow (value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary split + pause-instead-of-cancel messaging) as the base layer, with the Mar 2026 cohort branch + variants as the overlay. All cohorts benefit from the base refinement, not just Mar 2026.",
-      "risk": "Medium execution velocity + L-045 dependency; Low claims + brand voice",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-25",
       "executed_date": "",
       "autonomy_tier": 2,
       "learning_note": "",
-      "absorbed_changesets": [
-        "CS-2026-052"
-      ],
       "last_updated": "2026-04-22"
     },
     {
@@ -7017,7 +6541,6 @@
         "L4_learning": "Does inbox-placement optimization (vendor A/B layer on top of Klaviyo) produce the vendor-claimed 30–40% campaign revenue lift in Kenetik's send context, and which mechanism(s) drive any observed effect?",
         "L5_brand_check": "pass — CONFIRMED 2026-04-22 governance review: Maverick scope is technical-only (headers, DKIM/SPF, authentication). No customer-facing copy modification. First 8-day guardrails clean per Katie."
       },
-      "measurement_window_days": 30,
       "approved_by": "Katie (operator — STANDARD tier, zero-cost test already live; Devon gate at 2026-05-14 retention decision)",
       "approved_date": "2026-04-22",
       "published_date": "2026-04-14",
@@ -7029,14 +6552,7 @@
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
-      "published_by": "Katie",
-      "measurement_start": "2026-04-14",
       "measurement_due": "2026-05-14",
-      "publish_confirmation": {
-        "platform": "klaviyo",
-        "confirmation_id": "Maverick-Klaviyo integration enabled in Klaviyo admin; per-campaign A/B test infrastructure active. Backdated publish — test running in-market since 2026-04-14.",
-        "published_at": "2026-04-14T00:00:00Z"
-      },
       "ad_platform_refs": null,
       "organic_source": null
     }
