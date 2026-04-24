@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-23",
-  "next_id": 114,
+  "last_updated": "2026-04-24",
+  "next_id": 115,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-22T15:15:00Z",
     "last_sweep_session": 38,
@@ -98,28 +98,28 @@
     ]
   },
   "summary": {
-    "total": 113,
+    "total": 114,
     "by_status": {
       "closed": 46,
-      "published": 15,
+      "published": 16,
       "approved": 9,
       "draft": 40,
       "needs_feedback": 3
     },
     "by_risk": {
       "critical": 2,
-      "low": 61,
+      "low": 62,
       "medium": 41,
       "high": 9
     },
     "by_subtype": {
       "implementation": 77,
       "investigation": 21,
-      "quick": 15
+      "quick": 16
     },
-    "last_updated": "2026-04-23",
-    "total_changesets": 113,
-    "last_counted": "2026-04-23"
+    "last_updated": "2026-04-24",
+    "total_changesets": 114,
+    "last_counted": "2026-04-24"
   },
   "changesets": [
     {
@@ -7168,6 +7168,64 @@
       "scheduled_send_date": "2026-05-29",
       "executed_date": null,
       "autonomy_tier": null
+    },
+    {
+      "id": "CS-2026-114",
+      "title": "Shopify PDP bug fix \u2014 auto-select first available pack size on flavor toggle (CW Product Banner)",
+      "subtype": "quick",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify"
+      ],
+      "status": "published",
+      "risk_level": "low",
+      "owner": "Katie",
+      "created": "2026-04-24",
+      "objective_level": "L3",
+      "category": "other",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "manual",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": "[ASSUMED \u2014 verify] Recovers multi-flavor PDP visitors who previously abandoned with no size selected",
+          "downside": 0
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": 0
+        },
+        "primary_metric": "pdp_add_to_cart_rate_on_flavor_toggle_sessions",
+        "primary_metric_target": "no regression; directional lift on flavor-toggle sessions",
+        "L1_margin": "neutral",
+        "L2_cash": "neutral",
+        "L3_customer_quality": "positive",
+        "L4_learning": "confirms flavor-toggle-abandon pattern",
+        "L5_brand_check": "positive"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "direct",
+      "routed_date": "2026-04-24",
+      "approved_by": "Katie",
+      "approved_date": "2026-04-24",
+      "published_date": "2026-04-24",
+      "measurement_window": "14d",
+      "measurement_due": "2026-05-08",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-114.md",
+      "notes": "Auto-select first available pack size when visitor toggles flavor. PR: https://github.com/drinkkenetik/kenetik-shopify-theme/pull/new/fix/cw-product-banner-auto-select-size | Branch: fix/cw-product-banner-auto-select-size | Repro: Microsoft Clarity session replay",
+      "review_tier": "express",
+      "execution_target_date": "2026-04-24",
+      "executed_date": "2026-04-24",
+      "autonomy_tier": null,
+      "last_updated": "2026-04-24"
     }
   ],
   "queue_actions": {
