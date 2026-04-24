@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-24",
-  "next_id": 115,
+  "next_id": 116,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-22T15:15:00Z",
     "last_sweep_session": 38,
@@ -98,27 +98,27 @@
     ]
   },
   "summary": {
-    "total": 114,
+    "total": 115,
     "by_status": {
       "closed": 46,
       "published": 16,
-      "approved": 9,
+      "approved": 10,
       "draft": 40,
       "needs_feedback": 3
     },
     "by_risk": {
       "critical": 2,
-      "low": 62,
+      "low": 63,
       "medium": 41,
       "high": 9
     },
     "by_subtype": {
       "implementation": 77,
       "investigation": 21,
-      "quick": 16
+      "quick": 17
     },
     "last_updated": "2026-04-24",
-    "total_changesets": 114,
+    "total_changesets": 115,
     "last_counted": "2026-04-24"
   },
   "changesets": [
@@ -7226,6 +7226,72 @@
       "executed_date": "2026-04-24",
       "autonomy_tier": null,
       "last_updated": "2026-04-24"
+    },
+    {
+      "id": "CS-2026-115",
+      "title": "Seed first autonomous CRO hypothesis \u2014 subscription-first PDP presentation (T2 cycle 1)",
+      "subtype": "quick",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify",
+        "auto-optimize-loop"
+      ],
+      "status": "approved",
+      "risk_level": "low",
+      "review_tier": "express",
+      "owner": "Katie",
+      "created": "2026-04-24",
+      "objective_level": "L4",
+      "category": "experiment-seed",
+      "dependencies": [
+        "cowork-auto-optimize-orchestrator-runnable",
+        "theme-repo-secrets-4",
+        "ga4-custom-dimensions-ao_experiment-ao_variant"
+      ],
+      "blocks": [],
+      "spawned_from": "architecture/2026-04-24-t2-first-cro-experiment-scope.md",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": null,
+          "expected": "[VALIDATION RUN \u2014 no revenue target] T2 primary objective is reference-architecture validation; business outcome on subscription-first hypothesis is secondary signal.",
+          "downside": 0
+        },
+        "margin": {
+          "upside": null,
+          "expected": "Subscription attach rate may shift; margin effect depends on attach mix over 7-day sample.",
+          "downside": 0
+        },
+        "primary_metric": "add_to_cart_rate",
+        "primary_metric_target": "Validation only \u2014 success = full idle\u2192awaiting_approval\u2192canary\u2192measuring\u2192analyzing\u2192decided\u2192idle cycle with all Slack notifications firing.",
+        "L1_margin": "neutral",
+        "L2_cash": "neutral",
+        "L3_customer_quality": "neutral-positive (subscription-first may shift attach toward higher-LTV subscription)",
+        "L4_learning": "HIGH \u2014 first autonomous CRO cycle validates reference architecture that Klaviyo + paid media + ChangeSet auto-execute all copy.",
+        "L5_brand_check": "neutral (seed only; variant Liquid claims-checked + brand-voice-checked at orchestrator step 2)"
+      },
+      "routed_to": [
+        "Katie",
+        "Devon"
+      ],
+      "routed_via": "cowork-session",
+      "routed_date": "2026-04-24",
+      "approved_by": "Katie",
+      "approved_date": "2026-04-24",
+      "published_date": "2026-04-24",
+      "measurement_window": "7d (measuring phase) + 24h (canary) = 8d total after approve",
+      "measurement_due": "[TBD \u2014 starts when Slack approve fires; +8 days from approval]",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-115.md",
+      "notes": "First T2 validation cycle for autonomous CRO loop. Seeds seeded_hypothesis into drinkkenetik/kenetik-shopify-theme auto-optimize/state.json. Guardrails kept at -20%/-20%/+20% tier-1 on 7-day aggregate per Katie's 2026-04-24 decision. Variant rendering gated by Slack approval at awaiting_approval phase \u2014 state.json seed alone does not expose variant to traffic. Success defined as full phase-machine cycle + all Slack notifications + clean return to idle.",
+      "execution_target_date": "2026-04-24",
+      "executed_date": "2026-04-24",
+      "autonomy_tier": "tier_1",
+      "last_updated": "2026-04-24",
+      "cycle_tag": "t2-cycle-1",
+      "parent_scope_doc": "architecture/2026-04-24-t2-first-cro-experiment-scope.md"
     }
   ],
   "queue_actions": {
