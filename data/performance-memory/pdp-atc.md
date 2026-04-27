@@ -1,0 +1,56 @@
+# Performance Memory — pdp-atc
+
+> Auto-updated by the autonomous optimization loop after each experiment cycle.
+> This file accumulates patterns the agent has learned about what works and what doesn't
+> on the Product Detail Page for Add-to-Cart rate optimization.
+>
+> **Do not edit manually** — the agent appends to this file after each keep/discard decision.
+> Devon reviews patterns during the monthly calibration ceremony (Process 1.3).
+
+## Surface Info
+
+- **Surface**: pdp-atc (Product Detail Page — Add to Cart Rate)
+- **Primary metric**: add_to_cart_rate (higher is better)
+- **Measurement window**: 7 days
+- **Minimum sample**: 100 sessions per arm
+- **Started**: (not yet started)
+- **Total cycles**: 0
+- **Cumulative lift**: 0.0%
+
+## Winning Patterns
+
+_(No patterns recorded yet. The agent will add entries here after each KEEP decision.)_
+
+<!-- Format for entries:
+- [Cycle N] Pattern description (lift: +X.X%, p: 0.XXX, date: YYYY-MM-DD)
+-->
+
+## Losing Patterns
+
+_(No patterns recorded yet. The agent will add entries here after each DISCARD decision.)_
+
+<!-- Format for entries:
+- [Cycle N] Pattern description (lift: -X.X%, p: 0.XXX, date: YYYY-MM-DD)
+-->
+
+## Emergency Reverts
+
+_(No emergency reverts recorded yet.)_
+
+<!-- Format for entries:
+- [Cycle N] What happened, which guardrail tripped, what was reverted (date: YYYY-MM-DD)
+-->
+
+## Open Questions
+
+- Does moving the review carousel above the product description improve ATC?
+- Benefit-first vs. feature-first headline copy — which converts better?
+- Does subscription value prop placement (above vs. below ATC button) affect attach rate?
+- Impact of social proof density (star rating only vs. stars + review count + recent review snippet)
+- Video on PDP: help or hurt ATC rate?
+- Urgency/scarcity messaging: trust-builder or trust-breaker for this audience?
+- Section ordering above fold: image gallery first vs. product info first on mobile
+
+## Cross-Surface Insights
+
+_(Patterns that may apply to other surfaces will be noted here and appended to the KGS Learning Log at `data/performance-memory/cross-surface-pm.json` — add to both `entries` and `index` arrays.)_

@@ -1,0 +1,97 @@
+{
+  "_schema_version": "1.0",
+  "_description": "Experiment state for the autonomous optimization loop. Managed by the cron orchestrator and Cowork scheduled task. Do not edit manually.",
+  "_safety_config": {
+    "_doc": "Track A safety gate. revert_enabled=false ships in alert-only mode (Stage 1); flip to true after pdp-atc-001 cycle 1 calibration to enable live auto-revert (Stage 2). stale_snapshot_hours bounds how old a current_metrics snapshot can be before the cron skips guardrail evaluation.",
+    "revert_enabled": false,
+    "stale_snapshot_hours": 26
+  },
+  "experiments": {
+    "pdp-atc": {
+      "phase": "canary",
+      "experiment_id": "pdp-atc-001",
+      "surface": "pdp-atc",
+      "seeded_hypothesis": "Flip PDP buy-box default from one-time to subscription-first presentation (subscription option selected/rendered above one-time) to test whether anchoring to the higher-value option and simplifying the choice architecture lifts add-to-cart rate. Changing element: buy-box default state and option ordering in snippets/buy-buttons.liquid. Data rationale: hypothesis #4 in pdp-atc build-spec backlog; subscription-first is a known LTV lever and the compound effect on ATC is untested on Kenetik's audience. Expected direction: ATC rate up (+). Disproof: ATC rate flat or down at 95% confidence over 7-day measurement window, or subscription attach rate drop with no net ATC lift (pure cannibalization). Seeded 2026-04-24 by Katie for first live T2 validation cycle.",
+      "seeded_by": "katie",
+      "seeded_at": "2026-04-24T00:00:00Z",
+      "cycle_tag": "t2-cycle-1",
+      "hypothesis": "Flip PDP buy-box default from one-time to subscription-first presentation (subscription option selected/rendered above one-time) to test whether anchoring to the higher-value option and simplifying the choice architecture lifts add-to-cart rate. Changing element: buy-box default state and option ordering in snippets/buy-buttons.liquid. Data rationale: hypothesis #4 in pdp-atc build-spec backlog; subscription-first is a known LTV lever and the compound effect on ATC is untested on Kenetik's audience. Expected direction: ATC rate up (+). Disproof: ATC rate flat or down at 95% confidence over 7-day measurement window, or subscription attach rate drop with no net ATC lift (pure cannibalization). Seeded 2026-04-24 by Katie for first live T2 validation cycle.",
+      "branch": "auto-optimize/pdp-atc/t2-cycle-1-subscription-first",
+      "preview_theme_id": "161090339035",
+      "preview_url": "https://ketoneelixir.myshopify.com/?preview_theme_id=161090339035",
+      "variant_ratio": 0.1,
+      "cycle": 1,
+      "slack_thread_ts": "1777062025.357359",
+      "phase_history": [
+        {
+          "phase": "idle",
+          "entered_at": "2026-04-24T00:00:00Z"
+        },
+        {
+          "phase": "awaiting_approval",
+          "entered_at": "2026-04-24T17:00:00Z"
+        },
+        {
+          "phase": "canary",
+          "entered_at": "2026-04-26T20:04:12Z"
+        }
+      ],
+      "canary_started_at": "2026-04-26T20:04:12Z",
+      "measurement_started_at": null,
+      "measurement_window_days": 7,
+      "min_sessions_per_arm": 100,
+      "files_changed": [
+        "sections/cw-01-product-banner.liquid"
+      ],
+      "fair_game_elements_touched": [
+        "purchase_type_default_selection",
+        "purchase_type_ordering"
+      ],
+      "guardrail_checks": [
+        {
+          "checked_at": "2026-04-27T15:17:48.220921Z",
+          "snapshot_at": "2026-04-27T15:17:49.487452Z",
+          "result": "healthy",
+          "action_taken": "healthy"
+        }
+      ],
+      "last_checked_at": "2026-04-27T15:17:48.220921Z",
+      "katie_approval_observed_at": "2026-04-24T20:22:15Z",
+      "orchestrator_notes": [
+        {
+          "at": "2026-04-25T17:00:00Z",
+          "run": "10:00 PT",
+          "blocker": "preview_theme_id still null after 3 orchestrator runs (Day 2). Deploy workflow has not committed preview_theme_id back to state.json. Approval is on file from Katie (2026-04-24T20:22:15Z). Canary cannot activate without preview_theme_id. Sandbox cannot reach Shopify Admin API or GitHub Actions API to verify deploy run status. Human action required: re-run auto-optimize-deploy.yml on auto-optimize/pdp-atc/t2-cycle-1-subscription-first."
+        },
+        {
+          "at": "2026-04-25T18:09:49Z",
+          "run": "afternoon PT",
+          "blocker": "Day 2, 4th consecutive run blocked. preview_theme_id still null on main; no chore(auto-optimize): set preview_theme_id... commit has appeared. Variant branch HEAD unchanged at 5a59094. Katie's approve still on file (2026-04-24T20:22:15Z). Sandbox cannot self-heal \u2014 no Shopify Admin API or GH Actions API reach. Posting short escalation rather than re-spamming instructions; full unblock instructions remain in 2026-04-25 10:11 EDT thread reply. No state transitions this run."
+        },
+        {
+          "at": "2026-04-26T20:04:12Z",
+          "run": "afternoon PT (Day 3)",
+          "action": "Canary activated for pdp-atc-001 at 10% PDP traffic. Unblock condition met: preview_theme_id=161090339035 was committed back to main at 18:59:57Z (commit ce0645b) and Katie's prior approve (2026-04-24T20:22:15Z) is still on file. Updated snippets/auto-optimize-config.liquid to add pdp-atc-001 entry to window.__autoOptimize. Phase transitioned awaiting_approval -> canary. Tier 1 guardrails active (-20% ATC / -20% CVR / +20% bounce auto-revert). Cron will ramp to 50/50 measuring after 24h if healthy."
+        }
+      ],
+      "current_metrics": {
+        "snapshot_at": "2026-04-27T15:17:49.487452Z",
+        "control": {
+          "sessions": 0,
+          "atc_events": 0,
+          "atc_rate": 0.0,
+          "bounce_rate": 0.0,
+          "cvr": 0.0
+        },
+        "variant": {
+          "sessions": 0,
+          "atc_events": 0,
+          "atc_rate": 0.0,
+          "bounce_rate": 0.0,
+          "cvr": 0.0
+        }
+      }
+    }
+  },
+  "_last_cron_run": "2026-04-27T15:17:48.220921Z"
+}
