@@ -100,9 +100,9 @@
   "summary": {
     "total": 116,
     "by_status": {
-      "closed": 47,
+      "closed": 48,
       "published": 18,
-      "approved": 8,
+      "approved": 7,
       "draft": 41,
       "needs_feedback": 2
     },
@@ -2858,7 +2858,7 @@
       "platforms": [
         "amazon-ads"
       ],
-      "status": "approved",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie Spaller",
       "created": "2026-03-22",
@@ -2891,13 +2891,13 @@
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-03-22",
       "published_date": null,
-      "closed_date": null,
+      "closed_date": "2026-04-27",
       "measurement_window": "",
       "measurement_due": null,
-      "outcome": null,
+      "outcome": "stale",
       "review_tier": "express",
       "file": "cgo-logs/changesets/CS-2026-037.md",
-      "notes": "Amazon keyword gap analysis. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
+      "notes": "Amazon keyword gap analysis. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | CLOSED 2026-04-27: Closed as stale by Katie via /changeset-execute. Original CS was express auto-approved 2026-03-22 but never had a brief written and never executed (37+ days idle). Already flagged stale at 2026-04-15 sweep. Now formally closed because Amazon search term harvest / keyword gap analysis is being handled by external partner ZSquared \u2014 internal investigation superseded by partner work-stream. No measurement to record (never executed). Brief file CS-2026-037.md was missing from repo; minimal closure brief created at this closure to provide paper trail.",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
@@ -2905,9 +2905,16 @@
       "sweep_flags": [
         "S31 sweep 2026-04-13: stale 22d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
-        "stale_approved_gt_7d"
+        "stale_approved_gt_7d",
+        {
+          "flag": "closed_stale_superseded_by_partner",
+          "set_date": "2026-04-27",
+          "session": "2026-04-27-execute",
+          "action": "ZSquared partnership now owns the Amazon search term harvest work-stream; internal CS retired."
+        }
       ],
-      "last_updated": "2026-04-20"
+      "last_updated": "2026-04-27",
+      "closed_reason": "Stale and no longer relevant \u2014 Amazon search term harvest work is now being handled by external partner ZSquared, superseding any internal investigation under this CS."
     },
     {
       "id": "CS-2026-038",
