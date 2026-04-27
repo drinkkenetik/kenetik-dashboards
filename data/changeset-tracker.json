@@ -100,9 +100,9 @@
   "summary": {
     "total": 116,
     "by_status": {
-      "closed": 46,
+      "closed": 47,
       "published": 17,
-      "approved": 9,
+      "approved": 8,
       "draft": 41,
       "needs_feedback": 3
     },
@@ -5652,7 +5652,7 @@
     {
       "id": "CS-2026-087",
       "title": "CamJones Unbound IG Organic-to-Paid Graduation Test",
-      "status": "approved",
+      "status": "closed",
       "subtype": "implementation",
       "category": "paid_social_graduation",
       "department": "paid-media",
@@ -5663,7 +5663,7 @@
       "risk_level": "medium",
       "review_tier": "standard",
       "created": "2026-04-20",
-      "last_updated": "2026-04-21",
+      "last_updated": "2026-04-27",
       "hypothesis": "CamJones Unbound IG reel \u2014 the week's top creator-content performer on Freedom Segment themes (5.08% ER [src: cgo-logs/daily-syntheses/2026-04-20-s1.md#dept-content-brief]) \u2014 will hold ROAS above the paid-social breakeven threshold (>=2.2x on a 50% DTC margin) when boosted into Freedom Segment prospecting on IG. Directional support comes from Matt Hughes reel organic reach (737k impressions [src: cgo-logs/daily-syntheses/2026-04-20-s1.md#D07-D04-cross-domain]), though that asset has not yet been measured in paid. Testing CamJones validates the endurance-authority graduation pattern specifically on IG \u2014 where endurance signal is intact \u2014 while FB endurance is being simultaneously removed per L-036 [src: data/performance-memory/cross-surface-pm.json#L-036].",
       "objective_level": "L4",
       "spawned_from": "synthesis-2026-04-20-s1:ready-to-draft",
@@ -5701,24 +5701,31 @@
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "outcome": "cancelled",
+      "closed_date": "2026-04-27",
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-087.md",
-      "notes": "Spawned from 2026-04-20 daily synthesis Ready-to-draft block (D08 Creator/Ambassador graduation candidates). IG-only to implement L-036 (FB endurance fatigued, IG unaffected). Whiskey 50 on 4/26 is the calendar anchor. Budget source: CS-2026-089 (sequencing dependency). No closed precedent exists for IG endurance graduation \u2014 this CS and CS-2026-094 (parallel IG test) will establish the baseline. Revised 2026-04-21 per /changeset-review findings.",
+      "notes": "Spawned from 2026-04-20 daily synthesis Ready-to-draft block (D08 Creator/Ambassador graduation candidates). IG-only to implement L-036 (FB endurance fatigued, IG unaffected). Whiskey 50 on 4/26 is the calendar anchor. Budget source: CS-2026-089 (sequencing dependency). No closed precedent exists for IG endurance graduation \u2014 this CS and CS-2026-094 (parallel IG test) will establish the baseline. Revised 2026-04-21 per /changeset-review findings. | Closed as irrelevant by Katie 2026-04-27: the CamJones Unbound IG creative was already running paid via the Unbound Sweepstakes ad set on Meta; that campaign ended 2026-04-26. The graduation vehicle is gone, so the planned IG-only boost test has no execution path. No spend deployed under this CS; CS-2026-089 dependency is moot for 087's purposes (089 status unaffected \u2014 see review when scheduling Whiskey 50 / future graduation work). No measurement window opened. No learning recorded for paid endurance graduation on IG \u2014 open question deferred to next IG endurance candidate.",
       "sweep_flags": [
         {
           "flag": "execution_blocked_on_dependency",
           "set_date": "2026-04-21",
           "session": "2026-04-21-review",
           "action": "gated_on_CS-2026-089_approval"
+        },
+        {
+          "flag": "closed_irrelevant",
+          "set_date": "2026-04-27",
+          "session": "2026-04-27-execute",
+          "action": "status approved -> closed; outcome=cancelled; campaign vehicle ended"
         }
       ],
       "revision_notes": "[2026-04-21 /changeset-review \u2014 STANDARD tier, returned for revision]\n\nSix blocking items identified before advancement to CGO approval:\n\n1. MISSING RESOLUTION PATH \u2014 Brief has no Resolution Path (Remove/Refine/Add) block. Add a Resolution Path section with a one-line waiver explaining why Refine (rebalancing existing graduated assets) is insufficient and this must be an Add.\n\n2. WRONG spawned_from \u2014 rec-224 in the 2026-04-20 synthesis is the Brandon/Devon science content library YouTube+LinkedIn seeding pack (owner: Nick + Lawrence), NOT the CamJones graduation. CamJones appears in the synthesis as a Ready-to-draft item (line 136) and in the D08\u2192D12 cross-domain block (line 85). Correct the spawned_from attribution.\n\n3. WRONG CS-2026-043 citation \u2014 The brief cites \"Matt Hughes template (CS-2026-043)\" but CS-2026-043 is the TikTok Platform Test: Matt Hughes Brain Recovery Spark Ad (paid_tiktok, status=approved, no measurement). The IG/FB Matt Hughes graduations are CS-2026-061 (FB), CS-2026-094 (IG), and CS-2026-082 (FB moderation). Replace with the correct precedent or note that no closed precedent exists yet.\n\n4. MISSING inline [src:...] markers \u2014 Empirical claims (737k impressions, 5.08% ER, D17 organic winner, L-036 endurance fatigue, Matt Hughes template) all need inline [src: <path>#<section>] markers per changeset-common-functions \u00a70b.\n\n5. L1 MARGIN MATH \u2014 Brief shows margin.expected = $5,500 on revenue.expected = $9,200. Per \u00a73 paid_meta formula: ($9,200 \u00d7 0.50 DTC margin) \u2212 $2,500 ad spend = $2,100 expected contribution margin. Either recompute per \u00a73 or document the alternate rate used in _note.\n\n6. L2 CASH DEPENDENCY \u2014 L2 assertion depends on CS-2026-089 reallocation, which is still in draft. Make the sequence dependency explicit (add CS-2026-089 to dependencies[], or note that 087 cannot execute until 089 is approved).\n\nOnce addressed, resubmit via /changeset-review CS-2026-087.\n\n---\n[2026-04-21 second pass \u2014 author (Katie) addressed all 6 items]\nBrief rewritten with Resolution Path (1b), References Consulted (1c), corrected spawned_from (synthesis Ready-to-draft block, not rec-224), removed CS-2026-043 citation (wrong precedent \u2014 043 is TikTok), added inline [src:...] markers on all empirical claims, recomputed L1 margin per \u00a73 ($2,100 expected, \u2212$2,500 downside, $6,750 upside), added CS-2026-089 to dependencies[]. Ready for re-review via /changeset-review CS-2026-087.\n\n---\n[2026-04-21 /changeset-review pass 2 \u2014 APPROVED by Katie]\nAll 6 revision items from pass 1 resolved: Resolution Path added, spawned_from corrected, CS-2026-043 citation removed, inline [src:] markers in place, L1 margin recomputed per \u00a73 ($2,100 expected, -$2,500 downside, $6,750 upside), CS-2026-089 added to dependencies. L5 pass; L0 no anti-pattern match; no trade-off conflicts; no override conditions. Approved under Katie's creative/brand-voice authority per team-roles.md. EXECUTION GATED on CS-2026-089 approval \u2014 budget source must clear first.",
       "revision_date": "2026-04-21",
       "rejection_notes": null,
       "learning_note": null,
-      "spawned_changesets": null
+      "spawned_changesets": null,
+      "closed_reason": "Irrelevant \u2014 Unbound Sweepstakes ad set ended 2026-04-26; graduation vehicle no longer exists."
     },
     {
       "id": "CS-2026-088",
