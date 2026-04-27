@@ -4660,7 +4660,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-067.md",
-      "notes": "Cohort: 1,460 profiles (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). All 3 placeholders resolved 4/13: (1) Roman flavor = Blackberry Lemonade per Nick, pending final Roman confirm; (2) Variety inventory cleared by Ops; (3) Insert card resolved to digital BTS video unlock per Peter. Roman script/vibe brief drafted for Nick \u2014 shoot deadline 4/17 for 4/20 T0. Precedent: CS-2026-007. | 2026-04-15: Devon approved. Proceeding normally. CS-074 routine watchlist, no operational impact. Remaining: Devon claims review, Nick tone review, Roman shoot by 4/17. Execution target 4/20. | 2026-04-22 (Katie): Execution deferred \u2014 blocked on Roman thank-you video (Track B T4 digital unlock, see roman-script-brief.md). Shoot missed the 2026-04-17 deadline. Cleared execution_target_date; will re-target when video lands. Status remains approved. Log source: /changeset-execute. | 2026-04-27 (Katie via /changeset-execute): UNBLOCKED. Roman video descoped after 4\u00d7 Slack pings to Nick over 2 weeks with no asset delivered. Track B post-purchase digital unlock removed; T4 Track B copy rewritten to drop video tease. Track B status asymmetry now 3 levers (early access + status no-discount + T17 price lock). New execution target 2026-04-29 (T0 send). roman-script-brief.md marked deprecated for this CS but preserved for any future video request. Status remains approved pending Klaviyo flow build.",
+      "notes": "Cohort: 1,460 profiles (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). All 3 placeholders resolved 4/13: (1) Roman flavor = Blackberry Lemonade per Nick, pending final Roman confirm; (2) Variety inventory cleared by Ops; (3) Insert card resolved to digital BTS video unlock per Peter. Roman script/vibe brief drafted for Nick \u2014 shoot deadline 4/17 for 4/20 T0. Precedent: CS-2026-007. | 2026-04-15: Devon approved. Proceeding normally. CS-074 routine watchlist, no operational impact. Remaining: Devon claims review, Nick tone review, Roman shoot by 4/17. Execution target 4/20. | 2026-04-22 (Katie): Execution deferred \u2014 blocked on Roman thank-you video (Track B T4 digital unlock, see roman-script-brief.md). Shoot missed the 2026-04-17 deadline. Cleared execution_target_date; will re-target when video lands. Status remains approved. Log source: /changeset-execute. | 2026-04-27 (Katie via /changeset-execute): UNBLOCKED. Roman video descoped after 4\u00d7 Slack pings to Nick over 2 weeks with no asset delivered. Track B post-purchase digital unlock removed; T4 Track B copy rewritten to drop video tease. Track B status asymmetry now 3 levers (early access + status no-discount + T17 price lock). New execution target 2026-04-29 (T0 send). roman-script-brief.md marked deprecated for this CS but preserved for any future video request. Status remains approved pending Klaviyo flow build. | 2026-04-27 (Katie via /changeset-review): Re-reviewed rescope to Klaviyo campaigns (not flow) + sender roman@drinkkenetik.com. Standard tier. L0 no anti-pattern match. L1-L5 validated \u2014 L3 marginally strengthened, L4 measurement quality improved by campaign mechanic, L5 pass with expanded pending dependencies. RECOMMENDATION: APPROVE rescope. New pre-send checklist added to brief (Sender & Compliance Setup section). Format-level finding: brief lacks \u00a70b references_consulted block + [src:] markers (pre-dates \u00a70b tightening) \u2014 low-priority follow-up patch, not blocking. Original Devon approval 2026-04-15 preserved.",
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-29",
       "executed_date": null,
@@ -4681,6 +4681,18 @@
           "set_date": "2026-04-27",
           "session": "2026-04-27-execute",
           "action": "Track B post-purchase Roman thank-you video unlock removed from scope. Track B asymmetry now: early access + status no-discount + founding-customer price lock at T17 (3 levers, was 4). T4 Track B copy rewritten to drop video tease. roman-script-brief.md marked deprecated for this CS."
+        },
+        {
+          "flag": "rescope_to_campaigns_and_roman_sender",
+          "set_date": "2026-04-27",
+          "session": "2026-04-27-changeset-review",
+          "action": "Mechanic: Klaviyo flow \u2192 campaigns. Sender: roman@drinkkenetik.com (display name 'Roman'). Re-reviewed at Standard tier; APPROVED rescope. New pre-send dependencies: FTC \u00a7255 material-connection disclosure in footer, DKIM/SPF/DMARC verification for roman@ sender, deliverability warmup. Devon claims review + Nick tone review still pending. See CS-067 brief Rescope Review 2026-04-27 section."
+        },
+        {
+          "flag": "factual_grounding_format_debt",
+          "set_date": "2026-04-27",
+          "session": "2026-04-27-changeset-review",
+          "action": "Brief lacks formal references_consulted: block and inline [src:] markers per \u00a70b. Empirical claims ARE narratively cited. Brief pre-dates \u00a70b tightening. Low-priority follow-up patch \u2014 not blocking the rescope or execution."
         }
       ],
       "last_updated": "2026-04-27"
