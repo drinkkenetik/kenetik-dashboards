@@ -4660,9 +4660,9 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-067.md",
-      "notes": "Cohort: 1,460 profiles (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). All 3 placeholders resolved 4/13: (1) Roman flavor = Blackberry Lemonade per Nick, pending final Roman confirm; (2) Variety inventory cleared by Ops; (3) Insert card resolved to digital BTS video unlock per Peter. Roman script/vibe brief drafted for Nick \u2014 shoot deadline 4/17 for 4/20 T0. Precedent: CS-2026-007. | 2026-04-15: Devon approved. Proceeding normally. CS-074 routine watchlist, no operational impact. Remaining: Devon claims review, Nick tone review, Roman shoot by 4/17. Execution target 4/20. | 2026-04-22 (Katie): Execution deferred \u2014 blocked on Roman thank-you video (Track B T4 digital unlock, see roman-script-brief.md). Shoot missed the 2026-04-17 deadline. Cleared execution_target_date; will re-target when video lands. Status remains approved. Log source: /changeset-execute.",
+      "notes": "Cohort: 1,460 profiles (471 FREE seg Yx3yNy / 989 PAID seg Vq55GT). All 3 placeholders resolved 4/13: (1) Roman flavor = Blackberry Lemonade per Nick, pending final Roman confirm; (2) Variety inventory cleared by Ops; (3) Insert card resolved to digital BTS video unlock per Peter. Roman script/vibe brief drafted for Nick \u2014 shoot deadline 4/17 for 4/20 T0. Precedent: CS-2026-007. | 2026-04-15: Devon approved. Proceeding normally. CS-074 routine watchlist, no operational impact. Remaining: Devon claims review, Nick tone review, Roman shoot by 4/17. Execution target 4/20. | 2026-04-22 (Katie): Execution deferred \u2014 blocked on Roman thank-you video (Track B T4 digital unlock, see roman-script-brief.md). Shoot missed the 2026-04-17 deadline. Cleared execution_target_date; will re-target when video lands. Status remains approved. Log source: /changeset-execute. | 2026-04-27 (Katie via /changeset-execute): UNBLOCKED. Roman video descoped after 4\u00d7 Slack pings to Nick over 2 weeks with no asset delivered. Track B post-purchase digital unlock removed; T4 Track B copy rewritten to drop video tease. Track B status asymmetry now 3 levers (early access + status no-discount + T17 price lock). New execution target 2026-04-29 (T0 send). roman-script-brief.md marked deprecated for this CS but preserved for any future video request. Status remains approved pending Klaviyo flow build.",
       "scheduled_send_date": null,
-      "execution_target_date": null,
+      "execution_target_date": "2026-04-29",
       "executed_date": null,
       "autonomy_tier": null,
       "linked_calendar_activity": "ROMAN-020326",
@@ -4672,9 +4672,18 @@
           "flag": "blocked_on_creative",
           "set_date": "2026-04-22",
           "session": "/changeset-execute CS-2026-067",
-          "action": "Execution deferred by Katie. Blocked on Roman thank-you video (Track B T4 post-purchase unlock). Re-run /changeset-execute when video delivered."
+          "action": "Execution deferred by Katie. Blocked on Roman thank-you video (Track B T4 post-purchase unlock). Re-run /changeset-execute when video delivered.",
+          "resolved_date": "2026-04-27",
+          "resolution": "Resolved 2026-04-27 by Katie via /changeset-execute. Roman video was not delivered after 4 Slack pings to Nick over 2 weeks. CS proceeding without the video unlock \u2014 Track B post-purchase digital unlock descoped. See CS-067 brief Scope Change 2026-04-27 section."
+        },
+        {
+          "flag": "descope_video_unlock",
+          "set_date": "2026-04-27",
+          "session": "2026-04-27-execute",
+          "action": "Track B post-purchase Roman thank-you video unlock removed from scope. Track B asymmetry now: early access + status no-discount + founding-customer price lock at T17 (3 levers, was 4). T4 Track B copy rewritten to drop video tease. roman-script-brief.md marked deprecated for this CS."
         }
-      ]
+      ],
+      "last_updated": "2026-04-27"
     },
     {
       "id": "CS-2026-068",
