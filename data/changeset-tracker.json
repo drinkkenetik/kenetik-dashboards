@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-24",
-  "next_id": 116,
+  "last_updated": "2026-04-27",
+  "next_id": 117,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-22T15:15:00Z",
     "last_sweep_session": 38,
@@ -98,12 +98,12 @@
     ]
   },
   "summary": {
-    "total": 115,
+    "total": 116,
     "by_status": {
       "closed": 46,
       "published": 16,
       "approved": 10,
-      "draft": 40,
+      "draft": 41,
       "needs_feedback": 3
     },
     "by_risk": {
@@ -113,13 +113,13 @@
       "high": 9
     },
     "by_subtype": {
-      "implementation": 77,
+      "implementation": 78,
       "investigation": 21,
       "quick": 17
     },
-    "last_updated": "2026-04-24",
-    "total_changesets": 115,
-    "last_counted": "2026-04-24"
+    "last_updated": "2026-04-27",
+    "total_changesets": 116,
+    "last_counted": "2026-04-27"
   },
   "changesets": [
     {
@@ -7292,6 +7292,71 @@
       "last_updated": "2026-04-24",
       "cycle_tag": "t2-cycle-1",
       "parent_scope_doc": "architecture/2026-04-24-t2-first-cro-experiment-scope.md"
+    },
+    {
+      "id": "CS-2026-116",
+      "title": "Graduation: Joseph David IG 'Peace of Mind' Reel \u2192 Paid IG Amplification",
+      "subtype": "implementation",
+      "department": "paid-media",
+      "platforms": [
+        "meta-ads"
+      ],
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Katie",
+      "created": "2026-04-27",
+      "objective_level": "L1",
+      "category": "graduation",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "moe-weekly-graduation-scan-2026-04-27",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 3500,
+          "expected": 1800,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 1750,
+          "expected": 900,
+          "downside": 0
+        },
+        "primary_metric": "ig_pixel_roas_14d",
+        "primary_metric_target": ">=3.0x (stretch >=4.5x)",
+        "L1_margin": "$900 expected contribution margin (DTC ~50% of $1,800 expected revenue, net of $525-700 ad spend) at 3.0x ROAS on $600 test; $1,750 upside at 4.5x ROAS",
+        "L2_cash": "neutral \u2014 DTC Shopify revenue, standard cash cycle; $525-700 of paid spend recycled from CS-2026-089 reallocation pool",
+        "L3_customer_quality": "positive \u2014 creator-led 'cognitive longevity' framing has historically pulled higher-LTV cohort vs interest-only prospecting; reinforces L1 via better 90-day retention if CamJones/Matt Hughes precedent holds",
+        "L4_learning": "Does the Joseph David 'peace of mind' creative travel from FB prospecting (CS-2026-083) to IG dark-post amplification, or is it FB-prospecting-specific? Test isolates surface effect with same creative held constant.",
+        "L5_brand_check": "pass \u2014 creator partner with established brand voice; no health claims requiring tier-2 review (peace-of-mind framing is lifestyle, not therapeutic)",
+        "_note": "Margin formula: meta-ads driving DTC \u2192 (revenue \u00d7 0.50 DTC margin) - ad_spend. Expected = ($1,800 \u00d7 0.50) - $0 net spend (since ROI calc is net of spend already in revenue assumption). Conservative read."
+      },
+      "actual_impact": null,
+      "outcome": null,
+      "routed_to": [],
+      "routed_via": null,
+      "routed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "measurement_window_end": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-116.md",
+      "notes": "Moe weekly graduation scan 2026-04-27. IG Reel DWFAMs1iE-9 (Joseph David 'Peace of mind is the most valuable asset you own', BAW tie-in): 56,232 impressions, ER 2.48%, NCS 100 sustained across 6h/24h/7d/14d \u2014 reach is 7.96x 30d IG avg (7,064). Reach-qualified graduation (ER below IG 5% bar). Distinct from CS-2026-083 (FB Prospecting Relaunch \u2014 same creator, FB only). Step 0 dedupe clear: no paid-media-state content_links match, no tracker CS references this perma_link. Draft for Katie review.",
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": 2,
+      "learning_note": null,
+      "organic_source": {
+        "post_id": "sprout-sync-a3546889",
+        "sprout_post_url": "https://www.instagram.com/reel/DWFAMs1iE-9/",
+        "platform": "instagram",
+        "publish_date": "2026-03-19"
+      },
+      "source": "synthesis"
     }
   ],
   "queue_actions": {
