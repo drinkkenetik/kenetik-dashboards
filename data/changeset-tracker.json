@@ -101,8 +101,8 @@
     "total": 116,
     "by_status": {
       "closed": 46,
-      "published": 16,
-      "approved": 10,
+      "published": 17,
+      "approved": 9,
       "draft": 41,
       "needs_feedback": 3
     },
@@ -7236,7 +7236,7 @@
         "shopify",
         "auto-optimize-loop"
       ],
-      "status": "approved",
+      "status": "published",
       "risk_level": "low",
       "review_tier": "express",
       "owner": "Katie",
@@ -7280,18 +7280,32 @@
       "approved_date": "2026-04-24",
       "published_date": "2026-04-24",
       "measurement_window": "7d (measuring phase) + 24h (canary) = 8d total after approve",
-      "measurement_due": "[TBD \u2014 starts when Slack approve fires; +8 days from approval]",
+      "measurement_due": "2026-05-04",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-115.md",
-      "notes": "First T2 validation cycle for autonomous CRO loop. Seeds seeded_hypothesis into drinkkenetik/kenetik-shopify-theme auto-optimize/state.json. Guardrails kept at -20%/-20%/+20% tier-1 on 7-day aggregate per Katie's 2026-04-24 decision. Variant rendering gated by Slack approval at awaiting_approval phase \u2014 state.json seed alone does not expose variant to traffic. Success defined as full phase-machine cycle + all Slack notifications + clean return to idle. | AMENDMENT 2026-04-24: Surface config pdp-atc-theme.yaml rewritten v1.0\u2192v2.0 to map fair_game_files/elements to the actual live cw-product render path (cw-01-product-banner buy-box + cw-hp-* below-fold sections). v1.0 referenced generic Shopify files disabled on the live template \u2014 variant would have deployed with no visible change. | CYCLE 1 ATTEMPT 1 REJECTED 2026-04-24 15:51 EDT: orchestrator fired pre-PR#60-merge, generated Fuel-Your-Brain CTA hypothesis targeting snippets/product-buttons.liquid (no-op on cw-product template \u2014 only rendered by disabled main section + quickview). Variant branch also clobbered seeded_hypothesis in state.json. Rejected via Slack with context. Awaiting next Cowork run to re-read seeded_hypothesis on main + deploy subscription-first variant on cw-01-product-banner.liquid.",
+      "notes": "First T2 validation cycle for autonomous CRO loop. Seeds seeded_hypothesis into drinkkenetik/kenetik-shopify-theme auto-optimize/state.json. Guardrails kept at -20%/-20%/+20% tier-1 on 7-day aggregate per Katie's 2026-04-24 decision. Variant rendering gated by Slack approval at awaiting_approval phase \u2014 state.json seed alone does not expose variant to traffic. Success defined as full phase-machine cycle + all Slack notifications + clean return to idle. | AMENDMENT 2026-04-24: Surface config pdp-atc-theme.yaml rewritten v1.0\u2192v2.0 to map fair_game_files/elements to the actual live cw-product render path (cw-01-product-banner buy-box + cw-hp-* below-fold sections). v1.0 referenced generic Shopify files disabled on the live template \u2014 variant would have deployed with no visible change. | CYCLE 1 ATTEMPT 1 REJECTED 2026-04-24 15:51 EDT: orchestrator fired pre-PR#60-merge, generated Fuel-Your-Brain CTA hypothesis targeting snippets/product-buttons.liquid (no-op on cw-product template \u2014 only rendered by disabled main section + quickview). Variant branch also clobbered seeded_hypothesis in state.json. Rejected via Slack with context. Awaiting next Cowork run to re-read seeded_hypothesis on main + deploy subscription-first variant on cw-01-product-banner.liquid. | EXECUTE 2026-04-27: tracker reconciled status approved\u2192published. State.json seed verified on theme repo main (seeded_hypothesis + seeded_by=katie + seeded_at=2026-04-24T00:00:00Z + cycle_tag=t2-cycle-1 all present). Cycle 1 advanced through awaiting_approval (Katie approved 2026-04-24T20:22:15Z) \u2192 canary (entered 2026-04-26T20:04:12Z, 10% traffic, branch=auto-optimize/pdp-atc/t2-cycle-1-subscription-first, preview_theme_id=161090339035). Variant correctly targets cw-01-product-banner.liquid lines 262-297 per amended pdp-atc-theme.yaml v2.0. Measurement window: 1d canary + 7d measuring \u2192 measurement_due 2026-05-04. Contamination check vs CS-2026-114 (same file): different DOM regions (114 = flavor toggle pack-size auto-select; 115 = buy-box default subscription-first) \u2014 minor; 114's measurement settled. /changeset-lifecycle-sweep will pick up measurement at 2026-05-04.",
       "execution_target_date": "2026-04-24",
       "executed_date": "2026-04-24",
       "autonomy_tier": "tier_1",
-      "last_updated": "2026-04-24",
+      "last_updated": "2026-04-27",
       "cycle_tag": "t2-cycle-1",
-      "parent_scope_doc": "architecture/2026-04-24-t2-first-cro-experiment-scope.md"
+      "parent_scope_doc": "architecture/2026-04-24-t2-first-cro-experiment-scope.md",
+      "published_by": "Katie",
+      "measurement_start": "2026-04-26",
+      "measurement_window_days": 8,
+      "publish_confirmation": {
+        "department": "DTC-website",
+        "platforms": [
+          "shopify",
+          "auto-optimize-loop"
+        ],
+        "confirmation_id": "kenetik-shopify-theme/auto-optimize/state.json @ main \u2014 seeded_hypothesis present; cycle progressed to phase=canary on 2026-04-26T20:04:12Z; preview_theme_id=161090339035; branch=auto-optimize/pdp-atc/t2-cycle-1-subscription-first",
+        "published_at": "2026-04-24T00:00:00Z"
+      },
+      "ad_platform_refs": null,
+      "organic_source": null
     },
     {
       "id": "CS-2026-116",
