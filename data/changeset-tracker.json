@@ -5741,7 +5741,7 @@
       "risk_level": "medium",
       "review_tier": "standard",
       "created": "2026-04-20",
-      "last_updated": "2026-04-23",
+      "last_updated": "2026-04-27",
       "hypothesis": "Freedom500 FB reel graduates to paid placement paired with ARCA Talladega race activation (4/24). Tests whether motorsport/freedom creative holds on FB despite endurance fatigue (L-036), by using freedom-positioning rather than endurance-positioning hooks. If it clears 2.5x ROAS in 14d, we unlock a second FB graduation channel beyond athlete-authority.",
       "objective_level": "L4",
       "spawned_from": "rec-226",
@@ -5782,8 +5782,15 @@
       "closed_date": null,
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-088.md",
-      "notes": "Spawned from 2026-04-20 synthesis rec-226. ARCA Talladega on 4/24 is natural context. Hypothesis directly tests L-036 (FB endurance fatigue): freedom framing should NOT carry the endurance taint. If ROAS clears, we hold FB for freedom/motorsport wedge and keep endurance on IG+TikTok only.\n2026-04-23: Apr 23 owner scrub (AP-003): Freedom500 ARCA pairing \u2014 paid creative = Katie + Peter per Content Routing.",
-      "sweep_flags": [],
+      "notes": "Spawned from 2026-04-20 synthesis rec-226. ARCA Talladega on 4/24 is natural context. Hypothesis directly tests L-036 (FB endurance fatigue): freedom framing should NOT carry the endurance taint. If ROAS clears, we hold FB for freedom/motorsport wedge and keep endurance on IG+TikTok only.\n2026-04-23: Apr 23 owner scrub (AP-003): Freedom500 ARCA pairing \u2014 paid creative = Katie + Peter per Content Routing. | 2026-04-27 (via CS-089 finalization): Budget source CS-089 executed at scoped-down ~3% scale, leaving 088 unfunded at original scope. Katie directive: RESCOPE to $20-50/day smaller test that fits current paid-media envelope without new reallocation. Status remains draft pending rewrite.",
+      "sweep_flags": [
+        {
+          "flag": "needs_rescope_to_smaller_envelope",
+          "set_date": "2026-04-27",
+          "session": "2026-04-27-execute",
+          "action": "Original budget source (CS-089) executed at ~3% of brief scope, leaving 088 unfunded at original scale. Katie's directive: rescope 088 to $20-50/day test that fits current paid-media envelope without new reallocation. To be revised at next graduation-pipeline review or next time 088 surfaces in synthesis."
+        }
+      ],
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
@@ -5848,7 +5855,7 @@
       "closed_date": null,
       "autonomy_tier": null,
       "file": "cgo-logs/changesets/CS-2026-089.md",
-      "notes": "Spawned from 2026-04-20 synthesis rec-223 with explicit Meta-to-Google target pivot (justified in \u00a71b Resolution Path). High-risk autonomy-tier 3; requires Devon approval (CGO-level budget reallocation). Circuit-breakers enforce Google deterioration rollback at runtime rather than dashboard observation (closes P003 anti-pattern gap). CS-2026-051 is parent scope (FB retargeting-to-whitelisting reallocation, draft). Blocks CS-2026-087 (CamJones IG, approved 2026-04-21) and CS-2026-088 (Freedom500 FB, draft) \u2014 budget source for both. Whiskey 50 activation window 2026-04-26 is timing-critical; this CS must approve and execute within 5 days. Revised 2026-04-21 per /changeset-review FULL-tier findings (all 8 items addressed). | EXECUTED PARTIAL 2026-04-21, LOGGED 2026-04-27: Katie executed a scoped-down version of this reallocation \u2014 paused Cleetus whitelisting on Meta only (not full underperformer set) and shifted $20/day to Google Prospecting Wedge C only. Tracker advanced needs_feedback \u2192 published with retroactive 2026-04-21 dates. Implicit approval = Katie's paid-media budget authority (Meta-to-Google rebalance under $50/day is within autonomy_tier 1 envelope per team-roles.md). Scope deviation documented in scope_deviation field. CS-2026-087 dependency closed today as cancelled; CS-2026-088 Freedom500 FB still draft and is NOT funded by this scoped-down execution. Measurement: 14d ROAS on Google Wedge C Prospecting line, due 2026-05-05. Brief's blended-MER target moot at this scale.",
+      "notes": "Spawned from 2026-04-20 synthesis rec-223 with explicit Meta-to-Google target pivot (justified in \u00a71b Resolution Path). High-risk autonomy-tier 3; requires Devon approval (CGO-level budget reallocation). Circuit-breakers enforce Google deterioration rollback at runtime rather than dashboard observation (closes P003 anti-pattern gap). CS-2026-051 is parent scope (FB retargeting-to-whitelisting reallocation, draft). Blocks CS-2026-087 (CamJones IG, approved 2026-04-21) and CS-2026-088 (Freedom500 FB, draft) \u2014 budget source for both. Whiskey 50 activation window 2026-04-26 is timing-critical; this CS must approve and execute within 5 days. Revised 2026-04-21 per /changeset-review FULL-tier findings (all 8 items addressed). | EXECUTED PARTIAL 2026-04-21, LOGGED 2026-04-27: Katie executed a scoped-down version of this reallocation \u2014 paused Cleetus whitelisting on Meta only (not full underperformer set) and shifted $20/day to Google Prospecting Wedge C only. Tracker advanced needs_feedback \u2192 published with retroactive 2026-04-21 dates. Implicit approval = Katie's paid-media budget authority (Meta-to-Google rebalance under $50/day is within autonomy_tier 1 envelope per team-roles.md). Scope deviation documented in scope_deviation field. CS-2026-087 dependency closed today as cancelled; CS-2026-088 Freedom500 FB still draft and is NOT funded by this scoped-down execution. Measurement: 14d ROAS on Google Wedge C Prospecting line, due 2026-05-05. Brief's blended-MER target moot at this scale. | FINALIZED 2026-04-27: Meta paused campaign confirmed = 'Whitelisting / Cleetus'. Google reallocation target confirmed = 'Prospecting__ToF__PMAX__tCPA' (Performance Max, tCPA bid strategy \u2014 NOT a traditional Search Prospecting campaign as the brief implied). Campaign IDs still pending Katie's lookup. Katie's explicit decisions on follow-ups: (1) remaining Meta underperformers DEFER \u2014 leave on-air; no follow-up CS this week. (2) CS-2026-088 (Freedom500 FB Talladega pairing) \u2192 RESCOPE to smaller test ($20-50/day scale) at next surfacing. PMAX-on-PMAX overlap risk flagged with CS-2026-070 (Google PMAX Shopping feed audit, approved) \u2014 if 070 executes during 089's 14d measurement window, Wedge C PMAX ROAS will be contaminated by feed restructure. Recommend sequencing 070 after 2026-05-05 OR documenting expected contamination if 070 must run sooner.",
       "sweep_flags": [
         {
           "flag": "scope_deviation_at_execution",
@@ -5857,10 +5864,22 @@
           "action": "scoped_down_to_3pct_of_brief; remaining_meta_underperformers_unpaused"
         },
         {
-          "flag": "ad_platform_refs_pending",
+          "flag": "ad_platform_ids_pending",
           "set_date": "2026-04-27",
           "session": "2026-04-27-execute",
-          "action": "katie_to_fill_exact_meta_and_google_campaign_names"
+          "action": "campaign_names provided 2026-04-27; numeric campaign_ids still pending Katie's lookup"
+        },
+        {
+          "flag": "pmax_overlap_risk_with_CS-2026-070",
+          "set_date": "2026-04-27",
+          "session": "2026-04-27-execute",
+          "action": "Wedge C ToF PMAX shares campaign type with CS-070 (Google PMAX Shopping feed audit, approved). If 070 executes during 089's 14d window, feed restructure affects Wedge C PMAX measurement \u2014 extend 089 measurement window or sequence 070 after 089 close."
+        },
+        {
+          "flag": "remaining_underperformers_deferred_explicit",
+          "set_date": "2026-04-27",
+          "session": "2026-04-27-execute",
+          "action": "Katie chose 'leave on-air' for remaining Meta underperformers (whitelisting beyond Cleetus + other 0x lines). Explicit deferral logged 2026-04-27."
         }
       ],
       "revision_notes": "[2026-04-21 /changeset-review \u2014 FULL tier, returned for revision]\n\nEight items identified before advancement to CGO approval:\n\n1. MISSING RESOLUTION PATH \u2014 Brief has no Remove/Refine/Add block. Likely Remove (pause underperformers) + Refine (redirect existing spend to Google) \u2014 document explicitly with a depth-escalation check.\n\n2. spawned_from SCOPE DRIFT \u2014 rec-223 in the 2026-04-20 synthesis says \"Pause whitelisting/cleetus ad set (0.00x ROAS) and reallocate to METARECOVERY TEST\" (synthesis line 107). CS-089 instead reallocates to GOOGLE PROSPECTING. Either justify the Meta-to-Google pivot in the brief (with evidence) or correct the attribution.\n\n3. WRONG DOMAIN CITATION \u2014 \"D17\" cited for underperformance data is wrong. D17 is Industry News (Ketone-IQ, ketone-x-alcohol study). Paid media underperformance lives in D04. Replace D17 references with D04 citations.\n\n4. L-018 MISCITED \u2014 L3 claims Google intent is \"L-018-adjacent signal\". L-018 is \"Sprout Social Listening API 404s\" \u2014 an operational connector-reliability learning, not a customer-intent signal. No adjacency exists. Remove the claim or find the correct prior in cross-surface-pm.json.\n\n5. MISSING inline [src:...] markers \u2014 On all empirical claims: whitelisting/cleetus 0.00x, Google 9.16x, Meta 2.74x, \"underperformers at 1.2x hold\", \"3x current bid\". See changeset-common-functions \u00a70b for format.\n\n6. UNDISCLOSED CHANNEL RISK \u2014 Synthesis line 56 flags Google as \"DETERIORATING on non-brand (-28% WoW, tROAS lockout) but overall 9.16x signal still holds at portfolio level.\" This CS scales Google ~3x INTO a deteriorating channel with an algorithmic lockout active. L4 (\"durability at scaled spend\") understates this. Reframe hypothesis to: \"will deterioration reverse or accelerate under scaled spend.\"\n\n7. L1 INTERNAL INCONSISTENCY \u2014\n   (a) L1 narrative assumes underperformers \"at 1.2x hold\" losing ~$900/wk, but source data shows whitelisting/cleetus at 0.00x. Recompute with actual ROAS.\n   (b) L1 narrative says \"Net +$2.5k/wk margin\" which implies $5,000 over 14d, but margin.expected = $13,500 (2.7x gap). Reconcile.\n   (c) Margin formula for multi-surface reallocation (paid_meta + paid_google) is not documented. Per \u00a73 this is an incremental margin calculation (no net spend change). Document methodology in _note field.\n\n8. P003 ANTI-PATTERN RISK (L0) \u2014 Proposed fix is \"scale Google 3x and watch the dashboard\" without a circuit-breaker. For high-risk / autonomy_tier 3 / scaling into a flagged-deteriorating surface, add an explicit Action+Condition pair: e.g., \"pause Google reallocation if 7d ROAS < 4x\" or \"freeze increment if tROAS lockout persists >3 days.\" Observational targets are not guardrails.\n\nAlso: rec-223 calls this a \"spin-off of CS-051 (Facebook Retargeting-to-Whitelisting Reallocation)\" \u2014 add CS-051 parentage to the brief if accurate.\n\nContext: CS-2026-087 (CamJones IG graduation) was approved today with explicit sequencing dependency on this CS. CS-087 cannot execute until CS-089 is approved and budget reallocation is live. Whiskey 50 calendar anchor is 2026-04-26 \u2014 5 days from now.\n\nResubmit via /changeset-review CS-2026-089 once addressed.\n\n---\n[2026-04-21 second pass \u2014 author (Katie) addressed all 8 items]\nBrief rewritten: (1) Resolution Path \u00a71b added (Remove+Refine chosen; scope pivot Meta\u2192Google explicitly justified); (2) spawned_from clarified with pivot disclosure; (3) D17 replaced with D04 citations; (4) L-018 miscitation removed (it was Sprout connector 404s, not intent signal); (5) inline [src:] markers added; (6) Google deterioration risk disclosed in hypothesis and L4 hypothesis reframed; (7) L1 reconciled \u2014 recomputed at 50% DTC per \u00a73 reallocation formula, envelope now $4k/$11.25k/$20.5k (was $4.8k/$13.5k/$24.6k at undocumented 60%); (8) circuit-breakers added with explicit Action+Condition pairs. CS-051 parent scope added. Ready for re-review via /changeset-review CS-2026-089.",
@@ -5883,23 +5902,25 @@
       "ad_platform_refs": [
         {
           "platform": "facebook",
-          "campaign_name": "PENDING \u2014 Katie to update with exact Cleetus whitelisting campaign name from Meta Business Suite",
-          "adset_name": "PENDING",
+          "campaign_name": "Whitelisting / Cleetus",
+          "adset_name": "(campaign-level pause)",
           "ad_name": "n/a \u2014 campaign-level pause",
-          "campaign_id": "PENDING",
+          "campaign_id": "PENDING \u2014 Katie to add numeric ID from Meta Business Suite when convenient",
           "ad_id": null,
           "_action": "paused 2026-04-21",
           "_budget_removed_per_day": 20
         },
         {
           "platform": "google",
-          "campaign_name": "PENDING \u2014 Katie to update with exact Google Prospecting Wedge C campaign name",
-          "adset_name": "PENDING \u2014 ad group name (Wedge C Prospecting)",
+          "campaign_name": "Prospecting__ToF__PMAX__tCPA",
+          "adset_name": "(PMAX \u2014 no traditional ad group; uses asset groups)",
           "ad_name": "n/a \u2014 budget reallocation, no new creative",
-          "campaign_id": "PENDING",
+          "campaign_id": "PENDING \u2014 Katie to add numeric ID from Google Ads when convenient",
           "ad_id": null,
           "_action": "budget increased 2026-04-21",
-          "_budget_added_per_day": 20
+          "_budget_added_per_day": 20,
+          "_campaign_type": "PMAX (Performance Max)",
+          "_bid_strategy": "tCPA (target CPA)"
         }
       ],
       "organic_source": null,
