@@ -230,27 +230,63 @@
         /* ── Detail (expanded row) ── */
         tr.detail-row { background: var(--surface) !important; cursor: default; }
         tr.detail-row td {
-            padding: 16px 18px 20px 18px;
+            padding: 0;
             border-bottom: 1px solid var(--border);
+            text-align: left;        /* override table-cell default */
+        }
+        .detail-wrap {
+            padding: 18px 22px 22px;
+            text-align: left;
+        }
+        .detail-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding-bottom: 10px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        .detail-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.2px;
+        }
+        .detail-title .id {
+            font-family: 'SF Mono', Menlo, Consolas, monospace;
+            font-size: 13px;
+            color: var(--accent-light);
+            margin-left: 6px;
+        }
+        .detail-subtitle {
+            font-size: 11px;
+            color: var(--text-muted);
         }
         .detail-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 24px;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 28px;
         }
-        .detail-section h4 {
+        .detail-section {
+            text-align: left;
+            margin-bottom: 18px;
+        }
+        .detail-section:last-child { margin-bottom: 0; }
+        .detail-section h3 {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
             color: var(--text-muted);
-            margin-bottom: 6px;
+            margin: 0 0 8px 0;
             font-weight: 600;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--border);
         }
         .detail-section p {
             font-size: 12px;
-            line-height: 1.5;
+            line-height: 1.55;
             color: var(--text);
-            margin-bottom: 12px;
+            margin: 0 0 8px 0;
         }
         .detail-section code {
             background: var(--bg);
@@ -268,6 +304,131 @@
             padding: 2px 0;
             color: var(--text-muted);
         }
+
+        /* ── Visualizations: metric delta bars ── */
+        .metric-row {
+            display: grid;
+            grid-template-columns: 90px 1fr 80px;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 11px;
+        }
+        .metric-row:last-child { margin-bottom: 0; }
+        .metric-label {
+            font-family: 'SF Mono', Menlo, Consolas, monospace;
+            font-size: 11px;
+            color: var(--text);
+        }
+        .metric-bar {
+            position: relative;
+            height: 14px;
+            background: var(--bg);
+            border-radius: 3px;
+            overflow: visible;
+        }
+        .metric-bar .zero {
+            position: absolute;
+            left: 50%;
+            top: -2px;
+            bottom: -2px;
+            width: 1px;
+            background: var(--border);
+        }
+        .metric-bar .threshold {
+            position: absolute;
+            top: -3px;
+            bottom: -3px;
+            width: 1px;
+            background: var(--text-muted);
+            opacity: 0.5;
+        }
+        .metric-bar .threshold.danger { background: var(--danger); opacity: 0.6; }
+        .metric-bar .threshold.warning { background: var(--warning); opacity: 0.6; }
+        .metric-bar .fill {
+            position: absolute;
+            top: 1px;
+            bottom: 1px;
+            background: var(--info);
+            border-radius: 2px;
+            transition: width 0.3s, left 0.3s, background 0.3s;
+        }
+        .metric-bar .fill.healthy { background: var(--success); }
+        .metric-bar .fill.tier2 { background: var(--warning); }
+        .metric-bar .fill.tier1 { background: var(--danger); }
+        .metric-bar.empty {
+            background: repeating-linear-gradient(45deg, var(--bg), var(--bg) 3px, var(--surface-hover) 3px, var(--surface-hover) 6px);
+        }
+        .metric-delta {
+            font-variant-numeric: tabular-nums;
+            text-align: right;
+            color: var(--text);
+            font-size: 11px;
+        }
+        .metric-delta.muted { color: var(--text-muted); }
+
+        /* ── Sample size bar ── */
+        .sample-bar {
+            display: flex;
+            height: 18px;
+            border-radius: 3px;
+            overflow: hidden;
+            background: var(--bg);
+            margin-bottom: 6px;
+        }
+        .sample-bar .control {
+            background: var(--info);
+            opacity: 0.75;
+            transition: width 0.3s;
+        }
+        .sample-bar .variant {
+            background: var(--accent);
+            opacity: 0.85;
+            transition: width 0.3s;
+        }
+        .sample-legend {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+        .sample-legend .ctl { color: var(--info); }
+        .sample-legend .var { color: var(--accent-light); }
+
+        /* ── Phase timeline ── */
+        .phase-timeline {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 6px;
+        }
+        .phase-pill-tl {
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            font-weight: 600;
+            background: var(--bg);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+        .phase-pill-tl.done { color: var(--success); border-color: rgba(34,197,94,0.3); }
+        .phase-pill-tl.current { color: var(--info); border-color: var(--info); background: rgba(59,130,246,0.08); }
+        .phase-timeline-meta {
+            font-size: 10px;
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ── Awaiting-data placeholder ── */
+        .awaiting {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 11px;
+            padding: 6px 0;
+        }
+
         .phase-history {
             list-style: none;
             font-size: 11px;
@@ -692,59 +853,272 @@
             const surfaceCfg = appState.surfaces[surface];
             const filesChanged = exp.files_changed || [];
             const phaseHistory = (exp.phase_history || []).slice().reverse();
-            const guardrailChecks = (exp.guardrail_checks || []).slice(-5).reverse();
+            const guardrailChecks = (exp.guardrail_checks || []).slice(-8).reverse();
+            const metrics = exp.current_metrics;
 
-            const guardrailsList = surfaceCfg?.guardrails ? `
-                <h4>Guardrails (from surface config)</h4>
-                <p>
-                    <strong>Tier 1 (auto-revert ${appState.stateJson?._safety_config?.revert_enabled ? 'LIVE' : 'alert-only'}):</strong>
-                    ${(surfaceCfg.guardrails.tier_1 || []).map(r => `${r.metric} ${r.direction} ${r.threshold_pct}%`).join(', ') || '—'}<br>
-                    <strong>Tier 2 (pause ${appState.stateJson?._safety_config?.revert_enabled ? 'LIVE' : 'alert-only'}):</strong>
-                    ${(surfaceCfg.guardrails.tier_2 || []).map(r => `${r.metric} ${r.direction} ${r.threshold_pct}%`).join(', ') || '—'}<br>
-                    <strong>Min canary sessions per arm:</strong> ${surfaceCfg.guardrails.min_canary_sessions_per_arm || 50}
-                </p>` : '';
-
-            const recentChecks = guardrailChecks.length ? `
-                <h4>Recent guardrail checks (last 5)</h4>
-                <ul class="phase-history">
-                    ${guardrailChecks.map(c => `
-                        <li>
-                            <span class="ts">${fmtTimeAbs(c.checked_at)}</span>
-                            <span>${c.result}${c.metric ? ` · ${c.metric} ${(c.delta_pct*100).toFixed(1)}%` : ''} → ${c.action_taken || 'none'}</span>
-                        </li>`).join('')}
-                </ul>` : '';
-
-            return `
-                <div class="detail-grid">
-                    <div class="detail-section">
-                        <h4>Hypothesis</h4>
-                        <p>${exp.hypothesis || exp.seeded_hypothesis || '<em>No hypothesis recorded.</em>'}</p>
-
-                        <h4>Files changed</h4>
-                        <ul class="files-changed">
-                            ${filesChanged.length ? filesChanged.map(f => `<li>${f}</li>`).join('') : '<li><em>None recorded</em></li>'}
-                        </ul>
-
-                        ${guardrailsList}
-                        ${recentChecks}
-                    </div>
-                    <div class="detail-section">
-                        <h4>Phase history</h4>
-                        <ul class="phase-history">
-                            ${phaseHistory.map(p => `
-                                <li>
-                                    <span class="ts">${fmtTimeAbs(p.entered_at)}</span>
-                                    <span>${p.phase}${p.reason ? ` — ${p.reason}` : ''}</span>
-                                </li>`).join('')}
-                        </ul>
-
-                        <h4>Branch / theme</h4>
-                        <p>
-                            <code>${exp.branch || '—'}</code><br>
-                            Preview theme ID: <code>${exp.preview_theme_id || '—'}</code>
-                        </p>
+            // ── Title row ──
+            const seededBy = exp.seeded_by ? ` · seeded by ${exp.seeded_by}` : '';
+            const canaryStart = exp.canary_started_at ? ` · canary since ${fmtTimeAbs(exp.canary_started_at)}` : '';
+            const titleHtml = `
+                <div class="detail-title-row">
+                    <div>
+                        <div class="detail-title">Experiment Detail<span class="id">${exp.experiment_id || surface}</span></div>
+                        <div class="detail-subtitle">${exp.cycle_tag || ''}${seededBy}${canaryStart}</div>
                     </div>
                 </div>`;
+
+            // ── Performance visual (sample size + per-metric delta bars) ──
+            const performanceHtml = renderPerformanceSection(exp, surfaceCfg);
+
+            // ── Phase timeline (horizontal pills) ──
+            const timelineHtml = renderPhaseTimeline(exp);
+
+            // ── Guardrail status visual (per-metric current standing vs thresholds) ──
+            const guardrailHtml = renderGuardrailVisual(metrics, surfaceCfg);
+
+            // ── Recent guardrail checks (compact timeline) ──
+            const recentChecksHtml = guardrailChecks.length ? `
+                <ul class="phase-history">
+                    ${guardrailChecks.map(c => {
+                        const dot = c.result === 'healthy' ? '🟢' :
+                                    c.result === 'tier1_breach' ? '🔴' :
+                                    c.result === 'tier2_breach' ? '🟡' : '⚪';
+                        const detail = c.metric
+                            ? ` · ${c.metric} ${(c.delta_pct * 100).toFixed(1)}%`
+                            : '';
+                        return `<li>
+                            <span class="ts">${fmtTimeAbs(c.checked_at)}</span>
+                            <span>${dot} ${c.result}${detail}${c.action_taken && c.action_taken !== 'none' ? ` → ${c.action_taken}` : ''}</span>
+                        </li>`;
+                    }).join('')}
+                </ul>` : `<div class="awaiting">No guardrail checks yet — first cron run after canary activation will populate.</div>`;
+
+            // ── Phase history (chronological list, full detail) ──
+            const phaseHistoryHtml = phaseHistory.length ? `
+                <ul class="phase-history">
+                    ${phaseHistory.map(p => `
+                        <li>
+                            <span class="ts">${fmtTimeAbs(p.entered_at)}</span>
+                            <span>${p.phase}${p.reason ? ` — ${p.reason}` : ''}</span>
+                        </li>`).join('')}
+                </ul>` : '<div class="awaiting">No phase history.</div>';
+
+            return `
+                <div class="detail-wrap">
+                    ${titleHtml}
+                    <div class="detail-grid">
+                        <div>
+                            <div class="detail-section">
+                                <h3>Hypothesis</h3>
+                                <p>${exp.hypothesis || exp.seeded_hypothesis || '<em>No hypothesis recorded.</em>'}</p>
+                            </div>
+                            <div class="detail-section">
+                                <h3>Performance vs Control</h3>
+                                ${performanceHtml}
+                            </div>
+                            <div class="detail-section">
+                                <h3>Guardrail Status</h3>
+                                ${guardrailHtml}
+                            </div>
+                            <div class="detail-section">
+                                <h3>Recent Guardrail Checks (last 8)</h3>
+                                ${recentChecksHtml}
+                            </div>
+                        </div>
+                        <div>
+                            <div class="detail-section">
+                                <h3>Phase Timeline</h3>
+                                ${timelineHtml}
+                            </div>
+                            <div class="detail-section">
+                                <h3>Phase History</h3>
+                                ${phaseHistoryHtml}
+                            </div>
+                            <div class="detail-section">
+                                <h3>Files Changed</h3>
+                                <ul class="files-changed">
+                                    ${filesChanged.length ? filesChanged.map(f => `<li>${f}</li>`).join('') : '<li><em>None recorded</em></li>'}
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h3>Branch / Preview Theme</h3>
+                                <p>
+                                    <code>${exp.branch || '—'}</code><br>
+                                    <span style="color: var(--text-muted)">Preview theme ID:</span> <code>${exp.preview_theme_id || '—'}</code>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        // ── Renders the sample-size bar + per-metric delta bars ──
+        function renderPerformanceSection(exp, surfaceCfg) {
+            const m = exp.current_metrics;
+            if (!m || ((m.control?.sessions || 0) === 0 && (m.variant?.sessions || 0) === 0)) {
+                return `<div class="awaiting">Awaiting first GA4 snapshot. Cron pulls metrics every 6h once events flow. Visualizations will appear here automatically.</div>`;
+            }
+
+            const cs = m.control?.sessions || 0;
+            const vs = m.variant?.sessions || 0;
+            const total = cs + vs;
+            const cPct = total ? (cs / total * 100) : 50;
+            const vPct = 100 - cPct;
+
+            const sampleHtml = `
+                <div class="sample-bar" title="control ${cs} · variant ${vs}">
+                    <div class="control" style="width: ${cPct}%"></div>
+                    <div class="variant" style="width: ${vPct}%"></div>
+                </div>
+                <div class="sample-legend">
+                    <span class="ctl">● Control: ${cs.toLocaleString()}</span>
+                    <span class="var">● Variant: ${vs.toLocaleString()}</span>
+                </div>`;
+
+            // Per-metric delta bars (atc_rate, cvr, bounce_rate)
+            const tier1Rules = surfaceCfg?.guardrails?.tier_1 || [];
+            const tier2Rules = surfaceCfg?.guardrails?.tier_2 || [];
+            const allMetricNames = new Set([
+                ...tier1Rules.map(r => r.metric),
+                ...tier2Rules.map(r => r.metric),
+                'atc_rate', 'bounce_rate', 'cvr',
+            ]);
+
+            const metricRows = Array.from(allMetricNames).map(metric => {
+                return renderMetricDeltaBar(metric, m, tier1Rules, tier2Rules);
+            }).join('');
+
+            return `
+                <div style="margin-bottom: 14px;">
+                    <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px;">Sample Size</div>
+                    ${sampleHtml}
+                </div>
+                <div>
+                    <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;">Variant vs Control Delta (per metric)</div>
+                    ${metricRows}
+                </div>`;
+        }
+
+        // ── A single metric delta bar with threshold markers ──
+        function renderMetricDeltaBar(metric, currentMetrics, tier1Rules, tier2Rules) {
+            const ctrl = currentMetrics?.control?.[metric];
+            const variant = currentMetrics?.variant?.[metric];
+
+            const t1 = tier1Rules.find(r => r.metric === metric);
+            const t2 = tier2Rules.find(r => r.metric === metric);
+
+            // Bar visualizes -25% to +25% (5% padding beyond largest tier-1 threshold of 20%)
+            const RANGE = 25;
+            const pctToLeft = pct => 50 + (pct / RANGE) * 50;  // -25% = 0%, 0% = 50%, +25% = 100%
+
+            // Threshold markers
+            const markers = [];
+            if (t1) {
+                const dropMark = t1.direction === 'drop' ? -t1.threshold_pct : null;
+                const riseMark = t1.direction === 'rise' ? t1.threshold_pct : null;
+                if (dropMark !== null) markers.push({ pct: dropMark, cls: 'danger' });
+                if (riseMark !== null) markers.push({ pct: riseMark, cls: 'danger' });
+            }
+            if (t2) {
+                const dropMark = t2.direction === 'drop' ? -t2.threshold_pct : null;
+                const riseMark = t2.direction === 'rise' ? t2.threshold_pct : null;
+                if (dropMark !== null) markers.push({ pct: dropMark, cls: 'warning' });
+                if (riseMark !== null) markers.push({ pct: riseMark, cls: 'warning' });
+            }
+            const markerHtml = markers.map(mk => {
+                const left = Math.max(0, Math.min(100, pctToLeft(mk.pct)));
+                return `<div class="threshold ${mk.cls}" style="left: ${left}%" title="${mk.pct}% threshold"></div>`;
+            }).join('');
+
+            // Fill bar (variant delta vs control)
+            let fillHtml = '';
+            let deltaText = '—';
+            let deltaCls = 'muted';
+            if (ctrl !== null && ctrl !== undefined && ctrl !== 0 && variant !== null && variant !== undefined) {
+                const delta = (variant - ctrl) / ctrl;
+                const deltaPct = delta * 100;
+                const fillCls = breachClass(deltaPct, t1, t2);
+                const isNeg = deltaPct < 0;
+                const left = isNeg ? pctToLeft(deltaPct) : 50;
+                const width = Math.abs(deltaPct) / RANGE * 50;
+                fillHtml = `<div class="fill ${fillCls}" style="left: ${Math.max(0, Math.min(100, left))}%; width: ${Math.min(50, width)}%"></div>`;
+                deltaText = `${deltaPct >= 0 ? '+' : ''}${deltaPct.toFixed(1)}%`;
+                deltaCls = '';
+            } else if ((currentMetrics?.control?.sessions || 0) > 0) {
+                deltaText = '—';
+                deltaCls = 'muted';
+            }
+
+            return `
+                <div class="metric-row">
+                    <div class="metric-label">${metric}</div>
+                    <div class="metric-bar${ctrl === undefined ? ' empty' : ''}">
+                        <div class="zero"></div>
+                        ${markerHtml}
+                        ${fillHtml}
+                    </div>
+                    <div class="metric-delta ${deltaCls}">${deltaText}</div>
+                </div>`;
+        }
+
+        function breachClass(deltaPct, t1, t2) {
+            // Determine which tier (if any) this delta breaches.
+            function breaches(rule, dpct) {
+                if (!rule) return false;
+                const t = rule.threshold_pct;
+                return rule.direction === 'drop' ? dpct <= -t : dpct >= +t;
+            }
+            if (breaches(t1, deltaPct)) return 'tier1';
+            if (breaches(t2, deltaPct)) return 'tier2';
+            return 'healthy';
+        }
+
+        // ── Phase timeline (horizontal pills with current highlighted) ──
+        function renderPhaseTimeline(exp) {
+            const phases = ['idle', 'awaiting_approval', 'canary', 'measuring', 'analyzing', 'decided'];
+            const current = exp.phase || 'idle';
+            const reachedSet = new Set((exp.phase_history || []).map(p => p.phase));
+            reachedSet.add(current);
+
+            const pills = phases.map(p => {
+                const cls = (p === current) ? 'current' : (reachedSet.has(p) ? 'done' : '');
+                return `<div class="phase-pill-tl ${cls}">${p.replace('_', ' ')}</div>`;
+            }).join('');
+
+            // Estimate time-in-current-phase (already computed elsewhere; quick summary here)
+            const lastEntry = (exp.phase_history || []).filter(p => p.phase === current).pop();
+            const enteredAt = lastEntry?.entered_at;
+            const meta = enteredAt ? `In <strong>${current}</strong> since ${fmtTimeAbs(enteredAt)} · ${fmtRelative(enteredAt)}` : '';
+
+            return `
+                <div class="phase-timeline">${pills}</div>
+                <div class="phase-timeline-meta">${meta}</div>`;
+        }
+
+        // ── Guardrail status visual: pills showing which tier each metric is in ──
+        function renderGuardrailVisual(metrics, surfaceCfg) {
+            const safetyEnabled = appState.stateJson?._safety_config?.revert_enabled;
+            const stage = safetyEnabled ? 'Stage 2 — auto-revert LIVE' : 'Stage 1 — alert-only';
+
+            if (!surfaceCfg?.guardrails) {
+                return '<div class="awaiting">Surface config not yet synced.</div>';
+            }
+            const t1 = surfaceCfg.guardrails.tier_1 || [];
+            const t2 = surfaceCfg.guardrails.tier_2 || [];
+
+            const summary = `<p style="margin-bottom: 10px; color: var(--text-muted); font-size: 11px;">
+                <strong style="color: var(--text)">${stage}</strong> · min canary sessions per arm: ${surfaceCfg.guardrails.min_canary_sessions_per_arm || 50}
+            </p>`;
+
+            const tierRow = (label, rules, color) => `
+                <div style="margin-bottom: 6px;">
+                    <span style="font-size: 11px; color: ${color}; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px;">${label}:</span>
+                    ${rules.length ? rules.map(r =>
+                        `<span style="display: inline-block; margin: 2px 4px 2px 0; padding: 2px 8px; border-radius: 3px; background: var(--bg); font-size: 11px; font-family: monospace;">${r.metric} ${r.direction === 'drop' ? '−' : '+'}${r.threshold_pct}%</span>`
+                    ).join('') : '<em style="color: var(--text-muted); font-size: 11px;">none</em>'}
+                </div>`;
+
+            return summary + tierRow('Tier 1 (auto-revert)', t1, 'var(--danger)') + tierRow('Tier 2 (pause)', t2, 'var(--warning)');
         }
 
         function toggleDetail(surface) {
