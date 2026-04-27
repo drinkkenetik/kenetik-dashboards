@@ -115,10 +115,17 @@
         }
         .panel-body.padded { padding: 14px 18px; }
         .panel-empty {
-            padding: 32px 18px;
+            padding: 14px 18px;
             text-align: center;
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 12px;
+        }
+        /* Inline empty states — for panels where the empty state is the
+           normal steady state and shouldn't dominate the screen. */
+        .panel.compact-empty .panel-empty {
+            padding: 10px 18px;
+            text-align: left;
+            font-style: italic;
         }
 
         /* ── Action queue items ── */
@@ -571,12 +578,11 @@
             const items = buildActionQueue();
             if (!items.length) {
                 return `
-                    <div class="panel">
+                    <div class="panel compact-empty">
                         <div class="panel-header">
                             <div class="panel-title">Action Queue</div>
-                            <div class="panel-meta">Nothing waiting on you</div>
+                            <div class="panel-meta">Nothing waiting on you · system running cleanly</div>
                         </div>
-                        <div class="panel-empty">No actions needed. The system is running cleanly.</div>
                     </div>`;
             }
             const rows = items.map(it => `
@@ -756,12 +762,11 @@
             const decided = Object.values(exps).filter(e => e.phase === 'decided' || e.phase === 'idle' && (e.phase_history || []).some(p => p.phase === 'decided'));
             if (!decided.length) {
                 return `
-                    <div class="panel">
+                    <div class="panel compact-empty">
                         <div class="panel-header">
                             <div class="panel-title">Recently Decided</div>
-                            <div class="panel-meta">Last 30 days</div>
+                            <div class="panel-meta">No completed cycles yet · first ETA ~May 4</div>
                         </div>
-                        <div class="panel-empty">No completed cycles yet. First cycle expected to decide ~May 4.</div>
                     </div>`;
             }
             // (Detailed table will populate once Cycle 1 completes; minimal scaffold for now)
