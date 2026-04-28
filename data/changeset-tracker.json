@@ -6529,7 +6529,7 @@
       "platforms": [
         "content-production"
       ],
-      "status": "draft",
+      "status": "approved",
       "risk_level": "medium",
       "owner": "Devon Price",
       "created": "2026-04-21",
@@ -6569,13 +6569,21 @@
       "outcome": "",
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-097.md",
-      "notes": "Step 8a P0 structural escalation \u2014 D13 consecutive_below_40 = 6. Owner-surface contracts + production queue SLA + concentration circuit-breaker. Devon weekly check-in. Kill gate: no improvement to >=50 within 3 sessions triggers war-room.",
+      "notes": "Step 8a P0 structural escalation \u2014 D13 consecutive_below_40 = 6. Owner-surface contracts + production queue SLA + concentration circuit-breaker. Devon weekly check-in. Kill gate: no improvement to >=50 within 3 sessions triggers war-room. | 2026-04-28 (Devon via Claude /changeset-execute): First check-in agenda set. Open: Nicole-vs-Peter on email surface; Devon to resolve in meeting. Kill-gate at 50 holds; on pace if Charlotte+Peter maintain pace. Reassign min 5 CSes off Katie (70.6%\u2192~50%) recommended.",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-28",
       "executed_date": "",
       "autonomy_tier": 2,
       "learning_note": "",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "first_checkin_2026_04_28_agenda_set",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-checkin-1",
+          "action": "First Devon check-in agenda packaged for Charlotte + Peter today. Forced-numbers format (last-7-days shipped, next-7 committed, SLA adherence, owner-concentration). Kill-gate math: D13 CRS 19\u219231 in 5 days, on-pace to \u226550 by session 3 if pace holds. Recommend hold gate at 50 (don't move goalposts). Open routing question raised: CS-097 \u00a7 Owner has Nicole as email lead but Devon's check-in roster is Charlotte+Peter \u2014 need Devon to resolve owner map first 60 sec of meeting."
+        }
+      ],
+      "last_updated": "2026-04-28"
     },
     {
       "id": "CS-2026-098",
