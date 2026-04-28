@@ -6763,9 +6763,7 @@
       "created": "2026-04-22",
       "objective_level": "L3",
       "category": "lifecycle_retention",
-      "dependencies": [
-        "L-045-voluntary-involuntary-split"
-      ],
+      "dependencies": [],
       "blocks": [],
       "spawned_from": "synthesis-2026-04-22-s1-rec-234c-mar-cohort-cascade",
       "spawned_changesets": [],
@@ -6802,13 +6800,13 @@
       "outcome": "",
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-100.md",
-      "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946. | 2026-04-22 EXPANDED: Absorbed CS-2026-052 (closed superseded same session). Scope now includes all-subscriber refinement of the Upcoming Subscription Order Flow (value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary split + pause-instead-of-cancel messaging) as the base layer, with the Mar 2026 cohort branch + variants as the overlay. All cohorts benefit from the base refinement, not just Mar 2026.",
+      "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946. | 2026-04-22 EXPANDED: Absorbed CS-2026-052 (closed superseded same session). Scope now includes all-subscriber refinement of the Upcoming Subscription Order Flow (value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary split + pause-instead-of-cancel messaging) as the base layer, with the Mar 2026 cohort branch + variants as the overlay. All cohorts benefit from the base refinement, not just Mar 2026. | 2026-04-28 (Devon via Claude /changeset-review): Co-approval dossier packaged. Recommended APPROVE_STANDARD_BARE_BRANCH_WITH_CONDITIONS. Bare branch margin reconciliation: $16K (Read A, default) vs $23.2K (Devon directive, likely combined reference). Strip L-045 phantom dep from bare branch. Spawn 1 sibling CS for Layer 1 base refinement; flag Phase 3 as L-045-deferred.",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-25",
       "executed_date": "",
       "autonomy_tier": 2,
       "learning_note": "",
-      "last_updated": "2026-04-22",
+      "last_updated": "2026-04-28",
       "sweep_flags": [
         {
           "flag": "mar_cohort_save_flow_3d_overdue",
@@ -6816,6 +6814,12 @@
           "session": "2026-04-28-s1",
           "action": "devon_co_approval_then_katie_4h_ship",
           "age_days": 3
+        },
+        {
+          "flag": "bare_branch_scope_reduction_2026_04_28",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-changeset-review",
+          "action": "Co-approval dossier for Devon+Brandon. Recommended scope reduction to BARE BRANCH ONLY (Mar cohort branch / Layer 2). DEFER Layer 1 base refinement to new sibling CS. DEFER Phase 3 involuntary save until L-045 split lands (de-phantom-ize). Margin reconciliation: bare branch = ~$16K expected (per original Section 3); Devon's $23.2K matches combined-expanded scope. Default Read A: $16K. 3 approval conditions + 2 spawn actions documented."
         }
       ]
     },
