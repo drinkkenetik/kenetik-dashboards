@@ -1,0 +1,1666 @@
+{
+  "version": "2.1.0",
+  "description": "KGS Learning Log. Active entries maintained by Process 3.8; acted-on entries archived weekly. The synthesis process reads the index for fast lookups and full entries for weekly review.",
+  "migrated_from": "v1.0 Cross-Surface Performance Memory (Creative Intelligence \u00a76.8A). v2.0 replaced rigid schema with flat learning log. v2.1 added index layer, consolidation, and bandwidth-aware reads.",
+  "config": {
+    "domain_note": "Free-text field. Recommended values: paid-media, content, lifecycle, website, campaigns, operations, cross-surface. Each department's instruction file defines which keywords it matches on \u2014 that's the authoritative routing, not this config.",
+    "evidence_thresholds": {
+      "preliminary": 1,
+      "moderate": "3 from 2+ independent sources",
+      "strong": 5
+    },
+    "skill_file_update_threshold": "moderate",
+    "synthesis_cadence": "daily capture during pipeline run, weekly deep review Fridays",
+    "archive_policy": "Process 3.8 archives acted-on entries weekly during Friday synthesis. Archived entries move to archived_entries array (preserved for audit). Active entries = un-acted + last 90 days acted.",
+    "last_bridged_moe_synthesis": "SYN-20260417-001"
+  },
+  "entry_types": {
+    "_note": "Descriptive, not an exclusive enum. New types can emerge as the system learns.",
+    "skill_update": "Decision rules, evaluation frameworks, thresholds, confirmed patterns \u2014 destined for skill files via Process 3.8",
+    "process_change": "Operational changes to domain/dept instructions, data pulls, pipeline steps. Entries with changeset_candidate: true surface as ChangeSet proposals.",
+    "threshold_calibration": "Threshold tuning (e.g., CPL boundaries) \u2014 requires measurement before committing to skill file",
+    "changeset_outcome": "Auto-appended when any ChangeSet closes. Includes outcome_class (confirmed/minor_variance/significant_variance) and variance_pct for estimation calibration.",
+    "content_pattern": "Content performance pattern bridged from Moe's Performance Memory with cross-domain implications. Platform-specific hook weights stay in content-producer-skill.md \u00a73."
+  },
+  "index": [
+    {
+      "id": "L-001",
+      "summary": "Lead gen \u2192 CPL not ROAS; downstream Klaviyo conversion invisible to Meta",
+      "domain": "paid-media",
+      "status": "archived",
+      "date": "2026-04-02"
+    },
+    {
+      "id": "L-002",
+      "summary": "Campaign objective restructuring > creative refresh when strong mid-funnel + weak bottom-funnel",
+      "domain": "paid-media",
+      "status": "archived",
+      "date": "2026-04-02"
+    },
+    {
+      "id": "L-003",
+      "summary": "D04 needs campaign-level ATC + checkout metrics from Polar for restructuring tree",
+      "domain": "paid-media",
+      "status": "archived",
+      "date": "2026-04-02"
+    },
+    {
+      "id": "L-004",
+      "summary": "Polar aggregate \u2260 daily budget; 3d/7d/14d trend confirmation required before spend decisions",
+      "domain": "paid-media",
+      "status": "archived",
+      "date": "2026-03-24"
+    },
+    {
+      "id": "L-005",
+      "summary": "Content blackout narrative was false -- 46 posts published in period. Real issue is IG engagement collapse (-68%) and calendar gap Apr 6-12",
+      "domain": "content",
+      "status": "archived",
+      "date": "2026-04-06"
+    },
+    {
+      "id": "L-006",
+      "summary": "FB ROAS 0.89x (Session 26) was incorrect -- actual 2.59x. Brain Awareness Week campaign at 9.99x. Always verify Polar aggregate vs campaign-level data",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-04-06"
+    },
+    {
+      "id": "L-007",
+      "summary": "CS-2026-002 confirmed (N/A%): Influencer segmentation infrastructure delivered; subscriber-level view captures 2.4x more profiles than purchaser-only; $source tagging gap identified for Superfiliate.",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-08"
+    },
+    {
+      "id": "L-008",
+      "summary": "CS-2026-011 significant_variance (80.3%): Science email led engagement but revenue target was misset \u2014 promo benchmarks applied to content email. Correct baseline: ~$1K-$2K.",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-08"
+    },
+    {
+      "id": "L-009",
+      "summary": "DTC vs Amazon structural asymmetry: +13.3% vs -48.9% WoW \u2014 Cleetus flywheel doesn't transfer to Amazon [\u26a0\ufe0f CONTRADICTION: see L-016 \u2014 Amazon -48.9% may be connector artifact, not real revenue]",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-04-10"
+    },
+    {
+      "id": "L-010",
+      "summary": "Creator program 91.67% dormancy \u2014 no SLA enforcement mechanism exists; need inactivity threshold trigger",
+      "domain": "content",
+      "status": "archived",
+      "date": "2026-04-10"
+    },
+    {
+      "id": "L-011",
+      "summary": "HARD GATE: D13 calendar has non-roster owners (Isaac, Pipa) \u2014 owner validation must gate calendar entries",
+      "domain": "content",
+      "status": "archived",
+      "date": "2026-04-10"
+    },
+    {
+      "id": "L-012",
+      "summary": "CS-2026-001 significant_variance (99.9%): Mid-flow intercepts for time-sensitive cohorts must deploy same-day; $source debunked for influencer attribution",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-10"
+    },
+    {
+      "id": "L-013",
+      "summary": "CS-2026-004 confirmed (0%): Tag-based Superfiliate attribution captures ~100% vs 14% click-based \u2014 deterministic model for all creator channels",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-04-10"
+    },
+    {
+      "id": "L-014",
+      "summary": "CS-2026-013 significant_variance (60.4%): Protocol email opens strong (43%) but doesn't convert (0.088% CVR). Embed product in protocol steps. Adjust segment economics for suppression.",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-10"
+    },
+    {
+      "id": "L-015",
+      "summary": "Feb 2026 cohort M1 repeat 12.8% (-33% YoY) -- need Day-7 leading indicator, current detection 30d late",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-04-13"
+    },
+    {
+      "id": "L-016",
+      "summary": "Connector-zero mistaken for -48.9% decline; domain brief template needs connector-health precondition before WoW claims [\u26a0\ufe0f CONTRADICTION: see L-009 which treated Amazon -48.9% as real]",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-13"
+    },
+    {
+      "id": "L-017",
+      "summary": "Martyn 2026 invalidates universal KME endurance claim -- need science-contradiction workflow D16 to claims audit",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-04-13"
+    },
+    {
+      "id": "L-018",
+      "summary": "Sprout Listening API 3 sessions of 404s failed silently -- need connector criticality tiers and auto-escalate",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-13"
+    },
+    {
+      "id": "L-019",
+      "summary": "ATC rate collapsed 30-32% uniformly across ALL devices -- cart-level infrastructure issue, not mobile UX",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-04-14"
+    },
+    {
+      "id": "L-020",
+      "summary": "ChangeSet approval-to-execution gap persists 13 sessions; escalation path ineffective -- need structural delegation",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-14"
+    },
+    {
+      "id": "L-021",
+      "summary": "Three independent domains converge on cognitive/neuroprotection positioning (D16+D17+D18)",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-04-14"
+    },
+    {
+      "id": "L-022",
+      "summary": "April subscription attach rate 40.7% vs March 11.5% (+254%) \u2014 step-function change, RCA opened CS-2026-075",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-15"
+    },
+    {
+      "id": "L-023",
+      "summary": "Creative freshness alarm fired at 0% FRESH \u2014 threshold reactive; recommend moving alert to 25% FRESH",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-04-15"
+    },
+    {
+      "id": "L-024",
+      "summary": "CS-2026-010 confirmed (0%): Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-06"
+    },
+    {
+      "id": "L-025",
+      "summary": "CS-2026-024 incomplete: placeholder \u2014 owner review pending for Subscription Pause/Skip Feature Test",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-07"
+    },
+    {
+      "id": "L-026",
+      "summary": "CS-2026-026/027 incomplete: BAW sprint ChangeSets closed without measurement \u2014 counter instruments not wired pre-campaign (merged L-027)",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-04-03"
+    },
+    {
+      "id": "L-028",
+      "summary": "CS-2026-036 confirmed (63%): Post-Purchase Review Request Optimization",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-07"
+    },
+    {
+      "id": "L-029",
+      "summary": "CS-2026-038 incomplete: placeholder \u2014 owner review pending for Ashton Activation (Seasonal Gap)",
+      "domain": "campaigns",
+      "status": "active",
+      "date": "2026-04-03"
+    },
+    {
+      "id": "L-030",
+      "summary": "CS-2026-039 incomplete: placeholder \u2014 owner review pending for Event Tracking (TikTok/Social Commitment)",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-04-03"
+    },
+    {
+      "id": "L-031",
+      "summary": "CS-2026-063 incomplete: placeholder \u2014 owner review pending for Cohort Quality Decline Investigation \u2014 Feb 2026 M1 Repeat",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-15"
+    },
+    {
+      "id": "L-032",
+      "summary": "CS-2026-065 incomplete: placeholder \u2014 owner review pending for Claims Audit \u2014 KME Endurance & MCT:Glucose Ratio (Martyn/Frenser 2026)",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-15"
+    },
+    {
+      "id": "L-033",
+      "summary": "TikTok ads state-file flag suppressed $858.75/7d real spend for 8+ sessions; state-file flags need same health checks as connectors",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-04-17"
+    },
+    {
+      "id": "L-034",
+      "summary": "Matt Hughes ROAS 9.57x narrative vs 1.57x actual \u2014 attribution-inheritance drift; ROAS must be re-sourced from Polar each session",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-04-17"
+    },
+    {
+      "id": "L-035",
+      "summary": "CS-2026-075 had role-label owner 'Lifecycle lead' \u2014 HARD GATE roster validation not applied at CS creation",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-17"
+    },
+    {
+      "id": "L-036",
+      "summary": "BRIDGE AP-004: Endurance hooks fatigued on Facebook (5.69x\u21920.58x median) \u2014 paid media must redirect FB creative to Protocol/Stimulant Refugee",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-04-17"
+    },
+    {
+      "id": "L-037",
+      "summary": "BRIDGE AP-005: Amazon listing text auto-publishing to TikTok/IG captions (6+ posts) \u2014 content ops publishing pipeline audit needed",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-04-17"
+    },
+    {
+      "id": "L-038",
+      "summary": "BRIDGE CP-011: Stimulant Refugee confirmed #2 audience segment (6.47%+ FB, 153K+ imp) \u2014 inform paid media targeting and lifecycle segmentation",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-04-17"
+    },
+    {
+      "id": "L-039",
+      "summary": "Dept briefs overstate severity \u2192 validate impact assertions before tier assignment. Added spec \u00a73a (resolution attempt pattern) to autonomous-changeset-spec v1.2",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-20"
+    },
+    {
+      "id": "L-040",
+      "summary": "CS-2026-045 significant_variance (97.7%): Athlete content scales only within retargeting; does not generalize to prospecting.",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-04-21"
+    },
+    {
+      "id": "L-041",
+      "summary": "CS-2026-014 significant_variance (92.8%): pure-content product-spotlight emails need lower baseline projections; bundle/urgency hook hypothesis for next iteration",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-21"
+    },
+    {
+      "id": "L-042",
+      "summary": "CS-2026-030 significant_variance (94.9% first-order; 75% LTV-adj): BAW one-time-to-sub flow \u2014 timing/framing validated on engagement but subscription offer did not close; iterate with stronger first-order incentive",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-21"
+    },
+    {
+      "id": "L-043",
+      "summary": "CS-2026-007 significant_variance (31.7% pro-rated): 5-touch Cleetus cohort nurture beats General-flow baseline (+130% RPR) but deep-discount cohort has structural LTV ceiling ($25.37 30d vs $45.33 Feb) email alone cannot break; flow stays evergreen",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-21"
+    },
+    {
+      "id": "L-044",
+      "summary": "Desktop-specific CVR regressions with flat/positive mobile CVR on the same surfaces are a strong signal of component-level regression (theme",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-04-21"
+    },
+    {
+      "id": "L-045",
+      "summary": "Subscription retention analysis must disaggregate voluntary (customer-initiated cancel) from involuntary (failed-payment, card-expired) chur",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-04-21"
+    },
+    {
+      "id": "L-046",
+      "summary": "When tracker.json and session handoff diverge on ChangeSet status, tracker.json is authoritative. Handoff narratives lag tracker state when ",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-21"
+    },
+    {
+      "id": "L-047",
+      "summary": "Creator content boosted into PMAX (mixed placements) vs IG/FB-only (native placements) produces channel-mismatch attribution gaps. Native pl",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-04-21"
+    },
+    {
+      "id": "L-048",
+      "summary": "Domain health streak below threshold for N=5 is final warning; N=6 triggers Step 8a structural P0 escalation. Tactical fixes (symptomatic Ch",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-21"
+    },
+    {
+      "id": "L-049",
+      "date": "2026-04-22",
+      "type": "process_change",
+      "domain": "operations"
+    },
+    {
+      "id": "L-050",
+      "date": "2026-04-22",
+      "type": "process_change",
+      "domain": "operations"
+    },
+    {
+      "id": "L-051",
+      "date": "2026-04-22",
+      "type": "process_change",
+      "domain": "content"
+    },
+    {
+      "id": "L-052",
+      "date": "2026-04-22",
+      "type": "skill_update",
+      "domain": "paid-media"
+    },
+    {
+      "id": "L-053",
+      "date": "2026-04-22",
+      "type": "process_change",
+      "domain": "operations"
+    },
+    {
+      "id": "L-054",
+      "summary": "Desktop CVR is +22.0% WoW (3.22% to 3.93%) with checkout start +40.8%; the funnel break is mobile (-27.4%) at PDP-discovery stage, not desktop checkou",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "L-055",
+      "summary": "Hard Gate 2 orphan rate is 97.6% (559/573), not 14% (68/70). The S38 figure was a 14d-window slice that masked a systemic gap ~10x larger.",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "L-056",
+      "summary": "5 of 6 P0 action items had ZERO Slack/Drive/calendar evidence over 5 days. The pipeline only sees what is in writing. Silent decisions equal no decisi",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "L-057",
+      "summary": "When a paid campaign reallocation removes traffic from a high-CVR PDP, the CRO funnel measurement shows up as a site degradation -- but the root cause",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "L-058",
+      "summary": "3 phantom dependencies exist in tracker.json: CS-100 to L-045-voluntary-involuntary-split (not a tracker entry); CS-102 to 113 (12 May email CSes) to ",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-27"
+    }
+  ],
+  "entries": [
+    {
+      "id": "L-006",
+      "date": "2026-04-06",
+      "type": "threshold_calibration",
+      "learning": "Session 26 reported FB ROAS at 0.89x (below breakeven), triggering crisis narrative and budget reallocation recommendations. Session 27 data shows actual 2.59x Pixel ROAS. Root cause: Polar Analytics was offline; the 0.89x figure came from an incomplete or misattributed data source. Multi-source verification is required before declaring a channel in crisis. This reinforces L-004 (multi-window trend confirmation).",
+      "source": "Session 27 synthesis -- D04 paid media data correction",
+      "source_type": "data_correction",
+      "domain": "paid-media",
+      "evidence": "Session 26: FB ROAS 0.89x (crisis). Session 27: FB ROAS 2.59x (recovery). Brain Awareness Week 9.99x. Polar offline during Session 26 scan.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-004"
+      ],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-007",
+      "date": "2026-04-08",
+      "type": "changeset_outcome",
+      "learning": "Built 3 Klaviyo segments for Cleetus influencer cohort \u2192 2 of 3 populated correctly (6,345+ profiles), 1 empty due to $source data gap \u2192 Subscriber-level segmentation captures 2.4x more profiles than purchaser-only view; Superfiliate $source tagging needs investigation for future creator activations.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "3 Klaviyo segments built, 6,345+ profiles covered; subscriber-level segmentation 2.4x > purchaser-only; $source gap blocks Superfiliate attribution. See CS-2026-002 measurement.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-002",
+      "variance_pct": null,
+      "outcome_class": "confirmed",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-008",
+      "date": "2026-04-08",
+      "type": "changeset_outcome",
+      "learning": "Science-led April Fools email (Machado 2022 qEEG study) sent to 17K \u2192 $1,184 revenue, 46.5% open rate (#1 in class), 0.71% click rate (#1 in class), 1.52% CTOR \u2192 Revenue underperformed vs $6K target, but target was misset: promotional benchmarks applied to a non-promotional content email. Actual performance led all comparable non-promo sends on engagement metrics. Correct baseline for non-promo science emails to ~17K audience: ~$1K-$2K revenue, ~0.6% click rate, ~1.5% CTOR.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Sent to 17K: $1,184 revenue, 46.5% open (#1), 0.71% CTR (#1), 1.52% CTOR. Revenue target misset: promo benchmarks on content email. Correct baseline: ~$1K-$2K. See CS-2026-011 measurement.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-011",
+      "variance_pct": 80.3,
+      "outcome_class": "significant_variance",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-009",
+      "date": "2026-04-10",
+      "type": "skill_update",
+      "learning": "DTC +13.3% WoW ($67.5K) while Amazon -48.9% ($19K) confirms channel asymmetry is structural, not cyclical. The Cleetus flywheel drives DTC spikes but Amazon has no equivalent organic amplification mechanism. Amazon recovery requires dedicated paid media structure (CS-2026-042 or equivalent) rather than waiting for DTC momentum to spill over.",
+      "source": "Session 30 synthesis \u2014 cross-channel revenue analysis",
+      "source_type": "synthesis_observation",
+      "domain": "paid-media",
+      "evidence": "DTC 7d: $67,539. Amazon 7d: $19,000. DTC WoW: +13.3%. Amazon WoW: -48.9%. Gap widening since Session 27. D05 Amazon connector still at $0 (no data). Pattern pat-014 tracking.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-006",
+        "L-007",
+        "L-016"
+      ],
+      "changeset_candidate": false,
+      "contradiction_flag": "L-016 argues Amazon -48.9% was a connector-zero artifact (Amazon Ads only); organic was -7.1% net WoW. If L-016 is correct, the structural asymmetry conclusion needs revision. Needs CGO resolution.",
+      "entry_type": "pattern_observation",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "contradiction_with": [
+        "L-016"
+      ],
+      "needs_review": true
+    },
+    {
+      "id": "L-012",
+      "date": "2026-04-10",
+      "type": "changeset_outcome",
+      "learning": "Mid-flow conditional splits deployed 2-4 days after cohort entry intercepted only 4.5% of target profiles (50/1,113). For time-sensitive influencer cohorts, intercepts must be same-day or use top-of-flow routing / standalone campaigns. Also confirmed: Klaviyo $source contains form IDs not traffic sources \u2014 future influencer attribution needs UTM or Superfiliate property tracking.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Mid-flow intercepts deployed 2-4d late \u2192 4.5% reach (50/1,113). $source contains form IDs not traffic sources. See CS-2026-001 measurement.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": true,
+      "changeset_id": "CS-2026-001",
+      "variance_pct": 99.9,
+      "outcome_class": "significant_variance",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-013",
+      "date": "2026-04-10",
+      "type": "changeset_outcome",
+      "learning": "Excluded March 7 Cleetus activation outlier from paid media trends and built Polar custom channel grouping (custom_5144) using Shopify order tags + promo codes \u2192 Superfiliate attribution capture went from 14% to ~100% for tagged orders. Tag-based deterministic attribution (Shopify tags + promo codes) is the correct model for influencer/creator channels; click-based attribution severely undercounts at 87% gap. This finding applies to all future creator partnerships and should inform how we build attribution for any new creator/influencer channel.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "paid-media",
+      "evidence": "Superfiliate attribution: 14% click-based \u2192 ~100% tag-based (Shopify tags + promo codes). Paid Search ROAS 5.26x \u2192 6.66x post-exclusion. See CS-2026-004 measurement.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-004",
+      "variance_pct": 0,
+      "outcome_class": "confirmed",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-014",
+      "date": "2026-04-10",
+      "type": "changeset_outcome",
+      "learning": "Protocol-framed email ('3 Steps for Better Focus') sent to Engaged 3M + Prospects Engaged \u2192 43% open rate but 0.62% CTR and 0.088% CVR ($1,425 revenue vs $3,600 expected) \u2192 Protocol/how-to framing creates strong curiosity-driven opens but fails to convert when product is positioned as an add-on rather than integral to the protocol. Future emails should embed product directly into protocol steps. Also: segment economics must account for suppression \u2014 actual reachable audience was 18K, not 51K.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "43% open, 0.62% CTR, 0.088% CVR ($1,425 vs $3,600 target). Actual audience 18K not 51K (suppression). Protocol framing opens but doesn't convert. See CS-2026-013 measurement.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-013",
+      "variance_pct": 60.4,
+      "outcome_class": "significant_variance",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-015",
+      "date": "2026-04-13",
+      "type": "threshold_calibration",
+      "learning": "New-customer cohort M1 repeat declined to 12.8% for Feb 2026 (-33% YoY) while new-session acquisition fell 16.3% WoW and new-customer rate fell 21.4 ppts. Three independent domains converge: cohort quality decline is acquisition-channel-mix driven (Unbound Sweep + ARCA + creator-launch Feb cohort).",
+      "source": "D01 + D06 + D09 cross-signal (2026-04-13 domain scans)",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "No new-cohort M1 repeat alert threshold exists; signal surfaces 30+ days late in cached_metrics. See synthesis 2026-04-13-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "domain-06 skill (add Day-7 cohort leading-indicator metric); running-log.json cached_metrics (add m1_cohort_repeat_rolling)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
+    },
+    {
+      "id": "L-016",
+      "date": "2026-04-13",
+      "type": "process_change",
+      "learning": "S30 handoff cited Amazon -48.9% WoW as RED; this session's full pull shows Amazon Ads connector returns zero for all metrics (credential/mapping failure) while Amazon organic is only -7.1% net WoW (Easter baseline reversion). The -48.9% figure was an Ads-only artifact of the broken connector, not a real business signal.",
+      "source": "D03 scan (2026-04-13) vs S30 handoff",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "No validation layer between connector-zero output and scan-level WoW claim. See synthesis 2026-04-13-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-009"
+      ],
+      "target": "domain-03 skill (add connector-health precondition check before WoW delta reporting)",
+      "contradiction_flag": "Contradicts L-009 which treated Amazon -48.9% as real revenue signal. L-016 evidence shows this was a connector artifact. Needs CGO resolution.",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "contradiction_with": [
+        "L-009"
+      ],
+      "needs_review": true
+    },
+    {
+      "id": "L-017",
+      "date": "2026-04-13",
+      "type": "skill_update",
+      "learning": "Martyn et al. 2026 (J Appl Physiol, PMID 41962970, n=8 RCT) directly contradicts blanket ketones-boost-endurance messaging. KME + carbs did not enhance endurance vs carbs alone; reduced glucose and CHO oxidation efficiency. Kenetik's Tier A performance claim is now metabolic-state-conditional, not universal.",
+      "source": "D16 (Martyn et al. 2026, J Appl Physiol, PMID 41962970)",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "No science-contradiction trigger path from D16 to claims audit; approved claims can persist under contradicted science. See synthesis 2026-04-13-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/references/claims-compliance.md (add science-contradiction workflow); domain-16 skill (add claims-audit trigger on Tier A challenge)",
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-018",
+      "date": "2026-04-13",
+      "type": "threshold_calibration",
+      "learning": "Sprout Social Listening API returning 404 for 3+ consecutive sessions (S29, S30, S31), blocking primary trend-detection data source. No escalation path was triggered; synthesis quality degraded silently.",
+      "source": "D18 (2026-04-13 scan)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Trend-detection connector 404s (3+ sessions) escalated silently; no criticality tiers defined. See synthesis 2026-04-13-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "data-brain operational playbook (define connector criticality tiers + escalation SLAs); domain-18 skill (add 3-session-failure auto-escalate)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-019",
+      "date": "2026-04-14",
+      "type": "process_change",
+      "learning": "ATC rate collapsed 30-32% uniformly across ALL devices -- indicates cart-level infrastructure issue, not mobile-specific UX problem. Prior sessions focused on mobile bounce as primary CRO concern.",
+      "source": "D09 domain brief + D01 domain brief, 2026-04-14 scan",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "D09: ATC -30-32% all devices. D01: revenue -12.4%, sessions -37.9%. See daily synthesis 2026-04-14-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/roles/web-experimentation-skill.md",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ]
+    },
+    {
+      "id": "L-020",
+      "date": "2026-04-14",
+      "type": "process_change",
+      "learning": "ChangeSet approval-to-execution gap persists for 13th consecutive session despite flagging. Current escalation path (recommendations to Katie) is ineffective -- need structural delegation mechanism.",
+      "source": "D12 domain brief + D14 department brief, 2026-04-14 scan",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "D12: 14 stale approved (11 Katie), 0 executing, flagged 13 sessions. See daily synthesis 2026-04-14-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "cgo-daily-pipeline/config/changeset-instructions.md",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ]
+    },
+    {
+      "id": "L-021",
+      "date": "2026-04-14",
+      "type": "skill_update",
+      "learning": "Three independent domains converge on cognitive/neuroprotection positioning: published RCTs (D16), competitor launches (D17), consumer trends (D18) all point away from endurance toward cognitive benefits.",
+      "source": "D16 + D17 + D18 domain briefs, 2026-04-14 scan",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "D16: Martyn+Tominec RCTs. D17: Happy Panda, Tecton, nootropic CAGR. D18: Caffeine-free 78/100. See synthesis 2026-04-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/references/claims-compliance.md",
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
+    },
+    {
+      "id": "L-024",
+      "date": "2026-04-06",
+      "type": "changeset_outcome",
+      "learning": "For Superfiliate-acquired customers on Klaviyo, property audit revealed all Superfiliate data lives on creator profiles, not customer profiles. $source contains Klaviyo form IDs, not traffic attribution; Superfiliate Campaign Conversion fires on creators only with empty event properties; Shopify order tags don't propagate to profile-level Shopify Tags. Only working attribution path is discount codes on Placed Order events. Spawned CS-2026-049 (Shopify Flow to tag customers on 'superfiliate conversion approved' order tag). Investigation revealed existing attribution is structurally incomplete \u2014 every Superfiliate-sourced flow has been firing on the wrong audience.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "5 of 5 investigation questions confirmed; Superfiliate profile-level attribution structurally broken; working path is order-tag-based Flow. See CS-2026-010 + CS-2026-049.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-010",
+      "variance_pct": 0,
+      "outcome_class": "confirmed",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-025",
+      "date": "2026-04-07",
+      "type": "changeset_outcome",
+      "learning": "Subscription Pause/Skip Feature Test closed partially_complete with no learning_note and no actual_impact. Owner (Katie + Recharge) needs to populate outcome data for voluntary_churn_rate against the >=15% reduction target from 2.9% baseline. This PM entry is a placeholder \u2014 backfill required.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Expected target: voluntary_churn_rate <=2.5% monthly. Actual: not written. Close state partial; owner review pending.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-024",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
+    },
+    {
+      "id": "L-026",
+      "date": "2026-04-03",
+      "type": "changeset_outcome",
+      "learning": "Two BAW sprint ChangeSets (CS-2026-026 Velocity Emergency + CS-2026-027 Tier A Fast-Track) both closed force_closed_no_measurement \u2014 content was produced but velocity metrics were never tracked because no instrumentation existed before either campaign launched. Pattern: sprint-style ChangeSets must define and activate their counter instrument BEFORE the campaign starts; retroactive measurement is impossible when the window has expired.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "content",
+      "evidence": "CS-2026-026 target: >=3 posts/day during BAW. CS-2026-027 target: >=5 Tier A posts. Both: unmeasured \u2014 no counters running. Shared root cause: no pre-sprint instrumentation.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "CS-2026-026",
+        "CS-2026-027"
+      ],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-026",
+      "related_changeset_ids": [
+        "CS-2026-026",
+        "CS-2026-027"
+      ],
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "merge_note": "Merged L-027 (CS-2026-027 BAW Tier A Fast-Track, identical root cause) into this entry 2026-04-17",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
+    },
+    {
+      "id": "L-028",
+      "date": "2026-04-07",
+      "type": "changeset_outcome",
+      "learning": "For post-purchase review requests on Klaviyo, investigation found submission rate is 3.7% (declining from 6.4% peak) against a >=10% target. 'Copy of' variant outperforms original by 39% RPR but receives only 29% of traffic. LoyaltyLion review incentive is missing. SMS gets 33.5% click-through but converts at only 0.6%. Spawned CS-2026-053 (review flow rebuild) to consolidate on the winning variant, add LoyaltyLion incentive, and rebuild SMS treatment.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "3.7% submission rate vs >=10% target; winning variant (39% higher RPR) underserved at 29% traffic; SMS converts 55x worse than email. See CS-2026-036 + CS-2026-053.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-036",
+      "variance_pct": 63,
+      "outcome_class": "confirmed",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-029",
+      "date": "2026-04-03",
+      "type": "changeset_outcome",
+      "learning": "Ashton Activation (Seasonal Gap) closed deferred \u2014 not executed. Seasonal window passed before activation launched. Placeholder PM entry until CGO decides whether to re-approach for next seasonal gap or retire.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "campaigns",
+      "evidence": "Expected: >=3 actionable insights from cancellation survey data. Actual: deferred, no execution. Owner review pending.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-038",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
+    },
+    {
+      "id": "L-030",
+      "date": "2026-04-03",
+      "type": "changeset_outcome",
+      "learning": "TikTok Event Tracking closed deferred \u2014 not executed within the approval window. Paid TikTok ROAS (>=3.0x target vs 2.1x baseline) continues to run without proper event instrumentation. Placeholder PM entry; owner review pending on whether to re-queue or retire.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "paid-media",
+      "evidence": "Expected: meta_roas >=3.0x. Actual: deferred. No event tracking implementation occurred. Owner review pending.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-039",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
+    },
+    {
+      "id": "L-031",
+      "date": "2026-04-15",
+      "type": "changeset_outcome",
+      "learning": "Cohort Quality Decline Investigation \u2014 Feb 2026 M1 Repeat closed redundant. The investigation was superseded by parallel work; M1 repeat rate restoration (12.8% \u2192 >=16%) remains an open need but will be addressed through a different ChangeSet path. Placeholder PM entry; owner review pending on whether to re-open under new ID.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Expected: Feb cohort M1 repeat restored to >=16%. Actual: investigation closed as redundant without findings captured here. Owner review pending.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-063",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
+    },
+    {
+      "id": "L-032",
+      "date": "2026-04-15",
+      "type": "changeset_outcome",
+      "learning": "Claims Audit \u2014 KME Endurance & MCT:Glucose Ratio (Martyn/Frenser 2026) closed superseded. The claims audit was rolled into a broader compliance review path. Regulatory exposure review for blanket KME endurance claims and MCT:glucose SKU compliance rate remain unresolved under this ID. Placeholder PM entry; successor CS-ID pending linkage.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "operations",
+      "evidence": "Expected: zero blanket KME endurance claims, all MCT:glucose SKUs reviewed by Apr 20. Actual: superseded without measurement captured here. Owner review pending.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-065",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
+    },
+    {
+      "id": "L-036",
+      "date": "2026-04-17",
+      "type": "content_pattern",
+      "learning": "Endurance/adventure content on Facebook has undergone a confirmed pattern reversal: from 5.69x median (Mar 22) to 0.58x median (Apr 3). HYROX Cancun near-median on FB. Cross-domain implication for paid media: FB creative briefs must eliminate endurance hooks; redirect FB spend to Protocol Class (3.9x median) and Stimulant Refugee (3.3x median) which are performing strongly. TikTok/IG endurance content is unaffected \u2014 platform-specific fatigue.",
+      "source": "Moe Content PM SYN-20260417-001 \u2014 AP-004 endurance fatigue on Facebook (confirmed 2 cycles)",
+      "source_type": "content_pm_bridge",
+      "domain": "content",
+      "evidence": "AP-004: Leadville/HYROX FB posts 0.31%-1.45% eng (0.58x median). Prior cycle 5.69x. Confirmed 2 consecutive cycles. See SYN-20260417-001.",
+      "confidence": "preliminary",
+      "action_taken": {
+        "action_taken_cs": "CS-2026-093",
+        "action_taken_date": "2026-04-20",
+        "action_taken_session": "2026-04-20-s1"
+      },
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": true,
+      "changeset_note": "Update paid media creative brief template: exclude endurance hooks for FB campaigns; redirect to Protocol Class or Stimulant Refugee hooks",
+      "bridge_source_id": "AP-004",
+      "bridge_synthesis_id": "SYN-20260417-001",
+      "entry_type": "content_pattern",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-037",
+      "date": "2026-04-17",
+      "type": "content_pattern",
+      "learning": "Amazon product listing text (e.g., 'KENETIK Caffeine-Free Focus Drink \u2013 Brain Fuel for Mental Clarity...') is being auto-published as TikTok and Instagram captions via an unaudited publishing workflow. 6+ posts from Mar 31-Apr 2 show near-zero impressions and engagement. Cross-domain implication for content operations: the publishing pipeline has a source-level bug injecting listing copy into social queues. Immediate audit required; this pollutes reporting metrics and wastes posting frequency.",
+      "source": "Moe Content PM SYN-20260417-001 \u2014 AP-005 Amazon listing text anti-pattern (NEW Apr 2026)",
+      "source_type": "content_pm_bridge",
+      "domain": "content",
+      "evidence": "AP-005: 6+ TikTok/IG posts (Mar 31-Apr 2) with Amazon listing captions. Near-zero impressions and engagement. Publishing pipeline source unidentified. See SYN-20260417-001.",
+      "confidence": "preliminary",
+      "action_taken": {
+        "action_taken_cs": "CS-2026-092",
+        "action_taken_date": "2026-04-20",
+        "action_taken_session": "2026-04-20-s1"
+      },
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": true,
+      "changeset_note": "Audit content publishing pipeline for Amazon listing text injection; add caption quality gate (min 50 chars, no product listing format) before social publish",
+      "bridge_source_id": "AP-005",
+      "bridge_synthesis_id": "SYN-20260417-001",
+      "entry_type": "content_pattern",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-038",
+      "date": "2026-04-17",
+      "type": "content_pattern",
+      "learning": "'Stimulant Refugee' (caffeine addiction / Wedge B audience) is now confirmed as the #2 audience segment behind Protocol Class on Facebook, with 6.47%+ average engagement across 22+ posts and 153K+ impressions over 4+ cycles. Cross-domain implications: (1) paid media FB targeting should explicitly weight toward Stimulant Refugee hooks as primary creative direction alongside Protocol Class; (2) lifecycle should map this persona to a Klaviyo segment for dedicated email flow development; (3) content calendar should maintain Stimulant Refugee cadence at minimum 30% of FB output.",
+      "source": "Moe Content PM SYN-20260417-001 \u2014 CP-011 Stimulant Refugee confirmed #2 segment (NEW Apr 2026)",
+      "source_type": "content_pm_bridge",
+      "domain": "content",
+      "evidence": "CP-011: 22+ FB posts, 6.47%+ avg eng, 153K+ impressions, 4+ cycles. 3.3x overall median. Ashton Hall celebrity attribution variant adds named dimension at 1.73x FB median. See SYN-20260417-001.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "bridge_source_id": "CP-011",
+      "bridge_synthesis_id": "SYN-20260417-001",
+      "entry_type": "content_pattern",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
+    },
+    {
+      "id": "L-039",
+      "date": "2026-04-20",
+      "type": "process_change",
+      "learning": "Department briefs overstate impact severity when research contradicts existing positioning \u2014 but the pipeline trusts those assertions verbatim for changeset generation. CS-2026-068 and CS-2026-077 were both rated CRITICAL based on the dept-science-research brief claiming three papers 'directly contradict current Kenetik claims.' Cross-referencing against claims-compliance.md showed: (1) no athletic performance claims exist to contradict, (2) immune claims already use qualified Tier B language, (3) the only action needed was adding two guardrail notes. The changesets sat in draft for days waiting for CGO review of work that took minutes to validate and execute. Root cause: no validation step between brief severity assertion and changeset tier assignment.",
+      "source": "CS-2026-068 + CS-2026-077 closure analysis",
+      "source_type": "process_change",
+      "domain": "operations",
+      "evidence": "CS-2026-068 (claims repositioning) and CS-2026-077 (claims framework emergency revision) both generated 2026-04-16 as CRITICAL. (see CS-2026-068)",
+      "confidence": "strong",
+      "action_taken": "Spec amendment v1.2 \u2014 added \u00a73a (Impact Validation & Resolution Attempt) to autonomous-changeset-spec.md and Step 2.6 to changeset-instructions.md. Pipeline now validates impact assertions against source data before tier assignment, attempts resolution for autonomously-resolvable work, and minimizes the human decision surface for anything that does reach CGO review.",
+      "skill_files_updated": [
+        "cgo-daily-pipeline/config/autonomous-changeset-spec.md",
+        "cgo-daily-pipeline/config/changeset-instructions.md"
+      ],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-068, CS-2026-077",
+      "variance_pct": null,
+      "outcome_class": null
+    },
+    {
+      "id": "L-040",
+      "date": "2026-04-21",
+      "type": "changeset_outcome",
+      "learning": "Scaled Matt Hughes retargeting winner (CS-029, 9.57x on $97 BAW retargeting) to full-budget prospecting+interest+retargeting mix \u2192 prospecting/interest produced 0 purchases and blended ROAS collapsed to 0.38x on $288 spend. Athlete content is a retargeting reinforcement asset, not a prospecting asset. Creative performance does not generalize across audience temperature when the predecessor win was in a warm/contextual slot.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "paid-media",
+      "evidence": "Projected: $4,800 revenue / $2,400 margin / 3.0x ROAS expected (target 1.5x). Actual: $109.31 revenue / -$233.80 margin / 0.38x blended ROAS. (see CS-2026-045)",
+      "confidence": "moderate",
+      "action_taken": "Prospecting and interest adsets paused operationally ~Apr 10 after Day 7 kill trigger. Retargeting retained; additional Matt Hughes content will be loaded into retargeting audiences.",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-045",
+      "variance_pct": 97.7,
+      "outcome_class": "significant_variance"
+    },
+    {
+      "id": "L-041",
+      "date": "2026-04-21",
+      "type": "changeset_outcome",
+      "learning": "Sent SHOTS 'Your Anywhere Reset' product spotlight to 19,016 (vs 52,575 planned); travel/TSA framing with no bundle or urgency hook. -> Open rate healthy (35.96%) but CTR (0.56%) and CVR (0.074%) collapsed revenue pull-through to $1,293.07 vs $18,000 expected (-92.8%). -> Pure-content product-spotlight emails (no bundle/urgency/promo) need lower baseline projections anchored on validated comparables; travel angle alone did not drive click/convert. Next iteration in May email calendar should test bundle or urgency hook and audit the segment-build step that reduced sends by 64%.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Projected: $18,000 revenue / $9,000 margin / email_rpr at product-spotlight benchmark. Actual: $1,293.07 revenue / $646.54 margin (50% DTC) / $0.068 RPR. (see CS-2026-014)",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-014",
+      "variance_pct": 92.8,
+      "outcome_class": "significant_variance"
+    },
+    {
+      "id": "L-042",
+      "date": "2026-04-21",
+      "type": "changeset_outcome",
+      "learning": "Launched 3-touch Klaviyo flow (SMS > Email > SMS-reminder) targeting BAW one-time buyers 3 weeks post-purchase with 'running low - subscribe' framing; flow reached 495 recipients. -> 3 subscriptions ($266.28 first-order rev / $1,296 projected 6-mo LTV) vs 8-20 target / $5,184 expected LTV (-62.5% vs floor on primary metric; -75% LTV-adjusted). Top-of-funnel strong (SMS 27-39% CTR, email 43.3% open) but flow CVR 0.61% vs 1.5% target. Segment was +65% larger than estimated. -> Timing + framing validated (engagement strong) but the subscription offer itself did not convert warm buyers. The miss is a conversion problem, not an audience problem. Next iteration: test stronger first-order sub incentive (30-50% first month) and/or earlier-in-depletion timing. Flow is net-positive at near-zero cost, but below projected scale.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Projected: $5,184 6-mo LTV (12 subs x $72 x 6) / 8-20 subscription_starts / >=1.5% flow CVR. (see CS-2026-030)",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-041"
+      ],
+      "changeset_candidate": true,
+      "changeset_id": "CS-2026-030",
+      "variance_pct": 94.9,
+      "outcome_class": "significant_variance"
+    },
+    {
+      "id": "L-043",
+      "date": "2026-04-21",
+      "type": "changeset_outcome",
+      "learning": "Launched 5-touch Klaviyo flow (email + SMS) targeting ~4,797 CLEETUS-FREE3PACK Mar 2026 cohort with Cleetus-voiced education-first arc (Day 3 intro \u2192 Day 7 science \u2192 Day 10 Matt Hughes \u2192 Day 14 15%-off ask \u2192 Day 21 subscription CTA). -> Flow generated $1,968 / 25 conversions over 36 days (14,268 sends, 32.7% open, 0.17% CVR, $0.138 RPR). Cohort 30d LTV $25.37 (-44% vs Feb 2026, -61% vs 2025-09 Cleetus cohort). New-sub rate 0.3% (below 0.5-0.8% historical). -> Flow beats General-flow RPR baseline (+130%) so stays live as evergreen for future cohort entries, but did NOT hit the aggressive 8% reorder / <=8% churn / 5% sub-conversion projection for deep-discount acquisition. Structural learning: deep-discount cohorts (80% Cleetus-FREE3PACK, sub-$13 AOV) have LTV ceilings an email flow alone cannot break. Next cohort-recovery playbooks should either add paid-retargeting layer OR set conservative targets calibrated to the now-known deep-discount benchmarks (~$25 30d LTV, ~0.3% new-sub rate).",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Projected: $7,200 revenue / $3,600 margin / 8% reorder rate / <=8% churn / 5% sub-conversion over 90 days. (see CS-2026-007)",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-041",
+        "L-042"
+      ],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-007",
+      "variance_pct": 31.7,
+      "outcome_class": "significant_variance"
+    },
+    {
+      "id": "L-044",
+      "date": "2026-04-21",
+      "type": "skill_update",
+      "learning": "Desktop-specific CVR regressions with flat/positive mobile CVR on the same surfaces are a strong signal of component-level regression (theme variant, hero block, PDP sticky-ATC, or CLS regression) rather than content/copy/offer issues. When blended CVR is masking a device-specific collapse (this instance: blended +21% masking desktop -15.7%), component-isolation must precede any remediation. Diagnosis path: Shopify theme diff (14d version history) -> Polar session replay (desktop-only) -> GA4 desktop vs mobile funnel -> CWV desktop vs mobile. Remediation path: rollback offending component if isolable within 48h, else escalate to engineering.",
+      "source": "D09 Website/CRO scan + CS-2026-095 framing",
+      "source_type": "synthesis_derived",
+      "domain": "website",
+      "evidence": "2026-04-21 D09: Desktop Homepage -44%, Shots PDP -71%, Concentrate PDP -28% WoW. Mobile flat. Blended +21% hid the regression. (see CS-2026-095)",
+      "confidence": "strong",
+      "changesets_referenced": [
+        "CS-2026-095",
+        "CS-2026-056"
+      ]
+    },
+    {
+      "id": "L-045",
+      "date": "2026-04-21",
+      "type": "skill_update",
+      "learning": "Subscription retention analysis must disaggregate voluntary (customer-initiated cancel) from involuntary (failed-payment, card-expired) churn. Blended churn metrics mask driver and mis-direct intervention. New rule: all future ETP, retention, and cohort analysis splits voluntary vs involuntary. Voluntary churn responds to value/offer/content intervention; involuntary churn responds to payment-retry, dunning, card-update flows. Mixing them produces false negatives on both intervention types.",
+      "source": "dept-lifecycle-marketing.md 2026-04-21",
+      "source_type": "rule_adoption",
+      "domain": "lifecycle",
+      "evidence": "D06 new subs -31.5% WoW (Recharge + Klaviyo confirmed). Prior CS-072 ETP flow 0.048% performance measured without split - retrospectively ambiguous whether flow quality issue or payment-failure issue.",
+      "confidence": "strong",
+      "changesets_referenced": [
+        "CS-2026-072"
+      ]
+    },
+    {
+      "id": "L-046",
+      "date": "2026-04-21",
+      "type": "process_change",
+      "learning": "When tracker.json and session handoff diverge on ChangeSet status, tracker.json is authoritative. Handoff narratives lag tracker state when force-close events, corrections, or real-time status changes occur between handoff write and next session read. Pattern confirmed this session: CS-077 CLOSED in tracker but 'pending' in handoff; CS-045 CLOSED but 'in_flight' in handoff; CS-026/027 force-closed but narrated as active. Data primacy rule (tracker > handoff) prevents phantom work streams and downstream unblock errors. Synthesis must flag these reconciliations explicitly.",
+      "source": "D12 scan + handoff 2026-04-20-session-1.md cross-reference",
+      "source_type": "governance_derived",
+      "domain": "operations",
+      "evidence": "2026-04-21 D12 scan shows CS-077/045/026/027 CLOSED vs handoff narrative as pending/in_flight. Corrections applied in synthesis 2026-04-21 \u00a7ChangeSet Portfolio Status.",
+      "confidence": "strong",
+      "changesets_referenced": [
+        "CS-2026-077",
+        "CS-2026-045",
+        "CS-2026-026",
+        "CS-2026-027"
+      ]
+    },
+    {
+      "id": "L-047",
+      "date": "2026-04-21",
+      "type": "skill_update",
+      "learning": "Creator content boosted into PMAX (mixed placements) vs IG/FB-only (native placements) produces channel-mismatch attribution gaps. Native placement boosts inherit organic attribution more cleanly; PMAX campaigns spread signal across display/YouTube/Gmail where creator-native CTRs plummet. For graduation-to-paid decisions, prefer native platform (IG reel -> IG paid, FB reel -> FB paid) over PMAX unless specifically testing cross-placement performance.",
+      "source": "D19 TikTok + D08 Creator scan triangulation",
+      "source_type": "attribution_derived",
+      "domain": "paid-media",
+      "evidence": "TikTok Tier 1 3.42x ROAS native vs Tier 2 $0 conversion_value (PMAX-spread attribution gap). Matt Hughes FB-native boost working; CamJones IG-native boost proposed (CS-087).",
+      "confidence": "moderate",
+      "changesets_referenced": [
+        "CS-2026-087",
+        "CS-2026-094",
+        "CS-2026-061"
+      ]
+    },
+    {
+      "id": "L-048",
+      "date": "2026-04-21",
+      "type": "process_change",
+      "learning": "Domain health streak below threshold for N=5 is final warning; N=6 triggers Step 8a structural P0 escalation. Tactical fixes (symptomatic ChangeSets) applied at N=1..5 that produce reversion within <5 sessions confirm the bottleneck is infrastructure-level. Structural response requires owner-contract commitments, SLA enforcement with escalation, and CGO-level weekly check-in. First-ever Step 8a trigger in Kenetik system (D13, session 37). Kill-gate is war-room escalation if no recovery within 3 sessions of structural CS launch.",
+      "source": "D13 domain_health_streaks.D13.consecutive_below_40 reaching 6",
+      "source_type": "escalation_rule",
+      "domain": "operations",
+      "evidence": "D13 RED sessions 32-37 (6 consecutive). CS-057 + CS-075 prior tactical fixes; reverted within 5 sessions both times. Step 8a P0 structural CS-097 launched. (see source)",
+      "confidence": "strong",
+      "changesets_referenced": [
+        "CS-2026-097",
+        "CS-2026-057",
+        "CS-2026-075"
+      ]
+    },
+    {
+      "id": "L-049",
+      "date": "2026-04-22",
+      "type": "process_change",
+      "learning": "Session handoff narrative claims must be reverified against fresh domain-scan data before being propagated into synthesis. Handoff prose optimizes for continuity and tends to compress/round/extrapolate numbers in ways that become load-bearing false premises in the next session. New rule: every quoted statistic in a prior handoff that appears in a new synthesis must cite its fresh-data origin, not the handoff. Apply Hard Gate 6-style CORRECTION framework to handoff inheritance.",
+      "source": "Session 38 handoff-vs-freshdata reconciliation",
+      "source_type": "governance_derived",
+      "domain": "operations",
+      "evidence": "7 material handoff claims inaccurate vs fresh S38 data: Google ROAS 9x 3rd (actual: no 9x figure present), Blended CVR +21% (actual -4.7%. (see session handoff)",
+      "confidence": "strong",
+      "changesets_referenced": []
+    },
+    {
+      "id": "L-050",
+      "date": "2026-04-22",
+      "type": "process_change",
+      "learning": "Orphaned-campaign audit must scan the full marketing-calendar activity range, not only items flagged in the prior session's brief. Session-scoped audits undercount by 3x+ because new activities added or restaged since last scan are missed. New method: re-scan ALL open activities each session and deduplicate against CS tracker linked_changesets arrays.",
+      "source": "D13 marketing calendar re-audit",
+      "source_type": "method_derived",
+      "domain": "operations",
+      "evidence": "S37 handoff reported 21 orphaned. S38 full re-audit found 68 of 70 14-day activities orphaned. 3.2x undercount pattern.",
+      "confidence": "strong",
+      "changesets_referenced": [
+        "CS-2026-097",
+        "CS-2026-099"
+      ]
+    },
+    {
+      "id": "L-051",
+      "date": "2026-04-22",
+      "type": "process_change",
+      "learning": "When N independent demand signals share one production format and one message thread, collapse them into a single composite production unit rather than producing N separate assets. Composite captures cumulative audience overlap at 1/N production cost. Triggers: (a) same content format (e.g., 30-60s short-form video), (b) compatible message progression (hook \u2192 proof \u2192 positioning), (c) claims envelope accommodates all three, (d) trend windows overlap. Reference case: CS-2026-098 (2PM Crash + Leadville + Joelle Debban composite reel).",
+      "source": "Session 38 ChangeSet design",
+      "source_type": "pattern_derived",
+      "domain": "content",
+      "evidence": "DS-04-A 2PM Crash (24-48h intercept) + DS-04-B Leadville (48h amplification) + D10 S4 Joelle Debban testimonial (zero-activation UGC). (see session handoff)",
+      "confidence": "moderate",
+      "changesets_referenced": [
+        "CS-2026-098"
+      ]
+    },
+    {
+      "id": "L-052",
+      "date": "2026-04-22",
+      "type": "skill_update",
+      "learning": "Paid ROAS rising while site CVR falls is an attribution ceiling, not a growth signal. Paid cannot create revenue above what the funnel can convert; reported ROAS lift in this state typically reflects (a) better-attributed existing demand, (b) pixel-platform divergence on specific creatives, or (c) audience shifting to higher-intent segments temporarily. Rule: when paid ROAS delta > 0 and site CVR delta < 0 for 2+ consecutive sessions, escalate to CVR-fix-before-spend-increase protocol. Amplifying spend on a broken funnel is negative-EV.",
+      "source": "D04 + D02 + D08 session 38 cross-surface triangulation",
+      "source_type": "attribution_derived",
+      "domain": "paid-media",
+      "evidence": "Paid ROAS improving WoW across Meta + Google while blended CVR -4.7% WoW, Desktop CVR -23.6%, Shots PDP -51.4%. (see session handoff)",
+      "confidence": "moderate",
+      "changesets_referenced": [
+        "CS-2026-095"
+      ]
+    },
+    {
+      "id": "L-053",
+      "date": "2026-04-22",
+      "type": "process_change",
+      "learning": "When a structural P0 escalation (Step 8a) shows negative trajectory between trigger session and next session AND the required recovery delta exceeds any historical session-over-session movement in that domain, pre-emptively convene war-room rather than waiting for the 3-session kill-gate. Rationale: the kill-gate is a backstop, not the optimal decision point; if recovery math is statistically improbable, convening early captures 1-2 sessions of response capacity. Apply to pat-012, pat-015, and any future structural P0 triggers.",
+      "source": "D13 CRS trajectory analysis post-Step 8a",
+      "source_type": "escalation_derived",
+      "domain": "operations",
+      "evidence": "D13 CRS 21 (S37) \u2192 19 (S38); recovery to \u226550 by S40 would require +31 in 2 sessions; largest historical session-over-session CRS delta in any domain is ~+18. (see source)",
+      "confidence": "strong",
+      "changesets_referenced": [
+        "CS-2026-097"
+      ]
+    },
+    {
+      "id": "L-054",
+      "date": "2026-04-27",
+      "type": "skill_update",
+      "learning": "Desktop CVR is +22.0% WoW (3.22% to 3.93%) with checkout start +40.8%; the funnel break is mobile (-27.4%) at PDP-discovery stage, not desktop checkout. S38 desktop -23.6% claim was unsupported by today's fresh device-breakdown data. Mobile collapse is largely explained by one missing high-CVR PDP (Endurance Training Bundle).",
+      "source": "D09 Website & CRO domain brief 2026-04-27 (fresh Polar Pixel device breakdown)",
+      "source_type": "domain_contradiction",
+      "domain": "website",
+      "evidence": "Synthesis at S38 anchored on a metric direction without a fresh device-breakdown re-pull. Mobile vs. desktop diagnosis must be re-derived from the most recent Polar Pixel device export each session, not propagated from prior synthesis. See daily synthesis 2026-04-27-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-044",
+        "L-046",
+        "L-049"
+      ],
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md framing-guardrails (add device-breakdown re-derivation rule -- never inherit a device-direction claim across sessions)"
+    },
+    {
+      "id": "L-055",
+      "date": "2026-04-27",
+      "type": "process_change",
+      "learning": "Hard Gate 2 orphan rate is 97.6% (559/573), not 14% (68/70). The S38 figure was a 14d-window slice that masked a systemic gap ~10x larger.",
+      "source": "D13 Marketing Calendar domain brief 2026-04-27 (full re-audit on full 573-entry calendar)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Window-scoped audits without an explicit full-vs-window annotation hide systemic-vs-incident distinction. S38 reported a 14d-window number as if it were the systemic figure. See daily synthesis 2026-04-27-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-049",
+        "L-050"
+      ],
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md (add: any orphan/coverage statistic must include scope annotation -- 14d window vs full calendar); D13 brief template (require both window and full-file rate when the gap is investigated)"
+    },
+    {
+      "id": "L-056",
+      "date": "2026-04-27",
+      "type": "process_change",
+      "learning": "5 of 6 P0 action items had ZERO Slack/Drive/calendar evidence over 5 days. The pipeline only sees what is in writing. Silent decisions equal no decisions.",
+      "source": "D14 + D12 + D13 cross-read 2026-04-27",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Standup cadence and dispatch loop don't enforce written acknowledgment within an SLA. P0s are routed into Slack DMs but team practice doesn't require a same-day received/blocked/done reply. Team-roles.md does not specify P0 acknowledgment SLA. See daily synthesis 2026-04-27-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-039",
+        "L-049"
+      ],
+      "target": "brain/kenetik-brain/references/team-roles.md (add section: P0 ChangeSet acknowledgment SLA equals same-day Slack reply with one of ACK / blocked / shipped); cgo-daily-pipeline/config/dispatch-instructions.md (Layer 1 DMs flag P0s + require ACK)"
+    },
+    {
+      "id": "L-057",
+      "date": "2026-04-27",
+      "type": "skill_update",
+      "learning": "When a paid campaign reallocation removes traffic from a high-CVR PDP, the CRO funnel measurement shows up as a site degradation -- but the root cause is a paid decision, not a site bug. CS-089 cleetus FB collapse to $7 is the candidate cause for Endurance Bundle PDP traffic loss.",
+      "source": "D04 paid media + D09 CRO cross-read 2026-04-27",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Domain scans are isolated by data source. When a paid campaign change moves >500 sessions/wk away from a single landing page, the corresponding CRO impact must be flagged at synthesis time. No current mechanism does this. See daily synthesis 2026-04-27-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-044",
+        "L-052"
+      ],
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md content-commerce-cross-referencing block (add: paid campaign pause/redirect to CRO landing-page impact check); D04 + D09 brief templates (require linked URL change WoW)"
+    },
+    {
+      "id": "L-058",
+      "date": "2026-04-27",
+      "type": "process_change",
+      "learning": "3 phantom dependencies exist in tracker.json: CS-100 to L-045-voluntary-involuntary-split (not a tracker entry); CS-102 to 113 (12 May email CSes) to outline-v3-2026-04-23 (not in tracker); CS-115 to 3 missing infra deps. ChangeSet schema allows free-text dependency strings without referential integrity check.",
+      "source": "D12 tracker.json schema audit 2026-04-27",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Tracker dependency field accepts arbitrary strings; no validation against existing ChangeSet IDs or registered learning artifacts. Phantom deps accumulate silently. See daily synthesis 2026-04-27-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-049"
+      ],
+      "target": "cgo-logs/changesets/tracker.json schema (add validator: dependency strings must resolve to either CS-YYYY-NNN existing in tracker, or L-NNN existing in cross-surface-pm.json, or be flagged external_artifact with explicit owner); cgo-daily-pipeline/config/changeset-instructions.md (Step 3 guidance on dependency hygiene)"
+    }
+  ],
+  "archived_entries": [
+    {
+      "id": "L-001",
+      "date": "2026-04-02",
+      "type": "skill_update",
+      "learning": "Lead gen campaigns must be evaluated on CPL, not ROAS. ROAS will always appear near-zero because conversion happens downstream in Klaviyo flows, not in Meta.",
+      "source": "Katie Spaller (Slack DM to Devon)",
+      "source_type": "team_feedback",
+      "domain": "paid-media",
+      "evidence": "ka_prospecting_lg_shot flagged 0.0x ROAS but 101 ATC; campaign is OUTCOME_LEADS feeding Klaviyo flow. See session-handoff-2026-04-02, Slack Katie\u2192Devon 2026-04-01.",
+      "confidence": "strong",
+      "action_taken": "Fix A \u2014 added LEAD_GEN funnel stage and CPL evaluation to D04 + paid-media-skill.md \u00a73.8.1",
+      "skill_files_updated": [
+        "paid-media-skill.md \u00a73.8.1",
+        "domain-04-instructions.md"
+      ],
+      "related_entries": [
+        "L-002"
+      ],
+      "archived_date": "2026-04-05",
+      "archived_reason": "Codified into skill files; live \u22657 days"
+    },
+    {
+      "id": "L-002",
+      "date": "2026-04-02",
+      "type": "skill_update",
+      "learning": "Campaign objective restructuring is a valid optimization action. When a campaign has strong mid-funnel signals (ATC, engagement) but weak bottom-funnel conversion, the right action is to restructure the campaign objective \u2014 not refresh creative.",
+      "source": "Katie Spaller (Slack DM to Devon)",
+      "source_type": "team_feedback",
+      "domain": "paid-media",
+      "evidence": "Ashton Hall at 1.68x ROAS approaching threshold. System would recommend creative refresh; Katie recommended restructure to ATC-optimized. See session-handoff-2026-04-02.",
+      "confidence": "moderate",
+      "action_taken": "Fix C \u2014 added campaign restructuring decision tree to paid-media-skill.md \u00a73.11",
+      "skill_files_updated": [
+        "paid-media-skill.md \u00a73.11",
+        "dept-paid-media-instructions.md"
+      ],
+      "related_entries": [
+        "L-001"
+      ],
+      "archived_date": "2026-04-05",
+      "archived_reason": "Codified into skill files; live \u22657 days"
+    },
+    {
+      "id": "L-004",
+      "date": "2026-03-24",
+      "type": "skill_update",
+      "learning": "Polar aggregate spend data can be misinterpreted as daily budget. Multi-window trend confirmation (3d/7d/14d) is required before any spend decision to prevent acting on misread data.",
+      "source": "Session 18 forensic analysis (Ashton Hall spend error)",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "D04 recommended pausing Ashton Hall based on aggregate ($300) vs actual daily ($110). See session-handoff-2026-03-24.",
+      "confidence": "strong",
+      "action_taken": "paid-media-skill.md v1.1 \u2014 added \u00a73.6 Multi-Window Trend Confirmation",
+      "skill_files_updated": [
+        "paid-media-skill.md \u00a73.6"
+      ],
+      "related_entries": [],
+      "archived_date": "2026-04-05",
+      "archived_reason": "Codified into skill files; live \u22657 days"
+    },
+    {
+      "id": "L-003",
+      "date": "2026-04-02",
+      "type": "process_change",
+      "learning": "D04 should pull ATC metrics at campaign level for restructuring analysis \u2014 current Polar pulls don't include mid-funnel signals needed by the new restructuring decision tree (Fix C).",
+      "source": "Session 26 architecture review",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "Fix C restructuring tree requires ATC + checkout rate at campaign level. Polar has these (infra spec \u00a74.1). D04 doesn't request them. See session-handoff-2026-04-02.",
+      "confidence": "strong",
+      "action_taken": "CS-2026-056 created 2026-04-10",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-002",
+        "CS-2026-056"
+      ],
+      "changeset_candidate": true,
+      "changeset_note": "Expand D04 Polar pull to include adds_to_cart, initiate_checkout at campaign level",
+      "archived_date": "2026-04-11",
+      "archived_reason": "CS-2026-056 created from changeset_candidate; action live \u22657 days"
+    },
+    {
+      "id": "L-005",
+      "date": "2026-04-06",
+      "type": "process_change",
+      "learning": "The 'content blackout' narrative carried across Sessions 23-26 was factually incorrect. Sprout Social API shows 46 posts published in the period. The real issue is an IG engagement collapse (-68% from prior period) and a forward-looking calendar gap (Apr 6-12 empty). Diagnosis: domain scans relied on calendar status rather than published post verification. Fix: D07 and D13 should always cross-reference Sprout Social published post counts before declaring a content drought.",
+      "source": "Session 27 synthesis -- D07/D13 Sprout Social API verification",
+      "source_type": "data_correction",
+      "domain": "content",
+      "evidence": "Sprout Social: 46 posts published across IG/TikTok/FB in period previously reported as 'blackout'. IG ER 0.065% (7d avg). Calendar empty Apr 6-12.",
+      "confidence": "strong",
+      "action_taken": "CS-2026-057 created 2026-04-10",
+      "skill_files_updated": [],
+      "related_entries": [
+        "CS-2026-057"
+      ],
+      "changeset_candidate": true,
+      "changeset_note": "Update D07 and D13 to require Sprout Social published-post count verification before declaring content drought",
+      "archived_date": "2026-04-17",
+      "archived_reason": "CS-2026-057 created 2026-04-10 and live \u22657 days; content blackout verification fix initiated"
+    },
+    {
+      "id": "L-010",
+      "date": "2026-04-10",
+      "type": "process_observation",
+      "learning": "D08 creator dormancy hit 91.67% (11/12 creators inactive) despite Nick's engagement efforts. The creator program structure currently has no SLA enforcement \u2014 creators can go dormant indefinitely without a formal intervention trigger. A defined inactivity threshold (e.g., 21 days no post = automated DM) would surface program health issues before they compound into quarter-scale dormancy.",
+      "source": "Session 30 synthesis \u2014 D08 RED status analysis",
+      "source_type": "synthesis_observation",
+      "domain": "content",
+      "evidence": "D08 score: RED. 11/12 creators inactive. Last active: 1 creator (unidentified). Nick owns creator relationships. No SLA enforcement mechanism in current creator management spec.",
+      "confidence": "strong",
+      "action_taken": "rec-204 issued (systematic inactivity protocol)",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": true,
+      "changeset_note": "Build creator inactivity SLA into Nick's weekly creator review \u2014 auto-flag any creator with >21 days no post",
+      "archived_date": "2026-04-17",
+      "archived_reason": "rec-204 issued 2026-04-10 and live \u22657 days; creator SLA enforcement protocol initiated"
+    },
+    {
+      "id": "L-011",
+      "date": "2026-04-10",
+      "type": "data_quality_observation",
+      "learning": "D13 calendar scan flagged 'Isaac' and 'Pipa' as content owners but neither name appears in the team-roles.md roster (16 verified members). Content attributed to unknown owners creates accountability gaps \u2014 posts may not get made, quality cannot be tracked to a person, and the system cannot route feedback. HARD GATE: Any new calendar entry with an owner field must be validated against team-roles.md before being accepted into the system.",
+      "source": "Session 30 synthesis \u2014 D13 HARD GATE violation",
+      "source_type": "synthesis_observation",
+      "domain": "content",
+      "evidence": "D13 calendar entries contain owners 'Isaac' and 'Pipa'. team-roles.md: 16 verified members, neither name present. Flagged per HARD GATE protocol. rec-203 issued to Nick for calendar remediation.",
+      "confidence": "strong",
+      "action_taken": "rec-203 issued to Nick Lacagnina",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "archived_date": "2026-04-17",
+      "archived_reason": "rec-203 issued 2026-04-10 and live \u22657 days; calendar owner validation HARD GATE communicated to Nick Lacagnina"
+    },
+    {
+      "id": "L-022",
+      "date": "2026-04-15",
+      "type": "operational_signal",
+      "learning": "April subscription attach rate 40.7% vs March 11.5% (+254%) appeared at month boundary without a known offer change. Behavioral driver candidates: Recharge offer page change, checkout UX change, cohort quality shift, acquisition channel mix shift, or measurement bug. RCA opened via CS-2026-075.",
+      "source": "D06 Subscription + dept-lifecycle-marketing.md, 2026-04-15 scan",
+      "source_type": "metric_discontinuity",
+      "domain": "lifecycle",
+      "evidence": "Recharge attach rate weekly series March 30 week 11.5% -> April 01 week 40.7%. Step-function change, not trend. Largest LTV recovery signal in portfolio.",
+      "confidence": "moderate",
+      "action_taken": "CS-2026-075 RCA opened; Lifecycle + Katie 7-day diagnosis target",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-019"
+      ],
+      "target": "brain/kenetik-brain/references/lifecycle-marketing.md",
+      "entry_type": "operational_signal",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-04-19",
+      "archival_state": "archived",
+      "archived_reason": "scheduler_c1_hook",
+      "archived_by": "workflow_scheduler.c1",
+      "archived_tenant_version": "1.0.0",
+      "physically_moved_at": "2026-04-19T23:58:35.148744+00:00"
+    },
+    {
+      "id": "L-023",
+      "date": "2026-04-15",
+      "type": "operational_signal",
+      "learning": "Creative freshness monitoring fired at 0% FRESH -- the threshold is reactive, not proactive. Portfolio reached full fatigue before any alert triggered. Recommended: move alert trigger to 25% FRESH to enable proactive refresh brief generation before ROAS erosion compounds.",
+      "source": "dept-paid-media.md + D04, 2026-04-15 scan",
+      "source_type": "playbook_failure_mode",
+      "domain": "paid-media",
+      "evidence": "0% FRESH / 94% WATCH / 6% FATIGUED portfolio state reached without playbook firing. Blended ROAS 2.39x vs 3.5x target. Ashton Hall 0.25x ROAS persistent margin drag.",
+      "confidence": "moderate",
+      "action_taken": "rec-191 Creative Freshness trigger threshold recalibration (Peter + Katie, 7-day)",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "cgo-daily-pipeline/config/creative-freshness-playbook.md",
+      "entry_type": "operational_signal",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ],
+      "archived_date": "2026-04-19",
+      "archival_state": "archived",
+      "archived_reason": "scheduler_c1_hook",
+      "archived_by": "workflow_scheduler.c1",
+      "archived_tenant_version": "1.0.0",
+      "physically_moved_at": "2026-04-19T23:58:35.148786+00:00"
+    },
+    {
+      "id": "L-033",
+      "date": "2026-04-17",
+      "type": "process_change",
+      "learning": "TikTok ads ingestion flag tiktok_ads=false in paid-media-state.json suppressed $858.75/7d spend at 2.62x ROAS (+38.5% WoW) from synthesis for 8+ sessions. Polar confirmed real spend and positive ROAS. State-file flag had no self-healing mechanism. Connector-health preconditions per L-016 must extend to state-file flags, not just connector-zero detection.",
+      "source": "cgo-logs/domain-scans/2026-04-17-s1 Domain 19",
+      "source_type": "domain_scan",
+      "domain": "paid-media",
+      "evidence": "paid-media-state.json flag=false; Polar get_context returned $858.75/7d live TikTok spend; 8+ sessions of suppressed reporting",
+      "confidence": "preliminary",
+      "action_taken": "Target cgo-daily-pipeline/config/domains/domain-19.md \u2014 add 'verify Polar TikTok spend before trusting paid-media-state.json flag' precondition. Raised as rec-221 (Katie + Peter).",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-016"
+      ],
+      "changeset_candidate": false,
+      "changeset_id": null,
+      "variance_pct": null,
+      "outcome_class": null,
+      "sweep_flag": null,
+      "entry_type": "process_change",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-04-19",
+      "archival_state": "archived",
+      "archived_reason": "scheduler_c1_hook",
+      "archived_by": "workflow_scheduler.c1",
+      "archived_tenant_version": "1.0.0",
+      "physically_moved_at": "2026-04-19T23:58:35.148789+00:00"
+    },
+    {
+      "id": "L-034",
+      "date": "2026-04-17",
+      "type": "threshold_calibration",
+      "learning": "Matt Hughes series claimed 9.57x ROAS vs actual 1.57x measurement is a 6x attribution drift. Narrative was inherited across 3 sessions of synthesis without re-sourcing from Polar campaign-level data. ROAS claims in content/dept briefs inherit from prior syntheses rather than re-sourcing \u2014 creates attribution-inheritance drift when the original source was itself imprecise.",
+      "source": "cgo-logs/department-briefs/2026-04-17-s1/dept-content.md",
+      "source_type": "department_brief",
+      "domain": "cross-surface",
+      "evidence": "Claimed 9.57x narrative in synthesis (S32-S34); actual Polar campaign-level 1.57x; CS-2026-045 scale decision gated by reconciliation today",
+      "confidence": "preliminary",
+      "action_taken": "Target synthesis-instructions.md Step 4 \u2014 add 're-source ROAS figures from Polar campaign-level each session; do not inherit from prior synthesis narrative' precondition.",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-006"
+      ],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-045",
+      "variance_pct": -83.6,
+      "outcome_class": "missed_target",
+      "sweep_flag": null,
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-04-19",
+      "archival_state": "archived",
+      "archived_reason": "scheduler_c1_hook",
+      "archived_by": "workflow_scheduler.c1",
+      "archived_tenant_version": "1.0.0",
+      "physically_moved_at": "2026-04-19T23:58:35.148790+00:00"
+    },
+    {
+      "id": "L-035",
+      "date": "2026-04-17",
+      "type": "process_change",
+      "learning": "CS-2026-075 was written with owner field = 'Lifecycle lead' \u2014 a role label, not a person. The HARD GATE Team Roster Validation is applied at synthesis output but not at ChangeSet creation. Invalid-owner CSs can enter the tracker undetected.",
+      "source": "cgo-logs/department-briefs/2026-04-17-s1/dept-operations-planning.md",
+      "source_type": "department_brief",
+      "domain": "operations",
+      "evidence": "tracker.json CS-2026-075 owner='Lifecycle lead'; team-roles.md Slack Directory has 16 members, 'Lifecycle lead' is not among them",
+      "confidence": "preliminary",
+      "action_taken": "Target changeset-instructions.md \u2014 add roster validation step to CS creation; fail CS creation if owner is not in team-roles.md Slack Directory. Raised as rec-218 (reassign CS-075 to Katie, Peter owns).",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-075",
+      "variance_pct": null,
+      "outcome_class": null,
+      "sweep_flag": null,
+      "entry_type": "process_change",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-04-19",
+      "archival_state": "archived",
+      "archived_reason": "scheduler_c1_hook",
+      "archived_by": "workflow_scheduler.c1",
+      "archived_tenant_version": "1.0.0",
+      "physically_moved_at": "2026-04-19T23:58:35.148791+00:00"
+    }
+  ],
+  "last_updated": "2026-04-27T22:50:00Z"
+}
