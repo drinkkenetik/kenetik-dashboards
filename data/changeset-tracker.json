@@ -1,29 +1,29 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-27",
-  "next_id": 124,
+  "last_updated": "2026-04-28T16:35:00Z",
+  "next_id": 127,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-04-27T22:35:00Z",
-    "last_sweep_session": 39,
+    "last_sweep_date": "2026-04-28T16:35:00Z",
+    "last_sweep_session": 40,
     "last_sweep_result": "completed",
     "last_sweep_counts": {
-      "total_scanned": 116,
-      "measurement_overdue": 0,
+      "total_scanned": 126,
+      "measurement_overdue": 6,
       "measured": 0,
       "auto_closed": 0,
-      "flagged_human_review": 0,
-      "stale_detected": 1,
-      "draft_overdue_gt_5d": 7,
-      "nudges_sent": 0
+      "flagged_human_review": 4,
+      "stale_detected": 16,
+      "draft_overdue_gt_5d": 15,
+      "nudges_sent_pending_phase4": 11
     }
   },
   "summary": {
-    "total": 123,
+    "total": 126,
     "by_status": {
       "closed": 48,
       "published": 18,
       "approved": 7,
-      "draft": 48,
+      "draft": 51,
       "needs_feedback": 2
     },
     "by_risk": {
@@ -511,7 +511,14 @@
       "sweep_flags": [
         "S31 2026-04-13: measurement window closed \u2014 manual data pull required (pipeline could not auto-measure)",
         "measurement_overdue",
-        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
+        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)",
+        {
+          "flag": "measurement_overdue_15d",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "manual_data_pull",
+          "age_days": 15
+        }
       ],
       "last_updated": "2026-04-16",
       "measurement_result": {
@@ -1585,7 +1592,14 @@
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
         "stale_approved_gt_7d",
-        "executed_2026-04-21_via_changeset_execute"
+        "executed_2026-04-21_via_changeset_execute",
+        {
+          "flag": "measurement_window_closes_today",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "katie_pull_today",
+          "age_days": 0
+        }
       ],
       "scheduled_send_date": "2026-04-21",
       "execution_target_date": null,
@@ -2990,7 +3004,14 @@
       "executed_date": "2026-04-14",
       "stale": true,
       "sweep_flags": [
-        "S31 sweep 2026-04-13: stale 19d \u2014 requires binary execute-or-close decision in 72h"
+        "S31 sweep 2026-04-13: stale 19d \u2014 requires binary execute-or-close decision in 72h",
+        {
+          "flag": "measurement_window_closes_today_14d",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "nick_lawrence_readout_today",
+          "age_days": 0
+        }
       ],
       "last_updated": "2026-04-16",
       "published_date": "2026-04-14",
@@ -3491,7 +3512,14 @@
       "requires_human_review": true,
       "last_updated": "2026-04-16",
       "sweep_flags": [
-        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
+        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)",
+        {
+          "flag": "measurement_overdue_18d_critical",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "manual_review_data_corruption_flag",
+          "age_days": 18
+        }
       ]
     },
     {
@@ -3655,7 +3683,14 @@
       "executed_date": null,
       "autonomy_tier": null,
       "sweep_flags": [
-        "stale_approved_gt_7d"
+        "stale_approved_gt_7d",
+        {
+          "flag": "devon_decision_overdue_13d",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "devon_decision_sweep_today",
+          "age_days": 13
+        }
       ],
       "last_updated": "2026-04-20"
     },
@@ -4055,6 +4090,13 @@
           "session": "2026-04-27-s1",
           "overdue_days": 19,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate_20d_decay",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "archive_review_war_room",
+          "age_days": 20
         }
       ]
     },
@@ -4081,7 +4123,14 @@
       "approved_date": "2026-04-15",
       "notes": " | 2026-04-15: Devon approved. Expand D04 Polar pull to include campaign-level ATC + checkout metrics.",
       "sweep_flags": [
-        "stale_approved_gt_7d"
+        "stale_approved_gt_7d",
+        {
+          "flag": "archive_candidate_13d",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "archive_review_war_room",
+          "age_days": 13
+        }
       ],
       "last_updated": "2026-04-20"
     },
@@ -4108,7 +4157,14 @@
       "approved_date": "2026-04-15",
       "notes": " | 2026-04-15: Devon approved. Update D07/D13 scans to cross-reference Sprout published post counts before declaring content drought.",
       "sweep_flags": [
-        "stale_approved_gt_7d"
+        "stale_approved_gt_7d",
+        {
+          "flag": "archive_candidate_13d",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "archive_review_war_room",
+          "age_days": 13
+        }
       ],
       "last_updated": "2026-04-20"
     },
@@ -5029,6 +5085,13 @@
           "set_date": "2026-04-27",
           "session": "2026-04-27-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d_recheck",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "devon_decision_sweep_today",
+          "age_days": 13
         }
       ]
     },
@@ -6379,7 +6442,15 @@
       "executed_date": "",
       "autonomy_tier": 2,
       "learning_note": "",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "pixel_verification_4d_overdue",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "hard_deadline_today",
+          "age_days": 4
+        }
+      ]
     },
     {
       "id": "CS-2026-096",
@@ -6434,7 +6505,15 @@
       "autonomy_tier": 2,
       "learning_note": "",
       "last_updated": "2026-04-23",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "high_risk_5d_overdue",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "devon_decision_sweep_today",
+          "age_days": 5
+        }
+      ]
     },
     {
       "id": "CS-2026-097",
@@ -6549,7 +6628,15 @@
       "executed_date": "",
       "autonomy_tier": 2,
       "learning_note": "L-051 composite production unit reference case",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "brandon_gate_2_4d_overdue",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "package_dossier_today_devon_approval",
+          "age_days": 4
+        }
+      ]
     },
     {
       "id": "CS-2026-099",
@@ -6618,6 +6705,13 @@
           "session": "2026-04-27-s1",
           "overdue_days": 5,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "gp_launch_gate_6d_overdue",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "devon_decision_sweep_today_blocks_5_may_csets",
+          "age_days": 6
         }
       ]
     },
@@ -6681,7 +6775,15 @@
       "autonomy_tier": 2,
       "learning_note": "",
       "last_updated": "2026-04-22",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "mar_cohort_save_flow_3d_overdue",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "devon_co_approval_then_katie_4h_ship",
+          "age_days": 3
+        }
+      ]
     },
     {
       "id": "CS-2026-101",
@@ -7628,7 +7730,15 @@
       "measurement_window_end": "2026-05-06",
       "expected_impact": "Recover ~80 conv/wk on the 869-session loss. Reframes mobile CVR -27.4% from a site-bug interpretation to a paid/lifecycle 2nd-order interpretation; saves Lawrence + team a multi-day mobile redesign that is not the actual fix.",
       "dependencies": "Phase 4 may require Devon sign-off if reactivation depends on a paused paid campaign decision. No phantom deps.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "p0_escalation_endurance_pdp_live_revenue_loss",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "restore_today_live_bleed_600_1200_per_day",
+          "age_days": 1
+        }
+      ],
       "created": "2026-04-27",
       "autonomy_tier": 2,
       "risk_level": "medium",
@@ -7676,7 +7786,15 @@
       "measurement_window_end": "2026-05-06",
       "expected_impact": "Pre-empts brand-safety risk window narrowing into Mother's Day Apr 28. Closes both items by EOD Apr 28; preserves narrative control on the organic TBI/cognitive recovery thread.",
       "dependencies": "Independent (does not depend on other CSes). Mother's Day Apr 28 launch needs this clear.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "p1_due_today_eod",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-s1",
+          "action": "devon_brandon_post_response_garrett_lot_clearance",
+          "age_days": 0
+        }
+      ],
       "created": "2026-04-27",
       "autonomy_tier": 2,
       "risk_level": "medium",
@@ -7735,6 +7853,79 @@
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-123.md",
       "notes": "Summary: Lawrence drafts brief by Apr 28; Charlotte ships 5 IG posts by May 5; Moe instruments measurement (Sprout post analytics + content_links). Aligns with confirmed CP-011 Stimulant Refugee + IG engagement-recovery momentum (engagements +72% WoW on IG). Lowest-lift unblock for the LEARN stage of the content flywheel (zero hypothesis execution since 2026-03-05). | Priority (synthesis tag): P2 | Demand signal: None | Source recommendations: ['rec-240'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
+    },
+    {
+      "id": "CS-2026-124",
+      "title": "Per-Serving Value-Framing Test \u2014 Counter-Position vs Ketone-IQ APRIL26 30%-Off Promo",
+      "owner": "Cliff Morgan",
+      "status": "draft",
+      "subtype": "implementation",
+      "last_updated": "2026-04-28",
+      "execution_target_date": "2026-05-05",
+      "measurement_window_end": "2026-05-19",
+      "expected_impact": "Test whether explicit per-serving value framing (vs energy-drink comparison + sub savings emphasis) lifts cold-audience CR/CAC by 10\u201315% during Ketone-IQ APRIL26 promo window. Address pricing objection 'still too expensive' now confirmed in two distinct VoC windows. Pairs with Group 1 Paid Media insight that prospecting CAC has deteriorated $54.70 to $86.54 (+58%) \u2014 cold audiences are not converting at higher price points.",
+      "dependencies": "No phantom deps. Coordinate with rec-243 paid pause sequencing (Katie). Brandon claims-clear value-framing language stays inside matrix.",
+      "sweep_flags": [],
+      "created": "2026-04-28",
+      "autonomy_tier": 1,
+      "risk_level": "medium",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo",
+        "meta-ads",
+        "google-ads"
+      ],
+      "source": "synthesis",
+      "file": "cgo-logs/changesets/CS-2026-124.md",
+      "notes": "Summary: Cliff Morgan + Katie Spaller co-own. Cliff defines per-serving value math + sub savings emphasis (anchor: per-serving cost vs equivalent energy drink/coffee). Katie ships email send variant (M19/C variant) + 2 paid social creatives. Test window: 7 days during Ketone-IQ APRIL26 promo overlap. Linked to rec-245. P3 of synthesis priority stack."
+    },
+    {
+      "id": "CS-2026-125",
+      "title": "UGC Capture & Amplification Sprint \u2014 5 Unprompted Brand Mentions for Mother's Day Adjacency",
+      "owner": "Nick Lacagnina",
+      "status": "draft",
+      "subtype": "implementation",
+      "last_updated": "2026-04-28",
+      "execution_target_date": "2026-05-05",
+      "measurement_window_end": "2026-05-19",
+      "expected_impact": "Convert 5 high-credibility unprompted mentions into amplified social/email assets within 7 days. Targets: sub-2hr marathon athlete (race-kit listing alongside On Running, Wolaco, Transparent Labs, BPN); Mackenzie Pass mountain biker; Gwen Jorgensen WTCS tag; REV Tour athlete; collegiate archer 5-star (currently Pending \u2014 approve for publication). Sequence amplification for Mother's Day (May 8\u201310) gift-guide window.",
+      "dependencies": "No phantom deps. Charlotte Thamm executes IG amplification. Katie clears archer 5-star review (Pending status). Brandon claims-clear if performance language used.",
+      "sweep_flags": [],
+      "created": "2026-04-28",
+      "autonomy_tier": 1,
+      "risk_level": "low",
+      "department": "social-media",
+      "platforms": [
+        "instagram-organic",
+        "facebook-organic",
+        "klaviyo"
+      ],
+      "source": "synthesis",
+      "file": "cgo-logs/changesets/CS-2026-125.md",
+      "notes": "Summary: Nick + Charlotte co-execute. Nick handles outreach DMs to 5 targets within 48h; Charlotte ships amplification posts (story repost, feed feature) within 7d; collegiate archer review approved + featured by May 5. Pairs with Mother's Day creator collabs (May 8\u201310) and clarity-cluster VoC themes. Linked to rec-246."
+    },
+    {
+      "id": "CS-2026-126",
+      "title": "Klaviyo Review Request Flow (Rcgah9) Audit & Repair \u2014 Restore -83% Velocity",
+      "owner": "Katie Spaller",
+      "status": "draft",
+      "subtype": "investigation",
+      "last_updated": "2026-04-28",
+      "execution_target_date": "2026-05-02",
+      "measurement_window_end": "2026-05-19",
+      "expected_impact": "Diagnose -83% review velocity decline (29/wk Apr 8-9 peak to 5/wk now) against stable sentiment (+0.128, 4.4-star avg). Audit trigger config, send timing, deliverability, suppression. Restore to ~20/wk baseline within 2 weeks. Each week without flow audit = social proof + SEO compounding loss invisible to dashboards because rating + sentiment read green.",
+      "dependencies": "No phantom deps. Independent of CS-100 ship. Pull Rcgah9 metrics from Klaviyo MCP.",
+      "sweep_flags": [],
+      "created": "2026-04-28",
+      "autonomy_tier": 1,
+      "risk_level": "low",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "source": "synthesis",
+      "file": "cgo-logs/changesets/CS-2026-126.md",
+      "notes": "Summary: Katie audits Klaviyo Review Request flow Rcgah9 \u2014 trigger criteria, send timing relative to delivery, deliverability stats, suppression list. Hypothesis: structural flow-mechanics fault (trigger or timing change), NOT VoC degradation. Outcome: identify root cause, ship fix, monitor 2-week recovery to ~20 reviews/week. Linked to rec-247. P5 of synthesis recommendations."
     }
   ],
   "queue_actions": {
