@@ -9,27 +9,23 @@
     "last_sweep_counts": {
       "total_scanned": 126,
       "measurement_overdue": 6,
-      "measured": 2,
-      "auto_closed": 2,
+      "measured": 5,
+      "auto_closed": 5,
       "flagged_human_review": 4,
       "stale_detected": 16,
       "draft_overdue_gt_5d": 15,
       "nudges_sent_pending_phase4": 11
     },
-    "measurement_overdue_remaining_after_manual_close": [
-      "CS-2026-046",
-      "CS-2026-006",
-      "CS-2026-018",
-      "CS-2026-040"
-    ],
+    "measurement_overdue_remaining_after_manual_close": [],
     "manual_measurement_session": "2026-04-28-execute",
-    "manual_measurement_root_cause": "sub_agent_mcp_inheritance_failure_per_skill_warning"
+    "manual_measurement_root_cause": "sub_agent_mcp_inheritance_failure_per_skill_warning",
+    "cs_040_deferred_to_brief_full_measurement_date": "2026-05-07"
   },
   "summary": {
     "total": 126,
     "by_status": {
-      "closed": 52,
-      "published": 16,
+      "closed": 55,
+      "published": 13,
       "approved": 9,
       "draft": 46,
       "needs_feedback": 3
@@ -469,7 +465,7 @@
         "klaviyo",
         "instagram-organic"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Nick Lacagnina + Charlotte Thamm",
       "created": "2026-03-10",
@@ -506,29 +502,60 @@
       "published_date": "2026-03-14",
       "measurement_window": "30d",
       "measurement_due": "2026-04-13",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "mar_2026_attach_rate": 0.115,
+        "apr_2026_attach_rate": 0.413,
+        "baseline_reported_in_brief": 0.08,
+        "baseline_actual_historical": 0.206,
+        "primary_metric_target": 0.12,
+        "data_source": "shopify_cohort_data_monthly_subscription_attach_rate",
+        "attribution_caveat": "multi_platform_content_distillation_cannot_causally_claim_attach_lift",
+        "measured_via": "shopify_cohort_state_file",
+        "measured_date": "2026-04-28"
+      },
+      "outcome": "inconclusive_attach_attribution_strong_directional_signal",
+      "closed_date": "2026-04-28",
       "file": "cgo-logs/changesets/CS-2026-006.md",
-      "notes": "Published Mar 14. High risk \u2014 Devon approved. Blocks CS-2026-024 (pause/skip). | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
+      "notes": "Published Mar 14. High risk \u2014 Devon approved. Blocks CS-2026-024 (pause/skip). | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h. | 2026-04-28 (Devon via Claude /changeset-measurement): CLOSED \u2014 inconclusive attribution. L5 brand-equity CS class needs metric-template refresh.",
       "review_tier": "standard",
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
       "measurement_approaching": true,
       "sweep_flags": [
-        "S31 2026-04-13: measurement window closed \u2014 manual data pull required (pipeline could not auto-measure)",
-        "measurement_overdue",
-        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)",
+        {
+          "flag": "S31 2026-04-13: measurement window closed \u2014 manual data pull required (pipeline could not auto-measure)",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during 2026-04-28 measurement sweep."
+        },
+        {
+          "flag": "measurement_overdue",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during 2026-04-28 measurement sweep."
+        },
+        {
+          "flag": "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during 2026-04-28 measurement sweep."
+        },
         {
           "flag": "measurement_overdue_15d",
           "set_date": "2026-04-28",
           "session": "2026-04-28-s1",
           "action": "manual_data_pull",
           "age_days": 15
+        },
+        {
+          "flag": "manual_measurement_close_2026_04_28",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Manual close. Apr attach 41.3% mechanically meets \u226512% target but attribution to CS-006's content distillation is structurally infeasible. L5 brand-equity CSes need different primary metrics (citation pickup, science-page traffic). Brief baseline (8%) misstated; Feb actual was 20.6%."
         }
       ],
-      "last_updated": "2026-04-16",
+      "last_updated": "2026-04-28",
       "measurement_result": {
         "outcome": "inconclusive",
         "measured_date": "2026-04-20",
@@ -1638,7 +1665,7 @@
       "platforms": [
         "klaviyo"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie Spaller",
       "created": "2026-03-13",
@@ -1672,18 +1699,44 @@
       "review_tier": "standard",
       "published_date": "2026-04-21",
       "file": "cgo-logs/changesets/CS-2026-018.md",
-      "notes": "Send: 4/21. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-21 executed by Katie via /changeset-execute \u2014 pre-publish mismatch caught (final creative initially attached was CS-2026-021 testimonial email; corrected to Midlife Brain Window creative matching brief). Measurement window 7d, due 2026-04-28.",
+      "notes": "Send: 4/21. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-21 executed by Katie via /changeset-execute \u2014 pre-publish mismatch caught (final creative initially attached was CS-2026-021 testimonial email; corrected to Midlife Brain Window creative matching brief). Measurement window 7d, due 2026-04-28. | 2026-04-28 (Devon via Claude /changeset-measurement): CLOSED \u2014 underperformed with metric-definition caveat. Educational/science email vs flash_sale_revenue mismatch.",
       "sweep_flags": [
-        "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved",
-        "stale_approved_gt_7d",
-        "executed_2026-04-21_via_changeset_execute",
+        {
+          "flag": "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during 2026-04-28 measurement sweep."
+        },
+        {
+          "flag": "stale_approved",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during 2026-04-28 measurement sweep."
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during 2026-04-28 measurement sweep."
+        },
+        {
+          "flag": "executed_2026-04-21_via_changeset_execute",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during 2026-04-28 measurement sweep."
+        },
         {
           "flag": "measurement_window_closes_today",
           "set_date": "2026-04-28",
           "session": "2026-04-28-s1",
           "action": "katie_pull_today",
           "age_days": 0
+        },
+        {
+          "flag": "manual_measurement_close_2026_04_28",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Manual close. Revenue $361 vs $7K target = 5.2%. Underperformed at the dollar layer AND metric-definition was wrong (educational/science email shouldn't be measured on flash_sale_revenue). Open rate strong (45.9%) \u2014 subject worked, body/CTA underperformed. Patch new-changeset.md template: educational sends should default to CTR + engagement primary metric."
         }
       ],
       "scheduled_send_date": "2026-04-21",
@@ -1691,10 +1744,28 @@
       "executed_date": "2026-04-21",
       "autonomy_tier": null,
       "stale": false,
-      "last_updated": "2026-04-21",
+      "last_updated": "2026-04-28",
       "measurement_due": "2026-04-28",
       "ad_platform_refs": null,
-      "organic_source": null
+      "organic_source": null,
+      "outcome": "underperformed_with_metric_definition_caveat",
+      "closed_date": "2026-04-28",
+      "actual_impact": {
+        "klaviyo_campaign_id": "01KP369SQMNBAJ7YHZG8R42ZKR",
+        "recipients": 15727,
+        "open_rate": 0.459,
+        "click_rate": 0.00789,
+        "click_to_open_rate": 0.0172,
+        "conversion_rate": 0.00038,
+        "conversions": 6,
+        "revenue": 361.3,
+        "aov": 60.22,
+        "unsubscribe_rate": 0.00395,
+        "spam_complaint_rate": 6e-05,
+        "margin_estimate": 181,
+        "measured_via": "klaviyo_mcp_get_campaign_report",
+        "measured_date": "2026-04-28"
+      }
     },
     {
       "id": "CS-2026-019",
@@ -3083,25 +3154,36 @@
       ],
       "routed_via": "auto",
       "routed_date": "2026-03-27",
-      "notes": "Revised Apr 7. Nick owns Tier 1 (Brand Champs, Apr 7-11). Nick+Lawrence tag-team Tier 2 (Premier Partners, Apr 14-18). Lawrence owns Tier 3 (Affiliates, Apr 14-25). Progress tracked in Reengagement Dashboard. Target: 20-25 reactivations by May 7. Apr 23: Derek removed from Tier 2 per AP-003 roster discipline \u2014 not in team-roles.md, no KGS access.",
+      "notes": "Revised Apr 7. Nick owns Tier 1 (Brand Champs, Apr 7-11). Nick+Lawrence tag-team Tier 2 (Premier Partners, Apr 14-18). Lawrence owns Tier 3 (Affiliates, Apr 14-25). Progress tracked in Reengagement Dashboard. Target: 20-25 reactivations by May 7. Apr 23: Derek removed from Tier 2 per AP-003 roster discipline \u2014 not in team-roles.md, no KGS access. | 2026-04-28 (Devon via Claude /changeset-measurement): INTERIM \u2014 strong positive signal (~30 non-equity active vs 17 baseline). measurement_due re-anchored to 2026-05-07 per brief Full Measurement date. Holding open through Tier 3 boost window completion.",
       "autonomy_tier": 2,
       "execution_target_date": "2026-04-07",
       "executed_date": "2026-04-14",
       "stale": true,
       "sweep_flags": [
-        "S31 sweep 2026-04-13: stale 19d \u2014 requires binary execute-or-close decision in 72h",
+        {
+          "flag": "S31 sweep 2026-04-13: stale 19d \u2014 requires binary execute-or-close decision in 72h",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during 2026-04-28 measurement sweep."
+        },
         {
           "flag": "measurement_window_closes_today_14d",
           "set_date": "2026-04-28",
           "session": "2026-04-28-s1",
           "action": "nick_lawrence_readout_today",
           "age_days": 0
+        },
+        {
+          "flag": "interim_measurement_hold_open_to_may_7",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Interim measurement (250 conversions sampled): ~30 non-equity active codes vs 17 baseline = ~13-15 net reactivation; on track for 20-25 target by May 7. Run-rate revenue ~$5-7K in 13d vs $3K monthly target. Measurement_due re-anchored 2026-04-28 \u2192 2026-05-07 to honor brief's \u00a7 Measurement Plan. Resolution Hierarchy: Refine \u2014 don't close prematurely; patch the tracker default to copy brief dates."
         }
       ],
-      "last_updated": "2026-04-16",
+      "last_updated": "2026-04-28",
       "published_date": "2026-04-14",
       "measurement_window": "14d",
-      "measurement_due": "2026-04-28"
+      "measurement_due": "2026-05-07"
     },
     {
       "id": "CS-2026-041",
@@ -3480,7 +3562,7 @@
       "platforms": [
         "shopify"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "critical",
       "owner": "Katie Spaller",
       "created": "2026-04-03",
@@ -3510,7 +3592,7 @@
       "routed_via": "slack",
       "routed_date": "2026-04-03",
       "file": "cgo-logs/changesets/CS-2026-046/brief.md",
-      "notes": "Root cause: Mar 23 template rewrite broke JS class selectors. Fix deployed Apr 3. ATC rate recovering from ~12% toward 35% baseline. Measurement window Apr 3-10. | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h.",
+      "notes": "Root cause: Mar 23 template rewrite broke JS class selectors. Fix deployed Apr 3. ATC rate recovering from ~12% toward 35% baseline. Measurement window Apr 3-10. | 2026-04-15 sweep: measurement overdue; outcome data pull required within 24h. | 2026-04-28 (Devon via Claude /changeset-measurement): CLOSED \u2014 fix shipped, no regression, lift signal present but not isolatable from confounds without Polar funnel data.",
       "measurement_window": "7d",
       "autonomy_tier": 2,
       "approved_by": "Devon",
@@ -3519,12 +3601,15 @@
       "published_date": "2026-04-03",
       "measurement_due": "2026-04-10",
       "actual_impact": {
-        "status": "measuring",
-        "fix_deployed": "2026-04-03",
-        "pre_bug_atc_rate": "35.1%",
-        "broken_period_atc_rate": "~12%",
-        "post_fix_partial": "24.5% (partial day)",
-        "estimated_revenue_loss": "$100K-$130K over 11-day broken period"
+        "daily_revenue_pre_bug_normal": 6576,
+        "daily_revenue_broken_period": 7267,
+        "daily_revenue_post_fix_window": 7998,
+        "daily_revenue_lift_pct": 0.1,
+        "margin_actual": "indeterminate",
+        "data_source": "shopify_cohort_data_daily_revenue",
+        "data_gap": "polar_atc_rate_and_cvr_not_pulled",
+        "measured_via": "shopify_cohort_state_file",
+        "measured_date": "2026-04-28"
       },
       "execution_target_date": null,
       "executed_date": null,
@@ -3595,17 +3680,30 @@
         "notes": "ATC rate did NOT recover to pre-bug levels. Post-fix average ATC (~12.3%) is essentially unchanged from broken period (~12%). Apr 5 spike (28.1% ATC) was driven by email campaign traffic, not organic homepage recovery. Possible causes: fix was partial, second bug exists, or traffic mix shifted away from homepage. Revenue improved marginally vs broken period ($60K/8d vs $46K/7d) but still ~60% below pre-bug run rate."
       },
       "requires_human_review": true,
-      "last_updated": "2026-04-16",
+      "last_updated": "2026-04-28",
       "sweep_flags": [
-        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)",
+        {
+          "flag": "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during 2026-04-28 measurement sweep."
+        },
         {
           "flag": "measurement_overdue_18d_critical",
           "set_date": "2026-04-28",
           "session": "2026-04-28-s1",
           "action": "manual_review_data_corruption_flag",
           "age_days": 18
+        },
+        {
+          "flag": "manual_measurement_close_2026_04_28",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Manual close. Daily revenue post-fix +10% vs broken; ATC-rate funnel data not available from pre-computed state files. Outcome: fix_shipped_revenue_signal_inconclusive. Surfaced: CRO/website CSes need Polar MCP wired into measurement lane or measurable proxy."
         }
-      ]
+      ],
+      "outcome": "fix_shipped_revenue_signal_inconclusive",
+      "closed_date": "2026-04-28"
     },
     {
       "id": "CS-2026-047",
