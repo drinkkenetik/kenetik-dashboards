@@ -20,11 +20,11 @@
   "summary": {
     "total": 126,
     "by_status": {
-      "closed": 49,
+      "closed": 50,
       "published": 18,
-      "approved": 7,
-      "draft": 50,
-      "needs_feedback": 2
+      "approved": 9,
+      "draft": 46,
+      "needs_feedback": 3
     },
     "by_risk": {
       "critical": 2,
@@ -6151,7 +6151,7 @@
     {
       "id": "CS-2026-091",
       "title": "Amazon Ads L-018 Data Pipeline \u2014 Sponsored Products + Brands Search-Term Report Ingestion",
-      "status": "draft",
+      "status": "approved",
       "subtype": "implementation",
       "category": "data_infrastructure",
       "department": "operations",
@@ -6162,7 +6162,7 @@
       "risk_level": "low",
       "review_tier": "standard",
       "created": "2026-04-20",
-      "last_updated": "2026-04-20",
+      "last_updated": "2026-04-28",
       "hypothesis": "Ingesting Amazon Sponsored Products + Sponsored Brands search-term reports into the warehouse unblocks the rec-225 Amazon ads diagnostic work referenced in today's daily-pulse (L-018). Pipeline cadence: daily incremental. Target table: amazon_ads.search_terms_daily with standard ad-attribution joins.",
       "objective_level": "L4",
       "spawned_from": "rec-225",
@@ -6191,8 +6191,8 @@
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-27",
       "executed_date": null,
-      "approved_by": null,
-      "approved_date": null,
+      "approved_by": "Devon",
+      "approved_date": "2026-04-28",
       "published_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
@@ -6201,8 +6201,15 @@
       "closed_date": null,
       "autonomy_tier": 1,
       "file": "cgo-logs/changesets/CS-2026-091.md",
-      "notes": "Spawned from 2026-04-20 synthesis rec-225. L-018 referenced in daily-pulse but dashboard shows 'data unavailable'. Garrett owns ingestion. Downstream consumers: Katie (search-term optimization), Devon (Amazon MER visibility).",
-      "sweep_flags": [],
+      "notes": "Spawned from 2026-04-20 synthesis rec-225. L-018 referenced in daily-pulse but dashboard shows 'data unavailable'. Garrett owns ingestion. Downstream consumers: Katie (search-term optimization), Devon (Amazon MER visibility). | 2026-04-28 (Devon via Claude /changeset-execute): Tier 1 approve + execute. Status draft \u2192 approved. Open: name engineering-execution lead.",
+      "sweep_flags": [
+        {
+          "flag": "tier_1_approve_execute_2026_04_28",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Tier 1 (shadow-autonomous) approved + queued for execution. Open routing question surfaced: actual engineering-execution lead needs naming (header has Devon+Katie but neither writes pipelines). Devon picks: self-execute, contractor, or hand to existing scripts/ owner. Status draft \u2192 approved."
+        }
+      ],
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
@@ -6212,7 +6219,7 @@
     {
       "id": "CS-2026-092",
       "title": "Investigate + Remediate Amazon Listing Text Auto-Publishing to TikTok/IG (PM L-037)",
-      "status": "draft",
+      "status": "approved",
       "subtype": "investigation",
       "category": "content_operations",
       "department": "operations",
@@ -6223,7 +6230,7 @@
       "risk_level": "medium",
       "review_tier": "standard",
       "created": "2026-04-20",
-      "last_updated": "2026-04-20",
+      "last_updated": "2026-04-28",
       "hypothesis": "An unaudited publishing workflow is injecting Amazon product-listing copy (e.g. 'KENETIK Caffeine-Free Focus Drink...') into the TikTok and Instagram publishing queue. 6+ near-zero-engagement posts from Mar 31 \u2013 Apr 2 confirm the pollution. Investigation deliverable: identify the source integration (Sprout Social? Zapier? direct API?), pause the source, backfill a remediation list of polluted posts, and establish a pre-publish content filter to prevent recurrence.",
       "objective_level": "L4",
       "spawned_from": "PM-L-037",
@@ -6250,10 +6257,10 @@
       },
       "linked_calendar_activity": null,
       "scheduled_send_date": null,
-      "execution_target_date": "2026-04-22",
+      "execution_target_date": "2026-05-01",
       "executed_date": null,
-      "approved_by": null,
-      "approved_date": null,
+      "approved_by": "Devon",
+      "approved_date": "2026-04-28",
       "published_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
@@ -6262,14 +6269,22 @@
       "closed_date": null,
       "autonomy_tier": 1,
       "file": "cgo-logs/changesets/CS-2026-092.md",
-      "notes": "Spawned from PM L-037 (changeset_candidate=true, action_taken=None). Urgent \u2014 pollution is active and recurring. Garrett owns integration audit; Charlotte owns social queue cleanup. Sets PM L-037 action_taken upon close.",
+      "notes": "Spawned from PM L-037 (changeset_candidate=true, action_taken=None). Urgent \u2014 pollution is active and recurring. Garrett owns integration audit; Charlotte owns social queue cleanup. Sets PM L-037 action_taken upon close. | 2026-04-28 (Devon via Claude /changeset-execute): Tier 1 approve + execute. Status draft \u2192 approved. Reset target 2026-05-01 (source pause) / 2026-05-05 (cleanup). Owners: Nick (investigation), Charlotte (cleanup).",
       "sweep_flags": [
         {
           "flag": "draft_overdue_target_gt_5d",
           "set_date": "2026-04-27",
           "session": "2026-04-27-s1",
           "overdue_days": 5,
-          "action": "owner_nudge_queued_phase_4"
+          "action": "owner_nudge_queued_phase_4",
+          "resolved_date": "2026-04-28",
+          "resolution": "Resolved via /changeset-execute Tier 1 approve. Status moved draft \u2192 approved; new execution target 2026-05-01."
+        },
+        {
+          "flag": "tier_1_approve_execute_2026_04_28",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Tier 1 (shadow-autonomous) approved + queued. Active recurring pollution = urgent; every day of delay produces more polluted posts. Execution: Nick (source identification) + Charlotte (queue cleanup). Reset target 2026-05-01 for source pause; 2026-05-05 for backfill. Status draft \u2192 approved."
         }
       ],
       "revision_notes": null,
@@ -6475,7 +6490,7 @@
       "platforms": [
         "superfiliate"
       ],
-      "status": "draft",
+      "status": "closed",
       "risk_level": "high",
       "owner": "Devon Price + Nick Lacagnina + Brandon Dyksterhouse",
       "created": "2026-04-21",
@@ -6509,24 +6524,32 @@
       "published_date": "",
       "measurement_window": "14d_post_graduation",
       "measurement_due": "",
-      "actual_impact": {},
-      "outcome": "",
-      "closed_date": "",
+      "actual_impact": null,
+      "outcome": "decision_window_lapsed_no_action",
+      "closed_date": "2026-04-28",
       "file": "cgo-logs/changesets/CS-2026-096.md",
-      "notes": "D10 viral IG reel DXXITMzkSd_ with 40+ @bekenetik sponsorship tags (TBI/stroke recovery). Gate 1: Devon 48h sponsorship decision. Gate 2: Brandon claims compliance (no Tier A/B TBI/stroke claims permitted). Auto-closes if Gate 1 declines. Autonomy tier is 2 with the two gates enforced as block-before-execute guardrails \u2014 see brief \u00a7Two-Gate Structure and \u00a7Autonomy Tier.\n2026-04-23: Apr 23 owner scrub (AP-003): creator sponsorship on superfiliate = Nick; exec sponsorship decision = Devon; science review = Brandon. Katie not required (no paid-media spend on this CS).",
+      "notes": "D10 viral IG reel DXXITMzkSd_ with 40+ @bekenetik sponsorship tags (TBI/stroke recovery). Gate 1: Devon 48h sponsorship decision. Gate 2: Brandon claims compliance (no Tier A/B TBI/stroke claims permitted). Auto-closes if Gate 1 declines. Autonomy tier is 2 with the two gates enforced as block-before-execute guardrails \u2014 see brief \u00a7Two-Gate Structure and \u00a7Autonomy Tier.\n2026-04-23: Apr 23 owner scrub (AP-003): creator sponsorship on superfiliate = Nick; exec sponsorship decision = Devon; science review = Brandon. Katie not required (no paid-media spend on this CS). | 2026-04-28 (Devon via Claude /changeset-execute): AUTO-CLOSE per brief. Status draft \u2192 closed. Outcome: decision_window_lapsed_no_action. Learning signal L-097 spawned. Trevor relationship not pursued via this CS; if still wanted as non-time-pressured creator partnership, spawn a fresh CS.",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-23",
       "executed_date": "",
       "autonomy_tier": 2,
       "learning_note": "",
-      "last_updated": "2026-04-23",
+      "last_updated": "2026-04-28",
       "sweep_flags": [
         {
           "flag": "high_risk_5d_overdue",
           "set_date": "2026-04-28",
           "session": "2026-04-28-s1",
           "action": "devon_decision_sweep_today",
-          "age_days": 5
+          "age_days": 5,
+          "resolved_date": "2026-04-28",
+          "resolution": "Resolved via auto-close per brief; no decision rendered within 48h window; CS closed as decision_window_lapsed_no_action."
+        },
+        {
+          "flag": "auto_close_per_brief_2026_04_28",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "AUTO-CLOSED retroactively per brief \u00a7 Two-Gate Structure Gate 1 explicit auto-close rule. 48h decision window expired 2026-04-23; sweep didn't fire; manual close today. Trevor moment past peak (40+ tags landed in 24h burst Apr 21, time-sensitivity documented in 4/22-s1). No public action taken (per brief auto-close design). Learning signal L-097 spawned: wire auto-close handler into changeset-lifecycle-sweep for time-windowed CSes."
         }
       ]
     },
@@ -6676,7 +6699,7 @@
       "platforms": [
         "changeset-process"
       ],
-      "status": "draft",
+      "status": "needs_feedback",
       "risk_level": "medium",
       "owner": "Devon Price",
       "created": "2026-04-22",
@@ -6728,7 +6751,7 @@
       "outcome": "",
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-099.md",
-      "notes": "Retrofit Hard Gate 2 linkage on in-flight GP-LAUNCH-2026 activating TODAY across organic + email + SMS + influencer + paid. Paid spend blocked until creative + UTMs + pixels verified. Systemic fix for 68/70 orphaned belongs to CS-2026-097. | 2026-04-28 (Devon via Claude /changeset-review): Co-approval dossier packaged for Cliff+Devon. Recommended APPROVE_STANDARD_WITH_CONDITIONS. Paid held dark 6 days = gate worked. Approval unblocks GP-TEASE-0429 + 5 May email CSes. 4 conditions on the approval; 3 items explicitly out-of-scope to prevent scope creep.",
+      "notes": "Retrofit Hard Gate 2 linkage on in-flight GP-LAUNCH-2026 activating TODAY across organic + email + SMS + influencer + paid. Paid spend blocked until creative + UTMs + pixels verified. Systemic fix for 68/70 orphaned belongs to CS-2026-097. | 2026-04-28 (Devon via Claude /changeset-review): Co-approval dossier packaged for Cliff+Devon. Recommended APPROVE_STANDARD_WITH_CONDITIONS. Paid held dark 6 days = gate worked. Approval unblocks GP-TEASE-0429 + 5 May email CSes. 4 conditions on the approval; 3 items explicitly out-of-scope to prevent scope creep. | 2026-04-28 (Devon via Claude /changeset-execute): Devon side approved (Standard tier + 4 conditions). Status draft \u2192 needs_feedback. Awaiting Cliff Morgan co-approval. If Cliff approves \u2192 status approved \u2192 5 May email CSes + GP-TEASE-0429 unblock. If silent 72h \u2192 escalation.",
       "scheduled_send_date": "2026-04-22",
       "execution_target_date": "2026-04-22",
       "executed_date": "",
@@ -6740,20 +6763,30 @@
           "set_date": "2026-04-27",
           "session": "2026-04-27-s1",
           "overdue_days": 5,
-          "action": "owner_nudge_queued_phase_4"
+          "action": "owner_nudge_queued_phase_4",
+          "resolved_date": "2026-04-28",
+          "resolution": "Resolved via /changeset-execute: dossier packaged + Devon side approved + status moved draft \u2192 needs_feedback awaiting Cliff signoff. Removed from overdue-draft column."
         },
         {
           "flag": "gp_launch_gate_6d_overdue",
           "set_date": "2026-04-28",
           "session": "2026-04-28-s1",
           "action": "devon_decision_sweep_today_blocks_5_may_csets",
-          "age_days": 6
+          "age_days": 6,
+          "resolved_date": "2026-04-28",
+          "resolution": "Resolved via /changeset-execute: dossier packaged + Devon side approved + status moved draft \u2192 needs_feedback awaiting Cliff signoff. Removed from overdue-draft column."
         },
         {
           "flag": "co_approval_dossier_packaged_2026_04_28",
           "set_date": "2026-04-28",
           "session": "2026-04-28-changeset-review",
           "action": "Cliff+Devon co-approval dossier packaged. L0 anti-pattern: pass with retrofit-as-default soft flag. L1-L5 hierarchy: pass at Standard tier (L4 weak). Recommended: APPROVE with 4 conditions (reconcile 4/22-4/28 activity, re-anchor measurement window from first send, paid activation pre-conditions checklist, pre-staging audit by 4/30 for 5/2 + 5/13 + 4/28 launches). Reality check: paid held dark for 6 days (gate worked); approving today unblocks GP-TEASE-0429 tomorrow + 5 May email CSes (102/104/106/107/109). Out of scope: 97.6% systemic Hard Gate 2 orphan rate (war-room work)."
+        },
+        {
+          "flag": "devon_stamp_route_cliff_2026_04_28",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Devon side approved (Standard tier, 4 conditions documented in dossier). Status draft \u2192 needs_feedback. Explicitly awaiting Cliff Morgan co-approval per \u00a7 Autonomy Tier. One-screen ask designed for \u22645 min review. If Cliff approves: status \u2192 approved; unblocks GP-TEASE-0429 + 5 May email CSes (102/104/106/107/109). If silent 72h: escalation."
         }
       ],
       "last_updated": "2026-04-28"
