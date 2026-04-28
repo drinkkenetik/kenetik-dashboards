@@ -560,31 +560,87 @@
         .pm-meta { font-size: 11px; color: var(--text-muted); }
         .pm-content {
             display: none;
-            padding: 14px 18px 18px 18px;
-            font-size: 12px;
-            line-height: 1.55;
+            padding: 18px 24px 22px;
+            font-size: 13px;
+            line-height: 1.6;
             color: var(--text);
             border-bottom: 1px solid var(--border);
+            text-align: left;
+            max-width: 900px;       /* readable line length cap */
         }
         .pm-section.open .pm-content { display: block; }
-        .pm-content h2 {
-            font-size: 14px;
-            margin: 12px 0 6px 0;
+        /* Heading hierarchy — explicit, left-aligned, with section borders */
+        .pm-content h1 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 4px 0;
             color: var(--text);
+            text-align: left;
+        }
+        .pm-content h2 {
+            font-size: 12px;
+            font-weight: 600;
+            margin: 18px 0 6px 0;
+            padding-bottom: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
         }
         .pm-content h3 {
             font-size: 13px;
-            margin: 10px 0 4px 0;
+            font-weight: 600;
+            margin: 12px 0 4px 0;
             color: var(--text);
+            text-align: left;
         }
-        .pm-content ul { margin-left: 20px; margin-bottom: 8px; }
-        .pm-content li { margin-bottom: 3px; color: var(--text); }
-        .pm-content em { color: var(--text-muted); }
+        .pm-content p {
+            margin: 0 0 8px 0;
+            text-align: left;
+        }
+        .pm-content blockquote {
+            border-left: 2px solid var(--border);
+            margin: 8px 0;
+            padding: 4px 0 4px 12px;
+            color: var(--text-muted);
+            font-size: 12px;
+            font-style: normal;
+        }
+        .pm-content ul, .pm-content ol {
+            padding-left: 22px;
+            margin: 4px 0 10px 0;
+            text-align: left;
+        }
+        .pm-content li {
+            margin: 2px 0;
+            color: var(--text);
+            text-align: left;
+        }
+        .pm-content li > strong:first-child {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .pm-content em {
+            color: var(--text-muted);
+            font-style: italic;
+        }
         .pm-content code {
             background: var(--bg);
             padding: 1px 5px;
             border-radius: 3px;
             font-size: 11px;
+            font-family: 'SF Mono', Menlo, Consolas, monospace;
+            color: var(--accent-light);
+        }
+        .pm-content strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .pm-content hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 14px 0;
         }
 
         /* ── System health (footer) ── */
