@@ -7574,168 +7574,167 @@
       "title": "Paid Pause-and-Reallocate Package \u2014 branded__pmax/ketoneiq pause + ashton 80% cut + winbacks 2x",
       "owner": "Katie Spaller",
       "status": "draft",
-      "tier": 2,
-      "priority": "P1",
       "subtype": "implementation",
-      "risk": "medium",
-      "session_created": "2026-04-27-s1",
-      "created_date": "2026-04-27",
       "last_updated": "2026-04-27",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
-      "summary": "Pause branded__pmax__troas Google ($188/wk @0.85x cannibalizing brand search) + ketoneiq conquesting Google ($53/wk @0.00x). Reduce ashton hall x kenetik FB by 80% ($232 -> ~$45) until 2 FATIGUED ads replaced. Double winbacks Meta budget ($189 -> ~$400/wk).",
       "expected_impact": "Net ~$300/wk redirected from sub-1x lines to 5.09x line. Protects 23.6x branded search from PMax cannibalization. Conservative 7d ROAS uplift +0.3-0.5x blended.",
       "dependencies": "L-052 (broken-funnel pattern), pat-011 creative fatigue. No phantom deps.",
-      "source_synthesis": "cgo-logs/daily-syntheses/2026-04-27-s1.md",
-      "source_recommendations": [
-        "rec-238"
+      "sweep_flags": [],
+      "created": "2026-04-27",
+      "autonomy_tier": 2,
+      "risk_level": "medium",
+      "department": "paid-media",
+      "platforms": [
+        "meta-ads",
+        "google-ads"
       ],
-      "demand_signal": "cgo-2026-04-27-001",
-      "sweep_flags": []
+      "source": "synthesis",
+      "file": "cgo-logs/changesets/CS-2026-117.md",
+      "notes": "Summary: Pause branded__pmax__troas Google ($188/wk @0.85x cannibalizing brand search) + ketoneiq conquesting Google ($53/wk @0.00x). Reduce ashton hall x kenetik FB by 80% ($232 -> ~$45) until 2 FATIGUED ads replaced. Double winbacks Meta budget ($189 -> ~$400/wk). | Priority (synthesis tag): P1 | Demand signal: cgo-2026-04-27-001 | Source recommendations: ['rec-238'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
     },
     {
       "id": "CS-2026-118",
       "title": "Matt Hughes Apr 8 + Apr 24 Reels Graduation to Paid (creative refresh + content_links instrumentation)",
-      "owner": "Nick Lacagnina + Katie Spaller",
+      "owner": "Nick Lacagnina",
       "status": "draft",
-      "tier": 2,
-      "priority": "P1",
       "subtype": "implementation",
-      "risk": "medium",
-      "session_created": "2026-04-27-s1",
-      "created_date": "2026-04-27",
       "last_updated": "2026-04-27",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
-      "summary": "Graduate Matt Hughes Apr 8 reel (106,316 imp / 52 saves, top 30d organic) + Apr 24 Kenetik Challenge cross-platform (FB 6.49% / IG 4.72% / TT 9.01% ER) into paid. Replace 2 ASHTON FATIGUED ads (static_ashtonhall-3 + video_ashton 2 ad). Pair with content_links instrumentation fix (Peter Bayne) to close graduation feedback loop.",
       "expected_impact": "Conservative 7d uplift: replace 1.18x Matt Hughes paid + 0.40x Ashton with 3-5x graduated content; recovers +$300-600/wk on Meta. Closes systemic content_links=null gap (8th+ session).",
       "dependencies": "Extends CS-2026-061. Requires Lawrence rights confirmation; Charlotte asset routing; Peter content_links automation.",
-      "source_synthesis": "cgo-logs/daily-syntheses/2026-04-27-s1.md",
-      "source_recommendations": [
-        "rec-239"
+      "sweep_flags": [],
+      "created": "2026-04-27",
+      "autonomy_tier": 2,
+      "risk_level": "medium",
+      "department": "paid-media",
+      "platforms": [
+        "meta-ads",
+        "tiktok-ads"
       ],
-      "demand_signal": "cgo-2026-04-27-001",
-      "sweep_flags": []
+      "source": "synthesis",
+      "file": "cgo-logs/changesets/CS-2026-118.md",
+      "notes": "Summary: Graduate Matt Hughes Apr 8 reel (106,316 imp / 52 saves, top 30d organic) + Apr 24 Kenetik Challenge cross-platform (FB 6.49% / IG 4.72% / TT 9.01% ER) into paid. Replace 2 ASHTON FATIGUED ads (static_ashtonhall-3 + video_ashton 2 ad). Pair with content_links instrumentation fix (Peter Bayne) to close graduation feedback loop. | Priority (synthesis tag): P1 | Demand signal: cgo-2026-04-27-001 | Source recommendations: ['rec-239'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
     },
     {
       "id": "CS-2026-119",
       "title": "Endurance Training Bundle PDP Traffic Restore \u2014 diagnostic + reactivation",
-      "owner": "Garrett Davis + Katie Spaller",
+      "owner": "Garrett Davis",
       "status": "draft",
-      "tier": 2,
-      "priority": "P0",
       "subtype": "implementation",
-      "risk": "medium",
-      "session_created": "2026-04-27-s1",
-      "created_date": "2026-04-27",
       "last_updated": "2026-04-27",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
-      "summary": "Audit /products/endurance-training-bundle Shopify theme history Apr 19-20 (Garrett); pull Apr 13-19 paid + Klaviyo logs for any campaign or send pointing to that URL (Katie); identify the traffic-source loss (likely 2nd-order to CS-089 cleetus reallocation). If found: restore traffic source by Apr 28. Conservative recovery: 65-84 conv/wk = $4,400-5,700/wk margin.",
       "expected_impact": "Recover ~80 conv/wk on the 869-session loss. Reframes mobile CVR -27.4% from a site-bug interpretation to a paid/lifecycle 2nd-order interpretation; saves Lawrence + team a multi-day mobile redesign that is not the actual fix.",
       "dependencies": "Phase 4 may require Devon sign-off if reactivation depends on a paused paid campaign decision. No phantom deps.",
-      "source_synthesis": "cgo-logs/daily-syntheses/2026-04-27-s1.md",
-      "source_recommendations": [
-        "P3"
+      "sweep_flags": [],
+      "created": "2026-04-27",
+      "autonomy_tier": 2,
+      "risk_level": "medium",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify",
+        "meta-ads",
+        "klaviyo"
       ],
-      "demand_signal": null,
-      "sweep_flags": []
+      "source": "synthesis",
+      "file": "cgo-logs/changesets/CS-2026-119.md",
+      "notes": "Summary: Audit /products/endurance-training-bundle Shopify theme history Apr 19-20 (Garrett); pull Apr 13-19 paid + Klaviyo logs for any campaign or send pointing to that URL (Katie); identify the traffic-source loss (likely 2nd-order to CS-089 cleetus reallocation). If found: restore traffic source by Apr 28. Conservative recovery: 65-84 conv/wk = $4,400-5,700/wk margin. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['P3'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
     },
     {
       "id": "CS-2026-120",
       "title": "L-053 War-Room Outcomes & Owner-Rebalance \u2014 D13 8-session structural P0 + Katie 70.6% circuit-breaker",
-      "owner": "Devon Price + Cliff Morgan + Peter Bayne",
+      "owner": "Devon Price",
       "status": "draft",
-      "tier": 3,
-      "priority": "P0",
       "subtype": "implementation",
-      "risk": "medium",
-      "session_created": "2026-04-27-s1",
-      "created_date": "2026-04-27",
       "last_updated": "2026-04-27",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
-      "summary": "Convene L-053 war-room (overdue per protocol). Produce DECISIONS, not status: (a) approve owner-rebalance Katie 70.6% -> ~50% per Operations dept brief proposal; (b) restructure standup so missing-evidence patterns surface live (P0 ACK SLA); (c) phantom-dependency audit (L-045 split, outline-v3, CS-115 infra deps) \u2014 build or remove; (d) Cowork VM disk-exhaustion resilience review; (e) wholesale at-risk $813K review tier instantiation with Josh; (f) content_category writeback patch (Charlotte + Lawrence \u2014 Sprout sync field mapping); (g) TT/X/YT cadence structural decision.",
       "expected_impact": "Drops Katie share to ~50% (still above 35% threshold but structural relief). Closes 5/6 P0 zero-evidence pattern. Restores D13 to a recovery trajectory; without it, recovery math is statistically improbable per L-053.",
       "dependencies": "L-053 (war-room rule), L-048 (N=6 streak triggers Step 8a P0 \u2014 we are at N=8). No phantom deps; this CS audits and removes them.",
-      "source_synthesis": "cgo-logs/daily-syntheses/2026-04-27-s1.md",
-      "source_recommendations": [
-        "P4"
+      "sweep_flags": [],
+      "created": "2026-04-27",
+      "autonomy_tier": null,
+      "risk_level": "medium",
+      "department": "operations",
+      "platforms": [
+        "changeset-process"
       ],
-      "demand_signal": null,
-      "sweep_flags": []
+      "source": "synthesis",
+      "file": "cgo-logs/changesets/CS-2026-120.md",
+      "notes": "Summary: Convene L-053 war-room (overdue per protocol). Produce DECISIONS, not status: (a) approve owner-rebalance Katie 70.6% -> ~50% per Operations dept brief proposal; (b) restructure standup so missing-evidence patterns surface live (P0 ACK SLA); (c) phantom-dependency audit (L-045 split, outline-v3, CS-115 infra deps) \u2014 build or remove; (d) Cowork VM disk-exhaustion resilience review; (e) wholesale at-risk $813K review tier instantiation with Josh; (f) content_category writeback patch (Charlotte + Lawrence \u2014 Sprout sync field mapping); (g) TT/X/YT cadence structural decision. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['P4'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
     },
     {
       "id": "CS-2026-121",
       "title": "VoC P1 Close-Out \u2014 Epilepsy/TBI Public Claim + Apr 21 Can Corrosion Lot Review",
-      "owner": "Devon Price + Brandon Dyksterhouse + Garrett Davis",
+      "owner": "Devon Price",
       "status": "draft",
-      "tier": 2,
-      "priority": "P0",
       "subtype": "implementation",
-      "risk": "medium",
-      "session_created": "2026-04-27-s1",
-      "created_date": "2026-04-27",
       "last_updated": "2026-04-27",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
-      "summary": "(a) Epilepsy/TBI Facebook public-comment claim Apr 26: Devon + Brandon respond per claims-policy guardrail; document in compliance log. Pair with Matt Hughes earned TBI narrative \u2014 explicit sign-off required for any structured content using that angle. (b) Can corrosion Apr 21 incident: Garrett + lot-number review; if systemic, COA + supplier outreach + retention/refund protocol. Katie comms with affected customer.",
       "expected_impact": "Pre-empts brand-safety risk window narrowing into Mother's Day Apr 28. Closes both items by EOD Apr 28; preserves narrative control on the organic TBI/cognitive recovery thread.",
       "dependencies": "Independent (does not depend on other CSes). Mother's Day Apr 28 launch needs this clear.",
-      "source_synthesis": "cgo-logs/daily-syntheses/2026-04-27-s1.md",
-      "source_recommendations": [
-        "rec-241"
+      "sweep_flags": [],
+      "created": "2026-04-27",
+      "autonomy_tier": 2,
+      "risk_level": "medium",
+      "department": "operations",
+      "platforms": [
+        "system-health"
       ],
-      "demand_signal": null,
-      "sweep_flags": []
+      "source": "synthesis",
+      "file": "cgo-logs/changesets/CS-2026-121.md",
+      "notes": "Summary: (a) Epilepsy/TBI Facebook public-comment claim Apr 26: Devon + Brandon respond per claims-policy guardrail; document in compliance log. Pair with Matt Hughes earned TBI narrative \u2014 explicit sign-off required for any structured content using that angle. (b) Can corrosion Apr 21 incident: Garrett + lot-number review; if systemic, COA + supplier outreach + retention/refund protocol. Katie comms with affected customer. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['rec-241'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
     },
     {
       "id": "CS-2026-122",
       "title": "Trend-to-Content Sprint \u2014 UK Biobank + Frontiers Cognition Meta + GLP-1 Adjacency (3-brief package)",
-      "owner": "Brandon Dyksterhouse + Devon Price",
+      "owner": "Brandon Dyksterhouse",
       "status": "draft",
-      "tier": 2,
-      "priority": "P1",
       "subtype": "implementation",
-      "risk": "medium",
-      "session_created": "2026-04-27-s1",
-      "created_date": "2026-04-27",
       "last_updated": "2026-04-27",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
-      "summary": "Brandon authors 3 distillation briefs; Devon claims-approves; Charlotte/Nick organic + Katie paid execute. (a) UK Biobank PMID 42036791 distillation by Apr 28 (400-600 word blog + email + 3 social variants); (b) Frontiers 2026 ketone-cognition meta distillation by Apr 29; (c) GLP-1 cognitive-bridge adjacency brief by Apr 30 (Devon claims gate priority \u2014 peak cultural moment, #metabolichealth 6,208 msgs/wk). Pair with Mother's Day 'Fight Mom Brain' for narrative coherence. Triage with Larry vs 12 active production-queue briefs; pause lowest-priority briefs to absorb.",
       "expected_impact": "Captures 5-7d window before Tecton/HVMN own narrative on cognition. GLP-1 trend at peak cultural moment = highest-leverage acquisition content of Q2. Anchors Mother's Day pivot in 3 high-credibility human studies (claims-defensible).",
       "dependencies": "Devon claims approval is the single gate. Triage against production-queue (12 briefs active). No phantom deps.",
-      "source_synthesis": "cgo-logs/daily-syntheses/2026-04-27-s1.md",
-      "source_recommendations": [
-        "rec-242"
+      "sweep_flags": [],
+      "created": "2026-04-27",
+      "autonomy_tier": 2,
+      "risk_level": "medium",
+      "department": "content",
+      "platforms": [
+        "content-production",
+        "klaviyo",
+        "instagram-organic"
       ],
-      "demand_signal": "cgo-2026-04-27-002,cgo-2026-04-27-003,cgo-2026-04-27-004",
-      "sweep_flags": []
+      "source": "synthesis",
+      "file": "cgo-logs/changesets/CS-2026-122.md",
+      "notes": "Summary: Brandon authors 3 distillation briefs; Devon claims-approves; Charlotte/Nick organic + Katie paid execute. (a) UK Biobank PMID 42036791 distillation by Apr 28 (400-600 word blog + email + 3 social variants); (b) Frontiers 2026 ketone-cognition meta distillation by Apr 29; (c) GLP-1 cognitive-bridge adjacency brief by Apr 30 (Devon claims gate priority \u2014 peak cultural moment, #metabolichealth 6,208 msgs/wk). Pair with Mother's Day 'Fight Mom Brain' for narrative coherence. Triage with Larry vs 12 active production-queue briefs; pause lowest-priority briefs to absorb. | Priority (synthesis tag): P1 | Demand signal: cgo-2026-04-27-002,cgo-2026-04-27-003,cgo-2026-04-27-004 | Source recommendations: ['rec-242'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
     },
     {
       "id": "CS-2026-123",
       "title": "Activate H-202603-002 (Wedge B Social-Proof IG Hooks) \u2014 break 8-week hypothesis-execution stall",
-      "owner": "Lawrence Giarrizzo + Charlotte Thamm",
+      "owner": "Lawrence Giarrizzo",
       "status": "draft",
-      "tier": 1,
-      "priority": "P2",
       "subtype": "implementation",
-      "risk": "medium",
-      "session_created": "2026-04-27-s1",
-      "created_date": "2026-04-27",
       "last_updated": "2026-04-27",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
-      "summary": "Lawrence drafts brief by Apr 28; Charlotte ships 5 IG posts by May 5; Moe instruments measurement (Sprout post analytics + content_links). Aligns with confirmed CP-011 Stimulant Refugee + IG engagement-recovery momentum (engagements +72% WoW on IG). Lowest-lift unblock for the LEARN stage of the content flywheel (zero hypothesis execution since 2026-03-05).",
       "expected_impact": "Restores experiment-driven LEARN cycle. Even null result is informative; if positive, validates social-proof hook for IG Wedge B audience and feeds production memory.",
       "dependencies": "Independent of other CSes. Builds on completed CP-011 confirmation.",
-      "source_synthesis": "cgo-logs/daily-syntheses/2026-04-27-s1.md",
-      "source_recommendations": [
-        "rec-240"
+      "sweep_flags": [],
+      "created": "2026-04-27",
+      "autonomy_tier": 1,
+      "risk_level": "medium",
+      "department": "content",
+      "platforms": [
+        "instagram-organic"
       ],
-      "demand_signal": null,
-      "sweep_flags": []
+      "source": "synthesis",
+      "file": "cgo-logs/changesets/CS-2026-123.md",
+      "notes": "Summary: Lawrence drafts brief by Apr 28; Charlotte ships 5 IG posts by May 5; Moe instruments measurement (Sprout post analytics + content_links). Aligns with confirmed CP-011 Stimulant Refugee + IG engagement-recovery momentum (engagements +72% WoW on IG). Lowest-lift unblock for the LEARN stage of the content flywheel (zero hypothesis execution since 2026-03-05). | Priority (synthesis tag): P2 | Demand signal: None | Source recommendations: ['rec-240'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
     }
   ],
   "queue_actions": {
