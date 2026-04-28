@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-28",
-  "next_id": 127,
+  "next_id": 128,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-28T16:35:00Z",
     "last_sweep_session": 40,
@@ -22,12 +22,12 @@
     "cs_040_deferred_to_brief_full_measurement_date": "2026-05-07"
   },
   "summary": {
-    "total": 126,
+    "total": 127,
     "by_status": {
       "closed": 55,
       "published": 13,
       "approved": 9,
-      "draft": 46,
+      "draft": 47,
       "needs_feedback": 3
     },
     "by_risk": {
@@ -42,7 +42,7 @@
       "quick": 17
     },
     "last_updated": "2026-04-28",
-    "total_changesets": 126,
+    "total_changesets": 127,
     "last_counted": "2026-04-28"
   },
   "changesets": [
@@ -8196,6 +8196,75 @@
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-126.md",
       "notes": "Summary: Katie audits Klaviyo Review Request flow Rcgah9 \u2014 trigger criteria, send timing relative to delivery, deliverability stats, suppression list. Hypothesis: structural flow-mechanics fault (trigger or timing change), NOT VoC degradation. Outcome: identify root cause, ship fix, monitor 2-week recovery to ~20 reviews/week. Linked to rec-247. P5 of synthesis recommendations."
+    },
+    {
+      "id": "CS-2026-127",
+      "title": "Adaptive Lifecycle Sweep (eliminate silent-degradation failure mode)",
+      "subtype": "implementation",
+      "department": "operations",
+      "platforms": [
+        "changeset-process"
+      ],
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Devon Price",
+      "created": "2026-04-28",
+      "objective_level": "L4",
+      "category": "infrastructure",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "2026-04-28-execute-architectural-fix-on-sub-agent-mcp-failure",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "sweep_measurement_failure_legibility",
+        "primary_metric_target": "measurement_deferred field replaces silent measured:0; pending_measurement_queue drains within 1 main-session run per week",
+        "L1_margin": "neutral_direct_indirect_protects_future_measurement_signal",
+        "L2_cash": "neutral",
+        "L3_customer_quality": "neutral",
+        "L4_learning": "codifies_honor_the_constraint_route_around_it_pattern_for_sub_agent_mcp_mismatches",
+        "L5_brand_check": "pass"
+      },
+      "review_tier": "standard",
+      "routed_to": [
+        "Devon"
+      ],
+      "routed_via": "github_commit",
+      "routed_date": "2026-04-28",
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_window": "14d",
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-127.md",
+      "scheduled_send_date": null,
+      "execution_target_date": null,
+      "executed_date": null,
+      "autonomy_tier": 1,
+      "linked_calendar_activity": null,
+      "learning_note": null,
+      "sweep_flags": [
+        {
+          "flag": "spawned_from_sub_agent_silent_failure_diagnosis",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Spawned by Devon via Claude after CS-016/017/046/006/018/040 measurement-overdue investigation. Resolution Hierarchy applied: Diagnose \u2192 Remove (silent count + warning-as-control) \u2192 Refine (Phase 0.8 + queue + last_sweep_counts shape). No Add. Implementation surface: changeset-lifecycle-sweep.md + tracker.json schema + cgo-daily-pipeline orchestrator config (Slack nudge)."
+        }
+      ],
+      "last_updated": "2026-04-28",
+      "notes": "Adaptive lifecycle sweep proposal. One command, two contexts. Phase 0.8 sets measurement_capable boolean; sub-agent runs queue deferred CSes to lifecycle_sweep.pending_measurement_queue and skip Phase 2; main-session runs drain the queue. last_sweep_counts gains measurement_deferred + pending_measurement_queue_size fields so silent failure becomes legible. Optional Slack nudge on detection-only runs. No new commands, no new data stores. See file for full Resolution Hierarchy walkthrough."
     }
   ],
   "queue_actions": {
