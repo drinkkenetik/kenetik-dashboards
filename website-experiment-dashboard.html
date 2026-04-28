@@ -21,6 +21,7 @@
             --danger: #ef4444;
             --info: #3b82f6;
             --kenetik-green: #22c55e;
+            --gold: #fbbf24;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,6 +32,33 @@
             color: var(--text);
             min-height: 100vh;
         }
+
+        /* ── Animations (subtle, used sparingly) ── */
+        @keyframes pulse-fade {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.55; }
+        }
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+            50% { box-shadow: 0 0 0 4px rgba(34,197,94,0); }
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pulse { animation: pulse-fade 2.4s ease-in-out infinite; }
+        .pulse-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--success);
+            margin-right: 5px;
+            vertical-align: middle;
+            animation: pulse-dot 2s ease-out infinite;
+        }
+        .pulse-dot.warn { background: var(--warning); animation-name: pulse-dot; box-shadow: 0 0 0 0 rgba(245,158,11,0.4); }
+        .pulse-dot.muted { background: var(--text-muted); animation: none; }
 
         a { color: var(--accent-light); text-decoration: none; }
         a:hover { text-decoration: underline; }
@@ -50,14 +78,64 @@
             gap: 16px;
         }
         .header-left h1 {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.6px;
             margin-bottom: 4px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--info) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .header-left .subtitle {
             color: var(--text-muted);
             font-size: 13px;
+        }
+
+        /* ── Stats bar (at-a-glance system status) ── */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: border-color 0.15s, transform 0.15s;
+        }
+        .stat-card:hover {
+            border-color: rgba(99,102,241,0.4);
+            transform: translateY(-1px);
+        }
+        .stat-card-label {
+            color: var(--text-muted);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-weight: 600;
+        }
+        .stat-card-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            font-variant-numeric: tabular-nums;
+        }
+        .stat-card-value.gradient {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--info) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card-meta {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
         }
         .header-right {
             display: flex;
@@ -88,9 +166,10 @@
         .panel {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            margin-bottom: 16px;
+            border-radius: 10px;
+            margin-bottom: 14px;
             overflow: hidden;
+            animation: fade-in-up 0.3s ease;
         }
         .panel-header {
             padding: 14px 18px;
@@ -190,11 +269,19 @@
             cursor: pointer;
             transition: background 0.1s;
         }
+        table.experiments tbody tr.surface-row {
+            transition: background 0.15s, border-left-color 0.2s;
+            border-left: 2px solid transparent;
+        }
         table.experiments tbody tr:hover {
             background: var(--surface-hover);
         }
-        table.experiments tbody tr.expanded {
-            background: var(--surface-hover);
+        table.experiments tbody tr.surface-row.expanded {
+            background: rgba(59, 130, 246, 0.06);
+            border-left-color: var(--info);
+        }
+        table.experiments tbody tr.detail-row {
+            border-left: 2px solid var(--info);
         }
         table.experiments td {
             padding: 10px 12px;
@@ -1195,42 +1282,56 @@
         }
 
         function renderSystemHealth() {
+            // Stats bar at top covers active surfaces / stage / last cron / cycles —
+            // keep this footer slim, just for context the stats bar can't fit.
+            return `
+                <div class="footnote" style="margin-top: 18px;">
+                    GA4 metric integration is Phase 2 — live A/B traffic data populates
+                    once the cron's GA4 query catches up (24-48h for fresh dimensions).
+                    Realtime view in GA4 admin shows events immediately if you need
+                    instant signal during canary.
+                </div>`;
+        }
+
+        function renderStatsBar() {
             const s = appState.stateJson;
             const exps = s?.experiments || {};
             const activeCount = Object.values(exps).filter(e => e.phase && e.phase !== 'idle').length;
             const totalSurfaces = SURFACES_LIST.length;
-            const stage = s?._safety_config?.revert_enabled ? '2 (live)' : '1 (alert-only)';
+            const stage = s?._safety_config?.revert_enabled ? '2 — Live' : '1 — Alert-Only';
+            const stageGradient = !s?._safety_config?.revert_enabled;
+
+            // Find current canary/measuring experiment for "Cycle" card
+            const activeExp = Object.values(exps).find(e => e.phase === 'canary' || e.phase === 'measuring');
+            const currentCycle = activeExp ? (activeExp.cycle_tag || activeExp.experiment_id) : '—';
+            const currentPhase = activeExp ? activeExp.phase : 'idle';
 
             return `
-                <div class="panel">
-                    <div class="panel-header">
-                        <div class="panel-title">System Health</div>
-                        <div class="panel-meta">last cron run ${fmtRelative(s?._last_cron_run)}</div>
+                <div class="stats-bar">
+                    <div class="stat-card">
+                        <span class="stat-card-label">Stage</span>
+                        <span class="stat-card-value ${stageGradient ? 'gradient' : ''}">${stage}</span>
+                        <span class="stat-card-meta">${stageGradient ? 'Calibrating thresholds' : 'Auto-revert active'}</span>
                     </div>
-                    <div class="panel-body">
-                        <div class="health-grid">
-                            <div class="health-stat">
-                                <div class="health-label">Active surfaces</div>
-                                <div class="health-value">${activeCount} / ${totalSurfaces}</div>
-                            </div>
-                            <div class="health-stat">
-                                <div class="health-label">Stage</div>
-                                <div class="health-value">${stage}</div>
-                            </div>
-                            <div class="health-stat">
-                                <div class="health-label">Last cron run</div>
-                                <div class="health-value muted">${fmtTimeAbs(s?._last_cron_run)}</div>
-                            </div>
-                            <div class="health-stat">
-                                <div class="health-label">Cycles completed</div>
-                                <div class="health-value muted">0</div>
-                            </div>
-                            <div class="health-stat">
-                                <div class="health-label">Cumulative lift</div>
-                                <div class="health-value muted">— first cycle</div>
-                            </div>
-                        </div>
-                        <div class="footnote">GA4 metric integration: Phase 2. Live A/B traffic data not shown on this dashboard yet.</div>
+                    <div class="stat-card">
+                        <span class="stat-card-label">Active Surfaces</span>
+                        <span class="stat-card-value">${activeCount} / ${totalSurfaces}</span>
+                        <span class="stat-card-meta">${activeCount === totalSurfaces ? 'all running' : (totalSurfaces - activeCount) + ' idle'}</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card-label">Current Cycle</span>
+                        <span class="stat-card-value" style="font-size: 14px; font-family: 'SF Mono', Menlo, Consolas, monospace;">${currentCycle}</span>
+                        <span class="stat-card-meta">${activeExp ? activeExp.surface + ' · ' + currentPhase : 'no active experiment'}</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card-label">Last Cron Run</span>
+                        <span class="stat-card-value" style="font-size: 14px;"><span class="pulse-dot"></span>${fmtRelative(s?._last_cron_run)}</span>
+                        <span class="stat-card-meta">${fmtTimeAbs(s?._last_cron_run)}</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card-label">Cycles Decided</span>
+                        <span class="stat-card-value">0</span>
+                        <span class="stat-card-meta">first cycle in flight</span>
                     </div>
                 </div>`;
         }
@@ -1239,7 +1340,7 @@
             renderError();
             const lastRefreshEl = document.getElementById('lastRefresh');
             if (appState.loadedAt) {
-                lastRefreshEl.textContent = `loaded ${fmtRelative(appState.loadedAt.toISOString())}`;
+                lastRefreshEl.innerHTML = `<span class="pulse-dot"></span>loaded ${fmtRelative(appState.loadedAt.toISOString())}`;
             }
 
             if (!appState.stateJson) {
@@ -1248,6 +1349,7 @@
             }
 
             document.getElementById('content').innerHTML = `
+                ${renderStatsBar()}
                 ${renderActionQueue()}
                 ${renderActiveExperiments()}
                 ${renderRecentlyDecided()}
