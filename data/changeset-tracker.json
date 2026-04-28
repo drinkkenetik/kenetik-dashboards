@@ -6628,7 +6628,7 @@
       "outcome": "",
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-098.md",
-      "notes": "Composite production unit collapsing DS-04-A (2PM Crash) + DS-04-B (Leadville) + Joelle Debban testimonial into ONE 30-60s reel. Target publish TikTok + IG Reels 2026-04-24 EOD inside 48h trend windows. Brandon claims-gate; Lawrence secures Joelle UGC rights 24h.",
+      "notes": "Composite production unit collapsing DS-04-A (2PM Crash) + DS-04-B (Leadville) + Joelle Debban testimonial into ONE 30-60s reel. Target publish TikTok + IG Reels 2026-04-24 EOD inside 48h trend windows. Brandon claims-gate; Lawrence secures Joelle UGC rights 24h. | 2026-04-28 (Devon via Claude /changeset-execute): Brandon Gate 2 dossier packaged and routed. PMID 41962970 endurance-CHO constraint cleanly scoped out. Trend window past peak \u2014 Devon to decide publish-today vs reframe-without-hooks. Claims envelope clean; awaiting Brandon checkbox approval + Lawrence relationship confirmation for FTC \u00a7255 disclosure exact language.",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-24",
       "executed_date": "",
@@ -6641,8 +6641,15 @@
           "session": "2026-04-28-s1",
           "action": "package_dossier_today_devon_approval",
           "age_days": 4
+        },
+        {
+          "flag": "brandon_gate_2_dossier_packaged",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Brandon Gate 2 dossier packaged. Claims envelope: mechanism (Tier 2 Metabolic Brain Fuel) + Joelle Debban testimonial (FTC \u00a7255). PMID 41962970 endurance-CHO constraint formally scoped OUT (per claims-compliance.md 2026-04-15 entry \u2014 Martyn applies only to endurance claims, this reel is cognitive/mechanism). Adjacent constraints verified: Tominec 2026 altitude-exercise boundary, Miyatsu 2024 null, disease adjacency ban, Sander 2024 ICH, AUD ban, no-hype voice. FTC disclosure language pending Lawrence's confirmation of Joelle relationship state. Trend window closed/past peak \u2014 claims-clean but Devon to decide publish-today vs reframe (economics note only)."
         }
-      ]
+      ],
+      "last_updated": "2026-04-28"
     },
     {
       "id": "CS-2026-099",
