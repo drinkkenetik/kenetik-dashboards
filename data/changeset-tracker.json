@@ -7787,7 +7787,7 @@
       "owner": "Devon Price",
       "status": "draft",
       "subtype": "implementation",
-      "last_updated": "2026-04-27",
+      "last_updated": "2026-04-28",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
       "expected_impact": "Pre-empts brand-safety risk window narrowing into Mother's Day Apr 28. Closes both items by EOD Apr 28; preserves narrative control on the organic TBI/cognitive recovery thread.",
@@ -7799,6 +7799,12 @@
           "session": "2026-04-28-s1",
           "action": "devon_brandon_post_response_garrett_lot_clearance",
           "age_days": 0
+        },
+        {
+          "flag": "public_response_drafted_matt_hughes_gate_codified",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Public FB reply drafted (claims-clean, redirect-to-DM, no disease engagement). Compliance log entry written. Matt Hughes earned-narrative HARD GATE codified \u2014 BLOCKED until explicit Devon + Brandon signoff; default expectation = no structured content ever using TBI angle. DMs route to Brandon. See CS-121 brief 'Public Response Draft + Compliance Log + Matt Hughes Gate'."
         }
       ],
       "created": "2026-04-27",
@@ -7810,7 +7816,8 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-121.md",
-      "notes": "Summary: (a) Epilepsy/TBI Facebook public-comment claim Apr 26: Devon + Brandon respond per claims-policy guardrail; document in compliance log. Pair with Matt Hughes earned TBI narrative \u2014 explicit sign-off required for any structured content using that angle. (b) Can corrosion Apr 21 incident: Garrett + lot-number review; if systemic, COA + supplier outreach + retention/refund protocol. Katie comms with affected customer. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['rec-241'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
+      "notes": "Summary: (a) Epilepsy/TBI Facebook public-comment claim Apr 26: Devon + Brandon respond per claims-policy guardrail; document in compliance log. Pair with Matt Hughes earned TBI narrative \u2014 explicit sign-off required for any structured content using that angle. (b) Can corrosion Apr 21 incident: Garrett + lot-number review; if systemic, COA + supplier outreach + retention/refund protocol. Katie comms with affected customer. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['rec-241'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | 2026-04-28 (Devon via Claude /changeset-execute): Public FB reply DRAFTED \u2014 needs Devon + Brandon final 5-min cycle before posting; targets Apr 28 EOD before Mother's Day launch. Brandon handles any inbound DMs. Matt Hughes structured content HARD GATE codified: BLOCKED, default = no structured content ever, unblock requires Brandon claims envelope + Devon cosign. Garrett lot review + Katie customer comms tracked separately as parallel work streams.",
+      "matt_hughes_hard_gate": "BLOCKED \u2014 devon_brandon_signoff_required"
     },
     {
       "id": "CS-2026-122",
