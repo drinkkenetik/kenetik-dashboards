@@ -9,19 +9,27 @@
     "last_sweep_counts": {
       "total_scanned": 126,
       "measurement_overdue": 6,
-      "measured": 0,
-      "auto_closed": 0,
+      "measured": 2,
+      "auto_closed": 2,
       "flagged_human_review": 4,
       "stale_detected": 16,
       "draft_overdue_gt_5d": 15,
       "nudges_sent_pending_phase4": 11
-    }
+    },
+    "measurement_overdue_remaining_after_manual_close": [
+      "CS-2026-046",
+      "CS-2026-006",
+      "CS-2026-018",
+      "CS-2026-040"
+    ],
+    "manual_measurement_session": "2026-04-28-execute",
+    "manual_measurement_root_cause": "sub_agent_mcp_inheritance_failure_per_skill_warning"
   },
   "summary": {
     "total": 126,
     "by_status": {
-      "closed": 50,
-      "published": 18,
+      "closed": 52,
+      "published": 16,
       "approved": 9,
       "draft": 46,
       "needs_feedback": 3
@@ -1435,7 +1443,7 @@
       "platforms": [
         "klaviyo"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie Spaller",
       "created": "2026-03-13",
@@ -1471,14 +1479,39 @@
       "measurement_due": "2026-04-23",
       "ad_platform_refs": null,
       "file": "cgo-logs/changesets/CS-2026-016.md",
-      "notes": "Sent 2026-04-16 (retro-confirmed by Katie 2026-04-21). Final creative diverged from brief subject lines: deployed headline 'PROTECT YOUR REM SLEEP' with 'FUEL YOUR CALM' / 'TRY IT TONIGHT' CTAs, Watermelon Lime hero. Robberechts 2023 claims block (3% sleep efficiency, 26% REM drop prevention) included with reference footer. Measurement window 2026-04-16 \u2192 2026-04-23.",
-      "sweep_flags": [],
+      "notes": "Sent 2026-04-16 (retro-confirmed by Katie 2026-04-21). Final creative diverged from brief subject lines: deployed headline 'PROTECT YOUR REM SLEEP' with 'FUEL YOUR CALM' / 'TRY IT TONIGHT' CTAs, Watermelon Lime hero. Robberechts 2023 claims block (3% sleep efficiency, 26% REM drop prevention) included with reference footer. Measurement window 2026-04-16 \u2192 2026-04-23. | 2026-04-28 (Devon via Claude /changeset-measurement): CLOSED \u2014 underperformed primary metric. CTR 0.899% vs 2.5% target. Revenue $870 / margin ~$435. Open rate strong (45.9%) but click-through weak; sleep-hook subject line did its job, tonight-CTA + flavor-led closing did not.",
+      "sweep_flags": [
+        {
+          "flag": "manual_measurement_close_2026_04_28",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Manual /changeset-measurement close. CTR 0.899% vs 2.5% target = 36% of target. Margin ~$435 vs $900 expected = 48%. Outcome: underperformed_primary_metric. List health intact (unsub 0.484%, spam 0.006%). Learning signal: sleep-hook subjects open well but tonight-CTA + flavor-led closing under-converts; iterate copy/CTA before next sleep wave."
+        }
+      ],
       "scheduled_send_date": "2026-04-16",
       "execution_target_date": "2026-04-16",
       "executed_date": "2026-04-16",
       "autonomy_tier": null,
       "stale": false,
-      "last_updated": "2026-04-21"
+      "last_updated": "2026-04-28",
+      "outcome": "underperformed_primary_metric",
+      "closed_date": "2026-04-28",
+      "actual_impact": {
+        "recipients": 15915,
+        "open_rate": 0.4594,
+        "click_rate": 0.00899,
+        "click_to_open_rate": 0.0196,
+        "conversion_rate": 0.00044,
+        "conversions": 7,
+        "revenue": 870.28,
+        "aov": 124.33,
+        "margin_estimate": 435,
+        "unsubscribe_rate": 0.00484,
+        "spam_complaint_rate": 6e-05,
+        "klaviyo_campaign_id": "01KP360F884WMSE0NQYQ3NXHMT",
+        "measured_via": "klaviyo_mcp_get_campaign_report",
+        "measured_date": "2026-04-28"
+      }
     },
     {
       "id": "CS-2026-017",
@@ -1488,7 +1521,7 @@
       "platforms": [
         "klaviyo"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie Spaller",
       "created": "2026-03-13",
@@ -1522,18 +1555,39 @@
       "review_tier": "express",
       "published_date": "2026-04-17",
       "file": "cgo-logs/changesets/CS-2026-017.md",
-      "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized \u2014 supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis.",
+      "notes": "Send: 4/17 (tentative). BLOCKED: Cleetus koozie assets not finalized \u2014 supplier quotes overdue (rec-026). Draft ready with Underground Ecom pending final koozie creative. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-28 (Devon via Claude /changeset-measurement): CLOSED \u2014 mixed signal. Email CVR narrow-miss (89% of target, +56.5% over baseline) but combined dollar outcome BEAT expected by 30%. Outcome treats dollars as the L1 truth: success_with_primary_metric_caveat. Refining bundle-CS primary metric definition is the L4 learning.",
       "sweep_flags": [
-        "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved",
-        "stale_approved_gt_7d"
+        {
+          "flag": "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during CS-017 measurement close."
+        },
+        {
+          "flag": "stale_approved",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during CS-017 measurement close."
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "unknown",
+          "session": "pre_2026-04-28",
+          "action": "String-flag normalized to dict during CS-017 measurement close."
+        },
+        {
+          "flag": "manual_measurement_close_2026_04_28",
+          "set_date": "2026-04-28",
+          "session": "2026-04-28-execute",
+          "action": "Manual /changeset-measurement close. Email CVR 0.313% vs 0.35% target = 89% (narrow miss). Combined email+SMS revenue $4,696 / margin ~$2,348 vs $1,800 expected = 130% (hit). Outcome: success_with_primary_metric_caveat. L4 learning: bundle CSes need combined-channel primary metric or per-channel targets; email-only CVR undercounts SMS dollar contribution. Two C10/M19 'Last Call' campaigns from 4/24 flagged separately \u2014 verify they were sent under a CS or backfill attribution."
+        }
       ],
       "scheduled_send_date": "2026-04-17",
       "execution_target_date": null,
       "executed_date": "2026-04-17",
       "autonomy_tier": null,
       "stale": false,
-      "last_updated": "2026-04-21",
+      "last_updated": "2026-04-28",
       "measurement_due": "2026-04-24",
       "ad_platform_refs": null,
       "organic_source": null,
@@ -1543,6 +1597,37 @@
         "window_days": 7,
         "attribution": "Klaviyo campaign-level revenue; segment-scoped to Engaged 3M + Prospects Engaged + Cleetus Lead Gen",
         "contamination_note": "CS-2026-035 SMS-First Experiment overlap \u2014 use Klaviyo campaign_id attribution, not flow-level"
+      },
+      "outcome": "success_with_primary_metric_caveat",
+      "closed_date": "2026-04-28",
+      "actual_impact": {
+        "email": {
+          "klaviyo_campaign_id": "01KPDD2EMR6J8G8YD7MZAMBTYF",
+          "recipients": 16319,
+          "open_rate": 0.5071,
+          "click_rate": 0.02526,
+          "conversion_rate": 0.00313,
+          "conversions": 51,
+          "revenue": 4451.14,
+          "aov": 87.28,
+          "unsubscribe_rate": 0.00399,
+          "spam_complaint_rate": 0.0
+        },
+        "sms": {
+          "klaviyo_campaign_id": "01KPCYB8D0E85G69A9ZSWNJAW2",
+          "recipients": 2983,
+          "click_rate": 0.33345,
+          "conversion_rate": 0.0017,
+          "conversions": 5,
+          "revenue": 244.9,
+          "aov": 48.98,
+          "unsubscribe_rate": 0.00613
+        },
+        "combined_revenue": 4696.04,
+        "combined_conversions": 56,
+        "margin_estimate": 2348,
+        "measured_via": "klaviyo_mcp_get_campaign_report",
+        "measured_date": "2026-04-28"
       }
     },
     {
