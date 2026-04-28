@@ -560,14 +560,209 @@
         .pm-meta { font-size: 11px; color: var(--text-muted); }
         .pm-content {
             display: none;
-            padding: 18px 24px 22px;
+            padding: 0;
             font-size: 13px;
             line-height: 1.6;
             color: var(--text);
             border-bottom: 1px solid var(--border);
             text-align: left;
-            max-width: 900px;       /* readable line length cap */
         }
+        .pm-inner {
+            padding: 18px 24px 22px;
+            text-align: left;
+        }
+        /* PM Stats strip — 4 tiles at the top of an expanded surface */
+        .pm-stats-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+            padding: 14px 18px 16px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255,255,255,0.015);
+        }
+        .pm-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .pm-stat-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .pm-stat-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            font-variant-numeric: tabular-nums;
+        }
+        .pm-stat-value.gradient {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--success) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .pm-stat-value.muted { color: var(--text-muted); font-weight: 600; font-size: 16px; }
+        .pm-stat-meta {
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+
+        /* Win-rate visual: row of dots, last N cycles */
+        .pm-winrate-dots {
+            display: flex;
+            gap: 3px;
+            margin-top: 4px;
+        }
+        .pm-winrate-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+        .pm-winrate-dot.keep { background: var(--success); }
+        .pm-winrate-dot.discard { background: var(--danger); }
+        .pm-winrate-dot.inconclusive { background: var(--warning); }
+        .pm-winrate-dot.reverted { background: var(--text-muted); border: 1px solid var(--danger); }
+
+        /* PM 2-column layout */
+        .pm-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 28px;
+            padding: 18px 24px 22px;
+        }
+        .pm-section-block { margin-bottom: 18px; }
+        .pm-section-block:last-child { margin-bottom: 0; }
+        .pm-section-block h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-muted);
+            margin: 0 0 8px 0;
+            font-weight: 600;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .pm-section-block h3 .badge {
+            font-size: 10px;
+            background: var(--bg);
+            color: var(--text-muted);
+            padding: 1px 7px;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .pm-section-block h3 .badge.accent {
+            background: rgba(99,102,241,0.15);
+            color: var(--accent-light);
+        }
+
+        /* Cycle ledger / pattern entries */
+        .cycle-row {
+            display: grid;
+            grid-template-columns: 16px 1fr 70px 70px;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 12px;
+            align-items: center;
+        }
+        .cycle-row:last-child { border-bottom: none; }
+        .cycle-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            justify-self: center;
+        }
+        .cycle-dot.keep { background: var(--success); box-shadow: 0 0 0 2px rgba(34,197,94,0.15); }
+        .cycle-dot.discard { background: var(--danger); }
+        .cycle-dot.inconclusive { background: var(--warning); }
+        .cycle-dot.reverted { background: var(--danger); border: 2px solid var(--text-muted); }
+        .cycle-meta {
+            color: var(--text);
+            line-height: 1.4;
+        }
+        .cycle-meta .cycle-tag {
+            font-family: 'SF Mono', Menlo, Consolas, monospace;
+            font-size: 11px;
+            color: var(--accent-light);
+            margin-right: 6px;
+        }
+        .cycle-meta .cycle-desc { color: var(--text); }
+        .cycle-lift {
+            font-variant-numeric: tabular-nums;
+            text-align: right;
+            font-weight: 600;
+        }
+        .cycle-lift.pos { color: var(--success); }
+        .cycle-lift.neg { color: var(--danger); }
+        .cycle-lift.flat { color: var(--text-muted); }
+        .cycle-date {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Open Questions backlog */
+        .pm-question-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .pm-question-list li {
+            padding: 6px 0 6px 16px;
+            font-size: 12px;
+            color: var(--text);
+            line-height: 1.45;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .pm-question-list li:last-child { border-bottom: none; }
+        .pm-question-list li::before {
+            content: "?";
+            position: absolute;
+            left: 0;
+            top: 6px;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* Cross-surface insights / preamble — free-form markdown */
+        .pm-prose {
+            font-size: 12px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .pm-prose p { margin: 0 0 8px 0; }
+        .pm-prose ul, .pm-prose ol { padding-left: 22px; margin: 4px 0 8px 0; }
+        .pm-prose li { margin: 2px 0; }
+        .pm-prose code {
+            background: var(--bg);
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-family: 'SF Mono', Menlo, Consolas, monospace;
+            color: var(--accent-light);
+        }
+        .pm-prose strong { color: var(--text); font-weight: 600; }
+        .pm-prose em { color: var(--text-muted); font-style: italic; }
+
+        .pm-empty {
+            padding: 12px 0;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        .pm-section-block.danger h3 { color: var(--danger); }
+        .pm-section-block.danger { border-left: 2px solid var(--danger); padding-left: 10px; }
         .pm-section.open .pm-content { display: block; }
         /* Heading hierarchy — explicit, left-aligned, with section borders */
         .pm-content h1 {
@@ -1299,6 +1494,216 @@
                 </div>`;
         }
 
+        // ── Markdown parsing helpers for Performance Memory ──
+        function parsePmMarkdown(md) {
+            // Returns { preamble, sections: { 'Section Name': 'raw md content' } }
+            // Splits on `## Heading` markers.
+            const sections = {};
+            const parts = md.split(/^##\s+/m);
+            const preamble = (parts[0] || '').trim();
+            for (let i = 1; i < parts.length; i++) {
+                const lines = parts[i].split('\n');
+                const heading = lines[0].trim();
+                const content = lines.slice(1).join('\n').trim();
+                sections[heading] = content;
+            }
+            return { preamble, sections };
+        }
+
+        function parseSurfaceInfo(infoMd) {
+            // Extract bullet-list metadata from the Surface Info section.
+            // Format: "- **Key**: value"
+            const out = {};
+            const re = /^\s*-\s*\*\*([^:]+?)\*\*:\s*(.+?)\s*$/gm;
+            let m;
+            while ((m = re.exec(infoMd)) !== null) {
+                out[m[1].trim()] = m[2].trim();
+            }
+            return out;
+        }
+
+        function parsePatternEntries(sectionMd) {
+            // Parse cycle entries in format:
+            //   - [Cycle N] description (lift: +X.X%, p: 0.XXX, date: YYYY-MM-DD)
+            // Returns array of {cycle, description, lift, date, raw}
+            if (!sectionMd) return [];
+            const entries = [];
+            const re = /^\s*-\s+\[Cycle\s+(\d+)\]\s+(.+?)$/gm;
+            let m;
+            while ((m = re.exec(sectionMd)) !== null) {
+                const raw = m[2];
+                const liftMatch = raw.match(/lift:\s*([+\-]?\d+\.?\d*)\s*%/i);
+                const dateMatch = raw.match(/date:\s*(\d{4}-\d{2}-\d{2})/i);
+                const desc = raw.replace(/\s*\(.*\)\s*$/, '').trim();
+                entries.push({
+                    cycle: parseInt(m[1]),
+                    description: desc,
+                    lift: liftMatch ? parseFloat(liftMatch[1]) : null,
+                    date: dateMatch ? dateMatch[1] : null,
+                    raw,
+                });
+            }
+            return entries;
+        }
+
+        function parseQuestionList(sectionMd) {
+            if (!sectionMd) return [];
+            // Strip placeholder "_(No patterns recorded yet...)_" lines
+            return sectionMd
+                .split('\n')
+                .map(l => l.trim())
+                .filter(l => l.startsWith('-'))
+                .map(l => l.replace(/^-\s+/, ''));
+        }
+
+        function isEmptyPlaceholder(sectionMd) {
+            if (!sectionMd) return true;
+            return /^_\(No\s/i.test(sectionMd.trim());
+        }
+
+        // ── Render performance memory for a single surface ──
+        function renderPmSurface(surface, md) {
+            const { preamble, sections } = parsePmMarkdown(md);
+            const info = parseSurfaceInfo(sections['Surface Info'] || '');
+            const wins = parsePatternEntries(sections['Winning Patterns'] || '');
+            const losses = parsePatternEntries(sections['Losing Patterns'] || '');
+            const reverts = parsePatternEntries(sections['Emergency Reverts'] || '');
+            const questions = parseQuestionList(sections['Open Questions'] || '');
+
+            const totalCycles = wins.length + losses.length + reverts.length;
+            const totalKeeps = wins.length;
+            const totalDiscards = losses.length;
+            const winRate = totalCycles > 0 ? Math.round((totalKeeps / totalCycles) * 100) : null;
+
+            // Cumulative lift from md, or compute from wins
+            const liftFromMd = info['Cumulative lift'] || '0.0%';
+            const cumulativeLift = parseFloat(liftFromMd) || 0;
+
+            // ── Stats strip ──
+            const statsStrip = `
+                <div class="pm-stats-strip">
+                    <div class="pm-stat">
+                        <span class="pm-stat-label">Total Cycles</span>
+                        <span class="pm-stat-value">${totalCycles}</span>
+                        <span class="pm-stat-meta">${totalKeeps} keep · ${totalDiscards} discard${reverts.length ? ' · ' + reverts.length + ' revert' : ''}</span>
+                    </div>
+                    <div class="pm-stat">
+                        <span class="pm-stat-label">Cumulative Lift</span>
+                        <span class="pm-stat-value ${cumulativeLift > 0 ? 'gradient' : (cumulativeLift === 0 ? 'muted' : '')}">${cumulativeLift > 0 ? '+' : ''}${cumulativeLift.toFixed(1)}%</span>
+                        <span class="pm-stat-meta">across ${totalCycles} cycle${totalCycles === 1 ? '' : 's'}</span>
+                    </div>
+                    <div class="pm-stat">
+                        <span class="pm-stat-label">Win Rate</span>
+                        <span class="pm-stat-value ${winRate === null ? 'muted' : ''}">${winRate === null ? '—' : winRate + '%'}</span>
+                        ${renderWinRateDots(wins, losses, reverts)}
+                    </div>
+                    <div class="pm-stat">
+                        <span class="pm-stat-label">Open Questions</span>
+                        <span class="pm-stat-value">${questions.length}</span>
+                        <span class="pm-stat-meta">untested hypotheses queued</span>
+                    </div>
+                </div>`;
+
+            // ── Decided Cycles (combined wins + losses, newest first) ──
+            const allDecided = [...wins.map(w => ({...w, outcome: 'keep'})),
+                                ...losses.map(l => ({...l, outcome: 'discard'}))]
+                                .sort((a, b) => b.cycle - a.cycle);
+
+            const decidedHtml = allDecided.length ? `
+                ${allDecided.map(c => `
+                    <div class="cycle-row">
+                        <div class="cycle-dot ${c.outcome}"></div>
+                        <div class="cycle-meta">
+                            <span class="cycle-tag">cycle ${c.cycle}</span>
+                            <span class="cycle-desc">${c.description}</span>
+                        </div>
+                        <div class="cycle-lift ${c.lift > 0 ? 'pos' : (c.lift < 0 ? 'neg' : 'flat')}">${c.lift !== null ? (c.lift >= 0 ? '+' : '') + c.lift.toFixed(1) + '%' : '—'}</div>
+                        <div class="cycle-date">${c.date || ''}</div>
+                    </div>`).join('')}
+            ` : `<div class="pm-empty">No cycles decided yet. First cycle expected to decide ~May 4. Each row will show outcome (keep/discard), pattern, lift, and date.</div>`;
+
+            // ── Patterns Learned (alias for the cycle list above; could become tag aggregation later) ──
+            // For now, omit if the cycle ledger above is the same data.
+
+            // ── Emergency Reverts (only render if non-empty) ──
+            const revertsHtml = reverts.length ? `
+                <div class="pm-section-block danger">
+                    <h3>Emergency Reverts <span class="badge" style="background: rgba(239,68,68,0.15); color: var(--danger)">${reverts.length}</span></h3>
+                    ${reverts.map(r => `
+                        <div class="cycle-row">
+                            <div class="cycle-dot reverted"></div>
+                            <div class="cycle-meta">
+                                <span class="cycle-tag">cycle ${r.cycle}</span>
+                                <span class="cycle-desc">${r.description}</span>
+                            </div>
+                            <div class="cycle-lift">—</div>
+                            <div class="cycle-date">${r.date || ''}</div>
+                        </div>`).join('')}
+                </div>` : '';
+
+            // ── Open Questions (right column) ──
+            const questionsHtml = questions.length ? `
+                <ul class="pm-question-list">
+                    ${questions.map(q => `<li>${q}</li>`).join('')}
+                </ul>
+            ` : `<div class="pm-empty">No untested hypotheses queued.</div>`;
+
+            // ── Cross-Surface Insights (right column) ──
+            const crossInsightsRaw = sections['Cross-Surface Insights'] || '';
+            const crossHtml = isEmptyPlaceholder(crossInsightsRaw) ?
+                `<div class="pm-empty">No cross-surface insights yet. Patterns generalizable to other surfaces will appear here once cycle 1 decides.</div>`
+                : `<div class="pm-prose">${marked.parse(crossInsightsRaw)}</div>`;
+
+            // ── Preamble (above 2-col grid, brief context) ──
+            const preambleHtml = preamble ? `<div class="pm-prose" style="padding: 14px 24px 0;">${marked.parse(preamble)}</div>` : '';
+
+            // ── Compose ──
+            return `
+                <div class="pm-content">
+                    ${statsStrip}
+                    ${preambleHtml}
+                    <div class="pm-grid">
+                        <div>
+                            <div class="pm-section-block">
+                                <h3>Decided Cycles
+                                    ${allDecided.length ? `<span class="badge accent">${allDecided.length}</span>` : ''}
+                                </h3>
+                                ${decidedHtml}
+                            </div>
+                            ${revertsHtml}
+                        </div>
+                        <div>
+                            <div class="pm-section-block">
+                                <h3>Open Questions
+                                    ${questions.length ? `<span class="badge">${questions.length}</span>` : ''}
+                                </h3>
+                                ${questionsHtml}
+                            </div>
+                            <div class="pm-section-block">
+                                <h3>Cross-Surface Insights</h3>
+                                ${crossHtml}
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        function renderWinRateDots(wins, losses, reverts) {
+            // Last 8 outcomes, oldest → newest
+            const all = [...wins.map(w => ({c: w.cycle, k: 'keep'})),
+                         ...losses.map(l => ({c: l.cycle, k: 'discard'})),
+                         ...reverts.map(r => ({c: r.cycle, k: 'reverted'}))]
+                         .sort((a, b) => a.c - b.c)
+                         .slice(-8);
+            if (!all.length) {
+                return `<div class="pm-winrate-dots">${'<div class="pm-winrate-dot"></div>'.repeat(8)}</div>`;
+            }
+            const dots = all.map(o => `<div class="pm-winrate-dot ${o.k}"></div>`).join('');
+            // Pad with empty dots if <8
+            const empties = '<div class="pm-winrate-dot"></div>'.repeat(Math.max(0, 8 - all.length));
+            return `<div class="pm-winrate-dots">${empties}${dots}</div>`;
+        }
+
         function renderPerformanceMemory() {
             const sections = SURFACES_LIST.map(surface => {
                 const md = appState.performance[surface];
@@ -1310,13 +1715,12 @@
                                 <span class="pm-toggle-text">${surface}</span>
                                 <span class="pm-meta">no memory file</span>
                             </div>
-                            <div class="pm-content"><em>Performance memory not yet synced for this surface.</em></div>
+                            <div class="pm-content" style="display: block;"><div class="pm-inner"><em style="color: var(--text-muted)">Performance memory not yet synced for this surface.</em></div></div>
                         </div>`;
                 }
-                const cyclesMatch = md.match(/Total cycles[*:]+\s*(\d+)/);
-                const cycles = cyclesMatch ? cyclesMatch[1] : '0';
-                const liftMatch = md.match(/Cumulative lift[*:]+\s*([+\-\d.%]+)/);
-                const lift = liftMatch ? liftMatch[1] : '0.0%';
+                const info = parseSurfaceInfo(parsePmMarkdown(md).sections['Surface Info'] || '');
+                const cycles = info['Total cycles'] || '0';
+                const lift = info['Cumulative lift'] || '0.0%';
                 return `
                     <div class="pm-section" data-surface="${surface}">
                         <div class="pm-toggle" onclick="this.parentElement.classList.toggle('open')">
@@ -1324,14 +1728,14 @@
                             <span class="pm-toggle-text">${surface}</span>
                             <span class="pm-meta">${cycles} cycle${cycles === '1' ? '' : 's'} · cumulative lift ${lift}</span>
                         </div>
-                        <div class="pm-content">${marked.parse(md)}</div>
+                        ${renderPmSurface(surface, md)}
                     </div>`;
             }).join('');
             return `
                 <div class="panel">
                     <div class="panel-header">
                         <div class="panel-title">Performance Memory</div>
-                        <div class="panel-meta">institutional learnings · click to expand</div>
+                        <div class="panel-meta">institutional learnings · click surface to expand</div>
                     </div>
                     <div class="panel-body">${sections}</div>
                 </div>`;
