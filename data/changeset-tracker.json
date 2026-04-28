@@ -20,10 +20,10 @@
   "summary": {
     "total": 126,
     "by_status": {
-      "closed": 48,
+      "closed": 49,
       "published": 18,
       "approved": 7,
-      "draft": 51,
+      "draft": 50,
       "needs_feedback": 2
     },
     "by_risk": {
@@ -37,9 +37,9 @@
       "investigation": 21,
       "quick": 17
     },
-    "last_updated": "2026-04-27",
-    "total_changesets": 123,
-    "last_counted": "2026-04-27"
+    "last_updated": "2026-04-28",
+    "total_changesets": 126,
+    "last_counted": "2026-04-28"
   },
   "changesets": [
     {
@@ -5048,7 +5048,7 @@
       "platforms": [
         "sprout-social"
       ],
-      "status": "closed_benign",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Devon Price",
       "created": "2026-04-15",
