@@ -416,6 +416,27 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-04-27"
+    },
+    {
+      "id": "L-059",
+      "summary": "Matt Hughes content unit is simultaneously CS-118 graduation candidate AND CS-121 compliance liability; graduation pipeline does not flag co-occurring compliance exposure on same content_id.",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-04-28"
+    },
+    {
+      "id": "L-060",
+      "summary": "content_mix_targets week_start frozen 6+ weeks (2026-03-16); writeback patch needs to be paired with targets refresh or scoreboard remains misleading.",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-28"
+    },
+    {
+      "id": "L-061",
+      "summary": "TikTok absent from paid-media-state.json (8th+ session); $745/wk spend invisible to D04 channel-mix; structural ingestion gap.",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-04-28"
     }
   ],
   "entries": [
@@ -1367,6 +1388,58 @@
         "L-049"
       ],
       "target": "cgo-logs/changesets/tracker.json schema (add validator: dependency strings must resolve to either CS-YYYY-NNN existing in tracker, or L-NNN existing in cross-surface-pm.json, or be flagged external_artifact with explicit owner); cgo-daily-pipeline/config/changeset-instructions.md (Step 3 guidance on dependency hygiene)"
+    },
+    {
+      "id": "L-059",
+      "date": "2026-04-28",
+      "type": "process_change",
+      "learning": "Matt Hughes content unit simultaneously contains the strongest authentic brand asset of the week (high-ER FB/IG reels, CS-118 graduation candidate) AND its largest reputational/compliance liability (epilepsy/boxing-syndrome customer disclosure on the 9-page comment thread). Graduation queue logic does not flag co-occurring compliance exposure on the same content unit.",
+      "source": "dept-content + dept-market-intelligence + D07 + D10 cross-flag, 2026-04-28",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "CS-118 graduation evaluation reads engagement metrics; CS-121 reads VoC compliance flags. The two pipelines do not share a content_id key, so they cannot detect when the same asset is in both queues. Result is a sequencing gap. See daily synthesis 2026-04-28-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-053"
+      ],
+      "target": "cgo-daily-pipeline/config/changeset-instructions.md graduation lifecycle -- add compliance-coexistence check gate before any paid graduation ChangeSet enters approved status."
+    },
+    {
+      "id": "L-060",
+      "date": "2026-04-28",
+      "type": "process_change",
+      "learning": "content_mix_targets week_start has been frozen at 2026-03-16 for 6+ weeks. Even when CS-120 deploys writeback patch fixing content_category NULL, the mix scoreboard will continue to read 'all categories at 0% actual vs target' against a stale reference week -- every measurement is misleading until targets refresh. The scoreboard then mis-routes content production decisions.",
+      "source": "D13 + dept-market-intelligence, 2026-04-28",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "content_mix_targets refresh was never automated. Charlotte/Lawrence own manual update; no recurring task or trigger exists. Writeback patch is necessary but not sufficient -- must be paired with mix-targets refresh on same deploy. See daily synthesis 2026-04-28-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-055",
+        "L-058"
+      ],
+      "target": "cgo-daily-pipeline/config/task-a-scans.md (D13 instructions) -- add content_mix_targets week_start age as a hard-gate field; flag if >14d old."
+    },
+    {
+      "id": "L-061",
+      "date": "2026-04-28",
+      "type": "process_change",
+      "learning": "TikTok is entirely absent from paid-media-state.json despite $745/7d active spend (8th+ consecutive session). D04 channel-mix and blended ROAS are understated by ~$745/wk; pat-011 fatigue logic cannot fire on TikTok creative; content_links graduation tracking blind for the platform.",
+      "source": "D04 + D19 cross-flag + dept-paid-media, 2026-04-28",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "paid-media-state.json ingestion does not include TikTok platform. executive-bi-refresh pipeline has Meta + Google connectors but not TikTok Ads API. Structural ingestion gap, not pipeline failure. See daily synthesis 2026-04-28-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-052"
+      ],
+      "target": "data warehouse / executive-bi-refresh job spec -- add TikTok Ads platform ingestion (spend, ROAS, fatigue_signal, content_links). Coordinate with CS-095 (related pixel work)."
     }
   ],
   "archived_entries": [
@@ -1662,5 +1735,5 @@
       "physically_moved_at": "2026-04-19T23:58:35.148791+00:00"
     }
   ],
-  "last_updated": "2026-04-27T22:50:00Z"
+  "last_updated": "2026-04-28T16:50:00Z"
 }
