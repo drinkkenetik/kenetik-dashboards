@@ -8583,6 +8583,12 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-execute",
           "action": "Agenda restructured per Devon directive 2026-04-29: redistribution OFF (skill-mix means team can't absorb Katie's CSes), automation + data infra consolidation ON. Verifications applied: VM disk exhaustion was 4/27 (already addressed); content_category writeback STILL broken (separate from listening fix); TT/X/YT split into native-delivery (0/21 real) + back-sync (separate question, likely Sprout API limitation); wholesale at-risk REPLACED with data-refinement-first sequencing. Item #1' = single-owner accountability for cross-surface data infrastructure (recommend Garrett). Item #6 closed. Item #1 removed. Verification window unchanged."
+        },
+        {
+          "flag": "owner_decisions_locked_2026_04_29",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Owners locked: Devon = cross-surface data infrastructure owner (for now). Peter = content_category writeback. Weekly review meeting collapsed (Devon = both decision-maker and infra owner). Most agenda items now have named owners + dispositions; war-room framing largely overtaken. Recommend skip-convene + move to published with owner-decisions as \u00a7 Outcomes, OR 15-min lightweight sync to ratify."
         }
       ],
       "created": "2026-04-27",
@@ -8594,7 +8600,7 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-120.md",
-      "notes": "Summary: Convene L-053 war-room (overdue per protocol). Produce DECISIONS, not status: (a) approve owner-rebalance Katie 70.6% -> ~50% per Operations dept brief proposal; (b) restructure standup so missing-evidence patterns surface live (P0 ACK SLA); (c) phantom-dependency audit (L-045 split, outline-v3, CS-115 infra deps) \u2014 build or remove; (d) Cowork VM disk-exhaustion resilience review; (e) wholesale at-risk $813K review tier instantiation with Josh; (f) content_category writeback patch (Charlotte + Lawrence \u2014 Sprout sync field mapping); (g) TT/X/YT cadence structural decision. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['P4'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | 2026-04-29 (Devon via Claude /changeset-execute): Convene update logged. Revised allocation reflects today's archives (CS-056/057 to Lawrence dropped, CS-046 to Peter dropped). Katie baseline recomputed 55.6%. Status transitions draft \u2192 published on convene completion. | 2026-04-29 (Devon via Claude /changeset-execute): Agenda RESTRUCTURED per Devon directive. Redistribution off, automation + data infra consolidation on. 3 of 7 items verified/closed/replaced. New item 1' = single-owner cross-surface data infrastructure. Verification measures automation plan + named owner operating, not redistribution."
+      "notes": "Summary: Convene L-053 war-room (overdue per protocol). Produce DECISIONS, not status: (a) approve owner-rebalance Katie 70.6% -> ~50% per Operations dept brief proposal; (b) restructure standup so missing-evidence patterns surface live (P0 ACK SLA); (c) phantom-dependency audit (L-045 split, outline-v3, CS-115 infra deps) \u2014 build or remove; (d) Cowork VM disk-exhaustion resilience review; (e) wholesale at-risk $813K review tier instantiation with Josh; (f) content_category writeback patch (Charlotte + Lawrence \u2014 Sprout sync field mapping); (g) TT/X/YT cadence structural decision. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['P4'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | 2026-04-29 (Devon via Claude /changeset-execute): Convene update logged. Revised allocation reflects today's archives (CS-056/057 to Lawrence dropped, CS-046 to Peter dropped). Katie baseline recomputed 55.6%. Status transitions draft \u2192 published on convene completion. | 2026-04-29 (Devon via Claude /changeset-execute): Agenda RESTRUCTURED per Devon directive. Redistribution off, automation + data infra consolidation on. 3 of 7 items verified/closed/replaced. New item 1' = single-owner cross-surface data infrastructure. Verification measures automation plan + named owner operating, not redistribution. | 2026-04-29 (Devon): OWNERS LOCKED. Devon = cross-surface infra owner; Peter = content_category writeback. Weekly review collapsed. Recommend skip-convene OR 15-min lightweight ratify. Most decisions now made in writing \u2014 meeting may not be needed."
     },
     {
       "id": "CS-2026-121",
@@ -8924,7 +8930,7 @@
       "owner": "Devon Price",
       "created": "2026-04-29",
       "objective_level": "L4",
-      "category": "infrastructure",
+      "category": "system_improvement",
       "dependencies": [
         "CS-2026-120-named-cross-surface-data-infra-owner"
       ],
@@ -8972,10 +8978,16 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-execute",
           "action": "Operationalizes Devon's 2026-04-29 directive: 'Work the bottleneck by streamlining the processes.' Adds a dedicated Automation Opportunity Surfacing lane to the daily synthesizer + time-cost observability schema fields + weekly automation review tier + monthly retrospective. Closes the loop on automation work happening DESPITE the system instead of THROUGH it. Resolution Hierarchy: Diagnose \u2192 Remove (stop treating automation candidates as sub-priority) \u2192 Refine (dedicated synthesizer lane) \u2192 Add (4 mechanisms). Add justified because routing mechanism doesn't exist elsewhere."
+        },
+        {
+          "flag": "re_audit_simplification_devon_scrutiny_2026_04_29",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Devon scrutiny caught over-engineering. Resolution Hierarchy re-audit: REMOVE time_cost.* fields (existing timestamps suffice), automation_opportunity schema field (use existing category=system_improvement), weekly review meeting (Devon = both decision-maker and infra owner), monthly retro (folds into existing calibration), time-cost-history state file (compute on demand), dedicated automation section header (annotation pass instead). REFINE: single synthesizer prompt block added to task-b-synthesis.md Phase 2 Step 2. ADD: nothing. Schema changes: zero. New files: zero. New meetings: zero. Validator/dashboard impact: zero."
         }
       ],
       "last_updated": "2026-04-29",
-      "notes": "Operationalizes Devon 2026-04-29 directive on automation focus. Synthesizer instruction patch + ChangeSet schema time-cost fields + weekly automation review tier + monthly retro. Blocked by CS-120 named infrastructure owner. Related: CS-127 queue mechanism is the prototype for automation-CS-routing."
+      "notes": "Operationalizes Devon 2026-04-29 directive on automation focus. Synthesizer instruction patch + ChangeSet schema time-cost fields + weekly automation review tier + monthly retro. Blocked by CS-120 named infrastructure owner. Related: CS-127 queue mechanism is the prototype for automation-CS-routing. | 2026-04-29 (Devon via Claude /changeset-execute): Re-audit per Devon scrutiny. Simplified to ONE prompt change in task-b-synthesis.md. No new schema, no new files, no new meetings. Routes automation CSes through existing category=system_improvement value. Closed-loop measurement uses existing timestamps. See \u00a7 Resolution Hierarchy Re-Audit + \u00a7 SUPERSEDING PROPOSED CHANGE in brief."
     }
   ],
   "queue_actions": {
