@@ -411,9 +411,31 @@
               "cvr": 0.0
             }
           }
+        },
+        {
+          "checked_at": "2026-04-29T17:31:00.206503Z",
+          "snapshot_at": "2026-04-29T17:31:02.044310Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 158,
+              "atc_events": 0,
+              "atc_rate": 0.0,
+              "bounce_rate": 1.0,
+              "cvr": 0.0
+            },
+            "variant": {
+              "sessions": 12,
+              "atc_events": 0,
+              "atc_rate": 0.0,
+              "bounce_rate": 1.0,
+              "cvr": 0.0
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-04-29T14:56:34.805372Z",
+      "last_checked_at": "2026-04-29T17:31:00.206503Z",
       "katie_approval_observed_at": "2026-04-24T20:22:15Z",
       "orchestrator_notes": [
         {
@@ -433,16 +455,16 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-04-29T14:56:35.970825Z",
+        "snapshot_at": "2026-04-29T17:31:02.044310Z",
         "control": {
-          "sessions": 139,
+          "sessions": 158,
           "atc_events": 0,
           "atc_rate": 0.0,
           "bounce_rate": 1.0,
           "cvr": 0.0
         },
         "variant": {
-          "sessions": 7,
+          "sessions": 12,
           "atc_events": 0,
           "atc_rate": 0.0,
           "bounce_rate": 1.0,
@@ -452,5 +474,5 @@
       "last_undersample_escalation_at": "2026-04-28T18:31:08.976426Z"
     }
   },
-  "_last_cron_run": "2026-04-29T14:56:34.805372Z"
+  "_last_cron_run": "2026-04-29T17:31:00.206503Z"
 }
