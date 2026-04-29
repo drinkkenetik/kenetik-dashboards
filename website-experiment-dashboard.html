@@ -294,6 +294,20 @@
             font-weight: 600;
             font-family: 'SF Mono', Menlo, Consolas, monospace;
             font-size: 12px;
+            white-space: nowrap;
+        }
+        .surface-cell .disclosure {
+            display: inline-block;
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-right: 6px;
+            transition: transform 0.15s;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            transform-origin: center;
+        }
+        tr.surface-row.expanded .surface-cell .disclosure {
+            transform: rotate(90deg);
+            color: var(--info);
         }
 
         /* ── Status pills ── */
@@ -1160,7 +1174,7 @@
                 if (!exp) {
                     return `
                         <tr class="surface-${surface}">
-                            <td class="surface-cell">${surface}</td>
+                            <td class="surface-cell"><span class="disclosure" style="opacity: 0.3">▶</span>${surface}</td>
                             <td><span class="pill pill-idle">no entry</span></td>
                             <td colspan="6" class="num" style="color: var(--text-muted)">No experiment record yet</td>
                             <td></td>
@@ -1174,7 +1188,7 @@
 
                 const dataRow = `
                     <tr class="surface-row" data-surface="${surface}" onclick="toggleDetail('${surface}')">
-                        <td class="surface-cell">${surface}</td>
+                        <td class="surface-cell"><span class="disclosure">▶</span>${surface}</td>
                         <td><span class="pill pill-${phase}">${phase.replace('_',' ')}</span></td>
                         <td class="num">${exp.cycle_tag || exp.experiment_id || '—'}</td>
                         <td class="num">${timeInPhase(exp)}</td>
