@@ -8984,10 +8984,16 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-execute",
           "action": "Devon scrutiny caught over-engineering. Resolution Hierarchy re-audit: REMOVE time_cost.* fields (existing timestamps suffice), automation_opportunity schema field (use existing category=system_improvement), weekly review meeting (Devon = both decision-maker and infra owner), monthly retro (folds into existing calibration), time-cost-history state file (compute on demand), dedicated automation section header (annotation pass instead). REFINE: single synthesizer prompt block added to task-b-synthesis.md Phase 2 Step 2. ADD: nothing. Schema changes: zero. New files: zero. New meetings: zero. Validator/dashboard impact: zero."
+        },
+        {
+          "flag": "re_audit_2_awareness_depth_2026_04_29",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Devon scrutiny round 2: scan-each-rec was too narrow. Real automation leverage lives in the process meta-layer (sub-steps, capabilities, existing infra), not in tactical recs. Prompt block replaced with 7-substep process-step analysis: (1) compute median step durations from timestamps; (2) identify highest-duration step; (3) read its process doc; classify sub-steps automated/manual; (4) inventory existing capabilities (MCPs/scripts/GHA/brain refs); (5) cross-check shipped system_improvement CSes (avoid re-recommend); (6) surface top candidate with reasoning + savings; (7) tactical rec-pass as fallback; (8) 'no new candidates' valid output. Simplification gains preserved: no new schema, no new files, no new meetings."
         }
       ],
       "last_updated": "2026-04-29",
-      "notes": "Operationalizes Devon 2026-04-29 directive on automation focus. Synthesizer instruction patch + ChangeSet schema time-cost fields + weekly automation review tier + monthly retro. Blocked by CS-120 named infrastructure owner. Related: CS-127 queue mechanism is the prototype for automation-CS-routing. | 2026-04-29 (Devon via Claude /changeset-execute): Re-audit per Devon scrutiny. Simplified to ONE prompt change in task-b-synthesis.md. No new schema, no new files, no new meetings. Routes automation CSes through existing category=system_improvement value. Closed-loop measurement uses existing timestamps. See \u00a7 Resolution Hierarchy Re-Audit + \u00a7 SUPERSEDING PROPOSED CHANGE in brief."
+      "notes": "Operationalizes Devon 2026-04-29 directive on automation focus. Synthesizer instruction patch + ChangeSet schema time-cost fields + weekly automation review tier + monthly retro. Blocked by CS-120 named infrastructure owner. Related: CS-127 queue mechanism is the prototype for automation-CS-routing. | 2026-04-29 (Devon via Claude /changeset-execute): Re-audit per Devon scrutiny. Simplified to ONE prompt change in task-b-synthesis.md. No new schema, no new files, no new meetings. Routes automation CSes through existing category=system_improvement value. Closed-loop measurement uses existing timestamps. See \u00a7 Resolution Hierarchy Re-Audit + \u00a7 SUPERSEDING PROPOSED CHANGE in brief. | 2026-04-29 (Devon round 2): Awareness-depth re-audit. Prompt block replaced with 7-substep process-step analysis (read process docs + capabilities inventory + tracker timestamps + reason about manual-vs-automated sub-steps). Same simplification gains preserved (no new schema/files/meetings/commands). Fallback recs-pass kept as step 7. 'No new candidates' valid step 8 output prevents fabrication."
     }
   ],
   "queue_actions": {
