@@ -395,93 +395,134 @@
         /* ── Visualizations: metric delta bars ── */
         .metric-row {
             display: grid;
-            grid-template-columns: 90px 1fr 80px;
-            gap: 10px;
+            /* label · current values (ctl/var) · bar · delta */
+            grid-template-columns: 80px 145px 1fr 70px;
+            gap: 12px;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 14px;
             font-size: 11px;
         }
-        .metric-row:last-child { margin-bottom: 0; }
+        .metric-row:last-child { margin-bottom: 6px; }
         .metric-label {
             font-family: 'SF Mono', Menlo, Consolas, monospace;
             font-size: 11px;
             color: var(--text);
+            font-weight: 600;
+        }
+        .metric-values {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+            line-height: 1.3;
+        }
+        .metric-values .ctl-val { color: var(--info); font-weight: 600; }
+        .metric-values .var-val { color: var(--accent-light); font-weight: 600; }
+        .metric-bar-wrap {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
         .metric-bar {
             position: relative;
-            height: 14px;
-            background: var(--bg);
-            border-radius: 3px;
+            height: 22px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: 4px;
             overflow: visible;
         }
         .metric-bar .zero {
             position: absolute;
             left: 50%;
-            top: -2px;
-            bottom: -2px;
-            width: 1px;
-            background: var(--border);
-        }
-        .metric-bar .threshold {
-            position: absolute;
             top: -3px;
             bottom: -3px;
             width: 1px;
-            background: var(--text-muted);
-            opacity: 0.5;
+            background: var(--text);
+            opacity: 0.65;
         }
-        .metric-bar .threshold.danger { background: var(--danger); opacity: 0.6; }
-        .metric-bar .threshold.warning { background: var(--warning); opacity: 0.6; }
+        .metric-bar .threshold {
+            position: absolute;
+            top: -4px;
+            bottom: -4px;
+            width: 2px;
+            background: var(--text-muted);
+            border-radius: 1px;
+        }
+        .metric-bar .threshold.danger { background: var(--danger); }
+        .metric-bar .threshold.warning { background: var(--warning); }
         .metric-bar .fill {
             position: absolute;
-            top: 1px;
-            bottom: 1px;
+            top: 2px;
+            bottom: 2px;
             background: var(--info);
-            border-radius: 2px;
+            border-radius: 3px;
             transition: width 0.3s, left 0.3s, background 0.3s;
         }
-        .metric-bar .fill.healthy { background: var(--success); }
-        .metric-bar .fill.tier2 { background: var(--warning); }
-        .metric-bar .fill.tier1 { background: var(--danger); }
+        .metric-bar .fill.healthy { background: var(--success); box-shadow: 0 0 6px rgba(34,197,94,0.45); }
+        .metric-bar .fill.tier2 { background: var(--warning); box-shadow: 0 0 6px rgba(245,158,11,0.45); }
+        .metric-bar .fill.tier1 { background: var(--danger); box-shadow: 0 0 6px rgba(239,68,68,0.45); }
         .metric-bar.empty {
-            background: repeating-linear-gradient(45deg, var(--bg), var(--bg) 3px, var(--surface-hover) 3px, var(--surface-hover) 6px);
+            background: repeating-linear-gradient(45deg, var(--bg), var(--bg) 4px, var(--surface-hover) 4px, var(--surface-hover) 8px);
         }
+        /* Tick scale labels under each delta bar */
+        .metric-scale {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+            font-family: 'SF Mono', Menlo, Consolas, monospace;
+            padding: 0 1px;
+            user-select: none;
+        }
+        .metric-scale .danger-tick { color: var(--danger); font-weight: 700; }
+        .metric-scale .warning-tick { color: var(--warning); font-weight: 700; }
         .metric-delta {
             font-variant-numeric: tabular-nums;
             text-align: right;
             color: var(--text);
-            font-size: 11px;
+            font-size: 13px;
+            font-weight: 700;
         }
-        .metric-delta.muted { color: var(--text-muted); }
+        .metric-delta.muted { color: var(--text-muted); font-weight: 400; font-size: 12px; }
+        .metric-delta.pos { color: var(--success); }
+        .metric-delta.neg { color: var(--danger); }
 
         /* ── Sample size bar ── */
         .sample-bar {
             display: flex;
-            height: 18px;
-            border-radius: 3px;
+            height: 28px;
+            border-radius: 6px;
             overflow: hidden;
             background: var(--bg);
-            margin-bottom: 6px;
+            border: 1px solid var(--border);
+            margin-bottom: 8px;
+            gap: 2px;
+            padding: 2px;
         }
         .sample-bar .control {
             background: var(--info);
-            opacity: 0.75;
+            border-radius: 4px;
+            min-width: 6px;
             transition: width 0.3s;
         }
         .sample-bar .variant {
-            background: var(--accent);
-            opacity: 0.85;
+            background: var(--accent-light);
+            border-radius: 4px;
+            min-width: 6px;
             transition: width 0.3s;
         }
         .sample-legend {
             display: flex;
             justify-content: space-between;
-            font-size: 10px;
+            font-size: 12px;
             color: var(--text-muted);
             font-variant-numeric: tabular-nums;
+            font-weight: 500;
         }
-        .sample-legend .ctl { color: var(--info); }
-        .sample-legend .var { color: var(--accent-light); }
+        .sample-legend .ctl { color: var(--info); font-weight: 700; }
+        .sample-legend .var { color: var(--accent-light); font-weight: 700; }
+        .sample-legend .pct { color: var(--text-muted); font-weight: 400; margin-left: 4px; opacity: 0.8; }
 
         /* ── Phase timeline ── */
         .phase-timeline {
@@ -1306,12 +1347,12 @@
 
             const sampleHtml = `
                 <div class="sample-bar" title="control ${cs} · variant ${vs}">
-                    <div class="control" style="width: ${cPct}%"></div>
-                    <div class="variant" style="width: ${vPct}%"></div>
+                    <div class="control" style="width: ${cPct}%" title="Control: ${cs} sessions (${cPct.toFixed(1)}%)"></div>
+                    <div class="variant" style="width: ${vPct}%" title="Variant: ${vs} sessions (${vPct.toFixed(1)}%)"></div>
                 </div>
                 <div class="sample-legend">
-                    <span class="ctl">● Control: ${cs.toLocaleString()}</span>
-                    <span class="var">● Variant: ${vs.toLocaleString()}</span>
+                    <span class="ctl">● Control: ${cs.toLocaleString()}<span class="pct">(${cPct.toFixed(1)}%)</span></span>
+                    <span class="var">● Variant: ${vs.toLocaleString()}<span class="pct">(${vPct.toFixed(1)}%)</span></span>
                 </div>`;
 
             // Per-metric delta bars (atc_rate, cvr, bounce_rate)
@@ -1382,19 +1423,52 @@
                 const width = Math.abs(deltaPct) / RANGE * 50;
                 fillHtml = `<div class="fill ${fillCls}" style="left: ${Math.max(0, Math.min(100, left))}%; width: ${Math.min(50, width)}%"></div>`;
                 deltaText = `${deltaPct >= 0 ? '+' : ''}${deltaPct.toFixed(1)}%`;
-                deltaCls = '';
+                deltaCls = (deltaPct > 0 && fillCls === 'healthy') ? 'pos'
+                          : (deltaPct < 0 && fillCls === 'healthy') ? 'neg'
+                          : '';
             } else if ((currentMetrics?.control?.sessions || 0) > 0) {
-                deltaText = '—';
+                deltaText = 'no data';
                 deltaCls = 'muted';
             }
+
+            // Format current values for display next to the bar
+            const fmtVal = v => {
+                if (v === null || v === undefined) return '—';
+                if (metric.endsWith('_rate') || metric === 'cvr' || metric === 'bounce_rate') {
+                    return (v * 100).toFixed(2) + '%';
+                }
+                return Number(v).toLocaleString();
+            };
+            const valuesHtml = `
+                <div class="metric-values">
+                    <div><span class="ctl-val">ctl</span> ${fmtVal(ctrl)}</div>
+                    <div><span class="var-val">var</span> ${fmtVal(variant)}</div>
+                </div>`;
+
+            // Scale labels under the bar — show threshold positions
+            const t1Pct = t1 ? t1.threshold_pct : null;
+            const t2Pct = t2 ? t2.threshold_pct : null;
+            const direction = (t1 || t2)?.direction;
+            const scaleHtml = `
+                <div class="metric-scale">
+                    ${t1Pct ? `<span class="danger-tick">${direction === 'drop' ? '−' : ''}${t1Pct}%</span>` : '<span></span>'}
+                    ${t2Pct ? `<span class="warning-tick">${direction === 'drop' ? '−' : ''}${t2Pct}%</span>` : '<span></span>'}
+                    <span>0</span>
+                    ${t2Pct ? `<span class="warning-tick">${direction === 'rise' ? '+' : ''}${t2Pct}%</span>` : '<span></span>'}
+                    ${t1Pct ? `<span class="danger-tick">${direction === 'rise' ? '+' : ''}${t1Pct}%</span>` : '<span></span>'}
+                </div>`;
 
             return `
                 <div class="metric-row">
                     <div class="metric-label">${metric}</div>
-                    <div class="metric-bar${ctrl === undefined ? ' empty' : ''}">
-                        <div class="zero"></div>
-                        ${markerHtml}
-                        ${fillHtml}
+                    ${valuesHtml}
+                    <div class="metric-bar-wrap">
+                        <div class="metric-bar${ctrl === undefined ? ' empty' : ''}">
+                            <div class="zero"></div>
+                            ${markerHtml}
+                            ${fillHtml}
+                        </div>
+                        ${scaleHtml}
                     </div>
                     <div class="metric-delta ${deltaCls}">${deltaText}</div>
                 </div>`;
