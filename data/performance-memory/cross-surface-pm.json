@@ -437,6 +437,27 @@
       "domain": "paid-media",
       "status": "active",
       "date": "2026-04-28"
+    },
+    {
+      "id": "L-062",
+      "summary": "Mobile CVR is +4.1% WoW (RECOVERED), desktop CVR +16.6% with checkout-start +59.3%. The S40 'mobile crisis' framing (-18.6% PDP-discovery) was based o",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-04-29"
+    },
+    {
+      "id": "L-063",
+      "summary": "Katie owner concentration is 55.6% (40/72 active) when 'Katie Spaller' + 'Katie' aliases are correctly de-aliased against current tracker. S40's 70.6%",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-29"
+    },
+    {
+      "id": "L-064",
+      "summary": "Same-day-or-day-prior publications are a structural blind spot when claims-anchor citation lock-in happens at S(N-1) and the citation is consumed at S",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-04-29"
     }
   ],
   "entries": [
@@ -1440,6 +1461,65 @@
         "L-052"
       ],
       "target": "data warehouse / executive-bi-refresh job spec -- add TikTok Ads platform ingestion (spend, ROAS, fatigue_signal, content_links). Coordinate with CS-095 (related pixel work)."
+    },
+    {
+      "id": "L-062",
+      "date": "2026-04-29",
+      "type": "process_change",
+      "learning": "Mobile CVR is +4.1% WoW (RECOVERED), desktop CVR +16.6% with checkout-start +59.3%. The S40 'mobile crisis' framing (-18.6% PDP-discovery) was based on a stale-window read. Synthesis must apply L-054 each session: re-derive Polar Pixel device direction from fresh data; do not propagate handoff-framed crisis claims without verification.",
+      "source": "Today's D09 + dept-website-cro vs S40 handoff 'mobile -18.6% CVR PDP-discovery crisis' framing",
+      "source_type": "domain_contradiction",
+      "domain": "website",
+      "evidence": "Handoff narratives encode point-in-time interpretations that lag the next domain scan by 24h. When the synthesis weights handoff above fresh data, it propagates stale severity framing across departments. The structural fix already exists (L-054); the failure mode is forgetting to apply it. See daily synthesis 2026-04-29-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-054",
+        "L-049"
+      ],
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 8 Quality Gate -- add explicit 'L-054 application verified' check item under 'Metric freshness cross-check'",
+      "status": "active",
+      "changeset_candidate": false
+    },
+    {
+      "id": "L-063",
+      "date": "2026-04-29",
+      "type": "threshold_calibration",
+      "learning": "Katie owner concentration is 55.6% (40/72 active) when 'Katie Spaller' + 'Katie' aliases are correctly de-aliased against current tracker. S40's 70.6% figure is not reproducible from current tracker.json. Pat-014 threshold concept remains valid; the specific magnitude propagated from S40 was an alias artifact.",
+      "source": "Today's D12 + dept-ops vs S40 handoff 'Katie 70.6% concentration'",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "pat-014 percentage in handoff narrative was computed before the alias-merge step or against a different tracker snapshot. Without versioned calculation logic, downstream consumers (synthesis, dept-ops, war-room CS-120 scope) inherit the percentage without recomputing. Per L-046, tracker.json is authoritative -- but the handoff narrative is consumed first chronologically each session. See daily synthesis 2026-04-29-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-046",
+        "pat-014"
+      ],
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 1 Triage -- when consuming pat-014 from handoff, recompute percentage from current tracker.json as part of pattern carry-forward, not just status verb.",
+      "status": "active",
+      "changeset_candidate": false
+    },
+    {
+      "id": "L-064",
+      "date": "2026-04-29",
+      "type": "process_change",
+      "learning": "Same-day-or-day-prior publications are a structural blind spot when claims-anchor citation lock-in happens at S(N-1) and the citation is consumed at S(N) without re-validating against today's D16 scan. PMID 42036791 (UK Biobank n=269,178, Park & Choi BJN 2026-04-27) was published one day before S40 ran and was not flagged in S40 handoff -- but materially affects CS-122 Brief 1 (n=4,653) citation lock-in.",
+      "source": "Today's D16 + dept-science PMID 42036791 vs S40 handoff 'UK Biobank n=4,653' anchor for CS-122 Brief 1",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "The fix is requiring the claims-approver (Devon) to confirm the citation against today's D16 fresh literature surface before any approval ship. See daily synthesis 2026-04-29-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-049"
+      ],
+      "target": "cgo-daily-pipeline/config/dispatch-instructions.md Layer 2 (CGO DM) -- when CS-122 family items appear in the CGO dispatch DM, require explicit 'D16 today's literature reviewed for citation supersession' confirmation before claims approval routes.",
+      "status": "active",
+      "changeset_candidate": false
     }
   ],
   "archived_entries": [
