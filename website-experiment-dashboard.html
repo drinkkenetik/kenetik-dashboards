@@ -464,19 +464,25 @@
         .metric-bar.empty {
             background: repeating-linear-gradient(45deg, var(--bg), var(--bg) 4px, var(--surface-hover) 4px, var(--surface-hover) 8px);
         }
-        /* Tick scale labels under each delta bar */
+        /* Tick scale labels under each delta bar — absolute positioned to
+           align exactly under the tick they describe. */
         .metric-scale {
-            display: flex;
-            justify-content: space-between;
+            position: relative;
+            height: 12px;
             font-size: 9px;
-            color: var(--text-muted);
             font-variant-numeric: tabular-nums;
             font-family: 'SF Mono', Menlo, Consolas, monospace;
-            padding: 0 1px;
             user-select: none;
         }
-        .metric-scale .danger-tick { color: var(--danger); font-weight: 700; }
-        .metric-scale .warning-tick { color: var(--warning); font-weight: 700; }
+        .metric-scale .tick-label {
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .metric-scale .tick-label.zero { color: var(--text-muted); opacity: 0.7; }
+        .metric-scale .tick-label.danger { color: var(--danger); font-weight: 700; }
+        .metric-scale .tick-label.warning { color: var(--warning); font-weight: 700; }
         .metric-delta {
             font-variant-numeric: tabular-nums;
             text-align: right;
@@ -1445,17 +1451,27 @@
                     <div><span class="var-val">var</span> ${fmtVal(variant)}</div>
                 </div>`;
 
-            // Scale labels under the bar — show threshold positions
-            const t1Pct = t1 ? t1.threshold_pct : null;
-            const t2Pct = t2 ? t2.threshold_pct : null;
-            const direction = (t1 || t2)?.direction;
+            // Scale labels — absolute positioned to align exactly under each
+            // tick mark on the bar above. Only renders labels for thresholds
+            // that actually exist on this metric (e.g., bounce_rate only has
+            // rise thresholds; cvr only has tier-1, no tier-2). Always
+            // includes the zero label.
+            const scaleLabels = [];
+            scaleLabels.push({ pct: 0, text: '0', cls: 'zero' });
+            if (t1) {
+                if (t1.direction === 'drop') scaleLabels.push({ pct: -t1.threshold_pct, text: '−' + t1.threshold_pct + '%', cls: 'danger' });
+                if (t1.direction === 'rise') scaleLabels.push({ pct: +t1.threshold_pct, text: '+' + t1.threshold_pct + '%', cls: 'danger' });
+            }
+            if (t2) {
+                if (t2.direction === 'drop') scaleLabels.push({ pct: -t2.threshold_pct, text: '−' + t2.threshold_pct + '%', cls: 'warning' });
+                if (t2.direction === 'rise') scaleLabels.push({ pct: +t2.threshold_pct, text: '+' + t2.threshold_pct + '%', cls: 'warning' });
+            }
             const scaleHtml = `
                 <div class="metric-scale">
-                    ${t1Pct ? `<span class="danger-tick">${direction === 'drop' ? '−' : ''}${t1Pct}%</span>` : '<span></span>'}
-                    ${t2Pct ? `<span class="warning-tick">${direction === 'drop' ? '−' : ''}${t2Pct}%</span>` : '<span></span>'}
-                    <span>0</span>
-                    ${t2Pct ? `<span class="warning-tick">${direction === 'rise' ? '+' : ''}${t2Pct}%</span>` : '<span></span>'}
-                    ${t1Pct ? `<span class="danger-tick">${direction === 'rise' ? '+' : ''}${t1Pct}%</span>` : '<span></span>'}
+                    ${scaleLabels.map(l => {
+                        const left = Math.max(0, Math.min(100, pctToLeft(l.pct)));
+                        return `<span class="tick-label ${l.cls}" style="left: ${left}%">${l.text}</span>`;
+                    }).join('')}
                 </div>`;
 
             return `
