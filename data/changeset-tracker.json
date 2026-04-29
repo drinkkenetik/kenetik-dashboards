@@ -8566,12 +8566,19 @@
       "owner": "Devon Price",
       "status": "draft",
       "subtype": "implementation",
-      "last_updated": "2026-04-27",
+      "last_updated": "2026-04-29",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
       "expected_impact": "Drops Katie share to ~50% (still above 35% threshold but structural relief). Closes 5/6 P0 zero-evidence pattern. Restores D13 to a recovery trajectory; without it, recovery math is statistically improbable per L-053.",
       "dependencies": "L-053 (war-room rule), L-048 (N=6 streak triggers Step 8a P0 \u2014 we are at N=8). No phantom deps; this CS audits and removes them.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "convene_update_2026_04_29_state_changes_logged",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Convene update appended to CS-120 brief. State changes since 4/27: CS-056/057 archived (Lawrence allocation drops to 2 CSes); CS-046 closed (Peter allocation drops to 3); Katie concentration recomputed to 55.6% (was 70.6%); L-045 phantom dep resolved on CS-100; CS-127 adaptive sweep shipped. Revised allocation tabulated. Tightened 60-90min decision-density agenda. Status transition draft \u2192 published on convene completion. War-room is 1d+ overdue per protocol; today is execution_target_date."
+        }
+      ],
       "created": "2026-04-27",
       "autonomy_tier": null,
       "risk_level": "medium",
@@ -8581,7 +8588,7 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-120.md",
-      "notes": "Summary: Convene L-053 war-room (overdue per protocol). Produce DECISIONS, not status: (a) approve owner-rebalance Katie 70.6% -> ~50% per Operations dept brief proposal; (b) restructure standup so missing-evidence patterns surface live (P0 ACK SLA); (c) phantom-dependency audit (L-045 split, outline-v3, CS-115 infra deps) \u2014 build or remove; (d) Cowork VM disk-exhaustion resilience review; (e) wholesale at-risk $813K review tier instantiation with Josh; (f) content_category writeback patch (Charlotte + Lawrence \u2014 Sprout sync field mapping); (g) TT/X/YT cadence structural decision. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['P4'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
+      "notes": "Summary: Convene L-053 war-room (overdue per protocol). Produce DECISIONS, not status: (a) approve owner-rebalance Katie 70.6% -> ~50% per Operations dept brief proposal; (b) restructure standup so missing-evidence patterns surface live (P0 ACK SLA); (c) phantom-dependency audit (L-045 split, outline-v3, CS-115 infra deps) \u2014 build or remove; (d) Cowork VM disk-exhaustion resilience review; (e) wholesale at-risk $813K review tier instantiation with Josh; (f) content_category writeback patch (Charlotte + Lawrence \u2014 Sprout sync field mapping); (g) TT/X/YT cadence structural decision. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['P4'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | 2026-04-29 (Devon via Claude /changeset-execute): Convene update logged. Revised allocation reflects today's archives (CS-056/057 to Lawrence dropped, CS-046 to Peter dropped). Katie baseline recomputed 55.6%. Status transitions draft \u2192 published on convene completion."
     },
     {
       "id": "CS-2026-121",
