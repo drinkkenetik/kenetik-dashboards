@@ -1,49 +1,53 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-28",
-  "next_id": 128,
+  "last_updated": "2026-04-29T16:25:00Z",
+  "next_id": 129,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-04-28T16:35:00Z",
-    "last_sweep_session": 40,
+    "last_sweep_date": "2026-04-29T16:25:00Z",
+    "last_sweep_session": 41,
     "last_sweep_result": "completed",
     "last_sweep_counts": {
-      "total_scanned": 126,
-      "measurement_overdue": 6,
-      "measured": 5,
-      "auto_closed": 5,
-      "flagged_human_review": 4,
-      "stale_detected": 16,
-      "draft_overdue_gt_5d": 15,
-      "nudges_sent_pending_phase4": 11
+      "total_scanned": 127,
+      "measurement_overdue": 0,
+      "measured": 0,
+      "auto_closed": 0,
+      "flagged_human_review": 0,
+      "stale_detected": 8,
+      "draft_overdue_gt_5d": 34,
+      "nudges_sent_pending_phase4": 43,
+      "measurement_due_today": 1,
+      "measurement_approaching_3d": 1,
+      "archive_candidates": 6
     },
     "measurement_overdue_remaining_after_manual_close": [],
     "manual_measurement_session": "2026-04-28-execute",
     "manual_measurement_root_cause": "sub_agent_mcp_inheritance_failure_per_skill_warning",
-    "cs_040_deferred_to_brief_full_measurement_date": "2026-05-07"
+    "cs_040_deferred_to_brief_full_measurement_date": "2026-05-07",
+    "notes_session_41": "Phase 3 sweep: inline analysis only (no measurement pulls \u2014 Klaviyo MCP get_campaign_report DATA_UNAVAILABLE per dept-lifecycle; CS-019 Katie to pull manually today per synthesis rec-263). 1 new ChangeSet generated (CS-2026-128 MHAM+GLP-1 consolidation per P4/DS-2026-04-29-002). Archive candidates flagged: CS-056, CS-057, CS-047, CS-058, CS-078, CS-055."
   },
   "summary": {
-    "total": 127,
+    "total": 128,
     "by_status": {
       "closed": 55,
       "published": 14,
       "approved": 9,
-      "draft": 46,
+      "draft": 47,
       "needs_feedback": 3
     },
     "by_risk": {
       "critical": 2,
-      "low": 63,
-      "medium": 41,
+      "low": 66,
+      "medium": 51,
       "high": 9
     },
     "by_subtype": {
-      "implementation": 78,
-      "investigation": 21,
+      "implementation": 89,
+      "investigation": 22,
       "quick": 17
     },
     "last_updated": "2026-04-29",
-    "total_changesets": 127,
-    "last_counted": "2026-04-28"
+    "total_changesets": 128,
+    "last_counted": "2026-04-29"
   },
   "changesets": [
     {
@@ -1831,6 +1835,12 @@
           "set_date": "2026-04-22",
           "session": "/changeset-execute CS-2026-019",
           "action": "Scheduled 2pm ET send 2026-04-22. Stale-approved flags resolved by execution."
+        },
+        {
+          "flag": "measurement_due_today",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "action": "katie_pull_today_eod"
         }
       ],
       "scheduled_send_date": "2026-04-22",
@@ -1892,7 +1902,14 @@
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
         "stale_approved_gt_7d",
-        "published_2026-04-22_scheduled_send_4-24"
+        "published_2026-04-22_scheduled_send_4-24",
+        {
+          "flag": "measurement_approaching_3d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_until_due": 2,
+          "action": "prep_owner_phase_4"
+        }
       ],
       "scheduled_send_date": "2026-04-24",
       "execution_target_date": null,
@@ -2669,7 +2686,15 @@
       "execution_target_date": "2026-04-28",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 7,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-032",
@@ -3740,7 +3765,22 @@
       "risk_level": "medium",
       "dependencies": [],
       "notes": "| 2026-04-15: Unblocked \u2014 CS-065 closed as superseded.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Capture trending conversation before competitors. Replicate April 2 science post outperformance (2.7% ER, 40x baseline). Establish Kenetik cognitive performance positioning.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: ER >2% on each piece, combined impressions >50K in 7d, graduation candidacy for paid amplification]",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 23,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "reason": "window_or_event_passed",
+          "action": "owner_decide_archive_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-048",
@@ -3873,6 +3913,13 @@
           "session": "2026-04-28-s1",
           "action": "devon_decision_sweep_today",
           "age_days": 13
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 14,
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-20"
@@ -4147,7 +4194,15 @@
       "revision_notes": "=== /changeset-review revision 2026-04-22 (Katie) ===\n\nREQUIRED (address before re-submission):\n\nR1. Tracker hygiene \u2014 review_tier: fix 'express' \u2192 'standard' per \u00a76. This CS is subtype=implementation + expected revenue $9K/yr (not \u2265$10K for FULL, not <$2K for EXPRESS). Same \u00a76 enforcement gap as EC-2026-006 (CS-2026-031). Reference EC-2026-006 if filing another note.\n\nR2. Tracker hygiene \u2014 expected_impact.revenue.expected: current value 750 appears to be monthly; convention across the tracker is annualized. Update to 9000 (matches brief's '$750/mo ($9,000/yr)'). Same treatment for upside (1500 \u2192 18000) and downside (200 \u2192 2400), and margin fields at 50% (375\u21924500, 750\u21929000, 100\u21921200).\n\nR3. Resolution Path documentation \u2014 the table cells are boilerplate. Actual changes are Remove (variant split) + Add (LoyaltyLion incentive + rule) + Refine (SMS link audit). Rewrite the Diagnose cell with the specific CS-2026-036 findings (3.7% submission rate declining from 6.4% peak; 'Copy of' variant outperforms original on 90d; SMS UX gap). Rewrite Remove/Refine/Add cells to describe what each of the three changes does. Update Resolution Path label to reflect multi-step.\n\nR4. Factual grounding \u2014 add inline [src: cgo-logs/changesets/CS-2026-036.md#...] markers on the specific metric claims per \u00a710c: 33.7% open, 3.2% click, 9.6% CTO, $1.19 RPR, 3.7% submission rate, etc.\n\nR5. UNGROUNDED industry-benchmark claims \u2014 either cite the benchmark source for '2-4x review volume' (LoyaltyLion benchmark? Klaviyo case study? specific Kenetik data?) and '2-3x higher repeat rate for review writers,' or flag them as [UNGROUNDED \u2014 requires external verification]. These support L1 indirect-lift math and L3 reasoning, so they're load-bearing.\n\nRECOMMENDED (strongly consider):\n\nC1. L1 breakdown math \u2014 the component breakdown in \u00a73 sums to $702-$1,502/mo margin (direct $502 + indirect $150-$700 + SMS $50-$300), which is materially above the $375/mo expected value. Either the expected is a conservative dilution assumption (document it) or the bottom-up was computed separately from the summary. Reconcile.\n\nC2. L4 learning quality \u2014 consider a 20/80 A/B holdout on the LoyaltyLion incentive copy (not on variant scaling, which is already proven). Isolating the incentive effect from the variant effect produces a much cleaner L4 answer about 'does LoyaltyLion incentive lift review submission?' than a blended pre/post. 14-day window with the baseline from CS-2026-036 is okay-but-noisy without a control.\n\nOPTIONAL:\n\nO1. Clarify in the brief that the ~$502/mo variant-scaling component is effectively already proven (90d of 'Copy of' variant outperforming) \u2014 that change is near-deterministic. The unknowns (and hence the learning) are the LoyaltyLion and SMS-fix components. This reframing tightens the hypothesis.\n\n--- Substantive review (preserved for reference) ---\n\nResolution Path audit: pass (after R3 addressed)\nL0 Anti-pattern check: no match \u2014 pass\nL1 math: reasonable but inconsistent (see C1)\nL2: neutral DTC \u2014 agree\nL3: positive \u2014 agree, cross-dimensional L3\u2192L1 reasoning present\nL4: valuable hypothesis, weak method without A/B (see C2)\nL5: pass \u2014 no claims, standard LoyaltyLion disclosure\nConflict check: clear \u2014 no active CS touches flow Rcgah9\nPM support: strong \u2014 L-028 directly corroborates baseline + variant winner\nReversibility: <25 min, fully reversible \u2014 low execution risk\n\nOverall: the substance is solid. The required items are tracker-hygiene + documentation quality, not safety. Address R1-R5 and resubmit via /changeset-review CS-2026-053.",
       "revision_date": "2026-04-22",
       "last_updated": "2026-04-22",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "needs_feedback_stale_gt_3d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 22,
+          "action": "devon_decision_overdue"
+        }
+      ]
     },
     {
       "id": "CS-2026-054",
@@ -4209,6 +4264,13 @@
           "set_date": "2026-04-27",
           "session": "2026-04-27-s1",
           "overdue_days": 5,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 21,
           "action": "owner_nudge_queued_phase_4"
         }
       ]
@@ -4280,6 +4342,20 @@
           "session": "2026-04-28-s1",
           "action": "archive_review_war_room",
           "age_days": 20
+        },
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 21,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "reason": "window_or_event_passed",
+          "action": "owner_decide_archive_phase_4"
         }
       ]
     },
@@ -4313,6 +4389,20 @@
           "session": "2026-04-28-s1",
           "action": "archive_review_war_room",
           "age_days": 13
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 14,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "reason": "point_in_time_diagnostic_superseded",
+          "action": "devon_decide_archive_phase_4"
         }
       ],
       "last_updated": "2026-04-20"
@@ -4347,6 +4437,20 @@
           "session": "2026-04-28-s1",
           "action": "archive_review_war_room",
           "age_days": 13
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 14,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "reason": "point_in_time_diagnostic_superseded",
+          "action": "devon_decide_archive_phase_4"
         }
       ],
       "last_updated": "2026-04-20"
@@ -4373,7 +4477,22 @@
       "dependencies": [],
       "notes": " | 2026-04-15: Unblocked \u2014 CS-065 closed as superseded.\n2026-04-23: Apr 23 owner scrub (AP-003): superfiliate creator activation routes to Nick + Lawrence per Content Routing.",
       "last_updated": "2026-04-23",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 19,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "reason": "window_or_event_passed",
+          "action": "owner_decide_archive_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-059",
@@ -4529,7 +4648,15 @@
       "revision_date": "2026-04-22",
       "last_updated": "2026-04-22",
       "notes": " | 2026-04-22 /changeset-review: REVISE. 3-touch sequence no longer executable \u2014 2 of 3 touches past planned send dates. Compress to 1 combined touch (subscribe CTA + last-chance) targeting Apr 26-28. Also: populate L1-L5, normalize schema, rewrite Resolution Path (Add \u2192 Refine, branch FTP instead of parallel flow), resolve CS-2026-031 FTP contamination, waive or attach RCA on pat-015. See revision_notes.",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "needs_feedback_stale_gt_3d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 19,
+          "action": "devon_decision_overdue"
+        }
+      ]
     },
     {
       "id": "CS-2026-063",
@@ -4646,6 +4773,13 @@
           "set_date": "2026-04-27",
           "session": "2026-04-27-s1",
           "overdue_days": 5,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 16,
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -5059,7 +5193,15 @@
       "last_updated": "2026-04-14",
       "created": "2026-04-14",
       "notes": "[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: FAQ + social content reducing T1D-related support tickets by 30%. Establishes defensive content moat.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: 7d: content published on 2+ platforms. 14d: engagement rate. 30d: support ticket volume on ketone safety questions.]",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 15,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-070",
@@ -5101,7 +5243,15 @@
       "approved_date": "2026-04-22",
       "review_tier": "express",
       "notes": "| 2026-04-22 /changeset-review: EXPRESS AUTO-APPROVE. All 11 Express checklist items passed (rollback was implied, not explicit \u2014 acceptable for low-risk feed optimization). Flagged for execution: (a) document campaign settings BEFORE restructure for clean revert; (b) if feed audit + bid restructure both fail to move ROAS, escalate to RCA rather than iterate; (c) capture learning on whether feed-quality or bid-strategy was the actual root cause (diagnostic value). Deferred hygiene to next synthesis pass: canonical surface name (paid-google \u2192 paid_google per \u00a78), inline [src:] markers, L1-L5 formal population.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Recover $251/wk spend to >2.0x ROAS (from 0.40x). Low absolute impact but diagnostic value for Google Shopping channel.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: 24h: feed audit complete, issues documented. 48h: restructured campaign live. 7d: ROAS measurement vs 0.40x baseline.]",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 7,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-071",
@@ -5147,7 +5297,15 @@
       "autonomy_tier": 1,
       "notes": "Created by S33 synthesis.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: +80-100 bps blended ROAS in 7d]",
       "last_updated": "2026-04-15",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 14,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-072",
@@ -5193,7 +5351,15 @@
       "autonomy_tier": 0,
       "notes": "Created by S33 synthesis; hard-gate violation.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Restore 2.5%+ CTR to 3806 recipients]",
       "last_updated": "2026-04-15",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 14,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-073",
@@ -5239,7 +5405,15 @@
       "autonomy_tier": 1,
       "notes": "Created by S33 synthesis.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: 2x winback CTR]",
       "last_updated": "2026-04-15",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 14,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-074",
@@ -5353,7 +5527,15 @@
       "autonomy_tier": 1,
       "notes": "Spawned from L-022. Created by S33 synthesis.\n2026-04-23: Apr 23 owner scrub (AP-003): 'Lifecycle lead' placeholder resolved to Katie Spaller \u2014 recharge/subscription owner per Content Routing.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Identify/protect single largest LTV lever in portfolio]",
       "last_updated": "2026-04-23",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 14,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-076",
@@ -5391,7 +5573,15 @@
       "autonomy_tier": 2,
       "source": "synthesis",
       "notes": "[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Recovery of desktop conversion would reverse -24.4% new customer order decline \u2014 estimated $5K-$15K/week revenue at stake.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: 48h diagnosis window, then 5d recovery observation. Target: desktop ATC within 10% of prior baseline.]",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 13,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-077",
@@ -5481,7 +5671,22 @@
       "autonomy_tier": 2,
       "source": "calendar_safety_net",
       "notes": "[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: [PIPELINE GAP: needs estimation]]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: To be defined during review. Recommended 7-day post-event window through 4/26.]",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 13,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "reason": "window_or_event_passed",
+          "action": "owner_decide_archive_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-079",
@@ -5607,6 +5812,13 @@
           "session": "2026-04-27-s1",
           "overdue_days": 10,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 13,
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -5670,7 +5882,15 @@
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-081.md",
       "notes": "Spawned from 2026-04-17 synthesis rec-219. Board 4/15 flagged Lifetime Club termination as material to $5M investor round. Routes Peter (Legal/Ops) + Josh (Finance). Investigation subtype \u2014 spawns Implementation CS on path selection. Escalates to Cliff if missed.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 12,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
@@ -5734,7 +5954,15 @@
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-082.md",
       "notes": "Spawned from 2026-04-17 synthesis rec-220. D18 flagged Matt Hughes FB reel as brand-safety HIGH (hostile comments + DV references). Coordinates with CS-2026-074 response framework voice. DV-ref volume >5/day in first 72h escalates to Devon for pull-spend consideration.\n2026-04-23: Apr 23 owner scrub (AP-003): meta-ads brand safety on paid surface routes to Katie (paid-media owner) + Peter (COO on content response). Charlotte runs organic social, not paid.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 12,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
@@ -5805,6 +6033,13 @@
           "set_date": "2026-04-27",
           "session": "2026-04-27-s1",
           "overdue_days": 5,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 12,
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -6139,6 +6374,13 @@
           "set_date": "2026-04-27",
           "session": "2026-04-27-execute",
           "action": "Original budget source (CS-089) executed at ~3% of brief scope, leaving 088 unfunded at original scale. Katie's directive: rescope 088 to $20-50/day test that fits current paid-media envelope without new reallocation. To be revised at next graduation-pipeline review or next time 088 surfaces in synthesis."
+        },
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 9,
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -6342,7 +6584,15 @@
       "autonomy_tier": null,
       "file": "cgo-logs/changesets/CS-2026-090.md",
       "notes": "Spawned from 2026-04-20 synthesis rec-227 (P5 Ketone-IQ counter). Direct response to Ketone-IQ APRIL26 30% sub discount + Tony Robbins YouTube push flagged by D13 (5th consecutive session below 40% share of voice). Katie owns email copy + flow (email/SMS is Katie's surface per Content Routing); Lawrence owns PDP module build. Peter claims review required pre-send. Apr 23: reassigned from Nicole Sanchez to Katie Spaller per team-roles.md Content Routing \u2014 Sales Support is not the owner of Klaviyo/Shopify surfaces.\n2026-04-23: Apr 23 owner scrub: Lawrence removed \u2014 Creator Partnerships role does not own lifecycle PDP modules on klaviyo/shopify. Katie (lifecycle/shopify) is sole owner.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 9,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
@@ -6548,7 +6798,15 @@
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-093.md",
       "notes": "Spawned from PM L-036 (changeset_candidate=true, action_taken=None). Companion to CS-2026-088 \u2014 CS-088 tests whether freedom framing survives FB while this CS redirects the broader brief away from endurance. Sets PM L-036 action_taken upon publish.\n2026-04-23: Apr 23 owner scrub (AP-003): paid creative brief on meta-ads pairs Katie + Peter, not Charlotte (organic-only).",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 9,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
@@ -6618,7 +6876,15 @@
       "revision_date": null,
       "rejection_notes": null,
       "learning_note": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 9,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-095",
@@ -6680,6 +6946,13 @@
           "session": "2026-04-28-s1",
           "action": "hard_deadline_today",
           "age_days": 4
+        },
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 8,
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -6888,6 +7161,13 @@
           "set_date": "2026-04-28",
           "session": "2026-04-28-execute",
           "action": "Brandon Gate 2 dossier packaged. Claims envelope: mechanism (Tier 2 Metabolic Brain Fuel) + Joelle Debban testimonial (FTC \u00a7255). PMID 41962970 endurance-CHO constraint formally scoped OUT (per claims-compliance.md 2026-04-15 entry \u2014 Martyn applies only to endurance claims, this reel is cognitive/mechanism). Adjacent constraints verified: Tominec 2026 altitude-exercise boundary, Miyatsu 2024 null, disease adjacency ban, Sander 2024 ICH, AUD ban, no-hype voice. FTC disclosure language pending Lawrence's confirmation of Joelle relationship state. Trend window closed/past peak \u2014 claims-clean but Devon to decide publish-today vs reframe (economics note only)."
+        },
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 7,
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-28"
@@ -6988,6 +7268,13 @@
           "set_date": "2026-04-28",
           "session": "2026-04-28-execute",
           "action": "Devon side approved (Standard tier, 4 conditions documented in dossier). Status draft \u2192 needs_feedback. Explicitly awaiting Cliff Morgan co-approval per \u00a7 Autonomy Tier. One-screen ask designed for \u22645 min review. If Cliff approves: status \u2192 approved; unblocks GP-TEASE-0429 + 5 May email CSes (102/104/106/107/109). If silent 72h: escalation."
+        },
+        {
+          "flag": "needs_feedback_stale_gt_3d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 7,
+          "action": "devon_decision_overdue"
         }
       ],
       "last_updated": "2026-04-28"
@@ -7251,7 +7538,15 @@
       "scheduled_send_date": "2026-05-01",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-103",
@@ -7303,7 +7598,15 @@
       "scheduled_send_date": "2026-05-04",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-104",
@@ -7354,7 +7657,15 @@
       "scheduled_send_date": "2026-05-06",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-105",
@@ -7407,7 +7718,15 @@
       "scheduled_send_date": "2026-05-08",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-106",
@@ -7460,7 +7779,15 @@
       "scheduled_send_date": "2026-05-10",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-107",
@@ -7513,7 +7840,15 @@
       "scheduled_send_date": "2026-05-13",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-108",
@@ -7565,7 +7900,15 @@
       "scheduled_send_date": "2026-05-16",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-109",
@@ -7617,7 +7960,15 @@
       "scheduled_send_date": "2026-05-18",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-110",
@@ -7669,7 +8020,15 @@
       "scheduled_send_date": "2026-05-21",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-111",
@@ -7720,7 +8079,15 @@
       "scheduled_send_date": "2026-05-23",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-112",
@@ -7772,7 +8139,15 @@
       "scheduled_send_date": "2026-05-25",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-113",
@@ -7825,7 +8200,15 @@
       "scheduled_send_date": "2026-05-29",
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "draft_stale_gt_5d",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-s1",
+          "days_stale": 6,
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-114",
@@ -8364,6 +8747,55 @@
       ],
       "last_updated": "2026-04-28",
       "notes": "Adaptive lifecycle sweep proposal. One command, two contexts. Phase 0.8 sets measurement_capable boolean; sub-agent runs queue deferred CSes to lifecycle_sweep.pending_measurement_queue and skip Phase 2; main-session runs drain the queue. last_sweep_counts gains measurement_deferred + pending_measurement_queue_size fields so silent failure becomes legible. Optional Slack nudge on detection-only runs. No new commands, no new data stores. See file for full Resolution Hierarchy walkthrough."
+    },
+    {
+      "id": "CS-2026-128",
+      "title": "MHAM \"More Good Days = Good Fuel\" Consolidated Series (with GLP-1 Cognitive Bridge)",
+      "subtype": "implementation",
+      "department": "content",
+      "platforms": [
+        "organic-social",
+        "klaviyo",
+        "blog"
+      ],
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Charlotte Thamm + Lawrence Giarrizzo + Brandon Dyksterhouse + Devon Price",
+      "created": "2026-04-29",
+      "objective_level": "L3",
+      "category": "content_campaign",
+      "dependencies": [
+        "CS-2026-122",
+        "CS-2026-125"
+      ],
+      "blocks": [],
+      "spawned_from": "synthesis_2026-04-29-s1_P4",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "L1_margin_usd": null,
+        "L2_cash_usd": null,
+        "L3_customer_quality_score": "[PIPELINE GAP \u2014 needs estimation; expected positive directional via #metabolichealth + #MHAM2026 + #GLP1 hashtag adjacency capture, currently 21:1 underindexed]",
+        "L4_learning_value": "Closed-loop measurement on consolidated brief vs prior two-brief approach; tests whether single-anchor multi-trend content outperforms parallel single-trend briefs",
+        "L5_brand_check": "[PIPELINE GAP \u2014 blocks auto-advance until reviewed]"
+      },
+      "routed_to": null,
+      "routed_via": null,
+      "routed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_window": "2026-05-01 to 2026-05-31",
+      "measurement_due": "2026-06-07",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-128.md",
+      "notes": "Consolidates DS-04 MHAM May Campaign + DS-04 GLP-1 cognitive bridge into single MHAM-anchored series. Resolution Hierarchy Step 2 (Remove duplicate briefs) > Step 4 (Add). Production load reduced ~50%. Tier 2 mechanism only \u2014 no new Tier 1 mental-health claims. PMID 42038700 anchor.",
+      "linked_calendar_activity": "MHAM-2026-MAY",
+      "source": "synthesis_priority_stack",
+      "autonomy_tier": 2,
+      "sweep_flags": [],
+      "scheduled_send_date": null
     }
   ],
   "queue_actions": {
