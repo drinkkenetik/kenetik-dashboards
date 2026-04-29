@@ -7024,7 +7024,7 @@
         "primary_metric": "mar_2026_cohort_m1_retention",
         "primary_metric_target": ">=18% (vs Feb 2026 baseline 12.8%)",
         "_impact_note": "Expanded 2026-04-22 to absorb CS-2026-052's all-subscriber refinement scope. Added $14.4K/yr expected margin ($7.2K/yr downside, $28.8K/yr upside) on top of the original Mar 2026 cohort save projection. Addition reflects refinement benefit to non-Mar cohorts only; Mar cohort benefit was already modeled in the original CS-2026-100 scope.",
-        "L1_margin": "$16K expected (bare branch, annualized) / $32K upside / $3.5K downside \u2014 Mar cohort 5,987 \u00d7 +5pp M1 lift \u00d7 $45 AOV \u00d7 3 renewals",
+        "L1_margin": "$23.2K expected (combined Layer 1 + Layer 2, annualized) / $46.4K upside / $5.3K downside \u2014 base refinement $7.2K incremental + Mar cohort branch $16K (5,987 \u00d7 +5pp M1 lift \u00d7 $45 AOV \u00d7 3 renewals)",
         "L2_cash": "Net-positive \u2014 renewal-save discount fired conditionally at cancel risk, not blanket; preserves cash vs blanket-promo",
         "L3_customer_quality": "Mar cohort subscription_ltv_30d target \u2265$32 (vs current $25.93); +5.2pp M1 retention compounds to LTV",
         "L4_learning": "Tests whether single-cohort branch logic scales or whether generalized cohort-first-renewal infra is needed; learning signal documented in \u00a7Notes",
@@ -7039,7 +7039,7 @@
       ],
       "routed_via": "slack",
       "routed_date": "2026-04-22",
-      "approved_by": "Devon Price (CGO co-approval) + Brandon Dyksterhouse (claims gate pre-fire on science-forward variant)",
+      "approved_by": "Katie Spaller",
       "approved_date": "2026-04-29",
       "published_date": "",
       "measurement_window": "30d_post_first_renewal_wave",
@@ -7048,7 +7048,7 @@
       "outcome": "",
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-100.md",
-      "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946. | 2026-04-22 EXPANDED: Absorbed CS-2026-052 (closed superseded same session). Scope now includes all-subscriber refinement of the Upcoming Subscription Order Flow (value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary split + pause-instead-of-cancel messaging) as the base layer, with the Mar 2026 cohort branch + variants as the overlay. All cohorts benefit from the base refinement, not just Mar 2026. | 2026-04-28 (Devon via Claude /changeset-review): Co-approval dossier packaged. Recommended APPROVE_STANDARD_BARE_BRANCH_WITH_CONDITIONS. Bare branch margin reconciliation: $16K (Read A, default) vs $23.2K (Devon directive, likely combined reference). Strip L-045 phantom dep from bare branch. Spawn 1 sibling CS for Layer 1 base refinement; flag Phase 3 as L-045-deferred. | 2026-04-29 (Katie via /changeset-execute \u2192 /changeset-review): APPROVED \u2014 STANDARD tier, bare branch (Layer 2 / Mar 2026 cohort branch) only. Devon co-approval per prior 2026-04-28 directive; Brandon claims-pass condition on science-forward variant tracked as pre-fire gate. Margin read default = Read A: $16K expected (Section 3 yaml, bare branch). Layer 1 (all-subscriber base refinement) DEFERRED to new sibling CS (target: ship within 14 days, Katie owner). Phase 3 (involuntary churn save) DEFERRED until L-045 voluntary/involuntary split lands. Phantom-dependency anti-pattern fix applied via scope reduction. L0-L5 all pass (L5 pass pending Brandon claims-pass on science-forward variant only). Approval log: CS-2026-100 approved by Katie (per Devon directive).",
+      "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946. | 2026-04-22 EXPANDED: Absorbed CS-2026-052 (closed superseded same session). Scope now includes all-subscriber refinement of the Upcoming Subscription Order Flow (value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary split + pause-instead-of-cancel messaging) as the base layer, with the Mar 2026 cohort branch + variants as the overlay. All cohorts benefit from the base refinement, not just Mar 2026. | 2026-04-28 (Devon via Claude /changeset-review): Co-approval dossier packaged. Recommended APPROVE_STANDARD_BARE_BRANCH_WITH_CONDITIONS. Bare branch margin reconciliation: $16K (Read A, default) vs $23.2K (Devon directive, likely combined reference). Strip L-045 phantom dep from bare branch. Spawn 1 sibling CS for Layer 1 base refinement; flag Phase 3 as L-045-deferred. | 2026-04-29 (Katie via /changeset-execute \u2192 /changeset-review): APPROVED \u2014 STANDARD tier, bare branch (Layer 2 / Mar 2026 cohort branch) only. Devon co-approval per prior 2026-04-28 directive; Brandon claims-pass condition on science-forward variant tracked as pre-fire gate. Margin read default = Read A: $16K expected (Section 3 yaml, bare branch). Layer 1 (all-subscriber base refinement) DEFERRED to new sibling CS (target: ship within 14 days, Katie owner). Phase 3 (involuntary churn save) DEFERRED until L-045 voluntary/involuntary split lands. Phantom-dependency anti-pattern fix applied via scope reduction. L0-L5 all pass (L5 pass pending Brandon claims-pass on science-forward variant only). Approval log: CS-2026-100 approved by Katie (per Devon directive). | 2026-04-29 (Katie via /changeset-review correction): TWO CORRECTIONS to the prior approval entry: (1) Approver-of-record corrected from Devon to Katie. Klaviyo flow change is in Katie's surface-of-change authority (AP-003 routing: klaviyo + lifecycle-marketing \u2192 Katie Spaller). Devon's 2026-04-28 input was guidance on pricing-mechanic visibility, not a required approval gate \u2014 the renewal-save discount mechanic is pre-existing in the Upcoming Subscription Order Flow, not net-new pricing. (2) Scope re-expanded from bare-branch back to combined Layer 1 + Layer 2. Splitting Layer 1 (base refinement) into a sibling CS was process overhead \u2014 Layer 1 has no data dependency (just template work) and Mar cohort benefits more from shipping refreshed base + cohort branch together than from cohort variants on top of stale base. Phase 3 (involuntary churn save) STAYS deferred \u2014 that is the only piece with a real L-045 dependency. Margin read returns to $23.2K combined expected (Layer 1 incremental $7.2K + Layer 2 Mar cohort $16K). Sibling-CS spawn action withdrawn.",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-25",
       "executed_date": "",
@@ -7098,15 +7098,33 @@
           "set_date": "2026-04-29",
           "session": "/changeset-review CS-2026-100",
           "action": "Edge case to log at first measurement read: if bare-branch Mar cohort hits \u226518% M1 retention WITHOUT Layer 1 base refinement live, that is a learning signal that the absorbed Layer 1 may not pull as much margin as the expansion language projected ($7.2K-$14.4K incremental). Use this signal to re-evaluate the deferred Layer 1 sibling CS."
+        },
+        {
+          "flag": "approver_corrected_to_katie_2026_04_29",
+          "set_date": "2026-04-29",
+          "session": "/changeset-review CS-2026-100 correction",
+          "action": "Approver-of-record corrected from Devon Price to Katie Spaller. Klaviyo flow change is in Katie's surface-of-change authority lane (AP-003: klaviyo + lifecycle-marketing \u2192 Katie). Devon's 2026-04-28 input was guidance, not a required gate \u2014 pre-existing renewal-save discount mechanic, not net-new pricing."
+        },
+        {
+          "flag": "scope_re_expanded_to_combined_2026_04_29",
+          "set_date": "2026-04-29",
+          "session": "/changeset-review CS-2026-100 correction",
+          "action": "Scope re-expanded from bare-branch (Layer 2 only) back to combined Layer 1 + Layer 2. Layer 1 base refinement (value-reinforcement block, skip/reschedule CTAs, pause-instead-of-cancel messaging) ships with the Mar cohort branch in a single Klaviyo update. Layer 1 has no data dependency. Mar cohort gets refreshed base + cohort variants together. Phase 3 (involuntary churn save) STAYS deferred until L-045 lands \u2014 that is the only real dep. Sibling-CS spawn action withdrawn. Margin read $23.2K combined expected."
+        },
+        {
+          "flag": "sibling_cs_spawn_withdrawn",
+          "set_date": "2026-04-29",
+          "session": "/changeset-review CS-2026-100 correction",
+          "action": "Withdrew the spawn action for \"Upcoming Subscription Order Flow \u2014 All-Subscriber Base Refinement\" sibling CS. Layer 1 is now in-scope of CS-2026-100 itself. Supersedes the 2026-04-29 spawn_layer_1_sibling_cs flag."
         }
       ],
       "review_tier": "standard",
-      "scope_reduced_to": "bare_branch_layer_2_mar_cohort_only",
+      "scope_reduced_to": null,
       "conditions": [
-        "devon_margin_read_default_16k_section_3_yaml",
         "brandon_claims_pass_on_science_forward_variant_pre_fire",
-        "tracker_l_045_dependency_scope_phase_3_only_already_clean"
-      ]
+        "phase_3_involuntary_save_remains_deferred_pending_l_045_voluntary_involuntary_split"
+      ],
+      "scope": "combined_layer_1_base_refinement_plus_layer_2_mar_cohort_branch_phase_3_deferred"
     },
     {
       "id": "CS-2026-101",
