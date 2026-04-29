@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-28",
+  "last_updated": "2026-04-29",
   "next_id": 129,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-29T16:25:00Z",
@@ -31,9 +31,9 @@
   "summary": {
     "total": 128,
     "by_status": {
-      "closed": 55,
+      "closed": 57,
       "published": 16,
-      "approved": 8,
+      "approved": 6,
       "draft": 46,
       "needs_feedback": 3
     },
@@ -48,9 +48,9 @@
       "investigation": 22,
       "quick": 17
     },
-    "last_updated": "2026-04-28",
+    "last_updated": "2026-04-29",
     "total_changesets": 128,
-    "last_counted": "2026-04-28"
+    "last_counted": "2026-04-29"
   },
   "changesets": [
     {
@@ -4370,7 +4370,7 @@
       "platforms": [
         "daily-pipeline"
       ],
-      "status": "approved",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Devon Price",
       "created": "2026-04-10",
@@ -4383,9 +4383,16 @@
       "autonomy_tier": 1,
       "approved_by": "Devon",
       "approved_date": "2026-04-15",
-      "notes": " | 2026-04-15: Devon approved. Expand D04 Polar pull to include campaign-level ATC + checkout metrics.",
+      "notes": "2026-04-15: Devon approved. Expand D04 Polar pull to include campaign-level ATC + checkout metrics. | 2026-04-29 (Devon via Claude /changeset-execute): ARCHIVED. Diagnostic served purpose. archived: true.",
       "sweep_flags": [
-        "stale_approved_gt_7d",
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "unknown",
+          "session": "pre_2026-04-29",
+          "action": "String-flag normalized to dict during 2026-04-29 sweep.",
+          "resolved_date": "2026-04-29",
+          "resolution": "Resolved by archive 2026-04-29."
+        },
         {
           "flag": "archive_candidate_13d",
           "set_date": "2026-04-28",
@@ -4398,17 +4405,30 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "days_stale": 14,
-          "action": "owner_nudge_queued_phase_4"
+          "action": "owner_nudge_queued_phase_4",
+          "resolved_date": "2026-04-29",
+          "resolution": "Resolved by archive 2026-04-29."
         },
         {
           "flag": "archive_candidate",
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "reason": "point_in_time_diagnostic_superseded",
-          "action": "devon_decide_archive_phase_4"
+          "action": "devon_decide_archive_phase_4",
+          "resolved_date": "2026-04-29",
+          "resolution": "Resolved by archive 2026-04-29."
+        },
+        {
+          "flag": "archived_2026_04_29_per_cgo_synthesis",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Archived per 2026-04-29 CGO synthesis decision #6. Point-in-time diagnostic served its purpose; original problem diagnosed and propagated downstream. Removed from CS-120 owner-rebalance Lawrence allocation (net-zero impact). Drops Devon's approved-column load by 50% combined with sibling archive."
         }
       ],
-      "last_updated": "2026-04-20"
+      "last_updated": "2026-04-29",
+      "outcome": "archived_diagnostic_no_longer_needed",
+      "closed_date": "2026-04-29",
+      "archived": true
     },
     {
       "id": "CS-2026-057",
@@ -4418,7 +4438,7 @@
       "platforms": [
         "daily-pipeline"
       ],
-      "status": "approved",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Devon Price",
       "created": "2026-04-10",
@@ -4431,9 +4451,16 @@
       "autonomy_tier": 1,
       "approved_by": "Devon",
       "approved_date": "2026-04-15",
-      "notes": " | 2026-04-15: Devon approved. Update D07/D13 scans to cross-reference Sprout published post counts before declaring content drought.",
+      "notes": "2026-04-15: Devon approved. Update D07/D13 scans to cross-reference Sprout published post counts before declaring content drought. | 2026-04-29 (Devon via Claude /changeset-execute): ARCHIVED. Diagnostic served purpose. archived: true.",
       "sweep_flags": [
-        "stale_approved_gt_7d",
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "unknown",
+          "session": "pre_2026-04-29",
+          "action": "String-flag normalized to dict during 2026-04-29 sweep.",
+          "resolved_date": "2026-04-29",
+          "resolution": "Resolved by archive 2026-04-29."
+        },
         {
           "flag": "archive_candidate_13d",
           "set_date": "2026-04-28",
@@ -4446,17 +4473,30 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "days_stale": 14,
-          "action": "owner_nudge_queued_phase_4"
+          "action": "owner_nudge_queued_phase_4",
+          "resolved_date": "2026-04-29",
+          "resolution": "Resolved by archive 2026-04-29."
         },
         {
           "flag": "archive_candidate",
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "reason": "point_in_time_diagnostic_superseded",
-          "action": "devon_decide_archive_phase_4"
+          "action": "devon_decide_archive_phase_4",
+          "resolved_date": "2026-04-29",
+          "resolution": "Resolved by archive 2026-04-29."
+        },
+        {
+          "flag": "archived_2026_04_29_per_cgo_synthesis",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Archived per 2026-04-29 CGO synthesis decision #6. Point-in-time diagnostic served its purpose; original problem diagnosed and propagated downstream. Removed from CS-120 owner-rebalance Lawrence allocation (net-zero impact). Drops Devon's approved-column load by 50% combined with sibling archive."
         }
       ],
-      "last_updated": "2026-04-20"
+      "last_updated": "2026-04-29",
+      "outcome": "archived_diagnostic_no_longer_needed",
+      "closed_date": "2026-04-29",
+      "archived": true
     },
     {
       "id": "CS-2026-058",
@@ -7338,7 +7378,7 @@
       "outcome": "",
       "closed_date": "",
       "file": "cgo-logs/changesets/CS-2026-100.md",
-      "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946. | 2026-04-22 EXPANDED: Absorbed CS-2026-052 (closed superseded same session). Scope now includes all-subscriber refinement of the Upcoming Subscription Order Flow (value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary split + pause-instead-of-cancel messaging) as the base layer, with the Mar 2026 cohort branch + variants as the overlay. All cohorts benefit from the base refinement, not just Mar 2026. | 2026-04-28 (Devon via Claude /changeset-review): Co-approval dossier packaged. Recommended APPROVE_STANDARD_BARE_BRANCH_WITH_CONDITIONS. Bare branch margin reconciliation: $16K (Read A, default) vs $23.2K (Devon directive, likely combined reference). Strip L-045 phantom dep from bare branch. Spawn 1 sibling CS for Layer 1 base refinement; flag Phase 3 as L-045-deferred. | 2026-04-29 (Katie via /changeset-execute \u2192 /changeset-review): APPROVED \u2014 STANDARD tier, bare branch (Layer 2 / Mar 2026 cohort branch) only. Devon co-approval per prior 2026-04-28 directive; Brandon claims-pass condition on science-forward variant tracked as pre-fire gate. Margin read default = Read A: $16K expected (Section 3 yaml, bare branch). Layer 1 (all-subscriber base refinement) DEFERRED to new sibling CS (target: ship within 14 days, Katie owner). Phase 3 (involuntary churn save) DEFERRED until L-045 voluntary/involuntary split lands. Phantom-dependency anti-pattern fix applied via scope reduction. L0-L5 all pass (L5 pass pending Brandon claims-pass on science-forward variant only). Approval log: CS-2026-100 approved by Katie (per Devon directive). | 2026-04-29 (Katie via /changeset-review correction): TWO CORRECTIONS to the prior approval entry: (1) Approver-of-record corrected from Devon to Katie. Klaviyo flow change is in Katie's surface-of-change authority (AP-003 routing: klaviyo + lifecycle-marketing \u2192 Katie Spaller). Devon's 2026-04-28 input was guidance on pricing-mechanic visibility, not a required approval gate \u2014 the renewal-save discount mechanic is pre-existing in the Upcoming Subscription Order Flow, not net-new pricing. (2) Scope re-expanded from bare-branch back to combined Layer 1 + Layer 2. Splitting Layer 1 (base refinement) into a sibling CS was process overhead \u2014 Layer 1 has no data dependency (just template work) and Mar cohort benefits more from shipping refreshed base + cohort branch together than from cohort variants on top of stale base. Phase 3 (involuntary churn save) STAYS deferred \u2014 that is the only piece with a real L-045 dependency. Margin read returns to $23.2K combined expected (Layer 1 incremental $7.2K + Layer 2 Mar cohort $16K). Sibling-CS spawn action withdrawn. | 2026-04-29 (Katie via /changeset-execute): PUBLISHED. Upcoming Subscription Order Flow updated in Klaviyo with combined Layer 1 + Layer 2 scope. LIVE: Layer 1 base refinement (value-reinforcement block + skip/reschedule CTAs + pause-instead-of-cancel messaging) applies to ALL subscribers entering the flow. Layer 2 Mar 2026 cohort branch (segment mar-2026-first-renewal n=5,987) fires on T-7/T-3/T-1 cadence with 2 of 3 variants live: (1) variety inviter, (2) social-proof / Joelle Debban + Rockrr Racing UGC. Variant (3) science-forward (PMID 41994946 framing) HELD PAUSED in Klaviyo until Brandon claims-pass lands. SMS overlay live for SMS-subscribed Mar cohort members at T-2 + T-1. Phase 3 (involuntary churn save) NOT in this publish \u2014 deferred until L-045 voluntary/involuntary split lands. Measurement window: 30d post first-renewal wave (Mar cohort renewals fire 2026-04-25 to 2026-05-05); due 2026-06-05. Primary KPI: mar_2026_cohort_m1_retention \u226518% (vs Feb baseline 12.8%). Secondary KPIs: first_renewal_flow_ctr \u22653.5%, pause_conversion \u226525%, ltv_30d_mar_cohort \u2265$32 (vs $25.93). | 2026-04-29 (Katie via /changeset-execute REVERT): Premature publish status undone. The Klaviyo flow update has NOT actually been built yet \u2014 tracker was flipped to published before the implementation work happened. Reverting to status=approved. Build steps file generated for Katie. Brandon claims-pass request DM stands (can run in parallel with build). Will re-publish once Klaviyo work is actually live. | 2026-04-29 (Katie via /changeset-execute): PUBLISHED with go-live date 2026-04-30. Status flipped approved -> published. Klaviyo flow scheduled to launch 4/30 with combined Layer 1 + Layer 2 scope. Variants 1+2 + Layer 1 base refinement live; Variant 3 (science-forward, PMID 41994946) HELD PAUSED pending Brandon claims-pass. SMS overlay live for SMS Mar cohort T-2/T-1. Phase 3 deferred (L-045 dep). Mar cohort first-renewal wave 2026-04-25 -> 2026-05-05; 4/25-4/29 slice (~2,700 profiles) accepted as partial-coverage. Measurement due 2026-06-05. Primary KPI mar_2026_cohort_m1_retention >=18% vs Feb baseline 12.8%.",
+      "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946. | 2026-04-22 EXPANDED: Absorbed CS-2026-052 (closed superseded same session). Scope now includes all-subscriber refinement of the Upcoming Subscription Order Flow (value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary split + pause-instead-of-cancel messaging) as the base layer, with the Mar 2026 cohort branch + variants as the overlay. All cohorts benefit from the base refinement, not just Mar 2026. | 2026-04-28 (Devon via Claude /changeset-review): Co-approval dossier packaged. Recommended APPROVE_STANDARD_BARE_BRANCH_WITH_CONDITIONS. Bare branch margin reconciliation: $16K (Read A, default) vs $23.2K (Devon directive, likely combined reference). Strip L-045 phantom dep from bare branch. Spawn 1 sibling CS for Layer 1 base refinement; flag Phase 3 as L-045-deferred. | 2026-04-29 (Katie via /changeset-execute \u2192 /changeset-review): APPROVED \u2014 STANDARD tier, bare branch (Layer 2 / Mar 2026 cohort branch) only. Devon co-approval per prior 2026-04-28 directive; Brandon claims-pass condition on science-forward variant tracked as pre-fire gate. Margin read default = Read A: $16K expected (Section 3 yaml, bare branch). Layer 1 (all-subscriber base refinement) DEFERRED to new sibling CS (target: ship within 14 days, Katie owner). Phase 3 (involuntary churn save) DEFERRED until L-045 voluntary/involuntary split lands. Phantom-dependency anti-pattern fix applied via scope reduction. L0-L5 all pass (L5 pass pending Brandon claims-pass on science-forward variant only). Approval log: CS-2026-100 approved by Katie (per Devon directive). | 2026-04-29 (Katie via /changeset-review correction): TWO CORRECTIONS to the prior approval entry: (1) Approver-of-record corrected from Devon to Katie. Klaviyo flow change is in Katie's surface-of-change authority (AP-003 routing: klaviyo + lifecycle-marketing \u2192 Katie Spaller). Devon's 2026-04-28 input was guidance on pricing-mechanic visibility, not a required approval gate \u2014 the renewal-save discount mechanic is pre-existing in the Upcoming Subscription Order Flow, not net-new pricing. (2) Scope re-expanded from bare-branch back to combined Layer 1 + Layer 2. Splitting Layer 1 (base refinement) into a sibling CS was process overhead \u2014 Layer 1 has no data dependency (just template work) and Mar cohort benefits more from shipping refreshed base + cohort branch together than from cohort variants on top of stale base. Phase 3 (involuntary churn save) STAYS deferred \u2014 that is the only piece with a real L-045 dependency. Margin read returns to $23.2K combined expected (Layer 1 incremental $7.2K + Layer 2 Mar cohort $16K). Sibling-CS spawn action withdrawn. | 2026-04-29 (Katie via /changeset-execute): PUBLISHED. Upcoming Subscription Order Flow updated in Klaviyo with combined Layer 1 + Layer 2 scope. LIVE: Layer 1 base refinement (value-reinforcement block + skip/reschedule CTAs + pause-instead-of-cancel messaging) applies to ALL subscribers entering the flow. Layer 2 Mar 2026 cohort branch (segment mar-2026-first-renewal n=5,987) fires on T-7/T-3/T-1 cadence with 2 of 3 variants live: (1) variety inviter, (2) social-proof / Joelle Debban + Rockrr Racing UGC. Variant (3) science-forward (PMID 41994946 framing) HELD PAUSED in Klaviyo until Brandon claims-pass lands. SMS overlay live for SMS-subscribed Mar cohort members at T-2 + T-1. Phase 3 (involuntary churn save) NOT in this publish \u2014 deferred until L-045 voluntary/involuntary split lands. Measurement window: 30d post first-renewal wave (Mar cohort renewals fire 2026-04-25 to 2026-05-05); due 2026-06-05. Primary KPI: mar_2026_cohort_m1_retention \u226518% (vs Feb baseline 12.8%). Secondary KPIs: first_renewal_flow_ctr \u22653.5%, pause_conversion \u226525%, ltv_30d_mar_cohort \u2265$32 (vs $25.93). | 2026-04-29 (Katie via /changeset-execute REVERT): Premature publish status undone. The Klaviyo flow update has NOT actually been built yet \u2014 tracker was flipped to published before the implementation work happened. Reverting to status=approved. Build steps file generated for Katie. Brandon claims-pass request DM stands (can run in parallel with build). Will re-publish once Klaviyo work is actually live. | 2026-04-29 (Katie via /changeset-execute): PUBLISHED with go-live date 2026-04-30. Status flipped approved -> published. Klaviyo flow scheduled to launch 4/30 with combined Layer 1 + Layer 2 scope. Variants 1+2 + Layer 1 base refinement live; Variant 3 (science-forward, PMID 41994946) HELD PAUSED pending Brandon claims-pass. SMS overlay live for SMS Mar cohort T-2/T-1. Phase 3 deferred (L-045 dep). Mar cohort first-renewal wave 2026-04-25 -> 2026-05-05; 4/25-4/29 slice (~2,700 profiles) accepted as partial-coverage. Measurement due 2026-06-05. Primary KPI mar_2026_cohort_m1_retention >=18% vs Feb baseline 12.8%. | 2026-04-29 (Devon via Claude /changeset-execute): Scope-deviation surfaced. Full combined scope published, not bare branch. Recommend ratify. Variant 3 still pending Brandon claims-pass on PMID 41994946 (Tier A). No tracker status change.",
       "scheduled_send_date": "2026-04-30",
       "execution_target_date": "2026-04-30",
       "executed_date": "2026-04-30",
@@ -7430,6 +7470,12 @@
           "set_date": "2026-04-29",
           "session": "/changeset-execute CS-2026-100",
           "action": "PUBLISHED with go-live 2026-04-30 (per Katie). Tracker flipped status=approved -> status=published; execution_target_date moved 2026-04-25 -> 2026-04-30. Klaviyo flow Upcoming Subscription Order Flow scheduled for 4/30 launch with combined Layer 1 (all-subscriber base refinement: value-reinforcement block + skip/reschedule CTAs + pause-instead-of-cancel) + Layer 2 (Mar 2026 cohort branch, segment mar-2026-first-renewal n=5,987, T-7/T-3/T-1 cadence). Variants 1 (variety inviter) + 2 (social-proof / Joelle Debban + Rockrr Racing UGC) live. Variant 3 (science-forward, PMID 41994946) HELD PAUSED in Klaviyo pending Brandon claims-pass. SMS overlay live for SMS-subscribed Mar cohort at T-2/T-1. Phase 3 (involuntary churn save) DEFERRED until L-045 voluntary/involuntary split lands. Mar cohort first-renewal wave runs 2026-04-25 -> 2026-05-05 (4/25-4/29 slice ~2,700 profiles will hit unrefreshed flow; partial coverage accepted). Measurement window 30d post first-renewal wave, due 2026-06-05. Primary KPI: mar_2026_cohort_m1_retention >=18% (vs Feb baseline 12.8%). Supersedes prior premature publish flip + revert from earlier 2026-04-29 session."
+        },
+        {
+          "flag": "scope_deviation_surfaced_2026_04_29",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "CS-100 published 2026-04-29 with FULL combined Layer 1 + Layer 2 scope, deviating from yesterday's bare-branch-only directive. Recommendation: ratify the deviation (Option 1) \u2014 Mar cohort first-renewals already firing; rollback contaminates measurement. Variant 3 (science-forward, PMID 41994946 Tier A) remains HELD pending Brandon claims-pass \u2014 straightforward checkbox. L4 learning: directives in /changeset-review dossiers don't bind /changeset-execute scope."
         }
       ],
       "review_tier": "standard",
@@ -8543,7 +8589,7 @@
       "owner": "Devon Price",
       "status": "draft",
       "subtype": "implementation",
-      "last_updated": "2026-04-28",
+      "last_updated": "2026-04-29",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
       "expected_impact": "Pre-empts brand-safety risk window narrowing into Mother's Day Apr 28. Closes both items by EOD Apr 28; preserves narrative control on the organic TBI/cognitive recovery thread.",
@@ -8561,6 +8607,12 @@
           "set_date": "2026-04-28",
           "session": "2026-04-28-execute",
           "action": "Public FB reply drafted (claims-clean, redirect-to-DM, no disease engagement). Compliance log entry written. Matt Hughes earned-narrative HARD GATE codified \u2014 BLOCKED until explicit Devon + Brandon signoff; default expectation = no structured content ever using TBI angle. DMs route to Brandon. See CS-121 brief 'Public Response Draft + Compliance Log + Matt Hughes Gate'."
+        },
+        {
+          "flag": "updated_to_gate_cs_122_brief_2_and_3_conditional",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Per 2026-04-29 CGO synthesis: CS-121 EOD hard gate now gates CS-122 Brief 2 (Frontiers cognition meta) + Brief 3 (GLP-1) conditionally \u2014 only if either brief uses Matt Hughes earned narrative content (per CS-121 Matt Hughes hard gate). UK Biobank Brief 1 does NOT depend on CS-121 (no Matt Hughes content). Default expectation per CS-121: no Matt Hughes structured content in any Brief without explicit Devon + Brandon signoff."
         }
       ],
       "created": "2026-04-27",
@@ -8572,8 +8624,12 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-121.md",
-      "notes": "Summary: (a) Epilepsy/TBI Facebook public-comment claim Apr 26: Devon + Brandon respond per claims-policy guardrail; document in compliance log. Pair with Matt Hughes earned TBI narrative \u2014 explicit sign-off required for any structured content using that angle. (b) Can corrosion Apr 21 incident: Garrett + lot-number review; if systemic, COA + supplier outreach + retention/refund protocol. Katie comms with affected customer. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['rec-241'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | 2026-04-28 (Devon via Claude /changeset-execute): Public FB reply DRAFTED \u2014 needs Devon + Brandon final 5-min cycle before posting; targets Apr 28 EOD before Mother's Day launch. Brandon handles any inbound DMs. Matt Hughes structured content HARD GATE codified: BLOCKED, default = no structured content ever, unblock requires Brandon claims envelope + Devon cosign. Garrett lot review + Katie customer comms tracked separately as parallel work streams.",
-      "matt_hughes_hard_gate": "BLOCKED \u2014 devon_brandon_signoff_required"
+      "notes": "Summary: (a) Epilepsy/TBI Facebook public-comment claim Apr 26: Devon + Brandon respond per claims-policy guardrail; document in compliance log. Pair with Matt Hughes earned TBI narrative \u2014 explicit sign-off required for any structured content using that angle. (b) Can corrosion Apr 21 incident: Garrett + lot-number review; if systemic, COA + supplier outreach + retention/refund protocol. Katie comms with affected customer. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['rec-241'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | 2026-04-28 (Devon via Claude /changeset-execute): Public FB reply DRAFTED \u2014 needs Devon + Brandon final 5-min cycle before posting; targets Apr 28 EOD before Mother's Day launch. Brandon handles any inbound DMs. Matt Hughes structured content HARD GATE codified: BLOCKED, default = no structured content ever, unblock requires Brandon claims envelope + Devon cosign. Garrett lot review + Katie customer comms tracked separately as parallel work streams. | 2026-04-29 (Devon via Claude /changeset-execute): Dependency updated. CS-121 conditionally gates CS-122 Brief 2 + Brief 3 (only if Matt Hughes narrative used). Brief 1 UK Biobank unaffected. Default: no Matt Hughes structured content without Devon+Brandon signoff per CS-121 hard gate.",
+      "matt_hughes_hard_gate": "BLOCKED \u2014 devon_brandon_signoff_required",
+      "blocks": [
+        "CS-2026-122-brief-2-conditional",
+        "CS-2026-122-brief-3-conditional"
+      ]
     },
     {
       "id": "CS-2026-122",
@@ -8581,12 +8637,19 @@
       "owner": "Brandon Dyksterhouse",
       "status": "draft",
       "subtype": "implementation",
-      "last_updated": "2026-04-27",
+      "last_updated": "2026-04-29",
       "execution_target_date": "2026-04-29",
       "measurement_window_end": "2026-05-06",
       "expected_impact": "Captures 5-7d window before Tecton/HVMN own narrative on cognition. GLP-1 trend at peak cultural moment = highest-leverage acquisition content of Q2. Anchors Mother's Day pivot in 3 high-credibility human studies (claims-defensible).",
       "dependencies": "Devon claims approval is the single gate. Triage against production-queue (12 briefs active). No phantom deps.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "citation_conflict_resolved_no_op_2026_04_29",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Citation-conflict flag from this morning's synthesis was based on a stale draft snapshot. The brief in repo already cites PMID 42036791 (n=269,178, Park & Choi 2026). Claims approval can proceed on existing anchor. No supersession needed. Spawned recommendation: add publication-supersession check to D16 scan instructions to prevent recurrence (guard, not halt)."
+        }
+      ],
       "created": "2026-04-27",
       "autonomy_tier": 2,
       "risk_level": "medium",
@@ -8598,7 +8661,7 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-122.md",
-      "notes": "Summary: Brandon authors 3 distillation briefs; Devon claims-approves; Charlotte/Nick organic + Katie paid execute. (a) UK Biobank PMID 42036791 distillation by Apr 28 (400-600 word blog + email + 3 social variants); (b) Frontiers 2026 ketone-cognition meta distillation by Apr 29; (c) GLP-1 cognitive-bridge adjacency brief by Apr 30 (Devon claims gate priority \u2014 peak cultural moment, #metabolichealth 6,208 msgs/wk). Pair with Mother's Day 'Fight Mom Brain' for narrative coherence. Triage with Larry vs 12 active production-queue briefs; pause lowest-priority briefs to absorb. | Priority (synthesis tag): P1 | Demand signal: cgo-2026-04-27-002,cgo-2026-04-27-003,cgo-2026-04-27-004 | Source recommendations: ['rec-242'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1"
+      "notes": "Summary: Brandon authors 3 distillation briefs; Devon claims-approves; Charlotte/Nick organic + Katie paid execute. (a) UK Biobank PMID 42036791 distillation by Apr 28 (400-600 word blog + email + 3 social variants); (b) Frontiers 2026 ketone-cognition meta distillation by Apr 29; (c) GLP-1 cognitive-bridge adjacency brief by Apr 30 (Devon claims gate priority \u2014 peak cultural moment, #metabolichealth 6,208 msgs/wk). Pair with Mother's Day 'Fight Mom Brain' for narrative coherence. Triage with Larry vs 12 active production-queue briefs; pause lowest-priority briefs to absorb. | Priority (synthesis tag): P1 | Demand signal: cgo-2026-04-27-002,cgo-2026-04-27-003,cgo-2026-04-27-004 | Source recommendations: ['rec-242'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | 2026-04-29 (Devon via Claude /changeset-execute): Citation-conflict resolution NO-OP. Brief A already on PMID 42036791 (n=269,178). Brandon does not need to disambiguate. Per PubMed pull, paper is Tier B observational; carry 'associated with' language guardrail into Brief A copy approval."
     },
     {
       "id": "CS-2026-123",
@@ -8813,12 +8876,20 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-128.md",
-      "notes": "Consolidates DS-04 MHAM May Campaign + DS-04 GLP-1 cognitive bridge into single MHAM-anchored series. Resolution Hierarchy Step 2 (Remove duplicate briefs) > Step 4 (Add). Production load reduced ~50%. Tier 2 mechanism only \u2014 no new Tier 1 mental-health claims. PMID 42038700 anchor.",
+      "notes": "Consolidates DS-04 MHAM May Campaign + DS-04 GLP-1 cognitive bridge into single MHAM-anchored series. Resolution Hierarchy Step 2 (Remove duplicate briefs) > Step 4 (Add). Production load reduced ~50%. Tier 2 mechanism only \u2014 no new Tier 1 mental-health claims. PMID 42038700 anchor. | 2026-04-29 (Devon via Claude /changeset-execute): GLP-1 claims gate APPROVE w/ 2 binding edits. Charlotte pre-prod blocked until edits land. Brandon per-post review still required for science callouts. Cross-refs CS-122/CS-100/CS-121 all noted.",
       "linked_calendar_activity": "MHAM-2026-MAY",
       "source": "synthesis_priority_stack",
       "autonomy_tier": 2,
-      "sweep_flags": [],
-      "scheduled_send_date": null
+      "sweep_flags": [
+        {
+          "flag": "devon_glp1_claims_gate_approved_with_two_edits",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Devon GLP-1 claims gate: APPROVE with 2 binding edits \u2014 (1) strike 'with or alongside GLP-1' from \u00a7 PROPOSED CHANGE, replace with generic metabolic-baseline framing; (2) #GLP1 hashtag participation conditional on each post reading claims-clean if GLP-1 reference stripped. Cross-references CS-122 Brief A (UK Biobank PMID 42036791 anchor resolved), CS-100 Variant 3 (Brandon claims-pass pending PMID 41994946), CS-121 (Matt Hughes hard gate active). Brandon per-post review still required for all science callouts. Charlotte pre-production blocked until 2 edits applied."
+        }
+      ],
+      "scheduled_send_date": null,
+      "last_updated": "2026-04-29"
     }
   ],
   "queue_actions": {
