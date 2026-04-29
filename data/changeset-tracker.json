@@ -33,8 +33,8 @@
     "by_status": {
       "closed": 57,
       "published": 16,
-      "approved": 6,
-      "draft": 46,
+      "approved": 7,
+      "draft": 45,
       "needs_feedback": 3
     },
     "by_risk": {
@@ -8851,7 +8851,7 @@
         "klaviyo",
         "blog"
       ],
-      "status": "draft",
+      "status": "approved",
       "risk_level": "medium",
       "owner": "Charlotte Thamm + Lawrence Giarrizzo + Brandon Dyksterhouse + Devon Price",
       "created": "2026-04-29",
@@ -8874,8 +8874,8 @@
       "routed_to": null,
       "routed_via": null,
       "routed_date": null,
-      "approved_by": null,
-      "approved_date": null,
+      "approved_by": "Devon",
+      "approved_date": "2026-04-29",
       "published_date": null,
       "measurement_window": "2026-05-01 to 2026-05-31",
       "measurement_due": "2026-06-07",
@@ -8883,7 +8883,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-128.md",
-      "notes": "Consolidates DS-04 MHAM May Campaign + DS-04 GLP-1 cognitive bridge into single MHAM-anchored series. Resolution Hierarchy Step 2 (Remove duplicate briefs) > Step 4 (Add). Production load reduced ~50%. Tier 2 mechanism only \u2014 no new Tier 1 mental-health claims. PMID 42038700 anchor. | 2026-04-29 (Devon via Claude /changeset-execute): GLP-1 claims gate APPROVE w/ 2 binding edits. Charlotte pre-prod blocked until edits land. Brandon per-post review still required for science callouts. Cross-refs CS-122/CS-100/CS-121 all noted.",
+      "notes": "Consolidates DS-04 MHAM May Campaign + DS-04 GLP-1 cognitive bridge into single MHAM-anchored series. Resolution Hierarchy Step 2 (Remove duplicate briefs) > Step 4 (Add). Production load reduced ~50%. Tier 2 mechanism only \u2014 no new Tier 1 mental-health claims. PMID 42038700 anchor. | 2026-04-29 (Devon via Claude /changeset-execute): GLP-1 claims gate APPROVE w/ 2 binding edits. Charlotte pre-prod blocked until edits land. Brandon per-post review still required for science callouts. Cross-refs CS-122/CS-100/CS-121 all noted. | 2026-04-29 (Devon via Claude /changeset-execute): APPROVED with 2 binding edits applied to brief. Status draft \u2192 approved. Charlotte pre-production unblocked. Brandon per-post claims-pass standard gate. CS-121 Matt Hughes hard gate / CS-100 V3 / Tier 1 MH claims all OOS.",
       "linked_calendar_activity": "MHAM-2026-MAY",
       "source": "synthesis_priority_stack",
       "autonomy_tier": 2,
@@ -8893,6 +8893,12 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-execute",
           "action": "Devon GLP-1 claims gate: APPROVE with 2 binding edits \u2014 (1) strike 'with or alongside GLP-1' from \u00a7 PROPOSED CHANGE, replace with generic metabolic-baseline framing; (2) #GLP1 hashtag participation conditional on each post reading claims-clean if GLP-1 reference stripped. Cross-references CS-122 Brief A (UK Biobank PMID 42036791 anchor resolved), CS-100 Variant 3 (Brandon claims-pass pending PMID 41994946), CS-121 (Matt Hughes hard gate active). Brandon per-post review still required for all science callouts. Charlotte pre-production blocked until 2 edits applied."
+        },
+        {
+          "flag": "devon_glp1_claims_gate_approved_edits_applied_2026_04_29",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Devon's two binding edits applied to brief: (1) struck 'with or alongside GLP-1' from \u00a7 PROPOSED CHANGE \u2014 replaced with generic metabolic-baseline framing; (2) added hashtag-claims-clean rule preamble before \u00a7 Channels \u2014 every post under #GLP1/#metabolichealth must read clean if GLP-1 reference stripped. Status draft \u2192 approved. Charlotte pre-production unblocked. Brandon per-post review remains the standard gate. CS-121 Matt Hughes hard gate, CS-100 Variant 3 PMID 41994946, and Tier 1 mental-health claims explicitly out-of-scope for this approval."
         }
       ],
       "scheduled_send_date": null,
