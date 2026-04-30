@@ -499,9 +499,31 @@
               "cvr": 0.0
             }
           }
+        },
+        {
+          "checked_at": "2026-04-30T12:30:16.136493Z",
+          "snapshot_at": "2026-04-30T12:30:17.992038Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 370,
+              "atc_events": 34,
+              "atc_rate": 0.0918918918918919,
+              "bounce_rate": 0.7702702702702703,
+              "cvr": 0.0
+            },
+            "variant": {
+              "sessions": 34,
+              "atc_events": 4,
+              "atc_rate": 0.11764705882352941,
+              "bounce_rate": 0.7941176470588235,
+              "cvr": 0.0
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-04-30T06:51:01.340193Z",
+      "last_checked_at": "2026-04-30T12:30:16.136493Z",
       "katie_approval_observed_at": "2026-04-24T20:22:15Z",
       "orchestrator_notes": [
         {
@@ -521,24 +543,24 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-04-30T06:51:04.796795Z",
+        "snapshot_at": "2026-04-30T12:30:17.992038Z",
         "control": {
-          "sessions": 277,
-          "atc_events": 24,
-          "atc_rate": 0.08664259927797834,
-          "bounce_rate": 0.7689530685920578,
+          "sessions": 370,
+          "atc_events": 34,
+          "atc_rate": 0.0918918918918919,
+          "bounce_rate": 0.7702702702702703,
           "cvr": 0.0
         },
         "variant": {
-          "sessions": 30,
+          "sessions": 34,
           "atc_events": 4,
-          "atc_rate": 0.13333333333333333,
-          "bounce_rate": 0.7666666666666667,
+          "atc_rate": 0.11764705882352941,
+          "bounce_rate": 0.7941176470588235,
           "cvr": 0.0
         }
       },
       "last_undersample_escalation_at": "2026-04-30T00:28:47.849909Z"
     }
   },
-  "_last_cron_run": "2026-04-30T06:51:01.340193Z"
+  "_last_cron_run": "2026-04-30T12:30:16.136493Z"
 }
