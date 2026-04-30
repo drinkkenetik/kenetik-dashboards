@@ -33,8 +33,8 @@
     "by_status": {
       "closed": 57,
       "published": 16,
-      "approved": 7,
-      "draft": 47,
+      "approved": 8,
+      "draft": 46,
       "needs_feedback": 3
     },
     "by_risk": {
@@ -8932,8 +8932,7 @@
       "objective_level": "L4",
       "category": "system_improvement",
       "dependencies": [
-        "CS-2026-120-named-cross-surface-data-infra-owner",
-        "CS-2026-130-build-out-makes-manual-invoke-citation-accurate"
+        "CS-2026-120-named-cross-surface-data-infra-owner"
       ],
       "blocks": [],
       "spawned_from": "CS-2026-120-restructured-agenda-2026-04-29-devon-directive",
@@ -9003,30 +9002,34 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-execute",
           "action": "Devon scrutiny round 4: 'manual invoke via CGO copilot' was vapor \u2014 spec exists, no callers. Correction logged. CS-2026-130 spawned to actually build the copilot into the daily pipeline. Today's manual invoke = direct synthesizer re-run; post-CS-130-ship = /cgo-copilot ask. Same anti-pattern as CS-127 (spec but not wired). Should have verified citation."
+        },
+        {
+          "flag": "re_audit_5_copilot_pivot_to_deletion_2026_04_29",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Devon pivot: copilot being deleted, not built. Manual-invoke for Pass B is direct synthesizer re-run, period \u2014 no future copilot path. Round 5 correction appended to brief. CS-130 flipped from build to remove."
         }
       ],
       "last_updated": "2026-04-29",
-      "notes": "Operationalizes Devon 2026-04-29 directive on automation focus. Synthesizer instruction patch + ChangeSet schema time-cost fields + weekly automation review tier + monthly retro. Blocked by CS-120 named infrastructure owner. Related: CS-127 queue mechanism is the prototype for automation-CS-routing. | 2026-04-29 (Devon via Claude /changeset-execute): Re-audit per Devon scrutiny. Simplified to ONE prompt change in task-b-synthesis.md. No new schema, no new files, no new meetings. Routes automation CSes through existing category=system_improvement value. Closed-loop measurement uses existing timestamps. See \u00a7 Resolution Hierarchy Re-Audit + \u00a7 SUPERSEDING PROPOSED CHANGE in brief. | 2026-04-29 (Devon round 2): Awareness-depth re-audit. Prompt block replaced with 7-substep process-step analysis (read process docs + capabilities inventory + tracker timestamps + reason about manual-vs-automated sub-steps). Same simplification gains preserved (no new schema/files/meetings/commands). Fallback recs-pass kept as step 7. 'No new candidates' valid step 8 output prevents fabrication. | 2026-04-29 (Devon round 3): Cost/cadence/backlog re-audit. Two-pass design: rec-scan daily (cheap), deep analysis weekly Mondays (~17K tokens) + manual invoke. Backlog = running-log pending_recommendations with category=process_automation (existing 202-entry aggregator). Daily one-liner in Devon's DM shows backlog count. Closed-loop via tracker + running-log filters. | 2026-04-29 (Devon round 4): Manual-invoke citation was vapor. CS-2026-130 spawned to wire the copilot. Today's invoke = direct synthesizer re-run; post-CS-130 = /cgo-copilot ask. Same spec-but-not-wired anti-pattern as CS-127."
+      "notes": "Operationalizes Devon 2026-04-29 directive on automation focus. Synthesizer instruction patch + ChangeSet schema time-cost fields + weekly automation review tier + monthly retro. Blocked by CS-120 named infrastructure owner. Related: CS-127 queue mechanism is the prototype for automation-CS-routing. | 2026-04-29 (Devon via Claude /changeset-execute): Re-audit per Devon scrutiny. Simplified to ONE prompt change in task-b-synthesis.md. No new schema, no new files, no new meetings. Routes automation CSes through existing category=system_improvement value. Closed-loop measurement uses existing timestamps. See \u00a7 Resolution Hierarchy Re-Audit + \u00a7 SUPERSEDING PROPOSED CHANGE in brief. | 2026-04-29 (Devon round 2): Awareness-depth re-audit. Prompt block replaced with 7-substep process-step analysis (read process docs + capabilities inventory + tracker timestamps + reason about manual-vs-automated sub-steps). Same simplification gains preserved (no new schema/files/meetings/commands). Fallback recs-pass kept as step 7. 'No new candidates' valid step 8 output prevents fabrication. | 2026-04-29 (Devon round 3): Cost/cadence/backlog re-audit. Two-pass design: rec-scan daily (cheap), deep analysis weekly Mondays (~17K tokens) + manual invoke. Backlog = running-log pending_recommendations with category=process_automation (existing 202-entry aggregator). Daily one-liner in Devon's DM shows backlog count. Closed-loop via tracker + running-log filters. | 2026-04-29 (Devon round 4): Manual-invoke citation was vapor. CS-2026-130 spawned to wire the copilot. Today's invoke = direct synthesizer re-run; post-CS-130 = /cgo-copilot ask. Same spec-but-not-wired anti-pattern as CS-127. | 2026-04-29 (Devon pivot, round 5): Manual-invoke is direct synthesizer re-run forever. Copilot path being removed entirely via CS-130 (flipped to deletion)."
     },
     {
       "id": "CS-2026-130",
-      "title": "Build /cgo-copilot + /executive-copilot into the Daily Pipeline",
+      "title": "Remove Unused /cgo-copilot + /executive-copilot Commands from the Plugin",
       "subtype": "implementation",
       "department": "operations",
       "platforms": [
         "changeset-process",
         "daily-pipeline"
       ],
-      "status": "draft",
+      "status": "approved",
       "risk_level": "low",
       "owner": "Devon Price",
       "created": "2026-04-29",
       "objective_level": "L4",
       "category": "system_improvement",
       "dependencies": [],
-      "blocks": [
-        "CS-2026-129-round-3-manual-invoke-citation-accuracy"
-      ],
+      "blocks": [],
       "spawned_from": "CS-2026-129-round-3-manual-invoke-reference-was-vapor",
       "spawned_changesets": [],
       "expected_impact": {
@@ -9040,10 +9043,10 @@
           "expected": 0,
           "downside": 0
         },
-        "primary_metric": "cgo_copilot_invocations_per_week",
-        "primary_metric_target": "morning_pre_answers_in_dm_daily; \u226510 ad-hoc queries logged within 30d",
+        "primary_metric": "commands_removed_references_stripped_no_breakage",
+        "primary_metric_target": "2 command files deleted; 4 reference files patched; verification grep returns clean",
         "L1_margin": "neutral_indirect_via_faster_decision_cycle",
-        "L4_learning": "query_log_pattern_review_feeds_back_into_reporting_design",
+        "L4_learning": "documents_spec_without_callers_anti_pattern_resolution_via_remove_not_build",
         "L5_brand_check": "pass"
       },
       "review_tier": "standard",
@@ -9053,8 +9056,8 @@
       ],
       "routed_via": "github_commit",
       "routed_date": "2026-04-29",
-      "approved_by": null,
-      "approved_date": null,
+      "approved_by": "Devon",
+      "approved_date": "2026-04-29",
       "published_date": null,
       "measurement_window": "30d",
       "measurement_due": null,
@@ -9069,10 +9072,16 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-execute",
           "action": "Spawned because CS-129 round 3 manual-invoke cited /cgo-copilot as if it were a working surface \u2014 it isn't. Two command specs exist (cgo-copilot.md 160 lines + executive-copilot.md 241 lines) with zero callers. Edge Case Log + query log referenced but not initialized. Same anti-pattern as CS-127 (sweep silent-failure mode \u2014 spec but not wired). Build-out scope: Phase 4.5 in daily pipeline + standing-question file + 2 JSONL log files. Existing state files already serve as the 'data marts' spec references. Resolution Hierarchy: Diagnose (vapor spec) \u2192 Remove (redundant re-synthesis per query) \u2192 Refine (use existing specs + state files) \u2192 Add (wiring + 3 small artifacts)."
+        },
+        {
+          "flag": "flipped_build_to_remove_2026_04_29",
+          "set_date": "2026-04-29",
+          "session": "2026-04-29-execute",
+          "action": "Devon pivot same day: 'I don't want to wire up the cgo copilot. I want to delete those commands from the plugin.' Resolution Hierarchy step: was Add (Phase 4.5 wiring), now Remove (deletion + reference cleanup). Edge Case Log stays \u2014 real artifact at cgo-logs/edge-cases/ managed by /edge-cases command. Query log was vapor and goes away with the specs. Files deleted: cgo-copilot.md + executive-copilot.md. Files patched: brain/kenetik-brain/SKILL.md (router rows), architecture/kgs-department-buildout-spec.md (bullet \u2192 removal note), data-warehouse-status.md (consumer-skills enumeration), CS-129 round 5 correction. Same anti-pattern as CS-127 (spec exists, not wired) but resolved via Remove instead of build \u2014 copilot spec didn't earn its place."
         }
       ],
       "last_updated": "2026-04-29",
-      "notes": "Spawned 2026-04-29 from CS-129 round 3 honest accounting. Two specs exist (cgo-copilot.md 160 lines + executive-copilot.md 241 lines) but zero callers in daily pipeline. Build scope: Phase 4.5 morning pre-answers + standing question list (3 daily) + Edge Case Log + Query Log files initialized + verify command callable on-demand. State files serving as data marts already exist. Owner: Devon (CGO + cross-surface infra owner per CS-120 #1)."
+      "notes": "Spawned 2026-04-29 from CS-129 round 3 honest accounting. Two specs exist (cgo-copilot.md 160 lines + executive-copilot.md 241 lines) but zero callers in daily pipeline. Build scope: Phase 4.5 morning pre-answers + standing question list (3 daily) + Edge Case Log + Query Log files initialized + verify command callable on-demand. State files serving as data marts already exist. Owner: Devon (CGO + cross-surface infra owner per CS-120 #1). | 2026-04-29 (Devon pivot): FLIPPED build \u2192 REMOVE. Approved 2026-04-29. Files deleted + 4 references patched. Edge Case Log stays (real, managed by /edge-cases). Query log was vapor, goes away."
     }
   ],
   "queue_actions": {
