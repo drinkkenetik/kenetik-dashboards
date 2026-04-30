@@ -458,6 +458,27 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-04-29"
+    },
+    {
+      "id": "L-065",
+      "summary": "Pixel ROAS recovery (3.54x \u2192 3.96x trailing-3d) is masking a 40% conversion-volume drop on flat $4,096/7d spend (241 \u2192 144 conv WoW). Binding constrai",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-04-30"
+    },
+    {
+      "id": "L-066",
+      "summary": "Site CVR recovery is structural and sustaining \u2014 two consecutive weeks of all-device +17%, desktop +57.2%, mobile +6.7%. pat-010 should de-escalate fr",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-04-30"
+    },
+    {
+      "id": "L-067",
+      "summary": "pat-012 Devon decision queue has reached longest unbroken streak in pipeline history (15+ sessions / 17h zero-signal / 6+ Tier-3 stacked) AND has now ",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-04-30"
     }
   ],
   "entries": [
@@ -1520,6 +1541,58 @@
       "target": "cgo-daily-pipeline/config/dispatch-instructions.md Layer 2 (CGO DM) -- when CS-122 family items appear in the CGO dispatch DM, require explicit 'D16 today's literature reviewed for citation supersession' confirmation before claims approval routes.",
       "status": "active",
       "changeset_candidate": false
+    },
+    {
+      "id": "L-065",
+      "date": "2026-04-30",
+      "type": "skill_update",
+      "learning": "Pixel ROAS recovery (3.54x \u2192 3.96x trailing-3d) is masking a 40% conversion-volume drop on flat $4,096/7d spend (241 \u2192 144 conv WoW). Binding constraint is top-of-funnel creative effectiveness decay, NOT under-investment or budget allocation.",
+      "source": "cgo-daily-pipeline/synthesis-2026-04-30-s1, dept-paid-media",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "ROAS-only readouts conflate efficiency with effectiveness; when conversion volume drops faster than spend, the ratio recovery is arithmetic, not strategic. See daily synthesis 2026-04-30-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-061"
+      ],
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md (Step 8 quality gate: add explicit volume-vs-efficiency framing check when ROAS recovers in -conv-volume context)"
+    },
+    {
+      "id": "L-066",
+      "date": "2026-04-30",
+      "type": "threshold_calibration",
+      "learning": "Site CVR recovery is structural and sustaining \u2014 two consecutive weeks of all-device +17%, desktop +57.2%, mobile +6.7%. pat-010 should de-escalate from active to monitoring. Pattern-tracker thresholds were set to detect erosion onset but lacked symmetric exit rule; a pattern reversed for 2+ consecutive weeks with effect sizes >10% should auto-de-escalate.",
+      "source": "cgo-daily-pipeline/synthesis-2026-04-30-s1, dept-website-cro",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "S40 framed as mobile crisis; S41/S42 corroborate recovery. See daily synthesis 2026-04-30-s1.md and L-062.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-062",
+        "L-054"
+      ],
+      "target": "cgo-logs/running-log.json tracked_patterns schema (add auto_exit_rule per pattern); pat-010 status field"
+    },
+    {
+      "id": "L-067",
+      "date": "2026-04-30",
+      "type": "process_change",
+      "learning": "pat-012 Devon decision queue has reached longest unbroken streak in pipeline history (15+ sessions / 17h zero-signal / 6+ Tier-3 stacked) AND has now produced live revenue impact (CS-099 5/1 expiry blocks 12 May email CSes; CS-100 ~$98/day MRR leak). Reminder volume has not worked. The intervention that historically works (per L-056) is mechanical: a fixed-time facilitated decision forum produces decisions at 5-10x the rate of asynchronous reminders.",
+      "source": "cgo-daily-pipeline/synthesis-2026-04-30-s1, dept-ops",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Reminder-volume optimization is a local solution that does not address the structural constraint (synchronous decision capacity is bounded; async decisions don't happen because Tier-3 decisions need verbal context). The fix is forum design. See daily synthesis 2026-04-30-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-056"
+      ],
+      "target": "cgo-daily-pipeline/config/dispatch-instructions.md (rule: if pat-012 streak >=N=15, recommend same-day post-existing-meeting decision sprint in Layer 1.5 dept-ops DM); brain/kenetik-brain/references/team-roles.md (codify post-R&D-Call decision sprint as recurring forum)"
     }
   ],
   "archived_entries": [
@@ -1815,5 +1888,5 @@
       "physically_moved_at": "2026-04-19T23:58:35.148791+00:00"
     }
   ],
-  "last_updated": "2026-04-28T16:50:00Z"
+  "last_updated": "2026-04-30T13:50:00Z"
 }
