@@ -477,9 +477,31 @@
               "cvr": 0.0
             }
           }
+        },
+        {
+          "checked_at": "2026-04-30T06:51:01.340193Z",
+          "snapshot_at": "2026-04-30T06:51:04.796795Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 277,
+              "atc_events": 24,
+              "atc_rate": 0.08664259927797834,
+              "bounce_rate": 0.7689530685920578,
+              "cvr": 0.0
+            },
+            "variant": {
+              "sessions": 30,
+              "atc_events": 4,
+              "atc_rate": 0.13333333333333333,
+              "bounce_rate": 0.7666666666666667,
+              "cvr": 0.0
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-04-30T00:28:47.849909Z",
+      "last_checked_at": "2026-04-30T06:51:01.340193Z",
       "katie_approval_observed_at": "2026-04-24T20:22:15Z",
       "orchestrator_notes": [
         {
@@ -499,24 +521,24 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-04-30T00:28:49.897091Z",
+        "snapshot_at": "2026-04-30T06:51:04.796795Z",
         "control": {
-          "sessions": 72,
-          "atc_events": 0,
-          "atc_rate": 0.0,
-          "bounce_rate": 0.7777777777777778,
+          "sessions": 277,
+          "atc_events": 24,
+          "atc_rate": 0.08664259927797834,
+          "bounce_rate": 0.7689530685920578,
           "cvr": 0.0
         },
         "variant": {
-          "sessions": 7,
-          "atc_events": 0,
-          "atc_rate": 0.0,
-          "bounce_rate": 0.7142857142857143,
+          "sessions": 30,
+          "atc_events": 4,
+          "atc_rate": 0.13333333333333333,
+          "bounce_rate": 0.7666666666666667,
           "cvr": 0.0
         }
       },
       "last_undersample_escalation_at": "2026-04-30T00:28:47.849909Z"
     }
   },
-  "_last_cron_run": "2026-04-30T00:28:47.849909Z"
+  "_last_cron_run": "2026-04-30T06:51:01.340193Z"
 }
