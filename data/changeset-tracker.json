@@ -156,7 +156,14 @@
       "executed_date": null,
       "autonomy_tier": null,
       "learning_note": "Influencer welcome intercept deployed 2-4 days after cohort entered flow \u2192 only 50/1,113 profiles reached (4.5%) \u2192 hypothesis inconclusive. Key learning: mid-flow intercepts for time-sensitive cohorts must deploy same-day. Future influencer onboarding needs top-of-flow routing or standalone campaigns with proper Cleetus attribution tracking.",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-08 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
+      ]
     },
     {
       "id": "CS-2026-002",
@@ -249,7 +256,14 @@
       "autonomy_tier": null,
       "measurement_approaching": true,
       "learning_note": "Built 3 Klaviyo segments for Cleetus influencer cohort \u2192 2 of 3 populated correctly (6,345+ profiles), 1 empty due to $source data gap \u2192 Subscriber-level segmentation captures 2.4x more profiles than purchaser-only; Superfiliate $source tagging needs investigation for future creator activations.",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-08 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
+      ]
     },
     {
       "id": "CS-2026-003",
@@ -310,7 +324,14 @@
       "closed_date": "2026-03-30",
       "file": "cgo-logs/changesets/CS-2026-003.md",
       "notes": "Closed 2026-03-30. Outcome: Success (Scenario A). Combined revenue +77% vs email-only baseline. SMS-first sequencing adopted as permanent flash sale strategy.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-08 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
+      ],
       "measurement_window_end": "2026-03-27",
       "scheduled_send_date": null,
       "execution_target_date": null,
@@ -394,7 +415,14 @@
       "executed_date": null,
       "autonomy_tier": null,
       "learning_note": "Excluded March 7 Cleetus activation outlier from paid media trends and built Polar custom channel grouping (custom_5144) using Shopify order tags + promo codes \u2192 Paid search ROAS stabilized at 6.66x (vs 5.26x baseline), Superfiliate attribution capture went from 14% to ~100% for tagged orders \u2192 Tag-based deterministic attribution is the correct model for influencer/creator channels; click-based attribution severely undercounts (87% gap). This finding applies to all future creator partnerships.",
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-08 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
+      ]
     },
     {
       "id": "CS-2026-005",
@@ -451,7 +479,14 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-09 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
+      ]
     },
     {
       "id": "CS-2026-006",
@@ -551,6 +586,12 @@
           "set_date": "2026-04-28",
           "session": "2026-04-28-execute",
           "action": "Manual close. Apr attach 41.3% mechanically meets \u226512% target but attribution to CS-006's content distillation is structurally infeasible. L5 brand-equity CSes need different primary metrics (citation pickup, science-page traffic). Brief baseline (8%) misstated; Feb actual was 20.6%."
+        },
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-10 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
         }
       ],
       "last_updated": "2026-04-28",
@@ -681,7 +722,13 @@
       "sweep_flags": [
         "S31 2026-04-13: measurement window closed \u2014 manual data pull required (pipeline could not auto-measure)",
         "measurement_overdue",
-        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
+        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)",
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-10 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
       ],
       "last_updated": "2026-04-21",
       "measurement_result": {
@@ -791,7 +838,14 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-10 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
+      ]
     },
     {
       "id": "CS-2026-009",
@@ -2305,7 +2359,13 @@
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
         "MEASUREMENT_OVERDUE",
-        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW content velocity). Session 24 sweep."
+        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW content velocity). Session 24 sweep.",
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-14 < created 2026-03-16 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
       ],
       "execution_target_date": null,
       "executed_date": null,
@@ -2367,7 +2427,13 @@
       "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
       "sweep_flags": [
         "MEASUREMENT_OVERDUE",
-        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW Tier A fast-track). Session 24 sweep."
+        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW Tier A fast-track). Session 24 sweep.",
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-14 < created 2026-03-17 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
       ],
       "execution_target_date": null,
       "executed_date": null,
@@ -2437,7 +2503,14 @@
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-028.md",
       "notes": "Reallocation executed correctly. Measurement inconclusive \u2014 baseline included peak Leadville Sweepstakes + BAW promotional period, creating invalid comparison. Demand cliff (documented in CS-033) drove universal conversion declines across all channels. Key learning: Pmax has a scaling ceiling; Leadville absorbed budget well at 3.35x ROAS. Creative gate for FB prospecting remains in effect.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-16 < created 2026-03-17 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
+      ],
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -2512,7 +2585,14 @@
       "closed_date": "2026-04-01",
       "file": "cgo-logs/changesets/CS-2026-029.md",
       "notes": "Published Mar 17. Closed Apr 1 as SUCCESS. Combined 9.57x ROAS (target 1.5x). Organic variants outperformed \u2014 no custom creative needed. Budget-constrained but efficiency exceptional.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-16 < created 2026-03-17 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
+      ],
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null
@@ -2599,7 +2679,13 @@
       "sweep_flags": [
         "S31 2026-04-13: measurement window closed \u2014 manual data pull required (pipeline could not auto-measure)",
         "measurement_overdue",
-        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)"
+        "data_corruption_repaired: needs manual outcome review (fix-plan 2026-04-16)",
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-16 < created 2026-03-19 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
       ],
       "scheduled_send_date": "2026-04-03",
       "execution_target_date": "2026-04-06",
@@ -2723,6 +2809,12 @@
           "session": "2026-04-29-s1",
           "days_stale": 7,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-19 < created 2026-03-20 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
         }
       ]
     },
@@ -2775,7 +2867,14 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-19 < created 2026-03-20 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
+      ]
     },
     {
       "id": "CS-2026-033",
@@ -2824,7 +2923,21 @@
       "execution_target_date": null,
       "executed_date": null,
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "timestamp_inferred_from_git_log_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill of CS-2026-133 Half A: inferred closed_date=2026-04-22 from git_log for status=closed."
+        },
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-19 < created 2026-03-21 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
+      ],
+      "closed_date": "2026-04-22"
     },
     {
       "id": "CS-2026-034",
@@ -2875,9 +2988,22 @@
       "autonomy_tier": null,
       "stale": true,
       "sweep_flags": [
-        "S31 sweep 2026-04-13: stale 25d \u2014 requires binary execute-or-close decision in 72h"
+        "S31 sweep 2026-04-13: stale 25d \u2014 requires binary execute-or-close decision in 72h",
+        {
+          "flag": "timestamp_inferred_from_last_updated_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill of CS-2026-133 Half A: inferred closed_date=2026-04-14 from last_updated for status=closed."
+        },
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-19 < created 2026-03-21 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        }
       ],
-      "last_updated": "2026-04-14"
+      "last_updated": "2026-04-14",
+      "closed_date": "2026-04-14"
     },
     {
       "id": "CS-2026-035",
@@ -2939,6 +3065,12 @@
           "session": "2026-04-30-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 11
+        },
+        {
+          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill detection: routed_date 2026-03-22 < created 2026-03-23 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
         }
       ],
       "measurement_due": "2026-05-03",
@@ -7193,7 +7325,7 @@
       "routed_via": "slack",
       "routed_date": "2026-04-21",
       "approved_by": "",
-      "approved_date": "",
+      "approved_date": "2026-04-28",
       "published_date": "",
       "measurement_window": "4_sessions",
       "measurement_due": "",
@@ -7213,6 +7345,12 @@
           "set_date": "2026-04-28",
           "session": "2026-04-28-checkin-1",
           "action": "First Devon check-in agenda packaged for Charlotte + Peter today. Forced-numbers format (last-7-days shipped, next-7 committed, SLA adherence, owner-concentration). Kill-gate math: D13 CRS 19\u219231 in 5 days, on-pace to \u226550 by session 3 if pace holds. Recommend hold gate at 50 (don't move goalposts). Open routing question raised: CS-097 \u00a7 Owner has Nicole as email lead but Devon's check-in roster is Charlotte+Peter \u2014 need Devon to resolve owner map first 60 sec of meeting."
+        },
+        {
+          "flag": "timestamp_inferred_from_last_updated_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "One-shot backfill of CS-2026-133 Half A: inferred approved_date=2026-04-28 from last_updated for status=approved."
         }
       ],
       "last_updated": "2026-04-28"
@@ -9348,10 +9486,16 @@
           "set_date": "2026-04-30",
           "session": "2026-04-30-execute",
           "action": "Shipped same-session draft \u2192 approved \u2192 published per Tier 1 shadow-autonomous infra precedent (CS-091/092). Half A: added Phase 3.7 Timestamp Audit Pass to changeset-lifecycle-sweep.md \u2014 for each non-archived CS, audit status-corresponding timestamp; backfill from last_updated \u2192 git log \u2192 sweep_flag.set_date in priority order; flag missing or inverted timestamps for human attention; new counters timestamps_inferred + timestamps_missing_for_status added to last_sweep_counts. Half B: hardened changeset-measurement.md close path (now explicitly sets closed_date + last_updated) and changeset-lifecycle-sweep.md Step 3A auto-close path (explicit closed_date set). /changeset-review and /changeset-execute already correctly set their respective timestamps \u2014 verified, no patch needed. Spawned from CS-129 round 8 stress test data-quality finding."
+        },
+        {
+          "flag": "round_2_audit_simplification_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "Devon round 2 scrutiny: (1) daily audit redundant with Pass B Step 1A \u2014 Phase 3.7 REMOVED from lifecycle-sweep (-3656 chars); (2) inline patches duplicated logic \u2014 replaced with single \u00a71c canonical pattern in changeset-common-functions.md, all 4 transition surfaces cite by reference. One-shot backfill executed: 3 inferred, 128 already clean, 0 still missing, 18 inverted-briefing flagged for human review. Net effect: shorter, clearer, more durable."
         }
       ],
       "last_updated": "2026-04-30",
-      "notes": "Closed-loop result of CS-129's stress test. Pass B identified its own input as broken; this CS fixes it via two-half approach: (Half A) sweep Phase 4-region audit + backfill, (Half B) command hardening at writeback paths. Shipped same session per Tier 1 shadow-autonomous precedent."
+      "notes": "Closed-loop result of CS-129's stress test. Pass B identified its own input as broken; this CS fixes it via two-half approach: (Half A) sweep Phase 4-region audit + backfill, (Half B) command hardening at writeback paths. Shipped same session per Tier 1 shadow-autonomous precedent. | 2026-04-30 (Devon round 2): Simplified per audit. Phase 3.7 daily audit removed (redundant with Pass B). Inline patches consolidated to \u00a71c canonical pattern in common-functions. One-shot backfill applied. Net: shorter, clearer, more durable single source of truth."
     }
   ],
   "queue_actions": {
