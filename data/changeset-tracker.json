@@ -1,56 +1,44 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-30",
-  "next_id": 131,
+  "next_id": 133,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-04-29T16:25:00Z",
-    "last_sweep_session": 41,
-    "last_sweep_result": "completed",
+    "last_sweep_date": "2026-04-30T13:45:00Z",
+    "last_sweep_session": 42,
+    "last_sweep_result": "completed_no_mcp_measurement_pulls",
     "last_sweep_counts": {
-      "total_scanned": 127,
-      "measurement_overdue": 0,
+      "total_scanned": 132,
+      "stale_detected": 8,
+      "archive_candidates": 5,
+      "measurement_overdue": 1,
+      "measurement_due_today": 0,
       "measured": 0,
       "auto_closed": 0,
       "flagged_human_review": 0,
-      "stale_detected": 8,
       "draft_overdue_gt_5d": 34,
-      "nudges_sent_pending_phase4": 43,
-      "measurement_due_today": 1,
-      "measurement_approaching_3d": 1,
-      "archive_candidates": 6,
-      "measurement_deferred": 0,
-      "pending_measurement_queue_size": 0
+      "nudges_sent_pending_phase4": 9,
+      "measurement_approaching_3d": 0,
+      "measurement_deferred": 1,
+      "pending_measurement_queue_size": 1
     },
     "measurement_overdue_remaining_after_manual_close": [],
     "manual_measurement_session": "2026-04-28-execute",
     "manual_measurement_root_cause": "sub_agent_mcp_inheritance_failure_per_skill_warning",
     "cs_040_deferred_to_brief_full_measurement_date": "2026-05-07",
     "notes_session_41": "Phase 3 sweep: inline analysis only (no measurement pulls \u2014 Klaviyo MCP get_campaign_report DATA_UNAVAILABLE per dept-lifecycle; CS-019 Katie to pull manually today per synthesis rec-263). 1 new ChangeSet generated (CS-2026-128 MHAM+GLP-1 consolidation per P4/DS-2026-04-29-002). Archive candidates flagged: CS-056, CS-057, CS-047, CS-058, CS-078, CS-055.",
-    "pending_measurement_queue": []
+    "pending_measurement_queue": [
+      "CS-2026-019"
+    ]
   },
   "summary": {
-    "total": 130,
+    "total": 132,
     "by_status": {
       "closed": 57,
       "published": 16,
       "approved": 8,
-      "draft": 46,
+      "draft": 48,
       "needs_feedback": 3
-    },
-    "by_risk": {
-      "critical": 2,
-      "low": 66,
-      "medium": 51,
-      "high": 9
-    },
-    "by_subtype": {
-      "implementation": 89,
-      "investigation": 22,
-      "quick": 17
-    },
-    "last_updated": "2026-04-29",
-    "total_changesets": 130,
-    "last_counted": "2026-04-29"
+    }
   },
   "changesets": [
     {
@@ -1844,6 +1832,21 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "action": "katie_pull_today_eod"
+        },
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 10
+        },
+        {
+          "flag": "measurement_overdue",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "measurement_pull_phase_4_dm",
+          "due_date": "2026-04-29",
+          "overdue_days": 1
         }
       ],
       "scheduled_send_date": "2026-04-22",
@@ -1912,6 +1915,13 @@
           "session": "2026-04-29-s1",
           "days_until_due": 2,
           "action": "prep_owner_phase_4"
+        },
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 8
         }
       ],
       "scheduled_send_date": "2026-04-24",
@@ -1969,7 +1979,14 @@
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
         "stale_approved_gt_7d",
-        "published_2026-04-22_scheduled_send_2026-04-26"
+        "published_2026-04-22_scheduled_send_2026-04-26",
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 8
+        }
       ],
       "scheduled_send_date": "2026-04-26",
       "execution_target_date": null,
@@ -2026,7 +2043,14 @@
         "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
         "stale_approved",
         "stale_approved_gt_7d",
-        "published_2026-04-22_scheduled_send_2026-04-29"
+        "published_2026-04-22_scheduled_send_2026-04-29",
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 8
+        }
       ],
       "scheduled_send_date": "2026-04-29",
       "execution_target_date": null,
@@ -2905,7 +2929,14 @@
       "review_tier": "standard",
       "last_updated": "2026-04-19",
       "sweep_flags": [
-        "stale_approved"
+        "stale_approved",
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 11
+        }
       ],
       "measurement_due": "2026-05-03",
       "published_date": "2026-04-19"
@@ -4204,6 +4235,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 22,
           "action": "devon_decision_overdue"
+        },
+        {
+          "flag": "stale_needs_feedback_gt_7d",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 8
         }
       ]
     },
@@ -4698,6 +4736,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 19,
           "action": "devon_decision_overdue"
+        },
+        {
+          "flag": "stale_needs_feedback_gt_7d",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 8
         }
       ]
     },
@@ -4824,6 +4869,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 16,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "review_for_archive_phase_4",
+          "age_days": 17
         }
       ],
       "execution_target_date": "2026-04-22",
@@ -5243,6 +5295,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 15,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "review_for_archive_phase_4",
+          "age_days": 16
         }
       ]
     },
@@ -5347,6 +5406,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 14,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "review_for_archive_phase_4",
+          "age_days": 15
         }
       ]
     },
@@ -5401,6 +5467,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 14,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "review_for_archive_phase_4",
+          "age_days": 15
         }
       ]
     },
@@ -5455,6 +5528,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 14,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "archive_candidate",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "review_for_archive_phase_4",
+          "age_days": 15
         }
       ]
     },
@@ -7550,7 +7630,15 @@
       "measurement_due": "2026-05-14",
       "ad_platform_refs": null,
       "organic_source": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 8
+        }
+      ]
     },
     {
       "id": "CS-2026-102",
@@ -9100,6 +9188,96 @@
       ],
       "last_updated": "2026-04-29",
       "notes": "Spawned 2026-04-29 from CS-129 round 3 honest accounting. Two specs exist (cgo-copilot.md 160 lines + executive-copilot.md 241 lines) but zero callers in daily pipeline. Build scope: Phase 4.5 morning pre-answers + standing question list (3 daily) + Edge Case Log + Query Log files initialized + verify command callable on-demand. State files serving as data marts already exist. Owner: Devon (CGO + cross-surface infra owner per CS-120 #1). | 2026-04-29 (Devon pivot): FLIPPED build \u2192 REMOVE. Approved 2026-04-29. Files deleted + 4 references patched. Edge Case Log stays (real, managed by /edge-cases). Query log was vapor, goes away."
+    },
+    {
+      "id": "CS-2026-131",
+      "title": "Equity Partner Superfiliate link-tagging fix (CLEETUS/ROMAN/NIKKO/DRJOSH)",
+      "subtype": "implementation",
+      "department": "creator-affiliate",
+      "platforms": [
+        "superfiliate",
+        "performance-memory"
+      ],
+      "status": "draft",
+      "risk_level": "low",
+      "owner": "Lawrence Giarrizzo + Peter Bayne",
+      "created": "2026-04-30",
+      "objective_level": "L4",
+      "category": "data_integrity",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": "synthesis_2026-04-30-s1_P5_dept-content_rec3",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "L1_margin_usd": null,
+        "L2_cash_usd": null,
+        "L3_customer_quality_score": "[PIPELINE GAP \u2014 needs estimation]",
+        "L4_learning_value": "Closes structural attribution gap for 4 Equity Partners ($4,213 in 7d revenue with 0 Superfiliate-linked posts). Unblocks pat-011 fatigue diagnosis and graduation candidate identification.",
+        "L5_brand_check": "[PIPELINE GAP \u2014 blocks auto-advance until reviewed]"
+      },
+      "routed_to": null,
+      "routed_via": null,
+      "routed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_window": "2026-05-01 to 2026-05-15",
+      "measurement_due": "2026-05-22",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-131.md",
+      "notes": "Driven by dept-content S5 + cross-flag #2: 4-creator pattern across two consecutive sessions. Pairs with content_links/content_category writeback patch (L-060). Lawrence handles content-side link generation; Peter handles platform-side writeback patch. Tier 1 candidate: low-risk, high-evidence operational fix. Spawned by synthesis 2026-04-30-s1 P5 + dept-content Recommendation 3.",
+      "source": "synthesis_priority_stack",
+      "autonomy_tier": 1,
+      "linked_pm_entry": "L-060",
+      "sweep_flags": []
+    },
+    {
+      "id": "CS-2026-132",
+      "title": "Paid creative refresh: FB general retargeting ABO + TT Tier 2 + Google Dr. Disrespect PMax",
+      "subtype": "implementation",
+      "department": "paid-media",
+      "platforms": [
+        "meta-ads",
+        "tiktok-ads",
+        "google-ads"
+      ],
+      "status": "draft",
+      "risk_level": "medium",
+      "owner": "Katie Spaller + Peter Bayne",
+      "created": "2026-04-30",
+      "objective_level": "L1",
+      "category": "creative_refresh",
+      "dependencies": [
+        "CS-2026-095"
+      ],
+      "blocks": [],
+      "spawned_from": "synthesis_2026-04-30-s1_DS_cgo-2026-04-30-002",
+      "spawned_changesets": [],
+      "expected_impact": {
+        "L1_margin_usd": "[PIPELINE GAP \u2014 needs estimation; recoverable spend ~$903/7d ($242 FB ABO 0% + $180 TT Tier 2 0% + $481 Dr.D 0.99x)]",
+        "L2_cash_usd": null,
+        "L3_customer_quality_score": "[PIPELINE GAP \u2014 needs estimation]",
+        "L4_learning_value": "Tests creative-refresh-vs-pause threshold for fatigued campaigns; closed-loop measurement on three platforms simultaneously establishes refresh ROAS lift baseline.",
+        "L5_brand_check": "[PIPELINE GAP \u2014 blocks auto-advance until reviewed]"
+      },
+      "routed_to": null,
+      "routed_via": null,
+      "routed_date": null,
+      "approved_by": null,
+      "approved_date": null,
+      "published_date": null,
+      "measurement_window": "2026-05-05 to 2026-05-19",
+      "measurement_due": "2026-05-26",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-132.md",
+      "notes": "Three campaigns at fatigue threshold: FB general retargeting ABO ($242/7d, 0 purchases, 5+ days), TT Tier 2 ($180/7d, 0 purchases, L-061 measurement-blind), Google Dr. Disrespect PMax ($481/7d, 0.99x ROAS). For TT Tier 2, pause-pending-investigation is safer until Katie confirms intent in TikTok Ads Manager directly (L-061 prevents creative-fatigue diagnosis). Provenance unmeasurable due to paid-media-state.json N=10 \u2014 refresh, not iterate. Driven by cgo-2026-04-30-002 demand signal + dept-paid-media Action 2 + Theme 2 conversion-volume -40% framing.",
+      "source": "demand_signal",
+      "autonomy_tier": 2,
+      "sweep_flags": []
     }
   ],
   "queue_actions": {
@@ -9402,6 +9580,36 @@
       "date": "2026-04-27",
       "sweep_timestamp": "2026-04-27T22:35:00Z",
       "summary": "Phase 3 lifecycle sweep. 7 new CSes added (117-123): paid pause-and-reallocate (CS-117); Matt Hughes graduation (CS-118); Endurance Bundle PDP restore (CS-119); L-053 war-room outcomes (CS-120); VoC P1 close-out (CS-121); trend-to-content sprint (CS-122); H-002 hypothesis activation (CS-123). next_id 117->124. Stale approved 1 (CS-074 Devon, 12d). 14 drafts past target; 7 with overdue_days>=5 flagged. Measurement-window overdue: 0 published items past meas_end (the S38 5 measurement_overdue from D12 brief refer to drafts with execute_by past, not published meas windows). Phantom dependencies persist: 3 (CS-100 L-045 split, CS-102-113 outline-v3, CS-115 infra) \u2014 P4 war-room agenda."
+    },
+    {
+      "session": 42,
+      "date": "2026-04-30",
+      "sweep_timestamp": "2026-04-30T13:45:00Z",
+      "summary": "Phase 3 lifecycle sweep. 2 new CSes added (131 link-tagging, 132 paid creative refresh). next_id 131->133. Stale flags added: 8. Archive candidates added: 5. Measurement overdue: 1 (CS-019 still pending Klaviyo pull from S41). MCP measurement pulls deferred \u2014 orchestrator pass without Layer 2 connector access.",
+      "new_cses": [
+        "CS-2026-131",
+        "CS-2026-132"
+      ],
+      "stale_flagged": [
+        "CS-2026-019",
+        "CS-2026-020",
+        "CS-2026-021",
+        "CS-2026-022",
+        "CS-2026-035",
+        "CS-2026-053",
+        "CS-2026-062",
+        "CS-2026-101"
+      ],
+      "archive_flagged": [
+        "CS-2026-064",
+        "CS-2026-069",
+        "CS-2026-071",
+        "CS-2026-072",
+        "CS-2026-073"
+      ],
+      "measurement_pending": [
+        "CS-2026-019"
+      ]
     }
   ]
 }
