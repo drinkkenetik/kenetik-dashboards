@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-04-30",
-  "next_id": 133,
+  "next_id": 134,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-04-30T13:45:00Z",
     "last_sweep_session": 42,
@@ -31,14 +31,17 @@
     ]
   },
   "summary": {
-    "total": 132,
+    "total": 133,
     "by_status": {
       "closed": 57,
-      "published": 16,
+      "published": 18,
       "approved": 8,
-      "draft": 48,
+      "draft": 47,
       "needs_feedback": 3
-    }
+    },
+    "total_changesets": 133,
+    "last_updated": "2026-04-30",
+    "last_counted": "2026-04-30"
   },
   "changesets": [
     {
@@ -9013,7 +9016,7 @@
         "changeset-process",
         "daily-pipeline"
       ],
-      "status": "draft",
+      "status": "published",
       "risk_level": "low",
       "owner": "Devon Price",
       "created": "2026-04-29",
@@ -9050,11 +9053,11 @@
       ],
       "routed_via": "github_commit",
       "routed_date": "2026-04-29",
-      "approved_by": null,
-      "approved_date": null,
-      "published_date": null,
+      "approved_by": "Devon",
+      "approved_date": "2026-04-30",
+      "published_date": "2026-04-30",
       "measurement_window": "90d",
-      "measurement_due": null,
+      "measurement_due": "2026-07-29",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
@@ -9114,10 +9117,17 @@
           "set_date": "2026-04-30",
           "session": "2026-04-30-execute",
           "action": "Devon directive 'fix gaps 1-4' applied. (1) approve_to_published_no_schedule replaces approve_to_publish, filtered to non-scheduled CSes; execution_variance_vs_plan added as separate metric for scheduled CSes. (2) publish_to_close DROPPED \u2014 mechanically equals brief's chosen measurement_window. (3) Data quality precondition added at top of Step 1: if <50% of recent 30 closed CSes have all five timestamps clean, skip duration analysis and surface auto-stamp candidate. (4) Step 5 cross-check status filter expanded from {closed} to {approved, published, closed, needs_feedback} for in-flight automation work. Gap 5 documented as known limitation. Re-stress-tested 2026-04-30: precondition fails (27% < 50%), surfaces auto-stamp candidate cleanly. Cross-check correctly flagged 2 possibly-overlapping CSes (079 + 127) for review without auto-suppressing \u2014 neither actually overlaps with timestamp-on-status-transition work. Ready to bake."
+        },
+        {
+          "flag": "baked_into_task_b_synthesis_md_2026_04_30",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "Pass B prompt block (round 8 corrected spec) inserted into cgo-daily-pipeline/config/task-b-synthesis.md as new Phase 2 Step 2.5 \u2014 between Step 2 Execute Synthesis and Step 3 Quality Gate. Includes Pass A daily lightweight rec-scan + Pass B cadence-throttled deep analysis with all 5 round 8 spec gap fixes (data quality precondition, scheduling-confound filter, publish_to_close dropped, expanded cross-check status filter, gap 5 known limitation documented). Status draft \u2192 approved \u2192 published. measurement_due 2026-07-29 (90d window for verification: clean_pct >= 80% within 30d, >= 95% within 90d, \u22651 spawned automation CS within 60d, measurable time-per-CS delta within 90d)."
         }
       ],
       "last_updated": "2026-04-30",
-      "notes": "Operationalizes Devon 2026-04-29 directive on automation focus. Synthesizer instruction patch + ChangeSet schema time-cost fields + weekly automation review tier + monthly retro. Blocked by CS-120 named infrastructure owner. Related: CS-127 queue mechanism is the prototype for automation-CS-routing. | 2026-04-29 (Devon via Claude /changeset-execute): Re-audit per Devon scrutiny. Simplified to ONE prompt change in task-b-synthesis.md. No new schema, no new files, no new meetings. Routes automation CSes through existing category=system_improvement value. Closed-loop measurement uses existing timestamps. See \u00a7 Resolution Hierarchy Re-Audit + \u00a7 SUPERSEDING PROPOSED CHANGE in brief. | 2026-04-29 (Devon round 2): Awareness-depth re-audit. Prompt block replaced with 7-substep process-step analysis (read process docs + capabilities inventory + tracker timestamps + reason about manual-vs-automated sub-steps). Same simplification gains preserved (no new schema/files/meetings/commands). Fallback recs-pass kept as step 7. 'No new candidates' valid step 8 output prevents fabrication. | 2026-04-29 (Devon round 3): Cost/cadence/backlog re-audit. Two-pass design: rec-scan daily (cheap), deep analysis weekly Mondays (~17K tokens) + manual invoke. Backlog = running-log pending_recommendations with category=process_automation (existing 202-entry aggregator). Daily one-liner in Devon's DM shows backlog count. Closed-loop via tracker + running-log filters. | 2026-04-29 (Devon round 4): Manual-invoke citation was vapor. CS-2026-130 spawned to wire the copilot. Today's invoke = direct synthesizer re-run; post-CS-130 = /cgo-copilot ask. Same spec-but-not-wired anti-pattern as CS-127. | 2026-04-29 (Devon pivot, round 5): Manual-invoke is direct synthesizer re-run forever. Copilot path being removed entirely via CS-130 (flipped to deletion). | 2026-04-29 (Devon round 6): Cadence mechanism specified \u2014 self-managed via running-log age (>= 7d since most recent open process_automation entry \u2192 run; else skip). No orchestrator change needed; reuses round 3's cross-check state read. /edge-cases command status surfaced for Devon decision (keep as docs / move to brain ref / wire automation). | 2026-04-30 (Devon directive 'test before bake'): Stress test caught 5 spec gaps. DO NOT BAKE until gaps 1-4 fixed and re-tested. Real candidate surfaced despite broken specs: auto-stamp timestamps on status transitions in lifecycle sweep. | 2026-04-30 (Devon round 8): Gaps 1-4 fixed in spec. Re-stress-tested cleanly. READY TO BAKE into task-b-synthesis.md. First production run will surface auto-stamp candidate as top."
+      "notes": "Operationalizes Devon 2026-04-29 directive on automation focus. Synthesizer instruction patch + ChangeSet schema time-cost fields + weekly automation review tier + monthly retro. Blocked by CS-120 named infrastructure owner. Related: CS-127 queue mechanism is the prototype for automation-CS-routing. | 2026-04-29 (Devon via Claude /changeset-execute): Re-audit per Devon scrutiny. Simplified to ONE prompt change in task-b-synthesis.md. No new schema, no new files, no new meetings. Routes automation CSes through existing category=system_improvement value. Closed-loop measurement uses existing timestamps. See \u00a7 Resolution Hierarchy Re-Audit + \u00a7 SUPERSEDING PROPOSED CHANGE in brief. | 2026-04-29 (Devon round 2): Awareness-depth re-audit. Prompt block replaced with 7-substep process-step analysis (read process docs + capabilities inventory + tracker timestamps + reason about manual-vs-automated sub-steps). Same simplification gains preserved (no new schema/files/meetings/commands). Fallback recs-pass kept as step 7. 'No new candidates' valid step 8 output prevents fabrication. | 2026-04-29 (Devon round 3): Cost/cadence/backlog re-audit. Two-pass design: rec-scan daily (cheap), deep analysis weekly Mondays (~17K tokens) + manual invoke. Backlog = running-log pending_recommendations with category=process_automation (existing 202-entry aggregator). Daily one-liner in Devon's DM shows backlog count. Closed-loop via tracker + running-log filters. | 2026-04-29 (Devon round 4): Manual-invoke citation was vapor. CS-2026-130 spawned to wire the copilot. Today's invoke = direct synthesizer re-run; post-CS-130 = /cgo-copilot ask. Same spec-but-not-wired anti-pattern as CS-127. | 2026-04-29 (Devon pivot, round 5): Manual-invoke is direct synthesizer re-run forever. Copilot path being removed entirely via CS-130 (flipped to deletion). | 2026-04-29 (Devon round 6): Cadence mechanism specified \u2014 self-managed via running-log age (>= 7d since most recent open process_automation entry \u2192 run; else skip). No orchestrator change needed; reuses round 3's cross-check state read. /edge-cases command status surfaced for Devon decision (keep as docs / move to brain ref / wire automation). | 2026-04-30 (Devon directive 'test before bake'): Stress test caught 5 spec gaps. DO NOT BAKE until gaps 1-4 fixed and re-tested. Real candidate surfaced despite broken specs: auto-stamp timestamps on status transitions in lifecycle sweep. | 2026-04-30 (Devon round 8): Gaps 1-4 fixed in spec. Re-stress-tested cleanly. READY TO BAKE into task-b-synthesis.md. First production run will surface auto-stamp candidate as top. | 2026-04-30 (Devon via Claude /changeset-execute): BAKED. Status draft \u2192 published. Pass B prompt block now in task-b-synthesis.md Phase 2 Step 2.5. Measurement window through 2026-07-29.",
+      "executed_date": "2026-04-30"
     },
     {
       "id": "CS-2026-130",
@@ -9278,6 +9288,70 @@
       "source": "demand_signal",
       "autonomy_tier": 2,
       "sweep_flags": []
+    },
+    {
+      "id": "CS-2026-133",
+      "title": "Auto-Stamp Tracker Timestamps on Status Transitions",
+      "subtype": "implementation",
+      "department": "operations",
+      "platforms": [
+        "changeset-process"
+      ],
+      "status": "published",
+      "risk_level": "low",
+      "owner": "Devon Price",
+      "created": "2026-04-30",
+      "objective_level": "L4",
+      "category": "system_improvement",
+      "dependencies": [],
+      "blocks": [
+        "CS-2026-129-effective-operation-until-timestamps-clean"
+      ],
+      "spawned_from": "CS-2026-129-round-8-stress-test-data-quality-finding",
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "tracker_timestamp_clean_pct_recent_30_closed",
+        "primary_metric_target": ">=80% within 30d, >=95% within 90d",
+        "L1_margin": "neutral_indirect_via_restored_pass_b_signal",
+        "L4_learning": "enables_pass_b_to_target_real_bottlenecks_in_future_runs",
+        "L5_brand_check": "pass"
+      },
+      "review_tier": "standard",
+      "routed_to": [
+        "Devon"
+      ],
+      "routed_via": "github_commit",
+      "routed_date": "2026-04-30",
+      "approved_by": "Devon",
+      "approved_date": "2026-04-30",
+      "published_date": "2026-04-30",
+      "executed_date": "2026-04-30",
+      "measurement_window": "90d",
+      "measurement_due": "2026-07-29",
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-133.md",
+      "autonomy_tier": 1,
+      "sweep_flags": [
+        {
+          "flag": "shipped_2026_04_30_half_a_audit_pass_half_b_command_hardening",
+          "set_date": "2026-04-30",
+          "session": "2026-04-30-execute",
+          "action": "Shipped same-session draft \u2192 approved \u2192 published per Tier 1 shadow-autonomous infra precedent (CS-091/092). Half A: added Phase 3.7 Timestamp Audit Pass to changeset-lifecycle-sweep.md \u2014 for each non-archived CS, audit status-corresponding timestamp; backfill from last_updated \u2192 git log \u2192 sweep_flag.set_date in priority order; flag missing or inverted timestamps for human attention; new counters timestamps_inferred + timestamps_missing_for_status added to last_sweep_counts. Half B: hardened changeset-measurement.md close path (now explicitly sets closed_date + last_updated) and changeset-lifecycle-sweep.md Step 3A auto-close path (explicit closed_date set). /changeset-review and /changeset-execute already correctly set their respective timestamps \u2014 verified, no patch needed. Spawned from CS-129 round 8 stress test data-quality finding."
+        }
+      ],
+      "last_updated": "2026-04-30",
+      "notes": "Closed-loop result of CS-129's stress test. Pass B identified its own input as broken; this CS fixes it via two-half approach: (Half A) sweep Phase 4-region audit + backfill, (Half B) command hardening at writeback paths. Shipped same session per Tier 1 shadow-autonomous precedent."
     }
   ],
   "queue_actions": {
