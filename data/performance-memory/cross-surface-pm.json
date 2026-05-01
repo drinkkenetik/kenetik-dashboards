@@ -500,6 +500,13 @@
       "domain": "lifecycle-marketing",
       "status": "active",
       "date": "2026-05-01"
+    },
+    {
+      "id": "L-071",
+      "summary": "CS-2026-083 stale (non-execution): dependency-on-blocker briefs need parallel approval-gate queueing, not serial \u2014 lost the window after CS-077 cleared",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-05-01"
     }
   ],
   "entries": [
@@ -1668,6 +1675,24 @@
       "changeset_id": "CS-2026-019",
       "variance_pct": 21.4,
       "outcome_class": "minor_variance"
+    },
+    {
+      "id": "L-071",
+      "date": "2026-05-01",
+      "type": "changeset_outcome",
+      "learning": "Draft FB prospecting CS aged out without execution: dependency-on-blocker (CS-077) cleared 1 day after exec target, but overlay-copy approval + paid-media slot were not queued in parallel, so the brief lost its window. Process learning: when a CS depends on a blocker and has a tight execution target, queue the post-blocker approval gates in parallel with blocker resolution rather than serially after it. The cognitive-vs-athletic FB prospecting hypothesis (pat-015) remains untested; future revisits should spawn a fresh CS with current creative inventory.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "paid-media",
+      "evidence": "Drafted 2026-04-17, execution target 2026-04-22, never approved/scheduled/published. 14 days in draft, 9 days overdue at close. Upstream CS-2026-077 closed 2026-04-23 (1d after target). Sweep flags: draft_overdue_target_gt_5d (4-27), draft_stale_gt_5d (4-29). Projected: $12,000 revenue / $6,000 margin / >=2.0x prospecting ROAS. Actual: $0 (non-execution). Variance: 100.0% (significant_variance, but classified as scheduling/process failure not estimation failure).",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-083",
+      "variance_pct": 100.0,
+      "outcome_class": "significant_variance"
     }
   ],
   "archived_entries": [
