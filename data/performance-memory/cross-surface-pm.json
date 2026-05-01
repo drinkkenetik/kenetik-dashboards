@@ -479,6 +479,20 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-04-30"
+    },
+    {
+      "id": "L-068",
+      "summary": "Two consecutive cohorts (2026-02, 2026-03) confirmed below M1 baseline; 2026-03 n=5,987 at 6.3% lowest in 16 months \u2014 acquisition-quality cliff confirmed structural.",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-05-01"
+    },
+    {
+      "id": "L-069",
+      "summary": "Async reminders cannot substitute for a binding decision-time forum; pat-012 reached Day 2 of compounding revenue impact after S42's 'sprint recommendation' didn't operationalize.",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-05-01"
     }
   ],
   "entries": [
@@ -1593,6 +1607,42 @@
         "L-056"
       ],
       "target": "cgo-daily-pipeline/config/dispatch-instructions.md (rule: if pat-012 streak >=N=15, recommend same-day post-existing-meeting decision sprint in Layer 1.5 dept-ops DM); brain/kenetik-brain/references/team-roles.md (codify post-R&D-Call decision sprint as recurring forum)"
+    },
+    {
+      "id": "L-068",
+      "date": "2026-05-01",
+      "type": "threshold_calibration",
+      "learning": "Two consecutive monthly cohorts (2026-02 n=2,497, 2026-03 n=5,987) have produced M1 repeat rates (12.8%, 6.3%) at one-third to two-thirds of the 2025 baseline (17-20%). The 2026-03 cohort is the second-largest cohort in the 16-month dataset and has the lowest M1 repeat rate. This is no longer noise \u2014 it is a confirmed structural acquisition-quality signal that compounds with the +14.3% session CVR (CRO recovery may have attracted lower-intent first-time buyers per L-057).",
+      "source": "Daily synthesis 2026-05-01-s1, Theme 2 (cross-domain D01 Signal 2 + D02 Signal 3 + D06 Signal 4)",
+      "source_type": "domain_contradiction",
+      "domain": "lifecycle",
+      "evidence": "Cohort 30d LTV $45 vs $63 avg; 60d $51 vs $79 avg. M1 6.3% on n=5,987 = ~624-customer ~$22-40K May revenue gap vs baseline. See daily synthesis 2026-05-01-s1.md.",
+      "confidence": "strong",
+      "action_taken": "Created CS-2026-134 (Katie owner, T1) for targeted re-engagement sequence + acquisition-channel-mix audit for Feb cohort.",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-057",
+        "L-065"
+      ],
+      "target": "kenetik-growth-system/commands/funnel-diagnosis.md (M1 < 12% threshold trigger); Katie's lifecycle Klaviyo flow audit checklist; running-log.json tracked_patterns pat-013 elevation."
+    },
+    {
+      "id": "L-069",
+      "date": "2026-05-01",
+      "type": "process_change",
+      "learning": "The post-R&D-Call decision sprint recommended in S42 (per L-067) did not visibly resolve CS-099 / CS-100 / CS-095 / CS-019. D14 reports zero Slack signal across 7 prior action items in date-filtered search (Apr 30+); D12 reports Cliff silent 72h+ on CS-099. The asynchronous reminder pattern has now produced two consecutive sessions of compounding revenue impact (~$98/day MRR + 12 dependent CSes blocked + Hughes/MHAM/GLP-1 stack stalled). A 'facilitated 30-min post-call sprint' was a recommendation, not a binding mechanism.",
+      "source": "Daily synthesis 2026-05-01-s1, Theme 1 (pat-012 / D14 / D12)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "pat-012 Devon decision queue Day 2 of compounding live revenue impact. Zero Slack signal across 7 prior action items. Cliff silent 72h+ on CS-099. See daily synthesis 2026-05-01-s1.md.",
+      "confidence": "strong",
+      "action_taken": "Recommendation surfaced in synthesis P0 priority + CGO DM. CS scoping for binding decision forum suggested to Peter.",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-056",
+        "L-067"
+      ],
+      "target": "kenetik-growth-system/commands/cgo-copilot.md (or new command) \u2014 define a recurring binding 'Decision Forum' with pre-published agenda, time-boxed 30 min, Cliff-facilitated, decision-or-defer requirement per item."
     }
   ],
   "archived_entries": [
@@ -1888,5 +1938,5 @@
       "physically_moved_at": "2026-04-19T23:58:35.148791+00:00"
     }
   ],
-  "last_updated": "2026-04-30T13:50:00Z"
+  "last_updated": "2026-05-01"
 }
