@@ -1,42 +1,28 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-04-30",
-  "next_id": 134,
+  "last_updated": "2026-05-01",
+  "next_id": 136,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-04-30T13:45:00Z",
-    "last_sweep_session": 42,
+    "last_sweep_date": "2026-05-01",
+    "last_sweep_session": "2026-05-01-s1",
     "last_sweep_result": "completed_no_mcp_measurement_pulls",
     "last_sweep_counts": {
-      "total_scanned": 132,
-      "stale_detected": 8,
-      "archive_candidates": 5,
+      "stale_flags_applied": 19,
       "measurement_overdue": 1,
-      "measurement_due_today": 0,
-      "measured": 0,
       "auto_closed": 0,
-      "flagged_human_review": 0,
-      "draft_overdue_gt_5d": 34,
-      "nudges_sent_pending_phase4": 9,
-      "measurement_approaching_3d": 0,
-      "measurement_deferred": 1,
-      "pending_measurement_queue_size": 1
-    },
-    "measurement_overdue_remaining_after_manual_close": [],
-    "manual_measurement_session": "2026-04-28-execute",
-    "manual_measurement_root_cause": "sub_agent_mcp_inheritance_failure_per_skill_warning",
-    "cs_040_deferred_to_brief_full_measurement_date": "2026-05-07",
-    "notes_session_41": "Phase 3 sweep: inline analysis only (no measurement pulls \u2014 Klaviyo MCP get_campaign_report DATA_UNAVAILABLE per dept-lifecycle; CS-019 Katie to pull manually today per synthesis rec-263). 1 new ChangeSet generated (CS-2026-128 MHAM+GLP-1 consolidation per P4/DS-2026-04-29-002). Archive candidates flagged: CS-056, CS-057, CS-047, CS-058, CS-078, CS-055.",
-    "pending_measurement_queue": [
-      "CS-2026-019"
-    ]
+      "measurement_capable": false,
+      "deferred_to_pending_measurement_queue": [
+        "CS-2026-019"
+      ]
+    }
   },
   "summary": {
-    "total": 133,
+    "total": 135,
     "by_status": {
       "closed": 57,
       "published": 18,
       "approved": 8,
-      "draft": 47,
+      "draft": 49,
       "needs_feedback": 3
     },
     "total_changesets": 133,
@@ -1904,6 +1890,13 @@
           "action": "measurement_pull_phase_4_dm",
           "due_date": "2026-04-29",
           "overdue_days": 1
+        },
+        {
+          "flag": "measurement_overdue",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "2d",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "scheduled_send_date": "2026-04-22",
@@ -1979,6 +1972,13 @@
           "session": "2026-04-30-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 8
+        },
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "46d",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "scheduled_send_date": "2026-04-24",
@@ -2043,6 +2043,13 @@
           "session": "2026-04-30-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 8
+        },
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "46d",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "scheduled_send_date": "2026-04-26",
@@ -2107,6 +2114,13 @@
           "session": "2026-04-30-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 8
+        },
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "46d",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "scheduled_send_date": "2026-04-29",
@@ -2815,6 +2829,13 @@
           "set_date": "2026-04-30",
           "session": "2026-04-30-execute",
           "action": "One-shot backfill detection: routed_date 2026-03-19 < created 2026-03-20 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "9d",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -3071,6 +3092,13 @@
           "set_date": "2026-04-30",
           "session": "2026-04-30-execute",
           "action": "One-shot backfill detection: routed_date 2026-03-22 < created 2026-03-23 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
+        },
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "24d",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "measurement_due": "2026-05-03",
@@ -3372,6 +3400,13 @@
           "set_date": "2026-04-28",
           "session": "2026-04-28-execute",
           "action": "Interim measurement (250 conversions sampled): ~30 non-equity active codes vs 17 baseline = ~13-15 net reactivation; on track for 20-25 target by May 7. Run-rate revenue ~$5-7K in 13d vs $3K monthly target. Measurement_due re-anchored 2026-04-28 \u2192 2026-05-07 to honor brief's \u00a7 Measurement Plan. Resolution Hierarchy: Refine \u2014 don't close prematurely; patch the tracker default to copy brief dates."
+        },
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "35d",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-28",
@@ -4088,6 +4123,13 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "days_stale": 14,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "16d",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -5317,6 +5359,13 @@
           "set_date": "2026-04-29",
           "session": "/changeset-execute CS-2026-067",
           "action": "Published per Katie. 4 Klaviyo campaigns live in scheduled state; C1 sends 2026-04-29 AM. Measurement window 60d (due 2026-06-28). Lifecycle sweep auto-pulls KPI at 14d/30d/60d. Outstanding pre-D5 dependency: Hugo to confirm Recharge founding-customer price lock for C3 (Track B E2) before 2026-05-04."
+        },
+        {
+          "flag": "measurement_approaching_5_3",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "5/3",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-29",
@@ -5486,6 +5535,13 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "days_stale": 7,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "9d",
           "action": "owner_nudge_queued_phase_4"
         }
       ]
@@ -6363,7 +6419,15 @@
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-084.md",
       "notes": "Spawned from Phase 2c PM-DRIVE-TO-A portfolio. Bundles Cluster A (confidence inflation) + Cluster B (entry_type regression) primaries + A5/B5 reconciler companions via P002 Guardrail-as-input primitive. 5-level review APPROVE. Promotes Provisional Co-emit-lifecycle-marker pattern to Established on ship (3/3 applications). Rollout: day 1-5 gate+classifier shadow, day 6-10 flag-policy cutover + reconciler, day 11-14 strict-policy after 48h clean telemetry. | 2026-04-19: SHIPPED. scripts/pm_write_gate.py (validated-write API), scripts/pm_reconciler.py (batch backfill), cgo-daily-pipeline/config/pm-write-gate-policy.json (flag policy, shadow=false). Reconciler APPLIED: 30 entry_type backfills + 21 confidence downgrades (18 Cluster-A inflated strongs + 3 additional single-source moderates). Backup: data/performance-memory/cross-surface-pm.json.bak-20260419T235328Z. Gate smoke-test: selftest 4/4 green (validation, downgrade, rejection, classifier); shadow append correctly blocked live write. E5 scanner confirms PM_ENTRY_TYPE_MISSING cleared (30->0). Policy rollout: flag today, strict after 48h clean telemetry.\n2026-04-23: Apr 23 owner scrub: 'eng-TBD' placeholder removed \u2014 ops platform (performance-memory) is Devon-owned per AP-003 v1.7.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "12d",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
@@ -6424,7 +6488,15 @@
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-085.md",
       "notes": "Spawned from Phase 2c PM-DRIVE-TO-A portfolio. Bundles Cluster C primary (archival synthesis) + Cluster E primary + E5 companion + C5 reconciler via shared workflow-scheduler infrastructure. Confound check vs Cluster C passed (distinct primitives; shared infra). 5-level review APPROVE with conditions (risk-classifier rules required before E2 live cutover). Ship order: E5 day 1 standalone, scheduler core + C1 tenant days 3-7, E2 shadow days 8-10, E2 live days 11-12, C5 reconciliation days 13-14. P003 circuit breaker 2nd major application. | 2026-04-19: Tenant E5 (stale-state scanner) SHIPPED standalone per plan. scripts/e5_stale_state_scanner.py implements 4 tracker rules + 2 PM rules + P003 circuit breaker (5%/24h) + dedupe with 3-scan escalation. Dry-run smoke test: 61 violations detected against live tracker+PM (1 STALE_APPROVED_OVERDUE, 10 DRAFT_STALE, 6 MEASUREMENT_OVERDUE, 14 STALE_APPROVED_UNDATED, 30 PM_ENTRY_TYPE_MISSING). Remaining tenants (C1 archival, E2 execution queue, C5 reconciler) queued. | 2026-04-19: FULL SHIP. scripts/workflow_scheduler.py (core + registry + shared P003 circuit breaker), scripts/wf_tenant_c1.py (PM archival hook + C5 backlog reconciler), scripts/wf_tenant_e2.py (ChangeSet execution queue + risk classifier). C1 live: archived 5 acted-on entries (L-022/023/033/034/035). C5 live: physically moved 5 entries active->archived_entries (30->25 active / 7->12 archived). E2 live: 16 approved CSes scanned, 1 auto-advanced (CS-035 klaviyo tier-1 Devon-approved), 15 routed to manual-push-hold with nudge (including CS-056 + CS-057 proof-point). E5 already shipped in commit 96216b6. Manual-push queue written to cgo-logs/workflow-scheduler/manual-push-queue.jsonl. Rollout note: CS-085 spec called for E2 48h shadow before live; compressed here given same-session validation + Devon directive. Circuit breaker healthy across all tenants.\n2026-04-23: Apr 23 owner scrub: 'eng-TBD' placeholder removed \u2014 ops platform (changeset-process) is Devon-owned.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "12d",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
@@ -6485,7 +6557,15 @@
       "autonomy_tier": 0,
       "file": "cgo-logs/changesets/CS-2026-086.md",
       "notes": "Rewritten post-audit (2026-04-19). Original bifurcated scope (ceremony + team-ingest service) invalidated by audit finding that producer model was fictional and actual producer is Step 9\u2192Step 5b with an inbound-DM coverage gap. Single-fix form. Passes 5-level review + would pass proposed Level-0 anti-pattern cross-check (EC-2026-004 v2.1.2). S effort. Pairs with CS-2026-084 + CS-2026-085 in PM-DRIVE-TO-A-2026-04-19 portfolio.\n2026-04-23: Apr 23 owner scrub: 'eng-TBD' placeholder removed \u2014 ops platform (changeset-process) is Devon-owned.",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "12d",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
       "revision_notes": "2026-04-19 v2 rewrite: removed D5 weekly ceremony (Spec-without-runtime-enforcement anti-pattern). Removed Phase 2 team-ingest service (producer consolidation not needed \u2014 no fragmented producers existed). Removed CS-084 dependency (Step 5b write path already correct). Now single-fix ChangeSet: Step 9a.2 extension + team-roster config + narrow keyword broadening + backfill sweep. See audit 2026-04-Wk4-cluster-d-phase1-disambiguation.md and EC-2026-004.",
       "revision_date": "2026-04-19",
       "rejection_notes": null,
@@ -6730,6 +6810,13 @@
           "set_date": "2026-04-27",
           "session": "2026-04-27-execute",
           "action": "Katie chose 'leave on-air' for remaining Meta underperformers (whitelisting beyond Cleetus + other 0x lines). Explicit deferral logged 2026-04-27."
+        },
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "10d",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": "[2026-04-21 /changeset-review \u2014 FULL tier, returned for revision]\n\nEight items identified before advancement to CGO approval:\n\n1. MISSING RESOLUTION PATH \u2014 Brief has no Remove/Refine/Add block. Likely Remove (pause underperformers) + Refine (redirect existing spend to Google) \u2014 document explicitly with a depth-escalation check.\n\n2. spawned_from SCOPE DRIFT \u2014 rec-223 in the 2026-04-20 synthesis says \"Pause whitelisting/cleetus ad set (0.00x ROAS) and reallocate to METARECOVERY TEST\" (synthesis line 107). CS-089 instead reallocates to GOOGLE PROSPECTING. Either justify the Meta-to-Google pivot in the brief (with evidence) or correct the attribution.\n\n3. WRONG DOMAIN CITATION \u2014 \"D17\" cited for underperformance data is wrong. D17 is Industry News (Ketone-IQ, ketone-x-alcohol study). Paid media underperformance lives in D04. Replace D17 references with D04 citations.\n\n4. L-018 MISCITED \u2014 L3 claims Google intent is \"L-018-adjacent signal\". L-018 is \"Sprout Social Listening API 404s\" \u2014 an operational connector-reliability learning, not a customer-intent signal. No adjacency exists. Remove the claim or find the correct prior in cross-surface-pm.json.\n\n5. MISSING inline [src:...] markers \u2014 On all empirical claims: whitelisting/cleetus 0.00x, Google 9.16x, Meta 2.74x, \"underperformers at 1.2x hold\", \"3x current bid\". See changeset-common-functions \u00a70b for format.\n\n6. UNDISCLOSED CHANNEL RISK \u2014 Synthesis line 56 flags Google as \"DETERIORATING on non-brand (-28% WoW, tROAS lockout) but overall 9.16x signal still holds at portfolio level.\" This CS scales Google ~3x INTO a deteriorating channel with an algorithmic lockout active. L4 (\"durability at scaled spend\") understates this. Reframe hypothesis to: \"will deterioration reverse or accelerate under scaled spend.\"\n\n7. L1 INTERNAL INCONSISTENCY \u2014\n   (a) L1 narrative assumes underperformers \"at 1.2x hold\" losing ~$900/wk, but source data shows whitelisting/cleetus at 0.00x. Recompute with actual ROAS.\n   (b) L1 narrative says \"Net +$2.5k/wk margin\" which implies $5,000 over 14d, but margin.expected = $13,500 (2.7x gap). Reconcile.\n   (c) Margin formula for multi-surface reallocation (paid_meta + paid_google) is not documented. Per \u00a73 this is an incremental margin calculation (no net spend change). Document methodology in _note field.\n\n8. P003 ANTI-PATTERN RISK (L0) \u2014 Proposed fix is \"scale Google 3x and watch the dashboard\" without a circuit-breaker. For high-risk / autonomy_tier 3 / scaling into a flagged-deteriorating surface, add an explicit Action+Condition pair: e.g., \"pause Google reallocation if 7d ROAS < 4x\" or \"freeze increment if tROAS lockout persists >3 days.\" Observational targets are not guardrails.\n\nAlso: rec-223 calls this a \"spin-off of CS-051 (Facebook Retargeting-to-Whitelisting Reallocation)\" \u2014 add CS-051 parentage to the brief if accurate.\n\nContext: CS-2026-087 (CamJones IG graduation) was approved today with explicit sequencing dependency on this CS. CS-087 cannot execute until CS-089 is approved and budget reallocation is live. Whiskey 50 calendar anchor is 2026-04-26 \u2014 5 days from now.\n\nResubmit via /changeset-review CS-2026-089 once addressed.\n\n---\n[2026-04-21 second pass \u2014 author (Katie) addressed all 8 items]\nBrief rewritten: (1) Resolution Path \u00a71b added (Remove+Refine chosen; scope pivot Meta\u2192Google explicitly justified); (2) spawned_from clarified with pivot disclosure; (3) D17 replaced with D04 citations; (4) L-018 miscitation removed (it was Sprout connector 404s, not intent signal); (5) inline [src:] markers added; (6) Google deterioration risk disclosed in hypothesis and L4 hypothesis reframed; (7) L1 reconciled \u2014 recomputed at 50% DTC per \u00a73 reallocation formula, envelope now $4k/$11.25k/$20.5k (was $4.8k/$13.5k/$24.6k at undocumented 60%); (8) circuit-breakers added with explicit Action+Condition pairs. CS-051 parent scope added. Ready for re-review via /changeset-review CS-2026-089.",
@@ -6917,6 +7004,13 @@
           "set_date": "2026-04-28",
           "session": "2026-04-28-execute",
           "action": "Tier 1 (shadow-autonomous) approved + queued for execution. Open routing question surfaced: actual engineering-execution lead needs naming (header has Devon+Katie but neither writes pipelines). Devon picks: self-execute, contractor, or hand to existing scripts/ owner. Status draft \u2192 approved."
+        },
+        {
+          "flag": "measurement_approaching_5_3",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "5/3",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -7210,6 +7304,13 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "days_stale": 8,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "overdue_close",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "today",
           "action": "owner_nudge_queued_phase_4"
         }
       ]
@@ -7539,6 +7640,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 7,
           "action": "devon_decision_overdue"
+        },
+        {
+          "flag": "co_approval_expiry_today",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "today",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-28"
@@ -7697,6 +7805,13 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-execute",
           "action": "CS-100 published 2026-04-29 with FULL combined Layer 1 + Layer 2 scope, deviating from yesterday's bare-branch-only directive. Recommendation: ratify the deviation (Option 1) \u2014 Mar cohort first-renewals already firing; rollback contaminates measurement. Variant 3 (science-forward, PMID 41994946 Tier A) remains HELD pending Brandon claims-pass \u2014 straightforward checkbox. L4 learning: directives in /changeset-review dossiers don't bind /changeset-execute scope."
+        },
+        {
+          "flag": "approved_unexecuted",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "~$98/day MRR leak",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "review_tier": "standard",
@@ -7778,6 +7893,13 @@
           "session": "2026-04-30-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 8
+        },
+        {
+          "flag": "stale_published_gt_7d",
+          "set_date": "2026-05-01",
+          "session": "2026-05-01-s1",
+          "detail": "9d",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -9496,6 +9618,40 @@
       ],
       "last_updated": "2026-04-30",
       "notes": "Closed-loop result of CS-129's stress test. Pass B identified its own input as broken; this CS fixes it via two-half approach: (Half A) sweep Phase 4-region audit + backfill, (Half B) command hardening at writeback paths. Shipped same session per Tier 1 shadow-autonomous precedent. | 2026-04-30 (Devon round 2): Simplified per audit. Phase 3.7 daily audit removed (redundant with Pass B). Inline patches consolidated to \u00a71c canonical pattern in common-functions. One-shot backfill applied. Net: shorter, clearer, more durable single source of truth."
+    },
+    {
+      "id": "CS-2026-134",
+      "title": "March 2026 cohort M1 re-engagement sequence (n=5,987, M1 6.3% vs 17-20% baseline)",
+      "status": "draft",
+      "owner": "Katie Spaller",
+      "category": "lifecycle_marketing",
+      "tier": "T1",
+      "created": "2026-05-01",
+      "session_created": "2026-05-01-s1",
+      "description": "Build and ship a targeted re-engagement / repurchase prompt sequence for the 2026-03 acquisition cohort (5,987 customers; second-largest cohort in 16-month dataset). M1 repeat rate is 6.3% vs 17-20% baseline. The M1 window is May 2026 \u2014 sequence must launch in week of 5/4 to capture the window. Audit which Klaviyo flows the cohort entered (Welcome, 15-day educational, retention) and assess whether timing/content is calibrated for the lower initial engagement. Also pre-stage the Apr 5 spike cohort retention pull for 5/5 (per D06 A3).",
+      "evidence": "D01 Signal 2 / Action 2; D02 Signal 3 / Action 5; D06 Signal 4 / Action 5. Cohort 30d LTV $45 vs $63 avg.",
+      "expected_impact": "If sequence lifts M1 from 6.3% to 12% (half baseline): ~340 incremental repeat orders x $65 AOV = ~$22,100 incremental May revenue. M1 window closes by mid-May.",
+      "route": "Katie (owner), Devon (awareness)",
+      "measurement_window_end": "2026-06-01",
+      "source_signal": "cgo-2026-05-01-001 (DS-07 Retention Risk T1)",
+      "sweep_flags": []
+    },
+    {
+      "id": "CS-2026-135",
+      "title": "Wholesale at-risk account triage ($816,553 across 59 accounts)",
+      "status": "draft",
+      "owner": "Josh Goodale + Nicole Sanchez",
+      "category": "wholesale",
+      "tier": "T2",
+      "created": "2026-05-01",
+      "session_created": "2026-05-01-s1",
+      "description": "Score 59 at-risk wholesale accounts ($816,553 historical revenue) by revenue x recency. Direct outreach to top 10 by revenue. Categorize root cause. Use Dierbergs and Genesis launches as a re-engagement narrative.",
+      "evidence": "D01 Signal 5 / Action 4. 59 at-risk vs 123 churned ($181K). Wholesale Apr -6.8% MoM but +43.4% since Jan.",
+      "expected_impact": "Recovery of 20% of at-risk pool = ~$163K annualized.",
+      "route": "Josh (owner), Nicole (account comms), Devon (strategic awareness)",
+      "measurement_window_end": "2026-07-01",
+      "source_signal": "cgo-2026-05-01-002 (DS-08 Channel Churn Risk T1)",
+      "sweep_flags": []
     }
   ],
   "queue_actions": {
@@ -9754,80 +9910,10 @@
     "new_changesets": 1,
     "notes": "16 stale approved (all 21d except CS-034 18d, CS-036/037 15d). 3 measurement windows approaching Apr 8-9. 1 new CS created (CS-2026-047 Brain Health Content Bundle). No auto-closes \u2014 no measurement-overdue published items with available data (Polar offline blocks verification)."
   },
-  "lifecycle_sweep_notes": [
-    {
-      "date": "2026-04-19",
-      "note": "CS-2026-086 rewritten v2 post Cluster D disambiguation audit. Scope changed from bifurcated ceremony+infra to single Step-9a.2 coverage fix. CS-084 dependency removed. Autonomy tier lowered to 0. Risk low. Review tier standard. Method gaps logged as EC-2026-004 (Level-0 anti-pattern cross-check; disjunction-vs-conjunction at pre-emit)."
-    },
-    {
-      "date": "2026-04-19",
-      "note": "CS-2026-086 v2 executed: Step 9a.2 inserted into synthesis-instructions.md; team-roster.json created; 7 additional correction-shape keywords added to Step 9a; backfill sweep harness + review template shipped (scripts/step9a2_backfill_sweep.py). Measurement window 14d."
-    },
-    {
-      "session": 38,
-      "date": "2026-04-22",
-      "sweep_timestamp": "2026-04-22T15:15:00Z",
-      "summary": "Phase 3 lifecycle sweep. 3 new CSes added (098/099/100). next_id 98->101. Stale approved 7 (unchanged from S37, ages +1). Measurement overdue rose 2->5 per D12 brief correction. Pipeline net: +3 new / -0 closed / -0 auto-closed this session (non-atomic closes routed to Phase 4 DMs).",
-      "new_cses": [
-        "CS-2026-098",
-        "CS-2026-099",
-        "CS-2026-100"
-      ],
-      "refines_existing": [
-        "CS-2026-095 (scope expansion)",
-        "CS-2026-097 (check-in pull-forward)",
-        "CS-2026-037 (owner reassign)",
-        "CS-2026-089 (Devon escalation)",
-        "CS-2026-091 (HG8 reinforcement)"
-      ],
-      "hard_gate_2_breach_count": 68,
-      "hard_gate_3_triggered": true,
-      "step_8a_active_domains": [
-        "D13 (consecutive_below_40=7)"
-      ],
-      "step_8a_watch_domains": [
-        "D06 (consecutive_below_40=2)"
-      ],
-      "pattern_layer_escalations": [
-        "pat-012 Devon tier-3 latency 15+ sessions, self-executing via CS-096 48h auto-close"
-      ],
-      "data_primacy_corrections_applied": 7
-    },
-    {
-      "session": 39,
-      "date": "2026-04-27",
-      "sweep_timestamp": "2026-04-27T22:35:00Z",
-      "summary": "Phase 3 lifecycle sweep. 7 new CSes added (117-123): paid pause-and-reallocate (CS-117); Matt Hughes graduation (CS-118); Endurance Bundle PDP restore (CS-119); L-053 war-room outcomes (CS-120); VoC P1 close-out (CS-121); trend-to-content sprint (CS-122); H-002 hypothesis activation (CS-123). next_id 117->124. Stale approved 1 (CS-074 Devon, 12d). 14 drafts past target; 7 with overdue_days>=5 flagged. Measurement-window overdue: 0 published items past meas_end (the S38 5 measurement_overdue from D12 brief refer to drafts with execute_by past, not published meas windows). Phantom dependencies persist: 3 (CS-100 L-045 split, CS-102-113 outline-v3, CS-115 infra) \u2014 P4 war-room agenda."
-    },
-    {
-      "session": 42,
-      "date": "2026-04-30",
-      "sweep_timestamp": "2026-04-30T13:45:00Z",
-      "summary": "Phase 3 lifecycle sweep. 2 new CSes added (131 link-tagging, 132 paid creative refresh). next_id 131->133. Stale flags added: 8. Archive candidates added: 5. Measurement overdue: 1 (CS-019 still pending Klaviyo pull from S41). MCP measurement pulls deferred \u2014 orchestrator pass without Layer 2 connector access.",
-      "new_cses": [
-        "CS-2026-131",
-        "CS-2026-132"
-      ],
-      "stale_flagged": [
-        "CS-2026-019",
-        "CS-2026-020",
-        "CS-2026-021",
-        "CS-2026-022",
-        "CS-2026-035",
-        "CS-2026-053",
-        "CS-2026-062",
-        "CS-2026-101"
-      ],
-      "archive_flagged": [
-        "CS-2026-064",
-        "CS-2026-069",
-        "CS-2026-071",
-        "CS-2026-072",
-        "CS-2026-073"
-      ],
-      "measurement_pending": [
-        "CS-2026-019"
-      ]
-    }
-  ]
+  "lifecycle_sweep_notes": {
+    "pending_measurement_queue": [
+      "CS-2026-019"
+    ],
+    "queue_last_updated": "2026-05-01"
+  }
 }
