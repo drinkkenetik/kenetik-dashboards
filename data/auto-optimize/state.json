@@ -592,9 +592,31 @@
               "cvr": 0.0
             }
           }
+        },
+        {
+          "checked_at": "2026-05-01T12:18:49.017244Z",
+          "snapshot_at": "2026-05-01T12:18:51.220714Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 1028,
+              "atc_events": 102,
+              "atc_rate": 0.09922178988326848,
+              "bounce_rate": 0.754863813229572,
+              "cvr": 0.0
+            },
+            "variant": {
+              "sessions": 96,
+              "atc_events": 12,
+              "atc_rate": 0.125,
+              "bounce_rate": 0.7708333333333334,
+              "cvr": 0.0
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-05-01T06:53:01.950863Z",
+      "last_checked_at": "2026-05-01T12:18:49.017244Z",
       "katie_approval_observed_at": "2026-04-24T20:22:15Z",
       "orchestrator_notes": [
         {
@@ -614,24 +636,24 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-05-01T06:53:04.741129Z",
+        "snapshot_at": "2026-05-01T12:18:51.220714Z",
         "control": {
-          "sessions": 952,
-          "atc_events": 98,
-          "atc_rate": 0.10294117647058823,
-          "bounce_rate": 0.7531512605042017,
+          "sessions": 1028,
+          "atc_events": 102,
+          "atc_rate": 0.09922178988326848,
+          "bounce_rate": 0.754863813229572,
           "cvr": 0.0
         },
         "variant": {
-          "sessions": 89,
+          "sessions": 96,
           "atc_events": 12,
-          "atc_rate": 0.1348314606741573,
-          "bounce_rate": 0.7640449438202247,
+          "atc_rate": 0.125,
+          "bounce_rate": 0.7708333333333334,
           "cvr": 0.0
         }
       },
       "last_undersample_escalation_at": "2026-04-30T00:28:47.849909Z"
     }
   },
-  "_last_cron_run": "2026-05-01T06:53:01.950863Z"
+  "_last_cron_run": "2026-05-01T12:18:49.017244Z"
 }
