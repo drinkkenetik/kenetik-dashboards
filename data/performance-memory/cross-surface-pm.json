@@ -493,6 +493,13 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-05-01"
+    },
+    {
+      "id": "L-070",
+      "summary": "CS-2026-019 minor_variance (21.4%): Earth Day cultural hook tiers below DST; apply ~30-35% suppression haircut to Klaviyo audience estimates",
+      "domain": "lifecycle-marketing",
+      "status": "active",
+      "date": "2026-05-01"
     }
   ],
   "entries": [
@@ -1643,6 +1650,24 @@
         "L-067"
       ],
       "target": "kenetik-growth-system/commands/cgo-copilot.md (or new command) \u2014 define a recurring binding 'Decision Forum' with pre-published agenda, time-boxed 30 min, Cliff-facilitated, decision-or-defer requirement per item."
+    },
+    {
+      "id": "L-070",
+      "date": "2026-05-01",
+      "type": "changeset_outcome",
+      "learning": "Cultural hook tiering: Earth Day email beat science-content avg (0.88% CTR vs 0.4%) but underperformed DST cultural benchmark (1.14%). Cultural saturation matters - bodily-state-aligned moments (DST) > values-aligned moments (Earth Day) for Kenetik's segment. Recalibrate cultural CTR target to 1.0-1.3% for values-aligned sends. Separately, brief-stage segment-size estimate (51,643) overstated delivered audience (16,108) by ~3x due to standard Klaviyo suppressions - apply ~30-35% suppression haircut to future Klaviyo expected-revenue projections.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle-marketing",
+      "evidence": "Projected: $1,800 revenue, $900 margin, >=2.0% CTR (Klaviyo email, audience ~51,643). Actual: $1,415.16 revenue, $707.58 margin (50% DTC), 0.876% CTR (141 unique clicks / 16,097 delivered). Variance: 21.4% on revenue. Open rate 45.87% (strong); revenue-per-recipient $0.088 (2.5x brief-implied $0.035). Margin impact: -21% vs projection. Hypothesis: partially supported (cultural beats science avg, but tiers below DST). Send: 2026-04-22 2pm ET; measurement window 4/22-4/29.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-019",
+      "variance_pct": 21.4,
+      "outcome_class": "minor_variance"
     }
   ],
   "archived_entries": [
