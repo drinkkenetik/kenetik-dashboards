@@ -658,9 +658,31 @@
               "cvr": 0.0
             }
           }
+        },
+        {
+          "checked_at": "2026-05-02T06:37:46.766157Z",
+          "snapshot_at": "2026-05-02T06:37:49.435364Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 1501,
+              "atc_events": 145,
+              "atc_rate": 0.0966022651565623,
+              "bounce_rate": 0.7475016655562958,
+              "cvr": 0.0
+            },
+            "variant": {
+              "sessions": 130,
+              "atc_events": 17,
+              "atc_rate": 0.13076923076923078,
+              "bounce_rate": 0.7461538461538462,
+              "cvr": 0.0
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-05-02T00:28:12.463646Z",
+      "last_checked_at": "2026-05-02T06:37:46.766157Z",
       "katie_approval_observed_at": "2026-04-24T20:22:15Z",
       "orchestrator_notes": [
         {
@@ -680,24 +702,24 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-05-02T00:28:14.172473Z",
+        "snapshot_at": "2026-05-02T06:37:49.435364Z",
         "control": {
-          "sessions": 1286,
-          "atc_events": 117,
-          "atc_rate": 0.09097978227060653,
-          "bounce_rate": 0.7488335925349923,
+          "sessions": 1501,
+          "atc_events": 145,
+          "atc_rate": 0.0966022651565623,
+          "bounce_rate": 0.7475016655562958,
           "cvr": 0.0
         },
         "variant": {
-          "sessions": 116,
-          "atc_events": 15,
-          "atc_rate": 0.12931034482758622,
-          "bounce_rate": 0.75,
+          "sessions": 130,
+          "atc_events": 17,
+          "atc_rate": 0.13076923076923078,
+          "bounce_rate": 0.7461538461538462,
           "cvr": 0.0
         }
       },
       "last_undersample_escalation_at": "2026-04-30T00:28:47.849909Z"
     }
   },
-  "_last_cron_run": "2026-05-02T00:28:12.463646Z"
+  "_last_cron_run": "2026-05-02T06:37:46.766157Z"
 }
