@@ -680,9 +680,31 @@
               "cvr": 0.0
             }
           }
+        },
+        {
+          "checked_at": "2026-05-02T12:17:07.776955Z",
+          "snapshot_at": "2026-05-02T12:17:10.424782Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 1576,
+              "atc_events": 148,
+              "atc_rate": 0.09390862944162437,
+              "bounce_rate": 0.7519035532994924,
+              "cvr": 0.0
+            },
+            "variant": {
+              "sessions": 137,
+              "atc_events": 17,
+              "atc_rate": 0.12408759124087591,
+              "bounce_rate": 0.7445255474452555,
+              "cvr": 0.0
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-05-02T06:37:46.766157Z",
+      "last_checked_at": "2026-05-02T12:17:07.776955Z",
       "katie_approval_observed_at": "2026-04-24T20:22:15Z",
       "orchestrator_notes": [
         {
@@ -702,24 +724,24 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-05-02T06:37:49.435364Z",
+        "snapshot_at": "2026-05-02T12:17:10.424782Z",
         "control": {
-          "sessions": 1501,
-          "atc_events": 145,
-          "atc_rate": 0.0966022651565623,
-          "bounce_rate": 0.7475016655562958,
+          "sessions": 1576,
+          "atc_events": 148,
+          "atc_rate": 0.09390862944162437,
+          "bounce_rate": 0.7519035532994924,
           "cvr": 0.0
         },
         "variant": {
-          "sessions": 130,
+          "sessions": 137,
           "atc_events": 17,
-          "atc_rate": 0.13076923076923078,
-          "bounce_rate": 0.7461538461538462,
+          "atc_rate": 0.12408759124087591,
+          "bounce_rate": 0.7445255474452555,
           "cvr": 0.0
         }
       },
       "last_undersample_escalation_at": "2026-04-30T00:28:47.849909Z"
     }
   },
-  "_last_cron_run": "2026-05-02T06:37:46.766157Z"
+  "_last_cron_run": "2026-05-02T12:17:07.776955Z"
 }
