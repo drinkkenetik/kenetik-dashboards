@@ -768,9 +768,31 @@
               "cvr": 0.0
             }
           }
+        },
+        {
+          "checked_at": "2026-05-03T12:15:22.259965Z",
+          "snapshot_at": "2026-05-03T12:15:24.111062Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 2043,
+              "atc_events": 197,
+              "atc_rate": 0.09642682329907,
+              "bounce_rate": 0.750367107195301,
+              "cvr": 0.0
+            },
+            "variant": {
+              "sessions": 185,
+              "atc_events": 23,
+              "atc_rate": 0.12432432432432433,
+              "bounce_rate": 0.7243243243243244,
+              "cvr": 0.0
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-05-03T06:50:06.060062Z",
+      "last_checked_at": "2026-05-03T12:15:22.259965Z",
       "katie_approval_observed_at": "2026-04-24T20:22:15Z",
       "orchestrator_notes": [
         {
@@ -790,24 +812,24 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-05-03T06:50:09.333132Z",
+        "snapshot_at": "2026-05-03T12:15:24.111062Z",
         "control": {
-          "sessions": 1993,
-          "atc_events": 194,
-          "atc_rate": 0.09734069242348219,
-          "bounce_rate": 0.7496236828901154,
+          "sessions": 2043,
+          "atc_events": 197,
+          "atc_rate": 0.09642682329907,
+          "bounce_rate": 0.750367107195301,
           "cvr": 0.0
         },
         "variant": {
-          "sessions": 183,
-          "atc_events": 22,
-          "atc_rate": 0.12021857923497267,
-          "bounce_rate": 0.726775956284153,
+          "sessions": 185,
+          "atc_events": 23,
+          "atc_rate": 0.12432432432432433,
+          "bounce_rate": 0.7243243243243244,
           "cvr": 0.0
         }
       },
       "last_undersample_escalation_at": "2026-04-30T00:28:47.849909Z"
     }
   },
-  "_last_cron_run": "2026-05-03T06:50:06.060062Z"
+  "_last_cron_run": "2026-05-03T12:15:22.259965Z"
 }
