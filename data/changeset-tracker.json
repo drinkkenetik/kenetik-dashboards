@@ -7173,6 +7173,14 @@
           "action": "Engineering execution lead: Devon + Cowork co-pilot. Per Devon decision 2026-05-04 (Monday Connect packet recommendation Option A): author scripts/amazon_ads_search_terms_pull.py modeled on existing pattern (qb_financial_refresh.py / recharge_subscription_sync.py / shopify_cohort_analysis.py). Add daily-cron GHA following the .github/workflows/quickbooks-financial-refresh.yml shape. Write to data/paid-media-state.json or new data/amazon-ads-state.json. Surface output in daily-pulse + dept-paid-media brief. Estimated ~half-day of Devon's time. Decision rationale: existing custom-script pattern is the team's chosen approach (no SaaS dependency adds), Peter is saturated on CS-140 (claims-gate) so handoff to Peter would slip both, Fivetran's $250-500/mo recurring exceeds custom-build cost over any reasonable horizon. Build kickoff timing: TBD this week.",
           "next_action": "Devon co-authors scripts/amazon_ads_search_terms_pull.py via Cowork in any 4-hour block this week.",
           "measurement": "pipeline_freshness_daily SLA <4h post-source-refresh, surfaced in daily-pulse"
+        },
+        {
+          "flag": "amazon_ads_api_application_submitted",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-monday-connect",
+          "action": "Devon submitted Amazon Ads API access application 2026-05-04. Selected scope: Advertising (read+write \u2014 campaigns, creative, reports). Skipped Data provider scope (not applicable; would have extended review timeline). Application Q1 'specific solutions' answered as: internal advertising performance pipeline ingesting SP+SB report data into Kenetik's data warehouse for the marketing/ops team. Application Q2 'processes to automate' answered as: daily search-term reporting, negative keyword identification, cross-channel ROAS comparison, performance anomaly detection, daily executive reporting. Approval expected within 72h.",
+          "next_action": "Wait for approval response. Once approved, walk the LWA Security Profile + OAuth refresh-token + Profile ID setup per scripts/amazon_ads_search_terms_pull.py docstring. Then populate AMAZON_ADS_* repo secrets, manual-trigger the GHA once, uncomment cron.",
+          "expected_response_by": "2026-05-07"
         }
       ],
       "revision_notes": null,
