@@ -878,9 +878,31 @@
               "cvr": 0.0
             }
           }
+        },
+        {
+          "checked_at": "2026-05-04T18:30:51.623084Z",
+          "snapshot_at": "2026-05-04T18:30:54.084560Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 2893,
+              "atc_events": 297,
+              "atc_rate": 0.10266159695817491,
+              "bounce_rate": 0.7545800207397165,
+              "cvr": 0.0
+            },
+            "variant": {
+              "sessions": 261,
+              "atc_events": 33,
+              "atc_rate": 0.12643678160919541,
+              "bounce_rate": 0.7049808429118773,
+              "cvr": 0.0
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-05-04T12:31:56.545433Z",
+      "last_checked_at": "2026-05-04T18:30:51.623084Z",
       "katie_approval_observed_at": "2026-04-24T20:22:15Z",
       "orchestrator_notes": [
         {
@@ -900,24 +922,24 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-05-04T12:31:58.406941Z",
+        "snapshot_at": "2026-05-04T18:30:54.084560Z",
         "control": {
-          "sessions": 2786,
-          "atc_events": 285,
-          "atc_rate": 0.10229720028715003,
-          "bounce_rate": 0.7530509691313712,
+          "sessions": 2893,
+          "atc_events": 297,
+          "atc_rate": 0.10266159695817491,
+          "bounce_rate": 0.7545800207397165,
           "cvr": 0.0
         },
         "variant": {
-          "sessions": 251,
+          "sessions": 261,
           "atc_events": 33,
-          "atc_rate": 0.13147410358565736,
-          "bounce_rate": 0.7051792828685259,
+          "atc_rate": 0.12643678160919541,
+          "bounce_rate": 0.7049808429118773,
           "cvr": 0.0
         }
       },
       "last_undersample_escalation_at": "2026-04-30T00:28:47.849909Z"
     }
   },
-  "_last_cron_run": "2026-05-04T12:31:56.545433Z"
+  "_last_cron_run": "2026-05-04T18:30:51.623084Z"
 }
