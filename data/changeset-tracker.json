@@ -26,9 +26,9 @@
     "by_status": {
       "closed": 59,
       "published": 17,
-      "approved": 9,
+      "approved": 10,
       "draft": 52,
-      "needs_feedback": 3
+      "needs_feedback": 2
     },
     "last_updated": "2026-05-04",
     "last_counted": "2026-05-02",
@@ -7699,7 +7699,7 @@
       "platforms": [
         "changeset-process"
       ],
-      "status": "needs_feedback",
+      "status": "approved",
       "risk_level": "medium",
       "owner": "Devon Price",
       "created": "2026-04-22",
@@ -7742,8 +7742,8 @@
       ],
       "routed_via": "slack",
       "routed_date": "2026-04-22",
-      "approved_by": "",
-      "approved_date": "",
+      "approved_by": "Devon Price (CEO override after 7d Cliff silence)",
+      "approved_date": "2026-05-04",
       "published_date": "",
       "measurement_window": "7d_post_first_send",
       "measurement_due": "2026-04-29",
@@ -7801,9 +7801,24 @@
           "session": "2026-05-01-s1",
           "detail": "today",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "approved_via_ceo_override",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-monday-connect",
+          "action": "status needs_feedback \u2192 approved. Devon exercised CEO authority per 4/28 dossier escalation path (Cliff silent >7d, 5+ downstream CSes blocked). 4 conditions from 4/28 dossier carry forward: (1) reconcile 4/22-4/28 activity, (2) re-anchor measurement window from first-send, (3) paid activation pre-conditions checklist, (4) pre-staging audit by 4/30 for 5/2 + 5/13 + 4/28 launches.",
+          "unblocks": [
+            "GP-TEASE-0429",
+            "CS-2026-102",
+            "CS-2026-104",
+            "CS-2026-106",
+            "CS-2026-107",
+            "CS-2026-109"
+          ],
+          "resolution": "Approved per Devon CEO override 2026-05-04 Monday Connect."
         }
       ],
-      "last_updated": "2026-04-28"
+      "last_updated": "2026-05-04"
     },
     {
       "id": "CS-2026-100",
