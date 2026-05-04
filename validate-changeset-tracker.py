@@ -183,9 +183,7 @@ def validate(path='data/changeset-tracker.json'):
             if actual != expected:
                 warnings.append(f"summary.by_status.{status}: expected {expected}, actual {actual}")
 
-    total = summary.get('total_changesets')
-    if total is not None and total != len(changesets):
-        warnings.append(f"summary.total_changesets: expected {total}, actual {len(changesets)}")
+    # summary.total_changesets retired 2026-05-04 — was redundant with summary.total.
 
     print_results(errors, warnings)
     if errors:
