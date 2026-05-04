@@ -8845,7 +8845,7 @@
       "department": "DTC-website",
       "platforms": [
         "shopify",
-        "auto-optimize-loop"
+        "auto-optimize"
       ],
       "status": "published",
       "risk_level": "low",
@@ -9367,7 +9367,9 @@
       "subtype": "implementation",
       "department": "content",
       "platforms": [
-        "organic-social",
+        "tiktok-organic",
+        "instagram-organic",
+        "facebook-organic",
         "klaviyo",
         "blog"
       ],
@@ -10012,7 +10014,8 @@
         "klaviyo",
         "meta-ads",
         "tiktok-ads",
-        "social-media"
+        "tiktok-organic",
+        "instagram-organic"
       ],
       "source": "synthesis",
       "spawned_from": "2026-05-04-s1",
@@ -10124,7 +10127,8 @@
       "platforms": [
         "blog",
         "klaviyo",
-        "social-media",
+        "instagram-organic",
+        "linkedin-organic",
         "kenetikpro"
       ],
       "source": "synthesis",
