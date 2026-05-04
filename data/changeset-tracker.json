@@ -7112,7 +7112,7 @@
       "risk_level": "low",
       "review_tier": "standard",
       "created": "2026-04-20",
-      "last_updated": "2026-04-28",
+      "last_updated": "2026-05-04",
       "hypothesis": "Ingesting Amazon Sponsored Products + Sponsored Brands search-term reports into the warehouse unblocks the rec-225 Amazon ads diagnostic work referenced in today's daily-pulse (L-018). Pipeline cadence: daily incremental. Target table: amazon_ads.search_terms_daily with standard ad-attribution joins.",
       "objective_level": "L4",
       "spawned_from": "rec-225",
@@ -7151,7 +7151,7 @@
       "closed_date": null,
       "autonomy_tier": 1,
       "file": "cgo-logs/changesets/CS-2026-091.md",
-      "notes": "Spawned from 2026-04-20 synthesis rec-225. L-018 referenced in daily-pulse but dashboard shows 'data unavailable'. Garrett owns ingestion. Downstream consumers: Katie (search-term optimization), Devon (Amazon MER visibility). | 2026-04-28 (Devon via Claude /changeset-execute): Tier 1 approve + execute. Status draft \u2192 approved. Open: name engineering-execution lead.",
+      "notes": "Spawned from 2026-04-20 synthesis rec-225. L-018 referenced in daily-pulse but dashboard shows 'data unavailable'. Garrett owns ingestion. Downstream consumers: Katie (search-term optimization), Devon (Amazon MER visibility). | 2026-04-28 (Devon via Claude /changeset-execute): Tier 1 approve + execute. Status draft \u2192 approved. Open: name engineering-execution lead. | 2026-05-04 (Devon via Claude /Monday-Connect): Engineering execution lead = Devon + Cowork co-pilot (Option A from CS-091 prep packet). Build target: scripts/amazon_ads_search_terms_pull.py + daily GHA cron. Estimated ~4 hours. Build kickoff timing this week, TBD.",
       "sweep_flags": [
         {
           "flag": "tier_1_approve_execute_2026_04_28",
@@ -7165,6 +7165,14 @@
           "session": "2026-05-01-s1",
           "detail": "5/3",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "execution_lead_named",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-monday-connect",
+          "action": "Engineering execution lead: Devon + Cowork co-pilot. Per Devon decision 2026-05-04 (Monday Connect packet recommendation Option A): author scripts/amazon_ads_search_terms_pull.py modeled on existing pattern (qb_financial_refresh.py / recharge_subscription_sync.py / shopify_cohort_analysis.py). Add daily-cron GHA following the .github/workflows/quickbooks-financial-refresh.yml shape. Write to data/paid-media-state.json or new data/amazon-ads-state.json. Surface output in daily-pulse + dept-paid-media brief. Estimated ~half-day of Devon's time. Decision rationale: existing custom-script pattern is the team's chosen approach (no SaaS dependency adds), Peter is saturated on CS-140 (claims-gate) so handoff to Peter would slip both, Fivetran's $250-500/mo recurring exceeds custom-build cost over any reasonable horizon. Build kickoff timing: TBD this week.",
+          "next_action": "Devon co-authors scripts/amazon_ads_search_terms_pull.py via Cowork in any 4-hour block this week.",
+          "measurement": "pipeline_freshness_daily SLA <4h post-source-refresh, surfaced in daily-pulse"
         }
       ],
       "revision_notes": null,
