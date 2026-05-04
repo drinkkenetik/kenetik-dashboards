@@ -7181,6 +7181,21 @@
           "action": "Devon submitted Amazon Ads API access application 2026-05-04. Selected scope: Advertising (read+write \u2014 campaigns, creative, reports). Skipped Data provider scope (not applicable; would have extended review timeline). Application Q1 'specific solutions' answered as: internal advertising performance pipeline ingesting SP+SB report data into Kenetik's data warehouse for the marketing/ops team. Application Q2 'processes to automate' answered as: daily search-term reporting, negative keyword identification, cross-channel ROAS comparison, performance anomaly detection, daily executive reporting. Approval expected within 72h.",
           "next_action": "Wait for approval response. Once approved, walk the LWA Security Profile + OAuth refresh-token + Profile ID setup per scripts/amazon_ads_search_terms_pull.py docstring. Then populate AMAZON_ADS_* repo secrets, manual-trigger the GHA once, uncomment cron.",
           "expected_response_by": "2026-05-07"
+        },
+        {
+          "flag": "rescoped_for_zsquared_transition",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-monday-connect",
+          "action": "Rescope: original target was scripts/amazon_ads_search_terms_pull.py pulling Sponsored Products + Sponsored Brands search-term reports from Kenetik's own Amazon Ads account. ZSquared 3P reseller deal moves Amazon ad account ownership to ZSquared on transition. Pivot script targets Brand Analytics endpoints (Search Query Performance Report, Customer Loyalty Analytics, Repeat Purchase Behavior, Demographics) \u2014 these are tied to Brand Registry which Kenetik retains. Same auth flow (LWA refresh-token), same script structure, different report-config bodies. ~80% of code is reusable. Plus add ingestion of ZSquared's weekly reporting feed (CSV/JSON drops to data/amazon/zsquared-reporting/) once their delivery format lands. Amazon Ads API access application stays as-is \u2014 the Advertising scope covers Brand Analytics for Brand Registry holders.",
+          "next_actions": [
+            "Wait for Amazon Ads API approval (expected by 2026-05-07)",
+            "Walk LWA Security Profile + OAuth refresh-token setup (no change from original plan)",
+            "Repoint script: replace request_sp_search_term_report() and request_sb_search_term_report() with Brand Analytics endpoint requests (spSearchQuery, sbSearchQuery, etc.)",
+            "Output file change: data/amazon/amazon-ads-search-terms.json \u2192 data/amazon/brand-analytics-state.json",
+            "Add separate ZSquared reporting feed ingestion script (waiting on ZSquared feed format spec)"
+          ],
+          "unblocked_by": "ZSquared reporting feed format spec (negotiate per the meeting prep \u2014 weekly automated CSV/JSON drops to shared folder)",
+          "related_pause": "Domain 03 (Amazon) paused in daily pipeline 2026-05-04 \u2014 see shared-config.json paused_domains."
         }
       ],
       "revision_notes": null,
