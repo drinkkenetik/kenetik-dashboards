@@ -1,32 +1,37 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-02",
-  "next_id": 137,
+  "last_updated": "2026-05-04",
+  "next_id": 141,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-01",
-    "last_sweep_session": "2026-05-01-s1",
+    "last_sweep_date": "2026-05-04",
+    "last_sweep_session": "2026-05-04-s1",
     "last_sweep_result": "completed_no_mcp_measurement_pulls",
     "last_sweep_counts": {
-      "stale_flags_applied": 19,
-      "measurement_overdue": 1,
+      "stale_flags_applied": 10,
+      "measurement_overdue": 6,
       "auto_closed": 0,
       "measurement_capable": false,
       "deferred_to_pending_measurement_queue": [
-        "CS-2026-019"
+        "CS-2026-020",
+        "CS-2026-021",
+        "CS-2026-035",
+        "CS-2026-084",
+        "CS-2026-085",
+        "CS-2026-086"
       ]
     }
   },
   "summary": {
-    "total": 136,
+    "total": 140,
     "by_status": {
       "closed": 59,
       "published": 17,
       "approved": 9,
-      "draft": 48,
+      "draft": 52,
       "needs_feedback": 3
     },
     "total_changesets": 136,
-    "last_updated": "2026-05-02",
+    "last_updated": "2026-05-04",
     "last_counted": "2026-05-02",
     "by_risk": {
       "medium": 1
@@ -2034,6 +2039,13 @@
           "session": "2026-05-01-s1",
           "detail": "46d",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "measurement_overdue",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-s1",
+          "days_overdue": 3,
+          "action": "deferred_to_pending_measurement_queue (Klaviyo MCP unavailable)"
         }
       ],
       "scheduled_send_date": "2026-04-24",
@@ -2105,6 +2117,13 @@
           "session": "2026-05-01-s1",
           "detail": "46d",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "measurement_overdue",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-s1",
+          "days_overdue": 1,
+          "action": "deferred_to_pending_measurement_queue (Klaviyo MCP unavailable)"
         }
       ],
       "scheduled_send_date": "2026-04-26",
@@ -3154,6 +3173,13 @@
           "session": "2026-05-01-s1",
           "detail": "24d",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "measurement_overdue",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-s1",
+          "days_overdue": 1,
+          "action": "deferred_to_pending_measurement_queue (Klaviyo MCP unavailable)"
         }
       ],
       "measurement_due": "2026-05-03",
@@ -4186,6 +4212,13 @@
           "session": "2026-05-01-s1",
           "detail": "16d",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-s1",
+          "days_stale": 14,
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-20"
@@ -4474,6 +4507,13 @@
           "session": "2026-04-30-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 8
+        },
+        {
+          "flag": "stale_needs_feedback_gt_7d",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-s1",
+          "days_stale": 12,
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -4975,6 +5015,13 @@
           "session": "2026-04-30-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 8
+        },
+        {
+          "flag": "stale_needs_feedback_gt_7d",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-s1",
+          "days_stale": 12,
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -5597,6 +5644,13 @@
           "set_date": "2026-05-01",
           "session": "2026-05-01-s1",
           "detail": "9d",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-s1",
+          "days_stale": 12,
           "action": "owner_nudge_queued_phase_4"
         }
       ]
@@ -6506,6 +6560,13 @@
           "session": "2026-05-01-s1",
           "detail": "12d",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "measurement_overdue",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-s1",
+          "days_overdue": 1,
+          "action": "deferred_to_pending_measurement_queue (Klaviyo MCP unavailable)"
         }
       ],
       "revision_notes": null,
@@ -6575,6 +6636,13 @@
           "session": "2026-05-01-s1",
           "detail": "12d",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "measurement_overdue",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-s1",
+          "days_overdue": 1,
+          "action": "deferred_to_pending_measurement_queue (Klaviyo MCP unavailable)"
         }
       ],
       "revision_notes": null,
@@ -6644,6 +6712,13 @@
           "session": "2026-05-01-s1",
           "detail": "12d",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "measurement_overdue",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-s1",
+          "days_overdue": 1,
+          "action": "deferred_to_pending_measurement_queue (Klaviyo MCP unavailable)"
         }
       ],
       "revision_notes": "2026-04-19 v2 rewrite: removed D5 weekly ceremony (Spec-without-runtime-enforcement anti-pattern). Removed Phase 2 team-ingest service (producer consolidation not needed \u2014 no fragmented producers existed). Removed CS-084 dependency (Step 5b write path already correct). Now single-fix ChangeSet: Step 9a.2 extension + team-roster config + narrow keyword broadening + backfill sweep. See audit 2026-04-Wk4-cluster-d-phase1-disambiguation.md and EC-2026-004.",
@@ -9878,6 +9953,230 @@
       "spawned_from": null,
       "file": "cgo-logs/changesets/CS-2026-136.md",
       "notes": "Wedge A PMAX audience signal cleanup \u2014 bundle of 5 actions: (1) strip 10 finance-news interest signals, (2) replace with productivity-aligned interests, (3) build Klaviyo Wedge A High Value segment as sole customer-data signal + add retargeting lists as exclusions, (4) cut 5 weak/duplicate search themes + add 12 ketone-aware themes, (5) round out affinity sites/apps/YouTube. Source: Wedge A PMAX funnel diagnosis 2026-05-04 in Cowork session. Approved by Katie at creation per CLAUDE.md global instruction. Pairs with separate LP redesign workstream for /pages/protocol-deep-work (cold-traffic mismatch). Template candidate for Wedge B/C if results validate."
+    },
+    {
+      "id": "CS-2026-137",
+      "title": "GP/Mother's Day/Memorial Day Convergence Umbrella (5/4-5/26)",
+      "owner": "Cliff Morgan + Peter Bayne",
+      "status": "draft",
+      "subtype": "implementation",
+      "category": "campaign_orchestration",
+      "last_updated": "2026-05-04",
+      "execution_target_date": "2026-05-13",
+      "scheduled_send_date": null,
+      "measurement_window_end": "2026-05-26",
+      "expected_impact": {
+        "revenue": {
+          "upside": "[ASSUMED - verify with baseline pull]",
+          "expected": "[ASSUMED - verify with baseline pull]",
+          "downside": "[ASSUMED - verify with baseline pull]"
+        },
+        "margin": {
+          "upside": "[ASSUMED - verify with baseline pull]",
+          "expected": "[ASSUMED - verify with baseline pull]",
+          "downside": "[ASSUMED - verify with baseline pull]"
+        },
+        "primary_metric": "GP launch week 5/13 DTC revenue + 5/13 LTO drop conversion rate",
+        "primary_metric_target": "5/13 LTO drop hits >=3% CVR on /pages/golden-pear-launch landing surface; GP launch week 5/13-5/19 DTC revenue >=$50K",
+        "L1_margin": "High - protects ~$200K+ revenue exposure across 5 partner activations + Mother's Day moment + Memorial Day sale",
+        "L2_cash": "None - configuration / process-only",
+        "L3_customer_quality": "[PIPELINE GAP - needs estimation]",
+        "L4_learning": "[PIPELINE GAP - needs estimation]",
+        "L5_brand_check": "[PIPELINE GAP - blocks auto-advance until reviewed]"
+      },
+      "review_tier": "umbrella",
+      "linked_calendar_activity": "GP-LAUNCH-2026",
+      "approved_by": null,
+      "published_date": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "learning_note": null,
+      "spawned_changesets": null,
+      "executed_date": null,
+      "autonomy_tier": null,
+      "dependencies": "CS-2026-099 (GP HG2 Remediation, blocks 5 GP May email CSes); CS-2026-095 (Desktop PDP Diagnostic Sprint, blocks CS-132 paid creative refresh); CS-2026-138 (LP CTA Standardization, blocks 5/13 partner activation destinations); CS-2026-140 (Bulk-Content Claims Gate); claims-pass on Matt Hughes 5/6 + MDay 5/10 copy.",
+      "sweep_flags": [],
+      "created": "2026-05-04",
+      "risk_level": "high",
+      "department": "cross-functional",
+      "platforms": [
+        "shopify",
+        "klaviyo",
+        "meta-ads",
+        "tiktok-ads",
+        "social-media"
+      ],
+      "source": "synthesis",
+      "spawned_from": "2026-05-04-s1",
+      "file": "cgo-logs/changesets/CS-2026-137.md",
+      "notes": "Umbrella ChangeSet covering 5/4-5/26 GP launch + Mother's Day + Memorial Day convergence per Market Intelligence dept brief A2 + Operations dept brief OPS-S07. Resolution Hierarchy Step 3 (Refine \u2014 operationalize Monday Connect as binding decision-time forum per L-069) + Step 4 (Add \u2014 umbrella CS structure for cross-beat coordination is novel). Three tracks reconciled in Phase 3 Convergence War-Room; Cliff facilitates per L-069 designation."
+    },
+    {
+      "id": "CS-2026-138",
+      "title": "Partner & Comparison LP CTA Standardization (Ashton Hall + /vs-other-ketones)",
+      "owner": "Katie Spaller",
+      "status": "draft",
+      "subtype": "implementation",
+      "category": "website_cro",
+      "last_updated": "2026-05-04",
+      "execution_target_date": "2026-05-12",
+      "scheduled_send_date": null,
+      "measurement_window_end": "2026-05-19",
+      "expected_impact": {
+        "revenue": {
+          "upside": "[ASSUMED - verify with baseline pull]",
+          "expected": "[ASSUMED - verify with baseline pull]",
+          "downside": "[ASSUMED - verify with baseline pull]"
+        },
+        "margin": {
+          "upside": "[ASSUMED - verify with baseline pull]",
+          "expected": "[ASSUMED - verify with baseline pull]",
+          "downside": "[ASSUMED - verify with baseline pull]"
+        },
+        "primary_metric": "/pages/ashton-hall + /pages/kenetik-vs-other-ketones CVR",
+        "primary_metric_target": "Both pages >=1.95% CVR (50% of site avg) within 7 days of deploy",
+        "L1_margin": "Positive - pure conversion-rate recovery, no incremental spend; protects 5 partner-activation destinations on 5/13",
+        "L2_cash": "None - configuration / process-only",
+        "L3_customer_quality": "[PIPELINE GAP - needs estimation]",
+        "L4_learning": "[PIPELINE GAP - needs estimation]",
+        "L5_brand_check": "Pass - see notes for review scope"
+      },
+      "review_tier": "standard",
+      "linked_calendar_activity": "GP-LAUNCH-2026",
+      "approved_by": null,
+      "published_date": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "learning_note": null,
+      "spawned_changesets": null,
+      "executed_date": null,
+      "autonomy_tier": null,
+      "dependencies": "CS-2026-095 close (unblocks Katie deploy queue capacity). Co-owners: Alex Cottone (visual support if redesign needed); Peter Bayne (brand-voice review on copy); Devon Price (any product-claim copy that surfaces).",
+      "sweep_flags": [],
+      "created": "2026-05-04",
+      "risk_level": "low",
+      "department": "website-cro",
+      "platforms": [
+        "shopify"
+      ],
+      "source": "synthesis",
+      "spawned_from": "2026-05-04-s1",
+      "file": "cgo-logs/changesets/CS-2026-138.md",
+      "notes": "Per Website & CRO dept brief Action 1 + D09 SIG-02 + calendar SIG-07 (5/13 GP launch destination). Two consecutive measurement windows of 0% CVR on Ashton Hall (96.4% bounce, 111 sessions) + /vs-other-ketones (276 sessions, 56.9% bounce, no purchase pathway). Resolution Hierarchy Step 3 (Refine) \u2014 extend the collection-page conversion pattern that already works at 4.91% CVR. Carry from S43 rec-208."
+    },
+    {
+      "id": "CS-2026-139",
+      "title": "MAC Energy Counter-Positioning Brief (BHB-vs-goBHB-salts comparison asset)",
+      "owner": "Brandon Dyksterhouse",
+      "status": "draft",
+      "subtype": "implementation",
+      "category": "content",
+      "last_updated": "2026-05-04",
+      "execution_target_date": "2026-05-09",
+      "scheduled_send_date": null,
+      "measurement_window_end": "2026-07-19",
+      "expected_impact": {
+        "revenue": {
+          "upside": "[ASSUMED - verify with baseline pull]",
+          "expected": "[ASSUMED - verify with baseline pull]",
+          "downside": "[ASSUMED - verify with baseline pull]"
+        },
+        "margin": {
+          "upside": "[ASSUMED - verify with baseline pull]",
+          "expected": "[ASSUMED - verify with baseline pull]",
+          "downside": "[ASSUMED - verify with baseline pull]"
+        },
+        "primary_metric": "BHB-vs-goBHB asset distribution coverage by 7/12 launch + AmazonAds + IG + KenetikPro",
+        "primary_metric_target": "Asset live in market across 3+ surfaces (paid creative, /vs-other-ketones evidence page, organic IG carousel) by 6/15",
+        "L1_margin": "Medium - primarily competitive defense; revenue benefit is preventive (avoiding category narrative loss to McGregor)",
+        "L2_cash": "None - configuration / process-only",
+        "L3_customer_quality": "[PIPELINE GAP - needs estimation]",
+        "L4_learning": "[PIPELINE GAP - needs estimation]",
+        "L5_brand_check": "[PIPELINE GAP - blocks auto-advance until reviewed]"
+      },
+      "review_tier": "standard",
+      "linked_calendar_activity": null,
+      "approved_by": null,
+      "published_date": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "learning_note": null,
+      "spawned_changesets": null,
+      "executed_date": null,
+      "autonomy_tier": null,
+      "dependencies": "PMID 42021684 (FFAR3 paper, peer-reviewed 2026-04-23) + PMID 42063954 (Frontiers in Nutrition meta-analysis, SMD 0.29 + dose-response, 2026-04-15). Devon claims approval gate. Cascade to /pages/kenetik-vs-other-ketones (CS-095 + CS-138 land first). Co-owners: Devon Price + Katie Spaller (co-approval); Lawrence Giarrizzo + Charlotte Thamm (distribution); Alex Cottone (visual graphics).",
+      "sweep_flags": [],
+      "created": "2026-05-04",
+      "risk_level": "medium",
+      "department": "content",
+      "platforms": [
+        "blog",
+        "klaviyo",
+        "social-media",
+        "kenetikpro"
+      ],
+      "source": "synthesis",
+      "spawned_from": "2026-05-04-s1",
+      "file": "cgo-logs/changesets/CS-2026-139.md",
+      "notes": "Per Science dept brief A3 + Market Intelligence dept brief A3 + DS-06 cgo-2026-05-01-003. Anchor framing: Frontiers in Nutrition meta-analysis explicitly found no significant difference between ketone formulation types. McGregor MAC Energy 7/12 launch with corrected 2g goBHB (vs S43 5g) gives Kenetik 5-6x dose-superiority + FFAR3 receptor-mechanism narrative no competitor markets. Resolution Hierarchy Step 4 (Add) justified."
+    },
+    {
+      "id": "CS-2026-140",
+      "title": "Bulk-Content Claims Gate Refinement (block scheduling on claims_compliance=not_checked)",
+      "owner": "Peter Bayne",
+      "status": "draft",
+      "subtype": "implementation",
+      "category": "system_improvement",
+      "last_updated": "2026-05-04",
+      "execution_target_date": "2026-05-08",
+      "scheduled_send_date": null,
+      "measurement_window_end": "2026-06-04",
+      "expected_impact": {
+        "revenue": {
+          "upside": "[ASSUMED - verify with baseline pull]",
+          "expected": "[ASSUMED - verify with baseline pull]",
+          "downside": "[ASSUMED - verify with baseline pull]"
+        },
+        "margin": {
+          "upside": "[ASSUMED - verify with baseline pull]",
+          "expected": "[ASSUMED - verify with baseline pull]",
+          "downside": "[ASSUMED - verify with baseline pull]"
+        },
+        "primary_metric": "Count of claims_compliance=not_checked entries reaching scheduled state within 7d of publish date",
+        "primary_metric_target": "Zero scheduled entries with claims_compliance=not_checked within 7-day publish window",
+        "L1_margin": "Defensive - eliminates one class of brand-safety / regulated-claims exposure",
+        "L2_cash": "None - configuration / process-only",
+        "L3_customer_quality": "[PIPELINE GAP - needs estimation]",
+        "L4_learning": "[PIPELINE GAP - needs estimation]",
+        "L5_brand_check": "Pass - see notes for review scope"
+      },
+      "review_tier": "standard",
+      "linked_calendar_activity": null,
+      "approved_by": null,
+      "published_date": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "learning_note": null,
+      "spawned_changesets": null,
+      "executed_date": null,
+      "autonomy_tier": null,
+      "dependencies": "Bulk-content tool source code access; claims enum reconciliation against the 7 idea-stage posts identified in D13 today; Devon claims-pass authority for any flagged items.",
+      "sweep_flags": [],
+      "created": "2026-05-04",
+      "risk_level": "low",
+      "department": "operations",
+      "platforms": [
+        "content-production",
+        "changeset-process"
+      ],
+      "source": "synthesis",
+      "spawned_from": "2026-05-04-s1",
+      "file": "cgo-logs/changesets/CS-2026-140.md",
+      "notes": "Per Market Intelligence dept brief A1. Resolution Hierarchy Step 3 (Refine). Triggered by today's 2 HARD GATE breaches: Matt Hughes 5/6 TBI/Oxycontin copy + Mother's Day 5/10 copy. Codification: single line added to bulk-content tool blocking scheduling on claims_compliance=not_checked within 7-day window."
     }
   ],
   "queue_actions": {
