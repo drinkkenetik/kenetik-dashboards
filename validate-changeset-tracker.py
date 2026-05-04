@@ -150,6 +150,23 @@ def validate(path='data/changeset-tracker.json'):
                 else:
                     errors.append(f"{cs_id}: sweep_flags[{j}] is {type(flag).__name__}, expected string or object with 'flag' field")
 
+
+    # 6b. Array-typed graph fields must be arrays (added 2026-05-04)
+    # CS-117 through CS-140 regression: daily-pipeline writer emitted dependencies as free-text
+    # string, which crashed the changeset-dashboard openDetail() popup with TypeError.
+    array_fields = ('dependencies', 'blocks', 'spawned_changesets', 'routed_to')
+    for cs in changesets:
+        cs_id = cs.get('id', '?')
+        for fname in array_fields:
+            if fname not in cs or cs[fname] is None:
+                continue
+            if not isinstance(cs[fname], list):
+                errors.append(
+                    f"{cs_id}: '{fname}' must be an array (got "
+                    f"{type(cs[fname]).__name__}). Wrap single values in []. "
+                    "Free-text descriptions belong in 'notes', not in graph fields."
+                )
+
     # 7. Duplicate ID check
     ids = [cs.get('id') for cs in changesets]
     dupes = [id for id, count in Counter(ids).items() if count > 1]

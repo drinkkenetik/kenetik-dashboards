@@ -1693,7 +1693,8 @@ const DEPARTMENT_COLORS = {
     'creator-affiliate':   '#ec4899',
     'science-research':    '#06b6d4',
     'wholesale':           '#8b5cf6',
-    'operations':          '#94a3b8'
+    'operations':          '#94a3b8',
+    'cross-functional':    '#9ca3af'
 };
 
 function departmentColor(dept) {
@@ -2604,12 +2605,12 @@ function openDetail(id) {
 
         ${timelineHtml}
 
-        ${(cs.dependencies && cs.dependencies.length) || (cs.blocks && cs.blocks.length) || cs.spawned_from || (cs.spawned_changesets && cs.spawned_changesets.length) ? `
+        ${(Array.isArray(cs.dependencies) && cs.dependencies.length) || (Array.isArray(cs.blocks) && cs.blocks.length) || cs.spawned_from || (Array.isArray(cs.spawned_changesets) && cs.spawned_changesets.length) ? `
         <div class="detail-section detail-relations">
             ${cs.spawned_from ? `<div><label>Spawned From</label> <span class="cs-link" onclick="openDetail('${cs.spawned_from}')">${cs.spawned_from}</span></div>` : ''}
-            ${cs.spawned_changesets && cs.spawned_changesets.length ? `<div><label>Spawned</label> ${cs.spawned_changesets.map(s => `<span class="cs-link" onclick="openDetail('${s}')">${s}</span>`).join(', ')}</div>` : ''}
-            ${cs.dependencies && cs.dependencies.length ? `<div><label>Depends On</label> ${cs.dependencies.map(d => /^CS-/.test(d) ? `<span class="cs-link" onclick="openDetail('${d}')">${d}</span>` : d).join(', ')}</div>` : ''}
-            ${cs.blocks && cs.blocks.length ? `<div><label>Blocks</label> ${cs.blocks.map(d => /^CS-/.test(d) ? `<span class="cs-link" onclick="openDetail('${d}')">${d}</span>` : d).join(', ')}</div>` : ''}
+            ${Array.isArray(cs.spawned_changesets) && cs.spawned_changesets.length ? `<div><label>Spawned</label> ${cs.spawned_changesets.map(s => `<span class="cs-link" onclick="openDetail('${s}')">${s}</span>`).join(', ')}</div>` : ''}
+            ${Array.isArray(cs.dependencies) && cs.dependencies.length ? `<div><label>Depends On</label> ${cs.dependencies.map(d => /^CS-/.test(d) ? `<span class="cs-link" onclick="openDetail('${d}')">${d}</span>` : d).join(', ')}</div>` : ''}
+            ${Array.isArray(cs.blocks) && cs.blocks.length ? `<div><label>Blocks</label> ${cs.blocks.map(d => /^CS-/.test(d) ? `<span class="cs-link" onclick="openDetail('${d}')">${d}</span>` : d).join(', ')}</div>` : ''}
         </div>
         ` : ''}
 
