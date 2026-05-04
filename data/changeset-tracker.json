@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-01",
-  "next_id": 136,
+  "last_updated": "2026-05-04",
+  "next_id": 137,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-01",
     "last_sweep_session": "2026-05-01-s1",
@@ -17,17 +17,23 @@
     }
   },
   "summary": {
-    "total": 135,
+    "total": 136,
     "by_status": {
-      "closed": 57,
-      "published": 18,
-      "approved": 8,
-      "draft": 49,
+      "closed": 59,
+      "published": 17,
+      "approved": 9,
+      "draft": 48,
       "needs_feedback": 3
     },
-    "total_changesets": 133,
-    "last_updated": "2026-04-30",
-    "last_counted": "2026-04-30"
+    "total_changesets": 134,
+    "last_updated": "2026-05-04",
+    "last_counted": "2026-05-04",
+    "by_risk": {
+      "medium": 1
+    },
+    "by_subtype": {
+      "implementation": 1
+    }
   },
   "changesets": [
     {
@@ -1813,7 +1819,7 @@
       "platforms": [
         "klaviyo"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie Spaller",
       "created": "2026-03-13",
@@ -1874,14 +1880,18 @@
           "flag": "measurement_due_today",
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
-          "action": "katie_pull_today_eod"
+          "action": "katie_pull_today_eod",
+          "resolved_date": "2026-05-01",
+          "resolved_by": "closed_underperformed_via_changeset_measurement"
         },
         {
           "flag": "stale_published_gt_7d",
           "set_date": "2026-04-30",
           "session": "2026-04-30-s1",
           "action": "owner_nudge_queued_phase_4",
-          "age_days": 10
+          "age_days": 10,
+          "resolved_date": "2026-05-01",
+          "resolved_by": "closed_underperformed_via_changeset_measurement"
         },
         {
           "flag": "measurement_overdue",
@@ -1889,14 +1899,18 @@
           "session": "2026-04-30-s1",
           "action": "measurement_pull_phase_4_dm",
           "due_date": "2026-04-29",
-          "overdue_days": 1
+          "overdue_days": 1,
+          "resolved_date": "2026-05-01",
+          "resolved_by": "closed_underperformed_via_changeset_measurement"
         },
         {
           "flag": "measurement_overdue",
           "set_date": "2026-05-01",
           "session": "2026-05-01-s1",
           "detail": "2d",
-          "action": "owner_nudge_queued_phase_4"
+          "action": "owner_nudge_queued_phase_4",
+          "resolved_date": "2026-05-01",
+          "resolved_by": "closed_underperformed_via_changeset_measurement"
         }
       ],
       "scheduled_send_date": "2026-04-22",
@@ -1904,10 +1918,51 @@
       "executed_date": "2026-04-22",
       "autonomy_tier": null,
       "stale": false,
-      "last_updated": "2026-04-20",
+      "last_updated": "2026-05-01",
       "measurement_due": "2026-04-29",
       "ad_platform_refs": null,
-      "organic_source": null
+      "organic_source": null,
+      "outcome": "underperformed",
+      "closed_date": "2026-05-01",
+      "actual_impact": {
+        "primary_metric": "email_engagement",
+        "primary_metric_baseline": "Science avg ~0.4% CTR; DST cultural benchmark 1.14% CTR",
+        "primary_metric_result": "0.876% CTR (141 unique clicks / 16,097 delivered)",
+        "primary_metric_delta": "-56% vs >=2.0% target; +119% vs science avg; -23% vs DST benchmark",
+        "revenue_impact": 1415.16,
+        "margin_impact": 707.58,
+        "confidence": "high",
+        "statistical_significance": true,
+        "_detail": {
+          "campaign_id_klaviyo": "01KP36EG8RNK4VSMPV1S3J095Q",
+          "recipients": 16108,
+          "delivered": 16097,
+          "delivery_rate": 0.99932,
+          "open_rate": 0.45872,
+          "opens_unique": 7384,
+          "click_rate": 0.00876,
+          "clicks_unique": 141,
+          "click_to_open_rate": 0.0191,
+          "conversions": 13,
+          "conversion_uniques": 13,
+          "conversion_rate": 0.00081,
+          "average_order_value": 108.86,
+          "revenue_per_recipient": 0.0879,
+          "unsubscribe_rate": 0.0036,
+          "bounce_rate": 0.00068,
+          "spam_complaints": 0,
+          "audience_segments": [
+            "Engaged (3 Months)",
+            "UE | Prospects Engaged"
+          ],
+          "send_time_utc": "2026-04-22T18:00:00Z"
+        },
+        "_note": "margin_impact = revenue_impact x 0.50 (Klaviyo -> DTC Shopify margin per common-functions \u00a73). Audience scale was ~31% of brief estimate (16,108 vs 51,643) due to standard suppressions; revenue-per-recipient ($0.088) actually exceeded brief's implied $/recipient ($0.035) by 2.5x.",
+        "L1_margin_actual": "below ($708 vs $900 projected; -21%)",
+        "L3_customer_quality_actual": "too early - 13 converters need cohort time to read repeat behavior",
+        "L4_learning_actual": "hypothesis partially supported - cultural hook beat science avg (0.88% > 0.4%) but underperformed DST benchmark (0.88% < 1.14%); brief-stage audience estimate also needs ~30% suppression haircut"
+      },
+      "learning_note": "Sent Earth Day email 'Clean Fuel for a Cleaner Planet' to Engaged 3M + Prospects Engaged segments -> 0.88% CTR (target >=2.0%), $1,415 rev (vs $1,800 expected, -21%) but $0.088/recipient (2.5x brief-implied rate); cultural hooks tier below DST for our segment, audience scale halved by suppressions vs brief estimate."
     },
     {
       "id": "CS-2026-020",
@@ -6286,7 +6341,7 @@
     {
       "id": "CS-2026-083",
       "title": "FB Prospecting Relaunch \u2014 Joseph David Peace of Mind Creative",
-      "status": "draft",
+      "status": "closed",
       "subtype": "implementation",
       "category": "paid_media",
       "department": "paid-media",
@@ -6297,7 +6352,7 @@
       "risk_level": "medium",
       "review_tier": "full",
       "created": "2026-04-17",
-      "last_updated": "2026-04-23",
+      "last_updated": "2026-05-01",
       "hypothesis": "A single fresh prospecting creative \u2014 Joseph David Peace of Mind IG reel, adapted for FB with Kenetik-framed bookends and cognitive-forward overlay copy \u2014 paired with freed CS-2026-071 budget, recovers 50-70% of the new-customer acquisition drop within 14 days. Cognitive positioning (vs. athletic) is the hypothesis per pat-015.",
       "objective_level": "L1",
       "spawned_from": "2026-04-17-synthesis-P1",
@@ -6335,9 +6390,30 @@
       "published_date": null,
       "measurement_window": "14d",
       "measurement_due": null,
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "prospecting_roas",
+        "primary_metric_baseline": "n/a \u2014 never executed",
+        "primary_metric_result": "n/a \u2014 never executed",
+        "primary_metric_delta": "n/a \u2014 never executed",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "high",
+        "statistical_significance": false,
+        "_detail": {
+          "execution_target_date": "2026-04-22",
+          "actual_executed_date": null,
+          "days_overdue_at_close": 9,
+          "days_in_draft": 14,
+          "approved": false,
+          "published": false
+        },
+        "_note": "ChangeSet drafted 2026-04-17, target 2026-04-22, never approved or published. Closed 2026-05-01 as stale per Katie. revenue_impact and margin_impact set to 0 (not null) because the brief was measured (zero deployment = zero impact, not 'unmeasurable').",
+        "L1_margin_actual": "0 \u2014 never executed",
+        "L3_customer_quality_actual": "n/a \u2014 never executed",
+        "L4_learning_actual": "Original hypothesis (cognitive-forward FB prospecting creative recovers 50-70% of new-customer drop) was not tested. The pat-015 cognitive-vs-athletic test remains open. Window for relaunch closed; if FB prospecting is revisited, draft a fresh CS with current creative inventory rather than reviving this one."
+      },
+      "outcome": "stale",
+      "closed_date": "2026-05-01",
       "autonomy_tier": 1,
       "file": "cgo-logs/changesets/CS-2026-083.md",
       "notes": "Spawned from 2026-04-17 synthesis P1 priority (funnel starvation \u2192 FB prospecting relaunch). Tier 1 auto-advance eligible: known surface, documented creative, margin-positive projection, L5 pass. Depends on CS-077 claims framework for overlay copy sign-off. Partners with CS-2026-055 hypothesis testing sprint (shares brand-bookend spec). Calendar link to be created as PROSPECTING-JOSEPHDAVID-042026 on approval.\n2026-04-23: Apr 23 owner scrub (AP-003): new paid creative on meta-ads pairs Katie (paid-media) + Peter (content creation) per Content Routing.",
@@ -6347,20 +6423,24 @@
           "set_date": "2026-04-27",
           "session": "2026-04-27-s1",
           "overdue_days": 5,
-          "action": "owner_nudge_queued_phase_4"
+          "action": "owner_nudge_queued_phase_4",
+          "resolved_date": "2026-05-01",
+          "resolved_by": "closed_stale_via_changeset_measurement"
         },
         {
           "flag": "draft_stale_gt_5d",
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "days_stale": 12,
-          "action": "owner_nudge_queued_phase_4"
+          "action": "owner_nudge_queued_phase_4",
+          "resolved_date": "2026-05-01",
+          "resolved_by": "closed_stale_via_changeset_measurement"
         }
       ],
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
-      "learning_note": null,
+      "learning_note": "FB prospecting relaunch (Joseph David Peace of Mind reel) drafted 2026-04-17 with execution target 2026-04-22 -> draft aged 14 days without approval; CS-077 dependency closed 2026-04-23 but Brandon overlay-copy sign-off + paid-media slot never opened -> closed as stale 2026-05-01. Cognitive-vs-athletic prospecting hypothesis (pat-015) remains untested; if revisited, spawn fresh CS with current creative inventory and tighter approval gate sequencing.",
       "spawned_changesets": null
     },
     {
@@ -9652,6 +9732,61 @@
       "measurement_window_end": "2026-07-01",
       "source_signal": "cgo-2026-05-01-002 (DS-08 Channel Churn Risk T1)",
       "sweep_flags": []
+    },
+    {
+      "id": "CS-2026-136",
+      "title": "Wedge A PMAX Audience Signal Cleanup \u2014 Strip Finance Interests, Restructure Customer Lists, Refine Search Themes",
+      "owner": "Katie Spaller",
+      "status": "approved",
+      "subtype": "implementation",
+      "category": "paid_media",
+      "last_updated": "2026-05-04",
+      "execution_target_date": "2026-05-07",
+      "scheduled_send_date": null,
+      "measurement_window_end": "2026-05-21",
+      "expected_impact": {
+        "revenue": {
+          "upside": "CPA -25%, ROAS to parity with Wedge C PMAX",
+          "expected": "CPA -12%, meaningful but not parity",
+          "downside": "PMAX relearning dips 7-10d, net flat over 14d window"
+        },
+        "margin": {
+          "upside": "[ASSUMED \u2014 verify with baseline pull]",
+          "expected": "[ASSUMED \u2014 verify with baseline pull]",
+          "downside": "Net flat or slight negative during relearning"
+        },
+        "primary_metric": "CPA vs Wedge C PMAX parity",
+        "primary_metric_target": "Wedge A CPA within 80% of Wedge C PMAX over 14d post-change",
+        "L1_margin": "Positive \u2014 recovers wasted spend on misaligned impressions; magnitude depends on current baseline",
+        "L2_cash": "None \u2014 configuration-only, no incremental spend",
+        "L3_customer_quality": "Positive \u2014 coherent signals attract higher-LTV Output Engineer prospects vs. contaminated finance-news + retargeting bleed",
+        "L4_learning": "High \u2014 validates audience hygiene methodology, becomes template for Wedge B + Wedge C audience reviews",
+        "L5_brand_check": "Pass \u2014 no creative, no claims, no new audience exposure (narrowing not expanding)"
+      },
+      "review_tier": "standard",
+      "linked_calendar_activity": null,
+      "approved_by": "Katie Spaller",
+      "published_date": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "learning_note": null,
+      "spawned_changesets": null,
+      "executed_date": null,
+      "autonomy_tier": null,
+      "dependencies": "Klaviyo segment build (Wedge A High Value, 1-2 hr) + rollback snapshot CSV. No conflict with CS-117 (different campaign) or CS-132 (different campaign). Adjacent workstream: cold-traffic LP redesign for /pages/protocol-deep-work \u2014 separate CS pending.",
+      "sweep_flags": [],
+      "created": "2026-05-04",
+      "risk_level": "medium",
+      "department": "paid-media",
+      "platforms": [
+        "google-ads",
+        "klaviyo"
+      ],
+      "source": "diagnostic",
+      "spawned_from": null,
+      "file": "cgo-logs/changesets/CS-2026-136.md",
+      "notes": "Wedge A PMAX audience signal cleanup \u2014 bundle of 5 actions: (1) strip 10 finance-news interest signals, (2) replace with productivity-aligned interests, (3) build Klaviyo Wedge A High Value segment as sole customer-data signal + add retargeting lists as exclusions, (4) cut 5 weak/duplicate search themes + add 12 ketone-aware themes, (5) round out affinity sites/apps/YouTube. Source: Wedge A PMAX funnel diagnosis 2026-05-04 in Cowork session. Approved by Katie at creation per CLAUDE.md global instruction. Pairs with separate LP redesign workstream for /pages/protocol-deep-work (cold-traffic mismatch). Template candidate for Wedge B/C if results validate."
     }
   ],
   "queue_actions": {
