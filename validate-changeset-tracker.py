@@ -20,26 +20,30 @@ import json
 import sys
 from collections import Counter
 
-VALID_STATUSES = {'draft', 'needs_feedback', 'approved', 'published', 'rolled_back', 'closed'}
-VALID_SUBTYPES = {'implementation', 'investigation', 'quick'}
-REQUIRED_FIELDS = {'id', 'title', 'status', 'department', 'platforms', 'created'}
+# ─── Canonical constants — loaded from _schema-constants.json (single source of truth) ─────────
+#
+# Constants live in data/_schema-constants.json, synced from the kgs-repo
+# (kenetik-growth-system/commands/_schema-constants.json) on every push to main
+# via the kgs-repo's sync-tracker-to-dashboards.yml workflow.
+# §1b in the kgs-repo's changeset-common-functions.md describes the JSON for
+# human readers; the JSON is the machine-readable source of truth.
 
-# Canonical department enum (post-AP-001 schema)
-VALID_DEPARTMENTS = {
-    'paid-media', 'lifecycle-marketing', 'DTC-website', 'amazon',
-    'social-media', 'content', 'creator-affiliate', 'science-research',
-    'wholesale', 'operations'
-}
+import os
+_CONSTANTS_PATH = os.path.join(os.path.dirname(__file__), 'data', '_schema-constants.json')
+try:
+    with open(_CONSTANTS_PATH, 'r') as _cf:
+        _SC = json.load(_cf)
+except FileNotFoundError:
+    print(f"FATAL: schema constants not found at {_CONSTANTS_PATH}", file=sys.stderr)
+    print("       Did the kgs-repo sync-tracker-to-dashboards.yml run? "
+          "It should have copied _schema-constants.json into data/.")
+    sys.exit(2)
 
-# Known platforms — non-exhaustive, used for soft (warning) validation so new
-# platforms don't fail the build. Add more as new channels come online.
-KNOWN_PLATFORMS = {
-    'meta-ads', 'google-ads', 'tiktok-ads', 'amazon-ads',
-    'klaviyo', 'shopify', 'recharge',
-    'instagram-organic', 'sprout-social', 'content-production',
-    'superfiliate', 'pubmed',
-    'system-health', 'daily-pipeline', 'changeset-process'
-}
+VALID_STATUSES = set(_SC['valid_statuses'])
+VALID_SUBTYPES = set(_SC['valid_subtypes'])
+REQUIRED_FIELDS = set(_SC['required_fields'])
+VALID_DEPARTMENTS = set(_SC['valid_departments'])
+KNOWN_PLATFORMS = set(_SC['valid_platforms'])
 
 def validate(path='data/changeset-tracker.json'):
     errors = []
