@@ -9975,7 +9975,7 @@
     {
       "id": "CS-2026-137",
       "title": "GP/Mother's Day/Memorial Day Convergence Umbrella (5/4-5/26)",
-      "owner": "Cliff Morgan + Peter Bayne",
+      "owner": "Nick Lacagnina",
       "status": "draft",
       "subtype": "implementation",
       "category": "campaign_orchestration",
@@ -10019,7 +10019,14 @@
         "CS-2026-138",
         "CS-2026-140"
       ],
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "owner_handoff_to_nick",
+          "set_date": "2026-05-04",
+          "session": "2026-05-04-monday-connect",
+          "action": "Owner change: 'Cliff Morgan + Peter Bayne' \u2192 'Nick Lacagnina'. Per Devon: war-room discussion routes to Nick's recurring Wednesday marketing tag-up (5/6) instead of standalone Monday Connect war-room. Nick covers the 3 tracks (MDay cluster, GP at-risk amplifiers, today-due beats) as part of the standing tag-up agenda. Calendar entry CS-2026-137-WAR-ROOM-050626 spawned to surface on the Tuesday-night auto-generated tag-up dashboard."
+        }
+      ],
       "created": "2026-05-04",
       "risk_level": "high",
       "department": "cross-functional",
