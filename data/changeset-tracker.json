@@ -22,12 +22,12 @@
     }
   },
   "summary": {
-    "total": 140,
+    "total": 141,
     "by_status": {
       "closed": 59,
       "published": 17,
       "approved": 10,
-      "draft": 52,
+      "draft": 53,
       "needs_feedback": 2
     },
     "last_updated": "2026-05-04",
@@ -10242,6 +10242,30 @@
       "spawned_from": "2026-05-04-s1",
       "file": "cgo-logs/changesets/CS-2026-140.md",
       "notes": "Per Market Intelligence dept brief A1. Resolution Hierarchy Step 3 (Refine). Triggered by today's 2 HARD GATE breaches: Matt Hughes 5/6 TBI/Oxycontin copy + Mother's Day 5/10 copy. Codification: single line added to bulk-content tool blocking scheduling on claims_compliance=not_checked within 7-day window. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): Bulk-content tool source code access; claims enum reconciliation against the 7 idea-stage posts identified in D13 today; Devon claims-pass authority for any flagged items."
+    },
+    {
+      "id": "CS-2026-142",
+      "title": "ZSquared Data Integration & Feed Ingestion",
+      "status": "draft",
+      "department": "operations",
+      "platforms": [
+        "daily-pipeline",
+        "changeset-process"
+      ],
+      "created": "2026-05-04",
+      "last_updated": "2026-05-04",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": 1,
+      "owner": "Devon Price + Josh Goodale",
+      "source": "manual",
+      "hypothesis": "ZSquared 3P reseller partnership is signed; Kenetik retains Brand Registry but cedes Amazon seller-of-record + Amazon Ads account on transition. Amazon channel intelligence post-transition requires three combined inputs: (1) Brand Analytics ingestion via Brand Registry \u2014 covered by CS-2026-091 rescope; (2) ZSquared weekly reporting feed ingestion \u2014 this CS; (3) public competitive scraping (Helium 10 / Jungle Scout) \u2014 separate workstream. ZSquared feed ingestion plus Brand Analytics is a stronger combined view than running 1P FBA gave us, because brand-side data + first-party 3P reporting > seller-side data alone.",
+      "file": "cgo-logs/changesets/CS-2026-142.md",
+      "dependencies": [
+        "CS-2026-091"
+      ],
+      "spawned_from": "session-2026-05-04-zsquared-partnership-signing",
+      "notes": "Sibling to CS-2026-091 (Brand Analytics ingestion). Together these two CSes cover the post-ZSquared-transition Amazon view: CS-091 = Kenetik-side data via Brand Registry, CS-142 = 3P-side data via ZSquared reporting feed. Domain 03 (Amazon) scan paused (shared-config.json paused_domains.03) until both feeds are live + D03 instructions are repointed at the new sources. Data-asks list and companion script spec documented in the brief."
     }
   ],
   "queue_actions": {
