@@ -248,6 +248,61 @@
         }
         .action-cta:hover { border-color: var(--accent); text-decoration: none; }
 
+        /* ── Clarity behavioral telemetry panels (C1) ── */
+        .clarity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        @media (max-width: 900px) {
+            .clarity-grid { grid-template-columns: 1fr; }
+        }
+        .clarity-row {
+            padding: 10px 18px;
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-rows: auto auto;
+            gap: 4px 12px;
+            align-items: baseline;
+            text-align: left;
+        }
+        .clarity-row:last-child { border-bottom: none; }
+        .clarity-url {
+            font-family: 'SF Mono', Menlo, Consolas, monospace;
+            font-size: 12px;
+            color: var(--text);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .clarity-score {
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+            font-weight: 600;
+            grid-column: 2;
+            grid-row: 1;
+            white-space: nowrap;
+        }
+        .clarity-score.friction-score { color: var(--danger); }
+        .clarity-score.engagement-score { color: var(--success, #16a34a); }
+        .clarity-meta {
+            font-size: 11px;
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+            grid-row: 2;
+        }
+        .panel-warning {
+            padding: 8px 18px;
+            background: rgba(245, 158, 11, 0.08);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+            font-size: 11px;
+            color: var(--warning, #b45309);
+        }
+
         /* ── Active experiments table ── */
         table.experiments {
             width: 100%;
@@ -968,6 +1023,8 @@
     <script>
         // ─── DATA SOURCES ─────────────────────────────────────────────────────
         const STATE_URL = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/auto-optimize/state.json';
+        const CLARITY_SNAPSHOTS_BASE = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/clarity/snapshots/';
+        const CLARITY_RUBRIC_URL = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/clarity/clarity-rubric.json';
         const SURFACES_LIST = ['pdp-atc'];  // expand as new surfaces ship
         const SURFACE_CONFIG_BASE = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/auto-optimize/surfaces/';
         const PERF_MEMORY_BASE = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/performance-memory/';
@@ -977,6 +1034,8 @@
             stateJson: null,
             surfaces: {},      // surface_id → yaml object
             performance: {},   // surface_id → markdown string
+            clarity: null,     // most recent clarity snapshot, or null
+            clarityRubric: null,
             error: null,
             loadedAt: null,
         };
@@ -1015,6 +1074,26 @@
                 } catch (e) {
                     appState.performance[surface] = null;
                 }
+            }
+
+            // Clarity snapshot — try today (UTC), fall back to most-recent up to 5 days back.
+            // Cron writes daily at 06:00 UTC; sync fires on commit. By the time anyone
+            // views the dashboard (typically post-09:00 ET = post-13:00 UTC) today's
+            // file should exist. Fallback handles cron-failed days cleanly.
+            for (let i = 0; i < 5; i++) {
+                const d = new Date(Date.now() - i * 86400000);
+                const iso = d.toISOString().slice(0, 10);   // YYYY-MM-DD UTC
+                try {
+                    appState.clarity = await fetchJson(CLARITY_SNAPSHOTS_BASE + iso + '.json');
+                    break;
+                } catch (e) {
+                    // try previous day
+                }
+            }
+            try {
+                appState.clarityRubric = await fetchJson(CLARITY_RUBRIC_URL);
+            } catch (e) {
+                appState.clarityRubric = null;
             }
 
             appState.loadedAt = new Date();
@@ -1847,6 +1926,120 @@
                 </div>`;
         }
 
+        // ─── CLARITY PANELS (C1) ───────────────────────────────────────────────
+        // Reads appState.clarity (most recent snapshot) and renders two
+        // side-by-side panels: top friction URLs + top engagement URLs.
+        // Empty state when no clarity data is available (cron hasn't run
+        // yet, or rubric is missing). Honors low_confidence flag to keep
+        // sub-50-session URLs out of leaderboards.
+
+        function _shortenUrl(u) {
+            if (!u) return '';
+            try {
+                const parsed = new URL(u);
+                return (parsed.pathname || '/') + (parsed.search || '');
+            } catch (e) {
+                return u;
+            }
+        }
+
+        function _topUrls(snap, scoreField, n = 5, ascending = false) {
+            if (!snap || !snap.urls) return [];
+            const entries = Object.entries(snap.urls)
+                .filter(([u, rec]) => !rec.low_confidence && rec.sessions > 0)
+                .map(([u, rec]) => ({ url: u, ...rec }));
+            entries.sort((a, b) => (ascending ? 1 : -1) * (b[scoreField] - a[scoreField]));
+            return entries.slice(0, n);
+        }
+
+        function _topFrictionSignal(rec) {
+            // Find the friction signal with the highest per-1k rate; humanize the label.
+            const signals = {
+                'rage_clicks_per_1k_sessions':       'rage clicks',
+                'dead_clicks_per_1k_sessions':       'dead clicks',
+                'quickback_clicks_per_1k_sessions':  'quickbacks',
+                'excessive_scroll_per_1k_sessions':  'excessive scroll',
+                'error_clicks_per_1k_sessions':      'error clicks',
+                'script_errors_per_1k_sessions':     'script errors',
+            };
+            let best = null;
+            for (const [field, label] of Object.entries(signals)) {
+                const v = rec[field] || 0;
+                if (!best || v > best.value) best = { field, label, value: v };
+            }
+            return best;
+        }
+
+        function renderClarityPanels() {
+            const snap = appState.clarity;
+            if (!snap) {
+                return `
+                    <div class="panel compact-empty">
+                        <div class="panel-header">
+                            <div class="panel-title">Behavioral Telemetry (Clarity)</div>
+                            <div class="panel-meta">No snapshot available — cron may not have run yet</div>
+                        </div>
+                    </div>`;
+            }
+
+            const fmtPct = v => (v == null ? '—' : v.toFixed(1));
+            const fmtScore = v => (v == null ? '—' : v.toFixed(0));
+            const friction = _topUrls(snap, 'friction_score', 5);
+            const engagement = _topUrls(snap, 'engagement_score', 5);
+            const meta = `${snap.snapshot_date} · ${snap.site_summary?.url_count || 0} URLs · ${snap.site_summary?.total_sessions_human || 0} human sessions`;
+
+            const frictionRow = (e) => {
+                const dom = _topFrictionSignal(e);
+                const domHint = dom && dom.value > 0 ? `${dom.label} ${dom.value.toFixed(1)}/1k` : '—';
+                return `
+                    <div class="clarity-row">
+                        <div class="clarity-url" title="${e.url}">${_shortenUrl(e.url)}</div>
+                        <div class="clarity-score friction-score">friction ${fmtScore(e.friction_score)}</div>
+                        <div class="clarity-meta">${e.sessions} sessions · ${domHint}</div>
+                    </div>`;
+            };
+
+            const engagementRow = (e) => `
+                <div class="clarity-row">
+                    <div class="clarity-url" title="${e.url}">${_shortenUrl(e.url)}</div>
+                    <div class="clarity-score engagement-score">engage ${fmtScore(e.engagement_score)}</div>
+                    <div class="clarity-meta">${e.sessions} sessions · ${(e.engagement_time_sec || 0).toFixed(0)}s active · ${fmtPct(e.scroll_depth_pct)}% scroll</div>
+                </div>`;
+
+            const errors = (snap.api_errors || []).length;
+            const errorBanner = errors
+                ? `<div class="panel-warning">${errors} of 3 Clarity API call(s) failed for this snapshot — leaderboards reflect partial data</div>`
+                : '';
+
+            return `
+                <div class="clarity-grid">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div class="panel-title">Site Friction Leaderboard</div>
+                            <div class="panel-meta">${meta}</div>
+                        </div>
+                        ${errorBanner}
+                        <div class="panel-body">
+                            ${friction.length === 0
+                                ? '<div class="panel-empty">No URLs with sufficient sessions yet.</div>'
+                                : friction.map(frictionRow).join('')}
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div class="panel-title">Engagement Leaders</div>
+                            <div class="panel-meta">${meta}</div>
+                        </div>
+                        ${errorBanner}
+                        <div class="panel-body">
+                            ${engagement.length === 0
+                                ? '<div class="panel-empty">No URLs with sufficient sessions yet.</div>'
+                                : engagement.map(engagementRow).join('')}
+                        </div>
+                    </div>
+                </div>`;
+        }
+
         function renderSystemHealth() {
             // Stats bar at top covers active surfaces / stage / last cron / cycles —
             // keep this footer slim, just for context the stats bar can't fit.
@@ -1918,6 +2111,7 @@
                 ${renderStatsBar()}
                 ${renderActionQueue()}
                 ${renderActiveExperiments()}
+                ${renderClarityPanels()}
                 ${renderRecentlyDecided()}
                 ${renderPerformanceMemory()}
                 ${renderSystemHealth()}
