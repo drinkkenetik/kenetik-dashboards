@@ -4829,7 +4829,7 @@
       "platforms": [
         "superfiliate"
       ],
-      "status": "draft",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Nick Lacagnina + Lawrence Giarrizzo",
       "created": "2026-04-10",
@@ -4841,8 +4841,8 @@
       "source": "calendar_safety_net",
       "autonomy_tier": 2,
       "dependencies": [],
-      "notes": " | 2026-04-15: Unblocked \u2014 CS-065 closed as superseded.\n2026-04-23: Apr 23 owner scrub (AP-003): superfiliate creator activation routes to Nick + Lawrence per Content Routing.",
-      "last_updated": "2026-04-23",
+      "notes": "[5/5 CLOSED \u2014 COMPLETE] Stress Awareness Month wrapped 4/30. De-Stress PR Kit creator activation delivered as part of the Stress Awareness Month campaign run. Underlying STRESS-MON-040126 calendar campaign + weekly content beats all closed as complete on 4/27. Closing CS as hygiene cleanup \u2014 work was executed, just CS status hadn't been updated.  | 2026-04-15: Unblocked \u2014 CS-065 closed as superseded.\n2026-04-23: Apr 23 owner scrub (AP-003): superfiliate creator activation routes to Nick + Lawrence per Content Routing.",
+      "last_updated": "2026-05-05",
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -4858,7 +4858,9 @@
           "reason": "window_or_event_passed",
           "action": "owner_decide_archive_phase_4"
         }
-      ]
+      ],
+      "outcome": "complete",
+      "closed_date": "2026-05-05"
     },
     {
       "id": "CS-2026-059",
@@ -6074,7 +6076,7 @@
       "id": "CS-2026-078",
       "title": "Sea Otter Classic Event Activation Tracking",
       "created": "2026-04-16",
-      "status": "draft",
+      "status": "closed",
       "subtype": "implementation",
       "department": "creator-affiliate",
       "platforms": [
@@ -6106,7 +6108,7 @@
       "linked_calendar_activity": "SEA-OTTER-041626",
       "autonomy_tier": 2,
       "source": "calendar_safety_net",
-      "notes": "[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: [PIPELINE GAP: needs estimation]]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: To be defined during review. Recommended 7-day post-event window through 4/26.]",
+      "notes": "[5/5 CLOSED \u2014 COMPLETE] Sea Otter Classic event ran 4/16-4/19 as planned. Brandon attended, Chris Norvold (videographer) captured 2 days of content (Thu/Fri), Friday athlete meet-and-greet at booth (Cameron Jones, Russell Finsterwald, C\u00e9cile Lejeune, Ruth Holcomb) executed. Closing as complete \u2014 event activation delivered. Note: tracker hadn't been updated post-event; this is hygiene cleanup, not new measurement. [2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: [PIPELINE GAP: needs estimation]]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: To be defined during review. Recommended 7-day post-event window through 4/26.]",
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -6122,7 +6124,10 @@
           "reason": "window_or_event_passed",
           "action": "owner_decide_archive_phase_4"
         }
-      ]
+      ],
+      "outcome": "complete",
+      "closed_date": "2026-05-05",
+      "last_updated": "2026-05-05"
     },
     {
       "id": "CS-2026-079",
