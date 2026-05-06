@@ -1,0 +1,56 @@
+{
+  "_doc": "Scoring rubric for Clarity friction + engagement signals. Read at runtime by scripts/track_clarity_cron.py. Tune weights here without touching code — restart of the cron picks them up next run. Per the v5 Clarity integration plan, weights are starting values; spot-check after a week of data and adjust if rankings don't match intuition.",
+  "schema_version": "1.0",
+  "last_updated": "2026-05-06",
+  "min_sessions_floor": 50,
+  "_min_sessions_floor_note": "URLs with fewer than this many sessions in the snapshot window are flagged low_confidence and excluded from leaderboards / ChangeSet triggers. Lowered from 100 → 50 (per Devon's v3 review) to capture pages like Ashton-Hall (~99 sessions, 0% CVR) — exactly the kind of broken page Clarity should surface.",
+
+  "friction_weights": {
+    "rage_clicks_per_1k_sessions":       4.0,
+    "dead_clicks_per_1k_sessions":       3.0,
+    "excessive_scroll_per_1k_sessions":  2.0,
+    "quickback_clicks_per_1k_sessions":  2.0,
+    "error_clicks_per_1k_sessions":      1.5,
+    "script_errors_per_1k_sessions":     1.0
+  },
+  "_friction_weights_rationale": {
+    "rage_clicks":      "Highest-confidence frustration signal — repeated clicks indicate genuine struggle",
+    "dead_clicks":      "UX affordance failure — user thought something was interactive when it wasn't",
+    "excessive_scroll": "Content discovery friction (ambiguous: could be exploration, but typically struggle)",
+    "quickback_clicks": "Wrong-link friction — less direct than rage but clear navigation issue",
+    "error_clicks":     "Real friction but lower severity (errors were handled)",
+    "script_errors":    "Technical health signal — doesn't always block users but indicates fragility"
+  },
+
+  "engagement_weights": {
+    "engagement_time_sec":  3.0,
+    "scroll_depth_pct":     2.0
+  },
+  "_engagement_weights_rationale": {
+    "engagement_time_sec": "Active engagement (excludes idle) — best single signal of content resonance. Tentative weight pending calibration.",
+    "scroll_depth_pct":    "Content consumption — held attention through. Tentative weight pending calibration."
+  },
+
+  "health_thresholds": {
+    "replication_candidate":   20,
+    "neutral_lower":          -20,
+    "neutral_upper":           20,
+    "fix_or_experiment_candidate": -20
+  },
+
+  "downstream_triggers": {
+    "_doc": "Score thresholds that downstream consumers (Phase 3 ChangeSet generation, auto-optimize hypothesis generation, anomaly detection) use. Centralized here so tuning is one-line.",
+    "fix_candidate": {
+      "friction_percentile_min": 70,
+      "engagement_percentile_max": 50
+    },
+    "replication_candidate": {
+      "engagement_percentile_min": 90,
+      "friction_percentile_max": 30
+    },
+    "anomaly_detection": {
+      "friction_score_increase_sigma": 1.5,
+      "baseline_window_days": 14
+    }
+  }
+}
