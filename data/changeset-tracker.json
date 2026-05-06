@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-06T14:47:47Z",
+  "last_updated": "2026-05-05",
   "next_id": 141,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-04",
@@ -10068,10 +10068,10 @@
       "id": "CS-2026-137",
       "title": "GP/Mother's Day/Memorial Day Convergence Umbrella (5/4-5/26)",
       "owner": "Nick Lacagnina",
-      "status": "draft",
+      "status": "in_progress",
       "subtype": "implementation",
       "category": "campaign_orchestration",
-      "last_updated": "2026-05-04",
+      "last_updated": "2026-05-05",
       "execution_target_date": "2026-05-13",
       "scheduled_send_date": null,
       "measurement_window_end": "2026-05-26",
@@ -10133,7 +10133,7 @@
       "source": "synthesis",
       "spawned_from": "2026-05-04-s1",
       "file": "cgo-logs/changesets/CS-2026-137.md",
-      "notes": "Umbrella ChangeSet covering 5/4-5/26 GP launch + Mother's Day + Memorial Day convergence per Market Intelligence dept brief A2 + Operations dept brief OPS-S07. Resolution Hierarchy Step 3 (Refine \u2014 operationalize Monday Connect as binding decision-time forum per L-069) + Step 4 (Add \u2014 umbrella CS structure for cross-beat coordination is novel). Three tracks reconciled in Phase 3 Convergence War-Room; Cliff facilitates per L-069 designation. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): CS-2026-099 (GP HG2 Remediation, blocks 5 GP May email CSes); CS-2026-095 (Desktop PDP Diagnostic Sprint, blocks CS-132 paid creative refresh); CS-2026-138 (LP CTA Standardization, blocks 5/13 partner activation destinations); CS-2026-140 (Bulk-Content Claims Gate); claims-pass on Matt Hughes 5/6 + MDay 5/10 copy."
+      "notes": "[5/5 STATUS FLIP \u2014 DRAFT \u2192 IN_PROGRESS] Umbrella is actively tracking real work; flipping out of draft. The 3 sub-tracks are all in motion across owners: (1) Mother's Day cluster lock \u2014 Charlotte + Nick coordinating; (2) GP at-risk amplifier resolution \u2014 Ashton beats live, Cleetus Freedom Factory shoot 5/7, Doc TBD; (3) GP today-due beats \u2014 Katie has 5 emails in production for the convergence window. War-room venue: Nick's Wednesday marketing tag-up (5/6, tomorrow) replaces standalone Monday Connect war-room per Devon's 5/4 handoff. Cross-CS dependencies still gating: CS-2026-099 (GP HG2 Remediation, silent 7+ days from Cliff) \u2014 surface tomorrow; CS-2026-095 (Desktop PDP) overdue close; CS-2026-138 (Partner & Comparison LP) ship by 5/12. Acceptance: 5/13 LTO drop CVR \u22653% / GP week revenue \u2265$50K / Mother's Day GP Crossover live / Memorial Day setup ready by 5/14. \n\n--- prior notes ---\nUmbrella ChangeSet covering 5/4-5/26 GP launch + Mother's Day + Memorial Day convergence per Market Intelligence dept brief A2 + Operations dept brief OPS-S07. Resolution Hierarchy Step 3 (Refine \u2014 operationalize Monday Connect as binding decision-time forum per L-069) + Step 4 (Add \u2014 umbrella CS structure for cross-beat coordination is novel). Three tracks reconciled in Phase 3 Convergence War-Room; Cliff facilitates per L-069 designation. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): CS-2026-099 (GP HG2 Remediation, blocks 5 GP May email CSes); CS-2026-095 (Desktop PDP Diagnostic Sprint, blocks CS-132 paid creative refresh); CS-2026-138 (LP CTA Standardization, blocks 5/13 partner activation destinations); CS-2026-140 (Bulk-Content Claims Gate); claims-pass on Matt Hughes 5/6 + MDay 5/10 copy."
     },
     {
       "id": "CS-2026-138",
