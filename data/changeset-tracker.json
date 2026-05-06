@@ -7668,7 +7668,7 @@
       "platforms": [
         "tiktok-organic"
       ],
-      "status": "draft",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Nick Lacagnina + Charlotte Thamm",
       "created": "2026-04-22",
@@ -7708,15 +7708,15 @@
       "measurement_window": "48h_organic_7d_brand_search",
       "measurement_due": "2026-05-01",
       "actual_impact": {},
-      "outcome": "",
-      "closed_date": "",
+      "outcome": "skipped",
+      "closed_date": "2026-05-05",
       "file": "cgo-logs/changesets/CS-2026-098.md",
-      "notes": "Composite production unit collapsing DS-04-A (2PM Crash) + DS-04-B (Leadville) + Joelle Debban testimonial into ONE 30-60s reel. Target publish TikTok + IG Reels 2026-04-24 EOD inside 48h trend windows. Brandon claims-gate; Lawrence secures Joelle UGC rights 24h. | 2026-04-28 (Devon via Claude /changeset-execute): Brandon Gate 2 dossier packaged and routed. PMID 41962970 endurance-CHO constraint cleanly scoped out. Trend window past peak \u2014 Devon to decide publish-today vs reframe-without-hooks. Claims envelope clean; awaiting Brandon checkbox approval + Lawrence relationship confirmation for FTC \u00a7255 disclosure exact language.",
+      "notes": "[5/5 CLOSED \u2014 SKIPPED] Trend window closed without execution. Original CS targeted 4/24 publish on the \"2PM Crash / Glucose Crash\" mechanism trend (48h intercept). Today is 11 days past \u2014 composite reel did not produce. JOELLE DEBBAN PARTNERSHIP THREAD (separate): her DM was an explicit \"would love to work with you more intentionally\" partnership ask. That relationship lead is still alive and warrants direct outreach independent of the closed CS. Captured as a follow-up item below. \n\n--- prior notes ---\nComposite production unit collapsing DS-04-A (2PM Crash) + DS-04-B (Leadville) + Joelle Debban testimonial into ONE 30-60s reel. Target publish TikTok + IG Reels 2026-04-24 EOD inside 48h trend windows. Brandon claims-gate; Lawrence secures Joelle UGC rights 24h. | 2026-04-28 (Devon via Claude /changeset-execute): Brandon Gate 2 dossier packaged and routed. PMID 41962970 endurance-CHO constraint cleanly scoped out. Trend window past peak \u2014 Devon to decide publish-today vs reframe-without-hooks. Claims envelope clean; awaiting Brandon checkbox approval + Lawrence relationship confirmation for FTC \u00a7255 disclosure exact language.",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-24",
       "executed_date": "",
       "autonomy_tier": 2,
-      "learning_note": "L-051 composite production unit reference case",
+      "learning_note": "Trend-window content (24-48h intercept) did not execute and is now 11 days past target publish; window closed. Root cause: time-sensitive composite production requires expedited rights + claims path that was not in place. For future trend-window CS: pre-clear claims envelope + UGC rights template BEFORE the trend hits. Separately: Joelle Debban (BWR AZ athlete) original DM included an explicit partnership ask \u2014 that lead remains valuable independent of the trend window. Spun off to LTO-PEAR-051326 / partnership pipeline as standalone follow-up.",
       "sweep_flags": [
         {
           "flag": "brandon_gate_2_4d_overdue",
@@ -7739,7 +7739,7 @@
           "action": "owner_nudge_queued_phase_4"
         }
       ],
-      "last_updated": "2026-04-28"
+      "last_updated": "2026-05-05"
     },
     {
       "id": "CS-2026-099",
