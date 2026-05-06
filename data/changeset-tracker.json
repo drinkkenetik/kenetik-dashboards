@@ -24,14 +24,15 @@
   "summary": {
     "total": 142,
     "by_status": {
-      "closed": 59,
-      "published": 18,
-      "approved": 10,
-      "draft": 53,
-      "needs_feedback": 2
+      "closed": 65,
+      "published": 17,
+      "approved": 9,
+      "draft": 48,
+      "needs_feedback": 2,
+      "in_progress": 1
     },
-    "last_updated": "2026-05-04",
-    "last_counted": "2026-05-02",
+    "last_updated": "2026-05-06",
+    "last_counted": "2026-05-06",
     "by_risk": {
       "medium": 1
     },
@@ -5596,7 +5597,7 @@
     {
       "id": "CS-2026-070",
       "title": "Google PMAX Shopping Feed Audit & Restructure",
-      "status": "approved",
+      "status": "closed",
       "subtype": "quick",
       "department": "paid-media",
       "platforms": [
@@ -5627,12 +5628,12 @@
       },
       "autonomy_tier": 0,
       "source": "synthesis",
-      "last_updated": "2026-04-22",
+      "last_updated": "2026-05-06",
       "created": "2026-04-14",
       "approved_by": "Express Auto-Approve",
       "approved_date": "2026-04-22",
       "review_tier": "express",
-      "notes": "| 2026-04-22 /changeset-review: EXPRESS AUTO-APPROVE. All 11 Express checklist items passed (rollback was implied, not explicit \u2014 acceptable for low-risk feed optimization). Flagged for execution: (a) document campaign settings BEFORE restructure for clean revert; (b) if feed audit + bid restructure both fail to move ROAS, escalate to RCA rather than iterate; (c) capture learning on whether feed-quality or bid-strategy was the actual root cause (diagnostic value). Deferred hygiene to next synthesis pass: canonical surface name (paid-google \u2192 paid_google per \u00a78), inline [src:] markers, L1-L5 formal population.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Recover $251/wk spend to >2.0x ROAS (from 0.40x). Low absolute impact but diagnostic value for Google Shopping channel.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: 24h: feed audit complete, issues documented. 48h: restructured campaign live. 7d: ROAS measurement vs 0.40x baseline.]",
+      "notes": "| 2026-04-22 /changeset-review: EXPRESS AUTO-APPROVE. All 11 Express checklist items passed (rollback was implied, not explicit \u2014 acceptable for low-risk feed optimization). Flagged for execution: (a) document campaign settings BEFORE restructure for clean revert; (b) if feed audit + bid restructure both fail to move ROAS, escalate to RCA rather than iterate; (c) capture learning on whether feed-quality or bid-strategy was the actual root cause (diagnostic value). Deferred hygiene to next synthesis pass: canonical surface name (paid-google \u2192 paid_google per \u00a78), inline [src:] markers, L1-L5 formal population.\n\n[2026-04-23 AP-001 migration: expected_impact was prose; normalized to null-shape. Original: Recover $251/wk spend to >2.0x ROAS (from 0.40x). Low absolute impact but diagnostic value for Google Shopping channel.]\n\n[2026-04-23 AP-001 migration: measurement_plan was prose; normalized to null-shape. Original: 24h: feed audit complete, issues documented. 48h: restructured campaign live. 7d: ROAS measurement vs 0.40x baseline.]\n\n[2026-05-06 CLOSED \u2014 stale & unworked, by Katie] Closing CS-2026-070 as stale and unworked. PMAX Shopping performance has bounced back over the last few weeks without intervention on this CS. Keeping an eye on it; have launched a new Shopping campaign alongside feed-only as the active path forward. The original feed audit + restructure work in this CS was never executed (approved 2026-04-22, flagged stale at 2026-04-29, 2026-05-01, and 2026-05-04 sweeps). No measurement to record. Future learnings will land on the new shopping campaign CSes.",
       "sweep_flags": [
         {
           "flag": "stale_approved_gt_7d",
@@ -5654,8 +5655,20 @@
           "session": "2026-05-04-s1",
           "days_stale": 12,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "force_closed_stale_unworked",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-katie-manual",
+          "action": "closed_by_owner_katie"
         }
-      ]
+      ],
+      "closed_date": "2026-05-06",
+      "outcome": "stale",
+      "actual_impact": {
+        "status": "unmeasured",
+        "reason": "Never executed (approved 2026-04-22; flagged stale at 2026-04-29, 2026-05-01, and 2026-05-04 sweeps). Closed as stale & unworked per Katie 2026-05-06; underlying PMAX performance recovered organically and a new Shopping campaign was launched alongside feed-only as the active path forward."
+      }
     },
     {
       "id": "CS-2026-071",
