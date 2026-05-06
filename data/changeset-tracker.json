@@ -4533,7 +4533,7 @@
     },
     {
       "id": "CS-2026-054",
-      "title": "Creator Onboarding Activation Pilot \u2014 10 Dormant PREMIER PARTNERS (NARROWED)",
+      "title": "Creator Onboarding Activation Pilot \u2014 10 Dormant AFFILIATES / BOOSTED AFFILIATES (NARROWED)",
       "subtype": "implementation",
       "department": "creator-affiliate",
       "platforms": [
@@ -4551,18 +4551,18 @@
       "spawned_changesets": [],
       "expected_impact": {
         "revenue": {
-          "upside": 3000,
-          "expected": 1500,
-          "downside": 250
-        },
-        "margin": {
           "upside": 1500,
           "expected": 750,
-          "downside": 125
+          "downside": 100
+        },
+        "margin": {
+          "upside": 750,
+          "expected": 375,
+          "downside": 50
         },
         "primary_metric": "pilot_activation_rate",
-        "primary_metric_target": "\u226530% activation rate (3 of 10 dormant PPs post within 14 days)",
-        "note": "Revised upside reflects PP-tier audience leverage vs original mixed-tier pilot estimate."
+        "primary_metric_target": "\u226530% activation rate (3 of 10 dormant Affiliates / Boosted Affiliates post within 14 days)",
+        "note": "Revised expectations reflect Affiliate-tier audience scale. Pilot validates the activation MECHANIC, not max-reach. Scale to PP-tier mechanic later if ROI threshold hits."
       },
       "routed_to": [
         "Charlotte",
@@ -4580,7 +4580,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-054.md",
-      "notes": "[5/5 SCOPE REFINEMENT \u2014 PREMIER PARTNER TIER ONLY] Cohort narrowed to dormant Premier Partner tier creators specifically. Rationale: PP audiences (5K-1M followers) deliver materially more reach per activation than Affiliate tier (typical 500-5K). Same activation effort, higher ROI ceiling. Pool size: ~87 dormant PPs to pick 10 from (96 total PPs, 9 currently active per latest roster). Lawrence selects based on follower size + recency of enrollment + content fit. [5/5 REVIVED \u2014 NARROWED TO 10-CREATOR PILOT] Original CS scoped a full 14-day onboarding sequence (templates, content idea bank, feedback loops) \u2014 too heavy, stalled 28 days in draft. NEW SCOPE: lightweight pilot. Lawrence picks 10 dormant Feb-Mar enrollees and runs a 3-touch sequence: (1) personalized welcome DM with brief \u2192 (2) content idea after 3 days \u2192 (3) check-in after 7 days. Measure activation (any post within 14 days) at day 14. If \u22653/10 activate (30%), validate hypothesis and consider scaling to full sequence design. Lawrence drives execution; Nick approves cohort + brief template. Target pilot start: 5/12 (after GP launch passes). Measurement end: 5/26. Drops the comprehensive sequence design that was Charlotte's original block \u2014 lighter scope, faster validation, real data before infrastructure investment.\n\n--- prior notes ---\nAuto-generated from rec-199. Onboarding activation (distinct from CS-040 reactivation).\n2026-04-23: Apr 23 owner scrub (AP-003): superfiliate creator-affiliate ops routes to Nick (Dir Social Commerce) + Lawrence (Creator Partnerships), not Charlotte.",
+      "notes": "[5/5 SCOPE PIVOT \u2014 AFFILIATE / BOOSTED AFFILIATE TIER] Pivoted away from Premier Partner tier after Nick context: most high-follower dormant PPs are dormant for SPECIFIC business reasons, not because they need an onboarding nudge. PP CONTEXT (Nick 5/5): \u2022 Nikko Ortiz \u2014 was paid, now casually promoting unsolicited. Do NOT reach out (keep status quo). \u2022 Mews / Kerry Nguyen \u2014 paid then stopped. Do NOT reach out. \u2022 Cassandra Costa \u2014 paid then stopped. Do NOT reach out (already on PR Kit Top 30 anyway). \u2022 JustLive / Tyrrell Hughes \u2014 on pause, only considering paid deals. \u2022 Ariana Donovan, Aaron Endicott (Big E), Cameron Ahouse, JJ Virgin, Carson Hocevar \u2014 all asked for a fee, not interested in affiliate-commission model. \n\nAffiliate / Boosted Affiliate tier is a cleaner pilot fit: (1) self-selected into commission model \u2014 no fee-ask blockers, (2) larger pool, (3) Lawrence has cleaner context on the affiliate tier vs PP relationship complexity, (4) easier to scale if pilot validates. Trade-off: smaller per-creator audience (typical 500-5K) vs PP (5K-1M). Validates the MECHANIC; reach optimization comes later if mechanic works.\n\n[5/5 SCOPE REFINEMENT \u2014 PREMIER PARTNER TIER ONLY] Cohort narrowed to dormant Premier Partner tier creators specifically. Rationale: PP audiences (5K-1M followers) deliver materially more reach per activation than Affiliate tier (typical 500-5K). Same activation effort, higher ROI ceiling. Pool size: ~87 dormant PPs to pick 10 from (96 total PPs, 9 currently active per latest roster). Lawrence selects based on follower size + recency of enrollment + content fit. [5/5 REVIVED \u2014 NARROWED TO 10-CREATOR PILOT] Original CS scoped a full 14-day onboarding sequence (templates, content idea bank, feedback loops) \u2014 too heavy, stalled 28 days in draft. NEW SCOPE: lightweight pilot. Lawrence picks 10 dormant Feb-Mar enrollees and runs a 3-touch sequence: (1) personalized welcome DM with brief \u2192 (2) content idea after 3 days \u2192 (3) check-in after 7 days. Measure activation (any post within 14 days) at day 14. If \u22653/10 activate (30%), validate hypothesis and consider scaling to full sequence design. Lawrence drives execution; Nick approves cohort + brief template. Target pilot start: 5/12 (after GP launch passes). Measurement end: 5/26. Drops the comprehensive sequence design that was Charlotte's original block \u2014 lighter scope, faster validation, real data before infrastructure investment.\n\n--- prior notes ---\nAuto-generated from rec-199. Onboarding activation (distinct from CS-040 reactivation).\n2026-04-23: Apr 23 owner scrub (AP-003): superfiliate creator-affiliate ops routes to Nick (Dir Social Commerce) + Lawrence (Creator Partnerships), not Charlotte.",
       "scheduled_send_date": null,
       "execution_target_date": "2026-05-12",
       "executed_date": null,
