@@ -9075,12 +9075,12 @@
     },
     {
       "id": "CS-2026-118",
-      "title": "Matt Hughes Apr 8 + Apr 24 Reels Graduation to Paid (NARROWED \u2014 creative refresh only)",
-      "owner": "Nick Lacagnina",
+      "title": "Matt Hughes Reels \u2192 Paid Refresh (Katie swap, Isaac edits ready)",
+      "owner": "Katie Spaller",
       "status": "in_progress",
       "subtype": "implementation",
       "last_updated": "2026-05-05",
-      "execution_target_date": "2026-05-08",
+      "execution_target_date": "2026-05-06",
       "measurement_window_end": "2026-05-15",
       "expected_impact": "Conservative 7d uplift: replace 1.18x Matt Hughes paid + 0.40x Ashton with 3-5x graduated content; recovers +$300-600/wk on Meta. Closes systemic content_links=null gap (8th+ session).",
       "dependencies": [
@@ -9097,7 +9097,7 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-118.md",
-      "notes": "[5/5 REVIVED \u2014 NARROWED SCOPE] CS originally bundled creative refresh + Peter's content_links instrumentation. Bundling stalled it 6 days past target because Peter's instrumentation is on a separate cycle (8+ sessions un-shipped). NEW SCOPE: just the creative refresh chain \u2014 Lawrence rights confirmation \u2192 Charlotte asset routing \u2192 Katie paid execution. NEW TARGET: Fri 5/8. NEW MEASUREMENT WINDOW END: 5/15. Peter's content_links instrumentation piece spun off to standalone tracking (does not gate this CS). Matt Hughes reels still strong: Apr 8 = 106K imp/52 saves, Apr 24 = 4-9% ER cross-platform. Replaces 2 fatigued Ashton ads (static_ashtonhall-3, video_ashton 2 ad). Expected lift: +$300-600/wk on Meta vs current 1.18x Matt + 0.40x fatigued Ashton baseline.\n\n--- prior notes ---\nSummary: Graduate Matt Hughes Apr 8 reel (106,316 imp / 52 saves, top 30d organic) + Apr 24 Kenetik Challenge cross-platform (FB 6.49% / IG 4.72% / TT 9.01% ER) into paid. Replace 2 ASHTON FATIGUED ads (static_ashtonhall-3 + video_ashton 2 ad). Pair with content_links instrumentation fix (Peter Bayne) to close graduation feedback loop. | Priority (synthesis tag): P1 | Demand signal: cgo-2026-04-27-001 | Source recommendations: ['rec-239'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): Extends CS-2026-061. Requires Lawrence rights confirmation; Charlotte asset routing; Peter content_links automation."
+      "notes": "[5/5 SCOPE COLLAPSED \u2014 KATIE-ONLY] Nick clarification 5/5: rights to all Matt Hughes content already confirmed; he is whitelisted (or easily whitelist-approved via Superfiliate if needed). Isaac already edited the Matt Hughes Apr 8 + Apr 24 content; cut-downs not needed. Lawrence rights step + Charlotte asset routing step both collapse to zero \u2014 work is already done. Single remaining step: Katie swaps the 2 fatigued Ashton ads (static_ashtonhall-3 + video_ashton 2 ad) for Matt Hughes paid creative using Isaac's existing edits. Could ship today if she has bandwidth. New target: ship by Wed 5/6.\n\n--- prior notes ---\n[5/5 REVIVED \u2014 NARROWED SCOPE] CS originally bundled creative refresh + Peter's content_links instrumentation. Bundling stalled it 6 days past target because Peter's instrumentation is on a separate cycle (8+ sessions un-shipped). NEW SCOPE: just the creative refresh chain \u2014 Lawrence rights confirmation \u2192 Charlotte asset routing \u2192 Katie paid execution. NEW TARGET: Fri 5/8. NEW MEASUREMENT WINDOW END: 5/15. Peter's content_links instrumentation piece spun off to standalone tracking (does not gate this CS). Matt Hughes reels still strong: Apr 8 = 106K imp/52 saves, Apr 24 = 4-9% ER cross-platform. Replaces 2 fatigued Ashton ads (static_ashtonhall-3, video_ashton 2 ad). Expected lift: +$300-600/wk on Meta vs current 1.18x Matt + 0.40x fatigued Ashton baseline.\n\n--- prior notes ---\nSummary: Graduate Matt Hughes Apr 8 reel (106,316 imp / 52 saves, top 30d organic) + Apr 24 Kenetik Challenge cross-platform (FB 6.49% / IG 4.72% / TT 9.01% ER) into paid. Replace 2 ASHTON FATIGUED ads (static_ashtonhall-3 + video_ashton 2 ad). Pair with content_links instrumentation fix (Peter Bayne) to close graduation feedback loop. | Priority (synthesis tag): P1 | Demand signal: cgo-2026-04-27-001 | Source recommendations: ['rec-239'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): Extends CS-2026-061. Requires Lawrence rights confirmation; Charlotte asset routing; Peter content_links automation."
     },
     {
       "id": "CS-2026-119",
