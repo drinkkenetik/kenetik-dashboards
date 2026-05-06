@@ -50,6 +50,26 @@ template_note: >
   Prefer mutating the underlying Liquid sections over mutating section settings
   in the template JSON where possible — it's more durable.
 
+# ── URL membership (for Clarity-aware hypothesis generation) ──
+# The auto-optimize-orchestrator reads this list during the `decided` phase
+# to filter the Clarity friction snapshot to only this surface's URLs. Top
+# friction signals on these specific pages then inform the next hypothesis
+# (e.g., if rage clicks concentrate on the buy button, the next experiment
+# can target that element specifically rather than picking a generic
+# next-element from the fair-game list).
+#
+# Format: full canonical URLs (matches the canonicalize_url output in
+# scripts/track_clarity_cron.py — scheme + host + path, no query string).
+# The Clarity snapshot's `urls` map keys are in this same format.
+#
+# Add or remove URLs as the product catalog evolves. Empty list (or missing
+# field) means "all PDP traffic" — orchestrator falls back to top friction
+# across the whole site.
+urls:
+  - https://drinkkenetik.com/products/kenetik-cans-daily-clarity-focus
+  - https://drinkkenetik.com/products/kenetik-shots-on-the-go-clarity-focus
+  - https://drinkkenetik.com/products/kenetik-concentrate-customizable-clarity-focus
+
 # ── Measurement ──
 measurement_window_days: 7
 minimum_sample_size: 100    # sessions per variant (Bayesian needs less than frequentist)
