@@ -258,6 +258,17 @@
         @media (max-width: 900px) {
             .clarity-grid { grid-template-columns: 1fr; }
         }
+        /* Side-by-side clarity panels can't fit title+meta on one row at most
+           viewport widths. Stack them so both panels align (same header height,
+           body content starts at the same y-coordinate). */
+        .clarity-grid .panel-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+        .clarity-grid .panel-title {
+            white-space: nowrap;
+        }
         .clarity-row {
             padding: 10px 18px;
             border-bottom: 1px solid var(--border);
@@ -1329,6 +1340,104 @@
                 </div>`;
         }
 
+        // ─── PRIMARY METRIC + CONFIDENCE CELLS ────────────────────────────────
+        // Wires the two columns that previously read "— GA4 pending" using
+        // current_metrics (already populated by the cron) and surfaceCfg's
+        // primary_metric / primary_metric_direction (from the surface YAML).
+
+        function _fmtRate(v) {
+            return v == null ? '—' : (v * 100).toFixed(2) + '%';
+        }
+
+        function renderPrimaryMetricCell(exp, surfaceCfg) {
+            const m = exp.current_metrics;
+            const metric = surfaceCfg?.primary_metric;
+            if (!m || !metric) {
+                return '<td class="num" style="color: var(--text-muted)">—</td>';
+            }
+            const c = m.control?.[metric];
+            const v = m.variant?.[metric];
+            const cs = m.control?.sessions || 0;
+            const vs = m.variant?.sessions || 0;
+            if (c == null || v == null || c === 0 || cs === 0 || vs === 0) {
+                return `<td class="num" style="color: var(--text-muted)">
+                    <span style="font-size: 11px">${metric}</span><br>awaiting data
+                </td>`;
+            }
+            const delta = (v - c) / c;
+            const dir = surfaceCfg?.primary_metric_direction || 'higher_is_better';
+            const inDirection = dir === 'higher_is_better' ? delta > 0 : delta < 0;
+            const cls = inDirection ? 'pos' : 'neg';
+            const sign = delta >= 0 ? '+' : '';
+            return `<td class="num">
+                <span style="font-size: 11px; color: var(--text-muted)">${metric}</span><br>
+                ${_fmtRate(c)} → ${_fmtRate(v)}
+                <span class="metric-delta ${cls}" style="font-weight: 600">${sign}${(delta * 100).toFixed(1)}%</span>
+            </td>`;
+        }
+
+        // Standard normal CDF, Abramowitz & Stegun 7.1.26 (max error ~1.5e-7).
+        function _normalCDF(z) {
+            const a1 =  0.254829592, a2 = -0.284496736, a3 =  1.421413741;
+            const a4 = -1.453152027, a5 =  1.061405429, p  =  0.3275911;
+            const sign = z < 0 ? -1 : 1;
+            const x = Math.abs(z) / Math.sqrt(2);
+            const t = 1 / (1 + p * x);
+            const y = 1 - ((((a5*t + a4)*t + a3)*t + a2)*t + a1) * t * Math.exp(-x * x);
+            return 0.5 * (1 + sign * y);
+        }
+
+        // Live Bayesian P(variant beats control) on the primary metric.
+        // Beta(1,1) prior, normal approximation to the difference of posteriors —
+        // matches what the orchestrator computes at end-of-measurement up to
+        // numerical noise. Hover title clarifies the orchestrator value is canon.
+        function renderConfidenceCell(exp, surfaceCfg) {
+            const m = exp.current_metrics;
+            const metric = surfaceCfg?.primary_metric;
+            const dir = surfaceCfg?.primary_metric_direction || 'higher_is_better';
+            if (!m || !metric) {
+                return '<td class="num" style="color: var(--text-muted)">—</td>';
+            }
+            const cs = m.control?.sessions || 0;
+            const vs = m.variant?.sessions || 0;
+            const minN = exp.min_sessions_per_arm || 50;
+            if (cs < minN || vs < minN) {
+                return `<td class="num" style="color: var(--text-muted)">
+                    <span style="font-size: 11px">building sample</span><br>v=${vs}/c=${cs}
+                </td>`;
+            }
+            const cRate = m.control?.[metric];
+            const vRate = m.variant?.[metric];
+            if (cRate == null || vRate == null) {
+                return '<td class="num" style="color: var(--text-muted)">—</td>';
+            }
+            // Successes derived from rate × sessions (rate metrics like atc_rate, cvr).
+            const xC = Math.round(cRate * cs);
+            const xV = Math.round(vRate * vs);
+            // Beta posterior with Beta(1,1) prior
+            const aC = 1 + xC, bC = 1 + cs - xC;
+            const aV = 1 + xV, bV = 1 + vs - xV;
+            const muC = aC / (aC + bC);
+            const muV = aV / (aV + bV);
+            const varC = aC * bC / (Math.pow(aC + bC, 2) * (aC + bC + 1));
+            const varV = aV * bV / (Math.pow(aV + bV, 2) * (aV + bV + 1));
+            const sd = Math.sqrt(varC + varV);
+            if (sd === 0) {
+                return '<td class="num" style="color: var(--text-muted)">—</td>';
+            }
+            const z = (muV - muC) / sd;
+            // P(variant > control); for lower_is_better, "winning" = variant < control
+            let pBeats = _normalCDF(z);
+            if (dir === 'lower_is_better') pBeats = 1 - pBeats;
+            const pct = Math.round(pBeats * 100);
+            const cls = pBeats >= 0.95 ? 'pos' : pBeats <= 0.05 ? 'neg' : '';
+            const tip = `Live Bayesian read on ${metric} (Beta(1,1) prior, normal approx). Orchestrator computes the canonical posterior at end of measurement.`;
+            return `<td class="num" title="${tip}">
+                <span class="metric-delta ${cls}" style="font-weight: 600">${pct}%</span><br>
+                <span style="font-size: 11px; color: var(--text-muted)">P(variant beats)</span>
+            </td>`;
+        }
+
         function renderActiveExperiments() {
             const exps = appState.stateJson?.experiments || {};
             const surfaces = SURFACES_LIST;  // shows ALL configured surfaces
@@ -1349,6 +1458,7 @@
                 const controlSessions = exp.current_metrics?.control?.sessions ?? 0;
                 const previewUrlVal = previewUrl(exp);
                 const slackUrl = slackThreadUrl(exp.slack_thread_ts);
+                const surfaceCfg = appState.surfaces?.[surface];
 
                 const dataRow = `
                     <tr class="surface-row" data-surface="${surface}" onclick="toggleDetail('${surface}')">
@@ -1356,8 +1466,8 @@
                         <td><span class="pill pill-${phase}">${phase.replace('_',' ')}</span></td>
                         <td class="num">${exp.cycle_tag || exp.experiment_id || '—'}</td>
                         <td class="num">${timeInPhase(exp)}</td>
-                        <td class="num" style="color: var(--text-muted)">— GA4 pending</td>
-                        <td class="num" style="color: var(--text-muted)">— GA4 pending</td>
+                        ${renderPrimaryMetricCell(exp, surfaceCfg)}
+                        ${renderConfidenceCell(exp, surfaceCfg)}
                         <td class="num">${controlSessions.toLocaleString()} / ${variantSessions.toLocaleString()}</td>
                         <td class="num">${renderGuardrailDots(exp)}</td>
                         <td>${previewUrlVal ? `<a href="${previewUrlVal}" target="_blank" onclick="event.stopPropagation()">🔗</a>` : '—'}</td>
@@ -1741,6 +1851,35 @@
             if (dataRow) dataRow.classList.toggle('expanded', !visible);
         }
 
+        // Computes a "first ETA" string for the Recently Decided empty state.
+        // Pulls the soonest-finishing measuring/canary experiment and reports
+        // its decision date (measurement_started_at + measurement_window_days).
+        // Handles past-ETA gracefully ("decision imminent" / "past ETA").
+        function computeFirstEtaText(exps) {
+            const candidates = Object.values(exps || {})
+                .filter(e => e.phase === 'measuring' || e.phase === 'canary')
+                .map(e => {
+                    if (!e.measurement_started_at) return null;
+                    const start = new Date(e.measurement_started_at);
+                    const days = e.measurement_window_days || 7;
+                    const eta = new Date(start.getTime() + days * 86400000);
+                    return { eta, exp: e };
+                })
+                .filter(Boolean)
+                .sort((a, b) => a.eta - b.eta);
+
+            if (!candidates.length) return 'no measuring experiments';
+
+            const { eta } = candidates[0];
+            const fmt = d => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            const now = Date.now();
+            const hoursOut = (eta.getTime() - now) / 3600000;
+            if (hoursOut < -24) return `past ETA (${fmt(eta)}) · awaiting orchestrator`;
+            if (hoursOut < 0)   return `decision imminent (ETA was ${fmt(eta)})`;
+            if (hoursOut < 24)  return `decision imminent · ETA ${fmt(eta)}`;
+            return `first ETA ${fmt(eta)}`;
+        }
+
         function renderRecentlyDecided() {
             const exps = appState.stateJson?.experiments || {};
             // No completed cycles yet — show empty state for Phase 1
@@ -1750,7 +1889,7 @@
                     <div class="panel compact-empty">
                         <div class="panel-header">
                             <div class="panel-title">Recently Decided</div>
-                            <div class="panel-meta">No completed cycles yet · first ETA ~May 4</div>
+                            <div class="panel-meta">No completed cycles yet · ${computeFirstEtaText(exps)}</div>
                         </div>
                     </div>`;
             }
