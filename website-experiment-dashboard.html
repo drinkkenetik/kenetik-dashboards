@@ -307,6 +307,78 @@
             color: var(--text-muted);
             padding: 4px 0;
         }
+
+        /* ── Anomaly panel (Panel D) ──────────────────────────────────────── */
+        .anomaly-row {
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border);
+        }
+        .anomaly-row:last-child { border-bottom: none; }
+        .anomaly-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            gap: 10px;
+        }
+        .anomaly-url {
+            font-family: 'SF Mono', Menlo, Consolas, monospace;
+            font-size: 12px;
+            color: var(--text);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+        .anomaly-badge {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .anomaly-badge.health   { background: rgba(220, 38, 38, 0.12); color: var(--danger); }
+        .anomaly-badge.friction { background: rgba(245, 158, 11, 0.12); color: var(--warning); }
+        .anomaly-badge.both     { background: rgba(220, 38, 38, 0.18); color: var(--danger); }
+        .anomaly-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .anomaly-metric {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+        .anomaly-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: var(--text-muted);
+        }
+        .anomaly-value {
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .anomaly-delta {
+            font-size: 11px;
+            font-variant-numeric: tabular-nums;
+            font-weight: 600;
+        }
+        .anomaly-delta.neg { color: var(--danger); }
+        .anomaly-delta.pos { color: var(--success, #16a34a); }
+        .anomaly-delta.muted { color: var(--text-muted); font-weight: 400; }
+        @media (max-width: 700px) {
+            .anomaly-grid { grid-template-columns: 1fr 1fr; }
+        }
         .panel-warning {
             padding: 8px 18px;
             background: rgba(245, 158, 11, 0.08);
@@ -2123,6 +2195,104 @@
                 </div>`;
         }
 
+        // ─── ANOMALY PANEL (Panel D — C5.2) ────────────────────────────────────
+        // Reads appState.clarity.anomalies[] (computed by the cron's
+        // detect_clarity_anomalies(), see scripts/track_clarity_cron.py).
+        // Shows URLs whose health_score dropped or friction_score rose
+        // meaningfully week-over-week.
+        //
+        // Three-state rendering:
+        //   • field missing entirely (older snapshot, pre-C5)  → "Building baseline" empty state
+        //   • field present but empty (no movers OR no N-7)    → "Stable" message
+        //   • field has entries                                → row-per-anomaly
+        //
+        // Activates from day 8 of snapshot history. Before that the cron
+        // can't find an N-7 baseline and writes anomalies: [].
+        function renderAnomalyPanel() {
+            const snap = appState.clarity;
+            if (!snap) {
+                return '';   // No clarity at all — Panel A/B already shows that empty state
+            }
+
+            const anomalies = snap.anomalies;
+            const meta = `${snap.snapshot_date} · week-over-week`;
+
+            // Field absent (cron pre-C5 or rubric load failed): graceful "building baseline"
+            if (anomalies === undefined) {
+                return `
+                    <div class="panel compact-empty">
+                        <div class="panel-header">
+                            <div class="panel-title">Week-over-Week Movers</div>
+                            <div class="panel-meta">Building baseline — needs ~7 days of snapshot history</div>
+                        </div>
+                    </div>`;
+            }
+
+            // Field present but empty: no movers OR no N-7 found
+            if (!Array.isArray(anomalies) || anomalies.length === 0) {
+                return `
+                    <div class="panel compact-empty">
+                        <div class="panel-header">
+                            <div class="panel-title">Week-over-Week Movers</div>
+                            <div class="panel-meta">${meta} · no URLs crossed the worsening threshold</div>
+                        </div>
+                    </div>`;
+            }
+
+            const fmtScore = v => (v == null ? '—' : Number(v).toFixed(0));
+            const fmtSignal = v => (v == null ? '—' : Number(v).toFixed(1));
+            const fmtDelta = v => {
+                if (v == null) return '—';
+                const sign = v >= 0 ? '+' : '';
+                return `${sign}${Number(v).toFixed(0)}`;
+            };
+            const triggerBadge = trig => {
+                if (trig === 'health_drop') return '<span class="anomaly-badge health">health drop</span>';
+                if (trig === 'friction_rise') return '<span class="anomaly-badge friction">friction rise</span>';
+                if (trig === 'both') return '<span class="anomaly-badge both">both</span>';
+                return '';
+            };
+
+            const rows = anomalies.map(a => `
+                <div class="anomaly-row">
+                    <div class="anomaly-header">
+                        <div class="anomaly-url" title="${a.url}">${_shortenUrl(a.url)}</div>
+                        ${triggerBadge(a.trigger)}
+                    </div>
+                    <div class="anomaly-grid">
+                        <div class="anomaly-metric">
+                            <span class="anomaly-label">Health</span>
+                            <span class="anomaly-value">${fmtScore(a.health_score_prev)} → ${fmtScore(a.health_score_now)}</span>
+                            <span class="anomaly-delta ${a.health_score_delta < 0 ? 'neg' : 'pos'}">${fmtDelta(a.health_score_delta)}</span>
+                        </div>
+                        <div class="anomaly-metric">
+                            <span class="anomaly-label">Friction</span>
+                            <span class="anomaly-value">${fmtScore(a.friction_score_prev)} → ${fmtScore(a.friction_score_now)}</span>
+                            <span class="anomaly-delta ${a.friction_score_delta > 0 ? 'neg' : 'pos'}">${fmtDelta(a.friction_score_delta)}</span>
+                        </div>
+                        <div class="anomaly-metric">
+                            <span class="anomaly-label">${a.dominant_signal_label || 'Top signal'}</span>
+                            <span class="anomaly-value">${fmtSignal(a.dominant_signal_prev)} → ${fmtSignal(a.dominant_signal_now)}/1k</span>
+                            <span class="anomaly-delta muted">vs ${a.comparison_date}</span>
+                        </div>
+                        <div class="anomaly-metric">
+                            <span class="anomaly-label">Sessions</span>
+                            <span class="anomaly-value">${(a.sessions_prev || 0).toLocaleString()} → ${(a.sessions_now || 0).toLocaleString()}</span>
+                            <span class="anomaly-delta muted">volume ctx</span>
+                        </div>
+                    </div>
+                </div>`).join('');
+
+            return `
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-title">Week-over-Week Movers</div>
+                        <div class="panel-meta">${meta} · ${anomalies.length} URL${anomalies.length === 1 ? '' : 's'} worsened</div>
+                    </div>
+                    <div class="panel-body">${rows}</div>
+                </div>`;
+        }
+
         function renderSystemHealth() {
             // Stats bar at top covers active surfaces / stage / last cron / cycles —
             // keep this footer slim, just for context the stats bar can't fit.
@@ -2195,6 +2365,7 @@
                 ${renderActionQueue()}
                 ${renderActiveExperiments()}
                 ${renderClarityPanels()}
+                ${renderAnomalyPanel()}
                 ${renderRecentlyDecided()}
                 ${renderPerformanceMemory()}
                 ${renderSystemHealth()}
