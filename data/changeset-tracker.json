@@ -22,10 +22,10 @@
     }
   },
   "summary": {
-    "total": 141,
+    "total": 142,
     "by_status": {
       "closed": 59,
-      "published": 17,
+      "published": 18,
       "approved": 10,
       "draft": 53,
       "needs_feedback": 2
@@ -10266,6 +10266,31 @@
       ],
       "spawned_from": "session-2026-05-04-zsquared-partnership-signing",
       "notes": "Sibling to CS-2026-091 (Brand Analytics ingestion). Together these two CSes cover the post-ZSquared-transition Amazon view: CS-091 = Kenetik-side data via Brand Registry, CS-142 = 3P-side data via ZSquared reporting feed. Domain 03 (Amazon) scan paused (shared-config.json paused_domains.03) until both feeds are live + D03 instructions are repointed at the new sources. Data-asks list and companion script spec documented in the brief."
+    },
+    {
+      "id": "CS-2026-143",
+      "title": "[pdp-atc] Cycle 1: Subscription-first buy-box variant",
+      "status": "published",
+      "department": "DTC-website",
+      "platforms": [
+        "auto-optimize"
+      ],
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "katie",
+      "source": "experiment",
+      "experiment_id": "pdp-atc-001",
+      "hypothesis": "Flip PDP buy-box default from one-time to subscription-first presentation (subscription option selected/rendered above one-time) to test whether anchoring to the higher-value option and simplifying the choice architecture lifts add-to-cart rate. Changing element: buy-box default state and option ordering in snippets/buy-buttons.liquid. Data rationale: hypothesis #4 in pdp-atc build-spec backlog; subscription-first is a known LTV lever and the compound effect on ATC is untested on Kenetik's audience. Expected direction: ATC rate up (+). Disproof: ATC rate flat or down at 95% confidence over 7-day measurement window, or subscription attach rate drop with no net ATC lift (pure cannibalization). Seeded 2026-04-24 by Katie for first live T2 validation cycle.",
+      "expected_impact": {
+        "primary_metric": "atc_rate",
+        "expected_direction": "up",
+        "disproof": "ATC rate flat or down at 95% confidence over 7-day measurement window, OR subscription attach rate drop with no net ATC lift (pure cannibalization)"
+      },
+      "created": "2026-04-24",
+      "last_updated": "2026-05-05",
+      "published_date": "2026-04-26",
+      "notes": "BACKFILL (one-time): pdp-atc-001 was created before A3 landed (auto-optimize-orchestrator tracker-write logic). This entry catches it up. Slack thread: https://kenetik.slack.com/archives/C0AN37DLDKQ/p1777062025357359 Branch: auto-optimize/pdp-atc/t2-cycle-1-subscription-first. Preview theme: 161090339035. Measurement window: 7 days from 2026-05-01. State.json runtime detail at auto-optimize-theme/auto-optimize/state.json#experiments.pdp-atc."
     }
   ],
   "queue_actions": {
