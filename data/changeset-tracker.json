@@ -4532,15 +4532,15 @@
     },
     {
       "id": "CS-2026-054",
-      "title": "Creator Onboarding Activation Funnel \u2014 14-Day New Enrollee Sequence",
+      "title": "Creator Onboarding Activation Pilot \u2014 10-Creator Lightweight Test (NARROWED)",
       "subtype": "implementation",
       "department": "creator-affiliate",
       "platforms": [
         "superfiliate"
       ],
-      "status": "draft",
+      "status": "in_progress",
       "risk_level": "medium",
-      "owner": "Nick Lacagnina + Lawrence Giarrizzo",
+      "owner": "Lawrence Giarrizzo (primary), Nick Lacagnina (approval)",
       "created": "2026-04-08",
       "objective_level": "L3",
       "category": "creator_program",
@@ -4550,17 +4550,18 @@
       "spawned_changesets": [],
       "expected_impact": {
         "revenue": {
-          "upside": 8000,
-          "expected": 4000,
-          "downside": 1000
+          "upside": 1500,
+          "expected": 750,
+          "downside": 0
         },
         "margin": {
-          "upside": 4000,
-          "expected": 2000,
-          "downside": 500
+          "upside": 750,
+          "expected": 375,
+          "downside": 0
         },
-        "primary_metric": "creator_activation_rate",
-        "primary_metric_target": "30-50% activation rate for Feb-Mar dormant cohort"
+        "primary_metric": "pilot_activation_rate",
+        "primary_metric_target": "\u226530% activation rate (3 of 10 dormant creators post within 14 days)",
+        "note": "Conservatively scoped to pilot scale (10 creators). Full-program scaling decision based on pilot results."
       },
       "routed_to": [
         "Charlotte",
@@ -4578,28 +4579,14 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-054.md",
-      "notes": "Auto-generated from rec-199. Onboarding activation (distinct from CS-040 reactivation).\n2026-04-23: Apr 23 owner scrub (AP-003): superfiliate creator-affiliate ops routes to Nick (Dir Social Commerce) + Lawrence (Creator Partnerships), not Charlotte.",
+      "notes": "[5/5 REVIVED \u2014 NARROWED TO 10-CREATOR PILOT] Original CS scoped a full 14-day onboarding sequence (templates, content idea bank, feedback loops) \u2014 too heavy, stalled 28 days in draft. NEW SCOPE: lightweight pilot. Lawrence picks 10 dormant Feb-Mar enrollees and runs a 3-touch sequence: (1) personalized welcome DM with brief \u2192 (2) content idea after 3 days \u2192 (3) check-in after 7 days. Measure activation (any post within 14 days) at day 14. If \u22653/10 activate (30%), validate hypothesis and consider scaling to full sequence design. Lawrence drives execution; Nick approves cohort + brief template. Target pilot start: 5/12 (after GP launch passes). Measurement end: 5/26. Drops the comprehensive sequence design that was Charlotte's original block \u2014 lighter scope, faster validation, real data before infrastructure investment.\n\n--- prior notes ---\nAuto-generated from rec-199. Onboarding activation (distinct from CS-040 reactivation).\n2026-04-23: Apr 23 owner scrub (AP-003): superfiliate creator-affiliate ops routes to Nick (Dir Social Commerce) + Lawrence (Creator Partnerships), not Charlotte.",
       "scheduled_send_date": null,
-      "execution_target_date": "2026-04-22",
+      "execution_target_date": "2026-05-12",
       "executed_date": null,
       "autonomy_tier": 2,
-      "last_updated": "2026-04-23",
-      "sweep_flags": [
-        {
-          "flag": "draft_overdue_target_gt_5d",
-          "set_date": "2026-04-27",
-          "session": "2026-04-27-s1",
-          "overdue_days": 5,
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "draft_stale_gt_5d",
-          "set_date": "2026-04-29",
-          "session": "2026-04-29-s1",
-          "days_stale": 21,
-          "action": "owner_nudge_queued_phase_4"
-        }
-      ]
+      "last_updated": "2026-05-05",
+      "sweep_flags": [],
+      "measurement_window_end": "2026-05-26"
     },
     {
       "id": "CS-2026-055",
