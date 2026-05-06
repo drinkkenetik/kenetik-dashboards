@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-04",
+  "last_updated": "2026-05-05",
   "next_id": 141,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-04",
@@ -9287,9 +9287,9 @@
       "id": "CS-2026-125",
       "title": "UGC Capture & Amplification Sprint \u2014 5 Unprompted Brand Mentions for Mother's Day Adjacency",
       "owner": "Nick Lacagnina",
-      "status": "draft",
+      "status": "in_progress",
       "subtype": "implementation",
-      "last_updated": "2026-04-28",
+      "last_updated": "2026-05-05",
       "execution_target_date": "2026-05-05",
       "measurement_window_end": "2026-05-19",
       "expected_impact": "Convert 5 high-credibility unprompted mentions into amplified social/email assets within 7 days. Targets: sub-2hr marathon athlete (race-kit listing alongside On Running, Wolaco, Transparent Labs, BPN); Mackenzie Pass mountain biker; Gwen Jorgensen WTCS tag; REV Tour athlete; collegiate archer 5-star (currently Pending \u2014 approve for publication). Sequence amplification for Mother's Day (May 8\u201310) gift-guide window.",
@@ -9306,7 +9306,7 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-125.md",
-      "notes": "Summary: Nick + Charlotte co-execute. Nick handles outreach DMs to 5 targets within 48h; Charlotte ships amplification posts (story repost, feed feature) within 7d; collegiate archer review approved + featured by May 5. Pairs with Mother's Day creator collabs (May 8\u201310) and clarity-cluster VoC themes. Linked to rec-246. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): No phantom deps. Charlotte Thamm executes IG amplification. Katie clears archer 5-star review (Pending status). Brandon claims-clear if performance language used."
+      "notes": "[5/5 EXECUTION STARTED] Nick advancing CS-2026-125 today. Target list pulled from D10 VoC + D18 social listening signals: (1) Sub-2hr marathon athlete \u2014 race-kit peer listing alongside On Running/Wolaco/Transparent Labs/BPN; (2) Mackenzie Pass mountain biker \u2014 descent video tag; (3) Gwen Jorgensen WTCS \u2014 already a Kenetik Brand Champion, easiest of the 5 (existing relationship); (4) REV Tour athlete \u2014 race-kit IG mention with @bekenetik; (5) Collegiate archer 5\u2605 review (currently Pending \u2014 Katie to clear before publication). Open: Charlotte to surface specific handles from Sprout Social for targets 1, 2, 4. Outreach DM template drafted and shared with Nick. Charlotte amplification by 5/12. Mother's Day adjacency window 5/8-5/10. Summary: Nick + Charlotte co-execute. Nick handles outreach DMs to 5 targets within 48h; Charlotte ships amplification posts (story repost, feed feature) within 7d; collegiate archer review approved + featured by May 5. Pairs with Mother's Day creator collabs (May 8\u201310) and clarity-cluster VoC themes. Linked to rec-246. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): No phantom deps. Charlotte Thamm executes IG amplification. Katie clears archer 5-star review (Pending status). Brandon claims-clear if performance language used."
     },
     {
       "id": "CS-2026-126",
