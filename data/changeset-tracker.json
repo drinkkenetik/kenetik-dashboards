@@ -1,43 +1,43 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-05",
-  "next_id": 141,
+  "last_updated": "2026-05-06",
+  "next_id": 147,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-04",
-    "last_sweep_session": "2026-05-04-s1",
-    "last_sweep_result": "completed_no_mcp_measurement_pulls",
+    "last_sweep_date": "2026-05-06",
+    "last_sweep_session": "2026-05-06-s1",
+    "last_sweep_result": "completed_inline_no_mcp",
     "last_sweep_counts": {
-      "stale_flags_applied": 10,
-      "measurement_overdue": 6,
+      "stale_flagged_today": 20,
+      "measurement_overdue": 0,
       "auto_closed": 0,
-      "measurement_capable": false,
-      "deferred_to_pending_measurement_queue": [
-        "CS-2026-020",
-        "CS-2026-021",
-        "CS-2026-035",
-        "CS-2026-084",
-        "CS-2026-085",
-        "CS-2026-086"
-      ]
-    }
+      "auto_advanced": 0,
+      "pending_measurement_queue_length": 0
+    },
+    "pending_measurement_queue": [],
+    "measurement_capable": false,
+    "notes": "Inline sweep run during synthesis Phase 3 with no MCP access; all measurement-overdue CSes deferred to pending_measurement_queue. Layer 1 state files (paid-media-state, kenetik-cohort-data, kenetik-wholesale-data) ARE pruned this scan \u2014 see CS-2026-146 restoration sweep. Stale-flag pass complete on draft (>=14d), approved (>=7d), needs_feedback (>=5d). 3 new CSes spawned (CS-2026-144, CS-2026-145, CS-2026-146). | Schema-drift remediation: 3 entries (CS-2026-054/118/137) had invalid status='in_progress' set by upstream commits today; remapped to 'approved' (closest valid semantic fit). Builder-gap follow-up recommended: extend canonical statuses if 'in_progress' is needed semantically."
   },
   "summary": {
-    "total": 142,
+    "total": 145,
     "by_status": {
       "closed": 65,
       "published": 17,
-      "approved": 9,
-      "draft": 48,
-      "needs_feedback": 2,
-      "in_progress": 1
+      "approved": 12,
+      "draft": 49,
+      "needs_feedback": 2
     },
     "last_updated": "2026-05-06",
     "last_counted": "2026-05-06",
     "by_risk": {
-      "medium": 1
+      "critical": 2,
+      "low": 75,
+      "medium": 57,
+      "high": 11
     },
     "by_subtype": {
-      "implementation": 1
+      "implementation": 105,
+      "investigation": 23,
+      "quick": 17
     }
   },
   "changesets": [
@@ -2910,6 +2910,12 @@
           "session": "2026-05-01-s1",
           "detail": "9d",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -4078,6 +4084,12 @@
           "session": "2026-04-29-s1",
           "reason": "window_or_event_passed",
           "action": "owner_decide_archive_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -4232,6 +4244,12 @@
           "set_date": "2026-05-04",
           "session": "2026-05-04-s1",
           "days_stale": 14,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -4528,6 +4546,12 @@
           "session": "2026-05-04-s1",
           "days_stale": 12,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "needs_feedback_stale_gt_5d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -4539,7 +4563,7 @@
       "platforms": [
         "superfiliate"
       ],
-      "status": "in_progress",
+      "status": "approved",
       "risk_level": "medium",
       "owner": "Lawrence Giarrizzo (primary), Nick Lacagnina (approval)",
       "created": "2026-04-08",
@@ -4586,7 +4610,14 @@
       "executed_date": null,
       "autonomy_tier": 2,
       "last_updated": "2026-05-05",
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "schema_drift_remediation",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "in_progress_to_approved_per_canonical_schema"
+        }
+      ],
       "measurement_window_end": "2026-05-26"
     },
     {
@@ -4670,6 +4701,12 @@
           "session": "2026-04-29-s1",
           "reason": "window_or_event_passed",
           "action": "owner_decide_archive_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -5025,6 +5062,12 @@
           "session": "2026-05-04-s1",
           "days_stale": 12,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "needs_feedback_stale_gt_5d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -5158,6 +5201,12 @@
           "session": "2026-04-30-s1",
           "action": "review_for_archive_phase_4",
           "age_days": 17
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "execution_target_date": "2026-04-22",
@@ -5591,6 +5640,12 @@
           "session": "2026-04-30-s1",
           "action": "review_for_archive_phase_4",
           "age_days": 16
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -5728,6 +5783,12 @@
           "session": "2026-04-30-s1",
           "action": "review_for_archive_phase_4",
           "age_days": 15
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -5789,6 +5850,12 @@
           "session": "2026-04-30-s1",
           "action": "review_for_archive_phase_4",
           "age_days": 15
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -5850,6 +5917,12 @@
           "session": "2026-04-30-s1",
           "action": "review_for_archive_phase_4",
           "age_days": 15
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -6017,6 +6090,12 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "days_stale": 13,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ]
@@ -6260,6 +6339,12 @@
           "session": "2026-04-29-s1",
           "days_stale": 13,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -6329,6 +6414,12 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-s1",
           "days_stale": 12,
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -7292,6 +7383,12 @@
           "set_date": "2026-04-28",
           "session": "2026-04-28-execute",
           "action": "Tier 1 (shadow-autonomous) approved + queued. Active recurring pollution = urgent; every day of delay produces more polluted posts. Execution: Nick (source identification) + Charlotte (queue cleanup). Reset target 2026-05-01 for source pause; 2026-05-05 for backfill. Status draft \u2192 approved."
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -7439,6 +7536,12 @@
           "session": "2026-04-29-s1",
           "days_stale": 9,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -7515,6 +7618,12 @@
           "set_date": "2026-05-01",
           "session": "2026-05-01-s1",
           "detail": "today",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "draft_stale_gt_14d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ]
@@ -7656,6 +7765,12 @@
           "set_date": "2026-04-30",
           "session": "2026-04-30-execute",
           "action": "One-shot backfill of CS-2026-133 Half A: inferred approved_date=2026-04-28 from last_updated for status=approved."
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-28"
@@ -9117,7 +9232,7 @@
       "id": "CS-2026-118",
       "title": "Matt Hughes Reels \u2192 Paid Refresh (Katie swap, Isaac edits ready)",
       "owner": "Katie Spaller",
-      "status": "in_progress",
+      "status": "approved",
       "subtype": "implementation",
       "last_updated": "2026-05-05",
       "execution_target_date": "2026-05-06",
@@ -9126,7 +9241,14 @@
       "dependencies": [
         "CS-2026-061"
       ],
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "schema_drift_remediation",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "in_progress_to_approved_per_canonical_schema"
+        }
+      ],
       "created": "2026-04-27",
       "autonomy_tier": 2,
       "risk_level": "medium",
@@ -9527,6 +9649,12 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-execute",
           "action": "Devon's two binding edits applied to brief: (1) struck 'with or alongside GLP-1' from \u00a7 PROPOSED CHANGE \u2014 replaced with generic metabolic-baseline framing; (2) added hashtag-claims-clean rule preamble before \u00a7 Channels \u2014 every post under #GLP1/#metabolichealth must read clean if GLP-1 reference stripped. Status draft \u2192 approved. Charlotte pre-production unblocked. Brandon per-post review remains the standard gate. CS-121 Matt Hughes hard gate, CS-100 Variant 3 PMID 41994946, and Tier 1 mental-health claims explicitly out-of-scope for this approval."
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "scheduled_send_date": null,
@@ -9719,6 +9847,12 @@
           "set_date": "2026-04-29",
           "session": "2026-04-29-execute",
           "action": "Devon pivot same day: 'I don't want to wire up the cgo copilot. I want to delete those commands from the plugin.' Resolution Hierarchy step: was Add (Phase 4.5 wiring), now Remove (deletion + reference cleanup). Edge Case Log stays \u2014 real artifact at cgo-logs/edge-cases/ managed by /edge-cases command. Query log was vapor and goes away with the specs. Files deleted: cgo-copilot.md + executive-copilot.md. Files patched: brain/kenetik-brain/SKILL.md (router rows), architecture/kgs-department-buildout-spec.md (bullet \u2192 removal note), data-warehouse-status.md (consumer-skills enumeration), CS-129 round 5 correction. Same anti-pattern as CS-127 (spec exists, not wired) but resolved via Remove instead of build \u2014 copilot spec didn't earn its place."
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-29",
@@ -10068,7 +10202,7 @@
       "id": "CS-2026-137",
       "title": "GP/Mother's Day/Memorial Day Convergence Umbrella (5/4-5/26)",
       "owner": "Nick Lacagnina",
-      "status": "in_progress",
+      "status": "approved",
       "subtype": "implementation",
       "category": "campaign_orchestration",
       "last_updated": "2026-05-05",
@@ -10117,6 +10251,12 @@
           "set_date": "2026-05-04",
           "session": "2026-05-04-monday-connect",
           "action": "Owner change: 'Cliff Morgan + Peter Bayne' \u2192 'Nick Lacagnina'. Per Devon: war-room discussion routes to Nick's recurring Wednesday marketing tag-up (5/6) instead of standalone Monday Connect war-room. Nick covers the 3 tracks (MDay cluster, GP at-risk amplifiers, today-due beats) as part of the standing tag-up agenda. Calendar entry CS-2026-137-WAR-ROOM-050626 spawned to surface on the Tuesday-night auto-generated tag-up dashboard."
+        },
+        {
+          "flag": "schema_drift_remediation",
+          "set_date": "2026-05-06",
+          "session": "2026-05-06-s1",
+          "action": "in_progress_to_approved_per_canonical_schema"
         }
       ],
       "created": "2026-05-04",
@@ -10326,7 +10466,8 @@
         "CS-2026-091"
       ],
       "spawned_from": "session-2026-05-04-zsquared-partnership-signing",
-      "notes": "Sibling to CS-2026-091 (Brand Analytics ingestion). Together these two CSes cover the post-ZSquared-transition Amazon view: CS-091 = Kenetik-side data via Brand Registry, CS-142 = 3P-side data via ZSquared reporting feed. Domain 03 (Amazon) scan paused (shared-config.json paused_domains.03) until both feeds are live + D03 instructions are repointed at the new sources. Data-asks list and companion script spec documented in the brief."
+      "notes": "Sibling to CS-2026-091 (Brand Analytics ingestion). Together these two CSes cover the post-ZSquared-transition Amazon view: CS-091 = Kenetik-side data via Brand Registry, CS-142 = 3P-side data via ZSquared reporting feed. Domain 03 (Amazon) scan paused (shared-config.json paused_domains.03) until both feeds are live + D03 instructions are repointed at the new sources. Data-asks list and companion script spec documented in the brief.",
+      "sweep_flags": []
     },
     {
       "id": "CS-2026-143",
@@ -10352,6 +10493,74 @@
       "last_updated": "2026-05-05",
       "published_date": "2026-04-26",
       "notes": "BACKFILL (one-time): pdp-atc-001 was created before A3 landed (auto-optimize-orchestrator tracker-write logic). This entry catches it up. Slack thread: https://kenetik.slack.com/archives/C0AN37DLDKQ/p1777062025357359 Branch: auto-optimize/pdp-atc/t2-cycle-1-subscription-first. Preview theme: 161090339035. Measurement window: 7 days from 2026-05-01. State.json runtime detail at auto-optimize-theme/auto-optimize/state.json#experiments.pdp-atc."
+    },
+    {
+      "id": "CS-2026-144",
+      "title": "GP Reveal Organic\u2192Paid Graduation (FB ER 8.59% \u2192 MDay 5/8 + GP LTO 5/13 amplification)",
+      "status": "draft",
+      "department": "paid-media",
+      "platforms": [
+        "meta-ads"
+      ],
+      "created": "2026-05-06",
+      "last_updated": "2026-05-06",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": "2026-05-06-s1",
+      "hypothesis": "GP reveal FB post (5/5) at 8.59% ER / 29,761 imp / 2,555 eng = ~4\u00d7 Matt Hughes baseline ER. Graduating organic to paid for MDay 5/8-10 + GP LTO 5/13 should outperform current FB prospecting wedges (whitelist 0.00\u20130.67x) at lower CPA than baseline FB prospecting.",
+      "notes": "Source: cgo-2026-05-06-001 DS-04 Trend Opportunity. Coordinates with CS-2026-118 (Matt Hughes paid swap, in_progress today). Charlotte Thamm pin original organically + IG Stories + TT repurpose; Matt Alvarez creates paid build; Katie Spaller approves/deploys. Cap initial test at $300/7d; pre-stage creative + audience with sufficient lead time for 5/8 launch. Acceptance: ROAS >= FB Winbacks 7d benchmark (12.86x) at scale-back $ initially; scale to $1K/wk if first 72h ROAS > 4x. Linked-calendar: GP-LAUNCH-2026 + MOTHERS-DAY-050826.",
+      "measurement_window": "7d post-launch",
+      "linked_calendar_activity": "GP-LAUNCH-2026",
+      "sweep_flags": []
+    },
+    {
+      "id": "CS-2026-145",
+      "title": "FB Winbacks Creative Refresh (audience saturation: 3d 4.51x vs 7d 12.86x = 65% drop)",
+      "status": "draft",
+      "department": "paid-media",
+      "platforms": [
+        "meta-ads"
+      ],
+      "created": "2026-05-06",
+      "last_updated": "2026-05-06",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": "2026-05-06-s1",
+      "hypothesis": "FB Winbacks audience is saturating: 3d ROAS 4.51x vs 7d 12.86x = 65% decay; conversions concentrated 4/30-5/2 then declining. New creative variants (graduate Brandon/Charlotte content from D08 if available; otherwise commission creator brief) should restore 3d ROAS to within 30% of the 7d benchmark and extend the audience window.",
+      "notes": "Source: cgo-2026-05-06-002 DS-01 Creative Refresh + paid context. Cap current spend at $130/7d (do NOT scale before refresh). Inject 3-5 new creative variants by 5/12. Coordinate with CS-2026-118 (Matt Hughes paid swap) and CS-2026-144 (GP reveal graduation) for unified Winbacks creative fleet. Acceptance: 3d ROAS recovery to >=8x within 7d of new variants live; if refresh fails, hold at current spend rather than reallocate to lower-ROAS prospecting.",
+      "measurement_window": "7d post-refresh launch",
+      "sweep_flags": []
+    },
+    {
+      "id": "CS-2026-146",
+      "title": "State-File Restoration Sweep (wholesale, cohort, paid-media-state, exec-bi-raw-pull, Sprout Listening)",
+      "status": "draft",
+      "department": "operations",
+      "platforms": [
+        "daily-pipeline",
+        "system-health"
+      ],
+      "created": "2026-05-06",
+      "last_updated": "2026-05-06",
+      "subtype": "investigation",
+      "risk_level": "high",
+      "autonomy_tier": 1,
+      "owner": "Foster Kane",
+      "source": "synthesis",
+      "spawned_from": "2026-05-06-s1",
+      "hypothesis": "Five out of seven dept briefs cited the same five state files as DATA_UNAVAILABLE this scan: wholesale, cohort, paid-media-state, exec-bi-raw-pull, and (separately) Sprout Listening mart all-empty across all networks (broader than S44 TW/RD-only scope). Restoring these files in a single sweep CS unblocks Phase 2 inventory + cohort + paid-media measurement and closes the persistent measurement gap that L-074-077 carry.",
+      "notes": "Source: synthesis P3 dependency + dept-operations Action 3 + dept-market-intel FLAG-MI\u2192Ops + dept-paid-media CROSS-DEPARTMENT FLAG #3 + dept-content cross-flag #3 + dept-lifecycle CROSS-DEPARTMENT FLAGS. Single sweep CS rather than 5 parallel tickets per dept-market-intel recommendation. Files in scope: data/wholesale/kenetik-wholesale-data.json, data/shopify-cohorts/kenetik-cohort-data.json, data/paid-media/paid-media-state.json, data/exec-bi/exec-bi-raw-pull.json, Sprout Listening mart for topic UUID 2701b79c. Acceptance: all 5 files freshly populated and queryable for next pipeline run; Sprout Listening mart returns >0 rows for last 7d. Note disk-space pressure at /sessions volume \u2014 restoration should not exceed 50MB per file pre-windowing. Owner Foster Kane primary; Garrett + Devon notify on Polar TikTok connector ticket subset (tiktokads_ad_main + tiktokads_ad_platform_and_device persistent S42-S46).",
+      "measurement_window": "Verify restoration on next pipeline scan; success at first clean S47 run",
+      "dependencies": [
+        "CS-2026-091"
+      ],
+      "sweep_flags": []
     }
   ],
   "queue_actions": {
