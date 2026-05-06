@@ -49,8 +49,14 @@
       "friction_percentile_max": 30
     },
     "anomaly_detection": {
-      "friction_score_increase_sigma": 1.5,
-      "baseline_window_days": 14
+      "_doc": "Week-over-week detector (v1, threshold-based). Compares today's snapshot to N-7 days ago (±fallback_window_days if exact day missing). Flags URLs that meaningfully worsened on health_score OR friction_score. Activates from day 8 of snapshot history; before that, returns []. Tune thresholds here; cron picks them up next run.",
+      "lookback_days": 7,
+      "fallback_window_days": 2,
+      "min_health_drop": 10,
+      "min_friction_increase": 15,
+      "min_sessions_both_snapshots": 50,
+      "max_anomalies_returned": 10,
+      "_future_v2_sigma": "Once 14+ days of history accumulate, swap to sigma-based detection (friction_score_increase_sigma=1.5 over baseline_window_days=14). Captures URLs that worsened relative to their own variance, not just a flat threshold."
     }
   }
 }
