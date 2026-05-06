@@ -4533,7 +4533,7 @@
     },
     {
       "id": "CS-2026-054",
-      "title": "Creator Onboarding Activation Pilot \u2014 10-Creator Lightweight Test (NARROWED)",
+      "title": "Creator Onboarding Activation Pilot \u2014 10 Dormant PREMIER PARTNERS (NARROWED)",
       "subtype": "implementation",
       "department": "creator-affiliate",
       "platforms": [
@@ -4551,18 +4551,18 @@
       "spawned_changesets": [],
       "expected_impact": {
         "revenue": {
-          "upside": 1500,
-          "expected": 750,
-          "downside": 0
+          "upside": 3000,
+          "expected": 1500,
+          "downside": 250
         },
         "margin": {
-          "upside": 750,
-          "expected": 375,
-          "downside": 0
+          "upside": 1500,
+          "expected": 750,
+          "downside": 125
         },
         "primary_metric": "pilot_activation_rate",
-        "primary_metric_target": "\u226530% activation rate (3 of 10 dormant creators post within 14 days)",
-        "note": "Conservatively scoped to pilot scale (10 creators). Full-program scaling decision based on pilot results."
+        "primary_metric_target": "\u226530% activation rate (3 of 10 dormant PPs post within 14 days)",
+        "note": "Revised upside reflects PP-tier audience leverage vs original mixed-tier pilot estimate."
       },
       "routed_to": [
         "Charlotte",
@@ -4580,7 +4580,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-054.md",
-      "notes": "[5/5 REVIVED \u2014 NARROWED TO 10-CREATOR PILOT] Original CS scoped a full 14-day onboarding sequence (templates, content idea bank, feedback loops) \u2014 too heavy, stalled 28 days in draft. NEW SCOPE: lightweight pilot. Lawrence picks 10 dormant Feb-Mar enrollees and runs a 3-touch sequence: (1) personalized welcome DM with brief \u2192 (2) content idea after 3 days \u2192 (3) check-in after 7 days. Measure activation (any post within 14 days) at day 14. If \u22653/10 activate (30%), validate hypothesis and consider scaling to full sequence design. Lawrence drives execution; Nick approves cohort + brief template. Target pilot start: 5/12 (after GP launch passes). Measurement end: 5/26. Drops the comprehensive sequence design that was Charlotte's original block \u2014 lighter scope, faster validation, real data before infrastructure investment.\n\n--- prior notes ---\nAuto-generated from rec-199. Onboarding activation (distinct from CS-040 reactivation).\n2026-04-23: Apr 23 owner scrub (AP-003): superfiliate creator-affiliate ops routes to Nick (Dir Social Commerce) + Lawrence (Creator Partnerships), not Charlotte.",
+      "notes": "[5/5 SCOPE REFINEMENT \u2014 PREMIER PARTNER TIER ONLY] Cohort narrowed to dormant Premier Partner tier creators specifically. Rationale: PP audiences (5K-1M followers) deliver materially more reach per activation than Affiliate tier (typical 500-5K). Same activation effort, higher ROI ceiling. Pool size: ~87 dormant PPs to pick 10 from (96 total PPs, 9 currently active per latest roster). Lawrence selects based on follower size + recency of enrollment + content fit. [5/5 REVIVED \u2014 NARROWED TO 10-CREATOR PILOT] Original CS scoped a full 14-day onboarding sequence (templates, content idea bank, feedback loops) \u2014 too heavy, stalled 28 days in draft. NEW SCOPE: lightweight pilot. Lawrence picks 10 dormant Feb-Mar enrollees and runs a 3-touch sequence: (1) personalized welcome DM with brief \u2192 (2) content idea after 3 days \u2192 (3) check-in after 7 days. Measure activation (any post within 14 days) at day 14. If \u22653/10 activate (30%), validate hypothesis and consider scaling to full sequence design. Lawrence drives execution; Nick approves cohort + brief template. Target pilot start: 5/12 (after GP launch passes). Measurement end: 5/26. Drops the comprehensive sequence design that was Charlotte's original block \u2014 lighter scope, faster validation, real data before infrastructure investment.\n\n--- prior notes ---\nAuto-generated from rec-199. Onboarding activation (distinct from CS-040 reactivation).\n2026-04-23: Apr 23 owner scrub (AP-003): superfiliate creator-affiliate ops routes to Nick (Dir Social Commerce) + Lawrence (Creator Partnerships), not Charlotte.",
       "scheduled_send_date": null,
       "execution_target_date": "2026-05-12",
       "executed_date": null,
