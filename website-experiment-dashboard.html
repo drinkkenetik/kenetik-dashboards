@@ -295,6 +295,18 @@
             grid-column: 1 / -1;
             grid-row: 2;
         }
+        .clarity-caveat {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-style: italic;
+            padding: 8px 0 0 0;
+            line-height: 1.5;
+        }
+        .clarity-inline-empty {
+            font-size: 12px;
+            color: var(--text-muted);
+            padding: 4px 0;
+        }
         .panel-warning {
             padding: 8px 18px;
             background: rgba(245, 158, 11, 0.08);
@@ -1411,6 +1423,10 @@
                                 ${timelineHtml}
                             </div>
                             <div class="detail-section">
+                                <h3>Behavioral Friction (Clarity, surface-level)</h3>
+                                ${renderExperimentClarity(surface, exp, surfaceCfg)}
+                            </div>
+                            <div class="detail-section">
                                 <h3>Phase History</h3>
                                 ${phaseHistoryHtml}
                             </div>
@@ -2037,6 +2053,73 @@
                                 : engagement.map(engagementRow).join('')}
                         </div>
                     </div>
+                </div>`;
+        }
+
+        // ─── PER-EXPERIMENT CLARITY (Panel C — C4.2) ───────────────────────────
+        // Renders a surface-scoped Clarity friction snapshot inline within an
+        // experiment's detail card. Reads:
+        //   • surfaceCfg.urls (from auto-optimize/surfaces/<surface>.yaml)
+        //   • appState.clarity.urls (today's snapshot, keyed by canonical URL)
+        //
+        // Per-arm caveat: Clarity does not segment by ao_variant cookie, so
+        // friction shown here aggregates traffic across BOTH control and
+        // variant. It's a directional surface-health signal, not an
+        // experiment-arm diff. The caveat is rendered explicitly so no one
+        // mistakes this for per-variant attribution.
+        function renderExperimentClarity(surface, exp, surfaceCfg) {
+            const surfaceUrls = (surfaceCfg && Array.isArray(surfaceCfg.urls)) ? surfaceCfg.urls : [];
+            if (!surfaceUrls.length) {
+                return `<div class="clarity-inline-empty">Surface YAML has no <code>urls</code> field — Clarity context unavailable.</div>`;
+            }
+
+            const snap = appState.clarity;
+            if (!snap || !snap.urls) {
+                return `<div class="clarity-inline-empty">No Clarity snapshot loaded yet.</div>`;
+            }
+
+            // Filter snapshot to just this surface's URLs (case-sensitive
+            // exact match — both sides canonicalize to scheme+host+path
+            // upstream so this is safe).
+            const surfaceSet = new Set(surfaceUrls);
+            const matched = Object.entries(snap.urls)
+                .filter(([u, rec]) => surfaceSet.has(u))
+                .map(([u, rec]) => ({ url: u, ...rec }));
+
+            if (!matched.length) {
+                return `
+                    <div class="clarity-inline-empty">
+                        No Clarity friction data for this surface's ${surfaceUrls.length} URL${surfaceUrls.length === 1 ? '' : 's'} in the latest snapshot
+                        (${snap.snapshot_date}). May indicate the API call hit a quota or these URLs got &lt;50 sessions in the lookback window.
+                    </div>`;
+            }
+
+            // Sort by friction_score desc, render top 3. Even if the surface
+            // has more URLs (typical PDP has 3-5), top 3 is the actionable cut.
+            matched.sort((a, b) => (b.friction_score || 0) - (a.friction_score || 0));
+            const topN = matched.slice(0, 3);
+
+            const fmtScore = v => (v == null ? '—' : v.toFixed(0));
+            const rows = topN.map(e => {
+                const dom = _topFrictionSignal(e);
+                const domHint = dom && dom.value > 0 ? `${dom.label} ${dom.value.toFixed(1)}/1k` : '—';
+                const lowConf = e.low_confidence ? ' · <span style="color: var(--warning)">low confidence (&lt;50 sessions)</span>' : '';
+                return `
+                    <div class="clarity-row">
+                        <div class="clarity-url" title="${e.url}">${_shortenUrl(e.url)}</div>
+                        <div class="clarity-score friction-score">friction ${fmtScore(e.friction_score)}</div>
+                        <div class="clarity-meta">
+                            ${e.sessions} sessions · ${domHint} · engage ${fmtScore(e.engagement_score)}${lowConf}
+                        </div>
+                    </div>`;
+            }).join('');
+
+            return `
+                ${rows}
+                <div class="clarity-caveat">
+                    Aggregates control + variant traffic — Clarity doesn't segment by <code>ao_variant</code> cookie.
+                    Use this as surface-health context; pull session replays in Clarity UI to confirm whether the
+                    variant is driving any spike. Snapshot: ${snap.snapshot_date}.
                 </div>`;
         }
 
