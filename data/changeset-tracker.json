@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-05",
+  "last_updated": "2026-05-06T14:47:47Z",
   "next_id": 141,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-04",
@@ -8661,7 +8661,17 @@
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
         }
-      ]
+      ],
+      "notes_log": [
+        {
+          "ts": "2026-05-06T14:47:47Z",
+          "author": "Katie",
+          "event": "brief_supplement_added",
+          "note": "Supplemental agency-ready content briefs delivered for Emails #09-#12 (addresses gap in v1 briefs DOCX, which was missing the final 4 sends). New deliverable: Kenetik_May_2026_Email_Briefs_v1.1_Supplement_Emails_09-12.docx. Each brief mirrors its ChangeSet's subject, preview, segment, UTM, primary metric, expected impact, and hypothesis. Verified 24/24 alignment checks (subject A, preview A, UTM campaign, segment size, expected revenue, CS ID) across all four briefs. CS state remains: draft. T-2 prep gates unchanged. Logged by Katie.",
+          "artifact": "Kenetik_May_2026_Email_Briefs_v1.1_Supplement_Emails_09-12.docx"
+        }
+      ],
+      "last_updated": "2026-05-06T14:47:47Z"
     },
     {
       "id": "CS-2026-111",
@@ -8720,7 +8730,17 @@
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
         }
-      ]
+      ],
+      "notes_log": [
+        {
+          "ts": "2026-05-06T14:47:47Z",
+          "author": "Katie",
+          "event": "brief_supplement_added",
+          "note": "Supplemental agency-ready content briefs delivered for Emails #09-#12 (addresses gap in v1 briefs DOCX, which was missing the final 4 sends). New deliverable: Kenetik_May_2026_Email_Briefs_v1.1_Supplement_Emails_09-12.docx. Each brief mirrors its ChangeSet's subject, preview, segment, UTM, primary metric, expected impact, and hypothesis. Verified 24/24 alignment checks (subject A, preview A, UTM campaign, segment size, expected revenue, CS ID) across all four briefs. CS state remains: draft. T-2 prep gates unchanged. Logged by Katie.",
+          "artifact": "Kenetik_May_2026_Email_Briefs_v1.1_Supplement_Emails_09-12.docx"
+        }
+      ],
+      "last_updated": "2026-05-06T14:47:47Z"
     },
     {
       "id": "CS-2026-112",
@@ -8780,7 +8800,17 @@
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
         }
-      ]
+      ],
+      "notes_log": [
+        {
+          "ts": "2026-05-06T14:47:47Z",
+          "author": "Katie",
+          "event": "brief_supplement_added",
+          "note": "Supplemental agency-ready content briefs delivered for Emails #09-#12 (addresses gap in v1 briefs DOCX, which was missing the final 4 sends). New deliverable: Kenetik_May_2026_Email_Briefs_v1.1_Supplement_Emails_09-12.docx. Each brief mirrors its ChangeSet's subject, preview, segment, UTM, primary metric, expected impact, and hypothesis. Verified 24/24 alignment checks (subject A, preview A, UTM campaign, segment size, expected revenue, CS ID) across all four briefs. CS state remains: draft. T-2 prep gates unchanged. Logged by Katie.",
+          "artifact": "Kenetik_May_2026_Email_Briefs_v1.1_Supplement_Emails_09-12.docx"
+        }
+      ],
+      "last_updated": "2026-05-06T14:47:47Z"
     },
     {
       "id": "CS-2026-113",
@@ -8841,7 +8871,17 @@
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
         }
-      ]
+      ],
+      "notes_log": [
+        {
+          "ts": "2026-05-06T14:47:47Z",
+          "author": "Katie",
+          "event": "brief_supplement_added",
+          "note": "Supplemental agency-ready content briefs delivered for Emails #09-#12 (addresses gap in v1 briefs DOCX, which was missing the final 4 sends). New deliverable: Kenetik_May_2026_Email_Briefs_v1.1_Supplement_Emails_09-12.docx. Each brief mirrors its ChangeSet's subject, preview, segment, UTM, primary metric, expected impact, and hypothesis. Verified 24/24 alignment checks (subject A, preview A, UTM campaign, segment size, expected revenue, CS ID) across all four briefs. CS state remains: draft. T-2 prep gates unchanged. Logged by Katie.",
+          "artifact": "Kenetik_May_2026_Email_Briefs_v1.1_Supplement_Emails_09-12.docx"
+        }
+      ],
+      "last_updated": "2026-05-06T14:47:47Z"
     },
     {
       "id": "CS-2026-114",
