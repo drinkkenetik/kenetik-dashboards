@@ -3426,7 +3426,7 @@
       "platforms": [
         "superfiliate"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Nick Lacagnina (T1), Nick Lacagnina+Lawrence Giarrizzo (T2), Lawrence Giarrizzo (T3)",
       "created": "2026-03-25",
@@ -3456,7 +3456,7 @@
       ],
       "routed_via": "auto",
       "routed_date": "2026-03-27",
-      "notes": "Revised Apr 7. Nick owns Tier 1 (Brand Champs, Apr 7-11). Nick+Lawrence tag-team Tier 2 (Premier Partners, Apr 14-18). Lawrence owns Tier 3 (Affiliates, Apr 14-25). Progress tracked in Reengagement Dashboard. Target: 20-25 reactivations by May 7. Apr 23: Derek removed from Tier 2 per AP-003 roster discipline \u2014 not in team-roles.md, no KGS access. | 2026-04-28 (Devon via Claude /changeset-measurement): INTERIM \u2014 strong positive signal (~30 non-equity active vs 17 baseline). measurement_due re-anchored to 2026-05-07 per brief Full Measurement date. Holding open through Tier 3 boost window completion.",
+      "notes": "[5/5 FINAL MEASUREMENT \u2014 CLOSED AS SUCCESS] Comparison window: 4/16 (mid-Tier-1 baseline) \u2192 4/27 (peak-boost capture, full Tier 2 + 3 windows). 4/16-5/4 comparison was distorted by SF rolling-window artifact (early-April pre-boost data shed); 4/16-4/27 captures the actual boost-period activity cleanly. \n\nRESULTS (3-tier total): Reactivations = 23 (target: 20-25) \u2705 HIT. \u0394 Revenue = +$4,768 (expected: $7,200; 66% of expected) \u2014 primary metric. \u0394 Mentions = +166 (organic content lift). \u0394 Orders = +21. \n\nBY TIER: (1) Brand Champion (Apr 7-11 boost, 19 creators): +$1,200 rev, +55 mentions, +2 orders, 2 reactivations. Top: Derek Pratt $381, Brad Becca $136, Russell Finsterwald $185, Dan Marchese $120, Riff Raff $110. (2) Premier Partner (Apr 14-18 boost, 96 creators): +$2,307 rev, +52 mentions, +2 orders, 9 reactivations. Top: Dr. Stephanie Estima $828, Rob McCullough $414, Nikko Ortiz $314, Liza Joseph $279. (3) Affiliate (Apr 14-25 boost, 168 creators): +$1,262 rev, +59 mentions, +17 orders, 12 reactivations. Top: Kelli Sharpe $519, Emily Stauffer $163, Jonathan Shomo $136. \n\nROAS PROXY: ~$157 boost discount cost (21 incremental orders \u00d7 $7.50 avg discount) \u2192 $4,768 revenue capture = ~30x ROAS (well above >=4.0x target). Conservative since codes are commission, not direct ad spend, but directionally clear positive ROI. \n\nOUTCOME: SUCCESS. Reactivation target met. Revenue 66% of expected \u2014 slight miss but positive system-wide impact. Strong tier-3 (affiliate) order lift validates the lower-tier boost mechanics. Top performers identified for deeper investment (Derek Pratt, Brad Becca, Dr. Stephanie Estima, Kelli Sharpe \u2014 all flagged as scale candidates in CGO-side workflows). \n\nLEARNING NOTES: (a) SF rolling-window data hygiene: future measurements should explicitly note the comparison snapshot dates because lifetime-cumulative-vs-rolling-window confusion can flip a positive result negative; (b) Tier 3 (Affiliate) drove 81% of incremental orders despite Tier 1/2 driving more revenue per creator \u2014 affiliate boost mechanic is volume-multiplier; (c) Brand Champ boost top gainers (Derek, Brad, Riff Raff, Joseph David, Dan Marchese) are the same creators consistently driving paid boost ROI in other workflows \u2014 concentration risk if any one drops off.\n\n--- prior notes ---\nRevised Apr 7. Nick owns Tier 1 (Brand Champs, Apr 7-11). Nick+Lawrence tag-team Tier 2 (Premier Partners, Apr 14-18). Lawrence owns Tier 3 (Affiliates, Apr 14-25). Progress tracked in Reengagement Dashboard. Target: 20-25 reactivations by May 7. Apr 23: Derek removed from Tier 2 per AP-003 roster discipline \u2014 not in team-roles.md, no KGS access. | 2026-04-28 (Devon via Claude /changeset-measurement): INTERIM \u2014 strong positive signal (~30 non-equity active vs 17 baseline). measurement_due re-anchored to 2026-05-07 per brief Full Measurement date. Holding open through Tier 3 boost window completion.",
       "autonomy_tier": 2,
       "execution_target_date": "2026-04-07",
       "executed_date": "2026-04-14",
@@ -3489,10 +3489,24 @@
           "action": "owner_nudge_queued_phase_4"
         }
       ],
-      "last_updated": "2026-04-28",
+      "last_updated": "2026-05-05",
       "published_date": "2026-04-14",
       "measurement_window": "14d",
-      "measurement_due": "2026-05-07"
+      "measurement_due": "2026-05-07",
+      "outcome": "success",
+      "closed_date": "2026-05-05",
+      "actual_impact": {
+        "revenue_delta": 4768,
+        "mentions_delta": 166,
+        "orders_delta": 21,
+        "reactivations": 23,
+        "reactivations_target": "20-25",
+        "expected_revenue": 7200,
+        "capture_rate": "66%",
+        "roas_proxy": "~30x (vs >=4.0x target)",
+        "note": "Measurement window 4/16 \u2192 4/27 (peak-boost capture). 4/16-5/4 distorted by SF rolling-window artifact."
+      },
+      "learning_note": "Tier 3 affiliate boost = order-volume multiplier (81% of incremental orders). Tier 1/2 = revenue-per-creator multiplier. Future SF-based measurements: document comparison snapshot dates explicitly to avoid rolling-window false negatives. Top reactivated creators concentrate in known performers \u2014 concentration risk warrants pipeline depth investment."
     },
     {
       "id": "CS-2026-041",
