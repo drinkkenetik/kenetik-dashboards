@@ -1,42 +1,52 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-05-07T20:00:00Z",
-  "next_id": 147,
+  "next_id": 149,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-06",
-    "last_sweep_session": "2026-05-06-s1",
+    "last_sweep_date": "2026-05-07",
+    "last_sweep_session": "2026-05-07-s1",
     "last_sweep_result": "completed_inline_no_mcp",
     "last_sweep_counts": {
-      "stale_flagged_today": 20,
-      "measurement_overdue": 0,
+      "stale_flagged_today": 37,
+      "measurement_overdue": 9,
       "auto_closed": 0,
       "auto_advanced": 0,
-      "pending_measurement_queue_length": 0
+      "pending_measurement_queue_length": 9
     },
-    "pending_measurement_queue": [],
+    "pending_measurement_queue": [
+      "CS-2026-020",
+      "CS-2026-021",
+      "CS-2026-022",
+      "CS-2026-035",
+      "CS-2026-084",
+      "CS-2026-085",
+      "CS-2026-086",
+      "CS-2026-089",
+      "CS-2026-115"
+    ],
     "measurement_capable": false,
-    "notes": "Inline sweep run during synthesis Phase 3 with no MCP access; all measurement-overdue CSes deferred to pending_measurement_queue. Layer 1 state files (paid-media-state, kenetik-cohort-data, kenetik-wholesale-data) ARE pruned this scan \u2014 see CS-2026-146 restoration sweep. Stale-flag pass complete on draft (>=14d), approved (>=7d), needs_feedback (>=5d). 3 new CSes spawned (CS-2026-144, CS-2026-145, CS-2026-146). | Schema-drift remediation: 3 entries (CS-2026-054/118/137) had invalid status='in_progress' set by upstream commits today; remapped to 'approved' (closest valid semantic fit). Builder-gap follow-up recommended: extend canonical statuses if 'in_progress' is needed semantically."
+    "notes": "S47 inline sweep: Polar Analytics MCP unavailable for state-file Layer-1 reads (paid-media-state, cohort, wholesale). Klaviyo MCP up but insufficient alone for the OVERDUE set. All 9 measurement-OVERDUE CSes deferred to pending_measurement_queue per CS-2026-127 contract. Stale-flag pass complete on draft(>=14d)/approved(>=7d)/needs_feedback(>=5d). 2 new CSes spawned this run (CS-2026-147 site-wide CVR RCA, CS-2026-148 Customer Winback flow rebuild). measurement_capable=false until CS-2026-146 (Foster) restores state files or Polar MCP returns."
   },
   "summary": {
-    "total": 145,
+    "total": 147,
     "by_status": {
       "closed": 73,
       "published": 17,
       "approved": 12,
-      "draft": 41,
+      "draft": 43,
       "needs_feedback": 2
     },
-    "last_updated": "2026-05-07T20:00:00Z",
-    "last_counted": "2026-05-06",
+    "last_updated": "2026-05-07T17:30:00Z",
+    "last_counted": "2026-05-07",
     "by_risk": {
       "critical": 2,
       "low": 75,
-      "medium": 57,
-      "high": 11
+      "medium": 58,
+      "high": 12
     },
     "by_subtype": {
-      "implementation": 105,
-      "investigation": 23,
+      "implementation": 106,
+      "investigation": 24,
       "quick": 17
     }
   },
@@ -2916,6 +2926,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 49
         }
       ]
     },
@@ -4090,6 +4107,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 31
         }
       ]
     },
@@ -4251,6 +4275,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 31
         }
       ],
       "last_updated": "2026-04-20"
@@ -4552,6 +4583,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_needs_feedback_gt_5d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 30
         }
       ]
     },
@@ -4616,6 +4654,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "in_progress_to_approved_per_canonical_schema"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 29
         }
       ],
       "measurement_window_end": "2026-05-26"
@@ -4707,6 +4752,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 29
         }
       ]
     },
@@ -5068,6 +5120,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_needs_feedback_gt_5d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 27
         }
       ]
     },
@@ -5207,6 +5266,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 24
         }
       ],
       "execution_target_date": "2026-04-22",
@@ -5646,6 +5712,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 23
         }
       ]
     },
@@ -5789,6 +5862,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 22
         }
       ]
     },
@@ -5856,6 +5936,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 22
         }
       ]
     },
@@ -5923,6 +6010,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 22
         }
       ]
     },
@@ -6045,6 +6139,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 14,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 22
         }
       ]
     },
@@ -6097,6 +6198,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 21
         }
       ]
     },
@@ -6345,6 +6453,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 21
         }
       ],
       "revision_notes": null,
@@ -6421,6 +6536,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 20
         }
       ],
       "revision_notes": null,
@@ -6493,6 +6615,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 12,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 20
         }
       ],
       "revision_notes": null,
@@ -6983,6 +7112,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 9,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 17
         }
       ],
       "revision_notes": null,
@@ -7317,6 +7453,13 @@
           ],
           "unblocked_by": "ZSquared reporting feed format spec (negotiate per the meeting prep \u2014 weekly automated CSV/JSON drops to shared folder)",
           "related_pause": "Domain 03 (Amazon) paused in daily pipeline 2026-05-04 \u2014 see shared-config.json paused_domains."
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 9
         }
       ],
       "revision_notes": null,
@@ -7400,6 +7543,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 9
         }
       ],
       "revision_notes": null,
@@ -7469,6 +7619,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 9,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 17
         }
       ],
       "revision_notes": null,
@@ -7553,6 +7710,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 17
         }
       ]
     },
@@ -7636,6 +7800,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 16
         }
       ]
     },
@@ -7782,6 +7953,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 16
         }
       ],
       "last_updated": "2026-04-28"
@@ -7992,6 +8170,13 @@
             "CS-2026-109"
           ],
           "resolution": "Approved per Devon CEO override 2026-05-04 Monday Connect."
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 15
         }
       ],
       "last_updated": "2026-05-04"
@@ -8520,6 +8705,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ]
     },
@@ -8581,6 +8773,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ]
     },
@@ -8642,6 +8841,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ]
     },
@@ -8702,6 +8908,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ]
     },
@@ -8762,6 +8975,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ]
     },
@@ -8822,6 +9042,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ],
       "notes_log": [
@@ -8891,6 +9118,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ],
       "notes_log": [
@@ -8961,6 +9195,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ],
       "notes_log": [
@@ -9032,6 +9273,13 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_draft_gt_14d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ],
       "notes_log": [
@@ -9294,6 +9542,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "in_progress_to_approved_per_canonical_schema"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 10
         }
       ],
       "created": "2026-04-27",
@@ -9750,6 +10005,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 8
         }
       ],
       "scheduled_send_date": null,
@@ -9948,6 +10210,13 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-07",
+          "session": "2026-05-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 8
         }
       ],
       "last_updated": "2026-04-29",
@@ -10656,6 +10925,50 @@
         "CS-2026-091"
       ],
       "sweep_flags": []
+    },
+    {
+      "id": "CS-2026-147",
+      "title": "Site-Wide CVR Tracking Regression RCA",
+      "status": "draft",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify",
+        "daily-pipeline"
+      ],
+      "created": "2026-05-07",
+      "last_updated": "2026-05-07",
+      "subtype": "investigation",
+      "risk_level": "high",
+      "autonomy_tier": 0,
+      "owner": "Peter Bayne",
+      "source": "synthesis_priority_stack",
+      "hypothesis": "Site-wide CVR halving (Mobile -33.5%, Desktop -58.4%, Tablet -77.1%) coincides with 31.6% of LP sessions falling into (not set)/(empty) buckets and Clarity reporting 100% of URLs as low_confidence. Hypothesis: a tracking-instrumentation regression (GA4 collection / Shopify theme push / referrer-policy / Cloudflare WAF / pixel mis-fire) is the common root cause and is producing CVR symptoms across every device. Removing the broken script will recover most of the apparent CVR loss; LP redesign work is downstream of the diagnostic.",
+      "notes": "Spawned 2026-05-07 from synthesis Priority Stack P1. Single-purpose, rollback-ready. Coordinates with CS-2026-138 (Peter owns the broken script remediation per Resolution Hierarchy Step 2 Remove). Until this RCA closes, paid reallocation recommendations remain blocked because ROAS denominator is suspect.",
+      "review_tier": "strategic",
+      "measurement_window": "7d post-deploy CVR recovery vs S46 baseline (Mobile 2.60%, Desktop 2.53%, Tablet 6.06%); LP-bucket attribution share recovers to <5%"
+    },
+    {
+      "id": "CS-2026-148",
+      "title": "Customer Winback Flow Pause/Rebuild",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "created": "2026-05-07",
+      "last_updated": "2026-05-07",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "hypothesis": "Customer Winback flow has been at 0% CVR for 7d on 3,456 recipients (alongside Sub Winback 90/0 and Browse Abandonment 374/0). Sustained 0% CVR with 29.6% open / 0.38% click pattern is a creative + offer + LP problem, not an audience-fatigue problem. Hypothesis: pausing the flow, rebuilding the creative + adding a value-stack/per-serving offer aligned with the persistent price-affordability VoC theme, and routing winback LPs into the post-CS-138 fixed surface will recover 0.5-1% baseline CVR (~17-35 incremental conv / week, ~.5-3K weekly) and reduce suppression-rate exposure.",
+      "notes": "Spawned 2026-05-07 from synthesis rec-221 / dept-lifecycle-marketing Action #1. Co-owner Alisha McGinn for relaunch creative QA. Dependent on CS-2026-138 LP fix landing first so the new winback CTAs route to a converting page; if CS-138 slips past 5/12, pause-only milestone holds until LP recovers.",
+      "review_tier": "strategic",
+      "measurement_window": "14d post-relaunch CVR (target >= 0.5%), open-rate (target >= 25%), unsubscribe rate (target < 0.4%), recovered conv count vs zero-baseline",
+      "dependencies": [
+        "CS-2026-138"
+      ]
     }
   ],
   "queue_actions": {
