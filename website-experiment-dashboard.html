@@ -2177,8 +2177,10 @@
         // Reads appState.clarity (most recent snapshot) and renders two
         // side-by-side panels: top friction URLs + top engagement URLs.
         // Empty state when no clarity data is available (cron hasn't run
-        // yet, or rubric is missing). Honors low_confidence flag to keep
-        // sub-50-session URLs out of leaderboards.
+        // yet, or rubric is missing). Filters URLs below the live rubric's
+        // min_sessions_floor — using the rubric value rather than the
+        // baked-in low_confidence flag means tuning the floor is a single
+        // config change in clarity-rubric.json, no cron rerun needed.
 
         function _shortenUrl(u) {
             if (!u) return '';
@@ -2190,12 +2192,27 @@
             }
         }
 
+        // Reads min_sessions_floor from the live rubric. Falls back to 10 —
+        // matches the post-2026-05-07 calibration which lowered the floor
+        // after seeing real Kenetik traffic distribution (top URL ~47/day,
+        // median ~1/day, so the original 50 floor excluded everything).
+        function _minSessionsFloor() {
+            return appState.clarityRubric?.min_sessions_floor ?? 10;
+        }
+
         function _topUrls(snap, scoreField, n = 5, ascending = false) {
             if (!snap || !snap.urls) return [];
+            const floor = _minSessionsFloor();
             const entries = Object.entries(snap.urls)
-                .filter(([u, rec]) => !rec.low_confidence && rec.sessions > 0)
+                .filter(([u, rec]) => (rec.sessions || 0) >= floor)
                 .map(([u, rec]) => ({ url: u, ...rec }));
-            entries.sort((a, b) => (ascending ? 1 : -1) * (b[scoreField] - a[scoreField]));
+            // Default (ascending=false) → descending: largest score first.
+            // Friction leaderboard wants worst-first (highest friction);
+            // engagement leaderboard wants best-first (highest engagement).
+            // Both use the default. Original implementation had this
+            // inverted but never showed because the filter excluded all
+            // URLs — surfaced once min_sessions_floor dropped to 10.
+            entries.sort((a, b) => (ascending ? 1 : -1) * (a[scoreField] - b[scoreField]));
             return entries.slice(0, n);
         }
 
@@ -2366,7 +2383,8 @@
             const rows = topN.map(e => {
                 const dom = _topFrictionSignal(e);
                 const domHint = dom && dom.value > 0 ? `${dom.label} ${dom.value.toFixed(1)}/1k` : '—';
-                const lowConf = e.low_confidence ? ' · <span style="color: var(--warning)">low confidence (&lt;50 sessions)</span>' : '';
+                const floor = _minSessionsFloor();
+                const lowConf = ((e.sessions || 0) < floor) ? ` · <span style="color: var(--warning)">low confidence (&lt;${floor} sessions)</span>` : '';
                 return `
                     <div class="clarity-row">
                         <div class="clarity-url" title="${e.url}">${_shortenUrl(e.url)}</div>
