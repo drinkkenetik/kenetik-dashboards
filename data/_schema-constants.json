@@ -1,7 +1,7 @@
 {
   "_doc": "Canonical schema constants for the ChangeSet tracker. Source of truth referenced by changeset-common-functions.md \u00a71b. Both kgs-repo scripts/validate_changeset_tracker.py and the dashboards-repo validator import from here. Adding/changing any value requires a ChangeSet with department=operations, platforms=[changeset-process].",
   "version": "1.0",
-  "last_updated": "2026-05-04",
+  "last_updated": "2026-05-06",
   "valid_statuses": [
     "draft",
     "needs_feedback",
@@ -60,6 +60,7 @@
     "klaviyo-sms",
     "shopify",
     "recharge",
+    "shopify-notification",
     "tiktok-organic",
     "instagram-organic",
     "facebook-organic",
@@ -152,10 +153,45 @@
     "stale",
     "archived",
     "file",
-    "experiment_id"
+    "experiment_id",
+    "klaviyo_object",
+    "lock_in_time",
+    "confidence_tier",
+    "pattern_id",
+    "klaviyo_campaign_id",
+    "klaviyo_flow_id",
+    "klaviyo_message_id",
+    "klaviyo_segment_id",
+    "activation_date",
+    "pre_refresh_baseline",
+    "design_status",
+    "last_figma_pull_timestamp",
+    "figma_feedback_available",
+    "shared_hypothesis_id",
+    "pair_id"
   ],
   "_valid_departments_note": "cross-functional added 2026-05-04 to legitimize umbrella ChangeSets that span 3+ canonical departments. Use sparingly \u2014 if >10% of CSes per quarter use cross-functional, reassess whether finer-grained primary-department + secondary_departments[] is needed.",
   "_field_types_note": "Field type enforcement (added 2026-05-04): dependencies, blocks, spawned_changesets, platforms, routed_to (when multiple), sweep_flags MUST be arrays when present. The validator enforces this. Single-value variants (e.g. 'CS-X') must be wrapped in [].",
   "_valid_platforms_note": "Platforms describe the SURFACE-OF-CHANGE \u2014 the file/URL/API/asset edited (per AP-002). AVOID lazy generics like 'social-media' or 'organic-social'. Use the SPECIFIC platforms the CS actually edits: tiktok-organic, instagram-organic, facebook-organic, linkedin-organic, youtube. Multi-platform CSes list each surface separately. Last expanded 2026-05-04 with auto-optimize (Shopify auto-optimize-orchestrator queue), kenetikpro (KenetikPro practitioner channel), linkedin-organic (LinkedIn organic posting).",
-  "_experiment_id_note": "experiment_id added 2026-05-05 for CRO experiment ChangeSets originated by the auto-optimize-orchestrator. Format: '<surface>-<NNN>' (e.g., 'pdp-atc-001'). Required when source=='experiment'; null otherwise. The surface is derivable by splitting on the trailing '-NNN'; runtime detail (phase, variant_ratio, metrics, guardrail_checks) lives only in auto-optimize-theme/auto-optimize/state.json under experiments[<surface>]. Single-writer rule: source=='experiment' entries may only be written by commits authored by auto-optimize-orchestrator@drinkkenetik.com (commit-author check enforced in validate_changeset_tracker.py). See changeset-common-functions.md \u00a72 'Experiment-Originated ChangeSets' for full pattern."
+  "_experiment_id_note": "experiment_id added 2026-05-05 for CRO experiment ChangeSets originated by the auto-optimize-orchestrator. Format: '<surface>-<NNN>' (e.g., 'pdp-atc-001'). Required when source=='experiment'; null otherwise. The surface is derivable by splitting on the trailing '-NNN'; runtime detail (phase, variant_ratio, metrics, guardrail_checks) lives only in auto-optimize-theme/auto-optimize/state.json under experiments[<surface>]. Single-writer rule: source=='experiment' entries may only be written by commits authored by auto-optimize-orchestrator@drinkkenetik.com (commit-author check enforced in validate_changeset_tracker.py). See changeset-common-functions.md \u00a72 'Experiment-Originated ChangeSets' for full pattern.",
+  "valid_klaviyo_objects": [
+    "campaign_send",
+    "flow_message_refresh",
+    "flow_creation",
+    "flow_status_change",
+    "none"
+  ],
+  "valid_confidence_tiers": [
+    "high",
+    "medium",
+    "low"
+  ],
+  "valid_design_statuses": [
+    "pending",
+    "feedback_pending",
+    "feedback_sent",
+    "approved",
+    "held"
+  ],
+  "_lifecycle_extension_note": "2026-05-06: Lifecycle build plan v5 Amendment 5. New optional fields added: klaviyo_object, lock_in_time, confidence_tier, pattern_id, klaviyo_campaign_id, klaviyo_flow_id, klaviyo_message_id, klaviyo_segment_id, activation_date, pre_refresh_baseline, design_status, last_figma_pull_timestamp, figma_feedback_available, shared_hypothesis_id, pair_id. New enums: valid_klaviyo_objects, valid_confidence_tiers, valid_design_statuses. New platform: shopify-notification (Recharge customer-facing notifications via Klaviyo + Shopify customer-facing notifications now in CS framework per v8 \u00a71.9)."
 }
