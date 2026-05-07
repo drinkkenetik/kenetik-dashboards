@@ -3754,10 +3754,16 @@ function renderStateFiles() {
                 </tr>
                 <tr>
                     <td><code>holdout-segment-meta.json</code></td>
-                    <td>${ho ? '<span style="color:var(--success)">live</span>' : '<span style="color:var(--warning)">absent</span>'}</td>
-                    <td>${ho
-                        ? 'segment_id=' + escHtml(ho.klaviyo_segment_id || '?') + ' · sample=' + (ho.current_sample_size || 0).toLocaleString()
-                        : 'A2.1 not yet run — auto-lane will not exclude holdout from new campaigns until this exists'}</td>
+                    <td>${
+                        !ho ? '<span style="color:var(--warning)">absent</span>'
+                        : ho.status === 'pending_a2_1' ? '<span style="color:var(--warning)">pending</span>'
+                        : '<span style="color:var(--success)">live</span>'
+                    }</td>
+                    <td>${
+                        !ho ? 'A2.2 governance file not yet committed'
+                        : ho.status === 'pending_a2_1' ? 'A2.2 scaffolding committed; waiting on Devon\'s A2.1 segment creation in Klaviyo (replace 4 placeholder fields when done)'
+                        : 'segment_id=' + escHtml(ho.klaviyo_segment_id || '?') + ' · sample=' + (ho.current_sample_size || 0).toLocaleString()
+                    }</td>
                 </tr>
             </tbody>
         </table>
