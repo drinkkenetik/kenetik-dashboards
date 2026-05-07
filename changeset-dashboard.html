@@ -1357,6 +1357,124 @@
             color: var(--text-muted);
             margin-top: 2px;
         }
+
+        /* ── Tab navigation (B2b.8) ── */
+        .tab-nav {
+            display: flex;
+            gap: 4px;
+            border-bottom: 1px solid var(--border);
+            margin: 0 0 24px 0;
+        }
+        .tab-button {
+            background: transparent;
+            color: var(--text-muted);
+            border: none;
+            border-bottom: 2px solid transparent;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.15s, border-color 0.15s;
+            margin-bottom: -1px;
+        }
+        .tab-button:hover { color: var(--text); }
+        .tab-button.active {
+            color: var(--accent-light);
+            border-bottom-color: var(--accent);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* ── Lifecycle tab sections ── */
+        .lifecycle-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+        }
+        .lifecycle-section h3 {
+            font-size: 16px;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .lifecycle-section .section-sub {
+            color: var(--text-muted);
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+        .lifecycle-section .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 999px;
+            padding: 2px 10px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .lifecycle-section .badge.zero {
+            background: var(--border);
+            color: var(--text-muted);
+        }
+        .lifecycle-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .lifecycle-table th {
+            text-align: left;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .lifecycle-table td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .lifecycle-table tr:hover td { background: rgba(255,255,255,0.02); }
+        .lifecycle-table .cs-link {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .lifecycle-table .cs-link:hover { text-decoration: underline; }
+        .conf-tier-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .conf-tier-high { background: rgba(34,197,94,0.15); color: var(--success); }
+        .conf-tier-medium { background: rgba(245,158,11,0.15); color: var(--warning); }
+        .conf-tier-low { background: rgba(239,68,68,0.15); color: var(--danger); }
+        .blocker-list {
+            list-style: none;
+            padding: 0;
+            margin: 4px 0 0 0;
+            font-size: 11px;
+            color: var(--warning);
+        }
+        .blocker-list li::before { content: "⚠ "; }
+        .lifecycle-empty {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 30px;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .tab-button { padding: 10px 14px; font-size: 13px; }
+            .lifecycle-section { padding: 16px; }
+            .lifecycle-table { font-size: 12px; }
+            .lifecycle-table th, .lifecycle-table td { padding: 8px 6px; }
+        }
     </style>
 </head>
 <body>
@@ -1391,6 +1509,13 @@
             </select>
         </div>
     </header>
+
+    <nav class="tab-nav">
+        <button class="tab-button active" data-tab="overview" onclick="switchTab('overview')">Overview</button>
+        <button class="tab-button" data-tab="lifecycle" onclick="switchTab('lifecycle')">Lifecycle</button>
+    </nav>
+
+    <div id="tab-overview" class="tab-content active">
 
     <section class="kpis" id="kpis"></section>
 
@@ -1482,6 +1607,43 @@
             <tbody id="csTableBody"></tbody>
         </table>
     </section>
+
+    </div> <!-- /#tab-overview -->
+
+    <div id="tab-lifecycle" class="tab-content" hidden>
+        <section class="lifecycle-section" id="lifecycle-hold-window">
+            <h3>Hold Window <span class="badge zero" id="hwBadge">0</span></h3>
+            <div class="section-sub">
+                Tier-0 Klaviyo CSes that have been auto-sealed and are queued for send.
+                Operator can veto until <code>lock_in_time</code>; after that, auto-lane sends without confirmation.
+            </div>
+            <div id="hwBody"></div>
+        </section>
+
+        <section class="lifecycle-section" id="lifecycle-needs-you">
+            <h3>Needs You <span class="badge zero" id="nyBadge">0</span></h3>
+            <div class="section-sub">
+                Approved CSes blocked on a human action — Figma feedback review, claim violations, or design holds.
+            </div>
+            <div id="nyBody"></div>
+        </section>
+
+        <section class="lifecycle-section" id="lifecycle-recent-activity">
+            <h3>Recent Lifecycle Activity</h3>
+            <div class="section-sub">
+                Lifecycle-scoped CSes from the last 14 days — recent state transitions, scheduled sends, refresh activations.
+            </div>
+            <div id="raBody"></div>
+        </section>
+
+        <section class="lifecycle-section" id="lifecycle-state-files">
+            <h3>State Files</h3>
+            <div class="section-sub">
+                Operator metadata mirrored from the growth-system repo (read-only here; edit in repo).
+            </div>
+            <div id="sfBody"></div>
+        </section>
+    </div> <!-- /#tab-lifecycle -->
 
     <footer>
         Kenetik Growth System &middot; ChangeSet Dashboard v3.0 &middot; Live from <code>drinkkenetik/kenetik-dashboards</code> &middot; Auto-refreshes every 5 min
@@ -3340,6 +3502,283 @@ async function refresh() {
     }
 }
 
+// ═══════════════════════════════════════════════════
+// LIFECYCLE TAB (B2b.8)
+// ═══════════════════════════════════════════════════
+const KLAVIYO_AUTOMATION_BASE = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/klaviyo-automation/';
+let LIFECYCLE_STATE = { activeClusters: null, holdoutMeta: null, fetchedAt: null };
+
+function switchTab(name) {
+    document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === name);
+    });
+    document.querySelectorAll('.tab-content').forEach(el => {
+        const isTarget = el.id === ('tab-' + name);
+        el.classList.toggle('active', isTarget);
+        if (isTarget) {
+            el.removeAttribute('hidden');
+        } else {
+            el.setAttribute('hidden', '');
+        }
+    });
+    if (name === 'lifecycle') {
+        renderLifecycleTab();
+    }
+}
+
+async function fetchLifecycleStateFiles() {
+    // Mirrored by .github/workflows/sync-klaviyo-automation-to-dashboards.yml.
+    // Files may be absent (Loop 2 / A2.1 haven\'t run yet); 404s are expected.
+    async function fetchOptional(name) {
+        try {
+            const resp = await fetch(KLAVIYO_AUTOMATION_BASE + name + '?t=' + Date.now());
+            if (!resp.ok) return null;
+            return await resp.json();
+        } catch (err) {
+            return null;
+        }
+    }
+    const [activeClusters, holdoutMeta] = await Promise.all([
+        fetchOptional('active-clusters.json'),
+        fetchOptional('holdout-segment-meta.json'),
+    ]);
+    LIFECYCLE_STATE = { activeClusters, holdoutMeta, fetchedAt: new Date() };
+}
+
+function escHtml(s) {
+    if (s === null || s === undefined) return '';
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function fmtDateTime(iso) {
+    if (!iso) return '—';
+    try {
+        const d = new Date(iso);
+        return d.toLocaleString();
+    } catch (e) { return iso; }
+}
+
+function fmtRelative(iso) {
+    if (!iso) return '—';
+    try {
+        const d = new Date(iso);
+        const now = new Date();
+        const diffMs = d - now;
+        const absMs = Math.abs(diffMs);
+        const hr = absMs / 36e5;
+        const day = absMs / 864e5;
+        if (hr < 1) {
+            const m = Math.round(absMs / 6e4);
+            return diffMs > 0 ? 'in ' + m + ' min' : m + ' min ago';
+        }
+        if (day < 1) {
+            return diffMs > 0 ? 'in ' + hr.toFixed(1) + ' h' : hr.toFixed(1) + ' h ago';
+        }
+        return diffMs > 0 ? 'in ' + day.toFixed(1) + ' d' : day.toFixed(1) + ' d ago';
+    } catch (e) { return iso; }
+}
+
+function confTierPill(tier) {
+    const t = (tier || 'unknown').toLowerCase();
+    const cls = ['high','medium','low'].includes(t) ? 'conf-tier-' + t : '';
+    return '<span class="conf-tier-pill ' + cls + '">' + escHtml(t) + '</span>';
+}
+
+function holdWindowCSes(tracker) {
+    if (!tracker || !Array.isArray(tracker.changesets)) return [];
+    const now = new Date();
+    return tracker.changesets.filter(cs =>
+        cs.status === 'approved' &&
+        Array.isArray(cs.platforms) && cs.platforms.includes('klaviyo') &&
+        cs.autonomy_tier === 0 &&
+        cs.lock_in_time &&
+        new Date(cs.lock_in_time) > now
+    ).sort((a, b) => new Date(a.lock_in_time) - new Date(b.lock_in_time));
+}
+
+function needsYouCSes(tracker) {
+    if (!tracker || !Array.isArray(tracker.changesets)) return [];
+    return tracker.changesets.filter(cs => {
+        if (cs.status !== 'approved') return false;
+        return cs.design_status === 'feedback_pending'
+            || cs.design_status === 'feedback_sent'
+            || cs.design_status === 'held'
+            || cs.figma_feedback_available === true
+            || cs.devon_review_required === true;
+    });
+}
+
+function recentLifecycleCSes(tracker) {
+    if (!tracker || !Array.isArray(tracker.changesets)) return [];
+    const cutoff = new Date(Date.now() - 14 * 864e5);
+    return tracker.changesets
+        .filter(cs => Array.isArray(cs.platforms) && (cs.platforms.includes('klaviyo') || cs.platforms.includes('klaviyo-sms')))
+        .filter(cs => {
+            const t = cs.last_updated || cs.activation_date || cs.scheduled_send_date || cs.executed_date;
+            return t && new Date(t) >= cutoff;
+        })
+        .sort((a, b) => {
+            const ta = new Date(a.last_updated || a.activation_date || a.scheduled_send_date || a.executed_date);
+            const tb = new Date(b.last_updated || b.activation_date || b.scheduled_send_date || b.executed_date);
+            return tb - ta;
+        })
+        .slice(0, 30);
+}
+
+function csLink(cs) {
+    return '<a class="cs-link" href="#" onclick="showDetail(\'' + cs.id + '\');return false">' + escHtml(cs.id) + '</a>';
+}
+
+function blockersFor(cs) {
+    const blockers = [];
+    if (cs.design_status === 'feedback_pending') blockers.push('Figma feedback pending review');
+    if (cs.design_status === 'feedback_sent') blockers.push('Awaiting UE response on feedback');
+    if (cs.design_status === 'held') blockers.push('Design on hold');
+    if (cs.figma_feedback_available === true) blockers.push('New Figma feedback available — review on Pulse');
+    if (cs.devon_review_required === true) blockers.push('Devon claims review required');
+    return blockers;
+}
+
+function renderHoldWindow() {
+    const list = holdWindowCSes(TRACKER);
+    const badge = document.getElementById('hwBadge');
+    badge.textContent = list.length;
+    badge.classList.toggle('zero', list.length === 0);
+    const body = document.getElementById('hwBody');
+    if (list.length === 0) {
+        body.innerHTML = '<div class="lifecycle-empty">No CSes in Hold Window. Auto-lane will fire once Loop 3 seals new sends.</div>';
+        return;
+    }
+    body.innerHTML = `
+        <table class="lifecycle-table">
+            <thead><tr>
+                <th>CS</th><th>Title</th><th>Confidence</th><th>Audience</th><th>Lock-in</th><th>Klaviyo</th>
+            </tr></thead>
+            <tbody>
+                ${list.map(cs => `
+                    <tr>
+                        <td>${csLink(cs)}</td>
+                        <td>${escHtml(cs.title || cs.summary || '—')}</td>
+                        <td>${confTierPill(cs.confidence_tier)}</td>
+                        <td>${cs.estimated_recipients ? cs.estimated_recipients.toLocaleString() : '—'}</td>
+                        <td title="${escHtml(cs.lock_in_time)}">${escHtml(fmtRelative(cs.lock_in_time))}</td>
+                        <td>${cs.klaviyo_campaign_id
+                            ? '<a class="cs-link" target="_blank" rel="noopener" href="https://www.klaviyo.com/campaign/' + escHtml(cs.klaviyo_campaign_id) + '/edit">' + escHtml(cs.klaviyo_campaign_id) + '</a>'
+                            : '—'}</td>
+                    </tr>`).join('')}
+            </tbody>
+        </table>
+    `;
+}
+
+function renderNeedsYou() {
+    const list = needsYouCSes(TRACKER);
+    const badge = document.getElementById('nyBadge');
+    badge.textContent = list.length;
+    badge.classList.toggle('zero', list.length === 0);
+    const body = document.getElementById('nyBody');
+    if (list.length === 0) {
+        body.innerHTML = '<div class="lifecycle-empty">Nothing blocked. Approved Klaviyo CSes are clear of human-action gates.</div>';
+        return;
+    }
+    body.innerHTML = `
+        <table class="lifecycle-table">
+            <thead><tr>
+                <th>CS</th><th>Title</th><th>Blockers</th><th>Owner</th>
+            </tr></thead>
+            <tbody>
+                ${list.map(cs => {
+                    const blockers = blockersFor(cs);
+                    return `
+                    <tr>
+                        <td>${csLink(cs)}</td>
+                        <td>${escHtml(cs.title || cs.summary || '—')}</td>
+                        <td>
+                            <ul class="blocker-list">
+                                ${blockers.map(b => '<li>' + escHtml(b) + '</li>').join('')}
+                            </ul>
+                        </td>
+                        <td>${escHtml(cs.owner || cs.assigned_owner || '—')}</td>
+                    </tr>`;
+                }).join('')}
+            </tbody>
+        </table>
+    `;
+}
+
+function renderRecentActivity() {
+    const list = recentLifecycleCSes(TRACKER);
+    const body = document.getElementById('raBody');
+    if (list.length === 0) {
+        body.innerHTML = '<div class="lifecycle-empty">No lifecycle CS activity in the last 14 days.</div>';
+        return;
+    }
+    body.innerHTML = `
+        <table class="lifecycle-table">
+            <thead><tr>
+                <th>CS</th><th>Title</th><th>Status</th><th>Subtype</th><th>Last activity</th>
+            </tr></thead>
+            <tbody>
+                ${list.map(cs => `
+                    <tr>
+                        <td>${csLink(cs)}</td>
+                        <td>${escHtml(cs.title || cs.summary || '—')}</td>
+                        <td>${escHtml(cs.status || '—')}</td>
+                        <td>${escHtml(cs.klaviyo_object || cs.subtype || '—')}</td>
+                        <td title="${escHtml(cs.last_updated || cs.activation_date || cs.scheduled_send_date || '')}">${
+                            escHtml(fmtRelative(cs.last_updated || cs.activation_date || cs.scheduled_send_date || cs.executed_date))
+                        }</td>
+                    </tr>`).join('')}
+            </tbody>
+        </table>
+    `;
+}
+
+function renderStateFiles() {
+    const body = document.getElementById('sfBody');
+    const ac = LIFECYCLE_STATE.activeClusters;
+    const ho = LIFECYCLE_STATE.holdoutMeta;
+    const rows = [];
+    rows.push(`
+        <table class="lifecycle-table">
+            <thead><tr>
+                <th>File</th><th>Status</th><th>Detail</th>
+            </tr></thead>
+            <tbody>
+                <tr>
+                    <td><code>active-clusters.json</code></td>
+                    <td>${ac ? '<span style="color:var(--success)">live</span>' : '<span style="color:var(--text-muted)">absent</span>'}</td>
+                    <td>${ac
+                        ? (ac.active_clusters || []).length + ' active cluster(s)'
+                        : 'No clusters defined yet (Loop 2 will create on first calendar build)'}</td>
+                </tr>
+                <tr>
+                    <td><code>holdout-segment-meta.json</code></td>
+                    <td>${ho ? '<span style="color:var(--success)">live</span>' : '<span style="color:var(--warning)">absent</span>'}</td>
+                    <td>${ho
+                        ? 'segment_id=' + escHtml(ho.klaviyo_segment_id || '?') + ' · sample=' + (ho.current_sample_size || 0).toLocaleString()
+                        : 'A2.1 not yet run — auto-lane will not exclude holdout from new campaigns until this exists'}</td>
+                </tr>
+            </tbody>
+        </table>
+    `);
+    body.innerHTML = rows.join('');
+}
+
+async function renderLifecycleTab() {
+    if (!TRACKER) return;
+    if (!LIFECYCLE_STATE.fetchedAt || (Date.now() - LIFECYCLE_STATE.fetchedAt.getTime()) > 60000) {
+        await fetchLifecycleStateFiles();
+    }
+    renderHoldWindow();
+    renderNeedsYou();
+    renderRecentActivity();
+    renderStateFiles();
+}
+
+// ═══════════════════════════════════════════════════
+// BOOTSTRAP
+// ═══════════════════════════════════════════════════
 boot();
 setInterval(refresh, REFRESH_INTERVAL_MS);
 </script>
