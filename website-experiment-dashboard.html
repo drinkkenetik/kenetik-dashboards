@@ -397,6 +397,26 @@
             font-size: 11px;
             color: var(--warning, #b45309);
         }
+        /* Banner shown above the Clarity panels when snapshot is stale.
+           Sits outside individual panels so it warns about both leaderboards
+           AND the anomaly panel below at once. */
+        .stale-banner {
+            margin-bottom: 14px;
+            padding: 10px 14px;
+            background: rgba(220, 38, 38, 0.08);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--danger);
+            line-height: 1.5;
+        }
+        .stale-banner .stale-icon { margin-right: 6px; }
+        .stale-banner code {
+            font-size: 11px;
+            background: rgba(220, 38, 38, 0.1);
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
 
         /* ── Active experiments table ── */
         table.experiments {
@@ -2197,6 +2217,37 @@
             return best;
         }
 
+        // Returns the snapshot's age in hours, or null if snapshot_at is
+        // missing/unparseable. Used by the stale-banner gate.
+        function _clarityAgeHours(snap) {
+            if (!snap || !snap.snapshot_at) return null;
+            const t = new Date(snap.snapshot_at).getTime();
+            if (!Number.isFinite(t)) return null;
+            return (Date.now() - t) / 3600000;
+        }
+
+        // Stale = snapshot >25h old. Cron runs daily at 06:00 UTC; the 25h
+        // threshold gives 1h of grace before flagging. Returns the banner
+        // HTML or empty string. Renders above the clarity-grid so it warns
+        // about both leaderboards AND the anomaly panel at once.
+        function _clarityStaleBanner(snap) {
+            const ageH = _clarityAgeHours(snap);
+            if (ageH == null || ageH <= 25) return '';
+            const ageStr = ageH < 48
+                ? `${Math.floor(ageH)}h old`
+                : `${Math.floor(ageH / 24)} days old`;
+            return `
+                <div class="stale-banner">
+                    <span class="stale-icon">⚠</span>
+                    Clarity snapshot is <strong>${ageStr}</strong>
+                    (last write <code>${snap.snapshot_date || '—'}</code>).
+                    Cron may be failing — check
+                    <a href="https://github.com/drinkkenetik/kenetik-growth-system/actions/workflows/clarity-cron.yml"
+                       target="_blank" style="color: inherit; text-decoration: underline">Actions logs</a>.
+                    Friction/engagement/anomaly panels below reflect old data.
+                </div>`;
+        }
+
         function renderClarityPanels() {
             const snap = appState.clarity;
             if (!snap) {
@@ -2239,6 +2290,7 @@
                 : '';
 
             return `
+                ${_clarityStaleBanner(snap)}
                 <div class="clarity-grid">
                     <div class="panel">
                         <div class="panel-header">
