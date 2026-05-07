@@ -1,0 +1,23 @@
+{
+  "_doc": "Holdout segment governance metadata. Per build plan v5 A2 + architecture v5 §5. Fields populated after Devon completes A2.1 (manual Klaviyo segment creation). Validator (validate_state_files.py) accepts 0 as valid non-negative for placeholder values; dashboard State Files panel checks `status` field and surfaces 'A2.1 not yet run' when status='pending_a2_1'.",
+  "_handoff_to_devon": "When A2.1 is complete in Klaviyo: (1) replace klaviyo_segment_id with the real segment id, (2) set established_date to today, (3) populate current_sample_size with the live profile count, (4) flip status to 'live'. Then commit + push. The sync-klaviyo-automation-to-dashboards.yml workflow mirrors to dashboards repo automatically.",
+
+  "status": "pending_a2_1",
+  "klaviyo_segment_id": "PLACEHOLDER_REPLACE_ON_A2_1",
+  "segment_name": "Holdout — DO NOT MARKET (5% global)",
+  "established_date": "PENDING",
+  "rotation_cadence_days": 90,
+  "next_rotation_date": "PENDING",
+  "minimum_sample_size": 1000,
+  "current_sample_size": 0,
+  "exclusion_mechanism": "auto-lane adds Holdout segment to audiences.excluded on every Klaviyo campaign at creation time (per auto_lane.process_auto_lane_cs, B2b.4)",
+  "purpose": "Persistent ~5% global holdout for incrementality measurement. Excluded from all marketing sends; receives no campaigns or flow messages. Difference in conversion / revenue between holdout and non-holdout populations measures marketing-attributable lift.",
+  "raid_protection": true,
+
+  "_a2_1_definition": {
+    "_doc": "The Klaviyo segment definition Devon should create in A2.1. Hashes profile id deterministically; ~5% will satisfy holdout_id < 5 with uniform distribution.",
+    "name": "Holdout — DO NOT MARKET (5% global)",
+    "method": "Compute custom property holdout_id = int(md5(profile.id).hexdigest(), 16) % 100 for each marketing-eligible profile via Klaviyo API bulk update. Then create segment with condition `properties.holdout_id < 5` and is_active=true.",
+    "alternatives": "If bulk-property-update is heavy lift, an acceptable v1 substitute is created_at-based bucketing: select profiles where (created_at_unix_seconds % 20) < 1. Distribution is approximately uniform; trade-off is slight bias toward older profiles in the 5% bucket. Document the choice in 'method' field above when you ship."
+  }
+}
