@@ -1,0 +1,8 @@
+{
+  "_doc": "Loop 0 trigger registry per architecture v5 §5.2. Populated by B4.2 (onboard 17 active flows) when Devon registers the canonical Klaviyo flows. Currently empty — B4.1 (triggers.py) is built and wired into weekly cron, but no triggers registered yet.",
+  "_handoff_to_b4_2": "Each entry mirrors v5 §5.2 schema: trigger_id, klaviyo_flow_id, klaviyo_message_id (optional for flow_root type), trigger_type (flow_message|flow_root|campaign_recurring|behavioral), linked_changeset, stage (active|stale|underperformer|queued_for_refresh|refreshing|retired), last_refreshed (ISO date), current_baseline (open_rate, click_rate, conversion_rate, revenue_per_recipient), ab_test_active, ab_test_klaviyo_id, refresh_queue_priority (set by Loop 0), platform (klaviyo|recharge|shopify-notification).",
+
+  "version": "1.0",
+  "last_updated": "2026-05-07T00:00:00Z",
+  "triggers": []
+}
