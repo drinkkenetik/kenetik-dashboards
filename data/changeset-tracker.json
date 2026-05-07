@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-06",
+  "last_updated": "2026-05-07T20:00:00Z",
   "next_id": 147,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-06",
@@ -20,13 +20,13 @@
   "summary": {
     "total": 145,
     "by_status": {
-      "closed": 65,
+      "closed": 73,
       "published": 17,
       "approved": 12,
-      "draft": 49,
+      "draft": 41,
       "needs_feedback": 2
     },
-    "last_updated": "2026-05-06",
+    "last_updated": "2026-05-07T20:00:00Z",
     "last_counted": "2026-05-06",
     "by_risk": {
       "critical": 2,
@@ -7141,7 +7141,7 @@
     {
       "id": "CS-2026-090",
       "title": "Value-Framing Email + PDP Reinforcement \u2014 'Why Kenetik Costs What It Costs'",
-      "status": "draft",
+      "status": "closed",
       "subtype": "implementation",
       "category": "messaging_lifecycle",
       "department": "lifecycle-marketing",
@@ -7188,9 +7188,9 @@
       "measurement_window": "14d",
       "measurement_due": null,
       "actual_impact": null,
-      "outcome": null,
+      "outcome": "cancelled",
       "closed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 1,
       "file": "cgo-logs/changesets/CS-2026-090.md",
       "notes": "Spawned from 2026-04-20 synthesis rec-227 (P5 Ketone-IQ counter). Direct response to Ketone-IQ APRIL26 30% sub discount + Tony Robbins YouTube push flagged by D13 (5th consecutive session below 40% share of voice). Katie owns email copy + flow (email/SMS is Katie's surface per Content Routing); Lawrence owns PDP module build. Peter claims review required pre-send. Apr 23: reassigned from Nicole Sanchez to Katie Spaller per team-roles.md Content Routing \u2014 Sales Support is not the owner of Klaviyo/Shopify surfaces.\n2026-04-23: Apr 23 owner scrub: Lawrence removed \u2014 Creator Partnerships role does not own lifecycle PDP modules on klaviyo/shopify. Katie (lifecycle/shopify) is sole owner.",
       "sweep_flags": [
@@ -7206,7 +7206,18 @@
       "revision_date": null,
       "rejection_notes": null,
       "learning_note": null,
-      "spawned_changesets": null
+      "spawned_changesets": null,
+      "close_reason": "overdue \u2014 scheduled 2026-04-25; superseded by Per-Serving Value-Framing Test (CS-2026-124) which is itself overdue and will be reconsidered as part of /lifecycle-calendar June outline",
+      "closed_at": "2026-05-07T20:00:00Z",
+      "closed_by": "devon-via-claude (A1.2 backlog drain)",
+      "history": [
+        {
+          "timestamp": "2026-05-07T20:00:00Z",
+          "event": "closed",
+          "reason": "overdue \u2014 scheduled 2026-04-25; superseded by Per-Serving Value-Framing Test (CS-2026-124) which is itself overdue and will be reconsidered as part of /lifecycle-calendar June outline",
+          "actor": "A1.2 backlog drain"
+        }
+      ]
     },
     {
       "id": "CS-2026-091",
@@ -8245,7 +8256,7 @@
       "platforms": [
         "klaviyo"
       ],
-      "status": "draft",
+      "status": "closed",
       "risk_level": "low",
       "review_tier": "express",
       "owner": "Katie",
@@ -8285,7 +8296,7 @@
       "execution_target_date": "2026-04-29",
       "scheduled_send_date": "2026-05-01",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 0,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8293,6 +8304,18 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        }
+      ],
+      "outcome": "cancelled",
+      "close_reason": "overdue \u2014 scheduled 2026-05-01, send window closed",
+      "closed_at": "2026-05-07T20:00:00Z",
+      "closed_by": "devon-via-claude (A1.2 backlog drain)",
+      "history": [
+        {
+          "timestamp": "2026-05-07T20:00:00Z",
+          "event": "closed",
+          "reason": "overdue \u2014 scheduled 2026-05-01, send window closed",
+          "actor": "A1.2 backlog drain"
         }
       ]
     },
@@ -8304,7 +8327,7 @@
       "platforms": [
         "klaviyo"
       ],
-      "status": "draft",
+      "status": "closed",
       "risk_level": "low",
       "review_tier": "express",
       "owner": "Katie",
@@ -8345,7 +8368,7 @@
       "execution_target_date": "2026-05-02",
       "scheduled_send_date": "2026-05-04",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 0,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8353,6 +8376,18 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        }
+      ],
+      "outcome": "cancelled",
+      "close_reason": "overdue \u2014 scheduled 2026-05-04, send window closed",
+      "closed_at": "2026-05-07T20:00:00Z",
+      "closed_by": "devon-via-claude (A1.2 backlog drain)",
+      "history": [
+        {
+          "timestamp": "2026-05-07T20:00:00Z",
+          "event": "closed",
+          "reason": "overdue \u2014 scheduled 2026-05-04, send window closed",
+          "actor": "A1.2 backlog drain"
         }
       ]
     },
@@ -8364,7 +8399,7 @@
       "platforms": [
         "klaviyo"
       ],
-      "status": "draft",
+      "status": "closed",
       "risk_level": "low",
       "review_tier": "express",
       "owner": "Katie",
@@ -8404,7 +8439,7 @@
       "execution_target_date": "2026-05-04",
       "scheduled_send_date": "2026-05-06",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 0,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8412,6 +8447,18 @@
           "session": "2026-04-29-s1",
           "days_stale": 6,
           "action": "owner_nudge_queued_phase_4"
+        }
+      ],
+      "outcome": "cancelled",
+      "close_reason": "overdue \u2014 scheduled 2026-05-06, send window closed",
+      "closed_at": "2026-05-07T20:00:00Z",
+      "closed_by": "devon-via-claude (A1.2 backlog drain)",
+      "history": [
+        {
+          "timestamp": "2026-05-07T20:00:00Z",
+          "event": "closed",
+          "reason": "overdue \u2014 scheduled 2026-05-06, send window closed",
+          "actor": "A1.2 backlog drain"
         }
       ]
     },
@@ -8465,7 +8512,7 @@
       "execution_target_date": "2026-05-06",
       "scheduled_send_date": "2026-05-08",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 0,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8526,7 +8573,7 @@
       "execution_target_date": "2026-05-08",
       "scheduled_send_date": "2026-05-10",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 0,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8587,7 +8634,7 @@
       "execution_target_date": "2026-05-11",
       "scheduled_send_date": "2026-05-13",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 1,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8647,7 +8694,7 @@
       "execution_target_date": "2026-05-14",
       "scheduled_send_date": "2026-05-16",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 0,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8707,7 +8754,7 @@
       "execution_target_date": "2026-05-16",
       "scheduled_send_date": "2026-05-18",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 0,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8767,7 +8814,7 @@
       "execution_target_date": "2026-05-19",
       "scheduled_send_date": "2026-05-21",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 0,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8836,7 +8883,7 @@
       "execution_target_date": "2026-05-21",
       "scheduled_send_date": "2026-05-23",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 0,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8906,7 +8953,7 @@
       "execution_target_date": "2026-05-23",
       "scheduled_send_date": "2026-05-25",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 0,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -8977,7 +9024,7 @@
       "execution_target_date": "2026-05-27",
       "scheduled_send_date": "2026-05-29",
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 1,
       "sweep_flags": [
         {
           "flag": "draft_stale_gt_5d",
@@ -9265,7 +9312,7 @@
       "id": "CS-2026-119",
       "title": "Endurance Training Bundle PDP Traffic Restore \u2014 diagnostic + reactivation",
       "owner": "Garrett Davis",
-      "status": "draft",
+      "status": "closed",
       "subtype": "implementation",
       "last_updated": "2026-04-27",
       "execution_target_date": "2026-04-29",
@@ -9292,7 +9339,19 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-119.md",
-      "notes": "Summary: Audit /products/endurance-training-bundle Shopify theme history Apr 19-20 (Garrett); pull Apr 13-19 paid + Klaviyo logs for any campaign or send pointing to that URL (Katie); identify the traffic-source loss (likely 2nd-order to CS-089 cleetus reallocation). If found: restore traffic source by Apr 28. Conservative recovery: 65-84 conv/wk = $4,400-5,700/wk margin. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['P3'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): Phase 4 may require Devon sign-off if reactivation depends on a paused paid campaign decision. No phantom deps."
+      "notes": "Summary: Audit /products/endurance-training-bundle Shopify theme history Apr 19-20 (Garrett); pull Apr 13-19 paid + Klaviyo logs for any campaign or send pointing to that URL (Katie); identify the traffic-source loss (likely 2nd-order to CS-089 cleetus reallocation). If found: restore traffic source by Apr 28. Conservative recovery: 65-84 conv/wk = $4,400-5,700/wk margin. | Priority (synthesis tag): P0 | Demand signal: None | Source recommendations: ['P3'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): Phase 4 may require Devon sign-off if reactivation depends on a paused paid campaign decision. No phantom deps.",
+      "outcome": "cancelled",
+      "close_reason": "overdue \u2014 scheduled 2026-04-29; diagnostic still relevant but priority deprioritized; Devon will re-spawn via /changeset-recommend if traffic gap persists",
+      "closed_at": "2026-05-07T20:00:00Z",
+      "closed_by": "devon-via-claude (A1.2 backlog drain)",
+      "history": [
+        {
+          "timestamp": "2026-05-07T20:00:00Z",
+          "event": "closed",
+          "reason": "overdue \u2014 scheduled 2026-04-29; diagnostic still relevant but priority deprioritized; Devon will re-spawn via /changeset-recommend if traffic gap persists",
+          "actor": "A1.2 backlog drain"
+        }
+      ]
     },
     {
       "id": "CS-2026-120",
@@ -9388,7 +9447,7 @@
       "id": "CS-2026-122",
       "title": "Trend-to-Content Sprint \u2014 UK Biobank + Frontiers Cognition Meta + GLP-1 Adjacency (3-brief package)",
       "owner": "Brandon Dyksterhouse",
-      "status": "draft",
+      "status": "closed",
       "subtype": "implementation",
       "last_updated": "2026-04-29",
       "execution_target_date": "2026-04-29",
@@ -9414,7 +9473,19 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-122.md",
-      "notes": "Summary: Brandon authors 3 distillation briefs; Devon claims-approves; Charlotte/Nick organic + Katie paid execute. (a) UK Biobank PMID 42036791 distillation by Apr 28 (400-600 word blog + email + 3 social variants); (b) Frontiers 2026 ketone-cognition meta distillation by Apr 29; (c) GLP-1 cognitive-bridge adjacency brief by Apr 30 (Devon claims gate priority \u2014 peak cultural moment, #metabolichealth 6,208 msgs/wk). Pair with Mother's Day 'Fight Mom Brain' for narrative coherence. Triage with Larry vs 12 active production-queue briefs; pause lowest-priority briefs to absorb. | Priority (synthesis tag): P1 | Demand signal: cgo-2026-04-27-002,cgo-2026-04-27-003,cgo-2026-04-27-004 | Source recommendations: ['rec-242'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | 2026-04-29 (Devon via Claude /changeset-execute): Citation-conflict resolution NO-OP. Brief A already on PMID 42036791 (n=269,178). Brandon does not need to disambiguate. Per PubMed pull, paper is Tier B observational; carry 'associated with' language guardrail into Brief A copy approval. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): Devon claims approval is the single gate. Triage against production-queue (12 briefs active). No phantom deps."
+      "notes": "Summary: Brandon authors 3 distillation briefs; Devon claims-approves; Charlotte/Nick organic + Katie paid execute. (a) UK Biobank PMID 42036791 distillation by Apr 28 (400-600 word blog + email + 3 social variants); (b) Frontiers 2026 ketone-cognition meta distillation by Apr 29; (c) GLP-1 cognitive-bridge adjacency brief by Apr 30 (Devon claims gate priority \u2014 peak cultural moment, #metabolichealth 6,208 msgs/wk). Pair with Mother's Day 'Fight Mom Brain' for narrative coherence. Triage with Larry vs 12 active production-queue briefs; pause lowest-priority briefs to absorb. | Priority (synthesis tag): P1 | Demand signal: cgo-2026-04-27-002,cgo-2026-04-27-003,cgo-2026-04-27-004 | Source recommendations: ['rec-242'] | Source synthesis: cgo-logs/daily-syntheses/2026-04-27-s1.md | Session: 2026-04-27-s1 | 2026-04-29 (Devon via Claude /changeset-execute): Citation-conflict resolution NO-OP. Brief A already on PMID 42036791 (n=269,178). Brandon does not need to disambiguate. Per PubMed pull, paper is Tier B observational; carry 'associated with' language guardrail into Brief A copy approval. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): Devon claims approval is the single gate. Triage against production-queue (12 briefs active). No phantom deps.",
+      "outcome": "cancelled",
+      "close_reason": "overdue \u2014 scheduled 2026-04-29; trend window passed",
+      "closed_at": "2026-05-07T20:00:00Z",
+      "closed_by": "devon-via-claude (A1.2 backlog drain)",
+      "history": [
+        {
+          "timestamp": "2026-05-07T20:00:00Z",
+          "event": "closed",
+          "reason": "overdue \u2014 scheduled 2026-04-29; trend window passed",
+          "actor": "A1.2 backlog drain"
+        }
+      ]
     },
     {
       "id": "CS-2026-123",
@@ -9443,7 +9514,7 @@
       "id": "CS-2026-124",
       "title": "Per-Serving Value-Framing Test \u2014 Counter-Position vs Ketone-IQ APRIL26 30%-Off Promo",
       "owner": "Cliff Morgan",
-      "status": "draft",
+      "status": "closed",
       "subtype": "implementation",
       "last_updated": "2026-04-28",
       "execution_target_date": "2026-05-05",
@@ -9462,7 +9533,19 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-124.md",
-      "notes": "Summary: Cliff Morgan + Katie Spaller co-own. Cliff defines per-serving value math + sub savings emphasis (anchor: per-serving cost vs equivalent energy drink/coffee). Katie ships email send variant (M19/C variant) + 2 paid social creatives. Test window: 7 days during Ketone-IQ APRIL26 promo overlap. Linked to rec-245. P3 of synthesis priority stack. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): No phantom deps. Coordinate with rec-243 paid pause sequencing (Katie). Brandon claims-clear value-framing language stays inside matrix."
+      "notes": "Summary: Cliff Morgan + Katie Spaller co-own. Cliff defines per-serving value math + sub savings emphasis (anchor: per-serving cost vs equivalent energy drink/coffee). Katie ships email send variant (M19/C variant) + 2 paid social creatives. Test window: 7 days during Ketone-IQ APRIL26 promo overlap. Linked to rec-245. P3 of synthesis priority stack. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): No phantom deps. Coordinate with rec-243 paid pause sequencing (Katie). Brandon claims-clear value-framing language stays inside matrix.",
+      "outcome": "cancelled",
+      "close_reason": "overdue \u2014 scheduled 2026-05-05; counter-positioning still relevant, will be re-spawned as part of June lifecycle calendar if hypothesis still has merit",
+      "closed_at": "2026-05-07T20:00:00Z",
+      "closed_by": "devon-via-claude (A1.2 backlog drain)",
+      "history": [
+        {
+          "timestamp": "2026-05-07T20:00:00Z",
+          "event": "closed",
+          "reason": "overdue \u2014 scheduled 2026-05-05; counter-positioning still relevant, will be re-spawned as part of June lifecycle calendar if hypothesis still has merit",
+          "actor": "A1.2 backlog drain"
+        }
+      ]
     },
     {
       "id": "CS-2026-125",
@@ -9495,7 +9578,7 @@
       "id": "CS-2026-126",
       "title": "Klaviyo Review Request Flow (Rcgah9) Audit & Repair \u2014 Restore -83% Velocity",
       "owner": "Katie Spaller",
-      "status": "draft",
+      "status": "closed",
       "subtype": "investigation",
       "last_updated": "2026-04-28",
       "execution_target_date": "2026-05-02",
@@ -9512,7 +9595,19 @@
       ],
       "source": "synthesis",
       "file": "cgo-logs/changesets/CS-2026-126.md",
-      "notes": "Summary: Katie audits Klaviyo Review Request flow Rcgah9 \u2014 trigger criteria, send timing relative to delivery, deliverability stats, suppression list. Hypothesis: structural flow-mechanics fault (trigger or timing change), NOT VoC degradation. Outcome: identify root cause, ship fix, monitor 2-week recovery to ~20 reviews/week. Linked to rec-247. P5 of synthesis recommendations. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): No phantom deps. Independent of CS-100 ship. Pull Rcgah9 metrics from Klaviyo MCP."
+      "notes": "Summary: Katie audits Klaviyo Review Request flow Rcgah9 \u2014 trigger criteria, send timing relative to delivery, deliverability stats, suppression list. Hypothesis: structural flow-mechanics fault (trigger or timing change), NOT VoC degradation. Outcome: identify root cause, ship fix, monitor 2-week recovery to ~20 reviews/week. Linked to rec-247. P5 of synthesis recommendations. | Dependencies prose (auto-migrated from string\u2192array on 2026-05-04): No phantom deps. Independent of CS-100 ship. Pull Rcgah9 metrics from Klaviyo MCP.",
+      "outcome": "cancelled",
+      "close_reason": "overdue \u2014 scheduled 2026-05-02; flow audit can be re-spawned via /changeset-recommend at any time, but not actively blocked on this CS",
+      "closed_at": "2026-05-07T20:00:00Z",
+      "closed_by": "devon-via-claude (A1.2 backlog drain)",
+      "history": [
+        {
+          "timestamp": "2026-05-07T20:00:00Z",
+          "event": "closed",
+          "reason": "overdue \u2014 scheduled 2026-05-02; flow audit can be re-spawned via /changeset-recommend at any time, but not actively blocked on this CS",
+          "actor": "A1.2 backlog drain"
+        }
+      ]
     },
     {
       "id": "CS-2026-127",
@@ -10371,7 +10466,7 @@
       "learning_note": null,
       "spawned_changesets": null,
       "executed_date": null,
-      "autonomy_tier": null,
+      "autonomy_tier": 1,
       "dependencies": [],
       "sweep_flags": [],
       "created": "2026-05-04",
