@@ -5,27 +5,24 @@
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-07",
     "last_sweep_session": "2026-05-07-s1",
-    "last_sweep_result": "completed_inline_no_mcp",
+    "last_sweep_result": "remediation_completed_layer1_layer2_drained",
     "last_sweep_counts": {
       "stale_flagged_today": 37,
       "measurement_overdue": 9,
       "auto_closed": 0,
       "auto_advanced": 0,
-      "pending_measurement_queue_length": 9
+      "pending_measurement_queue_length": 1,
+      "measured_inline": 8,
+      "underperformed": 3,
+      "inconclusive": 4,
+      "data_needed": 1,
+      "success": 0
     },
     "pending_measurement_queue": [
-      "CS-2026-020",
-      "CS-2026-021",
-      "CS-2026-022",
-      "CS-2026-035",
-      "CS-2026-084",
-      "CS-2026-085",
-      "CS-2026-086",
-      "CS-2026-089",
-      "CS-2026-115"
+      "CS-2026-035"
     ],
-    "measurement_capable": false,
-    "notes": "S47 inline sweep: Polar Analytics MCP unavailable for state-file Layer-1 reads (paid-media-state, cohort, wholesale). Klaviyo MCP up but insufficient alone for the OVERDUE set. All 9 measurement-OVERDUE CSes deferred to pending_measurement_queue per CS-2026-127 contract. Stale-flag pass complete on draft(>=14d)/approved(>=7d)/needs_feedback(>=5d). 2 new CSes spawned this run (CS-2026-147 site-wide CVR RCA, CS-2026-148 Customer Winback flow rebuild). measurement_capable=false until CS-2026-146 (Foster) restores state files or Polar MCP returns."
+    "measurement_capable": true,
+    "notes": "S47 REMEDIATION: prior sweep deferred all 9 OVERDUE CSes citing Polar offline. That was incorrect \u2014 Klaviyo MCP was available (CS-020/021/022 measurable) and Layer-1 state files were on disk (CS-089 paid-media-state, CS-115 website-state both fresh today). Re-ran measurement: 8 of 9 had readable data via Klaviyo MCP or local state files. Outcomes: CS-020/022 underperformed (consistent with L-068 acquisition-quality decline pattern); CS-021 inconclusive (lifestyle type, no clear baseline); CS-035 genuinely data_needed (50/50 A/B segment-split needs Katie pull); CS-084/085 ops artifacts shipped, PM composite eval owed (Devon); CS-086 PARTIAL SHIP \u2014 team-roster.json missing, reopen scope; CS-089 inconclusive (ad_platform_refs PENDING per brief \u00a74b + Polar 3d/14d offline); CS-115 inconclusive_directional_positive (PDP -8.93% vs site-wide -46% = relative outperformance, but clean read gated on CS-147 tracking RCA restoring Layer 3+4 Polar Pixel funnel). measurement_capable=true; only CS-035 stays in queue."
   },
   "summary": {
     "total": 147,
@@ -2064,7 +2061,28 @@
       "autonomy_tier": null,
       "stale": false,
       "last_updated": "2026-04-22",
-      "measurement_due": "2026-05-01"
+      "measurement_due": "2026-05-01",
+      "measurement_result": {
+        "measured_date": "2026-05-07",
+        "measurement_capable": true,
+        "data_source": "klaviyo_mcp_get_campaign_report",
+        "campaign_id": "01KPWXTC5FQAWG95K1K6PFRJE3",
+        "campaign_name": "UE | C10/M19 - Talladega Race Day: Last Call for Pit Crew Coozie",
+        "sent": "2026-04-24",
+        "recipients": 16183,
+        "open_rate": 0.4697,
+        "click_rate": 0.01465,
+        "conversions": 32,
+        "conversion_rate": 0.00198,
+        "revenue": 2828.35,
+        "rpr": 0.17489,
+        "aov": 88.39,
+        "unsubscribe_rate": 0.00315,
+        "outcome": "underperformed",
+        "analysis": "Coozie close vs Valentine's $13.2K reference: $2,828 = 21% of expected. Open 47% (healthy), click 1.46% (moderate), conv 0.20% (sub-baseline). Pattern consistent with L-068 acquisition-quality decline + audience-fatigue on coozie sequence #10.",
+        "requires_human_review": true
+      },
+      "requires_human_review": true
     },
     {
       "id": "CS-2026-021",
@@ -2142,7 +2160,28 @@
       "autonomy_tier": null,
       "stale": false,
       "last_updated": "2026-04-22",
-      "measurement_due": "2026-05-03"
+      "measurement_due": "2026-05-03",
+      "measurement_result": {
+        "measured_date": "2026-05-07",
+        "measurement_capable": true,
+        "data_source": "klaviyo_mcp_get_campaign_report",
+        "campaign_id": "01KP36S6QCTDNGN0T8KNDK37HX",
+        "campaign_name": "UE | C11/M19 - What Changes After 14 Days",
+        "sent": "2026-04-27",
+        "recipients": 15989,
+        "open_rate": 0.46723,
+        "click_rate": 0.00959,
+        "conversions": 25,
+        "conversion_rate": 0.00157,
+        "revenue": 2230.77,
+        "rpr": 0.13976,
+        "aov": 89.23,
+        "unsubscribe_rate": 0.00413,
+        "outcome": "inconclusive",
+        "analysis": "Lifestyle/community type, no explicit revenue baseline in brief. Open 46.7% strong; click 0.96% on the low end. $2,231 on 16K Engaged. Unsub 0.41% elevated.",
+        "requires_human_review": true
+      },
+      "requires_human_review": true
     },
     {
       "id": "CS-2026-022",
@@ -2213,7 +2252,28 @@
       "autonomy_tier": null,
       "stale": false,
       "last_updated": "2026-04-22",
-      "measurement_due": "2026-05-06"
+      "measurement_due": "2026-05-06",
+      "measurement_result": {
+        "measured_date": "2026-05-07",
+        "measurement_capable": true,
+        "data_source": "klaviyo_mcp_get_campaign_report",
+        "campaign_id": "01KPNC8HJ4QNN321BP55REDV5X",
+        "campaign_name": "UE | C12/M19 - May is Loading Stock Up",
+        "sent": "2026-04-30",
+        "recipients": 17904,
+        "open_rate": 0.42051,
+        "click_rate": 0.00839,
+        "conversions": 18,
+        "conversion_rate": 0.00101,
+        "revenue": 1435.14,
+        "rpr": 0.08023,
+        "aov": 79.73,
+        "unsubscribe_rate": 0.0043,
+        "outcome": "underperformed",
+        "analysis": "Stock-up promo. Open 42% (slight dip), click 0.84%, conv 0.10%. Revenue $1,435 / RPR $0.08. Unsub 0.43% elevated for ENGAGED. Already noted in dept-lifecycle-marketing as soft CVR + click-to-conv funnel bottleneck.",
+        "requires_human_review": true
+      },
+      "requires_human_review": true
     },
     {
       "id": "CS-2026-023",
@@ -3206,7 +3266,17 @@
         }
       ],
       "measurement_due": "2026-05-03",
-      "published_date": "2026-04-19"
+      "published_date": "2026-04-19",
+      "measurement_result": {
+        "measured_date": "2026-05-07",
+        "measurement_capable": false,
+        "data_source": "klaviyo_mcp_attempted",
+        "outcome": "data_needed",
+        "analysis": "Test design is a 50/50 segment-split A/B (SMS-leads-email vs simultaneous) on the next 3 promotional campaigns. Generic campaign report cannot resolve; requires Katie to pull treatment-vs-control segment-level conv rates with explicit campaign tagging. Stays in pending_measurement_queue with detail.",
+        "requires_human_review": true,
+        "reason_for_human": "A/B segment-pair pull, not a generic campaign report"
+      },
+      "requires_human_review": true
     },
     {
       "id": "CS-2026-036",
@@ -6811,7 +6881,21 @@
       "revision_date": null,
       "rejection_notes": null,
       "learning_note": null,
-      "spawned_changesets": null
+      "spawned_changesets": null,
+      "measurement_result": {
+        "measured_date": "2026-05-07",
+        "measurement_capable": true,
+        "data_source": "artifact_inspection",
+        "artifacts_verified": [
+          "scripts/pm_write_gate.py",
+          "scripts/pm_reconciler.py"
+        ],
+        "outcome": "inconclusive",
+        "analysis": "Artifacts shipped (gated write API + reconciler). Primary KPI is PM composite eval at post-ship +1 week (target \u226585% Grade A). Eval harness output not available in this measurement run; requires Devon to run /pm-eval and report.",
+        "requires_human_review": true,
+        "reason_for_human": "PM composite eval harness output needed for primary acceptance"
+      },
+      "requires_human_review": true
     },
     {
       "id": "CS-2026-085",
@@ -6887,7 +6971,21 @@
       "revision_date": null,
       "rejection_notes": null,
       "learning_note": null,
-      "spawned_changesets": null
+      "spawned_changesets": null,
+      "measurement_result": {
+        "measured_date": "2026-05-07",
+        "measurement_capable": true,
+        "data_source": "artifact_inspection",
+        "artifacts_verified": [
+          "scripts/workflow_scheduler.py",
+          "scripts/e5_stale_state_scanner.py"
+        ],
+        "outcome": "inconclusive",
+        "analysis": "Scheduler core + E5 stale-state scanner shipped. Primary KPI is PM composite eval at post-ship +1 week + CS-056/057 advance within 48h of E5 ship. Eval harness output not available in this measurement run; requires Devon to run /pm-eval and verify CS-056/057 advance status.",
+        "requires_human_review": true,
+        "reason_for_human": "PM composite eval + CS-056/057 advance verification needed"
+      },
+      "requires_human_review": true
     },
     {
       "id": "CS-2026-086",
@@ -6963,7 +7061,25 @@
       "revision_date": "2026-04-19",
       "rejection_notes": null,
       "learning_note": null,
-      "spawned_changesets": null
+      "spawned_changesets": null,
+      "measurement_result": {
+        "measured_date": "2026-05-07",
+        "measurement_capable": true,
+        "data_source": "artifact_inspection_plus_pm_query",
+        "artifacts_verified": [
+          "cgo-daily-pipeline/config/synthesis-instructions.md (Step 9a.2 present, 2 references)"
+        ],
+        "artifacts_missing": [
+          "cgo-daily-pipeline/config/team-roster.json"
+        ],
+        "forward_window_team_feedback_entries": 0,
+        "backfill_team_feedback_entries": 0,
+        "outcome": "underperformed",
+        "analysis": "Step 9a.2 shipped to synthesis-instructions.md but team-roster.json is missing \u2014 Step 9a.2 cannot execute its author filter without it. Forward window 14d post-ship: 0 team_feedback entries written. Per brief falsification criteria, if BOTH backfill (0) and forward window (0) yield 0 corrections, dimension regression may reflect reality; however, missing team-roster.json means the test was not actually run as designed. Reopen scope to ship team-roster.json + execute backfill sweep.",
+        "requires_human_review": true,
+        "reason_for_human": "Partial ship \u2014 team-roster.json artifact missing; reopen scope"
+      },
+      "requires_human_review": true
     },
     {
       "id": "CS-2026-087",
@@ -7272,7 +7388,26 @@
           "L1 margin envelope from brief ($4k/$11.25k/$20.5k) does not apply \u2014 recompute at executed scale: 14d incremental margin range = (-$140) to (+$140) given $280 total reallocated spend \u00d7 50% DTC \u00d7 ROAS variance band.",
           "Circuit-breakers from brief (pause Google reallocation if 7d ROAS <4x, freeze increment if tROAS lockout >3 days) are functionally moot at $20/day."
         ]
-      }
+      },
+      "measurement_result": {
+        "measured_date": "2026-05-07",
+        "measurement_capable": true,
+        "data_source": "paid_media_state_json",
+        "state_file_age_hours": 7,
+        "snapshot": {
+          "meta_spend_7d": 1051.23,
+          "google_spend_7d": 2860.87,
+          "blended_roas_7d": 2.18,
+          "google_branded_search_roas_7d": 18.88,
+          "google_pmax_wedges_avg_roas_7d": 0.66,
+          "google_non_brand_search_roas_7d": 0.05
+        },
+        "outcome": "inconclusive",
+        "analysis": "Reallocation directional bet was partly right and partly wrong. Right: Google branded search 18.88x is the strongest scaling lane and the Meta-side cleetus 0.00x pause was correct. Wrong: Google portfolio bleeds on prospecting (PMax wedges 0.63-0.68x sub-unity, Non-Brand Search 0.05x). Brief flagged ad_platform_refs as PENDING for Katie \u2014 without exact campaign_id mapping, baseline-vs-current delta cannot be computed cleanly. Hard Gate 8 also blocks today (Polar 3d/14d windows offline; only 7d available).",
+        "requires_human_review": true,
+        "reason_for_human": "Brief ad_platform_refs still PENDING per CS-089 \u00a74b protocol; Polar 3d/14d offline"
+      },
+      "requires_human_review": true
     },
     {
       "id": "CS-2026-090",
@@ -9431,7 +9566,29 @@
       },
       "ad_platform_refs": null,
       "organic_source": null,
-      "sweep_flags": []
+      "sweep_flags": [],
+      "measurement_result": {
+        "measured_date": "2026-05-07",
+        "measurement_capable": true,
+        "data_source": "website_state_json_layer4_only",
+        "state_file_age_hours": 11,
+        "snapshot": {
+          "pdp_path": "/products/kenetik-cans-daily-clarity-focus",
+          "sessions_7d": 840,
+          "sessions_prior_7d": 630,
+          "sessions_change_pct": 33.33,
+          "cvr_7d": 0.0202,
+          "cvr_prior_7d": 0.0222,
+          "cvr_change_pct": -8.93,
+          "site_wide_mobile_cvr_change_pct": -33.51,
+          "site_wide_desktop_cvr_change_pct": -58.44
+        },
+        "outcome": "inconclusive_directional_positive",
+        "analysis": "PDP CVR -8.93% WoW. In normal context this reads as a fail for the subscription-first ATC variant. In context of site-wide CVR collapse (-33.5% / -58.4% across all devices), the PDP is significantly OUTPERFORMING the rest of the site under identical conditions \u2014 relative directional positive. CLEAN read requires Polar Pixel ATC funnel data (Layer 3+4) which is offline today. HOLD disposition until CS-2026-147 tracking RCA closes; once tracking restored, re-measure ATC rate isolated from site-wide attribution corruption.",
+        "requires_human_review": true,
+        "reason_for_human": "Polar Pixel ATC funnel (Layer 3+4) needed for clean variant attribution; gated on CS-147"
+      },
+      "requires_human_review": true
     },
     {
       "id": "CS-2026-116",
