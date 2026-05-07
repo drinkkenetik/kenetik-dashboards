@@ -1,9 +1,10 @@
 {
   "_doc": "Scoring rubric for Clarity friction + engagement signals. Read at runtime by scripts/track_clarity_cron.py. Tune weights here without touching code — restart of the cron picks them up next run. Per the v5 Clarity integration plan, weights are starting values; spot-check after a week of data and adjust if rankings don't match intuition.",
   "schema_version": "1.0",
-  "last_updated": "2026-05-06",
-  "min_sessions_floor": 50,
-  "_min_sessions_floor_note": "URLs with fewer than this many sessions in the snapshot window are flagged low_confidence and excluded from leaderboards / ChangeSet triggers. Lowered from 100 → 50 (per Devon's v3 review) to capture pages like Ashton-Hall (~99 sessions, 0% CVR) — exactly the kind of broken page Clarity should surface.",
+  "last_updated": "2026-05-07",
+  "min_sessions_floor": 10,
+  "_min_sessions_floor_note": "URLs with fewer than this many sessions in the snapshot window are flagged low_confidence and excluded from leaderboards / ChangeSet triggers. Lowered from 50 → 10 (2026-05-07) after first real snapshot showed top URL at 47 sessions/day — the 50 floor was excluding everything. anomaly_detection.min_sessions_both_snapshots stays at 50 (week-over-week diff needs higher confidence than single-snapshot ranking).",
+  "_min_sessions_floor_history": "100 → 50 (Devon v3, expected Ashton-Hall ~99 sessions/day) → 10 (2026-05-07, post-real-data calibration).",
 
   "friction_weights": {
     "rage_clicks_per_1k_sessions":       4.0,
