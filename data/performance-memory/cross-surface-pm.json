@@ -542,6 +542,34 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-05-04"
+    },
+    {
+      "id": "L-078",
+      "summary": "When site-wide CVR drops with sessions UP across all devices and a >20% LP-attribution loss, treat as a tracking-instrumentation regression first, not",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-05-07"
+    },
+    {
+      "id": "L-079",
+      "summary": "AJCN Burke/Noakes 2026 debate dyad opens 'exogenous ketones as CHO-sparing supplement' rhetorical lane in a peer-reviewed gold-standard journal. Separ",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-05-07"
+    },
+    {
+      "id": "L-080",
+      "summary": "When upstream data infrastructure (Polar MCP) is degraded, handoff trajectory claims must be carried as stale-but-credible directional context, not as",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-05-07"
+    },
+    {
+      "id": "L-081",
+      "summary": "A structural KPI that has been below threshold for 15 consecutive sessions is no longer a triage signal \u2014 it is a system-state. Continue logging in da",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-05-07"
     }
   ],
   "entries": [
@@ -1719,6 +1747,76 @@
       "skill_files_updated": [],
       "related_entries": [],
       "target": "cgo-daily-pipeline/config/task-b-synthesis.md Pass B Step 1A -- add manual-backfill branch when in-flight automation is forward-only; surface a one-time CS to manually add timestamps to past 30 closed CSes from changelog/Slack archaeology rather than wait indefinitely"
+    },
+    {
+      "id": "L-078",
+      "date": "2026-05-07",
+      "type": "process_change",
+      "learning": "When site-wide CVR drops with sessions UP across all devices and a >20% LP-attribution loss, treat as a tracking-instrumentation regression first, not a CRO redesign problem. Diagnose Step 1 before Refine Step 3.",
+      "source": "Synthesis 2026-05-07-s1 / D09 site-wide CVR collapse + 31.6% (not set)/(empty) LP buckets + Clarity 100% low_confidence",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "Mobile -33.5%, Desktop -58.4%, Tablet -77.1% all moving same direction with sessions +38% argues against device-specific UX failure. 31.6% of LP sessions in unattributed buckets; Clarity script_errors 234/1k on /vs-other-ketones. See daily synthesis 2026-05-07-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-074"
+      ],
+      "target": "brain/kenetik-brain/playbooks/website-cvr-diagnosis.md (new section: tracking-regression triage flow) OR cgo-daily-pipeline/config/synthesis-instructions.md Synthesis Reasoning \u00a72"
+    },
+    {
+      "id": "L-079",
+      "date": "2026-05-07",
+      "type": "skill_update",
+      "learning": "AJCN Burke/Noakes 2026 debate dyad opens 'exogenous ketones as CHO-sparing supplement' rhetorical lane in a peer-reviewed gold-standard journal. Separates Kenetik from MAC/Ketone-IQ keto-adaptation framing for the first time with Tier-1 framing source.",
+      "source": "Synthesis 2026-05-07-s1 / dept-science-research D16 7d window \u2014 Pulido-Correa + AJCN dyad (10.1016/j.ajcnut.2026.101271 + .101268)",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Two paired peer-reviewed AJCN papers. Burke/Noakes Yes-position concedes LCHF alone is suboptimal for endurance, opening the lane. Pulido-Correa (J Alzheimer's Disease) reinforces Tier-2 mechanism citation pool. See daily synthesis 2026-05-07-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-076"
+      ],
+      "target": "brain/kenetik-brain/positioning/competitive-counter-positioning.md + CS-2026-139 anchor brief refresh"
+    },
+    {
+      "id": "L-080",
+      "date": "2026-05-07",
+      "type": "threshold_calibration",
+      "learning": "When upstream data infrastructure (Polar MCP) is degraded, handoff trajectory claims must be carried as stale-but-credible directional context, not as evidence for new actions. Hard Gate 8 already enforces this for reallocation; extend to all multi-window claims.",
+      "source": "Synthesis 2026-05-07-s1 / D04 fresh state file refute \u2014 Pixel ROAS 3.83x (7d) vs S46 handoff 'Pixel ROAS -20.5%' trajectory claim",
+      "source_type": "domain_contradiction",
+      "domain": "paid-media",
+      "evidence": "Polar 3d/14d windows DATA_UNAVAILABLE today; S46 trajectory framing ('X is accelerating', 'Y declining N%') becomes un-falsifiable when source is offline. See daily synthesis 2026-05-07-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-074",
+        "L-075",
+        "L-076"
+      ],
+      "target": "cgo-daily-pipeline/config/task-b-synthesis.md Hard Gate 8 description (extend from reallocation-only to all trajectory claims when underlying multi-window data is unavailable)"
+    },
+    {
+      "id": "L-081",
+      "date": "2026-05-07",
+      "type": "process_change",
+      "learning": "A structural KPI that has been below threshold for 15 consecutive sessions is no longer a triage signal \u2014 it is a system-state. Continue logging in dashboard but stop adding it to weekly priority stacks while patch deployment is in flight.",
+      "source": "Synthesis 2026-05-07-s1 / D13 calendar tracker 23.9% / 15th consecutive sub-75% session; L-060 patch un-deployed",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Repeating same priority-stack item every session without forward motion produces alert fatigue; binding constraint is patch deployment, not awareness. See daily synthesis 2026-05-07-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-067"
+      ],
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 8a (consecutive failure escalation) \u2014 add suppression rule for already-in-flight CS escalations"
     }
   ],
   "archived_entries": [
@@ -2119,5 +2217,5 @@
       "archived_reason": "action_taken populated and live >=7 days; Process 3.8 Step 0b"
     }
   ],
-  "last_updated": "2026-05-04"
+  "last_updated": "2026-05-07T17:35:00Z"
 }
