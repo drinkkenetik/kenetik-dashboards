@@ -1175,9 +1175,38 @@
           "variant_value": 0.019626168224299065,
           "delta_pct": -0.25919822921790464,
           "threshold_pct": -0.2
+        },
+        {
+          "checked_at": "2026-05-07T12:35:34.230888Z",
+          "snapshot_at": "2026-05-07T12:35:36.643822Z",
+          "result": "tier1_breach",
+          "action_taken": "alert_only",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 4384,
+              "atc_events": 398,
+              "atc_rate": 0.09078467153284671,
+              "bounce_rate": 0.7536496350364964,
+              "purchases": 116,
+              "cvr": 0.02645985401459854
+            },
+            "variant": {
+              "sessions": 1171,
+              "atc_events": 113,
+              "atc_rate": 0.09649871904355252,
+              "bounce_rate": 0.7045260461144321,
+              "purchases": 24,
+              "cvr": 0.02049530315969257
+            }
+          },
+          "metric": "cvr",
+          "control_value": 0.02645985401459854,
+          "variant_value": 0.02049530315969257,
+          "delta_pct": -0.22541888748196348,
+          "threshold_pct": -0.2
         }
       ],
-      "last_checked_at": "2026-05-07T06:58:18.097978Z",
+      "last_checked_at": "2026-05-07T12:35:34.230888Z",
       "katie_approval_observed_at": "2026-04-24T20:22:15Z",
       "orchestrator_notes": [
         {
@@ -1197,26 +1226,26 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-05-07T06:58:20.529698Z",
+        "snapshot_at": "2026-05-07T12:35:36.643822Z",
         "control": {
-          "sessions": 4303,
-          "atc_events": 391,
-          "atc_rate": 0.09086683709040204,
-          "bounce_rate": 0.7531954450383453,
-          "purchases": 114,
-          "cvr": 0.026493144317917734
+          "sessions": 4384,
+          "atc_events": 398,
+          "atc_rate": 0.09078467153284671,
+          "bounce_rate": 0.7536496350364964,
+          "purchases": 116,
+          "cvr": 0.02645985401459854
         },
         "variant": {
-          "sessions": 1070,
-          "atc_events": 109,
-          "atc_rate": 0.10186915887850467,
-          "bounce_rate": 0.7046728971962617,
-          "purchases": 21,
-          "cvr": 0.019626168224299065
+          "sessions": 1171,
+          "atc_events": 113,
+          "atc_rate": 0.09649871904355252,
+          "bounce_rate": 0.7045260461144321,
+          "purchases": 24,
+          "cvr": 0.02049530315969257
         }
       },
       "last_undersample_escalation_at": "2026-04-30T00:28:47.849909Z"
     }
   },
-  "_last_cron_run": "2026-05-07T06:58:18.097978Z"
+  "_last_cron_run": "2026-05-07T12:35:34.230888Z"
 }
