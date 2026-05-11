@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-05-11T09:16:09.932285+00:00",
-  "next_id": 149,
+  "next_id": 150,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-07",
     "last_sweep_session": "2026-05-07-s1",
@@ -25,25 +25,25 @@
     "notes": "S47 REMEDIATION: prior sweep deferred all 9 OVERDUE CSes citing Polar offline. That was incorrect \u2014 Klaviyo MCP was available (CS-020/021/022 measurable) and Layer-1 state files were on disk (CS-089 paid-media-state, CS-115 website-state both fresh today). Re-ran measurement: 8 of 9 had readable data via Klaviyo MCP or local state files. Outcomes: CS-020/022 underperformed (consistent with L-068 acquisition-quality decline pattern); CS-021 inconclusive (lifestyle type, no clear baseline); CS-035 genuinely data_needed (50/50 A/B segment-split needs Katie pull); CS-084/085 ops artifacts shipped, PM composite eval owed (Devon); CS-086 PARTIAL SHIP \u2014 team-roster.json missing, reopen scope; CS-089 inconclusive (ad_platform_refs PENDING per brief \u00a74b + Polar 3d/14d offline); CS-115 inconclusive_directional_positive (PDP -8.93% vs site-wide -46% = relative outperformance, but clean read gated on CS-147 tracking RCA restoring Layer 3+4 Polar Pixel funnel). measurement_capable=true; only CS-035 stays in queue."
   },
   "summary": {
-    "total": 147,
+    "total": 148,
     "by_status": {
       "closed": 73,
       "published": 17,
       "approved": 12,
-      "draft": 43,
+      "draft": 44,
       "needs_feedback": 2
     },
-    "last_updated": "2026-05-11T09:16:09.922332+00:00",
-    "last_counted": "2026-05-07",
+    "last_updated": "2026-05-11T12:50:10.117820+00:00",
+    "last_counted": "2026-05-11",
     "by_risk": {
       "critical": 2,
       "low": 75,
-      "medium": 58,
+      "medium": 59,
       "high": 12
     },
     "by_subtype": {
       "implementation": 106,
-      "investigation": 24,
+      "investigation": 25,
       "quick": 17
     }
   },
@@ -11126,6 +11126,29 @@
       "dependencies": [
         "CS-2026-138"
       ]
+    },
+    {
+      "id": "CS-2026-149",
+      "title": "Cancellation Reasons RCA \u2014 Week 5/4 Churn Spike",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo",
+        "recharge"
+      ],
+      "created": "2026-05-11",
+      "last_updated": "2026-05-11",
+      "subtype": "investigation",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "owner": "Alisha McGinn",
+      "source": "synthesis_priority_stack",
+      "spawned_from": "2026-05-11-s1.md",
+      "hypothesis": "Week 5/4 subscription churn spiked to 108 cancellations (vs trailing 3-week baseline ~67, 1.60x = exceeds 150% threshold). Voluntary vs involuntary split is unresolved. Hypothesis: a meaningful share is voluntary (engagement-driven) rather than involuntary (payment-failure), because activations also rose +20.5%, indicating engagement variance, not dunning. Recharge Pro recovery is 57-64% historically and would absorb most involuntary churn; voluntary churn is the actionable target. If voluntary > 50%, MDay BIG BEAT 5/10 subs-exclusion design was a missed reactivation opportunity and Memorial Day 5/18 BIG QUARTERLY BEAT must include subs.",
+      "notes": "Pull Recharge cancellation reason tags + Klaviyo Canceled Subscription (S4ng5R) trigger flow audience. Deliver split by 5/13 EOD so Memorial Day BIG QUARTERLY BEAT sub-inclusion decision can be informed before 5/18. Cross-routes with DS-07 (Retention Risk T2) and Lifecycle dept Action 3. Polar offline blocks payment-failure deep-dive (Recharge connector); may require manual Recharge admin pull. [Pending verification \u2014 Polar offline; Recharge cancellation reason tags may require manual Recharge admin pull]",
+      "category": "retention_investigation",
+      "review_tier": "owner_decision",
+      "measurement_window": "2026-05-13 (initial split delivery) + 14d post-Memorial Day to measure Memorial Day sub-inclusion outcome"
     }
   ],
   "queue_actions": {
