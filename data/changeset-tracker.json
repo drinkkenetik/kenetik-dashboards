@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-11T09:16:09.932285+00:00",
-  "next_id": 150,
+  "last_updated": "2026-05-12T09:03:27.926690+00:00",
+  "next_id": 152,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-07",
     "last_sweep_session": "2026-05-07-s1",
@@ -25,24 +25,24 @@
     "notes": "S47 REMEDIATION: prior sweep deferred all 9 OVERDUE CSes citing Polar offline. That was incorrect \u2014 Klaviyo MCP was available (CS-020/021/022 measurable) and Layer-1 state files were on disk (CS-089 paid-media-state, CS-115 website-state both fresh today). Re-ran measurement: 8 of 9 had readable data via Klaviyo MCP or local state files. Outcomes: CS-020/022 underperformed (consistent with L-068 acquisition-quality decline pattern); CS-021 inconclusive (lifestyle type, no clear baseline); CS-035 genuinely data_needed (50/50 A/B segment-split needs Katie pull); CS-084/085 ops artifacts shipped, PM composite eval owed (Devon); CS-086 PARTIAL SHIP \u2014 team-roster.json missing, reopen scope; CS-089 inconclusive (ad_platform_refs PENDING per brief \u00a74b + Polar 3d/14d offline); CS-115 inconclusive_directional_positive (PDP -8.93% vs site-wide -46% = relative outperformance, but clean read gated on CS-147 tracking RCA restoring Layer 3+4 Polar Pixel funnel). measurement_capable=true; only CS-035 stays in queue."
   },
   "summary": {
-    "total": 148,
+    "total": 150,
     "by_status": {
       "closed": 73,
       "published": 17,
       "approved": 12,
-      "draft": 44,
+      "draft": 46,
       "needs_feedback": 2
     },
-    "last_updated": "2026-05-11T12:50:10.117820+00:00",
+    "last_updated": "2026-05-12T09:03:27.915761+00:00",
     "last_counted": "2026-05-11",
     "by_risk": {
       "critical": 2,
       "low": 75,
-      "medium": 59,
+      "medium": 61,
       "high": 12
     },
     "by_subtype": {
-      "implementation": 106,
+      "implementation": 108,
       "investigation": 25,
       "quick": 17
     }
@@ -11149,6 +11149,51 @@
       "category": "retention_investigation",
       "review_tier": "owner_decision",
       "measurement_window": "2026-05-13 (initial split delivery) + 14d post-Memorial Day to measure Memorial Day sub-inclusion outcome"
+    },
+    {
+      "id": "CS-2026-150",
+      "title": "Graduation: Cleetus TT Cluster (Rockingham + Freedom 500) -> Paid TikTok Amplification",
+      "status": "draft",
+      "department": "paid-media",
+      "platforms": [
+        "tiktok-ads"
+      ],
+      "created": "2026-05-11",
+      "last_updated": "2026-05-11",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 2,
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": "moe-weekly-graduation-scan-2026-05-11",
+      "hypothesis": "CP-012 motorsports/Cleetus content holds engagement when graduated from organic TT to paid TT. 4 organic TT post pairs (Apr 7-13) cleared TT engagement >5% (cluster mean ~7.4%, NCS 50-100) on Rockingham P4 and Freedom 500 themes. If paid TT amplification holds >=3% engagement at >=3x organic reach with >=1.5x ROAS in 14 days, we unlock a second TT graduation channel beyond Matt Hughes day-in-the-life (CP-013) and prove the motorsports lane generalizes across creator (Cleetus + Cam Jones EP-009) and event (Rockingham, Freedom 500, Sea Otter Unbound).",
+      "notes": "Sources (organic TT): sprout-sync-781e5dc4 + ae21f7ed (Rockingham 2026-04-07, ER 8.41% / 8.29%, NCS 100/96, ~620 imp); sprout-sync-a2f2cc61 + bd3740b3 (Cleetus Double Duty 2026-04-07, ER 5.66% / 5.55%, NCS 96/69, ~660 imp); sprout-sync-45cc5f2d + 00b68437 (Freedom 500 recap 2026-04-13, ER 7.96%, NCS 50, ~980 imp). CS-088 covers FB Freedom 500 variant only; TT is a distinct surface and creative format (vertical-native TT cuts vs FB reel reformat). Skill file SYN-20260508-001 v1.8 explicitly cited CP-012 as new cross-platform winner and EP-009 (Cam Jones cyclist activation) as emerging confirmation. Step 0 cross-check: paid-media-state.json has no ad with content_links to these post IDs (content_links empty across all 72 ads in current state file \u2014 known gap from CS-066 precedent); tracker.json has no graduation CS on tiktok-ads platform for Cleetus content. Spawned from moe-weekly-graduation-scan 2026-05-11.",
+      "category": "organic-to-paid-graduation",
+      "review_tier": "standard",
+      "measurement_window": "14d"
+    },
+    {
+      "id": "CS-2026-151",
+      "title": "Graduation: Matt Hughes 'Kenetik Challenge' Prank (Apr 24) -> Paid FB+TT Amplification",
+      "status": "draft",
+      "department": "paid-media",
+      "platforms": [
+        "meta-ads",
+        "tiktok-ads"
+      ],
+      "created": "2026-05-11",
+      "last_updated": "2026-05-11",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 2,
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": "moe-weekly-graduation-scan-2026-05-11",
+      "hypothesis": "The Matt Hughes 'Kenetik Challenge' prank reel (2026-04-24, FB) clears FB engagement threshold at 6.34% (13,778 imp, NCS 78). The prank-format Matt Hughes hook ('You said you were tough, so I know you can do it') is a fresh creative direction inside the proven Matt Hughes athlete-authority DNA (CP-001 to CP-004, scaled to 1.66M FB imp at 4.6% engagement in paid). If paid amplification holds >=4% engagement at >=3x organic reach with >=2.0x ROAS in 14 days, this becomes the next variant in the Matt Hughes rotation and extends paid creative library beyond current 4AM/Toughest Battles variants.",
+      "notes": "Source: sprout-sync-731a9639 (FB reel, 2026-04-24, 13,778 imp, 873 eng, ER 6.34%, NCS 78). EXPLICITLY PREDICTED in skill file SYN-20260508-001 v1.8: 'Apr 24 Matt Hughes Challenge prank likely graduates next cycle on FB+TT' \u2014 this CS operationalizes that prediction. Step 0 cross-check: no content_links match in paid-media-state.json (known gap per CS-066); tracker.json has no graduation CS for the 'Kenetik Challenge' creative \u2014 distinct from CS-094 (Matt Hughes 'What He's Doing Now' IG) and CS-088 (Freedom 500 FB) and the 4AM Athlete / Toughest Battles families currently in active paid rotation. Recommend FB-first deployment (organic origin) with a parallel TT cutdown to test cross-platform per CP-012/EP-009 pattern. Owner: Katie (paid-media). Spawned from moe-weekly-graduation-scan 2026-05-11.",
+      "category": "organic-to-paid-graduation",
+      "review_tier": "standard",
+      "measurement_window": "14d"
     }
   ],
   "queue_actions": {
