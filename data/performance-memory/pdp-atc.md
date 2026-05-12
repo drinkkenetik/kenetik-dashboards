@@ -13,8 +13,8 @@
 - **Primary metric**: add_to_cart_rate (higher is better)
 - **Measurement window**: 7 days
 - **Minimum sample**: 100 sessions per arm
-- **Started**: (not yet started)
-- **Total cycles**: 0
+- **Started**: 2026-05-12 (Cycle 1 — paused_for_review on tier-2 CVR breach)
+- **Total cycles**: 1
 - **Cumulative lift**: 0.0%
 
 ## Winning Patterns
@@ -27,7 +27,10 @@ _(No patterns recorded yet. The agent will add entries here after each KEEP deci
 
 ## Losing Patterns
 
-_(No patterns recorded yet. The agent will add entries here after each DISCARD decision.)_
+### Losing patterns log
+
+- [Cycle 1] Subscription-first buy-box default + option reorder (one-time → subscription anchoring). ATC rate +5.7% (control 8.97% → variant 9.48%, p(variant>control)=0.79, below 95% keep). CVR -19.2% guardrail tier-2 breach (control 2.34% → variant 1.89%) — paused for Katie review. Insight: subscription-first lifts top-of-funnel buy-button engagement but cannibalizes downstream conversion — pure ATC isn't enough to justify the CVR drag at this presentation strength. Sample: 6,455 control / 2,752 variant sessions over 9.3 days (date: 2026-05-12)
+
 
 <!-- Format for entries:
 - [Cycle N] Pattern description (lift: -X.X%, p: 0.XXX, date: YYYY-MM-DD)
