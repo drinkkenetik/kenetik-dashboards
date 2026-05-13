@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-13T09:07:54.624229+00:00",
+  "last_updated": "2026-05-13T13:57:26.137433+00:00",
   "next_id": 154,
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-13",
@@ -30,12 +30,12 @@
     "total": 152,
     "by_status": {
       "closed": 74,
-      "published": 16,
+      "published": 17,
       "approved": 12,
-      "draft": 48,
+      "draft": 47,
       "needs_feedback": 2
     },
-    "last_updated": "2026-05-13T12:59:13.469530+00:00",
+    "last_updated": "2026-05-13T13:57:26.137433+00:00",
     "last_counted": "2026-05-13",
     "by_risk": {
       "critical": 2,
@@ -10858,12 +10858,12 @@
       "id": "CS-2026-139",
       "title": "MAC Energy Counter-Positioning Brief (BHB-vs-goBHB-salts comparison asset)",
       "owner": "Brandon Dyksterhouse",
-      "status": "draft",
+      "status": "published",
       "subtype": "implementation",
       "category": "content",
-      "last_updated": "2026-05-04",
+      "last_updated": "2026-05-13",
       "execution_target_date": "2026-05-09",
-      "scheduled_send_date": null,
+      "scheduled_send_date": "2026-06-15",
       "measurement_window_end": "2026-07-19",
       "expected_impact": {
         "revenue": {
@@ -10882,18 +10882,18 @@
         "L2_cash": "None - configuration / process-only",
         "L3_customer_quality": "[PIPELINE GAP - needs estimation]",
         "L4_learning": "[PIPELINE GAP - needs estimation]",
-        "L5_brand_check": "[PIPELINE GAP - blocks auto-advance until reviewed]"
+        "L5_brand_check": "CLEARED 2026-05-13 -- Devon Tier-2 claims pass via 5/13-s1 rec-234"
       },
       "review_tier": "standard",
       "linked_calendar_activity": null,
-      "approved_by": null,
-      "published_date": null,
+      "approved_by": "Devon Price (Tier-2 claims via 5/13-s1 rec-234)",
+      "published_date": "2026-05-13",
       "actual_impact": null,
       "outcome": null,
       "closed_date": null,
       "learning_note": null,
       "spawned_changesets": null,
-      "executed_date": null,
+      "executed_date": "2026-05-13",
       "autonomy_tier": 1,
       "dependencies": [],
       "sweep_flags": [],
