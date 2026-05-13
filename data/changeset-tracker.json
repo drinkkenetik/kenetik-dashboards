@@ -1,48 +1,50 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-05-13T09:07:54.624229+00:00",
-  "next_id": 153,
+  "next_id": 154,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-07",
-    "last_sweep_session": "2026-05-07-s1",
-    "last_sweep_result": "remediation_completed_layer1_layer2_drained",
+    "last_sweep_date": "2026-05-13",
+    "last_sweep_session": "2026-05-13-s1",
+    "last_sweep_result": "inline_analysis_only_measurement_deferred_polar_offline",
     "last_sweep_counts": {
-      "stale_flagged_today": 37,
-      "measurement_overdue": 9,
+      "stale_flagged_today": 12,
+      "measurement_overdue": 2,
       "auto_closed": 0,
       "auto_advanced": 0,
-      "pending_measurement_queue_length": 1,
-      "measured_inline": 8,
-      "underperformed": 3,
-      "inconclusive": 4,
-      "data_needed": 1,
+      "pending_measurement_queue_length": 3,
+      "measured_inline": 0,
+      "underperformed": 0,
+      "inconclusive": 0,
+      "data_needed": 3,
       "success": 0
     },
     "pending_measurement_queue": [
-      "CS-2026-035"
+      "CS-2026-035",
+      "CS-2026-114",
+      "CS-2026-115"
     ],
-    "measurement_capable": true,
-    "notes": "S47 REMEDIATION: prior sweep deferred all 9 OVERDUE CSes citing Polar offline. That was incorrect \u2014 Klaviyo MCP was available (CS-020/021/022 measurable) and Layer-1 state files were on disk (CS-089 paid-media-state, CS-115 website-state both fresh today). Re-ran measurement: 8 of 9 had readable data via Klaviyo MCP or local state files. Outcomes: CS-020/022 underperformed (consistent with L-068 acquisition-quality decline pattern); CS-021 inconclusive (lifestyle type, no clear baseline); CS-035 genuinely data_needed (50/50 A/B segment-split needs Katie pull); CS-084/085 ops artifacts shipped, PM composite eval owed (Devon); CS-086 PARTIAL SHIP \u2014 team-roster.json missing, reopen scope; CS-089 inconclusive (ad_platform_refs PENDING per brief \u00a74b + Polar 3d/14d offline); CS-115 inconclusive_directional_positive (PDP -8.93% vs site-wide -46% = relative outperformance, but clean read gated on CS-147 tracking RCA restoring Layer 3+4 Polar Pixel funnel). measurement_capable=true; only CS-035 stays in queue."
+    "measurement_capable": false,
+    "notes": "S50 (2026-05-13): Polar 5th run offline; measurement_capable=FALSE for CS-114, CS-115. Layer-1 state files for CS-115 (website-state) stale (S47 last good read); deferring re-measurement to next sweep with fresh Polar. CS-143 transitioned published\u2192closed since S49 (per D12 SIG-12-1); outcome/actual_impact/learning_note fields empty \u2192 rec-236 to Foster for verification. CS-122 status delta (S49=draft, today=closed) \u2014 same verification owed. Stale flag inventory: 12 approved CSes >7d (CS-031, 049, 054, 091, 092, 097, 099, 118, 128, 130, 136, 137). Owner-nudges queued for Phase 4 dispatch; CS-091 nudge is Day 6 and is consolidated into P0 huddle action rather than a separate nudge. CS-152 first measurement window opens today."
   },
   "summary": {
-    "total": 151,
+    "total": 152,
     "by_status": {
       "closed": 74,
       "published": 16,
       "approved": 12,
-      "draft": 47,
+      "draft": 48,
       "needs_feedback": 2
     },
-    "last_updated": "2026-05-13T09:07:54.615424+00:00",
-    "last_counted": "2026-05-12",
+    "last_updated": "2026-05-13T12:59:13.469530+00:00",
+    "last_counted": "2026-05-13",
     "by_risk": {
       "critical": 2,
       "low": 75,
-      "medium": 62,
+      "medium": 63,
       "high": 12
     },
     "by_subtype": {
-      "implementation": 109,
+      "implementation": 110,
       "investigation": 25,
       "quick": 17
     }
@@ -11238,6 +11240,27 @@
       "spawned_from": "synthesis 2026-05-12-s1 P1",
       "hypothesis": "A 30-minute Devon-led team huddle is a single forcing function that resolves more parallel binding decisions than asynchronous Slack-thread coordination over the same period, addressing the D14 streak structural root cause (D14 now N=8 with 0 Slack action-evidence hits in 24h on 8 binding decisions from S48 close).",
       "notes": "Spawned from synthesis 2026-05-12-s1 Priority Stack P1. Forum cadence to be named by Cliff Morgan post-dissolution of the 8-CS queue (rec-231). Replaces asynchronous CS-099 8-CS queue mechanism. Owner concentration data from D14 (Devon 2 critical decisions / Katie 3 hard 5/12 commitments / Peter 2 hard 5/12 commitments) supports throughput-bound diagnosis. L-081 (structural KPI below threshold for many consecutive sessions = system-state, not triage signal) motivates structural fix vs another Slack ping.",
+      "measurement_window": "14d"
+    },
+    {
+      "id": "CS-2026-153",
+      "title": "Pre-Deadline Owner Slack-Post Hard-Gate: Make Decision-Throughput Failures Observable",
+      "status": "draft",
+      "department": "operations",
+      "platforms": [
+        "changeset-process"
+      ],
+      "created": "2026-05-13",
+      "last_updated": "2026-05-13",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "owner": "Devon Price",
+      "source": "synthesis_priority_stack",
+      "spawned_from": "2026-05-13-s1",
+      "hypothesis": "Requiring CS owners to post in #kgs-team 24h before their measurement_due/published_due/approval_due deadline creates a Slack-evidence trail that surfaces decision-throughput failures earlier than tracker.json status checks alone. Pairs with CS-2026-152 (huddle cadence) \u2014 huddle is synchronous forcing function; pre-deadline post is asynchronous early warning.",
+      "notes": "Source: synthesis 2026-05-13-s1 rec-233 + pat-017 (Slack-evidence absence as decision-throughput proxy, preliminary). Anti-pattern this addresses: 5/12 hard-deadline cluster (CS-138/145/147/148) all-draft + 0 Slack evidence post-5/12 for any queue-relevant term. Implementation surface: dispatch-instructions.md Phase 4 (add nudge rule); changeset-lifecycle-sweep.md Phase 4 (extend nudge logic). Primary success metric: zero silent-slip events for CSes with deadlines within next 14d window.",
+      "category": "changeset-process",
       "measurement_window": "14d"
     }
   ],
