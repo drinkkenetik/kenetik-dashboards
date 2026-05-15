@@ -600,7 +600,29 @@
       "summary": "A-list creator + product-reveal content = reproducible ~10x organic virality template; second confirming instance across wedges promotes from hypothesis to graduated pattern.",
       "domain": "content",
       "status": "active",
-      "date": "2026-05-11"
+      "date": "2026-05-11",
+      "date_last_corroborated": "2026-05-15"
+    },
+    {
+      "id": "L-086",
+      "summary": "pat-017 silent-slip pattern hit 3rd confirming instance; structural prevention encoded via CS-153 24h-pre-deadline Slack post hardgate.",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-05-15"
+    },
+    {
+      "id": "L-087",
+      "summary": "Subscriber Early Access head-start mechanic (4h \u00d7 ENGAGED \u00d7 subject variant) \u2192 11.7x email / 18.7x SMS rev density on GP launch \u2014 graduated template.",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-05-15"
+    },
+    {
+      "id": "L-088",
+      "summary": "4-domain convergence on TBI Tier 2 angle (D10 VoC + D18 trend + D16 Walsh KME RCT + D07 Roman Atwood); CS-2026-157 codification spawned.",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-05-15"
     }
   ],
   "entries": [
@@ -1893,14 +1915,68 @@
       "source": "D07 SIG-07-1 + D08 SIG-08-1 + Content dept SIG-C1 + 2026-05-11-s1 synthesis Pattern Tracker Updates",
       "source_type": "operational_signal",
       "domain": "content",
-      "evidence": "Ashton Hall GP teaser reel (DYAkDFqlsdD, IG 5/6): 221,445 impressions / 132,511 video views / 850 engagements in 24h post. Matt Hughes UFC FB reel (S47 reference): 3.82% ER / 187K impressions. Both A-list creators; both product-reveal content; both ~10x baseline. See daily synthesis 2026-05-11-s1.md.",
+      "evidence": "Ashton Hall GP teaser reel (DYAkDFqlsdD, IG 5/6): 221,445 impressions / 132,511 video views / 850 engagements in 24h post. Matt Hughes UFC FB reel (S47 reference): 3.82% ER / 187K impressions. Both A-list creators; both product-reveal content; both ~10x baseline. See daily synthesis 2026-05-11-s1.md. Corroborated 2026-05-15: Mom Brain 5/10 send (44.0% open / $2,353) is the 3rd confirming instance.",
       "confidence": "strong",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-079"
       ],
-      "target": "data/performance-memory/cross-surface-pm.json (new graduated pattern entry GP-202605-001 or similar in confirmed_patterns section). Replicate framing for Cleetus + Matt Hughes new variant + Dr. Disrespect 5/13 activations."
+      "target": "data/performance-memory/cross-surface-pm.json (new graduated pattern entry GP-202605-001 or similar in confirmed_patterns section). Replicate framing for Cleetus + Matt Hughes new variant + Dr. Disrespect 5/13 activations.",
+      "date_last_corroborated": "2026-05-15"
+    },
+    {
+      "id": "L-086",
+      "date": "2026-05-15",
+      "type": "process_change",
+      "learning": "pat-017 (Slack-evidence absence as decision-throughput proxy) reached 3rd confirming instance \u2014 the failure mode now catches the meta-governance fix designed to break it. Pattern is system-design, not triage noise. Structural prevention spec: dispatch layer enforces 24h-pre-deadline observable Slack post requirement per CS-2026-153, encoded as a governance-loop hardgate.",
+      "source": "synthesis 2026-05-15-s1 (D12 SIG-12-1 + D14 SIG-14-3 + self-observation CS-152/153 own draft Day 3)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "3rd confirming instance: 5/12 cluster all-draft Day 3 (CS-138/145/147/148/149) + CS-091 eng-lead Day 8 not named + CS-152/153 own draft Day 3. See daily synthesis 2026-05-15-s1.md.",
+      "confidence": "strong",
+      "action_taken": "CS-2026-155 spawned (Foster owner) for L-NNN promotion and structural prevention encoding",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-081"
+      ],
+      "target": "data/performance-memory/cross-surface-pm.json (entries; new id); cgo-daily-pipeline/config/dispatch-instructions.md (CS-153 enforcement integration)"
+    },
+    {
+      "id": "L-087",
+      "date": "2026-05-15",
+      "type": "skill_update",
+      "learning": "Subscriber Early Access head-start mechanic \u2014 4h pre-public window \u00d7 subscriber/waitlist (ENGAGED) segment \u00d7 subject-line variant \u2014 delivered 11.7x email rev density ($9.67/recipient vs $0.83 public) and 18.7x SMS rev density ($8.41 vs $0.45 public) on GP launch (5/13 14:00, largest single revenue moment of Q2). Reusable graduated template across upcoming launches (Memorial Day BEAT-04, TRX Lemon Lime Shot 5/25, Dave Asprey conference 5/27).",
+      "source": "synthesis 2026-05-15-s1 (D02 SIG-02-1 + D06 SIG-06-1 + Lifecycle dept brief)",
+      "source_type": "operational_signal",
+      "domain": "lifecycle",
+      "evidence": "GP Subscriber Early Access 5/13 14:00: 52.6% open / 22.7% click / 220 conv from 1,761 recipients / $17,003 / $9.67 per recipient. SMS parallel 48.6% click / $8.41 per recipient vs $0.45 public. See daily synthesis 2026-05-15-s1.md.",
+      "confidence": "strong",
+      "action_taken": "Katie owns L-NNN spec writeup today (rec-238); pair with joint D02+D06 attribution writeup",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-083",
+        "L-085"
+      ],
+      "target": "brain/kenetik-brain/references/lifecycle-playbook.md (new graduated template section); data/performance-memory/cross-surface-pm.json (this entry)"
+    },
+    {
+      "id": "L-088",
+      "date": "2026-05-15",
+      "type": "skill_update",
+      "learning": "4-domain convergence on TBI / concussion cognitive recovery brand-narrative. Three distinct consumer testimonials within 7d (Trev 5/8, Dane 5/13, ambassador application 5/14) all citing Roman Atwood Wedge A content as awareness source. Pairs with Walsh KME crossover RCT (NCT06588946, n=34, subjective cognitive decline) clinical scaffolding. Lands into 3-consecutive-weeks-uncontested-competitor-press whitespace. Tier 2 codification artifact owed Brandon + Devon this week.",
+      "source": "synthesis 2026-05-15-s1 (D10 SIG-10-1/10-2 + D18 SIG-18-2 + D16 SIG-16-2 + D07 Roman Atwood carry)",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "VoC TBI cluster (Trev, Dane, ambassador app) + D18 trend cluster strength STRONG + D16 Walsh score 98 + D17 3 weeks 0 competitor press. See daily synthesis 2026-05-15-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "CS-2026-157 spawned (Brandon owner) for TBI Tier 2 codification; DS-06 signal routed to demand-signals queue",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-083",
+        "L-085"
+      ],
+      "target": "brain/kenetik-brain/references/content-playbook.md (Tier 2 angle template); data/performance-memory/cross-surface-pm.json (this entry)"
     }
   ],
   "archived_entries": [
@@ -2342,5 +2418,5 @@
       "archived_reason": "Action taken 2026-05-01; >=7 days live; Process 3.8 Step 0b auto-archive."
     }
   ],
-  "last_updated": "2026-05-11T12:56:23.752935+00:00"
+  "last_updated": "2026-05-15T12:57:27.693417+00:00"
 }
