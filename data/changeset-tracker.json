@@ -1,53 +1,62 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-15T09:10:19.705614+00:00",
-  "next_id": 155,
+  "last_updated": "2026-05-15T12:50:38.957566+00:00",
+  "next_id": 158,
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-13",
-    "last_sweep_session": "2026-05-13-s1",
+    "last_sweep_date": "2026-05-15",
+    "last_sweep_session": "2026-05-15-s1",
     "last_sweep_result": "inline_analysis_only_measurement_deferred_polar_offline",
     "last_sweep_counts": {
       "stale_flagged_today": 12,
-      "measurement_overdue": 2,
+      "measurement_overdue": 12,
       "auto_closed": 0,
       "auto_advanced": 0,
-      "pending_measurement_queue_length": 3,
+      "pending_measurement_queue_length": 12,
       "measured_inline": 0,
       "underperformed": 0,
       "inconclusive": 0,
-      "data_needed": 3,
+      "data_needed": 12,
       "success": 0
     },
-    "pending_measurement_queue": [
-      "CS-2026-035",
-      "CS-2026-114",
-      "CS-2026-115"
-    ],
     "measurement_capable": false,
-    "notes": "S50 (2026-05-13): Polar 5th run offline; measurement_capable=FALSE for CS-114, CS-115. Layer-1 state files for CS-115 (website-state) stale (S47 last good read); deferring re-measurement to next sweep with fresh Polar. CS-143 transitioned published\u2192closed since S49 (per D12 SIG-12-1); outcome/actual_impact/learning_note fields empty \u2192 rec-236 to Foster for verification. CS-122 status delta (S49=draft, today=closed) \u2014 same verification owed. Stale flag inventory: 12 approved CSes >7d (CS-031, 049, 054, 091, 092, 097, 099, 118, 128, 130, 136, 137). Owner-nudges queued for Phase 4 dispatch; CS-091 nudge is Day 6 and is consolidated into P0 huddle action rather than a separate nudge. CS-152 first measurement window opens today."
+    "pending_measurement_queue": [
+      "CS-2026-020",
+      "CS-2026-021",
+      "CS-2026-022",
+      "CS-2026-035",
+      "CS-2026-084",
+      "CS-2026-085",
+      "CS-2026-086",
+      "CS-2026-089",
+      "CS-2026-101",
+      "CS-2026-114",
+      "CS-2026-115",
+      "CS-2026-127"
+    ],
+    "notes": "Polar Analytics MCP unavailable 7th consecutive run; Sprout Social 403 Day 3. Per Phase 0.8: measurement_capable=false, all measurement-overdue items queued for next sweep with MCP access. Sprout/Polar restoration gated on CS-091 eng-lead naming (Devon, Day 8) \u2192 CS-146 (Foster, draft-gated)."
   },
   "summary": {
-    "total": 153,
+    "total": 156,
     "by_status": {
       "closed": 74,
       "published": 17,
       "approved": 12,
-      "draft": 48,
+      "draft": 51,
       "needs_feedback": 2
     },
-    "last_updated": "2026-05-15T09:10:19.694127+00:00",
-    "last_counted": "2026-05-14",
     "by_risk": {
       "critical": 2,
-      "low": 75,
-      "medium": 64,
+      "low": 76,
+      "medium": 66,
       "high": 12
     },
     "by_subtype": {
-      "implementation": 111,
+      "implementation": 114,
       "investigation": 25,
       "quick": 17
-    }
+    },
+    "last_updated": "2026-05-15T12:50:38.957566+00:00",
+    "last_counted": "2026-05-15"
   },
   "changesets": [
     {
@@ -2995,6 +3004,12 @@
           "session": "2026-05-07-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 49
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -4354,6 +4369,12 @@
           "session": "2026-05-07-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 31
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-20"
@@ -4733,6 +4754,12 @@
           "session": "2026-05-07-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 29
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "measurement_window_end": "2026-05-26"
@@ -7597,6 +7624,12 @@
           "session": "2026-05-07-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 9
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -7687,6 +7720,12 @@
           "session": "2026-05-07-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 9
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -8097,6 +8136,12 @@
           "session": "2026-05-07-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 16
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-28"
@@ -8314,6 +8359,12 @@
           "session": "2026-05-07-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 15
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-05-04"
@@ -9708,6 +9759,12 @@
           "session": "2026-05-07-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 10
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "created": "2026-04-27",
@@ -10171,6 +10228,12 @@
           "session": "2026-05-07-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 8
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "scheduled_send_date": null,
@@ -10376,6 +10439,12 @@
           "session": "2026-05-07-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 8
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-29",
@@ -10708,7 +10777,14 @@
       "executed_date": null,
       "autonomy_tier": null,
       "dependencies": [],
-      "sweep_flags": [],
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ],
       "created": "2026-05-04",
       "risk_level": "medium",
       "department": "paid-media",
@@ -10780,6 +10856,12 @@
           "set_date": "2026-05-06",
           "session": "2026-05-06-s1",
           "action": "in_progress_to_approved_per_canonical_schema"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-15",
+          "session": "2026-05-15-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "created": "2026-05-04",
@@ -11287,6 +11369,76 @@
       "last_updated": "2026-05-14",
       "linked_calendar_activity": null,
       "notes": "Auto-generated by auto-optimize-orchestrator on pdp-atc cycle 2 (iterate per Katie's 2026-05-12 directive in cycle 1 Slack thread: 'keep the reorder but don't preselect'). Slack thread: https://kenetik.slack.com/archives/C0AN37DLDKQ/p1778773170246209 Branch: auto-optimize/pdp-atc/t2-cycle-2-reorder-no-preselect (commit 70a19a2). Predecessor: CS-2026-143 (cycle 1, closed underperformed/paused_for_review). State.json runtime detail at auto-optimize-theme/auto-optimize/state.json#experiments.pdp-atc."
+    },
+    {
+      "id": "CS-2026-155",
+      "title": "pat-017 Silent-Slip Pattern Promotion to L-NNN \u2014 Governance Loop Encoding",
+      "status": "draft",
+      "department": "operations",
+      "platforms": [
+        "changeset-process",
+        "daily-pipeline",
+        "performance-memory"
+      ],
+      "created": "2026-05-15",
+      "last_updated": "2026-05-15",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Foster Kane",
+      "source": "synthesis",
+      "spawned_from": "synthesis-2026-05-15-s1",
+      "hypothesis": "pat-017 (Slack-evidence absence as decision-throughput proxy) has reached 3rd confirming instance (5/12 cluster Day 3 silent-slip + CS-091 eng-lead Day 8 not named + CS-152/153 own draft Day 3). Promote to L-NNN with structural prevention spec: dispatch layer enforces 24h-pre-deadline observable Slack post requirement per CS-153, encoded as a governance-loop hardgate. Expected outcome: stale-cluster recurrence rate drops within 14d measurement window (target: <=1 new pat-017 instance over 14d).",
+      "notes": "Spawned from synthesis 2026-05-15-s1 (rec-239). 3rd confirming instance criteria met per D12 SIG-12-1 + D14 SIG-14-3. Pair with rec-236 (Foster CS-143/CS-122 close verification) and L-060 calendar writeback patch deploy. Foster on 3 governance-structural deliverables today.",
+      "category": "process_automation",
+      "measurement_window": "14d"
+    },
+    {
+      "id": "CS-2026-156",
+      "title": "Weekly Tecton + American Ketone Meta Ad-Library Pull Cadence (Polar-Independent Competitive Intel)",
+      "status": "draft",
+      "department": "market-intelligence",
+      "platforms": [
+        "meta-ads",
+        "content-production"
+      ],
+      "created": "2026-05-15",
+      "last_updated": "2026-05-15",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": 1,
+      "owner": "Charlotte Thamm",
+      "source": "synthesis",
+      "spawned_from": "synthesis-2026-05-15-s1",
+      "hypothesis": "Formalize weekly Tecton + American Ketone Meta ad-library pull as recurring cadence. Polar-independent competitive creative intel path. Use Brandon's 5/13 manual capture (Tecton + American Ketone Meta ads) as seed instance. Expected outcome: continuous competitive-creative drift visibility regardless of Polar status; 4+ weekly captures landed in 28d measurement window with documented creative shifts (theme, hook, mechanic, CTA).",
+      "notes": "Spawned from synthesis 2026-05-15-s1 (rec-241). Per D17 ACTION-2 + paid-media dept brief CROSS-DEPT FLAG. Lands into 3-consecutive-weeks-uncontested-competitor-press whitespace \u2014 visibility into the paid layer (where competitors ARE active) is the structural complement to PR-layer monitoring (where they are not).",
+      "category": "competitive_intel",
+      "measurement_window": "28d"
+    },
+    {
+      "id": "CS-2026-157",
+      "title": "TBI / Concussion Tier 2 Content Angle Codification \u2014 Walsh KME RCT \u00d7 Consumer-Narrative Cluster",
+      "status": "draft",
+      "department": "content",
+      "platforms": [
+        "blog",
+        "instagram-organic",
+        "tiktok-organic",
+        "facebook-organic",
+        "kenetikpro"
+      ],
+      "created": "2026-05-15",
+      "last_updated": "2026-05-15",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Brandon Dyksterhouse",
+      "source": "synthesis",
+      "spawned_from": "synthesis-2026-05-15-s1",
+      "hypothesis": "4-domain convergence (D10 VoC TBI testimonials + D18 trend cluster + D16 Walsh KME crossover RCT NCT06588946 + D07 Roman Atwood awareness source) supports a Tier 2 content angle codification. Use Walsh KME crossover RCT (n=34, subjective cognitive decline measures) as clinical scaffolding for Dane / Trev / ambassador-app consumer stories. Strict shared-customer-story framing per claims compliance. Expected outcome: shipped Tier 2 codification artifact within 21d (blog post + IG/TT/FB adaptation spec); brand-narrative captured before dissipation; lands into 3-week-uncontested-competitor whitespace for amplification.",
+      "notes": "Spawned from synthesis 2026-05-15-s1 (rec-242) + DS-06-2026-05-15-01. Co-owner: Devon Price (claims-compliance routing approval gate). Cross-flag: Charlotte adapts framing for IG/TT/FB after Brandon delivers compliance-cleared spec. Coordinated with Tier 1 outreach send window (Walsh / Newman / Prins). Highest-leverage Content + Science + MI artifact this week.",
+      "category": "content_strategy",
+      "measurement_window": "21d"
     }
   ],
   "queue_actions": {
