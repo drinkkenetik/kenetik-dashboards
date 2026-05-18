@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-05-18T12:50:53.808929Z",
-  "next_id": "CS-2026-159",
+  "next_id": "CS-2026-161",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-18",
     "last_sweep_session": "2026-05-18-s1",
@@ -36,12 +36,12 @@
     "notes": "Polar Analytics MCP unavailable Day 8 (CS-091 chain). Sprout 403 Day 4. measurement_capable=false maintained. 12 pending_measurement_queue items idempotent S51->S52. CS-2026-128 MHAM Day +5 of 14d window \u2014 sunset case strengthened per D02 C7 -53% conv decline; held for Devon+Charlotte decision today (P1 priority)."
   },
   "summary": {
-    "total": 157,
+    "total": 159,
     "by_status": {
       "closed": 74,
       "published": 17,
       "approved": 12,
-      "draft": 52,
+      "draft": 54,
       "needs_feedback": 2
     },
     "by_risk": {
@@ -11545,6 +11545,46 @@
       "notes": "Spawned 2026-05-18 from synthesis 2026-05-18-s1 Priority Stack rec-243 (also closes rec-238 carryforward from S51). Evidence: D02 SIG-02-1 + Lifecycle dept brief Rec 1 + L-087 active in cross-surface-pm.json. SMS pair also instanced at 11.3% conv / $8.41 RPR on 541 recipients. Deliverable: spec writeup + brand/copy template + Klaviyo segment + 4h pre-public timing rule documented in lifecycle-cadence-rules.md (new section). Measurement: apply at next GP-class drop; second instance graduates L-087 from candidate to confirmed pattern.",
       "category": "lifecycle_marketing",
       "review_tier": "standard",
+      "measurement_window": "14d"
+    },
+    {
+      "id": "CS-2026-159",
+      "title": "Graduation: Matt Hughes \"Toughest Battles\" TT Reel -> Paid TikTok Amplification",
+      "status": "draft",
+      "department": "paid-media",
+      "platforms": [
+        "tiktok-ads"
+      ],
+      "created": "2026-05-18",
+      "last_updated": "2026-05-18",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 2,
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": "moe-weekly-graduation-scan-2026-05-18",
+      "hypothesis": "Matt Hughes \"Toughest Battles\" TT reel (Apr 29, sprout-sync-502731ef) cleared the universal 3x-reach gate at 7.59x TT 30d avg (10,086 imp). ER is below threshold (1.32%) but creator equity is high (CP-001 to CP-004). Paid TT amplification with low-budget test ($20/day, 14d) tests whether reach-qualified graduations convert when creator DNA is strong. Pause gate: <1.0x ROAS at d7; close: <1.5x at d14.",
+      "notes": "Reach-only graduation candidate. ER below TT 5% gate. Lower-conviction tier vs CS-150/151. Brief at cgo-logs/changesets/CS-2026-159.md. Sibling to CS-118 (Matt Hughes Apr 8+Apr 24), CS-094 (IG What He Is Doing Now), CS-151 (Apr 24 Kenetik Challenge FB+TT) \u2014 distinct creative, distinct date.",
+      "measurement_window": "14d"
+    },
+    {
+      "id": "CS-2026-160",
+      "title": "Graduation: Garrett Mitchell \"Doubleheader Day at The Rock\" TT (Rockingham Apr 7) -> Paid TikTok Amplification",
+      "status": "draft",
+      "department": "paid-media",
+      "platforms": [
+        "tiktok-ads"
+      ],
+      "created": "2026-05-18",
+      "last_updated": "2026-05-18",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 2,
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": "moe-weekly-graduation-scan-2026-05-18",
+      "hypothesis": "Garrett Mitchell \"Doubleheader Day at The Rock\" TT reel (Apr 7; Sprout double-sync sprout-sync-358718ff + sprout-sync-f6734a8e referencing TT video 7626150876448705805) cleared the universal 3x-reach gate at pair-mean 5.34x TT 30d avg. Pair-mean ER ~2.5% (below TT 5% gate). Secondary-driver content from same Rockingham event as CS-150 Cleetus cluster (ER ~7.4%). Hypothesis: motorsports pattern (CP-012) generalizes to side-driver creative at lower ROAS. Test budget $15/day x 14d. Pause: <1.0x at d7; close: <1.2x at d14.",
+      "notes": "Lowest-conviction graduation in this scan cycle. Sibling to CS-150 (Cleetus TT Rockingham cluster) \u2014 distinct conviction tier (reach-only vs ER+reach), distinct driver. Folding into CS-150 was considered but rejected: would drag CS-150 cluster-mean ER claim below the 5% line. Brief at cgo-logs/changesets/CS-2026-160.md.",
       "measurement_window": "14d"
     }
   ],
