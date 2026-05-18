@@ -1,11 +1,11 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-18T09:19:03.998902+00:00",
-  "next_id": 158,
+  "last_updated": "2026-05-18T12:50:53.808929Z",
+  "next_id": "CS-2026-159",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-15",
-    "last_sweep_session": "2026-05-15-s1",
-    "last_sweep_result": "inline_analysis_only_measurement_deferred_polar_offline",
+    "last_sweep_date": "2026-05-18",
+    "last_sweep_session": "2026-05-18-s1",
+    "last_sweep_result": "inline_analysis_only_measurement_deferred_polar_offline_day_8_sprout_403_day_4",
     "last_sweep_counts": {
       "stale_flagged_today": 12,
       "measurement_overdue": 12,
@@ -33,30 +33,30 @@
       "CS-2026-115",
       "CS-2026-127"
     ],
-    "notes": "Polar Analytics MCP unavailable 7th consecutive run; Sprout Social 403 Day 3. Per Phase 0.8: measurement_capable=false, all measurement-overdue items queued for next sweep with MCP access. Sprout/Polar restoration gated on CS-091 eng-lead naming (Devon, Day 8) \u2192 CS-146 (Foster, draft-gated)."
+    "notes": "Polar Analytics MCP unavailable Day 8 (CS-091 chain). Sprout 403 Day 4. measurement_capable=false maintained. 12 pending_measurement_queue items idempotent S51->S52. CS-2026-128 MHAM Day +5 of 14d window \u2014 sunset case strengthened per D02 C7 -53% conv decline; held for Devon+Charlotte decision today (P1 priority)."
   },
   "summary": {
-    "total": 156,
+    "total": 157,
     "by_status": {
       "closed": 74,
       "published": 17,
       "approved": 12,
-      "draft": 51,
+      "draft": 52,
       "needs_feedback": 2
     },
     "by_risk": {
       "critical": 2,
-      "low": 76,
+      "low": 77,
       "medium": 66,
       "high": 12
     },
     "by_subtype": {
-      "implementation": 114,
+      "implementation": 115,
       "investigation": 25,
       "quick": 17
     },
-    "last_updated": "2026-05-18T09:19:03.987340+00:00",
-    "last_counted": "2026-05-15"
+    "last_updated": "2026-05-18",
+    "last_counted": "2026-05-18"
   },
   "changesets": [
     {
@@ -3010,6 +3010,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 26
         }
       ]
     },
@@ -4375,6 +4382,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 28
         }
       ],
       "last_updated": "2026-04-20"
@@ -4760,6 +4774,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 13
         }
       ],
       "measurement_window_end": "2026-05-26"
@@ -7630,6 +7651,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ],
       "revision_notes": null,
@@ -7726,6 +7754,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 20
         }
       ],
       "revision_notes": null,
@@ -8142,6 +8177,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 20
         }
       ],
       "last_updated": "2026-04-28"
@@ -8365,6 +8407,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ],
       "last_updated": "2026-05-04"
@@ -9765,6 +9814,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 13
         }
       ],
       "created": "2026-04-27",
@@ -10234,6 +10290,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 19
         }
       ],
       "scheduled_send_date": null,
@@ -10445,6 +10508,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 19
         }
       ],
       "last_updated": "2026-04-29",
@@ -10783,6 +10853,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 14
         }
       ],
       "created": "2026-05-04",
@@ -10862,6 +10939,13 @@
           "set_date": "2026-05-15",
           "session": "2026-05-15-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-18",
+          "session": "2026-05-18-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "age_days": 13
         }
       ],
       "created": "2026-05-04",
@@ -11439,6 +11523,29 @@
       "notes": "Spawned from synthesis 2026-05-15-s1 (rec-242) + DS-06-2026-05-15-01. Co-owner: Devon Price (claims-compliance routing approval gate). Cross-flag: Charlotte adapts framing for IG/TT/FB after Brandon delivers compliance-cleared spec. Coordinated with Tier 1 outreach send window (Walsh / Newman / Prins). Highest-leverage Content + Science + MI artifact this week.",
       "category": "content_strategy",
       "measurement_window": "21d"
+    },
+    {
+      "id": "CS-2026-158",
+      "title": "L-087 Subscriber Early Access Mechanic \u2014 Codification & 4h Head-Start Protocol Spec",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo",
+        "klaviyo-sms"
+      ],
+      "created": "2026-05-18",
+      "last_updated": "2026-05-18",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "synthesis_priority_stack",
+      "spawned_from": "rec-243 (synthesis 2026-05-18-s1); also resolves rec-238 carryforward from S51",
+      "hypothesis": "Codifying the 4h Subscriber Early Access head-start mechanic into a standing protocol (subscriber/waitlist segment x subject-line variant x 4h pre-public window) for all future product launches will reproduce or approach the GP-launch C5/M20 5/13 14:00 instance (12.9% conv, $9.97 RPR, 23.1% click on 1.76K segment). 11.7x revenue density vs typical 1-4% segment campaigns. Codification target: lock the segment definition, the timing window, and the subject-line variant pattern so the next GP-class drop can deploy without rebuilding from scratch.",
+      "notes": "Spawned 2026-05-18 from synthesis 2026-05-18-s1 Priority Stack rec-243 (also closes rec-238 carryforward from S51). Evidence: D02 SIG-02-1 + Lifecycle dept brief Rec 1 + L-087 active in cross-surface-pm.json. SMS pair also instanced at 11.3% conv / $8.41 RPR on 541 recipients. Deliverable: spec writeup + brand/copy template + Klaviyo segment + 4h pre-public timing rule documented in lifecycle-cadence-rules.md (new section). Measurement: apply at next GP-class drop; second instance graduates L-087 from candidate to confirmed pattern.",
+      "category": "lifecycle_marketing",
+      "review_tier": "standard",
+      "measurement_window": "14d"
     }
   ],
   "queue_actions": {
