@@ -672,6 +672,27 @@
       "domain": "lifecycle",
       "status": "active",
       "date": "2026-05-18"
+    },
+    {
+      "id": "L-096",
+      "summary": "Site-wide CVR shift greater than 100% co-occurring with (not set) LP delta greater than 50% absolute is instrumentation-attribution shift, not organic",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-05-19"
+    },
+    {
+      "id": "L-097",
+      "summary": "Session handoff narratives can compress multi-metric campaign comparisons into a single number, exaggerating magnitude. S52 cited MHAM Wedge B '-53% c",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-05-19"
+    },
+    {
+      "id": "L-098",
+      "summary": "Pat-017 silent-slip is forcing-function-shaped, not capacity-shaped. The same owners (Katie, Charlotte, Nick, Devon) who today have zero observable Sl",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-05-19"
     }
   ],
   "entries": [
@@ -2151,6 +2172,62 @@
         "L-087"
       ],
       "target": "data/performance-memory/cross-surface-pm.json (L-087 evidence bump) and Katie's spec writeup (rec-243 / rec-238 carryover); CS-2026-158"
+    },
+    {
+      "id": "L-096",
+      "date": "2026-05-19",
+      "type": "threshold_calibration",
+      "learning": "Site-wide CVR shift greater than 100% co-occurring with (not set) LP delta greater than 50% absolute is instrumentation-attribution shift, not organic CRO. Default-first hypothesis must be tracking regression per L-078 precedent before forward-looking magnitude is reported.",
+      "source": "Synthesis 2026-05-19-s1 cross-check against D09 brief + L-074 + L-078",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "D09 reports mobile CVR +548% / desktop +505% / homepage +236% WoW concurrent with (not set) LP sessions -89% (5,233 to 553) and total sessions +9.4%. Magnitude is implausibly large for organic CRO. L-074 precedent: S43 desktop CVR magnitude overstated 2.7x. L-078 precedent: site-wide CVR with sessions-up + LP attribution mass shift is tracking-instrumentation regression. See daily synthesis 2026-05-19-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-074",
+        "L-078",
+        "L-066"
+      ],
+      "target": "synthesis-instructions.md Framing Guardrails #1 - add automatic L-078 trigger when site-wide CVR shift >100% co-occurs with (not set) LP delta >50% absolute"
+    },
+    {
+      "id": "L-097",
+      "date": "2026-05-19",
+      "type": "process_change",
+      "learning": "Session handoff narratives can compress multi-metric campaign comparisons into a single number, exaggerating magnitude. S52 cited MHAM Wedge B '-53% conv vs C2' but today's D02 measures conv-rate delta -6.4% and conv-value delta -18.5%. Sunset case still strengthens but on different magnitude.",
+      "source": "D02 brief 2026-05-19, corrects S52 handoff narrative",
+      "source_type": "domain_contradiction",
+      "domain": "lifecycle",
+      "evidence": "MHAM C7 vs C2 today: click +45%, CVR -6.4%, RPR -17.6%, conv value -18.5% on 17,338 recipients. S52 handoff prose said '-53% conv vs C2'. The two numbers reference different metrics; compression lost the disambiguator. See daily synthesis 2026-05-19-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-087",
+        "L-095"
+      ],
+      "target": "session-handoff template format - require explicit metric label (conv_rate vs conv_value vs RPR) when citing delta percentages on campaign comparisons"
+    },
+    {
+      "id": "L-098",
+      "date": "2026-05-19",
+      "type": "skill_update",
+      "learning": "Pat-017 silent-slip is forcing-function-shaped, not capacity-shaped. The same owners (Katie, Charlotte, Nick, Devon) who today have zero observable Slack evidence on 5 deadline items had high-observability coordination on 5/13-5/14 launch. Launch coordination produces a forcing function via traffic/revenue dependence; non-launch deadlines have no equivalent.",
+      "source": "D14 + Operations dept brief 2026-05-19, pat-017 4th corroboration day",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "5 deadline-driven items zero observable Slack evidence in 24h: CS-091 (Devon), MHAM sunset (Katie/Devon/Charlotte), Memorial Day cluster (Nick/Katie/Charlotte/Foster), L-060/CS-138 deploy (Foster), Brandon Tier 1 outreach. Counter-evidence: 5/13-5/14 launch coordination same owners high-observability. CS-152 huddle Day +2/14 + CS-153 hard-gate (Foster) + CS-155 governance (Foster) form the meta-fix triad. See daily synthesis 2026-05-19-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-086",
+        "L-093",
+        "L-094"
+      ],
+      "target": "kenetik-growth-system/commands/changeset-execute.md and changeset-review.md - incorporate 'launch-equivalent forcing function' pattern into pre-deadline status gates so non-launch deadlines inherit launch-class observability rhythm"
     }
   ],
   "archived_entries": [
@@ -2592,5 +2669,5 @@
       "archived_reason": "Action taken 2026-05-01; >=7 days live; Process 3.8 Step 0b auto-archive."
     }
   ],
-  "last_updated": "2026-05-18T12:57:38.362716Z"
+  "last_updated": "2026-05-19T12:54:49Z"
 }
