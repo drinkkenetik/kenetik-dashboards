@@ -1,7 +1,7 @@
 {
   "_doc": "Canonical schema constants for the ChangeSet tracker. Source of truth referenced by changeset-common-functions.md \u00a71b. Both kgs-repo scripts/validate_changeset_tracker.py and the dashboards-repo validator import from here. Adding/changing any value requires a ChangeSet with department=operations, platforms=[changeset-process].",
   "version": "1.0",
-  "last_updated": "2026-05-06",
+  "last_updated": "2026-05-18",
   "valid_statuses": [
     "draft",
     "needs_feedback",
@@ -193,5 +193,31 @@
     "approved",
     "held"
   ],
+  "valid_marketing_calendar_statuses": [
+    "proposed",
+    "needs_SOW",
+    "needs_planning",
+    "budgeted",
+    "planned",
+    "approved",
+    "confirmed",
+    "in_progress",
+    "at_risk",
+    "complete",
+    "skipped",
+    "cancelled"
+  ],
+  "_valid_marketing_calendar_statuses_note": "Marketing calendar entry status enum. Source of truth for data/marketing-calendar/marketing-calendar-data.json marketing_calendar entries. Read by portal/marketing-calendar-dashboard.html (status dropdown), scripts/validate_marketing_calendar.py, and downstream readers (weekly management email filter, D13 brief).",
+  "valid_content_calendar_statuses": [
+    "idea",
+    "drafted",
+    "scheduled",
+    "published",
+    "reviewed",
+    "measured",
+    "vetoed",
+    "expired"
+  ],
+  "_valid_content_calendar_statuses_note": "Content calendar entry status enum. Source of truth for data/marketing-calendar/marketing-calendar-data.json content_calendar entries. Read by portal/marketing-calendar-dashboard.html and downstream readers.",
   "_lifecycle_extension_note": "2026-05-06: Lifecycle build plan v5 Amendment 5. New optional fields added: klaviyo_object, lock_in_time, confidence_tier, pattern_id, klaviyo_campaign_id, klaviyo_flow_id, klaviyo_message_id, klaviyo_segment_id, activation_date, pre_refresh_baseline, design_status, last_figma_pull_timestamp, figma_feedback_available, shared_hypothesis_id, pair_id. New enums: valid_klaviyo_objects, valid_confidence_tiers, valid_design_statuses. New platform: shopify-notification (Recharge customer-facing notifications via Klaviyo + Shopify customer-facing notifications now in CS framework per v8 \u00a71.9)."
 }
