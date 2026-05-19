@@ -1,24 +1,19 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-05-19T09:16:52.060119+00:00",
-  "next_id": "CS-2026-161",
+  "next_id": "CS-2026-162",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-18",
-    "last_sweep_session": "2026-05-18-s1",
-    "last_sweep_result": "inline_analysis_only_measurement_deferred_polar_offline_day_8_sprout_403_day_4",
+    "last_sweep_date": "2026-05-19",
+    "last_sweep_session": "2026-05-19-s1",
+    "last_sweep_result": "measurement_capable_false",
     "last_sweep_counts": {
-      "stale_flagged_today": 12,
+      "stale_flagged": 12,
       "measurement_overdue": 12,
       "auto_closed": 0,
-      "auto_advanced": 0,
-      "pending_measurement_queue_length": 12,
-      "measured_inline": 0,
-      "underperformed": 0,
-      "inconclusive": 0,
-      "data_needed": 12,
-      "success": 0
+      "pending_measurement_queue_size": 12,
+      "measurement_capable": false,
+      "reason": "Polar Day 8 + Sprout 403 Day 5 \u2014 layer 2 MCPs unavailable. 12 stale-approveds idempotent S51\u2192S52\u2192S53. Stale queue: CS-2026-020, 021, 022, 035, 084, 085, 086, 089, 101, 114, 115, 127. Single batched sweep queued post-CS-091 unblock."
     },
-    "measurement_capable": false,
     "pending_measurement_queue": [
       "CS-2026-020",
       "CS-2026-021",
@@ -32,31 +27,30 @@
       "CS-2026-114",
       "CS-2026-115",
       "CS-2026-127"
-    ],
-    "notes": "Polar Analytics MCP unavailable Day 8 (CS-091 chain). Sprout 403 Day 4. measurement_capable=false maintained. 12 pending_measurement_queue items idempotent S51->S52. CS-2026-128 MHAM Day +5 of 14d window \u2014 sunset case strengthened per D02 C7 -53% conv decline; held for Devon+Charlotte decision today (P1 priority)."
+    ]
   },
   "summary": {
-    "total": 159,
+    "total": 160,
     "by_status": {
       "closed": 74,
       "published": 17,
       "approved": 12,
-      "draft": 54,
+      "draft": 55,
       "needs_feedback": 2
     },
     "by_risk": {
       "critical": 2,
       "low": 77,
-      "medium": 68,
+      "medium": 69,
       "high": 12
     },
     "by_subtype": {
-      "implementation": 117,
+      "implementation": 118,
       "investigation": 25,
       "quick": 17
     },
-    "last_updated": "2026-05-19T09:16:52.048570+00:00",
-    "last_counted": "2026-05-18"
+    "last_updated": "2026-05-19T12:49:30+00:00",
+    "last_counted": "2026-05-19"
   },
   "changesets": [
     {
@@ -11586,6 +11580,32 @@
       "hypothesis": "Garrett Mitchell \"Doubleheader Day at The Rock\" TT reel (Apr 7; Sprout double-sync sprout-sync-358718ff + sprout-sync-f6734a8e referencing TT video 7626150876448705805) cleared the universal 3x-reach gate at pair-mean 5.34x TT 30d avg. Pair-mean ER ~2.5% (below TT 5% gate). Secondary-driver content from same Rockingham event as CS-150 Cleetus cluster (ER ~7.4%). Hypothesis: motorsports pattern (CP-012) generalizes to side-driver creative at lower ROAS. Test budget $15/day x 14d. Pause: <1.0x at d7; close: <1.2x at d14.",
       "notes": "Lowest-conviction graduation in this scan cycle. Sibling to CS-150 (Cleetus TT Rockingham cluster) \u2014 distinct conviction tier (reach-only vs ER+reach), distinct driver. Folding into CS-150 was considered but rejected: would drag CS-150 cluster-mean ER claim below the 5% line. Brief at cgo-logs/changesets/CS-2026-160.md.",
       "measurement_window": "14d"
+    },
+    {
+      "id": "CS-2026-161",
+      "title": "Memorial Day Cluster Master \u2014 Audience-Lock T-1 + Wedge A + Protocol Class Targeting",
+      "status": "draft",
+      "department": "cross-functional",
+      "platforms": [
+        "meta-ads",
+        "tiktok-ads",
+        "klaviyo",
+        "klaviyo-sms",
+        "instagram-organic",
+        "facebook-organic",
+        "tiktok-organic"
+      ],
+      "created": "2026-05-19",
+      "last_updated": "2026-05-19",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "owner": "Nick Lacagnina",
+      "source": "synthesis_priority_stack",
+      "hypothesis": "Locking audience + Wedge A frame + Protocol Class targeting at T-1 prevents L-086/pat-017 silent-slip on a 4-owner cluster and produces measurable launch echo across Memorial Day (5/20-5/26) sale window. Live test of L-086 silent-slip prevention pattern.",
+      "notes": "Spawned from synthesis 2026-05-19-s1.md P2. Coordinates BEAT-01 Matt Hughes Feature, BEAT-02 Grey Team Folds-of-Honor 10% donation, BEAT-03 Cleetus Audience Activation, BEAT-04 Email+SMS. Co-owners: Nick (BEAT owner), Charlotte (Protocol Class targeting + creative), Katie (email cadence + paid creative routing), Foster (paid ramp planning). Memorial Day Email+SMS owner ambiguity (calendar=Nick, Lifecycle=Katie) resolution required before 5/20 send. Pairs with CS-2026-128 sunset decision (P3). Decay-watch on Polar dark Day 8 \u2014 paid amp measurement window TBD post-CS-091. Cites L-086 silent-slip prevention, L-092 Protocol Class audience definition, L-088 4-domain TBI convergence pattern reuse.",
+      "review_tier": "tier1_cgo",
+      "measurement_window": "7d_post_5_26_close"
     }
   ],
   "queue_actions": {
