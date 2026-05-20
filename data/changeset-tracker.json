@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-20T12:53:54.994126Z",
+  "last_updated": "2026-05-20",
   "next_id": "CS-2026-164",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-20",
@@ -32,10 +32,10 @@
   "summary": {
     "total": 162,
     "by_status": {
-      "closed": 74,
+      "closed": 75,
       "published": 17,
       "approved": 12,
-      "draft": 57,
+      "draft": 56,
       "needs_feedback": 2
     },
     "by_risk": {
@@ -49,7 +49,7 @@
       "investigation": 25,
       "quick": 17
     },
-    "last_updated": "2026-05-20T12:53:54.994089Z",
+    "last_updated": "2026-05-20",
     "last_counted": "2026-05-20"
   },
   "changesets": [
@@ -11521,15 +11521,15 @@
     {
       "id": "CS-2026-158",
       "title": "L-087 Subscriber Early Access Mechanic \u2014 Codification & 4h Head-Start Protocol Spec",
-      "status": "draft",
+      "status": "closed",
       "department": "lifecycle-marketing",
       "platforms": [
         "klaviyo",
         "klaviyo-sms"
       ],
       "created": "2026-05-18",
-      "last_updated": "2026-05-18",
-      "subtype": "implementation",
+      "last_updated": "2026-05-20",
+      "subtype": "quick",
       "risk_level": "low",
       "autonomy_tier": 1,
       "owner": "Katie Spaller",
@@ -11539,7 +11539,28 @@
       "notes": "Spawned 2026-05-18 from synthesis 2026-05-18-s1 Priority Stack rec-243 (also closes rec-238 carryforward from S51). Evidence: D02 SIG-02-1 + Lifecycle dept brief Rec 1 + L-087 active in cross-surface-pm.json. SMS pair also instanced at 11.3% conv / $8.41 RPR on 541 recipients. Deliverable: spec writeup + brand/copy template + Klaviyo segment + 4h pre-public timing rule documented in lifecycle-cadence-rules.md (new section). Measurement: apply at next GP-class drop; second instance graduates L-087 from candidate to confirmed pattern.",
       "category": "lifecycle_marketing",
       "review_tier": "standard",
-      "measurement_window": "14d"
+      "measurement_window": "14d",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-05-20",
+      "published_by": "Katie Spaller",
+      "published_date": "2026-05-20",
+      "executed_date": "2026-05-20",
+      "measurement_start": null,
+      "measurement_due": null,
+      "measurement_window_days": null,
+      "publish_confirmation": {
+        "department": "lifecycle-marketing",
+        "platforms": [
+          "klaviyo",
+          "klaviyo-sms"
+        ],
+        "confirmation_id": "git commit on drinkkenetik/kenetik-growth-system main \u2014 see commit log",
+        "published_at": "2026-05-20T20:00:00Z",
+        "note": "Doc codification CS \u2014 publish surface is the KGS repo (brain/kenetik-brain/references/lifecycle-playbook.md), not a Klaviyo send. The codified template will be applied at the next GP-class drop."
+      },
+      "outcome": "success",
+      "closed_date": "2026-05-20",
+      "closure_note": "Codification CS \u2014 work shipped same-day (doc landed in brain/kenetik-brain/references/lifecycle-playbook.md; L-087 graduated active->confirmed in cross-surface-pm.json). No standalone measurement window on this CS: the measurement of the codified L-087 mechanic is delegated to subsequent deployment ChangeSets that fire the template on GP-class drops. Each deployment is its own measurable CS referencing lifecycle-playbook.md#L-087 with the acceptable bands defined therein. If a future deployment lands outside band, RCA + revision CS edits the playbook section directly."
     },
     {
       "id": "CS-2026-159",
