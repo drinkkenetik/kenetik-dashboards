@@ -1,10 +1,10 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-20T09:14:41.784651+00:00",
-  "next_id": "CS-2026-162",
+  "last_updated": "2026-05-20T12:53:54.994126Z",
+  "next_id": "CS-2026-164",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-19",
-    "last_sweep_session": "2026-05-19-s1",
+    "last_sweep_date": "2026-05-20",
+    "last_sweep_session": "2026-05-20-s1",
     "last_sweep_result": "measurement_capable_false",
     "last_sweep_counts": {
       "stale_flagged": 12,
@@ -12,7 +12,7 @@
       "auto_closed": 0,
       "pending_measurement_queue_size": 12,
       "measurement_capable": false,
-      "reason": "Polar Day 8 + Sprout 403 Day 5 \u2014 layer 2 MCPs unavailable. 12 stale-approveds idempotent S51\u2192S52\u2192S53. Stale queue: CS-2026-020, 021, 022, 035, 084, 085, 086, 089, 101, 114, 115, 127. Single batched sweep queued post-CS-091 unblock."
+      "reason": "Polar Day 10 + Sprout 403 Day 5 \u2014 layer 2 MCPs unavailable in staging-priority mode. 12 stale-approveds idempotent S51\u2192S52\u2192S53\u2192S54. Stale queue: CS-2026-020, 021, 022, 035, 084, 085, 086, 089, 101, 114, 115, 127. Single batched sweep queued post-CS-091 unblock."
     },
     "pending_measurement_queue": [
       "CS-2026-020",
@@ -30,27 +30,27 @@
     ]
   },
   "summary": {
-    "total": 160,
+    "total": 162,
     "by_status": {
       "closed": 74,
       "published": 17,
       "approved": 12,
-      "draft": 55,
+      "draft": 57,
       "needs_feedback": 2
     },
     "by_risk": {
       "critical": 2,
-      "low": 77,
-      "medium": 69,
+      "low": 78,
+      "medium": 70,
       "high": 12
     },
     "by_subtype": {
-      "implementation": 118,
+      "implementation": 120,
       "investigation": 25,
       "quick": 17
     },
-    "last_updated": "2026-05-20T09:14:41.773510+00:00",
-    "last_counted": "2026-05-19"
+    "last_updated": "2026-05-20T12:53:54.994089Z",
+    "last_counted": "2026-05-20"
   },
   "changesets": [
     {
@@ -11606,6 +11606,47 @@
       "notes": "Spawned from synthesis 2026-05-19-s1.md P2. Coordinates BEAT-01 Matt Hughes Feature, BEAT-02 Grey Team Folds-of-Honor 10% donation, BEAT-03 Cleetus Audience Activation, BEAT-04 Email+SMS. Co-owners: Nick (BEAT owner), Charlotte (Protocol Class targeting + creative), Katie (email cadence + paid creative routing), Foster (paid ramp planning). Memorial Day Email+SMS owner ambiguity (calendar=Nick, Lifecycle=Katie) resolution required before 5/20 send. Pairs with CS-2026-128 sunset decision (P3). Decay-watch on Polar dark Day 8 \u2014 paid amp measurement window TBD post-CS-091. Cites L-086 silent-slip prevention, L-092 Protocol Class audience definition, L-088 4-domain TBI convergence pattern reuse.",
       "review_tier": "tier1_cgo",
       "measurement_window": "7d_post_5_26_close"
+    },
+    {
+      "id": "CS-2026-162",
+      "title": "Genesis GM+Trainer Ketone Education Plan",
+      "status": "draft",
+      "department": "wholesale",
+      "platforms": [
+        "kenetikpro",
+        "blog"
+      ],
+      "created": "2026-05-20",
+      "last_updated": "2026-05-20",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "owner": "Brandon Dyksterhouse",
+      "source": "synthesis_priority_stack",
+      "spawned_from": "2026-05-20-s1-synthesis",
+      "hypothesis": "Spawning a structured Genesis enablement workstream (clinical content + GM/Trainer education materials + scheduled training sessions) protects the Genesis partner relationship and unlocks the largest unowned operational lift in our 30-day window. Without a CS, the work continues to slip as needs_planning on the marketing calendar with no owner sequence.",
+      "notes": "Co-owners: Josh Goodale (wholesale partnership coordination), Nicole Sanchez (logistics support \u2014 not primary). Largest unowned operational lift in next-30d window per Ops & Planning department brief 2026-05-20-s1. Partner-relationship-critical: Genesis GM+Trainer ketone education currently needs_planning with no CS attached.",
+      "measurement_window": "14d"
+    },
+    {
+      "id": "CS-2026-163",
+      "title": "Content Production Queue Hygiene + SLA Re-anchor",
+      "status": "draft",
+      "department": "content",
+      "platforms": [
+        "content-production"
+      ],
+      "created": "2026-05-20",
+      "last_updated": "2026-05-20",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": 1,
+      "owner": "Devon Price",
+      "source": "synthesis_priority_stack",
+      "spawned_from": "2026-05-20-s1-synthesis",
+      "hypothesis": "Auditing and archiving completed/abandoned briefs from production-queue.json, re-anchoring SLAs against current capacity, and re-establishing weekly state-file refresh cadence will (a) restore the max_active_briefs=10 guardrail discipline, (b) make queue depth a reliable demand signal for Larry's CP-1 routing, and (c) prevent recurrence of the 30-day state-file maintenance gap that masks SLA breaches.",
+      "notes": "Co-owners (execution): Peter Bayne + Nick Lacagnina per Content & Creative dept brief 2026-05-20-s1. Triggered by: 12 active briefs over max_active_briefs=10 guardrail; production-queue.json last updated 2026-04-20 (30d stale); BRIEF-20260408-005 caption-fix SLA 35d past deadline. Devon owns ops/infrastructure CSes per ownership-resolution rule (content-production platform \u2192 Devon).",
+      "measurement_window": "14d"
     }
   ],
   "queue_actions": {
