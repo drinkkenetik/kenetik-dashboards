@@ -271,5 +271,59 @@
     "specialty"
   ],
   "_valid_retail_channel_types_note": "Channel-type discriminator on retail-channels.json entries. Added 2026-05-19 with PR 1.C. Future expansion of wholesale-specific account-handling may justify splitting wholesale to its own file.",
+  "valid_marketing_calendar_categories": [
+    "product_launch",
+    "retail_launch",
+    "promo",
+    "content_theme",
+    "event",
+    "partnership"
+  ],
+  "_valid_marketing_calendar_categories_note": "6 top-level categories that replace the 65 legacy types on marketing_calendar entries. Added 2026-05-19 with PR 1.D per locked-designs.md decision 1. Each entry preserves its original type as `legacy_type` so downstream consumers can query finer granularity when needed. Attributes (anchor_creator, anchor_athlete, partner_org, linked_retail_channel_id, linked_product_launch_id, sub_beats) carry the variation that legacy types used to encode.",
+  "marketing_calendar_subbeat_templates": {
+    "product_launch": [
+      "Tease",
+      "Reveal",
+      "Hype",
+      "Launch day",
+      "Post-launch sustain"
+    ],
+    "retail_launch": [
+      "Anchor talent activation",
+      "Local creator UGC",
+      "Paid ads in DMA",
+      "Distributor and shipment coordination",
+      "In-store sampling and demo days",
+      "Promotional mechanic (sweeps, raffles, GWP)",
+      "POS and signage",
+      "Sell-through measurement"
+    ],
+    "promo": [
+      "Email and SMS sequence",
+      "Social push",
+      "Anchor activation",
+      "Discount mechanic",
+      "Closeout"
+    ],
+    "content_theme": [
+      "Science distillation",
+      "Email push",
+      "Social push",
+      "Creator amplification"
+    ],
+    "event": [
+      "Pre-event hype",
+      "On-site capture",
+      "Post-event content",
+      "Lead capture"
+    ],
+    "partnership": [
+      "Joint promotion",
+      "Co-branded content",
+      "Activation event",
+      "Measurement"
+    ]
+  },
+  "_marketing_calendar_subbeat_templates_note": "Per-category default sub-beat templates. The system suggests these when a new parent campaign is created; Katie can override any per campaign. After 90 days of observed usage we look at the override rate and decide whether to codify per-category enums. Added 2026-05-19 with PR 1.D per locked-designs.md decision 3.",
   "_lifecycle_extension_note": "2026-05-06: Lifecycle build plan v5 Amendment 5. New optional fields added: klaviyo_object, lock_in_time, confidence_tier, pattern_id, klaviyo_campaign_id, klaviyo_flow_id, klaviyo_message_id, klaviyo_segment_id, activation_date, pre_refresh_baseline, design_status, last_figma_pull_timestamp, figma_feedback_available, shared_hypothesis_id, pair_id. New enums: valid_klaviyo_objects, valid_confidence_tiers, valid_design_statuses. New platform: shopify-notification (Recharge customer-facing notifications via Klaviyo + Shopify customer-facing notifications now in CS framework per v8 §1.9)."
 }
