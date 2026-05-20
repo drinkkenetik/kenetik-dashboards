@@ -612,10 +612,11 @@
     },
     {
       "id": "L-087",
-      "summary": "Subscriber Early Access head-start mechanic (4h \u00d7 ENGAGED \u00d7 subject variant) \u2192 11.7x email / 18.7x SMS rev density on GP launch \u2014 graduated template.",
+      "summary": "Subscriber Early Access head-start mechanic (4h \u00d7 ENGAGED \u00d7 subject variant) \u2192 11.7x email / 18.7x SMS rev density on GP launch \u2014 CONFIRMED graduated template (2 corroborated instances). Codified in lifecycle-playbook.md via CS-2026-158.",
       "domain": "lifecycle",
-      "status": "active",
-      "date": "2026-05-15"
+      "status": "confirmed",
+      "date": "2026-05-15",
+      "last_validated": "2026-05-20"
     },
     {
       "id": "L-088",
@@ -2020,15 +2021,20 @@
       "source": "synthesis 2026-05-15-s1 (D02 SIG-02-1 + D06 SIG-06-1 + Lifecycle dept brief)",
       "source_type": "operational_signal",
       "domain": "lifecycle",
-      "evidence": "GP Subscriber Early Access 5/13 14:00: 52.6% open / 22.7% click / 220 conv / $17,003 / $9.67 per recipient. SMS parallel 48.6% click / $8.41 per recipient vs $0.45 public. See daily synthesis 2026-05-15-s1.md.",
+      "evidence": "GP Subscriber Early Access 5/13 14:00: 52.6% open / 22.7% click / 220 conv / $17,003 / $9.67 per recipient. SMS parallel 48.6% click / $8.41 per recipient vs $0.45 public. See daily synthesis 2026-05-15-s1.md. Instance #2 corroboration (2026-05-19 dept brief D02-1): mature 7d attribution of UE C5 send shows 53.9% open / 23.1% click / 12.91% CVR / $9.97 RPR / $17,531 attributed on 1,761 recipients \u2014 graduates L-087 from candidate to confirmed (2 corroborated instances).",
       "confidence": "strong",
-      "action_taken": "Katie owns L-NNN spec writeup today (rec-238); pair with joint D02+D06 attribution writeup",
-      "skill_files_updated": [],
+      "action_taken": "CS-2026-158 codified L-087 protocol in brain/kenetik-brain/references/lifecycle-playbook.md (2026-05-20). Closed rec-238 + rec-243. Pattern is now a deployable standing template for GP-class drops.",
+      "skill_files_updated": [
+        "brain/kenetik-brain/references/lifecycle-playbook.md"
+      ],
       "related_entries": [
         "L-083",
         "L-085"
       ],
-      "target": "brain/kenetik-brain/references/lifecycle-playbook.md (new graduated template section); data/performance-memory/cross-surface-pm.json (this entry)"
+      "target": "brain/kenetik-brain/references/lifecycle-playbook.md (new graduated template section); data/performance-memory/cross-surface-pm.json (this entry)",
+      "status": "confirmed",
+      "graduated_date": "2026-05-20",
+      "graduation_via": "CS-2026-158"
     },
     {
       "id": "L-088",
@@ -2669,5 +2675,5 @@
       "archived_reason": "Action taken 2026-05-01; >=7 days live; Process 3.8 Step 0b auto-archive."
     }
   ],
-  "last_updated": "2026-05-19T12:54:49Z"
+  "last_updated": "2026-05-20"
 }
