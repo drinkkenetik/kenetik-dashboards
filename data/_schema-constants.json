@@ -253,5 +253,23 @@
     "science"
   ],
   "_valid_owning_departments_note": "7 KGS departments. Used as the primary owning_department field on marketing_calendar, content_calendar, team_tasks, and retail_channels entries. Multi-department entries carry an optional contributing_departments array (array of values from the same enum). Added 2026-05-19 with PR 1.B per locked-designs.md decisions 5 and 6.",
+  "valid_retail_channel_stages": [
+    "pipeline",
+    "onboarding",
+    "pos_setup",
+    "active",
+    "review",
+    "expansion",
+    "sunset"
+  ],
+  "_valid_retail_channel_stages_note": "7-value lifecycle for a retail channel relationship. pipeline = BD discussions, onboarding = signed and prepping, pos_setup = launch week prep, active = selling, review = performance evaluation, expansion = scaling additional doors, sunset = winding down. Added 2026-05-19 with PR 1.C.",
+  "valid_retail_channel_types": [
+    "retail",
+    "wholesale",
+    "gym",
+    "clinic",
+    "specialty"
+  ],
+  "_valid_retail_channel_types_note": "Channel-type discriminator on retail-channels.json entries. Added 2026-05-19 with PR 1.C. Future expansion of wholesale-specific account-handling may justify splitting wholesale to its own file.",
   "_lifecycle_extension_note": "2026-05-06: Lifecycle build plan v5 Amendment 5. New optional fields added: klaviyo_object, lock_in_time, confidence_tier, pattern_id, klaviyo_campaign_id, klaviyo_flow_id, klaviyo_message_id, klaviyo_segment_id, activation_date, pre_refresh_baseline, design_status, last_figma_pull_timestamp, figma_feedback_available, shared_hypothesis_id, pair_id. New enums: valid_klaviyo_objects, valid_confidence_tiers, valid_design_statuses. New platform: shopify-notification (Recharge customer-facing notifications via Klaviyo + Shopify customer-facing notifications now in CS framework per v8 §1.9)."
 }
