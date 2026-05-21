@@ -1,18 +1,19 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-05-21T18:59:30.673395+00:00",
-  "next_id": "CS-2026-177",
+  "next_id": "CS-2026-178",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-20",
-    "last_sweep_session": "2026-05-20-s1",
-    "last_sweep_result": "measurement_capable_false",
+    "last_sweep_date": "2026-05-21",
+    "last_sweep_session": "2026-05-21-s1",
+    "last_sweep_result": "measurement_capable_mixed_polar_restored_day1_klaviyo_orchestrator_only_sprout_dark_d6",
     "last_sweep_counts": {
       "stale_flagged": 12,
       "measurement_overdue": 12,
       "auto_closed": 0,
       "pending_measurement_queue_size": 12,
       "measurement_capable": false,
-      "reason": "Polar Day 10 + Sprout 403 Day 5 \u2014 layer 2 MCPs unavailable in staging-priority mode. 12 stale-approveds idempotent S51\u2192S52\u2192S53\u2192S54. Stale queue: CS-2026-020, 021, 022, 035, 084, 085, 086, 089, 101, 114, 115, 127. Single batched sweep queued post-CS-091 unblock."
+      "idempotent_run": 6,
+      "new_changesets_spawned": 1
     },
     "pending_measurement_queue": [
       "CS-2026-020",
@@ -30,26 +31,26 @@
     ]
   },
   "summary": {
-    "total": 175,
+    "total": 176,
     "by_status": {
       "closed": 75,
       "published": 17,
       "approved": 13,
-      "draft": 68,
+      "draft": 69,
       "needs_feedback": 2
     },
     "by_risk": {
       "critical": 2,
       "low": 88,
-      "medium": 73,
+      "medium": 74,
       "high": 12
     },
     "by_subtype": {
-      "implementation": 120,
+      "implementation": 121,
       "investigation": 25,
       "quick": 30
     },
-    "last_updated": "2026-05-21T18:59:30.673395+00:00",
+    "last_updated": "2026-05-21T23:41:00.839346+00:00",
     "last_counted": "2026-05-21"
   },
   "changesets": [
@@ -3011,6 +3012,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 26
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ]
     },
@@ -4383,6 +4390,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 28
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "last_updated": "2026-04-20"
@@ -4775,6 +4788,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 13
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "measurement_window_end": "2026-05-26"
@@ -7652,6 +7671,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 14
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "revision_notes": null,
@@ -7755,6 +7780,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 20
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "revision_notes": null,
@@ -8178,6 +8209,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 20
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "last_updated": "2026-04-28"
@@ -8408,6 +8445,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 14
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "last_updated": "2026-05-04"
@@ -9815,6 +9858,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 13
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "created": "2026-04-27",
@@ -10291,6 +10340,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 19
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "scheduled_send_date": null,
@@ -10509,6 +10564,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 19
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "last_updated": "2026-04-29",
@@ -10854,6 +10915,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 14
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "created": "2026-05-04",
@@ -10940,6 +11007,12 @@
           "session": "2026-05-18-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 13
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-21",
+          "session": "2026-05-21-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
         }
       ],
       "created": "2026-05-04",
@@ -12299,6 +12372,28 @@
       "executed_date": "2026-05-21",
       "autonomy_tier": null,
       "sweep_flags": []
+    },
+    {
+      "id": "CS-2026-177",
+      "title": "Frontiers Cognition Meta-Analysis Distillation (SMD=0.26) \u2014 Wedge A Counter-Positioning Anchor",
+      "status": "draft",
+      "department": "science-research",
+      "platforms": [
+        "blog",
+        "kenetikpro",
+        "klaviyo"
+      ],
+      "created": "2026-05-21",
+      "last_updated": "2026-05-21",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "owner": "Brandon Dyksterhouse",
+      "source": "synthesis_priority_stack",
+      "spawned_from": "2026-05-21-s1.md",
+      "hypothesis": "Distilling Frontiers in Nutrition meta-analysis (2026-05-12, exogenous ketones + cognition, SMD=0.26, n=1347, p=0.0007, both ester and MCT significant) into consumer-facing Tier-2 cognitive-claim content during the live MHAM More Good Days window (~10 days remaining) and ahead of Asprey BEYOND (5/27) materially strengthens DS-06 Wedge A counter-positioning vs Neutonic (synthetic-nootropic, $6M raise) and KEY (caffeine-contrast). Frame: 'Not a synthetic nootropic \u2014 actual brain fuel. Peer-reviewed cognitive effect across n=1,347.' Expected: codified Wedge A claims anchor + lifecycle email/SMS adaptation + KenetikPro practitioner copy block. Devon claims-compliance gate required pre-publication; Katie owns Klaviyo distribution; target publish 5/27-5/28.",
+      "notes": "Cross-domain convergence: D17 SIG-17-1 + D18 SIG-18-1 + D10 SIG-10-1 (Crawford TBI) + D18 SIG-18-3 (Neutonic). Pairs with rec-235 counter-positioning memo extension and CS-2026-157 TBI Tier 2 codification on same evidence stack (Walsh KME RCT + Lyksholm renal RCT + Frontiers). Resolution Hierarchy Step 4 (Add) justified: no existing CS can absorb a SMD=0.26 cognitive-effect meta-analysis without diluting its specific frame. Pass-through dependencies: Devon Sprout 403 / CS-091 chain for downstream measurement; not blocking on those for authoring.",
+      "measurement_window": "14d"
     }
   ],
   "queue_actions": {
@@ -12557,10 +12652,12 @@
     "new_changesets": 1,
     "notes": "16 stale approved (all 21d except CS-034 18d, CS-036/037 15d). 3 measurement windows approaching Apr 8-9. 1 new CS created (CS-2026-047 Brain Health Content Bundle). No auto-closes \u2014 no measurement-overdue published items with available data (Polar offline blocks verification)."
   },
-  "lifecycle_sweep_notes": {
-    "pending_measurement_queue": [
-      "CS-2026-019"
-    ],
-    "queue_last_updated": "2026-05-01"
-  }
+  "lifecycle_sweep_notes": [
+    {
+      "session": "2026-05-21-s1",
+      "date": "2026-05-21",
+      "note": "Run #6 idempotent on the same 12 stale-approveds; Polar restored Day +1 but Layer 3/4 funnel decomposition into website-state.json pending (Phase E Step 1); Klaviyo MCP not available from sub-agents (orchestrator pre-fetch only); Sprout 403 Day 6. Measurement queue size unchanged (12). New CS spawned: CS-2026-177 (Frontiers Cognition Meta-Analysis Distillation, Brandon Dyksterhouse, science-research, medium risk). Pat-022 brief-vs-tracker drift remediation deferred to rec-262 (Devon stale-approved triage today).",
+      "recommendation": "Once Polar Layer 3/4 wiring lands (Phase E Step 1), re-evaluate the 6 paid-media-state-dependent CSes (CS-114/115/127/061/118/136) in next sweep with Layer 1 state-file pull. Klaviyo CSes (CS-020/021/022/035/089/101) remain Layer-3 manual until orchestrator integrates per-sub-agent Klaviyo MCP."
+    }
+  ]
 }
