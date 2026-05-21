@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-21T18:23:39.634004+00:00",
+  "last_updated": "2026-05-21T18:39:24.847697+00:00",
   "next_id": "CS-2026-177",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-20",
@@ -49,7 +49,7 @@
       "investigation": 25,
       "quick": 30
     },
-    "last_updated": "2026-05-21T18:23:39.634004+00:00",
+    "last_updated": "2026-05-21T18:39:24.847697+00:00",
     "last_counted": "2026-05-21"
   },
   "changesets": [
@@ -12294,7 +12294,7 @@
       "outcome": null,
       "closed_date": null,
       "file": "cgo-logs/changesets/CS-2026-176.md",
-      "notes": "New Shopify theme section (drinkkenetik/kenetik-shopify-theme, branch feat/ks-subscription-product, commit 627ce41). Foundational infrastructure for single-bundle PDPs with one-time / Subscribe & Save purchase options. No PR opened yet per Katie. Status flips to published when deployed to live theme. | 2026-05-21 fix: removed Save % badge next to Subscribe & Save price and Recharge footnote under cadence dropdown (commit a309f6d). Approved by Katie in-session. | 2026-05-21 fix: wired thumbnail-to-main image swap with fade transition + keyboard a11y (commit 25a005f).",
+      "notes": "New Shopify theme section (drinkkenetik/kenetik-shopify-theme, branch feat/ks-subscription-product, commit 627ce41). Foundational infrastructure for single-bundle PDPs with one-time / Subscribe & Save purchase options. No PR opened yet per Katie. Status flips to published when deployed to live theme. | 2026-05-21 fix: removed Save % badge next to Subscribe & Save price and Recharge footnote under cadence dropdown (commit a309f6d). Approved by Katie in-session. | 2026-05-21 fix: wired thumbnail-to-main image swap with fade transition + keyboard a11y (commit 25a005f). | 2026-05-21 fix: added hero as first gallery thumb so users can return to the main product image after viewing a thumb (commit 5ae3e97). Thumb grid widened to 5 columns scoped to this section.",
       "execution_target_date": null,
       "executed_date": "2026-05-21",
       "autonomy_tier": null,
