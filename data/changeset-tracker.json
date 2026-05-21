@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-21T09:14:48.163169+00:00",
-  "next_id": "CS-2026-176",
+  "last_updated": "2026-05-21T17:52:26.967873+00:00",
+  "next_id": "CS-2026-177",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-05-20",
     "last_sweep_session": "2026-05-20-s1",
@@ -30,27 +30,27 @@
     ]
   },
   "summary": {
-    "total": 174,
+    "total": 175,
     "by_status": {
       "closed": 75,
       "published": 17,
-      "approved": 12,
+      "approved": 13,
       "draft": 68,
       "needs_feedback": 2
     },
     "by_risk": {
       "critical": 2,
-      "low": 87,
+      "low": 88,
       "medium": 73,
       "high": 12
     },
     "by_subtype": {
-      "implementation": 119,
+      "implementation": 120,
       "investigation": 25,
       "quick": 30
     },
-    "last_updated": "2026-05-21T09:14:48.145025+00:00",
-    "last_counted": "2026-05-20"
+    "last_updated": "2026-05-21T17:52:26.967873+00:00",
+    "last_counted": "2026-05-21"
   },
   "changesets": [
     {
@@ -12247,6 +12247,58 @@
         "Katie"
       ],
       "notes": "Lifecycle calendar June 2026 v6 \u2014 event_seasonal send. "
+    },
+    {
+      "id": "CS-2026-176",
+      "title": "KS Subscription Product Shopify Section",
+      "subtype": "implementation",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify"
+      ],
+      "status": "approved",
+      "risk_level": "low",
+      "owner": "Katie Spaller",
+      "created": "2026-05-21",
+      "objective_level": "L2",
+      "category": "website_cro",
+      "dependencies": [],
+      "blocks": [],
+      "spawned_from": null,
+      "spawned_changesets": [],
+      "expected_impact": {
+        "revenue": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "margin": {
+          "upside": 0,
+          "expected": 0,
+          "downside": 0
+        },
+        "primary_metric": "bundle_pdp_cvr",
+        "primary_metric_target": "TBD on first live deployment"
+      },
+      "routed_to": [
+        "Katie"
+      ],
+      "routed_via": "cowork-session",
+      "routed_date": "2026-05-21",
+      "approved_by": "Katie",
+      "approved_date": "2026-05-21",
+      "published_date": null,
+      "measurement_window": null,
+      "measurement_due": null,
+      "actual_impact": null,
+      "outcome": null,
+      "closed_date": null,
+      "file": "cgo-logs/changesets/CS-2026-176.md",
+      "notes": "New Shopify theme section (drinkkenetik/kenetik-shopify-theme, branch feat/ks-subscription-product, commit 627ce41). Foundational infrastructure for single-bundle PDPs with one-time / Subscribe & Save purchase options. No PR opened yet per Katie. Status flips to published when deployed to live theme.",
+      "execution_target_date": null,
+      "executed_date": "2026-05-21",
+      "autonomy_tier": null,
+      "sweep_flags": []
     }
   ],
   "queue_actions": {
