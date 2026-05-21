@@ -694,6 +694,20 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-05-19"
+    },
+    {
+      "id": "L-099",
+      "summary": "Governance-fix CSes (CS-152/153/155) blocked by the L-098 failure mode they target; bootstrapping recursion.",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-05-21"
+    },
+    {
+      "id": "L-100",
+      "summary": "Calendar writeback debt has two independent failure modes: L-060 patch undeployed AND upstream CS lifecycle stall (CS-2026-111/112/161 draft).",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-05-21"
     }
   ],
   "entries": [
@@ -2234,6 +2248,44 @@
         "L-094"
       ],
       "target": "kenetik-growth-system/commands/changeset-execute.md and changeset-review.md - incorporate 'launch-equivalent forcing function' pattern into pre-deadline status gates so non-launch deadlines inherit launch-class observability rhythm"
+    },
+    {
+      "id": "L-099",
+      "date": "2026-05-21",
+      "type": "process_change",
+      "learning": "Governance-fix ChangeSets blocked by the failure mode they target: CS-2026-152 (huddle governance), CS-153 (pre-deadline hardgate), CS-155 (pat-017 promotion) were all designed to install forcing functions for acknowledge-and-defer (L-098), but all three remain draft because they themselves require the very forcing function they would create. Bootstrapping problem.",
+      "source": "Synthesis 2026-05-21-s1 / Ops dept INS-001",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Tracker.json shows CS-2026-152/153/155 all status=draft on session 55; pat-017 forcing-function-vs-capacity diagnosis (L-098) names the failure mode these CSes were designed to fix; CS-152 paired-post live test gated on CS-091 unblock. See daily synthesis 2026-05-21-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-086",
+        "L-093",
+        "L-098"
+      ],
+      "target": "cgo-daily-pipeline/config/changeset-instructions.md \u2014 add a self-bootstrap exception flag for governance/forcing-function CSes such that they advance through an alternate review path (e.g., paired-CS hard-gate or pipeline-level forcing) rather than the owner-discretion path that fails on them."
+    },
+    {
+      "id": "L-100",
+      "date": "2026-05-21",
+      "type": "skill_update",
+      "learning": "Calendar writeback debt has at least TWO independent failure modes: (a) Foster's writeback patch undeployed (L-060), and (b) upstream ChangeSet lifecycle stall on the linked CSes (CS-2026-111/112/161 all draft for Memorial Day on session 55). Treating L-060 as the sole root cause masks the second mechanism \u2014 observers attribute writeback silence to mechanism-broken rather than CS-lifecycle-stalled.",
+      "source": "Synthesis 2026-05-21-s1 / Market Intel INV-MI-1",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "Memorial Day parent has CS-2026-111/112 linked but tracker shows both status=draft; Trigger-1 writeback only fires on CS execution/publication; D13 SIGNAL 2 reports writeback-broken framing while INV-MI-1 isolates upstream CS-lifecycle stall as a distinct cause. See daily synthesis 2026-05-21-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-060",
+        "L-084",
+        "L-086"
+      ],
+      "target": "cgo-daily-pipeline/config/calendar-writeback-protocol.md \u2014 add diagnostic precondition: 'before declaring writeback broken, verify the linked CSes' status; if any are draft, the writeback is correctly inactive, not broken.'"
     }
   ],
   "archived_entries": [
@@ -2675,5 +2727,5 @@
       "archived_reason": "Action taken 2026-05-01; >=7 days live; Process 3.8 Step 0b auto-archive."
     }
   ],
-  "last_updated": "2026-05-20"
+  "last_updated": "2026-05-21T23:45:22.152058+00:00"
 }
