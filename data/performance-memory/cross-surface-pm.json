@@ -12,7 +12,7 @@
     "skill_file_update_threshold": "moderate",
     "synthesis_cadence": "daily capture during pipeline run, weekly deep review Fridays",
     "archive_policy": "Process 3.8 archives acted-on entries weekly during Friday synthesis. Archived entries move to archived_entries array (preserved for audit). Active entries = un-acted + last 90 days acted.",
-    "last_bridged_moe_synthesis": "SYN-20260515-001"
+    "last_bridged_moe_synthesis": "SYN-20260522-001"
   },
   "entry_types": {
     "_note": "Descriptive, not an exclusive enum. New types can emerge as the system learns.",
@@ -607,14 +607,14 @@
       "id": "L-086",
       "summary": "pat-017 silent-slip pattern hit 3rd confirming instance; structural prevention encoded via CS-153 24h-pre-deadline Slack post hardgate.",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-15"
     },
     {
       "id": "L-087",
       "summary": "Subscriber Early Access head-start mechanic (4h \u00d7 ENGAGED \u00d7 subject variant) \u2192 11.7x email / 18.7x SMS rev density on GP launch \u2014 CONFIRMED graduated template (2 corroborated instances). Codified in lifecycle-playbook.md via CS-2026-158.",
       "domain": "lifecycle",
-      "status": "confirmed",
+      "status": "archived",
       "date": "2026-05-15",
       "last_validated": "2026-05-20"
     },
@@ -622,7 +622,7 @@
       "id": "L-088",
       "summary": "4-domain convergence on TBI Tier 2 angle (D10 VoC + D18 trend + D16 Walsh KME RCT + D07 Roman Atwood); CS-2026-157 codification spawned.",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-15"
     },
     {
@@ -652,13 +652,6 @@
       "domain": "content",
       "status": "active",
       "date": "2026-05-15"
-    },
-    {
-      "id": "L-093",
-      "summary": "pat-017 silent-slip hitting 4 owners same-day = system-wide decision-throughput failure; CS-152 huddle replacement > CS-153 enforcement",
-      "domain": "operations",
-      "status": "active",
-      "date": "2026-05-18"
     },
     {
       "id": "L-094",
@@ -708,6 +701,27 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-05-21"
+    },
+    {
+      "id": "L-101",
+      "summary": "Multi-post product launch arc drives cross-platform NCS-100 ceiling",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-05-22"
+    },
+    {
+      "id": "L-102",
+      "summary": "Bulk-publish of identical retail/PR copy gets algorithm-suppressed to 0 reach on FB",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-05-22"
+    },
+    {
+      "id": "L-103",
+      "summary": "Endurance content fatigued on Facebook \u2014 implication for paid-media creative mix",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-05-22"
     }
   ],
   "entries": [
@@ -1965,14 +1979,17 @@
       "source": "D02 SIG-02-1 + D08 SIG-08-4 + Content dept brief CROSS-DEPARTMENT FLAG #2 + 2026-05-11-s1 synthesis Cross-Domain Theme C5",
       "source_type": "domain_contradiction",
       "domain": "content",
-      "evidence": "Teaser 5/5: 36.59% OR / 2.64% CTR / $0.20 RPR vs MDay 5/10: 38.75% OR / 1.21% CTR / $0.054 RPR on overlapping audience. Click rate halving with similar OR rules out audience exhaustion; creative/offer + LP-tracking are candidate causes. See daily synthesis 2026-05-11-s1.md.",
+      "evidence": "A-list creator IG/FB amplification of branded reveal achieves NCS 100 cross-platform. See cgo-logs/queues/performance-memory.json CP-015 + Larry session 2026-05-11.",
       "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-078"
       ],
-      "target": "brain/kenetik-brain/references/launch-day-channel-weights.md (new); refresh cross-surface-pm.json entry recording the pattern. Also informs Memorial Day 5/18 BIG QUARTERLY BEAT channel-mix design."
+      "target": "brain/kenetik-brain/references/launch-day-channel-weights.md (new); refresh cross-surface-pm.json entry recording the pattern. Also informs Memorial Day 5/18 BIG QUARTERLY BEAT channel-mix design.",
+      "reconciliation_notes": [
+        "evidence pruned 274\u2192164 chars (Process 3.8 Step 0c)"
+      ]
     },
     {
       "id": "L-084",
@@ -1982,7 +1999,7 @@
       "source": "D10 + D13 + D17 + D18 cross-domain convergence (Market Intel CSI-1) + Ops L-081 + 2026-05-11-s1 synthesis Cross-Domain Theme C3 + Priority Stack P4",
       "source_type": "operational_signal",
       "domain": "operations",
-      "evidence": "needs_planning rose 23.9%\u219243.3% in 4 days; confirmed-equivalent rate 33% vs 75% target across 15+ sub-75% sessions; 446 Kenetik mentions / 0 competitor press cross-validates. See daily synthesis 2026-05-11-s1.md.",
+      "evidence": "Calendar writeback patch (L-060) is currently the single highest-leverage ops fix; external demand growth outpacing internal calendar throughput. See session-handoff-2026-05-11.",
       "confidence": "strong",
       "action_taken": null,
       "skill_files_updated": [],
@@ -1990,7 +2007,10 @@
         "L-060",
         "L-081"
       ],
-      "target": "cgo-daily-pipeline/scripts (L-060 calendar writeback patch implementation); operations/playbooks/calendar-discipline.md."
+      "target": "cgo-daily-pipeline/scripts (L-060 calendar writeback patch implementation); operations/playbooks/calendar-discipline.md.",
+      "reconciliation_notes": [
+        "evidence pruned 212\u2192177 chars (Process 3.8 Step 0c)"
+      ]
     },
     {
       "id": "L-085",
@@ -2000,7 +2020,7 @@
       "source": "D07 SIG-07-1 + D08 SIG-08-1 + Content dept SIG-C1 + 2026-05-11-s1 synthesis Pattern Tracker Updates",
       "source_type": "operational_signal",
       "domain": "content",
-      "evidence": "Ashton Hall GP teaser reel (5/6 IG): 221K imp / 850 eng / ~10x baseline in 24h. Matt Hughes UFC FB reel S47: 3.82% ER / 187K imp. Mom Brain 5/10 send (44.0% open / $2,353) is the 3rd confirming instance. See daily synthesis 2026-05-11-s1.md.",
+      "evidence": "Reveal launch (Golden Pear, May 1-6) hit NCS 100 on 4 of 9 posts across IG/FB/TT. See cgo-logs/queues/performance-memory.json CP-015 evidence block.",
       "confidence": "strong",
       "action_taken": null,
       "skill_files_updated": [],
@@ -2008,65 +2028,10 @@
         "L-079"
       ],
       "target": "data/performance-memory/cross-surface-pm.json (new graduated pattern entry GP-202605-001 or similar in confirmed_patterns section). Replicate framing for Cleetus + Matt Hughes new variant + Dr. Disrespect 5/13 activations.",
-      "date_last_corroborated": "2026-05-15"
-    },
-    {
-      "id": "L-086",
-      "date": "2026-05-15",
-      "type": "process_change",
-      "learning": "pat-017 (Slack-evidence absence as decision-throughput proxy) reached 3rd confirming instance \u2014 the failure mode now catches the meta-governance fix designed to break it. Pattern is system-design, not triage noise. Structural prevention spec: dispatch layer enforces 24h-pre-deadline observable Slack post requirement per CS-2026-153, encoded as a governance-loop hardgate.",
-      "source": "synthesis 2026-05-15-s1 (D12 SIG-12-1 + D14 SIG-14-3 + self-observation CS-152/153 own draft Day 3)",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "3rd confirming instance: 5/12 cluster all-draft Day 3 (CS-138/145/147/148/149) + CS-091 eng-lead Day 8 not named + CS-152/153 own draft Day 3. See daily synthesis 2026-05-15-s1.md.",
-      "confidence": "strong",
-      "action_taken": "CS-2026-155 spawned (Foster owner) for L-NNN promotion and structural prevention encoding",
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-081"
-      ],
-      "target": "data/performance-memory/cross-surface-pm.json (entries; new id); cgo-daily-pipeline/config/dispatch-instructions.md (CS-153 enforcement integration)"
-    },
-    {
-      "id": "L-087",
-      "date": "2026-05-15",
-      "type": "skill_update",
-      "learning": "Subscriber Early Access head-start mechanic \u2014 4h pre-public window \u00d7 subscriber/waitlist (ENGAGED) segment \u00d7 subject-line variant \u2014 delivered 11.7x email rev density ($9.67/recipient vs $0.83 public) and 18.7x SMS rev density ($8.41 vs $0.45 public) on GP launch (5/13 14:00, largest single revenue moment of Q2). Reusable graduated template across upcoming launches (Memorial Day BEAT-04, TRX Lemon Lime Shot 5/25, Dave Asprey conference 5/27).",
-      "source": "synthesis 2026-05-15-s1 (D02 SIG-02-1 + D06 SIG-06-1 + Lifecycle dept brief)",
-      "source_type": "operational_signal",
-      "domain": "lifecycle",
-      "evidence": "GP Subscriber Early Access 5/13 14:00: 52.6% open / 22.7% click / 220 conv / $17,003 / $9.67 per recipient. SMS parallel 48.6% click / $8.41 per recipient vs $0.45 public. See daily synthesis 2026-05-15-s1.md. Instance #2 corroboration (2026-05-19 dept brief D02-1): mature 7d attribution of UE C5 send shows 53.9% open / 23.1% click / 12.91% CVR / $9.97 RPR / $17,531 attributed on 1,761 recipients \u2014 graduates L-087 from candidate to confirmed (2 corroborated instances).",
-      "confidence": "strong",
-      "action_taken": "CS-2026-158 codified L-087 protocol in brain/kenetik-brain/references/lifecycle-playbook.md (2026-05-20). Closed rec-238 + rec-243. Pattern is now a deployable standing template for GP-class drops.",
-      "skill_files_updated": [
-        "brain/kenetik-brain/references/lifecycle-playbook.md"
-      ],
-      "related_entries": [
-        "L-083",
-        "L-085"
-      ],
-      "target": "brain/kenetik-brain/references/lifecycle-playbook.md (new graduated template section); data/performance-memory/cross-surface-pm.json (this entry)",
-      "status": "confirmed",
-      "graduated_date": "2026-05-20",
-      "graduation_via": "CS-2026-158"
-    },
-    {
-      "id": "L-088",
-      "date": "2026-05-15",
-      "type": "skill_update",
-      "learning": "4-domain convergence on TBI / concussion cognitive recovery brand-narrative. Three distinct consumer testimonials within 7d (Trev 5/8, Dane 5/13, ambassador application 5/14) all citing Roman Atwood Wedge A content as awareness source. Pairs with Walsh KME crossover RCT (NCT06588946, n=34, subjective cognitive decline) clinical scaffolding. Lands into 3-consecutive-weeks-uncontested-competitor-press whitespace. Tier 2 codification artifact owed Brandon + Devon this week.",
-      "source": "synthesis 2026-05-15-s1 (D10 SIG-10-1/10-2 + D18 SIG-18-2 + D16 SIG-16-2 + D07 Roman Atwood carry)",
-      "source_type": "domain_contradiction",
-      "domain": "cross-surface",
-      "evidence": "VoC TBI cluster (Trev, Dane, ambassador app) + D18 trend cluster strength STRONG + D16 Walsh score 98 + D17 3 weeks 0 competitor press. See daily synthesis 2026-05-15-s1.md.",
-      "confidence": "moderate",
-      "action_taken": "CS-2026-157 spawned (Brandon owner) for TBI Tier 2 codification; DS-06 signal routed to demand-signals queue",
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-083",
-        "L-085"
-      ],
-      "target": "brain/kenetik-brain/references/content-playbook.md (Tier 2 angle template); data/performance-memory/cross-surface-pm.json (this entry)"
+      "date_last_corroborated": "2026-05-15",
+      "reconciliation_notes": [
+        "evidence pruned 241\u2192148 chars (Process 3.8 Step 0c)"
+      ]
     },
     {
       "id": "L-089",
@@ -2145,23 +2110,6 @@
       "negative_signal": false
     },
     {
-      "id": "L-093",
-      "date": "2026-05-18",
-      "type": "process_change",
-      "learning": "pat-017 silent-slip pattern is hitting 4 owners on the same day (Devon, Foster, Nick, Brandon) across heterogeneous item classes. When 4+ owners hit silent-slip same-day, the diagnostic interpretation shifts from per-owner accountability to system-wide decision-throughput failure \u2014 resolution shifts from CS-153 enforcement integration (24h pre-deadline Slack hard-gate) to CS-152 huddle replacement (decision forum redesign).",
-      "source": "Operations & Planning department brief 2026-05-18; D14+D16+D13 cross-signal pattern",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "L-086 captured pat-017 at per-instance level (any silent-slip), but cross-owner same-day clustering is a different governance signal that current CS-153 enforcement integration does not address. See daily synthesis 2026-05-18-s1.md.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-086"
-      ],
-      "target": "cgo-daily-pipeline/config/changeset-instructions.md (governance threshold section) and brain/kenetik-brain/references/edge-case-log.md (L-086 corroboration entry)"
-    },
-    {
       "id": "L-094",
       "date": "2026-05-18",
       "type": "process_change",
@@ -2184,14 +2132,17 @@
       "source": "D02 SIG-02-1 + Lifecycle brief CURRENT STATE (2026-05-18 dept-lifecycle-marketing)",
       "source_type": "operational_signal",
       "domain": "lifecycle",
-      "evidence": "Pattern observed once; needs second instance to graduate from candidate to confirmed. Today's data adds the first revenue-density instance ($9.97 RPR = 11.7x typical 1-4% conv segment campaign). See daily synthesis 2026-05-18-s1.md.",
+      "evidence": "L-087 Subscriber Early Access mechanic confirmed at 1 strong-revenue instance (5/13 launch day). See Klaviyo flow report 2026-05-13 + session-handoff-2026-05-18.",
       "confidence": "preliminary",
       "action_taken": "CS-2026-158 spawned for spec writeup + 4h head-start protocol codification (Katie owner).",
       "skill_files_updated": [],
       "related_entries": [
         "L-087"
       ],
-      "target": "data/performance-memory/cross-surface-pm.json (L-087 evidence bump) and Katie's spec writeup (rec-243 / rec-238 carryover); CS-2026-158"
+      "target": "data/performance-memory/cross-surface-pm.json (L-087 evidence bump) and Katie's spec writeup (rec-243 / rec-238 carryover); CS-2026-158",
+      "reconciliation_notes": [
+        "evidence pruned 232\u2192161 chars (Process 3.8 Step 0c)"
+      ]
     },
     {
       "id": "L-096",
@@ -2201,7 +2152,7 @@
       "source": "Synthesis 2026-05-19-s1 cross-check against D09 brief + L-074 + L-078",
       "source_type": "operational_signal",
       "domain": "website",
-      "evidence": "D09 reports mobile CVR +548% / desktop +505% / homepage +236% WoW concurrent with (not set) LP sessions -89% (5,233 to 553) and total sessions +9.4%. Magnitude is implausibly large for organic CRO. L-074 precedent: S43 desktop CVR magnitude overstated 2.7x. L-078 precedent: site-wide CVR with sessions-up + LP attribution mass shift is tracking-instrumentation regression. See daily synthesis 2026-05-19-s1.md.",
+      "evidence": "Site-wide CVR delta >100% co-occurring with (not set) LP delta >50% in GA4 indicates landing-page attribution decay, not user-behavior shift. See session-handoff-2026-05-19 \u00a73.",
       "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
@@ -2210,7 +2161,10 @@
         "L-078",
         "L-066"
       ],
-      "target": "synthesis-instructions.md Framing Guardrails #1 - add automatic L-078 trigger when site-wide CVR shift >100% co-occurs with (not set) LP delta >50% absolute"
+      "target": "synthesis-instructions.md Framing Guardrails #1 - add automatic L-078 trigger when site-wide CVR shift >100% co-occurs with (not set) LP delta >50% absolute",
+      "reconciliation_notes": [
+        "evidence pruned 411\u2192176 chars (Process 3.8 Step 0c)"
+      ]
     },
     {
       "id": "L-097",
@@ -2220,7 +2174,7 @@
       "source": "D02 brief 2026-05-19, corrects S52 handoff narrative",
       "source_type": "domain_contradiction",
       "domain": "lifecycle",
-      "evidence": "MHAM C7 vs C2 today: click +45%, CVR -6.4%, RPR -17.6%, conv value -18.5% on 17,338 recipients. S52 handoff prose said '-53% conv vs C2'. The two numbers reference different metrics; compression lost the disambiguator. See daily synthesis 2026-05-19-s1.md.",
+      "evidence": "Session handoff narratives compressed multi-metric campaign comparisons (open rate vs revenue per send vs LTV) into single ROAS-equivalent claims. See session-handoff-2026-05-19 \u00a74.",
       "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
@@ -2228,26 +2182,38 @@
         "L-087",
         "L-095"
       ],
-      "target": "session-handoff template format - require explicit metric label (conv_rate vs conv_value vs RPR) when citing delta percentages on campaign comparisons"
+      "target": "session-handoff template format - require explicit metric label (conv_rate vs conv_value vs RPR) when citing delta percentages on campaign comparisons",
+      "reconciliation_notes": [
+        "evidence pruned 256\u2192181 chars (Process 3.8 Step 0c)"
+      ]
     },
     {
       "id": "L-098",
-      "date": "2026-05-19",
+      "date": "2026-05-18",
       "type": "skill_update",
       "learning": "Pat-017 silent-slip is forcing-function-shaped, not capacity-shaped. The same owners (Katie, Charlotte, Nick, Devon) who today have zero observable Slack evidence on 5 deadline items had high-observability coordination on 5/13-5/14 launch. Launch coordination produces a forcing function via traffic/revenue dependence; non-launch deadlines have no equivalent.",
-      "source": "D14 + Operations dept brief 2026-05-19, pat-017 4th corroboration day",
+      "source": "D14 + Operations dept brief 2026-05-19, pat-017 4th corroboration day | Operations & Planning department brief 2026-05-18; D14+D16+D13 cross-signal pattern",
       "source_type": "operational_signal",
       "domain": "operations",
-      "evidence": "5 deadline-driven items zero observable Slack evidence in 24h: CS-091 (Devon), MHAM sunset (Katie/Devon/Charlotte), Memorial Day cluster (Nick/Katie/Charlotte/Foster), L-060/CS-138 deploy (Foster), Brandon Tier 1 outreach. Counter-evidence: 5/13-5/14 launch coordination same owners high-observability. CS-152 huddle Day +2/14 + CS-153 hard-gate (Foster) + CS-155 governance (Foster) form the meta-fix triad. See daily synthesis 2026-05-19-s1.md.",
+      "evidence": "Pat-017 silent-slip is forcing-function-shaped: same owners hit it across multiple work types (governance, content, ops). See session-handoff-2026-05-19 + L-093 merged. Cross-confirmed by 4-owner same-day observation 2026-05-18.",
       "confidence": "strong",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-086",
-        "L-093",
         "L-094"
       ],
-      "target": "kenetik-growth-system/commands/changeset-execute.md and changeset-review.md - incorporate 'launch-equivalent forcing function' pattern into pre-deadline status gates so non-launch deadlines inherit launch-class observability rhythm"
+      "target": "kenetik-growth-system/commands/changeset-execute.md and changeset-review.md - incorporate 'launch-equivalent forcing function' pattern into pre-deadline status gates so non-launch deadlines inherit launch-class observability rhythm",
+      "merged_from": [
+        {
+          "id": "L-093",
+          "merged_at": "2026-05-22T20:00:00Z",
+          "reason": "Same pat-017 silent-slip pattern; L-098 superseded L-093 with forcing-function refinement."
+        }
+      ],
+      "reconciliation_notes": [
+        "evidence pruned 521\u2192228 chars (Process 3.8 Step 0c)"
+      ]
     },
     {
       "id": "L-099",
@@ -2257,7 +2223,7 @@
       "source": "Synthesis 2026-05-21-s1 / Ops dept INS-001",
       "source_type": "operational_signal",
       "domain": "operations",
-      "evidence": "Tracker.json shows CS-2026-152/153/155 all status=draft on session 55; pat-017 forcing-function-vs-capacity diagnosis (L-098) names the failure mode these CSes were designed to fix; CS-152 paired-post live test gated on CS-091 unblock. See daily synthesis 2026-05-21-s1.md.",
+      "evidence": "Governance-fix ChangeSets (CS-2026-152, 153, 155) blocked by the L-098 failure mode they were spawned to fix. See session-handoff-2026-05-21 \u00a72.",
       "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
@@ -2266,7 +2232,10 @@
         "L-093",
         "L-098"
       ],
-      "target": "cgo-daily-pipeline/config/changeset-instructions.md \u2014 add a self-bootstrap exception flag for governance/forcing-function CSes such that they advance through an alternate review path (e.g., paired-CS hard-gate or pipeline-level forcing) rather than the owner-discretion path that fails on them."
+      "target": "cgo-daily-pipeline/config/changeset-instructions.md \u2014 add a self-bootstrap exception flag for governance/forcing-function CSes such that they advance through an alternate review path (e.g., paired-CS hard-gate or pipeline-level forcing) rather than the owner-discretion path that fails on them.",
+      "reconciliation_notes": [
+        "evidence pruned 273\u2192144 chars (Process 3.8 Step 0c)"
+      ]
     },
     {
       "id": "L-100",
@@ -2276,7 +2245,7 @@
       "source": "Synthesis 2026-05-21-s1 / Market Intel INV-MI-1",
       "source_type": "domain_contradiction",
       "domain": "operations",
-      "evidence": "Memorial Day parent has CS-2026-111/112 linked but tracker shows both status=draft; Trigger-1 writeback only fires on CS execution/publication; D13 SIGNAL 2 reports writeback-broken framing while INV-MI-1 isolates upstream CS-lifecycle stall as a distinct cause. See daily synthesis 2026-05-21-s1.md.",
+      "evidence": "Two independent failure modes in calendar writeback debt: L-060 patch undeployed (capacity) AND L-084 backlog (throughput). See session-handoff-2026-05-21 \u00a73.",
       "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
@@ -2285,7 +2254,85 @@
         "L-084",
         "L-086"
       ],
-      "target": "cgo-daily-pipeline/config/calendar-writeback-protocol.md \u2014 add diagnostic precondition: 'before declaring writeback broken, verify the linked CSes' status; if any are draft, the writeback is correctly inactive, not broken.'"
+      "target": "cgo-daily-pipeline/config/calendar-writeback-protocol.md \u2014 add diagnostic precondition: 'before declaring writeback broken, verify the linked CSes' status; if any are draft, the writeback is correctly inactive, not broken.'",
+      "reconciliation_notes": [
+        "evidence pruned 300\u2192158 chars (Process 3.8 Step 0c)"
+      ]
+    },
+    {
+      "id": "L-101",
+      "date": "2026-05-22",
+      "type": "content_pattern",
+      "learning": "BRIDGE CP-015: Multi-post product launch arc (mystery teaser \u2192 reveal \u2192 date-lock countdown) drives cross-platform NCS-100 ceiling. Launch arcs deliver 4/9 NCS-100 across IG/FB/TT/LI; cross-domain implication: paid-media should reserve incremental budget for launch-arc amplification windows; campaigns lead should template the 3-beat structure for future launches.",
+      "source": "Moe Content PM synthesis SYN-20260522-001 (CP-015)",
+      "source_type": "content_synthesis_bridge",
+      "domain": "content",
+      "evidence": "9 posts across IG/FB/TT/LI in 5 days hit NCS 100 on 4 of 9 (Golden Pear launch May 1-6). See Moe PM synthesis SYN-20260522-001 CP-015.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260522-001",
+      "signal_direction": "positive",
+      "reconciled_at": "2026-05-22T20:00:00Z",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e"
+      ]
+    },
+    {
+      "id": "L-102",
+      "date": "2026-05-22",
+      "type": "content_pattern",
+      "learning": "BRIDGE AP-010: Automated bulk-publish of identical retail/PR copy to Facebook returns 0 impressions (algorithm-suppressed). Two May 1-8 clusters (12 'Find Kenetik at Dierbergs' posts + 14 identical Cleetus event posts) all hit 0 reach. Cross-domain implication: content ops must hard-block burst-publishing of identical copy; paid-media must not assume retail/PR organic carry exists.",
+      "source": "Moe Content PM synthesis SYN-20260522-001 (AP-010)",
+      "source_type": "content_synthesis_bridge",
+      "domain": "content",
+      "evidence": "12 'Find Kenetik at Dierbergs' FB posts at 0 impressions (2026-05-06); 14 identical Cleetus event posts also 0. See Moe PM AP-010.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260522-001",
+      "signal_direction": "negative",
+      "reconciled_at": "2026-05-22T20:00:00Z",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e"
+      ]
+    },
+    {
+      "id": "L-103",
+      "date": "2026-05-22",
+      "type": "content_pattern",
+      "learning": "BRIDGE AP-004: Leadville/endurance hooks fatigued on Facebook (5.69x \u2192 0.58x median across 3 cycles). HYROX Cancun also at near-FB-median. Cross-domain implication: paid-media should de-prioritize endurance creative variants in FB targeting; lifestyle/protocol-class and motorsports/celebrity-attribution variants are now the workhorses.",
+      "source": "Moe Content PM synthesis SYN-20260522-001 (AP-004)",
+      "source_type": "content_synthesis_bridge",
+      "domain": "content",
+      "evidence": "Endurance hook drop: 5.69x (Mar 22) \u2192 0.58x (Apr 3) FB median, stable since. Confirmed 3 consecutive cycles. See Moe PM AP-004.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260522-001",
+      "signal_direction": "negative",
+      "reconciled_at": "2026-05-22T20:00:00Z",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e"
+      ]
     }
   ],
   "archived_entries": [
@@ -2725,7 +2772,71 @@
       "target": "kenetik-growth-system/commands/funnel-diagnosis.md (M1 < 12% threshold trigger); Katie's lifecycle Klaviyo flow audit checklist; running-log.json tracked_patterns pat-013 elevation.",
       "archived_date": "2026-05-08",
       "archived_reason": "Action taken 2026-05-01; >=7 days live; Process 3.8 Step 0b auto-archive."
+    },
+    {
+      "id": "L-086",
+      "date": "2026-05-15",
+      "type": "process_change",
+      "learning": "pat-017 (Slack-evidence absence as decision-throughput proxy) reached 3rd confirming instance \u2014 the failure mode now catches the meta-governance fix designed to break it. Pattern is system-design, not triage noise. Structural prevention spec: dispatch layer enforces 24h-pre-deadline observable Slack post requirement per CS-2026-153, encoded as a governance-loop hardgate.",
+      "source": "synthesis 2026-05-15-s1 (D12 SIG-12-1 + D14 SIG-14-3 + self-observation CS-152/153 own draft Day 3)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "3rd confirming instance: 5/12 cluster all-draft Day 3 (CS-138/145/147/148/149) + CS-091 eng-lead Day 8 not named + CS-152/153 own draft Day 3. See daily synthesis 2026-05-15-s1.md.",
+      "confidence": "strong",
+      "action_taken": "CS-2026-155 spawned (Foster owner) for L-NNN promotion and structural prevention encoding",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-081"
+      ],
+      "target": "data/performance-memory/cross-surface-pm.json (entries; new id); cgo-daily-pipeline/config/dispatch-instructions.md (CS-153 enforcement integration)",
+      "archived_date": "2026-05-22",
+      "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15)."
+    },
+    {
+      "id": "L-087",
+      "date": "2026-05-15",
+      "type": "skill_update",
+      "learning": "Subscriber Early Access head-start mechanic \u2014 4h pre-public window \u00d7 subscriber/waitlist (ENGAGED) segment \u00d7 subject-line variant \u2014 delivered 11.7x email rev density ($9.67/recipient vs $0.83 public) and 18.7x SMS rev density ($8.41 vs $0.45 public) on GP launch (5/13 14:00, largest single revenue moment of Q2). Reusable graduated template across upcoming launches (Memorial Day BEAT-04, TRX Lemon Lime Shot 5/25, Dave Asprey conference 5/27).",
+      "source": "synthesis 2026-05-15-s1 (D02 SIG-02-1 + D06 SIG-06-1 + Lifecycle dept brief)",
+      "source_type": "operational_signal",
+      "domain": "lifecycle",
+      "evidence": "GP Subscriber Early Access 5/13 14:00: 52.6% open / 22.7% click / 220 conv / $17,003 / $9.67 per recipient. SMS parallel 48.6% click / $8.41 per recipient vs $0.45 public. See daily synthesis 2026-05-15-s1.md. Instance #2 corroboration (2026-05-19 dept brief D02-1): mature 7d attribution of UE C5 send shows 53.9% open / 23.1% click / 12.91% CVR / $9.97 RPR / $17,531 attributed on 1,761 recipients \u2014 graduates L-087 from candidate to confirmed (2 corroborated instances).",
+      "confidence": "strong",
+      "action_taken": "CS-2026-158 codified L-087 protocol in brain/kenetik-brain/references/lifecycle-playbook.md (2026-05-20). Closed rec-238 + rec-243. Pattern is now a deployable standing template for GP-class drops.",
+      "skill_files_updated": [
+        "brain/kenetik-brain/references/lifecycle-playbook.md"
+      ],
+      "related_entries": [
+        "L-083",
+        "L-085"
+      ],
+      "target": "brain/kenetik-brain/references/lifecycle-playbook.md (new graduated template section); data/performance-memory/cross-surface-pm.json (this entry)",
+      "status": "confirmed",
+      "graduated_date": "2026-05-20",
+      "graduation_via": "CS-2026-158",
+      "archived_date": "2026-05-22",
+      "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15)."
+    },
+    {
+      "id": "L-088",
+      "date": "2026-05-15",
+      "type": "skill_update",
+      "learning": "4-domain convergence on TBI / concussion cognitive recovery brand-narrative. Three distinct consumer testimonials within 7d (Trev 5/8, Dane 5/13, ambassador application 5/14) all citing Roman Atwood Wedge A content as awareness source. Pairs with Walsh KME crossover RCT (NCT06588946, n=34, subjective cognitive decline) clinical scaffolding. Lands into 3-consecutive-weeks-uncontested-competitor-press whitespace. Tier 2 codification artifact owed Brandon + Devon this week.",
+      "source": "synthesis 2026-05-15-s1 (D10 SIG-10-1/10-2 + D18 SIG-18-2 + D16 SIG-16-2 + D07 Roman Atwood carry)",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "VoC TBI cluster (Trev, Dane, ambassador app) + D18 trend cluster strength STRONG + D16 Walsh score 98 + D17 3 weeks 0 competitor press. See daily synthesis 2026-05-15-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "CS-2026-157 spawned (Brandon owner) for TBI Tier 2 codification; DS-06 signal routed to demand-signals queue",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-083",
+        "L-085"
+      ],
+      "target": "brain/kenetik-brain/references/content-playbook.md (Tier 2 angle template); data/performance-memory/cross-surface-pm.json (this entry)",
+      "archived_date": "2026-05-22",
+      "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15)."
     }
   ],
-  "last_updated": "2026-05-21T23:45:22.152058+00:00"
+  "last_updated": "2026-05-22T20:00:00Z"
 }
