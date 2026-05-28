@@ -1,19 +1,19 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-05-28T09:22:57.275131+00:00",
-  "next_id": "CS-2026-178",
+  "last_updated": "2026-05-28T19:21:16.834762+00:00",
+  "next_id": "CS-2026-186",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-21",
-    "last_sweep_session": "2026-05-21-s1",
-    "last_sweep_result": "measurement_capable_mixed_polar_restored_day1_klaviyo_orchestrator_only_sprout_dark_d6",
+    "last_sweep_date": "2026-05-28",
+    "last_sweep_session": "2026-05-28-s1",
+    "last_sweep_result": "measurement_deferred_polar_unavailable_3rd_session_klaviyo_state_fresh",
     "last_sweep_counts": {
-      "stale_flagged": 12,
+      "stale_flagged": 13,
       "measurement_overdue": 12,
       "auto_closed": 0,
       "pending_measurement_queue_size": 12,
       "measurement_capable": false,
-      "idempotent_run": 6,
-      "new_changesets_spawned": 1
+      "idempotent_run": 0,
+      "new_changesets_spawned": 8
     },
     "pending_measurement_queue": [
       "CS-2026-020",
@@ -31,27 +31,27 @@
     ]
   },
   "summary": {
-    "total": 176,
+    "total": 184,
     "by_status": {
       "closed": 75,
       "published": 17,
       "approved": 13,
-      "draft": 69,
+      "draft": 77,
       "needs_feedback": 2
     },
     "by_risk": {
       "critical": 2,
-      "low": 88,
-      "medium": 74,
-      "high": 12
+      "low": 89,
+      "medium": 77,
+      "high": 16
     },
     "by_subtype": {
-      "implementation": 121,
-      "investigation": 25,
-      "quick": 30
+      "implementation": 126,
+      "investigation": 27,
+      "quick": 31
     },
-    "last_updated": "2026-05-28T09:22:57.262142+00:00",
-    "last_counted": "2026-05-21"
+    "last_updated": "2026-05-28T19:21:16.834762+00:00",
+    "last_counted": "2026-05-28"
   },
   "changesets": [
     {
@@ -3018,6 +3018,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -4396,6 +4402,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-20"
@@ -4794,6 +4806,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "measurement_window_end": "2026-05-26"
@@ -7677,6 +7695,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -7786,6 +7810,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -8215,6 +8245,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-28"
@@ -8451,6 +8487,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-05-04"
@@ -9864,6 +9906,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "created": "2026-04-27",
@@ -10346,6 +10394,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "scheduled_send_date": null,
@@ -10570,6 +10624,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-29",
@@ -10921,6 +10981,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "created": "2026-05-04",
@@ -11013,6 +11079,12 @@
           "set_date": "2026-05-21",
           "session": "2026-05-21-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "created": "2026-05-04",
@@ -12371,7 +12443,14 @@
       "execution_target_date": null,
       "executed_date": "2026-05-21",
       "autonomy_tier": null,
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-05-28",
+          "session": "2026-05-28-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-177",
@@ -12394,6 +12473,159 @@
       "hypothesis": "Distilling Frontiers in Nutrition meta-analysis (2026-05-12, exogenous ketones + cognition, SMD=0.26, n=1347, p=0.0007, both ester and MCT significant) into consumer-facing Tier-2 cognitive-claim content during the live MHAM More Good Days window (~10 days remaining) and ahead of Asprey BEYOND (5/27) materially strengthens DS-06 Wedge A counter-positioning vs Neutonic (synthetic-nootropic, $6M raise) and KEY (caffeine-contrast). Frame: 'Not a synthetic nootropic \u2014 actual brain fuel. Peer-reviewed cognitive effect across n=1,347.' Expected: codified Wedge A claims anchor + lifecycle email/SMS adaptation + KenetikPro practitioner copy block. Devon claims-compliance gate required pre-publication; Katie owns Klaviyo distribution; target publish 5/27-5/28.",
       "notes": "Cross-domain convergence: D17 SIG-17-1 + D18 SIG-18-1 + D10 SIG-10-1 (Crawford TBI) + D18 SIG-18-3 (Neutonic). Pairs with rec-235 counter-positioning memo extension and CS-2026-157 TBI Tier 2 codification on same evidence stack (Walsh KME RCT + Lyksholm renal RCT + Frontiers). Resolution Hierarchy Step 4 (Add) justified: no existing CS can absorb a SMD=0.26 cognitive-effect meta-analysis without diluting its specific frame. Pass-through dependencies: Devon Sprout 403 / CS-091 chain for downstream measurement; not blocking on those for authoring.",
       "measurement_window": "14d"
+    },
+    {
+      "id": "CS-2026-178",
+      "title": "Cleetus Paid Whitelisting Pause & Daytona Isolation",
+      "status": "draft",
+      "department": "paid-media",
+      "platforms": [
+        "meta-ads",
+        "superfiliate"
+      ],
+      "created": "2026-05-28",
+      "last_updated": "2026-05-28",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "synthesis_priority_stack",
+      "hypothesis": "19 of 20 Cleetus paid whitelist ads operate at 0.65x ROAS \u2014 pausing all except Daytona isolation variant should preserve top-performer signal while halting margin bleed. Per dept-content DA-CONTENT-02.",
+      "notes": "REMOVE-not-refine action. Spawned from synthesis 2026-05-28-s1 Priority Stack. Resolution Hierarchy step 2."
+    },
+    {
+      "id": "CS-2026-179",
+      "title": "2026-03 Cohort Source Segmentation (Cleetus vs Organic) M1 RCA",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo",
+        "shopify"
+      ],
+      "created": "2026-05-28",
+      "last_updated": "2026-05-28",
+      "subtype": "investigation",
+      "risk_level": "high",
+      "autonomy_tier": 2,
+      "owner": "Alisha McGinn",
+      "source": "synthesis_priority_stack",
+      "hypothesis": "2026-03 cohort (N=5,899) is largest in 16 months but M1=6.2% (worst reading), dragging L2 m3_repeat_rate lever. Segmenting by acquisition source (Cleetus-attributed vs organic) will falsify H-D02-01 and determine whether to tighten paid acquisition gates vs fix structural onboarding.",
+      "notes": "Spawned from synthesis 2026-05-28-s1 P2. Co-owner: Katie Spaller. Critical for L2 lever pacing."
+    },
+    {
+      "id": "CS-2026-180",
+      "title": "UE | First-Time Post Purchase 2026 Restoration / Falsification Test",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "created": "2026-05-28",
+      "last_updated": "2026-05-28",
+      "subtype": "implementation",
+      "risk_level": "high",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "synthesis_priority_stack",
+      "hypothesis": "UE First-Time Post Purchase flow status unclear. If disabled, restoring it should catch 2026-04/05 cohorts inside M1 windows and lift M1 retention to historical 12-15% range. Co-owner: Alisha McGinn.",
+      "notes": "Spawned from synthesis 2026-05-28-s1 P3. dept-lifecycle LM-S1-A2."
+    },
+    {
+      "id": "CS-2026-181",
+      "title": "MDW Memorial Reel Paid Graduation (conditional on paid_status verification)",
+      "status": "draft",
+      "department": "content",
+      "platforms": [
+        "instagram-organic",
+        "facebook-organic",
+        "meta-ads"
+      ],
+      "created": "2026-05-28",
+      "last_updated": "2026-05-28",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Nick Lacagnina",
+      "source": "synthesis_priority_stack",
+      "hypothesis": "MDW Memorial Reel hit FB 7.39% ER / IG 6.35% ER (4-5x baselines) \u2014 strongest dual-platform organic event of cycle. Graduating to paid should amplify reach while creative is hot. Gated on paid_status verification first. Co-owner: Katie Spaller.",
+      "notes": "Spawned from synthesis 2026-05-28-s1 What Worked. dept-content DA-CONTENT-01."
+    },
+    {
+      "id": "CS-2026-182",
+      "title": "Claims-Gated ADHD Content Lane (Brandon \u2192 Charlotte \u2192 Peter r/ADHD)",
+      "status": "draft",
+      "department": "content",
+      "platforms": [
+        "blog",
+        "instagram-organic",
+        "tiktok-organic"
+      ],
+      "created": "2026-05-28",
+      "last_updated": "2026-05-28",
+      "subtype": "implementation",
+      "risk_level": "high",
+      "autonomy_tier": 2,
+      "owner": "Brandon Dyksterhouse",
+      "source": "synthesis_priority_stack",
+      "hypothesis": "r/ADHD signal has crossed codification threshold (3rd consecutive week). Claims-gated content lane: Brandon \u2192 claims compliance scan \u2192 Charlotte production \u2192 Peter posting to r/ADHD. Captures growing demand without claims exposure. Per dept-market-intelligence priority 3.",
+      "notes": "Spawned from synthesis 2026-05-28-s1. Hard claims gate required \u2014 risk level high until claims matrix updated."
+    },
+    {
+      "id": "CS-2026-183",
+      "title": "Q3 Positioning Anchor Decision (Sport-Credibility vs Cognitive-Health)",
+      "status": "draft",
+      "department": "market-intelligence",
+      "platforms": [
+        "performance-memory",
+        "daily-pipeline"
+      ],
+      "created": "2026-05-28",
+      "last_updated": "2026-05-28",
+      "subtype": "investigation",
+      "risk_level": "high",
+      "autonomy_tier": 2,
+      "owner": "Cliff Morgan",
+      "source": "synthesis_priority_stack",
+      "hypothesis": "Pre-TRX 6/24 lock: must decide Q3 positioning anchor (sport-credibility vs cognitive-health). Decision affects content strategy, paid creative, partnerships, and athlete program. Deadline 2026-06-04. Co-owner: Devon Price.",
+      "notes": "Spawned from synthesis 2026-05-28-s1. Strategic decision \u2014 Cliff + Devon. Successor to rec-265. Per dept-market-intelligence priority 4."
+    },
+    {
+      "id": "CS-2026-184",
+      "title": "Methylene-Blue Counter-Positioning Content (24-72h window)",
+      "status": "draft",
+      "department": "content",
+      "platforms": [
+        "instagram-organic",
+        "tiktok-organic",
+        "blog"
+      ],
+      "created": "2026-05-28",
+      "last_updated": "2026-05-28",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Charlotte Thamm",
+      "source": "synthesis_priority_stack",
+      "hypothesis": "Methylene-blue trending in cognitive-performance space (D18 SIG-18-001). 24-72h window to layer counter-positioning content using CS-2026-139 template post-merge-unblock. Captures share-of-voice without claims risk.",
+      "notes": "Spawned from synthesis 2026-05-28-s1. Time-sensitive trend response. Depends on CS-2026-139 merge."
+    },
+    {
+      "id": "CS-2026-185",
+      "title": "Nick Task Reassignment (REMOVE-before-ADD)",
+      "status": "draft",
+      "department": "operations",
+      "platforms": [
+        "changeset-process"
+      ],
+      "created": "2026-05-28",
+      "last_updated": "2026-05-28",
+      "subtype": "quick",
+      "risk_level": "low",
+      "autonomy_tier": 1,
+      "owner": "Peter Bayne",
+      "source": "synthesis_priority_stack",
+      "hypothesis": "Nick's task load contains items better matched to other owners. Reassign QuikTrip BEAT-05/06/07 to Lawrence; YT-TEST-SPEND to Devon; archive expired tasks. Resolution Hierarchy STEP 2 (REMOVE). Per dept-operations OP-A4.",
+      "notes": "Spawned from synthesis 2026-05-28-s1. Capacity rebalance \u2014 frees Nick for creator/partnership focus."
     }
   ],
   "queue_actions": {
