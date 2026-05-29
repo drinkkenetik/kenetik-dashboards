@@ -743,6 +743,34 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-05-28"
+    },
+    {
+      "id": "L-107",
+      "summary": "ChangeSet status transitions logged in tracker can desync from actual platform state. CS-2026-178 was framed as executed/pause-complete in prior sessi",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-05-29"
+    },
+    {
+      "id": "L-108",
+      "summary": "2026-03 cohort M1 6.2% catastrophe (previously hypothesized as acquisition-quality cliff per L-068) is now hypothesized as FTPP flow-mediated failure ",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-05-29"
+    },
+    {
+      "id": "L-109",
+      "summary": "14 consecutive sessions of approval-to-execution gap with nudge-based intervention now empirically falsified. Communication-gap explanation is dead; s",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-05-29"
+    },
+    {
+      "id": "L-110",
+      "summary": "Operations department itself is operating on stale state files (215h team-tasks, 9d marketing-calendar) \u2014 reproducing the L-016 anti-pattern it has do",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-05-29"
     }
   ],
   "entries": [
@@ -2404,6 +2432,76 @@
         "L-098"
       ],
       "target": "synthesis-instructions.md Step 7a \u2014 extend D17 freshness gate to all alert types"
+    },
+    {
+      "id": "L-107",
+      "date": "2026-05-29",
+      "type": "process_change",
+      "learning": "ChangeSet status transitions logged in tracker can desync from actual platform state. CS-2026-178 was framed as executed/pause-complete in prior session narrative but tracker.json status remained 'draft' AND staging shows 21/21 cleetus ads active \u2014 three independent sources contradict the verbal-intent claim. The narrative-vs-state drift is a tracker hygiene risk.",
+      "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 D04 SIG-04-3 + paid-media-state.json (2026-05-29T10:55Z) + tracker.json CS-178",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "Three independent data sources agree CS-178 pause didn't execute: D04 SIG-04-3 (explicit correction), paid-media-state.json (0 paused / 139 active, 21 cleetus active), tracker.json (CS-178 status=draft, no measurement_window_end, no outcome populated). See daily synthesis 2026-05-29-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-098"
+      ],
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md framing-guardrails \u00a74 ChangeSet cross-check \u2014 expand to require both tracker-status match AND platform-state verification before claiming execution."
+    },
+    {
+      "id": "L-108",
+      "date": "2026-05-29",
+      "type": "skill_update",
+      "learning": "2026-03 cohort M1 6.2% catastrophe (previously hypothesized as acquisition-quality cliff per L-068) is now hypothesized as FTPP flow-mediated failure \u2014 same root cause explains BOTH low M1 AND low March sub_attach_rate. Collapses two open hypotheses (H-D02-01 + H-D02-02) into one falsifiable test under CS-2026-180.",
+      "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 Lifecycle dept CSI-LM-1 + Operations dept INS-OP-3",
+      "source_type": "operational_signal",
+      "domain": "lifecycle",
+      "evidence": "D06 explicitly converges: 'If FTPP flow was degraded during this period, it explains both low M1 repeat AND low attach simultaneously \u2014 both downstream of same FTPP flow failure.' D02 SIG-02-2 confirms 1 conversion / 1,310 delivered (0.076%). See daily synthesis 2026-05-29-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-068"
+      ],
+      "target": "data/performance-memory/cross-surface-pm.json L-068 \u2014 flag for status review pending CS-180 outcome; consider transition from 'confirmed' to 'under-review-by-CS-180'."
+    },
+    {
+      "id": "L-109",
+      "date": "2026-05-29",
+      "type": "process_change",
+      "learning": "14 consecutive sessions of approval-to-execution gap with nudge-based intervention now empirically falsified. Communication-gap explanation is dead; structural-cause hypothesis (H-D12-01: approvals don't generate scheduled execution slots) is the working model. Devon+Katie hold 87.5% of active CSes \u2014 exceeds 65% complexity-trigger threshold.",
+      "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 Operations dept INS-OP-2 + 5/28 nudge result (zero same-day executions)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "5/28 nudges produced zero same-day executions. 28d closed CS count = 10 (2.5/wk avg); last 14d = 1 closure; last 7d = 0. Active CS distribution: Katie 14, Devon 10, joint 4 = 28/32 (87.5%). See daily synthesis 2026-05-29-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-020",
+        "L-098"
+      ],
+      "target": "kenetik-growth-system/commands/changeset-execute.md AND CS-2026-152 (Decision-Throughput Governance) spec \u2014 CS-152 must include auto-scheduling on approval-event as a Step-1 component."
+    },
+    {
+      "id": "L-110",
+      "date": "2026-05-29",
+      "type": "process_change",
+      "learning": "Operations department itself is operating on stale state files (215h team-tasks, 9d marketing-calendar) \u2014 reproducing the L-016 anti-pattern it has documented. Self-reproduction of a documented failure mode signals the governance check needs to be load-bearing in the dept routine, not optional.",
+      "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 Operations dept INS-OP-5 + freshness-gate violations",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "team-tasks.json generated_at 2026-05-20T00:55Z (215h stale); marketing-calendar.json last_updated 2026-05-20 (9d stale). L-016 anti-pattern explicitly documents 'operating on stale state' as failure mode. See daily synthesis 2026-05-29-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-016",
+        "L-018"
+      ],
+      "target": "monthly-calibration checklist + dept-operations-planning.md instruction file \u2014 add explicit 'verify state-file freshness <=24h before issuing brief recommendations' as gate."
     }
   ],
   "archived_entries": [
