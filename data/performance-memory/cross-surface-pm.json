@@ -771,6 +771,27 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-05-29"
+    },
+    {
+      "id": "L-111",
+      "summary": "claims_tier_coverage = retraction-safety (1.00) + tier-mapping completeness (0%); registry formula measures only the former",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-06-01"
+    },
+    {
+      "id": "L-112",
+      "summary": "d13_calendar_coverage_pct: deprecated content-calendar def (0%) vs canonical planning-discipline (33-44%); same throughput failure",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-06-01"
+    },
+    {
+      "id": "L-113",
+      "summary": "Dave Asprey event coded P&L: 30 new / $5,239 vs $5-10k budget (coded CAC ~$167-333); conference-event benchmark",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-06-01"
     }
   ],
   "entries": [
@@ -2502,6 +2523,51 @@
         "L-018"
       ],
       "target": "monthly-calibration checklist + dept-operations-planning.md instruction file \u2014 add explicit 'verify state-file freshness <=24h before issuing brief recommendations' as gate."
+    },
+    {
+      "id": "L-111",
+      "date": "2026-06-01",
+      "type": "skill_update",
+      "learning": "claims_tier_coverage is two metrics wearing one name: retraction-safety (=1.00, healthy) and tier-mapping completeness (=0/10, unbuilt). The registry formula measures only the first, so the dashboard reads GREEN while the claims-permission gate the metric represents is not operational.",
+      "source": "Science & Research dept brief (CS-2026-189 scope), 2026-06-01",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Metric definition conflates a safety check with a coverage check; formula specified before the tier-mapping table existed. See daily synthesis 2026-06-01-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/references/metrics-registry.yaml (claims_tier_coverage def \u2014 add tier-completeness sub-metric); cross-surface-pm.json"
+    },
+    {
+      "id": "L-112",
+      "date": "2026-06-01",
+      "type": "process_change",
+      "learning": "d13_calendar_coverage_pct has two live readings: the DEPRECATED content-calendar forward-entry definition (0.0%) and the canonical planning-discipline definition (32.6% strict / 44.2% incl in_progress, 30d window). Both indicate the same execution-throughput failure; the canonical metric is in material drift, not contradicted.",
+      "source": "Market Intelligence dept brief (D13 reconciliation), 2026-06-01",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "Two definitions coexist after the 2026-05-26 redefinition; the deprecated reading was not retired from the D13 scan. See daily synthesis 2026-06-01-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "D13 domain-scan instructions (retire deprecated content-calendar reading); metrics-registry.yaml d13 note"
+    },
+    {
+      "id": "L-113",
+      "date": "2026-06-01",
+      "type": "threshold_calibration",
+      "learning": "Dave Asprey Biohacking Conference event P&L (coded, high-confidence): 30 new / $5,239 coded revenue against a $5,000-$10,000 budget -> coded CAC ~$167-333 (coded undercounts true attribution). A directional benchmark on conference-event acquisition economics.",
+      "source": "attribution-state.json campaign_correlation.event_rollups (5/30, confidence high)",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Additive economics observation (shared_token_ambiguous=false); flagged for event-type CAC benchmarking. See daily synthesis 2026-06-01-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "cross-surface-pm.json (event-economics); attribution snapshot 2026-05-30"
     }
   ],
   "archived_entries": [
