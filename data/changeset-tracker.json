@@ -1,19 +1,19 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-01T09:56:51.312174+00:00",
+  "last_updated": "2026-06-01T13:26:09.091335Z",
   "next_id": "CS-2026-193",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-05-29",
-    "last_sweep_session": "2026-05-29-s1",
-    "last_sweep_result": "stale_persists_polar_restored_drain_devon_p1_action",
+    "last_sweep_date": "2026-06-01",
+    "last_sweep_session": "2026-06-01-s1",
+    "last_sweep_result": "stale_persists_measurement_queue_held_for_devon_p1_drain (RTO forcing-function 6/05; 0 closures/30d; 0 new CSes spawned per Resolution Hierarchy \u2014 intake healthy/over-band, constraint is execution throughput not intake)",
     "last_sweep_counts": {
       "stale_flagged": 13,
       "measurement_overdue": 12,
       "auto_closed": 0,
       "pending_measurement_queue_size": 12,
       "measurement_capable": false,
-      "idempotent_run": 1,
-      "new_changesets_spawned": 7
+      "idempotent_run": 2,
+      "new_changesets_spawned": 0
     },
     "pending_measurement_queue": [
       "CS-2026-020",
@@ -50,8 +50,8 @@
       "investigation": 27,
       "quick": 31
     },
-    "last_updated": "2026-06-01T09:56:51.295860+00:00",
-    "last_counted": "2026-05-29"
+    "last_updated": "2026-06-01T13:26:09.091087Z",
+    "last_counted": "2026-06-01"
   },
   "changesets": [
     {
