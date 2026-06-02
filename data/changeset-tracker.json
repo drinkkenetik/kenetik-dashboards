@@ -1,33 +1,39 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-02T09:34:04.615472+00:00",
+  "last_updated": "2026-06-02T12:49:02.268270+00:00",
   "next_id": "CS-2026-193",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-06-01",
-    "last_sweep_session": "2026-06-01-s1",
-    "last_sweep_result": "stale_persists_measurement_queue_held_for_devon_p1_drain (RTO forcing-function 6/05; 0 closures/30d; 0 new CSes spawned per Resolution Hierarchy \u2014 intake healthy/over-band, constraint is execution throughput not intake)",
+    "last_sweep_date": "2026-06-02",
+    "last_sweep_session": "2026-06-02-s1",
+    "last_sweep_result": "idempotent_run_3 \u2014 13 stale-approved reflagged; measurement queue corrected to 17 published (was 12; +CS-067/100/129/133/139 per L-114); measurement human-gated (Devon Polar drain), measurement_capable=false; 3 expired-window CSes (128/118/137) flagged archive_candidate for RTO 6/05; 0 auto-closed; 0 new CSes (Resolution Hierarchy \u2014 intake over-band, constraint is throughput)",
     "last_sweep_counts": {
       "stale_flagged": 13,
-      "measurement_overdue": 12,
+      "measurement_overdue": 17,
       "auto_closed": 0,
-      "pending_measurement_queue_size": 12,
+      "pending_measurement_queue_size": 17,
       "measurement_capable": false,
-      "idempotent_run": 2,
-      "new_changesets_spawned": 0
+      "idempotent_run": 3,
+      "new_changesets_spawned": 0,
+      "archive_candidates_flagged": 3
     },
     "pending_measurement_queue": [
       "CS-2026-020",
       "CS-2026-021",
       "CS-2026-022",
       "CS-2026-035",
+      "CS-2026-067",
       "CS-2026-084",
       "CS-2026-085",
       "CS-2026-086",
       "CS-2026-089",
+      "CS-2026-100",
       "CS-2026-101",
       "CS-2026-114",
       "CS-2026-115",
-      "CS-2026-127"
+      "CS-2026-127",
+      "CS-2026-129",
+      "CS-2026-133",
+      "CS-2026-139"
     ]
   },
   "summary": {
@@ -50,8 +56,8 @@
       "investigation": 27,
       "quick": 31
     },
-    "last_updated": "2026-06-02T09:34:04.592927+00:00",
-    "last_counted": "2026-06-01"
+    "last_updated": "2026-06-02T12:49:02.268270+00:00",
+    "last_counted": "2026-06-02"
   },
   "changesets": [
     {
@@ -3024,6 +3030,12 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
         }
       ]
     },
@@ -4408,6 +4420,12 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
         }
       ],
       "last_updated": "2026-04-20"
@@ -4812,6 +4830,12 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
         }
       ],
       "measurement_window_end": "2026-05-26"
@@ -7701,6 +7725,12 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
         }
       ],
       "revision_notes": null,
@@ -7816,6 +7846,12 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
         }
       ],
       "revision_notes": null,
@@ -8251,6 +8287,12 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
         }
       ],
       "last_updated": "2026-04-28"
@@ -8493,6 +8535,12 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
         }
       ],
       "last_updated": "2026-05-04"
@@ -9912,6 +9960,18 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "archive_candidate_expired_window",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "route_to_Devon_for_RTO_gate_6/05_close"
         }
       ],
       "created": "2026-04-27",
@@ -10400,6 +10460,18 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "archive_candidate_expired_window",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "route_to_Devon_for_RTO_gate_6/05_close"
         }
       ],
       "scheduled_send_date": null,
@@ -10630,6 +10702,12 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
         }
       ],
       "last_updated": "2026-04-29",
@@ -10987,6 +11065,12 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
         }
       ],
       "created": "2026-05-04",
@@ -11085,6 +11169,18 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "archive_candidate_expired_window",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "route_to_Devon_for_RTO_gate_6/05_close"
         }
       ],
       "created": "2026-05-04",
@@ -12449,6 +12545,12 @@
           "set_date": "2026-05-28",
           "session": "2026-05-28-s1",
           "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-02",
+          "session": "2026-06-02-s1",
+          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
         }
       ]
     },
