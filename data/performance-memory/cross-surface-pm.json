@@ -792,6 +792,27 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-06-01"
+    },
+    {
+      "id": "L-114",
+      "summary": "Session-handoff CS-list citations are unreliable for queue depth: the 6/01 handoff cited 12 measurement-queue CSes; tracker.json shows 17 (omitted C",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-06-02"
+    },
+    {
+      "id": "L-115",
+      "summary": "PubMed sync queries match 'ketone' as a general-chemistry term, returning off-topic papers (organic photocatalysis, dairy-cow blood gas, lung adenoc",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-06-02"
+    },
+    {
+      "id": "L-116",
+      "summary": "Thiessen 2026 (PMID 41650388): acute ketone monoester supplementation decreases cardiac vagal modulation dose-dependently in healthy adults. Adversa",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-06-02"
     }
   ],
   "entries": [
@@ -2568,6 +2589,53 @@
       "skill_files_updated": [],
       "related_entries": [],
       "target": "cross-surface-pm.json (event-economics); attribution snapshot 2026-05-30"
+    },
+    {
+      "id": "L-114",
+      "date": "2026-06-02",
+      "type": "process_change",
+      "learning": "Session-handoff CS-list citations are unreliable for queue depth: the 6/01 handoff cited 12 measurement-queue CSes; tracker.json shows 17 (omitted CS-067/100/129/133/139). Handoffs should cite COUNTS sourced from tracker.json, not enumerated lists.",
+      "source": "Operations dept brief (D12/D14 reconciliation), 2026-06-02; daily synthesis 2026-06-02-s1.md",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Tracker authoritative published-count=17 vs handoff-cited 12. Root cause: handoffs hand-composed from working memory, not recomputed from tracker at write time.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-107"
+      ],
+      "target": "dispatch-instructions.md session-handoff format + task-b-synthesis.md Phase 4 Step 7 (cite tracker-derived counts, not CS lists)"
+    },
+    {
+      "id": "L-115",
+      "date": "2026-06-02",
+      "type": "process_change",
+      "learning": "PubMed sync queries match 'ketone' as a general-chemistry term, returning off-topic papers (organic photocatalysis, dairy-cow blood gas, lung adenocarcinoma, pediatric hyperinsulinism) as new_count_this_run. The new-paper signal is systematically unreliable until MeSH/human/species filters are added.",
+      "source": "Science dept brief INS-SR-1, 2026-06-02; daily synthesis 2026-06-02-s1.md",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "4 of today's flagged new papers off-topic. Root cause: scripts/sync_pubmed.py query strings lack MeSH human filters / species limiters.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "scripts/sync_pubmed.py query strings (add MeSH human filter + species limiter)"
+    },
+    {
+      "id": "L-116",
+      "date": "2026-06-02",
+      "type": "skill_update",
+      "learning": "Thiessen 2026 (PMID 41650388): acute ketone monoester supplementation decreases cardiac vagal modulation dose-dependently in healthy adults. Adversarially exploitable framing, not in tracked_citations or the Known Null/Negative Findings register, surfaced ahead of the TRX July launch.",
+      "source": "Science dept brief INS-SR-3 / MEMORY UPDATES, 2026-06-02; daily synthesis 2026-06-02-s1.md",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "New adverse-direction literature not auto-routed into claims-compliance negative-findings before launch-content production. Root cause: no auto-route of counter-signal papers pre-launch.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/references/claims-compliance.md (Known Null/Negative Findings) \u2014 add Thiessen 2026; route via CS-189/Brandon"
     }
   ],
   "archived_entries": [
@@ -3073,5 +3141,5 @@
       "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15)."
     }
   ],
-  "last_updated": "2026-05-28T19:24:58.103376+00:00"
+  "last_updated": "2026-06-02T12:54:39.456194+00:00"
 }
