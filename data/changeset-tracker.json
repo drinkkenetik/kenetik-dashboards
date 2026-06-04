@@ -39,10 +39,10 @@
   "summary": {
     "total": 192,
     "by_status": {
-      "closed": 75,
+      "closed": 76,
       "published": 18,
       "approved": 13,
-      "draft": 84,
+      "draft": 83,
       "needs_feedback": 2
     },
     "by_risk": {
@@ -12719,20 +12719,27 @@
     {
       "id": "CS-2026-180",
       "title": "UE | First-Time Post Purchase 2026 Restoration / Falsification Test",
-      "status": "draft",
+      "status": "closed",
       "department": "lifecycle-marketing",
       "platforms": [
         "klaviyo"
       ],
       "created": "2026-05-28",
-      "last_updated": "2026-05-28",
+      "last_updated": "2026-06-04",
       "subtype": "implementation",
       "risk_level": "high",
       "autonomy_tier": 1,
       "owner": "Katie Spaller",
       "source": "synthesis_priority_stack",
       "hypothesis": "UE First-Time Post Purchase flow status unclear. If disabled, restoring it should catch 2026-04/05 cohorts inside M1 windows and lift M1 retention to historical 12-15% range. Co-owner: Alisha McGinn.",
-      "notes": "Spawned from synthesis 2026-05-28-s1 P3. dept-lifecycle LM-S1-A2."
+      "notes": "Spawned from synthesis 2026-05-28-s1 P3. dept-lifecycle LM-S1-A2.",
+      "outcome": "invalid_premise",
+      "closed_by": "Katie",
+      "closed_on": "2026-06-04",
+      "execution_taken": "none",
+      "rollback_required": false,
+      "closure_reference": "EC-2026-009",
+      "closure_note": "FTPP 2026 flow live as 'UE | First Time Post Purchase 2026' (T6qbEb) since 2026-05-01, $1.13 RPR / 7d. Manual bridge would have collided with live flow (Level-0). Closed by Katie."
     },
     {
       "id": "CS-2026-181",
