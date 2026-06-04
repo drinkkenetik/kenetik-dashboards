@@ -39,10 +39,10 @@
   "summary": {
     "total": 192,
     "by_status": {
-      "closed": 76,
+      "closed": 77,
       "published": 18,
       "approved": 13,
-      "draft": 83,
+      "draft": 82,
       "needs_feedback": 2
     },
     "by_risk": {
@@ -12873,13 +12873,13 @@
     {
       "id": "CS-2026-187",
       "title": "pmax__shopping Feed Audit & 50% Spend Reduction (0.44x 7d ROAS structural drain)",
-      "status": "draft",
+      "status": "closed",
       "department": "paid-media",
       "platforms": [
         "google-ads"
       ],
       "created": "2026-05-29",
-      "last_updated": "2026-05-29",
+      "last_updated": "2026-06-04",
       "subtype": "implementation",
       "risk_level": "high",
       "autonomy_tier": 1,
@@ -12887,7 +12887,7 @@
       "source": "synthesis_priority_stack",
       "spawned_from": "synthesis-2026-05-29-s1",
       "hypothesis": "pmax__shopping (feed only) campaign is the single largest paid-media margin leak \u2014 $2,459/7d at 0.44x platform ROAS, 0 conversions in 3d, CTR 0.028% on 192K impressions. Multi-window agreement clears the confirmation gate. Hypothesis is feed-quality (SKU mix, exclusions) per H-D04-2, not bid strategy. Cut 50% within 24h pending Cliff sign-off; full SKU-exclusion + feed-quality audit within 72h.",
-      "notes": "Synthesis 2026-05-29-s1 P-stack supporting + Paid Media dept ACT-PM-2. Reallocation tier ~17% of Google paid \u2192 Katie + Cliff approval band. Evidence: D04 SIG-04-2, spend mix table (19.4% spend / <2% purchases), H-D04-2.",
+      "notes": "Synthesis 2026-05-29-s1 P-stack supporting + Paid Media dept ACT-PM-2. Reallocation tier ~17% of Google paid \u2192 Katie + Cliff approval band. Evidence: D04 SIG-04-2, spend mix table (19.4% spend / <2% purchases), H-D04-2. | CLOSED 2026-06-04 by Katie \u2014 outcome invalid_premise. PMAX Shopping (feed-only) Google campaign fully paused 2026-06-01 (Katie via Kyle, 30-day-ROAS basis); the brief's 50%-reduction + 72h feed-audit path was NOT pursued. Brief premise ('~$2,459/7d structural drain since 5/29', H-D04-2 feed-quality) was overstated: the spend was a contained budget-pacing incident \u2014 restrictions were loosened ~5/20 to restart a historical top performer, Google then spent 3x the daily cap, and Kyle caught/stopped it 5/23. Corrected spend: $124 (5/1-17), $2,273 (5/18-25), $371 (5/26-31). Budget NOT reallocated to Winbacks: Polar did not validate the ~27x pixel ROAS KGS cited, so Katie is holding winback scaling and developing new winback concepts for distinct churn reasons. Ref EC-2026-010. CS-2026-186 (Klaviyo winback flow rebuild) remains an independent draft, decoupled from this budget.",
       "measurement_window": "14d",
       "expected_impact": {
         "metrics_moved": [
@@ -12904,6 +12904,31 @@
       },
       "routed_to": [
         "Cliff Morgan"
+      ],
+      "outcome": "invalid_premise",
+      "executed_date": "2026-06-01",
+      "closed_date": "2026-06-04",
+      "sweep_flags": [
+        {
+          "flag": "closed_invalid_premise",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04",
+          "action": "Closed by Katie: pmax feed-only killed 6/1 on 30d-ROAS basis; brief premise (structural since-5/29 drain) overstated \u2014 contained budget-cap incident already fixed by Kyle 5/23; winback reallocation declined (Polar ROAS unvalidated). Ref EC-2026-010.",
+          "before": {
+            "status": "draft",
+            "outcome": null,
+            "executed_date": null,
+            "closed_date": null,
+            "notes": "Synthesis 2026-05-29-s1 P-stack supporting + Paid Media dept ACT-PM-2. Reallocation tier ~17% of Google paid \u2192 Katie + Cliff approval band. Evidence: D04 SIG-04-2, spend mix table (19.4% spend / <2% purchases), H-D04-2."
+          },
+          "after": {
+            "status": "closed",
+            "outcome": "invalid_premise",
+            "executed_date": "2026-06-01",
+            "closed_date": "2026-06-04",
+            "notes": "Synthesis 2026-05-29-s1 P-stack supporting + Paid Media dept ACT-PM-2. Reallocation tier ~17% of Google paid \u2192 Katie + Cliff approval band. Evidence: D04 SIG-04-2, spend mix table (19.4% spend / <2% purchases), H-D04-2. | CLOSED 2026-06-04 by Katie \u2014 outcome invalid_premise. PMAX Shopping (feed-only) Google campaign fully paused 2026-06-01 (Katie via Kyle, 30-day-ROAS basis); the brief's 50%-reduction + 72h feed-audit path was NOT pursued. Brief premise ('~$2,459/7d structural drain since 5/29', H-D04-2 feed-quality) was overstated: the spend was a contained budget-pacing incident \u2014 restrictions were loosened ~5/20 to restart a historical top performer, Google then spent 3x the daily cap, and Kyle caught/stopped it 5/23. Corrected spend: $124 (5/1-17), $2,273 (5/18-25), $371 (5/26-31). Budget NOT reallocated to Winbacks: Polar did not validate the ~27x pixel ROAS KGS cited, so Katie is holding winback scaling and developing new winback concepts for distinct churn reasons. Ref EC-2026-010. CS-2026-186 (Klaviyo winback flow rebuild) remains an independent draft, decoupled from this budget."
+          }
+        }
       ]
     },
     {
