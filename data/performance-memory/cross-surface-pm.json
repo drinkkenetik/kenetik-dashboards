@@ -813,6 +813,20 @@
       "domain": "content",
       "status": "active",
       "date": "2026-06-02"
+    },
+    {
+      "id": "L-117",
+      "summary": "domain_health_streaks.consecutive_below_40 has been incrementing on business-RED status (D13=23, D14=15) rather than the defined scan-quality criteria",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-06-04"
+    },
+    {
+      "id": "L-118",
+      "summary": "An isolated LP-level script/dead-click fix can be carved out of a broader instrumentation RCA (CS-147) and deployed independently when the failing ele",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-06-04"
     }
   ],
   "entries": [
@@ -2598,7 +2612,7 @@
       "source": "Operations dept brief (D12/D14 reconciliation), 2026-06-02; daily synthesis 2026-06-02-s1.md",
       "source_type": "operational_signal",
       "domain": "operations",
-      "evidence": "Tracker authoritative published-count=17 vs handoff-cited 12. Root cause: handoffs hand-composed from working memory, not recomputed from tracker at write time.",
+      "evidence": "Tracker authoritative published-count=17 vs handoff-cited 12. Root cause: handoffs hand-composed from working memory, not recomputed from tracker at write time. [Corroborated 2026-06-04: owner-concentration figures in handoffs (Katie 76%) overcounted co-ownership + draft-email batches; tracker truth 58.1% per Ops INV-OP-4. Compute concentration from tracker owner field only.]",
       "confidence": "strong",
       "action_taken": null,
       "skill_files_updated": [],
@@ -2636,6 +2650,36 @@
       "skill_files_updated": [],
       "related_entries": [],
       "target": "brain/kenetik-brain/references/claims-compliance.md (Known Null/Negative Findings) \u2014 add Thiessen 2026; route via CS-189/Brandon"
+    },
+    {
+      "id": "L-117",
+      "date": "2026-06-04",
+      "type": "threshold_calibration",
+      "learning": "domain_health_streaks.consecutive_below_40 has been incrementing on business-RED status (D13=23, D14=15) rather than the defined scan-quality criteria; both produced substantive briefs, so the counters should have reset. Reset to 0 this session.",
+      "source": "Synthesis Step 8a streak audit, 2026-06-04; daily synthesis 2026-06-04-s1.md",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Step 8a update rule keys off 'degraded quality' but prior sessions read a business-RED dept status as quality degradation; the two are distinct.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "synthesis-instructions.md Step 8a: clarify consecutive_below_40 tracks scan-quality only; reset on substantive brief regardless of business status."
+    },
+    {
+      "id": "L-118",
+      "date": "2026-06-04",
+      "type": "process_change",
+      "learning": "An isolated LP-level script/dead-click fix can be carved out of a broader instrumentation RCA (CS-147) and deployed independently when the failing element is isolated in Clarity \u2014 recovered ~$14.7k/wk weeks faster (CS-191 carve-out, 6/03).",
+      "source": "Website & CRO dept brief, 2026-06-04; daily synthesis 2026-06-04-s1.md",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "Default assumption was that LP fixes were blocked by the parent CS-147 RCA; the specific element was independently isolable. Resolution Hierarchy step-2 (remove blocker) succeeded.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "changeset-instructions.md / CRO playbook: check whether the failing element is independently isolable before treating a parent RCA as a hard blocker."
     }
   ],
   "archived_entries": [
@@ -3141,5 +3185,5 @@
       "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15)."
     }
   ],
-  "last_updated": "2026-06-02T12:54:39.456194+00:00"
+  "last_updated": "2026-06-04"
 }
