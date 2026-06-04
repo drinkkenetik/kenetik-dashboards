@@ -1,20 +1,20 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-03",
+  "last_updated": "2026-06-04",
   "next_id": "CS-2026-194",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-06-02",
-    "last_sweep_session": "2026-06-02-s1",
-    "last_sweep_result": "idempotent_run_3 \u2014 13 stale-approved reflagged; measurement queue corrected to 17 published (was 12; +CS-067/100/129/133/139 per L-114); measurement human-gated (Devon Polar drain), measurement_capable=false; 3 expired-window CSes (128/118/137) flagged archive_candidate for RTO 6/05; 0 auto-closed; 0 new CSes (Resolution Hierarchy \u2014 intake over-band, constraint is throughput)",
+    "last_sweep_date": "2026-06-04",
+    "last_sweep_session": "2026-06-04-s1",
+    "last_sweep_result": "idempotent_run_4 \u2014 11 stale-approved reflagged; measurement queue 17, measurement_capable=false (Devon Polar drain human-gated); archive_candidates=CS-099/118/136/137/054 (Ops INV-OP-1); CS-128 needs_execution_confirmation (MW 6/07); 0 auto-closed; 0 new CSes (Resolution Hierarchy \u2014 throughput-constrained)",
     "last_sweep_counts": {
-      "stale_flagged": 13,
+      "stale_flagged": 11,
       "measurement_overdue": 17,
       "auto_closed": 0,
       "pending_measurement_queue_size": 17,
       "measurement_capable": false,
-      "idempotent_run": 3,
+      "idempotent_run": 4,
       "new_changesets_spawned": 0,
-      "archive_candidates_flagged": 3
+      "archive_candidates_flagged": 5
     },
     "pending_measurement_queue": [
       "CS-2026-020",
@@ -57,7 +57,7 @@
       "quick": 31
     },
     "last_updated": "2026-06-04",
-    "last_counted": "2026-06-02"
+    "last_counted": "2026-06-04"
   },
   "changesets": [
     {
@@ -4426,6 +4426,12 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-20"
@@ -4836,6 +4842,18 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "archive_candidate_expired_window",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "archive_to_clear_RTO_gate_6/05 (Ops INV-OP-1; no Polar drain); owner authorizes"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "measurement_window_end": "2026-05-26"
@@ -7731,6 +7749,12 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -7852,6 +7876,12 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "revision_notes": null,
@@ -8293,6 +8323,12 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-28"
@@ -8541,6 +8577,18 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "archive_candidate_expired_window",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "archive_to_clear_RTO_gate_6/05 (Ops INV-OP-1; no Polar drain); owner authorizes"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-05-04"
@@ -9972,6 +10020,18 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "route_to_Devon_for_RTO_gate_6/05_close"
+        },
+        {
+          "flag": "archive_candidate_expired_window",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "archive_to_clear_RTO_gate_6/05 (Ops INV-OP-1; no Polar drain); owner authorizes"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "created": "2026-04-27",
@@ -10472,6 +10532,18 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "route_to_Devon_for_RTO_gate_6/05_close"
+        },
+        {
+          "flag": "needs_execution_confirmation",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "MW due 2026-06-07; 36d stale \u2014 confirm MHAM execution (pull read) or archive (Charlotte/Devon)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "scheduled_send_date": null,
@@ -10708,6 +10780,12 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "last_updated": "2026-04-29",
@@ -11071,6 +11149,18 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+        },
+        {
+          "flag": "archive_candidate_expired_window",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "archive_to_clear_RTO_gate_6/05 (Ops INV-OP-1; no Polar drain); owner authorizes"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "created": "2026-05-04",
@@ -11181,6 +11271,18 @@
           "set_date": "2026-06-02",
           "session": "2026-06-02-s1",
           "action": "route_to_Devon_for_RTO_gate_6/05_close"
+        },
+        {
+          "flag": "archive_candidate_expired_window",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "archive_to_clear_RTO_gate_6/05 (Ops INV-OP-1; no Polar drain); owner authorizes"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-04",
+          "session": "2026-06-04-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ],
       "created": "2026-05-04",
@@ -13301,6 +13403,12 @@
       "date": "2026-05-21",
       "note": "Run #6 idempotent on the same 12 stale-approveds; Polar restored Day +1 but Layer 3/4 funnel decomposition into website-state.json pending (Phase E Step 1); Klaviyo MCP not available from sub-agents (orchestrator pre-fetch only); Sprout 403 Day 6. Measurement queue size unchanged (12). New CS spawned: CS-2026-177 (Frontiers Cognition Meta-Analysis Distillation, Brandon Dyksterhouse, science-research, medium risk). Pat-022 brief-vs-tracker drift remediation deferred to rec-262 (Devon stale-approved triage today).",
       "recommendation": "Once Polar Layer 3/4 wiring lands (Phase E Step 1), re-evaluate the 6 paid-media-state-dependent CSes (CS-114/115/127/061/118/136) in next sweep with Layer 1 state-file pull. Klaviyo CSes (CS-020/021/022/035/089/101) remain Layer-3 manual until orchestrator integrates per-sub-agent Klaviyo MCP."
+    },
+    {
+      "session": "2026-06-04-s1",
+      "date": "2026-06-04",
+      "note": "Run #4 idempotent. Measurement queue 17 (12 overdue 29-34d + 5 open windows CS-067/100/129/133/139). measurement_capable=false \u2014 Polar drain human-gated on Devon (L-109, 15th session). Archive candidates = Ops-confirmed RTO set CS-099/118/136/137/054 (any 3 clears RTO gate 6/05, no Polar drain). CS-128 -> needs_execution_confirmation (MHAM MW 6/07, 36d stale). 0 new CSes: rec-267 (GP review IG + Matt Hughes FB graduation, time-boxed 6/08) flagged as spawn-candidate at queue-clear, not added now (Resolution Hierarchy \u2014 constraint is throughput, not intake; 84 drafts/0 closures-13d). Calendar safety net deferred: marketing-calendar 370h stale + Father's Day clusters are Nick decision-stall (ACT-MI-1/2).",
+      "recommendation": "Devon archive 3+ of CS-099/118/136/137/054 today (P1). Graduation CS only at queue-clear."
     }
   ]
 }
