@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-03T09:43:33.995752+00:00",
-  "next_id": "CS-2026-193",
+  "last_updated": "2026-06-03",
+  "next_id": "CS-2026-194",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-02",
     "last_sweep_session": "2026-06-02-s1",
@@ -37,10 +37,10 @@
     ]
   },
   "summary": {
-    "total": 191,
+    "total": 192,
     "by_status": {
       "closed": 75,
-      "published": 17,
+      "published": 18,
       "approved": 13,
       "draft": 84,
       "needs_feedback": 2
@@ -56,7 +56,7 @@
       "investigation": 27,
       "quick": 31
     },
-    "last_updated": "2026-06-03T09:43:33.983561+00:00",
+    "last_updated": "2026-06-04",
     "last_counted": "2026-06-02"
   },
   "changesets": [
@@ -12904,39 +12904,66 @@
     {
       "id": "CS-2026-191",
       "title": "Golden Pear LP Script-Error Remediation (122/1k script errors, 4-day persistent decay)",
-      "status": "draft",
+      "status": "published",
       "department": "DTC-website",
       "platforms": [
         "shopify"
       ],
       "created": "2026-05-29",
-      "last_updated": "2026-05-29",
+      "last_updated": "2026-06-04",
       "subtype": "implementation",
       "risk_level": "high",
       "autonomy_tier": 1,
       "owner": "Katie Spaller",
       "source": "synthesis_priority_stack",
       "spawned_from": "synthesis-2026-05-29-s1",
-      "hypothesis": "/pages/golden-pear is the #2 LP by sessions (3,166) and currently the worst high-volume page: CVR halved (8.33% \u2192 4.67%, -43.9% WoW), Clarity health score -31.07 with 4-day persistent worsening trend, scroll depth 21.1% (above-the-fold quit), script errors 122/1k sessions, dead-clicks 169/1k. Most likely proximate cause is JS errors breaking ATC/CTA flow \u2014 fix surfaces, fix conversion. Note: gated on CS-2026-147 (Site-Wide CVR Tracking Regression RCA) closing first to validate the CVR delta is real and not an instrumentation artifact.",
-      "notes": "Synthesis 2026-05-29-s1 supporting CS via Website-CRO dept ACT-WC-2. Evidence: website-state.json landing_pages[1], data/clarity/snapshots/2026-05-26..29 (4-day worst-3 entrant each day), L-104. Blocked by CS-2026-147 instrumentation RCA \u2014 do not execute remediation until tracking is verified.",
+      "hypothesis": "REVISED 2026-06-03 (Katie via Claude): Original hypothesis blamed JS errors. After pulling MS Clarity JS Errors panel directly via MCP, 92% of script errors are iOS Safari/WebKit internals (Can't find variable _AutofillCallbackHandler 134, window.webkit.messageHandlers 27) \u2014 not in our code. The 4 occurrences of 'Unexpected token else' are real but tiny volume \u2014 not the leak. Actual leak is dead clicks on CTAs (Clarity 5/29-6/1 mobile): 3,730 dead clicks on 'Golden Pear angle' thumbnails (no click handler bound \u2014 fixed via thumb-swap port), 603 dead clicks on 'Shop Golden Pear' entry CTA (likely Polar cart-injector interception OR Klaviyo backdrop persistence \u2014 routed to Peter as follow-on), 235 dead clicks on Add to Cart (race condition / section re-mount \u2014 fixed via document-level delegation safety net).",
+      "notes": "DEPLOYED 2026-06-03. PR #79 merged into main (commit cce6707). Shopify GitHub integration auto-syncs main to live theme. Smoke test 10/11 passed on preview theme (Clarity preview-traffic verification skipped, not a blocker \u2014 production telemetry will confirm in 24-48h). Carve-out from CS-2026-147 (instrumentation RCA) approved by Katie 2026-06-03. Measurement: 14d. Primary lp_level_cvr_new_visitors target back to 5%+ (prior 7-8%, pre-fix 3.46%). Balancing dead_clicks_per_1k_sessions <50/1k (from 188-225). Follow-on CS-2026-193 spawned for Peter on the 603 remaining dead-clicks on Shop Golden Pear entry CTA.",
       "measurement_window": "14d",
       "expected_impact": {
         "metrics_moved": [
           "d01_site_cvr",
           "lp_level_cvr_new_visitors"
         ],
-        "balancing_impact": "script_errors_per_1k",
+        "balancing_impact": "dead_clicks_per_1k_sessions (target <50/1k from 188-225)",
         "L1_outcome": "If CVR delta is real, ~116 lost transactions/wk at ~$70 AOV = ~$8.1k weekly revenue recoverable",
         "L2_quarterly_lever": "net_sales_dollars (L1) via d01_site_cvr (L3)",
         "L3_dept_primary": "golden_pear_lp_cvr (process; current 4.67% vs prior 8.33%)",
-        "L4_learning": "L-104 (Clarity dead-click density as leading indicator) \u2014 3rd corroboration if remediation reverses the CVR drop",
+        "L4_learning": "L-104 (Clarity dead-click density as leading indicator) \u2014 3rd corroboration. Refined: dead clicks on specific tappable-looking elements (thumbnails, image galleries) without click handlers are the conversion-killer mechanism, NOT JS syntax errors. Clarity JS Errors panel must be cross-checked against dead-click leaderboard before triaging \u2014 script_errors_per_1k alone over-weights iOS browser-internal noise.",
         "L5_brand_check": "[PIPELINE GAP \u2014 blocks auto-advance until reviewed]"
       },
-      "dependencies": [
-        "CS-2026-147"
-      ],
+      "dependencies": [],
       "routed_to": [
-        "Peter Bayne"
+        "Peter Bayne",
+        "Katie Spaller"
+      ],
+      "deploy_target": {
+        "repo": "drinkkenetik/kenetik-shopify-theme",
+        "branch": "fix/gp-thumbnails-and-atc-delegation",
+        "commit": "58c2db1",
+        "files_changed": [
+          "sections/ks-gp-shop.liquid",
+          "assets/ks-golden-pear-lp.js"
+        ],
+        "pr_link": "https://github.com/drinkkenetik/kenetik-shopify-theme/pull/79",
+        "merge_commit": "cce6707",
+        "pr_number": 79,
+        "branch_merged_from": "fix/gp-thumbnails-and-atc-delegation"
+      },
+      "deployed_at": "2026-06-03",
+      "sweep_flags": [
+        {
+          "flag": "status_enum_fix",
+          "set_date": "2026-06-04",
+          "session": "cron-repair-2026-06-04",
+          "action": "Corrected invalid status 'deployed' (not in canonical enum) to 'published'. Change is live via PR #79 / merge cce6707; entry is in its 14d measurement window, matching how CS-2026-114/115 are statused. Atomically refreshed summary.by_status + total.",
+          "before": {
+            "status": "deployed"
+          },
+          "after": {
+            "status": "published"
+          }
+        }
       ]
     },
     {
@@ -12974,6 +13001,41 @@
       },
       "routed_to": [
         "Brandon Dyksterhouse"
+      ]
+    },
+    {
+      "id": "CS-2026-193",
+      "title": "Shop Golden Pear entry CTA dead-click root cause (Polar / Klaviyo interference hypothesis)",
+      "status": "draft",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify"
+      ],
+      "created": "2026-06-03",
+      "last_updated": "2026-06-03",
+      "subtype": "investigation",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "owner": "Peter Bayne",
+      "source": "spawned_from_cs_191_diagnostic",
+      "spawned_from": "CS-2026-191",
+      "hypothesis": "MS Clarity dashboard (2026-06-03 query via MCP) showed 603 dead clicks + 159 quickbacks on Shop Golden Pear entry CTA across /pages/golden-pear, last 4 days mobile. The CTA appears on homepage banner, partner LPs (roman-atwood, cleetus), and the GP LP itself (hero / footer / winners re-CTA). All CTAs ALREADY have proper href values (#ks-gp-shop or shopify://pages/golden-pear) \u2014 verified via theme repo grep. The dead-click pattern is NOT a missing-href issue. Two leading hypotheses: (1) Polar Analytics cart-injector intercepting anchor clicks \u2014 visible in the live console as [Polar] Cart interception setup complete. If the Polar handler is over-broad it could swallow same-origin anchor clicks even on non-cart links. (2) Klaviyo onsite popup backdrop persisting as transparent overlay after close, catching the next tap (CSS z-index / pointer-events bug). Reproducible scenario in a Clarity replay (06-01 16:48:06 session): user closes a Close dialog popup, THEN dead-clicks Shop Golden Pear \u2014 rules out the popup itself blocking, points to residual overlay or interceptor.",
+      "notes": "Spawned from CS-2026-191 diagnostic phase. CS-191 shipped the thumbnail-swap + ATC delegation fixes (PR #79, merge cce6707). This CS handles the remaining ~603/4d dead-click leak that CS-191 did NOT fix. Diagnostic path: (a) On a preview theme, toggle Polar Analytics app embed OFF, reproduce dead-click attempt on Shop Golden Pear CTAs \u2014 if fixed, Polar is the culprit; file vendor ticket. (b) If Polar is innocent, instrument the page with a document-level click listener logging event.defaultPrevented + event.target + event.currentTarget, reproduce on mobile to identify the swallower. (c) Inspect DOM after closing a Klaviyo popup for orphaned modal-backdrop divs with non-auto pointer-events.",
+      "measurement_window": "14d",
+      "expected_impact": {
+        "metrics_moved": [
+          "lp_level_cvr_new_visitors",
+          "d01_site_cvr"
+        ],
+        "balancing_impact": "dead_clicks_per_1k_sessions on Shop Golden Pear CTA elements",
+        "L1_outcome": "Recover residual dead-click leak post-CS-191 (~$200-300/wk estimated)",
+        "L2_quarterly_lever": "net_sales_dollars via d01_site_cvr",
+        "L3_dept_primary": "golden_pear_lp_cvr",
+        "L4_learning": "Third-party app interception of same-origin anchor clicks \u2014 first known instance for Polar; informs vendor selection criteria for cart-replacement apps."
+      },
+      "dependencies": [],
+      "routed_to": [
+        "Peter Bayne"
       ]
     }
   ],
