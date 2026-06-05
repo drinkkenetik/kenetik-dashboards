@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-05T18:40:43.164383+00:00",
+  "last_updated": "2026-06-05T18:47:12.601355+00:00",
   "next_id": "CS-2026-195",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-04",
@@ -41,8 +41,8 @@
     "by_status": {
       "closed": 77,
       "published": 19,
-      "approved": 13,
-      "draft": 82,
+      "approved": 14,
+      "draft": 81,
       "needs_feedback": 2
     },
     "by_risk": {
@@ -56,7 +56,7 @@
       "investigation": 28,
       "quick": 31
     },
-    "last_updated": "2026-06-05T18:40:43.164383+00:00",
+    "last_updated": "2026-06-05T18:47:12.601355+00:00",
     "last_counted": "2026-06-05"
   },
   "changesets": [
@@ -13179,7 +13179,7 @@
     {
       "id": "CS-2026-194",
       "title": "Hodie Bash 2026 VIP QR Landing Page",
-      "status": "draft",
+      "status": "approved",
       "department": "DTC-website",
       "platforms": [
         "shopify"
@@ -13201,7 +13201,8 @@
           "lp_level_cvr_new_visitors",
           "new_customer_count"
         ]
-      }
+      },
+      "approved_by": "Katie Spaller"
     }
   ],
   "queue_actions": {
