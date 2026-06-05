@@ -95,9 +95,33 @@
               "cvr": 0.0
             }
           }
+        },
+        {
+          "checked_at": "2026-06-05T00:37:45.104423Z",
+          "snapshot_at": "2026-06-05T00:37:46.693803Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 14,
+              "atc_events": 0,
+              "atc_rate": 0.0,
+              "bounce_rate": 0.6428571428571429,
+              "purchases": 0,
+              "cvr": 0.0
+            },
+            "variant": {
+              "sessions": 3,
+              "atc_events": 2,
+              "atc_rate": 0.6666666666666666,
+              "bounce_rate": 0.3333333333333333,
+              "purchases": 0,
+              "cvr": 0.0
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-06-04T18:44:58.771279Z",
+      "last_checked_at": "2026-06-05T00:37:45.104423Z",
       "katie_approval_observed_at": "2026-06-04T17:36:13Z",
       "orchestrator_notes": [
         {
@@ -132,20 +156,20 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-06-04T18:45:00.100920Z",
+        "snapshot_at": "2026-06-05T00:37:46.693803Z",
         "control": {
-          "sessions": 0,
+          "sessions": 14,
           "atc_events": 0,
           "atc_rate": 0.0,
-          "bounce_rate": 0.0,
+          "bounce_rate": 0.6428571428571429,
           "purchases": 0,
           "cvr": 0.0
         },
         "variant": {
-          "sessions": 0,
-          "atc_events": 0,
-          "atc_rate": 0.0,
-          "bounce_rate": 0.0,
+          "sessions": 3,
+          "atc_events": 2,
+          "atc_rate": 0.6666666666666666,
+          "bounce_rate": 0.3333333333333333,
           "purchases": 0,
           "cvr": 0.0
         }
@@ -155,5 +179,5 @@
       "decided_at": null
     }
   },
-  "_last_cron_run": "2026-06-04T18:44:58.771279Z"
+  "_last_cron_run": "2026-06-05T00:37:45.104423Z"
 }
