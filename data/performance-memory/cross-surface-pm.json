@@ -12,7 +12,7 @@
     "skill_file_update_threshold": "moderate",
     "synthesis_cadence": "daily capture during pipeline run, weekly deep review Fridays",
     "archive_policy": "Process 3.8 archives acted-on entries weekly during Friday synthesis. Archived entries move to archived_entries array (preserved for audit). Active entries = un-acted + last 90 days acted.",
-    "last_bridged_moe_synthesis": "SYN-20260522-001"
+    "last_bridged_moe_synthesis": "SYN-20260605-001"
   },
   "entry_types": {
     "_note": "Descriptive, not an exclusive enum. New types can emerge as the system learns.",
@@ -174,14 +174,14 @@
       "id": "L-022",
       "summary": "April subscription attach rate 40.7% vs March 11.5% (+254%) \u2014 step-function change, RCA opened CS-2026-075",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-15"
     },
     {
       "id": "L-023",
       "summary": "Creative freshness alarm fired at 0% FRESH \u2014 threshold reactive; recommend moving alert to 25% FRESH",
       "domain": "paid-media",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-15"
     },
     {
@@ -244,21 +244,21 @@
       "id": "L-033",
       "summary": "TikTok ads state-file flag suppressed $858.75/7d real spend for 8+ sessions; state-file flags need same health checks as connectors",
       "domain": "paid-media",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-17"
     },
     {
       "id": "L-034",
       "summary": "Matt Hughes ROAS 9.57x narrative vs 1.57x actual \u2014 attribution-inheritance drift; ROAS must be re-sourced from Polar each session",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-17"
     },
     {
       "id": "L-035",
       "summary": "CS-2026-075 had role-label owner 'Lifecycle lead' \u2014 HARD GATE roster validation not applied at CS creation",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-17"
     },
     {
@@ -827,6 +827,20 @@
       "domain": "website",
       "status": "active",
       "date": "2026-06-04"
+    },
+    {
+      "id": "L-119",
+      "summary": "BRIDGE CP-004: Matt Hughes authority-testimonial \u2014 priority paid retargeting + creator amplification frame (rotate <=1x/7d)",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-06-05"
+    },
+    {
+      "id": "L-120",
+      "summary": "BRIDGE AP-011: cart-recovery/transactional copy belongs in Klaviyo+paid retargeting, never organic social (lifecycle<->content-ops boundary)",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-06-05"
     }
   ],
   "entries": [
@@ -924,12 +938,13 @@
       ],
       "changeset_candidate": false,
       "contradiction_flag": "L-016 argues Amazon -48.9% was a connector-zero artifact (Amazon Ads only); organic was -7.1% net WoW. If L-016 is correct, the structural asymmetry conclusion needs revision. Needs CGO resolution.",
-      "entry_type": "pattern_observation",
+      "entry_type": "skill_update",
       "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
+        "confidence 'strong' -> 'preliminary' (source_count=1)",
+        "entry_type 'pattern_observation'->'skill_update' normalized to defined type (Process 3.8 Step 0d, 2026-06-05)"
       ],
       "contradiction_with": [
         "L-016"
@@ -2300,7 +2315,7 @@
       "source": "D14 + Operations dept brief 2026-05-19, pat-017 4th corroboration day | Operations & Planning department brief 2026-05-18; D14+D16+D13 cross-signal pattern",
       "source_type": "operational_signal",
       "domain": "operations",
-      "evidence": "Pat-017 silent-slip is forcing-function-shaped: same owners hit it across multiple work types (governance, content, ops). See session-handoff-2026-05-19 + L-093 merged. Cross-confirmed by 4-owner same-day observation 2026-05-18.",
+      "evidence": "Same owners hit pat-017 silent-slip across governance, content, and ops work types \u2014 forcing-function-shaped, not capacity-shaped. See session-handoff-2026-05-19 + L-093.",
       "confidence": "strong",
       "action_taken": null,
       "skill_files_updated": [],
@@ -2317,7 +2332,8 @@
         }
       ],
       "reconciliation_notes": [
-        "evidence pruned 521\u2192228 chars (Process 3.8 Step 0c)"
+        "evidence pruned 521\u2192228 chars (Process 3.8 Step 0c)",
+        "evidence pruned 228->170 chars (Process 3.8 Step 0c, 2026-06-05)"
       ]
     },
     {
@@ -2446,13 +2462,16 @@
       "learning": "Clarity dead-click density acts as leading indicator before CVR drift \u2014 Website-CRO dept brief surfaced the pattern; reproducible across 2026-05 snapshots.",
       "source": "dept-website-cro.md 2026-05-28-s1",
       "source_type": "operational_signal",
-      "domain": "website-cro",
+      "domain": "website",
       "evidence": "Dept brief Phase 1.6 analysis on Clarity snapshots indicates dead-click density rises 5-10 days before measurable CVR drift. See daily synthesis 2026-05-28-s1.md.",
       "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "data/clarity/snapshots/ schema + funnel-diagnosis.md threshold tuning"
+      "target": "data/clarity/snapshots/ schema + funnel-diagnosis.md threshold tuning",
+      "reconciliation_notes": [
+        "domain 'website-cro'->'website' normalized (Process 3.8 Step 0d, 2026-06-05)"
+      ]
     },
     {
       "id": "L-105",
@@ -2497,14 +2516,17 @@
       "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 D04 SIG-04-3 + paid-media-state.json (2026-05-29T10:55Z) + tracker.json CS-178",
       "source_type": "domain_contradiction",
       "domain": "operations",
-      "evidence": "Three independent data sources agree CS-178 pause didn't execute: D04 SIG-04-3 (explicit correction), paid-media-state.json (0 paused / 139 active, 21 cleetus active), tracker.json (CS-178 status=draft, no measurement_window_end, no outcome populated). See daily synthesis 2026-05-29-s1.md.",
+      "evidence": "Three independent sources (D04 SIG-04-3, paid-media-state.json, tracker.json) confirm CS-178's pause never executed despite the narrative claiming complete. See daily synthesis 2026-05-29-s1.",
       "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-098"
       ],
-      "target": "cgo-daily-pipeline/config/synthesis-instructions.md framing-guardrails \u00a74 ChangeSet cross-check \u2014 expand to require both tracker-status match AND platform-state verification before claiming execution."
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md framing-guardrails \u00a74 ChangeSet cross-check \u2014 expand to require both tracker-status match AND platform-state verification before claiming execution.",
+      "reconciliation_notes": [
+        "evidence pruned 290->191 chars (Process 3.8 Step 0c, 2026-06-05)"
+      ]
     },
     {
       "id": "L-108",
@@ -2514,14 +2536,17 @@
       "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 Lifecycle dept CSI-LM-1 + Operations dept INS-OP-3",
       "source_type": "operational_signal",
       "domain": "lifecycle",
-      "evidence": "D06 explicitly converges: 'If FTPP flow was degraded during this period, it explains both low M1 repeat AND low attach simultaneously \u2014 both downstream of same FTPP flow failure.' D02 SIG-02-2 confirms 1 conversion / 1,310 delivered (0.076%). See daily synthesis 2026-05-29-s1.md.",
+      "evidence": "D06 + D02 converge: a degraded FTPP flow (1 conv / 1,310 delivered, 0.076%) explains low M1 repeat and low attach simultaneously. See daily synthesis 2026-05-29-s1.",
       "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-068"
       ],
-      "target": "data/performance-memory/cross-surface-pm.json L-068 \u2014 flag for status review pending CS-180 outcome; consider transition from 'confirmed' to 'under-review-by-CS-180'."
+      "target": "data/performance-memory/cross-surface-pm.json L-068 \u2014 flag for status review pending CS-180 outcome; consider transition from 'confirmed' to 'under-review-by-CS-180'.",
+      "reconciliation_notes": [
+        "evidence pruned 280->164 chars (Process 3.8 Step 0c, 2026-06-05)"
+      ]
     },
     {
       "id": "L-109",
@@ -2531,7 +2556,7 @@
       "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 Operations dept INS-OP-2 + 5/28 nudge result (zero same-day executions)",
       "source_type": "operational_signal",
       "domain": "operations",
-      "evidence": "5/28 nudges produced zero same-day executions. 28d closed CS count = 10 (2.5/wk avg); last 14d = 1 closure; last 7d = 0. Active CS distribution: Katie 14, Devon 10, joint 4 = 28/32 (87.5%). See daily synthesis 2026-05-29-s1.md.",
+      "evidence": "5/28 nudges produced zero same-day executions; closures fell to 0 in the last 7d. Active CS concentration: Katie 14 / Devon 10 (87.5%). See daily synthesis 2026-05-29-s1.",
       "confidence": "strong",
       "action_taken": null,
       "skill_files_updated": [],
@@ -2539,7 +2564,10 @@
         "L-020",
         "L-098"
       ],
-      "target": "kenetik-growth-system/commands/changeset-execute.md AND CS-2026-152 (Decision-Throughput Governance) spec \u2014 CS-152 must include auto-scheduling on approval-event as a Step-1 component."
+      "target": "kenetik-growth-system/commands/changeset-execute.md AND CS-2026-152 (Decision-Throughput Governance) spec \u2014 CS-152 must include auto-scheduling on approval-event as a Step-1 component.",
+      "reconciliation_notes": [
+        "evidence pruned 227->170 chars (Process 3.8 Step 0c, 2026-06-05)"
+      ]
     },
     {
       "id": "L-110",
@@ -2549,7 +2577,7 @@
       "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 Operations dept INS-OP-5 + freshness-gate violations",
       "source_type": "operational_signal",
       "domain": "operations",
-      "evidence": "team-tasks.json generated_at 2026-05-20T00:55Z (215h stale); marketing-calendar.json last_updated 2026-05-20 (9d stale). L-016 anti-pattern explicitly documents 'operating on stale state' as failure mode. See daily synthesis 2026-05-29-s1.md.",
+      "evidence": "team-tasks.json 215h stale and marketing-calendar.json 9d stale \u2014 Ops itself reproduces the 'operating on stale state' failure mode (L-016). See daily synthesis 2026-05-29-s1.",
       "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
@@ -2557,7 +2585,10 @@
         "L-016",
         "L-018"
       ],
-      "target": "monthly-calibration checklist + dept-operations-planning.md instruction file \u2014 add explicit 'verify state-file freshness <=24h before issuing brief recommendations' as gate."
+      "target": "monthly-calibration checklist + dept-operations-planning.md instruction file \u2014 add explicit 'verify state-file freshness <=24h before issuing brief recommendations' as gate.",
+      "reconciliation_notes": [
+        "evidence pruned 242->175 chars (Process 3.8 Step 0c, 2026-06-05)"
+      ]
     },
     {
       "id": "L-111",
@@ -2612,14 +2643,17 @@
       "source": "Operations dept brief (D12/D14 reconciliation), 2026-06-02; daily synthesis 2026-06-02-s1.md",
       "source_type": "operational_signal",
       "domain": "operations",
-      "evidence": "Tracker authoritative published-count=17 vs handoff-cited 12. Root cause: handoffs hand-composed from working memory, not recomputed from tracker at write time. [Corroborated 2026-06-04: owner-concentration figures in handoffs (Katie 76%) overcounted co-ownership + draft-email batches; tracker truth 58.1% per Ops INV-OP-4. Compute concentration from tracker owner field only.]",
+      "evidence": "Tracker published-count=17 vs handoff-cited 12; handoffs composed from memory, not recomputed from tracker. Owner-concentration also overcounted (Katie 76% vs 58.1% truth). See Ops brief 2026-06-04.",
       "confidence": "strong",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-107"
       ],
-      "target": "dispatch-instructions.md session-handoff format + task-b-synthesis.md Phase 4 Step 7 (cite tracker-derived counts, not CS lists)"
+      "target": "dispatch-instructions.md session-handoff format + task-b-synthesis.md Phase 4 Step 7 (cite tracker-derived counts, not CS lists)",
+      "reconciliation_notes": [
+        "evidence pruned 378->208 chars (Process 3.8 Step 0c, 2026-06-05)"
+      ]
     },
     {
       "id": "L-115",
@@ -2680,6 +2714,56 @@
       "skill_files_updated": [],
       "related_entries": [],
       "target": "changeset-instructions.md / CRO playbook: check whether the failing element is independently isolable before treating a parent RCA as a hard blocker."
+    },
+    {
+      "id": "L-119",
+      "date": "2026-06-05",
+      "type": "content_pattern",
+      "learning": "BRIDGE CP-004: The Matt Hughes/UFC authority-testimonial format (science + authority + emotional arc) drives engagement across FB/IG/LI/TT and is the strongest organic-to-paid graduation in program history (1.66M FB paid impressions at 4.6% engagement). Cross-domain implication: paid media should treat the authority-testimonial as a priority retargeting/prospecting creative frame, and creator amplification should adopt it as a repeatable structure \u2014 but rotate at <=1x/7d per platform (AP-008) since the hook fatigues on frequency, not content.",
+      "source": "Moe Content PM synthesis SYN-20260605-001 (CP-004)",
+      "source_type": "content_synthesis_bridge",
+      "domain": "content",
+      "evidence": "Revalidated 3rd consecutive cycle: 'rebuilding' testimonial FB 28.12% ER / NCS 51.4, highest editorial ER in window; 2.18x median. See Moe PM CP-004.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260605-001",
+      "signal_direction": "positive",
+      "reconciled_at": "2026-06-05T20:00:00Z",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e"
+      ]
+    },
+    {
+      "id": "L-120",
+      "date": "2026-06-05",
+      "type": "content_pattern",
+      "learning": "BRIDGE AP-011 (negative): Cart-recovery / transactional email copy ('Forgot something? Check out now\u2026') posted as organic social scores near-zero (NCS 5-44, 0-1.16% ER) \u2014 the feed algorithm ignores hard transactional CTAs. Distinct from AP-010 (bulk-duplication suppression); here the issue is copy register. Cross-domain implication: this is a lifecycle<->content-ops boundary failure \u2014 abandoned-cart/checkout-CTA copy belongs in Klaviyo email/SMS and paid retargeting only, never organic social. Content intake (Larry's queue) should reject transactional-CTA bodies on organic surfaces.",
+      "source": "Moe Content PM synthesis SYN-20260605-001 (AP-011)",
+      "source_type": "content_synthesis_bridge",
+      "domain": "content",
+      "evidence": "Reconfirmed 2nd consecutive cycle: 3 FB cart-recovery posts, NCS 13.6/13.8/44.1, ER 0.18-1.16%, one pushed to 13,788 imp. first_seen 2026-05-31. See Moe PM AP-011.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260605-001",
+      "signal_direction": "negative",
+      "reconciled_at": "2026-06-05T20:00:00Z",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e"
+      ]
     }
   ],
   "archived_entries": [
@@ -3185,5 +3269,5 @@
       "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15)."
     }
   ],
-  "last_updated": "2026-06-04"
+  "last_updated": "2026-06-05"
 }
