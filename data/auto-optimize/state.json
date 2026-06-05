@@ -177,9 +177,38 @@
           "variant_value": 0.07692307692307693,
           "delta_pct": -0.28007889546351084,
           "threshold_pct": -0.2
+        },
+        {
+          "checked_at": "2026-06-05T18:37:57.547720Z",
+          "snapshot_at": "2026-06-05T18:37:58.894311Z",
+          "result": "tier1_breach",
+          "action_taken": "alert_only",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 416,
+              "atc_events": 48,
+              "atc_rate": 0.11538461538461539,
+              "bounce_rate": 0.6875,
+              "purchases": 18,
+              "cvr": 0.04326923076923077
+            },
+            "variant": {
+              "sessions": 30,
+              "atc_events": 2,
+              "atc_rate": 0.06666666666666667,
+              "bounce_rate": 0.6333333333333333,
+              "purchases": 1,
+              "cvr": 0.03333333333333333
+            }
+          },
+          "metric": "atc_rate",
+          "control_value": 0.11538461538461539,
+          "variant_value": 0.06666666666666667,
+          "delta_pct": -0.4222222222222223,
+          "threshold_pct": -0.2
         }
       ],
-      "last_checked_at": "2026-06-05T12:57:53.234055Z",
+      "last_checked_at": "2026-06-05T18:37:57.547720Z",
       "katie_approval_observed_at": "2026-06-04T17:36:13Z",
       "orchestrator_notes": [
         {
@@ -211,25 +240,30 @@
           "at": "2026-06-04T17:41:29Z",
           "run": "auto-optimize-orchestrator scheduled (2026-06-04 17:41 UTC)",
           "action": "Activated canary for pdp-atc-002 at 10% PDP traffic per Katie's Slack approve (2026-06-04T17:36:13Z). Added entry to window.__autoOptimize in snippets/auto-optimize-config.liquid: { experimentId: pdp-atc-002, previewThemeId: 161604698331, variantRatio: 0.10, cookieDays: 30, surfaces: ['product'], debug: false }. Phase awaiting_approval -> canary. Tier 1/2 guardrails active (Stage 1 alert-only per Katie's directive \u2014 revert_enabled remains false). Cron will promote to 50/50 measuring after 24h if healthy (min 50 sessions/arm gate). Tracker CS-2026-154 transitioned approved -> published."
+        },
+        {
+          "at": "2026-06-05T14:10:36.629114Z",
+          "run": "auto-optimize-orchestrator scheduled",
+          "action": "Observed two consecutive tier-1 ATC breaches on pdp-atc-002 canary (2026-06-05T07:26 control 12.27%/variant 8.70% delta -29.1%; 2026-06-05T12:57 control 10.68%/variant 7.69% delta -28.0%; threshold -20%). Track A cron correctly logged action_taken=alert_only and posted both alerts to the Slack thread (1778773170.246209) tagging Devon + Katie. Orchestrator did NOT auto-revert: (a) _safety_config.revert_enabled=false (Stage 1 alert-only), Katie's explicit directive on 2026-05-14 ('let's see canary health before flipping revert_enabled to true'); (b) variant sample size still under min_sessions_per_arm (26 vs 100 min) \u2014 delta variance is high. No state.json phase change (cron owns canary->measuring). No tracker.json change (CS-2026-154 stays published). No duplicate Slack post \u2014 cron alerts already cover the breach. Awaiting either Katie's manual revert/flip-to-Stage-2 or organic sample growth so the next cron snapshot is more reliable. If a third consecutive tier-1 breach posts with variant sessions >= 100, escalation in this thread is warranted."
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-06-05T12:57:54.498067Z",
+        "snapshot_at": "2026-06-05T18:37:58.894311Z",
         "control": {
-          "sessions": 365,
-          "atc_events": 39,
-          "atc_rate": 0.10684931506849316,
-          "bounce_rate": 0.6794520547945205,
-          "purchases": 17,
-          "cvr": 0.04657534246575343
+          "sessions": 416,
+          "atc_events": 48,
+          "atc_rate": 0.11538461538461539,
+          "bounce_rate": 0.6875,
+          "purchases": 18,
+          "cvr": 0.04326923076923077
         },
         "variant": {
-          "sessions": 26,
+          "sessions": 30,
           "atc_events": 2,
-          "atc_rate": 0.07692307692307693,
-          "bounce_rate": 0.6538461538461539,
+          "atc_rate": 0.06666666666666667,
+          "bounce_rate": 0.6333333333333333,
           "purchases": 1,
-          "cvr": 0.038461538461538464
+          "cvr": 0.03333333333333333
         }
       },
       "last_undersample_escalation_at": null,
@@ -237,5 +271,5 @@
       "decided_at": null
     }
   },
-  "_last_cron_run": "2026-06-05T12:57:53.234055Z"
+  "_last_cron_run": "2026-06-05T18:37:57.547720Z"
 }
