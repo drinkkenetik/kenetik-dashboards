@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-05T15:00:40.106117+00:00",
+  "last_updated": "2026-06-05T15:20:24.193703+00:00",
   "next_id": "CS-2026-195",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-04",
@@ -56,7 +56,7 @@
       "investigation": 28,
       "quick": 31
     },
-    "last_updated": "2026-06-05T15:00:40.106117+00:00",
+    "last_updated": "2026-06-05T15:20:24.193703+00:00",
     "last_counted": "2026-06-05"
   },
   "changesets": [
@@ -13192,7 +13192,7 @@
       "owner": "Katie Spaller",
       "source": "manual",
       "hypothesis": "A dedicated co-branded VIP landing page for Hodie Bash QR-code traffic (VIP-bag print materials), built from existing KS-partner-* sections with Wedge B messaging and exclusive code HODIE25, will convert event scans into first orders + email captures better than routing scans to the homepage.",
-      "notes": "Built on branch feature/event-hodie-bash-lp in drinkkenetik/kenetik-shopify-theme. Template templates/page.event-hodie-bash-lp.json cloned from page.partner-landing.json; zero new Liquid. Celebrity testimonial section removed. Hero=RTD cans; shots+concentrate featured. Discount code HODIE25 (25% off first order) must be created in Shopify Admin. Hodie Bash hero/logo images to be uploaded in theme editor. Page not yet published to live.",
+      "notes": "Built on branch feature/event-hodie-bash-lp in drinkkenetik/kenetik-shopify-theme. Template templates/page.event-hodie-bash-lp.json cloned from page.partner-landing.json; zero new Liquid. Celebrity testimonial section removed. Hero=RTD cans; shots+concentrate featured. Discount code HODIE25 (25% off first order) must be created in Shopify Admin. Hodie Bash hero/logo images to be uploaded in theme editor. Page not yet published to live. [REV 2026-06-05: Audience broadened from VIP-only to all ~900 Hodie Bash attendees (all receive samples + print materials). Rebuilt from lighter homepage/golden-pear-family sections (new-hp-banner, KS-new-uspa-slider, KS-image-with-content-right, hp-energy-drink, hp-how-works, KS-can-product-section, hp-product-grid, cw-hp-02-customer-review-slider, cw-faq, cw-hp-17-newsletter) replacing the dark KS-partner-* stack per Katie design feedback. Added explicit event<>Kenetik narrative + sample-in-hand bridge. HODIE25 live 7/9-7/30, auto-applies via /discount links. Still zero new Liquid.]",
       "category": "creative",
       "review_tier": "express",
       "measurement_window": "14d",
