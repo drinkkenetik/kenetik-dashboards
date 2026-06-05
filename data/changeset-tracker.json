@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-05T09:15:28.637237+00:00",
-  "next_id": "CS-2026-194",
+  "last_updated": "2026-06-05T15:00:40.106117+00:00",
+  "next_id": "CS-2026-195",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-04",
     "last_sweep_session": "2026-06-04-s1",
@@ -37,27 +37,27 @@
     ]
   },
   "summary": {
-    "total": 192,
+    "total": 193,
     "by_status": {
       "closed": 77,
       "published": 19,
       "approved": 13,
-      "draft": 81,
+      "draft": 82,
       "needs_feedback": 2
     },
     "by_risk": {
       "critical": 2,
-      "low": 89,
+      "low": 90,
       "medium": 81,
       "high": 20
     },
     "by_subtype": {
-      "implementation": 133,
+      "implementation": 134,
       "investigation": 28,
       "quick": 31
     },
-    "last_updated": "2026-06-05T09:15:28.624764+00:00",
-    "last_counted": "2026-06-04"
+    "last_updated": "2026-06-05T15:00:40.106117+00:00",
+    "last_counted": "2026-06-05"
   },
   "changesets": [
     {
@@ -13175,6 +13175,33 @@
       "routed_to": [
         "Peter Bayne"
       ]
+    },
+    {
+      "id": "CS-2026-194",
+      "title": "Hodie Bash 2026 VIP QR Landing Page",
+      "status": "draft",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify"
+      ],
+      "created": "2026-06-05",
+      "last_updated": "2026-06-05",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": null,
+      "owner": "Katie Spaller",
+      "source": "manual",
+      "hypothesis": "A dedicated co-branded VIP landing page for Hodie Bash QR-code traffic (VIP-bag print materials), built from existing KS-partner-* sections with Wedge B messaging and exclusive code HODIE25, will convert event scans into first orders + email captures better than routing scans to the homepage.",
+      "notes": "Built on branch feature/event-hodie-bash-lp in drinkkenetik/kenetik-shopify-theme. Template templates/page.event-hodie-bash-lp.json cloned from page.partner-landing.json; zero new Liquid. Celebrity testimonial section removed. Hero=RTD cans; shots+concentrate featured. Discount code HODIE25 (25% off first order) must be created in Shopify Admin. Hodie Bash hero/logo images to be uploaded in theme editor. Page not yet published to live.",
+      "category": "creative",
+      "review_tier": "express",
+      "measurement_window": "14d",
+      "expected_impact": {
+        "metrics_moved": [
+          "lp_level_cvr_new_visitors",
+          "new_customer_count"
+        ]
+      }
     }
   ],
   "queue_actions": {
