@@ -362,6 +362,7 @@
     "new_sub_attach_rate",
     "pubmed_query_freshness",
     "retention_cost_proxy",
+    "review_avg_star",
     "sub_churn_active",
     "subscriber_ltv_monthly_value",
     "welcome_flow_to_sub_conversion"
