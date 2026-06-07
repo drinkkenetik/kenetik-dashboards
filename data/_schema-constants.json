@@ -335,6 +335,7 @@
     "claims_tier_coverage",
     "contribution_margin_pct",
     "creator_graduation_rate",
+    "creator_new_customer_pct",
     "d01_site_cvr",
     "d02_campaign_open_rate",
     "d04_paid_NCS",
