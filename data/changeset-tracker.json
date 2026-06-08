@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-08T16:17:40.621440+00:00",
-  "next_id": "CS-2026-196",
+  "last_updated": "2026-06-08T18:07:01.461586+00:00",
+  "next_id": "CS-2026-197",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-08",
     "last_sweep_session": "2026-06-08-s1",
@@ -37,26 +37,26 @@
     ]
   },
   "summary": {
-    "total": 194,
+    "total": 195,
     "by_status": {
       "closed": 77,
       "published": 19,
       "approved": 16,
-      "draft": 80,
+      "draft": 81,
       "needs_feedback": 2
     },
     "by_risk": {
       "critical": 2,
       "low": 91,
-      "medium": 81,
+      "medium": 82,
       "high": 20
     },
     "by_subtype": {
-      "implementation": 135,
+      "implementation": 136,
       "investigation": 28,
       "quick": 31
     },
-    "last_updated": "2026-06-08T16:45:05.613633+00:00",
+    "last_updated": "2026-06-08T18:07:01.461586+00:00",
     "last_counted": "2026-06-08"
   },
   "changesets": [
@@ -13230,6 +13230,39 @@
         ]
       },
       "approved_by": "Katie Spaller"
+    },
+    {
+      "id": "CS-2026-196",
+      "title": "Migrate Watermelon Lime 6-Pack subscribers to 12-Pack (volume/price-neutral) + churn-risk customer email",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "recharge",
+        "klaviyo"
+      ],
+      "created": "2026-06-08",
+      "last_updated": "2026-06-08",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "owner": "Katie Spaller",
+      "source": "manual",
+      "hypothesis": "Migrating the 86 active Watermelon Lime 6-Pack subscriptions to the 12-Pack (R1212-004, variant 46647110861019) at volume- and price-neutral terms \u2014 doubling order/charge frequency for single-6-pack subs, and collapsing 2x6-pack subs to 1x12-pack with frequency unchanged \u2014 lets us retire the WML 6-pack SKU without changing what any subscriber pays per period or receives per period. Pairing the migration with a same-day proactive customer email minimizes churn from the unexpected catalog/line-item change.",
+      "notes": "Pairs with CS-2026-195 (WML 6-pack storefront suppression). Scope approved by Katie 2026-06-08. SOURCE FILE: subscriptions_watermelon-lime_12pack_update_2026-06-08.csv (86 rows, verified 0 discrepancies). FIELD MAP applied to all 86: product_title='Kenetik Cans: Daily Clarity + Focus'; variant_title='Watermelon Lime / 12 Pack'; recurring_price=47.90; external_variant_id=46647110861019 (Katie-confirmed correct 12-pack variant, replacing the 6-pack id that appeared in the export); sku=R1212-004; external_product_id unchanged (6709588689048, Katie-confirmed). FREQUENCY LOGIC: 82 single-6-pack subs (qty=1) -> order_interval_frequency & charge_interval_frequency doubled, interval unit unchanged (e.g. 30d->60d, 14d->28d, 2m->4m, 25w->50w, 60d->120d). 4 two-6-pack subs (qty=2: 672347155, 781152509, 788724219, 818666832) -> quantity set to 1, frequency left unchanged (2x6=12 cans already). Net: same cans/period at same $/period for every subscriber. CHURN RISK FLAG: customer-facing line-item + cadence change on 86 active subs; proactive Klaviyo email notifying affected subscribers scheduled to send TODAY 2026-06-08 (scheduled_send_date). Email copy is a separate deliverable. Recharge bulk update to be executed via /changeset-execute after review. Note CS-2026-195 review_tier was express; this CS is full (pricing category + multi-platform).",
+      "category": "pricing",
+      "review_tier": "full",
+      "measurement_window": "30d",
+      "expected_impact": {
+        "metrics_moved": [
+          "active_sub_count",
+          "sub_churn_active"
+        ]
+      },
+      "dependencies": [
+        "CS-2026-195"
+      ],
+      "execution_target_date": "2026-06-08",
+      "scheduled_send_date": "2026-06-08"
     }
   ],
   "queue_actions": {
