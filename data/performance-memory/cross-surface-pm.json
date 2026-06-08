@@ -841,6 +841,13 @@
       "domain": "content",
       "status": "active",
       "date": "2026-06-05"
+    },
+    {
+      "id": "L-121",
+      "summary": "paid-media-state build script reports trailing-window spend + no live pause-state, surfacing already-paused campaigns as kill-candidates; also TikTok-blind.",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-06-08"
     }
   ],
   "entries": [
@@ -2764,6 +2771,26 @@
       "reconciliation_notes": [
         "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e"
       ]
+    },
+    {
+      "id": "L-121",
+      "date": "2026-06-08",
+      "type": "process_change",
+      "learning": "paid-media-state.json build script reports campaign spend from a trailing 7d window and does not read live pause status, so already-paused campaigns (CS-187 PMAX, paused 6/01) keep surfacing as live kill-candidates every scan; the same pipeline is also TikTok-blind (tiktok_ads:false). This manufactured 2 of 3 'open' paid signals in D04 as state-file artifacts.",
+      "source": "Paid Media dept brief 2026-06-08-s1 (CSI-PM-1) + D04 SIG-04-2/ACT-04-1",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "State-build script keys off a rolling spend window rather than live campaign status; no pause-state field carried. CS-187 closed invalid_premise 6/04 yet state file shows $773.85/7d. See daily synthesis 2026-06-08-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-105",
+        "L-107"
+      ],
+      "changeset_candidate": true,
+      "changeset_note": "Throughput-neutral engineering fix: add live pause-state read + per-campaign status field to paid-media-state build; backfill TikTok ingestion. Held under spawn-freeze; routed as rec.",
+      "target": "scripts/ paid-media-state build pipeline"
     }
   ],
   "archived_entries": [
