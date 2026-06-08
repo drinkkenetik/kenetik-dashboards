@@ -1,18 +1,18 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-07T09:08:15.690764+00:00",
-  "next_id": "CS-2026-195",
+  "last_updated": "2026-06-08T16:17:40.621440+00:00",
+  "next_id": "CS-2026-196",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-06-04",
-    "last_sweep_session": "2026-06-04-s1",
-    "last_sweep_result": "idempotent_run_4 \u2014 11 stale-approved reflagged; measurement queue 17, measurement_capable=false (Devon Polar drain human-gated); archive_candidates=CS-099/118/136/137/054 (Ops INV-OP-1); CS-128 needs_execution_confirmation (MW 6/07); 0 auto-closed; 0 new CSes (Resolution Hierarchy \u2014 throughput-constrained)",
+    "last_sweep_date": "2026-06-08",
+    "last_sweep_session": "2026-06-08-s1",
+    "last_sweep_result": "idempotent_run_5 \u2014 13 stale-approved reflagged; measurement queue 17, measurement_capable=false (Devon Polar-drain human-gated, unchanged from run 4); archive_candidates=CS-099/118/136/137/054; 0 auto-closed; 0 new CSes (Resolution Hierarchy \u2014 throughput-constrained per synthesis P1 + Ops ACT-OP-1). CS-100 measurement now overdue 3d, already in queue.",
     "last_sweep_counts": {
-      "stale_flagged": 11,
+      "stale_flagged": 13,
       "measurement_overdue": 17,
       "auto_closed": 0,
       "pending_measurement_queue_size": 17,
       "measurement_capable": false,
-      "idempotent_run": 4,
+      "idempotent_run": 5,
       "new_changesets_spawned": 0,
       "archive_candidates_flagged": 5
     },
@@ -37,27 +37,27 @@
     ]
   },
   "summary": {
-    "total": 193,
+    "total": 194,
     "by_status": {
       "closed": 77,
       "published": 19,
-      "approved": 14,
-      "draft": 81,
+      "approved": 16,
+      "draft": 80,
       "needs_feedback": 2
     },
     "by_risk": {
       "critical": 2,
-      "low": 90,
+      "low": 91,
       "medium": 81,
       "high": 20
     },
     "by_subtype": {
-      "implementation": 134,
+      "implementation": 135,
       "investigation": 28,
       "quick": 31
     },
-    "last_updated": "2026-06-07T09:08:15.678141+00:00",
-    "last_counted": "2026-06-05"
+    "last_updated": "2026-06-08T16:45:05.613633+00:00",
+    "last_counted": "2026-06-08"
   },
   "changesets": [
     {
@@ -2975,8 +2975,8 @@
       "sweep_flags": [
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-04-29",
-          "session": "2026-04-29-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "days_stale": 7,
           "action": "owner_nudge_queued_phase_4"
         },
@@ -2988,54 +2988,54 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-01",
-          "session": "2026-05-01-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "detail": "9d",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-06",
-          "session": "2026-05-06-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-07",
-          "session": "2026-05-07-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 49
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 26
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -4364,73 +4364,73 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-04-29",
-          "session": "2026-04-29-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "days_stale": 14,
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-01",
-          "session": "2026-05-01-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "detail": "16d",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-04",
-          "session": "2026-05-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "days_stale": 14,
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-06",
-          "session": "2026-05-06-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-07",
-          "session": "2026-05-07-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 31
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 28
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -4807,41 +4807,41 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-07",
-          "session": "2026-05-07-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 29
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 13
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "archive_candidate_expired_window",
@@ -4851,8 +4851,8 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -7714,46 +7714,46 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-07",
-          "session": "2026-05-07-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 9
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 14
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -7835,52 +7835,52 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-06",
-          "session": "2026-05-06-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-07",
-          "session": "2026-05-07-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 9
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 20
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -8282,52 +8282,52 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-06",
-          "session": "2026-05-06-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-07",
-          "session": "2026-05-07-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 16
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 20
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -8542,41 +8542,41 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-07",
-          "session": "2026-05-07-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 15
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 14
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "archive_candidate_expired_window",
@@ -8586,8 +8586,8 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -9979,41 +9979,41 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-07",
-          "session": "2026-05-07-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 10
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 13
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "archive_candidate_expired_window",
@@ -10029,8 +10029,8 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -10485,47 +10485,47 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-06",
-          "session": "2026-05-06-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-07",
-          "session": "2026-05-07-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 8
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 19
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "archive_candidate_expired_window",
@@ -10541,8 +10541,8 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -10739,52 +10739,52 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-06",
-          "session": "2026-05-06-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-07",
-          "session": "2026-05-07-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 8
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 19
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -11121,34 +11121,34 @@
       "sweep_flags": [
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 14
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "archive_candidate_expired_window",
@@ -11158,8 +11158,8 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -11237,34 +11237,34 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-15",
-          "session": "2026-05-15-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-18",
-          "session": "2026-05-18-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4",
           "age_days": 13
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-21",
-          "session": "2026-05-21-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_6 \u2014 rec-262 Devon triage)"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        },
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "archive_candidate_expired_window",
@@ -11280,8 +11280,8 @@
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-04",
-          "session": "2026-06-04-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         }
       ],
@@ -12648,15 +12648,15 @@
       "sweep_flags": [
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-05-28",
-          "session": "2026-05-28-s1",
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
         },
         {
           "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-02",
-          "session": "2026-06-02-s1",
-          "action": "owner_nudge_queued_phase_4 (idempotent_run_3)"
+          "set_date": "2026-06-08",
+          "session": "2026-06-08-s1",
+          "action": "owner_nudge_queued_phase_4"
         }
       ]
     },
@@ -12970,14 +12970,14 @@
     {
       "id": "CS-2026-189",
       "title": "Claims-Tier Coverage Mapping Infrastructure (claim_id \u2194 PMID \u2194 tier table)",
-      "status": "draft",
+      "status": "approved",
       "department": "science-research",
       "platforms": [
         "pubmed",
         "performance-memory"
       ],
       "created": "2026-05-29",
-      "last_updated": "2026-05-29",
+      "last_updated": "2026-06-08",
       "subtype": "implementation",
       "risk_level": "medium",
       "autonomy_tier": 1,
@@ -12985,7 +12985,7 @@
       "source": "synthesis_priority_stack",
       "spawned_from": "synthesis-2026-05-29-s1",
       "hypothesis": "Q2 L3 primary metric `claims_tier_coverage` is structurally undefined \u2014 10/10 tracked PMIDs in pubmed-state.json are retraction-safe (status=active) but 0/10 are tier-classified (claim_id=null, tier=null on every row). Build the claim_id \u2194 PMID \u2194 tier mapping table so the metric becomes computable. Once mapped, claims pre-screen automates (Devon/Claude can adjudicate Tier-3 cases without Brandon-in-the-loop verbal sign-off on every content piece). Highest-leverage Q2 infrastructure investment for science-research dept primary.",
-      "notes": "Synthesis 2026-05-29-s1 rec-245 via Science dept ACT-SR-1. [automation-leverage: high]. Source: pubmed-state.json 2026-05-29 direct inspection; cross-surface-pm candidate L-107 to be appended after this CS lands. Gates downstream auto-claims-scan for CS-2026-128 (MHAM), CS-2026-157 (TBI), CS-2026-177 (Frontiers), CS-2026-182 (ADHD).",
+      "notes": "Synthesis 2026-05-29-s1 rec-245 via Science dept ACT-SR-1. [automation-leverage: high]. Source: pubmed-state.json 2026-05-29 direct inspection; cross-surface-pm candidate L-107 to be appended after this CS lands. Gates downstream auto-claims-scan for CS-2026-128 (MHAM), CS-2026-157 (TBI), CS-2026-177 (Frontiers), CS-2026-182 (ADHD). [APPROVED 2026-06-08 by Devon Price via Slack: state 29944604 cognition directly (Tier A); 41962970 logged to negative-findings register. claims-map.json committed; pubmed-state tier_classified 10/10. Auto-claims-scan unblocked for CS-128/157/177/182.]",
       "measurement_window": "30d",
       "expected_impact": {
         "metrics_moved": [
@@ -13200,6 +13200,33 @@
         "metrics_moved": [
           "lp_level_cvr_new_visitors",
           "new_customer_count"
+        ]
+      },
+      "approved_by": "Katie Spaller"
+    },
+    {
+      "id": "CS-2026-195",
+      "title": "Suppress Watermelon Lime 6-Pack across can sections & product selectors",
+      "status": "approved",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify"
+      ],
+      "created": "2026-06-08",
+      "last_updated": "2026-06-08",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": null,
+      "owner": "Katie Spaller",
+      "source": "manual",
+      "hypothesis": "Suppressing the Watermelon Lime / 6 Pack variant combo everywhere it surfaces (can PDP flavor/size selectors and storefront product selectors/grids) prevents customers from selecting or adding an SKU we are pulling, avoiding mis-orders and Sold-Out friction while keeping all other flavors and the WML 12-pack fully available.",
+      "notes": "Implemented on branch feature/wml-6-pack-supression in drinkkenetik/kenetik-shopify-theme (pushed; PR pending). 7 files, scope approved by Katie. (1) JS disabledVariantsByFlavor map gains 'watermelon-lime': ['6-pack'] in sections/KS-can-product-section.liquid, KS-can-protocol-section.liquid, cw-01-product-banner.liquid (hides 6-pack size when WML flavor selected). (2) Liquid variant filtering removes the WML+6-pack variant from selectors: snippets/product-variant-options.liquid (powers product/section-product/api-product-quickview; client-side combo hide via data-select-label hooks since options render independently), sections/hp-product-grid.liquid (skip in actual-variantss), KS-best-sellers.liquid (skip in both actual-variantss loops), KS-partner-products.liquid (skip in count + dropdown loops). Shot sections, ks-subscription-product, KS-partner-subscription/sticky-bar (config-driven single variant) and card/popdown sections excluded per scope review. Note: hp-product-grid & KS-best-sellers use static size dropdowns, so selecting WML+6-pack resolves to Sold-Out/un-addable rather than hiding the size label. Not yet merged to main or published to live. [REV 2026-06-08: Preview-tested by Katie \u2014 looks good. Fixed a related UX gap: KS-can-product-section and KS-can-protocol-section did not auto-reselect a size when switching to a flavor lacking the previously-selected pack (e.g. leaving a 6-pack flavor left no size selected). Ported autoSelectFirstAvailableSize() from cw-01-product-banner (which already handled this) into both; fires a change event so price/variant-select update.]",
+      "category": "engineering",
+      "review_tier": "express",
+      "measurement_window": "14d",
+      "expected_impact": {
+        "metrics_moved": [
+          "d01_site_cvr_dtc"
         ]
       },
       "approved_by": "Katie Spaller"
