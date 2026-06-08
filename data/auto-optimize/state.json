@@ -8,7 +8,7 @@
   },
   "experiments": {
     "pdp-atc": {
-      "phase": "canary",
+      "phase": "measuring",
       "experiment_id": "pdp-atc-002",
       "surface": "pdp-atc",
       "seeded_hypothesis": "Flip PDP buy-box default from one-time to subscription-first presentation (subscription option selected/rendered above one-time) to test whether anchoring to the higher-value option and simplifying the choice architecture lifts add-to-cart rate. Changing element: buy-box default state and option ordering in snippets/buy-buttons.liquid. Data rationale: hypothesis #4 in pdp-atc build-spec backlog; subscription-first is a known LTV lever and the compound effect on ATC is untested on Kenetik's audience. Expected direction: ATC rate up (+). Disproof: ATC rate flat or down at 95% confidence over 7-day measurement window, or subscription attach rate drop with no net ATC lift (pure cannibalization). Seeded 2026-04-24 by Katie for first live T2 validation cycle.",
@@ -19,7 +19,7 @@
       "branch": "auto-optimize/pdp-atc/t2-cycle-2-reorder-no-preselect",
       "preview_theme_id": "161604698331",
       "preview_url": "https://ketoneelixir.myshopify.com/?preview_theme_id=161604698331",
-      "variant_ratio": 0.1,
+      "variant_ratio": 0.5,
       "cycle": 2,
       "slack_thread_ts": "1778773170.246209",
       "phase_history": [
@@ -59,10 +59,15 @@
           "phase": "canary",
           "entered_at": "2026-06-04T17:41:29Z",
           "reason": "Katie approved cycle 2 via Slack 2026-06-04 13:36 EDT. Activated 10% canary on preview_theme_id 161604698331. Cron promotes to 50/50 in ~24h if Tier 1/2 healthy. Stage 1 alert-only (revert_enabled=false) \u2014 Katie elected to keep that flag off until canary health observed."
+        },
+        {
+          "phase": "measuring",
+          "entered_at": "2026-06-08T00:38:31.442679Z",
+          "reason": "Canary complete (79h, 164 variant sessions). Ramped to 50/50."
         }
       ],
       "canary_started_at": "2026-06-04T17:41:29Z",
-      "measurement_started_at": null,
+      "measurement_started_at": "2026-06-08T00:38:31.442679Z",
       "measurement_window_days": 7,
       "min_sessions_per_arm": 100,
       "files_changed": [
@@ -351,9 +356,33 @@
           "variant_value": 0.0967741935483871,
           "delta_pct": -0.14103525881470372,
           "threshold_pct": -0.1
+        },
+        {
+          "checked_at": "2026-06-08T00:38:31.442679Z",
+          "snapshot_at": "2026-06-08T00:38:33.582465Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 1712,
+              "atc_events": 188,
+              "atc_rate": 0.10981308411214953,
+              "bounce_rate": 0.7254672897196262,
+              "purchases": 84,
+              "cvr": 0.04906542056074766
+            },
+            "variant": {
+              "sessions": 164,
+              "atc_events": 17,
+              "atc_rate": 0.10365853658536585,
+              "bounce_rate": 0.6646341463414634,
+              "purchases": 9,
+              "cvr": 0.054878048780487805
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-06-07T00:37:04.470834Z",
+      "last_checked_at": "2026-06-08T00:38:31.442679Z",
       "katie_approval_observed_at": "2026-06-04T17:36:13Z",
       "orchestrator_notes": [
         {
@@ -393,22 +422,22 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-06-07T00:37:06.462117Z",
+        "snapshot_at": "2026-06-08T00:38:33.582465Z",
         "control": {
-          "sessions": 1145,
-          "atc_events": 129,
-          "atc_rate": 0.11266375545851529,
-          "bounce_rate": 0.7135371179039302,
-          "purchases": 53,
-          "cvr": 0.0462882096069869
+          "sessions": 1712,
+          "atc_events": 188,
+          "atc_rate": 0.10981308411214953,
+          "bounce_rate": 0.7254672897196262,
+          "purchases": 84,
+          "cvr": 0.04906542056074766
         },
         "variant": {
-          "sessions": 93,
-          "atc_events": 9,
-          "atc_rate": 0.0967741935483871,
-          "bounce_rate": 0.6451612903225806,
-          "purchases": 6,
-          "cvr": 0.06451612903225806
+          "sessions": 164,
+          "atc_events": 17,
+          "atc_rate": 0.10365853658536585,
+          "bounce_rate": 0.6646341463414634,
+          "purchases": 9,
+          "cvr": 0.054878048780487805
         }
       },
       "last_undersample_escalation_at": null,
@@ -416,5 +445,5 @@
       "decided_at": null
     }
   },
-  "_last_cron_run": "2026-06-07T00:37:04.470834Z"
+  "_last_cron_run": "2026-06-08T00:38:31.442679Z"
 }
