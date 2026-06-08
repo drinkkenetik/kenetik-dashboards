@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-08T18:21:58.148215+00:00",
+  "last_updated": "2026-06-08T19:17:02.589305+00:00",
   "next_id": "CS-2026-197",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-08",
@@ -56,7 +56,7 @@
       "investigation": 28,
       "quick": 31
     },
-    "last_updated": "2026-06-08T18:21:58.148215+00:00",
+    "last_updated": "2026-06-08T19:17:02.589305+00:00",
     "last_counted": "2026-06-08"
   },
   "changesets": [
@@ -13248,7 +13248,7 @@
       "owner": "Katie Spaller",
       "source": "manual",
       "hypothesis": "Migrating the 86 active Watermelon Lime 6-Pack subscriptions to the 12-Pack (R1212-004, variant 46647110861019) at volume- and price-neutral terms \u2014 doubling order/charge frequency for single-6-pack subs, and collapsing 2x6-pack subs to 1x12-pack with frequency unchanged \u2014 lets us retire the WML 6-pack SKU without changing what any subscriber pays per period or receives per period. Pairing the migration with a same-day proactive customer email minimizes churn from the unexpected catalog/line-item change.",
-      "notes": "Pairs with CS-2026-195 (WML 6-pack storefront suppression). Scope approved by Katie 2026-06-08. SOURCE FILE: subscriptions_watermelon-lime_12pack_update_2026-06-08.csv (86 rows, verified 0 discrepancies). FIELD MAP applied to all 86: product_title='Kenetik Cans: Daily Clarity + Focus'; variant_title='Watermelon Lime / 12 Pack'; recurring_price=47.90; external_variant_id=46647110861019 (Katie-confirmed correct 12-pack variant, replacing the 6-pack id that appeared in the export); sku=R1212-004; external_product_id unchanged (6709588689048, Katie-confirmed). FREQUENCY LOGIC: 82 single-6-pack subs (qty=1) -> order_interval_frequency & charge_interval_frequency doubled, interval unit unchanged (e.g. 30d->60d, 14d->28d, 2m->4m, 25w->50w, 60d->120d). 4 two-6-pack subs (qty=2: 672347155, 781152509, 788724219, 818666832) -> quantity set to 1, frequency left unchanged (2x6=12 cans already). Net: same cans/period at same $/period for every subscriber. CHURN RISK FLAG: customer-facing line-item + cadence change on 86 active subs; proactive Klaviyo email notifying affected subscribers scheduled to send TODAY 2026-06-08 (scheduled_send_date). Email copy is a separate deliverable. Recharge bulk update to be executed via /changeset-execute after review. Note CS-2026-195 review_tier was express; this CS is full (pricing category + multi-platform). [ROLLOUT 2026-06-08]: Recharge bulk-update validation returned warnings on 14/86 rows; rollout phased. BATCH 1 (72 valid) PUSHED by Katie. HELD: 6 future-skipped subs (580494045,620637339,730203192,787218916,788724219,814339856 \u2014 update may strip skip -> migrate individually + re-apply skip; 788724219 is qty2->1) and 8 error-charge subs (616528416,620280853,620496495,620642575,620664468,622742535,626278554,786815500 \u2014 update may process a failed charge at new $47.90 -> resolve payment first, then migrate). EMAILS drafted & sending today from Katie Spaller (Director of Customer Success): A=batch1 single-pack(69), B=batch1 2x6->1x12(3: 672347155,781152509,818666832), C=future-skipped(6), D=error-charge(8) w/ payment-update CTA. Emails precede any new-SKU charge. Files: wml_12pack_BATCH1_ready_to_push_72.csv, wml_12pack_HOLD_future-skipped_6.csv, wml_12pack_HOLD_error-charges_8.csv, wml_12pack_migration_emails_2026-06-08.md. Outstanding: hand-migrate 14 held subs; spot-check migrated sample + confirm skips survived.",
+      "notes": "Pairs with CS-2026-195 (WML 6-pack storefront suppression). Scope approved by Katie 2026-06-08. SOURCE FILE: subscriptions_watermelon-lime_12pack_update_2026-06-08.csv (86 rows, verified 0 discrepancies). FIELD MAP applied to all 86: product_title='Kenetik Cans: Daily Clarity + Focus'; variant_title='Watermelon Lime / 12 Pack'; recurring_price=47.90; external_variant_id=46647110861019 (Katie-confirmed correct 12-pack variant, replacing the 6-pack id that appeared in the export); sku=R1212-004; external_product_id unchanged (6709588689048, Katie-confirmed). FREQUENCY LOGIC: 82 single-6-pack subs (qty=1) -> order_interval_frequency & charge_interval_frequency doubled, interval unit unchanged (e.g. 30d->60d, 14d->28d, 2m->4m, 25w->50w, 60d->120d). 4 two-6-pack subs (qty=2: 672347155, 781152509, 788724219, 818666832) -> quantity set to 1, frequency left unchanged (2x6=12 cans already). Net: same cans/period at same $/period for every subscriber. CHURN RISK FLAG: customer-facing line-item + cadence change on 86 active subs; proactive Klaviyo email notifying affected subscribers scheduled to send TODAY 2026-06-08 (scheduled_send_date). Email copy is a separate deliverable. Recharge bulk update to be executed via /changeset-execute after review. Note CS-2026-195 review_tier was express; this CS is full (pricing category + multi-platform). [ROLLOUT 2026-06-08]: Recharge bulk-update validation returned warnings on 14/86 rows; rollout phased. BATCH 1 (72 valid) PUSHED by Katie. HELD: 6 future-skipped subs (580494045,620637339,730203192,787218916,788724219,814339856 \u2014 update may strip skip -> migrate individually + re-apply skip; 788724219 is qty2->1) and 8 error-charge subs (616528416,620280853,620496495,620642575,620664468,622742535,626278554,786815500 \u2014 update may process a failed charge at new $47.90 -> resolve payment first, then migrate). EMAILS drafted & sending today from Katie Spaller (Director of Customer Success): A=batch1 single-pack(69), B=batch1 2x6->1x12(3: 672347155,781152509,818666832), C=future-skipped(6), D=error-charge(8) w/ payment-update CTA. Emails precede any new-SKU charge. Files: wml_12pack_BATCH1_ready_to_push_72.csv, wml_12pack_HOLD_future-skipped_6.csv, wml_12pack_HOLD_error-charges_8.csv, wml_12pack_migration_emails_2026-06-08.md. Outstanding: hand-migrate 14 held subs; spot-check migrated sample + confirm skips survived. [SEND LOG 2026-06-08]: Hybrid path. 3 Klaviyo campaigns scheduled 6:45pm ET from Katie at Kenetik (katie.s@drinkkenetik.com, reply-to Gorgias, Smart Sending OFF): A=01KTM8WJGF7JX205QKZ79EDDRX (list WKDYEE, 58/67 recipients), B=01KTM8X1M8YKYM0Z5Q8375MXD0 (TBJfvJ, 3/3), C=01KTM8X3GWSBMJHMJMRG0FCA8Z (UQkACP, 6/6). GORGIAS 1:1 FOLLOW-UP (17): 9 non-consented skipped in A (export from campaign Skipped report) + 8 Segment D error-charge subs. Transactional flow declined as over-complex for one-time send. Measurement due ~2026-07-08 (30d): hold active_sub_count, watch sub_churn_active.",
       "category": "pricing",
       "review_tier": "full",
       "measurement_window": "30d",
@@ -13262,7 +13262,8 @@
         "CS-2026-195"
       ],
       "execution_target_date": "2026-06-08",
-      "scheduled_send_date": "2026-06-08"
+      "scheduled_send_date": "2026-06-08",
+      "measurement_due": "2026-07-08"
     }
   ],
   "queue_actions": {
