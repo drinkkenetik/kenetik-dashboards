@@ -544,9 +544,38 @@
           "variant_value": 0.07882882882882883,
           "delta_pct": -0.23558932376359765,
           "threshold_pct": -0.2
+        },
+        {
+          "checked_at": "2026-06-09T18:42:05.755311Z",
+          "snapshot_at": "2026-06-09T18:42:07.572398Z",
+          "result": "tier1_breach",
+          "action_taken": "alert_only",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 2368,
+              "atc_events": 244,
+              "atc_rate": 0.10304054054054054,
+              "bounce_rate": 0.7309966216216216,
+              "purchases": 107,
+              "cvr": 0.045185810810810814
+            },
+            "variant": {
+              "sessions": 469,
+              "atc_events": 37,
+              "atc_rate": 0.07889125799573561,
+              "bounce_rate": 0.6609808102345416,
+              "purchases": 15,
+              "cvr": 0.031982942430703626
+            }
+          },
+          "metric": "atc_rate",
+          "control_value": 0.10304054054054054,
+          "variant_value": 0.07889125799573561,
+          "delta_pct": -0.23436680764794293,
+          "threshold_pct": -0.2
         }
       ],
-      "last_checked_at": "2026-06-09T12:57:23.553610Z",
+      "last_checked_at": "2026-06-09T18:42:05.755311Z",
       "katie_approval_observed_at": "2026-06-04T17:36:13Z",
       "orchestrator_notes": [
         {
@@ -583,25 +612,30 @@
           "at": "2026-06-05T14:10:36.629114Z",
           "run": "auto-optimize-orchestrator scheduled",
           "action": "Observed two consecutive tier-1 ATC breaches on pdp-atc-002 canary (2026-06-05T07:26 control 12.27%/variant 8.70% delta -29.1%; 2026-06-05T12:57 control 10.68%/variant 7.69% delta -28.0%; threshold -20%). Track A cron correctly logged action_taken=alert_only and posted both alerts to the Slack thread (1778773170.246209) tagging Devon + Katie. Orchestrator did NOT auto-revert: (a) _safety_config.revert_enabled=false (Stage 1 alert-only), Katie's explicit directive on 2026-05-14 ('let's see canary health before flipping revert_enabled to true'); (b) variant sample size still under min_sessions_per_arm (26 vs 100 min) \u2014 delta variance is high. No state.json phase change (cron owns canary->measuring). No tracker.json change (CS-2026-154 stays published). No duplicate Slack post \u2014 cron alerts already cover the breach. Awaiting either Katie's manual revert/flip-to-Stage-2 or organic sample growth so the next cron snapshot is more reliable. If a third consecutive tier-1 breach posts with variant sessions >= 100, escalation in this thread is warranted."
+        },
+        {
+          "at": "2026-06-09T14:10:38.795778Z",
+          "run": "auto-optimize-orchestrator scheduled (2026-06-09)",
+          "action": "Phase 0 reconciliation: no candidates (only published experiment tracker entry is CS-2026-154, state.json phase=measuring not idle/paused_for_review). Per-experiment routing: pdp-atc phase=measuring, skipped per protocol (cron owns canary->measuring->analyzing transitions). Escalation criterion from 2026-06-05 note now met: 3 consecutive tier-1 ATC breaches with variant sessions >= 100 (n=334 delta -24.3%, n=415 delta -21.8%, n=444 delta -23.6%). CVR also running -31% variant vs control. Posted thread escalation to #kgs-website tagging Devon and Katie with three options (let-ride / manual-cut-now / flip-to-Stage-2). No state.json phase change (cron owns transition), no tracker.json write (status stays published until analyzer call or manual close). Addressed Katie's clarification on the shots PDP friction signal: the pdp-atc surface YAML covers cans + shots + concentrate, so the buy-box reorder DOES apply on the shots PDP where Clarity is showing the friction (Katie had only tested cans). Recommended pulling Clarity session replays on shots PDP filtered to variant cookie to confirm whether the reorder is producing the dead-clicks specifically. revert_enabled remains false (Stage 1 alert-only)."
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-06-09T12:57:25.028075Z",
+        "snapshot_at": "2026-06-09T18:42:07.572398Z",
         "control": {
-          "sessions": 2337,
-          "atc_events": 241,
-          "atc_rate": 0.10312366281557553,
-          "bounce_rate": 0.730423620025674,
-          "purchases": 106,
-          "cvr": 0.04535729567821994
+          "sessions": 2368,
+          "atc_events": 244,
+          "atc_rate": 0.10304054054054054,
+          "bounce_rate": 0.7309966216216216,
+          "purchases": 107,
+          "cvr": 0.045185810810810814
         },
         "variant": {
-          "sessions": 444,
-          "atc_events": 35,
-          "atc_rate": 0.07882882882882883,
-          "bounce_rate": 0.6644144144144144,
-          "purchases": 14,
-          "cvr": 0.03153153153153153
+          "sessions": 469,
+          "atc_events": 37,
+          "atc_rate": 0.07889125799573561,
+          "bounce_rate": 0.6609808102345416,
+          "purchases": 15,
+          "cvr": 0.031982942430703626
         }
       },
       "last_undersample_escalation_at": null,
@@ -609,5 +643,5 @@
       "decided_at": null
     }
   },
-  "_last_cron_run": "2026-06-09T12:57:23.553610Z"
+  "_last_cron_run": "2026-06-09T18:42:05.755311Z"
 }
