@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-06-10",
-  "next_id": "CS-2026-198",
+  "next_id": "CS-2026-199",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-10",
     "last_sweep_session": "2026-06-10-s1",
@@ -37,26 +37,26 @@
     ]
   },
   "summary": {
-    "total": 196,
+    "total": 197,
     "by_status": {
       "closed": 77,
       "published": 20,
       "approved": 17,
-      "draft": 80,
+      "draft": 81,
       "needs_feedback": 2
     },
     "by_risk": {
       "critical": 2,
-      "low": 91,
+      "low": 92,
       "medium": 83,
       "high": 20
     },
     "by_subtype": {
-      "implementation": 137,
+      "implementation": 138,
       "investigation": 28,
       "quick": 31
     },
-    "last_updated": "2026-06-10T15:00:00+00:00",
+    "last_updated": "2026-06-10T15:40:15+00:00",
     "last_counted": "2026-06-10"
   },
   "changesets": [
@@ -13309,6 +13309,26 @@
       "spawned_from": "synthesis-2026-06-10-s1",
       "hypothesis": "Subscription churn is structurally accelerating (May 14.6% vs Apr 12.7%; active subs 2,380, -41/7d). The Canceled Subscription flow (S4ng5R) shows 33% open / 0.62% CTR / 1 conversion from 161 recipients — subscribers are opening (intent to engage) but there is no retention hook at the moment of peak cancel intent. Hypothesis: inserting a pre-cancel offer intercept (pause/skip option or single-order discount) BEFORE the final cancel confirmation captures a measurable share of active-churn events. This is a distinct funnel point from CS-2026-186 winback (post-cancel) — it intercepts pre-cancel. Falsify against 30d voluntary churn (May 309 events) to confirm whether a pre-cancel intercept materially reduces voluntary churn and supports active_sub_count recovery toward the 2,800 target.",
       "notes": "Spawned from synthesis 2026-06-10-s1 Priority Stack P1(b) via Lifecycle dept brief ACT-LM-2 (RED dept). Distinct from CS-2026-186 (winback, post-cancel) and CS-2026-149 (cancellation-reasons RCA, diagnostic). Evidence anchors: D06 subscription-state (fresh 1h), D02 Canceled Sub flow S4ng5R metrics (33% OR / 0.62% CTR / 1 conv / 161). focus_gap: active_sub_count (2,380 < 2,600 floor). Klaviyo surface (tier1_only mode) — defaults to draft for Katie advance per Governance Note.",
+      "measurement_window": "30d"
+    },
+    {
+      "id": "CS-2026-198",
+      "title": "Evergreen Offer LP — A/B test vs. Home Page as paid prospecting destination",
+      "status": "draft",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify"
+      ],
+      "created": "2026-06-10",
+      "last_updated": "2026-06-10",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": null,
+      "owner": "Katie Spaller",
+      "source": "manual",
+      "spawned_from": null,
+      "hypothesis": "A purpose-built single-offer evergreen landing page converts paid prospecting traffic better than the home page. Cold prospecting clicks need one linear argument (problem -> mechanism -> proof -> single offer) and one decision (Subscribe & Save vs One-Time), whereas the home page is built for brand breadth and returning-visitor navigation. Hypothesis: routing prospecting traffic to page.kenetik-evergreen-lp instead of the home page produces a measurable lift in landing-page -> purchase conversion rate at equal or better blended efficiency. Measured against home-page control over 30d (or to significance), guardrailed on prospecting MER/CAC.",
+      "notes": "Artifact shipped on branch feature/evergreen-offer-lp of drinkkenetik/kenetik-shopify-theme (PR into main pending): templates/page.kenetik-evergreen-lp.json + 12 kenetik-lp-* sections + assets (kenetik-lp.css/js, kenetik-3variety.png) + snippets/kenetik-lp-icon.liquid. Offer = Original Variety 6-pack, Subscribe & Save $23.95 (20%/30-day plan) vs One-Time $29.94. QA passed on preview theme (subscribe price+plan, one-time price, cart drawer + checkout, desktop+mobile). Greenlit by Katie for same-day launch (2026-06-10). Surface-of-change = shopify LP (§8); paid-media is the test vehicle, not the modified surface. OPEN: confirm Meta/GA ViewContent/AddToCart/InitiateCheckout fire (XHR add bypasses theme fetch-wrapped analytics) — routed to Kyle in #kenetik-paid-media. Economics estimate [ASSUMED] — no Polar baseline pulled at creation (sandbox offline); populate CVR baseline + expected lift + monthly prospecting volume before advancing past draft. Conflict scan incomplete at creation — re-run §0 before advancing. Claims Tier A (Devon-cleared), reviews VOC-verified (Sjxf32), 4.8 rating, energy-drink framing approved for this test.",
       "measurement_window": "30d"
     }
   ],
