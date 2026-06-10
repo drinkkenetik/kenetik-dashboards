@@ -855,6 +855,13 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-06-09"
+    },
+    {
+      "id": "L-123",
+      "summary": "A data source returning zero results 11 runs straight was re-noted as transient, not auto-escalated; no consecutive-empty-return threshold exists (CS-188 Sprout).",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-06-10"
     }
   ],
   "entries": [
@@ -2815,6 +2822,23 @@
         "L-118"
       ],
       "target": "Add a bot-filtered denominator (or bot-share confidence flag) to website-state.json and paid-media-state.json CVR/CAC computations; gate spend-change recs on bot-share threshold. Tie to CS-2026-147 RCA scope (rec-275)."
+    },
+    {
+      "id": "L-123",
+      "date": "2026-06-10",
+      "type": "threshold_calibration",
+      "learning": "A data source (Sprout listening, Moe mart) returning zero results for 11 consecutive runs was still re-noted each run as a transient miss rather than auto-escalated to an infrastructure emergency; escalation depended on a human (Market Intelligence) finally reframing it on run 11 (CS-188). The system tracks freshness/availability but has no consecutive-empty-return streak counter that flips a source from monitoring-gap to broken-layer with an assigned recovery-ETA owner.",
+      "source": "Market Intelligence & Planning dept brief (D17/D10/D18), 2026-06-10",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "CS-188 Sprout listening 11th consecutive zero-return run; D10/D17/D18 external VoC, competitive, and trend velocity all DATA_UNAVAILABLE. See daily synthesis 2026-06-10-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-121"
+      ],
+      "target": "Add a consecutive-empty-return counter to data-pipeline-status.md / anomaly-scan escalation thresholds; auto-escalate a source to infra-emergency with a recovery-ETA owner at N>=5 zero-return runs."
     }
   ],
   "archived_entries": [
@@ -3320,5 +3344,5 @@
       "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and ≥7 days live (entry date 2026-05-15)."
     }
   ],
-  "last_updated": "2026-06-05"
+  "last_updated": "2026-06-10T15:05:00Z"
 }
