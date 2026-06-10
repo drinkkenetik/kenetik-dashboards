@@ -40,9 +40,9 @@
     "total": 197,
     "by_status": {
       "closed": 77,
-      "published": 20,
+      "published": 21,
       "approved": 17,
-      "draft": 81,
+      "draft": 80,
       "needs_feedback": 2
     },
     "by_risk": {
@@ -56,7 +56,7 @@
       "investigation": 28,
       "quick": 31
     },
-    "last_updated": "2026-06-10T15:40:15+00:00",
+    "last_updated": "2026-06-10T15:44:46+00:00",
     "last_counted": "2026-06-10"
   },
   "changesets": [
@@ -13314,7 +13314,7 @@
     {
       "id": "CS-2026-198",
       "title": "Evergreen Offer LP — A/B test vs. Home Page as paid prospecting destination",
-      "status": "draft",
+      "status": "published",
       "department": "DTC-website",
       "platforms": [
         "shopify"
@@ -13328,8 +13328,27 @@
       "source": "manual",
       "spawned_from": null,
       "hypothesis": "A purpose-built single-offer evergreen landing page converts paid prospecting traffic better than the home page. Cold prospecting clicks need one linear argument (problem -> mechanism -> proof -> single offer) and one decision (Subscribe & Save vs One-Time), whereas the home page is built for brand breadth and returning-visitor navigation. Hypothesis: routing prospecting traffic to page.kenetik-evergreen-lp instead of the home page produces a measurable lift in landing-page -> purchase conversion rate at equal or better blended efficiency. Measured against home-page control over 30d (or to significance), guardrailed on prospecting MER/CAC.",
-      "notes": "Artifact shipped on branch feature/evergreen-offer-lp of drinkkenetik/kenetik-shopify-theme (PR into main pending): templates/page.kenetik-evergreen-lp.json + 12 kenetik-lp-* sections + assets (kenetik-lp.css/js, kenetik-3variety.png) + snippets/kenetik-lp-icon.liquid. Offer = Original Variety 6-pack, Subscribe & Save $23.95 (20%/30-day plan) vs One-Time $29.94. QA passed on preview theme (subscribe price+plan, one-time price, cart drawer + checkout, desktop+mobile). Greenlit by Katie for same-day launch (2026-06-10). Surface-of-change = shopify LP (§8); paid-media is the test vehicle, not the modified surface. OPEN: confirm Meta/GA ViewContent/AddToCart/InitiateCheckout fire (XHR add bypasses theme fetch-wrapped analytics) — routed to Kyle in #kenetik-paid-media. Economics estimate [ASSUMED] — no Polar baseline pulled at creation (sandbox offline); populate CVR baseline + expected lift + monthly prospecting volume before advancing past draft. Conflict scan incomplete at creation — re-run §0 before advancing. Claims Tier A (Devon-cleared), reviews VOC-verified (Sjxf32), 4.8 rating, energy-drink framing approved for this test.",
-      "measurement_window": "30d"
+      "notes": "Artifact shipped on branch feature/evergreen-offer-lp of drinkkenetik/kenetik-shopify-theme (PR into main pending): templates/page.kenetik-evergreen-lp.json + 12 kenetik-lp-* sections + assets (kenetik-lp.css/js, kenetik-3variety.png) + snippets/kenetik-lp-icon.liquid. Offer = Original Variety 6-pack, Subscribe & Save $23.95 (20%/30-day plan) vs One-Time $29.94. QA passed on preview theme (subscribe price+plan, one-time price, cart drawer + checkout, desktop+mobile). Greenlit by Katie for same-day launch (2026-06-10). Surface-of-change = shopify LP (§8); paid-media is the test vehicle, not the modified surface. OPEN: confirm Meta/GA ViewContent/AddToCart/InitiateCheckout fire (XHR add bypasses theme fetch-wrapped analytics) — routed to Kyle in #kenetik-paid-media. Economics estimate [ASSUMED] — no Polar baseline pulled at creation (sandbox offline); populate CVR baseline + expected lift + monthly prospecting volume before advancing past draft. Conflict scan incomplete at creation — re-run §0 before advancing. Claims Tier A (Devon-cleared), reviews VOC-verified (Sjxf32), 4.8 rating, energy-drink framing approved for this test. [2026-06-10 advanced draft->published by Katie. Resolved pre-publish items: (1) metrics_moved set to lp_level_cvr_new_visitors + d01_site_cvr (balancing digital_cac down / new_customer_count up); (2) economics grounded — site CVR baseline 5.5% target / 5.87% Clarity 30d (50,598 sessions), digital_cac ~$50 cur / $34 target; cold-prospecting CVR + monthly prospecting volume ASSUMED pending Kyle pixel/Meta data; (3) conflict scan: 19 open shopify/DTC-website CSes — primary watch CS-2026-147 (Site-Wide CVR Tracking Regression RCA) threatens primary-metric integrity; CS-2026-115/154 concurrent PDP CRO (low contamination, isolated by traffic split). OPEN: confirm Meta/GA pixels fire before trusting mid-funnel readout.]",
+      "measurement_window": "30d",
+      "approved_by": "Katie Spaller",
+      "published_date": "2026-06-10",
+      "executed_date": "2026-06-10",
+      "expected_impact": {
+        "metrics_moved": [
+          "lp_level_cvr_new_visitors",
+          "d01_site_cvr"
+        ],
+        "balancing_impact": [
+          {
+            "metric": "digital_cac",
+            "expected_direction": "down"
+          },
+          {
+            "metric": "new_customer_count",
+            "expected_direction": "up"
+          }
+        ]
+      }
     }
   ],
   "queue_actions": {
