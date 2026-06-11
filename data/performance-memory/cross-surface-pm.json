@@ -862,6 +862,20 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-06-10"
+    },
+    {
+      "id": "L-124",
+      "summary": "New strategic revenue workstreams (KenetikPro physician-referral Shopify store) are launched from meeting decisions without a governing ChangeSet, s",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-06-11"
+    },
+    {
+      "id": "L-125",
+      "summary": "A directional watch-item metric was carried forward from the prior synthesis ('desktop CVR -21% on +45% sessions') and contradicted by fresher domai",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-06-11"
     }
   ],
   "entries": [
@@ -2839,6 +2853,36 @@
         "L-121"
       ],
       "target": "Add a consecutive-empty-return counter to data-pipeline-status.md / anomaly-scan escalation thresholds; auto-escalate a source to infra-emergency with a recovery-ETA owner at N>=5 zero-return runs."
+    },
+    {
+      "id": "L-124",
+      "date": "2026-06-11",
+      "type": "process_change",
+      "learning": "New strategic revenue workstreams (KenetikPro physician-referral Shopify store) are launched from meeting decisions without a governing ChangeSet, so they escape the velocity/measurement system.",
+      "source": "D14 Team Intelligence scan, 2026-06-11 (SIG-14-4; decision recorded in 6/10 tag-up)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "KenetikPro third Shopify store decided 6/10 with material scope on Katie and no governing CS; no intake hook converts a meeting-level launch decision into a ChangeSet. See daily synthesis 2026-06-11-s1.md. CS-2026-199 spawned to close this instance.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "changeset-instructions.md intake rules + meeting-cadence.md / weekly-marketing-tag-up-recap.md (auto-flag new-workstream decisions for CS creation)"
+    },
+    {
+      "id": "L-125",
+      "date": "2026-06-11",
+      "type": "threshold_calibration",
+      "learning": "A directional watch-item metric was carried forward from the prior synthesis ('desktop CVR -21% on +45% sessions') and contradicted by fresher domain-scan data (sessions -20.7%, desktop -3.6%, CVR -2.4%); it should be retired.",
+      "source": "D01 Revenue scan, 2026-06-11 (memory_updates correction)",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Prior-session watch item not re-verified against the current domain scan; the framing-guardrail metric-freshness cross-check caught it one cycle late. See daily synthesis 2026-06-11-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "synthesis-instructions.md Step 8 metric-freshness cross-check (extend to session-handoff watch items, not only D14-sourced metrics)"
     }
   ],
   "archived_entries": [
