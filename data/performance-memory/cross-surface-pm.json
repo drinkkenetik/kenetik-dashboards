@@ -876,6 +876,20 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-06-11"
+    },
+    {
+      "id": "L-126",
+      "summary": "CS-189 status advanced to approved (co-sign 6/08 per claims-map) but the tracker approved_by field was never written, and a synthesis then read the ",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-06-11"
+    },
+    {
+      "id": "L-127",
+      "summary": "The 8-session RED was narrated as a throughput crisis, but intake velocity (11.5/wk) is in-band — the binding constraint is two human decision/measu",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-06-11"
     }
   ],
   "entries": [
@@ -2883,6 +2897,36 @@
       "skill_files_updated": [],
       "related_entries": [],
       "target": "synthesis-instructions.md Step 8 metric-freshness cross-check (extend to session-handoff watch items, not only D14-sourced metrics)"
+    },
+    {
+      "id": "L-126",
+      "date": "2026-06-11",
+      "type": "process_change",
+      "learning": "CS-189 status advanced to approved (co-sign 6/08 per claims-map) but the tracker approved_by field was never written, and a synthesis then read the empty field as 'co-sign pending' — a phantom decision block.",
+      "source": "Operations + Science dept briefs 2026-06-11 (INV-OP-1 / INV-SR-1)",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "tracker CS-189 status=approved, approved_by=None; claims-map shows APPROVED 2026-06-08 by Devon. Same field-gap class as CS-097 (L-035). See 2026-06-11-s2.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "changeset status-transition validation (require approved_by when status=approved) + synthesis ChangeSet cross-check reads approved_by AND claims-map/notes before declaring a co-sign pending"
+    },
+    {
+      "id": "L-127",
+      "date": "2026-06-11",
+      "type": "threshold_calibration",
+      "learning": "The 8-session RED was narrated as a throughput crisis, but intake velocity (11.5/wk) is in-band — the binding constraint is two human decision/measurement nodes, not processing speed or 80-draft volume.",
+      "source": "Operations dept brief 2026-06-11 (INS-OP-1)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "d12_velocity_new_per_week=11.5 (28d) in band[8,12]; measurement_capable=false 8th run; Devon block 48h. See 2026-06-11-s2.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "synthesis-instructions D12 framing — separate intake-velocity (healthy) from decision/measurement-gate (the actual RED)"
     }
   ],
   "archived_entries": [
