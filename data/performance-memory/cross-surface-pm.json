@@ -890,6 +890,13 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-06-11"
+    },
+    {
+      "id": "L-128",
+      "summary": "Re-run perpetuated stale July-4 'needs_planning' (Nick scheduled it 15:03Z, after dept briefs 14:54Z); re-run trusted briefs over fresher live calendar. Calendar build stale (2026-05-20).",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-06-11"
     }
   ],
   "entries": [
@@ -2927,6 +2934,18 @@
       "skill_files_updated": [],
       "related_entries": [],
       "target": "synthesis-instructions D12 framing — separate intake-velocity (healthy) from decision/measurement-gate (the actual RED)"
+    },
+    {
+      "id": "L-128",
+      "date": "2026-06-11",
+      "type": "process_change",
+      "domain": "operations",
+      "source_type": "operational_signal",
+      "learning": "A synthesis re-run that rebuilds from upstream department briefs can perpetuate stale state: Nick scheduled the July-4 beats (commit 15:03Z) after the dept briefs were authored (14:54Z), so both the s1 DM and the dept-informed s2 carried 'July-4 needs_planning' even though the live marketing-calendar already read 'planned' by s2 runtime. The re-run trusted the briefs over the fresher state file.",
+      "source": "Investigation of Nick's 2026-06-11 KGS Daily DM vs commit f3cd227",
+      "evidence": "Nick s1 DM 13:29Z; Market-Intel dept brief commit 3153df6 14:54Z (needs_planning); Nick July-4 commit f3cd227 15:03Z (needs_planning->planned); s2 re-run ~15:30-16:02Z still cited needs_planning. marketing-calendar-data.json generated_at 2026-05-20 (stale build); team edits land async. DOLLAR-ULTRA confirmed by Nick but pipeline task-state had no signal.",
+      "confidence": "strong",
+      "target": "task-b-synthesis.md (a re-run after Task A1 completes must re-read fast-changing state files — marketing-calendar-data.json, team-tasks.json — not rely solely on briefs authored earlier) + calendar-writeback-protocol.md (refresh generated_at / fast write-back loop so intraday team edits are visible to the next layer). Upstream: gate synthesis on task_a1_complete so the run does not fire before briefs exist."
     }
   ],
   "archived_entries": [
