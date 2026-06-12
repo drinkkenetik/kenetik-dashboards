@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-11T09:25:53.140966+00:00",
+  "last_updated": "2026-06-12T09:21:05.932163+00:00",
   "next_id": "CS-2026-200",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-11",
@@ -56,7 +56,7 @@
       "investigation": 29,
       "quick": 31
     },
-    "last_updated": "2026-06-11",
+    "last_updated": "2026-06-12T09:21:05.910979+00:00",
     "last_counted": "2026-06-11"
   },
   "changesets": [
