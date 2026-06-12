@@ -842,9 +842,33 @@
               "cvr": 0.03867403314917127
             }
           }
+        },
+        {
+          "checked_at": "2026-06-12T18:38:20.322342Z",
+          "snapshot_at": "2026-06-12T18:38:22.661070Z",
+          "result": "healthy",
+          "action_taken": "none",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 3770,
+              "atc_events": 350,
+              "atc_rate": 0.09283819628647215,
+              "bounce_rate": 0.7488063660477453,
+              "purchases": 145,
+              "cvr": 0.038461538461538464
+            },
+            "variant": {
+              "sessions": 1393,
+              "atc_events": 121,
+              "atc_rate": 0.08686288585786073,
+              "bounce_rate": 0.6884422110552764,
+              "purchases": 46,
+              "cvr": 0.033022254127781765
+            }
+          }
         }
       ],
-      "last_checked_at": "2026-06-12T13:05:44.272281Z",
+      "last_checked_at": "2026-06-12T18:38:20.322342Z",
       "katie_approval_observed_at": "2026-06-04T17:36:13Z",
       "orchestrator_notes": [
         {
@@ -896,25 +920,30 @@
           "at": "2026-06-11T14:10:10.413140Z",
           "run": "auto-optimize-orchestrator scheduled (2026-06-11)",
           "action": "Phase 0 reconciliation: no candidates (only published experiment tracker entry is CS-2026-154; state.json phase=measuring, not idle/paused_for_review). Per-experiment routing: pdp-atc phase=measuring, skipped per protocol (cron owns canary->measuring->analyzing). Tier-1 emergency-revert exception evaluated and not triggered: revert_enabled=false (Stage 1 alert-only) and 2026-06-09 thread escalation tagging Devon+Katie remains pending. Convergence continuing: last 6 consecutive snapshots all healthy (2026-06-10T07:26 through 2026-06-11T13:14, variant n=689->938). Current variant ATC 10.23% vs control 10.28% (delta -0.5%); CVR 4.05% vs 4.30% (delta -5.9%). Both metrics now well inside tier-2 thresholds. Day 3.56 of 7-day measurement window. No state.json phase change, no tracker.json write, no Slack post (silence default per Slack rules; Katie escalation already in flight and the latest convergence trend strengthens the let-ride option without requiring a new post)."
+        },
+        {
+          "at": "2026-06-12T14:09:46.985556Z",
+          "run": "auto-optimize-orchestrator scheduled (2026-06-12 14:10 UTC)",
+          "action": "Phase 0 reconciliation: no candidates (only published experiment tracker entry is CS-2026-154; state.json phase=measuring, not idle/paused_for_review). Per-experiment routing: pdp-atc phase=measuring, skipped per protocol (cron owns canary->measuring->analyzing). Tier-1 emergency-revert exception evaluated and not triggered: 10 consecutive healthy snapshots (2026-06-10T07:26 through 2026-06-12T13:05), revert_enabled=false (Stage 1 alert-only), and 2026-06-09 Katie+Devon thread escalation still in flight. Convergence has held: variant n=1086 vs control n=3354, ATC 9.76% vs 9.90% (delta -1.4%), CVR 3.87% vs 4.08% (delta -5.3%) -- both metrics well inside tier-2 thresholds. Day 4.56 of 7-day measurement window; analyzing phase ETA 2026-06-15T00:38Z. No state.json phase change, no tracker.json write, no Slack post (silence default per Slack rules; Katie escalation already in flight, convergence trend continues to strengthen the let-ride option without requiring a new post)."
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-06-12T13:05:45.933408Z",
+        "snapshot_at": "2026-06-12T18:38:22.661070Z",
         "control": {
-          "sessions": 3354,
-          "atc_events": 332,
-          "atc_rate": 0.09898628503279666,
-          "bounce_rate": 0.7385211687537269,
-          "purchases": 137,
-          "cvr": 0.04084675014907573
+          "sessions": 3770,
+          "atc_events": 350,
+          "atc_rate": 0.09283819628647215,
+          "bounce_rate": 0.7488063660477453,
+          "purchases": 145,
+          "cvr": 0.038461538461538464
         },
         "variant": {
-          "sessions": 1086,
-          "atc_events": 106,
-          "atc_rate": 0.09760589318600368,
-          "bounce_rate": 0.6574585635359116,
-          "purchases": 42,
-          "cvr": 0.03867403314917127
+          "sessions": 1393,
+          "atc_events": 121,
+          "atc_rate": 0.08686288585786073,
+          "bounce_rate": 0.6884422110552764,
+          "purchases": 46,
+          "cvr": 0.033022254127781765
         }
       },
       "last_undersample_escalation_at": null,
@@ -922,5 +951,5 @@
       "decided_at": null
     }
   },
-  "_last_cron_run": "2026-06-12T13:05:44.272281Z"
+  "_last_cron_run": "2026-06-12T18:38:20.322342Z"
 }
