@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-06-12T09:21:05.932163+00:00",
-  "next_id": "CS-2026-200",
+  "next_id": "CS-2026-201",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-11",
     "last_sweep_session": "2026-06-11-s1",
@@ -37,12 +37,12 @@
     ]
   },
   "summary": {
-    "total": 198,
+    "total": 199,
     "by_status": {
       "closed": 77,
       "published": 23,
       "approved": 16,
-      "draft": 80,
+      "draft": 81,
       "needs_feedback": 2
     },
     "by_risk": {
@@ -13326,7 +13326,7 @@
     },
     {
       "id": "CS-2026-197",
-      "title": "Pre-Cancel Offer Intercept — Canceled Subscription Flow (S4ng5R) Mid-Funnel Retention Hook",
+      "title": "Canceled Subscription Flow (S4ng5R) Rebuild — Post-Cancel Reason-Branched Winback",
       "status": "published",
       "department": "lifecycle-marketing",
       "platforms": [
@@ -13341,7 +13341,7 @@
       "source": "synthesis_priority_stack",
       "spawned_from": "synthesis-2026-06-10-s1",
       "hypothesis": "Subscription churn is structurally accelerating (May 14.6% vs Apr 12.7%; active subs 2,380, -41/7d). The Canceled Subscription flow (S4ng5R) shows 33% open / 0.62% CTR / 1 conversion from 161 recipients — subscribers are opening (intent to engage) but there is no retention hook at the moment of peak cancel intent. Hypothesis: inserting a pre-cancel offer intercept (pause/skip option or single-order discount) BEFORE the final cancel confirmation captures a measurable share of active-churn events. This is a distinct funnel point from CS-2026-186 winback (post-cancel) — it intercepts pre-cancel. Falsify against 30d voluntary churn (May 309 events) to confirm whether a pre-cancel intercept materially reduces voluntary churn and supports active_sub_count recovery toward the 2,800 target.",
-      "notes": "[2026-06-12] GO-LIVE: S4ng5R Canceled Subscription flow live in Klaviyo (confirmed by Katie AM). As-built structure per approved flow map: trigger=Subscription Cancelled on recharge; filters=started-sub 0x + recharge-reactivated 0x since flow start; 2-min delay -> plain-text cancel-confirmation Email #1 (from customer-experience, not founder) -> branch on cancellation reason using the 3 most-recurring Klaviyo reasons (cannot afford/too expensive, too much product, didn't mean to start a subscription) plus no-longer-using and don't-like-taste tails, each with a tailored winback email + reason-specific wait. NOTE: as-built is the post-cancel reason-branched winback on S4ng5R, broader than the original pre-cancel-intercept brief framing.",
+      "notes": "[2026-06-12] GO-LIVE: S4ng5R Canceled Subscription flow live in Klaviyo (confirmed by Katie AM). As-built structure per approved flow map: trigger=Subscription Cancelled on recharge; filters=started-sub 0x + recharge-reactivated 0x since flow start; 2-min delay -> plain-text cancel-confirmation Email #1 (from customer-experience, not founder) -> branch on cancellation reason using the 3 most-recurring Klaviyo reasons (cannot afford/too expensive, too much product, didn't mean to start a subscription) plus no-longer-using and don't-like-taste tails, each with a tailored winback email + reason-specific wait. Retitled 2026-06-12 to match live build (post-cancel reason-branched winback on S4ng5R). True pre-cancel intercept moved to CS-2026-200 (Recharge in-account cancellation-prevention flow) — not possible in Klaviyo. Cancellation-reason values already standardized; branch logic uses them directly.",
       "measurement_window": "30d",
       "sweep_flags": [
         {
@@ -13423,6 +13423,47 @@
       "notes": "Spawned 2026-06-11-s1 (synthesis P5). New third Shopify store (physician-referral patient sales, subdomain) was decided in the 6/10 marketing tag-up with material execution scope on Katie but NO governing ChangeSet (D14 SIG-14-4). This CS exists to (a) define success metrics + measurement window, (b) assign clear owner/sequence vs QT launch + Father's Day, (c) prevent the new workstream from escaping d12_velocity tracking. Resolution Hierarchy: Add justified — no existing CS governs this store; it is a measurement gap, not optimization bloat. Learning signal: see cross-surface-pm (KenetikPro ungoverned-workstream intake gap).",
       "category": "operations",
       "measurement_window": "30"
+    },
+    {
+      "id": "CS-2026-200",
+      "title": "Recharge In-Account Cancellation-Prevention Flow — Pre-Cancel Intercept (customer dashboard)",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "recharge"
+      ],
+      "created": "2026-06-12",
+      "last_updated": "2026-06-12",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "manual",
+      "spawned_from": "CS-2026-197",
+      "hypothesis": "A true pre-cancel intercept is not possible in Klaviyo — Klaviyo's Subscription Cancelled trigger only fires AFTER the cancel is committed (that is what CS-197/S4ng5R covers, post-cancel). The only surface that can intervene at the moment of cancel intent is Recharge's native in-account cancellation-prevention flow shown in the customer account dashboard. Hypothesis: presenting pause / skip-shipment / swap / single-order-discount options on the Recharge cancel path — branched on the now-standardized cancellation reasons — diverts a measurable share of active-churn events before they convert to a cancellation, recovering subs that the post-cancel winback structurally cannot reach. Falsify against 30d voluntary churn baseline.",
+      "notes": "Spun off from CS-2026-197 on 2026-06-12. CS-197 = post-cancel reason-branched winback (Klaviyo S4ng5R, live 2026-06-12). This CS = the pre-cancel half, which must live in Recharge because Klaviyo cannot intercept before cancellation confirmation. Reuses the standardized cancellation-reason values for in-dashboard branch logic. Recharge cancellation-prevention / retention settings: pause, skip, delivery-frequency change, swap, single-order discount. Owner Katie.",
+      "measurement_window": "30d",
+      "expected_impact": {
+        "metrics_moved": [
+          "active_sub_count",
+          "voluntary_churn_rate"
+        ],
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "balancing_impact": {
+          "metric": "promo_discount_cost",
+          "expected_direction": "up"
+        },
+        "learning_hypothesis": "Whether a Recharge in-account cancellation-prevention flow (pause/skip/swap/single-order discount, reason-branched) at the moment of cancel intent diverts active-churn events that the post-cancel Klaviyo winback (CS-197) cannot reach."
+      }
     }
   ],
   "queue_actions": {
