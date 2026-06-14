@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-13T09:01:32.568760+00:00",
+  "last_updated": "2026-06-14T09:01:45.850421+00:00",
   "next_id": "CS-2026-201",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-12",
@@ -39,9 +39,9 @@
     ]
   },
   "summary": {
-    "total": 199,
+    "total": 197,
     "by_status": {
-      "closed": 77,
+      "closed": 75,
       "published": 23,
       "approved": 16,
       "draft": 81,
@@ -50,15 +50,15 @@
     "by_risk": {
       "critical": 2,
       "low": 92,
-      "medium": 85,
+      "medium": 83,
       "high": 20
     },
     "by_subtype": {
-      "implementation": 139,
+      "implementation": 137,
       "investigation": 29,
       "quick": 31
     },
-    "last_updated": "2026-06-13T09:01:32.547309+00:00",
+    "last_updated": "2026-06-14T09:01:45.846468+00:00",
     "last_counted": "2026-06-12"
   },
   "changesets": [
@@ -443,70 +443,6 @@
       ]
     },
     {
-      "id": "CS-2026-005",
-      "title": "Post-Activation Retention Campaign (Cleetus Cohort)",
-      "subtype": "implementation",
-      "department": "lifecycle-marketing",
-      "platforms": [
-        "klaviyo"
-      ],
-      "status": "closed",
-      "risk_level": "medium",
-      "owner": "Katie Spaller",
-      "created": "2026-03-09",
-      "objective_level": "L1",
-      "category": "email_sms",
-      "dependencies": [
-        "CS-2026-002"
-      ],
-      "blocks": [],
-      "spawned_from": "rec-005",
-      "spawned_changesets": [
-        "CS-2026-007"
-      ],
-      "expected_impact": {
-        "revenue": {
-          "upside": 24000,
-          "expected": 12000,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 12000,
-          "expected": 6000,
-          "downside": 0
-        },
-        "primary_metric": "amazon_session_cvr",
-        "primary_metric_target": ">=15% CVR (from 10% baseline)"
-      },
-      "routed_to": [
-        "Katie"
-      ],
-      "routed_via": "slack",
-      "routed_date": "2026-03-07",
-      "approved_by": "Katie",
-      "approved_date": "2026-03-12",
-      "published_date": "2026-03-12",
-      "measurement_window": "14d",
-      "measurement_due": "2026-03-26",
-      "actual_impact": null,
-      "outcome": "superseded",
-      "closed_date": "2026-03-16",
-      "file": "cgo-logs/changesets/CS-2026-005.md",
-      "notes": "Closed: Superseded by CS-2026-014 (more comprehensive Amazon listing overhaul).",
-      "scheduled_send_date": null,
-      "execution_target_date": null,
-      "executed_date": null,
-      "autonomy_tier": null,
-      "sweep_flags": [
-        {
-          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
-          "set_date": "2026-04-30",
-          "session": "2026-04-30-execute",
-          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-09 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
-        }
-      ]
-    },
-    {
       "id": "CS-2026-006",
       "title": "Science Content Pipeline: Cell BHB Metabolic Fitness Paper",
       "subtype": "implementation",
@@ -799,71 +735,6 @@
         "recommended_action": "Pull Recharge data for Cleetus cohort churn rate (Mar 16 - Apr 20). Compare against 12% baseline. If churn data unavailable, consider reframing primary KPI to flow conversion rate."
       },
       "learning_note": "Launched 5-touch Klaviyo flow (email + SMS) targeting ~4,797 CLEETUS-FREE3PACK Mar 2026 cohort with Cleetus-voiced education-first arc (Day 3 intro \u2192 Day 7 science \u2192 Day 10 Matt Hughes \u2192 Day 14 15%-off ask \u2192 Day 21 subscription CTA). -> Flow generated $1,968 / 25 conversions over 36 days (14,268 sends, 32.7% open, 0.17% CVR, $0.138 RPR). Cohort 30d LTV $25.37 (-44% vs Feb 2026, -61% vs 2025-09 Cleetus cohort). New-sub rate 0.3% (below 0.5-0.8% historical). -> Flow beats General-flow RPR baseline (+130%) so stays live as evergreen for future cohort entries, but did NOT hit the aggressive 8% reorder / <=8% churn / 5% sub-conversion projection for deep-discount acquisition. Structural learning: deep-discount cohorts (80% Cleetus-FREE3PACK, sub-$13 AOV) have LTV ceilings an email flow alone cannot break. Next cohort-recovery playbooks should either add paid-retargeting layer OR set conservative targets calibrated to the now-known deep-discount benchmarks (~$25 30d LTV, ~0.3% new-sub rate)."
-    },
-    {
-      "id": "CS-2026-008",
-      "title": "'Brain Fuel' Positioning Sprint",
-      "subtype": "implementation",
-      "department": "DTC-website",
-      "platforms": [
-        "shopify"
-      ],
-      "status": "closed",
-      "risk_level": "medium",
-      "owner": "Nick Lacagnina + Charlotte Thamm + Matt Alvarez",
-      "created": "2026-03-10",
-      "objective_level": "L1",
-      "category": "creative",
-      "dependencies": [
-        "CS-2026-006"
-      ],
-      "blocks": [],
-      "spawned_from": "rec-008",
-      "spawned_changesets": [
-        "CS-2026-026"
-      ],
-      "expected_impact": {
-        "revenue": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "primary_metric": "creator_program_roi",
-        "primary_metric_target": "Framework delivery + tier recommendations"
-      },
-      "routed_to": [
-        "Nick",
-        "Charlotte",
-        "Matt"
-      ],
-      "routed_via": "slack",
-      "routed_date": "2026-03-07",
-      "approved_by": "Express Auto-Approve",
-      "approved_date": "2026-03-07",
-      "published_date": null,
-      "measurement_window": "30-day",
-      "measurement_due": null,
-      "actual_impact": null,
-      "outcome": "superseded",
-      "closed_date": "2026-03-16",
-      "file": "cgo-logs/changesets/CS-2026-008.md",
-      "notes": "Closed: Superseded by Session 11 creator analysis. ROI framework delivered separately.",
-      "execution_target_date": null,
-      "executed_date": null,
-      "autonomy_tier": null,
-      "sweep_flags": [
-        {
-          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
-          "set_date": "2026-04-30",
-          "session": "2026-04-30-execute",
-          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-10 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
-        }
-      ]
     },
     {
       "id": "CS-2026-009",
