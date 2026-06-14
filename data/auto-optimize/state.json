@@ -1035,9 +1035,38 @@
               "cvr": 0.02882380288238029
             }
           }
+        },
+        {
+          "checked_at": "2026-06-14T12:37:09.376579Z",
+          "snapshot_at": "2026-06-14T12:37:10.950793Z",
+          "result": "tier1_breach",
+          "action_taken": "alert_only",
+          "metrics_snapshot": {
+            "control": {
+              "sessions": 4862,
+              "atc_events": 444,
+              "atc_rate": 0.09132044426162073,
+              "bounce_rate": 0.762854792266557,
+              "purchases": 173,
+              "cvr": 0.0355820649938297
+            },
+            "variant": {
+              "sessions": 2205,
+              "atc_events": 180,
+              "atc_rate": 0.08163265306122448,
+              "bounce_rate": 0.7256235827664399,
+              "purchases": 62,
+              "cvr": 0.028117913832199547
+            }
+          },
+          "metric": "cvr",
+          "control_value": 0.0355820649938297,
+          "variant_value": 0.028117913832199547,
+          "delta_pct": -0.20977284940951338,
+          "threshold_pct": -0.2
         }
       ],
-      "last_checked_at": "2026-06-14T07:33:36.374362Z",
+      "last_checked_at": "2026-06-14T12:37:09.376579Z",
       "katie_approval_observed_at": "2026-06-04T17:36:13Z",
       "orchestrator_notes": [
         {
@@ -1097,22 +1126,22 @@
         }
       ],
       "current_metrics": {
-        "snapshot_at": "2026-06-14T07:33:37.760655Z",
+        "snapshot_at": "2026-06-14T12:37:10.950793Z",
         "control": {
-          "sessions": 4789,
-          "atc_events": 443,
-          "atc_rate": 0.09250365420755899,
-          "bounce_rate": 0.7617456671538944,
-          "purchases": 172,
-          "cvr": 0.03591564000835248
+          "sessions": 4862,
+          "atc_events": 444,
+          "atc_rate": 0.09132044426162073,
+          "bounce_rate": 0.762854792266557,
+          "purchases": 173,
+          "cvr": 0.0355820649938297
         },
         "variant": {
-          "sessions": 2151,
+          "sessions": 2205,
           "atc_events": 180,
-          "atc_rate": 0.08368200836820083,
-          "bounce_rate": 0.7243142724314272,
+          "atc_rate": 0.08163265306122448,
+          "bounce_rate": 0.7256235827664399,
           "purchases": 62,
-          "cvr": 0.02882380288238029
+          "cvr": 0.028117913832199547
         }
       },
       "last_undersample_escalation_at": null,
@@ -1120,5 +1149,5 @@
       "decided_at": null
     }
   },
-  "_last_cron_run": "2026-06-14T07:33:36.374362Z"
+  "_last_cron_run": "2026-06-14T12:37:09.376579Z"
 }
