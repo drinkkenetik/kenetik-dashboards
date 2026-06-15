@@ -1,22 +1,17 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-06-15T10:04:52.493122+00:00",
-  "next_id": "CS-2026-201",
+  "next_id": "CS-2026-202",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-06-12",
-    "last_sweep_session": "2026-06-12-s1",
-    "last_sweep_result": "idempotent_run_9 \u2014 14 stale-approved (>7d) unchanged from run 8 (flags already set 2026-06-08; not re-appended to avoid flag-object duplication). MEASUREMENT DEFERRED: 13 published past-due; pending_measurement_queue maintained at 17 (0 newly appended; today's overdue is a subset). measurement_capable=false (9th consecutive run): MCPs (Polar/Klaviyo/Sprout/Superfiliate) technically reachable this session, but queue drain remains gated on the unresolved Devon drain-owner decision (synthesis P1, ACT-OP-1) per the CS-2026-127 control contract \u2014 NOT auto-drained in an unattended run to avoid misclassification/false auto-close. 0 auto-closed. Calendar safety net (Step 1.5): 0 untracked qualifying activities. PM candidate scan (Step 1.6): 5 stale candidates (L-012/L-042/L-072/L-073/L-121, Apr-May, survived 8 runs unconverted) flagged for human convert-or-clear review \u2014 NOT auto-spawned (DS-05 draft-bloat at 81 drafts ~67pct; Resolution Hierarchy favors Refine over Add). Step 2 new CSes: 0 \u2014 synthesis candidates self-silencing (NCA via active paid decisions, sub via CS-197/200, calendar via rec-292); DS-05 stale-draft archive need already covered by open rec-255 (overlap confirmed, no spawn). summary recomputed from entries (total=199).",
+    "last_sweep_date": "2026-06-15",
+    "last_sweep_session": "2026-06-15-s1",
+    "last_sweep_result": "idempotent_run_10: 15 stale-approved (14 pre-flagged, CS-194 newly flagged); 4 measurement-due deferred (gated on unnamed Polar drain-owner per CS-127 control contract \u2014 not auto-closed/fabricated); 0 auto-closed; 1 new CS (CS-2026-201 runner-health governance, draft).",
     "last_sweep_counts": {
-      "stale_flagged": 14,
-      "measurement_overdue": 13,
-      "measured": 0,
-      "measurement_deferred": 17,
+      "stale_approved_gt_7d": 15,
+      "newly_flagged": 1,
+      "measurement_due_deferred": 4,
       "auto_closed": 0,
-      "pending_measurement_queue_size": 17,
-      "measurement_capable": false,
-      "idempotent_run": 9,
-      "new_changesets_spawned": 0,
-      "archive_candidates_flagged": 6
+      "new_changesets": 1
     },
     "pending_measurement_queue": [
       "CS-2026-020",
@@ -39,27 +34,27 @@
     ]
   },
   "summary": {
-    "total": 167,
+    "total": 168,
     "by_status": {
       "closed": 75,
       "published": 23,
       "approved": 16,
       "needs_feedback": 2,
-      "draft": 51
+      "draft": 52
     },
     "by_risk": {
       "critical": 2,
-      "low": 76,
+      "low": 77,
       "medium": 71,
       "high": 18
     },
     "by_subtype": {
-      "implementation": 123,
+      "implementation": 124,
       "investigation": 22,
       "quick": 22
     },
-    "last_updated": "2026-06-15T10:04:52.481813+00:00",
-    "last_counted": "2026-06-12"
+    "last_updated": "2026-06-15T13:19:44.321728+00:00",
+    "last_counted": "2026-06-15"
   },
   "changesets": [
     {
@@ -10917,7 +10912,15 @@
           "new_customer_count"
         ]
       },
-      "approved_by": "Katie Spaller"
+      "approved_by": "Katie Spaller",
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-06-15",
+          "session": "2026-06-15-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-195",
@@ -11123,6 +11126,26 @@
         },
         "learning_hypothesis": "Whether a Recharge in-account cancellation-prevention flow (pause/skip/swap/single-order discount, reason-branched) at the moment of cancel intent diverts active-churn events that the post-cancel Klaviyo winback (CS-197) cannot reach."
       }
+    },
+    {
+      "id": "CS-2026-201",
+      "title": "Pipeline runner-health governance: disk alert + stale-clone cleanup + named infra owner",
+      "status": "draft",
+      "department": "operations",
+      "platforms": [
+        "daily-pipeline"
+      ],
+      "created": "2026-06-15",
+      "last_updated": "2026-06-15",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "owner": "Garrett Davis",
+      "source": "synthesis",
+      "spawned_from": "2026-06-15-s1.md",
+      "hypothesis": "A disk-utilization alert at 80% + automated cleanup of stale /tmp pipeline clones (>24h) + a single named runner-infra owner prevents recurrence of the 6/14-6/15 disk-full outage that took the full automated stack (Larry loop, Exec BI Task 2b, Auto-Optimize, Domain Scans) dark for ~2 days.",
+      "notes": "Spawned from synthesis 2026-06-15-s1 P5-adjacent (Ops ACT-D-3, D14 SIG-14-01/ACT-4). First 2-day pipeline outage; root cause structural: no disk-utilization alerting, no cleanup cron for stale workspace clones, no named runner owner. Answers D14 Q-14-2 (no infra owner surfaced anywhere). Scope: (1) disk alert at 80%, (2) cleanup cron for clones >24h, (3) name Garrett as runner-infra owner. Draft pending Devon/Garrett approval.",
+      "category": "infrastructure"
     }
   ],
   "queue_actions": {
