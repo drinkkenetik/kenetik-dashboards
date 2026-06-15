@@ -37,9 +37,9 @@
     "total": 168,
     "by_status": {
       "closed": 79,
-      "published": 22,
+      "published": 23,
       "approved": 15,
-      "needs_feedback": 4,
+      "needs_feedback": 3,
       "draft": 48
     },
     "by_risk": {
@@ -9514,7 +9514,7 @@
     {
       "id": "CS-2026-157",
       "title": "TBI / Concussion Tier 2 Content Angle Codification — Walsh KME RCT × Consumer-Narrative Cluster",
-      "status": "needs_feedback",
+      "status": "approved",
       "department": "content",
       "platforms": [
         "blog",
@@ -9532,14 +9532,16 @@
       "source": "synthesis",
       "spawned_from": "synthesis-2026-05-15-s1",
       "hypothesis": "4-domain convergence (D10 VoC TBI testimonials + D18 trend cluster + D16 Walsh KME crossover RCT NCT06588946 + D07 Roman Atwood awareness source) supports a Tier 2 content angle codification. Use Walsh KME crossover RCT (n=34, subjective cognitive decline measures) as clinical scaffolding for Dane / Trev / ambassador-app consumer stories. Strict shared-customer-story framing per claims compliance. Expected outcome: shipped Tier 2 codification artifact within 21d (blog post + IG/TT/FB adaptation spec); brand-narrative captured before dissipation; lands into 3-week-uncontested-competitor whitespace for amplification.",
-      "notes": "Spawned from synthesis 2026-05-15-s1 (rec-242) + DS-06-2026-05-15-01. Co-owner: Devon Price (claims-compliance routing approval gate). Cross-flag: Charlotte adapts framing for IG/TT/FB after Brandon delivers compliance-cleared spec. Coordinated with Tier 1 outreach send window (Walsh / Newman / Prins). Highest-leverage Content + Science + MI artifact this week. | 2026-06-15: Brandon (Cowork): 21d amplification window lapsed; re-scoped to EVERGREEN codified TBI Tier 2 angle. Resolution Path + L1-L5 filled. Routed to Devon (claims co-gate); Charlotte adapts after compliance-cleared spec. draft->needs_feedback.",
+      "notes": "Spawned from synthesis 2026-05-15-s1 (rec-242) + DS-06-2026-05-15-01. Co-owner: Devon Price (claims-compliance routing approval gate). Cross-flag: Charlotte adapts framing for IG/TT/FB after Brandon delivers compliance-cleared spec. Coordinated with Tier 1 outreach send window (Walsh / Newman / Prins). Highest-leverage Content + Science + MI artifact this week. | 2026-06-15: Brandon (Cowork): 21d amplification window lapsed; re-scoped to EVERGREEN codified TBI Tier 2 angle. Resolution Path + L1-L5 filled. Routed to Devon (claims co-gate); Charlotte adapts after compliance-cleared spec. draft->needs_feedback. | 2026-06-15: Devon claims co-gate APPROVED the re-scoped evergreen TBI Tier 2 spec. Per-asset claims review still required before publish (Tier A/B disease claims prohibited; strict shared-customer-story framing). Charlotte adapts IG/TT/FB after Brandon delivers compliance-cleared spec. needs_feedback->approved.",
       "category": "content_strategy",
       "measurement_window": "21d",
       "routed_to": [
         "Devon"
       ],
       "routed_via": "manual",
-      "routed_date": "2026-06-15"
+      "routed_date": "2026-06-15",
+      "approved_by": "Devon Price",
+      "approved_date": "2026-06-15"
     },
     {
       "id": "CS-2026-158",
@@ -10706,7 +10708,7 @@
     {
       "id": "CS-2026-189",
       "title": "Claims-Tier Coverage Mapping Infrastructure (claim_id ↔ PMID ↔ tier table)",
-      "status": "approved",
+      "status": "published",
       "department": "science-research",
       "platforms": [
         "pubmed",
@@ -10721,7 +10723,7 @@
       "source": "synthesis_priority_stack",
       "spawned_from": "synthesis-2026-05-29-s1",
       "hypothesis": "Q2 L3 primary metric `claims_tier_coverage` is structurally undefined — 10/10 tracked PMIDs in pubmed-state.json are retraction-safe (status=active) but 0/10 are tier-classified (claim_id=null, tier=null on every row). Build the claim_id ↔ PMID ↔ tier mapping table so the metric becomes computable. Once mapped, claims pre-screen automates (Devon/Claude can adjudicate Tier-3 cases without Brandon-in-the-loop verbal sign-off on every content piece). Highest-leverage Q2 infrastructure investment for science-research dept primary.",
-      "notes": "Synthesis 2026-05-29-s1 rec-245 via Science dept ACT-SR-1. [automation-leverage: high]. Source: pubmed-state.json 2026-05-29 direct inspection; cross-surface-pm candidate L-107 to be appended after this CS lands. Gates downstream auto-claims-scan for CS-2026-128 (MHAM), CS-2026-157 (TBI), CS-2026-177 (Frontiers), CS-2026-182 (ADHD). [APPROVED 2026-06-08 by Devon Price via Slack: state 29944604 cognition directly (Tier A); 41962970 logged to negative-findings register. claims-map.json committed; pubmed-state tier_classified 10/10. Auto-claims-scan unblocked for CS-128/157/177/182.] | 2026-06-15: Brandon (Cowork): owner nudge — deliverable complete since 6/4 (10/10 PMIDs tier-classified). Pending Devon claims sign-off to make metric authoritative + enable auto-clearance. Slack nudge sent to Devon.",
+      "notes": "Synthesis 2026-05-29-s1 rec-245 via Science dept ACT-SR-1. [automation-leverage: high]. Source: pubmed-state.json 2026-05-29 direct inspection; cross-surface-pm candidate L-107 to be appended after this CS lands. Gates downstream auto-claims-scan for CS-2026-128 (MHAM), CS-2026-157 (TBI), CS-2026-177 (Frontiers), CS-2026-182 (ADHD). [APPROVED 2026-06-08 by Devon Price via Slack: state 29944604 cognition directly (Tier A); 41962970 logged to negative-findings register. claims-map.json committed; pubmed-state tier_classified 10/10. Auto-claims-scan unblocked for CS-128/157/177/182.] | 2026-06-15: Brandon (Cowork): owner nudge — deliverable complete since 6/4 (10/10 PMIDs tier-classified). Pending Devon claims sign-off to make metric authoritative + enable auto-clearance. Slack nudge sent to Devon. | 2026-06-15: Devon claims sign-off RECEIVED ('if you're good with them, I'm good with them'). claims_tier_coverage metric now AUTHORITATIVE; auto-clearance enabled. Deliverable (10/10 PMID tier-mapping in pubmed-state.json) live. approved->published.",
       "measurement_window": "30d",
       "expected_impact": {
         "metrics_moved": [
@@ -10746,7 +10748,11 @@
         }
       ],
       "routed_via": "manual",
-      "routed_date": "2026-06-15"
+      "routed_date": "2026-06-15",
+      "approved_by": "Devon Price",
+      "approved_date": "2026-06-15",
+      "executed_date": "2026-06-15",
+      "published_date": "2026-06-15"
     },
     {
       "id": "CS-2026-190",
