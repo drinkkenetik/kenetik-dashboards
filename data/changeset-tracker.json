@@ -36,9 +36,9 @@
   "summary": {
     "total": 168,
     "by_status": {
-      "closed": 78,
+      "closed": 79,
       "published": 22,
-      "approved": 16,
+      "approved": 15,
       "needs_feedback": 4,
       "draft": 48
     },
@@ -8088,7 +8088,7 @@
         "klaviyo",
         "blog"
       ],
-      "status": "approved",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Charlotte Thamm + Lawrence Giarrizzo + Brandon Dyksterhouse + Devon Price",
       "created": "2026-04-29",
@@ -8117,10 +8117,10 @@
       "measurement_window": "2026-05-01 to 2026-05-31",
       "measurement_due": "2026-06-07",
       "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "outcome": "decision_window_lapsed_no_action",
+      "closed_date": "2026-06-15",
       "file": "cgo-logs/changesets/CS-2026-128.md",
-      "notes": "Consolidates DS-04 MHAM May Campaign + DS-04 GLP-1 cognitive bridge into single MHAM-anchored series. Resolution Hierarchy Step 2 (Remove duplicate briefs) > Step 4 (Add). Production load reduced ~50%. Tier 2 mechanism only — no new Tier 1 mental-health claims. PMID 42038700 anchor. | 2026-04-29 (Devon via Claude /changeset-execute): GLP-1 claims gate APPROVE w/ 2 binding edits. Charlotte pre-prod blocked until edits land. Brandon per-post review still required for science callouts. Cross-refs CS-122/CS-100/CS-121 all noted. | 2026-04-29 (Devon via Claude /changeset-execute): APPROVED with 2 binding edits applied to brief. Status draft → approved. Charlotte pre-production unblocked. Brandon per-post claims-pass standard gate. CS-121 Matt Hughes hard gate / CS-100 V3 / Tier 1 MH claims all OOS.",
+      "notes": "Consolidates DS-04 MHAM May Campaign + DS-04 GLP-1 cognitive bridge into single MHAM-anchored series. Resolution Hierarchy Step 2 (Remove duplicate briefs) > Step 4 (Add). Production load reduced ~50%. Tier 2 mechanism only — no new Tier 1 mental-health claims. PMID 42038700 anchor. | 2026-04-29 (Devon via Claude /changeset-execute): GLP-1 claims gate APPROVE w/ 2 binding edits. Charlotte pre-prod blocked until edits land. Brandon per-post review still required for science callouts. Cross-refs CS-122/CS-100/CS-121 all noted. | 2026-04-29 (Devon via Claude /changeset-execute): APPROVED with 2 binding edits applied to brief. Status draft → approved. Charlotte pre-production unblocked. Brandon per-post claims-pass standard gate. CS-121 Matt Hughes hard gate / CS-100 V3 / Tier 1 MH claims all OOS. | 2026-06-15: Brandon (Cowork): CLOSED — never executed. 0/184 May published posts were the MHAM 'More Good Days = Good Fuel' series; capacity went to Golden Pear launch + retail. Window lapsed, nothing to measure. archived: true.",
       "linked_calendar_activity": "MHAM-2026-MAY",
       "source": "synthesis_priority_stack",
       "autonomy_tier": 2,
@@ -8201,7 +8201,8 @@
         }
       ],
       "scheduled_send_date": null,
-      "last_updated": "2026-04-29"
+      "last_updated": "2026-04-29",
+      "learning_note": "Time-boxed seasonal content (MHAM=May) must have production capacity confirmed against competing launches at approval, or it silently lapses. Golden Pear launch displaced MHAM with no explicit de-scope decision."
     },
     {
       "id": "CS-2026-129",
