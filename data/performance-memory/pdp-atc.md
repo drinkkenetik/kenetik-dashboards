@@ -14,7 +14,7 @@
 - **Measurement window**: 7 days
 - **Minimum sample**: 100 sessions per arm
 - **Started**: 2026-05-12 (Cycle 1 — paused_for_review on tier-2 CVR breach)
-- **Total cycles**: 1
+- **Total cycles**: 2
 - **Cumulative lift**: 0.0%
 
 ## Winning Patterns
@@ -30,6 +30,7 @@ _(No patterns recorded yet. The agent will add entries here after each KEEP deci
 ### Losing patterns log
 
 - [Cycle 1] Subscription-first buy-box default + option reorder (one-time → subscription anchoring). ATC rate +5.7% (control 8.97% → variant 9.48%, p(variant>control)=0.79, below 95% keep). CVR -19.2% guardrail tier-2 breach (control 2.34% → variant 1.89%) — paused for Katie review. Insight: subscription-first lifts top-of-funnel buy-button engagement but cannibalizes downstream conversion — pure ATC isn't enough to justify the CVR drag at this presentation strength. Sample: 6,455 control / 2,752 variant sessions over 9.3 days (date: 2026-05-12)
+- [Cycle 2] Reorder buy-box Subscribe & Save above One-time WITHOUT preselect (one-time stays default `checked`). ATC -14.3% (control 9.49% -> variant 8.14%) and CVR -25.7% (control 3.52% -> variant 2.62%) — tier-1 guardrail breach. Hypothesis that reorder alone (no forced default) would lift ATC without cycle-1 CVR cannibalization is DISPROVED: ordering Subscribe & Save first suppressed both ATC and conversion. Sample: 5,227 control / 2,446 variant sessions (date: 2026-06-15). Manual preemptive revert (Stage-1 alert-only).
 
 
 <!-- Format for entries:
@@ -38,7 +39,7 @@ _(No patterns recorded yet. The agent will add entries here after each KEEP deci
 
 ## Emergency Reverts
 
-_(No emergency reverts recorded yet.)_
+- [Cycle 2] pdp-atc-002 (CS-2026-154): tier-1 CVR guardrail breach (-25.7% vs control, threshold -20%). Stage-1 alert_only so cron did not auto-revert (revert_enabled=false); Katie manually removed the variant from auto-optimize-config.liquid (PR merged) and set state.json phase measuring->idle. (date: 2026-06-15)
 
 <!-- Format for entries:
 - [Cycle N] What happened, which guardrail tripped, what was reverted (date: YYYY-MM-DD)
