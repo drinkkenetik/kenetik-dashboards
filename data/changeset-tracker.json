@@ -36,11 +36,11 @@
   "summary": {
     "total": 168,
     "by_status": {
-      "closed": 77,
+      "closed": 78,
       "published": 22,
       "approved": 16,
       "needs_feedback": 4,
-      "draft": 49
+      "draft": 48
     },
     "by_risk": {
       "critical": 2,
@@ -10450,7 +10450,7 @@
     {
       "id": "CS-2026-182",
       "title": "Claims-Gated ADHD Content Lane (Brandon → Charlotte → Peter r/ADHD)",
-      "status": "draft",
+      "status": "closed",
       "department": "content",
       "platforms": [
         "blog",
@@ -10465,10 +10465,12 @@
       "owner": "Brandon Dyksterhouse",
       "source": "synthesis_priority_stack",
       "hypothesis": "r/ADHD signal has crossed codification threshold (3rd consecutive week). Claims-gated content lane: Brandon → claims compliance scan → Charlotte production → Peter posting to r/ADHD. Captures growing demand without claims exposure. Per dept-market-intelligence priority 3.",
-      "notes": "Spawned from synthesis 2026-05-28-s1. Hard claims gate required — risk level high until claims matrix updated. | 2026-06-15: Brandon (Cowork): HELD IN DRAFT (high risk/claims exposure). Blocked pending Devon claims-matrix update + CS-2026-189 sign-off. Do not advance to production until claim_id<->tier table authoritative.",
+      "notes": "Spawned from synthesis 2026-05-28-s1. Hard claims gate required — risk level high until claims matrix updated. | 2026-06-15: Brandon (Cowork): HELD IN DRAFT (high risk/claims exposure). Blocked pending Devon claims-matrix update + CS-2026-189 sign-off. Do not advance to production until claim_id<->tier table authoritative. | 2026-06-15: Brandon (Cowork): WILL NOT PURSUE. Closed per owner decision — ADHD content lane not worth the claims-exposure risk. Was held; now closed. archived: true.",
       "dependencies": [
         "CS-2026-189"
-      ]
+      ],
+      "outcome": "decision_window_lapsed_no_action",
+      "closed_date": "2026-06-15"
     },
     {
       "id": "CS-2026-183",
