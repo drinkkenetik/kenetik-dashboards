@@ -39,7 +39,7 @@ _(No patterns recorded yet. The agent will add entries here after each KEEP deci
 
 ## Emergency Reverts
 
-- [Cycle 2] pdp-atc-002 (CS-2026-154): tier-1 CVR guardrail breach (-25.7% vs control, threshold -20%). Stage-1 alert_only so cron did not auto-revert (revert_enabled=false); Katie manually removed the variant from auto-optimize-config.liquid (PR merged) and set state.json phase measuring->idle. (date: 2026-06-15)
+- [Cycle 2] pdp-atc-002 (CS-2026-154): tier-1 CVR guardrail breach — persisted to close with cumulative delta -26.0% (control 3.47% n=5339, variant 2.56% n=2496, threshold -20%). Stage-1 alert_only so cron did not auto-revert (revert_enabled=false). Katie manually merged PR #84 (commit d8482f1, 2026-06-15T13:59Z) clearing the entry from snippets/auto-optimize-config.liquid — this correctly stopped routing new traffic to the variant. However, state.json phase remained at `measuring`, so the alerting cron kept pulling cumulative GA4 data and re-firing tier-1 alerts. Orchestrator completed the missing close-out on 2026-06-16: state.json phase measuring->idle + experiment fields cleared. (revert date: 2026-06-15, close-out date: 2026-06-16)
 
 <!-- Format for entries:
 - [Cycle N] What happened, which guardrail tripped, what was reverted (date: YYYY-MM-DD)
