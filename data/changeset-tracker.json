@@ -1,14 +1,14 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-18T09:28:00.265332+00:00",
+  "last_updated": "2026-06-18T13:21:30.127737+00:00",
   "next_id": "CS-2026-202",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-06-16",
-    "last_sweep_session": "2026-06-16-s1",
-    "last_sweep_result": "idempotent_run_11: 14 stale-approved (1 newly flagged: CS-2026-195); 13 measurement-due deferred (human-gated on unnamed Polar drain-owner per CS-2026-127 control contract, L-109 15th session \u2014 NOT auto-closed/fabricated); 0 auto-closed; 0 new CS (calendar safety-net surfaced 18 type/status/window matches, all reconciled as already-covered via parent CS or open recs rec-256/260/266/279/289 or human/lifecycle routing; PM scan 5 candidates all overlap existing CS-146/148 + recs \u2014 net-new 0, consistent with decision-drain binding constraint).",
+    "last_sweep_date": "2026-06-18",
+    "last_sweep_session": "2026-06-18-s1",
+    "last_sweep_result": "idempotent_run_12: 14 stale-approved (0 newly flagged \u2014 none crossed 7d since run_11; CS-195 already flagged); 13 measurement-due deferred (human-gated on unnamed Polar drain-owner per CS-2026-127 control contract \u2014 measurement_capable=false, NOT auto-closed/fabricated; L-109 16th session); 0 auto-closed; 0 new CS (calendar safety-net: 0 untracked activities after tracker cross-ref; PM-candidate scan: 5 active candidates L-012/L-042/L-072/L-073/L-121 all overlap existing CS-146/148 or today's recs \u2014 net-new 0). Consistent with the decision-drain binding constraint (Devon 7-item block + unnamed Polar drain-owner, 12th run). Stale-approved pinned at Q2 cap (12 of 15 >30d) \u2014 closures must precede new approvals.",
     "last_sweep_counts": {
       "stale_approved_gt_7d": 14,
-      "newly_flagged": 1,
+      "newly_flagged": 0,
       "measurement_due_deferred": 13,
       "auto_closed": 0,
       "new_changesets": 0
