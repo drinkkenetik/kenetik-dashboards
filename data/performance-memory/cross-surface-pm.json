@@ -939,6 +939,27 @@
       "domain": "content",
       "status": "active",
       "date": "2026-06-18"
+    },
+    {
+      "id": "L-138",
+      "summary": "A mobile-CVR drop with sessions DOWN across devices is an on-site/client-side regression, NOT the L-078/L-096 unattributed-traffic instrumentation pat",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-06-19"
+    },
+    {
+      "id": "L-139",
+      "summary": "claims_tier_coverage is two metrics under one name: the registry formula scores only retraction-safety (10/10 = GREEN) while tier-mapping completeness",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-06-19"
+    },
+    {
+      "id": "L-140",
+      "summary": "The subscription-state.json week 2026-06-15 'inconsistency' is a field-naming collision, not data corruption \u2014 full-book MRR ($161,199, current_week) ",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-06-19"
     }
   ],
   "entries": [
@@ -3082,6 +3103,55 @@
       "skill_files_updated": [],
       "related_entries": [],
       "target": "metrics-registry.yaml \u2014 set a band on d08_creator_revenue_concentration_top5"
+    },
+    {
+      "id": "L-138",
+      "date": "2026-06-19",
+      "type": "threshold_calibration",
+      "learning": "A mobile-CVR drop with sessions DOWN across devices is an on-site/client-side regression, NOT the L-078/L-096 unattributed-traffic instrumentation pattern (which requires sessions UP with CVR down). 2026-06-19: mobile CVR -36% (3.34->2.14), sessions -22.9%, homepage script errors 9.8->130/1k.",
+      "source": "Website-CRO dept brief + Clarity/GA4 scan, 2026-06-19",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "Sessions-direction is the discriminator between on-site break and instrumentation artifact; prior runs defaulted CVR drops toward instrumentation. See daily synthesis 2026-06-19-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-078",
+        "L-096",
+        "L-134"
+      ],
+      "target": "synthesis-instructions Framing Guardrails / website RCA playbook \u2014 add sessions-direction discriminator"
+    },
+    {
+      "id": "L-139",
+      "date": "2026-06-19",
+      "type": "process_change",
+      "learning": "claims_tier_coverage is two metrics under one name: the registry formula scores only retraction-safety (10/10 = GREEN) while tier-mapping completeness (the actual TRX permission gate) is 0/10. Dashboard reads GREEN while the gate is non-operational.",
+      "source": "Science & Research dept brief, 2026-06-19",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "A single label conflates retraction-safety and tier-mapping; consumers read the safe component as the whole, masking the launch-blocking gap. Corroborates rec-262. See daily synthesis 2026-06-19-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "metrics-registry.yaml \u2014 split claims_tier_coverage into claims_retraction_safety_pct and claims_tier_mapping_pct"
+    },
+    {
+      "id": "L-140",
+      "date": "2026-06-19",
+      "type": "process_change",
+      "learning": "The subscription-state.json week 2026-06-15 'inconsistency' is a field-naming collision, not data corruption \u2014 full-book MRR ($161,199, current_week) and NEW-subs incremental MRR ($2,440, weekly_trend) share the label 'mrr'; active 2,370 (mid-week) vs 2,412 (week-start) differ only by net -14 timing (identical new=40/churned=54/charge=276).",
+      "source": "Operations & Planning dept brief, 2026-06-19",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Two different measures under one field name; consumers treat the definitional collision as a data-quality failure and risk discarding a valid $161k full-book MRR. See daily synthesis 2026-06-19-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "subscription-state.json \u2014 rename to full_book_mrr vs incremental_mrr"
     }
   ],
   "archived_entries": [
