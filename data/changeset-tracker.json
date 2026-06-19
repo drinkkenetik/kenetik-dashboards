@@ -1,17 +1,18 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-19T09:32:38.443651+00:00",
-  "next_id": "CS-2026-202",
+  "last_updated": "2026-06-19T13:22:37.491681+00:00",
+  "next_id": "CS-2026-203",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-06-18",
-    "last_sweep_session": "2026-06-18-s1",
-    "last_sweep_result": "idempotent_run_12: 14 stale-approved (0 newly flagged \u2014 none crossed 7d since run_11; CS-195 already flagged); 13 measurement-due deferred (human-gated on unnamed Polar drain-owner per CS-2026-127 control contract \u2014 measurement_capable=false, NOT auto-closed/fabricated; L-109 16th session); 0 auto-closed; 0 new CS (calendar safety-net: 0 untracked activities after tracker cross-ref; PM-candidate scan: 5 active candidates L-012/L-042/L-072/L-073/L-121 all overlap existing CS-146/148 or today's recs \u2014 net-new 0). Consistent with the decision-drain binding constraint (Devon 7-item block + unnamed Polar drain-owner, 12th run). Stale-approved pinned at Q2 cap (12 of 15 >30d) \u2014 closures must precede new approvals.",
+    "last_sweep_date": "2026-06-19",
+    "last_sweep_session": "2026-06-19-s1",
+    "last_sweep_result": "idempotent_run_13: 14 stale-approved >7d (0 newly crossed 7d since run_12 \u2014 CS-194/195 already flagged; 12 of 15 approved are >30d, pinned at Q2 cap, closures must precede new approvals per rec-306); 17 measurement-due/overdue DEFERRED, NOT auto-closed/fabricated (human-gated on unnamed Polar drain-owner per CS-2026-127 control contract, measurement_capable=false; L-109 17th session); 0 auto-closed; 1 NEW CS spawned: CS-2026-202 (July-4 BIG QUARTERLY BEAT governance, draft, Nick, synthesis_priority_stack) per Ops ACT-D-2 + Market-Intel ACT-D-1 \u2014 calendar safety-net excluded the master beat (email/sms channels, Loop-2). PM-candidate scan: active L-012/L-042/L-072/L-073/L-121 still overlap existing CS-146/148 + today's recs (net-new 0). Consistent with the decision-drain binding constraint (Devon 7-item block + unnamed Polar drain-owner, 13th run).",
     "last_sweep_counts": {
       "stale_approved_gt_7d": 14,
       "newly_flagged": 0,
-      "measurement_due_deferred": 13,
+      "measurement_due_deferred": 17,
       "auto_closed": 0,
-      "new_changesets": 0
+      "new_changesets": 1,
+      "stale_approved_gt_30d": 12
     },
     "pending_measurement_queue": [
       "CS-2026-020",
@@ -34,26 +35,26 @@
     ]
   },
   "summary": {
-    "total": 168,
+    "total": 169,
     "by_status": {
       "closed": 79,
       "published": 23,
       "approved": 16,
       "needs_feedback": 3,
-      "draft": 47
+      "draft": 48
     },
     "by_risk": {
       "critical": 2,
       "low": 77,
       "medium": 71,
-      "high": 18
+      "high": 19
     },
     "by_subtype": {
-      "implementation": 124,
+      "implementation": 125,
       "investigation": 22,
       "quick": 22
     },
-    "last_updated": "2026-06-19T09:32:38.434620+00:00",
+    "last_updated": "2026-06-19T13:22:20.861480+00:00",
     "last_counted": "2026-06-16"
   },
   "changesets": [
@@ -11204,6 +11205,29 @@
       "hypothesis": "A disk-utilization alert at 80% + automated cleanup of stale /tmp pipeline clones (>24h) + a single named runner-infra owner prevents recurrence of the 6/14-6/15 disk-full outage that took the full automated stack (Larry loop, Exec BI Task 2b, Auto-Optimize, Domain Scans) dark for ~2 days.",
       "notes": "Spawned from synthesis 2026-06-15-s1 P5-adjacent (Ops ACT-D-3, D14 SIG-14-01/ACT-4). First 2-day pipeline outage; root cause structural: no disk-utilization alerting, no cleanup cron for stale workspace clones, no named runner owner. Answers D14 Q-14-2 (no infra owner surfaced anywhere). Scope: (1) disk alert at 80%, (2) cleanup cron for clones >24h, (3) name Garrett as runner-infra owner. Draft pending Devon/Garrett approval.",
       "category": "infrastructure"
+    },
+    {
+      "id": "CS-2026-202",
+      "title": "4th of July BIG QUARTERLY BEAT \u2014 Governance & Sub-Beat Linkage",
+      "status": "draft",
+      "department": "cross-functional",
+      "platforms": [
+        "shopify",
+        "klaviyo",
+        "klaviyo-sms",
+        "meta-ads"
+      ],
+      "created": "2026-06-19",
+      "last_updated": "2026-06-19",
+      "subtype": "implementation",
+      "risk_level": "high",
+      "autonomy_tier": 1,
+      "owner": "Nick Lacagnina",
+      "source": "synthesis_priority_stack",
+      "spawned_from": "2026-06-19-s1.md",
+      "hypothesis": "The 4th-of-July BIG QUARTERLY BEAT (FOURTH-JULY, 6/29, quarterly_sale) is the quarter's largest discretionary-revenue beat but sits 'planned' at T-10 with zero linked ChangeSets and three needs_planning sub-beats. A single governing CS that locks the master + Cleetus&Roman LTO sub-beats to confirmed and spawns the email/SMS + Dierbergs execution CSes prevents the historical slip-to-rushed-send failure mode.",
+      "notes": "Created by Task B synthesis 2026-06-19-s1 per Ops ACT-D-2 + Market-Intel ACT-D-1. Routed OFF Katie to Nick (calendar owner) to avoid the 55% Katie CS-concentration. Master beat FOURTH-JULY carries email/sms channels (Loop-2 owned) so excluded from calendar auto-safety-net; intaken here via synthesis-driven generation. Sub-beats to spawn: VIP Email/SMS (FOURTH-JULY-BEAT-04), Paid+TikTok Shop (FOURTH-JULY-BEAT-05), Dierbergs July-4 retail (DIERBERGS-JULY4-062926 + 2 sub-beats), Cleetus & Roman LTO flavor activation (FOURTH-JULY-BEAT-02). The cancelled Cleetus 4th collab (FOURTH-JULY-BEAT-03) is absorbed by the LTO beat.",
+      "linked_calendar_activity": "FOURTH-JULY"
     }
   ],
   "queue_actions": {
