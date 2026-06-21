@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-20T09:01:31.831040+00:00",
+  "last_updated": "2026-06-21T09:11:19.529546+00:00",
   "next_id": "CS-2026-203",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-19",
@@ -35,9 +35,9 @@
     ]
   },
   "summary": {
-    "total": 169,
+    "total": 168,
     "by_status": {
-      "closed": 79,
+      "closed": 78,
       "published": 23,
       "approved": 16,
       "needs_feedback": 3,
@@ -46,15 +46,15 @@
     "by_risk": {
       "critical": 2,
       "low": 77,
-      "medium": 71,
+      "medium": 70,
       "high": 19
     },
     "by_subtype": {
-      "implementation": 125,
+      "implementation": 124,
       "investigation": 22,
       "quick": 22
     },
-    "last_updated": "2026-06-20T09:01:31.818518+00:00",
+    "last_updated": "2026-06-21T09:11:19.526247+00:00",
     "last_counted": "2026-06-16"
   },
   "changesets": [
@@ -2830,64 +2830,6 @@
           "set_date": "2026-06-08",
           "session": "2026-06-08-s1",
           "action": "owner_nudge_queued_phase_4"
-        }
-      ]
-    },
-    {
-      "id": "CS-2026-032",
-      "title": "Payment Failure Root Cause Audit & Recovery Program",
-      "subtype": "implementation",
-      "department": "lifecycle-marketing",
-      "platforms": [
-        "recharge"
-      ],
-      "status": "closed",
-      "risk_level": "medium",
-      "owner": "Katie Spaller",
-      "created": "2026-03-20",
-      "objective_level": "L1",
-      "category": "paid_media",
-      "dependencies": [],
-      "blocks": [],
-      "spawned_from": "rec-032",
-      "spawned_changesets": [],
-      "expected_impact": {
-        "revenue": {
-          "upside": 28800,
-          "expected": 14400,
-          "downside": -7200
-        },
-        "margin": {
-          "upside": 14400,
-          "expected": 7200,
-          "downside": -3600
-        },
-        "primary_metric": "graduation_roas",
-        "primary_metric_target": ">=3.0x ROAS on graduated content"
-      },
-      "routed_to": [
-        "Garrett",
-        "Katie"
-      ],
-      "routed_via": "auto",
-      "routed_date": "2026-03-19",
-      "file": "cgo-logs/changesets/CS-2026-032.md",
-      "notes": "Draft: Q1 top performers identified for paid amplification.",
-      "outcome": "deferred",
-      "approved_by": "Express Auto-Approve",
-      "approved_date": "2026-03-22",
-      "closed_date": "2026-03-22",
-      "measurement_window": "30-day from Phase 2 implementation",
-      "review_tier": "express",
-      "execution_target_date": null,
-      "executed_date": null,
-      "autonomy_tier": null,
-      "sweep_flags": [
-        {
-          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
-          "set_date": "2026-04-30",
-          "session": "2026-04-30-execute",
-          "action": "One-shot backfill detection: routed_date 2026-03-19 < created 2026-03-20 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
         }
       ]
     },
