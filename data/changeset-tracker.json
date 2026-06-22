@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-22T09:58:24.129619+00:00",
-  "next_id": "CS-2026-203",
+  "last_updated": "2026-06-22T13:27:33.702275+00:00",
+  "next_id": "CS-2026-204",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-19",
     "last_sweep_session": "2026-06-19-s1",
@@ -35,26 +35,26 @@
     ]
   },
   "summary": {
-    "total": 158,
+    "total": 159,
     "by_status": {
       "closed": 78,
       "published": 23,
       "approved": 16,
       "needs_feedback": 3,
-      "draft": 38
+      "draft": 39
     },
     "by_risk": {
       "critical": 2,
-      "low": 71,
+      "low": 72,
       "medium": 67,
       "high": 18
     },
     "by_subtype": {
-      "implementation": 115,
+      "implementation": 116,
       "investigation": 21,
       "quick": 22
     },
-    "last_updated": "2026-06-22T09:58:24.115355+00:00",
+    "last_updated": "2026-06-22T13:27:33.702275+00:00",
     "last_counted": "2026-06-16"
   },
   "changesets": [
@@ -10695,6 +10695,25 @@
       "hypothesis": "The 4th-of-July BIG QUARTERLY BEAT (FOURTH-JULY, 6/29, quarterly_sale) is the quarter's largest discretionary-revenue beat but sits 'planned' at T-10 with zero linked ChangeSets and three needs_planning sub-beats. A single governing CS that locks the master + Cleetus&Roman LTO sub-beats to confirmed and spawns the email/SMS + Dierbergs execution CSes prevents the historical slip-to-rushed-send failure mode.",
       "notes": "Created by Task B synthesis 2026-06-19-s1 per Ops ACT-D-2 + Market-Intel ACT-D-1. Routed OFF Katie to Nick (calendar owner) to avoid the 55% Katie CS-concentration. Master beat FOURTH-JULY carries email/sms channels (Loop-2 owned) so excluded from calendar auto-safety-net; intaken here via synthesis-driven generation. Sub-beats to spawn: VIP Email/SMS (FOURTH-JULY-BEAT-04), Paid+TikTok Shop (FOURTH-JULY-BEAT-05), Dierbergs July-4 retail (DIERBERGS-JULY4-062926 + 2 sub-beats), Cleetus & Roman LTO flavor activation (FOURTH-JULY-BEAT-02). The cancelled Cleetus 4th collab (FOURTH-JULY-BEAT-03) is absorbed by the LTO beat.",
       "linked_calendar_activity": "FOURTH-JULY"
+    },
+    {
+      "id": "CS-2026-203",
+      "title": "Homepage hero rollback to single static slide \u2014 fix mobile CVR drop & script-error spike",
+      "status": "draft",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify"
+      ],
+      "created": "2026-06-22",
+      "last_updated": "2026-06-22",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "owner": "Katie Spaller",
+      "source": "diagnostic",
+      "hypothesis": "Reverting the homepage hero from the re-enabled 4-slide Slick fade carousel back to a single static evergreen slide removes the autoplay/fade/clone code path that only executes with >1 slide. This should eliminate the homepage script-error spike (~10 -> ~130 per 1,000 sessions) and recover mobile CVR toward its 3.34% baseline (was 2.14%, RED) \u2014 without restoring the out-of-stock Golden Pear hero.",
+      "notes": "INCIDENT: Mobile CVR 3.34% -> 2.14% (RED); homepage #1 LP. Bisected 10d of theme repo: ONLY homepage change is templates/index.json Mon 6/15 20:38 (customizer) disabling single-slide Golden Pear hero (new_hp_banner_D3rgVe, OOS) + re-enabling legacy 4-slide hero new_hp_banner_tHDgpj. Hero runs Slick (cw-custom.js .home-banner-slider autoplay+fade+infinite); Slick autoplay only starts with >1 slide so single Golden Pear slide kept it inert; 4-slide hero re-activates fade/autoplay/clone path every session, only fade:true slider on site. No code changed. FIX: data-only index.json block_order trimmed to single slide banner_Thm7tc; others kept in blocks{}. PR fix/homepage-hero-single-slide-cvr pushed, DRAFT pending Katie merge. Live console blocked by org policy; RC from bisect + server HTML. Pre-existing aside: theme.liquid loads missing cw-custom-dev.js (404, not this incident).",
+      "category": "other"
     }
   ],
   "queue_actions": {
