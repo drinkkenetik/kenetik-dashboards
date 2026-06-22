@@ -1,18 +1,21 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-22T13:27:33.702275+00:00",
+  "last_updated": "2026-06-22",
   "next_id": "CS-2026-204",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-06-19",
-    "last_sweep_session": "2026-06-19-s1",
-    "last_sweep_result": "idempotent_run_13: 14 stale-approved >7d (0 newly crossed 7d since run_12 \u2014 CS-194/195 already flagged; 12 of 15 approved are >30d, pinned at Q2 cap, closures must precede new approvals per rec-306); 17 measurement-due/overdue DEFERRED, NOT auto-closed/fabricated (human-gated on unnamed Polar drain-owner per CS-2026-127 control contract, measurement_capable=false; L-109 17th session); 0 auto-closed; 1 NEW CS spawned: CS-2026-202 (July-4 BIG QUARTERLY BEAT governance, draft, Nick, synthesis_priority_stack) per Ops ACT-D-2 + Market-Intel ACT-D-1 \u2014 calendar safety-net excluded the master beat (email/sms channels, Loop-2). PM-candidate scan: active L-012/L-042/L-072/L-073/L-121 still overlap existing CS-146/148 + today's recs (net-new 0). Consistent with the decision-drain binding constraint (Devon 7-item block + unnamed Polar drain-owner, 13th run).",
+    "last_sweep_date": "2026-06-22",
+    "last_sweep_session": "2026-06-22-s1",
+    "last_sweep_result": "idempotent_run_14: 14 stale-approved >7d (0 newly crossed 7d since run_13; 12 of 14 >30d, pinned at Q2 cap, closures must precede new approvals per rec-306). 13-17 measurement-due/overdue DEFERRED, NOT auto-closed/fabricated (human-gated on unnamed Polar drain-owner per CS-2026-127 control contract; measurement_capable=false; L-109 18th session). 0 auto-closed. 0 NEW CS spawned. Calendar safety-net surfaced 15 untracked in-window activities (6 Cleetus event_activations Jul-Sep, 3 MOCALDO paid-stipend BEATs, 2 TRX content-capture events 6/30+7/17, NETC-MILE 6/26, Norwitz Substack, Blueberry flavor) \u2014 AUTO-SPAWN SUPPRESSED by deliberate decision: mass-spawning 15 drafts (39->54) directly worsens the d12_velocity RED (today's #1 priority) against ~1 closure/wk, off a 108h-STALE calendar, and repeats the CS-117..140 mass-spawn regression. Per Resolution Hierarchy (Remove/Refine before Add) + Ops INS-D-1 (adding CSes cannot relieve the decision-drain binding constraint). Surfaced for human triage in Devon CGO DM; most time-proximate (NETC-MILE 6/26, TRX FL-HQ 6/30, TRX Denver 7/17) flagged to Nick/Cliff to link-or-dismiss in the July-4/decision-block triage. PM-candidate scan: active L-012/L-042/L-072/L-073/L-121 still overlap existing CS-146/148 + today's recs (net-new 0). Consistent with the decision-drain binding constraint (Devon 7-item block + unnamed Polar drain-owner, 14th run).",
     "last_sweep_counts": {
       "stale_approved_gt_7d": 14,
       "newly_flagged": 0,
       "measurement_due_deferred": 17,
       "auto_closed": 0,
-      "new_changesets": 1,
-      "stale_approved_gt_30d": 12
+      "new_changesets": 0,
+      "stale_approved_gt_30d": 12,
+      "safety_net_candidates_surfaced": 15,
+      "safety_net_spawned": 0,
+      "pm_candidates_net_new": 0
     },
     "pending_measurement_queue": [
       "CS-2026-020",
