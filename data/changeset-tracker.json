@@ -42,9 +42,9 @@
     "by_status": {
       "closed": 78,
       "published": 24,
-      "approved": 21,
+      "approved": 26,
       "needs_feedback": 3,
-      "draft": 45
+      "draft": 40
     },
     "by_risk": {
       "critical": 2,
@@ -57,8 +57,8 @@
       "investigation": 21,
       "quick": 34
     },
-    "last_updated": "2026-06-23T15:41:35Z",
-    "last_counted": "2026-06-23T15:41:35Z"
+    "last_updated": "2026-06-23T16:12:38Z",
+    "last_counted": "2026-06-23T16:12:38Z"
   },
   "changesets": [
     {
@@ -10759,12 +10759,14 @@
       "pattern_id": null,
       "activation_date": "2026-07-01",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     },
     {
       "id": "CS-2026-205",
       "title": "The clarity window. A question-led, named-cognition-concept education read on why steady f",
-      "status": "draft",
+      "status": "approved",
       "department": "lifecycle-marketing",
       "platforms": [
         "klaviyo"
@@ -10800,7 +10802,9 @@
       "pattern_id": null,
       "activation_date": "2026-07-03",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     },
     {
       "id": "CS-2026-206",
@@ -10841,7 +10845,9 @@
       "pattern_id": null,
       "activation_date": "2026-07-08",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     },
     {
       "id": "CS-2026-207",
@@ -10882,7 +10888,8 @@
       "pattern_id": null,
       "activation_date": "2026-07-10",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "held_reason": "ASSET: approved Dave Asprey quote + likeness required before build"
     },
     {
       "id": "CS-2026-208",
@@ -10923,7 +10930,9 @@
       "pattern_id": null,
       "activation_date": "2026-07-13",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     },
     {
       "id": "CS-2026-209",
@@ -10964,12 +10973,14 @@
       "pattern_id": null,
       "activation_date": "2026-07-15",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     },
     {
       "id": "CS-2026-210",
       "title": "The afternoon you don't crash from. A named-concept education read for the stimulant-refug",
-      "status": "draft",
+      "status": "approved",
       "department": "lifecycle-marketing",
       "platforms": [
         "klaviyo"
@@ -11005,12 +11016,14 @@
       "pattern_id": null,
       "activation_date": "2026-07-18",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     },
     {
       "id": "CS-2026-211",
       "title": "Something is coming. The opening beat of the TRX x Kenetik Lemon-Lime Shot launch arc, a c",
-      "status": "draft",
+      "status": "approved",
       "department": "lifecycle-marketing",
       "platforms": [
         "klaviyo"
@@ -11046,12 +11059,14 @@
       "pattern_id": null,
       "activation_date": "2026-07-16",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     },
     {
       "id": "CS-2026-212",
       "title": "Subscribers and waitlist, yours first. The TRX x Kenetik Lemon-Lime Shot is live for the e",
-      "status": "draft",
+      "status": "approved",
       "department": "lifecycle-marketing",
       "platforms": [
         "klaviyo",
@@ -11088,12 +11103,14 @@
       "pattern_id": "L-087",
       "activation_date": "2026-07-22",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     },
     {
       "id": "CS-2026-213",
       "title": "It's here. The public launch-day broadcast of the TRX x Kenetik Lemon-Lime Shot at T-0, pa",
-      "status": "draft",
+      "status": "approved",
       "department": "lifecycle-marketing",
       "platforms": [
         "klaviyo",
@@ -11130,7 +11147,9 @@
       "pattern_id": null,
       "activation_date": "2026-07-22",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     },
     {
       "id": "CS-2026-214",
@@ -11171,7 +11190,9 @@
       "pattern_id": null,
       "activation_date": "2026-07-27",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     },
     {
       "id": "CS-2026-215",
@@ -11212,7 +11233,9 @@
       "pattern_id": null,
       "activation_date": "2026-07-30",
       "pre_refresh_baseline": null,
-      "design_status": "awaiting"
+      "design_status": "awaiting",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-23"
     }
   ],
   "queue_actions": {
