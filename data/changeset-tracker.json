@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-23T15:41:35Z",
+  "last_updated": "2026-06-23T16:40:00Z",
   "next_id": "CS-2026-216",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-22",
@@ -23,15 +23,11 @@
       "CS-2026-022",
       "CS-2026-035",
       "CS-2026-067",
-      "CS-2026-084",
-      "CS-2026-085",
-      "CS-2026-086",
       "CS-2026-089",
       "CS-2026-100",
       "CS-2026-101",
       "CS-2026-114",
       "CS-2026-115",
-      "CS-2026-127",
       "CS-2026-129",
       "CS-2026-133",
       "CS-2026-139"
@@ -40,9 +36,9 @@
   "summary": {
     "total": 171,
     "by_status": {
-      "closed": 78,
-      "published": 24,
-      "approved": 26,
+      "closed": 88,
+      "published": 20,
+      "approved": 20,
       "needs_feedback": 3,
       "draft": 40
     },
@@ -57,8 +53,8 @@
       "investigation": 21,
       "quick": 34
     },
-    "last_updated": "2026-06-23T16:12:38Z",
-    "last_counted": "2026-06-23T16:12:38Z"
+    "last_updated": "2026-06-23T16:40:00Z",
+    "last_counted": "2026-06-23T16:40:00Z"
   },
   "changesets": [
     {
@@ -3975,7 +3971,7 @@
       "platforms": [
         "shopify"
       ],
-      "status": "approved",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie Spaller + Devon Price",
       "created": "2026-04-06",
@@ -4101,7 +4097,19 @@
           "action": "owner_nudge_queued_phase_4"
         }
       ],
-      "last_updated": "2026-04-20"
+      "last_updated": "2026-06-23",
+      "outcome": "superseded",
+      "closed_date": "2026-06-23",
+      "actual_impact": {
+        "primary_metric": "profiles_with_acquisition_source",
+        "primary_metric_result": "Superseded. Verified 2026-06-23: acquisition_source/referring_creator absent from 40 most-recent Klaviyo profiles \u2014 Shopify Flow never built. Approach also invalidated by canonical superfiliate-klaviyo-property-map.md: customer-profile-level Superfiliate attribution does not work; only discount-code-on-Placed-Order is a working path. FLAG: if customer-level attribution still wanted, spawn new CS on the discount-code path (owner: Katie).",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO backlog close-out session 2026-06-23 (repo/connector verification)"
+      },
+      "learning_note": "[2026-06-23 close] Superseded. Verified 2026-06-23: acquisition_source/referring_creator absent from 40 most-recent Klaviyo profiles \u2014 Shopify Flow never built. Approach also invalidated by canonical superfiliate-klaviyo-property-map.md: customer-profile-level Superfiliate attribution does not work; only discount-code-on-Placed-Order is a working path. FLAG: if customer-level attribution still wanted, spawn new CS on the discount-code path (owner: Katie)."
     },
     {
       "id": "CS-2026-050",
@@ -5716,7 +5724,7 @@
     {
       "id": "CS-2026-084",
       "title": "PM Write-Gate: Unified Validated-Write API for cross-surface-pm.json",
-      "status": "published",
+      "status": "closed",
       "subtype": "implementation",
       "category": "internal_infra",
       "department": "operations",
@@ -5727,7 +5735,7 @@
       "risk_level": "medium",
       "review_tier": "full",
       "created": "2026-04-19",
-      "last_updated": "2026-04-23",
+      "last_updated": "2026-06-23",
       "hypothesis": "A single gated write API in front of cross-surface-pm.json \u2014 required-field validation, inline entry_type classifier, deterministic tier-earned computation, flag-then-strict policy rollout, time-boxed batch-reconciler \u2014 lifts the PM composite by +11-12 pts. Foundational: CS-2026-086 phase 2 is a client of this gate.",
       "objective_level": "L4",
       "spawned_from": "PM-DRIVE-TO-A-2026-04-19 (Phase 2c)",
@@ -5763,9 +5771,17 @@
       "published_date": "2026-04-19",
       "measurement_window": "14d",
       "measurement_due": "2026-05-03",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "pm_composite_score",
+        "primary_metric_result": "Implementation delivered & verified in repo (scripts/pm_write_gate.py + pm-write-gate-policy.json + cgo-logs/pm-write-gate live). Primary metric (PM composite +11-12pts) NOT measured \u2014 no post-ship PM eval run since 2026-04-18 (pre-ship). Hypothesis untested; deliverable confirmed shipped.",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "low",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO backlog close-out session 2026-06-23 (repo/connector verification)"
+      },
+      "outcome": "inconclusive",
+      "closed_date": "2026-06-23",
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-084.md",
       "notes": "Spawned from Phase 2c PM-DRIVE-TO-A portfolio. Bundles Cluster A (confidence inflation) + Cluster B (entry_type regression) primaries + A5/B5 reconciler companions via P002 Guardrail-as-input primitive. 5-level review APPROVE. Promotes Provisional Co-emit-lifecycle-marker pattern to Established on ship (3/3 applications). Rollout: day 1-5 gate+classifier shadow, day 6-10 flag-policy cutover + reconciler, day 11-14 strict-policy after 48h clean telemetry. | 2026-04-19: SHIPPED. scripts/pm_write_gate.py (validated-write API), scripts/pm_reconciler.py (batch backfill), cgo-daily-pipeline/config/pm-write-gate-policy.json (flag policy, shadow=false). Reconciler APPLIED: 30 entry_type backfills + 21 confidence downgrades (18 Cluster-A inflated strongs + 3 additional single-source moderates). Backup: data/performance-memory/cross-surface-pm.json.bak-20260419T235328Z. Gate smoke-test: selftest 4/4 green (validation, downgrade, rejection, classifier); shadow append correctly blocked live write. E5 scanner confirms PM_ENTRY_TYPE_MISSING cleared (30->0). Policy rollout: flag today, strict after 48h clean telemetry.\n2026-04-23: Apr 23 owner scrub: 'eng-TBD' placeholder removed \u2014 ops platform (performance-memory) is Devon-owned per AP-003 v1.7.",
@@ -5788,7 +5804,7 @@
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
-      "learning_note": null,
+      "learning_note": "[2026-06-23 close] Implementation delivered & verified in repo (scripts/pm_write_gate.py + pm-write-gate-policy.json + cgo-logs/pm-write-gate live). Primary metric (PM composite +11-12pts) NOT measured \u2014 no post-ship PM eval run since 2026-04-18 (pre-ship). Hypothesis untested; deliverable confirmed shipped.",
       "spawned_changesets": null,
       "measurement_result": {
         "measured_date": "2026-05-07",
@@ -5808,7 +5824,7 @@
     {
       "id": "CS-2026-085",
       "title": "Workflow Scheduler: Unified Module for Archival Trigger, Stale-State Monitor, Execution Queue",
-      "status": "published",
+      "status": "closed",
       "subtype": "implementation",
       "category": "internal_infra",
       "department": "operations",
@@ -5819,7 +5835,7 @@
       "risk_level": "medium",
       "review_tier": "full",
       "created": "2026-04-19",
-      "last_updated": "2026-04-23",
+      "last_updated": "2026-06-23",
       "hypothesis": "A unified workflow-scheduler module with three tenants (PM write-path hook, ChangeSet execution queue, stale-state detection worker) \u2014 all wrapped by shared P003 circuit-breaker \u2014 lifts PM composite +9-11 pts and unblocks CS-056/057 within 48h of E5 ship. E5 ships day 1 standalone.",
       "objective_level": "L4",
       "spawned_from": "PM-DRIVE-TO-A-2026-04-19 (Phase 2c)",
@@ -5853,9 +5869,17 @@
       "published_date": "2026-04-19",
       "measurement_window": "14d",
       "measurement_due": "2026-05-03",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "pm_composite_score + cs_loop_stall_count",
+        "primary_metric_result": "Delivered & verified (scripts/workflow_scheduler.py + cgo-logs/workflow-scheduler/scheduler-state.json). Unblock criterion MET: CS-056 & CS-057 both advanced to closed 2026-04-29. Primary composite leg NOT measured (no post-ship eval). Closed on confirmed deliverable + unblock.",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "low",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO backlog close-out session 2026-06-23 (repo/connector verification)"
+      },
+      "outcome": "inconclusive",
+      "closed_date": "2026-06-23",
       "autonomy_tier": 2,
       "file": "cgo-logs/changesets/CS-2026-085.md",
       "notes": "Spawned from Phase 2c PM-DRIVE-TO-A portfolio. Bundles Cluster C primary (archival synthesis) + Cluster E primary + E5 companion + C5 reconciler via shared workflow-scheduler infrastructure. Confound check vs Cluster C passed (distinct primitives; shared infra). 5-level review APPROVE with conditions (risk-classifier rules required before E2 live cutover). Ship order: E5 day 1 standalone, scheduler core + C1 tenant days 3-7, E2 shadow days 8-10, E2 live days 11-12, C5 reconciliation days 13-14. P003 circuit breaker 2nd major application. | 2026-04-19: Tenant E5 (stale-state scanner) SHIPPED standalone per plan. scripts/e5_stale_state_scanner.py implements 4 tracker rules + 2 PM rules + P003 circuit breaker (5%/24h) + dedupe with 3-scan escalation. Dry-run smoke test: 61 violations detected against live tracker+PM (1 STALE_APPROVED_OVERDUE, 10 DRAFT_STALE, 6 MEASUREMENT_OVERDUE, 14 STALE_APPROVED_UNDATED, 30 PM_ENTRY_TYPE_MISSING). Remaining tenants (C1 archival, E2 execution queue, C5 reconciler) queued. | 2026-04-19: FULL SHIP. scripts/workflow_scheduler.py (core + registry + shared P003 circuit breaker), scripts/wf_tenant_c1.py (PM archival hook + C5 backlog reconciler), scripts/wf_tenant_e2.py (ChangeSet execution queue + risk classifier). C1 live: archived 5 acted-on entries (L-022/023/033/034/035). C5 live: physically moved 5 entries active->archived_entries (30->25 active / 7->12 archived). E2 live: 16 approved CSes scanned, 1 auto-advanced (CS-035 klaviyo tier-1 Devon-approved), 15 routed to manual-push-hold with nudge (including CS-056 + CS-057 proof-point). E5 already shipped in commit 96216b6. Manual-push queue written to cgo-logs/workflow-scheduler/manual-push-queue.jsonl. Rollout note: CS-085 spec called for E2 48h shadow before live; compressed here given same-session validation + Devon directive. Circuit breaker healthy across all tenants.\n2026-04-23: Apr 23 owner scrub: 'eng-TBD' placeholder removed \u2014 ops platform (changeset-process) is Devon-owned.",
@@ -5878,7 +5902,7 @@
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
-      "learning_note": null,
+      "learning_note": "[2026-06-23 close] Delivered & verified (scripts/workflow_scheduler.py + cgo-logs/workflow-scheduler/scheduler-state.json). Unblock criterion MET: CS-056 & CS-057 both advanced to closed 2026-04-29. Primary composite leg NOT measured (no post-ship eval). Closed on confirmed deliverable + unblock.",
       "spawned_changesets": null,
       "measurement_result": {
         "measured_date": "2026-05-07",
@@ -5898,7 +5922,7 @@
     {
       "id": "CS-2026-086",
       "title": "Team Signal Coverage Fix: Step 9 extension for unsolicited team inbound DMs",
-      "status": "published",
+      "status": "closed",
       "subtype": "implementation",
       "category": "internal_infra",
       "department": "operations",
@@ -5909,7 +5933,7 @@
       "risk_level": "low",
       "review_tier": "standard",
       "created": "2026-04-19",
-      "last_updated": "2026-04-23",
+      "last_updated": "2026-06-23",
       "hypothesis": "Phase 1 disambiguation audit (2026-04-19) falsified the original producer model. Actual producer is synthesis-instructions.md Step 9 + task-b-synthesis.md Step 5b \u2014 wired, healthy, under-covered. Regression cause: Step 9 does not scan unsolicited inbound DMs to Devon (the channel L-001/L-002 used). Surgical fix: add Step 9a.2 to scan unsolicited DMs against team-roster config + narrow keyword broadening + one-time backfill sweep. Expected: C1-D3 0\u2192\u22653 in next eval; contributes +2\u20133 pts to portfolio.",
       "objective_level": "L4",
       "spawned_from": "PM-DRIVE-TO-A-2026-04-19 (Phase 2c)",
@@ -5943,9 +5967,17 @@
       "published_date": "2026-04-19",
       "measurement_window": "28d",
       "measurement_due": "2026-05-03",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "C1-D3 team-signal dimension",
+        "primary_metric_result": "Delivered. Step 9a.2 live in synthesis-instructions.md. Shipped-broken gap fixed 2026-06-23: removed dependency on nonexistent team-roster.json; 9a.2 now reads canonical brain/kenetik-brain/references/team-roles.md and resolves Slack IDs at runtime (Resolution Hierarchy: Remove+Refine). Forward team_feedback emissions not yet measured.",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "low",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO backlog close-out session 2026-06-23 (repo/connector verification)"
+      },
+      "outcome": "inconclusive",
+      "closed_date": "2026-06-23",
       "autonomy_tier": 0,
       "file": "cgo-logs/changesets/CS-2026-086.md",
       "notes": "Rewritten post-audit (2026-04-19). Original bifurcated scope (ceremony + team-ingest service) invalidated by audit finding that producer model was fictional and actual producer is Step 9\u2192Step 5b with an inbound-DM coverage gap. Single-fix form. Passes 5-level review + would pass proposed Level-0 anti-pattern cross-check (EC-2026-004 v2.1.2). S effort. Pairs with CS-2026-084 + CS-2026-085 in PM-DRIVE-TO-A-2026-04-19 portfolio.\n2026-04-23: Apr 23 owner scrub: 'eng-TBD' placeholder removed \u2014 ops platform (changeset-process) is Devon-owned.",
@@ -5968,7 +6000,7 @@
       "revision_notes": "2026-04-19 v2 rewrite: removed D5 weekly ceremony (Spec-without-runtime-enforcement anti-pattern). Removed Phase 2 team-ingest service (producer consolidation not needed \u2014 no fragmented producers existed). Removed CS-084 dependency (Step 5b write path already correct). Now single-fix ChangeSet: Step 9a.2 extension + team-roster config + narrow keyword broadening + backfill sweep. See audit 2026-04-Wk4-cluster-d-phase1-disambiguation.md and EC-2026-004.",
       "revision_date": "2026-04-19",
       "rejection_notes": null,
-      "learning_note": null,
+      "learning_note": "[2026-06-23 close] Delivered. Step 9a.2 live in synthesis-instructions.md. Shipped-broken gap fixed 2026-06-23: removed dependency on nonexistent team-roster.json; 9a.2 now reads canonical brain/kenetik-brain/references/team-roles.md and resolves Slack IDs at runtime (Resolution Hierarchy: Remove+Refine). Forward team_feedback emissions not yet measured.",
       "spawned_changesets": null,
       "measurement_result": {
         "measured_date": "2026-05-07",
@@ -6317,7 +6349,7 @@
     {
       "id": "CS-2026-091",
       "title": "Amazon Ads L-018 Data Pipeline \u2014 Sponsored Products + Brands Search-Term Report Ingestion",
-      "status": "approved",
+      "status": "closed",
       "subtype": "implementation",
       "category": "data_infrastructure",
       "department": "operations",
@@ -6328,7 +6360,7 @@
       "risk_level": "low",
       "review_tier": "standard",
       "created": "2026-04-20",
-      "last_updated": "2026-05-04",
+      "last_updated": "2026-06-23",
       "hypothesis": "Ingesting Amazon Sponsored Products + Sponsored Brands search-term reports into the warehouse unblocks the rec-225 Amazon ads diagnostic work referenced in today's daily-pulse (L-018). Pipeline cadence: daily incremental. Target table: amazon_ads.search_terms_daily with standard ad-attribution joins.",
       "objective_level": "L4",
       "spawned_from": "rec-225",
@@ -6362,9 +6394,17 @@
       "published_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "pipeline_freshness_daily",
+        "primary_metric_result": "Delivered & verified. scripts/amazon_ads_search_terms_pull.py (484 lines, single writer) + .github/workflows/amazon-ads-search-terms-pull.yml cron shipped (authored 2026-05-04 per Option A). L-018 Amazon Ads blind spot resolved.",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO backlog close-out session 2026-06-23 (repo/connector verification)"
+      },
+      "outcome": "success",
+      "closed_date": "2026-06-23",
       "autonomy_tier": 1,
       "file": "cgo-logs/changesets/CS-2026-091.md",
       "notes": "Spawned from 2026-04-20 synthesis rec-225. L-018 referenced in daily-pulse but dashboard shows 'data unavailable'. Garrett owns ingestion. Downstream consumers: Katie (search-term optimization), Devon (Amazon MER visibility). | 2026-04-28 (Devon via Claude /changeset-execute): Tier 1 approve + execute. Status draft \u2192 approved. Open: name engineering-execution lead. | 2026-05-04 (Devon via Claude /Monday-Connect): Engineering execution lead = Devon + Cowork co-pilot (Option A from CS-091 prep packet). Build target: scripts/amazon_ads_search_terms_pull.py + daily GHA cron. Estimated ~4 hours. Build kickoff timing this week, TBD.",
@@ -6461,13 +6501,13 @@
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
-      "learning_note": null,
+      "learning_note": "[2026-06-23 close] Delivered & verified. scripts/amazon_ads_search_terms_pull.py (484 lines, single writer) + .github/workflows/amazon-ads-search-terms-pull.yml cron shipped (authored 2026-05-04 per Option A). L-018 Amazon Ads blind spot resolved.",
       "spawned_changesets": null
     },
     {
       "id": "CS-2026-092",
       "title": "Investigate + Remediate Amazon Listing Text Auto-Publishing to TikTok/IG (PM L-037)",
-      "status": "approved",
+      "status": "closed",
       "subtype": "investigation",
       "category": "content_operations",
       "department": "operations",
@@ -6478,7 +6518,7 @@
       "risk_level": "medium",
       "review_tier": "standard",
       "created": "2026-04-20",
-      "last_updated": "2026-04-28",
+      "last_updated": "2026-06-23",
       "hypothesis": "An unaudited publishing workflow is injecting Amazon product-listing copy (e.g. 'KENETIK Caffeine-Free Focus Drink...') into the TikTok and Instagram publishing queue. 6+ near-zero-engagement posts from Mar 31 \u2013 Apr 2 confirm the pollution. Investigation deliverable: identify the source integration (Sprout Social? Zapier? direct API?), pause the source, backfill a remediation list of polluted posts, and establish a pre-publish content filter to prevent recurrence.",
       "objective_level": "L4",
       "spawned_from": "PM-L-037",
@@ -6512,9 +6552,17 @@
       "published_date": null,
       "measurement_window": "7d",
       "measurement_due": null,
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "polluted_posts_remaining",
+        "primary_metric_result": "Closed resolved. Verified 2026-06-23: no Amazon-listing-text artifacts (About this item / Ingredients / Item Form / Flavor Name / Pack of / fl oz etc.) detected in current Social Content Hub. Pollution not present on current social content. Sets PM L-037 action_taken=true.",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO backlog close-out session 2026-06-23 (repo/connector verification)"
+      },
+      "outcome": "success",
+      "closed_date": "2026-06-23",
       "autonomy_tier": 1,
       "file": "cgo-logs/changesets/CS-2026-092.md",
       "notes": "Spawned from PM L-037 (changeset_candidate=true, action_taken=None). Urgent \u2014 pollution is active and recurring. Garrett owns integration audit; Charlotte owns social queue cleanup. Sets PM L-037 action_taken upon close. | 2026-04-28 (Devon via Claude /changeset-execute): Tier 1 approve + execute. Status draft \u2192 approved. Reset target 2026-05-01 (source pause) / 2026-05-05 (cleanup). Owners: Nick (investigation), Charlotte (cleanup).",
@@ -6588,7 +6636,7 @@
       "revision_notes": null,
       "revision_date": null,
       "rejection_notes": null,
-      "learning_note": null,
+      "learning_note": "[2026-06-23 close] Closed resolved. Verified 2026-06-23: no Amazon-listing-text artifacts (About this item / Ingredients / Item Form / Flavor Name / Pack of / fl oz etc.) detected in current Social Content Hub. Pollution not present on current social content. Sets PM L-037 action_taken=true.",
       "spawned_changesets": null
     },
     {
@@ -6670,7 +6718,7 @@
       "platforms": [
         "content-production"
       ],
-      "status": "approved",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Devon Price",
       "created": "2026-04-21",
@@ -6706,16 +6754,24 @@
       "published_date": "",
       "measurement_window": "4_sessions",
       "measurement_due": "",
-      "actual_impact": {},
-      "outcome": "",
-      "closed_date": "",
+      "actual_impact": {
+        "primary_metric": "d13_score",
+        "primary_metric_result": "Closed superseded per Devon decision 2026-06-23. Content-production capacity P0 overtaken by subsequent automation/process work; this structural-ramp CS no longer the active vehicle.",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO backlog close-out session 2026-06-23 (repo/connector verification)"
+      },
+      "outcome": "superseded",
+      "closed_date": "2026-06-23",
       "file": "cgo-logs/changesets/CS-2026-097.md",
       "notes": "Step 8a P0 structural escalation \u2014 D13 consecutive_below_40 = 6. Owner-surface contracts + production queue SLA + concentration circuit-breaker. Devon weekly check-in. Kill gate: no improvement to >=50 within 3 sessions triggers war-room. | 2026-04-28 (Devon via Claude /changeset-execute): First check-in agenda set. Open: Nicole-vs-Peter on email surface; Devon to resolve in meeting. Kill-gate at 50 holds; on pace if Charlotte+Peter maintain pace. Reassign min 5 CSes off Katie (70.6%\u2192~50%) recommended.",
       "scheduled_send_date": "",
       "execution_target_date": "2026-04-28",
       "executed_date": "",
       "autonomy_tier": 2,
-      "learning_note": "",
+      "learning_note": "[2026-06-23 close] Closed superseded per Devon decision 2026-06-23. Content-production capacity P0 overtaken by subsequent automation/process work; this structural-ramp CS no longer the active vehicle.",
       "sweep_flags": [
         {
           "flag": "first_checkin_2026_04_28_agenda_set",
@@ -6780,7 +6836,7 @@
           "action": "owner_nudge_queued_phase_4"
         }
       ],
-      "last_updated": "2026-04-28"
+      "last_updated": "2026-06-23"
     },
     {
       "id": "CS-2026-098",
@@ -6871,7 +6927,7 @@
       "platforms": [
         "changeset-process"
       ],
-      "status": "approved",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Devon Price",
       "created": "2026-04-22",
@@ -6919,16 +6975,24 @@
       "published_date": "",
       "measurement_window": "7d_post_first_send",
       "measurement_due": "2026-04-29",
-      "actual_impact": {},
-      "outcome": "",
-      "closed_date": "",
+      "actual_impact": {
+        "primary_metric": "gp_launch_hardgate_linkage",
+        "primary_metric_result": "Superseded. GP-LAUNCH-2026 activated early May; the in-flight Hard Gate 2 retrofit is now obsolete (launch executed, measurement_due 2026-04-29 long past). No forward value in retrofitting linkage on a completed launch.",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO backlog close-out session 2026-06-23 (repo/connector verification)"
+      },
+      "outcome": "superseded",
+      "closed_date": "2026-06-23",
       "file": "cgo-logs/changesets/CS-2026-099.md",
       "notes": "Retrofit Hard Gate 2 linkage on in-flight GP-LAUNCH-2026 activating TODAY across organic + email + SMS + influencer + paid. Paid spend blocked until creative + UTMs + pixels verified. Systemic fix for 68/70 orphaned belongs to CS-2026-097. | 2026-04-28 (Devon via Claude /changeset-review): Co-approval dossier packaged for Cliff+Devon. Recommended APPROVE_STANDARD_WITH_CONDITIONS. Paid held dark 6 days = gate worked. Approval unblocks GP-TEASE-0429 + 5 May email CSes. 4 conditions on the approval; 3 items explicitly out-of-scope to prevent scope creep. | 2026-04-28 (Devon via Claude /changeset-execute): Devon side approved (Standard tier + 4 conditions). Status draft \u2192 needs_feedback. Awaiting Cliff Morgan co-approval. If Cliff approves \u2192 status approved \u2192 5 May email CSes + GP-TEASE-0429 unblock. If silent 72h \u2192 escalation.",
       "scheduled_send_date": "2026-04-22",
       "execution_target_date": "2026-04-22",
       "executed_date": "",
       "autonomy_tier": 2,
-      "learning_note": "",
+      "learning_note": "[2026-06-23 close] Superseded. GP-LAUNCH-2026 activated early May; the in-flight Hard Gate 2 retrofit is now obsolete (launch executed, measurement_due 2026-04-29 long past). No forward value in retrofitting linkage on a completed launch.",
       "sweep_flags": [
         {
           "flag": "draft_overdue_target_gt_5d",
@@ -7040,7 +7104,7 @@
           "action": "owner_nudge_queued_phase_4"
         }
       ],
-      "last_updated": "2026-05-04"
+      "last_updated": "2026-06-23"
     },
     {
       "id": "CS-2026-100",
@@ -7955,7 +8019,7 @@
       "platforms": [
         "changeset-process"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Devon Price",
       "created": "2026-04-28",
@@ -7995,16 +8059,24 @@
       "published_date": "2026-04-28",
       "measurement_window": "14d",
       "measurement_due": "2026-05-12",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "silent_degradation_eliminated",
+        "primary_metric_result": "Delivered & verifiably working. pending_measurement_queue field is live in tracker.json and in active use by the lifecycle sweep (it is the mechanism surfacing the deferred-measurement queue today). Silent-failure failure mode eliminated.",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO backlog close-out session 2026-06-23 (repo/connector verification)"
+      },
+      "outcome": "success",
+      "closed_date": "2026-06-23",
       "file": "cgo-logs/changesets/CS-2026-127.md",
       "scheduled_send_date": null,
       "execution_target_date": "2026-04-28",
       "executed_date": "2026-04-28",
       "autonomy_tier": 1,
       "linked_calendar_activity": null,
-      "learning_note": null,
+      "learning_note": "[2026-06-23 close] Delivered & verifiably working. pending_measurement_queue field is live in tracker.json and in active use by the lifecycle sweep (it is the mechanism surfacing the deferred-measurement queue today). Silent-failure failure mode eliminated.",
       "sweep_flags": [
         {
           "flag": "spawned_from_sub_agent_silent_failure_diagnosis",
@@ -8019,7 +8091,7 @@
           "action": "Status: draft \u2192 approved \u2192 published in single execution session. Patched: changeset-lifecycle-sweep.md (top warning + Phase 0.8 + Phase 2 Step 0 + Phase 4 counters + Phase 5 summary + Pipeline Execution Context); brain/kenetik-brain/references/system-architecture.md (canonical 4 \u2192 5 fields + version log); cgo-daily-pipeline/config/changeset-instructions.md (sub-agent warning + queue control note). tracker.json initialized lifecycle_sweep.pending_measurement_queue = [] and added measurement_deferred + pending_measurement_queue_size to last_sweep_counts."
         }
       ],
-      "last_updated": "2026-04-28",
+      "last_updated": "2026-06-23",
       "notes": "Adaptive lifecycle sweep proposal. One command, two contexts. Phase 0.8 sets measurement_capable boolean; sub-agent runs queue deferred CSes to lifecycle_sweep.pending_measurement_queue and skip Phase 2; main-session runs drain the queue. last_sweep_counts gains measurement_deferred + pending_measurement_queue_size fields so silent failure becomes legible. Optional Slack nudge on detection-only runs. No new commands, no new data stores. See file for full Resolution Hierarchy walkthrough. | 2026-04-28 (Devon via Claude /changeset-execute): SHIPPED. Status draft \u2192 published in single session. 3 files patched. Tracker initialized with new canonical 5th field + 3 new counters. Measurement_due = 2026-05-12 (14d). Validation: next sub-agent sweep run will exercise the false branch; next main-session sweep will exercise queue-drain (currently empty)."
     },
     {
@@ -8225,7 +8297,7 @@
         "changeset-process",
         "daily-pipeline"
       ],
-      "status": "approved",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Devon Price",
       "created": "2026-04-29",
@@ -8264,9 +8336,17 @@
       "published_date": null,
       "measurement_window": "30d",
       "measurement_due": null,
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "unused_commands_removed",
+        "primary_metric_result": "Delivered & verified. cgo-copilot.md and executive-copilot.md no longer exist in kenetik-growth-system/commands/. Cleanup complete; tracker status simply never flipped.",
+        "revenue_impact": 0,
+        "margin_impact": 0,
+        "confidence": "n/a",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO backlog close-out session 2026-06-23 (repo/connector verification)"
+      },
+      "outcome": "success",
+      "closed_date": "2026-06-23",
       "file": "cgo-logs/changesets/CS-2026-130.md",
       "autonomy_tier": 1,
       "sweep_flags": [
@@ -8333,8 +8413,9 @@
           "action": "owner_nudge_queued_phase_4"
         }
       ],
-      "last_updated": "2026-04-29",
-      "notes": "Spawned 2026-04-29 from CS-129 round 3 honest accounting. Two specs exist (cgo-copilot.md 160 lines + executive-copilot.md 241 lines) but zero callers in daily pipeline. Build scope: Phase 4.5 morning pre-answers + standing question list (3 daily) + Edge Case Log + Query Log files initialized + verify command callable on-demand. State files serving as data marts already exist. Owner: Devon (CGO + cross-surface infra owner per CS-120 #1). | 2026-04-29 (Devon pivot): FLIPPED build \u2192 REMOVE. Approved 2026-04-29. Files deleted + 4 references patched. Edge Case Log stays (real, managed by /edge-cases). Query log was vapor, goes away."
+      "last_updated": "2026-06-23",
+      "notes": "Spawned 2026-04-29 from CS-129 round 3 honest accounting. Two specs exist (cgo-copilot.md 160 lines + executive-copilot.md 241 lines) but zero callers in daily pipeline. Build scope: Phase 4.5 morning pre-answers + standing question list (3 daily) + Edge Case Log + Query Log files initialized + verify command callable on-demand. State files serving as data marts already exist. Owner: Devon (CGO + cross-surface infra owner per CS-120 #1). | 2026-04-29 (Devon pivot): FLIPPED build \u2192 REMOVE. Approved 2026-04-29. Files deleted + 4 references patched. Edge Case Log stays (real, managed by /edge-cases). Query log was vapor, goes away.",
+      "learning_note": "[2026-06-23 close] Delivered & verified. cgo-copilot.md and executive-copilot.md no longer exist in kenetik-growth-system/commands/. Cleanup complete; tracker status simply never flipped."
     },
     {
       "id": "CS-2026-133",
