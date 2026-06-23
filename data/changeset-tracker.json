@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-22T16:25:37.245748+00:00",
-  "next_id": "CS-2026-204",
+  "last_updated": "2026-06-23T15:41:35Z",
+  "next_id": "CS-2026-216",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-22",
     "last_sweep_session": "2026-06-22-s1",
@@ -38,27 +38,27 @@
     ]
   },
   "summary": {
-    "total": 159,
+    "total": 171,
     "by_status": {
       "closed": 78,
       "published": 24,
-      "approved": 15,
+      "approved": 21,
       "needs_feedback": 3,
-      "draft": 39
+      "draft": 45
     },
     "by_risk": {
       "critical": 2,
-      "low": 72,
-      "medium": 67,
+      "low": 79,
+      "medium": 72,
       "high": 18
     },
     "by_subtype": {
       "implementation": 116,
       "investigation": 21,
-      "quick": 22
+      "quick": 34
     },
-    "last_updated": "2026-06-22T16:25:37.245748+00:00",
-    "last_counted": "2026-06-16"
+    "last_updated": "2026-06-23T15:41:35Z",
+    "last_counted": "2026-06-23T15:41:35Z"
   },
   "changesets": [
     {
@@ -10719,6 +10719,500 @@
       "hypothesis": "Reverting the homepage hero from the re-enabled 4-slide Slick fade carousel back to a single static evergreen slide removes the autoplay/fade/clone code path that only executes with >1 slide. This should eliminate the homepage script-error spike (~10 -> ~130 per 1,000 sessions) and recover mobile CVR toward its 3.34% baseline (was 2.14%, RED) \u2014 without restoring the out-of-stock Golden Pear hero.",
       "notes": "INCIDENT: Mobile CVR 3.34% -> 2.14% (RED); homepage #1 LP. Bisected 10d of theme repo: ONLY homepage change is templates/index.json Mon 6/15 20:38 (customizer) disabling single-slide Golden Pear hero (new_hp_banner_D3rgVe, OOS) + re-enabling legacy 4-slide hero new_hp_banner_tHDgpj. Hero runs Slick (cw-custom.js .home-banner-slider autoplay+fade+infinite); Slick autoplay only starts with >1 slide so single Golden Pear slide kept it inert; 4-slide hero re-activates fade/autoplay/clone path every session, only fade:true slider on site. No code changed. FIX: data-only index.json block_order trimmed to single slide banner_Thm7tc; others kept in blocks{}. PR fix/homepage-hero-single-slide-cvr pushed, DRAFT pending Katie merge. Live console blocked by org policy; RC from bisect + server HTML. Pre-existing aside: theme.liquid loads missing cw-custom-dev.js (404, not this incident).",
       "category": "other"
+    },
+    {
+      "id": "CS-2026-204",
+      "title": "Take your brain off airplane mode. A short, metaphor-led education send in the proven fami",
+      "status": "approved",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A single-image metaphor opener in the 720p family beats editorial education on opens and matches it on RPR.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). education send 2026-07-01. Segment: engaged-all (broad; Wedge A lean).",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-01",
+      "execution_target_date": null,
+      "linked_calendar_activity": null,
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A single-image metaphor opener in the 720p family beats editorial education on opens and matches it on RPR."
+      },
+      "file": "cgo-logs/changesets/CS-2026-204.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "high",
+      "pattern_id": null,
+      "activation_date": "2026-07-01",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-205",
+      "title": "The clarity window. A question-led, named-cognition-concept education read on why steady f",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A question-led, named-cognition-concept education send carrying a single Tier A focus claim opens above type_avg and converts at or above education RPR, validating the clarity spine as a repeatable open-and-click engine.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). education send 2026-07-03. Segment: engaged-all (Wedge A tilt). HELD \u2014 pending Devon claims sign-off: devon_review_required:true. One Tier A claim (focus/cognition Stroop) with an UNRESOLVED PMID discrepancy (41773904 matrix vs 42263845 prompt); Frontiers meta excluded (Katie decision #3). Devon/Brandon must reconcile the PMID and confirm tier before lock. Brand-voice gate also applies (em-dash ban,",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-03",
+      "execution_target_date": null,
+      "linked_calendar_activity": null,
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A question-led, named-cognition-concept education send carrying a single Tier A focus claim opens above type_avg and converts at or above education RPR, validating the clarity spine as a repeatable open-and-click engine."
+      },
+      "file": "cgo-logs/changesets/CS-2026-205.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "high",
+      "pattern_id": null,
+      "activation_date": "2026-07-03",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-206",
+      "title": "Kenetik x Cleetus is here, with a free koozie on us. Announce the Kenetik x Cleetus / Quik",
+      "status": "approved",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A partnership announcement plus a national receipt-based gift-with-purchase lifts can-volume and RPR at or above promo type_avg WITHOUT an owned markdown, validating GWP as a discount-free promo lever for the price-sensitive base.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). promo send 2026-07-08. Segment: engaged-all (broad; Wedge A - Cleetus/racing fans lean). National GWP, no Tulsa-only sub-segment required..",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-08",
+      "execution_target_date": null,
+      "linked_calendar_activity": "QT-CLEETUS-RAFFLE-042226",
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A partnership announcement plus a national receipt-based gift-with-purchase lifts can-volume and RPR at or above promo type_avg WITHOUT an owned markdown, validating GWP as a discount-free promo lever for the price-sensitive base."
+      },
+      "file": "cgo-logs/changesets/CS-2026-206.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "high",
+      "pattern_id": null,
+      "activation_date": "2026-07-08",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-207",
+      "title": "Why Dave Asprey put Kenetik in his routine. The official integration, in his own words. A",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "An official named-authority credibility feature using only direct quotes opens above education type_avg and reinforces Wedge A trust, validating credibility-halo sends as a repeatable open lever.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). education send 2026-07-10. Segment: engaged-all (Wedge A tilt). HELD \u2014 pending Devon claims sign-off: devon_review_required:true. Asprey-direct-quotes-only (Katie decision #1); structure-function only; any citation from approved matrix only; Frontiers-meta fallback rule applies if cognition framing appears. Open: Asprey quote sourcing + media/likeness rights + claims tier. Brand-voice gate also appl",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-10",
+      "execution_target_date": null,
+      "linked_calendar_activity": null,
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "An official named-authority credibility feature using only direct quotes opens above education type_avg and reinforces Wedge A trust, validating credibility-halo sends as a repeatable open lever."
+      },
+      "file": "cgo-logs/changesets/CS-2026-207.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "high",
+      "pattern_id": null,
+      "activation_date": "2026-07-10",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-208",
+      "title": "Summer, clearly. A national, non-endurance summer moment contrasting heat-and-travel menta",
+      "status": "approved",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A non-endurance national summer-clarity moment with a drinks/shots CTA monetizes at or above event_seasonal type_avg without an owned markdown, validating occasion-anchored seasonal sends as a discount-free revenue lever.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). event_seasonal send 2026-07-13. Segment: engaged-all (broad; national summer moment).",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-13",
+      "execution_target_date": null,
+      "linked_calendar_activity": null,
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A non-endurance national summer-clarity moment with a drinks/shots CTA monetizes at or above event_seasonal type_avg without an owned markdown, validating occasion-anchored seasonal sends as a discount-free revenue lever."
+      },
+      "file": "cgo-logs/changesets/CS-2026-208.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "high",
+      "pattern_id": null,
+      "activation_date": "2026-07-13",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-209",
+      "title": "What you keep telling us about clarity. A Voice-of-Customer roundup of the 'clarity and fo",
+      "status": "approved",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A customer-voice VOC roundup of the two largest positive themes, with a light per-serving value reframe, builds the underused community baseline and reframes price-as-value without a discount, easing the 36.5% price churn driver.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). community send 2026-07-15. Segment: engaged-all (Wedge B tilt).",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-15",
+      "execution_target_date": null,
+      "linked_calendar_activity": null,
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A customer-voice VOC roundup of the two largest positive themes, with a light per-serving value reframe, builds the underused community baseline and reframes price-as-value without a discount, easing the 36.5% price churn driver."
+      },
+      "file": "cgo-logs/changesets/CS-2026-209.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "medium",
+      "pattern_id": null,
+      "activation_date": "2026-07-15",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-210",
+      "title": "The afternoon you don't crash from. A named-concept education read for the stimulant-refug",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A named-concept education send tilted to Wedge B, pairing a Tier A focus claim with a plain subscription/per-serving value case, opens above type_avg and nudges subscription intent, validating the clarity spine plus value reframe as a retention lever in a non-promo slot.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). education send 2026-07-18. Segment: engaged-all (Wedge B tilt). HELD \u2014 pending Devon claims sign-off: devon_review_required:true. One Tier A claim (focus/cognition Stroop) with an UNRESOLVED PMID discrepancy (41773904 matrix vs 42263845 prompt); optional midlife aging support from approved matrix only; Frontiers meta excluded (Katie decision #3). Devon/Brandon must reconcile the PMID and confirm tie",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-18",
+      "execution_target_date": null,
+      "linked_calendar_activity": null,
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A named-concept education send tilted to Wedge B, pairing a Tier A focus claim with a plain subscription/per-serving value case, opens above type_avg and nudges subscription intent, validating the clarity spine plus value reframe as a retention lever in a non-promo slot."
+      },
+      "file": "cgo-logs/changesets/CS-2026-210.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "high",
+      "pattern_id": null,
+      "activation_date": "2026-07-18",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-211",
+      "title": "Something is coming. The opening beat of the TRX x Kenetik Lemon-Lime Shot launch arc, a c",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A curiosity-led co-brand teaser about a week ahead of a GP-class drop lifts launch-day opens and click-through versus a cold reveal, without leaking the subscriber head-start publicly.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). launch send 2026-07-16. Segment: engaged-all (Wedge C primary; TRX arc begins). HELD \u2014 pending Devon claims sign-off: TRX-claim-gate-Devon (standard athletic-performance only; no CHO-fueling/'fuels your race'; no Frontiers-meta lean; Brodka 2026 adversarial); no-public-head-start-promotion (L-087 anti-pattern); no-discount; shots-non-carbonated-disclosure; TRX-URL-ground-at-brief-lock; brand-voice (em-dash ban, ban",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-16",
+      "execution_target_date": null,
+      "linked_calendar_activity": "TRX-LEM-061526",
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A curiosity-led co-brand teaser about a week ahead of a GP-class drop lifts launch-day opens and click-through versus a cold reveal, without leaking the subscriber head-start publicly."
+      },
+      "file": "cgo-logs/changesets/CS-2026-211.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "high",
+      "pattern_id": null,
+      "activation_date": "2026-07-16",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-212",
+      "title": "Subscribers and waitlist, yours first. The TRX x Kenetik Lemon-Lime Shot is live for the e",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo",
+        "klaviyo-sms"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "medium",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A third in-band L-087 deployment on the TRX GP-class drop confirms the 4h subscriber head-start mechanic (email RPR >=$7.50 / CVR >=10%, SMS conv >=9% / RPR >=$6.50) and re-validates the subscribe-and-save attach lift.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). launch send 2026-07-22. Segment: Subscriber Early Access (ENGAGED + WAITLIST) micro-segment per L-087 (saved Klaviyo segment, do NOT rebuild ad hoc). HELD \u2014 pending Devon claims sign-off: L-087-pre-fire-checklist (inventory + 14-day ENGAGED/WAITLIST segment refresh + live flow health BLOCKING); no-public-head-start-promotion; no-winback-flow-in-4h-window; distinct-creative-from-topic-10; TRX-claim-gate-Devon (standard athletic-performance only; no CHO-fueling; no Frontiers-meta lean)",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-22",
+      "execution_target_date": null,
+      "linked_calendar_activity": "TRX-LEM-061526",
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A third in-band L-087 deployment on the TRX GP-class drop confirms the 4h subscriber head-start mechanic (email RPR >=$7.50 / CVR >=10%, SMS conv >=9% / RPR >=$6.50) and re-validates the subscribe-and-save attach lift."
+      },
+      "file": "cgo-logs/changesets/CS-2026-212.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "high",
+      "pattern_id": "L-087",
+      "activation_date": "2026-07-22",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-213",
+      "title": "It's here. The public launch-day broadcast of the TRX x Kenetik Lemon-Lime Shot at T-0, pa",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo",
+        "klaviyo-sms"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A distinct public launch-day broadcast plus T-0 SMS, with the 09 early-access purchasers excluded, monetizes the broad list at or above the launch median-excl-outlier ($0.366 RPR) and validates the head-start/public split as a non-cannibalizing two-segment launch structure.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). launch send 2026-07-22. Segment: engaged-all (broad public launch; Wedge C primary). HELD \u2014 pending Devon claims sign-off: distinct-creative-from-topic-09 (L-087 anti-pattern); exclude-09-early-access-converters; use-median-excl-outlier-economics (NOT the $9.97 outlier); TRX-claim-gate-Devon (standard athletic-performance only; no CHO-fueling; no Frontiers-meta lean); shots-non-carbonated-disclosure; no-discount; TRX-UR",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-22",
+      "execution_target_date": null,
+      "linked_calendar_activity": "TRX-LEM-061526",
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A distinct public launch-day broadcast plus T-0 SMS, with the 09 early-access purchasers excluded, monetizes the broad list at or above the launch median-excl-outlier ($0.366 RPR) and validates the head-start/public split as a non-cannibalizing two-segment launch structure."
+      },
+      "file": "cgo-logs/changesets/CS-2026-213.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "high",
+      "pattern_id": null,
+      "activation_date": "2026-07-22",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-214",
+      "title": "Reset for August. A forward-looking teaser that sets up August's National Wellness Month (",
+      "status": "approved",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A forward-looking, non-endurance August / National Wellness Month reset moment with a drinks/shots CTA monetizes at or above event_seasonal type_avg without an owned markdown, validating occasion-anchored forward-looking seasonal sends as a discount-free revenue lever that sets up the next month.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). event_seasonal send 2026-07-27. Segment: engaged-all (broad; national forward-looking seasonal moment; rebalance off Wedge C).",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-27",
+      "execution_target_date": null,
+      "linked_calendar_activity": null,
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A forward-looking, non-endurance August / National Wellness Month reset moment with a drinks/shots CTA monetizes at or above event_seasonal type_avg without an owned markdown, validating occasion-anchored forward-looking seasonal sends as a discount-free revenue lever that sets up the next month."
+      },
+      "file": "cgo-logs/changesets/CS-2026-214.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "high",
+      "pattern_id": null,
+      "activation_date": "2026-07-27",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
+    },
+    {
+      "id": "CS-2026-215",
+      "title": "Catching up with Matt Hughes. A community update following the Matt Hughes story and partn",
+      "status": "approved",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "category": "email_sms",
+      "subtype": "quick",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "review_tier": "express",
+      "owner": "Katie Spaller",
+      "source": "synthesis",
+      "spawned_from": null,
+      "hypothesis": "A named-subject 'where he is now' follow-up to the proven Matt Hughes story sustains a high-trust community open and builds the underused community baseline, confirming the named-spotlight sub-type as a repeatable month-closer.",
+      "notes": "July 2026 lifecycle calendar (Stage 2). community send 2026-07-30. Segment: engaged-all (community/social-proof; rebalance off Wedge C).",
+      "created": "2026-06-23",
+      "last_updated": "2026-06-23",
+      "scheduled_send_date": "2026-07-30",
+      "execution_target_date": null,
+      "linked_calendar_activity": null,
+      "expected_impact": {
+        "metrics_moved": [
+          "d02_campaign_open_rate"
+        ],
+        "revenue": null,
+        "margin": null,
+        "learning_hypothesis": "A named-subject 'where he is now' follow-up to the proven Matt Hughes story sustains a high-trust community open and builds the underused community baseline, confirming the named-spotlight sub-type as a repeatable month-closer."
+      },
+      "file": "cgo-logs/changesets/CS-2026-215.md",
+      "klaviyo_object": "campaign_send",
+      "klaviyo_segment_id": "TBD-Stage2",
+      "lock_in_time": 720,
+      "confidence_tier": "medium",
+      "pattern_id": null,
+      "activation_date": "2026-07-30",
+      "pre_refresh_baseline": null,
+      "design_status": "awaiting"
     }
   ],
   "queue_actions": {
