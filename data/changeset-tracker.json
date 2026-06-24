@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-23T17:55:00Z",
+  "last_updated": "2026-06-23T18:05:00Z",
   "next_id": "CS-2026-216",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-22",
@@ -18,11 +18,7 @@
       "pm_candidates_net_new": 0
     },
     "pending_measurement_queue": [
-      "CS-2026-035",
       "CS-2026-067",
-      "CS-2026-101",
-      "CS-2026-114",
-      "CS-2026-115",
       "CS-2026-129",
       "CS-2026-133",
       "CS-2026-139"
@@ -31,10 +27,10 @@
   "summary": {
     "total": 171,
     "by_status": {
-      "closed": 93,
+      "closed": 97,
       "approved": 20,
-      "published": 15,
       "needs_feedback": 3,
+      "published": 11,
       "draft": 40
     },
     "by_risk": {
@@ -48,8 +44,8 @@
       "investigation": 21,
       "quick": 34
     },
-    "last_updated": "2026-06-23T17:55:00Z",
-    "last_counted": "2026-06-23T17:55:00Z"
+    "last_updated": "2026-06-23T18:05:00Z",
+    "last_counted": "2026-06-23T18:05:00Z"
   },
   "changesets": [
     {
@@ -3000,7 +2996,7 @@
       "platforms": [
         "klaviyo"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie Spaller",
       "created": "2026-03-23",
@@ -3043,7 +3039,7 @@
       "approved_by": "Katie (on behalf of Devon)",
       "approved_date": "2026-04-07",
       "review_tier": "standard",
-      "last_updated": "2026-04-19",
+      "last_updated": "2026-06-23",
       "sweep_flags": [
         "stale_approved",
         {
@@ -3085,7 +3081,18 @@
         "requires_human_review": true,
         "reason_for_human": "A/B segment-pair pull, not a generic campaign report"
       },
-      "requires_human_review": true
+      "requires_human_review": true,
+      "outcome": "inconclusive",
+      "closed_date": "2026-06-23",
+      "actual_impact": {
+        "primary_metric": "winback_reactivation_rate",
+        "primary_metric_result": "No controlled result to measure. Designed as a 50/50 A/B (treatment = SMS 4h before email; control = simultaneous) across the next 3 promo campaigns, but remained a tier-1 shadow-mode DRAFT and was never executed as a clean split. April SMS sends show high SMS CTR (28-33%) but that's not the controlled comparison this CS specified. RECOMMEND: if SMS-first is still of interest, run it as an actual split test; otherwise retire.",
+        "revenue_impact": 0,
+        "confidence": "medium",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO close-out 2026-06-23"
+      },
+      "learning_note": "[2026-06-23 close] No controlled result to measure. Designed as a 50/50 A/B (treatment = SMS 4h before email; control = simultaneous) across the next 3 promo campaigns, but remained a tier-1 shadow-mode DRAFT and was never executed as a clean split. April SMS sends show high SMS CTR (28-33%) but that's not the controlled comparison this CS specified. RECOMMEND: if SMS-first is still of interest, run it as an actual split test; otherwise retire."
     },
     {
       "id": "CS-2026-036",
@@ -7351,7 +7358,7 @@
       ],
       "category": "email_sms",
       "subtype": "investigation",
-      "status": "published",
+      "status": "closed",
       "owner": "Katie Spaller",
       "created": "2026-04-22",
       "risk_level": "low",
@@ -7384,10 +7391,17 @@
       "approved_by": "Katie (operator \u2014 STANDARD tier, zero-cost test already live; Devon gate at 2026-05-14 retention decision)",
       "approved_date": "2026-04-22",
       "published_date": "2026-04-14",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
-      "learning_note": null,
+      "actual_impact": {
+        "primary_metric": "campaign_rpr_treatment_vs_control",
+        "primary_metric_result": "Not measurable from available connectors. Maverick runs per-campaign A/B (inbox-placement treatment vs control); those arm-level RPR results live in Maverick's own tool, not surfaced through the Klaviyo API (Klaviyo only shows the 'Maverick Optimizer Backfill' webhook/segment). CS was a draft 30-day readout that was never executed. RECOMMEND: Katie pull the 30-day treatment-vs-control readout directly from Maverick; if the projected 30-40% incremental lift holds, log it as a new learning.",
+        "revenue_impact": 0,
+        "confidence": "medium",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO close-out 2026-06-23"
+      },
+      "outcome": "inconclusive",
+      "closed_date": "2026-06-23",
+      "learning_note": "[2026-06-23 close] Not measurable from available connectors. Maverick runs per-campaign A/B (inbox-placement treatment vs control); those arm-level RPR results live in Maverick's own tool, not surfaced through the Klaviyo API (Klaviyo only shows the 'Maverick Optimizer Backfill' webhook/segment). CS was a draft 30-day readout that was never executed. RECOMMEND: Katie pull the 30-day treatment-vs-control readout directly from Maverick; if the projected 30-40% incremental lift holds, log it as a new learning.",
       "spawned_changesets": null,
       "revision_notes": null,
       "revision_date": null,
@@ -7410,7 +7424,8 @@
           "detail": "9d",
           "action": "owner_nudge_queued_phase_4"
         }
-      ]
+      ],
+      "last_updated": "2026-06-23"
     },
     {
       "id": "CS-2026-102",
@@ -7634,7 +7649,7 @@
       "platforms": [
         "shopify"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "owner": "Katie",
       "created": "2026-04-24",
@@ -7673,17 +7688,25 @@
       "published_date": "2026-04-24",
       "measurement_window": "14d",
       "measurement_due": "2026-05-08",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "pdp_add_to_cart_rate_on_flavor_toggle_sessions",
+        "primary_metric_result": "Bug fix shipped & verified (autoSelectFirstAvailableSize helper on cw-01-product-banner.liquid, theme branch fix/cw-product-banner-auto-select-size). This is a dead-end-state fix (flavor toggle left the ATC form invalid) that can only help or be neutral. The flavor-toggle-specific ATC lift was never instrumented, and a site-wide ATC/CVR comparison around 4/24 would be confounded by concurrent activity, so no spurious number is reported. Closed delivered on the shipped fix.",
+        "revenue_impact": 0,
+        "confidence": "high",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO close-out 2026-06-23"
+      },
+      "outcome": "delivered",
+      "closed_date": "2026-06-23",
       "file": "cgo-logs/changesets/CS-2026-114.md",
       "notes": "Auto-select first available pack size when visitor toggles flavor. PR: https://github.com/drinkkenetik/kenetik-shopify-theme/pull/new/fix/cw-product-banner-auto-select-size | Branch: fix/cw-product-banner-auto-select-size | Repro: Microsoft Clarity session replay",
       "review_tier": "express",
       "execution_target_date": "2026-04-24",
       "executed_date": "2026-04-24",
       "autonomy_tier": null,
-      "last_updated": "2026-04-24",
-      "sweep_flags": []
+      "last_updated": "2026-06-23",
+      "sweep_flags": [],
+      "learning_note": "[2026-06-23 close] Bug fix shipped & verified (autoSelectFirstAvailableSize helper on cw-01-product-banner.liquid, theme branch fix/cw-product-banner-auto-select-size). This is a dead-end-state fix (flavor toggle left the ATC form invalid) that can only help or be neutral. The flavor-toggle-specific ATC lift was never instrumented, and a site-wide ATC/CVR comparison around 4/24 would be confounded by concurrent activity, so no spurious number is reported. Closed delivered on the shipped fix."
     },
     {
       "id": "CS-2026-115",
@@ -7694,7 +7717,7 @@
         "shopify",
         "auto-optimize"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "low",
       "review_tier": "express",
       "owner": "Katie",
@@ -7739,15 +7762,22 @@
       "published_date": "2026-04-24",
       "measurement_window": "7d (measuring phase) + 24h (canary) = 8d total after approve",
       "measurement_due": "2026-05-04",
-      "actual_impact": null,
-      "outcome": null,
-      "closed_date": null,
+      "actual_impact": {
+        "primary_metric": "autonomous_cro_cycle_validation",
+        "primary_metric_result": "VALIDATION NOT MET. Success required observing the full idle->awaiting_approval->canary->measuring->analyzing->decided->idle cycle with all Slack notifications. Per the 2026-05-27 dept-website-cro brief, CS-115 'has been live 33 days with no closed measurement' \u2014 the loop stalled in the measuring phase and never reached `decided`. pdp-atc-results.tsv contains only the 4/3 baseline cycle, no completed cycle. The reference-architecture validation did not complete. LEARNING: the autonomous CRO loop lacks a stall-detection/timeout to force analyze->decide when a measurement window overruns; first real cycle silently hung. This is the highest-priority fix before trusting the autonomous loop.",
+        "revenue_impact": 0,
+        "confidence": "medium",
+        "statistical_significance": false,
+        "_close_basis": "Devon CGO close-out 2026-06-23"
+      },
+      "outcome": "underperformed",
+      "closed_date": "2026-06-23",
       "file": "cgo-logs/changesets/CS-2026-115.md",
       "notes": "First T2 validation cycle for autonomous CRO loop. Seeds seeded_hypothesis into drinkkenetik/kenetik-shopify-theme auto-optimize/state.json. Guardrails kept at -20%/-20%/+20% tier-1 on 7-day aggregate per Katie's 2026-04-24 decision. Variant rendering gated by Slack approval at awaiting_approval phase \u2014 state.json seed alone does not expose variant to traffic. Success defined as full phase-machine cycle + all Slack notifications + clean return to idle. | AMENDMENT 2026-04-24: Surface config pdp-atc-theme.yaml rewritten v1.0\u2192v2.0 to map fair_game_files/elements to the actual live cw-product render path (cw-01-product-banner buy-box + cw-hp-* below-fold sections). v1.0 referenced generic Shopify files disabled on the live template \u2014 variant would have deployed with no visible change. | CYCLE 1 ATTEMPT 1 REJECTED 2026-04-24 15:51 EDT: orchestrator fired pre-PR#60-merge, generated Fuel-Your-Brain CTA hypothesis targeting snippets/product-buttons.liquid (no-op on cw-product template \u2014 only rendered by disabled main section + quickview). Variant branch also clobbered seeded_hypothesis in state.json. Rejected via Slack with context. Awaiting next Cowork run to re-read seeded_hypothesis on main + deploy subscription-first variant on cw-01-product-banner.liquid. | EXECUTE 2026-04-27: tracker reconciled status approved\u2192published. State.json seed verified on theme repo main (seeded_hypothesis + seeded_by=katie + seeded_at=2026-04-24T00:00:00Z + cycle_tag=t2-cycle-1 all present). Cycle 1 advanced through awaiting_approval (Katie approved 2026-04-24T20:22:15Z) \u2192 canary (entered 2026-04-26T20:04:12Z, 10% traffic, branch=auto-optimize/pdp-atc/t2-cycle-1-subscription-first, preview_theme_id=161090339035). Variant correctly targets cw-01-product-banner.liquid lines 262-297 per amended pdp-atc-theme.yaml v2.0. Measurement window: 1d canary + 7d measuring \u2192 measurement_due 2026-05-04. Contamination check vs CS-2026-114 (same file): different DOM regions (114 = flavor toggle pack-size auto-select; 115 = buy-box default subscription-first) \u2014 minor; 114's measurement settled. /changeset-lifecycle-sweep will pick up measurement at 2026-05-04.",
       "execution_target_date": "2026-04-24",
       "executed_date": "2026-04-24",
       "autonomy_tier": "tier_1",
-      "last_updated": "2026-04-27",
+      "last_updated": "2026-06-23",
       "cycle_tag": "t2-cycle-1",
       "parent_scope_doc": "architecture/2026-04-24-t2-first-cro-experiment-scope.md",
       "published_by": "Katie",
@@ -7786,7 +7816,8 @@
         "requires_human_review": true,
         "reason_for_human": "Polar Pixel ATC funnel (Layer 3+4) needed for clean variant attribution; gated on CS-147"
       },
-      "requires_human_review": true
+      "requires_human_review": true,
+      "learning_note": "[2026-06-23 close] VALIDATION NOT MET. Success required observing the full idle->awaiting_approval->canary->measuring->analyzing->decided->idle cycle with all Slack notifications. Per the 2026-05-27 dept-website-cro brief, CS-115 'has been live 33 days with no closed measurement' \u2014 the loop stalled in the measuring phase and never reached `decided`. pdp-atc-results.tsv contains only the 4/3 baseline cycle, no completed cycle. The reference-architecture validation did not complete. LEARNING: the autonomous CRO loop lacks a stall-detection/timeout to force analyze->decide when a measurement window overruns; first real cycle silently hung. This is the highest-priority fix before trusting the autonomous loop."
     },
     {
       "id": "CS-2026-118",
