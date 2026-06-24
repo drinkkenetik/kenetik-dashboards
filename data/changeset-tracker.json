@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-23T17:45:00Z",
+  "last_updated": "2026-06-23T17:55:00Z",
   "next_id": "CS-2026-216",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-22",
@@ -20,7 +20,6 @@
     "pending_measurement_queue": [
       "CS-2026-035",
       "CS-2026-067",
-      "CS-2026-100",
       "CS-2026-101",
       "CS-2026-114",
       "CS-2026-115",
@@ -32,9 +31,9 @@
   "summary": {
     "total": 171,
     "by_status": {
-      "closed": 92,
+      "closed": 93,
       "approved": 20,
-      "published": 16,
+      "published": 15,
       "needs_feedback": 3,
       "draft": 40
     },
@@ -49,8 +48,8 @@
       "investigation": 21,
       "quick": 34
     },
-    "last_updated": "2026-06-23T17:45:00Z",
-    "last_counted": "2026-06-23T17:45:00Z"
+    "last_updated": "2026-06-23T17:55:00Z",
+    "last_counted": "2026-06-23T17:55:00Z"
   },
   "changesets": [
     {
@@ -7157,7 +7156,7 @@
       "platforms": [
         "klaviyo"
       ],
-      "status": "published",
+      "status": "closed",
       "risk_level": "medium",
       "owner": "Katie Spaller",
       "created": "2026-04-22",
@@ -7201,17 +7200,29 @@
       "published_date": "2026-04-30",
       "measurement_window": "30d_post_first_renewal_wave",
       "measurement_due": "2026-06-05",
-      "actual_impact": {},
-      "outcome": "",
-      "closed_date": "",
+      "actual_impact": {
+        "primary_metric": "mar_2026_cohort_m1_retention",
+        "primary_metric_result": "Mar 2026 cohort M1 retention = 6.2% (367 repeat / 5,899 new) vs >=18% target AND vs Feb 2026 baseline 12.9% = SEVERE MISS (about a third of target, and HALF the baseline). The subscription order-flow refinement did not lift M1 retention. Likely driver: the Mar cohort is 2.5x larger than Feb (5,899 vs 2,390) \u2014 a low-intent promo/free-pack acquisition surge (Cleetus) diluted repeat behavior. LEARNING: M1 retention is dominated by acquisition mix, not flow copy; a flow refinement cannot overcome a low-intent cohort. Future retention CSes must segment by acquisition source/intent, not measure blended cohort M1.",
+        "mar_m1_retention_pct": 6.2,
+        "feb_baseline_m1_pct": 12.9,
+        "target_pct": 18.0,
+        "mar_cohort_size": 5899,
+        "feb_cohort_size": 2390,
+        "revenue_impact": 0,
+        "confidence": "high",
+        "statistical_significance": true,
+        "_close_basis": "Devon CGO close-out 2026-06-23; data/shopify-cohorts/cohort-state.json repeat_rate_pct"
+      },
+      "outcome": "underperformed",
+      "closed_date": "2026-06-23",
       "file": "cgo-logs/changesets/CS-2026-100.md",
       "notes": "Mar 2026 cohort n=5,987 entering first-renewal in 2-4 weeks with $25.93 30d LTV (vs Feb $45.33). Extends Upcoming Subscription Order Flow with cohort-specific branch + voluntary/involuntary split (L-045 operationalization). Brandon claims-gate on science-forward variant citing PMID 41994946. | 2026-04-22 EXPANDED: Absorbed CS-2026-052 (closed superseded same session). Scope now includes all-subscriber refinement of the Upcoming Subscription Order Flow (value reinforcement + skip/reschedule CTAs + L-045 voluntary/involuntary split + pause-instead-of-cancel messaging) as the base layer, with the Mar 2026 cohort branch + variants as the overlay. All cohorts benefit from the base refinement, not just Mar 2026. | 2026-04-28 (Devon via Claude /changeset-review): Co-approval dossier packaged. Recommended APPROVE_STANDARD_BARE_BRANCH_WITH_CONDITIONS. Bare branch margin reconciliation: $16K (Read A, default) vs $23.2K (Devon directive, likely combined reference). Strip L-045 phantom dep from bare branch. Spawn 1 sibling CS for Layer 1 base refinement; flag Phase 3 as L-045-deferred. | 2026-04-29 (Katie via /changeset-execute \u2192 /changeset-review): APPROVED \u2014 STANDARD tier, bare branch (Layer 2 / Mar 2026 cohort branch) only. Devon co-approval per prior 2026-04-28 directive; Brandon claims-pass condition on science-forward variant tracked as pre-fire gate. Margin read default = Read A: $16K expected (Section 3 yaml, bare branch). Layer 1 (all-subscriber base refinement) DEFERRED to new sibling CS (target: ship within 14 days, Katie owner). Phase 3 (involuntary churn save) DEFERRED until L-045 voluntary/involuntary split lands. Phantom-dependency anti-pattern fix applied via scope reduction. L0-L5 all pass (L5 pass pending Brandon claims-pass on science-forward variant only). Approval log: CS-2026-100 approved by Katie (per Devon directive). | 2026-04-29 (Katie via /changeset-review correction): TWO CORRECTIONS to the prior approval entry: (1) Approver-of-record corrected from Devon to Katie. Klaviyo flow change is in Katie's surface-of-change authority (AP-003 routing: klaviyo + lifecycle-marketing \u2192 Katie Spaller). Devon's 2026-04-28 input was guidance on pricing-mechanic visibility, not a required approval gate \u2014 the renewal-save discount mechanic is pre-existing in the Upcoming Subscription Order Flow, not net-new pricing. (2) Scope re-expanded from bare-branch back to combined Layer 1 + Layer 2. Splitting Layer 1 (base refinement) into a sibling CS was process overhead \u2014 Layer 1 has no data dependency (just template work) and Mar cohort benefits more from shipping refreshed base + cohort branch together than from cohort variants on top of stale base. Phase 3 (involuntary churn save) STAYS deferred \u2014 that is the only piece with a real L-045 dependency. Margin read returns to $23.2K combined expected (Layer 1 incremental $7.2K + Layer 2 Mar cohort $16K). Sibling-CS spawn action withdrawn. | 2026-04-29 (Katie via /changeset-execute): PUBLISHED. Upcoming Subscription Order Flow updated in Klaviyo with combined Layer 1 + Layer 2 scope. LIVE: Layer 1 base refinement (value-reinforcement block + skip/reschedule CTAs + pause-instead-of-cancel messaging) applies to ALL subscribers entering the flow. Layer 2 Mar 2026 cohort branch (segment mar-2026-first-renewal n=5,987) fires on T-7/T-3/T-1 cadence with 2 of 3 variants live: (1) variety inviter, (2) social-proof / Joelle Debban + Rockrr Racing UGC. Variant (3) science-forward (PMID 41994946 framing) HELD PAUSED in Klaviyo until Brandon claims-pass lands. SMS overlay live for SMS-subscribed Mar cohort members at T-2 + T-1. Phase 3 (involuntary churn save) NOT in this publish \u2014 deferred until L-045 voluntary/involuntary split lands. Measurement window: 30d post first-renewal wave (Mar cohort renewals fire 2026-04-25 to 2026-05-05); due 2026-06-05. Primary KPI: mar_2026_cohort_m1_retention \u226518% (vs Feb baseline 12.8%). Secondary KPIs: first_renewal_flow_ctr \u22653.5%, pause_conversion \u226525%, ltv_30d_mar_cohort \u2265$32 (vs $25.93). | 2026-04-29 (Katie via /changeset-execute REVERT): Premature publish status undone. The Klaviyo flow update has NOT actually been built yet \u2014 tracker was flipped to published before the implementation work happened. Reverting to status=approved. Build steps file generated for Katie. Brandon claims-pass request DM stands (can run in parallel with build). Will re-publish once Klaviyo work is actually live. | 2026-04-29 (Katie via /changeset-execute): PUBLISHED with go-live date 2026-04-30. Status flipped approved -> published. Klaviyo flow scheduled to launch 4/30 with combined Layer 1 + Layer 2 scope. Variants 1+2 + Layer 1 base refinement live; Variant 3 (science-forward, PMID 41994946) HELD PAUSED pending Brandon claims-pass. SMS overlay live for SMS Mar cohort T-2/T-1. Phase 3 deferred (L-045 dep). Mar cohort first-renewal wave 2026-04-25 -> 2026-05-05; 4/25-4/29 slice (~2,700 profiles) accepted as partial-coverage. Measurement due 2026-06-05. Primary KPI mar_2026_cohort_m1_retention >=18% vs Feb baseline 12.8%. | 2026-04-29 (Devon via Claude /changeset-execute): Scope-deviation surfaced. Full combined scope published, not bare branch. Recommend ratify. Variant 3 still pending Brandon claims-pass on PMID 41994946 (Tier A). No tracker status change.",
       "scheduled_send_date": "2026-04-30",
       "execution_target_date": "2026-04-30",
       "executed_date": "2026-04-30",
       "autonomy_tier": 2,
-      "learning_note": "",
-      "last_updated": "2026-04-29",
+      "learning_note": "[2026-06-23 close] Mar 2026 cohort M1 retention = 6.2% (367 repeat / 5,899 new) vs >=18% target AND vs Feb 2026 baseline 12.9% = SEVERE MISS (about a third of target, and HALF the baseline). The subscription order-flow refinement did not lift M1 retention. Likely driver: the Mar cohort is 2.5x larger than Feb (5,899 vs 2,390) \u2014 a low-intent promo/free-pack acquisition surge (Cleetus) diluted repeat behavior. LEARNING: M1 retention is dominated by acquisition mix, not flow copy; a flow refinement cannot overcome a low-intent cohort. Future retention CSes must segment by acquisition source/intent, not measure blended cohort M1.",
+      "last_updated": "2026-06-23",
       "sweep_flags": [
         {
           "flag": "mar_cohort_save_flow_3d_overdue",
