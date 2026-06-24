@@ -1,20 +1,65 @@
 {
   "description": "Structured PM evaluation results. Written by the kgs-weekly-pm-evaluation scheduled task after each run. 'latest' is the most recent eval; 'history' is the time series. composite/components are percentages; grade is the letter (A 90-100, B 80-89, C 70-79, D 60-69, F <60).",
   "framework": "performance-memory-evaluation-framework-v1.1",
-  "thresholds": { "alert_grade_below": "C", "alert_composite_drop_pp": 5 },
+  "thresholds": {
+    "alert_grade_below": "C",
+    "alert_composite_drop_pp": 5
+  },
   "latest": {
     "date": "2026-06-23",
     "composite": 68.2,
     "grade": "D",
-    "components": { "C1_capture": 55.6, "C2_quality": 75.0, "C3_hygiene": 55.6, "C4_feedback": 80.0, "C5_trajectory": 66.7 },
+    "components": {
+      "C1_capture": 55.6,
+      "C2_quality": 75.0,
+      "C3_hygiene": 55.6,
+      "C4_feedback": 80.0,
+      "C5_trajectory": 66.7
+    },
     "delta_vs_prior_pp": 3.3,
     "report": "cgo-logs/evaluations/2026-06-23-pm-evaluation.md",
-    "notes": "First eval since 4/18. CS-084 write-gate confirmed (entry_type 0->61%). Dominant drag: 113 active entries (volume bloat). CS-086 team-signal still 0."
+    "notes": "First eval since 4/18. CS-084 write-gate confirmed (entry_type 0->61%). Dominant drag: 113 active entries (volume bloat). CS-086 team-signal still 0. Grade D fired RCA threshold; RCA drafted (worst-regressed = C1 Capture -5.5pp) for Devon triage. Scheduled-task first fire on 6/23 confirmed eval idempotent vs manual re-baseline (data unchanged since 6/19); not re-scored/duplicated.",
+    "rca": "cgo-logs/rca-runs/2026-06-23-pm-eval-rca-DRAFT.md"
   },
   "history": [
-    { "date": "2026-04-07", "composite": 69.4, "grade": "D", "report": "cgo-logs/evaluations/2026-04-07-pm-evaluation.md" },
-    { "date": "2026-04-11", "composite": 84.4, "grade": "B", "report": "cgo-logs/evaluations/2026-04-11-pm-evaluation-v2.md" },
-    { "date": "2026-04-18", "composite": 64.9, "grade": "D", "components": { "C1_capture": 61.1, "C2_quality": 66.7, "C3_hygiene": 40.0, "C4_feedback": 80.0, "C5_trajectory": 66.7 }, "report": "cgo-logs/evaluations/2026-04-18-pm-evaluation.md" },
-    { "date": "2026-06-23", "composite": 68.2, "grade": "D", "components": { "C1_capture": 55.6, "C2_quality": 75.0, "C3_hygiene": 55.6, "C4_feedback": 80.0, "C5_trajectory": 66.7 }, "report": "cgo-logs/evaluations/2026-06-23-pm-evaluation.md" }
+    {
+      "date": "2026-04-07",
+      "composite": 69.4,
+      "grade": "D",
+      "report": "cgo-logs/evaluations/2026-04-07-pm-evaluation.md"
+    },
+    {
+      "date": "2026-04-11",
+      "composite": 84.4,
+      "grade": "B",
+      "report": "cgo-logs/evaluations/2026-04-11-pm-evaluation-v2.md"
+    },
+    {
+      "date": "2026-04-18",
+      "composite": 64.9,
+      "grade": "D",
+      "components": {
+        "C1_capture": 61.1,
+        "C2_quality": 66.7,
+        "C3_hygiene": 40.0,
+        "C4_feedback": 80.0,
+        "C5_trajectory": 66.7
+      },
+      "report": "cgo-logs/evaluations/2026-04-18-pm-evaluation.md"
+    },
+    {
+      "date": "2026-06-23",
+      "composite": 68.2,
+      "grade": "D",
+      "components": {
+        "C1_capture": 55.6,
+        "C2_quality": 75.0,
+        "C3_hygiene": 55.6,
+        "C4_feedback": 80.0,
+        "C5_trajectory": 66.7
+      },
+      "report": "cgo-logs/evaluations/2026-06-23-pm-evaluation.md",
+      "rca": "cgo-logs/rca-runs/2026-06-23-pm-eval-rca-DRAFT.md"
+    }
   ]
 }
