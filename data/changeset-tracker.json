@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
   "last_updated": "2026-06-25T09:00:33.669684+00:00",
-  "next_id": "CS-2026-216",
+  "next_id": "CS-2026-217",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-22",
     "last_sweep_session": "2026-06-22-s1",
@@ -25,27 +25,27 @@
     ]
   },
   "summary": {
-    "total": 171,
+    "total": 172,
     "by_status": {
       "closed": 97,
-      "approved": 20,
+      "approved": 21,
       "needs_feedback": 3,
       "published": 11,
       "draft": 40
     },
     "by_risk": {
       "critical": 2,
-      "low": 79,
+      "low": 80,
       "medium": 72,
       "high": 18
     },
     "by_subtype": {
-      "implementation": 116,
+      "implementation": 117,
       "investigation": 21,
       "quick": 34
     },
-    "last_updated": "2026-06-25T09:00:33.658231+00:00",
-    "last_counted": "2026-06-23T18:05:00Z"
+    "last_updated": "2026-06-25T00:00:00Z",
+    "last_counted": "2026-06-25T00:00:00Z"
   },
   "changesets": [
     {
@@ -11402,6 +11402,26 @@
       "design_status": "awaiting",
       "approved_by": "Katie Spaller",
       "approved_date": "2026-06-23"
+    },
+    {
+      "id": "CS-2026-216",
+      "title": "Paid Media Sandbox \u2014 Phase 0 scaffold (data/sandbox + seeded Afternoon Switch roadmap)",
+      "status": "approved",
+      "department": "paid-media",
+      "platforms": [
+        "meta-ads"
+      ],
+      "created": "2026-06-25",
+      "last_updated": "2026-06-25T00:00:00Z",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": 2,
+      "owner": "Katie Spaller",
+      "source": "manual",
+      "hypothesis": "A structured weekly sandbox (themes -> briefs -> paid test -> learning) that reuses KGS changeset/paid-media-state/performance-memory will compound prospecting learnings faster than ad-hoc testing.",
+      "notes": "Phase 0: created data/sandbox/{roadmap.json,research-log.json,sandbox-schema.json}, cgo-logs/sandbox/briefs/, scripts/validate_sandbox.py. Seeded 8-theme Afternoon Switch program; W1 & W2 backfilled from paid-media-state.json (both KILLED). Approved by Katie.",
+      "approved_by": "Katie Spaller",
+      "approved_date": "2026-06-25"
     }
   ],
   "queue_actions": {
