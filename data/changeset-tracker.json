@@ -25,13 +25,13 @@
     ]
   },
   "summary": {
-    "total": 172,
+    "total": 165,
     "by_status": {
       "closed": 96,
       "approved": 22,
       "needs_feedback": 3,
       "published": 11,
-      "draft": 40
+      "draft": 33
     },
     "by_risk": {
       "critical": 2,
@@ -1746,17 +1746,6 @@
       "file": "cgo-logs/changesets/CS-2026-020.md",
       "notes": "Send: 4/24 (tentative). Depends on CS-2026-017 koozie asset finalization. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 /changeset-execute: PUBLISHED (scheduled). Katie building in Klaviyo now, send scheduled for Friday 2026-04-24. All pre-publish safety checks passed: guardrails clear, no conflicts on Klaviyo cadence (CS-019 sent today, CS-021 scheduled 4/27, CS-022 scheduled 4/30), dependency CS-2026-017 published 4/17 with same Poff\u00e9 2023 citation (claims gate cleared transitively). executed_date stays null \u2014 Katie to rerun /changeset-execute CS-2026-020 post-send Friday to flip executed_date and start 7-day measurement window (measurement_due = send_date + 7d). | 2026-04-22 PER KATIE: set executed_date=2026-04-24 and measurement_due=2026-05-01 at scheduling time so no Mode 1.5 rerun is required. Measurement window runs 2026-04-24 -> 2026-05-01 regardless of when the send is actually confirmed.",
       "sweep_flags": [
-        "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved",
-        "stale_approved_gt_7d",
-        "published_2026-04-22_scheduled_send_4-24",
-        {
-          "flag": "measurement_approaching_3d",
-          "set_date": "2026-04-29",
-          "session": "2026-04-29-s1",
-          "days_until_due": 2,
-          "action": "prep_owner_phase_4"
-        },
         {
           "flag": "stale_published_gt_7d",
           "set_date": "2026-04-30",
@@ -1864,10 +1853,6 @@
       "file": "cgo-logs/changesets/CS-2026-021.md",
       "notes": "Send: 4/27. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 /changeset-execute: PUBLISHED (scheduled). Send date moved from tracker's 4/27 to Sunday 2026-04-26 per Katie. Katie building in Klaviyo now. All pre-publish safety checks passed: guardrails clear, clean Klaviyo cadence (CS-019 4/22 pub; CS-020 scheduled 4/24; CS-021 2026-04-26; CS-022 4/30), no dependencies, L3 customer-quality alignment. Claims gate: Katie confirmed passed KGS approval (Walsh 2021 + VOC testimonials FTC-compliant). Measurement window pre-pinned per Katie's preference: 2026-04-26 \u2192 2026-05-03 (7d, no Mode 1.5 rerun required). /changeset-measurement will pick up on 2026-05-03.",
       "sweep_flags": [
-        "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved",
-        "stale_approved_gt_7d",
-        "published_2026-04-22_scheduled_send_2026-04-26",
         {
           "flag": "stale_published_gt_7d",
           "set_date": "2026-04-30",
@@ -1975,9 +1960,6 @@
       "file": "cgo-logs/changesets/CS-2026-022.md",
       "notes": "Send: 4/30. Draft in progress with Underground Ecom. | 2026-04-15 sweep: stale >7d; recommend execute with co-owner redistribution per S33 synthesis. | 2026-04-22 /changeset-execute: PUBLISHED (scheduled). Send date moved from tracker's 4/30 to Wednesday 2026-04-29 per Katie. Katie building in Klaviyo now. Pre-publish safety checks passed: guardrails clear (Low risk, reversible, no discount beyond existing subscription offer), clean Klaviyo cadence (CS-019 4/22; CS-020 4/24; CS-021 4/26; CS-022 2026-04-29; 3-day spacing), no dependencies, claims gate N/A (Product Facts only \u2014 no external science claim). Measurement window pre-pinned: 2026-04-29 \u2192 2026-05-06 (7d, no Mode 1.5 rerun required). /changeset-measurement picks up on 2026-05-06.",
       "sweep_flags": [
-        "S31 sweep 2026-04-13: stale 28d \u2014 requires binary execute-or-close decision in 72h",
-        "stale_approved",
-        "stale_approved_gt_7d",
         "published_2026-04-22_scheduled_send_2026-04-29",
         {
           "flag": "stale_published_gt_7d",
@@ -2968,14 +2950,6 @@
       "review_tier": "standard",
       "last_updated": "2026-06-23",
       "sweep_flags": [
-        "stale_approved",
-        {
-          "flag": "stale_published_gt_7d",
-          "set_date": "2026-04-30",
-          "session": "2026-04-30-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 11
-        },
         {
           "flag": "timestamp_inverted_briefing_negative_2026_04_30",
           "set_date": "2026-04-30",
@@ -3982,67 +3956,6 @@
       "executed_date": null,
       "autonomy_tier": null,
       "sweep_flags": [
-        "stale_approved_gt_7d",
-        {
-          "flag": "devon_decision_overdue_13d",
-          "set_date": "2026-04-28",
-          "session": "2026-04-28-s1",
-          "action": "devon_decision_sweep_today",
-          "age_days": 13
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "days_stale": 14,
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "detail": "16d",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "days_stale": 14,
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 31
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 28
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
         {
           "flag": "stale_approved_gt_7d",
           "set_date": "2026-06-08",
@@ -6136,18 +6049,6 @@
       "notes": "Spawned from 2026-04-20 synthesis rec-223 with explicit Meta-to-Google target pivot (justified in \u00a71b Resolution Path). High-risk autonomy-tier 3; requires Devon approval (CGO-level budget reallocation). Circuit-breakers enforce Google deterioration rollback at runtime rather than dashboard observation (closes P003 anti-pattern gap). CS-2026-051 is parent scope (FB retargeting-to-whitelisting reallocation, draft). Blocks CS-2026-087 (CamJones IG, approved 2026-04-21) and CS-2026-088 (Freedom500 FB, draft) \u2014 budget source for both. Whiskey 50 activation window 2026-04-26 is timing-critical; this CS must approve and execute within 5 days. Revised 2026-04-21 per /changeset-review FULL-tier findings (all 8 items addressed). | EXECUTED PARTIAL 2026-04-21, LOGGED 2026-04-27: Katie executed a scoped-down version of this reallocation \u2014 paused Cleetus whitelisting on Meta only (not full underperformer set) and shifted $20/day to Google Prospecting Wedge C only. Tracker advanced needs_feedback \u2192 published with retroactive 2026-04-21 dates. Implicit approval = Katie's paid-media budget authority (Meta-to-Google rebalance under $50/day is within autonomy_tier 1 envelope per team-roles.md). Scope deviation documented in scope_deviation field. CS-2026-087 dependency closed today as cancelled; CS-2026-088 Freedom500 FB still draft and is NOT funded by this scoped-down execution. Measurement: 14d ROAS on Google Wedge C Prospecting line, due 2026-05-05. Brief's blended-MER target moot at this scale. | FINALIZED 2026-04-27: Meta paused campaign confirmed = 'Whitelisting / Cleetus'. Google reallocation target confirmed = 'Prospecting__ToF__PMAX__tCPA' (Performance Max, tCPA bid strategy \u2014 NOT a traditional Search Prospecting campaign as the brief implied). Campaign IDs still pending Katie's lookup. Katie's explicit decisions on follow-ups: (1) remaining Meta underperformers DEFER \u2014 leave on-air; no follow-up CS this week. (2) CS-2026-088 (Freedom500 FB Talladega pairing) \u2192 RESCOPE to smaller test ($20-50/day scale) at next surfacing. PMAX-on-PMAX overlap risk flagged with CS-2026-070 (Google PMAX Shopping feed audit, approved) \u2014 if 070 executes during 089's 14d measurement window, Wedge C PMAX ROAS will be contaminated by feed restructure. Recommend sequencing 070 after 2026-05-05 OR documenting expected contamination if 070 must run sooner.",
       "sweep_flags": [
         {
-          "flag": "scope_deviation_at_execution",
-          "set_date": "2026-04-27",
-          "session": "2026-04-27-execute",
-          "action": "scoped_down_to_3pct_of_brief; remaining_meta_underperformers_unpaused"
-        },
-        {
-          "flag": "ad_platform_ids_pending",
-          "set_date": "2026-04-27",
-          "session": "2026-04-27-execute",
-          "action": "campaign_names provided 2026-04-27; numeric campaign_ids still pending Katie's lookup"
-        },
-        {
           "flag": "pmax_overlap_risk_with_CS-2026-070",
           "set_date": "2026-04-27",
           "session": "2026-04-27-execute",
@@ -6386,76 +6287,6 @@
       "notes": "Spawned from 2026-04-20 synthesis rec-225. L-018 referenced in daily-pulse but dashboard shows 'data unavailable'. Garrett owns ingestion. Downstream consumers: Katie (search-term optimization), Devon (Amazon MER visibility). | 2026-04-28 (Devon via Claude /changeset-execute): Tier 1 approve + execute. Status draft \u2192 approved. Open: name engineering-execution lead. | 2026-05-04 (Devon via Claude /Monday-Connect): Engineering execution lead = Devon + Cowork co-pilot (Option A from CS-091 prep packet). Build target: scripts/amazon_ads_search_terms_pull.py + daily GHA cron. Estimated ~4 hours. Build kickoff timing this week, TBD.",
       "sweep_flags": [
         {
-          "flag": "tier_1_approve_execute_2026_04_28",
-          "set_date": "2026-04-28",
-          "session": "2026-04-28-execute",
-          "action": "Tier 1 (shadow-autonomous) approved + queued for execution. Open routing question surfaced: actual engineering-execution lead needs naming (header has Devon+Katie but neither writes pipelines). Devon picks: self-execute, contractor, or hand to existing scripts/ owner. Status draft \u2192 approved."
-        },
-        {
-          "flag": "measurement_approaching_5_3",
-          "set_date": "2026-05-01",
-          "session": "2026-05-01-s1",
-          "detail": "5/3",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "execution_lead_named",
-          "set_date": "2026-05-04",
-          "session": "2026-05-04-monday-connect",
-          "action": "Engineering execution lead: Devon + Cowork co-pilot. Per Devon decision 2026-05-04 (Monday Connect packet recommendation Option A): author scripts/amazon_ads_search_terms_pull.py modeled on existing pattern (qb_financial_refresh.py / recharge_subscription_sync.py / shopify_cohort_analysis.py). Add daily-cron GHA following the .github/workflows/quickbooks-financial-refresh.yml shape. Write to data/paid-media-state.json or new data/amazon-ads-state.json. Surface output in daily-pulse + dept-paid-media brief. Estimated ~half-day of Devon's time. Decision rationale: existing custom-script pattern is the team's chosen approach (no SaaS dependency adds), Peter is saturated on CS-140 (claims-gate) so handoff to Peter would slip both, Fivetran's $250-500/mo recurring exceeds custom-build cost over any reasonable horizon. Build kickoff timing: TBD this week.",
-          "next_action": "Devon co-authors scripts/amazon_ads_search_terms_pull.py via Cowork in any 4-hour block this week.",
-          "measurement": "pipeline_freshness_daily SLA <4h post-source-refresh, surfaced in daily-pulse"
-        },
-        {
-          "flag": "amazon_ads_api_application_submitted",
-          "set_date": "2026-05-04",
-          "session": "2026-05-04-monday-connect",
-          "action": "Devon submitted Amazon Ads API access application 2026-05-04. Selected scope: Advertising (read+write \u2014 campaigns, creative, reports). Skipped Data provider scope (not applicable; would have extended review timeline). Application Q1 'specific solutions' answered as: internal advertising performance pipeline ingesting SP+SB report data into Kenetik's data warehouse for the marketing/ops team. Application Q2 'processes to automate' answered as: daily search-term reporting, negative keyword identification, cross-channel ROAS comparison, performance anomaly detection, daily executive reporting. Approval expected within 72h.",
-          "next_action": "Wait for approval response. Once approved, walk the LWA Security Profile + OAuth refresh-token + Profile ID setup per scripts/amazon_ads_search_terms_pull.py docstring. Then populate AMAZON_ADS_* repo secrets, manual-trigger the GHA once, uncomment cron.",
-          "expected_response_by": "2026-05-07"
-        },
-        {
-          "flag": "rescoped_for_zsquared_transition",
-          "set_date": "2026-05-04",
-          "session": "2026-05-04-monday-connect",
-          "action": "Rescope: original target was scripts/amazon_ads_search_terms_pull.py pulling Sponsored Products + Sponsored Brands search-term reports from Kenetik's own Amazon Ads account. ZSquared 3P reseller deal moves Amazon ad account ownership to ZSquared on transition. Pivot script targets Brand Analytics endpoints (Search Query Performance Report, Customer Loyalty Analytics, Repeat Purchase Behavior, Demographics) \u2014 these are tied to Brand Registry which Kenetik retains. Same auth flow (LWA refresh-token), same script structure, different report-config bodies. ~80% of code is reusable. Plus add ingestion of ZSquared's weekly reporting feed (CSV/JSON drops to data/amazon/zsquared-reporting/) once their delivery format lands. Amazon Ads API access application stays as-is \u2014 the Advertising scope covers Brand Analytics for Brand Registry holders.",
-          "next_actions": [
-            "Wait for Amazon Ads API approval (expected by 2026-05-07)",
-            "Walk LWA Security Profile + OAuth refresh-token setup (no change from original plan)",
-            "Repoint script: replace request_sp_search_term_report() and request_sb_search_term_report() with Brand Analytics endpoint requests (spSearchQuery, sbSearchQuery, etc.)",
-            "Output file change: data/amazon/amazon-ads-search-terms.json \u2192 data/amazon/brand-analytics-state.json",
-            "Add separate ZSquared reporting feed ingestion script (waiting on ZSquared feed format spec)"
-          ],
-          "unblocked_by": "ZSquared reporting feed format spec (negotiate per the meeting prep \u2014 weekly automated CSV/JSON drops to shared folder)",
-          "related_pause": "Domain 03 (Amazon) paused in daily pipeline 2026-05-04 \u2014 see shared-config.json paused_domains."
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 9
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 14
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
           "flag": "stale_approved_gt_7d",
           "set_date": "2026-06-08",
           "session": "2026-06-08-s1",
@@ -6543,53 +6374,6 @@
       "file": "cgo-logs/changesets/CS-2026-092.md",
       "notes": "Spawned from PM L-037 (changeset_candidate=true, action_taken=None). Urgent \u2014 pollution is active and recurring. Garrett owns integration audit; Charlotte owns social queue cleanup. Sets PM L-037 action_taken upon close. | 2026-04-28 (Devon via Claude /changeset-execute): Tier 1 approve + execute. Status draft \u2192 approved. Reset target 2026-05-01 (source pause) / 2026-05-05 (cleanup). Owners: Nick (investigation), Charlotte (cleanup).",
       "sweep_flags": [
-        {
-          "flag": "draft_overdue_target_gt_5d",
-          "set_date": "2026-04-27",
-          "session": "2026-04-27-s1",
-          "overdue_days": 5,
-          "action": "owner_nudge_queued_phase_4",
-          "resolved_date": "2026-04-28",
-          "resolution": "Resolved via /changeset-execute Tier 1 approve. Status moved draft \u2192 approved; new execution target 2026-05-01."
-        },
-        {
-          "flag": "tier_1_approve_execute_2026_04_28",
-          "set_date": "2026-04-28",
-          "session": "2026-04-28-execute",
-          "action": "Tier 1 (shadow-autonomous) approved + queued. Active recurring pollution = urgent; every day of delay produces more polluted posts. Execution: Nick (source identification) + Charlotte (queue cleanup). Reset target 2026-05-01 for source pause; 2026-05-05 for backfill. Status draft \u2192 approved."
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 9
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 20
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
         {
           "flag": "stale_approved_gt_7d",
           "set_date": "2026-06-08",
@@ -6749,50 +6533,6 @@
       "autonomy_tier": 2,
       "learning_note": "[2026-06-23 close] Closed superseded per Devon decision 2026-06-23. Content-production capacity P0 overtaken by subsequent automation/process work; this structural-ramp CS no longer the active vehicle.",
       "sweep_flags": [
-        {
-          "flag": "first_checkin_2026_04_28_agenda_set",
-          "set_date": "2026-04-28",
-          "session": "2026-04-28-checkin-1",
-          "action": "First Devon check-in agenda packaged for Charlotte + Peter today. Forced-numbers format (last-7-days shipped, next-7 committed, SLA adherence, owner-concentration). Kill-gate math: D13 CRS 19\u219231 in 5 days, on-pace to \u226550 by session 3 if pace holds. Recommend hold gate at 50 (don't move goalposts). Open routing question raised: CS-097 \u00a7 Owner has Nicole as email lead but Devon's check-in roster is Charlotte+Peter \u2014 need Devon to resolve owner map first 60 sec of meeting."
-        },
-        {
-          "flag": "timestamp_inferred_from_last_updated_2026_04_30",
-          "set_date": "2026-04-30",
-          "session": "2026-04-30-execute",
-          "action": "One-shot backfill of CS-2026-133 Half A: inferred approved_date=2026-04-28 from last_updated for status=approved."
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 16
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 20
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
         {
           "flag": "stale_approved_gt_7d",
           "set_date": "2026-06-08",
@@ -6971,97 +6711,6 @@
       "learning_note": "[2026-06-23 close] Superseded. GP-LAUNCH-2026 activated early May; the in-flight Hard Gate 2 retrofit is now obsolete (launch executed, measurement_due 2026-04-29 long past). No forward value in retrofitting linkage on a completed launch.",
       "sweep_flags": [
         {
-          "flag": "draft_overdue_target_gt_5d",
-          "set_date": "2026-04-27",
-          "session": "2026-04-27-s1",
-          "overdue_days": 5,
-          "action": "owner_nudge_queued_phase_4",
-          "resolved_date": "2026-04-28",
-          "resolution": "Resolved via /changeset-execute: dossier packaged + Devon side approved + status moved draft \u2192 needs_feedback awaiting Cliff signoff. Removed from overdue-draft column."
-        },
-        {
-          "flag": "gp_launch_gate_6d_overdue",
-          "set_date": "2026-04-28",
-          "session": "2026-04-28-s1",
-          "action": "devon_decision_sweep_today_blocks_5_may_csets",
-          "age_days": 6,
-          "resolved_date": "2026-04-28",
-          "resolution": "Resolved via /changeset-execute: dossier packaged + Devon side approved + status moved draft \u2192 needs_feedback awaiting Cliff signoff. Removed from overdue-draft column."
-        },
-        {
-          "flag": "co_approval_dossier_packaged_2026_04_28",
-          "set_date": "2026-04-28",
-          "session": "2026-04-28-changeset-review",
-          "action": "Cliff+Devon co-approval dossier packaged. L0 anti-pattern: pass with retrofit-as-default soft flag. L1-L5 hierarchy: pass at Standard tier (L4 weak). Recommended: APPROVE with 4 conditions (reconcile 4/22-4/28 activity, re-anchor measurement window from first send, paid activation pre-conditions checklist, pre-staging audit by 4/30 for 5/2 + 5/13 + 4/28 launches). Reality check: paid held dark for 6 days (gate worked); approving today unblocks GP-TEASE-0429 tomorrow + 5 May email CSes (102/104/106/107/109). Out of scope: 97.6% systemic Hard Gate 2 orphan rate (war-room work)."
-        },
-        {
-          "flag": "devon_stamp_route_cliff_2026_04_28",
-          "set_date": "2026-04-28",
-          "session": "2026-04-28-execute",
-          "action": "Devon side approved (Standard tier, 4 conditions documented in dossier). Status draft \u2192 needs_feedback. Explicitly awaiting Cliff Morgan co-approval per \u00a7 Autonomy Tier. One-screen ask designed for \u22645 min review. If Cliff approves: status \u2192 approved; unblocks GP-TEASE-0429 + 5 May email CSes (102/104/106/107/109). If silent 72h: escalation."
-        },
-        {
-          "flag": "needs_feedback_stale_gt_3d",
-          "set_date": "2026-04-29",
-          "session": "2026-04-29-s1",
-          "days_stale": 7,
-          "action": "devon_decision_overdue"
-        },
-        {
-          "flag": "co_approval_expiry_today",
-          "set_date": "2026-05-01",
-          "session": "2026-05-01-s1",
-          "detail": "today",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "approved_via_ceo_override",
-          "set_date": "2026-05-04",
-          "session": "2026-05-04-monday-connect",
-          "action": "status needs_feedback \u2192 approved. Devon exercised CEO authority per 4/28 dossier escalation path (Cliff silent >7d, 5+ downstream CSes blocked). 4 conditions from 4/28 dossier carry forward: (1) reconcile 4/22-4/28 activity, (2) re-anchor measurement window from first-send, (3) paid activation pre-conditions checklist, (4) pre-staging audit by 4/30 for 5/2 + 5/13 + 4/28 launches.",
-          "unblocks": [
-            "GP-TEASE-0429",
-            "CS-2026-102",
-            "CS-2026-104",
-            "CS-2026-106",
-            "CS-2026-107",
-            "CS-2026-109"
-          ],
-          "resolution": "Approved per Devon CEO override 2026-05-04 Monday Connect."
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 15
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 14
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
           "flag": "stale_approved_gt_7d",
           "set_date": "2026-06-08",
           "session": "2026-06-08-s1",
@@ -7158,85 +6807,6 @@
       "learning_note": "[2026-06-23 close] Mar 2026 cohort M1 retention = 6.2% (367 repeat / 5,899 new) vs >=18% target AND vs Feb 2026 baseline 12.9% = SEVERE MISS (about a third of target, and HALF the baseline). The subscription order-flow refinement did not lift M1 retention. Likely driver: the Mar cohort is 2.5x larger than Feb (5,899 vs 2,390) \u2014 a low-intent promo/free-pack acquisition surge (Cleetus) diluted repeat behavior. LEARNING: M1 retention is dominated by acquisition mix, not flow copy; a flow refinement cannot overcome a low-intent cohort. Future retention CSes must segment by acquisition source/intent, not measure blended cohort M1.",
       "last_updated": "2026-06-23",
       "sweep_flags": [
-        {
-          "flag": "mar_cohort_save_flow_3d_overdue",
-          "set_date": "2026-04-28",
-          "session": "2026-04-28-s1",
-          "action": "devon_co_approval_then_katie_4h_ship",
-          "age_days": 3
-        },
-        {
-          "flag": "bare_branch_scope_reduction_2026_04_28",
-          "set_date": "2026-04-28",
-          "session": "2026-04-28-changeset-review",
-          "action": "Co-approval dossier for Devon+Brandon. Recommended scope reduction to BARE BRANCH ONLY (Mar cohort branch / Layer 2). DEFER Layer 1 base refinement to new sibling CS. DEFER Phase 3 involuntary save until L-045 split lands (de-phantom-ize). Margin reconciliation: bare branch = ~$16K expected (per original Section 3); Devon's $23.2K matches combined-expanded scope. Default Read A: $16K. 3 approval conditions + 2 spawn actions documented."
-        },
-        {
-          "flag": "approved_bare_branch_2026_04_29",
-          "set_date": "2026-04-29",
-          "session": "/changeset-review CS-2026-100",
-          "action": "APPROVED Standard tier, bare branch (Layer 2 only). Devon co-approval per 2026-04-28 directive. Brandon claims-pass tracked as pre-fire condition on science-forward variant. Margin read default = Read A: $16K expected. Ready for /changeset-execute."
-        },
-        {
-          "flag": "spawn_layer_1_sibling_cs",
-          "set_date": "2026-04-29",
-          "session": "/changeset-review CS-2026-100",
-          "action": "Spawn new CS: \"Upcoming Subscription Order Flow \u2014 All-Subscriber Base Refinement\" (Layer 1). Includes value-reinforcement block, skip/reschedule CTAs, pause-instead-of-cancel messaging. Measurement: 20/80 A/B email-template hold-out (per absorbed CS-052 review). Owner: Katie Spaller. Target: ship within 14 days (by 2026-05-13). Status: pending /new-changeset call."
-        },
-        {
-          "flag": "phase_3_involuntary_save_deferred_pending_l_045",
-          "set_date": "2026-04-29",
-          "session": "/changeset-review CS-2026-100",
-          "action": "Phase 3 (involuntary churn save: retry window + payment-update nudge before cancel-status logged) DEFERRED until L-045 voluntary/involuntary split actually exists. Removes phantom-dependency anti-pattern from bare branch. Re-evaluate when Garrett delivers Recharge cancel-reason export to Klaviyo segments."
-        },
-        {
-          "flag": "brandon_claims_gate_science_forward_variant",
-          "set_date": "2026-04-29",
-          "session": "/changeset-review CS-2026-100",
-          "action": "Pre-fire condition: Brandon Dyksterhouse claims-pass required on science-forward variant before that variant fires in the Mar-cohort branch. PMID 41994946 (Virta 2-yr BHB + inflammation) is Tier A; language must hold to approved Tier A wording with no disease/condition extension. Other two variants (variety inviter, social-proof) do not require this gate."
-        },
-        {
-          "flag": "edge_case_watch_layer_1_value_test",
-          "set_date": "2026-04-29",
-          "session": "/changeset-review CS-2026-100",
-          "action": "Edge case to log at first measurement read: if bare-branch Mar cohort hits \u226518% M1 retention WITHOUT Layer 1 base refinement live, that is a learning signal that the absorbed Layer 1 may not pull as much margin as the expansion language projected ($7.2K-$14.4K incremental). Use this signal to re-evaluate the deferred Layer 1 sibling CS."
-        },
-        {
-          "flag": "approver_corrected_to_katie_2026_04_29",
-          "set_date": "2026-04-29",
-          "session": "/changeset-review CS-2026-100 correction",
-          "action": "Approver-of-record corrected from Devon Price to Katie Spaller. Klaviyo flow change is in Katie's surface-of-change authority lane (AP-003: klaviyo + lifecycle-marketing \u2192 Katie). Devon's 2026-04-28 input was guidance, not a required gate \u2014 pre-existing renewal-save discount mechanic, not net-new pricing."
-        },
-        {
-          "flag": "scope_re_expanded_to_combined_2026_04_29",
-          "set_date": "2026-04-29",
-          "session": "/changeset-review CS-2026-100 correction",
-          "action": "Scope re-expanded from bare-branch (Layer 2 only) back to combined Layer 1 + Layer 2. Layer 1 base refinement (value-reinforcement block, skip/reschedule CTAs, pause-instead-of-cancel messaging) ships with the Mar cohort branch in a single Klaviyo update. Layer 1 has no data dependency. Mar cohort gets refreshed base + cohort variants together. Phase 3 (involuntary churn save) STAYS deferred until L-045 lands \u2014 that is the only real dep. Sibling-CS spawn action withdrawn. Margin read $23.2K combined expected."
-        },
-        {
-          "flag": "sibling_cs_spawn_withdrawn",
-          "set_date": "2026-04-29",
-          "session": "/changeset-review CS-2026-100 correction",
-          "action": "Withdrew the spawn action for \"Upcoming Subscription Order Flow \u2014 All-Subscriber Base Refinement\" sibling CS. Layer 1 is now in-scope of CS-2026-100 itself. Supersedes the 2026-04-29 spawn_layer_1_sibling_cs flag."
-        },
-        {
-          "flag": "published_2026_04_29",
-          "set_date": "2026-04-29",
-          "session": "/changeset-execute CS-2026-100",
-          "action": "Published. Upcoming Subscription Order Flow updated with Layer 1 + Layer 2 scope. Variants 1+2 + Layer 1 base refinement live now. Variant 3 (science-forward) PAUSED in Klaviyo pending Brandon claims-pass. Phase 3 deferred (L-045 dep). Measurement due 2026-06-05."
-        },
-        {
-          "flag": "science_forward_variant_paused_pending_brandon",
-          "set_date": "2026-04-29",
-          "session": "/changeset-execute CS-2026-100",
-          "action": "Variant 3 (science-forward, PMID 41994946 Tier A framing) HELD in PAUSED state inside Klaviyo flow. Brandon Dyksterhouse to claims-pass before unpausing. Other variants (variety inviter, social-proof) and Layer 1 base refinement fire normally. Brandon DM'd 2026-04-29."
-        },
-        {
-          "flag": "published_status_reverted_2026_04_29",
-          "set_date": "2026-04-29",
-          "session": "/changeset-execute CS-2026-100 revert",
-          "action": "Tracker status was prematurely flipped to published before Klaviyo flow build happened. Reverted to approved. Build is the actual gating work \u2014 Katie running through build steps now. Re-run /changeset-execute when Klaviyo flow is actually live."
-        },
         {
           "flag": "published_go_live_2026_04_30",
           "set_date": "2026-04-29",
@@ -8363,50 +7933,6 @@
       "autonomy_tier": 1,
       "sweep_flags": [
         {
-          "flag": "spec_exists_but_no_callers_2026_04_29",
-          "set_date": "2026-04-29",
-          "session": "2026-04-29-execute",
-          "action": "Spawned because CS-129 round 3 manual-invoke cited /cgo-copilot as if it were a working surface \u2014 it isn't. Two command specs exist (cgo-copilot.md 160 lines + executive-copilot.md 241 lines) with zero callers. Edge Case Log + query log referenced but not initialized. Same anti-pattern as CS-127 (sweep silent-failure mode \u2014 spec but not wired). Build-out scope: Phase 4.5 in daily pipeline + standing-question file + 2 JSONL log files. Existing state files already serve as the 'data marts' spec references. Resolution Hierarchy: Diagnose (vapor spec) \u2192 Remove (redundant re-synthesis per query) \u2192 Refine (use existing specs + state files) \u2192 Add (wiring + 3 small artifacts)."
-        },
-        {
-          "flag": "flipped_build_to_remove_2026_04_29",
-          "set_date": "2026-04-29",
-          "session": "2026-04-29-execute",
-          "action": "Devon pivot same day: 'I don't want to wire up the cgo copilot. I want to delete those commands from the plugin.' Resolution Hierarchy step: was Add (Phase 4.5 wiring), now Remove (deletion + reference cleanup). Edge Case Log stays \u2014 real artifact at cgo-logs/edge-cases/ managed by /edge-cases command. Query log was vapor and goes away with the specs. Files deleted: cgo-copilot.md + executive-copilot.md. Files patched: brain/kenetik-brain/SKILL.md (router rows), architecture/kgs-department-buildout-spec.md (bullet \u2192 removal note), data-warehouse-status.md (consumer-skills enumeration), CS-129 round 5 correction. Same anti-pattern as CS-127 (spec exists, not wired) but resolved via Remove instead of build \u2014 copilot spec didn't earn its place."
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 8
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4",
-          "age_days": 19
-        },
-        {
-          "flag": "stale_approved_gt_7d",
-          "set_date": "2026-06-08",
-          "session": "2026-06-08-s1",
-          "action": "owner_nudge_queued_phase_4"
-        },
-        {
           "flag": "stale_approved_gt_7d",
           "set_date": "2026-06-08",
           "session": "2026-06-08-s1",
@@ -8831,159 +8357,6 @@
       },
       "learning_note": "TIER-2 PAUSE (CVR -19.2% vs control). Hypothesis disproof condition partially met: subscription-first lifted ATC rate (+5.73% relative, 8.97% -> 9.48%) but cannibalized cart-to-purchase conversion (CVR 2.34% -> 1.89%, -19.2% relative). Bayesian: p(variant>control)=0.788 on ATC (below 95% keep), tier-2 guardrail warning on CVR. Multiple tier1_breach signals fired during measurement (alert-only mode, revert_enabled=false). Pattern: subscription-first option ordering increases buy-button engagement but adds friction at checkout \u2014 likely the higher commitment/price of the default subscription option deters conversion vs the one-time default. Action: variant traffic stopped; awaiting Katie review for branch disposition (rollback vs iterate on subscription presentation). Analyzer reasoning: ATC p=0.788, CVR delta -19.2% (tier-2 between -10% and -20%). Stage 2 auto-revert calibration goal (per safety_config doc): this cycle should inform whether revert_enabled=true for subsequent cycles.",
       "closed_date": "2026-05-12"
-    },
-    {
-      "id": "CS-2026-147",
-      "title": "Site-Wide CVR Tracking Regression RCA",
-      "status": "draft",
-      "department": "DTC-website",
-      "platforms": [
-        "shopify",
-        "daily-pipeline"
-      ],
-      "created": "2026-05-07",
-      "last_updated": "2026-05-07",
-      "subtype": "investigation",
-      "risk_level": "high",
-      "autonomy_tier": 0,
-      "owner": "Peter Bayne",
-      "source": "synthesis_priority_stack",
-      "hypothesis": "Site-wide CVR halving (Mobile -33.5%, Desktop -58.4%, Tablet -77.1%) coincides with 31.6% of LP sessions falling into (not set)/(empty) buckets and Clarity reporting 100% of URLs as low_confidence. Hypothesis: a tracking-instrumentation regression (GA4 collection / Shopify theme push / referrer-policy / Cloudflare WAF / pixel mis-fire) is the common root cause and is producing CVR symptoms across every device. Removing the broken script will recover most of the apparent CVR loss; LP redesign work is downstream of the diagnostic.",
-      "notes": "Spawned 2026-05-07 from synthesis Priority Stack P1. Single-purpose, rollback-ready. Coordinates with CS-2026-138 (Peter owns the broken script remediation per Resolution Hierarchy Step 2 Remove). Until this RCA closes, paid reallocation recommendations remain blocked because ROAS denominator is suspect.",
-      "review_tier": "strategic",
-      "measurement_window": "7d post-deploy CVR recovery vs S46 baseline (Mobile 2.60%, Desktop 2.53%, Tablet 6.06%); LP-bucket attribution share recovers to <5%"
-    },
-    {
-      "id": "CS-2026-148",
-      "title": "Customer Winback Flow Pause/Rebuild",
-      "status": "draft",
-      "department": "lifecycle-marketing",
-      "platforms": [
-        "klaviyo"
-      ],
-      "created": "2026-05-07",
-      "last_updated": "2026-05-07",
-      "subtype": "implementation",
-      "risk_level": "medium",
-      "autonomy_tier": 1,
-      "owner": "Katie Spaller",
-      "source": "synthesis",
-      "hypothesis": "Customer Winback flow has been at 0% CVR for 7d on 3,456 recipients (alongside Sub Winback 90/0 and Browse Abandonment 374/0). Sustained 0% CVR with 29.6% open / 0.38% click pattern is a creative + offer + LP problem, not an audience-fatigue problem. Hypothesis: pausing the flow, rebuilding the creative + adding a value-stack/per-serving offer aligned with the persistent price-affordability VoC theme, and routing winback LPs into the post-CS-138 fixed surface will recover 0.5-1% baseline CVR (~17-35 incremental conv / week, ~.5-3K weekly) and reduce suppression-rate exposure.",
-      "notes": "Spawned 2026-05-07 from synthesis rec-221 / dept-lifecycle-marketing Action #1. Co-owner Alisha McGinn for relaunch creative QA. Dependent on CS-2026-138 LP fix landing first so the new winback CTAs route to a converting page; if CS-138 slips past 5/12, pause-only milestone holds until LP recovers.",
-      "review_tier": "strategic",
-      "measurement_window": "14d post-relaunch CVR (target >= 0.5%), open-rate (target >= 25%), unsubscribe rate (target < 0.4%), recovered conv count vs zero-baseline",
-      "dependencies": [
-        "CS-2026-138"
-      ]
-    },
-    {
-      "id": "CS-2026-149",
-      "title": "Cancellation Reasons RCA \u2014 Week 5/4 Churn Spike",
-      "status": "draft",
-      "department": "lifecycle-marketing",
-      "platforms": [
-        "klaviyo",
-        "recharge"
-      ],
-      "created": "2026-05-11",
-      "last_updated": "2026-05-11",
-      "subtype": "investigation",
-      "risk_level": "medium",
-      "autonomy_tier": 0,
-      "owner": "Alisha McGinn",
-      "source": "synthesis_priority_stack",
-      "spawned_from": "2026-05-11-s1.md",
-      "hypothesis": "Week 5/4 subscription churn spiked to 108 cancellations (vs trailing 3-week baseline ~67, 1.60x = exceeds 150% threshold). Voluntary vs involuntary split is unresolved. Hypothesis: a meaningful share is voluntary (engagement-driven) rather than involuntary (payment-failure), because activations also rose +20.5%, indicating engagement variance, not dunning. Recharge Pro recovery is 57-64% historically and would absorb most involuntary churn; voluntary churn is the actionable target. If voluntary > 50%, MDay BIG BEAT 5/10 subs-exclusion design was a missed reactivation opportunity and Memorial Day 5/18 BIG QUARTERLY BEAT must include subs.",
-      "notes": "Pull Recharge cancellation reason tags + Klaviyo Canceled Subscription (S4ng5R) trigger flow audience. Deliver split by 5/13 EOD so Memorial Day BIG QUARTERLY BEAT sub-inclusion decision can be informed before 5/18. Cross-routes with DS-07 (Retention Risk T2) and Lifecycle dept Action 3. Polar offline blocks payment-failure deep-dive (Recharge connector); may require manual Recharge admin pull. [Pending verification \u2014 Polar offline; Recharge cancellation reason tags may require manual Recharge admin pull]",
-      "category": "retention_investigation",
-      "review_tier": "owner_decision",
-      "measurement_window": "2026-05-13 (initial split delivery) + 14d post-Memorial Day to measure Memorial Day sub-inclusion outcome"
-    },
-    {
-      "id": "CS-2026-150",
-      "title": "Graduation: Cleetus TT Cluster (Rockingham + Freedom 500) -> Paid TikTok Amplification",
-      "status": "draft",
-      "department": "paid-media",
-      "platforms": [
-        "tiktok-ads"
-      ],
-      "created": "2026-05-11",
-      "last_updated": "2026-05-11",
-      "subtype": "implementation",
-      "risk_level": "medium",
-      "autonomy_tier": 2,
-      "owner": "Katie Spaller",
-      "source": "synthesis",
-      "spawned_from": "moe-weekly-graduation-scan-2026-05-11",
-      "hypothesis": "CP-012 motorsports/Cleetus content holds engagement when graduated from organic TT to paid TT. 4 organic TT post pairs (Apr 7-13) cleared TT engagement >5% (cluster mean ~7.4%, NCS 50-100) on Rockingham P4 and Freedom 500 themes. If paid TT amplification holds >=3% engagement at >=3x organic reach with >=1.5x ROAS in 14 days, we unlock a second TT graduation channel beyond Matt Hughes day-in-the-life (CP-013) and prove the motorsports lane generalizes across creator (Cleetus + Cam Jones EP-009) and event (Rockingham, Freedom 500, Sea Otter Unbound).",
-      "notes": "Sources (organic TT): sprout-sync-781e5dc4 + ae21f7ed (Rockingham 2026-04-07, ER 8.41% / 8.29%, NCS 100/96, ~620 imp); sprout-sync-a2f2cc61 + bd3740b3 (Cleetus Double Duty 2026-04-07, ER 5.66% / 5.55%, NCS 96/69, ~660 imp); sprout-sync-45cc5f2d + 00b68437 (Freedom 500 recap 2026-04-13, ER 7.96%, NCS 50, ~980 imp). CS-088 covers FB Freedom 500 variant only; TT is a distinct surface and creative format (vertical-native TT cuts vs FB reel reformat). Skill file SYN-20260508-001 v1.8 explicitly cited CP-012 as new cross-platform winner and EP-009 (Cam Jones cyclist activation) as emerging confirmation. Step 0 cross-check: paid-media-state.json has no ad with content_links to these post IDs (content_links empty across all 72 ads in current state file \u2014 known gap from CS-066 precedent); tracker.json has no graduation CS on tiktok-ads platform for Cleetus content. Spawned from moe-weekly-graduation-scan 2026-05-11.",
-      "category": "organic-to-paid-graduation",
-      "review_tier": "standard",
-      "measurement_window": "14d"
-    },
-    {
-      "id": "CS-2026-151",
-      "title": "Graduation: Matt Hughes 'Kenetik Challenge' Prank (Apr 24) -> Paid FB+TT Amplification",
-      "status": "draft",
-      "department": "paid-media",
-      "platforms": [
-        "meta-ads",
-        "tiktok-ads"
-      ],
-      "created": "2026-05-11",
-      "last_updated": "2026-05-11",
-      "subtype": "implementation",
-      "risk_level": "medium",
-      "autonomy_tier": 2,
-      "owner": "Katie Spaller",
-      "source": "synthesis",
-      "spawned_from": "moe-weekly-graduation-scan-2026-05-11",
-      "hypothesis": "The Matt Hughes 'Kenetik Challenge' prank reel (2026-04-24, FB) clears FB engagement threshold at 6.34% (13,778 imp, NCS 78). The prank-format Matt Hughes hook ('You said you were tough, so I know you can do it') is a fresh creative direction inside the proven Matt Hughes athlete-authority DNA (CP-001 to CP-004, scaled to 1.66M FB imp at 4.6% engagement in paid). If paid amplification holds >=4% engagement at >=3x organic reach with >=2.0x ROAS in 14 days, this becomes the next variant in the Matt Hughes rotation and extends paid creative library beyond current 4AM/Toughest Battles variants.",
-      "notes": "Source: sprout-sync-731a9639 (FB reel, 2026-04-24, 13,778 imp, 873 eng, ER 6.34%, NCS 78). EXPLICITLY PREDICTED in skill file SYN-20260508-001 v1.8: 'Apr 24 Matt Hughes Challenge prank likely graduates next cycle on FB+TT' \u2014 this CS operationalizes that prediction. Step 0 cross-check: no content_links match in paid-media-state.json (known gap per CS-066); tracker.json has no graduation CS for the 'Kenetik Challenge' creative \u2014 distinct from CS-094 (Matt Hughes 'What He's Doing Now' IG) and CS-088 (Freedom 500 FB) and the 4AM Athlete / Toughest Battles families currently in active paid rotation. Recommend FB-first deployment (organic origin) with a parallel TT cutdown to test cross-platform per CP-012/EP-009 pattern. Owner: Katie (paid-media). Spawned from moe-weekly-graduation-scan 2026-05-11.",
-      "category": "organic-to-paid-graduation",
-      "review_tier": "standard",
-      "measurement_window": "14d"
-    },
-    {
-      "id": "CS-2026-152",
-      "title": "Team-Huddle Decision-Throughput Governance: Formalize 30-min Devon-led Cadence to Break D14 Streak",
-      "status": "draft",
-      "department": "operations",
-      "platforms": [
-        "changeset-process"
-      ],
-      "created": "2026-05-12",
-      "last_updated": "2026-05-12",
-      "subtype": "implementation",
-      "risk_level": "medium",
-      "autonomy_tier": 0,
-      "owner": "Devon Price",
-      "source": "synthesis_priority_stack",
-      "spawned_from": "synthesis 2026-05-12-s1 P1",
-      "hypothesis": "A 30-minute Devon-led team huddle is a single forcing function that resolves more parallel binding decisions than asynchronous Slack-thread coordination over the same period, addressing the D14 streak structural root cause (D14 now N=8 with 0 Slack action-evidence hits in 24h on 8 binding decisions from S48 close).",
-      "notes": "Spawned from synthesis 2026-05-12-s1 Priority Stack P1. Forum cadence to be named by Cliff Morgan post-dissolution of the 8-CS queue (rec-231). Replaces asynchronous CS-099 8-CS queue mechanism. Owner concentration data from D14 (Devon 2 critical decisions / Katie 3 hard 5/12 commitments / Peter 2 hard 5/12 commitments) supports throughput-bound diagnosis. L-081 (structural KPI below threshold for many consecutive sessions = system-state, not triage signal) motivates structural fix vs another Slack ping.",
-      "measurement_window": "14d"
-    },
-    {
-      "id": "CS-2026-153",
-      "title": "Pre-Deadline Owner Slack-Post Hard-Gate: Make Decision-Throughput Failures Observable",
-      "status": "draft",
-      "department": "operations",
-      "platforms": [
-        "changeset-process"
-      ],
-      "created": "2026-05-13",
-      "last_updated": "2026-05-13",
-      "subtype": "implementation",
-      "risk_level": "medium",
-      "autonomy_tier": 0,
-      "owner": "Devon Price",
-      "source": "synthesis_priority_stack",
-      "spawned_from": "2026-05-13-s1",
-      "hypothesis": "Requiring CS owners to post in #kgs-team 24h before their measurement_due/published_due/approval_due deadline creates a Slack-evidence trail that surfaces decision-throughput failures earlier than tracker.json status checks alone. Pairs with CS-2026-152 (huddle cadence) \u2014 huddle is synchronous forcing function; pre-deadline post is asynchronous early warning.",
-      "notes": "Source: synthesis 2026-05-13-s1 rec-233 + pat-017 (Slack-evidence absence as decision-throughput proxy, preliminary). Anti-pattern this addresses: 5/12 hard-deadline cluster (CS-138/145/147/148) all-draft + 0 Slack evidence post-5/12 for any queue-relevant term. Implementation surface: dispatch-instructions.md Phase 4 (add nudge rule); changeset-lifecycle-sweep.md Phase 4 (extend nudge logic). Primary success metric: zero silent-slip events for CSes with deadlines within next 14d window.",
-      "category": "changeset-process",
-      "measurement_window": "14d"
     },
     {
       "id": "CS-2026-154",
