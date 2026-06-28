@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-28T08:59:26.839871+00:00",
+  "last_updated": "2026-06-28T09:13:44.646575+00:00",
   "next_id": "CS-2026-218",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-22",
@@ -25,9 +25,9 @@
     ]
   },
   "summary": {
-    "total": 173,
+    "total": 172,
     "by_status": {
-      "closed": 97,
+      "closed": 96,
       "approved": 22,
       "needs_feedback": 3,
       "published": 11,
@@ -36,15 +36,15 @@
     "by_risk": {
       "critical": 2,
       "low": 80,
-      "medium": 73,
-      "high": 18
+      "high": 18,
+      "medium": 72
     },
     "by_subtype": {
-      "implementation": 118,
+      "implementation": 117,
       "investigation": 21,
       "quick": 34
     },
-    "last_updated": "2026-06-28T08:59:26.828894+00:00",
+    "last_updated": "2026-06-28T09:13:44.644605+00:00",
     "last_counted": "2026-06-25T20:42:42.482899+00:00"
   },
   "changesets": [
@@ -268,79 +268,6 @@
           "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-08 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
         }
       ]
-    },
-    {
-      "id": "CS-2026-003",
-      "title": "SMS-First Flash Sale Channel Strategy",
-      "subtype": "implementation",
-      "department": "lifecycle-marketing",
-      "platforms": [
-        "klaviyo"
-      ],
-      "status": "closed",
-      "risk_level": "medium",
-      "owner": "Katie Spaller + Nick Lacagnina",
-      "created": "2026-03-08",
-      "objective_level": "L1",
-      "category": "email_sms",
-      "dependencies": [],
-      "blocks": [],
-      "spawned_from": "rec-003",
-      "spawned_changesets": [],
-      "expected_impact": {
-        "revenue": {
-          "upside": 36000,
-          "expected": 18000,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 18000,
-          "expected": 9000,
-          "downside": 0
-        },
-        "primary_metric": "sms_flash_sale_cvr",
-        "primary_metric_target": ">=2.0% CVR (from 1.0% baseline)"
-      },
-      "routed_to": [
-        "Katie",
-        "Nick"
-      ],
-      "routed_via": "slack",
-      "routed_date": "2026-03-07",
-      "approved_by": "Katie",
-      "approved_date": "2026-03-13",
-      "published_date": "2026-03-13",
-      "measurement_window": "14d",
-      "measurement_due": "2026-03-27",
-      "actual_impact": {
-        "primary_metric": "sms_flash_sale_cvr",
-        "primary_metric_baseline": "$7,461 email-only flash sale revenue",
-        "primary_metric_result": "Combined revenue $13,246 vs $7,461 email-only baseline (+77%). SMS CVR 0.28%, Email CVR 0.17%. SMS RPR $0.24, Email RPR $0.21. SMS unsub 0.97% (under 1.0% guardrail).",
-        "primary_metric_delta": "+$5,785 (+77% vs email-only baseline)",
-        "revenue_impact": 13246,
-        "margin_impact": 7948,
-        "confidence": "medium",
-        "statistical_significance": false,
-        "_note": "Natural segmentation (not randomized). Directionally strong. margin_impact = revenue \u00d7 ~60% GM per brief economics.",
-        "_migration": "2026-04-01: Backfilled from ad-hoc schema. Original keys: revenue, margin, outcome_category, decision."
-      },
-      "outcome": "success",
-      "closed_date": "2026-03-30",
-      "file": "cgo-logs/changesets/CS-2026-003.md",
-      "notes": "Closed 2026-03-30. Outcome: Success (Scenario A). Combined revenue +77% vs email-only baseline. SMS-first sequencing adopted as permanent flash sale strategy.",
-      "sweep_flags": [
-        {
-          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
-          "set_date": "2026-04-30",
-          "session": "2026-04-30-execute",
-          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-08 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
-        }
-      ],
-      "measurement_window_end": "2026-03-27",
-      "scheduled_send_date": null,
-      "execution_target_date": null,
-      "executed_date": null,
-      "autonomy_tier": null
     },
     {
       "id": "CS-2026-004",
