@@ -1,7 +1,7 @@
 {
   "schema_version": "2.1",
-  "last_updated": "2026-06-29T09:30:29.029557+00:00",
-  "next_id": "CS-2026-218",
+  "last_updated": "2026-06-29T00:00:00Z",
+  "next_id": "CS-2026-219",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-06-22",
     "last_sweep_session": "2026-06-22-s1",
@@ -25,27 +25,27 @@
     ]
   },
   "summary": {
-    "total": 165,
+    "total": 166,
     "by_status": {
       "closed": 96,
       "approved": 22,
       "needs_feedback": 3,
       "published": 11,
-      "draft": 33
+      "draft": 34
     },
     "by_risk": {
       "critical": 2,
-      "low": 80,
+      "low": 81,
       "high": 17,
       "medium": 66
     },
     "by_subtype": {
-      "implementation": 112,
+      "implementation": 113,
       "investigation": 19,
       "quick": 34
     },
-    "last_updated": "2026-06-29T09:30:29.019195+00:00",
-    "last_counted": "2026-06-25T20:42:42.482899+00:00"
+    "last_updated": "2026-06-29T00:00:00Z",
+    "last_counted": "2026-06-29T00:00:00Z"
   },
   "changesets": [
     {
@@ -10742,6 +10742,26 @@
       "notes": "New repo drinkkenetik/wholesale-shopify-theme (main @ 798ecec). P0 Dawn 15.5.0 + scoped .ks-wholesale tokens. P1 component CSS/JS + ks-wholesale hero/proof/info/faq. P2 full re-skin (Kenetik schemes, Inter, warm-gradient buttons, pill shapes) + branded home. P3 gating: L1 access-check (allowlist home/customers*/policy/apply/legal/design_mode), L2 page gate, L3 pro-gated PDP lock (buy+price+JSON-LD) for Practitioner/Pro, L4 collection/search/related filter, cart-safety block, noindex on block. P4 native apply form (page.apply) + docs/tagging-workflow.md. P5 QA: liquid balance pass, JSON valid, gate sim 37/37. PENDING: theme push to store, Admin setup (apply page, pro-gated tag, customer tags, contact email, Flow), live QA, Devon claims sign-off.",
       "approved_by": "Katie Spaller",
       "approved_date": "2026-06-25"
+    },
+    {
+      "id": "CS-2026-218",
+      "title": "Wholesale theme home: fix CTA/footer/cart text contrast, hero image display, header height",
+      "status": "draft",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify"
+      ],
+      "created": "2026-06-29",
+      "last_updated": "2026-06-29",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "owner": "Katie Spaller",
+      "source": "manual",
+      "hypothesis": "A global link rule (a:not(.button):not(.ks-btn){color:var(--ks-blackberry)}) in ks-wholesale-global.css forces navy on every link, making the cart-drawer checkout text (navy-on-navy) and footer 'Need help?' email (navy-on-black) invisible. Removing it plus targeted additive fixes (white checkout text with corrected blackberry fallback, white footer help links, stronger btn-primary text-shadow on the warm gradient, hard-capped logo img + non-stretching header CTA, hero image rendered as a direct inline background on .hero-bg) restores legibility, makes the hero image display, and fixes the over-tall header without restructuring the theme.",
+      "notes": "Branch fix/wholesale-home-design-fixes off main in drinkkenetik/wholesale-shopify-theme; human opens/merges PR (api.github.com blocked in sandbox). Diff scoped to exactly 6 files (git diff --stat origin/main confirms nothing else): ks-wholesale-global.css (remove global navy link rule), ks-wholesale-layout.css (.btn-primary text-shadow 0.18->0.45), cart-drawer (checkout bg #0e4f5e->#13296e, color #fff !important), footer (.ks-wholesale-footer__help a{color:#fff}), header (hard-capped 36px logo img, fallback wordmark 'Kenetik Wholesale', non-stretching CTA), hero (inline background-image on .hero-bg, drop --hero-bg-desktop section var). NOT converting header/footer to section groups; theme.liquid + settings_data.json untouched. Validation: @shopify/theme-check-node 0 errors; liquid-html-parser parses all changed .liquid; liquidjs renders header+hero with balanced markup. Related to CS-2026-217 (wholesale site rebuild). Logged by Katie.",
+      "category": "other",
+      "review_tier": "express"
     }
   ],
   "queue_actions": {
