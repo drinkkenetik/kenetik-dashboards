@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenetik Creator Capacity Planner</title>
+<style>
+  :root{
+    --navy:#13286d; --strawberry:#e03d1a; --blueberry:#269dd2; --berry:#d01483;
+    --peach:#f06925; --pineapple:#fbb11b; --clean:#a3c3d9; --cream:#f5f0e8;
+    --ink:#1c2230; --muted:#6b7280; --line:#e4e7ec; --card:#ffffff;
+    /* wedge colors */
+    --w-a:#269dd2;   /* Protocol / Productivity */
+    --w-b:#fbb11b;   /* Ageless / Health 40+ */
+    --w-c1:#f06925;  /* Endurance */
+    --w-c2:#d01483;  /* Precision athlete */
+    --w-broad:#13286d;/* Broad reach / entertainment */
+    --w-none:#94a3b8;/* Unassigned */
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Futura","Century Gothic","Avenir Next",-apple-system,Segoe UI,Roboto,sans-serif;
+       background:var(--cream);color:var(--ink);}
+  header.app{background:var(--navy);color:#fff;padding:16px 22px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+  header.app h1{font-size:19px;margin:0;letter-spacing:.5px;font-weight:700;}
+  header.app .sub{font-size:12px;color:#c9d4ee;margin-top:2px;}
+  .controls{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .ctl{display:flex;flex-direction:column;font-size:10px;color:#c9d4ee;text-transform:uppercase;letter-spacing:.6px;}
+  .ctl input,.ctl select{margin-top:3px;background:#0d1c4f;border:1px solid #2a3f86;color:#fff;border-radius:7px;
+       padding:6px 8px;font-size:13px;font-family:inherit;}
+  .btn{background:var(--strawberry);color:#fff;border:none;border-radius:8px;padding:9px 14px;font-size:13px;
+       font-weight:600;cursor:pointer;font-family:inherit;}
+  .btn.sec{background:#0d1c4f;border:1px solid #2a3f86;}
+  .btn:hover{filter:brightness(1.07)}
+  /* legend */
+  .legend{display:flex;gap:14px;flex-wrap:wrap;padding:10px 22px;background:#fff;border-bottom:1px solid var(--line);
+          font-size:12px;align-items:center;}
+  .legend .lg{display:flex;align-items:center;gap:6px;color:#374151;cursor:pointer;user-select:none;}
+  .legend .sw{width:13px;height:13px;border-radius:3px;display:inline-block;}
+  .legend .lg.off{opacity:.32;text-decoration:line-through;}
+  .kpis{display:flex;gap:18px;margin-left:auto;font-size:12px;color:var(--muted);}
+  .kpis b{color:var(--navy);font-size:15px;}
+  /* filter bar */
+  .filterbar{display:flex;gap:10px;align-items:center;padding:9px 22px;background:#fff;border-bottom:1px solid var(--line);flex-wrap:wrap;}
+  .filterbar input[type=search]{flex:1;min-width:200px;max-width:360px;padding:8px 11px;border:1px solid var(--line);
+      border-radius:20px;font-size:13px;font-family:inherit;}
+  .filterbar select{padding:7px 9px;border:1px solid var(--line);border-radius:8px;font-size:13px;font-family:inherit;background:#fff;}
+  .filterbar .fcount{font-size:12px;color:var(--muted);}
+  .btn.sm{padding:6px 11px;font-size:12px;background:#eef1f5;color:#475569;border:1px solid var(--line);}
+  .card .vtag{display:inline-block;font-size:9.5px;padding:1px 6px;border-radius:8px;background:#f1f0ea;color:#7a6f57;margin-top:5px;}
+  .card .nm a{color:inherit;text-decoration:none;}
+  .card .nm a:hover{text-decoration:underline;}
+  .card .st{font-size:9px;color:#9aa2b1;text-transform:uppercase;letter-spacing:.4px;}
+  .card .modash{display:flex;align-items:center;gap:5px;margin-top:7px;font-size:10.5px;color:#a7adba;cursor:pointer;user-select:none;}
+  .card .modash.on{color:#2f9e44;font-weight:600;}
+  .card .modash input{margin:0;cursor:pointer;accent-color:#2f9e44;}
+  .mhead .reach{font-size:11px;color:#5b6472;margin-top:5px;font-weight:600;}
+  .mtotal .mlbl{font-size:10px;color:var(--muted);font-weight:400;margin-left:5px;text-transform:uppercase;letter-spacing:.5px;}
+  .mhead .revline{font-size:11px;color:#2f7d3a;margin-top:4px;font-weight:600;}
+  .mhead .revline .net{font-weight:600;}
+  .mhead .revline .net.pos{color:#2f9e44;}
+  .mhead .revline .net.neg{color:#c0392b;}
+  .card .crev{color:#2f7d3a;font-weight:700;}
+  .card .sfcode{font-size:9.5px;color:#9aa2b1;letter-spacing:.3px;text-transform:uppercase;}
+  /* board */
+  .board{display:flex;gap:14px;padding:16px 22px 40px;overflow-x:auto;align-items:flex-start;min-height:60vh;}
+  .col{background:#fff;border:1px solid var(--line);border-radius:12px;width:250px;flex:0 0 250px;display:flex;
+       flex-direction:column;max-height:78vh;}
+  .col.backlog{flex:0 0 270px;width:270px;background:#fbfaf6;border:1px dashed #cbb99a;}
+  .col h2{margin:0;padding:11px 13px 8px;font-size:14px;display:flex;justify-content:space-between;align-items:baseline;}
+  .col h2 .cnt{font-size:11px;color:var(--muted);font-weight:400;}
+  .mhead{padding:0 13px 10px;border-bottom:1px solid var(--line);min-height:104px;}
+  .rev0{color:#b9c0cc;font-weight:400;}
+  .col h2{min-height:40px;}
+  .mtotal{font-size:20px;font-weight:700;color:var(--navy);}
+  .mtotal.over{color:var(--strawberry);}
+  .budgetbar{height:6px;background:#eef1f5;border-radius:4px;margin-top:6px;overflow:hidden;}
+  .budgetbar > i{display:block;height:100%;background:var(--blueberry);}
+  .budgetbar > i.over{background:var(--strawberry);}
+  .mixbar{display:flex;height:9px;border-radius:4px;overflow:hidden;margin-top:8px;background:#eef1f5;}
+  .mixbar > span{display:block;height:100%;}
+  .vs{font-size:10.5px;color:var(--muted);margin-top:5px;}
+  .drop{padding:9px;flex:1;overflow-y:auto;min-height:80px;}
+  .drop.dragover{background:#eaf4fb;outline:2px dashed var(--blueberry);outline-offset:-4px;border-radius:8px;}
+  /* cards */
+  .card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--w-none);border-radius:9px;
+        padding:8px 10px;margin-bottom:8px;cursor:grab;box-shadow:0 1px 2px rgba(16,24,40,.05);position:relative;}
+  .card:active{cursor:grabbing;}
+  .card.recurring{cursor:default;border-style:solid;background:#fcfdff;}
+  .card .nm{font-size:13px;font-weight:600;line-height:1.2;padding-right:14px;}
+  .card .meta{font-size:11px;color:var(--muted);margin-top:3px;display:flex;flex-wrap:wrap;gap:8px;}
+  .card .cost{font-weight:700;color:var(--navy);}
+  .card .badge{position:absolute;top:6px;right:7px;font-size:9px;padding:1px 5px;border-radius:6px;
+        background:#eef1f5;color:#64748b;text-transform:uppercase;letter-spacing:.4px;}
+  .card.recurring .badge{background:#e7edfb;color:var(--navy);}
+  .card .tags{margin-top:4px;font-size:10px;color:#94a3b8;}
+  .card.dim{display:none;}
+  .empty{color:#b9a988;font-size:11px;text-align:center;padding:14px 4px;font-style:italic;}
+  /* modal */
+  .modal-bg{position:fixed;inset:0;background:rgba(19,40,109,.4);display:none;align-items:center;justify-content:center;z-index:50;}
+  .modal-bg.on{display:flex;}
+  .modal{background:#fff;border-radius:14px;width:520px;max-width:94vw;max-height:92vh;overflow-y:auto;padding:20px;}
+  .modal textarea{resize:vertical;line-height:1.45;}
+  .modal h3{margin:0 0 14px;color:var(--navy);}
+  .fld{margin-bottom:11px;}
+  .fld label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:4px;}
+  .fld input,.fld select,.fld textarea{width:100%;padding:8px 9px;border:1px solid var(--line);border-radius:8px;
+        font-size:13px;font-family:inherit;}
+  .fld.row{display:flex;gap:10px;}.fld.row > div{flex:1;}
+  .modal .actions{display:flex;gap:9px;margin-top:16px;}
+  .modal .actions .btn{flex:1;}
+  .btn.del{background:#fff;color:var(--strawberry);border:1px solid var(--strawberry);}
+  .recur-only{display:none;}
+  .foot{padding:2px 22px 20px;font-size:11px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="app">
+  <div>
+    <h1>KENETIK · Creator Capacity Planner</h1>
+    <div class="sub">Drag opportunities into months. Color = wedge. Watch each month's spend and mix.</div>
+  </div>
+  <div class="controls">
+    <label class="ctl">Monthly budget
+      <input type="number" id="budget" value="45000" step="1000" style="width:110px;">
+    </label>
+    <label class="ctl">Horizon
+      <select id="horizon">
+        <option value="6">6 mo</option>
+        <option value="9">9 mo</option>
+        <option value="12" selected>12 mo</option>
+      </select>
+    </label>
+    <button class="btn" id="addBtn">+ Add card</button>
+    <button class="btn sec" id="exportBtn">Export</button>
+    <button class="btn sec" id="resetBtn">Reset</button>
+  </div>
+</header>
+
+<div class="legend" id="legend"></div>
+<div class="filterbar" id="filterbar">
+  <input type="search" id="search" placeholder="🔍  Search creators, notes, verticals…">
+  <select id="vertFilter"><option value="all">All verticals</option></select>
+  <select id="statusFilter">
+    <option value="all">All statuses</option>
+    <option value="new">New</option>
+    <option value="awaiting">Awaiting</option>
+    <option value="planning">Planning</option>
+    <option value="responded">Responded</option>
+    <option value="rate_received">Rate received</option>
+  </select>
+  <span id="filterCount" class="fcount"></span>
+  <button class="btn sec sm" id="clearFilter">Clear</button>
+</div>
+<div class="board" id="board"></div>
+<div class="foot" id="foot"></div>
+
+<!-- edit modal -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <h3 id="modalTitle">Edit card</h3>
+    <div class="fld"><label>Name</label><input id="m_name" placeholder="Creator / opportunity"></div>
+    <div class="fld"><label>Wedge (color)</label><select id="m_wedge"></select></div>
+    <div class="fld row">
+      <div><label>Type</label><select id="m_type"><option value="oneoff">One-off</option><option value="recurring">Recurring monthly</option></select></div>
+      <div><label id="m_costlbl">Cost ($)</label><input id="m_cost" type="number" step="100" placeholder="0"></div>
+    </div>
+    <div class="fld row">
+      <div><label>Followers</label><input id="m_followers" placeholder="e.g. 250K"></div>
+      <div><label>Reach / post</label><input id="m_reach" placeholder="avg views / est reach"></div>
+    </div>
+    <div class="fld row">
+      <div><label>Engagement rate</label><input id="m_er" placeholder="e.g. 2.84%"></div>
+      <div style="display:flex;align-items:flex-end;padding-bottom:9px;">
+        <label style="display:flex;align-items:center;gap:7px;font-size:13px;text-transform:none;letter-spacing:0;color:var(--ink);cursor:pointer;">
+          <input type="checkbox" id="m_modash" style="width:auto;"> Modash report on file</label>
+      </div>
+    </div>
+    <div class="fld row">
+      <div><label>Status</label><select id="m_status">
+        <option value="">—</option>
+        <option value="new">New</option>
+        <option value="awaiting">Awaiting</option>
+        <option value="planning">Planning</option>
+        <option value="responded">Responded</option>
+        <option value="rate_received">Rate received</option>
+        <option value="on hold">On hold</option>
+        <option value="declined">Declined</option>
+        <option value="signed">Signed</option>
+      </select></div>
+      <div><label>Vertical</label><input id="m_vertical" placeholder="e.g. Golf"></div>
+    </div>
+    <div class="fld row recur-only">
+      <div><label>Start month</label><input id="m_start" placeholder="2026-07"></div>
+      <div><label>End month</label><input id="m_end" placeholder="blank = ongoing"></div>
+    </div>
+    <div class="fld"><label>Notes</label><textarea id="m_note" rows="5" placeholder="Modash source, angle, terms..."></textarea></div>
+    <div class="actions">
+      <button class="btn del" id="m_del">Delete</button>
+      <button class="btn sec" id="m_cancel">Cancel</button>
+      <button class="btn" id="m_save">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const STORE="kenetik_capacity_planner_v1";
+const WEDGES=[
+  {id:"a",     label:"A · Protocol (Productivity)", color:"var(--w-a)"},
+  {id:"b",     label:"B · Ageless (Health 40+)",    color:"var(--w-b)"},
+  {id:"c1",    label:"C · Endurance",               color:"var(--w-c1)"},
+  {id:"c2",    label:"C · Precision athlete",       color:"var(--w-c2)"},
+  {id:"broad", label:"Broad reach / entertainment", color:"var(--w-broad)"},
+  {id:"none",  label:"Unassigned",                  color:"var(--w-none)"},
+];
+const WCOLOR=Object.fromEntries(WEDGES.map(w=>[w.id,w.color]));
+
+// ---- seed data (from live paid roster + priced pipeline, 2026-07) ----
+function SEED(){return [
+  // ACTIVE PAID ROSTER (recurring) — sfCodes + June actual revenue
+  {name:"Derek Pratt", wedge:"c1", type:"recurring", cost:3500, followers:"", reach:"", start:"2026-01", end:"", sfCodes:["DPRATT"], revByMonth:{"2026-06":0}, note:"NEEDS NEW CONTRACT \u2014 prior term ended Nov 2024. Spartan / endurance.", src:"roster"},
+  {name:"Dr. Stephanie Estima", wedge:"b", type:"recurring", cost:4200, followers:"", reach:"", start:"2026-01", end:"2026-07", sfCodes:["BETTER", "WL_STEPH"], revByMonth:{"2026-06":646.72,"2026-07":312.61}, note:"Women's health / 40+. Contract ends 7/15 \u2014 not renewing.", src:"roster"},
+  {name:"Joseph David", wedge:"a", type:"recurring", cost:3000, followers:"1.7M", reach:"88.6k", er:"0.26%", modash:true, start:"2026-01", end:"2026-07", sfCodes:["JOSEPH", "WL_JOSEPH"], revByMonth:{"2026-06":142.59,"2026-07":0}, note:"Life Time Fitness. Ends 7/22. IG est reach 88.6k/post \u2014 31.7% fake followers, verify.", src:"roster"},
+  {name:"Gwen Jorgensen", wedge:"c1", type:"recurring", cost:2500, followers:"", reach:"", start:"2026-01", end:"2027-02", sfCodes:["GWEN"], revByMonth:{"2026-06":60.89,"2026-07":113.17}, note:"Olympic triathlete / runner.", src:"roster"},
+  {name:"Cameron Jones", wedge:"c1", type:"recurring", cost:2500, followers:"", reach:"", start:"2026-01", end:"2027-01", sfCodes:["CAMJONES"], revByMonth:{"2026-06":0}, note:"Endurance / running.", src:"roster"},
+  {name:"Brad Becca", wedge:"none", type:"recurring", cost:1500, followers:"", reach:"", start:"2026-01", end:"", sfCodes:["BRAD"], revByMonth:{"2026-06":238.25,"2026-07":238.02}, note:"Confirm wedge.", src:"roster"},
+  {name:"Madigan Munro", wedge:"c1", type:"recurring", cost:1000, followers:"", reach:"", start:"2026-01", end:"2026-12", sfCodes:["MUNRO"], revByMonth:{"2026-06":0}, note:"Trail / endurance.", src:"roster"},
+  {name:"Adam Burns", wedge:"none", type:"recurring", cost:1000, followers:"", reach:"", start:"2026-06", end:"2026-08", sfCodes:["ADAM"], revByMonth:{"2026-06":0}, note:"Confirm wedge. Ends 8/31.", src:"roster"},
+  {name:"Russell Finsterwald", wedge:"c1", type:"recurring", cost:833.33, followers:"28K", reach:"", start:"2026-01", end:"2026-12", sfCodes:["FINSTY"], revByMonth:{"2026-06":0}, note:"MTB / gravel. Redline re-issue pending.", src:"roster"},
+  {name:"C\u00e9cile Lejeune", wedge:"c1", type:"recurring", cost:833, followers:"", reach:"", start:"2026-01", end:"2027-12", sfCodes:["CECILE"], revByMonth:{"2026-06":0}, note:"Cyclist.", src:"roster"},
+  {name:"Kade Loertscher", wedge:"c1", type:"recurring", cost:340, followers:"", reach:"", start:"2026-04", end:"2026-10", sfCodes:["GOPHER15"], revByMonth:{"2026-06":0}, note:"Rev Tour. Endurance.", src:"roster"},
+  {name:"Anthony Moustakas", wedge:"none", type:"recurring", cost:250, followers:"", reach:"", start:"2026-01", end:"", sfCodes:["REALIGN", "WL_REALIGN"], revByMonth:{"2026-06":0}, note:"Confirm wedge.", src:"roster"},
+  {name:"Roman Atwood", wedge:"broad", type:"recurring", cost:0, followers:"", reach:"", start:"2026-01", end:"", sfCodes:["ROMAN", "SMILEMORE"], revByMonth:{"2026-06":11175.0,"2026-07":249.91}, note:"Family vlog. Equity/gifted \u2014 $0 cash. Codes: ROMAN + SMILEMORE.", src:"roster"},
+  {name:"Cleetus McFarland", wedge:"broad", type:"recurring", cost:0, followers:"", reach:"", start:"2026-01", end:"", sfCodes:["CLEETUS", "CLETUS"], revByMonth:{"2026-06":22352.12,"2026-07":763.36}, note:"Auto/entertainment. $0 cash. Codes: CLEETUS + CLETUS.", src:"roster"},
+  {name:"Dr. Disrespect", wedge:"broad", type:"recurring", cost:0, followers:"", reach:"", start:"2026-01", end:"", sfCodes:["DOC"], revByMonth:{"2026-06":3204.44,"2026-07":0}, note:"Gaming. $0 cash.", src:"roster"},
+  {name:"Matt Hughes", wedge:"c2", type:"recurring", cost:0, followers:"", reach:"", start:"2026-01", end:"", sfCodes:["HUGHES"], revByMonth:{"2026-06":652.59,"2026-07":32.45}, note:"MMA legend. $0 cash.", src:"roster"},
+  // PIPELINE — outstanding YouTube opportunities (auto-loaded from opps dashboard)
+  {name:"Nick Norwitz — Substack (Jun)", wedge:"a", type:"oneoff", cost:7500, followers:"150k+ (Substack)", reach:"", month:"2026-06", vertical:"Wellness & Science", status:"signed", sfCodes:["STAYCURIOUS"], codeLive:true, revByMonth:{"2026-06":3659.02,"2026-07":0}, url:"", note:"$7,500 of the $25k Norwitz deal — June Substack letter. Code STAYCURIOUS stays live (counts revenue every month). 15% comm. Via Dylan/Underscore.", src:"pipeline"},
+  {name:"Nick Norwitz — YouTube (Aug)", wedge:"a", type:"oneoff", cost:17500, followers:"", reach:"", month:"2026-08", vertical:"Wellness & Science", status:"signed", sfCodes:["STAYCURIOUS"], url:"", note:"Remaining $17,500 of the $25k deal — YouTube integration in August, paid after he posts.", src:"pipeline"},
+  {name:"WhistlinDiesel", wedge:"broad", type:"oneoff", cost:172500, followers:"10.5M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@WhistlinDiesel", note:"Auto/Lifestyle \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Vice Grip Garage (Letsreach)", wedge:"broad", type:"oneoff", cost:63250, followers:"2.48M", reach:"", month:null, vertical:"Auto & Motorsport", status:"awaiting", url:"https://www.youtube.com/@ViceGripGarage", note:"Auto/Builds \u00b7 awaiting", src:"youtube"},
+  {name:"Diesel Creek (Letsreach)", wedge:"broad", type:"oneoff", cost:25875, followers:"1.02M", reach:"", month:null, vertical:"Auto & Motorsport", status:"awaiting", url:"https://www.youtube.com/@DieselCreek", note:"Auto/Builds \u00b7 awaiting", src:"youtube"},
+  {name:"Rich Rebuilds (Letsreach)", wedge:"broad", type:"oneoff", cost:23000, followers:"1.68M", reach:"", month:null, vertical:"Auto & Motorsport", status:"awaiting", url:"https://www.youtube.com/@RichRebuilds", note:"EV / Salvage Builds \u00b7 awaiting \u00b7 @Nick", src:"youtube"},
+  {name:"DailyDrivenExotics", wedge:"broad", type:"oneoff", cost:13800, followers:"4.2M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@DailyDrivenExotics", note:"Auto/Supercar \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Officially Gassed (Letsreach)", wedge:"broad", type:"oneoff", cost:10815, followers:"1.03M", reach:"", month:null, vertical:"Auto & Motorsport", status:"awaiting", url:"https://www.youtube.com/@officially_gassed", note:"Automotive Builds \u00b7 awaiting \u00b7 @Nick", src:"youtube"},
+  {name:"Dom Tracy (Momin)", wedge:"broad", type:"oneoff", cost:10000, followers:"3.1M", reach:"", month:null, vertical:"Auto & Motorsport", status:"planning", url:"https://www.youtube.com/@DomTracy", note:"Auto \u00b7 planning \u00b7 @Lawrence", src:"youtube"},
+  {name:"Tj Hunt (Letsreach)", wedge:"broad", type:"oneoff", cost:9600, followers:"2.4M", reach:"", month:null, vertical:"Auto & Motorsport", status:"awaiting", url:"https://www.youtube.com/@tjhunt_", note:"Automotive / Lifestyle \u00b7 awaiting \u00b7 @Nick", src:"youtube"},
+  {name:"Michael Elsea (Momin)", wedge:"broad", type:"oneoff", cost:5000, followers:"107K", reach:"", month:null, vertical:"Auto & Motorsport", status:"planning", url:"", note:"Auto \u00b7 planning", src:"youtube"},
+  {name:"Devin Niemela (Letsreach)", wedge:"broad", type:"oneoff", cost:5000, followers:"770K", reach:"", month:null, vertical:"Auto & Motorsport", status:"awaiting", url:"https://www.youtube.com/@DevinNiemela", note:"Auto/Builds \u00b7 awaiting", src:"youtube"},
+  {name:"Hallie Deegan (Underscore)", wedge:"broad", type:"oneoff", cost:5000, followers:"600K+", reach:"", month:null, vertical:"Auto & Motorsport", status:"planning", url:"", note:"Auto/NASCAR \u00b7 planning", src:"youtube"},
+  {name:"Andy Didorosi (Night Media)", wedge:"broad", type:"oneoff", cost:5000, followers:"", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@thatdetroitandy", note:"Automotive/DIY \u00b7 new", src:"youtube"},
+  {name:"Ryan Shaw (Night Media)", wedge:"broad", type:"oneoff", cost:5000, followers:"", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@RyanShawtech", note:"Automotive/Tesla/EV/Tech \u00b7 new", src:"youtube"},
+  {name:"Matt Ross (Momin)", wedge:"broad", type:"oneoff", cost:4500, followers:"190K", reach:"", month:null, vertical:"Auto & Motorsport", status:"planning", url:"", note:"Auto \u00b7 planning", src:"youtube"},
+  {name:"Mike Lake (Momin)", wedge:"broad", type:"oneoff", cost:4500, followers:"182K", reach:"", month:null, vertical:"Auto & Motorsport", status:"planning", url:"", note:"Auto \u00b7 planning", src:"youtube"},
+  {name:"Flying Wheels (Momin)", wedge:"broad", type:"oneoff", cost:4000, followers:"484K", reach:"", month:null, vertical:"Auto & Motorsport", status:"planning", url:"https://www.youtube.com/@FlyingWheels", note:"Auto \u00b7 planning \u00b7 @Lawrence", src:"youtube"},
+  {name:"MilesPerHr (Momin)", wedge:"broad", type:"oneoff", cost:3500, followers:"808K", reach:"", month:null, vertical:"Auto & Motorsport", status:"planning", url:"https://www.youtube.com/@MilesPerHr", note:"Auto \u00b7 planning \u00b7 @Lawrence", src:"youtube"},
+  {name:"DragTimes (Letsreach)", wedge:"broad", type:"oneoff", cost:3125, followers:"551K", reach:"", month:null, vertical:"Auto & Motorsport", status:"awaiting", url:"https://www.youtube.com/@DragTimes", note:"Auto/Racing \u00b7 awaiting", src:"youtube"},
+  {name:"Vehicle Virgins (Letsreach)", wedge:"broad", type:"oneoff", cost:3125, followers:"2.49M", reach:"", month:null, vertical:"Auto & Motorsport", status:"awaiting", url:"https://www.youtube.com/@VehicleVirgins", note:"Car Reviews / General \u00b7 awaiting \u00b7 @Nick", src:"youtube"},
+  {name:"Serg Whips (Momin)", wedge:"broad", type:"oneoff", cost:1500, followers:"N/A", reach:"", month:null, vertical:"Auto & Motorsport", status:"planning", url:"", note:"Auto (Shorts only) \u00b7 planning", src:"youtube"},
+  {name:"Emelia Hartford", wedge:"broad", type:"oneoff", cost:0, followers:"2.0M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@EmeliaHartford", note:"Auto/Builds \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Adam LZ", wedge:"broad", type:"oneoff", cost:0, followers:"3.9M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@AdamLZ", note:"Auto/Drift \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"TheStradman", wedge:"broad", type:"oneoff", cost:0, followers:"4.5M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@TheStradman", note:"Auto/Supercar \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Tavarish", wedge:"broad", type:"oneoff", cost:0, followers:"3.1M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@Tavarish", note:"Auto/Builds \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Goonzquad", wedge:"broad", type:"oneoff", cost:0, followers:"2.8M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@goonzquad", note:"Auto/Builds \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Hoovies Garage", wedge:"broad", type:"oneoff", cost:0, followers:"1.7M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@HooviesGarage", note:"Auto/Lifestyle \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"itsjusta6", wedge:"broad", type:"oneoff", cost:0, followers:"1.4M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@itsjusta6", note:"Auto/Racing \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"BoostedBoiz", wedge:"broad", type:"oneoff", cost:0, followers:"1.3M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@BoostedBoiz", note:"Auto/Builds \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Finnegan's Garage", wedge:"broad", type:"oneoff", cost:0, followers:"~1M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@FinnegansGarage", note:"Auto/Builds \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Donut Media", wedge:"broad", type:"oneoff", cost:0, followers:"9.2M", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"https://www.youtube.com/@Donut", note:"Auto/Education \u00b7 new", src:"youtube"},
+  {name:"That Racing Channel (Letsreach)", wedge:"broad", type:"oneoff", cost:0, followers:"1.69M", reach:"", month:null, vertical:"Auto & Motorsport", status:"awaiting", url:"https://www.youtube.com/@ThatRacingChannel", note:"Auto/Racing \u00b7 awaiting", src:"youtube"},
+  {name:"FortNine (Letsreach)", wedge:"broad", type:"oneoff", cost:0, followers:"2.29M", reach:"", month:null, vertical:"Auto & Motorsport", status:"awaiting", url:"https://www.youtube.com/@FortNine", note:"Motorcycles / Powersports \u00b7 awaiting \u00b7 @Nick", src:"youtube"},
+  {name:"Bus Grease Monkey (Momin)", wedge:"broad", type:"oneoff", cost:0, followers:"220K", reach:"", month:null, vertical:"Auto & Motorsport", status:"new", url:"", note:"Auto \u00b7 new", src:"youtube"},
+  {name:"Nikko Ortiz", wedge:"broad", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Auto & Motorsport", status:"planning", url:"", note:"Auto/Motorsport \u00b7 planning \u00b7 @Nick", src:"youtube"},
+  {name:"Sam and Colby", wedge:"broad", type:"oneoff", cost:0, followers:"15.5M", reach:"", month:null, vertical:"Family & Lifestyle", status:"new", url:"https://www.youtube.com/@SamandColby", note:"Lifestyle/Explore \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"The Eh Bee Family", wedge:"broad", type:"oneoff", cost:0, followers:"10.2M", reach:"", month:null, vertical:"Family & Lifestyle", status:"new", url:"https://www.youtube.com/@EhBeeFamily", note:"Family/Comedy \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Daily Bumps", wedge:"broad", type:"oneoff", cost:0, followers:"5.1M", reach:"", month:null, vertical:"Family & Lifestyle", status:"new", url:"https://www.youtube.com/@DailyBumps", note:"Family/Lifestyle \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Jess & Gabriel Conte", wedge:"broad", type:"oneoff", cost:0, followers:"3.8M", reach:"", month:null, vertical:"Family & Lifestyle", status:"new", url:"https://www.youtube.com/@JessandGabriel", note:"Family/Lifestyle \u00b7 new \u00b7 @Lawrence", src:"youtube"},
+  {name:"Casey Neistat", wedge:"broad", type:"oneoff", cost:0, followers:"12.7M", reach:"", month:null, vertical:"Family & Lifestyle", status:"new", url:"https://www.youtube.com/@casey", note:"Lifestyle/Entrepreneur \u00b7 new", src:"youtube"},
+  {name:"Donut Operator (Underscore)", wedge:"broad", type:"oneoff", cost:0, followers:"3.5M+", reach:"", month:null, vertical:"Family & Lifestyle", status:"planning", url:"https://www.youtube.com/@DonutOperator", note:"Law Enforcement/Lifestyle \u00b7 planning", src:"youtube"},
+  {name:"Nate Illingsworth", wedge:"broad", type:"oneoff", cost:0, followers:"5.5k", reach:"", month:null, vertical:"Family & Lifestyle", status:"new", url:"https://www.youtube.com/@nate_illingsworth", note:"Lifestyle \u00b7 new", src:"youtube"},
+  {name:"Tyson Sonnek", wedge:"broad", type:"oneoff", cost:0, followers:"2k", reach:"", month:null, vertical:"Family & Lifestyle", status:"new", url:"https://www.youtube.com/@Tysonnek", note:"Lifestyle \u00b7 new", src:"youtube"},
+  {name:"Kyle Cokinos", wedge:"broad", type:"oneoff", cost:0, followers:"20k", reach:"", month:null, vertical:"Family & Lifestyle", status:"new", url:"https://www.youtube.com/@KidCoki", note:"Lifestyle \u00b7 new", src:"youtube"},
+  {name:"Mark Dowdle", wedge:"broad", type:"oneoff", cost:0, followers:"22k", reach:"", month:null, vertical:"Family & Lifestyle", status:"new", url:"https://www.youtube.com/@mark.dowdle", note:"Lifestyle \u00b7 new", src:"youtube"},
+  {name:"Elizabetheats", wedge:"broad", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Family & Lifestyle", status:"new", url:"", note:"Food/Lifestyle \u00b7 new", src:"youtube"},
+  {name:"Alex Eubank", wedge:"c1", type:"oneoff", cost:15000, followers:"2.5M+", reach:"", month:null, vertical:"Fitness & Endurance", status:"planning", url:"https://www.youtube.com/@AlexEubank", note:"Fitness/Lifestyle \u00b7 planning \u00b7 @Nick", src:"youtube"},
+  {name:"Miles Burris (Lisa Shields)", wedge:"c1", type:"oneoff", cost:4000, followers:"N/A", reach:"", month:null, vertical:"Fitness & Endurance", status:"planning", url:"", note:"Fitness/Veteran \u00b7 $4,000/month \u00d7 3mo \u00b7 planning \u00b7 @Nick", src:"youtube"},
+  {name:"Trevor Bauer / Momentum", wedge:"c1", type:"oneoff", cost:0, followers:1100000, reach:"", month:null, vertical:"Fitness & Endurance", status:"awaiting", url:"https://www.youtube.com/@BauerOutage", note:"Baseball / Sports \u00b7 awaiting \u00b7 @Nick", src:"youtube"},
+  {name:"Daniel Coffeen", wedge:"c1", type:"oneoff", cost:0, followers:"7k", reach:"", month:null, vertical:"Fitness & Endurance", status:"new", url:"https://www.youtube.com/c/DanielCoffeen", note:"Fitness/Lifestyle \u00b7 new", src:"youtube"},
+  {name:"Brittany Blanco", wedge:"c1", type:"oneoff", cost:0, followers:"12.2k", reach:"", month:null, vertical:"Fitness & Endurance", status:"new", url:"https://www.youtube.com/@ByltByBritt", note:"Fitness/Lifestyle \u00b7 new", src:"youtube"},
+  {name:"Maddy Watts (Ghost Runner)", wedge:"c1", type:"oneoff", cost:0, followers:"1k", reach:"", month:null, vertical:"Fitness & Endurance", status:"new", url:"https://www.youtube.com/@maddy_runs", note:"Running/Endurance \u00b7 new", src:"youtube"},
+  {name:"Ben Dziwulski (@wodprep)", wedge:"c1", type:"oneoff", cost:0, followers:"190k", reach:"", month:null, vertical:"Fitness & Endurance", status:"new", url:"https://www.youtube.com/@wodprep", note:"Fitness/CrossFit \u00b7 new", src:"youtube"},
+  {name:"s0m", wedge:"c1", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Fitness & Endurance", status:"new", url:"", note:"Gaming/Esports \u00b7 new", src:"youtube"},
+  {name:"Nick Shirley (Space Station)", wedge:"broad", type:"oneoff", cost:8000, followers:"N/A", reach:"", month:null, vertical:"Gaming", status:"awaiting", url:"https://www.youtube.com/@NickShirley", note:"Gaming/Puzzle \u00b7 $8,000/spot \u00b7 awaiting", src:"youtube"},
+  {name:"Code Bullets Day Off (Night Media)", wedge:"broad", type:"oneoff", cost:8000, followers:"", reach:"", month:null, vertical:"Gaming", status:"new", url:"https://www.youtube.com/@codebulletsdayoff582", note:"Gaming/Coding \u00b7 new", src:"youtube"},
+  {name:"Stephen Sharer Gaming (Night Media)", wedge:"broad", type:"oneoff", cost:7500, followers:"", reach:"", month:null, vertical:"Gaming", status:"new", url:"https://www.youtube.com/@StephenSharerGaming", note:"Gaming/Family \u00b7 new", src:"youtube"},
+  {name:"UnspeakablePlays (Night Media)", wedge:"broad", type:"oneoff", cost:7000, followers:"", reach:"", month:null, vertical:"Gaming", status:"new", url:"https://www.youtube.com/@UnspeakablePlays", note:"Family/Gaming \u00b7 new", src:"youtube"},
+  {name:"Country Club Adjacent (Underscore)", wedge:"a", type:"oneoff", cost:7500, followers:"", reach:"", month:null, vertical:"Golf", status:"rate_received", url:"https://www.instagram.com/countryclubadjacent/", note:"Golf Comedy \u00b7 ~$7,500 per YouTube integration (Hallie + Brendan, open to discussion) \u00b7 rate_received", src:"youtube"},
+  {name:"Jerome Rufin (Night Media)", wedge:"a", type:"oneoff", cost:5000, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://www.youtube.com/channel/UCBvj-_3BiEtW1uHYLdj4s7Q", note:"Golf/Fitness/Performance \u00b7 new", src:"youtube"},
+  {name:"Tim Pool (Rumble)", wedge:"broad", type:"oneoff", cost:4000, followers:"1.3M+ (YT) + Rumble", reach:"", month:null, vertical:"News & Commentary", status:"awaiting", url:"https://rumble.com/c/TimPool", note:"News/Commentary \u00b7 $4,000/read \u00b7 awaiting", src:"youtube"},
+  {name:"Graham Allen (Rumble)", wedge:"broad", type:"oneoff", cost:2200, followers:"1M+ (multi-platform)", reach:"", month:null, vertical:"News & Commentary", status:"awaiting", url:"", note:"Veteran/News \u00b7 $2,200/read + $6,000/mo WL \u00b7 awaiting", src:"youtube"},
+  {name:"Steven Crowder (Rumble)", wedge:"broad", type:"oneoff", cost:0, followers:"6M+ (multi-platform)", reach:"", month:null, vertical:"News & Commentary", status:"responded", url:"", note:"News/Commentary \u00b7 responded", src:"youtube"},
+  {name:"Hoog (Night Media)", wedge:"none", type:"oneoff", cost:10000, followers:"", reach:"", month:null, vertical:"Other", status:"new", url:"https://www.youtube.com/@hoog-youtube", note:"Infotainment/Education \u00b7 new", src:"youtube"},
+  {name:"Blacktail Studio (Momin)", wedge:"broad", type:"oneoff", cost:0, followers:"3.41M", reach:"", month:null, vertical:"Outdoor & Making", status:"new", url:"", note:"Woodworking \u00b7 new", src:"youtube"},
+  {name:"Blacktail Studio Uncut (Momin)", wedge:"broad", type:"oneoff", cost:0, followers:"1.5M", reach:"", month:null, vertical:"Outdoor & Making", status:"new", url:"", note:"Woodworking \u00b7 new", src:"youtube"},
+  {name:"Blacktail Ranch (Momin)", wedge:"broad", type:"oneoff", cost:0, followers:"220K", reach:"", month:null, vertical:"Outdoor & Making", status:"new", url:"", note:"Ranching \u00b7 new", src:"youtube"},
+  {name:"Frank Van Dam (Momin)", wedge:"broad", type:"oneoff", cost:0, followers:"421K", reach:"", month:null, vertical:"Outdoor & Making", status:"new", url:"", note:"Adventure \u00b7 new", src:"youtube"},
+  {name:"The Challenger Pilot (Momin)", wedge:"broad", type:"oneoff", cost:0, followers:"38.5K", reach:"", month:null, vertical:"Outdoor & Making", status:"new", url:"", note:"Piloting \u00b7 new", src:"youtube"},
+  {name:"Dr. Will Cole (The Onyx)", wedge:"a", type:"oneoff", cost:35000, followers:"200K+", reach:"", month:null, vertical:"Wellness & Science", status:"awaiting", url:"https://youtube.com/@drwillcole", note:"Wellness/Podcast \u00b7 awaiting", src:"youtube"},
+  {name:"Mark Manson (CND)", wedge:"a", type:"oneoff", cost:30000, followers:"2M+", reach:"", month:null, vertical:"Wellness & Science", status:"awaiting", url:"https://www.youtube.com/@IAmMarkManson", note:"Lifestyle/Author \u00b7 awaiting", src:"youtube"},
+  {name:"Russell Brand (Rumble)", wedge:"a", type:"oneoff", cost:3000, followers:"6.5M+ (YT) + Rumble", reach:"", month:null, vertical:"Wellness & Science", status:"awaiting", url:"https://rumble.com/c/russellbrand", note:"Wellness/Commentary \u00b7 $3,000/read \u00b7 awaiting", src:"youtube"},
+  {name:"Backyard Scientist", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Wellness & Science", status:"new", url:"", note:"STEM/Science \u00b7 new", src:"youtube"},
+  {name:"Michael Easter", wedge:"a", type:"oneoff", cost:15000, followers:"150k", reach:"49k", month:null, vertical:"Wellness & Science", status:"on hold", url:"", note:"Substack ~$15K/integration \u2014 DECLINED (high $15 CPC). Pivoting to mid-level Substack creators. 150k subs, 35% open, 1.2M 30D views, 63% US.", src:"youtube"},
+  // Cards with Modash reports provided + rates
+  {name:"Will Tennyson", wedge:"c1", type:"oneoff", cost:55000, followers:"5M", reach:"1.2M", er:"2.84%", modash:true, month:null, vertical:"Fitness & Endurance", status:"new", url:"https://www.youtube.com/@WillTennyson", note:"$50\u201360k/integration (Night Media). Fitness/Food/Lifestyle. Avg views 1.2M (video 3.3M).", src:"youtube"},
+  {name:"Divot Dudes", wedge:"a", type:"oneoff", cost:5000, followers:"355k", reach:"114.2k", er:"1.85%", modash:true, month:null, vertical:"Golf", status:"new", url:"https://www.youtube.com/@divotdudes", note:"$5k/integration. Golf comedy. Avg views 114k. 96% male, 66% US.", src:"youtube"},
+  // GOLF — Provisions Golf roster (rates TBD)
+  {name:"Grant Horvat", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@granthorvatgolfs", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Bryan Bros", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@bryanbrosgolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Chazzy Golf", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://www.youtube.com/@ChazBowkergolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Evan Thompson", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://www.youtube.com/@evanthompsongolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Micah Morris", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@micahmorrisgolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"BustaJack", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@bustajackgolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"BustaGolfs", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@BustaGolfs", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"BevBoys Golf", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@bevboysgolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Ben Kruper", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@benkruper_golf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Josh Mayer", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@joshmayergolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Hole in One Trick Shots (Josh Kelley)", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@joshkelleygolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Karol Priscilla", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@karolpriscilla", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Sara Winter", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@sarawintergolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Mac Boucher", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@macbouchergolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Hannah Rae Aslesen", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://www.instagram.com/hey_hannah_rae/", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Luke Kwon", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"http://www.youtube.com/@LukeKwonGolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"St Andre", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@standregolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Kyle Berkshire", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://youtube.com/@kyleberkshire3371", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Oscar Miranda", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://www.youtube.com/@iAmOscarMiranda", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Courses You Need To Play", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://www.youtube.com/@coursesyouneedtoplay", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Alexis Belton", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://www.youtube.com/@alexisbelton1", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  {name:"Zire Golf", wedge:"a", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Golf", status:"new", url:"https://www.instagram.com/ziregolf", note:"Provisions Golf roster. Rate TBD.", src:"golf-roster"},
+  // Named adds (Eric/raddadbod, Peyton Knight)
+  {name:"Eric (Raddadbodtv)", wedge:"c1", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Fitness & Endurance", status:"planning", url:"https://www.youtube.com/@raddadbodtv", note:"Shoe reviewer / runner / dad. Via Luca (Big Fellas Media). Father's Day collab. Rate TBD. raddadbodtv@gmail.com", src:"pipeline"},
+  {name:"Peyton Knight", wedge:"c1", type:"oneoff", cost:0, followers:"", reach:"", month:null, vertical:"Fitness & Endurance", status:"planning", url:"", note:"Female runner. Via Channa (Undercurrent). Offer: fee + 50% new + 7.5% whitelist. Price TBD. Running-face angle.", src:"pipeline"},
+];}
+
+
+// ---- state ----
+let state=load();
+function load(){
+  try{const s=JSON.parse(localStorage.getItem(STORE));
+    if(s&&s.cards){return syncSeed(s);}}catch(e){}
+  return {budget:45000, horizon:12, cards:SEED().map((c,i)=>({id:"c"+i+"_"+Date.now(),month:null,...c}))};
+}
+// bump when seed data (rates/stats/new cards) changes so it reaches saved boards
+const SEED_VERSION=10;
+// keep user's placements (month) + colors (wedge); refresh data fields; add new cards
+function syncSeed(s){
+  const seed=SEED();
+  const bump=s.seedVersion!==SEED_VERSION;
+  const dataFields=["cost","followers","reach","er","modash","url","status","note","vertical","start","end","sfCodes","revByMonth","codeLive"];
+  seed.forEach(sc=>{
+    const matches=s.cards.filter(c=>c.name===sc.name);
+    if(!matches.length){s.cards.push({id:"c_"+Math.random().toString(36).slice(2),month:null,...sc});return;}
+    matches.forEach(ex=>{
+      if(bump){dataFields.forEach(k=>{if(sc[k]!==undefined)ex[k]=sc[k];});}
+      else{["followers","reach","er","vertical","url","status"].forEach(k=>{if((ex[k]===undefined||ex[k]==="")&&sc[k])ex[k]=sc[k];});
+           if(!ex.modash&&sc.modash)ex.modash=true;}
+    });
+  });
+  if(bump){ // one-time targeted wedge corrections (respects future manual recolors)
+    const wedgeFix={"Eric (Raddadbodtv)":"c1"};
+    s.cards.forEach(c=>{if(wedgeFix[c.name])c.wedge=wedgeFix[c.name];});
+    // retire legacy single Norwitz card (split into Substack Jun + YouTube Aug)
+    s.cards=s.cards.filter(c=>c.name!=="Nick Norwitz");
+  }
+  s.seedVersion=SEED_VERSION;
+  return s;
+}
+function save(){localStorage.setItem(STORE,JSON.stringify(state));}
+// parse "5M" / "355k" / "1.2M" -> number
+function parseNum(v){
+  if(typeof v==="number")return v;
+  if(!v)return 0;
+  const m=String(v).replace(/,/g,"").match(/([\d.]+)\s*([kKmMbB]?)/);
+  if(!m)return 0;
+  const n=parseFloat(m[1]); const s=m[2].toLowerCase();
+  return Math.round(n*(s==="k"?1e3:s==="m"?1e6:s==="b"?1e9:1));
+}
+function fmtNum(n){
+  if(n>=1e6)return (n/1e6).toFixed(n>=1e7?0:1).replace(/\.0$/,"")+"M";
+  if(n>=1e3)return (n/1e3).toFixed(n>=1e4?0:1).replace(/\.0$/,"")+"k";
+  return String(n);
+}
+
+// ---- month helpers ----
+const START={y:2026,m:6}; // Jul 2026
+function months(){const a=[];let y=START.y,m=START.m;
+  for(let i=0;i<state.horizon;i++){a.push(y+"-"+String(m).padStart(2,"0"));m++;if(m>12){m=1;y++;}}return a;}
+function mLabel(id){const[y,m]=id.split("-").map(Number);
+  return new Date(y,m-1,1).toLocaleString("en-US",{month:"short",year:"numeric"});}
+function inWindow(card,mid){ // recurring active in month?
+  if(card.type!=="recurring")return false;
+  const s=card.start||months()[0];
+  if(mid<s)return false;
+  if(card.end&&mid>card.end)return false;
+  return true;
+}
+function num(v){return Number(v)||0;}
+
+// hidden wedges (legend toggle)
+let hidden=new Set();
+// filters
+let filter={search:"",vertical:"all",status:"all"};
+function matchesFilter(c){
+  if(c.type!=="oneoff")return true; // recurring roster always shows
+  if(filter.vertical!=="all" && (c.vertical||"Other")!==filter.vertical)return false;
+  if(filter.status!=="all" && (c.status||"")!==filter.status)return false;
+  if(filter.search){
+    const q=filter.search.toLowerCase();
+    const hay=[c.name,c.note,c.vertical,c.status].join(" ").toLowerCase();
+    if(!hay.includes(q))return false;
+  }
+  return true;
+}
+function filterActive(){return filter.search||filter.vertical!=="all"||filter.status!=="all";}
+
+// ---- render ----
+function render(){
+  const ms=months();
+  // legend
+  const lg=document.getElementById("legend");
+  lg.innerHTML=WEDGES.map(w=>`<span class="lg ${hidden.has(w.id)?'off':''}" data-w="${w.id}">
+     <span class="sw" style="background:${w.color}"></span>${w.label}</span>`).join("")
+     +`<span class="kpis" id="kpis"></span>`;
+  lg.querySelectorAll(".lg").forEach(el=>el.onclick=()=>{
+    const w=el.dataset.w; hidden.has(w)?hidden.delete(w):hidden.add(w); render();});
+
+  const board=document.getElementById("board");
+  board.innerHTML="";
+
+  // backlog col
+  board.appendChild(colEl("backlog","Pipeline / Unscheduled",null,ms));
+  // month cols
+  ms.forEach(mid=>board.appendChild(colEl("month",mLabel(mid),mid,ms)));
+
+  wireDrops();
+  renderKpis(ms);
+  if(document.getElementById("filterCount"))updateFilterCount();
+  document.getElementById("foot").textContent=
+    "Recurring roster cards auto-fill each month they're under contract (edit End month to scale back). "
+    +"Drag a pipeline card into a month to book it — the original stays in the pipeline so you can reuse it in other months. "
+    +"Drag a booked card to another month to move it, or back to the pipeline to remove that booking. Saves automatically.";
+}
+
+function cardsIn(mid){ // one-offs placed in month (or backlog if mid null)
+  return state.cards.filter(c=>c.type==="oneoff" && c.month===mid);
+}
+function monthTotal(mid){
+  let t=0;
+  state.cards.forEach(c=>{
+    if(c.type==="recurring"&&inWindow(c,mid))t+=num(c.cost);
+    if(c.type==="oneoff"&&c.month===mid)t+=num(c.cost);
+  });return t;
+}
+function monthMix(mid){
+  const mix={};
+  state.cards.forEach(c=>{
+    const active=(c.type==="recurring"&&inWindow(c,mid))||(c.type==="oneoff"&&c.month===mid);
+    if(active){mix[c.wedge]=(mix[c.wedge]||0)+num(c.cost);}
+  });return mix;
+}
+function monthReach(mid){ // sum of per-post reach across active cards
+  let r=0;
+  state.cards.forEach(c=>{
+    const active=(c.type==="recurring"&&inWindow(c,mid))||(c.type==="oneoff"&&c.month===mid);
+    if(active)r+=parseNum(c.reach);
+  });return r;
+}
+function cardRev(c,mid){return (c.revByMonth&&c.revByMonth[mid]!=null)?(Number(c.revByMonth[mid])||0):0;}
+// a card's code is generating revenue in month `mid`?
+function codeActive(c,mid){
+  if(c.type==="recurring")return inWindow(c,mid);
+  // one-off: booked month only, unless codeLive (code keeps earning from booked month onward)
+  if(c.codeLive&&c.month)return mid>=c.month;
+  return c.month===mid;
+}
+function monthRevenue(mid){ // Superfiliate attributed revenue for all live codes that month
+  let r=0;
+  state.cards.forEach(c=>{if(codeActive(c,mid))r+=cardRev(c,mid);});
+  return r;
+}
+
+function colEl(kind,title,mid,ms){
+  const col=document.createElement("div");
+  col.className="col"+(kind==="backlog"?" backlog":"");
+  let head;
+  if(kind==="backlog"){
+    const all=cardsIn(null), shown=all.filter(matchesFilter).length;
+    const n=filterActive()?`${shown} / ${all.length}`:all.length;
+    const back=all.reduce((a,c)=>a+num(c.cost),0);
+    head=`<h2>${title}<span class="cnt">${n}</span></h2>
+      <div class="mhead">
+        <div class="mtotal">$${back.toLocaleString()}<span class="mlbl">unbooked</span></div>
+        <div class="vs">Total value of the pipeline</div>
+        <div class="revline"><span class="rev0">Drag a card into a month to book it</span></div>
+        <div class="reach">👁 ${(()=>{let r=0;all.forEach(c=>r+=parseNum(c.reach));return r?fmtNum(r)+' est. reach':'—';})()}</div>
+      </div>`;
+  }else{
+    const tot=monthTotal(mid), bud=num(state.budget);
+    const pct=bud?Math.min(100,tot/bud*100):0;
+    const over=bud&&tot>bud;
+    const mix=monthMix(mid);
+    const mixTotal=Object.values(mix).reduce((a,b)=>a+b,0)||1;
+    const segs=WEDGES.filter(w=>mix[w.id]).map(w=>
+      `<span style="width:${mix[w.id]/mixTotal*100}%;background:${w.color}" title="${w.label}: $${mix[w.id].toLocaleString()}"></span>`).join("");
+    const cnt=(mid?state.cards.filter(c=>(c.type==="recurring"&&inWindow(c,mid))||(c.type==="oneoff"&&c.month===mid)).length:0);
+    const reach=monthReach(mid);
+    const rev=monthRevenue(mid);
+    const net=rev-tot;
+    const isCur=(mid===curMonthId());
+    const revlbl=isCur?"SF rev · MTD":"SF rev";
+    head=`<h2>${title}<span class="cnt">${cnt} creators</span></h2>
+      <div class="mhead">
+        <div class="mtotal ${over?'over':''}">$${tot.toLocaleString()}<span class="mlbl">spend</span></div>
+        <div class="budgetbar"><i class="${over?'over':''}" style="width:${pct}%"></i></div>
+        <div class="vs">${bud?(over?('$'+(tot-bud).toLocaleString()+' over budget'):('$'+(bud-tot).toLocaleString()+' left')):'&nbsp;'}</div>
+        <div class="revline">${rev?`💵 $${Math.round(rev).toLocaleString()} ${revlbl} <span class="net ${net>=0?'pos':'neg'}">(net ${net>=0?'+':'−'}$${Math.abs(Math.round(net)).toLocaleString()})</span>`:`<span class="rev0">${isCur?'— no SF revenue yet (MTD)':'— no SF revenue'}</span>`}</div>
+        <div class="reach">👁 ${reach?fmtNum(reach)+' est. reach':'—'}</div>
+        <div class="mixbar">${segs}</div>
+      </div>`;
+  }
+  const drop=document.createElement("div");
+  drop.className="drop"; drop.dataset.month=(mid===null?"__backlog__":mid);
+
+  // recurring cards active this month (months only)
+  if(mid){
+    state.cards.filter(c=>c.type==="recurring"&&inWindow(c,mid))
+      .sort((a,b)=>num(b.cost)-num(a.cost))
+      .forEach(c=>drop.appendChild(cardEl(c,true,mid)));
+  }
+  // one-offs (respect filters)
+  cardsIn(mid).filter(matchesFilter).sort((a,b)=>num(b.cost)-num(a.cost)).forEach(c=>drop.appendChild(cardEl(c,false,mid)));
+
+  if(!drop.children.length){
+    const e=document.createElement("div");e.className="empty";
+    e.textContent = kind==="backlog"
+      ? (filterActive()?"No matches — adjust search / filters":"Drag scheduled cards back here to un-plan")
+      : "Drop opportunities here";
+    drop.appendChild(e);
+  }
+  col.innerHTML=head; col.appendChild(drop);
+  return col;
+}
+
+function cardEl(c,isRecurring,mid){
+  const el=document.createElement("div");
+  el.className="card"+(isRecurring?" recurring":"")+(hidden.has(c.wedge)?" dim":"");
+  el.style.borderLeftColor=WCOLOR[c.wedge]||"var(--w-none)";
+  el.draggable=!isRecurring;
+  el.dataset.id=c.id;
+  const cost=num(c.cost);
+  const rev=mid?cardRev(c,mid):0;
+  const meta=[];
+  meta.push(`<span class="cost">${cost?('$'+cost.toLocaleString()+(isRecurring?'/mo':'')):'TBD'}</span>`);
+  if(rev)meta.push(`<span class="crev">💵 $${Math.round(rev).toLocaleString()}</span>`);
+  if(c.followers && c.followers!=="N/A")meta.push("👥 "+esc(String(c.followers)));
+  if(c.reach)meta.push("👁 "+esc(c.reach));
+  if(c.er)meta.push("❤ "+esc(c.er));
+  if(c.sfCodes&&c.sfCodes.length)meta.push(`<span class="sfcode">${esc(c.sfCodes.join(", "))}</span>`);
+  const badge=isRecurring?'recurring':(c.src==='youtube'?'youtube':(c.src==='pipeline'?'pipeline':'one-off'));
+  const nameHtml=c.url?`<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.name)} ↗</a>`:esc(c.name);
+  el.innerHTML=`<span class="badge">${badge}</span>
+    <div class="nm">${nameHtml}</div>
+    <div class="meta">${meta.join("")}</div>
+    ${c.vertical?`<span class="vtag">${esc(c.vertical)}</span>`:""}${c.status&&!isRecurring?` <span class="st">${esc(c.status)}</span>`:""}
+    ${c.note?`<div class="tags">${esc(c.note.slice(0,72))}${c.note.length>72?'…':''}</div>`:""}
+    <label class="modash ${c.modash?'on':''}"><input type="checkbox" ${c.modash?'checked':''}> Modash report</label>`;
+  el.onclick=(e)=>{if(e.target.tagName==="A")return;if(e.target.closest(".modash"))return;if(!el._dragging)openModal(c.id);};
+  const mchk=el.querySelector(".modash input");
+  if(mchk)mchk.onchange=(e)=>{e.stopPropagation();c.modash=mchk.checked;save();render();};
+  if(!isRecurring){
+    el.addEventListener("dragstart",ev=>{el._dragging=true;el.classList.add("dragging");
+      ev.dataTransfer.setData("text/plain",c.id);ev.dataTransfer.effectAllowed="move";});
+    el.addEventListener("dragend",()=>{el.classList.remove("dragging");setTimeout(()=>el._dragging=false,50);});
+  }
+  return el;
+}
+
+function wireDrops(){
+  document.querySelectorAll(".drop").forEach(d=>{
+    d.addEventListener("dragover",ev=>{ev.preventDefault();d.classList.add("dragover");});
+    d.addEventListener("dragleave",()=>d.classList.remove("dragover"));
+    d.addEventListener("drop",ev=>{ev.preventDefault();d.classList.remove("dragover");
+      const id=ev.dataTransfer.getData("text/plain");
+      const card=state.cards.find(c=>c.id===id);if(!card)return;
+      const raw=d.dataset.month, target=(raw==="__backlog__"?null:raw);
+      const isTemplate=(card.month===null);
+      if(isTemplate){
+        if(target!==null){
+          // book a reusable instance for this month; template stays in the pipeline
+          state.cards.push({...card,id:"c_"+Math.random().toString(36).slice(2),month:target,templateId:card.templateId||card.id});
+        }
+      }else{
+        if(target!==null){card.month=target;}          // move booking to another month
+        else if(card.templateId){                        // dropped back to pipeline -> remove this booking
+          state.cards=state.cards.filter(c=>c.id!==card.id);
+        }else{card.month=null;}                          // legacy card w/o template -> just unschedule
+      }
+      save();render();});
+  });
+}
+
+function curMonthId(){const n=new Date();return n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0");}
+function renderKpis(ms){
+  const k=document.getElementById("kpis");if(!k)return;
+  const cm=curMonthId();
+  const recurTot=state.cards.filter(c=>c.type==="recurring"&&inWindow(c,cm)).reduce((a,c)=>a+num(c.cost),0);
+  const planned=state.cards.filter(c=>c.type==="oneoff"&&c.month).reduce((a,c)=>a+num(c.cost),0);
+  const revNow=monthRevenue(cm);
+  const modashCnt=state.cards.filter(c=>c.modash).length;
+  k.innerHTML=`<span>Recurring this mo <b>$${recurTot.toLocaleString()}</b></span>
+    <span>${mLabel(cm)} SF rev · MTD <b>${revNow?'$'+Math.round(revNow).toLocaleString():'—'}</b></span>
+    <span>Planned one-offs <b>$${planned.toLocaleString()}</b></span>
+    <span>Modash on file <b>${modashCnt}</b></span>`;
+}
+
+// ---- modal ----
+let editId=null;
+function fillWedgeSel(sel){sel.innerHTML=WEDGES.map(w=>`<option value="${w.id}">${w.label}</option>`).join("");}
+function openModal(id){
+  editId=id;
+  const c=id?state.cards.find(x=>x.id===id):null;
+  document.getElementById("modalTitle").textContent=id?"Edit card":"Add card";
+  fillWedgeSel(document.getElementById("m_wedge"));
+  document.getElementById("m_name").value=c?c.name:"";
+  document.getElementById("m_wedge").value=c?c.wedge:"none";
+  document.getElementById("m_type").value=c?c.type:"oneoff";
+  document.getElementById("m_cost").value=c?c.cost:"";
+  document.getElementById("m_followers").value=c?(c.followers||""):"";
+  document.getElementById("m_reach").value=c?(c.reach||""):"";
+  document.getElementById("m_er").value=c?(c.er||""):"";
+  document.getElementById("m_modash").checked=c?!!c.modash:false;
+  document.getElementById("m_status").value=c?(c.status||""):"";
+  document.getElementById("m_vertical").value=c?(c.vertical||""):"";
+  document.getElementById("m_start").value=c?(c.start||""):"2026-07";
+  document.getElementById("m_end").value=c?(c.end||""):"";
+  document.getElementById("m_note").value=c?(c.note||""):"";
+  document.getElementById("m_del").style.display=id?"block":"none";
+  toggleRecur();
+  document.getElementById("modalBg").classList.add("on");
+}
+function toggleRecur(){
+  const rec=document.getElementById("m_type").value==="recurring";
+  document.querySelectorAll(".recur-only").forEach(e=>e.style.display=rec?"flex":"none");
+  document.getElementById("m_costlbl").textContent=rec?"Cost ($/mo)":"Cost ($)";
+}
+function closeModal(){document.getElementById("modalBg").classList.remove("on");editId=null;}
+document.getElementById("m_type").onchange=toggleRecur;
+document.getElementById("m_cancel").onclick=closeModal;
+document.getElementById("modalBg").onclick=e=>{if(e.target.id==="modalBg")closeModal();};
+document.getElementById("m_save").onclick=()=>{
+  const data={
+    name:document.getElementById("m_name").value.trim()||"Untitled",
+    wedge:document.getElementById("m_wedge").value,
+    type:document.getElementById("m_type").value,
+    cost:num(document.getElementById("m_cost").value),
+    followers:document.getElementById("m_followers").value.trim(),
+    reach:document.getElementById("m_reach").value.trim(),
+    er:document.getElementById("m_er").value.trim(),
+    modash:document.getElementById("m_modash").checked,
+    status:document.getElementById("m_status").value,
+    vertical:document.getElementById("m_vertical").value.trim(),
+    start:document.getElementById("m_start").value.trim(),
+    end:document.getElementById("m_end").value.trim(),
+    note:document.getElementById("m_note").value.trim(),
+  };
+  if(editId){Object.assign(state.cards.find(c=>c.id===editId),data);}
+  else{state.cards.push({id:"c_"+Date.now(),month:null,src:"manual",...data});}
+  save();closeModal();buildVerticalOptions();render();
+};
+document.getElementById("m_del").onclick=()=>{
+  if(editId&&confirm("Delete this card?")){state.cards=state.cards.filter(c=>c.id!==editId);save();closeModal();render();}
+};
+
+// ---- top controls ----
+document.getElementById("budget").value=state.budget;
+document.getElementById("horizon").value=state.horizon;
+document.getElementById("budget").oninput=e=>{state.budget=num(e.target.value);save();render();};
+document.getElementById("horizon").onchange=e=>{state.horizon=num(e.target.value);save();render();};
+document.getElementById("addBtn").onclick=()=>openModal(null);
+document.getElementById("resetBtn").onclick=()=>{
+  if(confirm("Reset the board to the seeded roster + pipeline? Your placements and edits will be lost.")){
+    localStorage.removeItem(STORE);state=load();
+    document.getElementById("budget").value=state.budget;
+    document.getElementById("horizon").value=state.horizon;buildVerticalOptions();render();}
+};
+document.getElementById("exportBtn").onclick=()=>{
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+  a.download="kenetik-capacity-plan.json";a.click();
+};
+
+function esc(s){return (s||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+
+// ---- filters ----
+function buildVerticalOptions(){
+  const sel=document.getElementById("vertFilter");
+  const verts=[...new Set(state.cards.filter(c=>c.type==="oneoff"&&c.vertical).map(c=>c.vertical))].sort();
+  sel.innerHTML='<option value="all">All verticals</option>'+verts.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join("");
+  sel.value=filter.vertical;
+}
+function updateFilterCount(){
+  const all=state.cards.filter(c=>c.type==="oneoff");
+  const shown=all.filter(matchesFilter).length;
+  document.getElementById("filterCount").textContent=
+    filterActive()?`Showing ${shown} of ${all.length} pipeline cards`:`${all.length} pipeline opportunities`;
+}
+document.getElementById("search").oninput=e=>{filter.search=e.target.value.trim();render();};
+document.getElementById("vertFilter").onchange=e=>{filter.vertical=e.target.value;render();};
+document.getElementById("statusFilter").onchange=e=>{filter.status=e.target.value;render();};
+document.getElementById("clearFilter").onclick=()=>{
+  filter={search:"",vertical:"all",status:"all"};
+  document.getElementById("search").value="";
+  document.getElementById("statusFilter").value="all";
+  render();
+};
+
+buildVerticalOptions();
+render();
+updateFilterCount();
+</script>
+</body>
+</html>
