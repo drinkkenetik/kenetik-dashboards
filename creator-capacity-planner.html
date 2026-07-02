@@ -220,6 +220,7 @@ const WCOLOR=Object.fromEntries(WEDGES.map(w=>[w.id,w.color]));
 // ---- seed data (from live paid roster + priced pipeline, 2026-07) ----
 function SEED(){return [
   // ACTIVE PAID ROSTER (recurring) — sfCodes + June actual revenue
+  {name:"Ruth Holcomb", wedge:"c1", type:"recurring", cost:500, followers:"", reach:"", start:"2026-07", end:"", sfCodes:[], revByMonth:{}, note:"LTGP MTB/gravel (Santa Cruz), female-athlete roster. ~$500/mo, contract finalizing via Stryv/Jonathan Lee. CONFIRM exact fee, start date, deliverables + promo code (Elyse has contract).", src:"roster"},
   {name:"Derek Pratt", wedge:"c1", type:"recurring", cost:3500, followers:"", reach:"", start:"2026-01", end:"", sfCodes:["DPRATT"], revByMonth:{"2026-06":0}, note:"NEEDS NEW CONTRACT \u2014 prior term ended Nov 2024. Spartan / endurance.", src:"roster"},
   {name:"Dr. Stephanie Estima", wedge:"b", type:"recurring", cost:4200, followers:"", reach:"", start:"2026-01", end:"2026-07", sfCodes:["BETTER", "WL_STEPH"], revByMonth:{"2026-06":646.72,"2026-07":312.61}, note:"Women's health / 40+. Contract ends 7/15 \u2014 not renewing.", src:"roster"},
   {name:"Joseph David", wedge:"b", type:"recurring", cost:3000, followers:"1.7M", reach:"88.6k", er:"0.26%", modash:true, start:"2026-01", end:"2026-07", sfCodes:["JOSEPH", "WL_JOSEPH"], revByMonth:{"2026-06":142.59,"2026-07":0}, note:"Life Time Fitness, teaches large women's classes. Modash 60% female, 25-44 = Wedge B (Ageless). Ends 7/22. IG est reach 88.6k/post \u2014 31.7% fake followers, verify.", src:"roster"},
@@ -352,7 +353,7 @@ function load(){
   return {budget:45000, horizon:12, cards:SEED().map((c,i)=>({id:"c"+i+"_"+Date.now(),month:null,...c}))};
 }
 // bump when seed data (rates/stats/new cards) changes so it reaches saved boards
-const SEED_VERSION=11;
+const SEED_VERSION=12;
 // keep user's placements (month) + colors (wedge); refresh data fields; add new cards
 function syncSeed(s){
   const seed=SEED();
@@ -498,12 +499,21 @@ function colEl(kind,title,mid,ms){
     const all=cardsIn(null), shown=all.filter(matchesFilter).length;
     const n=filterActive()?`${shown} / ${all.length}`:all.length;
     const back=all.reduce((a,c)=>a+num(c.cost),0);
+    const wc={}; all.forEach(c=>{wc[c.wedge]=(wc[c.wedge]||0)+1;});
+    const wcTot=Object.values(wc).reduce((a,b)=>a+b,0)||1;
+    const leadSegs=WEDGES.filter(w=>wc[w.id]).map(w=>
+      `<span style="width:${wc[w.id]/wcTot*100}%;background:${w.color}" title="${w.label}: ${wc[w.id]} leads"></span>`).join("");
+    const leadChips=WEDGES.filter(w=>wc[w.id]).sort((a,b)=>wc[b.id]-wc[a.id]).map(w=>
+      `<span class="wchip" title="${w.label}: ${wc[w.id]} leads"><i style="background:${w.color}"></i>${wc[w.id]}</span>`).join("");
+    const preach=(()=>{let r=0;all.forEach(c=>r+=parseNum(c.reach));return r?fmtNum(r)+' est. reach':'—';})();
     head=`<h2>${title}<span class="cnt">${n}</span></h2>
       <div class="mhead">
         <div class="mtotal">$${back.toLocaleString()}<span class="mlbl">unbooked</span></div>
         <div class="vs">Total value of the pipeline</div>
-        <div class="revline"><span class="rev0">Drag a card into a month to book it</span></div>
-        <div class="reach">👁 ${(()=>{let r=0;all.forEach(c=>r+=parseNum(c.reach));return r?fmtNum(r)+' est. reach':'—';})()}</div>
+        <div class="revline"><span class="rev0">Leads by wedge</span></div>
+        <div class="mixbar">${leadSegs}</div>
+        <div class="wedgebreak">${leadChips||'<span class="rev0">no leads</span>'}</div>
+        <div class="reach">👁 ${preach}</div>
       </div>`;
   }else{
     const tot=monthTotal(mid), bud=num(state.budget);
@@ -536,14 +546,14 @@ function colEl(kind,title,mid,ms){
   const drop=document.createElement("div");
   drop.className="drop"; drop.dataset.month=(mid===null?"__backlog__":mid);
 
-  // recurring cards active this month (months only)
+  // one-offs FIRST so bookings are easy to spot at the top of each month (respect filters)
+  cardsIn(mid).filter(matchesFilter).sort((a,b)=>num(b.cost)-num(a.cost)).forEach(c=>drop.appendChild(cardEl(c,false,mid)));
+  // then recurring roster cards active this month (months only)
   if(mid){
     state.cards.filter(c=>c.type==="recurring"&&inWindow(c,mid))
       .sort((a,b)=>num(b.cost)-num(a.cost))
       .forEach(c=>drop.appendChild(cardEl(c,true,mid)));
   }
-  // one-offs (respect filters)
-  cardsIn(mid).filter(matchesFilter).sort((a,b)=>num(b.cost)-num(a.cost)).forEach(c=>drop.appendChild(cardEl(c,false,mid)));
 
   if(!drop.children.length){
     const e=document.createElement("div");e.className="empty";
