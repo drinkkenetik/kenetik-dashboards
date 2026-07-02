@@ -612,12 +612,12 @@ function renderKpis(ms){
   const k=document.getElementById("kpis");if(!k)return;
   const cm=curMonthId();
   const recurTot=state.cards.filter(c=>c.type==="recurring"&&inWindow(c,cm)).reduce((a,c)=>a+num(c.cost),0);
-  const planned=state.cards.filter(c=>c.type==="oneoff"&&c.month).reduce((a,c)=>a+num(c.cost),0);
+  const oneoffTot=state.cards.filter(c=>c.type==="oneoff"&&c.month===cm).reduce((a,c)=>a+num(c.cost),0);
   const revNow=monthRevenue(cm);
   const modashCnt=state.cards.filter(c=>c.modash).length;
   k.innerHTML=`<span>Recurring this mo <b>$${recurTot.toLocaleString()}</b></span>
+    <span>One-offs this mo <b>$${oneoffTot.toLocaleString()}</b></span>
     <span>${mLabel(cm)} SF rev · MTD <b>${revNow?'$'+Math.round(revNow).toLocaleString():'—'}</b></span>
-    <span>Planned one-offs <b>$${planned.toLocaleString()}</b></span>
     <span>Modash on file <b>${modashCnt}</b></span>`;
 }
 
