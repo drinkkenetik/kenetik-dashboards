@@ -68,7 +68,7 @@
   .col.backlog{flex:0 0 270px;width:270px;background:#fbfaf6;border:1px dashed #cbb99a;}
   .col h2{margin:0;padding:11px 13px 8px;font-size:14px;display:flex;justify-content:space-between;align-items:baseline;}
   .col h2 .cnt{font-size:11px;color:var(--muted);font-weight:400;}
-  .mhead{padding:0 13px 10px;border-bottom:1px solid var(--line);min-height:128px;}
+  .mhead{padding:0 13px 12px;border-bottom:1px solid var(--line);min-height:152px;overflow:visible;flex:0 0 auto;}
   .rev0{color:#b9c0cc;font-weight:400;}
   .col h2{min-height:40px;}
   .mhead .wedgebreak{display:flex;flex-wrap:wrap;gap:4px 9px;margin-top:7px;}
@@ -222,7 +222,7 @@ function SEED(){return [
   // ACTIVE PAID ROSTER (recurring) — sfCodes + June actual revenue
   {name:"Derek Pratt", wedge:"c1", type:"recurring", cost:3500, followers:"", reach:"", start:"2026-01", end:"", sfCodes:["DPRATT"], revByMonth:{"2026-06":0}, note:"NEEDS NEW CONTRACT \u2014 prior term ended Nov 2024. Spartan / endurance.", src:"roster"},
   {name:"Dr. Stephanie Estima", wedge:"b", type:"recurring", cost:4200, followers:"", reach:"", start:"2026-01", end:"2026-07", sfCodes:["BETTER", "WL_STEPH"], revByMonth:{"2026-06":646.72,"2026-07":312.61}, note:"Women's health / 40+. Contract ends 7/15 \u2014 not renewing.", src:"roster"},
-  {name:"Joseph David", wedge:"a", type:"recurring", cost:3000, followers:"1.7M", reach:"88.6k", er:"0.26%", modash:true, start:"2026-01", end:"2026-07", sfCodes:["JOSEPH", "WL_JOSEPH"], revByMonth:{"2026-06":142.59,"2026-07":0}, note:"Life Time Fitness. Ends 7/22. IG est reach 88.6k/post \u2014 31.7% fake followers, verify.", src:"roster"},
+  {name:"Joseph David", wedge:"b", type:"recurring", cost:3000, followers:"1.7M", reach:"88.6k", er:"0.26%", modash:true, start:"2026-01", end:"2026-07", sfCodes:["JOSEPH", "WL_JOSEPH"], revByMonth:{"2026-06":142.59,"2026-07":0}, note:"Life Time Fitness, teaches large women's classes. Modash 60% female, 25-44 = Wedge B (Ageless). Ends 7/22. IG est reach 88.6k/post \u2014 31.7% fake followers, verify.", src:"roster"},
   {name:"Gwen Jorgensen", wedge:"c1", type:"recurring", cost:2500, followers:"", reach:"", start:"2026-01", end:"2027-02", sfCodes:["GWEN"], revByMonth:{"2026-06":60.89,"2026-07":113.17}, note:"Olympic triathlete / runner.", src:"roster"},
   {name:"Cameron Jones", wedge:"c1", type:"recurring", cost:2500, followers:"", reach:"", start:"2026-01", end:"2027-01", sfCodes:["CAMJONES"], revByMonth:{"2026-06":0}, note:"Endurance / running.", src:"roster"},
   {name:"Brad Becca", wedge:"none", type:"recurring", cost:1500, followers:"", reach:"", start:"2026-01", end:"", sfCodes:["BRAD"], revByMonth:{"2026-06":238.25,"2026-07":238.02}, note:"Confirm wedge.", src:"roster"},
@@ -352,7 +352,7 @@ function load(){
   return {budget:45000, horizon:12, cards:SEED().map((c,i)=>({id:"c"+i+"_"+Date.now(),month:null,...c}))};
 }
 // bump when seed data (rates/stats/new cards) changes so it reaches saved boards
-const SEED_VERSION=10;
+const SEED_VERSION=11;
 // keep user's placements (month) + colors (wedge); refresh data fields; add new cards
 function syncSeed(s){
   const seed=SEED();
@@ -368,7 +368,7 @@ function syncSeed(s){
     });
   });
   if(bump){ // one-time targeted wedge corrections (respects future manual recolors)
-    const wedgeFix={"Eric (Raddadbodtv)":"c1"};
+    const wedgeFix={"Eric (Raddadbodtv)":"c1","Joseph David":"b"};
     s.cards.forEach(c=>{if(wedgeFix[c.name])c.wedge=wedgeFix[c.name];});
     // retire legacy single Norwitz card (split into Substack Jun + YouTube Aug)
     s.cards=s.cards.filter(c=>c.name!=="Nick Norwitz");
