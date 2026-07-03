@@ -9,8 +9,12 @@ on:
       - 'system-state-definitions.json'
       - 'validate-dashboard.py'
       - 'data/changeset-tracker.json'
+      - 'data/changeset-work-queue.json'
+      - 'data/changeset-impact-rollup.json'
+      - 'data/_schema-constants.json'
       - 'changeset-dashboard.html'
       - 'validate-changeset-tracker.py'
+      - 'validate-dashboard-stats.py'
   pull_request:
     branches: [main]
 
@@ -78,3 +82,36 @@ jobs:
         if: success()
         run: |
           echo "## ✅ ChangeSet Tracker Validation Passed" >> $GITHUB_STEP_SUMMARY
+
+  validate-dashboard-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Reproduce every displayed dashboard statistic (D4 gate)
+        run: python3 validate-dashboard-stats.py
+
+      - name: Post failure summary
+        if: failure()
+        run: |
+          echo "## ❌ Dashboard Statistics Validation Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "A number the dashboard displays no longer reproduces from its source data, or the dashboard reintroduced a non-contract field / dead surface." >> $GITHUB_STEP_SUMMARY
+          echo "Run \`python3 validate-dashboard-stats.py\` locally to see details." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Common causes:**" >> $GITHUB_STEP_SUMMARY
+          echo "- impact-rollup.json or work-queue.json changed but the dashboard/manifest was not re-synced" >> $GITHUB_STEP_SUMMARY
+          echo "- A new client-side derivation of lifecycle/attention state was added (only computeAttentionIds is allowed)" >> $GITHUB_STEP_SUMMARY
+          echo "- A ChangeSet field outside allowed_cs_fields was referenced" >> $GITHUB_STEP_SUMMARY
+          echo "- A removed panel (shadow scorecard, lifecycle tab, the two misleading charts) was reintroduced" >> $GITHUB_STEP_SUMMARY
+
+      - name: Post success summary
+        if: success()
+        run: |
+          echo "## ✅ Dashboard Statistics Validation Passed" >> $GITHUB_STEP_SUMMARY
+          echo "Every displayed statistic reproduced from the four data products; contract clean; one attention derivation." >> $GITHUB_STEP_SUMMARY
