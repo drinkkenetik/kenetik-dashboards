@@ -1630,13 +1630,17 @@
         <div class="scoreboard-split" id="scoreboardBody"></div>
     </section>
 
-    <!-- OUTCOMES donut — same split, visual (kept beside the scoreboard) -->
-    <section style="margin-bottom:24px">
+    <!-- RESULTS charts: Outcomes Breakdown + Monthly Trend, side by side -->
+    <div class="charts-row">
         <div class="chart-card">
             <h3>Outcomes Breakdown <span style="font-size:11px;font-weight:400;color:var(--text-muted)">· full v3 enum</span></h3>
-            <div class="chart-container chart-narrow" style="margin-top:10px"><canvas id="outcomesChart"></canvas></div>
+            <div class="chart-container" style="margin-top:10px"><canvas id="outcomesChart"></canvas></div>
         </div>
-    </section>
+        <div class="chart-card">
+            <h3>Monthly Trend <span style="font-size:11px;font-weight:400;color:var(--text-muted)">· closed cohort</span></h3>
+            <div class="chart-container" style="margin-top:10px"><canvas id="monthlyTrendChart"></canvas></div>
+        </div>
+    </div>
 
     <!-- CLOSED: factual table of closed ChangeSets (the detail behind the scoreboard) -->
     <section class="closed-section" id="closedSection">
@@ -1661,14 +1665,6 @@
             non-numeric projections are excluded and listed, never summed).
         </div>
         <div id="moneyBody"></div>
-    </section>
-
-    <!-- MONTHLY TREND — revenue & closures over time -->
-    <section style="margin-bottom:24px">
-        <div class="chart-card">
-            <h3>Monthly Trend <span style="font-size:11px;font-weight:400;color:var(--text-muted)">· closed cohort</span></h3>
-            <div class="chart-container chart-narrow" style="margin-top:10px"><canvas id="monthlyTrendChart"></canvas></div>
-        </div>
     </section>
 
     <!-- AUTONOMY: rollup by_autonomy_tier (CGO calibration) -->
