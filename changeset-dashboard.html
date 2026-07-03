@@ -1560,6 +1560,11 @@
         .group-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin: 30px 0 4px; padding-left: 2px; }
         .group-label:first-of-type { margin-top: 8px; }
         .chart-narrow { max-width: 620px; }
+        /* My Work · By Owner cards */
+        .owner-open { font-size: 13px; font-weight: 600; color: var(--text); margin-top: 8px; }
+        .owner-stat-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+        .owner-stat-chip { font-size: 11px; padding: 2px 8px; border-radius: 5px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-muted); white-space: nowrap; }
+        .owner-quiet { margin-top: 14px; font-size: 12px; color: var(--text-muted); }
     </style>
 
     <header>
@@ -2154,11 +2159,13 @@ function renderOwnerLoad() {
     quiet.sort((a, b) => a.name.localeCompare(b.name));
     grid.innerHTML = active.map(o => {
         const focus = o.attention > 0 ? '<span style="color:var(--danger);font-weight:600">' + o.attention + ' need' + (o.attention === 1 ? 's' : '') + ' attention</span>' : '<span style="color:var(--success)">on track</span>';
-        const statusLine = Object.entries(o.byStatus).map(([s, n]) => escHtml(s) + ' ' + n).join(' · ');
+        const chips = Object.entries(o.byStatus).sort((a, b) => b[1] - a[1])
+            .map(([s, n]) => '<span class="owner-stat-chip">' + escHtml(s.replace(/_/g, ' ')) + ' ' + n + '</span>').join('');
         return '<div class="owner-card" onclick="openOwnerDrawer(\'' + encodeURIComponent(o.name) + '\')">' +
             '<div class="owner-name">' + escHtml(o.name) + '</div>' +
             '<div class="owner-focus">' + focus + '</div>' +
-            '<div class="owner-stats">' + o.total + ' open · ' + statusLine + '</div></div>';
+            '<div class="owner-open">' + o.total + ' open</div>' +
+            '<div class="owner-stat-chips">' + chips + '</div></div>';
     }).join('');
     quietC.innerHTML = quiet.length ? '<div class="owner-quiet">On track: ' + quiet.map(o => escHtml(o.name)).join(', ') + '</div>' : '';
 }
@@ -2169,7 +2176,7 @@ function openOwnerDrawer(encodedName) {
     const items = [...o.openItems].sort((a, b) => (b.attn ? 1 : 0) - (a.attn ? 1 : 0));
     const rows = items.map(({ cs, attn }) => '<div class="queue-row" onclick="closeOwnerDrawer();openDetail(\'' + cs.id + '\')">' +
         '<span class="qid">' + escHtml(cs.id) + '</span><span class="qtitle">' + escHtml(cs.title) + '</span>' +
-        '<span class="qmeta">' + escHtml(cs.status) + '</span>' + (attn ? '<span class="attn-badge">attention</span>' : '') + '</div>').join('');
+        '<span class="qmeta">' + escHtml(cs.status.replace(/_/g, ' ')) + '</span>' + (attn ? '<span class="attn-badge">attention</span>' : '') + '</div>').join('');
     document.getElementById('ownerDrawer').innerHTML = '<div style="padding:20px"><h3>' + escHtml(name) + '</h3>' +
         '<div class="section-sub" style="margin:6px 0 16px;color:var(--text-muted)">' + o.total + ' open · ' + o.attention + ' need attention</div>' + rows +
         '<button class="filter-btn" style="margin-top:16px" onclick="closeOwnerDrawer()">Close</button></div>';
