@@ -2152,12 +2152,11 @@ function renderOwnerLoad() {
     const entries = Object.values(owners);
     const grid = document.getElementById('ownerGrid');
     const quietC = document.getElementById('ownerQuietContainer');
-    if (!entries.length) { grid.innerHTML = '<div class="empty-state">No open ChangeSets</div>'; quietC.innerHTML = ''; return; }
-    const active = [], quiet = [];
-    entries.forEach(o => (o.attention === 0 && o.total <= 1 ? quiet : active).push(o));
-    active.sort((a, b) => b.attention - a.attention || b.total - a.total);
-    quiet.sort((a, b) => a.name.localeCompare(b.name));
-    grid.innerHTML = active.map(o => {
+    quietC.innerHTML = '';
+    if (!entries.length) { grid.innerHTML = '<div class="empty-state">No open ChangeSets</div>'; return; }
+    // Every owner with open work gets a card — sorted by attention, then load, then name.
+    entries.sort((a, b) => b.attention - a.attention || b.total - a.total || a.name.localeCompare(b.name));
+    grid.innerHTML = entries.map(o => {
         const focus = o.attention > 0 ? '<span style="color:var(--danger);font-weight:600">' + o.attention + ' need' + (o.attention === 1 ? 's' : '') + ' attention</span>' : '<span style="color:var(--success)">on track</span>';
         const chips = Object.entries(o.byStatus).sort((a, b) => b[1] - a[1])
             .map(([s, n]) => '<span class="owner-stat-chip">' + escHtml(s.replace(/_/g, ' ')) + ' ' + n + '</span>').join('');
@@ -2167,7 +2166,6 @@ function renderOwnerLoad() {
             '<div class="owner-open">' + o.total + ' open</div>' +
             '<div class="owner-stat-chips">' + chips + '</div></div>';
     }).join('');
-    quietC.innerHTML = quiet.length ? '<div class="owner-quiet">On track: ' + quiet.map(o => escHtml(o.name)).join(', ') + '</div>' : '';
 }
 function openOwnerDrawer(encodedName) {
     const name = decodeURIComponent(encodedName);
