@@ -1490,6 +1490,14 @@
          There is exactly one attention derivation on this page:
          computeAttentionIds() reads work-queue.json verbatim. No client-side
          urgency/aging/measurement classification exists anywhere below.
+
+         Panel flow is grouped for the morning review:
+           TOPLINE   → KPI scoreboard
+           ACT NOW   → Needs Attention · My Work by Owner
+           IN FLIGHT → Active Pipeline · Time-in-Status
+           RESULTS   → Outcome Scoreboard · Outcomes Breakdown · Closed ChangeSets
+           MONEY     → Impact & Money · Monthly Trend · Autonomy Tier
+           REFERENCE → All ChangeSets
          ══════════════════════════════════════════════════════════════ -->
 
     <style>
@@ -1527,6 +1535,10 @@
         .qmetric.over { color: var(--danger); }
         .qmetric.soon { color: var(--warning); }
         .escalation-row .qmsg { font-size: 12px; color: var(--text-muted); }
+        /* pipeline department sub-groups (fixes the squished "DTC Website2" spacing) */
+        .dept-group { margin-bottom: 14px; }
+        .dept-group-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+        .dept-group-count { font-size: 11px; color: var(--text-muted); font-weight: 600; }
         .scoreboard-split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         @media (max-width: 760px) { .scoreboard-split { grid-template-columns: 1fr; } }
         .outcome-line { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 13px; }
@@ -1545,6 +1557,9 @@
         .skip-list code { color: var(--accent-light); }
         .data-gated { color: var(--text-muted); font-style: italic; }
         .gated-tag { font-size: 10px; background: rgba(139,143,163,.15); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; color: var(--text-muted); }
+        .group-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin: 30px 0 4px; padding-left: 2px; }
+        .group-label:first-of-type { margin-top: 8px; }
+        .chart-narrow { max-width: 620px; }
     </style>
 
     <header>
@@ -1556,28 +1571,13 @@
                 <button class="refresh-btn" id="refreshBtn" onclick="manualRefresh()" title="Refresh now">↻ Refresh</button>
             </div>
         </div>
-        <div class="filters">
-            <button class="filter-btn active" id="fltAll" onclick="setSubtypeFilter('all')">All</button>
-            <button class="filter-btn" onclick="setSubtypeFilter('implementation')">Implementation</button>
-            <button class="filter-btn" onclick="setSubtypeFilter('investigation')">Investigation</button>
-            <button class="filter-btn" onclick="setSubtypeFilter('quick')">Quick</button>
-            <select class="filter-select" id="deptFilter" onchange="setDepartmentFilter(this.value)">
-                <option value="all">All Departments</option>
-            </select>
-            <select class="filter-select" onchange="setStatusFilter(this.value)">
-                <option value="all">All Statuses</option>
-                <option value="open">Open (non-closed)</option>
-                <option value="draft">Draft</option>
-                <option value="needs_feedback">Needs Feedback</option>
-                <option value="approved">Approved</option>
-                <option value="published">Published</option>
-                <option value="closed">Closed</option>
-            </select>
-        </div>
     </header>
 
-    <!-- KPI scoreboard: attention count (from work-queue) + rates/money (from rollup) -->
+    <!-- ══ TOPLINE ══ KPI scoreboard: attention (work-queue) + rates/money (rollup) -->
     <section class="kpis" id="kpis"></section>
+
+    <!-- ══ ACT NOW ══ -->
+    <div class="group-label">Act now</div>
 
     <!-- ATTENTION: the engine's work queue, rendered verbatim. One list. -->
     <section class="pipeline-section" id="attentionSection">
@@ -1591,11 +1591,34 @@
         <div id="attentionBody"></div>
     </section>
 
+    <!-- OWNER LOAD: bucketed by the same attention set (who owns the actions above) -->
+    <section class="owner-load-section">
+        <div class="section-head">
+            <h3>My Work · By Owner</h3>
+            <span class="section-sub" id="ownerLoadSub">Attention counts come from the engine's work queue — click a card for detail.</span>
+        </div>
+        <div class="owner-grid" id="ownerGrid"></div>
+        <div id="ownerQuietContainer"></div>
+    </section>
+
+    <!-- ══ IN FLIGHT ══ -->
+    <div class="group-label">In flight</div>
+
     <!-- PIPELINE: tracker facts only. Attention badge = queue membership. -->
     <section class="pipeline-section">
         <h3>Active Pipeline</h3>
         <div class="pipeline-columns" id="pipeline"></div>
     </section>
+
+    <!-- TIME IN STATUS: from status-entry dates; data-gated items annotated -->
+    <section class="time-status-section">
+        <h3>Time-in-Status <span style="font-size:12px;font-weight:400;color:var(--text-muted)">· open items, measured from status-entry date</span></h3>
+        <div class="time-avg-row" id="timeAvgRow"></div>
+        <div class="stale-list" id="staleList"></div>
+    </section>
+
+    <!-- ══ RESULTS ══ -->
+    <div class="group-label">Results · closed cohort</div>
 
     <!-- SCOREBOARD: full v3 outcome enum, measured vs administrative -->
     <section class="pipeline-section" id="scoreboardSection">
@@ -1607,7 +1630,15 @@
         <div class="scoreboard-split" id="scoreboardBody"></div>
     </section>
 
-    <!-- CLOSED: factual table of closed ChangeSets -->
+    <!-- OUTCOMES donut — same split, visual (kept beside the scoreboard) -->
+    <section style="margin-bottom:24px">
+        <div class="chart-card">
+            <h3>Outcomes Breakdown <span style="font-size:11px;font-weight:400;color:var(--text-muted)">· full v3 enum</span></h3>
+            <div class="chart-container chart-narrow" style="margin-top:10px"><canvas id="outcomesChart"></canvas></div>
+        </div>
+    </section>
+
+    <!-- CLOSED: factual table of closed ChangeSets (the detail behind the scoreboard) -->
     <section class="closed-section" id="closedSection">
         <div class="closed-section-header" id="closedHeader" onclick="toggleClosed()">
             <h3>Closed ChangeSets <span id="closedCountBadge" style="font-size:12px;font-weight:400;color:var(--text-muted)"></span></h3>
@@ -1619,6 +1650,9 @@
         <div class="closed-content" id="closedContent"></div>
     </section>
 
+    <!-- ══ MONEY & CALIBRATION ══ -->
+    <div class="group-label">Money &amp; calibration</div>
+
     <!-- MONEY: rollup output only. No client-side impact arithmetic. -->
     <section class="pipeline-section" id="moneySection">
         <h3>Impact &amp; Money</h3>
@@ -1629,14 +1663,12 @@
         <div id="moneyBody"></div>
     </section>
 
-    <!-- OWNER LOAD: bucketed by the same attention set -->
-    <section class="owner-load-section">
-        <div class="section-head">
-            <h3>My Work · By Owner</h3>
-            <span class="section-sub" id="ownerLoadSub">Attention counts come from the engine's work queue — click a card for detail.</span>
+    <!-- MONTHLY TREND — revenue & closures over time -->
+    <section style="margin-bottom:24px">
+        <div class="chart-card">
+            <h3>Monthly Trend <span style="font-size:11px;font-weight:400;color:var(--text-muted)">· closed cohort</span></h3>
+            <div class="chart-container chart-narrow" style="margin-top:10px"><canvas id="monthlyTrendChart"></canvas></div>
         </div>
-        <div class="owner-grid" id="ownerGrid"></div>
-        <div id="ownerQuietContainer"></div>
     </section>
 
     <!-- AUTONOMY: rollup by_autonomy_tier (CGO calibration) -->
@@ -1648,23 +1680,8 @@
         </div>
     </section>
 
-    <!-- TIME IN STATUS: from status-entry dates; data-gated items annotated -->
-    <section class="time-status-section">
-        <h3>Time-in-Status <span style="font-size:12px;font-weight:400;color:var(--text-muted)">· open items, measured from status-entry date</span></h3>
-        <div class="time-avg-row" id="timeAvgRow"></div>
-        <div class="stale-list" id="staleList"></div>
-    </section>
-
-    <div class="charts-row">
-        <div class="chart-card">
-            <h3>Monthly Trend <span style="font-size:11px;font-weight:400;color:var(--text-muted)">· closed cohort</span></h3>
-            <div class="chart-container"><canvas id="monthlyTrendChart"></canvas></div>
-        </div>
-        <div class="chart-card">
-            <h3>Outcomes Breakdown <span style="font-size:11px;font-weight:400;color:var(--text-muted)">· full v3 enum</span></h3>
-            <div class="chart-container"><canvas id="outcomesChart"></canvas></div>
-        </div>
-    </div>
+    <!-- ══ REFERENCE ══ -->
+    <div class="group-label">Reference</div>
 
     <section class="table-section">
         <h3>All ChangeSets</h3>
@@ -1747,7 +1764,6 @@ let TRACKER = null, CONSTANTS = null, QUEUE = null, ROLLUP = null;
 let ATTENTION_IDS = new Set();           // THE single attention derivation lives in computeAttentionIds()
 let lastFetchTime = null, closedExpanded = false;
 const briefCache = new Map();
-const filters = { subtype: 'all', department: 'all', status: 'all' };
 
 // ─────────────────────────────────────────────────────────────────────
 // THE SINGLE ATTENTION DERIVATION
@@ -1770,6 +1786,11 @@ function dataGatedIds() {
     if (QUEUE) (QUEUE.data_requests || []).forEach(d => { if (d && d.cs_id) s.add(d.cs_id); });
     return s;
 }
+
+// All ChangeSets (no client-side filtering — the dashboard renders the full cohort).
+function allChangesets() { return TRACKER ? TRACKER.changesets : []; }
+function isClosed(cs) { return cs.status === 'closed'; }
+function isOpen(cs) { return !isClosed(cs); }
 
 // ─────────────────────────────────────────────────────────────────────
 // FETCH (all four products; failure states preserved from the prior build)
@@ -1834,7 +1855,6 @@ function fmtDate(iso) { if (!iso) return '—'; try { return new Date(iso).toLoc
 function fmtDateTime(iso) { if (!iso) return '—'; try { return new Date(iso).toLocaleString(); } catch (e) { return iso; } }
 function fmt$(n) { return (n === null || n === undefined || isNaN(n)) ? '—' : '$' + Number(n).toLocaleString(undefined, { maximumFractionDigits: 0 }); }
 function pct(r) { return (r === null || r === undefined) ? '—' : Math.round(r * 100) + '%'; }
-function daysBetween(a, b) { return Math.round((new Date(b) - new Date(a)) / 86400000); }
 
 // Deterministic hue from a slug, so a department always gets the same color
 // without hardcoding the (contract-owned) department list.
@@ -1863,42 +1883,6 @@ function platformChips(platforms) {
 function outcomeLabel(o) { return o ? String(o).replace(/_/g, ' ') : '—'; }
 function isMeasured(o) { return CONSTANTS && (CONSTANTS.measured_outcomes || []).includes(o); }
 function isAdministrative(o) { return CONSTANTS && (CONSTANTS.administrative_outcomes || []).includes(o); }
-
-// ─────────────────────────────────────────────────────────────────────
-// FILTERS (affect the pipeline board + All-ChangeSets table only —
-// scoreboard and money are whole-cohort figures from the rollup)
-// ─────────────────────────────────────────────────────────────────────
-function setSubtypeFilter(val) {
-    filters.subtype = val;
-    document.querySelectorAll('.filters .filter-btn').forEach(b => b.classList.remove('active'));
-    const map = { all: 'All', implementation: 'Implementation', investigation: 'Investigation', quick: 'Quick' };
-    document.querySelectorAll('.filters .filter-btn').forEach(b => { if (b.textContent.trim() === map[val]) b.classList.add('active'); });
-    render();
-}
-function setDepartmentFilter(val) { filters.department = val; render(); }
-function setStatusFilter(val) { filters.status = val; render(); }
-function getFiltered() {
-    if (!TRACKER) return [];
-    return TRACKER.changesets.filter(cs => {
-        if (filters.subtype !== 'all' && cs.subtype !== filters.subtype) return false;
-        if (filters.department !== 'all' && cs.department !== filters.department) return false;
-        if (filters.status !== 'all') {
-            if (filters.status === 'open') { if (cs.status === 'closed') return false; }
-            else if (cs.status !== filters.status) return false;
-        }
-        return true;
-    });
-}
-function isClosed(cs) { return cs.status === 'closed'; }
-function isOpen(cs) { return !isClosed(cs); }
-function populateDepartmentDropdown() {
-    const sel = document.getElementById('deptFilter');
-    if (!sel || !TRACKER) return;
-    const depts = [...new Set(TRACKER.changesets.map(c => c.department).filter(Boolean))].sort();
-    const cur = sel.value;
-    sel.innerHTML = '<option value="all">All Departments</option>' + depts.map(d => '<option value="' + escHtml(d) + '">' + escHtml(departmentLabel(d)) + '</option>').join('');
-    sel.value = cur;
-}
 
 // ─────────────────────────────────────────────────────────────────────
 // KPI SCOREBOARD (attention from work-queue; rates + money from rollup)
@@ -2012,7 +1996,6 @@ function renderPipelineCard(cs) {
 }
 function renderColumn(list) {
     if (!list.length) return '<div class="empty-state" style="padding:8px;font-size:11px">None</div>';
-    // group by department, attention-bearing departments first
     const groups = {};
     list.forEach(cs => { (groups[cs.department || 'unassigned'] = groups[cs.department || 'unassigned'] || []).push(cs); });
     const order = Object.keys(groups).sort((a, b) => {
@@ -2021,11 +2004,11 @@ function renderColumn(list) {
         return ax - bx || groups[b].length - groups[a].length;
     });
     return order.map(d => '<div class="dept-group"><div class="dept-group-head">' + departmentBadge(d) +
-        '<span style="font-size:11px;color:var(--text-muted)">' + groups[d].length + '</span></div>' +
+        '<span class="dept-group-count">' + groups[d].length + '</span></div>' +
         groups[d].map(renderPipelineCard).join('') + '</div>').join('');
 }
 function renderPipeline() {
-    const data = getFiltered();
+    const data = allChangesets();
     const container = document.getElementById('pipeline');
     const drafts = data.filter(c => c.status === 'draft');
     const approved = data.filter(c => c.status === 'approved');
@@ -2054,7 +2037,7 @@ function renderScoreboard() {
 
     function group(title, total, counts, enumList) {
         const max = Math.max(1, ...Object.values(counts));
-        const lines = (enumList || Object.keys(counts)).filter(o => (counts[o] || 0) >= 0).map(o => {
+        const lines = (enumList || Object.keys(counts)).map(o => {
             const c = counts[o] || 0;
             return '<div class="outcome-line"><span class="oc-count">' + c + '</span>' +
                 '<div style="flex:1"><div class="oc-label">' + escHtml(outcomeLabel(o)) + '</div>' +
@@ -2077,7 +2060,7 @@ function toggleClosed() {
     document.getElementById('closedHeader').classList.toggle('expanded', closedExpanded);
 }
 function renderClosed() {
-    const closed = getFiltered().filter(isClosed);
+    const closed = allChangesets().filter(isClosed);
     document.getElementById('closedCountBadge').textContent = '(' + closed.length + ')';
     const sb = ROLLUP && ROLLUP.scoreboard;
     document.getElementById('closedSummaryPills').innerHTML = sb
@@ -2126,13 +2109,11 @@ function renderMoney() {
         '<div style="font-size:11px;color:var(--text-muted);margin-top:8px">By status: ' + Object.entries(op.by_status).map(([s, n]) => escHtml(s) + ' ' + n).join(' · ') + '</div>' +
         '</div></div>';
 
-    // By department (rollup closed-cohort breakdown — honest replacement for the deleted charts)
     const depts = Object.keys(ROLLUP.by_department).sort((a, b) => ROLLUP.by_department[b].expected_revenue - ROLLUP.by_department[a].expected_revenue);
     html += '<div class="chart-card"><h3>By Department · closed cohort</h3><table class="dept-table"><thead><tr><th>Department</th><th>Closed</th><th>Measured</th><th>Wins</th><th>Win rate</th><th>Exp. Rev</th><th>Act. Rev</th></tr></thead><tbody>' +
         depts.map(d => { const r = ROLLUP.by_department[d]; return '<tr><td>' + departmentBadge(d) + '</td><td>' + r.closed + '</td><td>' + r.measured + '</td><td>' + r.wins + '</td><td>' + pct(r.win_rate) + '</td><td>' + fmt$(r.expected_revenue) + '</td><td>' + fmt$(r.actual_revenue) + '</td></tr>'; }).join('') +
         '</tbody></table></div>';
 
-    // Skipped disclosure
     const sk = ROLLUP.skipped || [];
     html += '<div class="skip-note" onclick="document.getElementById(\'skipList\').classList.toggle(\'open\')">⚠ ' + sk.length + ' non-numeric impact projection' + (sk.length === 1 ? '' : 's') + ' excluded from sums (click to view)</div>' +
         '<div class="skip-list" id="skipList">' + sk.map(s => '<div><code>' + escHtml(s.id) + '</code> · ' + escHtml(s.field) + ' — “' + escHtml(s.value_preview) + '”</div>').join('') + '</div>';
@@ -2153,7 +2134,7 @@ function parseOwners(raw) {
 }
 function buildOwnerMap() {
     const owners = {};
-    getFiltered().filter(isOpen).forEach(cs => {
+    allChangesets().filter(isOpen).forEach(cs => {
         const attn = ATTENTION_IDS.has(cs.id);
         parseOwners(cs.owner).forEach(name => {
             const o = owners[name] || (owners[name] = { name, total: 0, attention: 0, byStatus: {}, openItems: [] });
@@ -2224,7 +2205,7 @@ function statusEntryDate(cs) {
 }
 function renderTimeInStatus() {
     const gated = dataGatedIds();
-    const open = getFiltered().filter(isOpen);
+    const open = allChangesets().filter(isOpen);
     const now = Date.now();
     const bands = {};
     const gatedItems = [];
@@ -2232,7 +2213,7 @@ function renderTimeInStatus() {
         const entry = statusEntryDate(cs);
         if (!entry) return;
         const days = Math.round((now - new Date(entry)) / 86400000);
-        if (gated.has(cs.id)) { gatedItems.push({ cs, days }); return; }  // excluded from averages
+        if (gated.has(cs.id)) { gatedItems.push({ cs, days }); return; }
         (bands[cs.status] = bands[cs.status] || []).push({ cs, days });
     });
     const avgRow = Object.keys(bands).sort().map(st => {
@@ -2242,7 +2223,6 @@ function renderTimeInStatus() {
     }).join('');
     document.getElementById('timeAvgRow').innerHTML = avgRow || '<div class="empty-state">No open items</div>';
 
-    // Oldest few per band + data-gated callouts
     const allSorted = [].concat(...Object.values(bands)).sort((a, b) => b.days - a.days).slice(0, 8);
     let list = allSorted.map(({ cs, days }) => '<div class="queue-row" onclick="openDetail(\'' + cs.id + '\')"><span class="qid">' + escHtml(cs.id) + '</span><span class="qtitle">' + escHtml(cs.title) + '</span><span class="qmeta">' + escHtml(cs.status) + '</span><span class="qmetric">' + days + 'd</span></div>').join('');
     if (gatedItems.length) {
@@ -2294,7 +2274,7 @@ function renderCharts() {
 // ─────────────────────────────────────────────────────────────────────
 let sortState = { key: 'id', dir: 1 };
 function renderTable() {
-    const data = [...getFiltered()];
+    const data = [...allChangesets()];
     data.sort((a, b) => {
         const k = sortState.key;
         let av = a[k] || '', bv = b[k] || '';
@@ -2366,7 +2346,7 @@ function detailRow(label, value) { return value ? '<div class="detail-row"><span
 function openDetail(id) {
     const cs = TRACKER.changesets.find(c => c.id === id);
     if (!cs) return;
-    const briefUrl = BRIEF_VIEW_BASE + cs.id + '.md';   // link derived from cs.id, not a stored file field
+    const briefUrl = BRIEF_VIEW_BASE + cs.id + '.md';
     let html = '<div class="detail-header"><div><div class="detail-id">' + escHtml(cs.id) + '</div><div class="detail-title">' + escHtml(cs.title) + '</div></div>' +
         '<button class="detail-close" onclick="closeDetail()">×</button></div>';
     html += attentionStatusFor(cs.id);
@@ -2412,16 +2392,15 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDetai
 function render() {
     if (!TRACKER) return;
     ATTENTION_IDS = computeAttentionIds();   // the one and only attention derivation
-    populateDepartmentDropdown();
     renderKPIs();
     renderAttention();
+    renderOwnerLoad();
     renderPipeline();
+    renderTimeInStatus();
     renderScoreboard();
     renderClosed();
     renderMoney();
-    renderOwnerLoad();
     renderAutonomy();
-    renderTimeInStatus();
     renderCharts();
     renderTable();
 }
