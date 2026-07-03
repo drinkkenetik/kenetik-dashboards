@@ -1480,53 +1480,137 @@
 <body>
 <div class="dashboard">
 
+    <!-- ══════════════════════════════════════════════════════════════
+         D3 REWRITE (2026-07-03). This dashboard RENDERS; it does not
+         DERIVE lifecycle state. Four data files are the only inputs:
+           data/changeset-tracker.json        — facts (pipeline, closed rows, owners)
+           data/_schema-constants.json         — enums, thresholds, labels, measured/admin split
+           data/changeset-work-queue.json      — the ONE "needs attention" derivation (engine output)
+           data/changeset-impact-rollup.json   — every money & rate statistic
+         There is exactly one attention derivation on this page:
+         computeAttentionIds() reads work-queue.json verbatim. No client-side
+         urgency/aging/measurement classification exists anywhere below.
+         ══════════════════════════════════════════════════════════════ -->
+
+    <style>
+        /* D3 supplementary styles (component-level; palette lives in :root above) */
+        .kpi-sub-strong { color: var(--text); font-weight: 600; }
+        .attn-badge {
+            display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .04em;
+            text-transform: uppercase; padding: 2px 7px; border-radius: 5px;
+            background: rgba(239,68,68,.15); color: var(--danger); border: 1px solid rgba(239,68,68,.35);
+        }
+        .engine-badge {
+            display: inline-flex; align-items: center; gap: 6px; font-size: 11px;
+            padding: 3px 10px; border-radius: 6px; border: 1px solid var(--border);
+            color: var(--text-muted); background: var(--surface);
+        }
+        .engine-badge .dot { width: 7px; height: 7px; border-radius: 50%; }
+        .engine-badge.shadow .dot { background: var(--warning); }
+        .engine-badge.live .dot { background: var(--success); }
+        .queue-block { margin-bottom: 14px; }
+        .queue-block-head {
+            display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px;
+            font-size: 13px; font-weight: 600;
+        }
+        .queue-count { font-size: 12px; color: var(--text-muted); font-weight: 400; }
+        .queue-row {
+            display: flex; align-items: center; gap: 10px; padding: 7px 10px;
+            border: 1px solid var(--border); border-radius: 8px; margin-bottom: 5px;
+            cursor: pointer; background: var(--surface); transition: background .15s;
+        }
+        .queue-row:hover { background: var(--surface-hover); }
+        .queue-row .qid { font-family: ui-monospace, monospace; font-size: 12px; color: var(--accent-light); min-width: 96px; }
+        .queue-row .qtitle { flex: 1; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .queue-row .qmeta { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+        .queue-row .qmetric { font-size: 11px; font-weight: 700; white-space: nowrap; }
+        .qmetric.over { color: var(--danger); }
+        .qmetric.soon { color: var(--warning); }
+        .escalation-row .qmsg { font-size: 12px; color: var(--text-muted); }
+        .scoreboard-split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 760px) { .scoreboard-split { grid-template-columns: 1fr; } }
+        .outcome-line { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 13px; }
+        .outcome-line .oc-label { flex: 1; }
+        .outcome-line .oc-count { font-weight: 700; min-width: 28px; text-align: right; }
+        .outcome-bar { height: 6px; border-radius: 3px; background: var(--accent); }
+        .split-head { font-size: 13px; font-weight: 700; margin-bottom: 10px; display: flex; gap: 8px; align-items: baseline; }
+        .split-head .split-total { color: var(--text-muted); font-weight: 400; font-size: 12px; }
+        .money-table, .dept-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .money-table th, .dept-table th { text-align: right; padding: 6px 10px; color: var(--text-muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid var(--border); }
+        .money-table td, .dept-table td { text-align: right; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+        .money-table th:first-child, .money-table td:first-child, .dept-table th:first-child, .dept-table td:first-child { text-align: left; }
+        .skip-note { font-size: 12px; color: var(--warning); margin-top: 8px; cursor: pointer; }
+        .skip-list { font-size: 11px; color: var(--text-muted); margin-top: 6px; display: none; }
+        .skip-list.open { display: block; }
+        .skip-list code { color: var(--accent-light); }
+        .data-gated { color: var(--text-muted); font-style: italic; }
+        .gated-tag { font-size: 10px; background: rgba(139,143,163,.15); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; color: var(--text-muted); }
+    </style>
+
     <header>
         <div class="header-left">
-            <h1>ChangeSet Dashboard <span class="schema-badge" id="schemaBadge">Schema v2.1</span></h1>
-            <div class="subtitle">Kenetik Growth System — Pipeline, Impact &amp; Lifecycle</div>
+            <h1>ChangeSet Dashboard <span class="schema-badge" id="schemaBadge">Schema v3.0</span></h1>
+            <div class="subtitle">Kenetik Growth System — Attention, Pipeline &amp; Impact</div>
             <div class="sync-row">
                 <span class="sync-status" id="syncStatus" style="font-size:12px;color:var(--text-muted);">Loading data…</span>
                 <button class="refresh-btn" id="refreshBtn" onclick="manualRefresh()" title="Refresh now">↻ Refresh</button>
             </div>
         </div>
         <div class="filters">
-            <button class="filter-btn active" onclick="setSubtypeFilter('all')">All</button>
+            <button class="filter-btn active" id="fltAll" onclick="setSubtypeFilter('all')">All</button>
             <button class="filter-btn" onclick="setSubtypeFilter('implementation')">Implementation</button>
             <button class="filter-btn" onclick="setSubtypeFilter('investigation')">Investigation</button>
             <button class="filter-btn" onclick="setSubtypeFilter('quick')">Quick</button>
-            <select class="filter-select" onchange="setDepartmentFilter(this.value)">
+            <select class="filter-select" id="deptFilter" onchange="setDepartmentFilter(this.value)">
                 <option value="all">All Departments</option>
             </select>
             <select class="filter-select" onchange="setStatusFilter(this.value)">
                 <option value="all">All Statuses</option>
                 <option value="open">Open (non-closed)</option>
                 <option value="draft">Draft</option>
-                <option value="proposed">Proposed</option>
+                <option value="needs_feedback">Needs Feedback</option>
                 <option value="approved">Approved</option>
                 <option value="published">Published</option>
                 <option value="closed">Closed</option>
-                <option value="rolled_back">Rolled Back</option>
             </select>
         </div>
     </header>
 
-    <nav class="tab-nav">
-        <button class="tab-button active" data-tab="overview" onclick="switchTab('overview')">Overview</button>
-        <button class="tab-button" data-tab="lifecycle" onclick="switchTab('lifecycle')">Lifecycle</button>
-    </nav>
-
-    <div id="tab-overview" class="tab-content active">
-
+    <!-- KPI scoreboard: attention count (from work-queue) + rates/money (from rollup) -->
     <section class="kpis" id="kpis"></section>
 
+    <!-- ATTENTION: the engine's work queue, rendered verbatim. One list. -->
+    <section class="pipeline-section" id="attentionSection">
+        <div class="section-head" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <h3>Needs Attention <span id="attnTotal" style="font-size:13px;font-weight:400;color:var(--text-muted)"></span></h3>
+            <span id="engineBadge"></span>
+        </div>
+        <div class="section-sub" style="margin-bottom:12px;color:var(--text-muted);font-size:12px;">
+            The engine's work queue — the same list Task B acts on. Not recomputed on this page.
+        </div>
+        <div id="attentionBody"></div>
+    </section>
+
+    <!-- PIPELINE: tracker facts only. Attention badge = queue membership. -->
     <section class="pipeline-section">
         <h3>Active Pipeline</h3>
         <div class="pipeline-columns" id="pipeline"></div>
     </section>
 
+    <!-- SCOREBOARD: full v3 outcome enum, measured vs administrative -->
+    <section class="pipeline-section" id="scoreboardSection">
+        <h3>Outcome Scoreboard <span id="scoreboardSub" style="font-size:13px;font-weight:400;color:var(--text-muted)"></span></h3>
+        <div class="section-sub" style="margin-bottom:14px;color:var(--text-muted);font-size:12px;">
+            Every closed ChangeSet, split by whether it produced a measurement. Administrative closures
+            (expiries, supersessions) are the majority class post-migration — shown, not hidden.
+        </div>
+        <div class="scoreboard-split" id="scoreboardBody"></div>
+    </section>
+
+    <!-- CLOSED: factual table of closed ChangeSets -->
     <section class="closed-section" id="closedSection">
         <div class="closed-section-header" id="closedHeader" onclick="toggleClosed()">
-            <h3>Closed &amp; Rolled Back <span id="closedCountBadge" style="font-size:12px;font-weight:400;color:var(--text-muted)"></span></h3>
+            <h3>Closed ChangeSets <span id="closedCountBadge" style="font-size:12px;font-weight:400;color:var(--text-muted)"></span></h3>
             <div class="closed-summary-pills">
                 <span id="closedSummaryPills"></span>
                 <span class="closed-toggle-icon" id="closedToggle">▼</span>
@@ -1535,53 +1619,49 @@
         <div class="closed-content" id="closedContent"></div>
     </section>
 
+    <!-- MONEY: rollup output only. No client-side impact arithmetic. -->
+    <section class="pipeline-section" id="moneySection">
+        <h3>Impact &amp; Money</h3>
+        <div class="section-sub" style="margin-bottom:14px;color:var(--text-muted);font-size:12px;">
+            Every figure below is rendered from <code>changeset-impact-rollup.json</code> (numeric-only sums;
+            non-numeric projections are excluded and listed, never summed).
+        </div>
+        <div id="moneyBody"></div>
+    </section>
 
+    <!-- OWNER LOAD: bucketed by the same attention set -->
     <section class="owner-load-section">
         <div class="section-head">
             <h3>My Work · By Owner</h3>
-            <span class="section-sub" id="ownerLoadSub">Click a card to see open and recently closed ChangeSets</span>
+            <span class="section-sub" id="ownerLoadSub">Attention counts come from the engine's work queue — click a card for detail.</span>
         </div>
         <div class="owner-grid" id="ownerGrid"></div>
         <div id="ownerQuietContainer"></div>
     </section>
 
-
+    <!-- AUTONOMY: rollup by_autonomy_tier (CGO calibration) -->
     <section class="autonomy-section">
-        <div class="autonomy-card">
-            <h3>Autonomy Tier Distribution</h3>
-            <div class="tier-bars" id="tierBars"></div>
-        </div>
-        <div class="autonomy-card">
-            <h3>Shadow Scorecard</h3>
-            <div id="scorecardContent"></div>
+        <div class="autonomy-card" style="grid-column:1/-1;">
+            <h3>Autonomy Tier · Closed-Cohort Performance</h3>
+            <div class="section-sub" style="margin-bottom:10px;color:var(--text-muted);font-size:12px;">Win rate and expiry by autonomy tier, from the impact rollup — evidence for tier-autonomy calibration.</div>
+            <div id="tierBars"></div>
         </div>
     </section>
 
-
+    <!-- TIME IN STATUS: from status-entry dates; data-gated items annotated -->
     <section class="time-status-section">
-        <h3>Time-in-Status · Measurement &amp; Aging</h3>
+        <h3>Time-in-Status <span style="font-size:12px;font-weight:400;color:var(--text-muted)">· open items, measured from status-entry date</span></h3>
         <div class="time-avg-row" id="timeAvgRow"></div>
         <div class="stale-list" id="staleList"></div>
     </section>
 
     <div class="charts-row">
         <div class="chart-card">
-            <h3>Closure Trend</h3>
-            <div class="chart-container"><canvas id="closureTrendChart"></canvas></div>
+            <h3>Monthly Trend <span style="font-size:11px;font-weight:400;color:var(--text-muted)">· closed cohort</span></h3>
+            <div class="chart-container"><canvas id="monthlyTrendChart"></canvas></div>
         </div>
         <div class="chart-card">
-            <h3>Impact by Department</h3>
-            <div class="chart-container"><canvas id="impactByDomainChart"></canvas></div>
-        </div>
-    </div>
-
-    <div class="charts-row">
-        <div class="chart-card">
-            <h3>Impact by Primary Metric</h3>
-            <div class="chart-container"><canvas id="impactByMetricChart"></canvas></div>
-        </div>
-        <div class="chart-card">
-            <h3>Outcomes Breakdown</h3>
+            <h3>Outcomes Breakdown <span style="font-size:11px;font-weight:400;color:var(--text-muted)">· full v3 enum</span></h3>
             <div class="chart-container"><canvas id="outcomesChart"></canvas></div>
         </div>
     </div>
@@ -1600,53 +1680,14 @@
                     <th data-sort="owner">Owner</th>
                     <th data-sort="created">Created</th>
                     <th data-sort="outcome">Outcome</th>
-                    <th data-sort="expected_revenue">Expected Rev</th>
-                    <th data-sort="actual_revenue">Actual Rev</th>
                 </tr>
             </thead>
             <tbody id="csTableBody"></tbody>
         </table>
     </section>
 
-    </div> <!-- /#tab-overview -->
-
-    <div id="tab-lifecycle" class="tab-content" hidden>
-        <section class="lifecycle-section" id="lifecycle-hold-window">
-            <h3>Hold Window <span class="badge zero" id="hwBadge">0</span></h3>
-            <div class="section-sub">
-                Tier-0 Klaviyo CSes that have been auto-sealed and are queued for send.
-                Operator can veto until <code>lock_in_time</code>; after that, auto-lane sends without confirmation.
-            </div>
-            <div id="hwBody"></div>
-        </section>
-
-        <section class="lifecycle-section" id="lifecycle-needs-you">
-            <h3>Needs You <span class="badge zero" id="nyBadge">0</span></h3>
-            <div class="section-sub">
-                Approved CSes blocked on a human action — Figma feedback review, claim violations, or design holds.
-            </div>
-            <div id="nyBody"></div>
-        </section>
-
-        <section class="lifecycle-section" id="lifecycle-recent-activity">
-            <h3>Recent Lifecycle Activity</h3>
-            <div class="section-sub">
-                Lifecycle-scoped CSes from the last 14 days — recent state transitions, scheduled sends, refresh activations.
-            </div>
-            <div id="raBody"></div>
-        </section>
-
-        <section class="lifecycle-section" id="lifecycle-state-files">
-            <h3>State Files</h3>
-            <div class="section-sub">
-                Operator metadata mirrored from the growth-system repo (read-only here; edit in repo).
-            </div>
-            <div id="sfBody"></div>
-        </section>
-    </div> <!-- /#tab-lifecycle -->
-
     <footer>
-        Kenetik Growth System &middot; ChangeSet Dashboard v3.0 &middot; Live from <code>drinkkenetik/kenetik-dashboards</code> &middot; Auto-refreshes every 5 min
+        Kenetik Growth System &middot; ChangeSet Dashboard v3.0 (D3) &middot; Live from <code>drinkkenetik/kenetik-dashboards</code> &middot; Auto-refreshes every 5 min
     </footer>
 </div>
 
@@ -1658,169 +1699,117 @@
     <div class="owner-drawer" id="ownerDrawer"></div>
 </div>
 
+<!-- Machine-readable manifest of every displayed statistic and its sole source.
+     validate-dashboard-stats.py resolves each source path and independently
+     recomputes it from the raw inputs (D4 gate). -->
+<script id="stats-manifest" type="application/json">
+{
+  "note": "Each displayed statistic + its single source. validate-dashboard-stats.py reproduces every one.",
+  "stats": [
+    { "key": "needs_attention",              "label": "Needs Attention",            "source": "work-queue", "recompute": "attention_unique_ids" },
+    { "key": "win_rate",                      "label": "Win rate (measured)",        "source": "rollup", "path": "scoreboard.win_rate",              "recompute": "win_rate" },
+    { "key": "closed_loop_rate",              "label": "Closed-loop rate",           "source": "rollup", "path": "scoreboard.closed_loop.rate",      "recompute": "closed_loop_rate" },
+    { "key": "expiry_rate",                   "label": "Expiry rate",                "source": "rollup", "path": "scoreboard.expiry.rate",           "recompute": "expiry_rate" },
+    { "key": "closed_total",                  "label": "Closed total",               "source": "rollup", "path": "scoreboard.closed_total",          "recompute": "closed_total" },
+    { "key": "measured_total",                "label": "Measured closures",          "source": "rollup", "path": "scoreboard.measured.total",        "recompute": "measured_total" },
+    { "key": "administrative_total",          "label": "Administrative closures",    "source": "rollup", "path": "scoreboard.administrative.total",  "recompute": "administrative_total" },
+    { "key": "measured_outcomes",             "label": "Measured outcome counts",    "source": "rollup", "path": "scoreboard.measured.outcomes",     "recompute": "measured_outcome_counts" },
+    { "key": "administrative_outcomes",       "label": "Admin outcome counts",       "source": "rollup", "path": "scoreboard.administrative.outcomes","recompute": "administrative_outcome_counts" },
+    { "key": "actual_revenue_closed",         "label": "Actual revenue (closed)",    "source": "rollup", "path": "money.closed_cohort.actual_revenue",  "recompute": "money_closed" },
+    { "key": "expected_revenue_closed",       "label": "Expected revenue (closed)",  "source": "rollup", "path": "money.closed_cohort.expected_revenue","recompute": "money_closed" },
+    { "key": "actual_margin_closed",          "label": "Actual margin (closed)",     "source": "rollup", "path": "money.closed_cohort.actual_margin",   "recompute": "money_closed" },
+    { "key": "expected_margin_closed",        "label": "Expected margin (closed)",   "source": "rollup", "path": "money.closed_cohort.expected_margin",  "recompute": "money_closed" },
+    { "key": "open_pipeline_expected_revenue","label": "Open pipeline expected rev", "source": "rollup", "path": "open_pipeline.expected_revenue",   "recompute": "money_open" },
+    { "key": "open_pipeline_by_status",       "label": "Open pipeline by status",    "source": "rollup", "path": "open_pipeline.by_status",          "recompute": "open_by_status" },
+    { "key": "by_department",                 "label": "Impact by department",       "source": "rollup", "path": "by_department",                    "recompute": "by_department" },
+    { "key": "by_autonomy_tier",              "label": "Impact by autonomy tier",    "source": "rollup", "path": "by_autonomy_tier",                 "recompute": "by_autonomy_tier" },
+    { "key": "monthly_trend",                 "label": "Monthly trend",              "source": "rollup", "path": "monthly_trend",                    "recompute": "monthly_trend" },
+    { "key": "skipped",                       "label": "Skipped non-numeric",        "source": "rollup", "path": "skipped",                          "recompute": "skipped" }
+  ]
+}
+</script>
+
 <script>
-// ═══════════════════════════════════════════════════
-// AUTO-FETCH CONFIG
-// ═══════════════════════════════════════════════════
-const DATA_URL = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/changeset-tracker.json';
-const BRIEF_BASE_URL = 'https://github.com/drinkkenetik/kenetik-growth-system/blob/main/';
-const BRIEF_RAW_BASE = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/briefs/';
+// ═══════════════════════════════════════════════════════════════════════
+// KENETIK CHANGESET DASHBOARD — D3 rewrite (2026-07-03)
+// Renders four published data products. Zero client-side lifecycle logic.
+// ═══════════════════════════════════════════════════════════════════════
+const REPO_RAW = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/';
+const DATA_URL       = REPO_RAW + 'changeset-tracker.json';
+const CONSTANTS_URL  = REPO_RAW + '_schema-constants.json';
+const WORKQUEUE_URL  = REPO_RAW + 'changeset-work-queue.json';
+const ROLLUP_URL     = REPO_RAW + 'changeset-impact-rollup.json';
+const BRIEF_RAW_BASE = REPO_RAW + 'briefs/';
+const BRIEF_VIEW_BASE= 'https://github.com/drinkkenetik/kenetik-dashboards/blob/main/data/briefs/';
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
-let TRACKER = null;
-let lastFetchTime = null;
-let closedExpanded = false;
+
+let TRACKER = null, CONSTANTS = null, QUEUE = null, ROLLUP = null;
+let ATTENTION_IDS = new Set();           // THE single attention derivation lives in computeAttentionIds()
+let lastFetchTime = null, closedExpanded = false;
 const briefCache = new Map();
+const filters = { subtype: 'all', department: 'all', status: 'all' };
 
-// Fetch raw brief markdown by CS id (e.g. "CS-2026-074"). Returns string or null.
-async function fetchBrief(csId) {
-    if (briefCache.has(csId)) return briefCache.get(csId);
-    const url = BRIEF_RAW_BASE + csId + '.md';
-    try {
-        const resp = await fetch(url + '?t=' + Date.now());
-        if (!resp.ok) { briefCache.set(csId, null); return null; }
-        const md = await resp.text();
-        briefCache.set(csId, md);
-        return md;
-    } catch (e) {
-        briefCache.set(csId, null);
-        return null;
-    }
+// ─────────────────────────────────────────────────────────────────────
+// THE SINGLE ATTENTION DERIVATION
+// Every "needs attention" count, badge, and bucket on this page reads
+// ATTENTION_IDS. It is populated here and nowhere else. The engine's
+// work-queue.json is the sole authority; this function does no classification.
+// ─────────────────────────────────────────────────────────────────────
+function computeAttentionIds() {
+    const s = new Set();
+    if (!QUEUE) return s;
+    Object.values(QUEUE.queues || {}).forEach(arr => (arr || []).forEach(it => { if (it && it.id) s.add(it.id); }));
+    (QUEUE.escalations || []).forEach(e => { if (e && e.cs_id) s.add(e.cs_id); });
+    (QUEUE.data_requests || []).forEach(d => { if (d && d.cs_id) s.add(d.cs_id); });
+    return s;
+}
+// Set of CS ids that have an open data request (data-gated) — used only to
+// annotate Time-in-Status so a blocked CS doesn't paint the panel red.
+function dataGatedIds() {
+    const s = new Set();
+    if (QUEUE) (QUEUE.data_requests || []).forEach(d => { if (d && d.cs_id) s.add(d.cs_id); });
+    return s;
 }
 
-// Parse brief markdown into { frontmatter: { key: value }, sections: [{ heading, body }] }.
-// Frontmatter is the leading block of "**Key:** value" lines before the first H2.
-function parseBrief(md) {
-    if (!md) return { frontmatter: {}, sections: [] };
-    const lines = md.split('\n');
-    const frontmatter = {};
-    const sections = [];
-    let i = 0;
-    // Skip H1 title
-    while (i < lines.length && !lines[i].trim().startsWith('# ')) i++;
-    if (i < lines.length) i++;
-    // Read frontmatter lines until first H2 or blank-then-non-frontmatter
-    while (i < lines.length && !lines[i].startsWith('## ')) {
-        const m = lines[i].match(/^\*\*([^*]+):\*\*\s*(.*)$/);
-        if (m) frontmatter[m[1].trim()] = m[2].trim();
-        i++;
-    }
-    // Read sections
-    let currentHeading = null;
-    let currentBody = [];
-    const flush = () => {
-        if (currentHeading !== null) {
-            sections.push({ heading: currentHeading, body: currentBody.join('\n').trim() });
-        }
-    };
-    while (i < lines.length) {
-        const line = lines[i];
-        if (line.startsWith('## ')) {
-            flush();
-            currentHeading = line.replace(/^##\s+/, '').trim();
-            currentBody = [];
-        } else if (currentHeading !== null) {
-            currentBody.push(line);
-        }
-        i++;
-    }
-    flush();
-    return { frontmatter, sections };
+// ─────────────────────────────────────────────────────────────────────
+// FETCH (all four products; failure states preserved from the prior build)
+// ─────────────────────────────────────────────────────────────────────
+async function fetchJSON(url, label) {
+    const resp = await fetch(url + '?t=' + Date.now());
+    if (!resp.ok) throw new Error(label + ': HTTP ' + resp.status);
+    const text = await resp.text();
+    try { return JSON.parse(text); }
+    catch (e) { throw new Error(label + ': invalid JSON (likely truncated during push) — ' + e.message + ' — ' + text.length + ' chars'); }
 }
 
-// Render a parsed brief's key narrative sections as HTML. Picks the sections
-// that answer: what's the bet, what will we do, how will we know it worked.
-function renderBriefNarrative(parsed) {
-    if (!parsed || !parsed.sections.length) return '';
-    // Priority order — only include sections that exist in the brief
-    const priority = [
-        'Hypothesis',
-        'The Bet',
-        'Problem',
-        'Context',
-        'Actions',
-        'Action',
-        'Scope',
-        'Change',
-        'Proposed Change',
-        'Success Criteria',
-        'Expected Outcome',
-        'Measurement Plan',
-        'Measurement Window',
-        'Measurement',
-        'Circuit-Breakers',
-        'Circuit Breakers',
-        'Guardrails',
-        'Risks',
-        'Approval Note',
-        'Dependencies',
-        'Spawned From'
-    ];
-    const seen = new Set();
-    const picked = [];
-    // First pass: priority-ordered
-    for (const name of priority) {
-        const hit = parsed.sections.find(s => s.heading.toLowerCase() === name.toLowerCase() && !seen.has(s.heading));
-        if (hit) { picked.push(hit); seen.add(hit.heading); }
-    }
-    // Second pass: any remaining sections not in priority list, in original order
-    for (const s of parsed.sections) {
-        if (!seen.has(s.heading)) { picked.push(s); seen.add(s.heading); }
-    }
-    if (!picked.length) return '';
-    const renderMd = (body) => {
-        if (!body) return '<em style="color:var(--text-muted)">(empty)</em>';
-        if (typeof marked !== 'undefined' && marked.parse) {
-            return marked.parse(body);
-        }
-        // Fallback: escape + basic line breaks
-        const esc = body.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        return '<p>' + esc.replace(/\n\n+/g,'</p><p>').replace(/\n/g,'<br>') + '</p>';
-    };
-    return picked.map(s => `
-        <div class="brief-section">
-            <div class="brief-section-heading">${s.heading}</div>
-            <div class="brief-section-body">${renderMd(s.body)}</div>
-        </div>
-    `).join('');
-}
-
-async function fetchTracker() {
+async function fetchAll() {
     const statusEl = document.getElementById('syncStatus');
     const btn = document.getElementById('refreshBtn');
     btn.classList.add('spinning');
     try {
-        const resp = await fetch(DATA_URL + '?t=' + Date.now());
-        if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        const text = await resp.text();
-        let parsed;
-        try {
-            parsed = JSON.parse(text);
-        } catch (parseErr) {
-            throw new Error('Invalid JSON (likely truncated during push): ' + parseErr.message + ' — file length: ' + text.length + ' chars');
+        const [tracker, constants, queue, rollup] = await Promise.all([
+            fetchJSON(DATA_URL, 'tracker'),
+            fetchJSON(CONSTANTS_URL, 'constants'),
+            fetchJSON(WORKQUEUE_URL, 'work-queue'),
+            fetchJSON(ROLLUP_URL, 'impact-rollup')
+        ]);
+        if (!tracker || !Array.isArray(tracker.changesets)) {
+            throw new Error('tracker: missing changesets array (keys: ' + Object.keys(tracker || {}).join(',') + ')');
         }
-        if (!parsed || !Array.isArray(parsed.changesets)) {
-            throw new Error('Invalid tracker structure: missing changesets array (keys: ' + Object.keys(parsed || {}).join(',') + ')');
-        }
-        parsed.changesets.forEach(cs => {
-            if (cs.status && cs.status.startsWith('closed_')) {
-                cs.outcome = cs.outcome || cs.status.replace('closed_', '');
-                cs.status = 'closed';
-            }
-        });
-        TRACKER = parsed;
+        TRACKER = tracker; CONSTANTS = constants; QUEUE = queue; ROLLUP = rollup;
         lastFetchTime = new Date();
-        statusEl.textContent = 'Live · ' + TRACKER.changesets.length + ' ChangeSets · Last synced ' + lastFetchTime.toLocaleTimeString();
+        statusEl.textContent = 'Live · ' + TRACKER.changesets.length + ' ChangeSets · synced ' + lastFetchTime.toLocaleTimeString();
         statusEl.style.color = 'var(--success)';
         document.getElementById('schemaBadge').textContent = 'Schema v' + (TRACKER.schema_version || '?');
         btn.classList.remove('spinning');
         return true;
     } catch (err) {
         console.error('Fetch failed:', err);
-        statusEl.textContent = 'Offline · ' + (lastFetchTime ? 'Last synced ' + lastFetchTime.toLocaleTimeString() : 'Could not load data');
+        statusEl.textContent = 'Offline · ' + (lastFetchTime ? 'last synced ' + lastFetchTime.toLocaleTimeString() : 'could not load data');
         statusEl.style.color = 'var(--danger)';
         btn.classList.remove('spinning');
         if (!TRACKER) {
-            document.getElementById('kpis').innerHTML = '<div class="kpi-card" style="grid-column:1/-1;text-align:center;padding:40px"><div class="kpi-label" style="color:var(--danger)">DATA LOAD FAILED</div><div style="font-size:14px;margin-top:8px;color:var(--text)">' + err.message + '</div><div class="kpi-detail" style="margin-top:12px">Check that <code>data/changeset-tracker.json</code> is valid JSON in the repo.<br>This usually means a recent push truncated the file.</div></div>';
+            document.getElementById('kpis').innerHTML = '<div class="kpi-card" style="grid-column:1/-1;text-align:center;padding:40px"><div class="kpi-label" style="color:var(--danger)">DATA LOAD FAILED</div><div style="font-size:14px;margin-top:8px;color:var(--text)">' + escHtml(err.message) + '</div><div class="kpi-detail" style="margin-top:12px">Check that all four <code>data/*.json</code> products are valid JSON in the repo.</div></div>';
         }
         return false;
     }
@@ -1834,1959 +1823,618 @@ async function manualRefresh() {
     setTimeout(() => { refreshLock = false; }, 2000);
 }
 
-// ═══════════════════════════════════════════════════
-// STATE
-// ═══════════════════════════════════════════════════
-let filters = { subtype: 'all', department: 'all', status: 'all' };
-
-function subtypeBadge(subtype) {
-    const cls = subtype === 'investigation' ? 'badge-invest' : subtype === 'quick' ? 'badge-quick' : 'badge-impl';
-    return `<span class="badge ${cls}">${subtype || 'unknown'}</span>`;
+// ─────────────────────────────────────────────────────────────────────
+// PRESENTATION HELPERS (labels derived from slugs; no enum copies)
+// ─────────────────────────────────────────────────────────────────────
+function escHtml(s) {
+    if (s === null || s === undefined) return '';
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+function fmtDate(iso) { if (!iso) return '—'; try { return new Date(iso).toLocaleDateString(); } catch (e) { return iso; } }
+function fmtDateTime(iso) { if (!iso) return '—'; try { return new Date(iso).toLocaleString(); } catch (e) { return iso; } }
+function fmt$(n) { return (n === null || n === undefined || isNaN(n)) ? '—' : '$' + Number(n).toLocaleString(undefined, { maximumFractionDigits: 0 }); }
+function pct(r) { return (r === null || r === undefined) ? '—' : Math.round(r * 100) + '%'; }
+function daysBetween(a, b) { return Math.round((new Date(b) - new Date(a)) / 86400000); }
 
-// ── Department color map (10 canonical values from department enum) ──
-const DEPARTMENT_COLORS = {
-    'paid-media':          '#3b82f6',
-    'lifecycle-marketing': '#6366f1',
-    'DTC-website':         '#14b8a6',
-    'amazon':              '#f59e0b',
-    'social-media':        '#f472b6',
-    'content':             '#a855f7',
-    'creator-affiliate':   '#ec4899',
-    'science-research':    '#06b6d4',
-    'wholesale':           '#8b5cf6',
-    'operations':          '#94a3b8',
-    'cross-functional':    '#9ca3af',
-    'market-intelligence': '#0ea5e9'
-};
-
-function departmentColor(dept) {
-    return DEPARTMENT_COLORS[dept] || '#6b7280';
+// Deterministic hue from a slug, so a department always gets the same color
+// without hardcoding the (contract-owned) department list.
+function slugHue(slug) {
+    let h = 0; const s = String(slug || '');
+    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
+    return h;
 }
-
+function departmentColor(dept) { return 'hsl(' + slugHue(dept) + ',55%,58%)'; }
 function departmentLabel(dept) {
     if (!dept) return 'Unassigned';
-    // Preserve "DTC" casing, title-case the rest, convert hyphens to spaces
-    return dept
-        .split('-')
-        .map(part => part === 'DTC' ? 'DTC' : part.charAt(0).toUpperCase() + part.slice(1))
-        .join(' ');
+    return String(dept).split('-').map(w => w.length <= 3 ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
-
 function departmentBadge(dept) {
-    if (!dept) return '';
-    const color = departmentColor(dept);
-    const label = departmentLabel(dept);
-    return `<span class="badge" style="background:${color}22;color:${color};border:1px solid ${color}44">${label}</span>`;
+    return '<span class="dept-badge" style="background:' + departmentColor(dept) + '22;color:' + departmentColor(dept) + ';border:1px solid ' + departmentColor(dept) + '55;">' + escHtml(departmentLabel(dept)) + '</span>';
 }
-
+function subtypeBadge(subtype) {
+    const t = (subtype || '').toLowerCase();
+    const color = t === 'investigation' ? 'var(--investigation)' : t === 'quick' ? 'var(--quick)' : 'var(--implementation)';
+    return subtype ? '<span class="subtype-badge" style="color:' + color + ';border-color:' + color + '55;">' + escHtml(subtype) + '</span>' : '';
+}
 function platformChips(platforms) {
-    if (!platforms || !Array.isArray(platforms) || !platforms.length) return '';
-    return `<span class="platform-chips">${platforms.map(p => `<span class="platform-chip">${p}</span>`).join('')}</span>`;
+    if (!Array.isArray(platforms)) return '';
+    return platforms.slice(0, 3).map(p => '<span class="platform-chip">' + escHtml(p) + '</span>').join('') + (platforms.length > 3 ? '<span class="platform-chip">+' + (platforms.length - 3) + '</span>' : '');
 }
+function outcomeLabel(o) { return o ? String(o).replace(/_/g, ' ') : '—'; }
+function isMeasured(o) { return CONSTANTS && (CONSTANTS.measured_outcomes || []).includes(o); }
+function isAdministrative(o) { return CONSTANTS && (CONSTANTS.administrative_outcomes || []).includes(o); }
 
-// ── Status-aware urgency classification ──
-// Single source of truth: urgency is derived from status + dates + measurement fields.
-// The tracker's cs.urgency field is intentionally NOT consulted here — it conflates
-// priority (high/medium/normal) with lifecycle urgency (measuring/stale/measure-due),
-// which caused the top "Needs Attention" card and the owner panel to diverge on drafts
-// whose cs.urgency was a priority string. Computing from status+dates keeps both panels
-// aligned on one classification.
-function getUrgencyLevel(cs) {
-    const today = new Date(); today.setHours(0,0,0,0);
-    const age = cs.created ? Math.round((today - new Date(cs.created)) / 86400000) : 0;
-    const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
-    const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
-    const md = cs.measurement_due ? new Date(cs.measurement_due) : null;
-    const targetDate = ssd || etd;
-    const daysUntil = targetDate ? Math.round((targetDate - today) / 86400000) : null;
-    const isBlocked = (cs.sweep_flags || []).some(f => {
-        const s = typeof f === 'string' ? f : (f && f.flag ? f.flag : String(f));
-        return s.toUpperCase().includes('BLOCK');
-    });
-    const status = cs.status || '';
-
-    // Closed/archived states never pull on the pipeline.
-    if (status === 'closed' || status === 'archived' || status === 'superseded' || status === 'rolled_back') {
-        return { level: 'none', daysUntil, age };
-    }
-
-    if (isBlocked) return { level: 'blocked', daysUntil, age };
-
-    if (status === 'published') {
-        // Top-level requires_human_review applies regardless of whether measurement_result exists.
-        // (Previously this flag was shadowed when measurement_result was present, which caused CS-046
-        // to show as 'measured' in the top card while the owner panel correctly flagged it.)
-        const humanReviewNeeded =
-            cs.requires_human_review === true ||
-            (cs.measurement_result && cs.measurement_result.requires_human_review === true);
-        if (humanReviewNeeded) return { level: 'needs-review', daysUntil, age };
-        if (cs.measurement_result) return { level: 'measured', daysUntil, age };
-        if (md) {
-            const daysUntilMeasure = Math.round((md - today) / 86400000);
-            if (daysUntilMeasure < 0) return { level: 'measure-due', daysUntil: daysUntilMeasure, age };
-            return { level: 'measuring', daysUntil: daysUntilMeasure, age };
-        }
-        return { level: 'none', daysUntil, age };
-    }
-
-    // needs_feedback always pulls on the owner — someone is waiting on a response.
-    if (status === 'needs_feedback') return { level: 'needs-review', daysUntil, age };
-
-    // Pre-execution statuses share the same overdue/due-soon/stale logic.
-    // An execution_target_date in the past makes a pre-execution CS overdue —
-    // the owner owes either a ship, a reschedule, or a close-out.
-    const preExecution = new Set(['approved','draft','recommended','proposed','in-review','in_review']);
-    if (preExecution.has(status)) {
-        if (daysUntil !== null && daysUntil < 0) return { level: 'overdue', daysUntil, age };
-        if (daysUntil !== null && daysUntil <= 3) return { level: 'due-soon', daysUntil, age };
-        if (daysUntil !== null) return { level: 'on-track', daysUntil, age };
-        // No target date → fall back to age-based staleness.
-        // Drafts get 14 days of runway; approved/recommended/proposed only 7 (they should be moving).
-        const staleThreshold = status === 'draft' ? 14 : 7;
-        if (age > staleThreshold) return { level: 'stale', daysUntil, age };
-        return { level: 'none', daysUntil, age };
-    }
-
-    return { level: 'none', daysUntil, age };
-}
-
-function urgencyBadge(cs) {
-    const u = getUrgencyLevel(cs);
-    if (u.level === 'blocked') return `<span class="badge badge-medium">BLOCKED</span>`;
-    if (u.level === 'overdue') return `<span class="badge badge-critical">OVERDUE ${Math.abs(u.daysUntil)}d</span>`;
-    if (u.level === 'due-soon') return `<span class="badge badge-high">DUE ${u.daysUntil}d</span>`;
-    if (u.level === 'stale') return `<span class="badge" style="background:rgba(239,68,68,0.15);color:var(--danger)">STALE ${u.age}d</span>`;
-    if (u.level === 'needs-review') return `<span class="badge badge-high">REVIEW NEEDED</span>`;
-    if (u.level === 'measured') return `<span class="badge badge-medium" style="background:rgba(34,197,94,0.15);color:var(--success)">MEASURED</span>`;
-    if (u.level === 'measure-due') return `<span class="badge badge-medium">MEASURE DUE</span>`;
-    if (u.level === 'measuring') return `<span class="badge badge-low">MEASURING ${u.daysUntil != null ? u.daysUntil + 'd' : ''}</span>`;
-    if (u.level === 'on-track' && u.daysUntil <= 7) return `<span class="badge badge-medium">DUE ${u.daysUntil}d</span>`;
-    if (u.level === 'on-track') return `<span class="badge badge-low">${u.daysUntil}d out</span>`;
-    return '';
-}
-
-function urgencyClass(cs) {
-    return 'urgency-' + getUrgencyLevel(cs).level;
-}
-
-// Urgency sort priority (lower = more urgent)
-function urgencySortOrder(cs) {
-    const level = getUrgencyLevel(cs).level;
-    const order = { 'needs-review': 0, 'measured': 1, 'measure-due': 2, 'overdue': 3, 'blocked': 4, 'stale': 5, 'due-soon': 6, 'measuring': 7, 'on-track': 8, 'none': 9 };
-    return order[level] ?? 9;
-}
-
-let sortCol = 'id';
-let sortDir = 'asc';
-let charts = {};
-
-// ═══════════════════════════════════════════════════
-// HELPERS
-// ═══════════════════════════════════════════════════
-function fmt$(n) {
-    if (n == null || isNaN(n)) return '—';
-    return '$' + Number(n).toLocaleString('en-US');
-}
-
-function isClosed(cs) {
-    return cs.status === 'closed' || (cs.status && cs.status.startsWith('closed_')) || cs.status === 'rolled_back';
-}
-
-function isOpen(cs) { return !isClosed(cs); }
-
-function getFiltered() {
-    return TRACKER.changesets.filter(cs => {
-        if (filters.subtype !== 'all' && cs.subtype !== filters.subtype) return false;
-        if (filters.department !== 'all' && cs.department !== filters.department) return false;
-        if (filters.status === 'open') return !isClosed(cs);
-        if (filters.status === 'closed') return isClosed(cs);
-        if (filters.status !== 'all' && cs.status !== filters.status) return false;
-        return true;
-    });
-}
-
-function expectedRev(cs) {
-    return cs.expected_impact?.revenue?.expected ?? 0;
-}
-
-function actualRev(cs) {
-    return cs.actual_impact?.revenue_impact ?? 0;
-}
-
-function actualMargin(cs) {
-    return cs.actual_impact?.margin_impact ?? 0;
-}
-
-const PIPELINE_LABELS = {
-    draft: 'Draft',
-    proposed: 'Proposed',
-    needs_feedback: 'Needs Feedback',
-    approved: 'Approved',
-    published: 'Published',
-    closed: 'Closed'
-};
-
-// ═══════════════════════════════════════════════════
-// FILTERS
-// ═══════════════════════════════════════════════════
+// ─────────────────────────────────────────────────────────────────────
+// FILTERS (affect the pipeline board + All-ChangeSets table only —
+// scoreboard and money are whole-cohort figures from the rollup)
+// ─────────────────────────────────────────────────────────────────────
 function setSubtypeFilter(val) {
     filters.subtype = val;
     document.querySelectorAll('.filters .filter-btn').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
+    const map = { all: 'All', implementation: 'Implementation', investigation: 'Investigation', quick: 'Quick' };
+    document.querySelectorAll('.filters .filter-btn').forEach(b => { if (b.textContent.trim() === map[val]) b.classList.add('active'); });
     render();
 }
-
 function setDepartmentFilter(val) { filters.department = val; render(); }
 function setStatusFilter(val) { filters.status = val; render(); }
-
+function getFiltered() {
+    if (!TRACKER) return [];
+    return TRACKER.changesets.filter(cs => {
+        if (filters.subtype !== 'all' && cs.subtype !== filters.subtype) return false;
+        if (filters.department !== 'all' && cs.department !== filters.department) return false;
+        if (filters.status !== 'all') {
+            if (filters.status === 'open') { if (cs.status === 'closed') return false; }
+            else if (cs.status !== filters.status) return false;
+        }
+        return true;
+    });
+}
+function isClosed(cs) { return cs.status === 'closed'; }
+function isOpen(cs) { return !isClosed(cs); }
 function populateDepartmentDropdown() {
-    const sel = document.querySelector('.filter-select');
-    while (sel.options.length > 1) sel.remove(1);
+    const sel = document.getElementById('deptFilter');
+    if (!sel || !TRACKER) return;
     const depts = [...new Set(TRACKER.changesets.map(c => c.department).filter(Boolean))].sort();
-    depts.forEach(d => {
-        const opt = document.createElement('option');
-        opt.value = d;
-        opt.textContent = departmentLabel(d);
-        sel.appendChild(opt);
-    });
+    const cur = sel.value;
+    sel.innerHTML = '<option value="all">All Departments</option>' + depts.map(d => '<option value="' + escHtml(d) + '">' + escHtml(departmentLabel(d)) + '</option>').join('');
+    sel.value = cur;
 }
 
-// ═══════════════════════════════════════════════════
-// KPIs — with pipeline conversion context
-// ═══════════════════════════════════════════════════
+// ─────────────────────────────────────────────────────────────────────
+// KPI SCOREBOARD (attention from work-queue; rates + money from rollup)
+// ─────────────────────────────────────────────────────────────────────
 function renderKPIs() {
-    const data = getFiltered();
-    const open = data.filter(isOpen);
-    const closed = data.filter(isClosed);
-    const published = data.filter(c => c.status === 'published');
-    const totalExpected = open.reduce((s, c) => s + expectedRev(c), 0);
-    const totalActual = closed.reduce((s, c) => s + actualRev(c), 0);
-    const totalActualMargin = closed.reduce((s, c) => s + actualMargin(c), 0);
-    const impl = data.filter(c => c.subtype === 'implementation').length;
-    const invest = data.filter(c => c.subtype === 'investigation').length;
-    const quick = data.filter(c => c.subtype === 'quick').length;
+    const el = document.getElementById('kpis');
+    const sb = ROLLUP && ROLLUP.scoreboard;
+    const money = ROLLUP && ROLLUP.money && ROLLUP.money.closed_cohort;
+    const openp = ROLLUP && ROLLUP.open_pipeline;
+    const cards = [];
 
-    const avgAge = open.length
-        ? Math.round(open.reduce((s, c) => s + (Date.now() - new Date(c.created)) / 86400000, 0) / open.length)
-        : 0;
-
-    // Needs attention count — aligned with owner panel Focus Now bucketing.
-    // Both panels filter on the same set of urgency levels from getUrgencyLevel().
-    const needsAttentionLevels = new Set(['overdue','blocked','needs-review','measure-due','stale']);
-    const needsAttention = data.filter(c => needsAttentionLevels.has(getUrgencyLevel(c).level)).length;
-
-    const successCount = closed.filter(c => c.outcome === 'success').length;
-    const underCount = closed.filter(c => c.outcome === 'underperformed').length;
-    const inconclusiveCount = closed.filter(c => c.outcome === 'inconclusive').length;
-
-    document.getElementById('kpis').innerHTML = `
-        <div class="kpi-card">
-            <div class="kpi-label">Active Pipeline</div>
-            <div class="kpi-value info">${open.length}</div>
-            <div class="kpi-detail">${data.filter(c=>c.status==='draft').length} draft · ${data.filter(c=>c.status==='approved').length} approved · ${published.length} live</div>
-        </div>
-        <div class="kpi-card" ${needsAttention > 0 ? 'style="border-color:rgba(239,68,68,0.4)"' : ''}>
-            <div class="kpi-label">Needs Attention</div>
-            <div class="kpi-value ${needsAttention > 0 ? 'danger' : 'success'}">${needsAttention}</div>
-            <div class="kpi-detail">${needsAttention > 0 ? 'Overdue, stale, or review needed' : 'Pipeline is healthy'}</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Closed</div>
-            <div class="kpi-value">${closed.length}</div>
-            <div class="kpi-detail" style="display:flex;gap:8px;flex-wrap:wrap">
-                ${successCount ? `<span style="color:var(--success)">${successCount} success</span>` : ''}
-                ${underCount ? `<span style="color:var(--danger)">${underCount} under</span>` : ''}
-                ${inconclusiveCount ? `<span style="color:var(--warning)">${inconclusiveCount} inconc</span>` : ''}
-            </div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Pipeline Expected Rev</div>
-            <div class="kpi-value">${fmt$(totalExpected)}</div>
-            <div class="kpi-detail">${open.length} open · Avg ${avgAge}d age</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Actual Revenue (Closed)</div>
-            <div class="kpi-value success">${fmt$(totalActual)}</div>
-            <div class="kpi-detail">${fmt$(totalActualMargin)} margin · ${closed.length ? Math.round(successCount/closed.length*100) : 0}% success rate</div>
-        </div>
-    `;
-}
-
-// ═══════════════════════════════════════════════════
-// PIPELINE — Draft (compact), Approved (sub-groups), Published (urgency-sorted)
-// ═══════════════════════════════════════════════════
-function classifyApproved(cs) {
-    const today = new Date();
-    today.setHours(0,0,0,0);
-    const ssd = cs.scheduled_send_date ? new Date(cs.scheduled_send_date) : null;
-    const etd = cs.execution_target_date ? new Date(cs.execution_target_date) : null;
-    if (ssd) return ssd >= today ? 'scheduled' : 'overdue';
-    if (etd) return etd >= today ? 'scheduled' : 'overdue';
-    return 'unworked';
-}
-
-// ── Shared: group a list of CSes by department, return ordered dept keys ──
-function groupByDepartment(items) {
-    const groups = {};
-    items.forEach(cs => {
-        const d = cs.department || 'unassigned';
-        if (!groups[d]) groups[d] = [];
-        groups[d].push(cs);
-    });
-    // Sort depts: urgency-heavy first, then count desc
-    const deptKeys = Object.keys(groups).sort((a, b) => {
-        const urgencyLevels = new Set(['stale','overdue','blocked','needs-review','measure-due','due-soon']);
-        const aUrgent = groups[a].filter(c => urgencyLevels.has(getUrgencyLevel(c).level)).length;
-        const bUrgent = groups[b].filter(c => urgencyLevels.has(getUrgencyLevel(c).level)).length;
-        if (aUrgent !== bUrgent) return bUrgent - aUrgent;
-        return groups[b].length - groups[a].length;
-    });
-    return { groups, deptKeys };
-}
-
-// ── Shared: render a department group as a collapsible block with compact items ──
-// variant: 'draft' (age), 'approved' (date), 'published' (urgency badge)
-function renderDeptGroup(dept, list, variant, opts) {
-    opts = opts || {};
-    const defaultExpanded = !!opts.defaultExpanded;
-    const today = new Date(); today.setHours(0,0,0,0);
-    const urgencyLevels = new Set(['stale','overdue','blocked','needs-review','measure-due','due-soon']);
-    const urgentCount = list.filter(c => urgencyLevels.has(getUrgencyLevel(c).level)).length;
-    const label = departmentLabel(dept);
-    const color = departmentColor(dept);
-    const isUnassigned = dept === 'unassigned';
-    const borderStyle = isUnassigned ? '' : `border-left-color:${color}`;
-
-    // Sort items: urgency first, then by date-field most relevant to the variant
-    const sorted = [...list].sort((a,b) => {
-        const ua = urgencySortOrder(a), ub = urgencySortOrder(b);
-        if (ua !== ub) return ua - ub;
-        if (variant === 'approved') {
-            return (a.scheduled_send_date||a.execution_target_date||'').localeCompare(b.scheduled_send_date||b.execution_target_date||'');
-        }
-        if (variant === 'published') {
-            return (a.measurement_due||'').localeCompare(b.measurement_due||'');
-        }
-        return (a.created||'').localeCompare(b.created||'');
-    });
-
-    const items = sorted.map(cs => {
-        const age = cs.created ? Math.round((today - new Date(cs.created)) / 86400000) : 0;
-        const urgency = getUrgencyLevel(cs);
-        const isStale = urgency.level === 'stale';
-        const isUrgent = urgencyLevels.has(urgency.level);
-
-        // Date / age display per variant
-        let rightMeta = '';
-        if (variant === 'approved') {
-            const d = cs.scheduled_send_date || cs.execution_target_date;
-            rightMeta = d ? new Date(d).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : `${age}d`;
-        } else if (variant === 'published') {
-            if (urgency.level === 'measuring' && urgency.daysUntil != null) rightMeta = `${urgency.daysUntil}d`;
-            else if (urgency.level === 'measure-due') rightMeta = `${Math.abs(urgency.daysUntil||0)}d late`;
-            else rightMeta = `${age}d`;
-        } else {
-            rightMeta = `${age}d`;
-        }
-
-        const urgencyFlag = isUrgent ? `<span class="dci-stale" style="color:${urgency.level==='stale'?'var(--danger)':urgency.level==='overdue'?'var(--danger)':urgency.level==='needs-review'?'var(--danger)':'var(--warning)'}">${urgency.level.toUpperCase().replace('-',' ')}</span>` : '';
-        const platformsHtml = platformChips(cs.platforms);
-
-        return `<div class="draft-compact-item ${isStale ? 'urgency-stale' : ''}" onclick="openDetail('${cs.id}')">
-            <div class="dci-left">
-                <span class="dci-id">${cs.id}</span>
-                <span class="dci-title">${cs.title || ''}</span>
-                ${platformsHtml}
-            </div>
-            <span class="dci-age">${rightMeta}</span>
-            ${urgencyFlag}
-        </div>`;
-    }).join('');
-
-    const countBadge = `<span style="color:var(--text-muted);font-weight:400">(${list.length})</span>`;
-    const urgentBadge = urgentCount ? ` <span style="color:var(--danger);font-size:9px;font-weight:700">${urgentCount} URGENT</span>` : '';
-    const toggleGlyph = defaultExpanded ? '▲' : '▼';
-    const expandedClass = defaultExpanded ? ' expanded' : '';
-
-    return `<div class="draft-dept-group">
-        <div class="draft-dept-header" style="${borderStyle}" onclick="this.nextElementSibling.classList.toggle('expanded');this.querySelector('.draft-toggle').textContent=this.nextElementSibling.classList.contains('expanded')?'▲':'▼'">
-            <span>${label} ${countBadge}${urgentBadge}</span>
-            <span class="draft-toggle">${toggleGlyph}</span>
-        </div>
-        <div class="draft-items${expandedClass}">${items}</div>
-    </div>`;
-}
-
-function renderApprovedSubgroups(items) {
-    // Overdue merges into Unworked — overdue status still shows via per-card urgency badge
-    const groups = { scheduled: [], unworked: [] };
-    items.forEach(cs => {
-        const bucket = classifyApproved(cs);
-        if (bucket === 'overdue') groups.unworked.push(cs);
-        else groups[bucket].push(cs);
-    });
-
-    function renderBucket(label, list, cssCls, defaultExpand) {
-        if (!list.length) {
-            return `<div class="approved-subgroup ${cssCls}">
-                <div class="subgroup-header ${cssCls}">${label} <span class="subgroup-count">0</span></div>
-                <div class="subgroup-items"><div style="font-size:11px;color:var(--text-muted);padding:4px 0">None</div></div>
-            </div>`;
-        }
-        const { groups: byDept, deptKeys } = groupByDepartment(list);
-        const content = deptKeys.map(d => renderDeptGroup(d, byDept[d], 'approved', { defaultExpanded: defaultExpand })).join('');
-        return `<div class="approved-subgroup ${cssCls}">
-            <div class="subgroup-header ${cssCls}">${label} <span class="subgroup-count">${list.length}</span></div>
-            <div class="subgroup-items">${content}</div>
-        </div>`;
+    cards.push(kpiCard(
+        String(ATTENTION_IDS.size), 'Needs Attention',
+        QUEUE ? (QUEUE.mode === 'live' ? 'engine live' : 'engine shadow') + ' · queue ' + fmtDateTime(QUEUE.generated) : 'queue unavailable',
+        'var(--danger)', "document.getElementById('attentionSection').scrollIntoView({behavior:'smooth'})"
+    ));
+    if (sb) {
+        cards.push(kpiCard(pct(sb.win_rate), 'Win Rate (measured)',
+            sb.measured.outcomes.success + ' of ' + sb.measured.total + ' measured', 'var(--success)'));
+        cards.push(kpiCard(pct(sb.closed_loop.rate), 'Closed-Loop Rate',
+            sb.closed_loop.measured + ' of ' + sb.closed_loop.closed_after_publish + ' closed-after-publish', 'var(--info)'));
+        cards.push(kpiCard(pct(sb.expiry.rate), 'Expiry Rate',
+            sb.expiry.expired + ' of ' + sb.expiry.closed_total + ' closed', 'var(--warning)'));
     }
-
-    return `<div class="approved-subgroups">
-        ${renderBucket('Unworked', groups.unworked, 'unworked', true)}
-        ${renderBucket('Scheduled', groups.scheduled, 'scheduled', false)}
-    </div>`;
-}
-
-function renderNeedsFeedbackGroup(items) {
-    if (!items.length) return '';
-    const { groups: byDept, deptKeys } = groupByDepartment(items);
-    const content = deptKeys.map(d => renderDeptGroup(d, byDept[d], 'approved', { defaultExpanded: true })).join('');
-    return `<div class="approved-subgroups" style="margin-top:8px">
-        <div class="approved-subgroup needs-feedback">
-            <div class="subgroup-header needs-feedback">Needs Feedback <span class="subgroup-count">${items.length}</span></div>
-            <div class="subgroup-items">${content}</div>
-        </div>
-    </div>`;
-}
-
-function renderDraftCompact(items) {
-    const { groups, deptKeys } = groupByDepartment(items);
-    if (!deptKeys.length) return '<div class="empty-state" style="padding:8px;font-size:11px">None</div>';
-    return deptKeys.map(d => renderDeptGroup(d, groups[d], 'draft', { defaultExpanded: false })).join('');
-}
-
-function renderPublishedUrgency(items) {
-    // Partition into urgency bands — each CS goes into exactly one band
-    const placed = new Set();
-    const needsReview = items.filter(c => { const l = getUrgencyLevel(c).level; return l === 'needs-review' || l === 'measured'; });
-    needsReview.forEach(c => placed.add(c.id));
-    const blocked = items.filter(c => { const l = getUrgencyLevel(c).level; return l === 'blocked' && !placed.has(c.id); });
-    blocked.forEach(c => placed.add(c.id));
-    const measureDue = items.filter(c => { const l = getUrgencyLevel(c).level; return l === 'measure-due' && !placed.has(c.id); });
-    measureDue.forEach(c => placed.add(c.id));
-    const measuring = items.filter(c => !placed.has(c.id));
-
-    function renderBand(label, list, dotColor, headerCls, defaultExpand) {
-        if (!list.length) return '';
-        const { groups, deptKeys } = groupByDepartment(list);
-        const content = deptKeys.map(d => renderDeptGroup(d, groups[d], 'published', { defaultExpanded: defaultExpand })).join('');
-        return `<div class="published-group">
-            <div class="published-group-header ${headerCls}"><span class="published-group-dot" style="background:${dotColor}"></span>${label} (${list.length})</div>
-            ${content}
-        </div>`;
+    if (money) {
+        cards.push(kpiCard(fmt$(money.actual_revenue), 'Actual Revenue · closed',
+            'vs ' + fmt$(money.expected_revenue) + ' expected · ' + money.entries_with_numeric.actual_revenue + ' of ' + money.cohort_size + ' with data', 'var(--kenetik-green)'));
     }
-
-    const html =
-        renderBand('Review Needed', needsReview, 'var(--danger)', 'urgent', true) +
-        renderBand('Blocked', blocked, 'var(--warning)', 'urgent', true) +
-        renderBand('Measure Due', measureDue, 'var(--warning)', 'urgent', true) +
-        renderBand('Measuring', measuring, 'var(--info)', 'active', false);
-
-    return html || '<div class="empty-state" style="padding:8px;font-size:11px">None</div>';
+    if (openp) {
+        cards.push(kpiCard(fmt$(openp.expected_revenue), 'Open Pipeline · expected rev',
+            openp.entries_with_numeric.expected_revenue + ' of ' + openp.cohort_size + ' open carry a numeric projection', 'var(--accent-light)'));
+    }
+    el.innerHTML = cards.join('');
+}
+function kpiCard(value, label, detail, color, onclick) {
+    return '<div class="kpi-card"' + (onclick ? ' style="cursor:pointer" onclick="' + onclick + '"' : '') + '>' +
+        '<div class="kpi-value" style="color:' + (color || 'var(--text)') + '">' + escHtml(value) + '</div>' +
+        '<div class="kpi-label">' + escHtml(label) + '</div>' +
+        '<div class="kpi-detail">' + escHtml(detail) + '</div></div>';
 }
 
+// ─────────────────────────────────────────────────────────────────────
+// ATTENTION LIST — work-queue.json rendered verbatim
+// ─────────────────────────────────────────────────────────────────────
+function renderAttention() {
+    const body = document.getElementById('attentionBody');
+    document.getElementById('attnTotal').textContent = '· ' + ATTENTION_IDS.size + ' unique ChangeSets';
+    const badgeEl = document.getElementById('engineBadge');
+    if (QUEUE) {
+        const mode = QUEUE.mode === 'live' ? 'live' : 'shadow';
+        badgeEl.innerHTML = '<span class="engine-badge ' + mode + '"><span class="dot"></span>engine ' + mode + ' · generated ' + escHtml(fmtDateTime(QUEUE.generated)) + '</span>';
+    } else { badgeEl.innerHTML = ''; }
+
+    if (!QUEUE) { body.innerHTML = '<div class="empty-state">Work queue unavailable.</div>'; return; }
+
+    const queueMeta = {
+        measurement_due:         { label: 'Measurement Due',        metric: it => ({ txt: it.overdue_days + 'd overdue', cls: 'over' }) },
+        measurement_approaching: { label: 'Measurement Approaching', metric: it => ({ txt: 'due ' + fmtDate(it.due), cls: 'soon' }) },
+        stale:                   { label: 'Stale',                  metric: it => ({ txt: it.age_days + 'd · ' + (it.threshold || ''), cls: 'soon' }) },
+        expiring:                { label: 'Expiring',               metric: it => ({ txt: 'expires in ' + it.expires_in_days + 'd', cls: 'over' }) }
+    };
+    let html = '';
+    Object.keys(queueMeta).forEach(qk => {
+        const items = (QUEUE.queues && QUEUE.queues[qk]) || [];
+        html += '<div class="queue-block"><div class="queue-block-head">' + escHtml(queueMeta[qk].label) +
+            '<span class="queue-count">' + items.length + '</span></div>';
+        if (!items.length) { html += '<div class="empty-state" style="padding:6px;font-size:12px">None</div>'; }
+        else {
+            html += items.map(it => {
+                const m = queueMeta[qk].metric(it);
+                return '<div class="queue-row" onclick="openDetail(\'' + it.id + '\')">' +
+                    '<span class="qid">' + escHtml(it.id) + '</span>' +
+                    '<span class="qtitle">' + escHtml(it.title) + '</span>' +
+                    '<span class="qmeta">' + escHtml(it.owner || '—') + ' · ' + escHtml(departmentLabel(it.department)) + '</span>' +
+                    '<span class="qmetric ' + m.cls + '">' + escHtml(m.txt) + '</span></div>';
+            }).join('');
+        }
+        html += '</div>';
+    });
+
+    const esc = QUEUE.escalations || [];
+    if (esc.length) {
+        html += '<div class="queue-block"><div class="queue-block-head">Escalations<span class="queue-count">' + esc.length + '</span></div>';
+        html += esc.map(e => '<div class="queue-row escalation-row" onclick="openDetail(\'' + e.cs_id + '\')">' +
+            '<span class="qid">' + escHtml(e.cs_id) + '</span>' +
+            '<span class="qtitle qmsg">' + escHtml(e.message) + '</span>' +
+            '<span class="qmeta">→ ' + escHtml(e.audience) + '</span></div>').join('');
+        html += '</div>';
+    }
+    const dr = QUEUE.data_requests || [];
+    if (dr.length) {
+        html += '<div class="queue-block"><div class="queue-block-head">Data Requests<span class="queue-count">' + dr.length + '</span></div>';
+        html += dr.map(d => '<div class="queue-row escalation-row" onclick="openDetail(\'' + d.cs_id + '\')">' +
+            '<span class="qid">' + escHtml(d.cs_id) + '</span>' +
+            '<span class="qtitle qmsg">' + escHtml(d.needed) + ' — ' + escHtml((d.platforms || []).join(', ')) + '</span>' +
+            '<span class="qmeta">' + (d.due_since ? 'since ' + escHtml(fmtDate(d.due_since)) : '') + '</span></div>').join('');
+        html += '</div>';
+    }
+    body.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// PIPELINE BOARD — tracker facts; attention badge = queue membership
+// ─────────────────────────────────────────────────────────────────────
 function renderPipelineCard(cs) {
-    return `<div class="pipeline-card ${urgencyClass(cs)}" onclick="openDetail('${cs.id}')">
-        <div class="cs-id">${cs.id}</div>
-        <div class="cs-title">${cs.title}</div>
-        <div class="cs-meta">
-            ${departmentBadge(cs.department)}
-            ${platformChips(cs.platforms)}
-            ${urgencyBadge(cs)}
-        </div>
-    </div>`;
+    const attn = ATTENTION_IDS.has(cs.id) ? '<span class="attn-badge">attention</span>' : '';
+    return '<div class="pipeline-card" onclick="openDetail(\'' + cs.id + '\')">' +
+        '<div class="cs-id">' + escHtml(cs.id) + '</div>' +
+        '<div class="cs-title">' + escHtml(cs.title) + '</div>' +
+        '<div class="cs-meta">' + departmentBadge(cs.department) + platformChips(cs.platforms) + attn + '</div></div>';
 }
-
+function renderColumn(list) {
+    if (!list.length) return '<div class="empty-state" style="padding:8px;font-size:11px">None</div>';
+    // group by department, attention-bearing departments first
+    const groups = {};
+    list.forEach(cs => { (groups[cs.department || 'unassigned'] = groups[cs.department || 'unassigned'] || []).push(cs); });
+    const order = Object.keys(groups).sort((a, b) => {
+        const ax = groups[a].some(c => ATTENTION_IDS.has(c.id)) ? 0 : 1;
+        const bx = groups[b].some(c => ATTENTION_IDS.has(c.id)) ? 0 : 1;
+        return ax - bx || groups[b].length - groups[a].length;
+    });
+    return order.map(d => '<div class="dept-group"><div class="dept-group-head">' + departmentBadge(d) +
+        '<span style="font-size:11px;color:var(--text-muted)">' + groups[d].length + '</span></div>' +
+        groups[d].map(renderPipelineCard).join('') + '</div>').join('');
+}
 function renderPipeline() {
     const data = getFiltered();
     const container = document.getElementById('pipeline');
-
     const drafts = data.filter(c => c.status === 'draft');
     const approved = data.filter(c => c.status === 'approved');
-    const published = data.filter(c => c.status === 'published');
     const needsFeedback = data.filter(c => c.status === 'needs_feedback');
-
-    // Build the 3-column layout: Draft | Approved | Published
+    const published = data.filter(c => c.status === 'published');
     let html = '';
-
-    // Draft column (compact)
-    html += `<div class="pipeline-col">
-        <div class="pipeline-col-header">
-            Draft
-            <span class="pipeline-col-count">${drafts.length}</span>
-        </div>
-        ${drafts.length ? renderDraftCompact(drafts) : '<div class="empty-state" style="padding:8px;font-size:11px">None</div>'}
-    </div>`;
-
-    // Approved column (sub-grouped)
-    html += `<div class="pipeline-col">
-        <div class="pipeline-col-header">
-            Approved
-            <span class="pipeline-col-count">${approved.length}</span>
-        </div>
-        ${approved.length > 0 ? renderApprovedSubgroups(approved) : '<div class="empty-state" style="padding:8px;font-size:11px">None</div>'}
-        ${needsFeedback.length > 0 ? renderNeedsFeedbackGroup(needsFeedback) : ''}
-    </div>`;
-
-    // Published column (urgency-sorted)
-    html += `<div class="pipeline-col">
-        <div class="pipeline-col-header">
-            Published
-            <span class="pipeline-col-count">${published.length}</span>
-        </div>
-        ${renderPublishedUrgency(published)}
-    </div>`;
-
+    html += '<div class="pipeline-col"><div class="pipeline-col-header">Draft <span class="pipeline-col-count">' + drafts.length + '</span></div>' + renderColumn(drafts) + '</div>';
+    html += '<div class="pipeline-col"><div class="pipeline-col-header">Approved <span class="pipeline-col-count">' + approved.length + '</span></div>' + renderColumn(approved) +
+        (needsFeedback.length ? '<div class="pipeline-col-header" style="margin-top:14px">Needs Feedback <span class="pipeline-col-count">' + needsFeedback.length + '</span></div>' + renderColumn(needsFeedback) : '') + '</div>';
+    html += '<div class="pipeline-col"><div class="pipeline-col-header">Published <span class="pipeline-col-count">' + published.length + '</span></div>' + renderColumn(published) + '</div>';
     container.innerHTML = html;
 }
 
-// ═══════════════════════════════════════════════════
-// CLOSED SECTION — compact table below pipeline
-// ═══════════════════════════════════════════════════
+// ─────────────────────────────────────────────────────────────────────
+// SCOREBOARD — full v3 enum, measured vs administrative (from rollup + constants)
+// ─────────────────────────────────────────────────────────────────────
+function renderScoreboard() {
+    const el = document.getElementById('scoreboardBody');
+    const sb = ROLLUP && ROLLUP.scoreboard;
+    if (!sb) { el.innerHTML = '<div class="empty-state">Rollup unavailable.</div>'; return; }
+    document.getElementById('scoreboardSub').textContent = '· ' + sb.closed_total + ' closed (' + sb.measured.total + ' measured / ' + sb.administrative.total + ' administrative)';
+
+    const colors = { success: 'var(--success)', underperformed: 'var(--danger)', inconclusive: 'var(--warning)',
+        expired_unexecuted: 'var(--text-muted)', expired_unreviewed: 'var(--text-muted)', superseded: 'var(--info)',
+        data_needed: 'var(--warning)', invalid_premise: 'var(--investigation)', rolled_back: 'var(--danger)' };
+
+    function group(title, total, counts, enumList) {
+        const max = Math.max(1, ...Object.values(counts));
+        const lines = (enumList || Object.keys(counts)).filter(o => (counts[o] || 0) >= 0).map(o => {
+            const c = counts[o] || 0;
+            return '<div class="outcome-line"><span class="oc-count">' + c + '</span>' +
+                '<div style="flex:1"><div class="oc-label">' + escHtml(outcomeLabel(o)) + '</div>' +
+                '<div class="outcome-bar" style="width:' + (c / max * 100) + '%;background:' + (colors[o] || 'var(--accent)') + '"></div></div></div>';
+        }).join('');
+        return '<div><div class="split-head">' + title + '<span class="split-total">' + total + ' closed</span></div>' + lines + '</div>';
+    }
+    el.innerHTML =
+        group('Measured', sb.measured.total, sb.measured.outcomes, CONSTANTS && CONSTANTS.measured_outcomes) +
+        group('Administrative', sb.administrative.total, sb.administrative.outcomes, CONSTANTS && CONSTANTS.administrative_outcomes);
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// CLOSED TABLE — tracker facts
+// ─────────────────────────────────────────────────────────────────────
 function toggleClosed() {
     closedExpanded = !closedExpanded;
     document.getElementById('closedContent').classList.toggle('expanded', closedExpanded);
     document.getElementById('closedToggle').classList.toggle('expanded', closedExpanded);
     document.getElementById('closedHeader').classList.toggle('expanded', closedExpanded);
 }
-
 function renderClosed() {
-    const data = getFiltered();
-    const closed = data.filter(isClosed);
-
-    // Summary pills
-    const successCount = closed.filter(c => c.outcome === 'success').length;
-    const underCount = closed.filter(c => c.outcome === 'underperformed').length;
-    const inconclusiveCount = closed.filter(c => c.outcome === 'inconclusive').length;
-    const rolledBack = closed.filter(c => c.status === 'rolled_back').length;
-    const totalActual = closed.reduce((s, c) => s + actualRev(c), 0);
-
-    document.getElementById('closedCountBadge').textContent = `(${closed.length})`;
-
-    let pills = '';
-    if (successCount) pills += `<span class="badge badge-low">${successCount} success</span>`;
-    if (underCount) pills += `<span class="badge badge-high">${underCount} under</span>`;
-    if (inconclusiveCount) pills += `<span class="badge badge-medium">${inconclusiveCount} inconc</span>`;
-    if (rolledBack) pills += `<span class="badge badge-high">${rolledBack} rolled back</span>`;
-    if (totalActual) pills += `<span style="font-size:12px;color:var(--success);font-weight:600;margin-left:4px">${fmt$(totalActual)}</span>`;
-    document.getElementById('closedSummaryPills').innerHTML = pills;
-
-    // Sort closed: most recent first
-    const sorted = [...closed].sort((a, b) => (b.closed_date || b.created || '').localeCompare(a.closed_date || a.created || ''));
-
+    const closed = getFiltered().filter(isClosed);
+    document.getElementById('closedCountBadge').textContent = '(' + closed.length + ')';
+    const sb = ROLLUP && ROLLUP.scoreboard;
+    document.getElementById('closedSummaryPills').innerHTML = sb
+        ? '<span class="pill" style="color:var(--success)">' + sb.measured.total + ' measured</span> <span class="pill" style="color:var(--text-muted)">' + sb.administrative.total + ' administrative</span>'
+        : '';
+    const sorted = [...closed].sort((a, b) => String(b.closed_date || '').localeCompare(String(a.closed_date || '')));
     const rows = sorted.map(cs => {
-        const outcomeClass = cs.outcome ? `outcome-${cs.outcome}` : '';
-        const outcomeLabel = cs.outcome ? cs.outcome.replace(/_/g, ' ') : (cs.status === 'rolled_back' ? 'rolled back' : '—');
-        return `<tr>
-            <td><span class="cs-link" onclick="openDetail('${cs.id}')">${cs.id}</span></td>
-            <td style="max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${cs.title}</td>
-            <td>${departmentBadge(cs.department)} ${platformChips(cs.platforms)}</td>
-            <td><span class="${outcomeClass}" style="font-weight:600;text-transform:capitalize">${outcomeLabel}</span></td>
-            <td>${cs.owner || '—'}</td>
-            <td>${cs.closed_date || '—'}</td>
-            <td>${actualRev(cs) ? fmt$(actualRev(cs)) : '—'}</td>
-        </tr>`;
+        const tag = isMeasured(cs.outcome) ? '<span class="pill" style="color:var(--success)">measured</span>'
+            : isAdministrative(cs.outcome) ? '<span class="pill" style="color:var(--text-muted)">admin</span>' : '';
+        return '<tr onclick="openDetail(\'' + cs.id + '\')" style="cursor:pointer">' +
+            '<td class="cs-link">' + escHtml(cs.id) + '</td>' +
+            '<td>' + escHtml(cs.title) + '</td>' +
+            '<td>' + departmentBadge(cs.department) + '</td>' +
+            '<td>' + escHtml(cs.owner || '—') + '</td>' +
+            '<td>' + escHtml(outcomeLabel(cs.outcome)) + ' ' + tag + '</td>' +
+            '<td>' + fmtDate(cs.closed_date) + '</td></tr>';
     }).join('');
-
-    document.getElementById('closedContent').innerHTML = `
-        <table class="closed-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Department</th>
-                    <th>Outcome</th>
-                    <th>Owner</th>
-                    <th>Closed</th>
-                    <th>Revenue</th>
-                </tr>
-            </thead>
-            <tbody>${rows}</tbody>
-        </table>
-    `;
+    document.getElementById('closedContent').innerHTML =
+        '<table class="closed-table"><thead><tr><th>ID</th><th>Title</th><th>Department</th><th>Owner</th><th>Outcome</th><th>Closed</th></tr></thead><tbody>' +
+        (rows || '<tr><td colspan="6" class="empty-state">None</td></tr>') + '</tbody></table>';
 }
 
-// ═══════════════════════════════════════════════════
-// CHARTS
-// ═══════════════════════════════════════════════════
-function renderCharts() {
-    const data = getFiltered();
-    const closed = data.filter(isClosed);
+// ─────────────────────────────────────────────────────────────────────
+// MONEY — rollup output only
+// ─────────────────────────────────────────────────────────────────────
+function renderMoney() {
+    const el = document.getElementById('moneyBody');
+    if (!ROLLUP) { el.innerHTML = '<div class="empty-state">Rollup unavailable.</div>'; return; }
+    const cc = ROLLUP.money.closed_cohort, mc = ROLLUP.money.measured_cohort, op = ROLLUP.open_pipeline;
+    let html = '';
 
-    Object.values(charts).forEach(c => c.destroy());
-    charts = {};
+    html += '<div class="charts-row" style="margin-bottom:16px"><div class="chart-card"><h3>Closed Cohort · Expected vs Actual</h3>' +
+        '<table class="money-table"><thead><tr><th>Cohort</th><th>Exp. Revenue</th><th>Act. Revenue</th><th>Exp. Margin</th><th>Act. Margin</th></tr></thead><tbody>' +
+        '<tr><td>All closed (' + cc.cohort_size + ')</td><td>' + fmt$(cc.expected_revenue) + '</td><td>' + fmt$(cc.actual_revenue) + '</td><td>' + fmt$(cc.expected_margin) + '</td><td>' + fmt$(cc.actual_margin) + '</td></tr>' +
+        '<tr><td>Measured (' + mc.cohort_size + ')</td><td>' + fmt$(mc.expected_revenue) + '</td><td>' + fmt$(mc.actual_revenue) + '</td><td>' + fmt$(mc.expected_margin) + '</td><td>' + fmt$(mc.actual_margin) + '</td></tr>' +
+        '</tbody></table>' +
+        '<div style="font-size:11px;color:var(--text-muted);margin-top:8px">Numeric data present on ' + cc.entries_with_numeric.actual_revenue + '/' + cc.cohort_size + ' closed (actual revenue). Non-numeric projections are excluded and listed below.</div>' +
+        '</div>' +
+        '<div class="chart-card"><h3>Open Pipeline</h3>' +
+        '<table class="money-table"><thead><tr><th></th><th>Value</th></tr></thead><tbody>' +
+        '<tr><td>Expected revenue</td><td>' + fmt$(op.expected_revenue) + '</td></tr>' +
+        '<tr><td>Expected margin</td><td>' + fmt$(op.expected_margin) + '</td></tr>' +
+        '<tr><td>Open ChangeSets</td><td>' + op.cohort_size + '</td></tr>' +
+        '<tr><td>With numeric projection</td><td>' + op.entries_with_numeric.expected_revenue + '</td></tr>' +
+        '</tbody></table>' +
+        '<div style="font-size:11px;color:var(--text-muted);margin-top:8px">By status: ' + Object.entries(op.by_status).map(([s, n]) => escHtml(s) + ' ' + n).join(' · ') + '</div>' +
+        '</div></div>';
 
-    // 1. Closure Trend (by week)
-    const closureByWeek = {};
-    closed.forEach(cs => {
-        if (cs.closed_date) {
-            const d = new Date(cs.closed_date);
-            const week = new Date(d);
-            week.setDate(d.getDate() - d.getDay());
-            const key = week.toISOString().slice(0, 10);
-            closureByWeek[key] = (closureByWeek[key] || 0) + 1;
-        }
-    });
+    // By department (rollup closed-cohort breakdown — honest replacement for the deleted charts)
+    const depts = Object.keys(ROLLUP.by_department).sort((a, b) => ROLLUP.by_department[b].expected_revenue - ROLLUP.by_department[a].expected_revenue);
+    html += '<div class="chart-card"><h3>By Department · closed cohort</h3><table class="dept-table"><thead><tr><th>Department</th><th>Closed</th><th>Measured</th><th>Wins</th><th>Win rate</th><th>Exp. Rev</th><th>Act. Rev</th></tr></thead><tbody>' +
+        depts.map(d => { const r = ROLLUP.by_department[d]; return '<tr><td>' + departmentBadge(d) + '</td><td>' + r.closed + '</td><td>' + r.measured + '</td><td>' + r.wins + '</td><td>' + pct(r.win_rate) + '</td><td>' + fmt$(r.expected_revenue) + '</td><td>' + fmt$(r.actual_revenue) + '</td></tr>'; }).join('') +
+        '</tbody></table></div>';
 
-    const weekKeys = Object.keys(closureByWeek).sort();
-    let cumulative = 0;
-    const cumulativeData = weekKeys.map(k => { cumulative += closureByWeek[k]; return cumulative; });
+    // Skipped disclosure
+    const sk = ROLLUP.skipped || [];
+    html += '<div class="skip-note" onclick="document.getElementById(\'skipList\').classList.toggle(\'open\')">⚠ ' + sk.length + ' non-numeric impact projection' + (sk.length === 1 ? '' : 's') + ' excluded from sums (click to view)</div>' +
+        '<div class="skip-list" id="skipList">' + sk.map(s => '<div><code>' + escHtml(s.id) + '</code> · ' + escHtml(s.field) + ' — “' + escHtml(s.value_preview) + '”</div>').join('') + '</div>';
 
-    charts.closure = new Chart(document.getElementById('closureTrendChart'), {
-        type: 'bar',
-        data: {
-            labels: weekKeys.length ? weekKeys.map(k => new Date(k).toLocaleDateString('en-US', {month:'short', day:'numeric'})) : ['No closed ChangeSets yet'],
-            datasets: [
-                {
-                    label: 'Closed (weekly)',
-                    data: weekKeys.length ? weekKeys.map(k => closureByWeek[k]) : [0],
-                    backgroundColor: 'rgba(99,102,241,0.5)',
-                    borderRadius: 4,
-                    yAxisID: 'y',
-                    order: 2
-                },
-                {
-                    label: 'Cumulative',
-                    data: cumulativeData.length ? cumulativeData : [0],
-                    type: 'line',
-                    borderColor: '#22c55e',
-                    backgroundColor: 'transparent',
-                    tension: 0.3,
-                    pointRadius: 3,
-                    yAxisID: 'y1',
-                    order: 1
-                }
-            ]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#8b8fa3', font: { size: 11 } } } },
-            scales: {
-                x: { ticks: { color: '#8b8fa3', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
-                y: { position: 'left', ticks: { color: '#8b8fa3', stepSize: 1 }, grid: { color: 'rgba(255,255,255,0.05)' }, title: { display: true, text: 'Closed', color: '#8b8fa3', font: { size: 10 } } },
-                y1: { position: 'right', ticks: { color: '#22c55e', stepSize: 1 }, grid: { display: false }, title: { display: true, text: 'Cumulative', color: '#22c55e', font: { size: 10 } } }
-            }
-        }
-    });
-
-    // 2. Impact by Department
-    const depts = [...new Set(data.map(c => c.department).filter(Boolean))].sort();
-    const expectedByDept = depts.map(d => data.filter(c => c.department === d).reduce((sum, c) => sum + expectedRev(c), 0));
-    const actualByDept = depts.map(d => closed.filter(c => c.department === d).reduce((sum, c) => sum + actualRev(c), 0));
-
-    charts.domain = new Chart(document.getElementById('impactByDomainChart'), {
-        type: 'bar',
-        data: {
-            labels: depts.map(d => departmentLabel(d)),
-            datasets: [
-                { label: 'Expected Revenue', data: expectedByDept, backgroundColor: 'rgba(99,102,241,0.4)', borderRadius: 4 },
-                { label: 'Actual Revenue', data: actualByDept, backgroundColor: 'rgba(34,197,94,0.6)', borderRadius: 4 }
-            ]
-        },
-        options: {
-            indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-            plugins: {
-                legend: { labels: { color: '#8b8fa3', font: { size: 11 } } },
-                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt$(ctx.raw) } }
-            },
-            scales: {
-                x: { ticks: { color: '#8b8fa3', callback: v => fmt$(v) }, grid: { color: 'rgba(255,255,255,0.05)' } },
-                y: { ticks: { color: '#8b8fa3' }, grid: { display: false } }
-            }
-        }
-    });
-
-    // 3. Impact by Primary Metric
-    const metricMap = {};
-    data.forEach(cs => {
-        const m = cs.expected_impact?.primary_metric || 'unknown';
-        if (!metricMap[m]) metricMap[m] = { expected: 0, actual: 0, count: 0 };
-        metricMap[m].expected += expectedRev(cs);
-        metricMap[m].count++;
-        if (isClosed(cs)) metricMap[m].actual += actualRev(cs);
-    });
-    const metrics = Object.keys(metricMap).sort();
-
-    charts.metric = new Chart(document.getElementById('impactByMetricChart'), {
-        type: 'bar',
-        data: {
-            labels: metrics,
-            datasets: [
-                { label: 'Expected Revenue', data: metrics.map(m => metricMap[m].expected), backgroundColor: 'rgba(99,102,241,0.4)', borderRadius: 4 },
-                { label: 'Actual Revenue', data: metrics.map(m => metricMap[m].actual), backgroundColor: 'rgba(34,197,94,0.6)', borderRadius: 4 }
-            ]
-        },
-        options: {
-            indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-            plugins: {
-                legend: { labels: { color: '#8b8fa3', font: { size: 11 } } },
-                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt$(ctx.raw) + ' (' + metricMap[metrics[ctx.dataIndex]].count + ' CS)' } }
-            },
-            scales: {
-                x: { ticks: { color: '#8b8fa3', callback: v => fmt$(v) }, grid: { color: 'rgba(255,255,255,0.05)' } },
-                y: { ticks: { color: '#8b8fa3' }, grid: { display: false } }
-            }
-        }
-    });
-
-    // 4. Outcomes Breakdown
-    const outcomes = { success: 0, underperformed: 0, inconclusive: 0, rolled_back: 0, cancelled: 0, open: 0 };
-    data.forEach(cs => {
-        if (cs.outcome && outcomes.hasOwnProperty(cs.outcome)) outcomes[cs.outcome]++;
-        else if (isOpen(cs)) outcomes.open++;
-    });
-    const outcomeLabels = Object.keys(outcomes).filter(k => outcomes[k] > 0);
-    const outcomeColors = { success: '#22c55e', underperformed: '#ef4444', inconclusive: '#f59e0b', rolled_back: '#ef4444', cancelled: '#8b8fa3', open: '#6366f1' };
-
-    charts.outcomes = new Chart(document.getElementById('outcomesChart'), {
-        type: 'doughnut',
-        data: {
-            labels: outcomeLabels.map(l => l.replace(/_/g, ' ')),
-            datasets: [{
-                data: outcomeLabels.map(l => outcomes[l]),
-                backgroundColor: outcomeLabels.map(l => outcomeColors[l] || '#6366f1'),
-                borderWidth: 0,
-                hoverOffset: 6
-            }]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            cutout: '60%',
-            plugins: {
-                legend: { position: 'right', labels: { color: '#8b8fa3', font: { size: 11 }, padding: 12 } }
-            }
-        }
-    });
+    el.innerHTML = html;
 }
 
-// ═══════════════════════════════════════════════════
-// TABLE
-// ═══════════════════════════════════════════════════
-function renderTable() {
-    const data = getFiltered();
-
-    data.sort((a, b) => {
-        let va, vb;
-        if (sortCol === 'expected_revenue') { va = expectedRev(a); vb = expectedRev(b); }
-        else if (sortCol === 'actual_revenue') { va = actualRev(a); vb = actualRev(b); }
-        else { va = a[sortCol] ?? ''; vb = b[sortCol] ?? ''; }
-        if (typeof va === 'string') { va = va.toLowerCase(); vb = vb.toLowerCase(); }
-        if (va < vb) return sortDir === 'asc' ? -1 : 1;
-        if (va > vb) return sortDir === 'asc' ? 1 : -1;
-        return 0;
-    });
-
-    document.getElementById('csTableBody').innerHTML = data.map(cs => `
-        <tr>
-            <td><span class="cs-link" onclick="openDetail('${cs.id}')">${cs.id}</span></td>
-            <td>${cs.title}</td>
-            <td>${subtypeBadge(cs.subtype)}</td>
-            <td>${departmentBadge(cs.department)} ${platformChips(cs.platforms)}</td>
-            <td><span class="status-pill status-${cs.status}">${(cs.status || '').replace(/_/g, ' ')}</span></td>
-            <td><span class="badge badge-${cs.risk_level || 'low'}">${cs.risk_level || 'low'}</span></td>
-            <td>${cs.owner || '—'}</td>
-            <td>${cs.created || '—'}</td>
-            <td>${cs.outcome ? `<span class="outcome-${cs.outcome}">${cs.outcome}</span>` : '—'}</td>
-            <td>${expectedRev(cs) ? fmt$(expectedRev(cs)) : '—'}</td>
-            <td>${cs.actual_impact ? fmt$(actualRev(cs)) : '—'}</td>
-        </tr>
-    `).join('');
-
-    document.querySelectorAll('.data-table th').forEach(th => {
-        th.classList.toggle('sorted', th.dataset.sort === sortCol);
-        th.textContent = th.textContent.replace(/ [▲▼]$/, '');
-        if (th.dataset.sort === sortCol) th.textContent += sortDir === 'asc' ? ' ▲' : ' ▼';
-    });
-}
-
-document.querySelectorAll('.data-table th[data-sort]').forEach(th => {
-    th.addEventListener('click', () => {
-        const col = th.dataset.sort;
-        if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
-        else { sortCol = col; sortDir = 'asc'; }
-        renderTable();
-    });
-});
-
-// ═══════════════════════════════════════════════════
-// DETAIL PANEL — with measurement result display
-// ═══════════════════════════════════════════════════
-function openDetail(id) {
-    const cs = TRACKER.changesets.find(c => c.id === id);
-    if (!cs) return;
-
-    const ei = cs.expected_impact || {};
-    const ai = cs.actual_impact || {};
-    const mr = cs.measurement_result || null;
-    const rev = ei.revenue || {};
-    const mar = ei.margin || {};
-
-    // Kick off brief fetch immediately (non-blocking)
-    const briefPromise = fetchBrief(cs.id);
-
-    // Measurement result section
-    let measurementHtml = '';
-    if (mr) {
-        const outcomeColor = mr.outcome === 'success' ? 'var(--success)' : mr.outcome === 'underperformed' ? 'var(--danger)' : 'var(--warning)';
-        const pk = mr.primary_kpi || {};
-
-        let secondaryHtml = '';
-        if (mr.secondary_kpis && mr.secondary_kpis.length) {
-            secondaryHtml = mr.secondary_kpis.map(k =>
-                `<tr><td>${k.metric}</td><td>${k.target || '—'}</td><td>${k.actual || '—'}</td><td>${k.delta || '—'}</td></tr>`
-            ).join('');
-        }
-
-        measurementHtml = `
-        <div class="detail-section">
-            <h4>Measurement Result</h4>
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
-                <span style="font-size:16px;font-weight:700;color:${outcomeColor};text-transform:uppercase">${mr.outcome}</span>
-                <span style="font-size:12px;color:var(--text-muted)">Measured ${mr.measured_date || '—'} · Confidence: ${mr.confidence || '—'}</span>
-            </div>
-            <table class="impact-table">
-                <tr><th>Metric</th><th>Target</th><th>Actual</th><th>Delta</th></tr>
-                <tr style="font-weight:600">
-                    <td>${pk.metric || '—'}</td>
-                    <td>${pk.target || '—'}</td>
-                    <td>${pk.actual || '—'}</td>
-                    <td>${pk.delta || '—'}</td>
-                </tr>
-                ${secondaryHtml}
-            </table>
-            ${mr.notes ? `<div style="margin-top:10px;font-size:12px;color:var(--text-muted);line-height:1.5;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px">${mr.notes}</div>` : ''}
-            ${mr.recommended_action ? `<div style="margin-top:8px;font-size:12px;line-height:1.5"><strong style="color:var(--warning)">Recommended:</strong> ${mr.recommended_action}</div>` : ''}
-            <div style="margin-top:6px;font-size:10px;color:var(--text-muted)">Source: ${mr.measurement_source || '—'}${mr.sample_size ? ' · Sample: ' + Number(mr.sample_size).toLocaleString() : ''}</div>
-        </div>`;
-    }
-
-    // Brief link — every CS has cs.file pointing to the markdown in kenetik-growth-system
-    const briefUrl = cs.file ? (BRIEF_BASE_URL + cs.file) : null;
-    const briefLink = briefUrl
-        ? `<a href="${briefUrl}" target="_blank" rel="noopener" class="brief-link">View full brief <span style="font-size:10px;opacity:0.7">↗</span></a>`
-        : '';
-
-    // Sweep flags — normalize to string list
-    const sweepFlagsRaw = Array.isArray(cs.sweep_flags) ? cs.sweep_flags : [];
-    const sweepFlagStrings = sweepFlagsRaw.map(f => typeof f === 'string' ? f : (f && f.flag) || '').filter(Boolean);
-    const sweepFlagHtml = sweepFlagStrings.length
-        ? `<div class="detail-alert detail-alert-warn"><strong>Sweep flags:</strong> ${sweepFlagStrings.map(f => `<span class="sweep-chip">${f}</span>`).join(' ')}</div>`
-        : '';
-
-    // Taxonomy divergence detail — when sweep Phase 0.9 has flagged tracker ≠ brief.
-    // Makes the flag actionable without opening the brief to diff manually.
-    const td = cs.taxonomy_divergence;
-    const taxonomyDivergenceHtml = (td && td.tracker && td.brief)
-        ? `<div class="detail-alert detail-alert-warn" style="font-size:12px">
-               <div style="font-weight:700;margin-bottom:6px">Taxonomy divergence (tracker vs brief)${td.detected ? ' · detected ' + td.detected : ''}</div>
-               <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-family:ui-monospace,monospace;font-size:11px">
-                   <span style="color:var(--text-muted)">tracker:</span><span>${td.tracker.department || '—'} / [${(td.tracker.platforms||[]).join(', ')}]</span>
-                   <span style="color:var(--text-muted)">brief:</span><span>${td.brief.department || '—'} / [${(td.brief.platforms||[]).join(', ')}]</span>
-               </div>
-               <div style="margin-top:6px;font-size:11px;color:var(--text-muted)">Brief is authoritative by default — confirm and correct the tracker (or edit the brief if the brief is wrong).</div>
-           </div>`
-        : '';
-
-    // Revision notes — highlighted for needs_feedback
-    const revisionHtml = cs.revision_notes
-        ? `<div class="detail-alert detail-alert-danger">
-               <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px">Revision Requested${cs.revision_date ? ' · ' + cs.revision_date : ''}</div>
-               <pre style="font-size:12px;line-height:1.5;white-space:pre-wrap;font-family:inherit;margin:0">${cs.revision_notes}</pre>
-           </div>`
-        : '';
-
-    // Timeline: Routed → Approved → Published → Measurement Due → Closed
-    const timelineEntries = [];
-    if (cs.created)                 timelineEntries.push({ label: 'Created',         date: cs.created });
-    if (cs.routed_date)             timelineEntries.push({ label: 'Routed',          date: cs.routed_date, meta: cs.routed_via ? ` (${cs.routed_via})` : '' });
-    if (cs.execution_target_date)   timelineEntries.push({ label: 'Target Execute',  date: cs.execution_target_date });
-    if (cs.scheduled_send_date)     timelineEntries.push({ label: 'Scheduled Send',  date: cs.scheduled_send_date });
-    if (cs.approved_date)           timelineEntries.push({ label: 'Approved',        date: cs.approved_date, meta: cs.approved_by ? ` by ${cs.approved_by}` : '' });
-    if (cs.published_date)          timelineEntries.push({ label: 'Published',       date: cs.published_date });
-    if (cs.measurement_due)         timelineEntries.push({ label: 'Measurement Due', date: cs.measurement_due });
-    if (cs.closed_date)             timelineEntries.push({ label: 'Closed',          date: cs.closed_date });
-    const timelineHtml = timelineEntries.length
-        ? `<div class="detail-timeline">${timelineEntries.map(e => `
-              <div class="timeline-entry">
-                  <div class="timeline-label">${e.label}</div>
-                  <div class="timeline-date">${e.date}${e.meta||''}</div>
-              </div>`).join('')}</div>`
-        : '';
-
-    // Compact at-a-glance meta row (the things you actually scan first)
-    const urgencyLabel = cs.urgency ? cs.urgency.replace(/_/g, ' ') : '';
-    const urgencyChip = urgencyLabel ? `<span class="meta-chip meta-chip-warn">urgency: ${urgencyLabel}</span>` : '';
-    const autonomyChip = cs.autonomy_tier != null ? `<span class="meta-chip">autonomy T${cs.autonomy_tier}</span>` : '';
-    const reviewChip = cs.review_tier ? `<span class="meta-chip">review: ${cs.review_tier}</span>` : '';
-
-    document.getElementById('detailPanel').innerHTML = `
-        <button class="detail-close" onclick="closeDetail()">&times;</button>
-        <div class="detail-header-row">
-            <div class="detail-id">${cs.id}</div>
-            ${briefLink}
-        </div>
-        <h2>${cs.title}</h2>
-
-        <div class="detail-meta-row">
-            <span class="status-pill status-${cs.status}" style="font-size:12px">${(cs.status || '').replace(/_/g, ' ')}</span>
-            ${subtypeBadge(cs.subtype)}
-            ${departmentBadge(cs.department)}
-            <span class="badge badge-${cs.risk_level || 'low'}" style="font-size:11px">risk: ${cs.risk_level || 'low'}</span>
-            ${urgencyChip}
-            ${autonomyChip}
-            ${reviewChip}
-        </div>
-
-        ${revisionHtml}
-        ${sweepFlagHtml}
-        ${taxonomyDivergenceHtml}
-
-        <div class="brief-narrative" id="briefNarrative-${cs.id}">
-            <div class="brief-narrative-loading">Loading brief…</div>
-        </div>
-
-        <div class="detail-grid" style="margin-top:14px">
-            <div class="detail-field"><label>Owner</label><span>${cs.owner || '—'}</span></div>
-            <div class="detail-field"><label>Platforms</label><span>${(cs.platforms||[]).join(', ') || '—'}</span></div>
-            <div class="detail-field"><label>Objective</label><span>${cs.objective_level || '—'}</span></div>
-            <div class="detail-field"><label>Category</label><span>${(cs.category || '—').replace(/_/g, ' ')}</span></div>
-            <div class="detail-field"><label>Routed To</label><span>${Array.isArray(cs.routed_to) ? cs.routed_to.join(', ') : (cs.routed_to || '—')}</span></div>
-            <div class="detail-field"><label>Measurement Window</label><span>${cs.measurement_window || '—'}</span></div>
-            ${cs.outcome ? `<div class="detail-field"><label>Outcome</label><span class="outcome-${cs.outcome}" style="font-weight:600">${cs.outcome}</span></div>` : ''}
-        </div>
-
-        ${timelineHtml}
-
-        ${(Array.isArray(cs.dependencies) && cs.dependencies.length) || (Array.isArray(cs.blocks) && cs.blocks.length) || cs.spawned_from || (Array.isArray(cs.spawned_changesets) && cs.spawned_changesets.length) ? `
-        <div class="detail-section detail-relations">
-            ${cs.spawned_from ? `<div><label>Spawned From</label> <span class="cs-link" onclick="openDetail('${cs.spawned_from}')">${cs.spawned_from}</span></div>` : ''}
-            ${Array.isArray(cs.spawned_changesets) && cs.spawned_changesets.length ? `<div><label>Spawned</label> ${cs.spawned_changesets.map(s => `<span class="cs-link" onclick="openDetail('${s}')">${s}</span>`).join(', ')}</div>` : ''}
-            ${Array.isArray(cs.dependencies) && cs.dependencies.length ? `<div><label>Depends On</label> ${cs.dependencies.map(d => /^CS-/.test(d) ? `<span class="cs-link" onclick="openDetail('${d}')">${d}</span>` : d).join(', ')}</div>` : ''}
-            ${Array.isArray(cs.blocks) && cs.blocks.length ? `<div><label>Blocks</label> ${cs.blocks.map(d => /^CS-/.test(d) ? `<span class="cs-link" onclick="openDetail('${d}')">${d}</span>` : d).join(', ')}</div>` : ''}
-        </div>
-        ` : ''}
-
-        <div class="detail-section">
-            <h4>Expected Impact</h4>
-            <table class="impact-table">
-                <tr><th></th><th>Revenue</th><th>Margin</th></tr>
-                <tr><td>Upside</td><td>${fmt$(rev.upside)}</td><td>${fmt$(mar.upside)}</td></tr>
-                <tr><td>Expected</td><td style="font-weight:600">${fmt$(rev.expected)}</td><td style="font-weight:600">${fmt$(mar.expected)}</td></tr>
-                <tr><td>Downside</td><td>${fmt$(rev.downside)}</td><td>${fmt$(mar.downside)}</td></tr>
-            </table>
-            <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">
-                Primary metric: <strong>${ei.primary_metric || '—'}</strong> — Target: ${ei.primary_metric_target || '—'}
-            </div>
-        </div>
-
-        ${measurementHtml}
-
-        ${ai && ai.primary_metric ? `
-        <div class="detail-section">
-            <h4>Actual Impact</h4>
-            <table class="impact-table">
-                <tr><th>Metric</th><th>Baseline</th><th>Result</th><th>Delta</th></tr>
-                <tr>
-                    <td>${ai.primary_metric}</td>
-                    <td>${ai.primary_metric_baseline ?? '—'}</td>
-                    <td style="font-weight:600">${ai.primary_metric_result ?? '—'}</td>
-                    <td style="font-weight:600;color:${(ai.primary_metric_delta||'').startsWith('+') ? 'var(--success)' : 'var(--danger)'}">${ai.primary_metric_delta ?? '—'}</td>
-                </tr>
-            </table>
-            <div style="margin-top:8px;font-size:12px">
-                Revenue impact: <strong>${fmt$(ai.revenue_impact)}</strong> ·
-                Margin impact: <strong>${fmt$(ai.margin_impact)}</strong> ·
-                Confidence: ${ai.confidence || '—'} ·
-                Stat sig: ${ai.statistical_significance ? 'Yes' : 'No'}
-            </div>
-        </div>
-        ` : ''}
-
-        ${cs.learning_note ? `
-        <div class="detail-section">
-            <h4>Learning Note</h4>
-            <p style="font-size:13px;line-height:1.5">${cs.learning_note}</p>
-        </div>
-        ` : ''}
-
-        <div class="detail-section">
-            <h4>Notes</h4>
-            <p style="font-size:13px;line-height:1.5;color:var(--text-muted)">${cs.notes || '—'}</p>
-        </div>
-
-        ${briefUrl ? `<div class="detail-brief-footer">
-            <a href="${briefUrl}" target="_blank" rel="noopener" class="brief-link-lg">Open full brief in GitHub <span style="font-size:11px">↗</span></a>
-        </div>` : ''}
-    `;
-
-    document.getElementById('detailOverlay').classList.add('open');
-
-    // Fill in brief narrative once fetched. We fall back to cs.hypothesis if the
-    // brief can't be fetched (e.g. not yet mirrored into /data/briefs/).
-    briefPromise.then(md => {
-        const container = document.getElementById('briefNarrative-' + cs.id);
-        if (!container) return; // popup was closed or reopened on a different CS
-        if (md) {
-            const parsed = parseBrief(md);
-            const html = renderBriefNarrative(parsed);
-            if (html) {
-                container.innerHTML = html;
-                return;
-            }
-        }
-        // Fallback: show hypothesis from tracker if we have it, else a link prompt
-        if (cs.hypothesis) {
-            container.innerHTML = `
-                <div class="brief-section">
-                    <div class="brief-section-heading">Hypothesis</div>
-                    <div class="brief-section-body"><p>${cs.hypothesis}</p></div>
-                </div>
-                ${briefUrl ? `<div class="brief-narrative-error">Full brief not yet mirrored to dashboard — <a href="${briefUrl}" target="_blank" rel="noopener" style="color:var(--accent-light)">view on GitHub ↗</a></div>` : ''}
-            `;
-        } else if (briefUrl) {
-            container.innerHTML = `<div class="brief-narrative-error">No narrative available in tracker. <a href="${briefUrl}" target="_blank" rel="noopener" style="color:var(--accent-light)">Open full brief in GitHub ↗</a></div>`;
-        } else {
-            container.innerHTML = `<div class="brief-narrative-error">No brief linked for this ChangeSet.</div>`;
-        }
-    });
-}
-
-function closeDetail() {
-    document.getElementById('detailOverlay').classList.remove('open');
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
-
-
-// ═══════════════════════════════════════════════════
-// OWNER LOAD BALANCING — "My Work" view
-// ═══════════════════════════════════════════════════
-
-// Status palette used by drawer badges (kept for legacy call-sites inside the drawer)
-const OWNER_STATUS_COLORS = {
-    draft: '#8b8fa3',
-    proposed: '#f59e0b',
-    needs_feedback: '#ef4444',
-    approved: '#3b82f6',
-    published: '#22c55e'
-};
-
-// Urgency palette — colors the owner-card bar by "what's pulling on this owner"
-// rather than by workflow stage. Red = overdue, orange = aging drafts,
-// yellow = awaiting review, green = healthy. Matches the focus-chip levels.
-const OWNER_URGENCY_COLORS = {
-    overdue:       '#ef4444', // red — same as --danger
-    aging:         '#f59e0b', // orange — same as --warning
-    needsFeedback: '#eab308', // yellow
-    healthy:       '#22c55e'  // green — same as --success
-};
-const OWNER_URGENCY_LABELS = {
-    overdue:       'overdue',
-    aging:         'aging draft',
-    needsFeedback: 'awaiting review',
-    healthy:       'on track'
-};
-
-// Parse an owner cell — may be "Nick", "Nick + Charlotte", "Nick (T1), Nick+Lawrence+Derek (T2), Lawrence (T3)",
-// "Charlotte & Brandon", etc. Returns a deduped array of primary names.
+// ─────────────────────────────────────────────────────────────────────
+// OWNER LOAD — bucketed by the single attention set
+// ─────────────────────────────────────────────────────────────────────
 function parseOwners(raw) {
     if (!raw) return ['Unassigned'];
-    let s = String(raw);
-    // Strip tier parentheticals like "(T1)", "(T2)", "(t3)"
-    s = s.replace(/\(\s*t\s*\d+\s*\)/gi, '');
-    // Split on common conjunctions
-    const parts = s.split(/[,+&/]|(?:\s+and\s+)|(?:\s*\/\s*)/i)
-                   .map(x => x.trim())
-                   .filter(Boolean);
+    let s = String(raw).replace(/\(\s*t\s*\d+\s*\)/gi, '');
+    const parts = s.split(/[,+&/]|(?:\s+and\s+)/i).map(x => x.trim()).filter(Boolean);
     const seen = new Set(), out = [];
-    for (const p of parts) {
-        const k = p.toLowerCase();
-        if (!seen.has(k)) { seen.add(k); out.push(p); }
-    }
+    for (const p of parts) { const k = p.toLowerCase(); if (!seen.has(k)) { seen.add(k); out.push(p); } }
     return out.length ? out : ['Unassigned'];
 }
-
-// Classify the single most-urgent thing pulling on this owner.
-// Returns { level, label } where level ∈ attention | review | aging | ontrack.
-function computeOwnerFocus(o) {
-    if (o.overdue > 0) return { level: 'attention', label: `${o.overdue} overdue` };
-    if (o.needsFeedback > 0) return { level: 'review', label: `${o.needsFeedback} awaiting review` };
-    if (o.agedDrafts > 0) return { level: 'aging', label: `${o.agedDrafts} aging ${o.agedDrafts === 1 ? 'draft' : 'drafts'} · oldest ${o.oldestAge}d` };
-    if (o.oldestAge > 14) return { level: 'aging', label: `oldest ${o.oldestAge}d` };
-    return { level: 'ontrack', label: 'on track' };
-}
-
-function computeOwnerScore(o) {
-    return o.overdue * 10 + o.needsFeedback * 5 + o.agedDrafts * 2 + Math.max(0, o.oldestAge - 14) * 0.2 + o.total * 0.1;
-}
-
-// Build the per-owner aggregate map. Each owner's entry collects the CSes they own,
-// including ones they share with others. Shared CSes carry a "shared" flag.
 function buildOwnerMap() {
-    const data = getFiltered();
     const owners = {};
-    const today = new Date(); today.setHours(0,0,0,0);
-
-    // Open
-    // Source of truth for urgency classification: getUrgencyLevel(cs).
-    // Both the top "Needs Attention" KPI card and the owner panel derive from this single
-    // function, so the counts always agree by construction. The mapping below translates
-    // the urgency level into the owner-panel bucket names (overdue / needsFeedback / aging / healthy).
-    data.filter(isOpen).forEach(cs => {
-        const primaries = parseOwners(cs.owner);
-        const shared = primaries.length > 1;
-        const ageDays = cs.created ? Math.round((Date.now() - new Date(cs.created)) / 86400000) : 0;
-        const urgency = getUrgencyLevel(cs);
-        const level = urgency.level;
-        // Map urgency level → owner panel bucket (keeps the 4-segment bar semantics).
-        // overdue → past execution date; needsFeedback → human review / feedback owed;
-        // aging → old-but-not-overdue drafts/approveds; healthy → on-track/none/measuring/measured.
-        let urgencyBucket = 'healthy';
-        if (level === 'overdue' || level === 'blocked') urgencyBucket = 'overdue';
-        else if (level === 'needs-review' || level === 'measure-due') urgencyBucket = 'needsFeedback';
-        else if (level === 'stale') urgencyBucket = 'aging';
-        // Legacy flags for card totals + drawer sorting.
-        const isOverdue = level === 'overdue' || level === 'blocked';
-        const needsReview = level === 'needs-review' || level === 'measure-due';
-        const isAgedDraft = level === 'stale';
-
-        primaries.forEach(name => {
-            if (!owners[name]) owners[name] = {
-                name,
-                total: 0,
-                byStatus: {},
-                byUrgency: { overdue: 0, needsFeedback: 0, aging: 0, healthy: 0 },
-                overdue: 0,
-                needsFeedback: 0,
-                agedDrafts: 0,
-                oldestAge: 0,
-                openItems: [],
-                closedItems: []
-            };
-            const o = owners[name];
+    getFiltered().filter(isOpen).forEach(cs => {
+        const attn = ATTENTION_IDS.has(cs.id);
+        parseOwners(cs.owner).forEach(name => {
+            const o = owners[name] || (owners[name] = { name, total: 0, attention: 0, byStatus: {}, openItems: [] });
             o.total++;
             o.byStatus[cs.status] = (o.byStatus[cs.status] || 0) + 1;
-            o.byUrgency[urgencyBucket]++;
-            if (isOverdue) o.overdue++;
-            if (needsReview) o.needsFeedback++;
-            if (isAgedDraft) o.agedDrafts++;
-            if (ageDays > o.oldestAge) o.oldestAge = ageDays;
-            o.openItems.push({ cs, shared, isOverdue, needsReview, isAgedDraft, ageDays });
+            if (attn) o.attention++;
+            o.openItems.push({ cs, attn });
         });
     });
-
-    // Closed (last 30 days)
-    const cutoff = Date.now() - 30 * 86400000;
-    data.filter(isClosed).forEach(cs => {
-        const closedDate = cs.closed_date ? new Date(cs.closed_date).getTime() : null;
-        if (!closedDate || closedDate < cutoff) return;
-        const primaries = parseOwners(cs.owner);
-        const shared = primaries.length > 1;
-        primaries.forEach(name => {
-            if (!owners[name]) owners[name] = {
-                name, total: 0, byStatus: {},
-                byUrgency: { overdue: 0, needsFeedback: 0, aging: 0, healthy: 0 },
-                overdue: 0, needsFeedback: 0,
-                agedDrafts: 0, oldestAge: 0, openItems: [], closedItems: []
-            };
-            owners[name].closedItems.push({ cs, shared });
-        });
-    });
-
     return owners;
 }
-
 function renderOwnerLoad() {
     const owners = buildOwnerMap();
     const entries = Object.values(owners);
-
-    if (!entries.length) {
-        document.getElementById('ownerGrid').innerHTML = '<div class="empty-state">No open ChangeSets</div>';
-        document.getElementById('ownerQuietContainer').innerHTML = '';
-        document.getElementById('ownerLoadSub').textContent = '';
-        return;
-    }
-
-    // Split: "active" shows as full cards, "quiet" folds into a single footer row.
-    // Quiet rule: exactly 1 open item, not overdue, not aging, not in review.
+    const grid = document.getElementById('ownerGrid');
+    const quietC = document.getElementById('ownerQuietContainer');
+    if (!entries.length) { grid.innerHTML = '<div class="empty-state">No open ChangeSets</div>'; quietC.innerHTML = ''; return; }
     const active = [], quiet = [];
-    entries.forEach(o => {
-        const isQuiet = o.total <= 1 && o.overdue === 0 && o.needsFeedback === 0 && o.agedDrafts === 0 && o.oldestAge <= 14;
-        (isQuiet ? quiet : active).push(o);
-    });
-
-    // Sort active by attention score (desc). Quiet is alphabetical.
-    active.sort((a, b) => computeOwnerScore(b) - computeOwnerScore(a));
+    entries.forEach(o => (o.attention === 0 && o.total <= 1 ? quiet : active).push(o));
+    active.sort((a, b) => b.attention - a.attention || b.total - a.total);
     quiet.sort((a, b) => a.name.localeCompare(b.name));
-
-    // Summary subtitle
-    const totalPeople = entries.length;
-    const totalOpen = entries.reduce((s, o) => s + o.total, 0);
-    const totalOverdue = entries.reduce((s, o) => s + o.overdue, 0);
-    document.getElementById('ownerLoadSub').innerHTML =
-        `${totalOpen} open across ${totalPeople} ${totalPeople === 1 ? 'owner' : 'owners'}` +
-        (totalOverdue > 0 ? ` · <span style="color:var(--danger);font-weight:600">${totalOverdue} overdue</span>` : '') +
-        ` · Click a card for details`;
-
-    // Render active cards — bar segments colored by urgency, not workflow status,
-    // so a glance at the bar tells you "is this person on fire, aging out, waiting
-    // on review, or clean?" rather than the status mix of their queue.
-    document.getElementById('ownerGrid').innerHTML = active.map(o => {
-        const focus = computeOwnerFocus(o);
-        // Render in priority order (overdue → needsFeedback → aging → healthy) so
-        // the most urgent segment is always on the left of the bar.
-        const URGENCY_ORDER = ['overdue', 'needsFeedback', 'aging', 'healthy'];
-        const barSegments = URGENCY_ORDER
-            .filter(bucket => o.byUrgency[bucket] > 0)
-            .map(bucket => {
-                const count = o.byUrgency[bucket];
-                const color = OWNER_URGENCY_COLORS[bucket];
-                const label = OWNER_URGENCY_LABELS[bucket];
-                return `<div class="owner-bar-seg" style="background:${color};flex:${count}" title="${label}: ${count}"></div>`;
-            }).join('');
-        const safeName = o.name.replace(/"/g, '&quot;');
-        return `<div class="owner-card level-${focus.level}" onclick="openOwnerDrawer('${encodeURIComponent(o.name)}')">
-            <div class="owner-card-arrow">→</div>
-            <div class="owner-card-header">
-                <span class="owner-name">${o.name}</span>
-                <span class="owner-headline"><span class="num">${o.total}</span><span class="lbl">open</span></span>
-            </div>
-            <div class="owner-bar">${barSegments}</div>
-            <div class="owner-focus level-${focus.level}"><span class="dot"></span>${focus.label}</div>
-        </div>`;
+    grid.innerHTML = active.map(o => {
+        const focus = o.attention > 0 ? '<span style="color:var(--danger);font-weight:600">' + o.attention + ' need' + (o.attention === 1 ? 's' : '') + ' attention</span>' : '<span style="color:var(--success)">on track</span>';
+        const statusLine = Object.entries(o.byStatus).map(([s, n]) => escHtml(s) + ' ' + n).join(' · ');
+        return '<div class="owner-card" onclick="openOwnerDrawer(\'' + encodeURIComponent(o.name) + '\')">' +
+            '<div class="owner-name">' + escHtml(o.name) + '</div>' +
+            '<div class="owner-focus">' + focus + '</div>' +
+            '<div class="owner-stats">' + o.total + ' open · ' + statusLine + '</div></div>';
     }).join('');
-
-    // Render quiet footer row
-    const quietContainer = document.getElementById('ownerQuietContainer');
-    if (!quiet.length) {
-        quietContainer.innerHTML = '';
-    } else {
-        const quietItems = quiet.map(o => {
-            const closedCount = o.closedItems.length;
-            const metaBits = [];
-            if (o.total > 0) metaBits.push(`${o.total} open`);
-            if (closedCount > 0) metaBits.push(`${closedCount} closed 30d`);
-            return `<div class="owner-quiet-item" onclick="event.stopPropagation(); openOwnerDrawer('${encodeURIComponent(o.name)}')">
-                <span class="q-name">${o.name}</span>
-                <span class="q-count">${metaBits.join(' · ') || '—'}</span>
-            </div>`;
-        }).join('');
-        quietContainer.innerHTML = `
-            <div class="owner-quiet-row" id="ownerQuietRow" onclick="toggleOwnerQuiet()">
-                <span><strong>${quiet.length}</strong> ${quiet.length === 1 ? 'owner' : 'owners'} with a single open item — all on track</span>
-                <span id="ownerQuietChevron">Show ▾</span>
-            </div>
-            <div class="owner-quiet-expand" id="ownerQuietExpand">${quietItems}</div>
-        `;
-    }
+    quietC.innerHTML = quiet.length ? '<div class="owner-quiet">On track: ' + quiet.map(o => escHtml(o.name)).join(', ') + '</div>' : '';
 }
-
-function toggleOwnerQuiet() {
-    const row = document.getElementById('ownerQuietRow');
-    const exp = document.getElementById('ownerQuietExpand');
-    const chev = document.getElementById('ownerQuietChevron');
-    const isOpen = exp.classList.toggle('open');
-    row.classList.toggle('open', isOpen);
-    chev.textContent = isOpen ? 'Hide ▴' : 'Show ▾';
-}
-
-// ─── Drawer ───
 function openOwnerDrawer(encodedName) {
     const name = decodeURIComponent(encodedName);
-    const owners = buildOwnerMap();
-    const o = owners[name];
+    const o = buildOwnerMap()[name];
     if (!o) return;
-
-    // Partition open items into "Focus now" and "In progress" using the same urgency
-    // classification as the top KPI card (getUrgencyLevel → isOverdue/needsReview/isAgedDraft flags
-    // set in buildOwnerMap). Any CS flagged as overdue, needing review, or aged goes into Focus Now.
-    const focusNow = [], inProgress = [];
-    o.openItems.forEach(entry => {
-        if (entry.isOverdue || entry.needsReview || entry.isAgedDraft) {
-            focusNow.push(entry);
-        } else {
-            inProgress.push(entry);
-        }
-    });
-    // Sort focus queue by urgency (overdue first, then needs-review, then aged)
-    const urgencyRank = entry => {
-        if (entry.isOverdue) return 0;
-        if (entry.needsReview) return 1;
-        if (entry.isAgedDraft) return 2;
-        return 3;
-    };
-    focusNow.sort((a, b) => urgencyRank(a) - urgencyRank(b) || b.ageDays - a.ageDays);
-    inProgress.sort((a, b) => b.ageDays - a.ageDays);
-    const closed = [...o.closedItems].sort((a, b) =>
-        (b.cs.closed_date || '').localeCompare(a.cs.closed_date || '')
-    );
-
-    const today = new Date(); today.setHours(0,0,0,0);
-
-    const rowHtml = (entry, mode) => {
-        const { cs, shared } = entry;
-        const title = (cs.title || '').replace(/"/g, '&quot;');
-        let meta = '', metaCls = '';
-        if (mode === 'closed') {
-            meta = `closed ${cs.closed_date || '—'}`;
-            metaCls = 'closed';
-        } else if (entry.isOverdue) {
-            const due = cs.scheduled_send_date || cs.execution_target_date;
-            const days = due ? Math.round((today - new Date(due)) / 86400000) : 0;
-            meta = `overdue ${days}d`;
-            metaCls = 'overdue';
-        } else if (entry.needsReview) {
-            meta = 'measurement review';
-            metaCls = 'review';
-        } else if (cs.status === 'needs_feedback') {
-            meta = 'needs review';
-            metaCls = 'review';
-        } else {
-            meta = `${cs.status.replace(/_/g,' ')} · ${entry.ageDays}d`;
-        }
-        const sharedMark = shared ? ' <span style="font-size:10px;opacity:0.6" title="shared with co-owners">•shared</span>' : '';
-        return `<div class="drawer-row ${shared ? 'shared' : ''}" onclick="closeOwnerDrawer(); openDetail('${cs.id}')">
-            <span class="row-id">${cs.id}</span>
-            <span class="row-title" title="${title}">${title || '<em style=opacity:.6>(untitled)</em>'}${sharedMark}</span>
-            <span class="row-meta ${metaCls}">${meta}</span>
-        </div>`;
-    };
-
-    const focusHtml = focusNow.length
-        ? focusNow.map(e => rowHtml(e, 'focus')).join('')
-        : '<div class="drawer-empty">Nothing overdue, no drafts aging, and no CSes awaiting your review. Clear runway.</div>';
-
-    const progressHtml = inProgress.length
-        ? inProgress.map(e => rowHtml(e, 'progress')).join('')
-        : '<div class="drawer-empty">No other open items.</div>';
-
-    const closedHtml = closed.length
-        ? closed.map(e => rowHtml(e, 'closed')).join('')
-        : '<div class="drawer-empty">No CSes closed in the last 30 days.</div>';
-
-    const focus = computeOwnerFocus(o);
-    // Match the bar's urgency palette: red=overdue, yellow=awaiting review,
-    // orange=aging drafts, green=on track. Literal hex for "yellow" because
-    // there's no --yellow CSS variable in this file.
-    const focusColor = focus.level === 'attention' ? 'var(--danger)'
-                     : focus.level === 'review'    ? '#eab308'
-                     : focus.level === 'aging'     ? 'var(--warning)'
-                     :                                'var(--success)';
-    const focusChip = `<span style="color:${focusColor};font-weight:600">${focus.label}</span>`;
-
-    document.getElementById('ownerDrawer').innerHTML = `
-        <button class="drawer-close" onclick="closeOwnerDrawer()">×</button>
-        <div class="drawer-header">
-            <h2>${o.name}</h2>
-            <div class="drawer-summary">
-                <strong>${o.total}</strong> open · <strong>${o.closedItems.length}</strong> closed last 30d · ${focusChip}
-            </div>
-        </div>
-
-        <div class="drawer-section">
-            <div class="drawer-section-head">
-                <h4>Focus Now</h4>
-                <span class="drawer-count">${focusNow.length}</span>
-            </div>
-            ${focusHtml}
-        </div>
-
-        <div class="drawer-section">
-            <div class="drawer-section-head">
-                <h4>In Progress</h4>
-                <span class="drawer-count">${inProgress.length}</span>
-            </div>
-            ${progressHtml}
-        </div>
-
-        <div class="drawer-section">
-            <div class="drawer-section-head drawer-collapsible" onclick="toggleDrawerClosed()">
-                <h4>Closed Last 30 Days <span class="drawer-toggle" id="drawerClosedToggle">▸</span></h4>
-                <span class="drawer-count">${closed.length}</span>
-            </div>
-            <div class="drawer-closed-body" id="drawerClosedBody">${closedHtml}</div>
-        </div>
-    `;
-
+    const items = [...o.openItems].sort((a, b) => (b.attn ? 1 : 0) - (a.attn ? 1 : 0));
+    const rows = items.map(({ cs, attn }) => '<div class="queue-row" onclick="closeOwnerDrawer();openDetail(\'' + cs.id + '\')">' +
+        '<span class="qid">' + escHtml(cs.id) + '</span><span class="qtitle">' + escHtml(cs.title) + '</span>' +
+        '<span class="qmeta">' + escHtml(cs.status) + '</span>' + (attn ? '<span class="attn-badge">attention</span>' : '') + '</div>').join('');
+    document.getElementById('ownerDrawer').innerHTML = '<div style="padding:20px"><h3>' + escHtml(name) + '</h3>' +
+        '<div class="section-sub" style="margin:6px 0 16px;color:var(--text-muted)">' + o.total + ' open · ' + o.attention + ' need attention</div>' + rows +
+        '<button class="filter-btn" style="margin-top:16px" onclick="closeOwnerDrawer()">Close</button></div>';
     document.getElementById('ownerDrawerOverlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
+}
+function closeOwnerDrawer() { document.getElementById('ownerDrawerOverlay').classList.remove('open'); }
+
+// ─────────────────────────────────────────────────────────────────────
+// AUTONOMY TIER — rollup by_autonomy_tier
+// ─────────────────────────────────────────────────────────────────────
+function renderAutonomy() {
+    const el = document.getElementById('tierBars');
+    const bt = ROLLUP && ROLLUP.by_autonomy_tier;
+    if (!bt) { el.innerHTML = '<div class="empty-state">Rollup unavailable.</div>'; return; }
+    const order = ['0', '1', '2', 'unassigned'];
+    el.innerHTML = '<table class="dept-table"><thead><tr><th>Tier</th><th>Closed</th><th>Measured</th><th>Wins</th><th>Win rate</th><th>Expired</th><th>Exp. Rev</th></tr></thead><tbody>' +
+        order.filter(t => bt[t]).map(t => { const r = bt[t]; return '<tr><td>' + (t === 'unassigned' ? 'Unassigned' : 'Tier ' + t) + '</td><td>' + r.closed + '</td><td>' + r.measured + '</td><td>' + r.wins + '</td><td>' + pct(r.win_rate) + '</td><td>' + r.expired + '</td><td>' + fmt$(r.expected_revenue) + '</td></tr>'; }).join('') +
+        '</tbody></table>';
 }
 
-function closeOwnerDrawer() {
-    document.getElementById('ownerDrawerOverlay').classList.remove('open');
-    document.body.style.overflow = '';
+// ─────────────────────────────────────────────────────────────────────
+// TIME-IN-STATUS — from status-entry dates; data-gated items annotated
+// (factual date arithmetic — NOT lifecycle classification)
+// ─────────────────────────────────────────────────────────────────────
+function statusEntryDate(cs) {
+    if (cs.status === 'published') return cs.published_date || cs.approved_date || cs.created;
+    if (cs.status === 'approved') return cs.approved_date || cs.created;
+    return cs.created; // draft / needs_feedback
 }
+function renderTimeInStatus() {
+    const gated = dataGatedIds();
+    const open = getFiltered().filter(isOpen);
+    const now = Date.now();
+    const bands = {};
+    const gatedItems = [];
+    open.forEach(cs => {
+        const entry = statusEntryDate(cs);
+        if (!entry) return;
+        const days = Math.round((now - new Date(entry)) / 86400000);
+        if (gated.has(cs.id)) { gatedItems.push({ cs, days }); return; }  // excluded from averages
+        (bands[cs.status] = bands[cs.status] || []).push({ cs, days });
+    });
+    const avgRow = Object.keys(bands).sort().map(st => {
+        const arr = bands[st];
+        const avg = Math.round(arr.reduce((s, x) => s + x.days, 0) / arr.length);
+        return '<div class="time-avg-item"><div class="time-avg-value">' + avg + 'd</div><div class="time-avg-label">' + escHtml(st) + ' avg (' + arr.length + ')</div></div>';
+    }).join('');
+    document.getElementById('timeAvgRow').innerHTML = avgRow || '<div class="empty-state">No open items</div>';
 
-function toggleDrawerClosed() {
-    const body = document.getElementById('drawerClosedBody');
-    const tog = document.getElementById('drawerClosedToggle');
-    const isOpen = body.classList.toggle('open');
-    tog.textContent = isOpen ? '▾' : '▸';
-}
-
-// Close drawer on Escape (harmonizes with existing detail-modal close pattern)
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && document.getElementById('ownerDrawerOverlay').classList.contains('open')) {
-        closeOwnerDrawer();
+    // Oldest few per band + data-gated callouts
+    const allSorted = [].concat(...Object.values(bands)).sort((a, b) => b.days - a.days).slice(0, 8);
+    let list = allSorted.map(({ cs, days }) => '<div class="queue-row" onclick="openDetail(\'' + cs.id + '\')"><span class="qid">' + escHtml(cs.id) + '</span><span class="qtitle">' + escHtml(cs.title) + '</span><span class="qmeta">' + escHtml(cs.status) + '</span><span class="qmetric">' + days + 'd</span></div>').join('');
+    if (gatedItems.length) {
+        list += '<div style="margin-top:10px;font-size:12px;color:var(--text-muted)">Data-gated (excluded from averages — blocked on an external data source):</div>' +
+            gatedItems.sort((a, b) => b.days - a.days).map(({ cs, days }) => '<div class="queue-row data-gated" onclick="openDetail(\'' + cs.id + '\')"><span class="qid">' + escHtml(cs.id) + '</span><span class="qtitle">' + escHtml(cs.title) + '</span><span class="gated-tag">data-gated</span><span class="qmetric">' + days + 'd</span></div>').join('');
     }
+    document.getElementById('staleList').innerHTML = list;
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// CHARTS — monthly trend + full-enum outcomes donut (both from rollup)
+// ─────────────────────────────────────────────────────────────────────
+let charts = {};
+function destroyChart(k) { if (charts[k]) { charts[k].destroy(); delete charts[k]; } }
+function renderCharts() {
+    if (typeof Chart === 'undefined' || !ROLLUP) return;
+    const gridColor = 'rgba(255,255,255,0.06)', tickColor = '#8b8fa3';
+
+    destroyChart('monthly');
+    const mt = ROLLUP.monthly_trend || [];
+    charts.monthly = new Chart(document.getElementById('monthlyTrendChart'), {
+        type: 'bar',
+        data: { labels: mt.map(m => m.month), datasets: [
+            { label: 'Closed', data: mt.map(m => m.closed), backgroundColor: '#6366f1' },
+            { label: 'Measured', data: mt.map(m => m.measured), backgroundColor: '#3b82f6' },
+            { label: 'Wins', data: mt.map(m => m.wins), backgroundColor: '#22c55e' }
+        ] },
+        options: { responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: tickColor } } },
+            scales: { x: { grid: { color: gridColor }, ticks: { color: tickColor } }, y: { grid: { color: gridColor }, ticks: { color: tickColor } } } }
+    });
+
+    destroyChart('outcomes');
+    const sb = ROLLUP.scoreboard;
+    const merged = Object.assign({}, sb.measured.outcomes, sb.administrative.outcomes);
+    const labels = Object.keys(merged);
+    const palette = { success: '#22c55e', underperformed: '#ef4444', inconclusive: '#f59e0b',
+        expired_unexecuted: '#6b7280', expired_unreviewed: '#4b5563', superseded: '#3b82f6',
+        data_needed: '#f59e0b', invalid_premise: '#a855f7', rolled_back: '#ef4444' };
+    charts.outcomes = new Chart(document.getElementById('outcomesChart'), {
+        type: 'doughnut',
+        data: { labels: labels.map(outcomeLabel), datasets: [{ data: labels.map(l => merged[l]), backgroundColor: labels.map(l => palette[l] || '#6366f1') }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: tickColor, font: { size: 11 } } } } }
+    });
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// ALL CHANGESETS TABLE — factual (no client-side money)
+// ─────────────────────────────────────────────────────────────────────
+let sortState = { key: 'id', dir: 1 };
+function renderTable() {
+    const data = [...getFiltered()];
+    data.sort((a, b) => {
+        const k = sortState.key;
+        let av = a[k] || '', bv = b[k] || '';
+        return String(av).localeCompare(String(bv)) * sortState.dir;
+    });
+    document.getElementById('csTableBody').innerHTML = data.map(cs =>
+        '<tr onclick="openDetail(\'' + cs.id + '\')" style="cursor:pointer">' +
+        '<td class="cs-link">' + escHtml(cs.id) + '</td>' +
+        '<td>' + escHtml(cs.title) + '</td>' +
+        '<td>' + subtypeBadge(cs.subtype) + '</td>' +
+        '<td>' + departmentBadge(cs.department) + '</td>' +
+        '<td>' + escHtml(cs.status) + '</td>' +
+        '<td>' + escHtml(cs.risk_level || '—') + '</td>' +
+        '<td>' + escHtml(cs.owner || '—') + '</td>' +
+        '<td>' + fmtDate(cs.created) + '</td>' +
+        '<td>' + escHtml(outcomeLabel(cs.outcome)) + '</td></tr>').join('');
+}
+document.querySelectorAll('.data-table th[data-sort]').forEach(th => {
+    th.addEventListener('click', () => {
+        const k = th.getAttribute('data-sort');
+        sortState.dir = (sortState.key === k) ? -sortState.dir : 1;
+        sortState.key = k;
+        document.querySelectorAll('.data-table th').forEach(x => x.classList.remove('sorted'));
+        th.classList.add('sorted');
+        renderTable();
+    });
 });
 
-// ═══════════════════════════════════════════════════
-// AUTONOMY TIER + SHADOW SCORECARD
-// ═══════════════════════════════════════════════════
-function renderAutonomy() {
-    const data = getFiltered();
-    const tiers = { 0: 0, 1: 0, 2: 0, unclassified: 0 };
-    const tierLabels = { 0: 'Tier 0 · Auto', 1: 'Tier 1 · Light Review', 2: 'Tier 2 · Full Review', unclassified: 'Unclassified' };
-    const tierColors = { 0: '#22c55e', 1: '#3b82f6', 2: '#f59e0b', unclassified: '#6b7280' };
-
-    data.forEach(cs => {
-        const at = cs.autonomy_tier;
-        if (at != null && tiers.hasOwnProperty(at)) tiers[at]++;
-        else if (isOpen(cs)) tiers.unclassified++;
-    });
-
-    const maxTier = Math.max(...Object.values(tiers), 1);
-
-    document.getElementById('tierBars').innerHTML = Object.entries(tiers).map(([tier, count]) => {
-        const pct = (count / maxTier * 100).toFixed(0);
-        return `<div class="tier-row">
-            <span class="tier-label">${tierLabels[tier]}</span>
-            <div class="tier-bar-track"><div class="tier-bar-fill" style="width:${pct}%;background:${tierColors[tier]}"></div></div>
-            <span class="tier-count" style="color:${tierColors[tier]}">${count}</span>
-        </div>`;
-    }).join('');
-
-    const sc = TRACKER.shadow_scorecard;
-    if (!sc) {
-        document.getElementById('scorecardContent').innerHTML = '<div class="empty-state">No scorecard data</div>';
-        return;
-    }
-
-    const conc = sc.concordance_summary || {};
-    const log = sc.auto_review_log || [];
-    const isPhaseB = sc.mode === 'active';
-    const phaseClass = isPhaseB ? 'phase-b' : 'phase-a';
-    const phaseLabel = isPhaseB ? 'Phase B — Active Autonomy' : 'Phase A — Shadow Mode';
-
-    const totalClassified = (sc.total_classified?.tier_0 || 0) + (sc.total_classified?.tier_1 || 0) + (sc.total_classified?.tier_2 || 0);
-    const autoAdvanced = sc.would_have_auto_advanced || 0;
-    const autoExecuted = sc.would_have_auto_executed || 0;
-    const concordant = conc.concordant || 0;
-    const discordant = conc.discordant || 0;
-    const pending = conc.pending || 0;
-    const totalResolved = conc.total_resolved || 0;
-    const concRate = totalResolved > 0 ? ((concordant / totalResolved) * 100).toFixed(0) + '%' : '—';
-    const concColor = totalResolved === 0 ? 'var(--text-muted)' : concordant / totalResolved >= 0.9 ? 'var(--success)' : concordant / totalResolved >= 0.7 ? 'var(--warning)' : 'var(--danger)';
-
-    const phaseB_threshold = 5;
-    const phaseB_accuracy = 0.9;
-    const readiness = Math.min(100, Math.round((totalResolved / phaseB_threshold) * 100));
-    const readinessColor = readiness >= 100 && (totalResolved === 0 || concordant / totalResolved >= phaseB_accuracy) ? 'var(--success)' : readiness >= 60 ? 'var(--warning)' : 'var(--text-muted)';
-
-    let logHtml = '';
-    if (log.length) {
-        logHtml = `<div style="margin-top:14px;border-top:1px solid var(--border);padding-top:12px">
-            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:8px">Shadow Decision Log</div>
-            <table style="width:100%;border-collapse:collapse;font-size:12px">
-                <tr style="border-bottom:1px solid var(--border)">
-                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">CS</th>
-                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Tier</th>
-                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Auto Verdict</th>
-                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Manual</th>
-                    <th style="text-align:left;padding:4px 6px;font-size:10px;color:var(--text-muted);text-transform:uppercase">Match?</th>
-                </tr>
-                ${log.map(entry => {
-                    const matchIcon = entry.concordance === 'concordant' ? '<span style="color:var(--success)">Yes</span>' :
-                        entry.concordance === 'discordant' ? '<span style="color:var(--danger)">No</span>' :
-                        '<span style="color:var(--warning)">Pending</span>';
-                    const manualDecision = entry.manual_review_decision || '<span style="color:var(--warning);font-style:italic">awaiting</span>';
-                    return `<tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
-                        <td style="padding:5px 6px"><span class="cs-link" onclick="openDetail('${entry.cs_id}')">${entry.cs_id}</span></td>
-                        <td style="padding:5px 6px">T${entry.tier}</td>
-                        <td style="padding:5px 6px;color:${entry.auto_review_verdict === 'pass' ? 'var(--success)' : 'var(--danger)'}">${entry.auto_review_verdict}</td>
-                        <td style="padding:5px 6px">${manualDecision}</td>
-                        <td style="padding:5px 6px">${matchIcon}</td>
-                    </tr>`;
-                }).join('')}
-            </table>
-        </div>`;
-    }
-
-    document.getElementById('scorecardContent').innerHTML = `
-        <div class="phase-indicator ${phaseClass}" style="margin-bottom:14px">
-            <strong>${phaseLabel}</strong>
-            ${sc.activated_date ? ` · Since ${sc.activated_date}` : ''}
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px">
-            <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--border)">
-                <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:4px">Concordance</div>
-                <div style="font-size:22px;font-weight:700;color:${concColor}">${concRate}</div>
-                <div style="font-size:10px;color:var(--text-muted)">${concordant}/${totalResolved} match${totalResolved === 0 ? 'es' : ''}</div>
-            </div>
-            <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--border)">
-                <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:4px">Pending Review</div>
-                <div style="font-size:22px;font-weight:700;color:${pending > 0 ? 'var(--warning)' : 'var(--text-muted)'}">${pending}</div>
-                <div style="font-size:10px;color:var(--text-muted)">need manual verdict</div>
-            </div>
-            <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--border)">
-                <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:4px">Would Auto-Act</div>
-                <div style="font-size:22px;font-weight:700;color:var(--accent-light)">${autoAdvanced + autoExecuted}</div>
-                <div style="font-size:10px;color:var(--text-muted)">${autoAdvanced} advance · ${autoExecuted} execute</div>
-            </div>
-        </div>
-
-        <div style="margin-bottom:12px">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-                <span style="font-size:11px;color:var(--text-muted)">Phase B Readiness</span>
-                <span style="font-size:11px;font-weight:600;color:${readinessColor}">${readiness}%</span>
-            </div>
-            <div style="height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden">
-                <div style="height:100%;width:${readiness}%;background:${readinessColor};border-radius:4px;transition:width 0.3s"></div>
-            </div>
-            <div style="font-size:10px;color:var(--text-muted);margin-top:4px">
-                ${totalResolved}/${phaseB_threshold} concordance checks completed · Need ${phaseB_threshold} at ≥90% accuracy
-            </div>
-        </div>
-
-        ${discordant > 0 ? `<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:8px;padding:10px 12px;margin-bottom:12px">
-            <div style="font-size:11px;font-weight:700;color:var(--danger);margin-bottom:4px">Discordance Alert</div>
-            <div style="font-size:12px;color:var(--text)">${discordant} decision${discordant > 1 ? 's' : ''} where automation disagreed with manual review.</div>
-        </div>` : ''}
-
-        ${logHtml}
-
-        <div style="margin-top:12px;font-size:11px;color:var(--text-muted);line-height:1.5;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:6px">
-            <strong>Next steps:</strong> ${sc.recommendation || 'Complete more manual reviews on shadow-classified ChangeSets to build concordance data.'}
-        </div>
-    `;
+// ─────────────────────────────────────────────────────────────────────
+// DETAIL PANEL — tracker facts + attention status + brief narrative (by id)
+// ─────────────────────────────────────────────────────────────────────
+async function fetchBrief(csId) {
+    if (briefCache.has(csId)) return briefCache.get(csId);
+    try {
+        const resp = await fetch(BRIEF_RAW_BASE + csId + '.md?t=' + Date.now());
+        if (!resp.ok) { briefCache.set(csId, null); return null; }
+        const md = await resp.text(); briefCache.set(csId, md); return md;
+    } catch (e) { briefCache.set(csId, null); return null; }
 }
-
-// ═══════════════════════════════════════════════════
-// TIME-IN-STATUS
-// ═══════════════════════════════════════════════════
-function renderTimeInStatus() {
-    const data = getFiltered();
-    const today = new Date(); today.setHours(0,0,0,0);
-    const active = data.filter(isOpen);
-
-    const statusAges = {};
-    active.forEach(cs => {
-        if (!cs.created) return;
-        const age = Math.round((today - new Date(cs.created)) / 86400000);
-        if (!statusAges[cs.status]) statusAges[cs.status] = [];
-        statusAges[cs.status].push(age);
-    });
-
-    const statusOrder = ['draft', 'approved', 'published'];
-    const avgRow = statusOrder.filter(s => statusAges[s]).map(status => {
-        const ages = statusAges[status];
-        const avg = Math.round(ages.reduce((a,b) => a+b, 0) / ages.length);
-        const cls = avg > 21 ? 'stale' : '';
-        return `<div class="time-avg-card">
-            <div class="time-avg-label">${status}</div>
-            <div class="time-avg-value ${cls}">${avg}d</div>
-            <div style="font-size:10px;color:var(--text-muted)">${ages.length} items</div>
-        </div>`;
-    }).join('');
-
-    document.getElementById('timeAvgRow').innerHTML = avgRow || '<div class="empty-state">No active items</div>';
-
-    const measurementItems = active
-        .filter(cs => cs.status === 'published' && cs.measurement_due)
-        .map(cs => {
-            const dueDate = new Date(cs.measurement_due);
-            const daysUntilDue = Math.round((dueDate - today) / 86400000);
-            return { ...cs, daysUntilDue, dueDate };
-        })
-        .sort((a,b) => a.daysUntilDue - b.daysUntilDue);
-
-    const measurementIds = new Set(measurementItems.map(cs => cs.id));
-
-    const staleItems = active
-        .filter(cs => !measurementIds.has(cs.id))
-        .map(cs => {
-            if (!cs.created) return null;
-            const age = Math.round((today - new Date(cs.created)) / 86400000);
-            return { ...cs, age };
-        })
-        .filter(cs => cs && ((cs.status === 'approved' && cs.age > 7) || cs.age > 14))
-        .sort((a,b) => b.age - a.age);
-
-    let html = '';
-
-    if (measurementItems.length) {
-        html += '<div style="font-size:11px;color:var(--info);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Awaiting Measurement (' + measurementItems.length + ')</div>';
-        html += measurementItems.map(cs => {
-            const overdue = cs.daysUntilDue < 0;
-            const dueSoon = cs.daysUntilDue <= 3;
-            const hasResult = cs.measurement_result != null;
-            const dueLabel = hasResult ? `<span style="color:var(--warning);font-weight:600">MEASURED — awaiting close decision</span>` :
-                overdue ? `<span style="color:var(--danger);font-weight:700">OVERDUE ${Math.abs(cs.daysUntilDue)}d</span>` :
-                dueSoon ? `<span style="color:var(--warning);font-weight:600">Due in ${cs.daysUntilDue}d</span>` :
-                `<span style="color:var(--text-muted)">Due in ${cs.daysUntilDue}d</span>`;
-            return `<div class="stale-item">
-                <span><span class="cs-link" onclick="openDetail('${cs.id}')" style="cursor:pointer">${cs.id}</span> · ${(cs.title||'').substring(0,40)}${(cs.title||'').length>40?'...':''} · <span class="status-pill status-published" style="font-size:10px">measuring</span> · ${cs.measurement_window || ''}</span>
-                ${dueLabel}
-            </div>`;
-        }).join('');
-        html += '<div style="height:12px"></div>';
+function parseBrief(md) {
+    if (!md) return { sections: [] };
+    const lines = md.split('\n'); const sections = []; let i = 0;
+    while (i < lines.length && !lines[i].startsWith('## ')) i++;
+    let heading = null, body = [];
+    const flush = () => { if (heading !== null) sections.push({ heading, body: body.join('\n').trim() }); };
+    while (i < lines.length) {
+        if (lines[i].startsWith('## ')) { flush(); heading = lines[i].replace(/^##\s+/, '').trim(); body = []; }
+        else if (heading !== null) body.push(lines[i]);
+        i++;
     }
-
-    if (staleItems.length) {
-        html += '<div style="font-size:11px;color:var(--danger);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Needs Attention (' + staleItems.length + ')</div>';
-        html += staleItems.map(cs => {
-            const cls = cs.age > 21 ? 'hot' : cs.age > 14 ? 'warm' : '';
-            return `<div class="stale-item">
-                <span><span class="cs-link" onclick="openDetail('${cs.id}')" style="cursor:pointer">${cs.id}</span> · ${(cs.title||'').substring(0,45)}${(cs.title||'').length>45?'...':''} · <span class="status-pill status-${cs.status}" style="font-size:10px">${cs.status}</span> · ${cs.owner||'—'}</span>
-                <span class="stale-age ${cls}">${cs.age}d</span>
-            </div>`;
-        }).join('');
-    }
-
-    if (!measurementItems.length && !staleItems.length) {
-        html = '<div class="empty-state" style="font-size:12px">No stale items — queue is healthy</div>';
-    }
-
-    document.getElementById('staleList').innerHTML = html;
+    flush();
+    return { sections };
 }
+function renderBriefNarrative(parsed) {
+    if (!parsed || !parsed.sections.length) return '';
+    const renderMd = b => (typeof marked !== 'undefined' && marked.parse) ? marked.parse(b) : '<p>' + escHtml(b) + '</p>';
+    return parsed.sections.map(s => '<div class="brief-section"><div class="brief-section-heading">' + escHtml(s.heading) + '</div><div class="brief-section-body">' + renderMd(s.body) + '</div></div>').join('');
+}
+function attentionStatusFor(id) {
+    if (!QUEUE) return '';
+    const hits = [];
+    Object.entries(QUEUE.queues || {}).forEach(([q, arr]) => { if ((arr || []).some(it => it.id === id)) hits.push(q.replace(/_/g, ' ')); });
+    (QUEUE.escalations || []).forEach(e => { if (e.cs_id === id) hits.push('escalation → ' + e.audience); });
+    (QUEUE.data_requests || []).forEach(d => { if (d.cs_id === id) hits.push('data request'); });
+    if (!hits.length) return '';
+    return '<div class="detail-alert" style="border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.08)"><strong>In work queue:</strong> ' + escHtml([...new Set(hits)].join(', ')) + '</div>';
+}
+function detailRow(label, value) { return value ? '<div class="detail-row"><span class="detail-label">' + escHtml(label) + '</span><span class="detail-value">' + value + '</span></div>' : ''; }
+function openDetail(id) {
+    const cs = TRACKER.changesets.find(c => c.id === id);
+    if (!cs) return;
+    const briefUrl = BRIEF_VIEW_BASE + cs.id + '.md';   // link derived from cs.id, not a stored file field
+    let html = '<div class="detail-header"><div><div class="detail-id">' + escHtml(cs.id) + '</div><div class="detail-title">' + escHtml(cs.title) + '</div></div>' +
+        '<button class="detail-close" onclick="closeDetail()">×</button></div>';
+    html += attentionStatusFor(cs.id);
+    html += '<div class="detail-badges">' + departmentBadge(cs.department) + subtypeBadge(cs.subtype) +
+        '<span class="status-badge">' + escHtml(cs.status) + '</span>' + platformChips(cs.platforms) + '</div>';
+    html += '<div class="detail-grid">';
+    html += detailRow('Owner', escHtml(cs.owner));
+    html += detailRow('Source', escHtml(cs.source));
+    html += detailRow('Risk', escHtml(cs.risk_level));
+    html += detailRow('Autonomy tier', (cs.autonomy_tier !== undefined && cs.autonomy_tier !== null) ? String(cs.autonomy_tier) : '');
+    html += detailRow('Review tier', escHtml(cs.review_tier));
+    html += detailRow('Created', fmtDate(cs.created));
+    html += detailRow('Approved', fmtDate(cs.approved_date));
+    html += detailRow('Published', fmtDate(cs.published_date));
+    html += detailRow('Closed', fmtDate(cs.closed_date));
+    html += detailRow('Measurement window', cs.measurement_window_days ? cs.measurement_window_days + ' days' : '');
+    html += detailRow('Measurement due', fmtDate(cs.measurement_due));
+    html += detailRow('Outcome', escHtml(outcomeLabel(cs.outcome)));
+    html += detailRow('Dependencies', Array.isArray(cs.dependencies) && cs.dependencies.length ? escHtml(cs.dependencies.join(', ')) : '');
+    html += detailRow('Blocks', Array.isArray(cs.blocks) && cs.blocks.length ? escHtml(cs.blocks.join(', ')) : '');
+    html += detailRow('Spawned from', escHtml(cs.spawned_from));
+    html += '</div>';
+    if (cs.hypothesis) html += '<div class="detail-section"><div class="detail-section-title">Hypothesis</div><div class="detail-section-body">' + escHtml(cs.hypothesis) + '</div></div>';
+    if (cs.outcome_notes) html += '<div class="detail-section"><div class="detail-section-title">Outcome notes</div><div class="detail-section-body">' + escHtml(cs.outcome_notes) + '</div></div>';
+    if (cs.notes) html += '<div class="detail-section"><div class="detail-section-title">Notes</div><div class="detail-section-body">' + escHtml(cs.notes) + '</div></div>';
+    html += '<div class="detail-brief" id="detailBrief"><div class="detail-section-title">Brief <a href="' + briefUrl + '" target="_blank" rel="noopener" style="font-size:11px;font-weight:400">View full brief ↗</a></div><div id="briefNarrative" style="color:var(--text-muted);font-size:12px">Loading brief…</div></div>';
 
-// ═══════════════════════════════════════════════════
-// RENDER ALL
-// ═══════════════════════════════════════════════════
+    document.getElementById('detailPanel').innerHTML = html;
+    document.getElementById('detailOverlay').classList.add('open');
+    fetchBrief(cs.id).then(md => {
+        const n = document.getElementById('briefNarrative');
+        if (!n) return;
+        if (!md) { n.innerHTML = '<em>No brief mirrored for this ChangeSet.</em>'; return; }
+        n.innerHTML = renderBriefNarrative(parseBrief(md)) || '<em>Brief has no narrative sections.</em>';
+    });
+}
+function closeDetail() { document.getElementById('detailOverlay').classList.remove('open'); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDetail(); closeOwnerDrawer(); } });
+
+// ─────────────────────────────────────────────────────────────────────
+// RENDER ORCHESTRATION
+// ─────────────────────────────────────────────────────────────────────
 function render() {
-    try {
-        renderKPIs();
-        renderPipeline();
-        renderClosed();
-        renderOwnerLoad();
-        renderAutonomy();
-        renderTimeInStatus();
-        renderCharts();
-        renderTable();
-    } catch (err) {
-        console.error('Render error:', err);
-        document.getElementById('syncStatus').textContent = 'Render error: ' + err.message;
-        document.getElementById('syncStatus').style.color = 'var(--danger)';
-    }
-}
-
-// ═══════════════════════════════════════════════════
-// BOOTSTRAP
-// ═══════════════════════════════════════════════════
-async function boot() {
-    const ok = await fetchTracker();
-    if (ok) {
-        populateDepartmentDropdown();
-        render();
-    }
-}
-
-async function refresh() {
-    const ok = await fetchTracker();
-    if (ok) {
-        populateDepartmentDropdown();
-        render();
-    }
-}
-
-// ═══════════════════════════════════════════════════
-// LIFECYCLE TAB (B2b.8)
-// ═══════════════════════════════════════════════════
-const KLAVIYO_AUTOMATION_BASE = 'https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/klaviyo-automation/';
-let LIFECYCLE_STATE = { activeClusters: null, holdoutMeta: null, fetchedAt: null };
-
-function switchTab(name) {
-    document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.tab === name);
-    });
-    document.querySelectorAll('.tab-content').forEach(el => {
-        const isTarget = el.id === ('tab-' + name);
-        el.classList.toggle('active', isTarget);
-        if (isTarget) {
-            el.removeAttribute('hidden');
-        } else {
-            el.setAttribute('hidden', '');
-        }
-    });
-    if (name === 'lifecycle') {
-        renderLifecycleTab();
-    }
-}
-
-async function fetchLifecycleStateFiles() {
-    // Mirrored by .github/workflows/sync-klaviyo-automation-to-dashboards.yml.
-    // Files may be absent (Loop 2 / A2.1 haven\'t run yet); 404s are expected.
-    async function fetchOptional(name) {
-        try {
-            const resp = await fetch(KLAVIYO_AUTOMATION_BASE + name + '?t=' + Date.now());
-            if (!resp.ok) return null;
-            return await resp.json();
-        } catch (err) {
-            return null;
-        }
-    }
-    const [activeClusters, holdoutMeta] = await Promise.all([
-        fetchOptional('active-clusters.json'),
-        fetchOptional('holdout-segment-meta.json'),
-    ]);
-    LIFECYCLE_STATE = { activeClusters, holdoutMeta, fetchedAt: new Date() };
-}
-
-function escHtml(s) {
-    if (s === null || s === undefined) return '';
-    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-
-function fmtDateTime(iso) {
-    if (!iso) return '—';
-    try {
-        const d = new Date(iso);
-        return d.toLocaleString();
-    } catch (e) { return iso; }
-}
-
-function fmtRelative(iso) {
-    if (!iso) return '—';
-    try {
-        const d = new Date(iso);
-        const now = new Date();
-        const diffMs = d - now;
-        const absMs = Math.abs(diffMs);
-        const hr = absMs / 36e5;
-        const day = absMs / 864e5;
-        if (hr < 1) {
-            const m = Math.round(absMs / 6e4);
-            return diffMs > 0 ? 'in ' + m + ' min' : m + ' min ago';
-        }
-        if (day < 1) {
-            return diffMs > 0 ? 'in ' + hr.toFixed(1) + ' h' : hr.toFixed(1) + ' h ago';
-        }
-        return diffMs > 0 ? 'in ' + day.toFixed(1) + ' d' : day.toFixed(1) + ' d ago';
-    } catch (e) { return iso; }
-}
-
-function confTierPill(tier) {
-    const t = (tier || 'unknown').toLowerCase();
-    const cls = ['high','medium','low'].includes(t) ? 'conf-tier-' + t : '';
-    return '<span class="conf-tier-pill ' + cls + '">' + escHtml(t) + '</span>';
-}
-
-function holdWindowCSes(tracker) {
-    if (!tracker || !Array.isArray(tracker.changesets)) return [];
-    const now = new Date();
-    return tracker.changesets.filter(cs =>
-        cs.status === 'approved' &&
-        Array.isArray(cs.platforms) && cs.platforms.includes('klaviyo') &&
-        cs.autonomy_tier === 0 &&
-        cs.lock_in_time &&
-        new Date(cs.lock_in_time) > now
-    ).sort((a, b) => new Date(a.lock_in_time) - new Date(b.lock_in_time));
-}
-
-function needsYouCSes(tracker) {
-    if (!tracker || !Array.isArray(tracker.changesets)) return [];
-    return tracker.changesets.filter(cs => {
-        if (cs.status !== 'approved') return false;
-        return cs.design_status === 'feedback_pending'
-            || cs.design_status === 'feedback_sent'
-            || cs.design_status === 'held'
-            || cs.figma_feedback_available === true
-            || cs.devon_review_required === true;
-    });
-}
-
-function recentLifecycleCSes(tracker) {
-    if (!tracker || !Array.isArray(tracker.changesets)) return [];
-    const cutoff = new Date(Date.now() - 14 * 864e5);
-    return tracker.changesets
-        .filter(cs => Array.isArray(cs.platforms) && (cs.platforms.includes('klaviyo') || cs.platforms.includes('klaviyo-sms')))
-        .filter(cs => {
-            const t = cs.last_updated || cs.activation_date || cs.scheduled_send_date || cs.executed_date;
-            return t && new Date(t) >= cutoff;
-        })
-        .sort((a, b) => {
-            const ta = new Date(a.last_updated || a.activation_date || a.scheduled_send_date || a.executed_date);
-            const tb = new Date(b.last_updated || b.activation_date || b.scheduled_send_date || b.executed_date);
-            return tb - ta;
-        })
-        .slice(0, 30);
-}
-
-function csLink(cs) {
-    return '<a class="cs-link" href="#" onclick="showDetail(\'' + cs.id + '\');return false">' + escHtml(cs.id) + '</a>';
-}
-
-function blockersFor(cs) {
-    const blockers = [];
-    if (cs.design_status === 'feedback_pending') blockers.push('Figma feedback pending review');
-    if (cs.design_status === 'feedback_sent') blockers.push('Awaiting UE response on feedback');
-    if (cs.design_status === 'held') blockers.push('Design on hold');
-    if (cs.figma_feedback_available === true) blockers.push('New Figma feedback available — review on Pulse');
-    if (cs.devon_review_required === true) blockers.push('Devon claims review required');
-    return blockers;
-}
-
-function renderHoldWindow() {
-    const list = holdWindowCSes(TRACKER);
-    const badge = document.getElementById('hwBadge');
-    badge.textContent = list.length;
-    badge.classList.toggle('zero', list.length === 0);
-    const body = document.getElementById('hwBody');
-    if (list.length === 0) {
-        body.innerHTML = '<div class="lifecycle-empty">No CSes in Hold Window. Auto-lane will fire once Loop 3 seals new sends.</div>';
-        return;
-    }
-    body.innerHTML = `
-        <table class="lifecycle-table">
-            <thead><tr>
-                <th>CS</th><th>Title</th><th>Confidence</th><th>Audience</th><th>Lock-in</th><th>Klaviyo</th>
-            </tr></thead>
-            <tbody>
-                ${list.map(cs => `
-                    <tr>
-                        <td>${csLink(cs)}</td>
-                        <td>${escHtml(cs.title || cs.summary || '—')}</td>
-                        <td>${confTierPill(cs.confidence_tier)}</td>
-                        <td>${cs.estimated_recipients ? cs.estimated_recipients.toLocaleString() : '—'}</td>
-                        <td title="${escHtml(cs.lock_in_time)}">${escHtml(fmtRelative(cs.lock_in_time))}</td>
-                        <td>${cs.klaviyo_campaign_id
-                            ? '<a class="cs-link" target="_blank" rel="noopener" href="https://www.klaviyo.com/campaign/' + escHtml(cs.klaviyo_campaign_id) + '/edit">' + escHtml(cs.klaviyo_campaign_id) + '</a>'
-                            : '—'}</td>
-                    </tr>`).join('')}
-            </tbody>
-        </table>
-    `;
-}
-
-function renderNeedsYou() {
-    const list = needsYouCSes(TRACKER);
-    const badge = document.getElementById('nyBadge');
-    badge.textContent = list.length;
-    badge.classList.toggle('zero', list.length === 0);
-    const body = document.getElementById('nyBody');
-    if (list.length === 0) {
-        body.innerHTML = '<div class="lifecycle-empty">Nothing blocked. Approved Klaviyo CSes are clear of human-action gates.</div>';
-        return;
-    }
-    body.innerHTML = `
-        <table class="lifecycle-table">
-            <thead><tr>
-                <th>CS</th><th>Title</th><th>Blockers</th><th>Owner</th>
-            </tr></thead>
-            <tbody>
-                ${list.map(cs => {
-                    const blockers = blockersFor(cs);
-                    return `
-                    <tr>
-                        <td>${csLink(cs)}</td>
-                        <td>${escHtml(cs.title || cs.summary || '—')}</td>
-                        <td>
-                            <ul class="blocker-list">
-                                ${blockers.map(b => '<li>' + escHtml(b) + '</li>').join('')}
-                            </ul>
-                        </td>
-                        <td>${escHtml(cs.owner || cs.assigned_owner || '—')}</td>
-                    </tr>`;
-                }).join('')}
-            </tbody>
-        </table>
-    `;
-}
-
-function renderRecentActivity() {
-    const list = recentLifecycleCSes(TRACKER);
-    const body = document.getElementById('raBody');
-    if (list.length === 0) {
-        body.innerHTML = '<div class="lifecycle-empty">No lifecycle CS activity in the last 14 days.</div>';
-        return;
-    }
-    body.innerHTML = `
-        <table class="lifecycle-table">
-            <thead><tr>
-                <th>CS</th><th>Title</th><th>Status</th><th>Subtype</th><th>Last activity</th>
-            </tr></thead>
-            <tbody>
-                ${list.map(cs => `
-                    <tr>
-                        <td>${csLink(cs)}</td>
-                        <td>${escHtml(cs.title || cs.summary || '—')}</td>
-                        <td>${escHtml(cs.status || '—')}</td>
-                        <td>${escHtml(cs.klaviyo_object || cs.subtype || '—')}</td>
-                        <td title="${escHtml(cs.last_updated || cs.activation_date || cs.scheduled_send_date || '')}">${
-                            escHtml(fmtRelative(cs.last_updated || cs.activation_date || cs.scheduled_send_date || cs.executed_date))
-                        }</td>
-                    </tr>`).join('')}
-            </tbody>
-        </table>
-    `;
-}
-
-function renderStateFiles() {
-    const body = document.getElementById('sfBody');
-    const ac = LIFECYCLE_STATE.activeClusters;
-    const ho = LIFECYCLE_STATE.holdoutMeta;
-    const rows = [];
-    rows.push(`
-        <table class="lifecycle-table">
-            <thead><tr>
-                <th>File</th><th>Status</th><th>Detail</th>
-            </tr></thead>
-            <tbody>
-                <tr>
-                    <td><code>active-clusters.json</code></td>
-                    <td>${ac ? '<span style="color:var(--success)">live</span>' : '<span style="color:var(--text-muted)">absent</span>'}</td>
-                    <td>${ac
-                        ? (ac.active_clusters || []).length + ' active cluster(s)'
-                        : 'No clusters defined yet (Loop 2 will create on first calendar build)'}</td>
-                </tr>
-                <tr>
-                    <td><code>holdout-segment-meta.json</code></td>
-                    <td>${
-                        !ho ? '<span style="color:var(--warning)">absent</span>'
-                        : ho.status === 'pending_a2_1' ? '<span style="color:var(--warning)">pending</span>'
-                        : '<span style="color:var(--success)">live</span>'
-                    }</td>
-                    <td>${
-                        !ho ? 'A2.2 governance file not yet committed'
-                        : ho.status === 'pending_a2_1' ? 'A2.2 scaffolding committed; waiting on Devon\'s A2.1 segment creation in Klaviyo (replace 4 placeholder fields when done)'
-                        : 'segment_id=' + escHtml(ho.klaviyo_segment_id || '?') + ' · sample=' + (ho.current_sample_size || 0).toLocaleString()
-                    }</td>
-                </tr>
-            </tbody>
-        </table>
-    `);
-    body.innerHTML = rows.join('');
-}
-
-async function renderLifecycleTab() {
     if (!TRACKER) return;
-    if (!LIFECYCLE_STATE.fetchedAt || (Date.now() - LIFECYCLE_STATE.fetchedAt.getTime()) > 60000) {
-        await fetchLifecycleStateFiles();
-    }
-    renderHoldWindow();
-    renderNeedsYou();
-    renderRecentActivity();
-    renderStateFiles();
+    ATTENTION_IDS = computeAttentionIds();   // the one and only attention derivation
+    populateDepartmentDropdown();
+    renderKPIs();
+    renderAttention();
+    renderPipeline();
+    renderScoreboard();
+    renderClosed();
+    renderMoney();
+    renderOwnerLoad();
+    renderAutonomy();
+    renderTimeInStatus();
+    renderCharts();
+    renderTable();
 }
-
-// ═══════════════════════════════════════════════════
-// BOOTSTRAP
-// ═══════════════════════════════════════════════════
+async function boot() {
+    const ok = await fetchAll();
+    if (ok) render();
+    setInterval(refresh, REFRESH_INTERVAL_MS);
+}
+async function refresh() {
+    const ok = await fetchAll();
+    if (ok) render();
+}
 boot();
-setInterval(refresh, REFRESH_INTERVAL_MS);
 </script>
 </body>
 </html>
