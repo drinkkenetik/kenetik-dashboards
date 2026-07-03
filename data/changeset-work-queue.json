@@ -1,0 +1,275 @@
+{
+ "generated": "2026-07-02T16:56:00+00:00",
+ "engine_date": "2026-07-02",
+ "mode": "shadow",
+ "queues": {
+  "measurement_due": [
+   {
+    "id": "CS-2026-067",
+    "title": "Roman Feb Free-3-Pack Cohort Winback \u2014 Cans Variety Pivot",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "published",
+    "due": "2026-06-28",
+    "overdue_days": 4,
+    "window_days": 60,
+    "expected_impact": {
+     "revenue": {
+      "upside": 17500,
+      "expected": 8500,
+      "downside": 2000
+     },
+     "margin": {
+      "upside": 8750,
+      "expected": 4250,
+      "downside": 1000
+     },
+     "primary_metric": "repeat_purchase_rate_60d",
+     "primary_metric_target": "Track A >=6% / Track B >=8% (from 0% baseline)",
+     "L1_margin": "+$4,250 expected (Variety 12pk, 50% margin on incremental)",
+     "L2_cash": "Positive \u2014 subscription attach shifts to 30d cadence",
+     "L3_customer_quality": "Positive \u2014 cans-fit correction + creator voice = LTV unlock ($300+ cans sub vs $30 shots one-off)",
+     "L4_learning": "Hypothesis: creator-voiced product-fit reframe beats generic welcome for creator-acquired cohorts; cohort offer asymmetry (status vs discount) prevents fairness backlash",
+     "L5_brand_check": "Pass pending Nick tone review + Devon claims review"
+    },
+    "has_measurement_data": false
+   },
+   {
+    "id": "CS-2026-139",
+    "title": "MAC Energy Counter-Positioning Brief (BHB-vs-goBHB-salts comparison asset)",
+    "owner": "Brandon Dyksterhouse",
+    "department": "content",
+    "status": "published",
+    "due": "2026-05-27",
+    "overdue_days": 36,
+    "window_days": 14,
+    "expected_impact": {
+     "revenue": {
+      "upside": "[ASSUMED - verify with baseline pull]",
+      "expected": "[ASSUMED - verify with baseline pull]",
+      "downside": "[ASSUMED - verify with baseline pull]"
+     },
+     "margin": {
+      "upside": "[ASSUMED - verify with baseline pull]",
+      "expected": "[ASSUMED - verify with baseline pull]",
+      "downside": "[ASSUMED - verify with baseline pull]"
+     },
+     "primary_metric": "BHB-vs-goBHB asset distribution coverage by 7/12 launch + AmazonAds + IG + KenetikPro",
+     "primary_metric_target": "Asset live in market across 3+ surfaces (paid creative, /vs-other-ketones evidence page, organic IG carousel) by 6/15",
+     "L1_margin": "Medium - primarily competitive defense; revenue benefit is preventive (avoiding category narrative loss to McGregor)",
+     "L2_cash": "None - configuration / process-only",
+     "L3_customer_quality": "[PIPELINE GAP - needs estimation]",
+     "L4_learning": "[PIPELINE GAP - needs estimation]",
+     "L5_brand_check": "CLEARED 2026-05-13 -- Devon Tier-2 claims pass via 5/13-s1 rec-234"
+    },
+    "has_measurement_data": false
+   }
+  ],
+  "measurement_approaching": [],
+  "stale": [
+   {
+    "id": "CS-2026-053",
+    "title": "Review Request Flow Optimization (Variant Scale + Incentive + SMS Fix)",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "needs_feedback",
+    "age_days": 71,
+    "threshold": "needs_feedback_digest"
+   },
+   {
+    "id": "CS-2026-062",
+    "title": "Apr 5 Cohort \u2014 Retention Intervention Package",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "needs_feedback",
+    "age_days": 71,
+    "threshold": "needs_feedback_digest"
+   },
+   {
+    "id": "CS-2026-162",
+    "title": "Genesis GM+Trainer Ketone Education Plan",
+    "owner": "Brandon Dyksterhouse",
+    "department": "wholesale",
+    "status": "needs_feedback",
+    "age_days": 43,
+    "threshold": "needs_feedback_digest"
+   },
+   {
+    "id": "CS-2026-202",
+    "title": "4th of July BIG QUARTERLY BEAT \u2014 Governance & Sub-Beat Linkage",
+    "owner": "Nick Lacagnina",
+    "department": "cross-functional",
+    "status": "draft",
+    "age_days": 13,
+    "threshold": "draft_digest"
+   },
+   {
+    "id": "CS-2026-203",
+    "title": "Homepage hero rollback to single static slide \u2014 fix mobile CVR drop & script-err",
+    "owner": "Katie Spaller",
+    "department": "DTC-website",
+    "status": "draft",
+    "age_days": 10,
+    "threshold": "draft_digest"
+   },
+   {
+    "id": "CS-2026-204",
+    "title": "Take your brain off airplane mode. A short, metaphor-led education send in the p",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "approved",
+    "age_days": 9,
+    "threshold": "approved_business_days"
+   },
+   {
+    "id": "CS-2026-207",
+    "title": "Why Dave Asprey put Kenetik in his routine. The official integration, in his own",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "draft",
+    "age_days": 9,
+    "threshold": "draft_digest"
+   },
+   {
+    "id": "CS-2026-216",
+    "title": "Paid Media Sandbox \u2014 Phase 0 scaffold (data/sandbox + seeded Afternoon Switch ro",
+    "owner": "Katie Spaller",
+    "department": "paid-media",
+    "status": "approved",
+    "age_days": 7,
+    "threshold": "approved_business_days"
+   },
+   {
+    "id": "CS-2026-217",
+    "title": "Wholesale site rebuild \u2014 Dawn rebuild, Kenetik re-skin, tiered tag gating",
+    "owner": "Katie Spaller",
+    "department": "wholesale",
+    "status": "approved",
+    "age_days": 7,
+    "threshold": "approved_business_days"
+   }
+  ],
+  "expiring": [
+   {
+    "id": "CS-2026-202",
+    "title": "4th of July BIG QUARTERLY BEAT \u2014 Governance & Sub-Beat Linkage",
+    "owner": "Nick Lacagnina",
+    "department": "cross-functional",
+    "status": "draft",
+    "expires_in_days": 1
+   }
+  ]
+ },
+ "transitions": [
+  {
+   "id": "CS-2026-067",
+   "action": "flag_data_needed",
+   "from": null,
+   "to": "sweep_flags += data_needed",
+   "reason": "measurement overdue 4d >= 3d with no measurement data"
+  },
+  {
+   "id": "CS-2026-139",
+   "action": "set_measurement_due",
+   "from": null,
+   "to": "2026-05-27",
+   "reason": "derived from executed/published date + window"
+  },
+  {
+   "id": "CS-2026-139",
+   "action": "flag_data_needed",
+   "from": null,
+   "to": "sweep_flags += data_needed",
+   "reason": "measurement overdue 36d >= 3d with no measurement data"
+  },
+  {
+   "id": "CS-2026-189",
+   "action": "set_measurement_due",
+   "from": null,
+   "to": "2026-07-15",
+   "reason": "derived from executed/published date + window"
+  },
+  {
+   "id": "CS-2026-198",
+   "action": "set_measurement_due",
+   "from": null,
+   "to": "2026-07-10",
+   "reason": "derived from executed/published date + window"
+  }
+ ],
+ "escalations": [
+  {
+   "audience": "owner",
+   "owner": "Katie Spaller",
+   "cs_id": "CS-2026-053",
+   "reason": "stale_needs_feedback",
+   "message": "CS-2026-053 feedback pending 71 days. Revise or close."
+  },
+  {
+   "audience": "owner",
+   "owner": "Katie Spaller",
+   "cs_id": "CS-2026-062",
+   "reason": "stale_needs_feedback",
+   "message": "CS-2026-062 feedback pending 71 days. Revise or close."
+  },
+  {
+   "audience": "devon",
+   "owner": "Katie Spaller",
+   "cs_id": "CS-2026-067",
+   "reason": "measurement_data_gap",
+   "message": "CS-2026-067 measurement overdue 4d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+  },
+  {
+   "audience": "devon",
+   "owner": "Brandon Dyksterhouse",
+   "cs_id": "CS-2026-139",
+   "reason": "measurement_data_gap",
+   "message": "CS-2026-139 measurement overdue 36d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+  },
+  {
+   "audience": "owner",
+   "owner": "Brandon Dyksterhouse",
+   "cs_id": "CS-2026-162",
+   "reason": "stale_needs_feedback",
+   "message": "CS-2026-162 feedback pending 43 days. Revise or close."
+  }
+ ],
+ "data_requests": [
+  {
+   "cs_id": "CS-2026-067",
+   "platforms": [
+    "klaviyo"
+   ],
+   "needed": "measurement data",
+   "due_since": "2026-06-28"
+  },
+  {
+   "cs_id": "CS-2026-139",
+   "platforms": [
+    "blog",
+    "klaviyo",
+    "instagram-organic",
+    "linkedin-organic",
+    "kenetikpro"
+   ],
+   "needed": "measurement data",
+   "due_since": "2026-05-27"
+  }
+ ],
+ "stats": {
+  "queue_sizes": {
+   "measurement_due": 2,
+   "measurement_approaching": 0,
+   "stale": 9,
+   "expiring": 1
+  },
+  "transitions": {
+   "flag_data_needed": 2,
+   "set_measurement_due": 3
+  },
+  "escalations": {
+   "stale_needs_feedback": 3,
+   "measurement_data_gap": 2
+  }
+ }
+}
