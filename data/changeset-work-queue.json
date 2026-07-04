@@ -1,6 +1,6 @@
 {
- "generated": "2026-07-03T12:18:40+00:00",
- "engine_date": "2026-07-03",
+ "generated": "2026-07-04T11:57:43+00:00",
+ "engine_date": "2026-07-04",
  "mode": "shadow",
  "queues": {
   "measurement_due": [
@@ -11,7 +11,7 @@
     "department": "lifecycle-marketing",
     "status": "published",
     "due": "2026-06-28",
-    "overdue_days": 5,
+    "overdue_days": 6,
     "window_days": 60,
     "expected_impact": {
      "revenue": {
@@ -41,7 +41,7 @@
     "department": "content",
     "status": "published",
     "due": "2026-05-27",
-    "overdue_days": 37,
+    "overdue_days": 38,
     "window_days": 14,
     "expected_impact": {
      "revenue": {
@@ -73,7 +73,7 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "needs_feedback",
-    "age_days": 72,
+    "age_days": 73,
     "threshold": "needs_feedback_digest"
    },
    {
@@ -82,7 +82,7 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "needs_feedback",
-    "age_days": 72,
+    "age_days": 73,
     "threshold": "needs_feedback_digest"
    },
    {
@@ -91,7 +91,7 @@
     "owner": "Brandon Dyksterhouse",
     "department": "wholesale",
     "status": "needs_feedback",
-    "age_days": 44,
+    "age_days": 45,
     "threshold": "needs_feedback_digest"
    },
    {
@@ -100,7 +100,7 @@
     "owner": "Katie Spaller",
     "department": "DTC-website",
     "status": "draft",
-    "age_days": 11,
+    "age_days": 12,
     "threshold": "draft_digest"
    },
    {
@@ -109,7 +109,16 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "approved",
-    "age_days": 10,
+    "age_days": 11,
+    "threshold": "approved_business_days"
+   },
+   {
+    "id": "CS-2026-205",
+    "title": "The clarity window. A question-led, named-cognition-concept education read on wh",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "approved",
+    "age_days": 11,
     "threshold": "approved_business_days"
    },
    {
@@ -118,7 +127,7 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "draft",
-    "age_days": 10,
+    "age_days": 11,
     "threshold": "draft_digest"
    },
    {
@@ -127,7 +136,7 @@
     "owner": "Katie Spaller",
     "department": "paid-media",
     "status": "approved",
-    "age_days": 8,
+    "age_days": 9,
     "threshold": "approved_business_days"
    },
    {
@@ -136,7 +145,7 @@
     "owner": "Katie Spaller",
     "department": "wholesale",
     "status": "approved",
-    "age_days": 8,
+    "age_days": 9,
     "threshold": "approved_business_days"
    }
   ],
@@ -146,6 +155,30 @@
     "title": "Homepage hero rollback to single static slide \u2014 fix mobile CVR drop & script-err",
     "owner": "Katie Spaller",
     "department": "DTC-website",
+    "status": "draft",
+    "expires_in_days": 2
+   },
+   {
+    "id": "CS-2026-204",
+    "title": "Take your brain off airplane mode. A short, metaphor-led education send in the p",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "approved",
+    "expires_in_days": 3
+   },
+   {
+    "id": "CS-2026-205",
+    "title": "The clarity window. A question-led, named-cognition-concept education read on wh",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "approved",
+    "expires_in_days": 3
+   },
+   {
+    "id": "CS-2026-207",
+    "title": "Why Dave Asprey put Kenetik in his routine. The official integration, in his own",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
     "status": "draft",
     "expires_in_days": 3
    }
@@ -157,7 +190,7 @@
    "action": "flag_data_needed",
    "from": null,
    "to": "sweep_flags += data_needed",
-   "reason": "measurement overdue 5d >= 3d with no measurement data"
+   "reason": "measurement overdue 6d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-139",
@@ -171,7 +204,7 @@
    "action": "flag_data_needed",
    "from": null,
    "to": "sweep_flags += data_needed",
-   "reason": "measurement overdue 37d >= 3d with no measurement data"
+   "reason": "measurement overdue 38d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-189",
@@ -193,7 +226,7 @@
    "from": "draft",
    "to": "closed",
    "outcome": "expired_unreviewed",
-   "reason": "draft for 14d >= 14d expiry"
+   "reason": "draft for 15d >= 14d expiry"
   }
  ],
  "escalations": [
@@ -202,35 +235,35 @@
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-053",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-053 feedback pending 72 days. Revise or close."
+   "message": "CS-2026-053 feedback pending 73 days. Revise or close."
   },
   {
    "audience": "owner",
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-062",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-062 feedback pending 72 days. Revise or close."
+   "message": "CS-2026-062 feedback pending 73 days. Revise or close."
   },
   {
    "audience": "devon",
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-067",
    "reason": "measurement_data_gap",
-   "message": "CS-2026-067 measurement overdue 5d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+   "message": "CS-2026-067 measurement overdue 6d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   },
   {
    "audience": "devon",
    "owner": "Brandon Dyksterhouse",
    "cs_id": "CS-2026-139",
    "reason": "measurement_data_gap",
-   "message": "CS-2026-139 measurement overdue 37d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+   "message": "CS-2026-139 measurement overdue 38d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   },
   {
    "audience": "owner",
    "owner": "Brandon Dyksterhouse",
    "cs_id": "CS-2026-162",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-162 feedback pending 44 days. Revise or close."
+   "message": "CS-2026-162 feedback pending 45 days. Revise or close."
   }
  ],
  "data_requests": [
@@ -273,8 +306,8 @@
   "queue_sizes": {
    "measurement_due": 2,
    "measurement_approaching": 0,
-   "stale": 8,
-   "expiring": 1
+   "stale": 9,
+   "expiring": 4
   },
   "transitions": {
    "flag_data_needed": 2,
