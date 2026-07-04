@@ -988,6 +988,27 @@
       "domain": "website",
       "status": "active",
       "date": "2026-07-02"
+    },
+    {
+      "id": "L-146",
+      "summary": "Measured AOV ($165 digest / ~$150 website net-sales/orders) is >2x the L2 aov focus target of $70; target is stale or on a different definition. Recon",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-07-03"
+    },
+    {
+      "id": "L-147",
+      "summary": "Creator-channel headline efficiency (ROI 11.96) is partly an equity-comp reporting artifact: top-2 revenue creators (Cleetus, Roman) carry $0 tracked ",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-07-03"
+    },
+    {
+      "id": "L-148",
+      "summary": "Ops dept brief recommended execute-or-retire on CS-118/136/031 as stale-approved, but all three are already CLOSED in the tracker. Dept briefs derivin",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-07-03"
     }
   ],
   "entries": [
@@ -3260,6 +3281,55 @@
       "skill_files_updated": [],
       "related_entries": [],
       "target": "synthesis-instructions.md Framing Guardrails (Baseline check) \u2014 add explicit reversion-vs-decline test for search-traffic WoW swings."
+    },
+    {
+      "id": "L-146",
+      "date": "2026-07-03",
+      "type": "threshold_calibration",
+      "learning": "Measured AOV ($165 digest / ~$150 website net-sales/orders) is >2x the L2 aov focus target of $70; target is stale or on a different definition. Reconcile before treating AOV as a gap.",
+      "source": "Lifecycle dept brief INS-D-1 + Website dept brief INS-D-1 + digest aov=165.44, 2026-07-03",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Three independent surfaces (Lifecycle, Website, digest) agree on ~$150-165 measured AOV vs $70 target. See daily synthesis 2026-07-03-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/references/metrics-taxonomy.md (L2 aov lever) + metric registry aov definition"
+    },
+    {
+      "id": "L-147",
+      "date": "2026-07-03",
+      "type": "skill_update",
+      "learning": "Creator-channel headline efficiency (ROI 11.96) is partly an equity-comp reporting artifact: top-2 revenue creators (Cleetus, Roman) carry $0 tracked CAC because they are equity/free-pack. The scalable lever is the commission tier (BETTER $13.28, HUGHES $13.47, STAYCURIOUS $17.25, all under the $22 target).",
+      "source": "Content dept brief INV-D-1 + attribution-state.json creator_economics (2026-07-02)",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "Blended creator ROI/CAC mixes $0 equity CACs with commission CACs, masking scalable economics. Thin attribution volume (guardrail: directional). See daily synthesis 2026-07-03-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-137"
+      ],
+      "target": "creator-management / creator-roi skill files \u2014 separate equity-partner artifacts from scalable commission-tier economics"
+    },
+    {
+      "id": "L-148",
+      "date": "2026-07-03",
+      "type": "process_change",
+      "learning": "Ops dept brief recommended execute-or-retire on CS-118/136/031 as stale-approved, but all three are already CLOSED in the tracker. Dept briefs deriving CS status from D14 meeting/handoff intelligence lag the tracker and can produce recommendations to action closed CSes.",
+      "source": "Operations dept brief ACT-D-2 vs live tracker.json cross-check (Phase 3), 2026-07-03",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Same failure mode as L-144 (CS-200 asserted frozen while published). See daily synthesis 2026-07-03-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-144"
+      ],
+      "target": "task-a1-departments.md \u2014 require dept briefs citing a specific CS status to re-read tracker.json"
     }
   ],
   "archived_entries": [
