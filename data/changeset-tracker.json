@@ -1,19 +1,19 @@
 {
   "schema_version": "3.0",
-  "last_updated": "2026-07-03T09:00:29.797065+00:00",
+  "last_updated": "2026-07-04T03:03:21.860642+00:00",
   "next_id": "CS-2026-222",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-07-02",
-    "last_sweep_session": "2026-07-02-s1",
-    "last_sweep_result": "idempotent_run_16 (session 72, DEGRADED \u2014 Polar MCP unavailable, state-file-direct; Sprout listening ~34d, CS-188 draft). Digest authoritative (12:23Z, not degraded). Stale-approved=7 (digest d12_stale_approved_count; egregious: CS-031 71d, CS-054, CS-118 66d, CS-136 59d, CS-137 \u2014 Katie/Nick, weeks past target, owner_nudge zero-effect since 6/08; only execute-or-retire clears per L-136). No new per-CS stale flags appended (idempotent \u2014 already flagged; avoiding flag-bloat, e.g. CS-031 carries 9). measurement_capable=FALSE \u2014 14 CSes DEFERRED (human-gated on unnamed Polar drain-owner per CS-2026-127 contract; pending_measurement_queue preserved, 4 items). 0 auto-closed (no data, no fabrication). 0 NEW CS: July-4 LP-fix (Cleetus/Roman) + owned-social + Prime Day + governance actions are directed via the Priority Stack to EXISTING CSes (CS-202 governance draft, CS-203 homepage hero draft) and named owners (Katie/Nick/Charlotte) rather than spawned \u2014 binding constraint is decision throughput (Devon 18-run block), not CS intake (Resolution Hierarchy: don't ADD; Ops brief explicitly endorses no mass-spawn). Calendar safety-net re-scanned: untracked in-window activities (Tour de France 7/4, Prime Day 7/13, TRX 7/8, Silver Rush 7/11, The Open 7/16, Cleetus beats) \u2014 AUTO-SPAWN SUPPRESSED per Ops INS-D-1 + Resolution Hierarchy (36 drafts vs ~1 close/wk; repeats CS-117..140). Surfaced for triage to Nick/Cliff. Summary drift FIXED: total 168->169 (CS-218 added by separate session), draft 36->37 recount. PM net-new 0.",
+    "last_sweep_date": "2026-07-03",
+    "last_sweep_session": "2026-07-03-s1",
+    "last_sweep_result": "idempotent run_17 (session 73, DEGRADED \u2014 Polar MCP + Klaviyo MCP both unavailable/unauthed; state-file-direct). Digest authoritative (non-degraded, date-matched). Stale-approved (genuinely abandoned)=0, consistent with digest d12_stale_approved_count=0: the 13 approved CSes (CS-204..217) are the July lifecycle-calendar/TRX batch with future scheduled_send_date (7/1-7/30) \u2014 scheduled work, not abandoned; no new per-CS stale flags appended (idempotent, avoiding flag-bloat). RECONCILIATION: Ops dept brief ACT-D-2 flagged CS-118/136/031 as stale-approved needing execute-or-retire, but all three are already CLOSED (each carries 3 flags) \u2014 L-144-class stale CS-status in the brief's D14 source; captured as L-148, no tracker action taken. measurement_capable=FALSE \u2014 measurement deferred (human-gated on unnamed Polar drain-owner per CS-2026-127 contract; Klaviyo also unauthed). CS-067 (measurement_due 6/28, past) stays in pending_measurement_queue. 0 auto-closed (no data, no fabrication). 0 NEW CS: priority-stack actions directed to EXISTING CSes + named owners, not spawned \u2014 binding constraint is decision throughput (Devon 18-run block), not CS intake (Resolution Hierarchy: don't ADD; Ops INS-D-1 endorses no mass-spawn). Calendar safety-net re-scanned (TDF 7/4, Prime Day 7/13, MAC 7/12, TRX 7/16) \u2014 AUTO-SPAWN SUPPRESSED per Ops INS-D-1 + Resolution Hierarchy. PM candidate scan: 0 net-new.",
     "last_sweep_counts": {
-      "stale_approved_gt_7d": 7,
+      "stale_approved_gt_7d": 0,
       "newly_flagged": 0,
       "measurement_due_deferred": 14,
       "auto_closed": 0,
       "new_changesets": 0,
-      "stale_approved_gt_30d": 7,
-      "safety_net_candidates_surfaced": 6,
+      "stale_approved_gt_30d": 0,
+      "safety_net_candidates_surfaced": 4,
       "safety_net_spawned": 0,
       "pm_candidates_net_new": 0
     },
@@ -45,8 +45,8 @@
       "investigation": 17,
       "quick": 34
     },
-    "last_updated": "2026-07-03T09:00:29.777880+00:00",
-    "last_counted": "2026-07-02T00:00:00Z"
+    "last_updated": "2026-07-04T03:03:21.860642+00:00",
+    "last_counted": "2026-07-03T00:00:00Z"
   },
   "changesets": [
     {
