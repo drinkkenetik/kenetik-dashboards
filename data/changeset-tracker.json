@@ -1,6 +1,6 @@
 {
   "schema_version": "3.0",
-  "last_updated": "2026-07-05T08:58:54.787732+00:00",
+  "last_updated": "2026-07-05T09:10:09.566381+00:00",
   "next_id": "CS-2026-222",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-07-03",
@@ -26,9 +26,9 @@
     "measurement_capable": false
   },
   "summary": {
-    "total": 163,
+    "total": 158,
     "by_status": {
-      "closed": 129,
+      "closed": 124,
       "needs_feedback": 3,
       "published": 11,
       "draft": 7,
@@ -36,16 +36,16 @@
     },
     "by_risk": {
       "critical": 2,
-      "low": 78,
-      "high": 17,
-      "medium": 66
+      "low": 76,
+      "high": 16,
+      "medium": 64
     },
     "by_subtype": {
-      "implementation": 112,
-      "investigation": 17,
-      "quick": 34
+      "implementation": 110,
+      "investigation": 15,
+      "quick": 33
     },
-    "last_updated": "2026-07-05T08:58:54.779356+00:00",
+    "last_updated": "2026-07-05T09:10:09.563116+00:00",
     "last_counted": "2026-07-03T00:00:00Z"
   },
   "changesets": [
@@ -727,84 +727,6 @@
         "file": "cgo-logs/changesets/CS-2026-009.md",
         "stale": false,
         "legacy_measurement_window": "60-day from launch",
-        "source_inferred": true
-      }
-    },
-    {
-      "id": "CS-2026-010",
-      "title": "Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
-      "department": "lifecycle-marketing",
-      "platforms": [
-        "klaviyo"
-      ],
-      "owner": "Katie Spaller + Devon Price",
-      "source": "synthesis",
-      "status": "closed",
-      "created": "2026-03-11",
-      "approved_date": "2026-03-16",
-      "published_date": "2026-04-06",
-      "closed_date": "2026-04-06",
-      "measurement_window_days": 7,
-      "measurement_due": "2026-04-13",
-      "measurement_result": {
-        "migrated_from_actual_impact": true,
-        "measured_date": "2026-04-06",
-        "note": "v3 migration: actual_impact was the recorded measurement"
-      },
-      "outcome": "success",
-      "expected_impact": {
-        "revenue": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "primary_metric": "flow_consolidation_count",
-        "primary_metric_target": ">=15 flows deactivated or merged"
-      },
-      "actual_impact": {
-        "primary_metric": "investigation_questions_answered",
-        "primary_metric_baseline": "0 of 5 answered",
-        "primary_metric_result": "5 of 5 answered with evidence",
-        "primary_metric_delta": "+5 (100% completion)",
-        "revenue_impact": null,
-        "margin_impact": null,
-        "confidence": "high",
-        "statistical_significance": true,
-        "_note": "Investigation subtype \u2014 no direct revenue. Spawned CS-2026-049 (Shopify Flow implementation) which carries the revenue impact.",
-        "L1_margin_actual": "null \u2014 investigation, no direct revenue",
-        "L3_customer_quality_actual": "confirmed \u2014 Superfiliate customer attribution gap prevents targeted retention flows. Fix designed.",
-        "L4_learning_actual": "Hypothesis supported: all 6 Superfiliate metrics fire on creator profiles only. $source contains form IDs not traffic source. Shopify order tags don't propagate to Klaviyo profile tags. Only working attribution: discount code matching on Placed Order events. Fix: Shopify Flow \u2192 Klaviyo custom property."
-      },
-      "spawned_changesets": [
-        "CS-2026-049"
-      ],
-      "review_tier": "express",
-      "subtype": "investigation",
-      "risk_level": "low",
-      "notes": "Coordinate with CS-2026-025 (undefined revenue investigation).",
-      "sweep_flags": [],
-      "executed_date": "2026-04-06",
-      "spawned_from": "rec-010",
-      "dependencies": [],
-      "blocks": [],
-      "routed_to": [
-        "Katie",
-        "Devon"
-      ],
-      "learning_note": "For [Superfiliate-acquired customers] on [Klaviyo], [property audit] revealed [all Superfiliate data lives on creator profiles, not customer profiles]. $source contains Klaviyo form IDs, not traffic attribution. Superfiliate Campaign Conversion fires on creators only with empty event properties. Shopify order tags don't propagate to profile-level Shopify Tags. Only working path: discount codes on Placed Order events. Fix: Shopify Flow triggered by 'superfiliate conversion approved' order tag \u2192 write acquisition_source + referring_creator to Klaviyo customer profiles.",
-      "meta": {
-        "objective_level": "L4",
-        "category": "email_sms",
-        "routed_via": "slack",
-        "routed_date": "2026-03-16",
-        "approved_by": "Express Auto-Approve",
-        "file": "cgo-logs/changesets/CS-2026-010.md",
-        "legacy_measurement_window": "7d",
         "source_inferred": true
       }
     },
@@ -2172,149 +2094,6 @@
       }
     },
     {
-      "id": "CS-2026-026",
-      "title": "BAW Content Velocity Emergency",
-      "department": "DTC-website",
-      "platforms": [
-        "shopify"
-      ],
-      "owner": "Nick Lacagnina + Charlotte Thamm",
-      "source": "synthesis",
-      "status": "closed",
-      "created": "2026-03-16",
-      "approved_date": "2026-03-14",
-      "published_date": "2026-03-14",
-      "closed_date": "2026-04-03",
-      "measurement_window_days": 9,
-      "measurement_due": "2026-03-23",
-      "outcome": "data_needed",
-      "outcome_notes": "v3 migration: outcome 'force_closed_no_measurement' -> 'data_needed'",
-      "expected_impact": {
-        "revenue": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "primary_metric": "content_velocity",
-        "primary_metric_target": ">=3 posts/day during BAW week"
-      },
-      "actual_impact": {
-        "status": "unmeasured",
-        "reason": "Measurement window expired without data collection. BAW content produced but velocity metrics not tracked."
-      },
-      "spawned_changesets": [
-        "CS-2026-027",
-        "CS-2026-030"
-      ],
-      "review_tier": "express",
-      "subtype": "implementation",
-      "risk_level": "high",
-      "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
-      "sweep_flags": [
-        "MEASUREMENT_OVERDUE",
-        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW content velocity). Session 24 sweep.",
-        {
-          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
-          "set_date": "2026-04-30",
-          "session": "2026-04-30-execute",
-          "action": "One-shot backfill detection: routed_date 2026-03-14 < created 2026-03-16 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
-        }
-      ],
-      "spawned_from": "rec-026",
-      "dependencies": [],
-      "blocks": [],
-      "routed_to": [
-        "Nick",
-        "Charlotte"
-      ],
-      "meta": {
-        "objective_level": "L4",
-        "category": "creative",
-        "routed_via": "slack",
-        "routed_date": "2026-03-14",
-        "approved_by": "Express Auto-Approve",
-        "file": "cgo-logs/changesets/CS-2026-026.md",
-        "legacy_measurement_window": "9d",
-        "source_inferred": true
-      }
-    },
-    {
-      "id": "CS-2026-027",
-      "title": "BAW Tier A Content Fast-Track Protocol",
-      "department": "DTC-website",
-      "platforms": [
-        "shopify"
-      ],
-      "owner": "Charlotte Thamm + Cliff Morgan",
-      "source": "synthesis",
-      "status": "closed",
-      "created": "2026-03-17",
-      "approved_date": "2026-03-14",
-      "published_date": "2026-03-14",
-      "closed_date": "2026-04-03",
-      "measurement_window_days": 9,
-      "measurement_due": "2026-03-23",
-      "outcome": "data_needed",
-      "outcome_notes": "v3 migration: outcome 'force_closed_no_measurement' -> 'data_needed'",
-      "expected_impact": {
-        "revenue": {
-          "upside": 7200,
-          "expected": 3600,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 3600,
-          "expected": 1800,
-          "downside": 0
-        },
-        "primary_metric": "tier_a_creator_output",
-        "primary_metric_target": ">=5 Tier A posts during BAW"
-      },
-      "actual_impact": {
-        "status": "unmeasured",
-        "reason": "Measurement window expired without data collection. Tier A fast-track execution status unknown."
-      },
-      "spawned_changesets": [],
-      "review_tier": "express",
-      "subtype": "implementation",
-      "risk_level": "medium",
-      "notes": "MEASUREMENT OVERDUE: Due Mar 23, now 4 days late.",
-      "sweep_flags": [
-        "MEASUREMENT_OVERDUE",
-        "MEASUREMENT OVERDUE (9d past measurement deadline (Mar 23) \u2014 BAW Tier A fast-track). Session 24 sweep.",
-        {
-          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
-          "set_date": "2026-04-30",
-          "session": "2026-04-30-execute",
-          "action": "One-shot backfill detection: routed_date 2026-03-14 < created 2026-03-17 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
-        }
-      ],
-      "spawned_from": "rec-027",
-      "dependencies": [
-        "CS-2026-026"
-      ],
-      "blocks": [],
-      "routed_to": [
-        "Charlotte",
-        "Cliff"
-      ],
-      "meta": {
-        "objective_level": "L2",
-        "category": "creative",
-        "routed_via": "slack",
-        "routed_date": "2026-03-14",
-        "approved_by": "Express Auto-Approve",
-        "file": "cgo-logs/changesets/CS-2026-027.md",
-        "legacy_measurement_window": "9d",
-        "source_inferred": true
-      }
-    },
-    {
       "id": "CS-2026-030",
       "title": "BAW One-Time Purchaser \u2192 Subscription Conversion",
       "department": "lifecycle-marketing",
@@ -2918,108 +2697,6 @@
         "closed_reason": "Stale and no longer relevant \u2014 Amazon search term harvest work is now being handled by external partner ZSquared, superseding any internal investigation under this CS.",
         "legacy_measurement_window": "",
         "window_normalization_note": "unparseable window '' \u2014 engine will flag data_needed at due time",
-        "source_inferred": true
-      }
-    },
-    {
-      "id": "CS-2026-038",
-      "title": "Ashton Activation (Seasonal Gap)",
-      "department": "DTC-website",
-      "platforms": [
-        "shopify"
-      ],
-      "owner": "Devon Price",
-      "source": "synthesis",
-      "status": "closed",
-      "created": "2026-03-24",
-      "approved_date": "2026-03-25",
-      "closed_date": "2026-04-03",
-      "outcome": "expired_unexecuted",
-      "outcome_notes": "v3 migration: outcome 'deferred' -> 'expired_unexecuted'",
-      "expected_impact": {
-        "revenue": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 0,
-          "expected": 0,
-          "downside": 0
-        },
-        "primary_metric": "cancellation_insight_count",
-        "primary_metric_target": ">=3 actionable insights from survey data"
-      },
-      "spawned_changesets": [],
-      "review_tier": "express",
-      "subtype": "investigation",
-      "risk_level": "medium",
-      "notes": "Subscription churn analysis from Recharge cancellation survey data. Deferred by Brandon 2026-04-03. Revisit in May for summer planning.",
-      "sweep_flags": [],
-      "spawned_from": "rec-038",
-      "dependencies": [],
-      "blocks": [],
-      "routed_to": [
-        "Katie"
-      ],
-      "meta": {
-        "objective_level": "L4",
-        "category": "subscription",
-        "routed_via": "slack",
-        "routed_date": "2026-03-25",
-        "approved_by": "Express Auto-Approve",
-        "file": "cgo-logs/changesets/CS-2026-038/brief.md",
-        "source_inferred": true
-      }
-    },
-    {
-      "id": "CS-2026-039",
-      "title": "Event Tracking (TikTok/Social Commitment)",
-      "department": "paid-media",
-      "platforms": [
-        "tiktok-ads"
-      ],
-      "owner": "Devon Price",
-      "source": "synthesis",
-      "status": "closed",
-      "created": "2026-03-24",
-      "approved_date": "2026-03-25",
-      "closed_date": "2026-04-03",
-      "outcome": "expired_unexecuted",
-      "outcome_notes": "v3 migration: outcome 'deferred' -> 'expired_unexecuted'",
-      "expected_impact": {
-        "revenue": {
-          "upside": 28800,
-          "expected": 14400,
-          "downside": -7200
-        },
-        "margin": {
-          "upside": 14400,
-          "expected": 7200,
-          "downside": -3600
-        },
-        "primary_metric": "meta_roas",
-        "primary_metric_target": ">=3.0x ROAS (from 2.1x baseline)"
-      },
-      "spawned_changesets": [],
-      "review_tier": "standard",
-      "subtype": "quick",
-      "risk_level": "low",
-      "notes": "Meta Advantage+ restructure investigation. Deferred by Brandon 2026-04-03. Revisit in May closer to UNBOUND (May 28).",
-      "sweep_flags": [],
-      "spawned_from": "rec-039",
-      "dependencies": [],
-      "blocks": [],
-      "routed_to": [
-        "Katie"
-      ],
-      "meta": {
-        "objective_level": "L1",
-        "category": "paid_media",
-        "routed_via": "slack",
-        "routed_date": "2026-03-25",
-        "approved_by": "Katie",
-        "file": "cgo-logs/changesets/CS-2026-039/brief.md",
         "source_inferred": true
       }
     },
