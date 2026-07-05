@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-04T11:57:44+00:00",
-  "tracker_last_updated": "2026-07-04T08:52:02.392605+00:00",
+  "generated": "2026-07-05T12:01:55+00:00",
+  "tracker_last_updated": "2026-07-05T09:10:09.566381+00:00",
   "tracker_schema_version": "3.0",
   "definitions": {
     "win_rate": "success / measured closures (measured_outcomes from _schema-constants.json)",
@@ -9,51 +9,51 @@
     "sums": "numeric values only; non-numeric impact values listed in skipped[]"
   },
   "scoreboard": {
-    "closed_total": 129,
+    "closed_total": 124,
     "measured": {
-      "total": 46,
+      "total": 45,
       "outcomes": {
         "inconclusive": 10,
-        "success": 17,
+        "success": 16,
         "underperformed": 19
       }
     },
     "administrative": {
-      "total": 83,
+      "total": 79,
       "outcomes": {
-        "data_needed": 3,
-        "expired_unexecuted": 34,
+        "data_needed": 1,
+        "expired_unexecuted": 32,
         "expired_unreviewed": 31,
         "invalid_premise": 3,
         "superseded": 12
       }
     },
     "unknown_outcome": 0,
-    "win_rate": 0.3696,
+    "win_rate": 0.3556,
     "closed_loop": {
-      "measured": 35,
-      "closed_after_publish": 38,
-      "rate": 0.9211
+      "measured": 34,
+      "closed_after_publish": 35,
+      "rate": 0.9714
     },
     "expiry": {
-      "expired": 65,
-      "closed_total": 129,
-      "rate": 0.5039
+      "expired": 63,
+      "closed_total": 124,
+      "rate": 0.5081
     }
   },
   "money": {
     "closed_cohort": {
-      "expected_revenue": 547174.0,
+      "expected_revenue": 529174.0,
       "actual_revenue": 23278.48,
-      "expected_margin": 267379.0,
+      "expected_margin": 258379.0,
       "actual_margin": 12112.93,
       "entries_with_numeric": {
-        "expected_revenue": 78,
+        "expected_revenue": 73,
         "actual_revenue": 43,
-        "expected_margin": 78,
+        "expected_margin": 73,
         "actual_margin": 34
       },
-      "cohort_size": 129
+      "cohort_size": 124
     },
     "measured_cohort": {
       "expected_revenue": 311934.0,
@@ -61,12 +61,12 @@
       "expected_margin": 155559.0,
       "actual_margin": 12112.93,
       "entries_with_numeric": {
-        "expected_revenue": 36,
+        "expected_revenue": 35,
         "actual_revenue": 32,
-        "expected_margin": 36,
+        "expected_margin": 35,
         "actual_margin": 23
       },
-      "cohort_size": 46
+      "cohort_size": 45
     }
   },
   "open_pipeline": {
@@ -86,12 +86,12 @@
   },
   "by_department": {
     "DTC-website": {
-      "closed": 15,
+      "closed": 12,
       "measured": 5,
       "wins": 1,
-      "expired": 6,
+      "expired": 5,
       "win_rate": 0.2,
-      "expected_revenue": 25900,
+      "expected_revenue": 22300,
       "actual_revenue": 0
     },
     "amazon": {
@@ -131,11 +131,11 @@
       "actual_revenue": 0
     },
     "lifecycle-marketing": {
-      "closed": 47,
-      "measured": 22,
-      "wins": 5,
+      "closed": 46,
+      "measured": 21,
+      "wins": 4,
       "expired": 21,
-      "win_rate": 0.2273,
+      "win_rate": 0.1905,
       "expected_revenue": 316024,
       "actual_revenue": 23169.17
     },
@@ -158,12 +158,12 @@
       "actual_revenue": 0
     },
     "paid-media": {
-      "closed": 19,
+      "closed": 18,
       "measured": 3,
       "wins": 1,
-      "expired": 12,
+      "expired": 11,
       "win_rate": 0.3333,
-      "expected_revenue": 97000,
+      "expected_revenue": 82600,
       "actual_revenue": 109.31
     },
     "science-research": {
@@ -223,12 +223,12 @@
       "actual_revenue": 0
     },
     "synthesis": {
-      "closed": 91,
-      "measured": 39,
-      "wins": 14,
-      "expired": 38,
-      "win_rate": 0.359,
-      "expected_revenue": 523524,
+      "closed": 86,
+      "measured": 38,
+      "wins": 13,
+      "expired": 36,
+      "win_rate": 0.3421,
+      "expected_revenue": 505524,
       "actual_revenue": 23278.48
     },
     "synthesis_priority_stack": {
@@ -270,22 +270,22 @@
       "actual_revenue": 0
     },
     "unassigned": {
-      "closed": 50,
-      "measured": 26,
-      "wins": 8,
-      "expired": 14,
-      "win_rate": 0.3077,
-      "expected_revenue": 328234,
+      "closed": 45,
+      "measured": 25,
+      "wins": 7,
+      "expired": 12,
+      "win_rate": 0.28,
+      "expected_revenue": 310234,
       "actual_revenue": 23278.48
     }
   },
   "monthly_trend": [
     {
       "month": "2026-04",
-      "closed": 47,
-      "measured": 24,
-      "wins": 9,
-      "expired": 11,
+      "closed": 42,
+      "measured": 23,
+      "wins": 8,
+      "expired": 9,
       "actual_revenue": 14251.9
     },
     {
