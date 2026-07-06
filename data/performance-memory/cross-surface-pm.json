@@ -1583,7 +1583,7 @@
       "source_type": "changeset_outcome",
       "domain": "lifecycle",
       "evidence": "Projected: $18,000 revenue / $9,000 margin / email_rpr at product-spotlight benchmark. Actual: $1,293.07 revenue / $646.54 margin (50% DTC) / $0.068 RPR. (see CS-2026-014)",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -1591,7 +1591,13 @@
       "changeset_id": "CS-2026-014",
       "variance_pct": 92.8,
       "outcome_class": "significant_variance",
-      "entry_type": "changeset_outcome"
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-042",
@@ -1602,7 +1608,7 @@
       "source_type": "changeset_outcome",
       "domain": "lifecycle",
       "evidence": "Projected: $5,184 6-mo LTV (12 subs x $72 x 6) / 8-20 subscription_starts / >=1.5% flow CVR. (see CS-2026-030)",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -1612,7 +1618,13 @@
       "changeset_id": "CS-2026-030",
       "variance_pct": 94.9,
       "outcome_class": "significant_variance",
-      "entry_type": "changeset_outcome"
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-043",
@@ -1623,7 +1635,7 @@
       "source_type": "changeset_outcome",
       "domain": "lifecycle",
       "evidence": "Projected: $7,200 revenue / $3,600 margin / 8% reorder rate / <=8% churn / 5% sub-conversion over 90 days. (see CS-2026-007)",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -1634,7 +1646,13 @@
       "changeset_id": "CS-2026-007",
       "variance_pct": 31.7,
       "outcome_class": "significant_variance",
-      "entry_type": "changeset_outcome"
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-044",
@@ -1645,14 +1663,20 @@
       "source_type": "synthesis_derived",
       "domain": "website",
       "evidence": "2026-04-21 D09: Desktop Homepage -44%, Shots PDP -71%, Concentrate PDP -28% WoW. Mobile flat. Blended +21% hid the regression. (see CS-2026-095)",
-      "confidence": "strong",
+      "confidence": "moderate",
       "changesets_referenced": [
         "CS-2026-095",
         "CS-2026-056"
       ],
       "entry_type": "skill_update",
       "skill_files_updated": [],
-      "related_entries": []
+      "related_entries": [],
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ]
     },
     {
       "id": "L-045",
@@ -1663,13 +1687,19 @@
       "source_type": "rule_adoption",
       "domain": "lifecycle",
       "evidence": "D06 new subs -31.5% WoW (Recharge + Klaviyo confirmed). Prior CS-072 ETP flow 0.048% performance measured without split - retrospectively ambiguous whether flow quality issue or payment-failure issue.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "changesets_referenced": [
         "CS-2026-072"
       ],
       "entry_type": "skill_update",
       "skill_files_updated": [],
-      "related_entries": []
+      "related_entries": [],
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-046",
@@ -1680,7 +1710,7 @@
       "source_type": "governance_derived",
       "domain": "operations",
       "evidence": "2026-04-21 D12 scan shows CS-077/045/026/027 CLOSED vs handoff narrative as pending/in_flight. Corrections applied in synthesis 2026-04-21 \u00a7ChangeSet Portfolio Status.",
-      "confidence": "strong",
+      "confidence": "moderate",
       "changesets_referenced": [
         "CS-2026-077",
         "CS-2026-045",
@@ -1689,7 +1719,13 @@
       ],
       "entry_type": "process_change",
       "skill_files_updated": [],
-      "related_entries": []
+      "related_entries": [],
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ]
     },
     {
       "id": "L-047",
@@ -1719,7 +1755,7 @@
       "source_type": "escalation_rule",
       "domain": "operations",
       "evidence": "D13 RED sessions 32-37 (6 consecutive). CS-057 + CS-075 prior tactical fixes; reverted within 5 sessions both times. Step 8a P0 structural CS-097 launched. (see source)",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "changesets_referenced": [
         "CS-2026-097",
         "CS-2026-057",
@@ -1727,7 +1763,13 @@
       ],
       "entry_type": "process_change",
       "skill_files_updated": [],
-      "related_entries": []
+      "related_entries": [],
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-049",
@@ -1760,14 +1802,20 @@
       "source_type": "method_derived",
       "domain": "operations",
       "evidence": "S37 handoff reported 21 orphaned. S38 full re-audit found 68 of 70 14-day activities orphaned. 3.2x undercount pattern.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "changesets_referenced": [
         "CS-2026-097",
         "CS-2026-099"
       ],
       "entry_type": "process_change",
       "skill_files_updated": [],
-      "related_entries": []
+      "related_entries": [],
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-051",
@@ -1778,13 +1826,19 @@
       "source_type": "pattern_derived",
       "domain": "content",
       "evidence": "DS-04-A 2PM Crash (24-48h intercept) + DS-04-B Leadville (48h amplification) + D10 S4 Joelle Debban testimonial (zero-activation UGC). (see session handoff)",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "changesets_referenced": [
         "CS-2026-098"
       ],
       "entry_type": "process_change",
       "skill_files_updated": [],
-      "related_entries": []
+      "related_entries": [],
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-052",
@@ -1812,13 +1866,19 @@
       "source_type": "escalation_derived",
       "domain": "operations",
       "evidence": "D13 CRS 21 (S37) \u2192 19 (S38); recovery to \u226550 by S40 would require +31 in 2 sessions; largest historical session-over-session CRS delta in any domain is ~+18. (see source)",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "changesets_referenced": [
         "CS-2026-097"
       ],
       "entry_type": "process_change",
       "skill_files_updated": [],
-      "related_entries": []
+      "related_entries": [],
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-054",
@@ -1852,7 +1912,7 @@
       "source_type": "operational_signal",
       "domain": "operations",
       "evidence": "Window-scoped audits without an explicit full-vs-window annotation hide systemic-vs-incident distinction. See daily synthesis 2026-04-27-s1.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -1860,7 +1920,13 @@
         "L-050"
       ],
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md (add: any orphan/coverage statistic must include scope annotation -- 14d window vs full calendar); D13 brief template (require both window and full-file rate when the gap is investigated)",
-      "entry_type": "process_change"
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-056",
@@ -1909,14 +1975,20 @@
       "source_type": "operational_signal",
       "domain": "operations",
       "evidence": "Tracker dependency field accepts arbitrary strings; no validation against existing ChangeSet IDs or registered learning artifacts. See daily synthesis 2026-04-27-s1.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-049"
       ],
       "target": "cgo-logs/changesets/tracker.json schema (add validator: dependency strings must resolve to either CS-YYYY-NNN existing in tracker, or L-NNN existing in cross-surface-pm.json, or be flagged external_artifact with explicit owner); cgo-daily-pipeline/config/changeset-instructions.md (Step 3 guidance on dependency hygiene)",
-      "entry_type": "process_change"
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-059",
@@ -1945,7 +2017,7 @@
       "source_type": "operational_signal",
       "domain": "operations",
       "evidence": "content_mix_targets refresh was never automated. Charlotte/Lawrence own manual update; no recurring task or trigger exists. See daily synthesis 2026-04-28-s1.",
-      "confidence": "strong",
+      "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -1953,7 +2025,13 @@
         "L-058"
       ],
       "target": "cgo-daily-pipeline/config/task-a-scans.md (D13 instructions) -- add content_mix_targets week_start age as a hard-gate field; flag if >14d old.",
-      "entry_type": "process_change"
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ]
     },
     {
       "id": "L-061",
@@ -1982,7 +2060,7 @@
       "source_type": "domain_contradiction",
       "domain": "operations",
       "evidence": "pat-014 percentage in handoff narrative was computed before the alias-merge step or against a different tracker snapshot. See daily synthesis 2026-04-29-s1.",
-      "confidence": "strong",
+      "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -1992,7 +2070,13 @@
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 1 Triage -- when consuming pat-014 from handoff, recompute percentage from current tracker.json as part of pattern carry-forward, not just status verb.",
       "status": "active",
       "changeset_candidate": false,
-      "entry_type": "threshold_calibration"
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ]
     },
     {
       "id": "L-064",
@@ -2003,7 +2087,7 @@
       "source_type": "operational_signal",
       "domain": "cross-surface",
       "evidence": "The fix is requiring the claims-approver (Devon) to confirm the citation against today's D16 fresh literature surface before any approval ship. See daily synthesis 2026-04-29-s1.md.",
-      "confidence": "strong",
+      "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -2012,7 +2096,13 @@
       "target": "cgo-daily-pipeline/config/dispatch-instructions.md Layer 2 (CGO DM) -- when CS-122 family items appear in the CGO dispatch DM, require explicit 'D16 today's literature reviewed for citation supersession' confirmation before claims approval routes.",
       "status": "active",
       "changeset_candidate": false,
-      "entry_type": "process_change"
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ]
     },
     {
       "id": "L-065",
@@ -2023,14 +2113,20 @@
       "source_type": "operational_signal",
       "domain": "paid-media",
       "evidence": "ROAS-only readouts conflate efficiency with effectiveness; when conversion volume drops faster than spend, the ratio recovery is arithmetic, not strategic. See daily synthesis 2026-04-30-s1.md.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-061"
       ],
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md (Step 8 quality gate: add explicit volume-vs-efficiency framing check when ROAS recovers in -conv-volume context)",
-      "entry_type": "skill_update"
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-066",
@@ -2041,7 +2137,7 @@
       "source_type": "operational_signal",
       "domain": "website",
       "evidence": "S40 framed as mobile crisis; S41/S42 corroborate recovery. See daily synthesis 2026-04-30-s1.md and L-062.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -2049,7 +2145,13 @@
         "L-054"
       ],
       "target": "cgo-logs/running-log.json tracked_patterns schema (add auto_exit_rule per pattern); pat-010 status field",
-      "entry_type": "threshold_calibration"
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-070",
@@ -2060,7 +2162,7 @@
       "source_type": "changeset_outcome",
       "domain": "lifecycle",
       "evidence": "Projected: $1,800 revenue, $900 margin, >=2.0% CTR (Klaviyo email, audience ~51,643). See entry L-070 source.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2068,7 +2170,13 @@
       "changeset_id": "CS-2026-019",
       "variance_pct": 21.4,
       "outcome_class": "minor_variance",
-      "entry_type": "changeset_outcome"
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-071",
@@ -2079,7 +2187,7 @@
       "source_type": "changeset_outcome",
       "domain": "paid-media",
       "evidence": "Drafted 2026-04-17, execution target 2026-04-22, never approved/scheduled/published. 14 days in draft, 9 days overdue at close. See entry L-071 source.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2087,7 +2195,13 @@
       "changeset_id": "CS-2026-083",
       "variance_pct": 100,
       "outcome_class": "significant_variance",
-      "entry_type": "changeset_outcome"
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-072",
@@ -2156,12 +2270,18 @@
       "source_type": "domain_contradiction",
       "domain": "cross-surface",
       "evidence": "Multiple primary sources (CPG Wire, Stack3D, Dexerto) confirm 2g goBHB; D17 also corrects Neutonic backers. See Market Intelligence dept brief 2026-05-04.",
-      "confidence": "strong",
+      "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 7a (D17 freshness revalidation) -- extend to require multi-source primary verification on competitive metrics, not just publication date verification",
-      "entry_type": "threshold_calibration"
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ]
     },
     {
       "id": "L-077",
@@ -2224,7 +2344,7 @@
       "source_type": "domain_contradiction",
       "domain": "paid-media",
       "evidence": "Polar 3d/14d windows DATA_UNAVAILABLE today; S46 trajectory framing ('X is accelerating', 'Y declining N%') becomes un-falsifiable when source is offline. See daily synthesis 2026-05-07-s1.md.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -2233,7 +2353,13 @@
         "L-076"
       ],
       "target": "cgo-daily-pipeline/config/task-b-synthesis.md Hard Gate 8 description (extend from reallocation-only to all trajectory claims when underlying multi-window data is unavailable)",
-      "entry_type": "threshold_calibration"
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-081",
@@ -2263,7 +2389,7 @@
       "source_type": "moe_pm_bridge",
       "domain": "content",
       "evidence": "Apr 17 FB: 4 Cam Jones giveaway variants combined 24,750 imp at 2.27% mean (0.62x FB median); single-variant Cam Jones at light frequency had 11.11% engagement on FB. See Moe PM AP-007.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2271,7 +2397,13 @@
       "changeset_note": null,
       "bridge_synthesis_id": "SYN-20260508-001",
       "moe_pattern_id": "AP-007",
-      "negative_signal": true
+      "negative_signal": true,
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-083",
@@ -2291,7 +2423,11 @@
       "target": "brain/kenetik-brain/references/launch-day-channel-weights.md (new); refresh cross-surface-pm.json entry recording the pattern. Also informs Memorial Day 5/18 BIG QUARTERLY BEAT channel-mix design.",
       "reconciliation_notes": [
         "evidence pruned 274\u2192164 chars (Process 3.8 Step 0c)"
-      ]
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-084",
@@ -2312,7 +2448,11 @@
       "target": "cgo-daily-pipeline/scripts (L-060 calendar writeback patch implementation); operations/playbooks/calendar-discipline.md.",
       "reconciliation_notes": [
         "evidence pruned 212\u2192177 chars (Process 3.8 Step 0c)"
-      ]
+      ],
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-085",
@@ -2333,7 +2473,11 @@
       "date_last_corroborated": "2026-05-15",
       "reconciliation_notes": [
         "evidence pruned 241\u2192148 chars (Process 3.8 Step 0c)"
-      ]
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-089",
@@ -2344,7 +2488,7 @@
       "source_type": "content_pm_bridge",
       "domain": "content",
       "evidence": "See cgo-logs/queues/performance-memory.json CP-005.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2352,7 +2496,13 @@
       "changeset_note": null,
       "entry_type": "content_pattern",
       "bridge_synthesis_id": "SYN-20260515-001",
-      "negative_signal": true
+      "negative_signal": true,
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-090",
@@ -2363,7 +2513,7 @@
       "source_type": "content_pm_bridge",
       "domain": "content",
       "evidence": "See cgo-logs/queues/performance-memory.json AP-008.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2371,7 +2521,13 @@
       "changeset_note": null,
       "entry_type": "content_pattern",
       "bridge_synthesis_id": "SYN-20260515-001",
-      "negative_signal": true
+      "negative_signal": true,
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-091",
@@ -2382,7 +2538,7 @@
       "source_type": "content_pm_bridge",
       "domain": "content",
       "evidence": "See cgo-logs/queues/performance-memory.json AP-009.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2390,7 +2546,13 @@
       "changeset_note": null,
       "entry_type": "content_pattern",
       "bridge_synthesis_id": "SYN-20260515-001",
-      "negative_signal": true
+      "negative_signal": true,
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-092",
@@ -2401,7 +2563,7 @@
       "source_type": "content_pm_bridge",
       "domain": "content",
       "evidence": "See cgo-logs/queues/performance-memory.json CP-008.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2409,7 +2571,13 @@
       "changeset_note": null,
       "entry_type": "content_pattern",
       "bridge_synthesis_id": "SYN-20260515-001",
-      "negative_signal": false
+      "negative_signal": false,
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-094",
@@ -2424,7 +2592,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "brain/kenetik-brain/references/lifecycle-cadence-rules.md (new section: review request cadence vs campaign launch); rec-244 ownership Katie Spaller"
+      "target": "brain/kenetik-brain/references/lifecycle-cadence-rules.md (new section: review request cadence vs campaign launch); rec-244 ownership Katie Spaller",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-096",
@@ -2446,7 +2618,11 @@
       "target": "synthesis-instructions.md Framing Guardrails #1 - add automatic L-078 trigger when site-wide CVR shift >100% co-occurs with (not set) LP delta >50% absolute",
       "reconciliation_notes": [
         "evidence pruned 411\u2192176 chars (Process 3.8 Step 0c)"
-      ]
+      ],
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-097",
@@ -2457,7 +2633,7 @@
       "source_type": "domain_contradiction",
       "domain": "lifecycle",
       "evidence": "Session handoff narratives compressed multi-metric campaign comparisons (open rate vs revenue per send vs LTV) into single ROAS-equivalent claims. See session-handoff-2026-05-19 \u00a74.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -2466,8 +2642,13 @@
       ],
       "target": "session-handoff template format - require explicit metric label (conv_rate vs conv_value vs RPR) when citing delta percentages on campaign comparisons",
       "reconciliation_notes": [
-        "evidence pruned 256\u2192181 chars (Process 3.8 Step 0c)"
-      ]
+        "evidence pruned 256\u2192181 chars (Process 3.8 Step 0c)",
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-098",
@@ -2496,7 +2677,11 @@
       "reconciliation_notes": [
         "evidence pruned 521\u2192228 chars (Process 3.8 Step 0c)",
         "evidence pruned 228->170 chars (Process 3.8 Step 0c, 2026-06-05)"
-      ]
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-099",
@@ -2507,7 +2692,7 @@
       "source_type": "operational_signal",
       "domain": "operations",
       "evidence": "Governance-fix ChangeSets (CS-2026-152, 153, 155) blocked by the L-098 failure mode they were spawned to fix. See session-handoff-2026-05-21 \u00a72.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -2517,8 +2702,13 @@
       ],
       "target": "cgo-daily-pipeline/config/changeset-instructions.md \u2014 add a self-bootstrap exception flag for governance/forcing-function CSes such that they advance through an alternate review path (e.g., paired-CS hard-gate or pipeline-level forcing) rather than the owner-discretion path that fails on them.",
       "reconciliation_notes": [
-        "evidence pruned 273\u2192144 chars (Process 3.8 Step 0c)"
-      ]
+        "evidence pruned 273\u2192144 chars (Process 3.8 Step 0c)",
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-100",
@@ -2529,7 +2719,7 @@
       "source_type": "domain_contradiction",
       "domain": "operations",
       "evidence": "Two independent failure modes in calendar writeback debt: L-060 patch undeployed (capacity) AND L-084 backlog (throughput). See session-handoff-2026-05-21 \u00a73.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -2539,8 +2729,13 @@
       ],
       "target": "cgo-daily-pipeline/config/calendar-writeback-protocol.md \u2014 add diagnostic precondition: 'before declaring writeback broken, verify the linked CSes' status; if any are draft, the writeback is correctly inactive, not broken.'",
       "reconciliation_notes": [
-        "evidence pruned 300\u2192158 chars (Process 3.8 Step 0c)"
-      ]
+        "evidence pruned 300\u2192158 chars (Process 3.8 Step 0c)",
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-101",
@@ -2551,7 +2746,7 @@
       "source_type": "content_synthesis_bridge",
       "domain": "content",
       "evidence": "9 posts across IG/FB/TT/LI in 5 days hit NCS 100 on 4 of 9 (Golden Pear launch May 1-6). See Moe PM synthesis SYN-20260522-001 CP-015.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2560,11 +2755,12 @@
       "entry_type": "content_pattern",
       "bridge_synthesis_id": "SYN-20260522-001",
       "signal_direction": "positive",
-      "reconciled_at": "2026-05-22T20:00:00Z",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
-        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e"
+        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e",
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
       ]
     },
     {
@@ -2576,7 +2772,7 @@
       "source_type": "content_synthesis_bridge",
       "domain": "content",
       "evidence": "12 'Find Kenetik at Dierbergs' FB posts at 0 impressions (2026-05-06); 14 identical Cleetus event posts also 0. See Moe PM AP-010.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2585,11 +2781,12 @@
       "entry_type": "content_pattern",
       "bridge_synthesis_id": "SYN-20260522-001",
       "signal_direction": "negative",
-      "reconciled_at": "2026-05-22T20:00:00Z",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
-        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e"
+        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e",
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
       ]
     },
     {
@@ -2601,7 +2798,7 @@
       "source_type": "content_synthesis_bridge",
       "domain": "content",
       "evidence": "Endurance hook drop: 5.69x (Mar 22) \u2192 0.58x (Apr 3) FB median, stable since. Confirmed 3 consecutive cycles. See Moe PM AP-004.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2610,11 +2807,12 @@
       "entry_type": "content_pattern",
       "bridge_synthesis_id": "SYN-20260522-001",
       "signal_direction": "negative",
-      "reconciled_at": "2026-05-22T20:00:00Z",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
-        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e"
+        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e",
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
       ]
     },
     {
@@ -2633,7 +2831,11 @@
       "target": "data/clarity/snapshots/ schema + funnel-diagnosis.md threshold tuning",
       "reconciliation_notes": [
         "domain 'website-cro'->'website' normalized (Process 3.8 Step 0d, 2026-06-05)"
-      ]
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-105",
@@ -2650,7 +2852,11 @@
       "related_entries": [
         "L-098"
       ],
-      "target": "task-a1-departments.md Phase 1.6 \u2014 codify state-file-direct as standard fallback"
+      "target": "task-a1-departments.md Phase 1.6 \u2014 codify state-file-direct as standard fallback",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-106",
@@ -2661,14 +2867,21 @@
       "source_type": "domain_contradiction",
       "domain": "operations",
       "evidence": "Multiple D17 items appeared in 2+ consecutive session handoffs without resolution timestamps. See daily synthesis 2026-05-28-s1.md.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-099",
         "L-098"
       ],
-      "target": "synthesis-instructions.md Step 7a \u2014 extend D17 freshness gate to all alert types"
+      "target": "synthesis-instructions.md Step 7a \u2014 extend D17 freshness gate to all alert types",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-107",
@@ -2688,7 +2901,11 @@
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md framing-guardrails \u00a74 ChangeSet cross-check \u2014 expand to require both tracker-status match AND platform-state verification before claiming execution.",
       "reconciliation_notes": [
         "evidence pruned 290->191 chars (Process 3.8 Step 0c, 2026-06-05)"
-      ]
+      ],
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-108",
@@ -2709,7 +2926,11 @@
       "target": "data/performance-memory/cross-surface-pm.json L-068 \u2014 flag for status review pending CS-180 outcome; consider transition from 'confirmed' to 'under-review-by-CS-180'.",
       "reconciliation_notes": [
         "evidence pruned 280->164 chars (Process 3.8 Step 0c, 2026-06-05)"
-      ]
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-110",
@@ -2730,7 +2951,11 @@
       "target": "monthly-calibration checklist + dept-operations-planning.md instruction file \u2014 add explicit 'verify state-file freshness <=24h before issuing brief recommendations' as gate.",
       "reconciliation_notes": [
         "evidence pruned 242->175 chars (Process 3.8 Step 0c, 2026-06-05)"
-      ]
+      ],
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-111",
@@ -2751,7 +2976,11 @@
       "merged_from": [
         "L-139"
       ],
-      "merged_date": "2026-06-19"
+      "merged_date": "2026-06-19",
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-112",
@@ -2762,11 +2991,18 @@
       "source_type": "domain_contradiction",
       "domain": "operations",
       "evidence": "Two definitions coexist after the 2026-05-26 redefinition; the deprecated reading was not retired from the D13 scan. See daily synthesis 2026-06-01-s1.md.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "D13 domain-scan instructions (retire deprecated content-calendar reading); metrics-registry.yaml d13 note"
+      "target": "D13 domain-scan instructions (retire deprecated content-calendar reading); metrics-registry.yaml d13 note",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-113",
@@ -2777,11 +3013,18 @@
       "source_type": "operational_signal",
       "domain": "cross-surface",
       "evidence": "Additive economics observation (shared_token_ambiguous=false); flagged for event-type CAC benchmarking. See daily synthesis 2026-06-01-s1.md.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "cross-surface-pm.json (event-economics); attribution snapshot 2026-05-30"
+      "target": "cross-surface-pm.json (event-economics); attribution snapshot 2026-05-30",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-115",
@@ -2796,7 +3039,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "scripts/sync_pubmed.py query strings (add MeSH human filter + species limiter)"
+      "target": "scripts/sync_pubmed.py query strings (add MeSH human filter + species limiter)",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-116",
@@ -2811,7 +3058,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "brain/kenetik-brain/references/claims-compliance.md (Known Null/Negative Findings) \u2014 add Thiessen 2026; route via CS-189/Brandon"
+      "target": "brain/kenetik-brain/references/claims-compliance.md (Known Null/Negative Findings) \u2014 add Thiessen 2026; route via CS-189/Brandon",
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-117",
@@ -2826,7 +3077,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "synthesis-instructions.md Step 8a: clarify consecutive_below_40 tracks scan-quality only; reset on substantive brief regardless of business status."
+      "target": "synthesis-instructions.md Step 8a: clarify consecutive_below_40 tracks scan-quality only; reset on substantive brief regardless of business status.",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-118",
@@ -2841,7 +3096,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "changeset-instructions.md / CRO playbook: check whether the failing element is independently isolable before treating a parent RCA as a hard blocker."
+      "target": "changeset-instructions.md / CRO playbook: check whether the failing element is independently isolable before treating a parent RCA as a hard blocker.",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-119",
@@ -2852,7 +3111,7 @@
       "source_type": "content_synthesis_bridge",
       "domain": "content",
       "evidence": "Revalidated 3rd consecutive cycle: 'rebuilding' testimonial FB 28.12% ER / NCS 51.4, highest editorial ER in window; 2.18x median. See Moe PM CP-004.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2861,11 +3120,12 @@
       "entry_type": "content_pattern",
       "bridge_synthesis_id": "SYN-20260605-001",
       "signal_direction": "positive",
-      "reconciled_at": "2026-06-05T20:00:00Z",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
-        "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e"
+        "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e",
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
       ]
     },
     {
@@ -2877,7 +3137,7 @@
       "source_type": "content_synthesis_bridge",
       "domain": "content",
       "evidence": "Reconfirmed 2nd consecutive cycle: 3 FB cart-recovery posts, NCS 13.6/13.8/44.1, ER 0.18-1.16%, one pushed to 13,788 imp. first_seen 2026-05-31. See Moe PM AP-011.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
@@ -2886,11 +3146,12 @@
       "entry_type": "content_pattern",
       "bridge_synthesis_id": "SYN-20260605-001",
       "signal_direction": "negative",
-      "reconciled_at": "2026-06-05T20:00:00Z",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
-        "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e"
+        "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e",
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
       ]
     },
     {
@@ -2911,7 +3172,11 @@
       ],
       "changeset_candidate": true,
       "changeset_note": "Throughput-neutral engineering fix: add live pause-state read + per-campaign status field to paid-media-state build; backfill TikTok ingestion. Held under spawn-freeze; routed as rec.",
-      "target": "scripts/ paid-media-state build pipeline"
+      "target": "scripts/ paid-media-state build pipeline",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-122",
@@ -2928,7 +3193,11 @@
       "related_entries": [
         "L-118"
       ],
-      "target": "Add a bot-filtered denominator (or bot-share confidence flag) to website-state.json and paid-media-state.json CVR/CAC computations; gate spend-change recs on bot-share threshold. Tie to CS-2026-147 RCA scope (rec-275)."
+      "target": "Add a bot-filtered denominator (or bot-share confidence flag) to website-state.json and paid-media-state.json CVR/CAC computations; gate spend-change recs on bot-share threshold. Tie to CS-2026-147 RCA scope (rec-275).",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-123",
@@ -2945,7 +3214,11 @@
       "related_entries": [
         "L-121"
       ],
-      "target": "Add a consecutive-empty-return counter to data-pipeline-status.md / anomaly-scan escalation thresholds; auto-escalate a source to infra-emergency with a recovery-ETA owner at N>=5 zero-return runs."
+      "target": "Add a consecutive-empty-return counter to data-pipeline-status.md / anomaly-scan escalation thresholds; auto-escalate a source to infra-emergency with a recovery-ETA owner at N>=5 zero-return runs.",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-124",
@@ -2960,7 +3233,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "changeset-instructions.md intake rules + meeting-cadence.md / weekly-marketing-tag-up-recap.md (auto-flag new-workstream decisions for CS creation)"
+      "target": "changeset-instructions.md intake rules + meeting-cadence.md / weekly-marketing-tag-up-recap.md (auto-flag new-workstream decisions for CS creation)",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-125",
@@ -2975,7 +3252,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "synthesis-instructions.md Step 8 metric-freshness cross-check (extend to session-handoff watch items, not only D14-sourced metrics)"
+      "target": "synthesis-instructions.md Step 8 metric-freshness cross-check (extend to session-handoff watch items, not only D14-sourced metrics)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-126",
@@ -2986,11 +3267,18 @@
       "source_type": "domain_contradiction",
       "domain": "operations",
       "evidence": "tracker CS-189 status=approved, approved_by=None; claims-map shows APPROVED 2026-06-08 by Devon. Same field-gap class as CS-097 (L-035). See 2026-06-11-s2.md.",
-      "confidence": "strong",
+      "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "changeset status-transition validation (require approved_by when status=approved) + synthesis ChangeSet cross-check reads approved_by AND claims-map/notes before declaring a co-sign pending"
+      "target": "changeset status-transition validation (require approved_by when status=approved) + synthesis ChangeSet cross-check reads approved_by AND claims-map/notes before declaring a co-sign pending",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ]
     },
     {
       "id": "L-127",
@@ -3001,11 +3289,18 @@
       "source_type": "operational_signal",
       "domain": "operations",
       "evidence": "d12_velocity_new_per_week=11.5 (28d) in band[8,12]; measurement_capable=false 8th run; Devon block 48h. See 2026-06-11-s2.md.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "synthesis-instructions D12 framing \u2014 separate intake-velocity (healthy) from decision/measurement-gate (the actual RED)"
+      "target": "synthesis-instructions D12 framing \u2014 separate intake-velocity (healthy) from decision/measurement-gate (the actual RED)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-128",
@@ -3016,10 +3311,17 @@
       "learning": "A synthesis re-run that rebuilds from upstream department briefs can perpetuate stale state: Nick scheduled the July-4 beats (commit 15:03Z) after the dept briefs were authored (14:54Z), so both the s1 DM and the dept-informed s2 carried 'July-4 needs_planning' even though the live marketing-calendar already read 'planned' by s2 runtime. The re-run trusted the briefs over the fresher state file.",
       "source": "Investigation of Nick's 2026-06-11 KGS Daily DM vs commit f3cd227",
       "evidence": "Nick confirmed July-4 planning 15:03Z but the s2 re-run ~15:30Z still cited needs_planning from a stale 5/20 calendar build. See daily synthesis 2026-06-12-s1.md.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "target": "task-b-synthesis.md (a re-run after Task A1 completes must re-read fast-changing state files \u2014 marketing-calendar-data.json, team-tasks.json \u2014 not rely solely on briefs authored earlier) + calendar-writeback-protocol.md (refresh generated_at / fast write-back loop so intraday team edits are visible to the next layer). Upstream: gate synthesis on task_a1_complete so the run does not fire before briefs exist.",
       "skill_files_updated": [],
-      "related_entries": []
+      "related_entries": [],
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-129",
@@ -3034,7 +3336,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "changeset-instructions.md decision-aging escalation + dispatch-instructions.md owner Slack hard-gate for N-day-stale gating CSes"
+      "target": "changeset-instructions.md decision-aging escalation + dispatch-instructions.md owner Slack hard-gate for N-day-stale gating CSes",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-130",
@@ -3049,7 +3355,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "brain/kenetik-brain claims matrix (cognitive-aging lane); Brandon review queue"
+      "target": "brain/kenetik-brain claims matrix (cognitive-aging lane); Brandon review queue",
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-131",
@@ -3064,7 +3374,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "claims-check / DS-04 hook citation-verification step (ACT-SR-2)"
+      "target": "claims-check / DS-04 hook citation-verification step (ACT-SR-2)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-132",
@@ -3075,11 +3389,18 @@
       "source_type": "operational_signal",
       "domain": "cross-surface",
       "evidence": "Legitimacy windows handled reactively each year; no calendar pre-stage exists for predictable ADA/device-event triggers. See daily synthesis 2026-06-12-s1.md.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "marketing-calendar pre-stage (annual ADA/device trigger) + Science evergreen library"
+      "target": "marketing-calendar pre-stage (annual ADA/device trigger) + Science evergreen library",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-133",
@@ -3090,11 +3411,18 @@
       "source_type": "operational_signal",
       "domain": "operations",
       "evidence": "Complete run committed 5 scanner domains (0 failed), but the count gate keys off the pre-retirement 16-domain model. See daily synthesis 2026-06-15-s1.md.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "cgo-daily-pipeline/config/task-b-synthesis.md PRE-FLIGHT Step 1 brief-count expectation + synthesis-instructions.md Inputs/'Domain count is 16' note \u2014 key the count gate off _scan-complete.json.domains_committed/domains_failed (or expected 5 scanner + 7 dept), not 16."
+      "target": "cgo-daily-pipeline/config/task-b-synthesis.md PRE-FLIGHT Step 1 brief-count expectation + synthesis-instructions.md Inputs/'Domain count is 16' note \u2014 key the count gate off _scan-complete.json.domains_committed/domains_failed (or expected 5 scanner + 7 dept), not 16.",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-134",
@@ -3113,7 +3441,11 @@
         "L-078",
         "L-122"
       ],
-      "target": "cgo-daily-pipeline/config/changeset-instructions.md (lifecycle sweep) or website-CRO scan instructions \u2014 add the '(not set) >=10% & rising 2 scans -> escalate RCA CS' trigger"
+      "target": "cgo-daily-pipeline/config/changeset-instructions.md (lifecycle sweep) or website-CRO scan instructions \u2014 add the '(not set) >=10% & rising 2 scans -> escalate RCA CS' trigger",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-135",
@@ -3124,13 +3456,20 @@
       "source_type": "operational_signal",
       "domain": "lifecycle",
       "evidence": "cohort-state M1: 2026-01=17.4, 2026-02=12.9, 2026-03=6.2 (promo), 2026-04=30.3. Unweighted rolling mean blends a promo mega-cohort with organic cohorts. See daily synthesis 2026-06-18-s1.md.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-108"
       ],
-      "target": "metrics-taxonomy.md m1_repeat_rate notes + cross-surface-pm L-068/L-108 re-scoping (exclude 2026-03 promo distortion)"
+      "target": "metrics-taxonomy.md m1_repeat_rate notes + cross-surface-pm L-068/L-108 re-scoping (exclude 2026-03 promo distortion)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-136",
@@ -3145,7 +3484,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "synthesis-instructions.md Step 8a-adjacent or changeset-lifecycle-sweep escalation rule"
+      "target": "synthesis-instructions.md Step 8a-adjacent or changeset-lifecycle-sweep escalation rule",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-137",
@@ -3160,7 +3503,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "metrics-registry.yaml \u2014 set a band on d08_creator_revenue_concentration_top5"
+      "target": "metrics-registry.yaml \u2014 set a band on d08_creator_revenue_concentration_top5",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-138",
@@ -3179,7 +3526,11 @@
         "L-096",
         "L-134"
       ],
-      "target": "synthesis-instructions Framing Guardrails / website RCA playbook \u2014 add sessions-direction discriminator"
+      "target": "synthesis-instructions Framing Guardrails / website RCA playbook \u2014 add sessions-direction discriminator",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-140",
@@ -3190,11 +3541,18 @@
       "source_type": "operational_signal",
       "domain": "operations",
       "evidence": "Two different measures under one field name; consumers treat the definitional collision as a data-quality failure and risk discarding a valid $161k full-book MRR. See daily synthesis 2026-06-19-s1.md.",
-      "confidence": "strong",
+      "confidence": "moderate",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "subscription-state.json \u2014 rename to full_book_mrr vs incremental_mrr"
+      "target": "subscription-state.json \u2014 rename to full_book_mrr vs incremental_mrr",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ]
     },
     {
       "id": "L-141",
@@ -3214,7 +3572,11 @@
         "L-122",
         "L-134"
       ],
-      "target": "kenetik-brain CVR-alarm triage / dept-website-cro instructions \u2014 add sessions-direction discriminator."
+      "target": "kenetik-brain CVR-alarm triage / dept-website-cro instructions \u2014 add sessions-direction discriminator.",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-142",
@@ -3225,13 +3587,20 @@
       "source_type": "domain_contradiction",
       "domain": "cross-surface",
       "evidence": "CS-122 cancelled; CS-128 decision_window_lapsed_no_action; meta now in monitored queries. See synthesis 2026-06-22-s1.md.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-128"
       ],
-      "target": "changeset-instructions / synthesis demand-signal routing \u2014 expedited DS-04 science-window lane with default owner + hard decision-by date."
+      "target": "changeset-instructions / synthesis demand-signal routing \u2014 expedited DS-04 science-window lane with default owner + hard decision-by date.",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-143",
@@ -3246,7 +3615,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "paid-media ingestion / ad-build checklist \u2014 require content_link at ad creation; add validator flag."
+      "target": "paid-media ingestion / ad-build checklist \u2014 require content_link at ad creation; add validator flag.",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-144",
@@ -3257,7 +3630,7 @@
       "source_type": "domain_contradiction",
       "domain": "operations",
       "evidence": "Tracker measured status=published; brief narrates built-but-frozen. Same over-assertion pattern as L-039/L-142. See daily synthesis 2026-06-29-s1.md.",
-      "confidence": "moderate",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
@@ -3265,7 +3638,14 @@
         "L-142",
         "L-136"
       ],
-      "target": "task-a1-departments.md \u2014 require a fresh tracker.json status read for any CS cited as blocked/frozen, overriding handoff narrative."
+      "target": "task-a1-departments.md \u2014 require a fresh tracker.json status read for any CS cited as blocked/frozen, overriding handoff narrative.",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ]
     },
     {
       "id": "L-145",
@@ -3280,7 +3660,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "synthesis-instructions.md Framing Guardrails (Baseline check) \u2014 add explicit reversion-vs-decline test for search-traffic WoW swings."
+      "target": "synthesis-instructions.md Framing Guardrails (Baseline check) \u2014 add explicit reversion-vs-decline test for search-traffic WoW swings.",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-146",
@@ -3295,7 +3679,11 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
-      "target": "brain/kenetik-brain/references/metrics-taxonomy.md (L2 aov lever) + metric registry aov definition"
+      "target": "brain/kenetik-brain/references/metrics-taxonomy.md (L2 aov lever) + metric registry aov definition",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-147",
@@ -3312,7 +3700,11 @@
       "related_entries": [
         "L-137"
       ],
-      "target": "creator-management / creator-roi skill files \u2014 separate equity-partner artifacts from scalable commission-tier economics"
+      "target": "creator-management / creator-roi skill files \u2014 separate equity-partner artifacts from scalable commission-tier economics",
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0"
     },
     {
       "id": "L-148",
@@ -3323,13 +3715,20 @@
       "source_type": "operational_signal",
       "domain": "operations",
       "evidence": "Same failure mode as L-144 (CS-200 asserted frozen while published). See daily synthesis 2026-07-03-s1.md.",
-      "confidence": "strong",
+      "confidence": "preliminary",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
         "L-144"
       ],
-      "target": "task-a1-departments.md \u2014 require dept briefs citing a specific CS status to re-read tracker.json"
+      "target": "task-a1-departments.md \u2014 require dept briefs citing a specific CS status to re-read tracker.json",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ]
     }
   ],
   "archived_entries": [
@@ -3857,5 +4256,5 @@
       "archived_reason": "Acted on 2026-05-18 (CS-2026-158 spawned, Katie owner); action live >=7 days per archive policy."
     }
   ],
-  "last_updated": "2026-07-02"
+  "last_updated": "2026-07-06"
 }
