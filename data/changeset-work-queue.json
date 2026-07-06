@@ -1,6 +1,6 @@
 {
- "generated": "2026-07-05T12:01:55+00:00",
- "engine_date": "2026-07-05",
+ "generated": "2026-07-06T12:51:48+00:00",
+ "engine_date": "2026-07-06",
  "mode": "shadow",
  "queues": {
   "measurement_due": [
@@ -11,7 +11,7 @@
     "department": "lifecycle-marketing",
     "status": "published",
     "due": "2026-06-28",
-    "overdue_days": 7,
+    "overdue_days": 8,
     "window_days": 60,
     "expected_impact": {
      "revenue": {
@@ -41,7 +41,7 @@
     "department": "content",
     "status": "published",
     "due": "2026-05-27",
-    "overdue_days": 39,
+    "overdue_days": 40,
     "window_days": 14,
     "expected_impact": {
      "revenue": {
@@ -82,7 +82,7 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "needs_feedback",
-    "age_days": 74,
+    "age_days": 75,
     "threshold": "needs_feedback_digest"
    },
    {
@@ -91,7 +91,7 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "needs_feedback",
-    "age_days": 74,
+    "age_days": 75,
     "threshold": "needs_feedback_digest"
    },
    {
@@ -100,17 +100,8 @@
     "owner": "Brandon Dyksterhouse",
     "department": "wholesale",
     "status": "needs_feedback",
-    "age_days": 46,
+    "age_days": 47,
     "threshold": "needs_feedback_digest"
-   },
-   {
-    "id": "CS-2026-203",
-    "title": "Homepage hero rollback to single static slide \u2014 fix mobile CVR drop & script-err",
-    "owner": "Katie Spaller",
-    "department": "DTC-website",
-    "status": "draft",
-    "age_days": 13,
-    "threshold": "draft_digest"
    },
    {
     "id": "CS-2026-204",
@@ -118,7 +109,7 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "approved",
-    "age_days": 12,
+    "age_days": 13,
     "threshold": "approved_business_days"
    },
    {
@@ -127,7 +118,7 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "approved",
-    "age_days": 12,
+    "age_days": 13,
     "threshold": "approved_business_days"
    },
    {
@@ -136,7 +127,7 @@
     "owner": "Katie Spaller",
     "department": "paid-media",
     "status": "approved",
-    "age_days": 10,
+    "age_days": 11,
     "threshold": "approved_business_days"
    },
    {
@@ -145,26 +136,54 @@
     "owner": "Katie Spaller",
     "department": "wholesale",
     "status": "approved",
-    "age_days": 10,
+    "age_days": 11,
     "threshold": "approved_business_days"
-   }
-  ],
-  "expiring": [
+   },
    {
-    "id": "CS-2026-203",
-    "title": "Homepage hero rollback to single static slide \u2014 fix mobile CVR drop & script-err",
+    "id": "CS-2026-218",
+    "title": "Wholesale theme home: fix CTA/footer/cart text contrast, hero image display, hea",
     "owner": "Katie Spaller",
     "department": "DTC-website",
     "status": "draft",
-    "expires_in_days": 1
+    "age_days": 7,
+    "threshold": "draft_digest"
    },
+   {
+    "id": "CS-2026-219",
+    "title": "Graduation \u2014 Derek \"Stays Moving All Day\" IG Reel \u2192 Paid Meta Amplification",
+    "owner": "Katie Spaller",
+    "department": "paid-media",
+    "status": "draft",
+    "age_days": 7,
+    "threshold": "draft_digest"
+   },
+   {
+    "id": "CS-2026-220",
+    "title": "Graduation \u2014 Rio Hawkins \"Doesn't Leave a Shot Behind\" IG Reel \u2192 Paid Meta Ampli",
+    "owner": "Katie Spaller",
+    "department": "paid-media",
+    "status": "draft",
+    "age_days": 7,
+    "threshold": "draft_digest"
+   },
+   {
+    "id": "CS-2026-221",
+    "title": "Norwitz LP \u2014 Meta ad creative (4 concepts)",
+    "owner": "Katie Spaller",
+    "department": "paid-media",
+    "status": "draft",
+    "age_days": 7,
+    "threshold": "draft_digest"
+   }
+  ],
+  "expiring": [
    {
     "id": "CS-2026-204",
     "title": "Take your brain off airplane mode. A short, metaphor-led education send in the p",
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "approved",
-    "expires_in_days": 2
+    "expires_in_days": 1
    },
    {
     "id": "CS-2026-205",
@@ -172,7 +191,23 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "approved",
-    "expires_in_days": 2
+    "expires_in_days": 1
+   },
+   {
+    "id": "CS-2026-216",
+    "title": "Paid Media Sandbox \u2014 Phase 0 scaffold (data/sandbox + seeded Afternoon Switch ro",
+    "owner": "Katie Spaller",
+    "department": "paid-media",
+    "status": "approved",
+    "expires_in_days": 3
+   },
+   {
+    "id": "CS-2026-217",
+    "title": "Wholesale site rebuild \u2014 Dawn rebuild, Kenetik re-skin, tiered tag gating",
+    "owner": "Katie Spaller",
+    "department": "wholesale",
+    "status": "approved",
+    "expires_in_days": 3
    }
   ]
  },
@@ -182,7 +217,7 @@
    "action": "flag_data_needed",
    "from": null,
    "to": "sweep_flags += data_needed",
-   "reason": "measurement overdue 7d >= 3d with no measurement data"
+   "reason": "measurement overdue 8d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-139",
@@ -196,7 +231,7 @@
    "action": "flag_data_needed",
    "from": null,
    "to": "sweep_flags += data_needed",
-   "reason": "measurement overdue 39d >= 3d with no measurement data"
+   "reason": "measurement overdue 40d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-189",
@@ -211,6 +246,14 @@
    "from": null,
    "to": "2026-07-10",
    "reason": "derived from executed/published date + window"
+  },
+  {
+   "id": "CS-2026-203",
+   "action": "expire",
+   "from": "draft",
+   "to": "closed",
+   "outcome": "expired_unreviewed",
+   "reason": "draft for 14d >= 14d expiry"
   }
  ],
  "escalations": [
@@ -219,35 +262,35 @@
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-053",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-053 feedback pending 74 days. Revise or close."
+   "message": "CS-2026-053 feedback pending 75 days. Revise or close."
   },
   {
    "audience": "owner",
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-062",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-062 feedback pending 74 days. Revise or close."
+   "message": "CS-2026-062 feedback pending 75 days. Revise or close."
   },
   {
    "audience": "devon",
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-067",
    "reason": "measurement_data_gap",
-   "message": "CS-2026-067 measurement overdue 7d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+   "message": "CS-2026-067 measurement overdue 8d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   },
   {
    "audience": "devon",
    "owner": "Brandon Dyksterhouse",
    "cs_id": "CS-2026-139",
    "reason": "measurement_data_gap",
-   "message": "CS-2026-139 measurement overdue 39d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+   "message": "CS-2026-139 measurement overdue 40d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   },
   {
    "audience": "owner",
    "owner": "Brandon Dyksterhouse",
    "cs_id": "CS-2026-162",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-162 feedback pending 46 days. Revise or close."
+   "message": "CS-2026-162 feedback pending 47 days. Revise or close."
   }
  ],
  "data_requests": [
@@ -290,12 +333,13 @@
   "queue_sizes": {
    "measurement_due": 2,
    "measurement_approaching": 1,
-   "stale": 8,
-   "expiring": 3
+   "stale": 11,
+   "expiring": 4
   },
   "transitions": {
    "flag_data_needed": 2,
-   "set_measurement_due": 3
+   "set_measurement_due": 3,
+   "expire": 1
   },
   "escalations": {
    "stale_needs_feedback": 3,
