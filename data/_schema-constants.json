@@ -210,6 +210,7 @@
   "_valid_team_tasks_tracks_note": "Track enum classifies a team-task by its destination workflow. Execution = direct campaign support; system_improvement = ChangeSet candidate; idea = parking lot; governance = process/standards work. Added 2026-05-19 with PR 1.B per locked-designs.md decision 2.",
   "valid_team_tasks_sources": [
     "wednesday_call",
+    "monday_call",
     "monday_dm",
     "daily_synthesis",
     "slack_thread",
