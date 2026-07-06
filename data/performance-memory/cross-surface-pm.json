@@ -5471,7 +5471,11 @@
         "L-002"
       ],
       "archived_date": "2026-04-05",
-      "archived_reason": "Codified into skill files; live \u22657 days"
+      "archived_reason": "Codified into skill files; live \u22657 days",
+      "entry_type": "skill_update",
+      "reconciliation_notes": [
+        "entry_type 'skill_update' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-002",
@@ -5492,7 +5496,11 @@
         "L-001"
       ],
       "archived_date": "2026-04-05",
-      "archived_reason": "Codified into skill files; live \u22657 days"
+      "archived_reason": "Codified into skill files; live \u22657 days",
+      "entry_type": "skill_update",
+      "reconciliation_notes": [
+        "entry_type 'skill_update' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-004",
@@ -5510,7 +5518,11 @@
       ],
       "related_entries": [],
       "archived_date": "2026-04-05",
-      "archived_reason": "Codified into skill files; live \u22657 days"
+      "archived_reason": "Codified into skill files; live \u22657 days",
+      "entry_type": "skill_update",
+      "reconciliation_notes": [
+        "entry_type 'skill_update' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-003",
@@ -5531,7 +5543,11 @@
       "changeset_candidate": true,
       "changeset_note": "Expand D04 Polar pull to include adds_to_cart, initiate_checkout at campaign level",
       "archived_date": "2026-04-11",
-      "archived_reason": "CS-2026-056 created from changeset_candidate; action live \u22657 days"
+      "archived_reason": "CS-2026-056 created from changeset_candidate; action live \u22657 days",
+      "entry_type": "process_change",
+      "reconciliation_notes": [
+        "entry_type 'process_change' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-005",
@@ -5551,7 +5567,11 @@
       "changeset_candidate": true,
       "changeset_note": "Update D07 and D13 to require Sprout Social published-post count verification before declaring content drought",
       "archived_date": "2026-04-17",
-      "archived_reason": "CS-2026-057 created 2026-04-10 and live \u22657 days; content blackout verification fix initiated"
+      "archived_reason": "CS-2026-057 created 2026-04-10 and live \u22657 days; content blackout verification fix initiated",
+      "entry_type": "process_change",
+      "reconciliation_notes": [
+        "entry_type 'process_change' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-010",
@@ -5569,7 +5589,11 @@
       "changeset_candidate": true,
       "changeset_note": "Build creator inactivity SLA into Nick's weekly creator review \u2014 auto-flag any creator with >21 days no post",
       "archived_date": "2026-04-17",
-      "archived_reason": "rec-204 issued 2026-04-10 and live \u22657 days; creator SLA enforcement protocol initiated"
+      "archived_reason": "rec-204 issued 2026-04-10 and live \u22657 days; creator SLA enforcement protocol initiated",
+      "entry_type": "pattern_observation",
+      "reconciliation_notes": [
+        "entry_type 'pattern_observation' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-011",
@@ -5586,7 +5610,11 @@
       "related_entries": [],
       "changeset_candidate": false,
       "archived_date": "2026-04-17",
-      "archived_reason": "rec-203 issued 2026-04-10 and live \u22657 days; calendar owner validation HARD GATE communicated to Nick Lacagnina"
+      "archived_reason": "rec-203 issued 2026-04-10 and live \u22657 days; calendar owner validation HARD GATE communicated to Nick Lacagnina",
+      "entry_type": "pattern_observation",
+      "reconciliation_notes": [
+        "entry_type 'pattern_observation' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-022",
@@ -5826,7 +5854,11 @@
       "variance_pct": null,
       "outcome_class": null,
       "archived_date": "2026-05-01",
-      "archived_reason": "action_taken populated and live >=7 days; Process 3.8 Step 0b"
+      "archived_reason": "action_taken populated and live >=7 days; Process 3.8 Step 0b",
+      "entry_type": "process_change",
+      "reconciliation_notes": [
+        "entry_type 'process_change' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-040",
@@ -5871,7 +5903,11 @@
       "target": "kenetik-growth-system/commands/cgo-copilot.md (or new command) \u2014 define a recurring binding Decision Forum: pre-published agenda, time-boxed 30 min, Cliff-facilitated, decision-or-defer per item; trigger when pat-012 streak >=15.",
       "merge_note": "Merged L-069 (S43 confirmation that S42 recommendation didn't operationalize) into this entry 2026-05-01",
       "archived_date": "2026-05-08",
-      "archived_reason": "Action taken 2026-04-30; >=8 days live; Process 3.8 Step 0b auto-archive."
+      "archived_reason": "Action taken 2026-04-30; >=8 days live; Process 3.8 Step 0b auto-archive.",
+      "entry_type": "process_change",
+      "reconciliation_notes": [
+        "entry_type 'process_change' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-068",
@@ -5891,7 +5927,11 @@
       ],
       "target": "kenetik-growth-system/commands/funnel-diagnosis.md (M1 < 12% threshold trigger); Katie's lifecycle Klaviyo flow audit checklist; running-log.json tracked_patterns pat-013 elevation.",
       "archived_date": "2026-05-08",
-      "archived_reason": "Action taken 2026-05-01; >=7 days live; Process 3.8 Step 0b auto-archive."
+      "archived_reason": "Action taken 2026-05-01; >=7 days live; Process 3.8 Step 0b auto-archive.",
+      "entry_type": "threshold_calibration",
+      "reconciliation_notes": [
+        "entry_type 'threshold_calibration' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-086",
@@ -5910,7 +5950,11 @@
       ],
       "target": "data/performance-memory/cross-surface-pm.json (entries; new id); cgo-daily-pipeline/config/dispatch-instructions.md (CS-153 enforcement integration)",
       "archived_date": "2026-05-22",
-      "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15)."
+      "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15).",
+      "entry_type": "process_change",
+      "reconciliation_notes": [
+        "entry_type 'process_change' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-087",
@@ -5935,7 +5979,11 @@
       "graduated_date": "2026-05-20",
       "graduation_via": "CS-2026-158",
       "archived_date": "2026-05-22",
-      "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15)."
+      "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15).",
+      "entry_type": "skill_update",
+      "reconciliation_notes": [
+        "entry_type 'skill_update' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-088",
@@ -5955,7 +6003,11 @@
       ],
       "target": "brain/kenetik-brain/references/content-playbook.md (Tier 2 angle template); data/performance-memory/cross-surface-pm.json (this entry)",
       "archived_date": "2026-05-22",
-      "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15)."
+      "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated and \u22657 days live (entry date 2026-05-15).",
+      "entry_type": "skill_update",
+      "reconciliation_notes": [
+        "entry_type 'skill_update' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+      ]
     },
     {
       "id": "L-095",
@@ -5974,10 +6026,12 @@
       ],
       "target": "data/performance-memory/cross-surface-pm.json (L-087 evidence bump) and Katie's spec writeup (rec-243 / rec-238 carryover); CS-2026-158",
       "reconciliation_notes": [
-        "evidence pruned 232\u2192161 chars (Process 3.8 Step 0c)"
+        "evidence pruned 232\u2192161 chars (Process 3.8 Step 0c)",
+        "entry_type 'skill_update' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
       ],
       "archived_date": "2026-06-12",
-      "archived_reason": "Acted on 2026-05-18 (CS-2026-158 spawned, Katie owner); action live >=7 days per archive policy."
+      "archived_reason": "Acted on 2026-05-18 (CS-2026-158 spawned, Katie owner); action live >=7 days per archive policy.",
+      "entry_type": "skill_update"
     },
     {
       "id": "L-149",
