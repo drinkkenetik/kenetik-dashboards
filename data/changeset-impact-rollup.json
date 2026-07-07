@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-06T22:28:29+00:00",
-  "tracker_last_updated": "2026-07-06T09:17:07.915358+00:00",
+  "generated": "2026-07-07T09:02:50+00:00",
+  "tracker_last_updated": "2026-07-07T09:02:27.926367+00:00",
   "tracker_schema_version": "3.0",
   "definitions": {
     "win_rate": "success / measured closures (measured_outcomes from _schema-constants.json)",
