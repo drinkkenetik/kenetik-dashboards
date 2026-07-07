@@ -1,7 +1,7 @@
 {
   "schema_version": "3.0",
-  "last_updated": "2026-07-07T09:02:27.926367+00:00",
-  "next_id": "CS-2026-224",
+  "last_updated": "2026-07-07T00:00:00+00:00",
+  "next_id": "CS-2026-225",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-07-06",
     "last_sweep_session": "2026-07-06-s1",
@@ -19,26 +19,26 @@
     ]
   },
   "summary": {
-    "total": 160,
+    "total": 161,
     "by_status": {
       "closed": 124,
       "needs_feedback": 3,
-      "published": 11,
+      "published": 12,
       "draft": 9,
       "approved": 13
     },
     "by_risk": {
       "critical": 2,
-      "low": 77,
+      "low": 78,
       "high": 16,
       "medium": 65
     },
     "by_subtype": {
-      "implementation": 112,
+      "implementation": 113,
       "investigation": 15,
       "quick": 33
     },
-    "last_updated": "2026-07-07T09:02:27.916147+00:00",
+    "last_updated": "2026-07-07",
     "last_counted": "2026-07-06T00:00:00Z"
   },
   "changesets": [
@@ -10340,6 +10340,43 @@
       "notes": "Root cause corroborated across 3 depts on 2026-07-06 (Content D07/D08, Market-Intelligence D13): calendar_quality 0.22, content_category_null 54%, forward_content_entries_7d 0, TikTok 1/21, LinkedIn 0. One missing mechanism explains the July-4 gap, the TikTok/LinkedIn cadence collapse, and recurring 'blackout' narratives (L-005). Also unlock content_mix_targets (frozen at week of 2026-03-16). Scope: Nick institutes a forward-scheduling+category-tag pass for the next 14 days BEFORE TRX 7/16; Cliff confirms content_mix_targets unlocked; Charlotte executes restored cadence. Unblocks the owned-organic leg of TRX 7/16 readiness (see synthesis P1/P2). Not a content-beat spawn - this is the mechanism fix (Resolution Hierarchy: REFINE, institute the missing step). Ref L-143 content_links separate blocker.",
       "category": "system_improvement",
       "measurement_window": "14"
+    },
+    {
+      "id": "CS-2026-224",
+      "title": "KenetikPro intake forms \u2014 PCP routing on patient Access Request + patient-referred practitioner application",
+      "status": "published",
+      "department": "cross-functional",
+      "platforms": [
+        "shopify",
+        "kenetikpro"
+      ],
+      "created": "2026-07-07",
+      "last_updated": "2026-07-07",
+      "subtype": "implementation",
+      "risk_level": "low",
+      "autonomy_tier": 0,
+      "owner": "Katie Spaller",
+      "source": "manual",
+      "spawned_from": "CS-2026-199",
+      "hypothesis": "Capturing access-preference + PCP contact on the patient intake form, and routing patient-referred PCPs through a dedicated auto-tagged practitioner application, lets the team correctly triage B1 (connect-with-partner) vs B2 (own-PCP) patients and cleanly attribute patient-originated practitioners \u2014 unblocking the KenetikPro physician-referral Path B2 funnel and its contribution to new patient accounts.",
+      "notes": "Implements the KenetikPro Account-Handling B2 path in the intake forms (see KenetikPro-Intake-Forms-Update-Spec.md + KenetikPro-Account-Handling-SOP.md). CHANGE 1 \u2014 Patient 'Pro Access Request' form (pro.drinkkenetik.com, Form ID 1038261): added (a) 'What are you hoping to use KenetikPro for?' short-text w/ wellness-framed examples for partner-matching, (b) required 'How would you like to access KenetikPro?' dropdown ['Be referred to an approved Kenetik practitioner partner' | 'Have my PCP join the program'], (c) 'PCP Full Name' + (d) 'PCP Email'. Access preference + PCP info stored as CUSTOMER METAFIELDS on the profile (not just notification email). CHANGE 2 \u2014 new 'KenetikPro Practitioner Application: Patient Referral' (kenetikwholesale.com, Form ID 1061806), duplicate of general application (1038318), Company+customer mode, routes to wholesale@; auto-applies tag 'referred-by-patient' on submit; header set to 'Join KenetikPro' / 'Your patient would like access to KenetikPro under your care...'. Currently INACTIVE pending activation. Join key patient<->PCP = PCP email (no referring-patient field re-collected). Claims: field labels wellness-framed, no conditions/diagnoses; 'hoping to use for' examples flagged for Devon claims review before broad promotion. Docs updated: KenetikPro-Intake-Forms-Update-Spec.md (new), Account-Handling SOP (B2 steps + tags). Spawned-from CS-2026-199 (physician-referral store governance).",
+      "category": "engineering",
+      "review_tier": "express",
+      "measurement_window": "30",
+      "approved_date": "2026-07-07",
+      "executed_date": "2026-07-07",
+      "published_date": "2026-07-07",
+      "measurement_window_days": 30,
+      "expected_impact": {
+        "metrics_moved": [
+          "new_customer_count"
+        ]
+      },
+      "meta": {
+        "category": "engineering",
+        "approved_by": "Katie Spaller",
+        "legacy_measurement_window": "30"
+      }
     }
   ]
 }
