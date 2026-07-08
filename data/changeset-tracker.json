@@ -1,11 +1,12 @@
 {
   "schema_version": "3.0",
-  "last_updated": "2026-07-08T08:49:25.882862+00:00",
+  "last_updated": "2026-07-08",
   "next_id": "CS-2026-227",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-07-07",
-    "last_sweep_session": "2026-07-07-s1",
-    "last_sweep_result": "measurement_capable=false (Polar MCP down, Klaviyo unauthed); 1 measurement-due (CS-067 klaviyo) deferred to pending_measurement_queue; 13 approved flagged stale_approved_gt_7d (held on P1 approval gate); 2 draft CS spawned via calendar safety net (CS-225 TRX Denver, CS-226 TFC-2026)",
+    "last_sweep_date": "2026-07-08",
+    "last_sweep_session": "2026-07-08-s1",
+    "last_sweep_result": "measurement_capable=false (Polar MCP down 3rd day, Klaviyo unauthed); measurement-due CS-067+CS-196 already in pending_measurement_queue (deferred); 13 approved held stale_approved_gt_7d on P1 Devon gate; CS-162 stale_needs_feedback_gt_7d (49d); 0 new CSes (all synthesis priorities map to existing CSes \u2014 dedup + unblock-not-add).",
+    "measurement_capable": false,
     "pending_measurement_queue": [
       "CS-2026-062",
       "CS-2026-067",
@@ -18,13 +19,13 @@
       "CS-2026-200"
     ],
     "last_sweep_counts": {
-      "stale_flagged": 13,
-      "measurement_due": 1,
+      "stale_flagged": 14,
+      "measurement_due": 2,
       "measured": 0,
       "auto_closed": 0,
-      "deferred_measurement": 1,
-      "new_changesets": 2,
-      "safety_net_held_speculative": 2
+      "deferred_measurement": 2,
+      "new_changesets": 0,
+      "safety_net_held_speculative": 0
     }
   },
   "summary": {
@@ -7535,7 +7536,15 @@
         "routed_via": "manual",
         "routed_date": "2026-06-15",
         "legacy_measurement_window": "14d"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_needs_feedback_gt_7d",
+          "set_date": "2026-07-08",
+          "session": "2026-07-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-163",
@@ -9349,7 +9358,14 @@
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
       },
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-08",
+          "session": "2026-07-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-205",
@@ -9390,7 +9406,14 @@
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
       },
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-08",
+          "session": "2026-07-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-206",
@@ -9432,7 +9455,14 @@
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
       },
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-08",
+          "session": "2026-07-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-207",
@@ -9512,7 +9542,14 @@
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
       },
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-08",
+          "session": "2026-07-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-209",
@@ -9553,7 +9590,14 @@
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
       },
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-08",
+          "session": "2026-07-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-210",
@@ -9594,7 +9638,14 @@
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
       },
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-08",
+          "session": "2026-07-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-211",
@@ -9636,7 +9687,14 @@
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
       },
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-08",
+          "session": "2026-07-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-212",
@@ -9680,7 +9738,14 @@
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
       },
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-08",
+          "session": "2026-07-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-213",
@@ -9723,7 +9788,14 @@
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
       },
-      "sweep_flags": []
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-08",
+          "session": "2026-07-08-s1",
+          "action": "owner_nudge_queued_phase_4"
+        }
+      ]
     },
     {
       "id": "CS-2026-214",
