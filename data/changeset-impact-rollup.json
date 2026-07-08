@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-08T16:22:50+00:00",
+  "generated": "2026-07-08T16:51:59+00:00",
   "tracker_last_updated": "2026-07-08T08:49:25.882862+00:00",
   "tracker_schema_version": "3.0",
   "definitions": {
@@ -9,7 +9,7 @@
     "sums": "numeric values only; non-numeric impact values listed in skipped[]"
   },
   "scoreboard": {
-    "closed_total": 121,
+    "closed_total": 122,
     "measured": {
       "total": 41,
       "outcomes": {
@@ -19,12 +19,12 @@
       }
     },
     "administrative": {
-      "total": 80,
+      "total": 81,
       "outcomes": {
         "data_needed": 1,
         "expired_unexecuted": 32,
         "expired_unreviewed": 31,
-        "invalid_premise": 3,
+        "invalid_premise": 4,
         "superseded": 13
       }
     },
@@ -37,8 +37,8 @@
     },
     "expiry": {
       "expired": 63,
-      "closed_total": 121,
-      "rate": 0.5207
+      "closed_total": 122,
+      "rate": 0.5164
     }
   },
   "money": {
@@ -53,7 +53,7 @@
         "expected_margin": 69,
         "actual_margin": 33
       },
-      "cohort_size": 121
+      "cohort_size": 122
     },
     "measured_cohort": {
       "expected_revenue": 232134.0,
@@ -70,17 +70,17 @@
     }
   },
   "open_pipeline": {
-    "expected_revenue": 14110.0,
-    "expected_margin": 7975.0,
+    "expected_revenue": 22360.0,
+    "expected_margin": 12100.0,
     "entries_with_numeric": {
       "expected_revenue": 5,
       "expected_margin": 5
     },
-    "cohort_size": 38,
+    "cohort_size": 37,
     "by_status": {
       "approved": 16,
-      "draft": 6,
-      "needs_feedback": 3,
+      "draft": 7,
+      "needs_feedback": 1,
       "published": 13
     }
   },
@@ -131,7 +131,7 @@
       "actual_revenue": 0
     },
     "lifecycle-marketing": {
-      "closed": 42,
+      "closed": 43,
       "measured": 17,
       "wins": 2,
       "expired": 21,
@@ -223,7 +223,7 @@
       "actual_revenue": 0
     },
     "synthesis": {
-      "closed": 82,
+      "closed": 83,
       "measured": 34,
       "wins": 11,
       "expired": 36,
@@ -252,7 +252,7 @@
       "actual_revenue": 0
     },
     "1": {
-      "closed": 43,
+      "closed": 44,
       "measured": 8,
       "wins": 4,
       "expired": 28,
@@ -306,7 +306,7 @@
     },
     {
       "month": "2026-07",
-      "closed": 40,
+      "closed": 41,
       "measured": 0,
       "wins": 0,
       "expired": 39,
