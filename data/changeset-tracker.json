@@ -9692,7 +9692,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-23",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -9706,8 +9706,8 @@
       "subtype": "quick",
       "risk_level": "low",
       "hypothesis": "A single-image metaphor opener in the 720p family beats editorial education on opens and matches it on RPR.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). education send 2026-07-01. Segment: engaged-all (broad; Wedge A lean).",
-      "scheduled_send_date": "2026-07-01",
+      "notes": "July 2026 lifecycle calendar (Stage 2). education send 2026-07-01. Segment: engaged-all (broad; Wedge A lean). [2026-07-08 Katie: send date 2026-07-01->2026-07-10; TRX Shot launch moved to 2026-08-11.]",
+      "scheduled_send_date": "2026-07-10",
       "meta": {
         "category": "email_sms",
         "file": "cgo-logs/changesets/CS-2026-204.md",
@@ -9741,7 +9741,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-29",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -9755,8 +9755,8 @@
       "subtype": "quick",
       "risk_level": "medium",
       "hypothesis": "A question-led, named-cognition-concept education send carrying a single Tier A focus claim opens above type_avg and converts at or above education RPR, validating the clarity spine as a repeatable open-and-click engine.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). education send 2026-07-03. Segment: engaged-all (Wedge A tilt). HELD \u2014 pending Devon claims sign-off: devon_review_required:true. RECONCILED 2026-06-29 (Brandon): focus/cognition Stroop claim anchors to PMID 41773904 (31-day KME RCT, 90g/day, Stroop p=0.015; Tier A, consumer-usable, tracked/active). PMID 42263845 was a mis-cite (separate acute-KME brain-insulin RCT in older men, cognitive-aging lane, not tracked, not the Stroop anchor) and is dropped from cognition citations; Frontiers meta excluded (Katie decision #3). PMID reconciled (41773904); awaiting Devon claims sign-off to clear devon_review_required and lock. Brand-voice gate also applies (em-dash ban,",
-      "scheduled_send_date": "2026-07-03",
+      "notes": "July 2026 lifecycle calendar (Stage 2). education send 2026-07-03. Segment: engaged-all (Wedge A tilt). HELD \u2014 pending Devon claims sign-off: devon_review_required:true. RECONCILED 2026-06-29 (Brandon): focus/cognition Stroop claim anchors to PMID 41773904 (31-day KME RCT, 90g/day, Stroop p=0.015; Tier A, consumer-usable, tracked/active). PMID 42263845 was a mis-cite (separate acute-KME brain-insulin RCT in older men, cognitive-aging lane, not tracked, not the Stroop anchor) and is dropped from cognition citations; Frontiers meta excluded (Katie decision #3). PMID reconciled (41773904); awaiting Devon claims sign-off to clear devon_review_required and lock. Brand-voice gate also applies (em-dash ban, [2026-07-08 Katie: send date 2026-07-03->2026-07-22; TRX Shot launch moved to 2026-08-11.]",
+      "scheduled_send_date": "2026-07-22",
       "meta": {
         "category": "email_sms",
         "file": "cgo-logs/changesets/CS-2026-205.md",
@@ -9790,7 +9790,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-23",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -9805,7 +9805,7 @@
       "subtype": "quick",
       "risk_level": "medium",
       "hypothesis": "A partnership announcement plus a national receipt-based gift-with-purchase lifts can-volume and RPR at or above promo type_avg WITHOUT an owned markdown, validating GWP as a discount-free promo lever for the price-sensitive base.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). promo send 2026-07-08. Segment: engaged-all (broad; Wedge A - Cleetus/racing fans lean). National GWP, no Tulsa-only sub-segment required..",
+      "notes": "July 2026 lifecycle calendar (Stage 2). promo send 2026-07-08. Segment: engaged-all (broad; Wedge A - Cleetus/racing fans lean). National GWP, no Tulsa-only sub-segment required.. [2026-07-08 Katie: July send date confirmed/peppered; timestamp refreshed.]",
       "scheduled_send_date": "2026-07-08",
       "meta": {
         "category": "email_sms",
@@ -9879,7 +9879,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-23",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -9893,7 +9893,7 @@
       "subtype": "quick",
       "risk_level": "low",
       "hypothesis": "A non-endurance national summer-clarity moment with a drinks/shots CTA monetizes at or above event_seasonal type_avg without an owned markdown, validating occasion-anchored seasonal sends as a discount-free revenue lever.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). event_seasonal send 2026-07-13. Segment: engaged-all (broad; national summer moment).",
+      "notes": "July 2026 lifecycle calendar (Stage 2). event_seasonal send 2026-07-13. Segment: engaged-all (broad; national summer moment). [2026-07-08 Katie: July send date confirmed/peppered; timestamp refreshed.]",
       "scheduled_send_date": "2026-07-13",
       "meta": {
         "category": "email_sms",
@@ -9928,7 +9928,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-23",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -9942,7 +9942,7 @@
       "subtype": "quick",
       "risk_level": "low",
       "hypothesis": "A customer-voice VOC roundup of the two largest positive themes, with a light per-serving value reframe, builds the underused community baseline and reframes price-as-value without a discount, easing the 36.5% price churn driver.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). community send 2026-07-15. Segment: engaged-all (Wedge B tilt).",
+      "notes": "July 2026 lifecycle calendar (Stage 2). community send 2026-07-15. Segment: engaged-all (Wedge B tilt). [2026-07-08 Katie: July send date confirmed/peppered; timestamp refreshed.]",
       "scheduled_send_date": "2026-07-15",
       "meta": {
         "category": "email_sms",
@@ -9977,7 +9977,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-29",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -9991,7 +9991,7 @@
       "subtype": "quick",
       "risk_level": "medium",
       "hypothesis": "A named-concept education send tilted to Wedge B, pairing a Tier A focus claim with a plain subscription/per-serving value case, opens above type_avg and nudges subscription intent, validating the clarity spine plus value reframe as a retention lever in a non-promo slot.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). education send 2026-07-18. Segment: engaged-all (Wedge B tilt). HELD \u2014 pending Devon claims sign-off: devon_review_required:true. RECONCILED 2026-06-29 (Brandon): focus/cognition Stroop claim anchors to PMID 41773904 (31-day KME RCT, 90g/day, Stroop p=0.015; Tier A, consumer-usable, tracked/active). PMID 42263845 was a mis-cite (separate acute-KME brain-insulin RCT in older men, cognitive-aging lane, not tracked, not the Stroop anchor) and is dropped from cognition citations; optional midlife aging support from approved matrix only; Frontiers meta excluded (Katie decision #3). Devon/Brandon must reconcile the PMID and confirm tie",
+      "notes": "July 2026 lifecycle calendar (Stage 2). education send 2026-07-18. Segment: engaged-all (Wedge B tilt). HELD \u2014 pending Devon claims sign-off: devon_review_required:true. RECONCILED 2026-06-29 (Brandon): focus/cognition Stroop claim anchors to PMID 41773904 (31-day KME RCT, 90g/day, Stroop p=0.015; Tier A, consumer-usable, tracked/active). PMID 42263845 was a mis-cite (separate acute-KME brain-insulin RCT in older men, cognitive-aging lane, not tracked, not the Stroop anchor) and is dropped from cognition citations; optional midlife aging support from approved matrix only; Frontiers meta excluded (Katie decision #3). Devon/Brandon must reconcile the PMID and confirm tie [2026-07-08 Katie: July send date confirmed/peppered; timestamp refreshed.]",
       "scheduled_send_date": "2026-07-18",
       "meta": {
         "category": "email_sms",
@@ -10026,7 +10026,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-23",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -10041,8 +10041,8 @@
       "subtype": "quick",
       "risk_level": "low",
       "hypothesis": "A curiosity-led co-brand teaser about a week ahead of a GP-class drop lifts launch-day opens and click-through versus a cold reveal, without leaking the subscriber head-start publicly.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). launch send 2026-07-16. Segment: engaged-all (Wedge C primary; TRX arc begins). HELD \u2014 pending Devon claims sign-off: TRX-claim-gate-Devon (standard athletic-performance only; no CHO-fueling/'fuels your race'; no Frontiers-meta lean; Brodka 2026 adversarial); no-public-head-start-promotion (L-087 anti-pattern); no-discount; shots-non-carbonated-disclosure; TRX-URL-ground-at-brief-lock; brand-voice (em-dash ban, ban",
-      "scheduled_send_date": "2026-07-16",
+      "notes": "July 2026 lifecycle calendar (Stage 2). launch send 2026-07-16. Segment: engaged-all (Wedge C primary; TRX arc begins). HELD \u2014 pending Devon claims sign-off: TRX-claim-gate-Devon (standard athletic-performance only; no CHO-fueling/'fuels your race'; no Frontiers-meta lean; Brodka 2026 adversarial); no-public-head-start-promotion (L-087 anti-pattern); no-discount; shots-non-carbonated-disclosure; TRX-URL-ground-at-brief-lock; brand-voice (em-dash ban, ban [2026-07-08 Katie: send date 2026-07-16->2026-07-28; TRX Shot launch moved to 2026-08-11.]",
+      "scheduled_send_date": "2026-07-28",
       "meta": {
         "category": "email_sms",
         "file": "cgo-logs/changesets/CS-2026-211.md",
@@ -10077,7 +10077,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-23",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -10092,8 +10092,8 @@
       "subtype": "quick",
       "risk_level": "medium",
       "hypothesis": "A third in-band L-087 deployment on the TRX GP-class drop confirms the 4h subscriber head-start mechanic (email RPR >=$7.50 / CVR >=10%, SMS conv >=9% / RPR >=$6.50) and re-validates the subscribe-and-save attach lift.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). launch send 2026-07-22. Segment: Subscriber Early Access (ENGAGED + WAITLIST) micro-segment per L-087 (saved Klaviyo segment, do NOT rebuild ad hoc). HELD \u2014 pending Devon claims sign-off: L-087-pre-fire-checklist (inventory + 14-day ENGAGED/WAITLIST segment refresh + live flow health BLOCKING); no-public-head-start-promotion; no-winback-flow-in-4h-window; distinct-creative-from-topic-10; TRX-claim-gate-Devon (standard athletic-performance only; no CHO-fueling; no Frontiers-meta lean)",
-      "scheduled_send_date": "2026-07-22",
+      "notes": "July 2026 lifecycle calendar (Stage 2). launch send 2026-07-22. Segment: Subscriber Early Access (ENGAGED + WAITLIST) micro-segment per L-087 (saved Klaviyo segment, do NOT rebuild ad hoc). HELD \u2014 pending Devon claims sign-off: L-087-pre-fire-checklist (inventory + 14-day ENGAGED/WAITLIST segment refresh + live flow health BLOCKING); no-public-head-start-promotion; no-winback-flow-in-4h-window; distinct-creative-from-topic-10; TRX-claim-gate-Devon (standard athletic-performance only; no CHO-fueling; no Frontiers-meta lean) [2026-07-08 Katie: send date 2026-07-22->2026-08-10; TRX Shot launch moved to 2026-08-11.]",
+      "scheduled_send_date": "2026-08-10",
       "meta": {
         "category": "email_sms",
         "file": "cgo-logs/changesets/CS-2026-212.md",
@@ -10129,7 +10129,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-23",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -10144,8 +10144,8 @@
       "subtype": "quick",
       "risk_level": "low",
       "hypothesis": "A distinct public launch-day broadcast plus T-0 SMS, with the 09 early-access purchasers excluded, monetizes the broad list at or above the launch median-excl-outlier ($0.366 RPR) and validates the head-start/public split as a non-cannibalizing two-segment launch structure.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). launch send 2026-07-22. Segment: engaged-all (broad public launch; Wedge C primary). HELD \u2014 pending Devon claims sign-off: distinct-creative-from-topic-09 (L-087 anti-pattern); exclude-09-early-access-converters; use-median-excl-outlier-economics (NOT the $9.97 outlier); TRX-claim-gate-Devon (standard athletic-performance only; no CHO-fueling; no Frontiers-meta lean); shots-non-carbonated-disclosure; no-discount; TRX-UR",
-      "scheduled_send_date": "2026-07-22",
+      "notes": "July 2026 lifecycle calendar (Stage 2). launch send 2026-07-22. Segment: engaged-all (broad public launch; Wedge C primary). HELD \u2014 pending Devon claims sign-off: distinct-creative-from-topic-09 (L-087 anti-pattern); exclude-09-early-access-converters; use-median-excl-outlier-economics (NOT the $9.97 outlier); TRX-claim-gate-Devon (standard athletic-performance only; no CHO-fueling; no Frontiers-meta lean); shots-non-carbonated-disclosure; no-discount; TRX-UR [2026-07-08 Katie: send date 2026-07-22->2026-08-11; TRX Shot launch moved to 2026-08-11.]",
+      "scheduled_send_date": "2026-08-11",
       "meta": {
         "category": "email_sms",
         "file": "cgo-logs/changesets/CS-2026-213.md",
@@ -10179,7 +10179,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-23",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -10193,7 +10193,7 @@
       "subtype": "quick",
       "risk_level": "low",
       "hypothesis": "A forward-looking, non-endurance August / National Wellness Month reset moment with a drinks/shots CTA monetizes at or above event_seasonal type_avg without an owned markdown, validating occasion-anchored forward-looking seasonal sends as a discount-free revenue lever that sets up the next month.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). event_seasonal send 2026-07-27. Segment: engaged-all (broad; national forward-looking seasonal moment; rebalance off Wedge C).",
+      "notes": "July 2026 lifecycle calendar (Stage 2). event_seasonal send 2026-07-27. Segment: engaged-all (broad; national forward-looking seasonal moment; rebalance off Wedge C). [2026-07-08 Katie: July send date confirmed/peppered; timestamp refreshed.]",
       "scheduled_send_date": "2026-07-27",
       "meta": {
         "category": "email_sms",
@@ -10228,7 +10228,7 @@
       "status": "approved",
       "created": "2026-06-23",
       "approved_date": "2026-06-23",
-      "last_updated": "2026-06-23",
+      "last_updated": "2026-07-08",
       "expected_impact": {
         "metrics_moved": [
           "d02_campaign_open_rate"
@@ -10242,7 +10242,7 @@
       "subtype": "quick",
       "risk_level": "low",
       "hypothesis": "A named-subject 'where he is now' follow-up to the proven Matt Hughes story sustains a high-trust community open and builds the underused community baseline, confirming the named-spotlight sub-type as a repeatable month-closer.",
-      "notes": "July 2026 lifecycle calendar (Stage 2). community send 2026-07-30. Segment: engaged-all (community/social-proof; rebalance off Wedge C).",
+      "notes": "July 2026 lifecycle calendar (Stage 2). community send 2026-07-30. Segment: engaged-all (community/social-proof; rebalance off Wedge C). [2026-07-08 Katie: July send date confirmed/peppered; timestamp refreshed.]",
       "scheduled_send_date": "2026-07-30",
       "meta": {
         "category": "email_sms",
