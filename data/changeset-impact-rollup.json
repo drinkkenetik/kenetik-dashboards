@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-08T14:31:31+00:00",
+  "generated": "2026-07-08T15:56:41+00:00",
   "tracker_last_updated": "2026-07-08T08:49:25.882862+00:00",
   "tracker_schema_version": "3.0",
   "definitions": {
@@ -9,64 +9,64 @@
     "sums": "numeric values only; non-numeric impact values listed in skipped[]"
   },
   "scoreboard": {
-    "closed_total": 124,
+    "closed_total": 121,
     "measured": {
-      "total": 45,
+      "total": 41,
       "outcomes": {
         "inconclusive": 10,
-        "success": 16,
-        "underperformed": 19
+        "success": 14,
+        "underperformed": 17
       }
     },
     "administrative": {
-      "total": 79,
+      "total": 80,
       "outcomes": {
         "data_needed": 1,
         "expired_unexecuted": 32,
         "expired_unreviewed": 31,
         "invalid_premise": 3,
-        "superseded": 12
+        "superseded": 13
       }
     },
     "unknown_outcome": 0,
-    "win_rate": 0.3556,
+    "win_rate": 0.3415,
     "closed_loop": {
-      "measured": 34,
-      "closed_after_publish": 35,
-      "rate": 0.9714
+      "measured": 31,
+      "closed_after_publish": 32,
+      "rate": 0.9688
     },
     "expiry": {
       "expired": 63,
-      "closed_total": 124,
-      "rate": 0.5081
+      "closed_total": 121,
+      "rate": 0.5207
     }
   },
   "money": {
     "closed_cohort": {
-      "expected_revenue": 529174.0,
-      "actual_revenue": 23278.48,
-      "expected_margin": 258379.0,
-      "actual_margin": 12112.93,
+      "expected_revenue": 449374.0,
+      "actual_revenue": 22094.87,
+      "expected_margin": 218479.0,
+      "actual_margin": 11521.12,
       "entries_with_numeric": {
-        "expected_revenue": 73,
-        "actual_revenue": 43,
-        "expected_margin": 73,
-        "actual_margin": 34
+        "expected_revenue": 69,
+        "actual_revenue": 40,
+        "expected_margin": 69,
+        "actual_margin": 33
       },
-      "cohort_size": 124
+      "cohort_size": 121
     },
     "measured_cohort": {
-      "expected_revenue": 311934.0,
-      "actual_revenue": 23278.48,
-      "expected_margin": 155559.0,
-      "actual_margin": 12112.93,
+      "expected_revenue": 232134.0,
+      "actual_revenue": 22094.87,
+      "expected_margin": 115659.0,
+      "actual_margin": 11521.12,
       "entries_with_numeric": {
-        "expected_revenue": 35,
-        "actual_revenue": 32,
-        "expected_margin": 35,
-        "actual_margin": 23
+        "expected_revenue": 31,
+        "actual_revenue": 29,
+        "expected_margin": 31,
+        "actual_margin": 22
       },
-      "cohort_size": 45
+      "cohort_size": 41
     }
   },
   "open_pipeline": {
@@ -76,17 +76,17 @@
       "expected_revenue": 5,
       "expected_margin": 5
     },
-    "cohort_size": 39,
+    "cohort_size": 38,
     "by_status": {
-      "approved": 13,
-      "draft": 10,
+      "approved": 16,
+      "draft": 7,
       "needs_feedback": 3,
-      "published": 13
+      "published": 12
     }
   },
   "by_department": {
     "DTC-website": {
-      "closed": 12,
+      "closed": 13,
       "measured": 5,
       "wins": 1,
       "expired": 5,
@@ -131,13 +131,13 @@
       "actual_revenue": 0
     },
     "lifecycle-marketing": {
-      "closed": 46,
-      "measured": 21,
-      "wins": 4,
+      "closed": 42,
+      "measured": 17,
+      "wins": 2,
       "expired": 21,
-      "win_rate": 0.1905,
-      "expected_revenue": 316024,
-      "actual_revenue": 23169.17
+      "win_rate": 0.1176,
+      "expected_revenue": 236224,
+      "actual_revenue": 21985.56
     },
     "market-intelligence": {
       "closed": 2,
@@ -223,16 +223,16 @@
       "actual_revenue": 0
     },
     "synthesis": {
-      "closed": 86,
-      "measured": 38,
-      "wins": 13,
+      "closed": 82,
+      "measured": 34,
+      "wins": 11,
       "expired": 36,
-      "win_rate": 0.3421,
-      "expected_revenue": 505524,
-      "actual_revenue": 23278.48
+      "win_rate": 0.3235,
+      "expected_revenue": 425724,
+      "actual_revenue": 22094.87
     },
     "synthesis_priority_stack": {
-      "closed": 18,
+      "closed": 19,
       "measured": 0,
       "wins": 0,
       "expired": 15,
@@ -252,7 +252,7 @@
       "actual_revenue": 0
     },
     "1": {
-      "closed": 42,
+      "closed": 43,
       "measured": 8,
       "wins": 4,
       "expired": 28,
@@ -270,23 +270,23 @@
       "actual_revenue": 0
     },
     "unassigned": {
-      "closed": 45,
-      "measured": 25,
-      "wins": 7,
+      "closed": 41,
+      "measured": 21,
+      "wins": 5,
       "expired": 12,
-      "win_rate": 0.28,
-      "expected_revenue": 310234,
-      "actual_revenue": 23278.48
+      "win_rate": 0.2381,
+      "expected_revenue": 230434,
+      "actual_revenue": 22094.87
     }
   },
   "monthly_trend": [
     {
       "month": "2026-04",
-      "closed": 42,
-      "measured": 23,
-      "wins": 8,
+      "closed": 38,
+      "measured": 19,
+      "wins": 6,
       "expired": 9,
-      "actual_revenue": 14251.9
+      "actual_revenue": 13068.29
     },
     {
       "month": "2026-05",
@@ -306,7 +306,7 @@
     },
     {
       "month": "2026-07",
-      "closed": 39,
+      "closed": 40,
       "measured": 0,
       "wins": 0,
       "expired": 39,

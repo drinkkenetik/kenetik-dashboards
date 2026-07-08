@@ -28,13 +28,13 @@
     }
   },
   "summary": {
-    "total": 163,
+    "total": 159,
     "by_status": {
-      "approved": 13,
-      "closed": 124,
-      "draft": 10,
+      "closed": 121,
       "needs_feedback": 3,
-      "published": 13
+      "published": 12,
+      "draft": 7,
+      "approved": 16
     },
     "by_risk": {
       "critical": 2,
@@ -174,112 +174,6 @@
         "routed_date": "2026-03-07",
         "approved_by": "Katie",
         "file": "cgo-logs/changesets/CS-2026-001.md",
-        "legacy_measurement_window": "30d",
-        "source_inferred": true
-      }
-    },
-    {
-      "id": "CS-2026-002",
-      "title": "Influencer Subscriber Segmentation & Welcome Track Routing",
-      "department": "lifecycle-marketing",
-      "platforms": [
-        "klaviyo"
-      ],
-      "owner": "Katie Spaller",
-      "source": "synthesis",
-      "status": "closed",
-      "created": "2026-03-08",
-      "approved_date": "2026-03-09",
-      "published_date": "2026-03-09",
-      "closed_date": "2026-04-08",
-      "measurement_window_days": 30,
-      "measurement_due": "2026-04-08",
-      "measurement_result": {
-        "migrated_from_actual_impact": true,
-        "measured_date": "2026-04-08",
-        "note": "v3 migration: actual_impact was the recorded measurement"
-      },
-      "outcome": "success",
-      "expected_impact": {
-        "revenue": {
-          "upside": 86400,
-          "expected": 43200,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 43200,
-          "expected": 21600,
-          "downside": 0
-        },
-        "primary_metric": "checkout_cvr",
-        "primary_metric_target": ">=1.80% (from 0.90% baseline)"
-      },
-      "actual_impact": {
-        "primary_metric": "segment_infrastructure_delivery",
-        "primary_metric_baseline": "0 influencer-cohort segments, no subscriber-level isolation",
-        "primary_metric_result": "3 segments created and active; 6,345+ profiles covered across non-converters (1,102) and free-pack-no-repeat (5,243) segments",
-        "primary_metric_delta": "+3 segments, +6,345 identifiable cohort profiles",
-        "revenue_impact": 0,
-        "margin_impact": null,
-        "confidence": "high",
-        "statistical_significance": true,
-        "_detail": {
-          "segment_a_s9jbqn": {
-            "name": "Cleetus 3/7 Promo - Non-Converters",
-            "profiles": 1102,
-            "status": "active"
-          },
-          "segment_b_u22pai": {
-            "name": "Influencer-Acquired - All Creators",
-            "profiles": 0,
-            "status": "active_but_empty",
-            "note": "$source filter not matching \u2014 Superfiliate property not populating in Klaviyo"
-          },
-          "segment_c_v3etsc": {
-            "name": "Cleetus 3/7 Promo - Free Pack, No Repeat Purchase",
-            "profiles": 5243,
-            "status": "active"
-          },
-          "existing_yqj4wm": {
-            "name": "UE | Cleetus Audience",
-            "profiles": 12066,
-            "status": "active"
-          }
-        },
-        "_note": "margin_impact = null \u2014 infrastructure ChangeSet with no direct revenue path. Revenue impact flows through downstream CS-2026-001 (Welcome Series). Brief economics explicitly state 'Indirect \u2014 enables CS-2026-001 ($2,600 expected)'. Tracker expected_impact ($43,200) was overstated vs. brief.",
-        "L1_margin_actual": "On-target \u2014 $0 direct as expected for infrastructure. Indirect margin contribution will be measured via CS-2026-001.",
-        "L3_customer_quality_actual": "Confirmed \u2014 segments successfully isolate non-converters (1,102) from free-pack-only (5,243) from repeat buyers, enabling differentiated treatment.",
-        "L4_learning_actual": "Hypothesis supported \u2014 subscriber-level segmentation reveals the Cleetus cohort is 2.4x larger than the purchaser-only view (6,345+ vs ~2,600 estimated). 1,102 subscribers never purchased at all, proving purchaser-only segments miss ~17% of the cohort. All Creators segment ($source filter) exposed a data quality gap: Superfiliate doesn't tag Klaviyo $source consistently."
-      },
-      "spawned_changesets": [],
-      "subtype": "implementation",
-      "risk_level": "low",
-      "notes": "Closed Apr 8 as success. 30-day measurement complete. Infrastructure delivered, CS-2026-001 unblocked. All Creators segment empty ($source issue) \u2014 flagged for future investigation.",
-      "sweep_flags": [
-        {
-          "flag": "timestamp_inverted_briefing_negative_2026_04_30",
-          "set_date": "2026-04-30",
-          "session": "2026-04-30-execute",
-          "action": "One-shot backfill detection: routed_date 2026-03-07 < created 2026-03-08 (impossible \u2014 backfill artifact). Flagged for human attention; not auto-corrected."
-        }
-      ],
-      "spawned_from": "rec-001",
-      "dependencies": [],
-      "blocks": [
-        "CS-2026-001"
-      ],
-      "routed_to": [
-        "Katie"
-      ],
-      "learning_note": "Built 3 Klaviyo segments for Cleetus influencer cohort \u2192 2 of 3 populated correctly (6,345+ profiles), 1 empty due to $source data gap \u2192 Subscriber-level segmentation captures 2.4x more profiles than purchaser-only; Superfiliate $source tagging needs investigation for future creator activations.",
-      "meta": {
-        "objective_level": "L1",
-        "category": "email_sms",
-        "routed_via": "slack",
-        "routed_date": "2026-03-07",
-        "approved_by": "Katie",
-        "file": "cgo-logs/changesets/CS-2026-002.md",
-        "measurement_approaching": true,
         "legacy_measurement_window": "30d",
         "source_inferred": true
       }
@@ -729,98 +623,6 @@
         "file": "cgo-logs/changesets/CS-2026-009.md",
         "stale": false,
         "legacy_measurement_window": "60-day from launch",
-        "source_inferred": true
-      }
-    },
-    {
-      "id": "CS-2026-011",
-      "title": "THE SCIENCE IS NO JOKE",
-      "department": "lifecycle-marketing",
-      "platforms": [
-        "klaviyo"
-      ],
-      "owner": "Katie Spaller",
-      "source": "synthesis",
-      "status": "closed",
-      "created": "2026-03-12",
-      "approved_date": "2026-03-14",
-      "published_date": "2026-04-01",
-      "closed_date": "2026-04-08",
-      "measurement_window_days": 7,
-      "measurement_due": "2026-04-08",
-      "measurement_result": {
-        "migrated_from_actual_impact": true,
-        "measured_date": "2026-04-08",
-        "note": "v3 migration: actual_impact was the recorded measurement"
-      },
-      "outcome": "underperformed",
-      "expected_impact": {
-        "revenue": {
-          "upside": 12000,
-          "expected": 6000,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 6000,
-          "expected": 3000,
-          "downside": 0
-        },
-        "primary_metric": "april_campaign_revenue",
-        "primary_metric_target": ">=6K campaign revenue in April"
-      },
-      "actual_impact": {
-        "primary_metric": "campaign_revenue",
-        "primary_metric_baseline": "$0 (no April 1 campaign scheduled)",
-        "primary_metric_result": "$1,183.61 from 15 orders ($78.91 AOV)",
-        "primary_metric_delta": "-$4,816.39 vs $6K target (-80.3%); however, within normal range ($874\u2013$2,123) for comparable non-promotional content emails",
-        "revenue_impact": 1183.61,
-        "margin_impact": 591.81,
-        "confidence": "high",
-        "statistical_significance": true,
-        "_detail": {
-          "campaign_id": "01KN4SPK5YYDN6QZC0YMDD4X7J",
-          "campaign_name": "UE | C1/M19 - The Science is no joke",
-          "send_time": "2026-04-01T18:00:00Z",
-          "recipients": 17128,
-          "delivered": 17123,
-          "open_rate": 0.4653,
-          "click_rate": 0.0071,
-          "ctor": 0.0152,
-          "conversions": 15,
-          "aov": 78.91,
-          "rpr": 0.0691,
-          "unsubscribe_rate": 0.0021,
-          "bounce_rate": 0.0003,
-          "spam_rate": 6e-05,
-          "benchmark_note": "Against 7 comparable non-promo content emails (Mar-Apr 2026): open rate #1 (46.5% vs 41.5% avg), click rate #1 (0.71% vs 0.64% avg), CTOR top 3 (1.52% vs 1.56% avg). Revenue mid-range ($1,184 vs $1,908 avg for revenue-generating sends)."
-        },
-        "_note": "margin_impact = $1,183.61 \u00d7 50% DTC Shopify margin = $591.81. Classified as underperformed vs original $6K target, but targets were misset \u2014 $6K and 8% CTR were promotional-campaign benchmarks applied to a non-promotional science engagement email. Actual performance led comparable content emails on engagement metrics.",
-        "L1_margin_actual": "Below vs original target ($592 vs $3,000). However, target was based on promotional benchmarks \u2014 comparable content email margin range is $437\u2013$1,061.",
-        "L3_customer_quality_actual": "Inconclusive \u2014 15 conversions too few to assess quality. $78.91 AOV is consistent with standard DTC orders.",
-        "L4_learning_actual": "Hypothesis partially supported: science subject lines generate top-of-class opens (46.5%, #1 in set). CTOR of 1.52% is in line with content emails, not elevated. Key insight: science credibility hooks open emails effectively but don't differentially drive clicks vs other content themes. The original 8% CTR target was based on promotional campaigns with offers, not content emails. Future science emails should be benchmarked against content-email baselines (~0.6% click rate, ~1.5% CTOR, ~$1K-$2K revenue for ~17K sends)."
-      },
-      "spawned_changesets": [],
-      "subtype": "implementation",
-      "risk_level": "low",
-      "notes": "Published Apr 1. Science-led April Fools email \u2014 Machado 2022 qEEG study. 7-day measurement window through Apr 8. Brief updated with final creative at publish.",
-      "sweep_flags": [],
-      "scheduled_send_date": "2026-04-01",
-      "spawned_from": "rec-011",
-      "dependencies": [],
-      "blocks": [],
-      "routed_to": [
-        "Katie"
-      ],
-      "learning_note": "Science-led April Fools email sent to 17K (not 51K \u2014 standard suppressions) \u2192 $1,184 revenue, 46.5% open rate (#1 in class), 0.71% click rate (#1 in class), 1.52% CTOR \u2192 Revenue underperformed vs $6K target but target was misset: $6K and 8% CTR were promo benchmarks, not content-email benchmarks. Actual performance led all comparable non-promo sends on engagement. Correct baseline for non-promo science emails: ~$1K-$2K revenue, ~0.6% click rate, ~1.5% CTOR.",
-      "meta": {
-        "objective_level": "L3",
-        "category": "email_sms",
-        "routed_via": "slack",
-        "routed_date": "2026-03-14",
-        "approved_by": "Katie",
-        "file": "cgo-logs/changesets/CS-2026-011.md",
-        "measurement_approaching": true,
-        "legacy_measurement_window": "7d",
         "source_inferred": true
       }
     },
@@ -2033,69 +1835,6 @@
       }
     },
     {
-      "id": "CS-2026-024",
-      "title": "Subscription Pause/Skip Feature Test",
-      "department": "lifecycle-marketing",
-      "platforms": [
-        "klaviyo"
-      ],
-      "owner": "Katie Spaller",
-      "source": "synthesis",
-      "status": "closed",
-      "created": "2026-03-16",
-      "approved_date": "2026-03-16",
-      "closed_date": "2026-04-07",
-      "measurement_window_days": 30,
-      "outcome": "underperformed",
-      "outcome_notes": "v3 migration: outcome 'partially_complete' -> 'underperformed'",
-      "expected_impact": {
-        "revenue": {
-          "upside": 57600,
-          "expected": 28800,
-          "downside": 9600
-        },
-        "margin": {
-          "upside": 28800,
-          "expected": 14400,
-          "downside": 4800
-        },
-        "primary_metric": "voluntary_churn_rate",
-        "primary_metric_target": "\u22642.5% monthly voluntary churn (\u226515% reduction from ~2.9% baseline)",
-        "L1_margin": "$1,200/mo expected contribution margin ($2,400 prevented-churn revenue \u00d7 50% DTC margin)",
-        "L2_cash": "positive \u2014 subscription revenue is recurring DTC, improves cash predictability by retaining subscribers vs one-time re-acquisition",
-        "L3_customer_quality": "strongly positive \u2014 pause/skip preserves customer relationship; pausers resume at 3-5x rate of cancellers, preserving compounding subscription LTV",
-        "L4_learning": "Will prominent pause/skip options reduce voluntary churn by \u226515% without increasing delayed cancellation? Secondary: what is actual resume rate after pause?",
-        "L5_brand_check": "pass \u2014 no discounting, no health claims, no pricing change; pause/skip is a customer-service improvement"
-      },
-      "spawned_changesets": [
-        "CS-2026-052"
-      ],
-      "review_tier": "full",
-      "subtype": "implementation",
-      "risk_level": "low",
-      "hypothesis": "Introducing a prominent pause/skip option in the subscription management flow and pre-churn touchpoints will reduce voluntary churn by \u226515% while retaining LTV",
-      "notes": "CLOSED \u2014 PARTIALLY COMPLETE. Scope item 1 (Recharge pause/skip config) was already live before ChangeSet creation. Scope items 2-4 (proactive flows) not built: no reliable signal to identify at-risk subscribers proactively, and adding net-new touchpoints risks increasing churn rather than reducing it. Voluntary churn data confirmed accessible via Recharge Churn tool > Cancellation Prevents > Performance > Cancellation Survey Response. Successor ChangeSet to optimize existing upcoming order notification emails instead.",
-      "sweep_flags": [],
-      "spawned_from": "rec-024",
-      "dependencies": [
-        "CS-2026-006"
-      ],
-      "blocks": [],
-      "routed_to": [
-        "Katie"
-      ],
-      "meta": {
-        "objective_level": "L3",
-        "category": "email_sms",
-        "routed_via": "slack",
-        "routed_date": "2026-03-16",
-        "approved_by": "Katie",
-        "file": "cgo-logs/changesets/CS-2026-024.md",
-        "legacy_measurement_window": "30-day from launch",
-        "source_inferred": true
-      }
-    },
-    {
       "id": "CS-2026-030",
       "title": "BAW One-Time Purchaser \u2192 Subscription Conversion",
       "department": "lifecycle-marketing",
@@ -2559,81 +2298,6 @@
         "file": "cgo-logs/changesets/CS-2026-035.md",
         "approved_by": "Katie (on behalf of Devon)",
         "requires_human_review": true,
-        "source_inferred": true
-      }
-    },
-    {
-      "id": "CS-2026-036",
-      "title": "Post-Purchase Review Request Optimization",
-      "department": "lifecycle-marketing",
-      "platforms": [
-        "klaviyo"
-      ],
-      "owner": "Katie Spaller",
-      "source": "synthesis",
-      "status": "closed",
-      "created": "2026-03-22",
-      "approved_date": "2026-03-22",
-      "published_date": "2026-04-07",
-      "closed_date": "2026-04-07",
-      "measurement_window_days": 14,
-      "measurement_due": "2026-04-21",
-      "measurement_result": {
-        "migrated_from_actual_impact": true,
-        "measured_date": "2026-04-07",
-        "note": "v3 migration: actual_impact was the recorded measurement"
-      },
-      "outcome": "success",
-      "expected_impact": {
-        "revenue": {
-          "upside": 3600,
-          "expected": 1800,
-          "downside": 0
-        },
-        "margin": {
-          "upside": 1800,
-          "expected": 900,
-          "downside": 0
-        },
-        "primary_metric": "review_submission_rate",
-        "primary_metric_target": ">=10% review submission rate"
-      },
-      "actual_impact": {
-        "primary_metric": "review_submission_rate",
-        "primary_metric_baseline": "3.7% (12-month average)",
-        "primary_metric_result": "N/A \u2014 investigation, not implementation",
-        "primary_metric_delta": "N/A",
-        "revenue_impact": 0,
-        "margin_impact": null,
-        "confidence": "high",
-        "statistical_significance": null,
-        "_note": "Investigation subtype \u2014 no direct revenue. Spawned CS-2026-053.",
-        "L4_learning_actual": "Review submission rate is 3.7% (declining from 6.4% peak). Winning variant gets only 29% traffic. No LoyaltyLion incentive. SMS 33.5% click but 0.6% CVR."
-      },
-      "spawned_changesets": [
-        "CS-2026-053"
-      ],
-      "review_tier": "express",
-      "subtype": "investigation",
-      "risk_level": "low",
-      "notes": "Ready for graduation.",
-      "sweep_flags": [],
-      "executed_date": "2026-04-07",
-      "spawned_from": "rec-036",
-      "dependencies": [],
-      "blocks": [],
-      "routed_to": [
-        "Katie"
-      ],
-      "learning_note": "For [post-purchase review requests] on [Klaviyo], investigation found submission rate is 3.7% and declining. Key insight: 'Copy of' variant outperforms original by 39% RPR but only gets 29% of traffic. LoyaltyLion incentive missing. SMS clicks don't convert. Spawned CS-2026-053.",
-      "meta": {
-        "objective_level": "L3",
-        "category": "email_sms",
-        "routed_via": "auto",
-        "routed_date": "2026-03-22",
-        "approved_by": "Express Auto-Approve",
-        "file": "cgo-logs/changesets/CS-2026-036.md",
-        "legacy_measurement_window": "14 days",
         "source_inferred": true
       }
     },
@@ -9186,9 +8850,9 @@
       ],
       "owner": "Katie Spaller",
       "source": "synthesis_priority_stack",
-      "status": "published",
+      "status": "closed",
       "created": "2026-05-29",
-      "last_updated": "2026-06-04",
+      "last_updated": "2026-07-08",
       "measurement_window_days": 14,
       "expected_impact": {
         "metrics_moved": [
@@ -9206,7 +8870,7 @@
       "subtype": "implementation",
       "risk_level": "high",
       "hypothesis": "REVISED 2026-06-03 (Katie via Claude): Original hypothesis blamed JS errors. After pulling MS Clarity JS Errors panel directly via MCP, 92% of script errors are iOS Safari/WebKit internals (Can't find variable _AutofillCallbackHandler 134, window.webkit.messageHandlers 27) \u2014 not in our code. The 4 occurrences of 'Unexpected token else' are real but tiny volume \u2014 not the leak. Actual leak is dead clicks on CTAs (Clarity 5/29-6/1 mobile): 3,730 dead clicks on 'Golden Pear angle' thumbnails (no click handler bound \u2014 fixed via thumb-swap port), 603 dead clicks on 'Shop Golden Pear' entry CTA (likely Polar cart-injector interception OR Klaviyo backdrop persistence \u2014 routed to Peter as follow-on), 235 dead clicks on Add to Cart (race condition / section re-mount \u2014 fixed via document-level delegation safety net).",
-      "notes": "DEPLOYED 2026-06-03. PR #79 merged into main (commit cce6707). Shopify GitHub integration auto-syncs main to live theme. Smoke test 10/11 passed on preview theme (Clarity preview-traffic verification skipped, not a blocker \u2014 production telemetry will confirm in 24-48h). Carve-out from CS-2026-147 (instrumentation RCA) approved by Katie 2026-06-03. Measurement: 14d. Primary lp_level_cvr_new_visitors target back to 5%+ (prior 7-8%, pre-fix 3.46%). Balancing dead_clicks_per_1k_sessions <50/1k (from 188-225). Follow-on CS-2026-193 spawned for Peter on the 603 remaining dead-clicks on Shop Golden Pear entry CTA.",
+      "notes": "DEPLOYED 2026-06-03. PR #79 merged into main (commit cce6707). Shopify GitHub integration auto-syncs main to live theme. Smoke test 10/11 passed on preview theme (Clarity preview-traffic verification skipped, not a blocker \u2014 production telemetry will confirm in 24-48h). Carve-out from CS-2026-147 (instrumentation RCA) approved by Katie 2026-06-03. Measurement: 14d. Primary lp_level_cvr_new_visitors target back to 5%+ (prior 7-8%, pre-fix 3.46%). Balancing dead_clicks_per_1k_sessions <50/1k (from 188-225). Follow-on CS-2026-193 spawned for Peter on the 603 remaining dead-clicks on Shop Golden Pear entry CTA. [2026-07-08 Katie: CAPTURE-AND-CLOSE. Golden Pear was a one-time flavor, now sold through and RETIRED (Shopify: 'Limited Edition Kenetik Golden Pear' set to DRAFT 2026-07-06; inventory 12-pack 0 / 24-pack 0 / 6-pack 1). Fix (PR #79, merge cce6707) was live ~2026-06-03 to 2026-07-06 (~33 days). Over 2026-05-29 to 2026-07-08 Golden Pear generated 882 orders / $52,008.92 gross / $44,350.49 net. Primary metric lp_level_cvr_new_visitors NOT re-measurable: MS Clarity not accessible this session AND the LP is decommissioned, so the intended 14d window (would have closed ~2026-06-17) cannot be completed. Outcome = OBSOLETED / SUPERSEDED BY SELL-THROUGH (inconclusive on CVR). L-104 learning banked from deploy-time Clarity data already in this CS: pre-fix dead-clicks 188-225/1k; 3,730 dead clicks on GP-angle thumbnails (fixed via thumb-swap) + 235 on Add-to-Cart (fixed via document-level delegation); target was <50/1k. Follow-on CS-2026-193 already closed 2026-07-02. No relaunch planned. L5 brand-check gap now moot on close.]",
       "sweep_flags": [
         {
           "flag": "status_enum_fix",
@@ -9242,8 +8906,14 @@
           "branch_merged_from": "fix/gp-thumbnails-and-atc-delegation"
         },
         "deployed_at": "2026-06-03",
-        "legacy_measurement_window": "14d"
-      }
+        "legacy_measurement_window": "14d",
+        "lp_off_date": "2026-07-06",
+        "fix_live_window": "2026-06-03 to 2026-07-06 (~33d)"
+      },
+      "closed_date": "2026-07-08",
+      "outcome": "superseded",
+      "measurement_due": "2026-06-17",
+      "outcome_notes": "Surface retired via sell-through before measurable CVR window could complete; inconclusive on primary metric. Dead-click fix learning (L-104) banked."
     },
     {
       "id": "CS-2026-192",
@@ -9660,28 +9330,30 @@
       "spawned_from": "2026-06-19-s1.md",
       "approved_date": "2026-07-08",
       "published_date": "2026-07-08",
-      "activation_date": "2026-06-26",
-      "campaign_end_date": "2026-07-07",
       "measurement_window_days": 7,
       "measurement_due": "2026-07-14",
-      "executed_scope": [
-        "homepage_hero_takeover",
-        "lead_capture_popup_takeover",
-        "welcome_flow_takeover",
-        "abandoned_cart_flow_takeover",
-        "email:early_access",
-        "email:start",
-        "email:reminder",
-        "email:last_call",
-        "sms:reminder",
-        "meta_ads:4th_of_July_Sale_2026 (6/26-7/7)"
-      ],
       "expected_impact": {
         "metrics_moved": [
           "net_sales_dollars",
           "quarterly_sale_revenue"
         ],
         "measurement_note": "Assess campaign revenue + channel contribution vs prior quarterly beat; window closes 2026-07-14."
+      },
+      "meta": {
+        "activation_date": "2026-06-26",
+        "campaign_end_date": "2026-07-07",
+        "executed_scope": [
+          "homepage_hero_takeover",
+          "lead_capture_popup_takeover",
+          "welcome_flow_takeover",
+          "abandoned_cart_flow_takeover",
+          "email:early_access",
+          "email:start",
+          "email:reminder",
+          "email:last_call",
+          "sms:reminder",
+          "meta_ads:4th_of_July_Sale_2026 (6/26-7/7)"
+        ]
       }
     },
     {
@@ -10383,20 +10055,28 @@
       ],
       "owner": "Katie Spaller",
       "source": "synthesis",
-      "status": "draft",
+      "status": "approved",
       "created": "2026-06-29",
-      "last_updated": "2026-06-29",
+      "last_updated": "2026-07-08",
       "measurement_window_days": 14,
       "autonomy_tier": 2,
       "subtype": "implementation",
       "risk_level": "medium",
       "hypothesis": "Derek IG reel (6/05, sprout-sync-6fed7c6a) cleared BOTH IG graduation gates: 8.04% ER (>5%) and 9.2x IG 30d avg reach (8,940 imp vs ~974 avg), NCS 100. Dual-signal organic breakout on evergreen always-on creator/lifestyle content (not event-bound, not Golden-Pear flavor-drop). Paid Meta amplification should hold >=4% engagement at scaled reach with ROAS >=1.5x in 14d.",
-      "notes": "Surfaced by moe-weekly-graduation-scan-2026-06-29. organic_only; not matched in paid-media-state.json (content_links empty this refresh \u2014 known CS-066 gap) nor tracker. No existing CS references Derek. Dedupe: IG winner (sprout-sync-6fed7c6a, NCS 100) graduates; FB twin (sprout-sync-845b1a8a, 629 imp/NCS 36) excluded. Brief: cgo-logs/changesets/CS-2026-219.md",
+      "notes": "Surfaced by moe-weekly-graduation-scan-2026-06-29. organic_only; not matched in paid-media-state.json (content_links empty this refresh \u2014 known CS-066 gap) nor tracker. No existing CS references Derek. Dedupe: IG winner (sprout-sync-6fed7c6a, NCS 100) graduates; FB twin (sprout-sync-845b1a8a, 629 imp/NCS 36) excluded. Brief: cgo-logs/changesets/CS-2026-219.md [2026-07-08 Katie: APPROVED for standard graduation test. Dual-signal graduate (8.04% ER + 9.2x reach, NCS 100). Setup: standard graduation-test budget, ROAS >=1.5x, 14d window, day-7 ROAS pause gate.]",
       "spawned_from": "moe-weekly-graduation-scan-2026-06-29",
       "meta": {
         "category": "graduation",
-        "legacy_measurement_window": "14d"
-      }
+        "legacy_measurement_window": "14d",
+        "approved_by": "Katie Spaller",
+        "paid_setup": {
+          "scale": "standard",
+          "roas_target": 1.5,
+          "measurement_window_days": 14,
+          "pause_gate": "day-7 ROAS"
+        }
+      },
+      "approved_date": "2026-07-08"
     },
     {
       "id": "CS-2026-220",
@@ -10407,20 +10087,28 @@
       ],
       "owner": "Katie Spaller",
       "source": "synthesis",
-      "status": "draft",
+      "status": "approved",
       "created": "2026-06-29",
-      "last_updated": "2026-06-29",
+      "last_updated": "2026-07-08",
       "measurement_window_days": 14,
       "autonomy_tier": 2,
       "subtype": "implementation",
       "risk_level": "medium",
       "hypothesis": "Rio Hawkins IG reel (6/11, sprout-sync-a3f3a014) cleared the IG engagement gate at 8.13% ER (>5%), NCS 100 (1,686 imp). Engagement-qualified organic breakout on evergreen creator/cycling content (not event-bound, not GP). Reach 1.7x avg is below the 3x universal gate \u2014 graduation conviction rests on the engagement signal. Paid Meta amplification (small-scale test) should hold >=4% engagement with ROAS >=1.3x in 14d.",
-      "notes": "Surfaced by moe-weekly-graduation-scan-2026-06-29. organic_only; not matched in paid-media-state.json (content_links empty) nor tracker. No existing CS references Rio Hawkins. Newly 7d-eligible this cycle (published 6/11, post-dated last scan 6/15 eligibility). Dedupe: IG winner (sprout-sync-a3f3a014, 8.13% ER/NCS 100) graduates; FB twin (sprout-sync-baf7e1f1, 0.48% ER) + TT twin (sprout-sync-db232eb7, 196 imp) excluded. Engagement-qualified, reach-below-3x \u2014 recommend smallest-scale test. Brief: cgo-logs/changesets/CS-2026-220.md",
+      "notes": "Surfaced by moe-weekly-graduation-scan-2026-06-29. organic_only; not matched in paid-media-state.json (content_links empty) nor tracker. No existing CS references Rio Hawkins. Newly 7d-eligible this cycle (published 6/11, post-dated last scan 6/15 eligibility). Dedupe: IG winner (sprout-sync-a3f3a014, 8.13% ER/NCS 100) graduates; FB twin (sprout-sync-baf7e1f1, 0.48% ER) + TT twin (sprout-sync-db232eb7, 196 imp) excluded. Engagement-qualified, reach-below-3x \u2014 recommend smallest-scale test. Brief: cgo-logs/changesets/CS-2026-220.md [2026-07-08 Katie: APPROVED as smallest-scale test. Engagement-qualified only (8.13% ER; reach 1.7x, below 3x gate). Setup: smallest-scale budget, ROAS >=1.3x, 14d window, day-7 ROAS pause gate.]",
       "spawned_from": "moe-weekly-graduation-scan-2026-06-29",
       "meta": {
         "category": "graduation",
-        "legacy_measurement_window": "14d"
-      }
+        "legacy_measurement_window": "14d",
+        "approved_by": "Katie Spaller",
+        "paid_setup": {
+          "scale": "smallest",
+          "roas_target": 1.3,
+          "measurement_window_days": 14,
+          "pause_gate": "day-7 ROAS"
+        }
+      },
+      "approved_date": "2026-07-08"
     },
     {
       "id": "CS-2026-221",
@@ -10450,22 +10138,34 @@
     {
       "id": "CS-2026-222",
       "title": "Graduation \u2014 Adam Burns \"Sets Up a Table for Everyone\" IG \u2192 Paid Meta Amplification",
-      "status": "draft",
+      "status": "approved",
       "department": "paid-media",
       "platforms": [
         "meta-ads"
       ],
       "created": "2026-07-06",
-      "last_updated": "2026-07-06",
+      "last_updated": "2026-07-08",
       "subtype": "implementation",
       "risk_level": "medium",
       "autonomy_tier": 2,
       "owner": "Katie Spaller",
       "source": "synthesis",
       "spawned_from": "moe-weekly-graduation-scan-2026-07-06",
-      "notes": "Reach-qualified graduation (5.1x IG 30d avg, ER 4.69%, NCS 100, organic_only). Single-signal reach; smallest-scale test. Sensitivity flag: caption references suicide-prevention awareness \u2014 Katie to decide run-as-is / softened variant / hold before scoping. Sole net-new graduation this cycle; Derek/Rio already CS-219/220.",
+      "notes": "Reach-qualified graduation (5.1x IG 30d avg, ER 4.69%, NCS 100, organic_only). Single-signal reach; smallest-scale test. Sensitivity flag: caption references suicide-prevention awareness \u2014 Katie to decide run-as-is / softened variant / hold before scoping. Sole net-new graduation this cycle; Derek/Rio already CS-219/220. [2026-07-08 Katie: APPROVED with condition = SOFTENED CREATIVE VARIANT. Amplify a cut that leads on the community/aid-station 'brain fuel' angle and softens the suicide-prevention awareness reference; respectful framing, cause is not the sell. Sensitivity resolution = softened_variant. Setup: smallest-scale budget, ROAS >=1.5x, 14d window, day-7 ROAS pause gate. Build softened variant before execution.]",
       "review_tier": "standard",
-      "measurement_window": "14d"
+      "approved_date": "2026-07-08",
+      "meta": {
+        "measurement_window": "14d",
+        "approved_by": "Katie Spaller",
+        "paid_setup": {
+          "scale": "smallest",
+          "roas_target": 1.5,
+          "measurement_window_days": 14,
+          "pause_gate": "day-7 ROAS"
+        },
+        "sensitivity_resolution": "softened_variant",
+        "creative_condition": "Softened variant required: lead on community/fueling angle; soften suicide-prevention awareness reference; respectful, not cause-as-sell."
+      }
     },
     {
       "id": "CS-2026-223",
