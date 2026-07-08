@@ -32,8 +32,8 @@
     "by_status": {
       "closed": 121,
       "needs_feedback": 3,
-      "published": 12,
-      "draft": 7,
+      "published": 13,
+      "draft": 6,
       "approved": 16
     },
     "by_risk": {
@@ -10119,21 +10119,43 @@
       ],
       "owner": "Katie Spaller",
       "source": "manual",
-      "status": "draft",
+      "status": "published",
       "created": "2026-06-29",
-      "last_updated": "2026-06-29T00:00:00Z",
+      "last_updated": "2026-07-08",
       "autonomy_tier": 2,
       "subtype": "implementation",
       "risk_level": "medium",
       "hypothesis": "Partner (Nick Norwitz) authority + fast-hack science creative converts warm/retargeting audiences to the /norwitz LP above the 3.0x MER floor; cold prospecting gated on pixel verification.",
-      "notes": "4 Meta concepts (fast-hack, scientist's pick, clarity-on-demand, differentiation) using two Nick images -> drinkkenetik.com/pages/norwitz, code StayCurious. Benchmarks from Slack #kgs-paid-media (Klaviyo/Drive offline). [2026-07-02 pipeline remediation: re-ID'd from duplicate CS-2026-217 and subtype 'creative'->'implementation'; hand-added entry bypassed build_cs_entry.py.]",
+      "notes": "4 Meta concepts (fast-hack, scientist's pick, clarity-on-demand, differentiation) using two Nick images -> drinkkenetik.com/pages/norwitz, code StayCurious. Benchmarks from Slack #kgs-paid-media (Klaviyo/Drive offline). [2026-07-02 pipeline remediation: re-ID'd from duplicate CS-2026-217 and subtype 'creative'->'implementation'; hand-added entry bypassed build_cs_entry.py.] [2026-07-08 Katie: LAUNCHED. Ad set live in Meta \u2014 Prospecting Sandbox ABO campaign, ad set '7/7_Round 5- Nick Norwitz WL_ADV+' (id 120248915620270466). 4 concepts / 6 creatives to drinkkenetik.com/pages/norwitz, code StayCurious: fast-hack ('molecule your body makes during a fast'; '7-day water fast in 24 hours' x2 with 4.4 mmol/L substantiation + 'Not medical advice' disclaimer), scientist's-pick ('doesn't guess, he measures'; 'studies metabolism at the highest level'), differentiation ('NOT ALL KETONES ARE EQUAL' \u2014 bioidentical D-BHB vs salt/1,3-butanediol/monoester), clarity-on-demand (D-BHB/focus). APPROVALS CLEARED: Nick Norwitz/partner (likeness + FTC), Devon Price (claims), Katie Spaller (pricing). draft->published; 14d measurement window, due 2026-07-22.]",
       "meta": {
-        "approvals_needed": [
-          "Devon Price (claims)",
-          "Katie Spaller (pricing)",
-          "Nick Norwitz / partner (likeness + FTC)"
-        ]
-      }
+        "approvals_cleared": {
+          "likeness_ftc": "Nick Norwitz / partner",
+          "claims": "Devon Price",
+          "pricing": "Katie Spaller"
+        },
+        "creative_concepts": [
+          "fast-hack",
+          "scientist's-pick",
+          "differentiation",
+          "clarity-on-demand"
+        ],
+        "creative_count": 6
+      },
+      "approved_date": "2026-07-08",
+      "published_date": "2026-07-08",
+      "executed_date": "2026-07-08",
+      "measurement_window_days": 14,
+      "measurement_due": "2026-07-22",
+      "ad_platform_refs": [
+        {
+          "platform": "meta-ads",
+          "campaign": "Prospecting Sandbox (ABO)",
+          "ad_set_name": "7/7_Round 5- Nick Norwitz WL_ADV+",
+          "ad_set_id": "120248915620270466",
+          "landing_page": "drinkkenetik.com/pages/norwitz",
+          "promo_code": "StayCurious"
+        }
+      ]
     },
     {
       "id": "CS-2026-222",

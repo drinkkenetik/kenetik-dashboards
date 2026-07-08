@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-08T15:56:41+00:00",
+  "generated": "2026-07-08T16:13:40+00:00",
   "tracker_last_updated": "2026-07-08T08:49:25.882862+00:00",
   "tracker_schema_version": "3.0",
   "definitions": {
@@ -79,9 +79,9 @@
     "cohort_size": 38,
     "by_status": {
       "approved": 16,
-      "draft": 7,
+      "draft": 6,
       "needs_feedback": 3,
-      "published": 12
+      "published": 13
     }
   },
   "by_department": {
