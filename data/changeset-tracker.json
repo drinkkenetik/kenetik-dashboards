@@ -1,11 +1,11 @@
 {
   "schema_version": "3.0",
-  "last_updated": "2026-07-07T00:00:00+00:00",
-  "next_id": "CS-2026-225",
+  "last_updated": "2026-07-07",
+  "next_id": "CS-2026-227",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-07-06",
-    "last_sweep_session": "2026-07-06-s1",
-    "last_sweep_result": "run_18 (session 74). measurement_capable=FALSE \u2014 measurement remains human-gated on the unnamed Polar drain-owner (part of Devon's 7-item decision block) and Klaviyo not authed this session; 0 auto-closed (no data, no fabrication). Measurement-due and held in pending_measurement_queue: CS-062 (meas_end 2026-05-05) and CS-067 (meas_end 2026-06-28). Stale-approved (genuinely abandoned)=0 \u2014 the 13 approved CS-204..217 are the July lifecycle/TRX batch with future scheduled_send_date; CS-216 (Paid Media Sandbox) and CS-217 (Wholesale rebuild) are 11d approved with no scheduled_send \u2014 approaching-stale, owner nudge queued (Katie) rather than flagged, avoiding flag-bloat (idempotent). 1 NEW CS spawned: CS-2026-223 (forward-scheduling mechanism, owner Nick) \u2014 root-cause REFINE, not a content-beat/calendar auto-spawn (Ops INS-D-1 mass-spawn suppression respected). Calendar safety-net re-scanned (Prime Day 7/13, TRX 7/16, MAC ~7/12) \u2014 auto-spawn suppressed; content needs routed via DS-02 demand signal instead. All 4 previously-flagged CSes (118/136/031/183) verified CLOSED.",
+    "last_sweep_date": "2026-07-07",
+    "last_sweep_session": "2026-07-07-s1",
+    "last_sweep_result": "measurement_capable=false (Polar MCP down, Klaviyo unauthed); 1 measurement-due (CS-067 klaviyo) deferred to pending_measurement_queue; 13 approved flagged stale_approved_gt_7d (held on P1 approval gate); 2 draft CS spawned via calendar safety net (CS-225 TRX Denver, CS-226 TFC-2026)",
     "pending_measurement_queue": [
       "CS-2026-062",
       "CS-2026-067",
@@ -16,30 +16,39 @@
       "CS-2026-196",
       "CS-2026-197",
       "CS-2026-200"
-    ]
+    ],
+    "last_sweep_counts": {
+      "stale_flagged": 13,
+      "measurement_due": 1,
+      "measured": 0,
+      "auto_closed": 0,
+      "deferred_measurement": 1,
+      "new_changesets": 2,
+      "safety_net_held_speculative": 2
+    }
   },
   "summary": {
-    "total": 161,
+    "total": 163,
     "by_status": {
       "closed": 124,
       "needs_feedback": 3,
       "published": 12,
-      "draft": 9,
+      "draft": 11,
       "approved": 13
     },
     "by_risk": {
       "critical": 2,
       "low": 78,
       "high": 16,
-      "medium": 65
+      "medium": 67
     },
     "by_subtype": {
-      "implementation": 113,
+      "implementation": 115,
       "investigation": 15,
       "quick": 33
     },
     "last_updated": "2026-07-07",
-    "last_counted": "2026-07-06T00:00:00Z"
+    "last_counted": "2026-07-07"
   },
   "changesets": [
     {
@@ -9709,7 +9718,16 @@
         "activation_date": "2026-07-01",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-205",
@@ -9749,7 +9767,16 @@
         "activation_date": "2026-07-03",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-206",
@@ -9790,7 +9817,16 @@
         "activation_date": "2026-07-08",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-207",
@@ -9869,7 +9905,16 @@
         "activation_date": "2026-07-13",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-209",
@@ -9909,7 +9954,16 @@
         "activation_date": "2026-07-15",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-210",
@@ -9949,7 +10003,16 @@
         "activation_date": "2026-07-18",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-211",
@@ -9990,7 +10053,16 @@
         "activation_date": "2026-07-16",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-212",
@@ -10033,7 +10105,16 @@
         "activation_date": "2026-07-22",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-213",
@@ -10075,7 +10156,16 @@
         "activation_date": "2026-07-22",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-214",
@@ -10115,7 +10205,16 @@
         "activation_date": "2026-07-27",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-215",
@@ -10155,7 +10254,16 @@
         "activation_date": "2026-07-30",
         "design_status": "awaiting",
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-216",
@@ -10177,7 +10285,16 @@
       "notes": "Phase 0: created data/sandbox/{roadmap.json,research-log.json,sandbox-schema.json}, cgo-logs/sandbox/briefs/, scripts/validate_sandbox.py. Seeded 8-theme Afternoon Switch program; W1 & W2 backfilled from paid-media-state.json (both KILLED). Approved by Katie.",
       "meta": {
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-217",
@@ -10199,7 +10316,16 @@
       "notes": "New repo drinkkenetik/wholesale-shopify-theme (main @ 798ecec). P0 Dawn 15.5.0 + scoped .ks-wholesale tokens. P1 component CSS/JS + ks-wholesale hero/proof/info/faq. P2 full re-skin (Kenetik schemes, Inter, warm-gradient buttons, pill shapes) + branded home. P3 gating: L1 access-check (allowlist home/customers*/policy/apply/legal/design_mode), L2 page gate, L3 pro-gated PDP lock (buy+price+JSON-LD) for Practitioner/Pro, L4 collection/search/related filter, cart-safety block, noindex on block. P4 native apply form (page.apply) + docs/tagging-workflow.md. P5 QA: liquid balance pass, JSON valid, gate sim 37/37. PENDING: theme push to store, Admin setup (apply page, pro-gated tag, customer tags, contact email, Flow), live QA, Devon claims sign-off.",
       "meta": {
         "approved_by": "Katie Spaller"
-      }
+      },
+      "sweep_flags": [
+        {
+          "flag": "stale_approved_gt_7d",
+          "set_date": "2026-07-07",
+          "session": "2026-07-07-s1",
+          "action": "owner_nudge_queued_phase_4",
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+        }
+      ]
     },
     {
       "id": "CS-2026-218",
@@ -10377,6 +10503,87 @@
         "approved_by": "Katie Spaller",
         "legacy_measurement_window": "30"
       }
+    },
+    {
+      "id": "CS-2026-225",
+      "title": "TRX Denver Event (7/17) \u2014 early-access content capture day",
+      "status": "draft",
+      "department": "content",
+      "platforms": [
+        "instagram-organic",
+        "tiktok-organic",
+        "content-production"
+      ],
+      "created": "2026-07-07",
+      "last_updated": "2026-07-07",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Nick Lacagnina",
+      "source": "calendar_safety_net",
+      "spawned_from": "cgo-logs/daily-syntheses/2026-07-07-s1.md",
+      "hypothesis": "Auto-generated from calendar safety net \u2014 the confirmed 7/17 TRX Denver early-access content-capture day (a real mid-July vehicle, per today's calendar reconciliation) requires structured tracking + measurement; it is operationally live (Nick shipping product to Brandon) but had no ChangeSet.",
+      "notes": "Safety-net spawn. Confirmed near-term event_activation, unlinked. Real mid-July TRX vehicle (TRX product launch itself is 8/11, tracked under TRX-LEM-061526). Owner hint 'Nick' accepted over dept default (resolve_cs_owner flag: verify). Coordinate 7/16 launch-email readiness (CS-211) + on-the-ground logistics (Ops INS-OP flag).",
+      "measurement_window": "14d post-event",
+      "expected_impact": {
+        "metrics_moved": [
+          "d07_engagement_rate_per_post",
+          "new_customer_count"
+        ],
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "balancing_impact": null,
+        "learning_hypothesis": "Whether structured capture/measurement of the TRX Denver event lifts owned-organic engagement and seeds measurable NCA into the 8/11 TRX launch."
+      },
+      "linked_calendar_activity": "TRX-LEM-061526-BEAT-17-TRX-DENVER-BIG-EVENT-072526"
+    },
+    {
+      "id": "CS-2026-226",
+      "title": "Texas Fight Collective (Seth Zanutto) 2026 partnership \u2014 structured tracking",
+      "status": "draft",
+      "department": "creator-affiliate",
+      "platforms": [
+        "superfiliate",
+        "instagram-organic"
+      ],
+      "created": "2026-07-07",
+      "last_updated": "2026-07-07",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Nick Lacagnina",
+      "source": "calendar_safety_net",
+      "spawned_from": "cgo-logs/daily-syntheses/2026-07-07-s1.md",
+      "hypothesis": "Auto-generated from calendar safety net \u2014 the confirmed TFC-2026 season-long partnership (5/29\u201310/17) has been running ~5 weeks without a ChangeSet; it already generates coded attribution (attribution-state event_rollups: TFC-2026) so it needs structured tracking + measurement to judge creator ROI/NCA contribution.",
+      "notes": "Safety-net spawn. Confirmed active partnership, unlinked. attribution-state event_rollup shows coded_new 0 to date on shared tokens \u2014 measurement should confirm whether the partnership is producing coded NCA. Ties to creator-concentration watch (Content INS-C-1).",
+      "measurement_window": "monthly (partnership runs to 2026-10-17)",
+      "expected_impact": {
+        "metrics_moved": [
+          "d08_creator_confirmed_revenue_monthly",
+          "new_customer_count"
+        ],
+        "revenue": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "margin": {
+          "upside": null,
+          "expected": null,
+          "downside": null
+        },
+        "balancing_impact": null,
+        "learning_hypothesis": "Whether the TFC season partnership produces measurable coded NCA / creator revenue vs its spend, or is awareness-only."
+      },
+      "linked_calendar_activity": "TFC-2026"
     }
   ]
 }

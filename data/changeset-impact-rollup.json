@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-07T17:20:18+00:00",
-  "tracker_last_updated": "2026-07-07T00:00:00+00:00",
+  "generated": "2026-07-08T04:06:48+00:00",
+  "tracker_last_updated": "2026-07-07",
   "tracker_schema_version": "3.0",
   "definitions": {
     "win_rate": "success / measured closures (measured_outcomes from _schema-constants.json)",
@@ -76,10 +76,10 @@
       "expected_revenue": 5,
       "expected_margin": 5
     },
-    "cohort_size": 37,
+    "cohort_size": 39,
     "by_status": {
       "approved": 13,
-      "draft": 9,
+      "draft": 11,
       "needs_feedback": 3,
       "published": 12
     }
