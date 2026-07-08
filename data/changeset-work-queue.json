@@ -1,6 +1,6 @@
 {
- "generated": "2026-07-07T12:23:33+00:00",
- "engine_date": "2026-07-07",
+ "generated": "2026-07-08T12:05:50+00:00",
+ "engine_date": "2026-07-08",
  "mode": "shadow",
  "queues": {
   "measurement_due": [
@@ -11,7 +11,7 @@
     "department": "lifecycle-marketing",
     "status": "published",
     "due": "2026-06-28",
-    "overdue_days": 9,
+    "overdue_days": 10,
     "window_days": 60,
     "expected_impact": {
      "revenue": {
@@ -41,7 +41,7 @@
     "department": "content",
     "status": "published",
     "due": "2026-05-27",
-    "overdue_days": 41,
+    "overdue_days": 42,
     "window_days": 14,
     "expected_impact": {
      "revenue": {
@@ -63,9 +63,34 @@
      "L5_brand_check": "CLEARED 2026-05-13 -- Devon Tier-2 claims pass via 5/13-s1 rec-234"
     },
     "has_measurement_data": false
+   },
+   {
+    "id": "CS-2026-196",
+    "title": "Migrate Watermelon Lime 6-Pack subscribers to 12-Pack (volume/price-neutral) + c",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "published",
+    "due": "2026-07-08",
+    "overdue_days": 0,
+    "window_days": 30,
+    "expected_impact": {
+     "metrics_moved": [
+      "active_sub_count",
+      "sub_churn_active"
+     ]
+    },
+    "has_measurement_data": false
    }
   ],
   "measurement_approaching": [
+   {
+    "id": "CS-2026-186",
+    "title": "UE Subscription Winback Flow Rebuild (broken CTA / suppression / stale content a",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "published",
+    "due": "2026-07-11"
+   },
    {
     "id": "CS-2026-196",
     "title": "Migrate Watermelon Lime 6-Pack subscribers to 12-Pack (volume/price-neutral) + c",
@@ -90,7 +115,7 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "needs_feedback",
-    "age_days": 76,
+    "age_days": 77,
     "threshold": "needs_feedback_digest"
    },
    {
@@ -99,7 +124,7 @@
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "needs_feedback",
-    "age_days": 76,
+    "age_days": 77,
     "threshold": "needs_feedback_digest"
    },
    {
@@ -108,7 +133,7 @@
     "owner": "Brandon Dyksterhouse",
     "department": "wholesale",
     "status": "needs_feedback",
-    "age_days": 48,
+    "age_days": 49,
     "threshold": "needs_feedback_digest"
    },
    {
@@ -117,7 +142,7 @@
     "owner": "Katie Spaller",
     "department": "paid-media",
     "status": "approved",
-    "age_days": 12,
+    "age_days": 13,
     "threshold": "approved_business_days"
    },
    {
@@ -126,7 +151,7 @@
     "owner": "Katie Spaller",
     "department": "wholesale",
     "status": "approved",
-    "age_days": 12,
+    "age_days": 13,
     "threshold": "approved_business_days"
    },
    {
@@ -135,7 +160,7 @@
     "owner": "Katie Spaller",
     "department": "DTC-website",
     "status": "draft",
-    "age_days": 8,
+    "age_days": 9,
     "threshold": "draft_digest"
    },
    {
@@ -144,7 +169,7 @@
     "owner": "Katie Spaller",
     "department": "paid-media",
     "status": "draft",
-    "age_days": 8,
+    "age_days": 9,
     "threshold": "draft_digest"
    },
    {
@@ -153,7 +178,7 @@
     "owner": "Katie Spaller",
     "department": "paid-media",
     "status": "draft",
-    "age_days": 8,
+    "age_days": 9,
     "threshold": "draft_digest"
    },
    {
@@ -162,7 +187,7 @@
     "owner": "Katie Spaller",
     "department": "paid-media",
     "status": "draft",
-    "age_days": 8,
+    "age_days": 9,
     "threshold": "draft_digest"
    }
   ],
@@ -173,7 +198,7 @@
     "owner": "Katie Spaller",
     "department": "paid-media",
     "status": "approved",
-    "expires_in_days": 2
+    "expires_in_days": 1
    },
    {
     "id": "CS-2026-217",
@@ -181,7 +206,7 @@
     "owner": "Katie Spaller",
     "department": "wholesale",
     "status": "approved",
-    "expires_in_days": 2
+    "expires_in_days": 1
    }
   ]
  },
@@ -191,7 +216,7 @@
    "action": "flag_data_needed",
    "from": null,
    "to": "sweep_flags += data_needed",
-   "reason": "measurement overdue 9d >= 3d with no measurement data"
+   "reason": "measurement overdue 10d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-139",
@@ -205,7 +230,7 @@
    "action": "flag_data_needed",
    "from": null,
    "to": "sweep_flags += data_needed",
-   "reason": "measurement overdue 41d >= 3d with no measurement data"
+   "reason": "measurement overdue 42d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-189",
@@ -227,7 +252,7 @@
    "from": "draft",
    "to": "closed",
    "outcome": "expired_unreviewed",
-   "reason": "draft for 18d >= 14d expiry"
+   "reason": "draft for 19d >= 14d expiry"
   },
   {
    "id": "CS-2026-203",
@@ -235,7 +260,7 @@
    "from": "draft",
    "to": "closed",
    "outcome": "expired_unreviewed",
-   "reason": "draft for 15d >= 14d expiry"
+   "reason": "draft for 16d >= 14d expiry"
   },
   {
    "id": "CS-2026-204",
@@ -243,7 +268,7 @@
    "from": "approved",
    "to": "closed",
    "outcome": "expired_unexecuted",
-   "reason": "approved 14d >= 14d expiry"
+   "reason": "approved 15d >= 14d expiry"
   },
   {
    "id": "CS-2026-205",
@@ -251,7 +276,14 @@
    "from": "approved",
    "to": "closed",
    "outcome": "expired_unexecuted",
-   "reason": "approved 14d >= 14d expiry"
+   "reason": "approved 15d >= 14d expiry"
+  },
+  {
+   "id": "CS-2026-224",
+   "action": "set_measurement_due",
+   "from": null,
+   "to": "2026-08-06",
+   "reason": "derived from executed/published date + window"
   }
  ],
  "escalations": [
@@ -260,35 +292,35 @@
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-053",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-053 feedback pending 76 days. Revise or close."
+   "message": "CS-2026-053 feedback pending 77 days. Revise or close."
   },
   {
    "audience": "owner",
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-062",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-062 feedback pending 76 days. Revise or close."
+   "message": "CS-2026-062 feedback pending 77 days. Revise or close."
   },
   {
    "audience": "devon",
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-067",
    "reason": "measurement_data_gap",
-   "message": "CS-2026-067 measurement overdue 9d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+   "message": "CS-2026-067 measurement overdue 10d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   },
   {
    "audience": "devon",
    "owner": "Brandon Dyksterhouse",
    "cs_id": "CS-2026-139",
    "reason": "measurement_data_gap",
-   "message": "CS-2026-139 measurement overdue 41d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+   "message": "CS-2026-139 measurement overdue 42d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   },
   {
    "audience": "owner",
    "owner": "Brandon Dyksterhouse",
    "cs_id": "CS-2026-162",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-162 feedback pending 48 days. Revise or close."
+   "message": "CS-2026-162 feedback pending 49 days. Revise or close."
   }
  ],
  "data_requests": [
@@ -325,18 +357,25 @@
     "klaviyo"
    ],
    "needed": "klaviyo campaign id ref for API pull"
+  },
+  {
+   "cs_id": "CS-2026-196",
+   "platforms": [
+    "klaviyo"
+   ],
+   "needed": "klaviyo campaign id ref for API pull"
   }
  ],
  "stats": {
   "queue_sizes": {
-   "measurement_due": 2,
-   "measurement_approaching": 2,
+   "measurement_due": 3,
+   "measurement_approaching": 3,
    "stale": 9,
    "expiring": 2
   },
   "transitions": {
    "flag_data_needed": 2,
-   "set_measurement_due": 3,
+   "set_measurement_due": 4,
    "expire": 4
   },
   "escalations": {
