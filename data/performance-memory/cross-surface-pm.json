@@ -15,12 +15,13 @@
     "last_bridged_moe_synthesis": "SYN-20260619-001"
   },
   "entry_types": {
-    "_note": "Descriptive, not an exclusive enum. New types can emerge as the system learns.",
+    "_note": "SINGLE CANON (2026-07-05 decision): these six keys are the exclusive entry_type enum, enforced by scripts/pm_validate.py I4 and imported by scripts/pm_write_gate.py. The gate's former extra values (pattern_observation, operational_signal, team_feedback, data_correction) are source_type values, not entry types.",
     "skill_update": "Decision rules, evaluation frameworks, thresholds, confirmed patterns \u2014 destined for skill files via Process 3.8",
     "process_change": "Operational changes to domain/dept instructions, data pulls, pipeline steps. Entries with changeset_candidate: true surface as ChangeSet proposals.",
     "threshold_calibration": "Threshold tuning (e.g., CPL boundaries) \u2014 requires measurement before committing to skill file",
     "changeset_outcome": "Auto-appended when any ChangeSet closes. Includes outcome_class (confirmed/minor_variance/significant_variance) and variance_pct for estimation calibration.",
-    "content_pattern": "Content performance pattern bridged from Moe's Performance Memory with cross-domain implications. Platform-specific hook weights stay in content-producer-skill.md \u00a73."
+    "content_pattern": "Content performance pattern bridged from Moe's Performance Memory with cross-domain implications. Platform-specific hook weights stay in content-producer-skill.md \u00a73.",
+    "staleness_alert": "Brain reference file past its staleness threshold (Amendment 10, written by scripts/check_brain_staleness.py). Cleared when the owner re-validates the file."
   },
   "index": [
     {
@@ -62,21 +63,21 @@
       "id": "L-006",
       "summary": "FB ROAS 0.89x (Session 26) was incorrect -- actual 2.59x. Brain Awareness Week campaign at 9.99x. Always verify Polar aggregate vs campaign-level data",
       "domain": "paid-media",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-06"
     },
     {
       "id": "L-007",
       "summary": "CS-2026-002 confirmed (N/A%): Influencer segmentation infrastructure delivered; subscriber-level view captures 2.4x more profiles than purchaser-only; $source tagging gap identified for Superfiliate.",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-08"
     },
     {
       "id": "L-008",
       "summary": "CS-2026-011 significant_variance (80.3%): Science email led engagement but revenue target was misset \u2014 promo benchmarks applied to content email. Correct baseline: ~$1K-$2K.",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-08"
     },
     {
@@ -188,14 +189,14 @@
       "id": "L-024",
       "summary": "CS-2026-010 confirmed (0%): Klaviyo Property Definition Audit \u2014 Superfiliate Source Attribution",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-06"
     },
     {
       "id": "L-025",
       "summary": "CS-2026-024 incomplete: placeholder \u2014 owner review pending for Subscription Pause/Skip Feature Test",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-07"
     },
     {
@@ -209,7 +210,7 @@
       "id": "L-028",
       "summary": "CS-2026-036 confirmed (63%): Post-Purchase Review Request Optimization",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-07"
     },
     {
@@ -1020,21 +1021,21 @@
     {
       "id": "L-150",
       "summary": "[CS-2026-050] incomplete (n/a): P1-CRITICAL content sprint scoped 4/7 for Stress Awareness Week 2, but the sprint was never deployed. Stress Awarenes\u2026",
-      "domain": "social-media",
+      "domain": "content",
       "status": "active",
       "date": "2026-04-20"
     },
     {
       "id": "L-151",
       "summary": "[CS-2026-059] incomplete (n/a): Kansas execution was partial \u2014 SKU launched and inventory shipped, but the Cleetus on-camera koozie promo did NOT hap\u2026",
-      "domain": "creator-affiliate",
+      "domain": "campaigns",
       "status": "active",
       "date": "2026-04-20"
     },
     {
       "id": "L-152",
       "summary": "[CS-2026-060] incomplete (n/a): Shake and Bake Bundle concept scrapped on 4/13 per Nick's decision. Rationale: the Cleetus Pit Crew Bundle launched a\u2026",
-      "domain": "creator-affiliate",
+      "domain": "campaigns",
       "status": "active",
       "date": "2026-04-20"
     },
@@ -1048,7 +1049,7 @@
     {
       "id": "L-154",
       "summary": "[CS-2026-077] incomplete (n/a): Superseded by CS-2026-068 audit. Key learning: when multiple changesets address the same risk, consolidate early rath\u2026",
-      "domain": "science-research",
+      "domain": "operations",
       "status": "active",
       "date": "2026-04-20"
     },
@@ -1062,21 +1063,21 @@
     {
       "id": "L-156",
       "summary": "[CS-2026-009] incomplete (n/a): For BWR Endurance Training Bundle purchasers on Klaviyo, an 8-week science-backed post-purchase protocol flow was sco\u2026",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-04-22"
     },
     {
       "id": "L-157",
       "summary": "[CS-2026-012] significant_variance (-66.7%): WIN AN UNBOUND ENTRY + CUSTOM CAM JONES GEAR \u2014 closed as underperformed on 2026-04-22 (no learning note \u2026",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-04-22"
     },
     {
       "id": "L-158",
       "summary": "[CS-2026-015] incomplete (n/a): SEA OTTER CLASSIC: ENDURANCE TRAINING BUNDLE \u2014 closed as success on 2026-04-22 (no learning note recorded).",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-04-22"
     },
@@ -1118,7 +1119,7 @@
     {
       "id": "L-164",
       "summary": "[CS-2026-052] incomplete (n/a): For Upcoming Subscription Order Flow on klaviyo, two draft CSes (CS-2026-052 general refinement, CS-2026-100 Mar 2026\u2026",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-04-22"
     },
@@ -1160,35 +1161,35 @@
     {
       "id": "L-170",
       "summary": "[CS-2026-016] incomplete (n/a): v3 migration: outcome 'underperformed_primary_metric' -> 'underperformed'",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-04-28"
     },
     {
       "id": "L-171",
       "summary": "[CS-2026-017] incomplete (n/a): v3 migration: outcome 'success_with_primary_metric_caveat' -> 'success'",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-04-28"
     },
     {
       "id": "L-172",
       "summary": "[CS-2026-018] incomplete (n/a): v3 migration: outcome 'underperformed_with_metric_definition_caveat' -> 'underperformed'",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-04-28"
     },
     {
       "id": "L-173",
       "summary": "[CS-2026-046] incomplete (n/a): v3 migration: outcome 'fix_shipped_revenue_signal_inconclusive' -> 'inconclusive'",
-      "domain": "DTC-website",
+      "domain": "website",
       "status": "active",
       "date": "2026-04-28"
     },
     {
       "id": "L-174",
       "summary": "[CS-2026-074] incomplete (n/a): v3 migration: outcome 'closed_benign' -> 'inconclusive'",
-      "domain": "social-media",
+      "domain": "content",
       "status": "active",
       "date": "2026-04-28"
     },
@@ -1216,21 +1217,21 @@
     {
       "id": "L-178",
       "summary": "[CS-2026-040] incomplete (n/a): Tier 3 affiliate boost = order-volume multiplier (81% of incremental orders). Tier 1/2 = revenue-per-creator multipli\u2026",
-      "domain": "creator-affiliate",
+      "domain": "campaigns",
       "status": "active",
       "date": "2026-05-05"
     },
     {
       "id": "L-179",
       "summary": "[CS-2026-058] incomplete (n/a): v3 migration: outcome 'complete' -> 'success'",
-      "domain": "creator-affiliate",
+      "domain": "campaigns",
       "status": "active",
       "date": "2026-05-05"
     },
     {
       "id": "L-180",
       "summary": "[CS-2026-078] incomplete (n/a): v3 migration: outcome 'complete' -> 'success'",
-      "domain": "creator-affiliate",
+      "domain": "campaigns",
       "status": "active",
       "date": "2026-05-05"
     },
@@ -1314,14 +1315,14 @@
     {
       "id": "L-192",
       "summary": "[CS-2026-143] incomplete (n/a): TIER-2 PAUSE (CVR -19.2% vs control). Hypothesis disproof condition partially met: subscription-first lifted ATC rate\u2026",
-      "domain": "DTC-website",
+      "domain": "website",
       "status": "active",
       "date": "2026-05-12"
     },
     {
       "id": "L-193",
       "summary": "[CS-2026-158] incomplete (n/a): [closure_note] Codification CS \u2014 work shipped same-day (doc landed in brain/kenetik-brain/references/lifecycle-playbo\u2026",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-05-20"
     },
@@ -1363,42 +1364,42 @@
     {
       "id": "L-199",
       "summary": "[CS-2026-154] incomplete (n/a): CYCLE 2 CLOSED \u2014 tier-1 CVR guardrail breach (manual close-out 2026-06-16 after Katie's partial revert 2026-06-15). H\u2026",
-      "domain": "DTC-website",
+      "domain": "website",
       "status": "active",
       "date": "2026-06-16"
     },
     {
       "id": "L-200",
       "summary": "[CS-2026-020] significant_variance (-50.0%): [2026-06-23 close] Talladega 'Last Call' coozie send (C10/M19, sent 4/24): $3,598 revenue (email $2,828.\u2026",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-06-23"
     },
     {
       "id": "L-201",
       "summary": "[CS-2026-021] significant_variance (-38.0%): [2026-06-23 close] 'What Changes After 14 Days' (C11/M19, sent 4/27): 0.163% CVR vs >=0.30% target = MIS\u2026",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-06-23"
     },
     {
       "id": "L-202",
       "summary": "[CS-2026-022] confirmed (-1.0%): [2026-06-23 close] 'May Is Loading \u2014 Stock Up' (C12/M19, sent 4/30): 0.86% email CTR vs >=2.0% target = MISS. Open 4\u2026",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-06-23"
     },
     {
       "id": "L-203",
       "summary": "[CS-2026-035] significant_variance (-100.0%): [2026-06-23 close] No controlled result to measure. Designed as a 50/50 A/B (treatment = SMS 4h before \u2026",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-06-23"
     },
     {
       "id": "L-204",
       "summary": "[CS-2026-049] incomplete (n/a): [2026-06-23 close] Superseded. Verified 2026-06-23: acquisition_source/referring_creator absent from 40 most-recent K\u2026",
-      "domain": "DTC-website",
+      "domain": "website",
       "status": "active",
       "date": "2026-06-23"
     },
@@ -1461,28 +1462,28 @@
     {
       "id": "L-213",
       "summary": "[CS-2026-100] significant_variance (-100.0%): [2026-06-23 close] Mar 2026 cohort M1 retention = 6.2% (367 repeat / 5,899 new) vs >=18% target AND vs \u2026",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-06-23"
     },
     {
       "id": "L-214",
       "summary": "[CS-2026-101] significant_variance (-100.0%): [2026-06-23 close] Not measurable from available connectors. Maverick runs per-campaign A/B (inbox-plac\u2026",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "status": "active",
       "date": "2026-06-23"
     },
     {
       "id": "L-215",
       "summary": "[CS-2026-114] incomplete (n/a): [2026-06-23 close] Bug fix shipped & verified (autoSelectFirstAvailableSize helper on cw-01-product-banner.liquid, th\u2026",
-      "domain": "DTC-website",
+      "domain": "website",
       "status": "active",
       "date": "2026-06-23"
     },
     {
       "id": "L-216",
       "summary": "[CS-2026-115] incomplete (n/a): [2026-06-23 close] VALIDATION NOT MET. Success required observing the full idle->awaiting_approval->canary->measuring\u2026",
-      "domain": "DTC-website",
+      "domain": "website",
       "status": "active",
       "date": "2026-06-23"
     },
@@ -1772,84 +1773,51 @@
       "domain": "operations",
       "status": "archived",
       "date": "2026-07-02"
+    },
+    {
+      "id": "L-258",
+      "summary": "digital_cac target ($34, band [28,42]) has no defined denominator, so the measured pixel_cac $52.97 cannot be judged a real band breach versus a defi\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-07-06"
+    },
+    {
+      "id": "L-259",
+      "summary": "Session handoffs carry stale alarm claims and phantom dates that fresher tracker/state data contradicts (e.g., 'TRX tier-map 0/10 stalled' when CS-18\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-07-07"
+    },
+    {
+      "id": "L-260",
+      "summary": "Sub-5k/wk paid-digital is the deliberate Q2 throttle baseline (tied to the 200k marketing-total cut), distinct from the recurring Polar-outage underc\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-07-07"
+    },
+    {
+      "id": "L-261",
+      "summary": "An empty, un-categorized forward content calendar is the structural enabler that lets phantom/cancelled dates (Prime Day, 'TRX 7/16') survive into mu\u2026",
+      "domain": "market-intelligence",
+      "status": "active",
+      "date": "2026-07-07"
+    },
+    {
+      "id": "L-262",
+      "summary": "The d07 per-post engagement-rate mean is polluted by zero-impression phantom duplicate-publish posts (9 of the 17x 'Three o'clock' Facebook assets at\u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-07-08"
+    },
+    {
+      "id": "L-263",
+      "summary": "Shopify cohort-state 7d weighted site CVR (2.6%) and GA4 blended (2.68%) now agree within 0.1pp; the ~4.75% figure validated in the registry on 2026-\u2026",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-07-08"
     }
   ],
   "entries": [
-    {
-      "id": "L-006",
-      "date": "2026-04-06",
-      "type": "threshold_calibration",
-      "learning": "Session 26 reported FB ROAS at 0.89x (below breakeven), triggering crisis narrative and budget reallocation recommendations. Session 27 data shows actual 2.59x Pixel ROAS. Root cause: Polar Analytics was offline; the 0.89x figure came from an incomplete or misattributed data source. Multi-source verification is required before declaring a channel in crisis. This reinforces L-004 (multi-window trend confirmation).",
-      "source": "Session 27 synthesis -- D04 paid media data correction",
-      "source_type": "data_correction",
-      "domain": "paid-media",
-      "evidence": "Session 26: FB ROAS 0.89x (crisis). Session 27: FB ROAS 2.59x (recovery). Brain Awareness Week 9.99x. Polar offline during Session 26 scan.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-004"
-      ],
-      "changeset_candidate": false,
-      "changeset_note": null,
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
-    },
-    {
-      "id": "L-007",
-      "date": "2026-04-08",
-      "type": "changeset_outcome",
-      "learning": "Built 3 Klaviyo segments for Cleetus influencer cohort \u2192 2 of 3 populated correctly (6,345+ profiles), 1 empty due to $source data gap \u2192 Subscriber-level segmentation captures 2.4x more profiles than purchaser-only view; Superfiliate $source tagging needs investigation for future creator activations.",
-      "source": "ChangeSet measurement (Process 7.5)",
-      "source_type": "changeset_outcome",
-      "domain": "lifecycle",
-      "evidence": "3 Klaviyo segments built, 6,345+ profiles covered; subscriber-level segmentation 2.4x > purchaser-only; $source gap blocks Superfiliate attribution. See CS-2026-002 measurement.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-002",
-      "variance_pct": null,
-      "outcome_class": "confirmed",
-      "entry_type": "changeset_outcome",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ]
-    },
-    {
-      "id": "L-008",
-      "date": "2026-04-08",
-      "type": "changeset_outcome",
-      "learning": "Science-led April Fools email (Machado 2022 qEEG study) sent to 17K \u2192 $1,184 revenue, 46.5% open rate (#1 in class), 0.71% click rate (#1 in class), 1.52% CTOR \u2192 Revenue underperformed vs $6K target, but target was misset: promotional benchmarks applied to a non-promotional content email. Actual performance led all comparable non-promo sends on engagement metrics. Correct baseline for non-promo science emails to ~17K audience: ~$1K-$2K revenue, ~0.6% click rate, ~1.5% CTOR.",
-      "source": "ChangeSet measurement (Process 7.5)",
-      "source_type": "changeset_outcome",
-      "domain": "lifecycle",
-      "evidence": "Sent to 17K: $1,184 revenue, 46.5% open (#1), 0.71% CTR (#1), 1.52% CTOR. Revenue target misset: promo benchmarks on content email. Correct baseline: ~$1K-$2K. See CS-2026-011 measurement.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-011",
-      "variance_pct": 80.3,
-      "outcome_class": "significant_variance",
-      "entry_type": "changeset_outcome",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
-    },
     {
       "id": "L-009",
       "date": "2026-04-10",
@@ -2116,79 +2084,6 @@
       "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-024",
-      "date": "2026-04-06",
-      "type": "changeset_outcome",
-      "learning": "For Superfiliate-acquired customers on Klaviyo, property audit revealed all Superfiliate data lives on creator profiles, not customer profiles. $source contains Klaviyo form IDs, not traffic attribution; Superfiliate Campaign Conversion fires on creators only with empty event properties; Shopify order tags don't propagate to profile-level Shopify Tags. Only working attribution path is discount codes on Placed Order events. Spawned CS-2026-049 (Shopify Flow to tag customers on 'superfiliate conversion approved' order tag). Investigation revealed existing attribution is structurally incomplete \u2014 every Superfiliate-sourced flow has been firing on the wrong audience.",
-      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
-      "source_type": "changeset_outcome",
-      "domain": "lifecycle",
-      "evidence": "5 of 5 investigation questions confirmed; Superfiliate profile-level attribution structurally broken; working path is order-tag-based Flow. See CS-2026-010 + CS-2026-049.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-010",
-      "variance_pct": 0,
-      "outcome_class": "confirmed",
-      "entry_type": "changeset_outcome",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
-    },
-    {
-      "id": "L-025",
-      "date": "2026-04-07",
-      "type": "changeset_outcome",
-      "learning": "Subscription Pause/Skip Feature Test closed partially_complete with no learning_note and no actual_impact. Owner (Katie + Recharge) needs to populate outcome data for voluntary_churn_rate against the >=15% reduction target from 2.9% baseline. This PM entry is a placeholder \u2014 backfill required.",
-      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
-      "source_type": "changeset_outcome",
-      "domain": "lifecycle",
-      "evidence": "Expected target: voluntary_churn_rate <=2.5% monthly. Actual: not written. Close state partial; owner review pending.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-024",
-      "variance_pct": null,
-      "outcome_class": "incomplete",
-      "sweep_flag": "pm_backfill_needs_owner_review",
-      "entry_type": "changeset_outcome",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-028",
-      "date": "2026-04-07",
-      "type": "changeset_outcome",
-      "learning": "For post-purchase review requests on Klaviyo, investigation found submission rate is 3.7% (declining from 6.4% peak) against a >=10% target. 'Copy of' variant outperforms original by 39% RPR but receives only 29% of traffic. LoyaltyLion review incentive is missing. SMS gets 33.5% click-through but converts at only 0.6%. Spawned CS-2026-053 (review flow rebuild) to consolidate on the winning variant, add LoyaltyLion incentive, and rebuild SMS treatment.",
-      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
-      "source_type": "changeset_outcome",
-      "domain": "lifecycle",
-      "evidence": "3.7% submission rate vs >=10% target; winning variant (39% higher RPR) underserved at 29% traffic; SMS converts 55x worse than email. See CS-2026-036 + CS-2026-053.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-036",
-      "variance_pct": 63,
-      "outcome_class": "confirmed",
-      "entry_type": "changeset_outcome",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
     },
     {
       "id": "L-031",
@@ -4423,7 +4318,7 @@
       "learning": "P1-CRITICAL content sprint scoped 4/7 for Stress Awareness Week 2, but the sprint was never deployed. Stress Awareness Month has since wound down and the SAW Week 2 window (4/13-4/19) has passed without a dedicated content push. Stress content has been running as a theme woven into daily IG cadence (STRESS-MON-040126-BEAT-03) and paid creator stress activations have continued (PAID-CREATOR-STRESS-040126). Learning: dedicated 'week sprint' changesets for always-on theme months need earlier scopi\u2026",
       "source": "ChangeSet tracker close record (CS-2026-050)",
       "source_type": "changeset_outcome",
-      "domain": "social-media",
+      "domain": "content",
       "evidence": "Outcome: superseded. Expected revenue: $0. Closed without measurement. Backfilled from tracker.json (CS-2026-050).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4435,7 +4330,10 @@
       "outcome_class": "incomplete",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986659+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'social-media' -> 'content' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-151",
@@ -4444,7 +4342,7 @@
       "learning": "Kansas execution was partial \u2014 SKU launched and inventory shipped, but the Cleetus on-camera koozie promo did NOT happen because Kenetik opted out of Kansas car sponsorship and the planned video activation was tied to that sponsorship. Without the A-list activation layer, the bundle launched cold in merchandising. Learning: A-list activations that are structurally tied to another deal (car sponsorship, tour partnership, etc.) need a backup plan if the parent deal falls through. For bundles/SKUs\u2026",
       "source": "ChangeSet tracker close record (CS-2026-059)",
       "source_type": "changeset_outcome",
-      "domain": "creator-affiliate",
+      "domain": "campaigns",
       "evidence": "Outcome: underperformed. Backfilled from tracker.json (CS-2026-059).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4457,7 +4355,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986673+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'creator-affiliate' -> 'campaigns' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-152",
@@ -4466,7 +4367,7 @@
       "learning": "Shake and Bake Bundle concept scrapped on 4/13 per Nick's decision. Rationale: the Cleetus Pit Crew Bundle launched at ARCA Kansas (CS-2026-059) runs cleanly into Talladega weekend without needing a differentiated Talladega-specific SKU. Single-bundle strategy avoids SKU sprawl, preserves Cleetus talking-point continuity, and lets momentum from Kansas roll into Talladega without re-educating the audience. Captured in calendar: ARCA-TAL-042426-BEAT-04 notes. Learning: event-level promotional SKU\u2026",
       "source": "ChangeSet tracker close record (CS-2026-060)",
       "source_type": "changeset_outcome",
-      "domain": "creator-affiliate",
+      "domain": "campaigns",
       "evidence": "Outcome: expired_unexecuted. Closed without measurement. Backfilled from tracker.json (CS-2026-060).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4478,7 +4379,10 @@
       "outcome_class": "incomplete",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986685+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'creator-affiliate' -> 'campaigns' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-153",
@@ -4509,7 +4413,7 @@
       "learning": "Superseded by CS-2026-068 audit. Key learning: when multiple changesets address the same risk, consolidate early rather than letting them sit as separate drafts. Brandon audit delay (6 days) was irrelevant \u2014 the claims mapping could be done without it because the impact assessment was straightforward once papers were mapped against the actual claims matrix.",
       "source": "ChangeSet tracker close record (CS-2026-077)",
       "source_type": "changeset_outcome",
-      "domain": "science-research",
+      "domain": "operations",
       "evidence": "Outcome: success. Actual revenue: $0. Backfilled from tracker.json (CS-2026-077).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4522,7 +4426,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986700+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'science-research' -> 'operations' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-155",
@@ -4553,7 +4460,7 @@
       "learning": "For BWR Endurance Training Bundle purchasers on Klaviyo, an 8-week science-backed post-purchase protocol flow was scoped but never shipped. Execution was halted 2026-04-22 when build (segment, flow wiring, suppression, QA, retroactive sends) was still not complete and Devon's claims hard-gate approval was still outstanding, with BWR event only 10-11 days away. Key insight: event-triggered lifecycle flows need claims-approved build complete \u22653 weeks pre-event, which means routing claims review a\u2026",
       "source": "ChangeSet tracker close record (CS-2026-009)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: expired_unexecuted. Expected revenue: $2,500. Actual revenue: $0. Closed without measurement. Backfilled from tracker.json (CS-2026-009).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4565,7 +4472,10 @@
       "outcome_class": "incomplete",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986714+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-157",
@@ -4574,7 +4484,7 @@
       "learning": "WIN AN UNBOUND ENTRY + CUSTOM CAM JONES GEAR \u2014 closed as underperformed on 2026-04-22 (no learning note recorded).",
       "source": "ChangeSet tracker close record (CS-2026-012)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: underperformed. Expected revenue: $9,000. Actual revenue: $3,000. Variance: -66.7%. Backfilled from tracker.json (CS-2026-012).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4586,7 +4496,10 @@
       "outcome_class": "significant_variance",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986725+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-158",
@@ -4595,7 +4508,7 @@
       "learning": "SEA OTTER CLASSIC: ENDURANCE TRAINING BUNDLE \u2014 closed as success on 2026-04-22 (no learning note recorded).",
       "source": "ChangeSet tracker close record (CS-2026-015)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: success. Expected revenue: $0. Actual revenue: $4,996. Backfilled from tracker.json (CS-2026-015).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4608,7 +4521,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986731+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-160",
@@ -4680,7 +4596,7 @@
       "learning": "For Upcoming Subscription Order Flow on klaviyo, two draft CSes (CS-2026-052 general refinement, CS-2026-100 Mar 2026 cohort branch) were converging on the same flow. /changeset-review surfaced the conflict. CS-2026-052 closed superseded and its scope absorbed into CS-2026-100 as the all-subscriber base layer. Key insight: /changeset-review's conflict check on the same surface caught what weekly synthesis and lifecycle sweep didn't \u2014 worth making the conflict check more explicit in synthesis in\u2026",
       "source": "ChangeSet tracker close record (CS-2026-052)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: superseded. Expected revenue: $28,800. Actual revenue: $0. Closed without measurement. Backfilled from tracker.json (CS-2026-052).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4692,7 +4608,10 @@
       "outcome_class": "incomplete",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986774+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-165",
@@ -4765,7 +4684,7 @@
       "learning": "v3 migration: outcome 'underperformed_primary_metric' -> 'underperformed'",
       "source": "ChangeSet tracker close record (CS-2026-016)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: underperformed. Expected revenue: $1,800. Backfilled from tracker.json (CS-2026-016).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4778,7 +4697,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986819+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-171",
@@ -4787,7 +4709,7 @@
       "learning": "v3 migration: outcome 'success_with_primary_metric_caveat' -> 'success'",
       "source": "ChangeSet tracker close record (CS-2026-017)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: success. Expected revenue: $3,600. Backfilled from tracker.json (CS-2026-017).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4800,7 +4722,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986822+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-172",
@@ -4809,7 +4734,7 @@
       "learning": "v3 migration: outcome 'underperformed_with_metric_definition_caveat' -> 'underperformed'",
       "source": "ChangeSet tracker close record (CS-2026-018)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: underperformed. Expected revenue: $7,200. Backfilled from tracker.json (CS-2026-018).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4822,7 +4747,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986825+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-173",
@@ -4831,7 +4759,7 @@
       "learning": "v3 migration: outcome 'fix_shipped_revenue_signal_inconclusive' -> 'inconclusive'",
       "source": "ChangeSet tracker close record (CS-2026-046)",
       "source_type": "changeset_outcome",
-      "domain": "DTC-website",
+      "domain": "website",
       "evidence": "Outcome: inconclusive. Expected revenue: $12,500. Backfilled from tracker.json (CS-2026-046).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4844,7 +4772,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986828+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'DTC-website' -> 'website' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-174",
@@ -4853,7 +4784,7 @@
       "learning": "v3 migration: outcome 'closed_benign' -> 'inconclusive'",
       "source": "ChangeSet tracker close record (CS-2026-074)",
       "source_type": "changeset_outcome",
-      "domain": "social-media",
+      "domain": "content",
       "evidence": "Outcome: inconclusive. Backfilled from tracker.json (CS-2026-074).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4866,7 +4797,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986831+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'social-media' -> 'content' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-178",
@@ -4875,7 +4809,7 @@
       "learning": "Tier 3 affiliate boost = order-volume multiplier (81% of incremental orders). Tier 1/2 = revenue-per-creator multiplier. Future SF-based measurements: document comparison snapshot dates explicitly to avoid rolling-window false negatives. Top reactivated creators concentrate in known performers \u2014 concentration risk warrants pipeline depth investment.",
       "source": "ChangeSet tracker close record (CS-2026-040)",
       "source_type": "changeset_outcome",
-      "domain": "creator-affiliate",
+      "domain": "campaigns",
       "evidence": "Outcome: success. Expected revenue: $7,200. Backfilled from tracker.json (CS-2026-040).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4888,7 +4822,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986846+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'creator-affiliate' -> 'campaigns' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-179",
@@ -4897,7 +4834,7 @@
       "learning": "v3 migration: outcome 'complete' -> 'success'",
       "source": "ChangeSet tracker close record (CS-2026-058)",
       "source_type": "changeset_outcome",
-      "domain": "creator-affiliate",
+      "domain": "campaigns",
       "evidence": "Outcome: success. Backfilled from tracker.json (CS-2026-058).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4910,7 +4847,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986850+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'creator-affiliate' -> 'campaigns' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-180",
@@ -4919,7 +4859,7 @@
       "learning": "v3 migration: outcome 'complete' -> 'success'",
       "source": "ChangeSet tracker close record (CS-2026-078)",
       "source_type": "changeset_outcome",
-      "domain": "creator-affiliate",
+      "domain": "campaigns",
       "evidence": "Outcome: success. Backfilled from tracker.json (CS-2026-078).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4932,7 +4872,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986853+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'creator-affiliate' -> 'campaigns' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-181",
@@ -4962,7 +4905,7 @@
       "learning": "TIER-2 PAUSE (CVR -19.2% vs control). Hypothesis disproof condition partially met: subscription-first lifted ATC rate (+5.73% relative, 8.97% -> 9.48%) but cannibalized cart-to-purchase conversion (CVR 2.34% -> 1.89%, -19.2% relative). Bayesian: p(variant>control)=0.788 on ATC (below 95% keep), tier-2 guardrail warning on CVR. Multiple tier1_breach signals fired during measurement (alert-only mode, revert_enabled=false). Pattern: subscription-first option ordering increases buy-button engagemen\u2026",
       "source": "ChangeSet tracker close record (CS-2026-143)",
       "source_type": "changeset_outcome",
-      "domain": "DTC-website",
+      "domain": "website",
       "evidence": "Outcome: underperformed. Backfilled from tracker.json (CS-2026-143).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4975,7 +4918,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986933+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'DTC-website' -> 'website' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-193",
@@ -4984,7 +4930,7 @@
       "learning": "[closure_note] Codification CS \u2014 work shipped same-day (doc landed in brain/kenetik-brain/references/lifecycle-playbook.md; L-087 graduated active->confirmed in cross-surface-pm.json). No standalone measurement window on this CS: the measurement of the codified L-087 mechanic is delegated to subsequent deployment ChangeSets that fire the template on GP-class drops. Each deployment is its own measurable CS referencing lifecycle-playbook.md#L-087 with the acceptable bands defined therein. If a fu\u2026",
       "source": "ChangeSet tracker close record (CS-2026-158)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: data_needed. Backfilled from tracker.json (CS-2026-158).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -4997,7 +4943,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986944+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-196",
@@ -5027,7 +4976,7 @@
       "learning": "CYCLE 2 CLOSED \u2014 tier-1 CVR guardrail breach (manual close-out 2026-06-16 after Katie's partial revert 2026-06-15). Hypothesis (reorder buy-box subscribe-first without preselect) was DISPROVED: CVR control 3.47% (n=5339) vs variant 2.56% (n=2496), relative delta -26.0% \u2014 worse than cycle 1's -19.2% tier-2 breach (cycle 1 kept the preselect; cycle 2 only reordered). ATC also degraded: variant 8.13% vs control 9.37%, delta -13.2% \u2014 so the reorder did NOT lift ATC even before considering CVR. Conv\u2026",
       "source": "ChangeSet tracker close record (CS-2026-154)",
       "source_type": "changeset_outcome",
-      "domain": "DTC-website",
+      "domain": "website",
       "evidence": "Outcome: underperformed. Backfilled from tracker.json (CS-2026-154).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5040,7 +4989,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986980+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'DTC-website' -> 'website' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-200",
@@ -5049,7 +5001,7 @@
       "learning": "[2026-06-23 close] Talladega 'Last Call' coozie send (C10/M19, sent 4/24): $3,598 revenue (email $2,828.35 / 32 conv / 0.20% CVR / RPR $0.175 + SMS $769.93 / 10 conv) vs >=$7K target = MISS (~51%). NOTE: the full Talladega coozie arc incl the 4/17 'Race Day Fuel' send (C7/M19: email $4,451 + SMS $245) totals $8,294, which clears $7K \u2014 so if CS-020 scope is the whole promo it met target. Scored on the last-call send per the CS title.",
       "source": "ChangeSet tracker close record (CS-2026-020)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: underperformed. Expected revenue: $7,200. Actual revenue: $3,598. Variance: -50.0%. Backfilled from tracker.json (CS-2026-020).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5061,7 +5013,10 @@
       "outcome_class": "significant_variance",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.986993+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-201",
@@ -5070,7 +5025,7 @@
       "learning": "[2026-06-23 close] 'What Changes After 14 Days' (C11/M19, sent 4/27): 0.163% CVR vs >=0.30% target = MISS. 26 conversions, $2,230.77 revenue, RPR $0.14, open 47.5% (healthy open, weak conversion). Education-style send did not drive purchase at target rate.",
       "source": "ChangeSet tracker close record (CS-2026-021)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: underperformed. Expected revenue: $3,600. Actual revenue: $2,231. Variance: -38.0%. Backfilled from tracker.json (CS-2026-021).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5082,7 +5037,10 @@
       "outcome_class": "significant_variance",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.987003+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-202",
@@ -5091,7 +5049,7 @@
       "learning": "[2026-06-23 close] 'May Is Loading \u2014 Stock Up' (C12/M19, sent 4/30): 0.86% email CTR vs >=2.0% target = MISS. Open 43% (healthy), email $1,435.14 + SMS $347.23 = $1,782.37 revenue. Stock-up framing underperformed on click engagement.",
       "source": "ChangeSet tracker close record (CS-2026-022)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: underperformed. Expected revenue: $1,800. Actual revenue: $1,782. Variance: -1.0%. Backfilled from tracker.json (CS-2026-022).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5103,7 +5061,10 @@
       "outcome_class": "confirmed",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.987010+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-203",
@@ -5112,7 +5073,7 @@
       "learning": "[2026-06-23 close] No controlled result to measure. Designed as a 50/50 A/B (treatment = SMS 4h before email; control = simultaneous) across the next 3 promo campaigns, but remained a tier-1 shadow-mode DRAFT and was never executed as a clean split. April SMS sends show high SMS CTR (28-33%) but that's not the controlled comparison this CS specified. RECOMMEND: if SMS-first is still of interest, run it as an actual split test; otherwise retire.",
       "source": "ChangeSet tracker close record (CS-2026-035)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: inconclusive. Expected revenue: $3,600. Actual revenue: $0. Variance: -100.0%. Backfilled from tracker.json (CS-2026-035).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5124,7 +5085,10 @@
       "outcome_class": "significant_variance",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.987017+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-204",
@@ -5133,7 +5097,7 @@
       "learning": "[2026-06-23 close] Superseded. Verified 2026-06-23: acquisition_source/referring_creator absent from 40 most-recent Klaviyo profiles \u2014 Shopify Flow never built. Approach also invalidated by canonical superfiliate-klaviyo-property-map.md: customer-profile-level Superfiliate attribution does not work; only discount-code-on-Placed-Order is a working path. FLAG: if customer-level attribution still wanted, spawn new CS on the discount-code path (owner: Katie).",
       "source": "ChangeSet tracker close record (CS-2026-049)",
       "source_type": "changeset_outcome",
-      "domain": "DTC-website",
+      "domain": "website",
       "evidence": "Outcome: superseded. Expected revenue: $2,600. Actual revenue: $0. Closed without measurement. Backfilled from tracker.json (CS-2026-049).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5145,7 +5109,10 @@
       "outcome_class": "incomplete",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.987024+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'DTC-website' -> 'website' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-205",
@@ -5327,7 +5294,7 @@
       "learning": "[2026-06-23 close] Mar 2026 cohort M1 retention = 6.2% (367 repeat / 5,899 new) vs >=18% target AND vs Feb 2026 baseline 12.9% = SEVERE MISS (about a third of target, and HALF the baseline). The subscription order-flow refinement did not lift M1 retention. Likely driver: the Mar cohort is 2.5x larger than Feb (5,899 vs 2,390) \u2014 a low-intent promo/free-pack acquisition surge (Cleetus) diluted repeat behavior. LEARNING: M1 retention is dominated by acquisition mix, not flow copy; a flow refinemen\u2026",
       "source": "ChangeSet tracker close record (CS-2026-100)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: underperformed. Expected revenue: $52,400. Actual revenue: $0. Variance: -100.0%. Backfilled from tracker.json (CS-2026-100).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5339,7 +5306,10 @@
       "outcome_class": "significant_variance",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.987079+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-214",
@@ -5348,7 +5318,7 @@
       "learning": "[2026-06-23 close] Not measurable from available connectors. Maverick runs per-campaign A/B (inbox-placement treatment vs control); those arm-level RPR results live in Maverick's own tool, not surfaced through the Klaviyo API (Klaviyo only shows the 'Maverick Optimizer Backfill' webhook/segment). CS was a draft 30-day readout that was never executed. RECOMMEND: Katie pull the 30-day treatment-vs-control readout directly from Maverick; if the projected 30-40% incremental lift holds, log it as a \u2026",
       "source": "ChangeSet tracker close record (CS-2026-101)",
       "source_type": "changeset_outcome",
-      "domain": "lifecycle-marketing",
+      "domain": "lifecycle",
       "evidence": "Outcome: inconclusive. Expected revenue: $8,750. Actual revenue: $0. Variance: -100.0%. Backfilled from tracker.json (CS-2026-101).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5360,7 +5330,10 @@
       "outcome_class": "significant_variance",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.987088+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-215",
@@ -5369,7 +5342,7 @@
       "learning": "[2026-06-23 close] Bug fix shipped & verified (autoSelectFirstAvailableSize helper on cw-01-product-banner.liquid, theme branch fix/cw-product-banner-auto-select-size). This is a dead-end-state fix (flavor toggle left the ATC form invalid) that can only help or be neutral. The flavor-toggle-specific ATC lift was never instrumented, and a site-wide ATC/CVR comparison around 4/24 would be confounded by concurrent activity, so no spurious number is reported. Closed delivered on the shipped fix.",
       "source": "ChangeSet tracker close record (CS-2026-114)",
       "source_type": "changeset_outcome",
-      "domain": "DTC-website",
+      "domain": "website",
       "evidence": "Outcome: success. Actual revenue: $0. Backfilled from tracker.json (CS-2026-114).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5382,7 +5355,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.987095+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'DTC-website' -> 'website' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-216",
@@ -5391,7 +5367,7 @@
       "learning": "[2026-06-23 close] VALIDATION NOT MET. Success required observing the full idle->awaiting_approval->canary->measuring->analyzing->decided->idle cycle with all Slack notifications. Per the 2026-05-27 dept-website-cro brief, CS-115 'has been live 33 days with no closed measurement' \u2014 the loop stalled in the measuring phase and never reached `decided`. pdp-atc-results.tsv contains only the 4/3 baseline cycle, no completed cycle. The reference-architecture validation did not complete. LEARNING: the\u2026",
       "source": "ChangeSet tracker close record (CS-2026-115)",
       "source_type": "changeset_outcome",
-      "domain": "DTC-website",
+      "domain": "website",
       "evidence": "Outcome: underperformed. Actual revenue: $0. Backfilled from tracker.json (CS-2026-115).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5404,7 +5380,10 @@
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.987103+00:00",
       "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review"
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'DTC-website' -> 'website' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ]
     },
     {
       "id": "L-217",
@@ -5449,6 +5428,108 @@
       "backfilled_at": "2026-07-06T03:06:32.987115+00:00",
       "maintain_version": "1.0.0",
       "sweep_flag": "pm_backfill_needs_owner_review"
+    },
+    {
+      "date": "2026-07-06",
+      "learning": "digital_cac target ($34, band [28,42]) has no defined denominator, so the measured pixel_cac $52.97 cannot be judged a real band breach versus a definitional artifact. Same failure class as the AOV target (L-146) but on a different metric.",
+      "source": "Paid Media dept brief 2026-07-06-s1 (ACT-D-2); corroborated by attribution channel_cac (pixel $58.48 vs blended $35.59)",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "State-file pixel_cac $52.97 (7d) vs a $34 target with an undefined denominator; monthly-history est_paid_cac ranges $54-240 (blended-leaning); dept-instructions define digital_cac = digital_social spend / Shopify NCA, but the target was locked without specifying all-channel vs digital-only NCA. See daily synthesis 2026-07-06-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "brain/kenetik-brain/references/metrics-taxonomy.md (digital_cac definition) + metrics-registry.yaml",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "flag",
+      "created_at": "2026-07-06T17:42:30.778674+00:00",
+      "archival_state": "active",
+      "id": "L-258"
+    },
+    {
+      "date": "2026-07-07",
+      "learning": "Session handoffs carry stale alarm claims and phantom dates that fresher tracker/state data contradicts (e.g., 'TRX tier-map 0/10 stalled' when CS-189 was signed 6/15; phantom 'TRX 7/16'; Sprout CS-188 'CLOSED' vs voc-state still empty), consuming pipeline cycles chasing non-problems.",
+      "source": "Science brief INS-S-1 + Market Intel INS-MI-2 (2026-07-07-s1 scan)",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Handoff content is not reconciled against tracker.json + state-file freshness before it propagates into the next day's briefs, so a resolved item or corrected date reads as still-open/mission-critical. See daily synthesis 2026-07-07-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "task-b-synthesis.md handoff-read step / dispatch session-handoff writer \u2014 add a reconcile-handoff-against-tracker+state gate before carrying claims forward.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "flag",
+      "created_at": "2026-07-08T04:12:28.295588+00:00",
+      "archival_state": "active",
+      "id": "L-259"
+    },
+    {
+      "date": "2026-07-07",
+      "learning": "Sub-5k/wk paid-digital is the deliberate Q2 throttle baseline (tied to the 200k marketing-total cut), distinct from the recurring Polar-outage undercount pattern; the two are separable via freshness flags (polar_stale, roas_validation).",
+      "source": "Paid Media brief memory_update / INV-PM-1 (2026-07-07-s1)",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "paid-media-state.json fresh (2026-07-07T10:40Z), polar_stale=false, roas_validation ok; total_spend_7d 4611.78 matches digest. Prior sessions risk flagging deliberate throttle as a suspected Polar outage. See daily synthesis 2026-07-07-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "paid-media domain/dept scan \u2014 check polar_stale + roas_validation before flagging low spend as an outage.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "flag",
+      "created_at": "2026-07-08T04:12:28.299641+00:00",
+      "archival_state": "active",
+      "id": "L-260"
+    },
+    {
+      "date": "2026-07-07",
+      "learning": "An empty, un-categorized forward content calendar is the structural enabler that lets phantom/cancelled dates (Prime Day, 'TRX 7/16') survive into multi-department planning.",
+      "source": "Market Intel INS-MI-2 + Content ACT-C-3 (2026-07-07-s1)",
+      "source_type": "operational_signal",
+      "domain": "market-intelligence",
+      "evidence": "forward_content_entries_7d=0, content_category_null_pct=0.54, calendar empty past 07-06; no forward-completeness gate forces reconciliation. See daily synthesis 2026-07-07-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "marketing-calendar process / D13 scan \u2014 add a forward-completeness + category-null check that blocks phantom-date propagation.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "flag",
+      "created_at": "2026-07-08T04:12:28.303757+00:00",
+      "archival_state": "active",
+      "id": "L-261"
+    },
+    {
+      "date": "2026-07-08",
+      "learning": "The d07 per-post engagement-rate mean is polluted by zero-impression phantom duplicate-publish posts (9 of the 17x 'Three o'clock' Facebook assets at 0 impressions), mechanically producing a false -27.8% WoW drop. Zero-impression assets should be excluded from the per-post mean.",
+      "source": "D07 Social & Brand scan + Content dept brief, 2026-07-08-s1",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "The engagement-rate recipe averages across all published assets with no minimum-impression floor, so phantom/failed-publish slots (a Sprout scheduling/cross-post bug) enter the denominator as genuine zero-engagement posts. See daily synthesis 2026-07-08-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "metric-compute-map.json (d07_engagement_rate_per_post recipe: add impressions>0 filter)",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "flag",
+      "created_at": "2026-07-08T17:14:47.781346+00:00",
+      "archival_state": "active",
+      "id": "L-262"
+    },
+    {
+      "date": "2026-07-08",
+      "learning": "Shopify cohort-state 7d weighted site CVR (2.6%) and GA4 blended (2.68%) now agree within 0.1pp; the ~4.75% figure validated in the registry on 2026-05-25 no longer reflects reality, and the [5-6%] Q2 target band is aspirational, not a live day-to-day drift baseline the site is failing against.",
+      "source": "Website & CRO dept brief, 2026-07-08-s1",
+      "source_type": "domain_contradiction",
+      "domain": "website",
+      "evidence": "The registry CVR baseline was validated once (2026-05-25) against a Shopify definition that has since diverged from live dual-source reality; the target band was never revalidated against the sustained ~2.6% 12-mo trend, so daily scans repeatedly flag a false 'materially-below-band' drift. See daily synthesis 2026-07-08-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "brain/kenetik-brain/references/metrics-taxonomy.md (d01_site_cvr band governance, route to Devon)",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "flag",
+      "created_at": "2026-07-08T17:14:47.787302+00:00",
+      "archival_state": "active",
+      "id": "L-263"
     }
   ],
   "archived_entries": [
@@ -5590,9 +5671,10 @@
       "changeset_note": "Build creator inactivity SLA into Nick's weekly creator review \u2014 auto-flag any creator with >21 days no post",
       "archived_date": "2026-04-17",
       "archived_reason": "rec-204 issued 2026-04-10 and live \u22657 days; creator SLA enforcement protocol initiated",
-      "entry_type": "pattern_observation",
+      "entry_type": "skill_update",
       "reconciliation_notes": [
-        "entry_type 'pattern_observation' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+        "entry_type 'pattern_observation' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)",
+        "entry_type pattern_observation->skill_update (canon reconciliation, 2026-07-05)"
       ]
     },
     {
@@ -5611,9 +5693,10 @@
       "changeset_candidate": false,
       "archived_date": "2026-04-17",
       "archived_reason": "rec-203 issued 2026-04-10 and live \u22657 days; calendar owner validation HARD GATE communicated to Nick Lacagnina",
-      "entry_type": "pattern_observation",
+      "entry_type": "skill_update",
       "reconciliation_notes": [
-        "entry_type 'pattern_observation' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)"
+        "entry_type 'pattern_observation' backfilled (archived-entry sweep, 2026-07-05 session; inferred=True)",
+        "entry_type pattern_observation->skill_update (canon reconciliation, 2026-07-05)"
       ]
     },
     {
@@ -5632,7 +5715,7 @@
         "L-019"
       ],
       "target": "brain/kenetik-brain/references/lifecycle-marketing.md",
-      "entry_type": "operational_signal",
+      "entry_type": "process_change",
       "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
@@ -5641,7 +5724,10 @@
       "archived_reason": "scheduler_c1_hook",
       "archived_by": "workflow_scheduler.c1",
       "archived_tenant_version": "1.0.0",
-      "physically_moved_at": "2026-04-19T23:58:35.148744+00:00"
+      "physically_moved_at": "2026-04-19T23:58:35.148744+00:00",
+      "reconciliation_notes": [
+        "entry_type operational_signal->process_change (canon reconciliation, 2026-07-05)"
+      ]
     },
     {
       "id": "L-023",
@@ -5657,12 +5743,13 @@
       "skill_files_updated": [],
       "related_entries": [],
       "target": "cgo-daily-pipeline/config/creative-freshness-playbook.md",
-      "entry_type": "operational_signal",
+      "entry_type": "process_change",
       "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
-        "confidence 'strong' -> 'moderate' (source_count=2)"
+        "confidence 'strong' -> 'moderate' (source_count=2)",
+        "entry_type operational_signal->process_change (canon reconciliation, 2026-07-05)"
       ],
       "archived_date": "2026-04-19",
       "archival_state": "archived",
@@ -7518,7 +7605,167 @@
       "gate_version": "1.0.0",
       "archived_date": "2026-07-05",
       "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-006",
+      "date": "2026-04-06",
+      "type": "threshold_calibration",
+      "learning": "Session 26 reported FB ROAS at 0.89x (below breakeven), triggering crisis narrative and budget reallocation recommendations. Session 27 data shows actual 2.59x Pixel ROAS. Root cause: Polar Analytics was offline; the 0.89x figure came from an incomplete or misattributed data source. Multi-source verification is required before declaring a channel in crisis. This reinforces L-004 (multi-window trend confirmation).",
+      "source": "Session 27 synthesis -- D04 paid media data correction",
+      "source_type": "data_correction",
+      "domain": "paid-media",
+      "evidence": "Session 26: FB ROAS 0.89x (crisis). Session 27: FB ROAS 2.59x (recovery). Brain Awareness Week 9.99x. Polar offline during Session 26 scan.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-004"
+      ],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-07-08",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-007",
+      "date": "2026-04-08",
+      "type": "changeset_outcome",
+      "learning": "Built 3 Klaviyo segments for Cleetus influencer cohort \u2192 2 of 3 populated correctly (6,345+ profiles), 1 empty due to $source data gap \u2192 Subscriber-level segmentation captures 2.4x more profiles than purchaser-only view; Superfiliate $source tagging needs investigation for future creator activations.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "3 Klaviyo segments built, 6,345+ profiles covered; subscriber-level segmentation 2.4x > purchaser-only; $source gap blocks Superfiliate attribution. See CS-2026-002 measurement.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-002",
+      "variance_pct": null,
+      "outcome_class": "confirmed",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-07-08",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-008",
+      "date": "2026-04-08",
+      "type": "changeset_outcome",
+      "learning": "Science-led April Fools email (Machado 2022 qEEG study) sent to 17K \u2192 $1,184 revenue, 46.5% open rate (#1 in class), 0.71% click rate (#1 in class), 1.52% CTOR \u2192 Revenue underperformed vs $6K target, but target was misset: promotional benchmarks applied to a non-promotional content email. Actual performance led all comparable non-promo sends on engagement metrics. Correct baseline for non-promo science emails to ~17K audience: ~$1K-$2K revenue, ~0.6% click rate, ~1.5% CTOR.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Sent to 17K: $1,184 revenue, 46.5% open (#1), 0.71% CTR (#1), 1.52% CTOR. Revenue target misset: promo benchmarks on content email. Correct baseline: ~$1K-$2K. See CS-2026-011 measurement.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-011",
+      "variance_pct": 80.3,
+      "outcome_class": "significant_variance",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-07-08",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-024",
+      "date": "2026-04-06",
+      "type": "changeset_outcome",
+      "learning": "For Superfiliate-acquired customers on Klaviyo, property audit revealed all Superfiliate data lives on creator profiles, not customer profiles. $source contains Klaviyo form IDs, not traffic attribution; Superfiliate Campaign Conversion fires on creators only with empty event properties; Shopify order tags don't propagate to profile-level Shopify Tags. Only working attribution path is discount codes on Placed Order events. Spawned CS-2026-049 (Shopify Flow to tag customers on 'superfiliate conversion approved' order tag). Investigation revealed existing attribution is structurally incomplete \u2014 every Superfiliate-sourced flow has been firing on the wrong audience.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "5 of 5 investigation questions confirmed; Superfiliate profile-level attribution structurally broken; working path is order-tag-based Flow. See CS-2026-010 + CS-2026-049.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-010",
+      "variance_pct": 0,
+      "outcome_class": "confirmed",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-07-08",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-025",
+      "date": "2026-04-07",
+      "type": "changeset_outcome",
+      "learning": "Subscription Pause/Skip Feature Test closed partially_complete with no learning_note and no actual_impact. Owner (Katie + Recharge) needs to populate outcome data for voluntary_churn_rate against the >=15% reduction target from 2.9% baseline. This PM entry is a placeholder \u2014 backfill required.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Expected target: voluntary_churn_rate <=2.5% monthly. Actual: not written. Close state partial; owner review pending.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-024",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-07-08",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-028",
+      "date": "2026-04-07",
+      "type": "changeset_outcome",
+      "learning": "For post-purchase review requests on Klaviyo, investigation found submission rate is 3.7% (declining from 6.4% peak) against a >=10% target. 'Copy of' variant outperforms original by 39% RPR but receives only 29% of traffic. LoyaltyLion review incentive is missing. SMS gets 33.5% click-through but converts at only 0.6%. Spawned CS-2026-053 (review flow rebuild) to consolidate on the winning variant, add LoyaltyLion incentive, and rebuild SMS treatment.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "3.7% submission rate vs >=10% target; winning variant (39% higher RPR) underserved at 29% traffic; SMS converts 55x worse than email. See CS-2026-036 + CS-2026-053.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-036",
+      "variance_pct": 63,
+      "outcome_class": "confirmed",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-07-08",
+      "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-07-06"
+  "last_updated": "2026-07-08"
 }
