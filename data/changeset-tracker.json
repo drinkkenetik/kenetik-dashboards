@@ -30,11 +30,11 @@
   "summary": {
     "total": 163,
     "by_status": {
+      "approved": 13,
       "closed": 124,
+      "draft": 10,
       "needs_feedback": 3,
-      "published": 12,
-      "draft": 11,
-      "approved": 13
+      "published": 13
     },
     "by_risk": {
       "critical": 2,
@@ -9648,16 +9648,41 @@
       ],
       "owner": "Nick Lacagnina",
       "source": "synthesis_priority_stack",
-      "status": "draft",
+      "status": "published",
       "created": "2026-06-19",
-      "last_updated": "2026-06-19",
+      "last_updated": "2026-07-08",
       "linked_calendar_activity": "FOURTH-JULY",
       "autonomy_tier": 1,
       "subtype": "implementation",
       "risk_level": "high",
       "hypothesis": "The 4th-of-July BIG QUARTERLY BEAT (FOURTH-JULY, 6/29, quarterly_sale) is the quarter's largest discretionary-revenue beat but sits 'planned' at T-10 with zero linked ChangeSets and three needs_planning sub-beats. A single governing CS that locks the master + Cleetus&Roman LTO sub-beats to confirmed and spawns the email/SMS + Dierbergs execution CSes prevents the historical slip-to-rushed-send failure mode.",
-      "notes": "Created by Task B synthesis 2026-06-19-s1 per Ops ACT-D-2 + Market-Intel ACT-D-1. Routed OFF Katie to Nick (calendar owner) to avoid the 55% Katie CS-concentration. Master beat FOURTH-JULY carries email/sms channels (Loop-2 owned) so excluded from calendar auto-safety-net; intaken here via synthesis-driven generation. Sub-beats to spawn: VIP Email/SMS (FOURTH-JULY-BEAT-04), Paid+TikTok Shop (FOURTH-JULY-BEAT-05), Dierbergs July-4 retail (DIERBERGS-JULY4-062926 + 2 sub-beats), Cleetus & Roman LTO flavor activation (FOURTH-JULY-BEAT-02). The cancelled Cleetus 4th collab (FOURTH-JULY-BEAT-03) is absorbed by the LTO beat.",
-      "spawned_from": "2026-06-19-s1.md"
+      "notes": "Created by Task B synthesis 2026-06-19-s1 per Ops ACT-D-2 + Market-Intel ACT-D-1. Routed OFF Katie to Nick (calendar owner) to avoid the 55% Katie CS-concentration. Master beat FOURTH-JULY carries email/sms channels (Loop-2 owned) so excluded from calendar auto-safety-net; intaken here via synthesis-driven generation. Sub-beats to spawn: VIP Email/SMS (FOURTH-JULY-BEAT-04), Paid+TikTok Shop (FOURTH-JULY-BEAT-05), Dierbergs July-4 retail (DIERBERGS-JULY4-062926 + 2 sub-beats), Cleetus & Roman LTO flavor activation (FOURTH-JULY-BEAT-02). The cancelled Cleetus 4th collab (FOURTH-JULY-BEAT-03) is absorbed by the LTO beat. [2026-07-08 Katie: RECONCILED TO EXECUTED. The 4th of July campaign ran comprehensively: homepage hero takeover; lead-capture popup takeover; Welcome flow + Abandoned Cart flow takeovers; 4 email campaigns (early access, start, reminder, last call); 1 SMS (reminder); Meta ad campaign '4th of July Sale 2026' live 2026-06-26 to 2026-07-07. Beat delivered end-to-end (not slipped). Moved draft->published; measurement window closes 2026-07-14 (7d after 7/7 end).]",
+      "spawned_from": "2026-06-19-s1.md",
+      "approved_date": "2026-07-08",
+      "published_date": "2026-07-08",
+      "activation_date": "2026-06-26",
+      "campaign_end_date": "2026-07-07",
+      "measurement_window_days": 7,
+      "measurement_due": "2026-07-14",
+      "executed_scope": [
+        "homepage_hero_takeover",
+        "lead_capture_popup_takeover",
+        "welcome_flow_takeover",
+        "abandoned_cart_flow_takeover",
+        "email:early_access",
+        "email:start",
+        "email:reminder",
+        "email:last_call",
+        "sms:reminder",
+        "meta_ads:4th_of_July_Sale_2026 (6/26-7/7)"
+      ],
+      "expected_impact": {
+        "metrics_moved": [
+          "net_sales_dollars",
+          "quarterly_sale_revenue"
+        ],
+        "measurement_note": "Assess campaign revenue + channel contribution vs prior quarterly beat; window closes 2026-07-14."
+      }
     },
     {
       "id": "CS-2026-203",
