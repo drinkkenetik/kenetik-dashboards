@@ -3,9 +3,9 @@
   "last_updated": "2026-07-10T09:02:00.883819+00:00",
   "next_id": "CS-2026-227",
   "lifecycle_sweep": {
-    "last_sweep_date": "2026-07-08",
-    "last_sweep_session": "2026-07-08-s1",
-    "last_sweep_result": "measurement_capable=false (Polar MCP down 3rd day, Klaviyo unauthed); measurement-due CS-067+CS-196 already in pending_measurement_queue (deferred); 13 approved held stale_approved_gt_7d on P1 Devon gate; CS-162 stale_needs_feedback_gt_7d (49d); 0 new CSes (all synthesis priorities map to existing CSes \u2014 dedup + unblock-not-add).",
+    "last_sweep_date": "2026-07-10",
+    "last_sweep_session": "2026-07-10-s1",
+    "last_sweep_result": "measurement_capable=false (Polar MCP unreachable per D07 handoff; Klaviyo unauthed). 13 approved held stale_approved_gt_7d on the CS-205 Devon claims gate (15-17d) \u2014 re-affirmed; CS-162 stale_needs_feedback (51d). Measurement-due CS-067 (6/28) + CS-196 (7/8) retained in pending_measurement_queue, deferred (no valid measurement read without Polar/Klaviyo). 0 new CSes \u2014 every synthesis priority maps to existing work (CS-203/CS-223/CS-216/217/CS-162/save-flows) or dispatched dept actions; adding into a 13-deep jammed gate would worsen the org's #1 blocker (unblock-not-add).",
     "measurement_capable": false,
     "pending_measurement_queue": [
       "CS-2026-062",
@@ -48,8 +48,8 @@
       "investigation": 14,
       "quick": 33
     },
-    "last_updated": "2026-07-10T09:02:00.873767+00:00",
-    "last_counted": "2026-07-07"
+    "last_updated": "2026-07-10T13:20:47.925802+00:00",
+    "last_counted": "2026-07-10"
   },
   "changesets": [
     {
