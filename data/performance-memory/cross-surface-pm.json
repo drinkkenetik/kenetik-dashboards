@@ -623,7 +623,7 @@
       "id": "L-089",
       "summary": "Captionless IG posts (AP-001) \u2014 RESOLVED: publish gate confirmed durable across 4 consecutive clean windows",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-15",
       "date_last_corroborated": "2026-07-10"
     },
@@ -3005,32 +3005,6 @@
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-089",
-      "date": "2026-05-15",
-      "type": "content_pattern",
-      "learning": "BRIDGE CP-005/AP-001 [RESOLVED]: Captionless Instagram posts were dead weight (0% engagement vs ~2.25% captioned median), unresolved across 7 synthesis cycles. Content-ops shipped a publish-gate fix; AP-001 has now held CLEAN across 4 consecutive feed/reel windows (SYN-20260612 through SYN-20260710) \u2014 all remaining captionless items are IG Stories (caption-free by design, tracked separately). Moe's PM marks this RESOLVED with a passive monitor only. Closing the loop: the content-ops publish-gate recommendation from this entry is confirmed durable.",
-      "source": "Moe Content PM bridge (SYN-20260515-001) \u2014 CP-005",
-      "source_type": "content_pm_bridge",
-      "domain": "content",
-      "evidence": "See cgo-logs/queues/performance-memory.json CP-005.",
-      "confidence": "strong",
-      "action_taken": "IG empty-caption publish gate shipped; confirmed durable across 4 consecutive clean feed/reel windows (SYN-20260612, 20260619, 20260706, 20260710).",
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_note": null,
-      "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260710-001",
-      "negative_signal": true,
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)",
-        "Refreshed from SYN-20260710-001: AP-001 status RESOLVED, 4 consecutive clean windows confirmed (Process 3.8 Step 0e, 2026-07-10)"
-      ]
     },
     {
       "id": "L-090",
@@ -8000,6 +7974,34 @@
       ],
       "archived_date": "2026-07-10",
       "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-089",
+      "date": "2026-05-15",
+      "type": "content_pattern",
+      "learning": "BRIDGE CP-005/AP-001 [RESOLVED]: Captionless Instagram posts were dead weight (0% engagement vs ~2.25% captioned median), unresolved across 7 synthesis cycles. Content-ops shipped a publish-gate fix; AP-001 has now held CLEAN across 4 consecutive feed/reel windows (SYN-20260612 through SYN-20260710) \u2014 all remaining captionless items are IG Stories (caption-free by design, tracked separately). Moe's PM marks this RESOLVED with a passive monitor only. Closing the loop: the content-ops publish-gate recommendation from this entry is confirmed durable.",
+      "source": "Moe Content PM bridge (SYN-20260515-001) \u2014 CP-005",
+      "source_type": "content_pm_bridge",
+      "domain": "content",
+      "evidence": "See cgo-logs/queues/performance-memory.json CP-005.",
+      "confidence": "strong",
+      "action_taken": "IG empty-caption publish gate shipped; confirmed durable across 4 consecutive clean feed/reel windows (SYN-20260612, 20260619, 20260706, 20260710).",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260710-001",
+      "negative_signal": true,
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)",
+        "Refreshed from SYN-20260710-001: AP-001 status RESOLVED, 4 consecutive clean windows confirmed (Process 3.8 Step 0e, 2026-07-10)"
+      ],
+      "archived_date": "2026-07-10",
+      "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated (IG empty-caption publish gate) and live well over 7 days \u2014 confirmed durable across 4 consecutive clean feed/reel windows per Moe's PM (SYN-20260612, 20260619, 20260706, 20260710)."
     }
   ],
   "last_updated": "2026-07-10"
