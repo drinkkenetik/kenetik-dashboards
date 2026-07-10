@@ -1,79 +1,91 @@
 {
-  "description": "Structured PM evaluation results. Written by the kgs-weekly-pm-evaluation scheduled task after each run. 'latest' is the most recent eval; 'history' is the time series. composite/components are percentages; grade is the letter (A 90-100, B 80-89, C 70-79, D 60-69, F <60).",
-  "framework": "performance-memory-evaluation-framework-v1.1",
-  "thresholds": {
-    "alert_grade_below": "C",
-    "alert_composite_drop_pp": 5
-  },
-  "latest": {
-    "date": "2026-07-03",
-    "composite": 63.4,
-    "grade": "D",
-    "components": {
-      "C1_capture": 50.0,
-      "C2_quality": 75.0,
-      "C3_hygiene": 53.3,
-      "C4_feedback": 66.7,
-      "C5_trajectory": 66.7
+    "description": "Structured PM evaluation results. Written by the kgs-weekly-pm-evaluation scheduled task after each run. 'latest' is the most recent eval; 'history' is the time series. composite/components are percentages; grade is the letter (A 90-100, B 80-89, C 70-79, D 60-69, F <60).",
+    "framework": "performance-memory-evaluation-framework-v1.1",
+    "thresholds": {
+        "alert_grade_below": "C",
+        "alert_composite_drop_pp": 5
     },
-    "delta_vs_prior_pp": -4.8,
-    "report": "cgo-logs/evaluations/2026-07-03-pm-evaluation.md",
-    "notes": "Maintenance machinery stalled across surfaces: write-gate last fired 6/05 (24 entries since all null-type), archival last ran 6/12, changeset_outcome capture frozen at 5/01 despite 58 CS closes in 14d, Moe synthesis frozen 6/19 (all 15 confirmed patterns >14d stale). C1 worst-regressed (55.6->50.0, D1 2->1). C3 now scored on all 5 framework dims (prior scored 3); D1/D2 hit 0 (115 active >50 bloat; 76% >30d). C4 lowered to est. 66.7 on concrete loop-completion break. Grade D fired RCA threshold; RCA drafted (root cause hypothesis: consolidation running degraded/silent, same MCP-auth failure class as lifecycle sweep run_17). team_feedback still 0 vs 3 needs_feedback CSes.",
-    "rca": "cgo-logs/rca-runs/2026-07-03-pm-eval-rca-DRAFT.md"
-  },
-  "history": [
-    {
-      "date": "2026-04-07",
-      "composite": 69.4,
-      "grade": "D",
-      "report": "cgo-logs/evaluations/2026-04-07-pm-evaluation.md"
+    "latest": {
+        "date": "2026-07-10",
+        "composite": 74.3,
+        "grade": "C",
+        "components": {
+            "C1_capture": 72.2,
+            "C2_quality": 83.3,
+            "C3_hygiene": 60.0,
+            "C4_feedback": 80.0,
+            "C5_trajectory": 66.7
+        },
+        "delta_vs_prior_pp": 10.9,
+        "report": "cgo-logs/evaluations/2026-07-10-pm-evaluation.md",
+        "notes": "Composite rebounded 63.4->74.3 (D->C), driven by three fixes landing between 7/03 and 7/10: (1) changeset_outcome capture restored to 122/122 closed-CS coverage (was 18/129, frozen since 5/01); (2) entry_type null defect fully resolved (0/262 null, was 46/115) via a 2026-07-06 mass backfill (109 entries) plus live write-gate v1.1.0; (3) archival resumed (76 archived trailing 7d: 64 on 7/05, 6 on 7/08, 6 on 7/10) after a ~3-week stall. C1 (+22.2pp) and C4 (+13.3pp) were the biggest movers; C4-D5 (content learning loop) confirmed same-day Moe->Larry propagation (SYN-20260710-001 -> content-producer-skill.md v1.16). C3 (hygiene) remains weakest at 60.0% -- flagged as possibly a framework-calibration issue (164 active / 65 pct >30d fail the literal 50-cap/30-day rubric, but max active age is 88d, inside the store config archive_policy 90-day acted-entry retention window) rather than a fresh regression. Unresolved from prior evals, not new: team_feedback still 0 new since 4/02 (1 open needs_feedback CS, CS-2026-162); 3 of 10 changeset_candidate entries (L-072, L-073, L-121) have zero corresponding ChangeSet at 32-70 days old; 1 strong-confidence entry (L-020) carries an unapplied reconciler downgrade note (strong->moderate); config.last_bridged_moe_synthesis still reads SYN-20260619-001 (3wk stale) despite a demonstrably working bridge. Grade C, no >5pp drop -- RCA threshold did not fire."
     },
-    {
-      "date": "2026-04-11",
-      "composite": 84.4,
-      "grade": "B",
-      "report": "cgo-logs/evaluations/2026-04-11-pm-evaluation-v2.md"
-    },
-    {
-      "date": "2026-04-18",
-      "composite": 64.9,
-      "grade": "D",
-      "components": {
-        "C1_capture": 61.1,
-        "C2_quality": 66.7,
-        "C3_hygiene": 40.0,
-        "C4_feedback": 80.0,
-        "C5_trajectory": 66.7
-      },
-      "report": "cgo-logs/evaluations/2026-04-18-pm-evaluation.md"
-    },
-    {
-      "date": "2026-06-23",
-      "composite": 68.2,
-      "grade": "D",
-      "components": {
-        "C1_capture": 55.6,
-        "C2_quality": 75.0,
-        "C3_hygiene": 55.6,
-        "C4_feedback": 80.0,
-        "C5_trajectory": 66.7
-      },
-      "report": "cgo-logs/evaluations/2026-06-23-pm-evaluation.md",
-      "rca": "cgo-logs/rca-runs/2026-06-23-pm-eval-rca-DRAFT.md"
-    },
-    {
-      "date": "2026-07-03",
-      "composite": 63.4,
-      "grade": "D",
-      "components": {
-        "C1_capture": 50.0,
-        "C2_quality": 75.0,
-        "C3_hygiene": 53.3,
-        "C4_feedback": 66.7,
-        "C5_trajectory": 66.7
-      },
-      "report": "cgo-logs/evaluations/2026-07-03-pm-evaluation.md",
-      "rca": "cgo-logs/rca-runs/2026-07-03-pm-eval-rca-DRAFT.md"
-    }
-  ]
+    "history": [
+        {
+            "date": "2026-04-07",
+            "composite": 69.4,
+            "grade": "D",
+            "report": "cgo-logs/evaluations/2026-04-07-pm-evaluation.md"
+        },
+        {
+            "date": "2026-04-11",
+            "composite": 84.4,
+            "grade": "B",
+            "report": "cgo-logs/evaluations/2026-04-11-pm-evaluation-v2.md"
+        },
+        {
+            "date": "2026-04-18",
+            "composite": 64.9,
+            "grade": "D",
+            "components": {
+                "C1_capture": 61.1,
+                "C2_quality": 66.7,
+                "C3_hygiene": 40.0,
+                "C4_feedback": 80.0,
+                "C5_trajectory": 66.7
+            },
+            "report": "cgo-logs/evaluations/2026-04-18-pm-evaluation.md"
+        },
+        {
+            "date": "2026-06-23",
+            "composite": 68.2,
+            "grade": "D",
+            "components": {
+                "C1_capture": 55.6,
+                "C2_quality": 75.0,
+                "C3_hygiene": 55.6,
+                "C4_feedback": 80.0,
+                "C5_trajectory": 66.7
+            },
+            "report": "cgo-logs/evaluations/2026-06-23-pm-evaluation.md",
+            "rca": "cgo-logs/rca-runs/2026-06-23-pm-eval-rca-DRAFT.md"
+        },
+        {
+            "date": "2026-07-03",
+            "composite": 63.4,
+            "grade": "D",
+            "components": {
+                "C1_capture": 50.0,
+                "C2_quality": 75.0,
+                "C3_hygiene": 53.3,
+                "C4_feedback": 66.7,
+                "C5_trajectory": 66.7
+            },
+            "report": "cgo-logs/evaluations/2026-07-03-pm-evaluation.md",
+            "rca": "cgo-logs/rca-runs/2026-07-03-pm-eval-rca-DRAFT.md"
+        },
+        {
+            "date": "2026-07-10",
+            "composite": 74.3,
+            "grade": "C",
+            "components": {
+                "C1_capture": 72.2,
+                "C2_quality": 83.3,
+                "C3_hygiene": 60.0,
+                "C4_feedback": 80.0,
+                "C5_trajectory": 66.7
+            },
+            "report": "cgo-logs/evaluations/2026-07-10-pm-evaluation.md"
+        }
+    ]
 }
