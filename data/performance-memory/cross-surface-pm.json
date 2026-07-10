@@ -12,7 +12,7 @@
     "skill_file_update_threshold": "moderate",
     "synthesis_cadence": "daily capture during pipeline run, weekly deep review Fridays",
     "archive_policy": "Process 3.8 archives acted-on entries weekly during Friday synthesis. Archived entries move to archived_entries array (preserved for audit). Active entries = un-acted + last 90 days acted.",
-    "last_bridged_moe_synthesis": "SYN-20260619-001"
+    "last_bridged_moe_synthesis": "SYN-20260710-001"
   },
   "entry_types": {
     "_note": "SINGLE CANON (2026-07-05 decision): these six keys are the exclusive entry_type enum, enforced by scripts/pm_validate.py I4 and imported by scripts/pm_write_gate.py. The gate's former extra values (pattern_observation, operational_signal, team_feedback, data_correction) are source_type values, not entry types.",
@@ -621,10 +621,11 @@
     },
     {
       "id": "L-089",
-      "summary": "Captionless Instagram posts are dead weight",
+      "summary": "Captionless IG posts (AP-001) \u2014 RESOLVED: publish gate confirmed durable across 4 consecutive clean windows",
       "domain": "content",
       "status": "active",
-      "date": "2026-05-15"
+      "date": "2026-05-15",
+      "date_last_corroborated": "2026-07-10"
     },
     {
       "id": "L-090",
@@ -635,10 +636,11 @@
     },
     {
       "id": "L-091",
-      "summary": "Large-reach ambassador 'awareness' posts deliver EMV but trivial revenue",
+      "summary": "Ambassador EMV \u2260 revenue (AP-009) \u2014 reconfirmed at most extreme reading yet (JOSEPH 232K imp/$33.75 vs BREAKTHROUGH 4.1K imp/$2,266)",
       "domain": "content",
       "status": "active",
-      "date": "2026-05-15"
+      "date": "2026-05-15",
+      "date_last_corroborated": "2026-07-10"
     },
     {
       "id": "L-092",
@@ -705,10 +707,11 @@
     },
     {
       "id": "L-102",
-      "summary": "Bulk-publish of identical retail/PR copy gets algorithm-suppressed to 0 reach on FB",
+      "summary": "Bulk-publish retail copy suppressed on FB + paid boost landing on dead copy (AP-010) \u2014 5th cycle, dedupe/boost-block fix still unshipped, open P0 to Devon",
       "domain": "content",
       "status": "active",
-      "date": "2026-05-22"
+      "date": "2026-05-22",
+      "date_last_corroborated": "2026-07-10"
     },
     {
       "id": "L-103",
@@ -1798,7 +1801,7 @@
     {
       "id": "L-261",
       "summary": "An empty, un-categorized forward content calendar is the structural enabler that lets phantom/cancelled dates (Prime Day, 'TRX 7/16') survive into mu\u2026",
-      "domain": "market-intelligence",
+      "domain": "cross-surface",
       "status": "active",
       "date": "2026-07-07"
     },
@@ -1908,7 +1911,8 @@
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
+        "confidence 'strong' -> 'preliminary' (source_count=1)",
+        "L-009 (the contradicting entry) was archived 2026-07-10 as expired_unactioned \u2014 the underlying question (real Amazon revenue decline vs. connector artifact) was never resolved by CGO. Flagging in this week's report as a stale open item rather than a fresh active-vs-active contradiction."
       ],
       "contradiction_with": [
         "L-009"
@@ -3006,25 +3010,26 @@
       "id": "L-089",
       "date": "2026-05-15",
       "type": "content_pattern",
-      "learning": "BRIDGE CP-005: Captionless Instagram posts are dead weight. Cumulative 144+ Instagram captionless posts at ~0% engagement vs ~2.25% captioned median; AP-001 unresolved across 7 synthesis cycles. This is now a structural content-ops failure: 50% of eligible IG posts in the most recent 14d window (34/68) shipped with empty captions and every one scored NCS<25. Cross-domain implication: content operations publishing workflow needs a hard pre-publish gate (block IG publish if caption < 50 chars). Already escalated to Devon for workflow fix this week.",
+      "learning": "BRIDGE CP-005/AP-001 [RESOLVED]: Captionless Instagram posts were dead weight (0% engagement vs ~2.25% captioned median), unresolved across 7 synthesis cycles. Content-ops shipped a publish-gate fix; AP-001 has now held CLEAN across 4 consecutive feed/reel windows (SYN-20260612 through SYN-20260710) \u2014 all remaining captionless items are IG Stories (caption-free by design, tracked separately). Moe's PM marks this RESOLVED with a passive monitor only. Closing the loop: the content-ops publish-gate recommendation from this entry is confirmed durable.",
       "source": "Moe Content PM bridge (SYN-20260515-001) \u2014 CP-005",
       "source_type": "content_pm_bridge",
       "domain": "content",
       "evidence": "See cgo-logs/queues/performance-memory.json CP-005.",
-      "confidence": "preliminary",
-      "action_taken": null,
+      "confidence": "strong",
+      "action_taken": "IG empty-caption publish gate shipped; confirmed durable across 4 consecutive clean feed/reel windows (SYN-20260612, 20260619, 20260706, 20260710).",
       "skill_files_updated": [],
       "related_entries": [],
       "changeset_candidate": false,
       "changeset_note": null,
       "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260515-001",
+      "bridge_synthesis_id": "SYN-20260710-001",
       "negative_signal": true,
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
+        "confidence 'strong' -> 'preliminary' (source_count=1)",
+        "Refreshed from SYN-20260710-001: AP-001 status RESOLVED, 4 consecutive clean windows confirmed (Process 3.8 Step 0e, 2026-07-10)"
       ]
     },
     {
@@ -3056,25 +3061,26 @@
       "id": "L-091",
       "date": "2026-05-15",
       "type": "content_pattern",
-      "learning": "BRIDGE AP-009: Large-reach ambassador 'awareness' posts deliver EMV but trivial revenue. JOSEPH (justjosephd, BAW partner) generated 681,041 ambassador impressions and 17,503 unique visitors over the 90d window ending 2026-05-15 \u2014 and converted 11 sales / $375.98 revenue (0.06% visitor-to-sale). BREAKTHROUGH (medic1kidd): 3,705 impressions / 187 visitors / 70 sales / $5K+ revenue (37x conversion rate, 13x revenue). Cross-domain implications: (1) creator selection should weight conversion fit over reach (high-EMV \u2260 high-ROI), (2) creator-ROI scoring needs a visitor-to-sale rate floor that triggers re-evaluation, (3) ambassador program review process should surface awareness-only creators for repositioning or sunset.",
+      "learning": "BRIDGE AP-009: Large-reach ambassador 'awareness' posts deliver EMV but trivial revenue \u2014 high-EMV does not equal high-ROI. Reconfirmed across 4 independent weekly cycles, most recently (SYN-20260706) at its most extreme reading yet: JOSEPH 232,108 impressions / 1,335 unique visitors \u2192 1 conversion / $33.75 revenue (0.07% visitor CVR) vs. BREAKTHROUGH 4,139 impressions \u2192 23 conversions / $2,266.54 (6.0% CVR) in the same window \u2014 JOSEPH took ~56x the reach for ~1.5% of BREAKTHROUGH's revenue. Cross-domain implications unchanged and now higher-confidence: (1) creator selection should weight conversion fit over reach, (2) creator-ROI scoring needs a visitor-to-sale rate floor that triggers re-evaluation, (3) ambassador program review should surface awareness-only creators for repositioning or sunset. Moe's PM recommendation: weight conversions/revenue 10:1 over impressions/EMV in all ambassador ROI evaluation.",
       "source": "Moe Content PM bridge (SYN-20260515-001) \u2014 AP-009",
       "source_type": "content_pm_bridge",
       "domain": "content",
       "evidence": "See cgo-logs/queues/performance-memory.json AP-009.",
-      "confidence": "preliminary",
+      "confidence": "strong",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
       "changeset_candidate": false,
       "changeset_note": null,
       "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260515-001",
+      "bridge_synthesis_id": "SYN-20260706-001",
       "negative_signal": true,
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
+        "confidence 'strong' -> 'preliminary' (source_count=1)",
+        "Refreshed from SYN-20260706-001 reconfirmation (4th independent cycle, most extreme reading); confidence preliminary -> strong (Process 3.8 Step 0e, 2026-07-10)"
       ]
     },
     {
@@ -3290,26 +3296,27 @@
       "id": "L-102",
       "date": "2026-05-22",
       "type": "content_pattern",
-      "learning": "BRIDGE AP-010: Automated bulk-publish of identical retail/PR copy to Facebook returns 0 impressions (algorithm-suppressed). Two May 1-8 clusters (12 'Find Kenetik at Dierbergs' posts + 14 identical Cleetus event posts) all hit 0 reach. Cross-domain implication: content ops must hard-block burst-publishing of identical copy; paid-media must not assume retail/PR organic carry exists.",
+      "learning": "BRIDGE AP-010: Automated bulk-publish of identical retail/PR copy to Facebook gets algorithm-suppressed to near-zero impressions \u2014 AND paid amplification keeps landing on that dead copy. Reconfirmed 5 consecutive cycles (SYN-20260522 through SYN-20260710); most recent window (SYN-20260710): 2 identical 'Find Kenetik at Dierbergs!' FB posts at NCS 51.1/45.5, and the second was boosted to 58,851 impressions at 0.3% ER. The bulk-cluster size has shrunk (2 posts vs. the original 12-14) but the core fix \u2014 dedupe post bodies per-platform per-day before publish, and block paid amplification on any body scoring NCS<25 \u2014 remains unshipped after five logged cycles. Cross-domain implication: content ops needs the dedupe gate; paid media is actively spending on organic-suppressed copy with no proven audience response. Moe's PM has re-escalated P0 to Devon each cycle.",
       "source": "Moe Content PM synthesis SYN-20260522-001 (AP-010)",
       "source_type": "content_synthesis_bridge",
       "domain": "content",
       "evidence": "12 'Find Kenetik at Dierbergs' FB posts at 0 impressions (2026-05-06); 14 identical Cleetus event posts also 0. See Moe PM AP-010.",
-      "confidence": "preliminary",
+      "confidence": "strong",
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [],
       "changeset_candidate": false,
       "changeset_note": null,
       "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260522-001",
+      "bridge_synthesis_id": "SYN-20260710-001",
       "signal_direction": "negative",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e",
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+        "confidence 'moderate' -> 'preliminary' (source_count=1)",
+        "Refreshed from SYN-20260710-001 (5th consecutive reconfirmation); confidence preliminary -> strong; flagged as open P0 needing Devon decision (Process 3.8 Step 0e, 2026-07-10)"
       ]
     },
     {
@@ -5377,7 +5384,7 @@
       "source": "Paid Media dept brief 2026-07-06-s1 (ACT-D-2); corroborated by attribution channel_cac (pixel $58.48 vs blended $35.59)",
       "source_type": "operational_signal",
       "domain": "paid-media",
-      "evidence": "State-file pixel_cac $52.97 (7d) vs a $34 target with an undefined denominator; monthly-history est_paid_cac ranges $54-240 (blended-leaning); dept-instructions define digital_cac = digital_social spend / Shopify NCA, but the target was locked without specifying all-channel vs digital-only NCA. See daily synthesis 2026-07-06-s1.md.",
+      "evidence": "pixel_cac ($52.97/7d) vs $34 target compares mismatched denominators \u2014 the target was never specified as all-channel vs digital-only NCA. See daily synthesis 2026-07-06-s1.md.",
       "confidence": "moderate",
       "action_taken": null,
       "target": "brain/kenetik-brain/references/metrics-taxonomy.md (digital_cac definition) + metrics-registry.yaml",
@@ -5386,7 +5393,11 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-06T17:42:30.778674+00:00",
       "archival_state": "active",
-      "id": "L-258"
+      "id": "L-258",
+      "reconciliation_notes": [
+        "evidence pruned from 333 chars to source-pointer form (Process 3.8 Step 0c, 2026-07-10)"
+      ],
+      "type": "process_change"
     },
     {
       "date": "2026-07-07",
@@ -5394,7 +5405,7 @@
       "source": "Science brief INS-S-1 + Market Intel INS-MI-2 (2026-07-07-s1 scan)",
       "source_type": "operational_signal",
       "domain": "cross-surface",
-      "evidence": "Handoff content is not reconciled against tracker.json + state-file freshness before it propagates into the next day's briefs, so a resolved item or corrected date reads as still-open/mission-critical. See daily synthesis 2026-07-07-s1.md.",
+      "evidence": "Handoff content isn't reconciled against tracker.json + state-file freshness before propagating, so resolved/corrected items can read as still-open. See daily synthesis 2026-07-07-s1.md.",
       "confidence": "moderate",
       "action_taken": null,
       "target": "task-b-synthesis.md handoff-read step / dispatch session-handoff writer \u2014 add a reconcile-handoff-against-tracker+state gate before carrying claims forward.",
@@ -5403,7 +5414,11 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-08T04:12:28.295588+00:00",
       "archival_state": "active",
-      "id": "L-259"
+      "id": "L-259",
+      "reconciliation_notes": [
+        "evidence pruned from 239 chars to source-pointer form (Process 3.8 Step 0c, 2026-07-10)"
+      ],
+      "type": "process_change"
     },
     {
       "date": "2026-07-07",
@@ -5411,7 +5426,7 @@
       "source": "Paid Media brief memory_update / INV-PM-1 (2026-07-07-s1)",
       "source_type": "operational_signal",
       "domain": "paid-media",
-      "evidence": "paid-media-state.json fresh (2026-07-07T10:40Z), polar_stale=false, roas_validation ok; total_spend_7d 4611.78 matches digest. Prior sessions risk flagging deliberate throttle as a suspected Polar outage. See daily synthesis 2026-07-07-s1.md.",
+      "evidence": "paid-media-state.json was fresh with roas_validation ok when this fired \u2014 a deliberate spend throttle got flagged as a suspected Polar outage. See daily synthesis 2026-07-07-s1.md.",
       "confidence": "preliminary",
       "action_taken": null,
       "target": "paid-media domain/dept scan \u2014 check polar_stale + roas_validation before flagging low spend as an outage.",
@@ -5420,14 +5435,18 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-08T04:12:28.299641+00:00",
       "archival_state": "active",
-      "id": "L-260"
+      "id": "L-260",
+      "reconciliation_notes": [
+        "evidence pruned from 242 chars to source-pointer form (Process 3.8 Step 0c, 2026-07-10)"
+      ],
+      "type": "process_change"
     },
     {
       "date": "2026-07-07",
       "learning": "An empty, un-categorized forward content calendar is the structural enabler that lets phantom/cancelled dates (Prime Day, 'TRX 7/16') survive into multi-department planning.",
       "source": "Market Intel INS-MI-2 + Content ACT-C-3 (2026-07-07-s1)",
       "source_type": "operational_signal",
-      "domain": "market-intelligence",
+      "domain": "cross-surface",
       "evidence": "forward_content_entries_7d=0, content_category_null_pct=0.54, calendar empty past 07-06; no forward-completeness gate forces reconciliation. See daily synthesis 2026-07-07-s1.md.",
       "confidence": "preliminary",
       "action_taken": null,
@@ -5437,7 +5456,11 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-08T04:12:28.303757+00:00",
       "archival_state": "active",
-      "id": "L-261"
+      "id": "L-261",
+      "type": "process_change",
+      "reconciliation_notes": [
+        "domain 'market-intelligence' -> 'cross-surface' normalized to config.domain_note recommended values (Process 3.8 Step 0d, 2026-07-10)"
+      ]
     },
     {
       "date": "2026-07-08",
@@ -5445,7 +5468,7 @@
       "source": "D07 Social & Brand scan + Content dept brief, 2026-07-08-s1",
       "source_type": "operational_signal",
       "domain": "content",
-      "evidence": "The engagement-rate recipe averages across all published assets with no minimum-impression floor, so phantom/failed-publish slots (a Sprout scheduling/cross-post bug) enter the denominator as genuine zero-engagement posts. See daily synthesis 2026-07-08-s1.md.",
+      "evidence": "Engagement-rate recipe averages across all published assets with no minimum-impression floor, letting phantom/failed-publish posts (Sprout bug) count as zero-engagement. See daily synthesis 2026-07-08-s1.md.",
       "confidence": "moderate",
       "action_taken": null,
       "target": "metric-compute-map.json (d07_engagement_rate_per_post recipe: add impressions>0 filter)",
@@ -5454,7 +5477,11 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-08T17:14:47.781346+00:00",
       "archival_state": "active",
-      "id": "L-262"
+      "id": "L-262",
+      "reconciliation_notes": [
+        "evidence pruned from 260 chars to source-pointer form (Process 3.8 Step 0c, 2026-07-10)"
+      ],
+      "type": "process_change"
     },
     {
       "date": "2026-07-08",
@@ -5462,7 +5489,7 @@
       "source": "Website & CRO dept brief, 2026-07-08-s1",
       "source_type": "domain_contradiction",
       "domain": "website",
-      "evidence": "The registry CVR baseline was validated once (2026-05-25) against a Shopify definition that has since diverged from live dual-source reality; the target band was never revalidated against the sustained ~2.6% 12-mo trend, so daily scans repeatedly flag a false 'materially-below-band' drift. See daily synthesis 2026-07-08-s1.md.",
+      "evidence": "Registry CVR baseline was validated once (2026-05-25) against a Shopify definition that has since diverged, so scans flag a false 'below-band' drift against a stale target. See daily synthesis 2026-07-08-s1.md.",
       "confidence": "moderate",
       "action_taken": null,
       "target": "brain/kenetik-brain/references/metrics-taxonomy.md (d01_site_cvr band governance, route to Devon)",
@@ -5471,7 +5498,11 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-08T17:14:47.787302+00:00",
       "archival_state": "active",
-      "id": "L-263"
+      "id": "L-263",
+      "reconciliation_notes": [
+        "evidence pruned from 328 chars to source-pointer form (Process 3.8 Step 0c, 2026-07-10)"
+      ],
+      "type": "skill_update"
     },
     {
       "date": "2026-07-10",
@@ -5479,7 +5510,7 @@
       "source": "Paid Media dept brief 2026-07-10-s1 (INS-D-1); paid-media-state.json campaigns vs ads",
       "source_type": "operational_signal",
       "domain": "paid-media",
-      "evidence": "campaigns[] $8,674/7d vs ads[] $4,358/7d in the same fresh (polar_stale=false) pull; monthly-history April paid_digital_social $41,609 (~$9.6k/wk). Contradicts L-260's freshness-flag separation test. See daily synthesis 2026-07-10-s1.md.",
+      "evidence": "campaigns[] ($8,674/7d) vs ads[] ($4,358/7d) diverge in the same fresh pull \u2014 contradicts L-260's freshness-flag separation test. See daily synthesis 2026-07-10-s1.md.",
       "confidence": "moderate",
       "action_taken": null,
       "target": "cross-surface-pm.json L-260 (revise); add a campaign-vs-ad reconciliation check to the paid-media-state build script",
@@ -5488,7 +5519,11 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-10T13:28:18.925733+00:00",
       "archival_state": "active",
-      "id": "L-264"
+      "id": "L-264",
+      "reconciliation_notes": [
+        "evidence pruned from 237 chars to source-pointer form (Process 3.8 Step 0c, 2026-07-10)"
+      ],
+      "type": "process_change"
     },
     {
       "date": "2026-07-10",
@@ -5505,7 +5540,8 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-10T13:28:18.929727+00:00",
       "archival_state": "active",
-      "id": "L-265"
+      "id": "L-265",
+      "type": "process_change"
     },
     {
       "date": "2026-07-10",
@@ -5522,7 +5558,8 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-10T13:28:18.933692+00:00",
       "archival_state": "active",
-      "id": "L-266"
+      "id": "L-266",
+      "type": "skill_update"
     },
     {
       "date": "2026-07-10",
@@ -5539,7 +5576,8 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-10T13:28:18.937321+00:00",
       "archival_state": "active",
-      "id": "L-267"
+      "id": "L-267",
+      "type": "process_change"
     },
     {
       "date": "2026-07-10",
@@ -5556,7 +5594,8 @@
       "gate_policy_at_write": "flag",
       "created_at": "2026-07-10T13:28:18.940932+00:00",
       "archival_state": "active",
-      "id": "L-268"
+      "id": "L-268",
+      "type": "process_change"
     }
   ],
   "archived_entries": [
