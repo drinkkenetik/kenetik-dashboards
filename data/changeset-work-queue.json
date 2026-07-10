@@ -1,6 +1,6 @@
 {
- "generated": "2026-07-08T12:05:50+00:00",
- "engine_date": "2026-07-08",
+ "generated": "2026-07-10T03:11:35+00:00",
+ "engine_date": "2026-07-10",
  "mode": "shadow",
  "queues": {
   "measurement_due": [
@@ -11,7 +11,7 @@
     "department": "lifecycle-marketing",
     "status": "published",
     "due": "2026-06-28",
-    "overdue_days": 10,
+    "overdue_days": 12,
     "window_days": 60,
     "expected_impact": {
      "revenue": {
@@ -41,7 +41,7 @@
     "department": "content",
     "status": "published",
     "due": "2026-05-27",
-    "overdue_days": 42,
+    "overdue_days": 44,
     "window_days": 14,
     "expected_impact": {
      "revenue": {
@@ -71,12 +71,39 @@
     "department": "lifecycle-marketing",
     "status": "published",
     "due": "2026-07-08",
-    "overdue_days": 0,
+    "overdue_days": 2,
     "window_days": 30,
     "expected_impact": {
      "metrics_moved": [
       "active_sub_count",
       "sub_churn_active"
+     ]
+    },
+    "has_measurement_data": false
+   },
+   {
+    "id": "CS-2026-198",
+    "title": "Evergreen Offer LP \u2014 A/B test vs. Home Page as paid prospecting destination",
+    "owner": "Katie Spaller",
+    "department": "DTC-website",
+    "status": "published",
+    "due": "2026-07-10",
+    "overdue_days": 0,
+    "window_days": 30,
+    "expected_impact": {
+     "metrics_moved": [
+      "lp_level_cvr_new_visitors",
+      "d01_site_cvr"
+     ],
+     "balancing_impact": [
+      {
+       "metric": "digital_cac",
+       "expected_direction": "down"
+      },
+      {
+       "metric": "new_customer_count",
+       "expected_direction": "up"
+      }
      ]
     },
     "has_measurement_data": false
@@ -92,12 +119,12 @@
     "due": "2026-07-11"
    },
    {
-    "id": "CS-2026-196",
-    "title": "Migrate Watermelon Lime 6-Pack subscribers to 12-Pack (volume/price-neutral) + c",
+    "id": "CS-2026-197",
+    "title": "Canceled Subscription Flow (S4ng5R) Rebuild \u2014 Post-Cancel Reason-Branched Winbac",
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "published",
-    "due": "2026-07-08"
+    "due": "2026-07-12"
    },
    {
     "id": "CS-2026-198",
@@ -110,49 +137,13 @@
   ],
   "stale": [
    {
-    "id": "CS-2026-053",
-    "title": "Review Request Flow Optimization (Variant Scale + Incentive + SMS Fix)",
-    "owner": "Katie Spaller",
-    "department": "lifecycle-marketing",
-    "status": "needs_feedback",
-    "age_days": 77,
-    "threshold": "needs_feedback_digest"
-   },
-   {
-    "id": "CS-2026-062",
-    "title": "Apr 5 Cohort \u2014 Retention Intervention Package",
-    "owner": "Katie Spaller",
-    "department": "lifecycle-marketing",
-    "status": "needs_feedback",
-    "age_days": 77,
-    "threshold": "needs_feedback_digest"
-   },
-   {
     "id": "CS-2026-162",
     "title": "Genesis GM+Trainer Ketone Education Plan",
     "owner": "Brandon Dyksterhouse",
     "department": "wholesale",
     "status": "needs_feedback",
-    "age_days": 49,
+    "age_days": 51,
     "threshold": "needs_feedback_digest"
-   },
-   {
-    "id": "CS-2026-216",
-    "title": "Paid Media Sandbox \u2014 Phase 0 scaffold (data/sandbox + seeded Afternoon Switch ro",
-    "owner": "Katie Spaller",
-    "department": "paid-media",
-    "status": "approved",
-    "age_days": 13,
-    "threshold": "approved_business_days"
-   },
-   {
-    "id": "CS-2026-217",
-    "title": "Wholesale site rebuild \u2014 Dawn rebuild, Kenetik re-skin, tiered tag gating",
-    "owner": "Katie Spaller",
-    "department": "wholesale",
-    "status": "approved",
-    "age_days": 13,
-    "threshold": "approved_business_days"
    },
    {
     "id": "CS-2026-218",
@@ -160,63 +151,36 @@
     "owner": "Katie Spaller",
     "department": "DTC-website",
     "status": "draft",
-    "age_days": 9,
-    "threshold": "draft_digest"
-   },
-   {
-    "id": "CS-2026-219",
-    "title": "Graduation \u2014 Derek \"Stays Moving All Day\" IG Reel \u2192 Paid Meta Amplification",
-    "owner": "Katie Spaller",
-    "department": "paid-media",
-    "status": "draft",
-    "age_days": 9,
-    "threshold": "draft_digest"
-   },
-   {
-    "id": "CS-2026-220",
-    "title": "Graduation \u2014 Rio Hawkins \"Doesn't Leave a Shot Behind\" IG Reel \u2192 Paid Meta Ampli",
-    "owner": "Katie Spaller",
-    "department": "paid-media",
-    "status": "draft",
-    "age_days": 9,
-    "threshold": "draft_digest"
-   },
-   {
-    "id": "CS-2026-221",
-    "title": "Norwitz LP \u2014 Meta ad creative (4 concepts)",
-    "owner": "Katie Spaller",
-    "department": "paid-media",
-    "status": "draft",
-    "age_days": 9,
+    "age_days": 11,
     "threshold": "draft_digest"
    }
   ],
   "expiring": [
    {
-    "id": "CS-2026-216",
-    "title": "Paid Media Sandbox \u2014 Phase 0 scaffold (data/sandbox + seeded Afternoon Switch ro",
+    "id": "CS-2026-218",
+    "title": "Wholesale theme home: fix CTA/footer/cart text contrast, hero image display, hea",
     "owner": "Katie Spaller",
-    "department": "paid-media",
-    "status": "approved",
-    "expires_in_days": 1
-   },
-   {
-    "id": "CS-2026-217",
-    "title": "Wholesale site rebuild \u2014 Dawn rebuild, Kenetik re-skin, tiered tag gating",
-    "owner": "Katie Spaller",
-    "department": "wholesale",
-    "status": "approved",
-    "expires_in_days": 1
+    "department": "DTC-website",
+    "status": "draft",
+    "expires_in_days": 3
    }
   ]
  },
  "transitions": [
   {
+   "id": "CS-2026-053",
+   "action": "expire",
+   "from": "draft",
+   "to": "closed",
+   "outcome": "expired_unreviewed",
+   "reason": "draft for 94d >= 14d expiry"
+  },
+  {
    "id": "CS-2026-067",
    "action": "flag_data_needed",
    "from": null,
    "to": "sweep_flags += data_needed",
-   "reason": "measurement overdue 10d >= 3d with no measurement data"
+   "reason": "measurement overdue 12d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-139",
@@ -230,7 +194,7 @@
    "action": "flag_data_needed",
    "from": null,
    "to": "sweep_flags += data_needed",
-   "reason": "measurement overdue 42d >= 3d with no measurement data"
+   "reason": "measurement overdue 44d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-189",
@@ -247,23 +211,15 @@
    "reason": "derived from executed/published date + window"
   },
   {
-   "id": "CS-2026-202",
-   "action": "expire",
-   "from": "draft",
-   "to": "closed",
-   "outcome": "expired_unreviewed",
-   "reason": "draft for 19d >= 14d expiry"
-  },
-  {
    "id": "CS-2026-203",
    "action": "expire",
    "from": "draft",
    "to": "closed",
    "outcome": "expired_unreviewed",
-   "reason": "draft for 16d >= 14d expiry"
+   "reason": "draft for 18d >= 14d expiry"
   },
   {
-   "id": "CS-2026-204",
+   "id": "CS-2026-216",
    "action": "expire",
    "from": "approved",
    "to": "closed",
@@ -271,7 +227,7 @@
    "reason": "approved 15d >= 14d expiry"
   },
   {
-   "id": "CS-2026-205",
+   "id": "CS-2026-217",
    "action": "expire",
    "from": "approved",
    "to": "closed",
@@ -288,39 +244,25 @@
  ],
  "escalations": [
   {
-   "audience": "owner",
-   "owner": "Katie Spaller",
-   "cs_id": "CS-2026-053",
-   "reason": "stale_needs_feedback",
-   "message": "CS-2026-053 feedback pending 77 days. Revise or close."
-  },
-  {
-   "audience": "owner",
-   "owner": "Katie Spaller",
-   "cs_id": "CS-2026-062",
-   "reason": "stale_needs_feedback",
-   "message": "CS-2026-062 feedback pending 77 days. Revise or close."
-  },
-  {
    "audience": "devon",
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-067",
    "reason": "measurement_data_gap",
-   "message": "CS-2026-067 measurement overdue 10d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+   "message": "CS-2026-067 measurement overdue 12d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   },
   {
    "audience": "devon",
    "owner": "Brandon Dyksterhouse",
    "cs_id": "CS-2026-139",
    "reason": "measurement_data_gap",
-   "message": "CS-2026-139 measurement overdue 42d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+   "message": "CS-2026-139 measurement overdue 44d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   },
   {
    "audience": "owner",
    "owner": "Brandon Dyksterhouse",
    "cs_id": "CS-2026-162",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-162 feedback pending 49 days. Revise or close."
+   "message": "CS-2026-162 feedback pending 51 days. Revise or close."
   }
  ],
  "data_requests": [
@@ -368,19 +310,19 @@
  ],
  "stats": {
   "queue_sizes": {
-   "measurement_due": 3,
+   "measurement_due": 4,
    "measurement_approaching": 3,
-   "stale": 9,
-   "expiring": 2
+   "stale": 2,
+   "expiring": 1
   },
   "transitions": {
+   "expire": 4,
    "flag_data_needed": 2,
-   "set_measurement_due": 4,
-   "expire": 4
+   "set_measurement_due": 4
   },
   "escalations": {
-   "stale_needs_feedback": 3,
-   "measurement_data_gap": 2
+   "measurement_data_gap": 2,
+   "stale_needs_feedback": 1
   }
  },
  "measurement_pulled": []

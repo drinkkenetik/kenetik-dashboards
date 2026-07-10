@@ -1,6 +1,6 @@
 {
   "schema_version": "3.0",
-  "last_updated": "2026-07-08",
+  "last_updated": "2026-07-09T09:02:32.609472+00:00",
   "next_id": "CS-2026-227",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-07-08",
@@ -39,16 +39,16 @@
     },
     "by_risk": {
       "critical": 2,
-      "low": 78,
+      "low": 74,
       "high": 16,
       "medium": 67
     },
     "by_subtype": {
-      "implementation": 115,
-      "investigation": 15,
+      "implementation": 112,
+      "investigation": 14,
       "quick": 33
     },
-    "last_updated": "2026-07-08T08:49:25.872290+00:00",
+    "last_updated": "2026-07-09T09:02:32.597232+00:00",
     "last_counted": "2026-07-07"
   },
   "changesets": [
