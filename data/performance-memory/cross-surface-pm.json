@@ -3756,14 +3756,15 @@
       "domain": "operations",
       "evidence": "KenetikPro store decided 6/10 with no governing CS \u2014 no intake hook converts meeting-level launch decisions into ChangeSets. CS-2026-199 spawned. See daily synthesis 2026-06-11-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "CS-2026-199 closed 2026-07-02: Govern + measure the KenetikPro physician-referral Shopify store (backfill approved by Devon 2026-07-11, batch row 1)",
       "skill_files_updated": [],
       "related_entries": [],
       "target": "changeset-instructions.md intake rules + meeting-cadence.md / weekly-marketing-tag-up-recap.md (auto-flag new-workstream decisions for CS creation)",
       "entry_type": "process_change",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-07-11"
     },
     {
       "id": "L-125",
