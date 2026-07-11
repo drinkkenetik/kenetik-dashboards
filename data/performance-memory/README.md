@@ -21,6 +21,8 @@ archived_entries[]  — full detail for codified learnings (action_taken populat
 
 **Read discipline:** Daily synthesis reads the index only. Process 3.8 reads entries (active) for weekly review. Monthly calibration reads all arrays for staleness and closed-loop checks.
 
+**Documented `archived_reason` values** (2026-07-11): `acted_on` (action_taken populated ≥7d — the normal codified path, archived by the weekly cron), `expired_unactioned` (>90d, no action — Q1 policy), `closed_without_measurement` (no-learning lifecycle CS closes, archived on write), `merged_into_L-NNN` (consolidation judge absorbed the entry), `resolved_wont_act` (a human ruled via `🚫 L-NNN <reason>` that no action is warranted — resolution-without-action is a legitimate closure; the reply is preserved in `resolution_note`).
+
 **Write discipline:** Writers append a new entry to `entries` AND a corresponding one-line summary to `index` (status: "active"). Process 3.8 moves acted-on entries from `entries` to `archived_entries` and updates index status to "archived".
 
 ## How It Works

@@ -1929,9 +1929,11 @@
       "domain": "cross-surface",
       "evidence": "No science-contradiction trigger path from D16 to claims audit; approved claims can persist under contradicted science. See synthesis 2026-04-13-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "CS-2026-068 2026-04-20: Claims Repositioning: Cognitive/Neuroprotection Content Pivot",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-068"
+      ],
       "target": "brain/kenetik-brain/references/claims-compliance.md (add science-contradiction workflow); domain-16 skill (add claims-audit trigger on Tier A challenge)",
       "entry_type": "skill_update",
       "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
@@ -1939,7 +1941,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_stamped_at": "2026-07-11"
     },
     {
       "id": "L-018",
@@ -1951,9 +1954,11 @@
       "domain": "operations",
       "evidence": "Trend-detection connector 404s (3+ sessions) escalated silently; no criticality tiers defined. See synthesis 2026-04-13-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "CS-2026-091 2026-06-23: Amazon Ads L-018 Data Pipeline \u2014 Sponsored Products + Brands Search-Term Report Ingestion",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-091"
+      ],
       "target": "data-brain operational playbook (define connector criticality tiers + escalation SLAs); domain-18 skill (add 3-session-failure auto-escalate)",
       "entry_type": "threshold_calibration",
       "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
@@ -1961,7 +1966,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_stamped_at": "2026-07-11"
     },
     {
       "id": "L-019",
@@ -2220,13 +2226,17 @@
       ],
       "entry_type": "skill_update",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-100"
+      ],
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_taken": "CS-2026-100 2026-06-23: Upcoming Subscription Order Flow \u2014 Broad Refinement + Mar 2026 Cohort Branch",
+      "action_stamped_at": "2026-07-11"
     },
     {
       "id": "L-046",
@@ -2545,11 +2555,12 @@
       "domain": "operations",
       "evidence": "content_mix_targets refresh was never automated. Charlotte/Lawrence own manual update; no recurring task or trigger exists. See daily synthesis 2026-04-28-s1.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "CS-2026-155 2026-07-02: pat-017 Silent-Slip Pattern Promotion to L-NNN \u2014 Governance Loop Encoding",
       "skill_files_updated": [],
       "related_entries": [
         "L-055",
-        "L-058"
+        "L-058",
+        "CS-2026-155"
       ],
       "target": "cgo-daily-pipeline/config/task-a-scans.md (D13 instructions) -- add content_mix_targets week_start age as a hard-gate field; flag if >14d old.",
       "entry_type": "process_change",
@@ -2558,7 +2569,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'strong' -> 'moderate' (source_count=2)"
-      ]
+      ],
+      "action_stamped_at": "2026-07-11"
     },
     {
       "id": "L-061",
@@ -3067,9 +3079,11 @@
       "domain": "content",
       "evidence": "See cgo-logs/queues/performance-memory.json CP-008.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "CS-2026-161 2026-07-02: Memorial Day Cluster Master \u2014 Audience-Lock T-1 + Wedge A + Protocol Class Targeting",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-161"
+      ],
       "changeset_candidate": false,
       "changeset_note": null,
       "entry_type": "content_pattern",
@@ -3080,7 +3094,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_stamped_at": "2026-07-11"
     },
     {
       "id": "L-094",
@@ -3137,11 +3152,12 @@
       "domain": "lifecycle",
       "evidence": "Session handoff narratives compressed multi-metric campaign comparisons (open rate vs revenue per send vs LTV) into single ROAS-equivalent claims. See session-handoff-2026-05-19 \u00a74.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "CS-2026-096 2026-04-28: Trevor Viral Moment Sponsorship Graduation (Contingent on Devon 48h Decision)",
       "skill_files_updated": [],
       "related_entries": [
         "L-087",
-        "L-095"
+        "L-095",
+        "CS-2026-096"
       ],
       "target": "session-handoff template format - require explicit metric label (conv_rate vs conv_value vs RPR) when citing delta percentages on campaign comparisons",
       "reconciliation_notes": [
@@ -3151,7 +3167,8 @@
       "entry_type": "process_change",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-07-11"
     },
     {
       "id": "L-098",
@@ -3329,9 +3346,11 @@
       "domain": "website",
       "evidence": "Dept brief Phase 1.6 analysis on Clarity snapshots indicates dead-click density rises 5-10 days before measurable CVR drift. See daily synthesis 2026-05-28-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "CS-2026-191 2026-07-08: Golden Pear LP Script-Error Remediation (122/1k script errors, 4-day persistent decay)",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-191"
+      ],
       "target": "data/clarity/snapshots/ schema + funnel-diagnosis.md threshold tuning",
       "reconciliation_notes": [
         "domain 'website-cro'->'website' normalized (Process 3.8 Step 0d, 2026-06-05)"
@@ -3339,7 +3358,8 @@
       "entry_type": "skill_update",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-07-11"
     },
     {
       "id": "L-105",
@@ -3397,10 +3417,11 @@
       "domain": "operations",
       "evidence": "Three independent sources (D04 SIG-04-3, paid-media-state.json, tracker.json) confirm CS-178's pause never executed despite the narrative claiming complete. See daily synthesis 2026-05-29-s1.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "CS-2026-189 2026-06-15: Claims-Tier Coverage Mapping Infrastructure (claim_id \u2194 PMID \u2194 tier table)",
       "skill_files_updated": [],
       "related_entries": [
-        "L-098"
+        "L-098",
+        "CS-2026-189"
       ],
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md framing-guardrails \u00a74 ChangeSet cross-check \u2014 expand to require both tracker-status match AND platform-state verification before claiming execution.",
       "reconciliation_notes": [
@@ -3409,7 +3430,8 @@
       "entry_type": "process_change",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-07-11"
     },
     {
       "id": "L-108",
@@ -4116,14 +4138,17 @@
       "domain": "paid-media",
       "evidence": "content_links_populated=0 across 152 ads; flagged D08 3x prior + Paid Media this run. See synthesis 2026-06-22-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "CS-2026-223 2026-07-06: Institute forward-scheduling + category-tagging mechanism for the content calendar",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-223"
+      ],
       "target": "paid-media ingestion / ad-build checklist \u2014 require content_link at ad creation; add validator flag.",
       "entry_type": "process_change",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-07-11"
     },
     {
       "id": "L-144",
@@ -8004,5 +8029,5 @@
       "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated (IG empty-caption publish gate) and live well over 7 days \u2014 confirmed durable across 4 consecutive clean feed/reel windows per Moe's PM (SYN-20260612, 20260619, 20260706, 20260710)."
     }
   ],
-  "last_updated": "2026-07-10"
+  "last_updated": "2026-07-11"
 }
