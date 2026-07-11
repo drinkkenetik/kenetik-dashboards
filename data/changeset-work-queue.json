@@ -1,6 +1,6 @@
 {
- "generated": "2026-07-10T12:23:00+00:00",
- "engine_date": "2026-07-10",
+ "generated": "2026-07-11T11:52:14+00:00",
+ "engine_date": "2026-07-11",
  "mode": "shadow",
  "queues": {
   "measurement_due": [
@@ -11,7 +11,7 @@
     "department": "lifecycle-marketing",
     "status": "published",
     "due": "2026-06-28",
-    "overdue_days": 12,
+    "overdue_days": 13,
     "window_days": 60,
     "expected_impact": {
      "revenue": {
@@ -41,7 +41,7 @@
     "department": "content",
     "status": "published",
     "due": "2026-05-27",
-    "overdue_days": 44,
+    "overdue_days": 45,
     "window_days": 14,
     "expected_impact": {
      "revenue": {
@@ -65,13 +65,36 @@
     "has_measurement_data": false
    },
    {
+    "id": "CS-2026-186",
+    "title": "UE Subscription Winback Flow Rebuild (broken CTA / suppression / stale content a",
+    "owner": "Katie Spaller",
+    "department": "lifecycle-marketing",
+    "status": "published",
+    "due": "2026-07-11",
+    "overdue_days": 0,
+    "window_days": 30,
+    "expected_impact": {
+     "metrics_moved": [
+      "active_sub_count",
+      "sub_churn_active"
+     ],
+     "balancing_impact": "subscriber_list_engagement",
+     "L1_outcome": "[PIPELINE GAP \u2014 needs estimation]",
+     "L2_quarterly_lever": "active_sub_count L2 lever \u2014 every 1pp churn reduction = ~24 saved subs/mo against 2,801 base",
+     "L3_dept_primary": "sub_winback_conversion_rate (process; current 0.0%)",
+     "L4_learning": "Falsifies whether the winback flow is salvageable (broken link/suppression) vs structural (no offer mechanic strong enough to reverse cancellation)",
+     "L5_brand_check": "[PIPELINE GAP \u2014 blocks auto-advance until reviewed]"
+    },
+    "has_measurement_data": false
+   },
+   {
     "id": "CS-2026-196",
     "title": "Migrate Watermelon Lime 6-Pack subscribers to 12-Pack (volume/price-neutral) + c",
     "owner": "Katie Spaller",
     "department": "lifecycle-marketing",
     "status": "published",
     "due": "2026-07-08",
-    "overdue_days": 2,
+    "overdue_days": 3,
     "window_days": 30,
     "expected_impact": {
      "metrics_moved": [
@@ -88,7 +111,7 @@
     "department": "DTC-website",
     "status": "published",
     "due": "2026-07-10",
-    "overdue_days": 0,
+    "overdue_days": 1,
     "window_days": 30,
     "expected_impact": {
      "metrics_moved": [
@@ -127,12 +150,12 @@
     "due": "2026-07-12"
    },
    {
-    "id": "CS-2026-198",
-    "title": "Evergreen Offer LP \u2014 A/B test vs. Home Page as paid prospecting destination",
-    "owner": "Katie Spaller",
-    "department": "DTC-website",
+    "id": "CS-2026-202",
+    "title": "4th of July BIG QUARTERLY BEAT \u2014 Governance & Sub-Beat Linkage",
+    "owner": "Nick Lacagnina",
+    "department": "cross-functional",
     "status": "published",
-    "due": "2026-07-10"
+    "due": "2026-07-14"
    }
   ],
   "stale": [
@@ -142,7 +165,7 @@
     "owner": "Brandon Dyksterhouse",
     "department": "wholesale",
     "status": "needs_feedback",
-    "age_days": 51,
+    "age_days": 52,
     "threshold": "needs_feedback_digest"
    },
    {
@@ -151,7 +174,7 @@
     "owner": "Katie Spaller",
     "department": "DTC-website",
     "status": "draft",
-    "age_days": 11,
+    "age_days": 12,
     "threshold": "draft_digest"
    }
   ],
@@ -162,7 +185,7 @@
     "owner": "Katie Spaller",
     "department": "DTC-website",
     "status": "draft",
-    "expires_in_days": 3
+    "expires_in_days": 2
    }
   ]
  },
@@ -173,14 +196,14 @@
    "from": "draft",
    "to": "closed",
    "outcome": "expired_unreviewed",
-   "reason": "draft for 94d >= 14d expiry"
+   "reason": "draft for 95d >= 14d expiry"
   },
   {
    "id": "CS-2026-067",
    "action": "flag_data_needed",
    "from": null,
    "to": "sweep_flags += data_needed",
-   "reason": "measurement overdue 12d >= 3d with no measurement data"
+   "reason": "measurement overdue 13d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-139",
@@ -194,7 +217,7 @@
    "action": "flag_data_needed",
    "from": null,
    "to": "sweep_flags += data_needed",
-   "reason": "measurement overdue 44d >= 3d with no measurement data"
+   "reason": "measurement overdue 45d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-189",
@@ -202,6 +225,13 @@
    "from": null,
    "to": "2026-07-15",
    "reason": "derived from executed/published date + window"
+  },
+  {
+   "id": "CS-2026-196",
+   "action": "flag_data_needed",
+   "from": null,
+   "to": "sweep_flags += data_needed",
+   "reason": "measurement overdue 3d >= 3d with no measurement data"
   },
   {
    "id": "CS-2026-198",
@@ -216,6 +246,22 @@
    "from": "draft",
    "to": "closed",
    "outcome": "expired_unreviewed",
+   "reason": "draft for 19d >= 14d expiry"
+  },
+  {
+   "id": "CS-2026-204",
+   "action": "expire",
+   "from": "approved",
+   "to": "closed",
+   "outcome": "expired_unexecuted",
+   "reason": "approved 18d >= 14d expiry"
+  },
+  {
+   "id": "CS-2026-207",
+   "action": "expire",
+   "from": "draft",
+   "to": "closed",
+   "outcome": "expired_unreviewed",
    "reason": "draft for 18d >= 14d expiry"
   },
   {
@@ -224,7 +270,7 @@
    "from": "approved",
    "to": "closed",
    "outcome": "expired_unexecuted",
-   "reason": "approved 15d >= 14d expiry"
+   "reason": "approved 16d >= 14d expiry"
   },
   {
    "id": "CS-2026-217",
@@ -232,7 +278,7 @@
    "from": "approved",
    "to": "closed",
    "outcome": "expired_unexecuted",
-   "reason": "approved 15d >= 14d expiry"
+   "reason": "approved 16d >= 14d expiry"
   },
   {
    "id": "CS-2026-224",
@@ -248,21 +294,28 @@
    "owner": "Katie Spaller",
    "cs_id": "CS-2026-067",
    "reason": "measurement_data_gap",
-   "message": "CS-2026-067 measurement overdue 12d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+   "message": "CS-2026-067 measurement overdue 13d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   },
   {
    "audience": "devon",
    "owner": "Brandon Dyksterhouse",
    "cs_id": "CS-2026-139",
    "reason": "measurement_data_gap",
-   "message": "CS-2026-139 measurement overdue 44d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
+   "message": "CS-2026-139 measurement overdue 45d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   },
   {
    "audience": "owner",
    "owner": "Brandon Dyksterhouse",
    "cs_id": "CS-2026-162",
    "reason": "stale_needs_feedback",
-   "message": "CS-2026-162 feedback pending 51 days. Revise or close."
+   "message": "CS-2026-162 feedback pending 52 days. Revise or close."
+  },
+  {
+   "audience": "devon",
+   "owner": "Katie Spaller",
+   "cs_id": "CS-2026-196",
+   "reason": "measurement_data_gap",
+   "message": "CS-2026-196 measurement overdue 3d and no data source has produced measurement data. Unblock the data source or close as data_needed with notes."
   }
  ],
  "data_requests": [
@@ -287,6 +340,15 @@
    "due_since": "2026-05-27"
   },
   {
+   "cs_id": "CS-2026-196",
+   "platforms": [
+    "recharge",
+    "klaviyo"
+   ],
+   "needed": "measurement data",
+   "due_since": "2026-07-08"
+  },
+  {
    "cs_id": "CS-2026-067",
    "platforms": [
     "klaviyo"
@@ -295,6 +357,13 @@
   },
   {
    "cs_id": "CS-2026-139",
+   "platforms": [
+    "klaviyo"
+   ],
+   "needed": "klaviyo campaign id ref for API pull"
+  },
+  {
+   "cs_id": "CS-2026-186",
    "platforms": [
     "klaviyo"
    ],
@@ -310,18 +379,18 @@
  ],
  "stats": {
   "queue_sizes": {
-   "measurement_due": 4,
+   "measurement_due": 5,
    "measurement_approaching": 3,
    "stale": 2,
    "expiring": 1
   },
   "transitions": {
-   "expire": 4,
-   "flag_data_needed": 2,
+   "expire": 6,
+   "flag_data_needed": 3,
    "set_measurement_due": 4
   },
   "escalations": {
-   "measurement_data_gap": 2,
+   "measurement_data_gap": 3,
    "stale_needs_feedback": 1
   }
  },
