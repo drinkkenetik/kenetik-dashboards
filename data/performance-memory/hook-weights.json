@@ -1,0 +1,866 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Larry's hook effectiveness weights + anti-pattern avoidance state. Split out of content-producer-skill.md \u00a73 (Phase 5, 2026-07-11). Weights multiply base hook priority during selection; anti-pattern multipliers mark hooks to avoid/deprioritize on the listed platforms.",
+  "writer": "moe-weekly-performance-memory via scripts/hook_weights.py apply \u2014 never hand-edited",
+  "readers": [
+    "Larry content generation (content-producer-skill.md \u00a73 pointer)",
+    "scripts/pm_eval.py c4_d5"
+  ],
+  "migrated_from": "brain/kenetik-brain/roles/content-producer-skill.md \u00a73 @ 2026-07-11",
+  "last_updated": "2026-07-11",
+  "last_synthesis_applied": "SYN-20260710-001",
+  "update_policy": {
+    "auto_apply_max_single_change_pct": 100,
+    "hold_and_escalate": "If ANY single weight change exceeds the auto-apply cap (more than doubling/halving), hold ALL changes in the batch and DM Devon (U06528UQV7H) for CGO approval.",
+    "learning_threshold": "5+ content pieces using the hook style, >30% median NCS outperformance vs. other styles, >80% confidence."
+  },
+  "hook_weights": [
+    {
+      "id": "HW-001",
+      "name": "Sensation framing",
+      "example": "Feel the difference in 20 minutes",
+      "weight": 1.6,
+      "platforms": [
+        "all"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "last_validated": "2026-03-19",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260319-001",
+          "date": "2026-03-19",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory synthesis: 61 posts analyzed, sensation framing outperformed median NCS by >30%"
+    },
+    {
+      "id": "HW-002",
+      "name": "Science framing",
+      "example": "D-BHB ketones fuel your brain directly",
+      "weight": 1.0,
+      "platforms": [
+        "all"
+      ],
+      "confidence": "baseline",
+      "status": "active",
+      "last_validated": "2026-03-07",
+      "origin": "initial_baseline",
+      "provenance": [],
+      "rules": [],
+      "notes": "Initial \u2014 insufficient sample size for adjustment"
+    },
+    {
+      "id": "HW-003",
+      "name": "Social proof",
+      "example": "Why 10,000+ professionals switched",
+      "weight": 1.5,
+      "platforms": [
+        "all"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "last_validated": "2026-03-19",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260319-001",
+          "date": "2026-03-19",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory synthesis: social proof hooks showed consistent outperformance across platforms"
+    },
+    {
+      "id": "HW-004",
+      "name": "Problem-agitation",
+      "example": "Still relying on caffeine crashes?",
+      "weight": 1.8,
+      "platforms": [
+        "all"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "last_validated": "2026-03-19",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260319-001",
+          "date": "2026-03-19",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory synthesis: strongest performer \u2014 problem-agitation hooks hit highest NCS deltas"
+    },
+    {
+      "id": "HW-005",
+      "name": "Curiosity",
+      "example": "The one thing Navy SEALs drink before missions",
+      "weight": 1.0,
+      "platforms": [
+        "all"
+      ],
+      "confidence": "baseline",
+      "status": "active",
+      "last_validated": "2026-03-07",
+      "origin": "initial_baseline",
+      "provenance": [],
+      "rules": [],
+      "notes": "Initial \u2014 insufficient sample size for adjustment"
+    },
+    {
+      "id": "HW-006",
+      "name": "Authority",
+      "example": "Informed Sport Certified \u2014 banned substance free",
+      "weight": 1.0,
+      "platforms": [
+        "all"
+      ],
+      "confidence": "baseline",
+      "status": "active",
+      "last_validated": "2026-03-07",
+      "origin": "initial_baseline",
+      "provenance": [],
+      "rules": [],
+      "notes": "Initial \u2014 insufficient sample size for adjustment"
+    },
+    {
+      "id": "HW-007",
+      "name": "Direct benefit",
+      "example": "Clean energy. Zero crash. Zero caffeine.",
+      "weight": 0.8,
+      "platforms": [
+        "all"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-04-03",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260403-001",
+          "date": "2026-04-03",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "**REVERSED** \u2014 Performance Memory SYN-20260403: 3 TikTok posts at 0.22x median, 2 FB posts at 0.48x median. Larger sample reverses Mar 22 finding (was 1.4). Pending Devon approval."
+    },
+    {
+      "id": "HW-008",
+      "name": "Endurance lifestyle",
+      "example": "Built for athletes who refuse to quit",
+      "weight": 1.3,
+      "platforms": [
+        "instagram"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-04-03",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260403-001",
+          "date": "2026-04-03",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [
+        "FB fatigue confirmed (SYN-20260410) \u2014 reserve endurance hooks for Instagram; see anti-pattern HW-AP-005."
+      ],
+      "notes": "Performance Memory SYN-20260403: Leadville content showing fatigue on FB (0.58x median, down from 5.69x). Still strong on IG (1.87x). Reduced from 1.5 to 1.3 to reflect FB fatigue."
+    },
+    {
+      "id": "HW-009",
+      "name": "Storytelling",
+      "example": "The Leadville 100 changed everything",
+      "weight": 1.3,
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-03-22",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260322",
+          "date": "2026-03-22",
+          "resolved": false,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory synthesis (Mar 22): consistent outperformance across Instagram (5.06x, 2 posts) and Facebook (2.73x, 4 posts). Meets threshold on combined data."
+    },
+    {
+      "id": "HW-010",
+      "name": "Engagement bait",
+      "example": "Which flavor are you?",
+      "weight": 1.2,
+      "platforms": [
+        "instagram"
+      ],
+      "confidence": "low",
+      "status": "active",
+      "last_validated": "2026-03-22",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260322",
+          "date": "2026-03-22",
+          "resolved": false,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory synthesis (Mar 22): Instagram graduated post at 12.2x median. Small sample (2 posts) but strong signal \u2014 provisional weight, needs more data."
+    },
+    {
+      "id": "HW-011",
+      "name": "Contrarian",
+      "example": "The truth? You can't outrun a bad foundation",
+      "weight": 1.5,
+      "platforms": [
+        "tiktok"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "last_validated": "2026-04-17",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260417-001",
+          "date": "2026-04-17",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory SYN-20260417: **HIGH confidence \u2014 3rd consecutive cycle of validation.** 5.56% on TikTok (2.93x TT median). Upgraded from 1.3 to 1.5. Strongest TikTok-specific hook in playbook. TikTok-specific weight only."
+    },
+    {
+      "id": "HW-012",
+      "name": "Science distillation",
+      "example": "New research in Cell shows BHB...",
+      "weight": 1.4,
+      "platforms": [
+        "linkedin"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-04-10",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260410-001",
+          "date": "2026-04-10",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory SYN-20260410: LinkedIn science hooks at 15.4% avg eng (1.7x LI median). 22% on Cell BHB post. **LinkedIn-specific weight only.**"
+    },
+    {
+      "id": "HW-013",
+      "name": "Named celebrity attribution",
+      "example": "\u2014 Ashton Hall",
+      "weight": 2.0,
+      "platforms": [
+        "linkedin",
+        "facebook"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-04-17",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260417-001",
+          "date": "2026-04-17",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory SYN-20260417: Ashton Hall FB reel 6.28% engagement (1.73x FB median, 23,520 impressions) \u2014 highest single-post result in program history. Celebrity quote attribution amplifies credibility of caffeine/problem-agitation hooks. **LinkedIn and Facebook only. MEDIUM confidence \u2014 1 cycle.**"
+    },
+    {
+      "id": "HW-014",
+      "name": "Motorsports partnership story",
+      "example": "Clean energy for a dirty track\" / Cleetus Ford #30 / Rockingham / Freedom 500",
+      "weight": 1.5,
+      "platforms": [
+        "tiktok"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260501-001",
+          "date": "2026-05-01",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory SYN-20260501: 17 posts, 5.55% TikTok median engagement (2.2x TT median), top variants NCS 96-100. Pattern: authority figure + factual sport recap + KENETIK-branded asset (Cleetus #30 Ford). **TikTok-specific. MEDIUM confidence \u2014 1 cycle, but highly repeatable.**"
+    },
+    {
+      "id": "HW-015",
+      "name": "Day-in-the-life authority micro-storytelling",
+      "example": "A day in the life of [name] elevated by Kenetik",
+      "weight": 1.7,
+      "platforms": [
+        "tiktok"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260501-001",
+          "date": "2026-05-01",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [
+        "Test next cycle with Cleetus, Charlotte, Cam Jones as authority figures."
+      ],
+      "notes": "Performance Memory SYN-20260501: 3 Matt Hughes variants all hit 8.17-8.32% TikTok engagement (3.3x TT median, NCS 93.8). Same hook, three caption variants, identical NCS \u2014 visual/format does the work. **TikTok-specific. MEDIUM confidence \u2014 1 cycle.** Test next cycle with Cleetus, Charlotte, Cam Jones as authority figures."
+    },
+    {
+      "id": "HW-016",
+      "name": "Cultural moment + ketone science combo (Stress Awareness Month / Brain Awareness Week / Mental Health Awareness Month)",
+      "example": "",
+      "weight": 1.5,
+      "platforms": [
+        "linkedin",
+        "instagram"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-05-01",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260501-001",
+          "date": "2026-05-01",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [
+        "Tie ketone science to the monthly cultural calendar; LinkedIn primary, Instagram secondary."
+      ],
+      "notes": "Performance Memory SYN-20260501: April Stress Awareness Month at 18% LinkedIn (NCS 94.9). Cell BHB 22%. Brain Awareness Week 11.5%. **LinkedIn primary, Instagram secondary (April Fools science 2.24% IG). MEDIUM confidence \u2014 4 samples across 2 platforms.** Tie ketone science to monthly cultural calendar."
+    },
+    {
+      "id": "HW-017",
+      "name": "Cyclist / cycling-activation race recap",
+      "example": "Monterey in April hits different\" / \"150g carbs, 5g ketones / Cam fuels a race\" / \"POV you blink at Sea Otter",
+      "weight": 1.4,
+      "platforms": [
+        "tiktok",
+        "instagram"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-05-08",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260508-001",
+          "date": "2026-05-08",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-006",
+            "CP-012",
+            "EP-009"
+          ]
+        }
+      ],
+      "rules": [
+        "Test on Unbound (gravel) + Charlotte's events next."
+      ],
+      "notes": "Performance Memory SYN-20260508 (EP-009): 13 captioned Sea Otter posts. TikTok mean 5.04% engagement (2x TT median, n=5); IG mean 3.48% (1.5x captioned median, n=2). FB at par. YT 0% (AP-006). Same DNA as CP-012 motorsports: authority athlete + branded asset + factual event recap. **TikTok + Instagram only.** MEDIUM confidence \u2014 1 cycle. Test on Unbound (gravel) + Charlotte's events next."
+    },
+    {
+      "id": "HW-018",
+      "name": "Curiosity-bait launch teaser",
+      "example": "can't say much / best one yet\" + eye emoji + question",
+      "weight": 1.3,
+      "platforms": [
+        "facebook",
+        "instagram"
+      ],
+      "confidence": "low",
+      "status": "active",
+      "last_validated": "2026-05-08",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260508-001",
+          "date": "2026-05-08",
+          "resolved": true,
+          "pattern_ids": [
+            "EP-010"
+          ]
+        }
+      ],
+      "rules": [
+        "Reserve for product launches; the teaser alone is weak \u2014 see the launch-arc entry."
+      ],
+      "notes": "Performance Memory SYN-20260508 (EP-010): Konzentrate teaser \u2014 FB 5.29% / 3,175 imp / NCS 42 (1.46x FB median); IG 2.18% / 7,331 imp (just below median). **Facebook primary, Instagram secondary.** LOW confidence \u2014 1 post / 2 platform variants. Reserve for product launches. Test 4-5 launch teasers next cycle."
+    },
+    {
+      "id": "HW-019",
+      "name": "Multi-post product launch arc (mystery teaser \u2192 reveal \u2192 date-lock + countdown \u2014 3+ sequenced posts over 5-7 days)",
+      "example": "",
+      "weight": 1.8,
+      "platforms": [
+        "instagram",
+        "facebook",
+        "tiktok",
+        "linkedin"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "last_validated": "2026-06-12",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260522-001",
+          "date": "2026-05-22",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-010",
+            "CP-015",
+            "EP-010",
+            "EP-013",
+            "EP-014"
+          ]
+        },
+        {
+          "synthesis_id": "SYN-20260531-001",
+          "date": "2026-05-31",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-010",
+            "CP-015",
+            "EP-010",
+            "EP-013",
+            "EP-014"
+          ]
+        },
+        {
+          "synthesis_id": "SYN-20260612-001",
+          "date": "2026-06-12",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-010",
+            "CP-015",
+            "EP-010",
+            "EP-013",
+            "EP-014"
+          ]
+        }
+      ],
+      "rules": [
+        "Minimum 3 posts over a 5-7 day arc with narrative escalation: (1) mystery + drop date implied, (2) visual reveal + product name implied, (3) named product + explicit date-lock + scarcity.",
+        "Always include a LinkedIn image+copy beat in the launch arc (SYN-20260531).",
+        "Giveaway/sweepstakes mechanics amplify only INSIDE the arc \u2014 never as decontextualized standalone blasts (EP-013).",
+        "After the date-lock, extend the arc with PARTICIPATION beats (hide -> hunt -> winner announcement with live scarcity count) \u2014 never another 'it's here' repost (EP-014, 2nd-cycle)."
+      ],
+      "notes": "Performance Memory SYN-20260522 (NEW CP-015): Golden Pear launch arc \u2014 9 posts across IG/FB/TT/LinkedIn over May 1-6, 4 of 9 hit NCS 100. FB Reel step 2 (\"New look. New flavor. New obsession. Coming soon.\") = 41,043 imp / 3,148 eng / 7.67% ER / NCS 100 \u2014 largest single-post FB engagement event since CP-010 Ashton Hall. IG step 3 (\"Some of you guessed it. Golden Pear is here. May 13th.\") = 21,105 imp / 712 eng / 3.37% / NCS 100. LinkedIn launch teaser hit 11.11% engagement (n=1). The teaser ALONE is weak (EP-010 stayed LOW confidence last cycle); the FULL ARC is what crosses NCS 100. **Cross-platform (IG/FB/TT/LinkedIn). HIGH confidence \u2014 9-post validation across 4 platforms.** Promotes EP-010 to confirmed CP-015. Template for Larry: minimum 3 posts, 5-7 day arc, narrative escalation = (1) mystery + drop date implied, (2) visual reveal + product name implied, (3) named product + explicit date-lock + scarcity (\"limited run\"). Test on next flavor drop and next product launch. **UPDATE SYN-20260531: arc CONFIRMED on LinkedIn \u2014 Golden Pear sweepstakes posts drove LI new-window median to 18.22% (n=5), incl. 'Day 2 of the Golden Pear Sweepstakes' 36.65% and 'To every mom\u2026' 35.64%. Always include a LinkedIn image+copy beat in the launch arc. CAVEAT (EP-013): the sweepstakes mechanic only amplifies INSIDE the arc \u2014 standalone 'WANT TO WIN BIG' reposts landed NCS 7-23. Frame giveaways as part of the launch narrative, never as decontextualized blasts. UPDATE SYN-20260612 (EP-014 \u2192 MEDIUM, 2nd-cycle validation): after the date-lock, extend the arc with PARTICIPATION beats \u2014 hide \u2192 hunt \u2192 winner announcement with live scarcity count ('We have our first winner\u2026 4 still out there') hit FB 5.98% / NCS 97.3 and IG 3.08% / NCS 99.2 \u2014 never another 'it's here' repost (this window's boosted flavor-drop reposts ran 191K/42K/34K imp at 0.35\u20131.34% ER).**"
+    },
+    {
+      "id": "HW-020",
+      "name": "Cultural-moment remembrance, NO commerce CTA",
+      "example": "This MDW, we're remembering and honoring\u2026",
+      "weight": 1.5,
+      "platforms": [
+        "facebook",
+        "instagram",
+        "tiktok"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-06-12",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260612-001",
+          "date": "2026-06-12",
+          "resolved": true,
+          "pattern_ids": [
+            "EP-015"
+          ]
+        }
+      ],
+      "rules": [
+        "On solemn cultural moments (Memorial Day, 9/11, Veterans Day) lead with a no-CTA remembrance post; run commerce/donation mechanics as SEPARATE posts judged on conversion, not ER."
+      ],
+      "notes": "Performance Memory SYN-20260612 (NEW EP-015): pure MDW remembrance reels hit FB 6.67% / 114,873 imp (largest organic FB engagement event of the cycle), IG 6.18% / 77,475 imp, TT 5.48%. The SAME moment with donation/discount CTA (Grey Team 5% + GOVX 30%) landed 1.74\u20132.52% \u2014 a ~3x gap. **Cross-platform (FB/IG/TT). MEDIUM confidence \u2014 1 cycle, exceptional reach evidence.** RULE: on solemn cultural moments (Memorial Day, 9/11, Veterans Day), lead with a no-CTA remembrance post; run commerce/donation mechanics as SEPARATE posts judged on conversion, not ER."
+    },
+    {
+      "id": "HW-021",
+      "name": "Afternoon cognitive-slump problem-agitation",
+      "example": "Three o'clock and the doc you opened at noon is still blank. That's not a discipline problem\u2026",
+      "weight": 1.6,
+      "platforms": [
+        "facebook"
+      ],
+      "confidence": "low",
+      "status": "active",
+      "last_validated": "2026-06-19",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260619-001",
+          "date": "2026-06-19",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-008",
+            "EP-016"
+          ]
+        }
+      ],
+      "rules": [
+        "Belongs to the Problem-agitation family; respect the AP-008 same-body 1x/7d cap when scaling.",
+        "Test on IG/TT and isolate time-of-day next cycle."
+      ],
+      "notes": "Performance Memory SYN-20260619 (NEW EP-016): white-collar/Protocol Class problem-agitation hook naming the 3pm knowledge-work slump and reframing it as a fuel problem (distinct from the caffeine-crash frame). 10 FB placements; best variants NCS 100 at 1.96\u20133.77% ER, but a same-body Jun 3 batch scored NCS 30\u201359 \u2014 **cadence/timing, not the hook, drives the spread.** **Facebook only. LOW confidence \u2014 1 cycle, FB-only.** Belongs to the Problem-agitation family (1.8). Respect the AP-008 same-body 1x/7d cap when scaling; test on IG/TT and isolate time-of-day next cycle."
+    },
+    {
+      "id": "HW-022",
+      "name": "Named-athlete/individual storytelling on OWNED Instagram + Facebook",
+      "example": "Razo Rob said it best\u2026\" / \"Everybody's asking Derek\u2026\" / \"Adam sets up a table for everyone else",
+      "weight": 1.5,
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-07-10",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260706-001",
+          "date": "2026-07-06",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-012",
+            "EP-018"
+          ]
+        },
+        {
+          "synthesis_id": "SYN-20260710-001",
+          "date": "2026-07-10",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-012",
+            "EP-018"
+          ]
+        }
+      ],
+      "rules": [
+        "Owned surfaces only; do NOT route this hook to LinkedIn (falsified SYN-20260710).",
+        "Owned TikTok is the one untested surface \u2014 test next cycle."
+      ],
+      "notes": "Performance Memory SYN-20260706 (NEW EP-018): owned IG feed posts that open on a specific named athlete/ambassador + narrate their routine with Kenetik as fuel all hit NCS 100 \u2014 Razo Rob 23.6% ER / 2,451 imp, Derek 8.0% ER / 8,940 imp (highest-reach IG winner), Rio Hawkins 7.6% / 1,819 imp. Generic brand statements without a named protagonist sat at/below the 3.60% IG median. Owned-IG mirror of the TikTok day-in-life (1.7x) + motorsports (CP-012) families. **Instagram (owned) only. MEDIUM-LOW confidence \u2014 1 cycle.** Test the named-individual open on TikTok/FB owned next cycle. **UPDATE SYN-20260710 (2nd cycle): confirmed on IG (NCS 100 / 8,591 imp), EXTENDS to owned FB (NCS 92.6), FALSIFIED on LinkedIn (identical body NCS 14.4) \u2192 confidence MEDIUM. Generalizes from athlete-routine to helper/community narrative (\"Adam sets up a table for everyone else\"). Scope: Instagram + Facebook owned; do NOT route this hook to LinkedIn. Owned TikTok still the one untested surface.**"
+    }
+  ],
+  "anti_patterns": [
+    {
+      "id": "HW-AP-001",
+      "name": "Social proof + science hybrid",
+      "example": "",
+      "platforms": [
+        "tiktok"
+      ],
+      "multiplier": 0.47,
+      "confidence": "high",
+      "status": "active",
+      "last_validated": "2026-03-22",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260322",
+          "date": "2026-03-22",
+          "resolved": false,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory (Mar 22): 4 posts, consistently underperformed median by >50%. Avoid on TikTok."
+    },
+    {
+      "id": "HW-AP-002",
+      "name": "Protocol-forward",
+      "example": "Add to your daily protocol",
+      "platforms": [
+        "tiktok"
+      ],
+      "multiplier": 0.61,
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-03-22",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260322",
+          "date": "2026-03-22",
+          "resolved": false,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory (Mar 22): 3 posts, 39% below median. Too niche for TikTok discovery algorithm."
+    },
+    {
+      "id": "HW-AP-003",
+      "name": "Direct benefit \"brain fuel\"",
+      "example": "",
+      "platforms": [
+        "tiktok"
+      ],
+      "multiplier": 0.22,
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-04-03",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260403-001",
+          "date": "2026-04-03",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory (Apr 3): 3 TikTok posts at 0.49% engagement (0.22x median). **REVERSED from prior winner.** Larger sample invalidated Mar 22 finding."
+    },
+    {
+      "id": "HW-AP-004",
+      "name": "Direct benefit \"brain fuel\"",
+      "example": "",
+      "platforms": [
+        "facebook"
+      ],
+      "multiplier": 0.48,
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-04-03",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260403-001",
+          "date": "2026-04-03",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory (Apr 3): 2 FB posts at 1.78% engagement (0.48x median). Below median on both major platforms."
+    },
+    {
+      "id": "HW-AP-005",
+      "name": "Endurance lifestyle (generic)",
+      "example": "",
+      "platforms": [
+        "facebook"
+      ],
+      "multiplier": 0.57,
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-04-10",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260322",
+          "date": "2026-03-22",
+          "resolved": false,
+          "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260410-001",
+          "date": "2026-04-10",
+          "resolved": true,
+          "pattern_ids": []
+        }
+      ],
+      "rules": [],
+      "notes": "Performance Memory (Apr 10): Endurance hooks dropped from 5.69x (Mar 22) to below FB median. HYROX Canc\u00fan at 2.05% vs 3.62% median. Fatigue confirmed \u2014 reserve for Instagram."
+    },
+    {
+      "id": "HW-AP-006",
+      "name": "YouTube cross-post of FB/IG/TT short content",
+      "example": "",
+      "platforms": [
+        "youtube"
+      ],
+      "multiplier": 0.0,
+      "confidence": "high",
+      "status": "active",
+      "last_validated": "2026-05-22",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260501-001",
+          "date": "2026-05-01",
+          "resolved": true,
+          "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260508-001",
+          "date": "2026-05-08",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-006"
+          ]
+        },
+        {
+          "synthesis_id": "SYN-20260522-001",
+          "date": "2026-05-22",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-006"
+          ]
+        }
+      ],
+      "rules": [
+        "HARD PAUSE on automated YT cross-posting until a purpose-built vertical (native 5-15 min long-form) is funded \u2014 decisive across 4 synthesis cycles."
+      ],
+      "notes": "Performance Memory (May 1): 6 YouTube cross-posts in window at 0.32% median engagement vs ~2.5% baseline expectation. YouTube needs native long-form (5-15 min) hooks. **STOP YouTube cross-posting until a real long-form strategy exists.**\n---\nPerformance Memory SYN-20260508 (AP-006 confirmed): 8 cumulative YT cross-posts across 2 cycles, all near-zero engagement. New cycle added 2 more (Sea Otter Monterey + Cam fuels) at 0 reported imp / 0% eng. **STOP YouTube cross-posting until a real long-form strategy exists.**\n---\nPerformance Memory SYN-20260522 (AP-006 confirmed 4th cycle): 8 YT posts in window, median 0.00%, mean 0.24%. 4 cycles of evidence is decisive \u2014 **HARD PAUSE recommended on automated YT cross-post until purpose-built vertical funded.**"
+    },
+    {
+      "id": "HW-AP-007",
+      "name": "No caption / Amazon listing text on Instagram",
+      "example": "",
+      "platforms": [
+        "instagram"
+      ],
+      "multiplier": 0.05,
+      "confidence": "high",
+      "status": "resolved",
+      "last_validated": "2026-06-19",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260619-001",
+          "date": "2026-06-19",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-001"
+          ]
+        }
+      ],
+      "rules": [
+        "Empty-caption publish gate is holding (2 consecutive clean feed/reel windows, SYN-20260619) \u2014 keep a passive monitor only; IG Stories are caption-free by design and tracked separately."
+      ],
+      "notes": "Performance Memory (May 8): 20 new captionless IG posts in 8 days (cumulative 110+, AP-001 worsened 3rd consecutive cycle) at <0.5% engagement. **Block IG publish at workflow level if caption < 50 chars. Re-escalated to Devon \u2014 fix workflow this week.** **UPDATE SYN-20260619: 2ND CONSECUTIVE CLEAN feed/reel window \u2014 6/6 eligible IG feed/reel captioned (median 3.53%); the 24 captionless items are IG STORIES (caption-free by design, tracked separately). The empty-caption publish gate is holding \u2192 DOWNGRADE feed/reel captionless to RESOLVED; keep a passive monitor only.**"
+    },
+    {
+      "id": "HW-AP-008",
+      "name": "Same-day giveaway variant saturation (>1 variant of same offer per platform per day)",
+      "example": "",
+      "platforms": [
+        "facebook"
+      ],
+      "multiplier": 0.62,
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-05-08",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260508-001",
+          "date": "2026-05-08",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-007"
+          ]
+        }
+      ],
+      "rules": [
+        "Max 1 giveaway-mechanic post per platform per day; stagger variants 24-48h apart.",
+        "Larry's content scheduler must enforce a 24h same-offer cooldown on FB."
+      ],
+      "notes": "Performance Memory SYN-20260508 (AP-007): Cam Jones Unbound giveaway 4 FB variants on Apr 17 \u2014 combined 24,750 imp (huge reach) but 2.27% mean engagement (0.62x FB median), all variants NCS<35. Same hook in single-post form last cycle hit 11.11% / NCS 91.2. Frequency, not the hook, was the failure. **RULE: max 1 giveaway-mechanic post per platform per day; stagger variants 24-48h apart. Larry's content scheduler must enforce a 24h same-offer cooldown on FB.**"
+    },
+    {
+      "id": "HW-AP-009",
+      "name": "Automated bulk-publish of identical retail/PR copy on Facebook (>1 identical body per platform per day, same-second cluster)",
+      "example": "",
+      "platforms": [
+        "facebook"
+      ],
+      "multiplier": 0.0,
+      "confidence": "high",
+      "status": "active",
+      "last_validated": "2026-05-22",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260522-001",
+          "date": "2026-05-22",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-007",
+            "AP-010"
+          ]
+        }
+      ],
+      "rules": [
+        "Deduplicate post bodies per-platform per-day BEFORE publish; cap same-body variants at 1/24h (extends the AP-007 rule to body text).",
+        "Identify and disable the auto-poster producing same-second clusters \u2014 FB spam detection suppresses entire batches (most severe FB anti-pattern in the program)."
+      ],
+      "notes": "Performance Memory SYN-20260522 (NEW AP-010): 12 identical \"Find Kenetik at Dierbergs!\" FB posts published within 3 seconds (May 6 20:57:21-24Z) \u2014 ALL 12 lifetime.impressions=0. 14 identical \"Kenetik's a disruptor in the healthy energy drink market\" FB posts published within 14 seconds (May 5 17:47:42-18:01:33Z) \u2014 ALL 14 lifetime.impressions=0. 26 zero-reach FB posts in 5 days. FB spam detection flagged the cluster pattern and suppressed entire batches. **MOST SEVERE FB anti-pattern in the program.** Level-2 Remove fix: deduplicate post bodies per-platform per-day BEFORE publish; cap same-body variants at 1/24h (extends AP-007 rule to body text, not just giveaway mechanics). Identify and disable the auto-poster producing these clusters."
+    },
+    {
+      "id": "HW-AP-010",
+      "name": "Cart-recovery / transactional email copy on organic social ('\ud83d\udea8 Forgot something? Transform your tomorrow, today. Check out now\u2026')",
+      "example": "",
+      "platforms": [
+        "facebook"
+      ],
+      "multiplier": 0.0,
+      "confidence": "medium",
+      "status": "active",
+      "last_validated": "2026-05-31",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260531-001",
+          "date": "2026-05-31",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-011"
+          ]
+        }
+      ],
+      "rules": [
+        "Transactional/cart-recovery copy belongs in Klaviyo email/SMS + paid retargeting ONLY \u2014 never organic social; Larry's queue must reject transactional-CTA bodies on organic surfaces."
+      ],
+      "notes": "Performance Memory SYN-20260531 (NEW AP-011): 3 FB cart-recovery posts at NCS 5 / 0% ER / 10-88 imp. Abandoned-cart and checkout-CTA copy has no social hook and the feed algorithm ignores the hard transactional CTA. **RULE: transactional/cart-recovery copy belongs in Klaviyo email/SMS + paid retargeting ONLY \u2014 never organic social. Larry's queue must reject transactional-CTA bodies on organic surfaces.**"
+    }
+  ]
+}
