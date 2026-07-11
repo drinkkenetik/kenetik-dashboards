@@ -15,6 +15,10 @@ on:
       - 'changeset-dashboard.html'
       - 'validate-changeset-tracker.py'
       - 'validate-dashboard-stats.py'
+      - 'website-experiment-dashboard.html'
+      - 'kenetik-network-viewer.html'
+      - 'surface-registry.json'
+      - 'validate-surface-registry.py'
   pull_request:
     branches: [main]
 
@@ -115,3 +119,24 @@ jobs:
         run: |
           echo "## ✅ Dashboard Statistics Validation Passed" >> $GITHUB_STEP_SUMMARY
           echo "Every displayed statistic reproduced from the four data products; contract clean; one attention derivation." >> $GITHUB_STEP_SUMMARY
+
+  validate-surface-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Surface registry gate (P4-T5) — every deployed HTML must be registered
+        run: python3 validate-surface-registry.py --registry surface-registry.json --html *.html
+
+      - name: Post failure summary
+        if: failure()
+        run: |
+          echo "## ❌ Surface Registry Gate Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "A root-level HTML surface is not registered in surface-registry.json with a deployable status." >> $GITHUB_STEP_SUMMARY
+          echo "The registry is canonical in kgs at architecture/reporting/surface-registry.json (this repo's copy is a sync target — edit it there)." >> $GITHUB_STEP_SUMMARY
