@@ -2,18 +2,35 @@
   "_comment": "P4-T5 surface registry — one row per reporting surface. Deploy gates: publish-board-portal.yml (kgs) and validate-dashboard.yml (kenetik-dashboards) fail the build if a deployed HTML is not registered here with status 'deployed'. The kenetik-dashboards copy of this file is a pure sync target (sync-website-state-to-dashboards.yml); edit only in kgs architecture/reporting/.",
   "version": "1.0",
   "updated": "2026-07-11",
-  "statuses": ["deployed", "repo-only", "retired-from-deploy", "pending-retirement-decision"],
+  "statuses": [
+    "deployed",
+    "repo-only",
+    "retired-from-deploy",
+    "pending-retirement-decision"
+  ],
   "surfaces": [
     {
       "id": "board-portal",
       "name": "Board Intelligence Portal",
       "repo": "kenetik-growth-system",
       "path": "portal/board-intelligence-portal.html",
-      "aliases": ["index.html"],
+      "aliases": [
+        "index.html"
+      ],
       "url": "Cloudflare Pages root (Access-gated), also /portal/board-intelligence-portal.html",
       "owner": "Devon Price",
       "purpose": "Board/investor-facing intelligence: financials, cohorts, subscriptions, wholesale (incl. AR), creators, milestones.",
-      "data_sources": ["data/board-portal/*", "data/metrics/reporting-state.json", "data/shopify-cohorts/cohort-state.json", "data/subscriptions/subscription-state.json", "data/wholesale/*", "data/creator-roster/creator-roster-data.json", "data/reengagement/reengagement-data.json", "cgo-logs/changesets/tracker.json", "cgo-logs/running-log.json"],
+      "data_sources": [
+        "data/board-portal/*",
+        "data/metrics/reporting-state.json",
+        "data/shopify-cohorts/cohort-state.json",
+        "data/subscriptions/subscription-state.json",
+        "data/wholesale/*",
+        "data/creator-roster/creator-roster-data.json",
+        "data/reengagement/reengagement-data.json",
+        "cgo-logs/changesets/tracker.json",
+        "cgo-logs/running-log.json"
+      ],
       "refresh_cadence": "push-triggered + daily 11:30 UTC republish",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
@@ -26,7 +43,14 @@
       "url": "/scoreboard.html and /portal/scoreboard.html",
       "owner": "Devon Price",
       "purpose": "Weekly-review scoreboard: L1-L3 metric trajectories vs targets, ChangeSet activity, wholesale detail.",
-      "data_sources": ["data/metrics/reporting-state.json", "data/metrics/current-state.json (L2/L3 rows — P4-T7 migration pending)", "data/metrics/milestones.json", "data/wholesale/*", "cgo-logs/changesets/tracker.json", "portal/components/metric-defs.js"],
+      "data_sources": [
+        "data/metrics/reporting-state.json",
+        "data/metrics/current-state.json (L2/L3 rows — P4-T7 migration pending)",
+        "data/metrics/milestones.json",
+        "data/wholesale/*",
+        "cgo-logs/changesets/tracker.json",
+        "portal/components/metric-defs.js"
+      ],
       "refresh_cadence": "weekly Monday refresh (scoreboard-weekly-refresh.yml) + daily republish",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
@@ -39,7 +63,12 @@
       "url": "/ops-dashboard.html and /portal/ops-dashboard.html",
       "owner": "Devon Price",
       "purpose": "Daily operational surface: paid media (P3-T1 rescue incl. fatigue flags), VoC, subscriptions, Amazon honest-blank.",
-      "data_sources": ["data/paid-media/paid-media-state.json", "data/voc/voc-state.json", "data/subscriptions/subscription-state.json", "data/metrics/reporting-state.json"],
+      "data_sources": [
+        "data/paid-media/paid-media-state.json",
+        "data/voc/voc-state.json",
+        "data/subscriptions/subscription-state.json",
+        "data/metrics/reporting-state.json"
+      ],
       "refresh_cadence": "daily (exec BI chain ~6:00 ET) + daily 11:30 UTC republish",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
@@ -52,7 +81,9 @@
       "url": "/trends.html and /portal/trends.html",
       "owner": "Devon Price",
       "purpose": "ISO-week medians of the daily digest metrics (P3-T3/T4); 26-week rolling window.",
-      "data_sources": ["data/metrics/weekly-trends.json"],
+      "data_sources": [
+        "data/metrics/weekly-trends.json"
+      ],
       "refresh_cadence": "weekly (self-triggering refresh in scoreboard-weekly-refresh.yml)",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
@@ -65,11 +96,16 @@
       "url": "/marketing-dashboard.html and /portal/marketing-dashboard.html",
       "owner": "Nick (maintained by Devon)",
       "purpose": "Campaign/content/task view for the marketing team (BIG CAMPAIGNS + content calendar + team tasks + retail).",
-      "data_sources": ["data/marketing-calendar/marketing-calendar-data.json", "data/content/content-calendar-data.json", "data/tasks/team-tasks.json", "data/retail/retail-channels.json"],
+      "data_sources": [
+        "data/marketing-calendar/marketing-calendar-data.json",
+        "data/content/content-calendar-data.json",
+        "data/tasks/team-tasks.json",
+        "data/retail/retail-channels.json"
+      ],
       "refresh_cadence": "daily (Task 2a writes calendar; team edits ad hoc) + daily republish",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed",
-      "note": "P4-T4 investigation open: overlap with marketing-calendar-dashboard.html — merge recommendation with Devon"
+      "note": "P4-T4/T4b resolved: marketing-calendar-dashboard.html retired to a redirect stub pointing here; Calendar tab is the canonical calendar viewer."
     },
     {
       "id": "marketing-calendar-dashboard",
@@ -78,12 +114,14 @@
       "path": "portal/marketing-calendar-dashboard.html",
       "url": "/marketing-calendar-dashboard.html and /portal/marketing-calendar-dashboard.html",
       "owner": "Nick (maintained by Devon)",
-      "purpose": "Calendar-first view of parent campaigns + sub-beats; carries embedded JSON snapshot (1.5 MB).",
-      "data_sources": ["data/marketing-calendar/marketing-calendar-data.json", "embedded JSON snapshot"],
-      "refresh_cadence": "daily republish; embedded snapshot updates on regeneration only",
+      "purpose": "Redirect stub to marketing-dashboard.html (calendar editor retired 2026-07-11, P4-T4b; bookmarks preserved).",
+      "data_sources": [
+        "none (redirect stub)"
+      ],
+      "refresh_cadence": "static (daily republish)",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed",
-      "note": "P4-T4 investigation open: merge/externalize-embedded-JSON recommendation with Devon"
+      "note": "P4-T4b executed: editor retired; marketing-dashboard.html Calendar tab is the canonical viewer. Row retained because the dist gate checks deployed basenames."
     },
     {
       "id": "kgs-system-map",
@@ -93,7 +131,9 @@
       "url": "/kgs-system-map.html and /portal/kgs-system-map.html",
       "owner": "Devon Price",
       "purpose": "Static visual map of the KGS pipeline/architecture for orientation.",
-      "data_sources": ["self-contained (embedded)"],
+      "data_sources": [
+        "self-contained (embedded)"
+      ],
       "refresh_cadence": "manual (edited when architecture changes)",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
@@ -106,7 +146,10 @@
       "url": "/app/wholesale-admin.html",
       "owner": "Devon Price",
       "purpose": "Authed input app for wholesale account edits; writes to Supabase (read-only portal rule does not apply).",
-      "data_sources": ["Supabase (writes)", "data/wholesale/*"],
+      "data_sources": [
+        "Supabase (writes)",
+        "data/wholesale/*"
+      ],
       "refresh_cadence": "interactive",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
@@ -132,7 +175,9 @@
       "url": "none (repo only)",
       "owner": "Devon Price",
       "purpose": "Ad-hoc relationship/connections tracker prototype; never wired into the deploy.",
-      "data_sources": ["data/connections-tracker/state.json"],
+      "data_sources": [
+        "data/connections-tracker/state.json"
+      ],
       "refresh_cadence": "manual",
       "deploy": "none",
       "status": "repo-only"
@@ -145,7 +190,9 @@
       "url": "none (repo only)",
       "owner": "Devon Price",
       "purpose": "Modash-fed creator capacity planning prototype; never wired into the deploy.",
-      "data_sources": ["data/creator-capacity-planner/state.json"],
+      "data_sources": [
+        "data/creator-capacity-planner/state.json"
+      ],
       "refresh_cadence": "manual",
       "deploy": "none",
       "status": "repo-only"
@@ -158,7 +205,10 @@
       "url": "GitHub Pages (kenetik-dashboards) root",
       "owner": "Devon Price",
       "purpose": "Build-state view of the 12 roles / 98 processes in the KGS Virtual Team spec.",
-      "data_sources": ["system-state.json (pure sync target from kgs — P4-T1)", "system-state-definitions.json"],
+      "data_sources": [
+        "system-state.json (pure sync target from kgs — P4-T1)",
+        "system-state-definitions.json"
+      ],
       "refresh_cadence": "on system-state.json sync",
       "deploy": "GitHub Pages (kenetik-dashboards)",
       "status": "deployed"
@@ -171,7 +221,12 @@
       "url": "GitHub Pages (kenetik-dashboards)",
       "owner": "Devon Price",
       "purpose": "ChangeSet pipeline view: tracker statuses, work queue, impact rollup (D3 rewrite, D4-gated).",
-      "data_sources": ["data/changeset-tracker.json", "data/changeset-work-queue.json", "data/changeset-impact-rollup.json", "data/_schema-constants.json"],
+      "data_sources": [
+        "data/changeset-tracker.json",
+        "data/changeset-work-queue.json",
+        "data/changeset-impact-rollup.json",
+        "data/_schema-constants.json"
+      ],
       "refresh_cadence": "on tracker sync (sync-tracker-to-dashboards.yml)",
       "deploy": "GitHub Pages (kenetik-dashboards)",
       "status": "deployed"
@@ -184,7 +239,11 @@
       "url": "GitHub Pages (kenetik-dashboards)",
       "owner": "Devon Price",
       "purpose": "Auto-optimize experiment surfaces: state, clarity snapshots, website-state trends.",
-      "data_sources": ["data/website-state.json", "data/auto-optimize/state.json", "data/clarity/snapshots/*"],
+      "data_sources": [
+        "data/website-state.json",
+        "data/auto-optimize/state.json",
+        "data/clarity/snapshots/*"
+      ],
       "refresh_cadence": "on website-state/clarity syncs",
       "deploy": "GitHub Pages (kenetik-dashboards)",
       "status": "deployed"
@@ -197,7 +256,9 @@
       "url": "GitHub Pages (kenetik-dashboards)",
       "owner": "Devon Price",
       "purpose": "Mermaid network diagrams of KGS roles/processes (network-diagrams/*.mermaid).",
-      "data_sources": ["network-diagrams/*.mermaid"],
+      "data_sources": [
+        "network-diagrams/*.mermaid"
+      ],
       "refresh_cadence": "manual",
       "deploy": "GitHub Pages (kenetik-dashboards)",
       "status": "pending-retirement-decision",
