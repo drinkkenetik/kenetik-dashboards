@@ -1,7 +1,7 @@
 {
   "_comment": "P4-T5 surface registry — one row per reporting surface. Deploy gates: publish-board-portal.yml (kgs) and validate-dashboard.yml (kenetik-dashboards) fail the build if a deployed HTML is not registered here with status 'deployed'. The kenetik-dashboards copy of this file is a pure sync target (sync-website-state-to-dashboards.yml); edit only in kgs architecture/reporting/.",
   "version": "1.0",
-  "updated": "2026-07-11",
+  "updated": "2026-07-12",
   "statuses": [
     "deployed",
     "repo-only",
@@ -10,14 +10,35 @@
   ],
   "surfaces": [
     {
+      "id": "reporting-hub",
+      "name": "Reporting Hub",
+      "repo": "kenetik-growth-system",
+      "path": "portal/index.html",
+      "aliases": [
+        "index.html"
+      ],
+      "url": "Cloudflare Pages root (Access-gated) — the single front door; deployed as index.html",
+      "owner": "Devon Price",
+      "purpose": "Entry hub: one landing page routing every audience (board, executive weekly, daily ops, departments) to its surface, with per-surface data-freshness dots.",
+      "data_sources": [
+        "data/metrics/reporting-state.json",
+        "data/metrics/weekly-trends.json",
+        "data/paid-media/paid-media-state.json",
+        "data/marketing-calendar/marketing-calendar-data.json",
+        "data/wholesale/wholesale-state.json",
+        "data/creator-roster/creator-roster-data.json",
+        "cgo-logs/changesets/tracker.json"
+      ],
+      "refresh_cadence": "static page + daily 11:30 UTC republish (freshness dots read live from data files)",
+      "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
+      "status": "deployed"
+    },
+    {
       "id": "board-portal",
       "name": "Board Intelligence Portal",
       "repo": "kenetik-growth-system",
       "path": "portal/board-intelligence-portal.html",
-      "aliases": [
-        "index.html"
-      ],
-      "url": "Cloudflare Pages root (Access-gated), also /portal/board-intelligence-portal.html",
+      "url": "/portal/board-intelligence-portal.html (Access-gated); reached from the hub's Board Room",
       "owner": "Devon Price",
       "purpose": "Board/investor-facing intelligence: financials, cohorts, subscriptions, wholesale (incl. AR), creators, milestones.",
       "data_sources": [
