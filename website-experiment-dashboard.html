@@ -1118,6 +1118,15 @@
     </style>
 </head>
 <body>
+<!-- [P5-T4] Cross-world nav — static copy of kenetik-growth-system portal/components/nav-header.js; keep in sync. -->
+<style>
+  .kgs-xnav{display:flex;flex-wrap:wrap;gap:2px 3px;align-items:center;font:600 12.5px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:8px 12px;background:#fff;border-bottom:1px solid rgba(20,20,32,.10);}
+  .kgs-xnav a,.kgs-xnav .cur{padding:5px 9px;border-radius:7px;text-decoration:none;color:#5A5B66;}
+  .kgs-xnav a:hover{background:rgba(20,20,32,.06);color:#16161D;}
+  .kgs-xnav .cur{background:#1E1230;color:#fff;}
+  .kgs-xnav .sep{color:#C9CAD2;}
+</style>
+<nav class="kgs-xnav" aria-label="Reporting surfaces"><a href="https://kenetik-board-portal.pages.dev/">Home</a><span class="sep">·</span><a href="https://kenetik-board-portal.pages.dev/portal/board-intelligence-portal.html">Board</a><span class="sep">·</span><a href="https://kenetik-board-portal.pages.dev/scoreboard.html">Scoreboard</a><span class="sep">·</span><a href="https://kenetik-board-portal.pages.dev/ops-dashboard.html">Ops</a><span class="sep">·</span><a href="https://kenetik-board-portal.pages.dev/trends.html">Trends</a><span class="sep">·</span><a href="https://kenetik-board-portal.pages.dev/marketing-dashboard.html">Marketing</a><span class="sep">·</span><a href="changeset-dashboard.html">ChangeSets</a></nav>
     <div class="dashboard">
         <header>
             <div class="header-left">
