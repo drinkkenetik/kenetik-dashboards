@@ -45,7 +45,6 @@
       "purpose": "Weekly-review scoreboard: L1-L3 metric trajectories vs targets, ChangeSet activity, wholesale detail.",
       "data_sources": [
         "data/metrics/reporting-state.json",
-        "data/metrics/current-state.json (L2/L3 rows — P4-T7 migration pending)",
         "data/metrics/milestones.json",
         "data/wholesale/*",
         "cgo-logs/changesets/tracker.json",
