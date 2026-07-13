@@ -117,19 +117,21 @@
     },
     {
       "id": "ops-dashboard",
-      "name": "Ops Dashboard",
+      "name": "Daily Pulse",
       "repo": "kenetik-growth-system",
       "path": "portal/ops-dashboard.html",
       "url": "/ops-dashboard.html and /portal/ops-dashboard.html",
       "owner": "Devon Price",
-      "purpose": "Daily operational surface: paid media (P3-T1 rescue incl. fatigue flags), VoC, subscriptions, Amazon honest-blank.",
+      "purpose": "Thin morning surface (P6B-T4): per-domain status strip (paid media, subscriptions, VoC, wholesale AR, creators) with freshness dots + links to each domain page, plus a flags section. Depth lives on the domain pages. Filename kept as ops-dashboard.html for bookmarks.",
       "data_sources": [
         "data/paid-media/paid-media-state.json",
-        "data/voc/voc-state.json",
         "data/subscriptions/subscription-state.json",
-        "data/metrics/reporting-state.json"
+        "data/voc/voc-state.json",
+        "data/wholesale/wholesale-state.json",
+        "data/wholesale/payment-match-probe.json",
+        "data/attribution/creator-economics-monthly.json"
       ],
-      "refresh_cadence": "daily (exec BI chain ~6:00 ET) + daily 11:30 UTC republish",
+      "refresh_cadence": "daily morning check (reads state files written ~6:00\u20136:30 ET) + daily 11:30 UTC republish",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
     },
