@@ -140,36 +140,41 @@
       "handle": "@2brothersepoxy",
       "primary": "$20,535",
       "secondary": "1.34M views",
-      "angle": "Random-creator pop",
-      "href": "https://tiktok.com/@2brothersepoxy/video/7538575914821602574"
-    },
-    {
-      "handle": "@natedecenzi",
-      "primary": "$19,267",
-      "secondary": "15 videos",
-      "angle": "Top creator",
-      "href": "https://tiktok.com/@natedecenzi"
+      "angle": "Comparison",
+      "href": "https://tiktok.com/@2brothersepoxy/video/7538575914821602574",
+      "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7538575914821602574.webp"
     },
     {
       "handle": "@be.lush",
-      "primary": "$11,900",
-      "secondary": "7 videos",
-      "angle": "Taste / first sip",
-      "href": "https://tiktok.com/@be.lush"
+      "primary": "$9,430",
+      "secondary": "482K views",
+      "angle": "Ketones + focus",
+      "href": "https://tiktok.com/@be.lush/video/7545964105744534839",
+      "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7545964105744534839.webp"
     },
     {
       "handle": "@affiliatezshop.us",
-      "primary": "$10,940",
-      "secondary": "55 videos",
-      "angle": "Volume",
-      "href": "https://tiktok.com/@affiliatezshop.us"
+      "primary": "$2,210",
+      "secondary": "117K views",
+      "angle": "Reaction",
+      "href": "https://tiktok.com/@affiliatezshop.us/video/7571662340807003447",
+      "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7571662340807003447.webp"
+    },
+    {
+      "handle": "@betterbybrian",
+      "primary": "$1,851",
+      "secondary": "37K views",
+      "angle": "First sip",
+      "href": "https://tiktok.com/@betterbybrian/video/7528325239822896397",
+      "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7528325239822896397.webp"
     },
     {
       "handle": "@tyler.slone289",
-      "primary": "$5,689",
-      "secondary": "6 videos",
-      "angle": "Rising",
-      "href": "https://tiktok.com/@tyler.slone289"
+      "primary": "$1,749",
+      "secondary": "100K views",
+      "angle": "I quit energy drinks",
+      "href": "https://tiktok.com/@tyler.slone289/video/7566379846733991198",
+      "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7566379846733991198.webp"
     }
   ],
   "loop": [
