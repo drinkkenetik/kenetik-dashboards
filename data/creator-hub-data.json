@@ -1,0 +1,290 @@
+{
+  "_comment": "Creator Hub live data. Auto-refreshed weekly by /creator-hub-refresh (EUKA-verified). Editorial fields (mission, perks, dos/donts, clips, discordUrl, formEndpoint, assets) are hand-editable.",
+  "updated": "July 13, 2026",
+  "heroHeadline": "Put ketones on the map with us.",
+  "heroGmv": "~$465K in TikTok Shop GMV and counting. The #1 ketone brand on TikTok Shop.",
+  "discordUrl": "#join",
+  "formEndpoint": "",
+  "assets": {},
+  "navLinks": [
+    {
+      "label": "What is Kenetik",
+      "href": "#about"
+    },
+    {
+      "label": "Get started",
+      "href": "#start"
+    },
+    {
+      "label": "Ad reads",
+      "href": "#adreads"
+    },
+    {
+      "label": "Teardowns",
+      "href": "#teardowns"
+    },
+    {
+      "label": "Do's / Don'ts",
+      "href": "#rules"
+    },
+    {
+      "label": "Clips",
+      "href": "#clips"
+    },
+    {
+      "label": "Join",
+      "href": "#join"
+    }
+  ],
+  "proofChips": [
+    "12g Ketones",
+    "Caffeine-Free",
+    "Sugar-Free",
+    "Nothing Artificial"
+  ],
+  "seals": [
+    "12g Ketones",
+    "Zero Caffeine",
+    "Zero Sugar",
+    "Informed Sport Certified"
+  ],
+  "perksFeatured": [
+    {
+      "n": "1",
+      "title": "Free product",
+      "desc": "Samples to create with, sent through our program so you always have Kenetik on hand."
+    },
+    {
+      "n": "2",
+      "title": "Your code + commission",
+      "desc": "Your own trackable code, and you earn on every sale you drive."
+    }
+  ],
+  "perksRest": [
+    {
+      "n": "3",
+      "title": "Whitelisting",
+      "desc": "We put paid budget behind your best content, so your winners reach way more people. You get paid for that too."
+    },
+    {
+      "n": "4",
+      "title": "Contests + prizes",
+      "desc": "Ongoing contests for top creators, run inside the Discord."
+    },
+    {
+      "n": "5",
+      "title": "Real support",
+      "desc": "Direct feedback, proven playbooks, and my marketing tools. Not a gift card and silence."
+    }
+  ],
+  "perksNote": "Exact commission tiers, free-product amount, and whitelisting share are being finalized before this goes public.",
+  "steps": [
+    {
+      "n": "1",
+      "title": "Get product",
+      "desc": "Request your samples through our sampling flow.",
+      "cta": "Request product",
+      "href": "#apply"
+    },
+    {
+      "n": "2",
+      "title": "Get your code + link",
+      "desc": "Your trackable code, so every sale counts and you get paid.",
+      "cta": "Get my code",
+      "href": "#apply"
+    },
+    {
+      "n": "3",
+      "title": "Post",
+      "desc": "Use a proven ad read below, in your own voice. Tag @Kenetik, code in the caption.",
+      "cta": "See the ad reads",
+      "href": "#adreads"
+    },
+    {
+      "n": "4",
+      "title": "Join the Discord",
+      "desc": "For feedback, contests, and winning creative in real time.",
+      "cta": "Join Discord",
+      "href": "#join"
+    }
+  ],
+  "adReads": [
+    {
+      "angle": "Energy-drink comparison",
+      "why": "Our highest-converting lane. Hold your usual energy drink next to Kenetik and read the numbers side by side: their caffeine and sugar vs our 0 / 0 / 12g ketones.",
+      "example": "See what's converting below."
+    },
+    {
+      "angle": "“I quit energy drinks”",
+      "why": "A personal, honest, relatable transformation. What changed once you stopped reaching for caffeine.",
+      "example": "Personal experience, your own words."
+    },
+    {
+      "angle": "Personality / big reach",
+      "why": "A story and a face people already trust. Big organic lift.",
+      "example": "Roman Atwood × Kenetik"
+    },
+    {
+      "angle": "The random-creator pop",
+      "why": "Proof anyone can hit. TikTok is a power law, your video could be the one that pops.",
+      "example": "@2brothersepoxy · $20,535 / 1.34M views · our biggest single video"
+    },
+    {
+      "angle": "Taste reaction",
+      "why": "A genuine first-sip reaction on camera. Handles the taste question head-on.",
+      "example": "@be.lush · $9,430"
+    }
+  ],
+  "liveVideos": [
+    {
+      "handle": "@2brothersepoxy",
+      "primary": "$20,535",
+      "secondary": "1.34M views",
+      "angle": "Random-creator pop",
+      "href": "https://tiktok.com/@2brothersepoxy/video/7538575914821602574"
+    },
+    {
+      "handle": "@natedecenzi",
+      "primary": "$19,267",
+      "secondary": "15 videos",
+      "angle": "Top creator",
+      "href": "https://tiktok.com/@natedecenzi"
+    },
+    {
+      "handle": "@be.lush",
+      "primary": "$11,900",
+      "secondary": "7 videos",
+      "angle": "Taste / first sip",
+      "href": "https://tiktok.com/@be.lush"
+    },
+    {
+      "handle": "@affiliatezshop.us",
+      "primary": "$10,940",
+      "secondary": "55 videos",
+      "angle": "Volume",
+      "href": "https://tiktok.com/@affiliatezshop.us"
+    },
+    {
+      "handle": "@tyler.slone289",
+      "primary": "$5,689",
+      "secondary": "6 videos",
+      "angle": "Rising",
+      "href": "https://tiktok.com/@tyler.slone289"
+    }
+  ],
+  "loop": [
+    "Audit",
+    "Learn",
+    "Kenetik spin",
+    "Test",
+    "Scale",
+    "Repeat"
+  ],
+  "teardowns": [
+    {
+      "brand": "Neuro",
+      "cat": "Energy / focus",
+      "hook": "“I'll give you a million dollars for…” negotiation skit",
+      "gmv": "~$393K",
+      "spin": "“I offered him $100 for his last Kenetik and he said no.”",
+      "href": "https://tiktok.com/@watermelonz22/video/7591384432834104606"
+    },
+    {
+      "brand": "Nello",
+      "cat": "Calm / focus drink",
+      "hook": "“You do NOT drink this before…” warning",
+      "gmv": "~$115K",
+      "spin": "“Do not reach for another energy drink until you've seen this.”",
+      "href": "https://tiktok.com/@hkapproved/video/7617192215911124238"
+    },
+    {
+      "brand": "Bloom",
+      "cat": "Functional",
+      "hook": "“Never seen a…” uniqueness",
+      "gmv": "~$198K",
+      "spin": "“I've never felt this locked in, and it isn't caffeine.”",
+      "href": "https://tiktok.com/@obsessed.with.thi5/video/7578291955369528606"
+    },
+    {
+      "brand": "Nello",
+      "cat": "Calm / focus drink",
+      "hook": "“Things I wish I knew before…” story",
+      "gmv": "~$72K",
+      "spin": "“Things I wish I knew before I quit energy drinks.”",
+      "href": "https://tiktok.com/@chaosonthecoast_/video/7559593716642532663"
+    },
+    {
+      "brand": "Medicube",
+      "cat": "K-beauty",
+      "hook": "“How is this even legal?” curiosity",
+      "gmv": "~$80K",
+      "spin": "“How is a caffeine-free drink keeping me this dialed in?”",
+      "href": "https://tiktok.com/@cakedfinds/video/7655929538240679198"
+    },
+    {
+      "brand": "BrainMD",
+      "cat": "Nootropic",
+      "hook": "Authority “explains” read",
+      "gmv": "~$35K",
+      "spin": "A credible voice: “here's what actually happens when you swap.”",
+      "href": "https://tiktok.com/@philsmypharmacist/video/7593901307686030606"
+    }
+  ],
+  "dos": [
+    "Win the first 2 seconds. The hook is the whole game.",
+    "Convert through story and shared experience, not a discount. We're premium.",
+    "Keep it raw and real. One take, your voice. Polished reads like an ad and kills it.",
+    "Talk from personal experience: caffeine-free, 12g ketones, no crash, tastes good, no jitters.",
+    "Show the can in the scene (in hand, in the bag, on the desk), never on a pedestal.",
+    "Put your code in the caption and a pinned comment. Tag @Kenetik."
+  ],
+  "donts": [
+    "Don't call Kenetik an energy drink. It's the thing you're replacing. “Energy drink killer” is the only exception.",
+    "Don't make health or medical claims. No “treats,” “cures,” “clinically proven,” or conditions. Personal experience only.",
+    "Don't lead with a discount or “X% off.”",
+    "Don't read a stiff script, and don't over-polish."
+  ],
+  "clips": [
+    {
+      "title": "Science / brain visuals",
+      "tag": "Explainer",
+      "desc": "Brain-scan and brain-fuel animations, plus simple ketone-mechanism explainers.",
+      "href": "#"
+    },
+    {
+      "title": "Personality clips",
+      "tag": "Partners",
+      "desc": "Roman Atwood, Cleetus McFarland, Matt Hughes, and other athlete and partner moments.",
+      "href": "#"
+    },
+    {
+      "title": "Product b-roll",
+      "tag": "B-roll",
+      "desc": "Can pours, first-sip reactions, energy-drink-vs-Kenetik side-by-sides, desk and gym-bag lifestyle.",
+      "href": "#"
+    },
+    {
+      "title": "Founder / story clips",
+      "tag": "Story",
+      "desc": "The “why ketones” origin story and the mission behind the category.",
+      "href": "#"
+    }
+  ],
+  "perksShort": [
+    "Weekly calls",
+    "Contests",
+    "Live feedback",
+    "Winning creative drops",
+    "Audits on request",
+    "Marketing tools"
+  ],
+  "contact": {
+    "name": "Nick Lacagnina",
+    "title": "Director of Partnerships, Kenetik",
+    "email": "nick@drinkkenetik.com",
+    "ig": "@BiohackLac",
+    "igUrl": "https://instagram.com/biohacklac",
+    "web": "drinkkenetik.com",
+    "webUrl": "https://drinkkenetik.com"
+  }
+}
