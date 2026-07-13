@@ -32,10 +32,10 @@
     "total": 161,
     "by_status": {
       "closed": 119,
-      "published": 13,
+      "published": 14,
       "needs_feedback": 1,
       "draft": 12,
-      "approved": 16
+      "approved": 15
     },
     "by_risk": {
       "low": 73,
@@ -9548,15 +9548,15 @@
       ],
       "owner": "Katie Spaller",
       "source": "manual",
-      "status": "approved",
+      "status": "published",
       "created": "2026-06-25",
       "approved_date": "2026-06-25",
-      "last_updated": "2026-06-25T20:42:42.482899+00:00",
+      "last_updated": "2026-07-13T14:30:42.561287+00:00",
       "autonomy_tier": 2,
       "subtype": "implementation",
       "risk_level": "medium",
       "hypothesis": "Rebuilding the wholesale storefront from scratch on Dawn with the Kenetik design system and a default-deny, tag-tiered access gate (Dealer vs Practitioner/Pro) modernizes the experience and protects wholesale/practitioner pricing without legacy wlm-* cruft.",
-      "notes": "New repo drinkkenetik/wholesale-shopify-theme (main @ 798ecec). P0 Dawn 15.5.0 + scoped .ks-wholesale tokens. P1 component CSS/JS + ks-wholesale hero/proof/info/faq. P2 full re-skin (Kenetik schemes, Inter, warm-gradient buttons, pill shapes) + branded home. P3 gating: L1 access-check (allowlist home/customers*/policy/apply/legal/design_mode), L2 page gate, L3 pro-gated PDP lock (buy+price+JSON-LD) for Practitioner/Pro, L4 collection/search/related filter, cart-safety block, noindex on block. P4 native apply form (page.apply) + docs/tagging-workflow.md. P5 QA: liquid balance pass, JSON valid, gate sim 37/37. PENDING: theme push to store, Admin setup (apply page, pro-gated tag, customer tags, contact email, Flow), live QA, Devon claims sign-off.",
+      "notes": "New repo drinkkenetik/wholesale-shopify-theme (main @ 798ecec). P0 Dawn 15.5.0 + scoped .ks-wholesale tokens. P1 component CSS/JS + ks-wholesale hero/proof/info/faq. P2 full re-skin (Kenetik schemes, Inter, warm-gradient buttons, pill shapes) + branded home. P3 gating: L1 access-check (allowlist home/customers*/policy/apply/legal/design_mode), L2 page gate, L3 pro-gated PDP lock (buy+price+JSON-LD) for Practitioner/Pro, L4 collection/search/related filter, cart-safety block, noindex on block. P4 native apply form (page.apply) + docs/tagging-workflow.md. P5 QA: liquid balance pass, JSON valid, gate sim 37/37. LIVE 2026-06-30 \u2014 all outstanding items completed (theme push, Admin setup, live QA, Devon claims sign-off). [2026-07-13 Katie: confirmed live since 6/30; moved approved->published, 30d measurement window set, due 2026-07-30.]",
       "meta": {
         "approved_by": "Katie Spaller"
       },
@@ -9566,9 +9566,14 @@
           "set_date": "2026-07-07",
           "session": "2026-07-07-s1",
           "action": "owner_nudge_queued_phase_4",
-          "note": "held on P1 TRX/CS-205 approval gate (one root cause)"
+          "note": "held on P1 TRX/CS-205 approval gate (one root cause)",
+          "resolved": "2026-07-13",
+          "resolution": "went_live_2026-06-30_confirmed_by_owner"
         }
-      ]
+      ],
+      "published_date": "2026-06-30",
+      "measurement_window_days": 30,
+      "measurement_due": "2026-07-30"
     },
     {
       "id": "CS-2026-218",
