@@ -1123,12 +1123,12 @@
 <!-- [P6A-T3] shared dark header + gradient (matches the KGS portal surfaces) -->
 <header class="k-header" style="margin-bottom:0"><div class="k-header-inner">
   <div><div class="k-brand">KENETIK <span>Website Experiment Dashboard</span></div><div class="k-subtitle">CRO Experiments</div></div>
-  <div class="k-header-meta">Alert-only · calibrating</div>
+  <div class="k-header-meta"><div class="k-cadence">Updated on load · manual refresh</div><div class="k-updated" id="kgs-last-updated">Loading…</div></div>
 </div></header>
 <div class="grad" style="border-radius:0;margin-bottom:0;"></div>
 <!-- [P5-T4] Cross-world nav — static copy of kenetik-growth-system portal/components/nav-header.js; keep in sync. -->
 <style>
-  .kgs-xnav{display:flex;flex-wrap:wrap;gap:2px 3px;align-items:center;font:600 12.5px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:8px 12px;background:#fff;border-bottom:1px solid rgba(20,20,32,.10);}
+  .kgs-xnav{display:flex;flex-wrap:wrap;gap:2px 3px;align-items:center;font:600 12.5px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:8px 2px 0;}
   .kgs-xnav a,.kgs-xnav .cur{padding:5px 9px;border-radius:7px;text-decoration:none;color:#5A5B66;}
   .kgs-xnav a:hover{background:rgba(20,20,32,.06);color:#16161D;}
   .kgs-xnav .cur{background:#1E1230;color:#fff;}
@@ -2574,6 +2574,7 @@
             const lastRefreshEl = document.getElementById('lastRefresh');
             if (appState.loadedAt) {
                 lastRefreshEl.innerHTML = `<span class="pulse-dot"></span>loaded ${fmtRelative(appState.loadedAt.toISOString())}`;
+                { const _lu=document.getElementById('kgs-last-updated'); if(_lu)_lu.textContent='loaded '+fmtRelative(appState.loadedAt.toISOString()); }
             }
 
             if (!appState.stateJson) {
