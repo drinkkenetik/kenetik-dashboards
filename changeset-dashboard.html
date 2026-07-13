@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenetik ChangeSet Dashboard</title>
+    <!-- [P6A-T3] shared design system (vendored from KGS) -->
+    <link rel="stylesheet" href="components/portal-theme.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
     <style>
         :root {
-            --bg: #0f1117;
-            --surface: #1a1d27;
-            --surface-hover: #22262f;
-            --border: #2a2e3a;
-            --text: #e4e4e7;
-            --text-muted: #8b8fa3;
-            --accent: #6366f1;
+            --bg: var(--page);
+            --surface: var(--surface);
+            --surface-hover: var(--panel);
+            --border: var(--line);
+            --text: var(--ink);
+            --text-muted: var(--ink2);
+            --accent: var(--dept-content_strategy);
             --accent-light: #818cf8;
-            --success: #22c55e;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --info: #3b82f6;
-            --investigation: #a855f7;
-            --implementation: #6366f1;
-            --quick: #14b8a6;
-            --kenetik-green: #22c55e;
+            --success: var(--stage-active);
+            --warning: var(--dept-website);
+            --danger: var(--cat-event);
+            --info: var(--cat-product_launch);
+            --investigation: var(--cat-content_theme);
+            --implementation: var(--dept-content_strategy);
+            --quick: var(--dept-lifecycle);
+            --kenetik-green: var(--stage-active);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -244,7 +246,7 @@
         }
 
         .pipeline-col {
-            background: rgba(255,255,255,0.03);
+            background: rgba(20,20,32,0.03);
             border-radius: 8px;
             padding: 12px;
             min-height: 80px;
@@ -407,9 +409,9 @@
             letter-spacing: 0.5px;
             padding: 3px 8px;
             border-radius: 4px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(20,20,32,0.05);
             color: var(--text-muted);
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(20,20,32,0.08);
         }
         .meta-chip-warn { color: var(--warning); border-color: rgba(245,158,11,0.35); background: rgba(245,158,11,0.08); }
 
@@ -540,7 +542,7 @@
         .brief-section-body li { margin-bottom: 3px; }
         .brief-section-body strong { color: var(--text); font-weight: 600; }
         .brief-section-body code {
-            background: rgba(255,255,255,0.06);
+            background: rgba(20,20,32,0.06);
             padding: 1px 5px;
             border-radius: 3px;
             font-size: 12px;
@@ -653,11 +655,11 @@
 
         .data-table td {
             padding: 10px 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(20,20,32,0.04);
             vertical-align: top;
         }
 
-        .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+        .data-table tr:hover td { background: rgba(20,20,32,0.02); }
 
         .data-table .cs-link {
             color: var(--accent-light);
@@ -744,7 +746,7 @@
         .subgroup-item {
             font-size: 11px;
             padding: 4px 4px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(20,20,32,0.04);
             border-left: 2px solid transparent;
             line-height: 1.3;
             cursor: pointer;
@@ -777,7 +779,7 @@
             transition: background 0.1s;
             border-left: 3px solid transparent;
         }
-        .draft-dept-header:hover { background: rgba(255,255,255,0.04); }
+        .draft-dept-header:hover { background: rgba(20,20,32,0.04); }
         .draft-dept-header .draft-toggle { font-size: 9px; color: var(--text-muted); }
         .draft-items { max-height: 0; overflow: hidden; transition: max-height 0.2s ease; }
         .draft-items.expanded { max-height: 600px; overflow-y: auto; }
@@ -787,16 +789,16 @@
             font-weight: 500;
             padding: 1px 5px;
             border-radius: 3px;
-            background: rgba(255,255,255,0.04);
+            background: rgba(20,20,32,0.04);
             color: var(--text-muted);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(20,20,32,0.06);
             white-space: nowrap;
         }
         .platform-chips { display: inline-flex; gap: 3px; flex-wrap: wrap; }
         .draft-compact-item {
             font-size: 11px;
             padding: 5px 6px;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
+            border-bottom: 1px solid rgba(20,20,32,0.03);
             border-left: 2px solid transparent;
             cursor: pointer;
             display: flex;
@@ -805,7 +807,7 @@
             gap: 8px;
             transition: background 0.1s;
         }
-        .draft-compact-item:hover { background: rgba(255,255,255,0.03); color: var(--accent-light); }
+        .draft-compact-item:hover { background: rgba(20,20,32,0.03); color: var(--accent-light); }
         .draft-compact-item.urgency-stale { border-left-color: var(--danger); }
         .draft-compact-item .dci-left {
             display: flex;
@@ -894,9 +896,9 @@
         }
         .closed-table td {
             padding: 8px 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(20,20,32,0.04);
         }
-        .closed-table tr:hover td { background: rgba(255,255,255,0.02); }
+        .closed-table tr:hover td { background: rgba(20,20,32,0.02); }
         .closed-table .cs-link {
             color: var(--accent-light);
             cursor: pointer;
@@ -937,7 +939,7 @@
         }
         .owner-card {
             position: relative;
-            background: rgba(255,255,255,0.03);
+            background: rgba(20,20,32,0.03);
             border: 1px solid var(--border);
             border-left: 3px solid var(--border);
             border-radius: 10px;
@@ -946,7 +948,7 @@
             transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
         }
         .owner-card:hover {
-            background: rgba(255,255,255,0.05);
+            background: rgba(20,20,32,0.05);
             border-color: var(--accent);
             transform: translateY(-1px);
         }
@@ -995,7 +997,7 @@
             height: 6px;
             border-radius: 3px;
             overflow: hidden;
-            background: rgba(255,255,255,0.04);
+            background: rgba(20,20,32,0.04);
             margin-bottom: 10px;
         }
         .owner-bar-seg { height: 100%; }
@@ -1038,7 +1040,7 @@
             align-items: center;
             margin-top: 14px;
             padding: 10px 14px;
-            background: rgba(255,255,255,0.02);
+            background: rgba(20,20,32,0.02);
             border: 1px dashed var(--border);
             border-radius: 8px;
             font-size: 12px;
@@ -1047,7 +1049,7 @@
             transition: border-color 0.15s;
         }
         .owner-quiet-row:hover { border-color: var(--accent); color: #dcdef0; }
-        .owner-quiet-row.open { background: rgba(255,255,255,0.03); }
+        .owner-quiet-row.open { background: rgba(20,20,32,0.03); }
         .owner-quiet-expand {
             display: none;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -1056,7 +1058,7 @@
         }
         .owner-quiet-expand.open { display: grid; }
         .owner-quiet-item {
-            background: rgba(255,255,255,0.02);
+            background: rgba(20,20,32,0.02);
             border: 1px solid var(--border);
             border-radius: 6px;
             padding: 8px 10px;
@@ -1098,7 +1100,7 @@
             top: 20px; right: 20px;
             width: 28px; height: 28px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.06);
+            background: rgba(20,20,32,0.06);
             border: none;
             color: var(--text-muted);
             font-size: 16px;
@@ -1137,7 +1139,7 @@
         .drawer-section-head .drawer-count {
             font-size: 11px;
             color: var(--text-muted);
-            background: rgba(255,255,255,0.05);
+            background: rgba(20,20,32,0.05);
             padding: 2px 8px;
             border-radius: 10px;
             font-weight: 600;
@@ -1148,14 +1150,14 @@
             gap: 10px;
             align-items: center;
             padding: 10px 12px;
-            background: rgba(255,255,255,0.02);
+            background: rgba(20,20,32,0.02);
             border: 1px solid var(--border);
             border-radius: 8px;
             cursor: pointer;
             margin-bottom: 6px;
             transition: border-color 0.15s, background 0.15s;
         }
-        .drawer-row:hover { border-color: var(--accent); background: rgba(255,255,255,0.04); }
+        .drawer-row:hover { border-color: var(--accent); background: rgba(20,20,32,0.04); }
         .drawer-row .row-id {
             font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
             font-size: 11px;
@@ -1244,7 +1246,7 @@
         .tier-bar-track {
             flex: 1;
             height: 8px;
-            background: rgba(255,255,255,0.06);
+            background: rgba(20,20,32,0.06);
             border-radius: 4px;
             overflow: hidden;
         }
@@ -1263,7 +1265,7 @@
             display: flex;
             justify-content: space-between;
             padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(20,20,32,0.04);
             font-size: 13px;
         }
         .scorecard-metric:last-child { border-bottom: none; }
@@ -1302,7 +1304,7 @@
             flex-wrap: wrap;
         }
         .time-avg-card {
-            background: rgba(255,255,255,0.03);
+            background: rgba(20,20,32,0.03);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 10px 16px;
@@ -1328,7 +1330,7 @@
             display: flex;
             justify-content: space-between;
             padding: 6px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(20,20,32,0.04);
             align-items: center;
         }
         .stale-item:last-child { border-bottom: none; }
@@ -1437,7 +1439,7 @@
             padding: 10px;
             border-bottom: 1px solid var(--border);
         }
-        .lifecycle-table tr:hover td { background: rgba(255,255,255,0.02); }
+        .lifecycle-table tr:hover td { background: rgba(20,20,32,0.02); }
         .lifecycle-table .cs-link {
             color: var(--accent-light);
             text-decoration: none;
@@ -1478,6 +1480,11 @@
     </style>
 </head>
 <body>
+<!-- [P6A-T3] shared dark header + gradient (matches the KGS portal surfaces) -->
+<header class="k-header"><div class="k-header-inner">
+  <div><span class="k-brand">KENETIK <span>ChangeSet Dashboard</span></span></div>
+</div></header>
+<div class="grad" style="border-radius:0;margin-bottom:0;"></div>
 <!-- [P5-T4] Cross-world nav — static copy of kenetik-growth-system portal/components/nav-header.js; keep in sync. -->
 <style>
   .kgs-xnav{display:flex;flex-wrap:wrap;gap:2px 3px;align-items:center;font:600 12.5px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:8px 12px;background:#fff;border-bottom:1px solid rgba(20,20,32,.10);}
@@ -1572,7 +1579,7 @@
         /* My Work · By Owner cards */
         .owner-open { font-size: 13px; font-weight: 600; color: var(--text); margin-top: 8px; }
         .owner-stat-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
-        .owner-stat-chip { font-size: 11px; padding: 2px 8px; border-radius: 5px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-muted); white-space: nowrap; }
+        .owner-stat-chip { font-size: 11px; padding: 2px 8px; border-radius: 5px; background: rgba(20,20,32,0.05); border: 1px solid var(--border); color: var(--text-muted); white-space: nowrap; }
         .owner-quiet { margin-top: 14px; font-size: 12px; color: var(--text-muted); }
     </style>
 
@@ -2249,7 +2256,7 @@ let charts = {};
 function destroyChart(k) { if (charts[k]) { charts[k].destroy(); delete charts[k]; } }
 function renderCharts() {
     if (typeof Chart === 'undefined' || !ROLLUP) return;
-    const gridColor = 'rgba(255,255,255,0.06)', tickColor = '#8b8fa3';
+    const gridColor = 'rgba(20,20,32,0.06)', tickColor = '#8b8fa3';
 
     destroyChart('monthly');
     const mt = ROLLUP.monthly_trend || [];

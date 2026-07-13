@@ -1,0 +1,168 @@
+/* ============================================================
+   VENDORED COPY — canonical source is kenetik-growth-system:
+     portal/components/portal-theme.css
+   Kept in sync manually (same pattern as the P5-T4 nav vendoring).
+   Do NOT edit here; change it in KGS and re-copy. Vendored for
+   Phase 6A (design-system unification), 2026-07-13.
+   ============================================================ */
+/* ============================================================
+   Kenetik Portal Theme (P5-T1) — shared visual identity for all
+   portal reporting surfaces, extracted from portal/scoreboard.html
+   (Tracker Scoreboard = reference surface) and aligned with
+   brain/kenetik-brain/references/visual-identity.md
+   "Digital & Dashboard Design System" (v2.2, cream-free).
+
+   Deployed by publish-board-portal.yml to BOTH dist/components/ and
+   dist/portal/components/, so <link href="components/portal-theme.css">
+   resolves at / and at /portal/.
+
+   Pages keep only page-specific CSS inline; palette/topbar changes
+   happen here, once.
+   ============================================================ */
+
+:root{
+  /* neutrals & structure */
+  --ink:#16161D;--ink2:#5A5B66;--muted:#9A9BA6;
+  --surface:#FFFFFF;--panel:#F5F6F8;--page:#ECEDF1;
+  --line:rgba(20,20,32,.12);--line2:rgba(20,20,32,.07);
+  --deep:#1E1230;
+  /* brand accents */
+  --berry:#D0148C;--violet:#7A2BD0;--blue:#2E6BE6;
+  /* status colors + background tints */
+  --ok:#1FA463;--ok-bg:#EAF6EF;
+  --attn:#F5821F;--attn-bg:#FDEEE0;
+  --bad:#E0322B;--bad-bg:#FBE7E6;
+  --violet-bg:#F1ECFA;--blue-bg:#EAF0FD;
+  /* back-compat aliases (scoreboard-era names; no cream) */
+  --blackberry:#1E1230;--cream:#F5F6F8;
+  --success:#1FA463;--warn:#F5821F;--danger:#E0322B;
+  --text-primary:#16161D;--text-secondary:#5A5B66;--text-muted:#6F7080;
+  --border:rgba(20,20,32,.12);
+  /* card conventions */
+  --card-radius:12px;
+  --card-shadow:0 1px 3px rgba(20,20,32,.06),0 1px 2px rgba(20,20,32,.04);
+}
+
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text-primary);background:var(--page);margin:0;}
+
+/* KENETIK topbar + portal nav cluster (signature markup:
+   <div class="topbar"><span class="logo">KENETIK</span><span class="ctx">…</span>
+   <span class="sp"></span><a …>Board Portal ↗</a>…</div><div class="grad"></div>) */
+.topbar{background:var(--deep);color:#fff;padding:11px 16px;display:flex;align-items:center;gap:12px;border-radius:12px 12px 0 0;}
+.topbar .logo{font-weight:800;letter-spacing:.05em;}
+.topbar .ctx{opacity:.85;font-size:13px;}
+.topbar .sp{margin-left:auto;}
+.topbar a{font-size:11px;color:#fff;opacity:.8;text-decoration:none;margin-left:10px;}
+
+/* signature gradient strip — once per view */
+.grad{height:5px;background:linear-gradient(90deg,var(--berry),var(--violet),var(--blue));border-radius:0 0 4px 4px;margin-bottom:18px;}
+
+/* ============================================================
+   P6A-T1 — Canonical component system (one visual language).
+   Extracted verbatim from portal/board-intelligence-portal.html
+   (the reference surface, Devon 2026-07-12) so every portal surface
+   shares the same header, cards, tables, badges, and narrative block.
+   Restyle-only: these classes reproduce the board portal look via the
+   tokens above — no page invents its own hex. Consumed by all surfaces
+   (P6A-T2) and vendored into kenetik-dashboards (P6A-T3).
+   ============================================================ */
+
+/* --- extra tokens: typography scale, spacing, radii, shadows --- */
+:root{
+  --radius-sm:6px;--radius-pill:20px;
+  --shadow-hover:0 4px 12px rgba(20,20,32,.08);
+  --space-1:8px;--space-2:16px;--space-3:24px;--space-4:28px;--space-5:40px;
+  --max-width:1200px;
+  --fs-kpi:24px;--fs-h:15px;--fs-body:14px;--fs-sm:12px;--fs-xs:11px;--fs-label:10px;
+  --pineapple:#FBB11B; /* brand yellow accent — no digital-token equivalent */
+}
+
+/* --- header: dark bar + signature gradient underline (matches board portal) --- */
+.k-header{background:var(--deep);color:#fff;padding:20px 40px;z-index:100;box-shadow:0 2px 8px rgba(30,18,48,.15);}
+.k-header-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.k-brand{font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+.k-brand span{color:var(--blue);}
+.k-subtitle{font-size:var(--fs-xs);font-weight:500;letter-spacing:1px;text-transform:uppercase;opacity:.7;}
+.k-header-meta{text-align:right;font-size:var(--fs-xs);opacity:.6;}
+/* .grad (gradient underline) already defined above — pair it directly under .k-header */
+
+/* --- narrative summary block (left-rule) --- */
+.k-narrative{background:var(--surface);border-left:3px solid var(--blue);padding:var(--space-3) var(--space-4);
+  border-radius:0 var(--card-radius) var(--card-radius) 0;margin-bottom:var(--space-4);
+  font-size:var(--fs-body);line-height:1.8;box-shadow:var(--card-shadow);}
+.k-narrative p{margin-bottom:var(--space-1);} .k-narrative p:last-child{margin-bottom:0;}
+.k-narrative strong{font-weight:600;}
+
+/* --- KPI card with top accent bar --- */
+.k-kpi-card{background:var(--surface);border-radius:var(--card-radius);padding:20px 22px;
+  box-shadow:var(--card-shadow);position:relative;overflow:hidden;}
+.k-kpi-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--muted);}
+.k-kpi-card.accent-blue::before,.k-kpi-card.accent-blueberry::before{background:var(--blue);}
+.k-kpi-card.accent-berry::before{background:var(--berry);}
+.k-kpi-card.accent-violet::before{background:var(--violet);}
+.k-kpi-card.accent-ok::before,.k-kpi-card.accent-success::before{background:var(--ok);}
+.k-kpi-card.accent-attn::before,.k-kpi-card.accent-peach::before{background:var(--attn);}
+.k-kpi-card.accent-bad::before,.k-kpi-card.accent-strawberry::before{background:var(--bad);}
+.k-kpi-card.accent-pineapple::before{background:var(--pineapple);}
+.k-kpi-card.accent-clean::before{background:var(--muted);}
+.k-kpi-card.accent-blackberry::before{background:var(--deep);}
+.k-kpi-label{font-size:var(--fs-xs);font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-1);}
+.k-kpi-value{font-size:var(--fs-kpi);font-weight:700;color:var(--deep);line-height:1.2;}
+.k-kpi-subtitle{font-size:var(--fs-sm);color:var(--ink2);margin-top:4px;}
+
+/* --- generic white section card (chart / table / content container) --- */
+.k-section-card{background:var(--surface);border-radius:var(--card-radius);padding:var(--space-3);
+  box-shadow:var(--card-shadow);margin-bottom:var(--space-4);}
+.k-section-card.flush{margin-bottom:0;}
+.k-section-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.k-section-subtitle{font-size:var(--fs-xs);color:var(--muted);margin-bottom:var(--space-2);}
+.k-section-header{font-size:var(--fs-body);font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--ink2);margin:36px 0 var(--space-2);padding-bottom:var(--space-1);border-bottom:1px solid var(--line);}
+
+/* --- data table --- */
+.k-table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);}
+.k-table th{text-align:left;padding:8px 12px;font-weight:600;font-size:var(--fs-xs);text-transform:uppercase;
+  letter-spacing:.5px;color:var(--muted);border-bottom:2px solid var(--line);}
+.k-table td{padding:8px 12px;border-bottom:1px solid var(--line);}
+.k-table tr:last-child td{border-bottom:none;}
+
+/* --- status badge / pill --- */
+.k-badge{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-xs);font-weight:600;
+  padding:4px 10px;border-radius:var(--radius-pill);background:var(--ok-bg);color:var(--ok);}
+.k-badge.attn,.k-badge.stale{background:var(--attn-bg);color:var(--attn);}
+.k-badge.bad,.k-badge.error{background:var(--bad-bg);color:var(--bad);}
+.k-badge.neutral{background:var(--panel);color:var(--ink2);}
+.k-badge.info{background:var(--violet-bg);color:var(--violet);}
+
+/* --- freshness dot (inherits currentColor from its badge/context) --- */
+.k-freshness-dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
+
+/* --- signal tokens (exact hexes preserved so surfaces reference via var()
+   with zero pixel change): data-source freshness dots + preliminary amber +
+   legacy navy fallback. Kept here so no page carries a raw hex. --- */
+:root{
+  --signal-live:#22c55e;      /* live-feed dot (distinct from --ok chart green) */
+  --signal-static:#cbd5e1;    /* static/manual dot (light slate) */
+  --amber-ink:#B88A00;        /* dark-amber text for 'preliminary' labels */
+  --navy:#1e3a5f;             /* legacy navy fallback */
+  --white:#FFFFFF;
+}
+
+/* --- categorical data-viz palette (content categories, departments,
+   pipeline stages) — a shared semantic palette (the spec's "chart palette").
+   Distinct hues with no single accent equivalent; centralized here so surfaces
+   reference them via var() and carry no raw hex. Values preserved from the
+   marketing dashboard (P6A-T2). --- */
+:root{
+  --cat-product_launch:#3b82f6; --cat-retail_launch:#22c55e; --cat-promo:#f97316;
+  --cat-content_theme:#a855f7; --cat-event:#ef4444; --cat-partnership:#14b8a6;
+  --dept-content_strategy:#6366f1; --dept-paid_media:#ec4899; --dept-lifecycle:#14b8a6;
+  --dept-website:#f59e0b; --dept-market_intelligence:#06b6d4; --dept-operations:#84cc16;
+  --dept-science:#8b5cf6;
+  --stage-proposed:#64748b; --stage-pitched:#06b6d4; --stage-committed:#3b82f6;
+  --stage-pending:#f59e0b; --stage-active:#22c55e; --stage-inactive:#475569;
+}
+/* high-contrast accessibility override (shared) */
+@media (prefers-contrast: more){
+  :root{ --border:#666; --border-strong:#444; --text-muted:#444; }
+}
