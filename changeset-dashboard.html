@@ -246,7 +246,7 @@
         }
 
         .pipeline-col {
-            background: rgba(20,20,32,0.03);
+            background: rgba(20,20,32,0.06);
             border-radius: 8px;
             padding: 12px;
             min-height: 80px;
@@ -659,7 +659,7 @@
             vertical-align: top;
         }
 
-        .data-table tr:hover td { background: rgba(20,20,32,0.02); }
+        .data-table tr:hover td { background: rgba(20,20,32,0.06); }
 
         .data-table .cs-link {
             color: var(--accent-light);
@@ -807,7 +807,7 @@
             gap: 8px;
             transition: background 0.1s;
         }
-        .draft-compact-item:hover { background: rgba(20,20,32,0.03); color: var(--accent-light); }
+        .draft-compact-item:hover { background: rgba(20,20,32,0.06); color: var(--accent-light); }
         .draft-compact-item.urgency-stale { border-left-color: var(--danger); }
         .draft-compact-item .dci-left {
             display: flex;
@@ -898,7 +898,7 @@
             padding: 8px 8px;
             border-bottom: 1px solid rgba(20,20,32,0.04);
         }
-        .closed-table tr:hover td { background: rgba(20,20,32,0.02); }
+        .closed-table tr:hover td { background: rgba(20,20,32,0.06); }
         .closed-table .cs-link {
             color: var(--accent-light);
             cursor: pointer;
@@ -939,7 +939,7 @@
         }
         .owner-card {
             position: relative;
-            background: rgba(20,20,32,0.03);
+            background: rgba(20,20,32,0.06);
             border: 1px solid var(--border);
             border-left: 3px solid var(--border);
             border-radius: 10px;
@@ -1040,7 +1040,7 @@
             align-items: center;
             margin-top: 14px;
             padding: 10px 14px;
-            background: rgba(20,20,32,0.02);
+            background: rgba(20,20,32,0.06);
             border: 1px dashed var(--border);
             border-radius: 8px;
             font-size: 12px;
@@ -1049,7 +1049,7 @@
             transition: border-color 0.15s;
         }
         .owner-quiet-row:hover { border-color: var(--accent); color: #dcdef0; }
-        .owner-quiet-row.open { background: rgba(20,20,32,0.03); }
+        .owner-quiet-row.open { background: rgba(20,20,32,0.06); }
         .owner-quiet-expand {
             display: none;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -1058,7 +1058,7 @@
         }
         .owner-quiet-expand.open { display: grid; }
         .owner-quiet-item {
-            background: rgba(20,20,32,0.02);
+            background: rgba(20,20,32,0.06);
             border: 1px solid var(--border);
             border-radius: 6px;
             padding: 8px 10px;
@@ -1150,7 +1150,7 @@
             gap: 10px;
             align-items: center;
             padding: 10px 12px;
-            background: rgba(20,20,32,0.02);
+            background: rgba(20,20,32,0.06);
             border: 1px solid var(--border);
             border-radius: 8px;
             cursor: pointer;
@@ -1304,7 +1304,7 @@
             flex-wrap: wrap;
         }
         .time-avg-card {
-            background: rgba(20,20,32,0.03);
+            background: rgba(20,20,32,0.06);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 10px 16px;
@@ -1439,7 +1439,7 @@
             padding: 10px;
             border-bottom: 1px solid var(--border);
         }
-        .lifecycle-table tr:hover td { background: rgba(20,20,32,0.02); }
+        .lifecycle-table tr:hover td { background: rgba(20,20,32,0.06); }
         .lifecycle-table .cs-link {
             color: var(--accent-light);
             text-decoration: none;
@@ -1584,16 +1584,12 @@
         .owner-quiet { margin-top: 14px; font-size: 12px; color: var(--text-muted); }
     </style>
 
-    <header>
-        <div class="header-left">
-            <h1>ChangeSet Dashboard <span class="schema-badge" id="schemaBadge">Schema v3.0</span></h1>
-            <div class="subtitle">Kenetik Growth System — Attention, Pipeline &amp; Impact</div>
-            <div class="sync-row">
-                <span class="sync-status" id="syncStatus" style="font-size:12px;color:var(--text-muted);">Loading data…</span>
-                <button class="refresh-btn" id="refreshBtn" onclick="manualRefresh()" title="Refresh now">↻ Refresh</button>
-            </div>
-        </div>
-    </header>
+    <!-- [P6A fix] in-body title removed (now in the shared .k-header); slim status row kept -->
+    <div class="sync-row" style="display:flex;align-items:center;gap:10px;padding:14px 0 2px">
+        <span class="schema-badge" id="schemaBadge">Schema v3.0</span>
+        <span class="sync-status" id="syncStatus" style="font-size:12px;color:var(--text-muted);">Loading data…</span>
+        <button class="refresh-btn" id="refreshBtn" onclick="manualRefresh()" title="Refresh now">↻ Refresh</button>
+    </div>
 
     <!-- ══ TOPLINE ══ KPI scoreboard: attention (work-queue) + rates/money (rollup) -->
     <section class="kpis" id="kpis"></section>

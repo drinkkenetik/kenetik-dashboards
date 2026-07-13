@@ -78,7 +78,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;c
 }
 
 /* --- header: dark bar + signature gradient underline (matches board portal) --- */
-.k-header{background:var(--deep);color:#fff;padding:20px 40px;z-index:100;box-shadow:0 2px 8px rgba(30,18,48,.15);}
+.k-header{display:block;background:var(--deep);color:#fff;padding:20px 40px;z-index:100;box-shadow:0 2px 8px rgba(30,18,48,.15);}
 .k-header-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;}
 .k-brand{font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
 .k-brand span{color:var(--blue);}

@@ -435,7 +435,7 @@
             letter-spacing: 0.5px;
             color: var(--text-muted);
             border-bottom: 1px solid var(--border);
-            background: rgba(20,20,32,0.02);
+            background: rgba(20,20,32,0.06);
         }
         table.experiments tbody tr {
             border-bottom: 1px solid var(--border);
@@ -1136,16 +1136,11 @@
 </style>
 <nav class="kgs-xnav" aria-label="Reporting surfaces"><a href="https://kenetik-board-portal.pages.dev/">Home</a><span class="sep">·</span><a href="https://kenetik-board-portal.pages.dev/portal/board-intelligence-portal.html">Board</a><span class="sep">·</span><a href="https://kenetik-board-portal.pages.dev/scoreboard.html">Scoreboard</a><span class="sep">·</span><a href="https://kenetik-board-portal.pages.dev/ops-dashboard.html">Ops</a><span class="sep">·</span><a href="https://kenetik-board-portal.pages.dev/trends.html">Trends</a><span class="sep">·</span><a href="https://kenetik-board-portal.pages.dev/marketing-dashboard.html">Marketing</a><span class="sep">·</span><a href="changeset-dashboard.html">ChangeSets</a></nav>
     <div class="dashboard">
-        <header>
-            <div class="header-left">
-                <h1>Website Experiment Dashboard</h1>
-                <div class="subtitle">PDP / collection / cart CRO experiments — current state, history, learnings</div>
-            </div>
-            <div class="header-right">
-                <button id="refreshBtn" class="refresh-btn">↻ Refresh</button>
-                <div id="lastRefresh" class="last-refresh">—</div>
-            </div>
-        </header>
+        <!-- [P6A fix] in-body title removed (now in the shared .k-header); slim controls kept -->
+        <div style="display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:14px 0 2px">
+            <button id="refreshBtn" class="refresh-btn">↻ Refresh</button>
+            <div id="lastRefresh" class="last-refresh">—</div>
+        </div>
 
         <div id="errorBanner"></div>
 
