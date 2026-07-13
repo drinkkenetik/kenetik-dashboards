@@ -1,13 +1,17 @@
-name: Validate KGS Dashboard
+name: Validate Dashboards
+
+# 2026-07-13: KGS Virtual Team Dashboard retired (Devon's call). Deleted
+# kenetik-growth-system-dashboard.html, validate-dashboard.py, and
+# install-hooks.sh (all three existed solely for this surface's KGS v3.2
+# role/process structure validation). The validate-system-state job that
+# ran validate-dashboard.py is removed below. system-state.json and
+# system-state-definitions.json are left in the repo (orphaned — no reader,
+# no sync — flagged to Devon separately) but no longer gate CI.
 
 on:
   push:
     branches: [main]
     paths:
-      - 'system-state.json'
-      - 'kenetik-growth-system-dashboard.html'
-      - 'system-state-definitions.json'
-      - 'validate-dashboard.py'
       - 'data/changeset-tracker.json'
       - 'data/changeset-work-queue.json'
       - 'data/changeset-impact-rollup.json'
@@ -23,38 +27,6 @@ on:
     branches: [main]
 
 jobs:
-  validate-system-state:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Run KGS Dashboard Validation
-        run: python3 validate-dashboard.py
-
-      - name: Post failure summary
-        if: failure()
-        run: |
-          echo "## ❌ Dashboard Validation Failed" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "The KGS dashboard data does not match the v3.2 spec." >> $GITHUB_STEP_SUMMARY
-          echo "Run \`python3 validate-dashboard.py\` locally to see details." >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Common causes:**" >> $GITHUB_STEP_SUMMARY
-          echo "- AI agent regenerated entire system-state.json instead of surgical edit" >> $GITHUB_STEP_SUMMARY
-          echo "- Role names, layers, or process counts were changed" >> $GITHUB_STEP_SUMMARY
-          echo "- Processes added/removed without matching role references" >> $GITHUB_STEP_SUMMARY
-
-      - name: Post success summary
-        if: success()
-        run: |
-          echo "## ✅ Dashboard Validation Passed" >> $GITHUB_STEP_SUMMARY
-          echo "All 12 roles, 98 processes, and infrastructure match KGS v3.2 spec." >> $GITHUB_STEP_SUMMARY
-
   validate-changeset-tracker:
     runs-on: ubuntu-latest
     steps:
