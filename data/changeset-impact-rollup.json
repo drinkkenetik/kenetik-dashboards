@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-13T09:02:10+00:00",
-  "tracker_last_updated": "2026-07-13T09:01:46.641190+00:00",
+  "generated": "2026-07-13T12:21:12+00:00",
+  "tracker_last_updated": "2026-07-13T12:18:03.949426Z",
   "tracker_schema_version": "3.0",
   "definitions": {
     "win_rate": "success / measured closures (measured_outcomes from _schema-constants.json)",
@@ -70,16 +70,16 @@
     }
   },
   "open_pipeline": {
-    "expected_revenue": 13360.0,
-    "expected_margin": 7600.0,
+    "expected_revenue": 16144.0,
+    "expected_margin": 8457.0,
     "entries_with_numeric": {
-      "expected_revenue": 4,
-      "expected_margin": 4
+      "expected_revenue": 8,
+      "expected_margin": 8
     },
-    "cohort_size": 36,
+    "cohort_size": 40,
     "by_status": {
       "approved": 16,
-      "draft": 6,
+      "draft": 10,
       "needs_feedback": 1,
       "published": 13
     }

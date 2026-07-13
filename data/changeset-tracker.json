@@ -1,7 +1,7 @@
 {
   "schema_version": "3.0",
-  "last_updated": "2026-07-13T09:01:46.641190+00:00",
-  "next_id": "CS-2026-227",
+  "last_updated": "2026-07-13T12:18:03.949426Z",
+  "next_id": "CS-2026-231",
   "lifecycle_sweep": {
     "last_sweep_date": "2026-07-10",
     "last_sweep_session": "2026-07-10-s1",
@@ -29,26 +29,26 @@
     }
   },
   "summary": {
-    "total": 155,
+    "total": 159,
     "by_status": {
       "closed": 119,
       "published": 13,
       "needs_feedback": 1,
-      "draft": 6,
+      "draft": 10,
       "approved": 16
     },
     "by_risk": {
-      "low": 71,
+      "low": 72,
       "high": 16,
-      "medium": 67,
+      "medium": 70,
       "critical": 1
     },
     "by_subtype": {
-      "implementation": 109,
+      "implementation": 112,
       "investigation": 13,
-      "quick": 33
+      "quick": 34
     },
-    "last_updated": "2026-07-13T09:01:46.631724+00:00",
+    "last_updated": "2026-07-13T12:18:03.949422Z",
     "last_counted": "2026-07-10"
   },
   "changesets": [
@@ -9877,6 +9877,181 @@
         "learning_hypothesis": "Whether the TFC season partnership produces measurable coded NCA / creator revenue vs its spend, or is awareness-only."
       },
       "linked_calendar_activity": "TFC-2026"
+    },
+    {
+      "id": "CS-2026-227",
+      "title": "Dunning / failed-payment recovery automation (card-updater, retry logic, involuntary win-back)",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "recharge",
+        "klaviyo"
+      ],
+      "created": "2026-07-13",
+      "last_updated": "2026-07-13",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "diagnostic",
+      "spawned_from": "diagnostic/retention-teardown.md (kenetik-strategic-planning repo); handoffs/phase-1/WP4-retention-quick-wins.md",
+      "hypothesis": "26-44 subscribers/month churn involuntarily after a card decline with no recovery attempt (11-12.5% of all cancels). A card-updater network, spaced retry logic, and a Klaviyo win-back sequence should recover 25-40% of that segment (7-15 subs/mo) with no new CAC.",
+      "notes": "Draft only, nothing activated. Relates to prior CS-2026-032 (Payment Failure Root Cause Audit & Recovery Program, 2026-03) which is not present in the current tracker (likely archived in the v3 tracker migration) \u2014 this CS refreshes that scope against the current subscriber base (2,447 subs vs. 1,077 at CS-032's creation) rather than assuming CS-032 is still live. Full brief: analysis/retention-quickwin-package.md (kenetik-strategic-planning repo) Section 5, and this file's own brief body below tracker header.",
+      "category": "email_sms",
+      "review_tier": "full",
+      "measurement_window": "30d",
+      "expected_impact": {
+        "metrics_moved": [
+          "sub_churn_active",
+          "subscriber_ltv_monthly_value"
+        ],
+        "revenue": {
+          "upside": 1065,
+          "expected": 604,
+          "downside": 497
+        },
+        "margin": {
+          "upside": 328,
+          "expected": 186,
+          "downside": 153
+        },
+        "balancing_impact": null,
+        "learning_hypothesis": "Whether automated card-updater + spaced retry + Klaviyo win-back recovers 25-40% of monthly involuntary (passive) churn; measured via passive_churned count and win-back reactivation rate over a 30-day window post-launch."
+      },
+      "file": "cgo-logs/changesets/CS-2026-227.md"
+    },
+    {
+      "id": "CS-2026-228",
+      "title": "Checkout/PDP subscription-label clarity (accidental-subscription prevention)",
+      "status": "draft",
+      "department": "DTC-website",
+      "platforms": [
+        "shopify"
+      ],
+      "created": "2026-07-13",
+      "last_updated": "2026-07-13",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "diagnostic",
+      "spawned_from": "diagnostic/retention-teardown.md (kenetik-strategic-planning repo); handoffs/phase-1/WP4-retention-quick-wins.md",
+      "hypothesis": "38-50 subscribers/month cancel citing 'didn't mean to subscribe' (10.7-14.5% of cancels) despite the PDP buy-box already defaulting to one-time purchase, unselected (per data/performance-memory/pdp-atc.md Cycle 1/Cycle 2 revert history). Root cause is likely ambiguous 'Subscribe & Save X%' labeling reading as a discount rather than a recurring commitment. Adding an explicit recurring-billing + cancel-anytime line adjacent to the label, without touching the default selection, should reduce accidental enrollment with materially lower CVR risk than the prior default-changing experiments.",
+      "notes": "Draft only, nothing activated. Live-theme access flag: this brief was written from KGS repo experimentation history (data/performance-memory/pdp-atc.md) and NOT from direct access to the live Shopify theme code this session \u2014 pull and confirm current 'Subscribe & Save' copy before build. Coordinates with CS-2026-229 (post-purchase confirmation, Klaviyo) as the two-part fix for this cancel reason. Full brief: analysis/retention-quickwin-package.md Section 6.",
+      "category": "creative",
+      "review_tier": "standard",
+      "measurement_window": "30d",
+      "expected_impact": {
+        "metrics_moved": [
+          "sub_churn_active",
+          "new_sub_attach_rate"
+        ],
+        "revenue": {
+          "upside": 1065,
+          "expected": 603,
+          "downside": 568
+        },
+        "margin": {
+          "upside": 328,
+          "expected": 186,
+          "downside": 175
+        },
+        "balancing_impact": [
+          {
+            "metric": "d01_site_cvr",
+            "expected_direction": "neutral (copy-only change; no default-selection change, unlike CS-2026-115/143/154 which changed the default and materially hurt CVR)"
+          }
+        ],
+        "learning_hypothesis": "Whether explicit recurring-billing microcopy adjacent to the Subscribe & Save selector reduces the 'didn't mean to subscribe' cancel-reason rate without moving add-to-cart or checkout conversion."
+      },
+      "file": "cgo-logs/changesets/CS-2026-228.md"
+    },
+    {
+      "id": "CS-2026-229",
+      "title": "Post-purchase subscription confirmation touch (pre-first-renewal safety net)",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "klaviyo"
+      ],
+      "created": "2026-07-13",
+      "last_updated": "2026-07-13",
+      "subtype": "quick",
+      "risk_level": "low",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "diagnostic",
+      "spawned_from": "diagnostic/retention-teardown.md (kenetik-strategic-planning repo); handoffs/phase-1/WP4-retention-quick-wins.md",
+      "hypothesis": "A single Klaviyo email 2-3 days post-first-order, sent before the first renewal charge, that plainly confirms subscription terms and offers a one-click modify/pause/cancel link, will catch a share of accidental sign-ups before they become angry post-charge cancellations, refund requests, or chargebacks -- independent of and in addition to CS-2026-228's checkout copy fix.",
+      "notes": "Draft only, nothing activated. This is the 'Add' step of the Resolution Hierarchy applied to accidental-sub prevention -- justified specifically because it operates entirely post-checkout and carries zero add-to-cart/CVR risk, unlike the buy-box default changes already tested and reverted in CS-2026-115/143/154. Full brief: analysis/retention-quickwin-package.md Section 6.",
+      "category": "email_sms",
+      "review_tier": "express",
+      "measurement_window": "30d",
+      "expected_impact": {
+        "metrics_moved": [
+          "sub_churn_active",
+          "welcome_flow_to_sub_conversion"
+        ],
+        "revenue": {
+          "upside": 781,
+          "expected": 449,
+          "downside": 426
+        },
+        "margin": {
+          "upside": 240,
+          "expected": 138,
+          "downside": 131
+        },
+        "balancing_impact": null,
+        "learning_hypothesis": "Whether a pre-renewal confirmation email reduces confused/angry cancel-after-charge events and refund/chargeback volume, measured via cancel-reason mix shift and refund-rate change in the 30 days post-launch relative to the trailing 30-day baseline."
+      },
+      "file": "cgo-logs/changesets/CS-2026-229.md"
+    },
+    {
+      "id": "CS-2026-230",
+      "title": "Cancel-flow intercept -- skip/swap/pause/downsize/gift (oversupply deflection)",
+      "status": "draft",
+      "department": "lifecycle-marketing",
+      "platforms": [
+        "recharge"
+      ],
+      "created": "2026-07-13",
+      "last_updated": "2026-07-13",
+      "subtype": "implementation",
+      "risk_level": "medium",
+      "autonomy_tier": 1,
+      "owner": "Katie Spaller",
+      "source": "diagnostic",
+      "spawned_from": "diagnostic/retention-teardown.md (kenetik-strategic-planning repo); handoffs/phase-1/WP4-retention-quick-wins.md",
+      "hypothesis": "27-84 subscribers/month cancel citing 'too much product already' (8-23.7% of cancels, with the fuller 6-week VOC corpus suggesting the higher end -- see analysis/retention-quickwin-package.md Section 3 data-quality finding). A single pre-cancellation intercept screen offering skip/downsize/swap/pause/gift-to-a-friend, refreshing the approach piloted in the since-archived CS-2026-024 (15-30% industry benchmark cited there), should recover 20-35% of this segment (7-29 subs/mo) without new CAC.",
+      "notes": "Draft only, nothing activated. Segment size uses the higher current-data estimate (Section 3 data-quality finding: fuller 6-week VOC corpus shows oversupply at 23.7% of cancels vs. the original 8% snapshot) as the primary case, with the original 8%-scoped case shown as a conservative floor in the full brief. Full brief: analysis/retention-quickwin-package.md Section 7.",
+      "category": "experimentation",
+      "review_tier": "standard",
+      "measurement_window": "30d",
+      "expected_impact": {
+        "metrics_moved": [
+          "sub_churn_active",
+          "subscriber_ltv_monthly_value"
+        ],
+        "revenue": {
+          "upside": 2059,
+          "expected": 1128,
+          "downside": 497
+        },
+        "margin": {
+          "upside": 634,
+          "expected": 347,
+          "downside": 153
+        },
+        "balancing_impact": [
+          {
+            "metric": "active_sub_count",
+            "expected_direction": "positive -- pause/skip/downsize converts a cancel event into a retained-but-lighter-weight subscription rather than a full loss"
+          }
+        ],
+        "learning_hypothesis": "Whether a one-screen pre-cancel intercept (skip/swap/pause/downsize/gift) reduces oversupply-driven cancellations by 20-35%, and whether pause/downsize subscribers resume or maintain at the 3-5x higher rate cited in the CS-2026-024 precedent (resume-rate tracked to catch delayed-churn-via-pause as a false positive)."
+      },
+      "file": "cgo-logs/changesets/CS-2026-230.md"
     }
   ]
 }
