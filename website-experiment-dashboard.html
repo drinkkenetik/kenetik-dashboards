@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenetik Website Experiment Dashboard</title>
+    <!-- [P6A-T3] shared design system (vendored from KGS) -->
+    <link rel="stylesheet" href="components/portal-theme.css">
     <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <style>
         :root {
-            --bg: #0f1117;
-            --surface: #1a1d27;
-            --surface-hover: #22262f;
-            --border: #2a2e3a;
-            --text: #e4e4e7;
-            --text-muted: #8b8fa3;
-            --accent: #6366f1;
+            --bg: var(--page);
+            --surface: var(--surface);
+            --surface-hover: var(--panel);
+            --border: var(--line);
+            --text: var(--ink);
+            --text-muted: var(--ink2);
+            --accent: var(--dept-content_strategy);
             --accent-light: #818cf8;
-            --success: #22c55e;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --info: #3b82f6;
-            --kenetik-green: #22c55e;
+            --success: var(--stage-active);
+            --warning: var(--dept-website);
+            --danger: var(--cat-event);
+            --info: var(--cat-product_launch);
+            --kenetik-green: var(--stage-active);
             --gold: #fbbf24;
         }
 
@@ -433,7 +435,7 @@
             letter-spacing: 0.5px;
             color: var(--text-muted);
             border-bottom: 1px solid var(--border);
-            background: rgba(255,255,255,0.02);
+            background: rgba(20,20,32,0.02);
         }
         table.experiments tbody tr {
             border-bottom: 1px solid var(--border);
@@ -902,7 +904,7 @@
             grid-template-columns: 16px 1fr 70px 70px;
             gap: 10px;
             padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(20,20,32,0.04);
             font-size: 12px;
             align-items: center;
         }
@@ -955,7 +957,7 @@
             color: var(--text);
             line-height: 1.45;
             position: relative;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(20,20,32,0.04);
         }
         .pm-question-list li:last-child { border-bottom: none; }
         .pm-question-list li::before {
@@ -1118,6 +1120,11 @@
     </style>
 </head>
 <body>
+<!-- [P6A-T3] shared dark header + gradient (matches the KGS portal surfaces) -->
+<header class="k-header"><div class="k-header-inner">
+  <div><span class="k-brand">KENETIK <span>Website Experiment Dashboard</span></span></div>
+</div></header>
+<div class="grad" style="border-radius:0;margin-bottom:0;"></div>
 <!-- [P5-T4] Cross-world nav — static copy of kenetik-growth-system portal/components/nav-header.js; keep in sync. -->
 <style>
   .kgs-xnav{display:flex;flex-wrap:wrap;gap:2px 3px;align-items:center;font:600 12.5px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:8px 12px;background:#fff;border-bottom:1px solid rgba(20,20,32,.10);}
