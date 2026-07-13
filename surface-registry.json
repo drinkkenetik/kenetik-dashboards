@@ -1,5 +1,5 @@
 {
-  "_comment": "P4-T5 surface registry — one row per reporting surface. Deploy gates: publish-board-portal.yml (kgs) and validate-dashboard.yml (kenetik-dashboards) fail the build if a deployed HTML is not registered here with status 'deployed'. The kenetik-dashboards copy of this file is a pure sync target (sync-website-state-to-dashboards.yml); edit only in kgs architecture/reporting/.",
+  "_comment": "P4-T5 surface registry \u2014 one row per reporting surface. Deploy gates: publish-board-portal.yml (kgs) and validate-dashboard.yml (kenetik-dashboards) fail the build if a deployed HTML is not registered here with status 'deployed'. The kenetik-dashboards copy of this file is a pure sync target (sync-website-state-to-dashboards.yml); edit only in kgs architecture/reporting/.",
   "version": "1.0",
   "updated": "2026-07-13",
   "statuses": [
@@ -17,7 +17,7 @@
       "aliases": [
         "index.html"
       ],
-      "url": "Cloudflare Pages root (Access-gated) — the single front door; deployed as index.html",
+      "url": "Cloudflare Pages root (Access-gated) \u2014 the single front door; deployed as index.html",
       "owner": "Devon Price",
       "purpose": "Entry hub: one landing page routing every audience (board, executive weekly, daily ops, departments) to its surface, with per-surface data-freshness dots.",
       "data_sources": [
@@ -85,7 +85,7 @@
       ],
       "url": "/wholesale.html and /portal/wholesale.html",
       "owner": "Devon Price",
-      "purpose": "Wholesale domain page (P6B-T2): full depth — Pulse / Accounts / Margin / Cash / Pipeline, account worklists, AR aging. Moved out of the Scoreboard's Wholesale tab (which keeps a summary + link here). Admin app linked prominently.",
+      "purpose": "Wholesale domain page (P6B-T2): full depth \u2014 Pulse / Accounts / Margin / Cash / Pipeline, account worklists, AR aging. Moved out of the Scoreboard's Wholesale tab (which keeps a summary + link here). Admin app linked prominently.",
       "data_sources": [
         "data/wholesale/wholesale-state.json",
         "data/wholesale/business-type-overrides.json",
@@ -131,7 +131,7 @@
         "data/wholesale/payment-match-probe.json",
         "data/attribution/creator-economics-monthly.json"
       ],
-      "refresh_cadence": "daily morning check (reads state files written ~6:00–6:30 ET) + daily 11:30 UTC republish",
+      "refresh_cadence": "daily morning check (reads state files written ~6:00\u20136:30 ET) + daily 11:30 UTC republish",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
     },
@@ -145,11 +145,29 @@
       ],
       "url": "/paid-media.html and /portal/paid-media.html",
       "owner": "Devon Price",
-      "purpose": "Paid-media domain page (P6B-T1): full depth — pixel/platform/MER KPIs, spend-by-campaign, platform + campaign tables, creative-health / ad drill-down (#campaigns, #creative). Moved out of the Ops Dashboard.",
+      "purpose": "Paid-media domain page (P6B-T1): full depth \u2014 pixel/platform/MER KPIs, spend-by-campaign, platform + campaign tables, creative-health / ad drill-down (#campaigns, #creative). Moved out of the Ops Dashboard.",
       "data_sources": [
         "data/paid-media/paid-media-state.json"
       ],
       "refresh_cadence": "daily (exec BI chain ~6:00 ET) + daily 11:30 UTC republish",
+      "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
+      "status": "deployed"
+    },
+    {
+      "id": "partnerships",
+      "name": "Partnerships",
+      "repo": "kenetik-growth-system",
+      "path": "portal/partnerships.html",
+      "aliases": [
+        "partnerships.html"
+      ],
+      "url": "/partnerships.html and /portal/partnerships.html",
+      "owner": "Devon Price",
+      "purpose": "Partnerships domain page: research-partnerships / BD relationship tracker \u2014 active + pursued relationships across NCAA programs, pro sports, the physician network, researchers / KOLs, and summit vendors. Needs-attention strip, segment/status/search/sort, per-contact staleness. Folded in from the retired dashboards/brandon/ dashboard 2026-07-13.",
+      "data_sources": [
+        "data/partnerships/partnerships-state.json"
+      ],
+      "refresh_cadence": "manual \u2014 refreshed on demand (Brandon / Cowork; /summit-tracker) + daily 11:30 UTC republish. No automated writer (see summit-tracker.md note).",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
     },
@@ -327,24 +345,6 @@
       "deploy": "GitHub Pages (kenetik-dashboards)",
       "status": "pending-retirement-decision",
       "note": "Devon to decide retirement; still deployed until then, so it must stay registered"
-    },
-    {
-      "id": "creator-hub",
-      "name": "Kenetik TikTok Creator Hub",
-      "repo": "kenetik-dashboards",
-      "path": "creator-hub.html",
-      "aliases": [
-        "creator-hub.html"
-      ],
-      "url": "https://drinkkenetik.github.io/kenetik-dashboards/creator-hub.html (public creator-facing)",
-      "owner": "Nick Lacagnina",
-      "purpose": "Public creator-facing recruitment + enablement hub: what Kenetik is, the TTS mission, proven ad reads, live 'what's converting' from EUKA, big-brand teardowns, do's/don'ts, clip archive, Discord CTA, apply form.",
-      "data_sources": [
-        "data/creator-hub-data.json"
-      ],
-      "refresh_cadence": "weekly EUKA refresh via /creator-hub-refresh (rewrites data/creator-hub-data.json); editorial fields hand-edited",
-      "deploy": "kenetik-dashboards GitHub Pages (drinkkenetik.github.io/kenetik-dashboards)",
-      "status": "deployed"
     }
   ]
 }
