@@ -241,15 +241,15 @@
       "name": "Wholesale Admin (input app)",
       "repo": "kenetik-growth-system",
       "path": "app/wholesale-admin.html",
-      "url": "/app/wholesale-admin.html",
+      "url": "https://wholesale-admin.pages.dev/app/wholesale-admin.html",
       "owner": "Devon Price",
-      "purpose": "Authed input app for wholesale account edits; writes to Supabase (read-only portal rule does not apply).",
+      "purpose": "Authed input app for wholesale account edits; writes to Supabase (read-only portal rule does not apply). Gated by Supabase Auth + RLS, not Cloudflare Access.",
       "data_sources": [
         "Supabase (writes)",
         "data/wholesale/*"
       ],
       "refresh_cadence": "interactive",
-      "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
+      "deploy": "publish-wholesale-admin.yml -> gh-pages-wholesale-admin -> Cloudflare Pages (no Access; app self-gates on Supabase session)",
       "status": "deployed"
     },
     {
