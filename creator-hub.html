@@ -234,7 +234,7 @@
 <a data-discord class="btn" href="#join" style="position:fixed;right:18px;bottom:18px;z-index:70;background:linear-gradient(90deg,#D0148C,#7A2BD0);color:#fff;padding:14px 22px;box-shadow:0 8px 24px rgba(122,43,208,.4);">Join the Discord</a>
 
 <script>
-const DATA_URL = "data/creator-hub-data.json?t=" + Date.now();
+const DATA_URL = "https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/creator-hub-data.json?t=" + Date.now();
 const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function el(html){const t=document.createElement("template");t.innerHTML=html.trim();return t.content.firstChild;}
 fetch(DATA_URL).then(r=>r.json()).then(d=>{
