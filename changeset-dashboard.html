@@ -1833,7 +1833,7 @@ async function fetchAll() {
         }
         TRACKER = tracker; CONSTANTS = constants; QUEUE = queue; ROLLUP = rollup;
         lastFetchTime = new Date();
-        statusEl.textContent = 'Live · ' + TRACKER.changesets.length + ' ChangeSets · synced ' + lastFetchTime.toLocaleTimeString();
+        statusEl.textContent = TRACKER.changesets.length + ' ChangeSets';
         { var _lu=document.getElementById('kgs-last-updated'); if(_lu)_lu.textContent='synced '+lastFetchTime.toLocaleTimeString(); }
         statusEl.style.color = 'var(--success)';
         document.getElementById('schemaBadge').textContent = 'Schema v' + (TRACKER.schema_version || '?');
@@ -1841,7 +1841,7 @@ async function fetchAll() {
         return true;
     } catch (err) {
         console.error('Fetch failed:', err);
-        statusEl.textContent = 'Offline · ' + (lastFetchTime ? 'last synced ' + lastFetchTime.toLocaleTimeString() : 'could not load data');
+        statusEl.textContent = lastFetchTime ? 'Offline' : 'Could not load data';
         { var _lu=document.getElementById('kgs-last-updated'); if(_lu)_lu.textContent = lastFetchTime ? ('offline · last synced '+lastFetchTime.toLocaleTimeString()) : 'offline · no data'; }
         statusEl.style.color = 'var(--danger)';
         btn.classList.remove('spinning');
