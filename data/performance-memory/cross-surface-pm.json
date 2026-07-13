@@ -1867,6 +1867,20 @@
       "domain": "DTC-website",
       "status": "archived",
       "date": "2026-07-08"
+    },
+    {
+      "id": "L-271",
+      "summary": "ambassador_cac band breach ($44.61 vs $22 target, band [18,28]) is entirely cost-side and idle-stipend-driven (~$1,466.63/mo to four zero-revenue cre\u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-07-13"
+    },
+    {
+      "id": "L-272",
+      "summary": "'Product too expensive' is now the #1 voluntary cancellation reason (29.4%, 15/51), corroborated multi-source (price complaint inside a 5-star review\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-07-13"
     }
   ],
   "entries": [
@@ -5596,6 +5610,40 @@
       "archival_state": "active",
       "id": "L-268",
       "type": "process_change"
+    },
+    {
+      "date": "2026-07-13",
+      "learning": "ambassador_cac band breach ($44.61 vs $22 target, band [18,28]) is entirely cost-side and idle-stipend-driven (~$1,466.63/mo to four zero-revenue creators), not an acquisition-efficiency problem. NCA is healthy (46) and removal restores CAC toward band with zero revenue loss. When overshoot is numerator-driven with healthy volume, the 'wait two out-of-band months' caveat should not gate action.",
+      "source": "dept-content brief 2026-07-13 (D08 Superfiliate recompute + digest), INS-D-1/ACT-D-1",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "CAC-band logic does not distinguish numerator (idle fixed cost) from denominator (acquisition) drivers, so a pure idle-cost overshoot reads identically to a performance decline. Four paid creators produced $0 in trailing 30d while carrying ~$1,466.63/mo stipend. Spawned CS-2026-232. See daily synthesis 2026-07-13-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "ambassador program stipend-review cadence / creator-economics balancing-metric interpretation in metrics-taxonomy",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-13T14:20:46.370480+00:00",
+      "archival_state": "active",
+      "id": "L-271"
+    },
+    {
+      "date": "2026-07-13",
+      "learning": "'Product too expensive' is now the #1 voluntary cancellation reason (29.4%, 15/51), corroborated multi-source (price complaint inside a 5-star review + two unprompted IG comments), coexisting with 4.8-star brand health and reviews +150% WoW. High satisfaction + price objection = a value-communication gap, not a product or pricing-level problem; the lever is value-framing (CS-200 live), not discounting or reformulation.",
+      "source": "dept-market-intelligence brief 2026-07-13 (VOC cancel reasons + review + IG comments), CSI-MI-1",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Churn-reason taxonomy previously treated a price objection as a pricing-lever signal; multi-source corroboration against strong satisfaction reframes it as a value-communication gap, changing the recommended intervention class. See daily synthesis 2026-07-13-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "VOC synthesis interpretation + lifecycle retention messaging playbook",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-13T14:20:46.374834+00:00",
+      "archival_state": "active",
+      "id": "L-272"
     }
   ],
   "archived_entries": [
@@ -8030,5 +8078,5 @@
       "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated (IG empty-caption publish gate) and live well over 7 days \u2014 confirmed durable across 4 consecutive clean feed/reel windows per Moe's PM (SYN-20260612, 20260619, 20260706, 20260710)."
     }
   ],
-  "last_updated": "2026-07-11"
+  "last_updated": "2026-07-13"
 }
