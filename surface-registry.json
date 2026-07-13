@@ -94,6 +94,24 @@
       "status": "deployed"
     },
     {
+      "id": "paid-media",
+      "name": "Paid Media",
+      "repo": "kenetik-growth-system",
+      "path": "portal/paid-media.html",
+      "aliases": [
+        "paid-media.html"
+      ],
+      "url": "/paid-media.html and /portal/paid-media.html",
+      "owner": "Devon Price",
+      "purpose": "Paid-media domain page (P6B-T1): full depth \u2014 pixel/platform/MER KPIs, spend-by-campaign, platform + campaign tables, creative-health / ad drill-down (#campaigns, #creative). Moved out of the Ops Dashboard.",
+      "data_sources": [
+        "data/paid-media/paid-media-state.json"
+      ],
+      "refresh_cadence": "daily (exec BI chain ~6:00 ET) + daily 11:30 UTC republish",
+      "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
+      "status": "deployed"
+    },
+    {
       "id": "trends",
       "name": "Weekly Trends",
       "repo": "kenetik-growth-system",
