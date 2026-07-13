@@ -1,7 +1,7 @@
 {
-  "_comment": "P4-T5 surface registry — one row per reporting surface. Deploy gates: publish-board-portal.yml (kgs) and validate-dashboard.yml (kenetik-dashboards) fail the build if a deployed HTML is not registered here with status 'deployed'. The kenetik-dashboards copy of this file is a pure sync target (sync-website-state-to-dashboards.yml); edit only in kgs architecture/reporting/.",
+  "_comment": "P4-T5 surface registry \u2014 one row per reporting surface. Deploy gates: publish-board-portal.yml (kgs) and validate-dashboard.yml (kenetik-dashboards) fail the build if a deployed HTML is not registered here with status 'deployed'. The kenetik-dashboards copy of this file is a pure sync target (sync-website-state-to-dashboards.yml); edit only in kgs architecture/reporting/.",
   "version": "1.0",
-  "updated": "2026-07-12",
+  "updated": "2026-07-13",
   "statuses": [
     "deployed",
     "repo-only",
@@ -17,7 +17,7 @@
       "aliases": [
         "index.html"
       ],
-      "url": "Cloudflare Pages root (Access-gated) — the single front door; deployed as index.html",
+      "url": "Cloudflare Pages root (Access-gated) \u2014 the single front door; deployed as index.html",
       "owner": "Devon Price",
       "purpose": "Entry hub: one landing page routing every audience (board, executive weekly, daily ops, departments) to its surface, with per-surface data-freshness dots.",
       "data_sources": [
@@ -216,22 +216,6 @@
       "refresh_cadence": "manual",
       "deploy": "none",
       "status": "repo-only"
-    },
-    {
-      "id": "kgs-virtual-team-dashboard",
-      "name": "KGS Virtual Team Dashboard",
-      "repo": "kenetik-dashboards",
-      "path": "kenetik-growth-system-dashboard.html",
-      "url": "GitHub Pages (kenetik-dashboards) root",
-      "owner": "Devon Price",
-      "purpose": "Build-state view of the 12 roles / 98 processes in the KGS Virtual Team spec.",
-      "data_sources": [
-        "system-state.json (pure sync target from kgs — P4-T1)",
-        "system-state-definitions.json"
-      ],
-      "refresh_cadence": "on system-state.json sync",
-      "deploy": "GitHub Pages (kenetik-dashboards)",
-      "status": "deployed"
     },
     {
       "id": "changeset-dashboard",
