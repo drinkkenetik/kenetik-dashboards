@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-13T12:25:06+00:00",
+  "generated": "2026-07-13T14:11:25+00:00",
   "tracker_last_updated": "2026-07-13T12:18:03.949426Z",
   "tracker_schema_version": "3.0",
   "definitions": {
@@ -76,10 +76,10 @@
       "expected_revenue": 8,
       "expected_margin": 8
     },
-    "cohort_size": 40,
+    "cohort_size": 41,
     "by_status": {
       "approved": 16,
-      "draft": 10,
+      "draft": 11,
       "needs_feedback": 1,
       "published": 13
     }
