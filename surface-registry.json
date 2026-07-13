@@ -96,6 +96,26 @@
       "status": "deployed"
     },
     {
+      "id": "creators",
+      "name": "Creators",
+      "repo": "kenetik-growth-system",
+      "path": "portal/creators.html",
+      "aliases": [
+        "creators.html"
+      ],
+      "url": "/creators.html and /portal/creators.html",
+      "owner": "Devon Price",
+      "purpose": "Creator domain page (P6B-T3): order-grounded creator economics (new-vs-returning, directional CAC) + the board's Creator-Partnerships operational detail (equity partner cards, non-equity leaderboard, tier & health trends, customer quality). Moved out of the Scoreboard Creators tab and the Board portal (both keep summaries + link here).",
+      "data_sources": [
+        "data/creator-roster/creator-roster-data.json",
+        "data/attribution/creator-economics-monthly.json",
+        "data/board-portal/lever-diligence-metrics.json"
+      ],
+      "refresh_cadence": "daily (Superfiliate roster refresh) + daily 11:30 UTC republish",
+      "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
+      "status": "deployed"
+    },
+    {
       "id": "ops-dashboard",
       "name": "Ops Dashboard",
       "repo": "kenetik-growth-system",
