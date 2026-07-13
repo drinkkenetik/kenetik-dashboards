@@ -11,7 +11,7 @@
     <style>
         :root {
             --bg: var(--page);
-            --surface: var(--surface);
+            --surface: var(--white); /* [P6A fix] was cyclic var(--surface) */
             --surface-hover: var(--panel);
             --border: var(--line);
             --text: var(--ink);
@@ -1121,8 +1121,9 @@
 </head>
 <body>
 <!-- [P6A-T3] shared dark header + gradient (matches the KGS portal surfaces) -->
-<header class="k-header"><div class="k-header-inner">
-  <div><span class="k-brand">KENETIK <span>Website Experiment Dashboard</span></span></div>
+<header class="k-header" style="margin-bottom:0"><div class="k-header-inner">
+  <div><div class="k-brand">KENETIK <span>Website Experiment Dashboard</span></div><div class="k-subtitle">CRO Experiments</div></div>
+  <div class="k-header-meta">Alert-only · calibrating</div>
 </div></header>
 <div class="grad" style="border-radius:0;margin-bottom:0;"></div>
 <!-- [P5-T4] Cross-world nav — static copy of kenetik-growth-system portal/components/nav-header.js; keep in sync. -->
