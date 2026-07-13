@@ -76,6 +76,26 @@
       "status": "deployed"
     },
     {
+      "id": "wholesale",
+      "name": "Wholesale",
+      "repo": "kenetik-growth-system",
+      "path": "portal/wholesale.html",
+      "aliases": [
+        "wholesale.html"
+      ],
+      "url": "/wholesale.html and /portal/wholesale.html",
+      "owner": "Devon Price",
+      "purpose": "Wholesale domain page (P6B-T2): full depth \u2014 Pulse / Accounts / Margin / Cash / Pipeline, account worklists, AR aging. Moved out of the Scoreboard's Wholesale tab (which keeps a summary + link here). Admin app linked prominently.",
+      "data_sources": [
+        "data/wholesale/wholesale-state.json",
+        "data/wholesale/business-type-overrides.json",
+        "data/wholesale/metro-overrides.json"
+      ],
+      "refresh_cadence": "daily (wholesale analysis ~6:15 ET) + daily 11:30 UTC republish",
+      "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
+      "status": "deployed"
+    },
+    {
       "id": "ops-dashboard",
       "name": "Ops Dashboard",
       "repo": "kenetik-growth-system",
