@@ -242,15 +242,15 @@
   ],
   "teardowns": [
     {
-      "brand": "Neuro",
-      "cat": "Energy / focus",
-      "hook": "The focus-swap testimonial",
-      "gmv": "~$393K",
-      "spin": "“My focus before deep work isn't coffee anymore. It's this.”",
-      "href": "https://tiktok.com/@neuro",
-      "thumb": "",
-      "why": "A creator names the one thing they reach for before focused work, and why they dropped caffeine for it. First-person, relatable, and any creator can shoot it, no stunt or gimmick required.",
-      "caveat": "Borrow the focus-swap testimonial. Skip Neuro's caffeine plus L-theanine performance framing, ours is caffeine-free."
+      "brand": "Bloom",
+      "cat": "Functional",
+      "hook": "“This really puts it into perspective” label comparison",
+      "gmv": "~$23K",
+      "spin": "“Here's what I stopped putting in my body.” Hold an energy drink next to Kenetik and read the labels: 200mg caffeine, 39g sugar, versus 0, 0, and 12g ketones.",
+      "href": "https://www.tiktok.com/@az_momlife/video/7655397131263429918",
+      "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7655397131263429918.webp",
+      "why": "She holds the product up and reads the real label numbers back to back, then lands on the shocker (124g of sugar). The this-for-this rhythm makes the math impossible to un-see. @az_momlife ran the exact format for two different brands and it converted both times, proof it's the format, not the creator.",
+      "caveat": "Borrow the label-comparison rhythm. Stick to our proof set and the caffeine and sugar contrast, no health claims."
     },
     {
       "brand": "Nello",
