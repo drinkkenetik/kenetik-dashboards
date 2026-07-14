@@ -1881,6 +1881,13 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-07-13"
+    },
+    {
+      "id": "L-273",
+      "summary": "A dedicated synchronous all-hands (Monday Connect 7/13) convened to clear the CS-204..217 approval backlog ran 80+ minutes and never raised it (zero \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-07-14"
     }
   ],
   "entries": [
@@ -5644,6 +5651,23 @@
       "created_at": "2026-07-13T14:20:46.374834+00:00",
       "archival_state": "active",
       "id": "L-272"
+    },
+    {
+      "date": "2026-07-14",
+      "learning": "A dedicated synchronous all-hands (Monday Connect 7/13) convened to clear the CS-204..217 approval backlog ran 80+ minutes and never raised it (zero transcript hits for ChangeSet/authorize/sign-off); the approved queue grew 13->16 and CS-208 lapsed. The designated fix for 'async has failed' itself failed.",
+      "source": "D14 Team Intelligence scan (Monday Connect Gemini transcript + tracker), 2026-07-14",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Full 111KB transcript grep for ChangeSet/CS-2026/authorize/sign-off returned zero matches; tracker approved-queue 13->16; CS-208 send date 7/13 passed at status approved. See daily synthesis 2026-07-14-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "brain/kenetik-brain meeting-cadence / dispatch: stand up a recurring 15-min CS-authorization slot decoupled from Monday Connect open floor (H-14-1).",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-14T13:24:02.630556+00:00",
+      "archival_state": "active",
+      "id": "L-273"
     }
   ],
   "archived_entries": [
@@ -8078,5 +8102,5 @@
       "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated (IG empty-caption publish gate) and live well over 7 days \u2014 confirmed durable across 4 consecutive clean feed/reel windows per Moe's PM (SYN-20260612, 20260619, 20260706, 20260710)."
     }
   ],
-  "last_updated": "2026-07-13"
+  "last_updated": "2026-07-14"
 }
