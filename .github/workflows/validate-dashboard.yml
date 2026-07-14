@@ -1,25 +1,33 @@
 name: Validate Dashboards
 
-# 2026-07-13: KGS Virtual Team Dashboard retired (Devon's call). Deleted
-# kenetik-growth-system-dashboard.html, validate-dashboard.py, and
-# install-hooks.sh (all three existed solely for this surface's KGS v3.2
-# role/process structure validation). The validate-system-state job that
-# ran validate-dashboard.py is removed below. system-state.json and
-# system-state-definitions.json are left in the repo (orphaned — no reader,
-# no sync — flagged to Devon separately) but no longer gate CI.
+# 2026-07-13 (P7-T9): the ChangeSet dashboard and website-experiment dashboard
+# were rebuilt in the kenetik-growth-system portal (portal/changesets.html,
+# portal/experiments.html) and the two GitHub-Pages surfaces here became
+# redirect stubs. The cross-repo syncs that fed them
+# (sync-tracker-to-dashboards.yml, sync-website-state-to-dashboards.yml,
+# sync-clarity-to-dashboards.yml) are retired in kgs.
+#
+# Consequently the two dashboard-coupled jobs are retired here:
+#   - validate-changeset-tracker  (validated the now-unsynced data/changeset-tracker.json)
+#   - validate-dashboard-stats     (the D4 gate that reproduced every statistic the
+#                                   live changeset-dashboard.html displayed — moot for a stub)
+# Their scripts (validate-changeset-tracker.py, validate-dashboard-stats.py) are
+# deleted with this change. The synced data products (data/changeset-*.json,
+# data/website-state.json, data/clarity/*, data/auto-optimize/*) are now orphaned
+# in this repo — left in place, flagged to Devon (mirrors the 2026-07-13 Virtual
+# Team retirement's handling of system-state.json).
+#
+# The surface-registry gate is KEPT. surface-registry.json is CANONICAL in kgs
+# (architecture/reporting/); the mirror sync is retired, so this repo's copy is
+# updated manually — see its _comment.
 
 on:
   push:
     branches: [main]
     paths:
-      - 'data/changeset-tracker.json'
-      - 'data/changeset-work-queue.json'
-      - 'data/changeset-impact-rollup.json'
-      - 'data/_schema-constants.json'
       - 'changeset-dashboard.html'
-      - 'validate-changeset-tracker.py'
-      - 'validate-dashboard-stats.py'
       - 'website-experiment-dashboard.html'
+      - 'creator-hub.html'
       - 'kenetik-network-viewer.html'
       - 'surface-registry.json'
       - 'validate-surface-registry.py'
@@ -27,71 +35,6 @@ on:
     branches: [main]
 
 jobs:
-  validate-changeset-tracker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Validate changeset-tracker.json
-        run: python3 validate-changeset-tracker.py
-
-      - name: Post failure summary
-        if: failure()
-        run: |
-          echo "## ❌ ChangeSet Tracker Validation Failed" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "changeset-tracker.json does not match schema v2.1." >> $GITHUB_STEP_SUMMARY
-          echo "Run \`python3 validate-changeset-tracker.py\` locally to see details." >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Common causes:**" >> $GITHUB_STEP_SUMMARY
-          echo "- File was truncated during push (use git clone+push, NOT MCP push_files)" >> $GITHUB_STEP_SUMMARY
-          echo "- Invalid status used (valid: draft, needs_feedback, approved, published, rolled_back, closed)" >> $GITHUB_STEP_SUMMARY
-          echo "- Invalid subtype used (valid: implementation, investigation, quick)" >> $GITHUB_STEP_SUMMARY
-          echo "- Compound statuses like closed_success used instead of status=closed + outcome field" >> $GITHUB_STEP_SUMMARY
-
-      - name: Post success summary
-        if: success()
-        run: |
-          echo "## ✅ ChangeSet Tracker Validation Passed" >> $GITHUB_STEP_SUMMARY
-
-  validate-dashboard-stats:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Reproduce every displayed dashboard statistic (D4 gate)
-        run: python3 validate-dashboard-stats.py
-
-      - name: Post failure summary
-        if: failure()
-        run: |
-          echo "## ❌ Dashboard Statistics Validation Failed" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "A number the dashboard displays no longer reproduces from its source data, or the dashboard reintroduced a non-contract field / dead surface." >> $GITHUB_STEP_SUMMARY
-          echo "Run \`python3 validate-dashboard-stats.py\` locally to see details." >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Common causes:**" >> $GITHUB_STEP_SUMMARY
-          echo "- impact-rollup.json or work-queue.json changed but the dashboard/manifest was not re-synced" >> $GITHUB_STEP_SUMMARY
-          echo "- A new client-side derivation of lifecycle/attention state was added (only computeAttentionIds is allowed)" >> $GITHUB_STEP_SUMMARY
-          echo "- A ChangeSet field outside allowed_cs_fields was referenced" >> $GITHUB_STEP_SUMMARY
-          echo "- A removed panel (shadow scorecard, lifecycle tab, the two misleading charts) was reintroduced" >> $GITHUB_STEP_SUMMARY
-
-      - name: Post success summary
-        if: success()
-        run: |
-          echo "## ✅ Dashboard Statistics Validation Passed" >> $GITHUB_STEP_SUMMARY
-          echo "Every displayed statistic reproduced from the four data products; contract clean; one attention derivation." >> $GITHUB_STEP_SUMMARY
-
   validate-surface-registry:
     runs-on: ubuntu-latest
     steps:
@@ -111,4 +54,4 @@ jobs:
           echo "## ❌ Surface Registry Gate Failed" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "A root-level HTML surface is not registered in surface-registry.json with a deployable status." >> $GITHUB_STEP_SUMMARY
-          echo "The registry is canonical in kgs at architecture/reporting/surface-registry.json (this repo's copy is a sync target — edit it there)." >> $GITHUB_STEP_SUMMARY
+          echo "The registry is canonical in kgs at architecture/reporting/surface-registry.json (this repo's copy is a manual mirror — edit it there and re-copy)." >> $GITHUB_STEP_SUMMARY

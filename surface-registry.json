@@ -1,5 +1,5 @@
 {
-  "_comment": "P4-T5 surface registry \u2014 one row per reporting surface. Deploy gates: publish-board-portal.yml (kgs) and validate-dashboard.yml (kenetik-dashboards) fail the build if a deployed HTML is not registered here with status 'deployed'. The kenetik-dashboards copy of this file is a pure sync target (sync-website-state-to-dashboards.yml); edit only in kgs architecture/reporting/.",
+  "_comment": "MIRROR of kenetik-growth-system/architecture/reporting/surface-registry.json — kgs is CANONICAL. The automated mirror (sync-website-state-to-dashboards.yml) was retired P7-T9 (2026-07-13); this copy is now updated manually when the canonical file changes. Do not edit rows here — edit in kgs and re-copy. Consumed by this repo's validate-dashboard.yml surface gate (validate-surface-registry.py --html *.html).",
   "version": "1.0",
   "updated": "2026-07-13",
   "statuses": [
@@ -17,7 +17,7 @@
       "aliases": [
         "index.html"
       ],
-      "url": "Cloudflare Pages root (Access-gated) \u2014 the single front door; deployed as index.html",
+      "url": "Cloudflare Pages root (Access-gated) — the single front door; deployed as index.html",
       "owner": "Devon Price",
       "purpose": "Entry hub: one landing page routing every audience (board, executive weekly, daily ops, departments) to its surface, with per-surface data-freshness dots.",
       "data_sources": [
@@ -85,7 +85,7 @@
       ],
       "url": "/wholesale.html and /portal/wholesale.html",
       "owner": "Devon Price",
-      "purpose": "Wholesale domain page (P6B-T2): full depth \u2014 Pulse / Accounts / Margin / Cash / Pipeline, account worklists, AR aging. Moved out of the Scoreboard's Wholesale tab (which keeps a summary + link here). Admin app linked prominently.",
+      "purpose": "Wholesale domain page (P6B-T2): full depth — Pulse / Accounts / Margin / Cash / Pipeline, account worklists, AR aging. Moved out of the Scoreboard's Wholesale tab (which keeps a summary + link here). Admin app linked prominently.",
       "data_sources": [
         "data/wholesale/wholesale-state.json",
         "data/wholesale/business-type-overrides.json",
@@ -131,7 +131,7 @@
         "data/wholesale/payment-match-probe.json",
         "data/attribution/creator-economics-monthly.json"
       ],
-      "refresh_cadence": "daily morning check (reads state files written ~6:00\u20136:30 ET) + daily 11:30 UTC republish",
+      "refresh_cadence": "daily morning check (reads state files written ~6:00–6:30 ET) + daily 11:30 UTC republish",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
     },
@@ -145,7 +145,7 @@
       ],
       "url": "/paid-media.html and /portal/paid-media.html",
       "owner": "Devon Price",
-      "purpose": "Paid-media domain page (P6B-T1): full depth \u2014 pixel/platform/MER KPIs, spend-by-campaign, platform + campaign tables, creative-health / ad drill-down (#campaigns, #creative). Moved out of the Ops Dashboard.",
+      "purpose": "Paid-media domain page (P6B-T1): full depth — pixel/platform/MER KPIs, spend-by-campaign, platform + campaign tables, creative-health / ad drill-down (#campaigns, #creative). Moved out of the Ops Dashboard.",
       "data_sources": [
         "data/paid-media/paid-media-state.json"
       ],
@@ -163,11 +163,11 @@
       ],
       "url": "/partnerships.html and /portal/partnerships.html",
       "owner": "Devon Price",
-      "purpose": "Partnerships domain page: research-partnerships / BD relationship tracker \u2014 active + pursued relationships across NCAA programs, pro sports, the physician network, researchers / KOLs, and summit vendors. Needs-attention strip, segment/status/search/sort, per-contact staleness. Folded in from the retired dashboards/brandon/ dashboard 2026-07-13.",
+      "purpose": "Partnerships domain page: research-partnerships / BD relationship tracker — active + pursued relationships across NCAA programs, pro sports, the physician network, researchers / KOLs, and summit vendors. Needs-attention strip, segment/status/search/sort, per-contact staleness. Folded in from the retired dashboards/brandon/ dashboard 2026-07-13.",
       "data_sources": [
         "data/partnerships/partnerships-state.json"
       ],
-      "refresh_cadence": "manual \u2014 refreshed on demand (Brandon / Cowork; /summit-tracker) + daily 11:30 UTC republish. No automated writer (see summit-tracker.md note).",
+      "refresh_cadence": "manual — refreshed on demand (Brandon / Cowork; /summit-tracker) + daily 11:30 UTC republish. No automated writer (see summit-tracker.md note).",
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed"
     },
@@ -204,6 +204,50 @@
       "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
       "status": "deployed",
       "note": "P4-T4/T4b resolved: marketing-calendar-dashboard.html retired to a redirect stub pointing here; Calendar tab is the canonical calendar viewer."
+    },
+    {
+      "id": "changesets",
+      "name": "ChangeSets",
+      "repo": "kenetik-growth-system",
+      "path": "portal/changesets.html",
+      "aliases": [
+        "changesets.html"
+      ],
+      "owner": "Devon Price",
+      "purpose": "ChangeSet pipeline view (P7-T9): tracker statuses, needs-attention work queue, impact rollup, and per-ChangeSet brief drilldown. Rebuilt in the 6A system reading repo-native files; migrated from the retired kenetik-dashboards changeset-dashboard.html (now a redirect stub).",
+      "data_sources": [
+        "cgo-logs/changesets/tracker.json",
+        "cgo-logs/changesets/work-queue.json",
+        "cgo-logs/changesets/impact-rollup.json",
+        "kenetik-growth-system/commands/_schema-constants.json",
+        "cgo-logs/changesets/CS-*.md"
+      ],
+      "refresh_cadence": "on tracker changes (push-triggered) + daily 11:30 UTC republish; impact-rollup regenerated pre-dist",
+      "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
+      "status": "deployed",
+      "url": "/changesets.html and /portal/changesets.html"
+    },
+    {
+      "id": "experiments",
+      "name": "Experiments",
+      "repo": "kenetik-growth-system",
+      "path": "portal/experiments.html",
+      "aliases": [
+        "experiments.html"
+      ],
+      "owner": "Devon Price",
+      "purpose": "Website auto-optimize experiment state, GA4/GSC site metrics, and Clarity behavioral telemetry (P7-T9). Rebuilt in the 6A system reading kgs-native files; migrated from the retired kenetik-dashboards website-experiment-dashboard.html (now a redirect stub).",
+      "data_sources": [
+        "data/website/auto-optimize-state.json",
+        "data/website/website-state.json",
+        "data/clarity/snapshots/*",
+        "config/clarity-rubric.json"
+      ],
+      "refresh_cadence": "auto-optimize state (migrated snapshot; recurring writer pending — see note) + daily clarity/website-state + daily republish",
+      "deploy": "publish-board-portal.yml -> gh-pages-board-portal -> Cloudflare Pages (Access)",
+      "status": "deployed",
+      "note": "Auto-optimize state is a migrated snapshot (data/website/auto-optimize-state.json); its recurring writer lives in the Shopify theme repo (auto-optimize-orchestrator Cowork task) + a separate kdash sync, neither cleanly repointable to kgs — pending Devon (P7-T9 flag). Page degrades gracefully + shows a staleness banner.",
+      "url": "/experiments.html and /portal/experiments.html"
     },
     {
       "id": "marketing-calendar-dashboard",
@@ -302,16 +346,14 @@
       "path": "changeset-dashboard.html",
       "url": "GitHub Pages (kenetik-dashboards)",
       "owner": "Devon Price",
-      "purpose": "ChangeSet pipeline view: tracker statuses, work queue, impact rollup (D3 rewrite, D4-gated).",
+      "purpose": "Redirect stub to the portal ChangeSets page (/changesets.html). Rebuilt in kgs P7-T9; the github.io URL keeps resolving via meta-refresh.",
       "data_sources": [
-        "data/changeset-tracker.json",
-        "data/changeset-work-queue.json",
-        "data/changeset-impact-rollup.json",
-        "data/_schema-constants.json"
+        "none (redirect stub)"
       ],
-      "refresh_cadence": "on tracker sync (sync-tracker-to-dashboards.yml)",
+      "refresh_cadence": "static (redirect stub)",
       "deploy": "GitHub Pages (kenetik-dashboards)",
-      "status": "deployed"
+      "status": "deployed",
+      "note": "Redirect stub -> https://kenetik-board-portal.pages.dev/changesets.html (P7-T9). Row retained: kdash surface gate checks deployed basenames."
     },
     {
       "id": "website-experiment-dashboard",
@@ -320,15 +362,30 @@
       "path": "website-experiment-dashboard.html",
       "url": "GitHub Pages (kenetik-dashboards)",
       "owner": "Devon Price",
-      "purpose": "Auto-optimize experiment surfaces: state, clarity snapshots, website-state trends.",
+      "purpose": "Redirect stub to the portal Experiments page (/experiments.html). Rebuilt in kgs P7-T9; the github.io URL keeps resolving via meta-refresh.",
       "data_sources": [
-        "data/website-state.json",
-        "data/auto-optimize/state.json",
-        "data/clarity/snapshots/*"
+        "none (redirect stub)"
       ],
-      "refresh_cadence": "on website-state/clarity syncs",
+      "refresh_cadence": "static (redirect stub)",
       "deploy": "GitHub Pages (kenetik-dashboards)",
-      "status": "deployed"
+      "status": "deployed",
+      "note": "Redirect stub -> https://kenetik-board-portal.pages.dev/experiments.html (P7-T9). Row retained: kdash surface gate checks deployed basenames."
+    },
+    {
+      "id": "creator-hub",
+      "name": "Creator Hub (public)",
+      "repo": "kenetik-dashboards",
+      "path": "creator-hub.html",
+      "owner": "Devon Price",
+      "purpose": "Public marketing landing page for creator recruitment; fed by kdash-native creator-hub-data.json.",
+      "data_sources": [
+        "creator-hub-data.json"
+      ],
+      "refresh_cadence": "manual",
+      "deploy": "GitHub Pages (kenetik-dashboards)",
+      "status": "deployed",
+      "note": "Public by design — relocation out of the reporting repo recommended (Devon's call, not this phase). Registered P7-T9 so the kdash surface gate covers it.",
+      "url": "GitHub Pages (kenetik-dashboards)"
     },
     {
       "id": "network-viewer",
