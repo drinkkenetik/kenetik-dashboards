@@ -145,18 +145,18 @@
       "handle": "@2brothersepoxy",
       "primary": "$20,535",
       "secondary": "1.34M views",
-      "angle": "Comparison",
+      "angle": "The fuel reframe",
       "href": "https://tiktok.com/@2brothersepoxy/video/7538575914821602574",
       "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7538575914821602574.webp",
-      "note": "Held an energy drink next to Kenetik and read the numbers out loud.",
+      "note": "A creator carried Roman's message: fuel your body with garbage and you'll feel like garbage. Kenetik is the real thing.",
       "rank": "1",
       "age": "11mo ago",
-      "why": "A direct-to-camera pitch: name the problem, then frame Kenetik as the fix. Raw, one take, energy-drink-killer framing.",
-      "hook": "Better, and you still feel like garbage. This isn't an energy drink. It's the energy drink killer.",
+      "why": "A creator amplifying a Kenetik owner's core message, that running on the wrong fuel makes you feel like garbage, and Kenetik is different. Borrowing a trusted owner's framing gave it instant credibility, and it became our biggest single video.",
+      "hook": "Feel like garbage? It's the fuel you're putting in. Kenetik is the real thing, not another energy drink.",
       "sellingPoints": [
-        "Problem to solution: you're not putting real fuel in your body.",
-        "The contrast: no crash, no jitters.",
-        "The payoff: steady focus, all day."
+        "The owner's message: garbage fuel in, garbage out.",
+        "Kenetik is real fuel, not an energy drink.",
+        "No crash, no jitters, just steady focus."
       ]
     },
     {
@@ -229,6 +229,24 @@
         "Three ingredients, all natural.",
         "The flavors are out of this world.",
         "Clean and simple."
+      ]
+    },
+    {
+      "handle": "@kenetik",
+      "primary": "$350",
+      "secondary": "124K views",
+      "angle": "Real life",
+      "rank": "6",
+      "age": "10mo ago",
+      "href": "https://tiktok.com/@kenetik/video/7576725456347614519",
+      "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7576725456347614519.webp",
+      "note": "Roman on staying locked in through the chaos of everyday life.",
+      "why": "Our own channel again: a slice of life from Roman showing Kenetik fitting into a loud, chaotic day. Real life beats a polished ad, and it pulled 124K views.",
+      "hook": "My life is loud. It's chaotic. This is how I stay locked in through it.",
+      "sellingPoints": [
+        "Fits a real, busy day, not a studio.",
+        "Caffeine-free, so no jitters in the chaos.",
+        "Steady focus when everything's happening at once."
       ]
     }
   ],
