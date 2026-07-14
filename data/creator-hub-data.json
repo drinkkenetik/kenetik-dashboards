@@ -115,32 +115,38 @@
     {
       "angle": "Not an energy drink",
       "why": "Hold your usual energy drink next to Kenetik and read the labels: 200mg caffeine and 39g sugar versus 0, 0, and 12g ketones. The point is that Kenetik is the opposite of an energy drink, not a healthier one. You're leaving the category, not upgrading it.",
-      "example": "Read the labels side by side: a typical energy drink runs ~200mg caffeine and 39g sugar. Kenetik is 0 caffeine, 0 sugar, 12g ketones. Frame it as the replacement, never a “healthier energy drink.”"
+      "example": "Read the labels side by side: a typical energy drink runs ~200mg caffeine and 39g sugar. Kenetik is 0 caffeine, 0 sugar, 12g ketones. Frame it as the replacement, never a “healthier energy drink.”",
+      "icon": "no-bolt"
     },
     {
       "angle": "“I quit caffeine”",
       "why": "A personal, honest transformation, what changed once you dropped caffeine for good. Steadier days, no jitters, no 2pm crash.",
-      "example": "A first-person “I quit caffeine, here's what changed” story, steadier days, no crash. @tyler.slone289 ran it and it converted."
+      "example": "A first-person “I quit caffeine, here's what changed” story, steadier days, no crash. @tyler.slone289 ran it and it converted.",
+      "icon": "no-coffee"
     },
     {
       "angle": "Trusted creator owners",
       "why": "The names your audience already trusts, Roman Atwood, Cleetus McFarland, Matt Hughes, creators with real communities leading the charge on brain health. Their likeness pulls views and belief a cold ad never could.",
-      "example": "Roman Atwood, Cleetus McFarland, Matt Hughes."
+      "example": "Roman Atwood, Cleetus McFarland, Matt Hughes.",
+      "icon": "verified"
     },
     {
       "angle": "Fits your daily routine",
       "why": "Show exactly where Kenetik lands in a normal day, the morning ritual, before a workout, the 2pm desk reset. “Here's how it fits into my day” is the language that converts, because viewers picture themselves doing it.",
-      "example": "Routine and day-in-the-life content viewers see themselves in."
+      "example": "Routine and day-in-the-life content viewers see themselves in.",
+      "icon": "routine"
     },
     {
       "angle": "Taste reaction",
       "why": "Everyone's first question about a healthy drink is whether it actually tastes good. Answer it head-on. A real, unscripted first sip, your honest reaction, the flavor call-out. It kills the biggest objection before it's raised, and it makes people want to try it themselves.",
-      "example": "@be.lush leaned into the taste, and that honest first-sip reaction drove $9,430 in real TikTok Shop revenue."
+      "example": "@be.lush leaned into the taste, and that honest first-sip reaction drove $9,430 in real TikTok Shop revenue.",
+      "icon": "taste"
     },
     {
       "angle": "You found it first",
       "why": "Put your audience onto brain fuel before it's everywhere. Frame ketones as the next wellness wave, the one people ride early the way they did with collagen, gut health, and prebiotic soda. Your audience follows you to find what's next.",
-      "example": "Caffeine-free brain fuel is a brand-new category. The creators who break it early are the ones who benefit most."
+      "example": "Caffeine-free brain fuel is a brand-new category. The creators who break it early are the ones who benefit most.",
+      "icon": "first"
     }
   ],
   "liveVideos": [
