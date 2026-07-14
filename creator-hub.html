@@ -129,7 +129,7 @@
       <div class="pill" style="padding:0;gap:8px;margin-bottom:6px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FCF8E;box-shadow:0 0 0 4px rgba(63,207,142,.16);"></span><span class="eyebrow" style="color:#1F8A5B;">Live from TikTok Shop</span></div>
       <h3 style="font-size:clamp(20px,2.4vw,28px);font-weight:700;margin:0;">What's converting for us right now</h3>
     </div>
-    <span style="font-size:13px;color:#8A8B95;">Updated <span data-updated></span> · figures are point-in-time</span>
+    <span style="font-size:13px;color:#8A8B95;">Data as of <span data-updated></span> · figures are point-in-time</span>
   </div>
   <div style="font-size:13px;color:#8A8B95;margin:0 0 14px;">Tap any video to see the hook, selling points, and why it converted.</div>
   <div id="liveVideos" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;"></div>
@@ -246,7 +246,7 @@
 <a data-discord class="btn" href="#join" style="position:fixed;right:18px;bottom:18px;z-index:70;background:linear-gradient(90deg,#D0148C,#7A2BD0);color:#fff;padding:14px 22px;box-shadow:0 8px 24px rgba(122,43,208,.4);">Join the Discord</a>
 
 <script>
-const DATA_URL = "https://raw.githubusercontent.com/drinkkenetik/kenetik-dashboards/main/data/creator-hub-data.json?t=" + Date.now();
+const DATA_URL = "data/creator-hub-data.json?t=" + Date.now();
 const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function el(html){const t=document.createElement("template");t.innerHTML=html.trim();return t.content.firstChild;}
 fetch(DATA_URL).then(r=>r.json()).then(d=>{
