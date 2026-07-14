@@ -148,7 +148,16 @@
       "angle": "Comparison",
       "href": "https://tiktok.com/@2brothersepoxy/video/7538575914821602574",
       "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7538575914821602574.webp",
-      "note": "Held an energy drink next to Kenetik and read the numbers out loud."
+      "note": "Held an energy drink next to Kenetik and read the numbers out loud.",
+      "rank": "1",
+      "age": "11mo ago",
+      "why": "A direct-to-camera pitch: name the problem, then frame Kenetik as the fix. Raw, one take, energy-drink-killer framing.",
+      "hook": "Better, and you still feel like garbage. This isn't an energy drink. It's the energy drink killer.",
+      "sellingPoints": [
+        "Problem to solution: you're not putting real fuel in your body.",
+        "The contrast: no crash, no jitters.",
+        "The payoff: steady focus, all day."
+      ]
     },
     {
       "handle": "@be.lush",
@@ -157,7 +166,16 @@
       "angle": "Ketones + focus",
       "href": "https://tiktok.com/@be.lush/video/7545964105744534839",
       "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7545964105744534839.webp",
-      "note": "First-person on why she runs on ketones instead of caffeine."
+      "note": "First-person on why she runs on ketones instead of caffeine.",
+      "rank": "2",
+      "age": "10mo ago",
+      "why": "A short explainer on why the brain runs better on ketones than caffeine, then Kenetik as the easy way to get them.",
+      "hook": "Your brain's preferred fuel isn't glucose or caffeine. So what happens when you give it ketones?",
+      "sellingPoints": [
+        "Your brain actually prefers ketones.",
+        "The old problem was taste. Now there's a clean way to get them.",
+        "Sustained energy and sharper focus, the things we all want."
+      ]
     },
     {
       "handle": "@tyler.slone289",
@@ -166,7 +184,16 @@
       "angle": "I quit energy drinks",
       "href": "https://tiktok.com/@tyler.slone289/video/7566379846733991198",
       "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7566379846733991198.webp",
-      "note": "Quit-caffeine transformation: “haven't had an energy drink in months, for good reason.”"
+      "note": "Quit-caffeine transformation: “haven't had an energy drink in months, for good reason.”",
+      "rank": "3",
+      "age": "9mo ago",
+      "why": "A casual, conversational review built on a real quit-caffeine experience.",
+      "hook": "Haven't had an energy drink in months. For good reason.",
+      "sellingPoints": [
+        "Zero sugar, zero caffeine, fasting friendly.",
+        "The flavors are dialed in now.",
+        "Grab a case and try it."
+      ]
     },
     {
       "handle": "@kenetik",
@@ -175,7 +202,16 @@
       "angle": "From our channel",
       "href": "https://tiktok.com/@kenetik/video/7551800944049147191",
       "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7551800944049147191.webp",
-      "note": "Our own channel: a partner appreciation moment that doubled as product proof."
+      "note": "Our own channel: a partner appreciation moment that doubled as product proof.",
+      "rank": "4",
+      "age": "10mo ago",
+      "why": "Our own channel: a partner unveils Kenetik as a new tool for your toolbox, with announcement energy.",
+      "hook": "Today I'm going to introduce you to a brand new tool for your toolbox.",
+      "sellingPoints": [
+        "Out to disrupt the energy drink market.",
+        "Caffeine-free and sugar-free, and you still feel great.",
+        "Clean energy, no caffeine needed."
+      ]
     },
     {
       "handle": "@from.mud.to.beauty",
@@ -184,7 +220,16 @@
       "angle": "Focus + clarity",
       "href": "https://tiktok.com/@from.mud.to.beauty/video/7548900264716111135",
       "thumb": "https://database.euka.ai/storage/v1/object/public/creator_videos_photos/7548900264716111135.webp",
-      "note": "Straight-to-camera on the focus and clarity she gets from ketones."
+      "note": "Straight-to-camera on the focus and clarity she gets from ketones.",
+      "rank": "5",
+      "age": "10mo ago",
+      "why": "An enthusiastic, relatable monologue: what she reaches for instead of the usual energy drinks.",
+      "hook": "Need energy right now? What I'm not reaching for is the garbage everyone's drinking.",
+      "sellingPoints": [
+        "Three ingredients, all natural.",
+        "The flavors are out of this world.",
+        "Clean and simple."
+      ]
     }
   ],
   "loop": [
