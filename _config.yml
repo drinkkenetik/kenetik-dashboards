@@ -1,6 +1,6 @@
 # Markdown under data/ is content, not site templates. The dashboards fetch these
-# files directly from raw.githubusercontent.com (see BRIEF_RAW_BASE in
-# changeset-dashboard.html), so they are never served from the built Jekyll site.
+# files directly from raw.githubusercontent.com, so they are never served from
+# the built Jekyll site.
 #
 # By default the github-pages `jekyll-optional-front-matter` plugin pushes every
 # .md file through the Liquid + YAML renderer. That makes ordinary brief content
@@ -9,5 +9,4 @@
 # tag. Excluding these dirs stops Jekyll from parsing or rendering them at all,
 # which removes that entire class of build failure at the source.
 exclude:
-  - data/briefs/
   - data/performance-memory/
