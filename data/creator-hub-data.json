@@ -34,6 +34,10 @@
     {
       "label": "Join",
       "href": "#join"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
     }
   ],
   "proofChips": [
@@ -382,5 +386,39 @@
     "igUrl": "https://instagram.com/biohacklac",
     "web": "drinkkenetik.com",
     "webUrl": "https://drinkkenetik.com"
-  }
+  },
+  "faqs": [
+    {
+      "q": "What is Kenetik?",
+      "a": "Caffeine-free brain fuel. Real clarity and focus with zero caffeine, zero sugar, nothing artificial, and 12 grams of ketones. It's the opposite of an energy drink: calm, clear energy with no jitters and no crash."
+    },
+    {
+      "q": "How do I earn commission?",
+      "a": "Through TikTok Shop. Tag Kenetik's products in your video, and every sale it drives is credited to you. On TikTok Shop you don't need a separate code, the product tag does the work."
+    },
+    {
+      "q": "Do I need a big following?",
+      "a": "No. On TikTok Shop the top sellers usually aren't the biggest accounts. If your content converts, it wins. Your video could be the one that pops."
+    },
+    {
+      "q": "What can I say, and what should I avoid?",
+      "a": "Talk from your own experience: caffeine-free, 12 grams of ketones, no jitters, no crash, tastes good, steady focus. Keep every line experiential. Don't make health or medical claims like treats, cures, or clinically proven, and never call Kenetik an energy drink. It's the energy drink killer."
+    },
+    {
+      "q": "Does it have caffeine? What's in it?",
+      "a": "Zero caffeine, zero sugar, nothing artificial. The clean energy comes from 12 grams of ketones, the fuel your brain runs best on."
+    },
+    {
+      "q": "Does it actually taste good?",
+      "a": "Yes. Real fruit flavors, no chalky aftertaste, and no sugar. Taste is one of the biggest reasons people buy, so an honest first-sip reaction on camera converts."
+    },
+    {
+      "q": "What kind of content converts?",
+      "a": "Raw and real, one take, in your own voice. Win the first two seconds with a hook, tell a true story, and show the can in the scene. Pick one of the proven ad reads above and make it yours. Story converts, not a discount pitch."
+    },
+    {
+      "q": "Do I need to run a discount or a code?",
+      "a": "No. Kenetik is premium, so we convert through story and real experience, not a percentage off. On TikTok Shop, tagging the product is what credits your sale."
+    }
+  ]
 }
