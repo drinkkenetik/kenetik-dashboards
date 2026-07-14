@@ -354,25 +354,29 @@
       "title": "Science / brain visuals",
       "tag": "Explainer",
       "desc": "Brain-scan and brain-fuel animations, plus simple ketone-mechanism explainers.",
-      "href": "https://app.air.inc/a/b9ead120e"
+      "href": "https://app.air.inc/a/b9ead120e",
+      "thumb": "assets/clips/clip-science.jpg"
     },
     {
       "title": "Personality clips",
       "tag": "Partners",
       "desc": "Roman Atwood, Cleetus McFarland, Matt Hughes, and other athlete and partner moments.",
-      "href": "https://app.air.inc/a/b959bdd3c"
+      "href": "https://app.air.inc/a/b959bdd3c",
+      "thumb": "assets/clips/clip-personality.jpg"
     },
     {
       "title": "Product b-roll",
       "tag": "B-roll",
       "desc": "Can pours, first-sip reactions, energy-drink-vs-Kenetik side-by-sides, desk and gym-bag lifestyle.",
-      "href": "https://app.air.inc/a/b84453c89"
+      "href": "https://app.air.inc/a/b84453c89",
+      "thumb": "assets/clips/clip-product.jpg"
     },
     {
       "title": "Founder / story clips",
       "tag": "Story",
       "desc": "The “why ketones” origin story and the mission behind the category.",
-      "href": "https://app.air.inc/a/b7f9d6b37"
+      "href": "https://app.air.inc/a/b7f9d6b37",
+      "thumb": "assets/clips/clip-founder.jpg"
     }
   ],
   "perksShort": [
