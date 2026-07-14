@@ -203,18 +203,8 @@
       <div class="card" style="background:#F5F6F8;border-radius:20px;padding:clamp(24px,3vw,36px);">
         <div id="formBox">
           <div style="font-size:20px;font-weight:700;margin-bottom:6px;">Apply to partner</div>
-          <div style="font-size:14px;color:#5A5B66;margin-bottom:24px;">Tell us a little about you. We'll take it from there.</div>
-          <form id="applyForm" style="display:flex;flex-direction:column;gap:14px;">
-            <input name="name" required placeholder="Name" style="padding:13px 16px;border:1px solid #DADCE2;border-radius:10px;font:inherit;font-size:15px;">
-            <input name="handle" required placeholder="TikTok handle (@yourname)" style="padding:13px 16px;border:1px solid #DADCE2;border-radius:10px;font:inherit;font-size:15px;">
-            <input name="email" required type="email" placeholder="Email" style="padding:13px 16px;border:1px solid #DADCE2;border-radius:10px;font:inherit;font-size:15px;">
-            <div style="display:flex;gap:10px;flex-wrap:wrap;">
-              <input name="followers" placeholder="Follower count" style="flex:1 1 120px;min-width:0;padding:13px 16px;border:1px solid #DADCE2;border-radius:10px;font:inherit;font-size:15px;">
-              <input name="niche" placeholder="Content niche" style="flex:1 1 120px;min-width:0;padding:13px 16px;border:1px solid #DADCE2;border-radius:10px;font:inherit;font-size:15px;">
-            </div>
-            <textarea name="why" rows="3" placeholder="Why do you want in?" style="padding:13px 16px;border:1px solid #DADCE2;border-radius:10px;font:inherit;font-size:15px;resize:vertical;"></textarea>
-            <button type="submit" class="btn" style="background:linear-gradient(90deg,#D0148C,#7A2BD0);color:#fff;border:0;padding:16px;justify-content:center;cursor:pointer;">Send my application</button>
-          </form>
+          <div style="font-size:14px;color:#5A5B66;margin-bottom:24px;">Apply through our TikTok Shop creator portal. Takes about two minutes.</div>
+          <a class="btn" href="https://kenetiktiktok.superfiliate.com/portal/sign-up" target="_blank" rel="noopener" style="background:linear-gradient(90deg,#D0148C,#7A2BD0);color:#fff;padding:16px 28px;justify-content:center;width:100%;box-sizing:border-box;">Start your application</a><div style="font-size:13px;color:#8A8B95;margin-top:14px;line-height:1.5;">Opens our TikTok Shop creator portal. Quick sign-up, and you'll get your code and links to start posting.</div>
         </div>
       </div>
     </div>
@@ -306,7 +296,7 @@ document.getElementById("liveVideos").innerHTML=(d.liveVideos||[]).map(function(
   // form
   document.getElementById("faqs").innerHTML=(d.faqs||[]).map(function(f){return '<details style="border-bottom:1px solid #E7E8EC;"><summary style="padding:20px 2px;font-size:17px;font-weight:600;color:#1E1230;display:flex;justify-content:space-between;align-items:center;gap:16px;">'+esc(f.q)+'<span class="faqmark" style="color:#D0148C;font-size:24px;font-weight:400;line-height:1;flex-shrink:0;">+</span></summary><div style="padding:0 2px 22px;font-size:15px;font-weight:300;line-height:1.65;color:#5A5B66;max-width:64ch;">'+esc(f.a)+'</div></details>';}).join("");
   const form=document.getElementById("applyForm");
-  form.addEventListener("submit",async e=>{
+  if(form) form.addEventListener("submit",async e=>{
     e.preventDefault();
     const ep=d.formEndpoint;
     try{ if(ep){ await fetch(ep,{method:"POST",body:new FormData(form)});} }catch(_){}
