@@ -72,8 +72,8 @@
     },
     {
       "n": "2",
-      "title": "Your code + commission",
-      "desc": "Your own trackable code, and you earn on every sale you drive."
+      "title": "Earn on every sale",
+      "desc": "Tag Kenetik in your TikTok videos and you earn commission on every sale it drives, automatically. Sign up to Superfiliate below for your own link and code to earn off TikTok too."
     }
   ],
   "perksRest": [
@@ -97,24 +97,24 @@
   "steps": [
     {
       "n": "1",
-      "title": "Get product",
-      "desc": "Join our Superfiliate creator portal to get product. Quick sign-up, and you'll get your code and links to start.",
-      "cta": "Join Superfiliate",
-      "href": "https://kenetiktiktok.superfiliate.com/portal/sign-up"
-    },
-    {
-      "n": "2",
-      "title": "Get educated",
-      "desc": "Before you post, get why Kenetik wins: premium, caffeine-free brain fuel, the opposite of an energy drink. Know the story and the proof so your content lands and stays on-brand.",
+      "title": "Know the product",
+      "desc": "Get why Kenetik wins before you post: premium, caffeine-free brain fuel, the opposite of an energy drink. Know the story and the proof so your content lands and stays on-brand.",
       "cta": "What is Kenetik",
       "href": "#about"
     },
     {
-      "n": "3",
-      "title": "Post",
-      "desc": "Use a proven ad read below, in your own voice. Tag Kenetik's products in your video and every sale it drives is credited to you.",
+      "n": "2",
+      "title": "Post and tag",
+      "desc": "Make content in your own voice using a proven ad read below. Tag Kenetik's products in your TikTok videos and you earn commission on every sale, automatically. You're already set up for this.",
       "cta": "See the ad reads",
       "href": "#adreads"
+    },
+    {
+      "n": "3",
+      "title": "Go deeper with Superfiliate",
+      "desc": "Superfiliate takes it further: more free product, plus your own link and code to promote Kenetik off TikTok too. Sign up below to unlock it.",
+      "cta": "Join Superfiliate",
+      "href": "https://kenetiktiktok.superfiliate.com/portal/sign-up"
     },
     {
       "n": "4",
