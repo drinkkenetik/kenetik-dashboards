@@ -47,9 +47,18 @@
     "Nothing Artificial"
   ],
   "seals": [
-    "Informed Sport Certified",
-    "Bioidentical D-BHB",
-    "Third-Party Tested"
+    {
+      "title": "Informed Sport Certified",
+      "desc": "Every batch is tested for banned substances, so athletes at any level can trust what's in the can."
+    },
+    {
+      "title": "Bioidentical D-BHB",
+      "desc": "The same ketone your body makes for fuel, not a synthetic stand-in."
+    },
+    {
+      "title": "Third-Party Tested",
+      "desc": "Independently verified against the label. What we say is what's inside."
+    }
   ],
   "perksFeatured": [
     {
