@@ -24,6 +24,7 @@
   .lvh{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8B95;margin-bottom:6px;}
   details>summary{list-style:none;cursor:pointer;} summary::-webkit-details-marker{display:none;}
   .faqmark{transition:transform .18s ease;} details[open] .faqmark{transform:rotate(45deg);}
+#seals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,3vw,44px);align-items:start;}@media(max-width:720px){#seals{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -70,12 +71,13 @@
       <p style="font-size:clamp(22px,2.8vw,34px);font-weight:300;line-height:1.32;max-width:24ch;margin:0 0 8px;">A caffeine-free drink that <b style="font-weight:600;">fuels your brain</b>.</p>
       <p style="font-size:clamp(17px,1.7vw,20px);font-weight:300;line-height:1.6;color:#5A5B66;max-width:60ch;margin:0 0 28px;">Clarity and focus without the caffeine. No jitters, no sugar, no 2pm crash, no coming down. It's the calm, clear kind of energy, the opposite of an energy drink. Ketones do the work behind the scenes. You just feel clear. And it actually tastes good.</p>
       <div id="proofChips" style="display:flex;flex-wrap:wrap;gap:10px;"></div>
+      <div style="font-size:13px;font-weight:300;color:#8A8B95;margin-top:14px;">The proof lives on the can. Show it, don't say it.</div>
     </div>
     <div style="flex:1 1 360px;min-width:280px;order:1;">
       <picture style="display:block;aspect-ratio:4/5;border-radius:20px;overflow:hidden;"><source media="(max-width:640px)" srcset="assets/about-can-9x16.jpg"><img src="assets/about-can-1x1.jpg" alt="Kenetik Watermelon Lime can" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;"></picture>
     </div>
   </div>
-  <div id="seals" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(20px,3vw,40px);margin-top:40px;padding-top:32px;border-top:1px solid #E7E8EC;"></div>
+  <div id="seals" style="margin-top:40px;padding-top:32px;border-top:1px solid #E7E8EC;"></div>
 </section>
 
 <!-- MISSION -->
@@ -259,7 +261,7 @@ fetch(DATA_URL).then(r=>r.json()).then(d=>{
   // proof chips
   document.getElementById("proofChips").innerHTML=(d.proofChips||[]).map(c=>`<span class="pill" style="background:#F5F6F8;border:1px solid #E7E8EC;color:#1E1230;"><span style="width:6px;height:6px;border-radius:999px;background:linear-gradient(90deg,#D0148C,#2E6BE6);"></span>${esc(c)}</span>`).join("");
   // seals (text chips; swap to images when assets provided)
-  document.getElementById("seals").innerHTML=(d.seals||[]).map(function(s){var t=(typeof s==="string")?s:(s.title||"");var ds=(s&&s.desc)?s.desc:"";return '<div><div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;">'+'<span style="width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,#D0148C,#7A2BD0);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>'+'<span style="font-size:17px;font-weight:600;color:#1E1230;">'+esc(t)+'</span></div>'+(ds?'<div style="font-size:14px;font-weight:300;line-height:1.5;color:#5A5B66;">'+esc(ds)+'</div>':'')+'</div>';}).join("")+'<div style="grid-column:1/-1;font-size:13px;font-weight:300;color:#8A8B95;margin-top:8px;">The proof lives on the can. Show it, don&#39;t say it.</div>';
+  document.getElementById("seals").innerHTML=(d.seals||[]).map(function(s){var t=(typeof s==="string")?s:(s.title||"");var ds=(s&&s.desc)?s.desc:"";return '<div><div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;">'+'<span style="width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,#D0148C,#7A2BD0);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>'+'<span style="font-size:17px;font-weight:600;color:#1E1230;">'+esc(t)+'</span></div>'+(ds?'<div style="font-size:14px;font-weight:300;line-height:1.5;color:#5A5B66;">'+esc(ds)+'</div>':'')+'</div>';}).join("");
   // perks
   const perk=(p,big)=>`<div class="card" style="padding:${big?30:26}px;"><div style="width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#D0148C,#7A2BD0);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;margin-bottom:16px;">${esc(p.n)}</div><div style="font-size:${big?20:18}px;font-weight:600;margin-bottom:8px;">${esc(p.title)}</div><div style="font-size:${big?16:15}px;font-weight:300;line-height:1.55;color:#5A5B66;">${esc(p.desc)}</div></div>`;
   document.getElementById("perksFeatured").innerHTML=(d.perksFeatured||[]).map(p=>perk(p,true)).join("");
