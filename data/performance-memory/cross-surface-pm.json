@@ -1888,6 +1888,20 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-07-14"
+    },
+    {
+      "id": "L-274",
+      "summary": "The approved-CS egress stall is a routing defect, not a capacity or forcing-function gap: the 12-CS 6/23 batch bundles Katie-authorizable email/SMS/C\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-07-15"
+    },
+    {
+      "id": "L-275",
+      "summary": "Voluntary cancellation-reason ranking shifted: 'No longer want the product' 31.9% (#1), oversupply 29.8% (#2), 'too expensive' 25.5% (#3). Price is n\u2026",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-07-15"
     }
   ],
   "entries": [
@@ -5668,6 +5682,40 @@
       "created_at": "2026-07-14T13:24:02.630556+00:00",
       "archival_state": "active",
       "id": "L-273"
+    },
+    {
+      "date": "2026-07-15",
+      "learning": "The approved-CS egress stall is a routing defect, not a capacity or forcing-function gap: the 12-CS 6/23 batch bundles Katie-authorizable email/SMS/CRO CSs behind a Devon-only gate. The corrective is to split publish authority to the owning role (Katie) and reserve Devon only for genuine gates (CS-211 claims), not to re-run a synchronous forcing function.",
+      "source": "Operations & Planning dept brief INV-D-1/INS-D-2 (2026-07-15) + tracker.json",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Since session 79 only CS-217 (non-email wholesale) cleared approved->published; the 12-item Katie-owned email batch approved 6/23 sat unchanged through Monday Connect (7/13) and the 7/13 all-hands. Reinforces L-020/L-098/L-273. See daily synthesis 2026-07-15-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline authorization/dispatch routing + team-roles CGO Authority table application in the lifecycle sweep",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-15T13:27:40.319423+00:00",
+      "archival_state": "active",
+      "id": "L-274"
+    },
+    {
+      "date": "2026-07-15",
+      "learning": "Voluntary cancellation-reason ranking shifted: 'No longer want the product' 31.9% (#1), oversupply 29.8% (#2), 'too expensive' 25.5% (#3). Price is no longer the #1 reason (updates L-272). Oversupply+price = 55.3% is intercept-recoverable; the #1 value-realization reason is not discount-interceptable and points at post-purchase efficacy reinforcement.",
+      "source": "Lifecycle Marketing dept brief INV-D-3 (2026-07-15), data/voc/voc-state.json",
+      "source_type": "operational_signal",
+      "domain": "lifecycle",
+      "evidence": "7d cancellation mix from voc-state.json (53 total / 47 voluntary). Combined recoverable oversupply+price = 55.3%. Corroborates and updates active entry L-272. See daily synthesis 2026-07-15-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "cross-surface-pm L-272 entry + churn-intercept CS-230 reason-code coverage",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-15T13:27:50.958815+00:00",
+      "archival_state": "active",
+      "id": "L-275"
     }
   ],
   "archived_entries": [
@@ -8102,5 +8150,5 @@
       "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated (IG empty-caption publish gate) and live well over 7 days \u2014 confirmed durable across 4 consecutive clean feed/reel windows per Moe's PM (SYN-20260612, 20260619, 20260706, 20260710)."
     }
   ],
-  "last_updated": "2026-07-14"
+  "last_updated": "2026-07-15"
 }
