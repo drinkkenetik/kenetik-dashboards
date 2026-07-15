@@ -25,6 +25,7 @@
   details>summary{list-style:none;cursor:pointer;} summary::-webkit-details-marker{display:none;}
   .faqmark{transition:transform .18s ease;} details[open] .faqmark{transform:rotate(45deg);}
 #seals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,3vw,44px);align-items:start;}@media(max-width:720px){#seals{grid-template-columns:1fr;}}
+#nav a{padding:12px 14px;font-size:13px;font-weight:600;color:#5A5B66;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease;white-space:nowrap;text-decoration:none;}#nav a.nav-active{color:#1E1230;border-bottom-color:#D0148C;}section[id]{scroll-margin-top:104px;}
 </style>
 </head>
 <body>
@@ -81,7 +82,7 @@
 </section>
 
 <!-- MISSION -->
-<section style="background-color:#F5F6F8;background-image:linear-gradient(rgba(30,18,48,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(30,18,48,.05) 1px,transparent 1px);background-size:26px 26px;">
+<section id="mission" style="background-color:#F5F6F8;background-image:linear-gradient(rgba(30,18,48,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(30,18,48,.05) 1px,transparent 1px);background-size:26px 26px;">
   <div class="wrap" style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:center;">
     <div style="flex:1 1 440px;min-width:300px;">
       <div class="eyebrow" style="color:#7A2BD0;margin-bottom:20px;">Our mission on TikTok</div>
@@ -257,7 +258,7 @@ fetch(DATA_URL).then(r=>r.json()).then(d=>{
   const disc=d.discordUrl||"#join";
   document.querySelectorAll("[data-discord]").forEach(a=>{a.setAttribute("href",disc);if(disc.startsWith("http"))a.setAttribute("target","_blank");});
   // nav
-  document.getElementById("nav").innerHTML=(d.navLinks||[]).map(l=>`<a href="${esc(l.href)}" style="padding:12px 14px;font-size:13px;font-weight:600;color:#5A5B66;">${esc(l.label)}</a>`).join("");
+  document.getElementById("nav").innerHTML=(d.navLinks||[]).map(l=>`<a href="${esc(l.href)}" data-navtarget="${esc((l.href||'').replace('#',''))}">${esc(l.label)}</a>`).join("");
   // proof chips
   document.getElementById("proofChips").innerHTML=(d.proofChips||[]).map(c=>`<span class="pill" style="background:#F5F6F8;border:1px solid #E7E8EC;color:#1E1230;"><span style="width:6px;height:6px;border-radius:999px;background:linear-gradient(90deg,#D0148C,#2E6BE6);"></span>${esc(c)}</span>`).join("");
   // seals (text chips; swap to images when assets provided)
@@ -307,6 +308,8 @@ document.getElementById("liveVideos").innerHTML=(d.liveVideos||[]).map(function(
 }).catch(e=>{document.getElementById("heroHeadline").textContent="Kenetik Creator Hub";console.error("data load failed",e);});
 
 (function(){var fab=document.getElementById('floatDiscord'),hero=document.getElementById('top');if(!fab||!hero)return;function setFab(s){fab.style.opacity=s?'1':'0';fab.style.visibility=s?'visible':'hidden';fab.style.transform=s?'translateY(0)':'translateY(12px)';fab.style.pointerEvents=s?'auto':'none';}setFab(false);if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){setFab(!e.isIntersecting);});},{threshold:0}).observe(hero);}else{setFab(true);}})();
+
+(function(){var nav=document.getElementById('nav');if(!nav)return;var links=[].slice.call(nav.querySelectorAll('a[data-navtarget]'));if(!links.length)return;var map={};links.forEach(function(a){map[a.getAttribute('data-navtarget')]=a;});var secs=Object.keys(map).map(function(id){return document.getElementById(id);}).filter(Boolean);function activate(id){links.forEach(function(a){a.classList.toggle('nav-active',a.getAttribute('data-navtarget')===id);});var el=map[id];if(el){var t=el.offsetLeft-(nav.clientWidth/2)+(el.offsetWidth/2);if(nav.scrollTo){nav.scrollTo({left:Math.max(0,t),behavior:'smooth'});}else{nav.scrollLeft=Math.max(0,t);}}}if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){activate(e.target.id);}});},{rootMargin:'-45% 0px -50% 0px',threshold:0});secs.forEach(function(s){obs.observe(s);});}})();
 </script>
 </body>
 </html>
