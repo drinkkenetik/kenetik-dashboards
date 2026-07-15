@@ -29,6 +29,7 @@
 #lbimg{object-position:72% 38%;}@media(min-width:768px){#lbimg{object-position:center 34%;}}
 @media(max-width:640px){.hero-cta{flex-direction:column;align-items:stretch;}.hero-cta .btn{width:100%;box-sizing:border-box;}}
 .hero-text{padding:clamp(40px,6vw,80px) clamp(20px,4vw,56px);justify-content:center;}@media(max-width:640px){.hero-text{padding:24px 20px 40px;justify-content:flex-start;}}.oneline{display:inline-flex;align-items:center;gap:16px;}@media(max-width:640px){.oneline{display:flex;flex-direction:column;align-items:flex-start;gap:8px;}}
+@media(max-width:640px){.hero-media{order:-1;min-height:300px;}.hero-text{padding-top:20px;}}
 </style>
 </head>
 <body>
@@ -61,7 +62,7 @@
         <a class="btn" href="#adreads" style="color:#fff;padding:16px 28px;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4);">See what's converting</a>
       </div>
     </div>
-    <div style="flex:1 1 340px;min-width:280px;min-height:340px;position:relative;">
+    <div class="hero-media" style="flex:1 1 340px;min-width:280px;min-height:340px;position:relative;">
       <div style="position:absolute;inset:clamp(16px,2vw,40px);border-radius:20px;overflow:hidden;"><img src="assets/hero-creator.jpg?v=b3" alt="Kenetik creator drinking Watermelon Lime" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
     </div>
   </div>
