@@ -36,7 +36,7 @@
       <span style="font-weight:700;font-size:18px;letter-spacing:-.01em;">KENETIK</span>
       <span style="font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#5A5B66;border-left:1px solid #E7E8EC;padding-left:10px;">Creator Hub</span>
     </a>
-    <a data-discord class="btn" href="#join" style="background:#1E1230;color:#fff;padding:11px 20px;">Join the Discord</a>
+    <a data-discord class="btn" href="#join" style="background:#1E1230;color:#fff;padding:11px 20px;">Join Discord</a>
   </div>
   <nav id="nav" class="wrap" style="padding:0 12px;display:flex;gap:2px;overflow-x:auto;white-space:nowrap;border-top:1px solid #F0F1F4;"></nav>
 </header>
@@ -241,7 +241,7 @@
     </div>
   </div>
 </footer>
-<a data-discord class="btn" href="#join" style="position:fixed;right:18px;bottom:18px;z-index:70;background:linear-gradient(90deg,#D0148C,#7A2BD0);color:#fff;padding:14px 22px;box-shadow:0 8px 24px rgba(122,43,208,.4);">Join the Discord</a>
+<a data-discord class="btn" href="#join" style="position:fixed;right:18px;bottom:18px;z-index:70;background:linear-gradient(90deg,#D0148C,#7A2BD0);color:#fff;padding:14px 22px;box-shadow:0 8px 24px rgba(122,43,208,.4);">Join Discord</a>
 
 <script>
 const DATA_URL = "data/creator-hub-data.json?t=" + Date.now();
@@ -302,7 +302,7 @@ document.getElementById("liveVideos").innerHTML=(d.liveVideos||[]).map(function(
     e.preventDefault();
     const ep=d.formEndpoint;
     try{ if(ep){ await fetch(ep,{method:"POST",body:new FormData(form)});} }catch(_){}
-    document.getElementById("formBox").innerHTML=`<div style="text-align:center;padding:20px 10px;"><div style="width:56px;height:56px;border-radius:999px;background:linear-gradient(135deg,#D0148C,#2E6BE6);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:#fff;font-size:26px;">✓</div><div style="font-size:22px;font-weight:700;margin-bottom:10px;">You're in the queue.</div><div style="font-size:15px;font-weight:300;line-height:1.6;color:#5A5B66;max-width:34ch;margin:0 auto 22px;">Nick or the team will reach out. Jump in the Discord while you wait.</div><a class="btn" href="${esc(disc)}" ${disc.startsWith("http")?'target="_blank"':''} style="background:#1E1230;color:#fff;padding:14px 26px;">Join the Discord</a></div>`;
+    document.getElementById("formBox").innerHTML=`<div style="text-align:center;padding:20px 10px;"><div style="width:56px;height:56px;border-radius:999px;background:linear-gradient(135deg,#D0148C,#2E6BE6);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:#fff;font-size:26px;">✓</div><div style="font-size:22px;font-weight:700;margin-bottom:10px;">You're in the queue.</div><div style="font-size:15px;font-weight:300;line-height:1.6;color:#5A5B66;max-width:34ch;margin:0 auto 22px;">Nick or the team will reach out. Jump in the Discord while you wait.</div><a class="btn" href="${esc(disc)}" ${disc.startsWith("http")?'target="_blank"':''} style="background:#1E1230;color:#fff;padding:14px 26px;">Join Discord</a></div>`;
   });
 }).catch(e=>{document.getElementById("heroHeadline").textContent="Kenetik Creator Hub";console.error("data load failed",e);});
 </script>
