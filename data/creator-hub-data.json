@@ -446,5 +446,21 @@
       "q": "Do I need to run a discount or a code?",
       "a": "No. Kenetik is premium, so we convert through story and real experience, not a percentage off. On TikTok Shop, tagging the product is what credits your sale."
     }
+  ],
+  "sayThis": [
+    "Caffeine-free, sugar-free, 12g ketones, nothing artificial.",
+    "Brain fuel. Metabolic brain fuel. The category we're building.",
+    "Calm, clear focus with no jitters and no 2pm crash.",
+    "How it makes YOU feel, in your own words.",
+    "The opposite of an energy drink, what you reach for instead.",
+    "Bioidentical D-BHB ketones."
+  ],
+  "notThat": [
+    "“Energy drink,” even “a healthier energy drink.”",
+    "“Treats,” “cures,” “prevents,” or any health condition.",
+    "“Clinically proven.” (We say “clinically studied.”)",
+    "“Reduces inflammation,” “antioxidant,” or disease claims.",
+    "Hard stats like “focus up 20%” or “brain activity up X%.”",
+    "Promises or guarantees, and don't lead with a discount."
   ]
 }
