@@ -16,10 +16,6 @@
       "href": "#mission"
     },
     {
-      "label": "Get started",
-      "href": "#start"
-    },
-    {
       "label": "Ad reads",
       "href": "#adreads"
     },
@@ -34,6 +30,10 @@
     {
       "label": "Clips",
       "href": "#clips"
+    },
+    {
+      "label": "Get started",
+      "href": "#start"
     },
     {
       "label": "Join",
