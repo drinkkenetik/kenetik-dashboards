@@ -126,14 +126,14 @@
       "id": "L-015",
       "summary": "Feb 2026 cohort M1 repeat 12.8% (-33% YoY) -- need Day-7 leading indicator, current detection 30d late",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-13"
     },
     {
       "id": "L-016",
       "summary": "Connector-zero mistaken for -48.9% decline; domain brief template needs connector-health precondition before WoW claims [\u26a0\ufe0f CONTRADICTION: see L-009 which treated Amazon -48.9% as real]",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-13"
     },
     {
@@ -154,21 +154,21 @@
       "id": "L-019",
       "summary": "ATC rate collapsed 30-32% uniformly across ALL devices -- cart-level infrastructure issue, not mobile UX",
       "domain": "website",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-14"
     },
     {
       "id": "L-020",
       "summary": "Approval-to-execution gap is structural (14+ sessions; nudges falsified; Devon+Katie 87.5% CS concentration) \u2014 needs delegation/scheduling mechanism [merged L-109]",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-14"
     },
     {
       "id": "L-021",
       "summary": "Three independent domains converge on cognitive/neuroprotection positioning (D16+D17+D18)",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-14"
     },
     {
@@ -231,14 +231,14 @@
       "id": "L-031",
       "summary": "CS-2026-063 incomplete: placeholder \u2014 owner review pending for Cohort Quality Decline Investigation \u2014 Feb 2026 M1 Repeat",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-15"
     },
     {
       "id": "L-032",
       "summary": "CS-2026-065 incomplete: placeholder \u2014 owner review pending for Claims Audit \u2014 KME Endurance & MCT:Glucose Ratio (Martyn/Frenser 2026)",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-15"
     },
     {
@@ -280,7 +280,7 @@
       "id": "L-038",
       "summary": "BRIDGE CP-011: Stimulant Refugee confirmed #2 audience segment (6.47%+ FB, 153K+ imp) \u2014 inform paid media targeting and lifecycle segmentation",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-04-17"
     },
     {
@@ -1902,58 +1902,16 @@
       "domain": "lifecycle",
       "status": "active",
       "date": "2026-07-15"
+    },
+    {
+      "id": "L-276",
+      "summary": "[CS-2026-203] incomplete (n/a): Single-slide homepage hero fix applied live by Katie via Shopify editor (~7/10 sync); script errors fell ~130->27/1k.\u2026",
+      "domain": "DTC-website",
+      "status": "active",
+      "date": "2026-07-15"
     }
   ],
   "entries": [
-    {
-      "id": "L-015",
-      "date": "2026-04-13",
-      "type": "threshold_calibration",
-      "learning": "New-customer cohort M1 repeat declined to 12.8% for Feb 2026 (-33% YoY) while new-session acquisition fell 16.3% WoW and new-customer rate fell 21.4 ppts. Three independent domains converge: cohort quality decline is acquisition-channel-mix driven (Unbound Sweep + ARCA + creator-launch Feb cohort).",
-      "source": "D01 + D06 + D09 cross-signal (2026-04-13 domain scans)",
-      "source_type": "operational_signal",
-      "domain": "cross-surface",
-      "evidence": "No new-cohort M1 repeat alert threshold exists; signal surfaces 30+ days late in cached_metrics. See synthesis 2026-04-13-s1.md.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "domain-06 skill (add Day-7 cohort leading-indicator metric); running-log.json cached_metrics (add m1_cohort_repeat_rolling)",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-016",
-      "date": "2026-04-13",
-      "type": "process_change",
-      "learning": "S30 handoff cited Amazon -48.9% WoW as RED; this session's full pull shows Amazon Ads connector returns zero for all metrics (credential/mapping failure) while Amazon organic is only -7.1% net WoW (Easter baseline reversion). The -48.9% figure was an Ads-only artifact of the broken connector, not a real business signal.",
-      "source": "D03 scan (2026-04-13) vs S30 handoff",
-      "source_type": "domain_contradiction",
-      "domain": "operations",
-      "evidence": "No validation layer between connector-zero output and scan-level WoW claim. See synthesis 2026-04-13-s1.md.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-009"
-      ],
-      "target": "domain-03 skill (add connector-health precondition check before WoW delta reporting)",
-      "contradiction_flag": "Contradicts L-009 which treated Amazon -48.9% as real revenue signal. L-016 evidence shows this was a connector artifact. Needs CGO resolution.",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)",
-        "L-009 (the contradicting entry) was archived 2026-07-10 as expired_unactioned \u2014 the underlying question (real Amazon revenue decline vs. connector artifact) was never resolved by CGO. Flagging in this week's report as a stale open item rather than a fresh active-vs-active contradiction."
-      ],
-      "contradiction_with": [
-        "L-009"
-      ],
-      "needs_review": true
-    },
     {
       "id": "L-017",
       "date": "2026-04-13",
@@ -2003,144 +1961,6 @@
         "confidence 'moderate' -> 'preliminary' (source_count=1)"
       ],
       "action_stamped_at": "2026-07-11"
-    },
-    {
-      "id": "L-019",
-      "date": "2026-04-14",
-      "type": "process_change",
-      "learning": "ATC rate collapsed 30-32% uniformly across ALL devices -- indicates cart-level infrastructure issue, not mobile-specific UX problem. Prior sessions focused on mobile bounce as primary CRO concern.",
-      "source": "D09 domain brief + D01 domain brief, 2026-04-14 scan",
-      "source_type": "operational_signal",
-      "domain": "website",
-      "evidence": "D09: ATC -30-32% all devices. D01: revenue -12.4%, sessions -37.9%. See daily synthesis 2026-04-14-s1.md.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "brain/kenetik-brain/roles/web-experimentation-skill.md",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'moderate' (source_count=2)"
-      ]
-    },
-    {
-      "id": "L-020",
-      "date": "2026-04-14",
-      "type": "process_change",
-      "learning": "ChangeSet approval-to-execution gap is structural, not communicational. Persisted 14+ consecutive sessions; nudge-based escalation empirically falsified (5/28 nudges produced zero same-day executions). Working model H-D12-01: approvals don't generate scheduled execution slots. Devon+Katie hold 87.5% of active CSes \u2014 exceeds the 65% complexity-trigger threshold. Fix requires a structural delegation/scheduling mechanism, not reminders.",
-      "source": "D12+D14 briefs 2026-04-14 scan; cgo-daily-pipeline/synthesis-2026-05-29-s1 (Operations INS-OP-2 + 5/28 nudge result) [merged L-109]",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "5/28 nudges produced zero same-day executions; closures fell to 0 in the last 7d. Active CS concentration: Katie 14 / Devon 10 (87.5%). See daily synthesis 2026-05-29-s1.",
-      "confidence": "strong",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-098"
-      ],
-      "target": "cgo-daily-pipeline/config/changeset-instructions.md",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'moderate' (source_count=2)"
-      ],
-      "merged_from": [
-        "L-109"
-      ]
-    },
-    {
-      "id": "L-021",
-      "date": "2026-04-14",
-      "type": "skill_update",
-      "learning": "Three independent domains converge on cognitive/neuroprotection positioning: published RCTs (D16), competitor launches (D17), consumer trends (D18) all point away from endurance toward cognitive benefits.",
-      "source": "D16 + D17 + D18 domain briefs, 2026-04-14 scan",
-      "source_type": "domain_contradiction",
-      "domain": "cross-surface",
-      "evidence": "D16: Martyn+Tominec RCTs. D17: Happy Panda, Tecton, nootropic CAGR. D18: Caffeine-free 78/100. See synthesis 2026-04-14-s1.md.",
-      "confidence": "strong",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "brain/kenetik-brain/references/claims-compliance.md",
-      "entry_type": "skill_update",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-031",
-      "date": "2026-04-15",
-      "type": "changeset_outcome",
-      "learning": "Cohort Quality Decline Investigation \u2014 Feb 2026 M1 Repeat closed redundant. The investigation was superseded by parallel work; M1 repeat rate restoration (12.8% \u2192 >=16%) remains an open need but will be addressed through a different ChangeSet path. Placeholder PM entry; owner review pending on whether to re-open under new ID.",
-      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
-      "source_type": "changeset_outcome",
-      "domain": "lifecycle",
-      "evidence": "Expected: Feb cohort M1 repeat restored to >=16%. Actual: investigation closed as redundant without findings captured here. Owner review pending.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-063",
-      "variance_pct": null,
-      "outcome_class": "incomplete",
-      "sweep_flag": "pm_backfill_needs_owner_review",
-      "entry_type": "changeset_outcome",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-032",
-      "date": "2026-04-15",
-      "type": "changeset_outcome",
-      "learning": "Claims Audit \u2014 KME Endurance & MCT:Glucose Ratio (Martyn/Frenser 2026) closed superseded. The claims audit was rolled into a broader compliance review path. Regulatory exposure review for blanket KME endurance claims and MCT:glucose SKU compliance rate remain unresolved under this ID. Placeholder PM entry; successor CS-ID pending linkage.",
-      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
-      "source_type": "changeset_outcome",
-      "domain": "operations",
-      "evidence": "Expected: zero blanket KME endurance claims, all MCT:glucose SKUs reviewed by Apr 20. Actual: superseded without measurement captured here. Owner review pending.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-065",
-      "variance_pct": null,
-      "outcome_class": "incomplete",
-      "sweep_flag": "pm_backfill_needs_owner_review",
-      "entry_type": "changeset_outcome",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-038",
-      "date": "2026-04-17",
-      "type": "content_pattern",
-      "learning": "'Stimulant Refugee' (caffeine addiction / Wedge B audience) is now confirmed as the #2 audience segment behind Protocol Class on Facebook, with 6.47%+ average engagement across 22+ posts and 153K+ impressions over 4+ cycles. Cross-domain implications: (1) paid media FB targeting should explicitly weight toward Stimulant Refugee hooks as primary creative direction alongside Protocol Class; (2) lifecycle should map this persona to a Klaviyo segment for dedicated email flow development; (3) content calendar should maintain Stimulant Refugee cadence at minimum 30% of FB output.",
-      "source": "Moe Content PM SYN-20260417-001 \u2014 CP-011 Stimulant Refugee confirmed #2 segment (NEW Apr 2026)",
-      "source_type": "content_pm_bridge",
-      "domain": "content",
-      "evidence": "CP-011: 22+ FB posts, 6.47%+ avg eng, 153K+ impressions, 4+ cycles. 3.3x overall median. Ashton Hall celebrity attribution variant adds named dimension at 1.73x FB median. See SYN-20260417-001.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "bridge_source_id": "CP-011",
-      "bridge_synthesis_id": "SYN-20260417-001",
-      "entry_type": "content_pattern",
-      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
     },
     {
       "id": "L-041",
@@ -4062,14 +3882,17 @@
       "domain": "content",
       "evidence": "superfiliate-state top5 share 0.848; commission-controllable pool only ~$6.2K/30d; metric exists in registry with band=null. See daily synthesis 2026-06-18-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "CS-2026-232 2026-07-13: Cut idle ambassador stipends \u2014 4 zero-revenue paid creators (restore ambassador_cac)",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-232"
+      ],
       "target": "metrics-registry.yaml \u2014 set a band on d08_creator_revenue_concentration_top5",
       "entry_type": "threshold_calibration",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-07-17"
     },
     {
       "id": "L-138",
@@ -4260,16 +4083,18 @@
       "domain": "content",
       "evidence": "Blended creator ROI/CAC mixes $0 equity CACs with commission CACs, masking scalable economics. Thin attribution volume (guardrail: directional). See daily synthesis 2026-07-03-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "CS-2026-232 2026-07-13: Cut idle ambassador stipends \u2014 4 zero-revenue paid creators (restore ambassador_cac)",
       "skill_files_updated": [],
       "related_entries": [
-        "L-137"
+        "L-137",
+        "CS-2026-232"
       ],
       "target": "creator-management / creator-roi skill files \u2014 separate equity-partner artifacts from scalable commission-tier economics",
       "entry_type": "skill_update",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-07-17"
     },
     {
       "id": "L-148",
@@ -5442,7 +5267,7 @@
       "domain": "cross-surface",
       "evidence": "Handoff content isn't reconciled against tracker.json + state-file freshness before propagating, so resolved/corrected items can read as still-open. See daily synthesis 2026-07-07-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "CS-2026-233 2026-07-15: TRX 8/11 launch website readiness \u2014 Lemon-Lime Shot PDP + dedicated launch LP",
       "target": "task-b-synthesis.md handoff-read step / dispatch session-handoff writer \u2014 add a reconcile-handoff-against-tracker+state gate before carrying claims forward.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
@@ -5453,7 +5278,11 @@
       "reconciliation_notes": [
         "evidence pruned from 239 chars to source-pointer form (Process 3.8 Step 0c, 2026-07-10)"
       ],
-      "type": "process_change"
+      "type": "process_change",
+      "action_stamped_at": "2026-07-17",
+      "related_entries": [
+        "CS-2026-233"
+      ]
     },
     {
       "date": "2026-07-07",
@@ -5640,14 +5469,16 @@
       "domain": "content",
       "evidence": "CAC-band logic does not distinguish numerator (idle fixed cost) from denominator (acquisition) drivers, so a pure idle-cost overshoot reads identically to a performance decline. Four paid creators produced $0 in trailing 30d while carrying ~$1,466.63/mo stipend. Spawned CS-2026-232. See daily synthesis 2026-07-13-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "f78aabe 2026-07-13: Phase 4 close (session 78): dispatch receipt, running-log, handoff, learning signals L-271/L-272, pipeline-runs \u2014 RED (approval gate now unblockable, claims cleared)",
       "target": "ambassador program stipend-review cadence / creator-economics balancing-metric interpretation in metrics-taxonomy",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-07-13T14:20:46.370480+00:00",
       "archival_state": "active",
-      "id": "L-271"
+      "id": "L-271",
+      "action_stamped_at": "2026-07-17",
+      "related_entries": []
     },
     {
       "date": "2026-07-13",
@@ -5657,14 +5488,16 @@
       "domain": "cross-surface",
       "evidence": "Churn-reason taxonomy previously treated a price objection as a pricing-lever signal; multi-source corroboration against strong satisfaction reframes it as a value-communication gap, changing the recommended intervention class. See daily synthesis 2026-07-13-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "f78aabe 2026-07-13: Phase 4 close (session 78): dispatch receipt, running-log, handoff, learning signals L-271/L-272, pipeline-runs \u2014 RED (approval gate now unblockable, claims cleared)",
       "target": "VOC synthesis interpretation + lifecycle retention messaging playbook",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-07-13T14:20:46.374834+00:00",
       "archival_state": "active",
-      "id": "L-272"
+      "id": "L-272",
+      "action_stamped_at": "2026-07-17",
+      "related_entries": []
     },
     {
       "date": "2026-07-14",
@@ -5674,14 +5507,16 @@
       "domain": "operations",
       "evidence": "Full 111KB transcript grep for ChangeSet/CS-2026/authorize/sign-off returned zero matches; tracker approved-queue 13->16; CS-208 send date 7/13 passed at status approved. See daily synthesis 2026-07-14-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "e4492f3 2026-07-14: phase4: 2026-07-14-s1 dispatch close \u2014 running-log s79, handoff, 3 demand signals, L-273, dispatch receipt, pipeline-run (cites L-273)",
       "target": "brain/kenetik-brain meeting-cadence / dispatch: stand up a recurring 15-min CS-authorization slot decoupled from Monday Connect open floor (H-14-1).",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-07-14T13:24:02.630556+00:00",
       "archival_state": "active",
-      "id": "L-273"
+      "id": "L-273",
+      "action_stamped_at": "2026-07-17",
+      "related_entries": []
     },
     {
       "date": "2026-07-15",
@@ -5691,14 +5526,16 @@
       "domain": "operations",
       "evidence": "Since session 79 only CS-217 (non-email wholesale) cleared approved->published; the 12-item Katie-owned email batch approved 6/23 sat unchanged through Monday Connect (7/13) and the 7/13 all-hands. Reinforces L-020/L-098/L-273. See daily synthesis 2026-07-15-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "60e9d8b 2026-07-15: phase4: dispatch+close 2026-07-15-s1 (session 80) \u2014 running-log, handoff, L-274/L-275, receipt, pipeline-runs",
       "target": "cgo-daily-pipeline authorization/dispatch routing + team-roles CGO Authority table application in the lifecycle sweep",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-07-15T13:27:40.319423+00:00",
       "archival_state": "active",
-      "id": "L-274"
+      "id": "L-274",
+      "action_stamped_at": "2026-07-17",
+      "related_entries": []
     },
     {
       "date": "2026-07-15",
@@ -5708,14 +5545,41 @@
       "domain": "lifecycle",
       "evidence": "7d cancellation mix from voc-state.json (53 total / 47 voluntary). Combined recoverable oversupply+price = 55.3%. Corroborates and updates active entry L-272. See daily synthesis 2026-07-15-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "60e9d8b 2026-07-15: phase4: dispatch+close 2026-07-15-s1 (session 80) \u2014 running-log, handoff, L-274/L-275, receipt, pipeline-runs",
       "target": "cross-surface-pm L-272 entry + churn-intercept CS-230 reason-code coverage",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-07-15T13:27:50.958815+00:00",
       "archival_state": "active",
-      "id": "L-275"
+      "id": "L-275",
+      "action_stamped_at": "2026-07-17",
+      "related_entries": []
+    },
+    {
+      "date": "2026-07-15",
+      "type": "changeset_outcome",
+      "learning": "Single-slide homepage hero fix applied live by Katie via Shopify editor (~7/10 sync); script errors fell ~130->27/1k. CS-proposed change is in production, PR branch redundant. Follow-ups (separate): cw-custom-dev.js 404 hygiene; main PDP now worst-health surface.",
+      "source": "ChangeSet tracker close record (CS-2026-203)",
+      "source_type": "changeset_outcome",
+      "domain": "DTC-website",
+      "evidence": "Outcome: resolved. Backfilled from tracker.json (CS-2026-203).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-203",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-07-17T17:26:21.667420+00:00",
+      "maintain_version": "1.2.0",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-17T17:26:21.667918+00:00",
+      "archival_state": "active",
+      "id": "L-276"
     }
   ],
   "archived_entries": [
@@ -8148,7 +8012,210 @@
       ],
       "archived_date": "2026-07-10",
       "archived_reason": "Process 3.8 Step 0b auto-archive: action_taken populated (IG empty-caption publish gate) and live well over 7 days \u2014 confirmed durable across 4 consecutive clean feed/reel windows per Moe's PM (SYN-20260612, 20260619, 20260706, 20260710)."
+    },
+    {
+      "id": "L-015",
+      "date": "2026-04-13",
+      "type": "threshold_calibration",
+      "learning": "New-customer cohort M1 repeat declined to 12.8% for Feb 2026 (-33% YoY) while new-session acquisition fell 16.3% WoW and new-customer rate fell 21.4 ppts. Three independent domains converge: cohort quality decline is acquisition-channel-mix driven (Unbound Sweep + ARCA + creator-launch Feb cohort).",
+      "source": "D01 + D06 + D09 cross-signal (2026-04-13 domain scans)",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "No new-cohort M1 repeat alert threshold exists; signal surfaces 30+ days late in cached_metrics. See synthesis 2026-04-13-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "domain-06 skill (add Day-7 cohort leading-indicator metric); running-log.json cached_metrics (add m1_cohort_repeat_rolling)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-07-17",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-016",
+      "date": "2026-04-13",
+      "type": "process_change",
+      "learning": "S30 handoff cited Amazon -48.9% WoW as RED; this session's full pull shows Amazon Ads connector returns zero for all metrics (credential/mapping failure) while Amazon organic is only -7.1% net WoW (Easter baseline reversion). The -48.9% figure was an Ads-only artifact of the broken connector, not a real business signal.",
+      "source": "D03 scan (2026-04-13) vs S30 handoff",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "No validation layer between connector-zero output and scan-level WoW claim. See synthesis 2026-04-13-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-009"
+      ],
+      "target": "domain-03 skill (add connector-health precondition check before WoW delta reporting)",
+      "contradiction_flag": "Contradicts L-009 which treated Amazon -48.9% as real revenue signal. L-016 evidence shows this was a connector artifact. Needs CGO resolution.",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)",
+        "L-009 (the contradicting entry) was archived 2026-07-10 as expired_unactioned \u2014 the underlying question (real Amazon revenue decline vs. connector artifact) was never resolved by CGO. Flagging in this week's report as a stale open item rather than a fresh active-vs-active contradiction."
+      ],
+      "contradiction_with": [
+        "L-009"
+      ],
+      "needs_review": true,
+      "archived_date": "2026-07-17",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-019",
+      "date": "2026-04-14",
+      "type": "process_change",
+      "learning": "ATC rate collapsed 30-32% uniformly across ALL devices -- indicates cart-level infrastructure issue, not mobile-specific UX problem. Prior sessions focused on mobile bounce as primary CRO concern.",
+      "source": "D09 domain brief + D01 domain brief, 2026-04-14 scan",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "D09: ATC -30-32% all devices. D01: revenue -12.4%, sessions -37.9%. See daily synthesis 2026-04-14-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/roles/web-experimentation-skill.md",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ],
+      "archived_date": "2026-07-17",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-020",
+      "date": "2026-04-14",
+      "type": "process_change",
+      "learning": "ChangeSet approval-to-execution gap is structural, not communicational. Persisted 14+ consecutive sessions; nudge-based escalation empirically falsified (5/28 nudges produced zero same-day executions). Working model H-D12-01: approvals don't generate scheduled execution slots. Devon+Katie hold 87.5% of active CSes \u2014 exceeds the 65% complexity-trigger threshold. Fix requires a structural delegation/scheduling mechanism, not reminders.",
+      "source": "D12+D14 briefs 2026-04-14 scan; cgo-daily-pipeline/synthesis-2026-05-29-s1 (Operations INS-OP-2 + 5/28 nudge result) [merged L-109]",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "5/28 nudges produced zero same-day executions; closures fell to 0 in the last 7d. Active CS concentration: Katie 14 / Devon 10 (87.5%). See daily synthesis 2026-05-29-s1.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-098"
+      ],
+      "target": "cgo-daily-pipeline/config/changeset-instructions.md",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ],
+      "merged_from": [
+        "L-109"
+      ],
+      "archived_date": "2026-07-17",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-021",
+      "date": "2026-04-14",
+      "type": "skill_update",
+      "learning": "Three independent domains converge on cognitive/neuroprotection positioning: published RCTs (D16), competitor launches (D17), consumer trends (D18) all point away from endurance toward cognitive benefits.",
+      "source": "D16 + D17 + D18 domain briefs, 2026-04-14 scan",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "D16: Martyn+Tominec RCTs. D17: Happy Panda, Tecton, nootropic CAGR. D18: Caffeine-free 78/100. See synthesis 2026-04-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/references/claims-compliance.md",
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-07-17",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-031",
+      "date": "2026-04-15",
+      "type": "changeset_outcome",
+      "learning": "Cohort Quality Decline Investigation \u2014 Feb 2026 M1 Repeat closed redundant. The investigation was superseded by parallel work; M1 repeat rate restoration (12.8% \u2192 >=16%) remains an open need but will be addressed through a different ChangeSet path. Placeholder PM entry; owner review pending on whether to re-open under new ID.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Expected: Feb cohort M1 repeat restored to >=16%. Actual: investigation closed as redundant without findings captured here. Owner review pending.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-063",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-07-17",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-032",
+      "date": "2026-04-15",
+      "type": "changeset_outcome",
+      "learning": "Claims Audit \u2014 KME Endurance & MCT:Glucose Ratio (Martyn/Frenser 2026) closed superseded. The claims audit was rolled into a broader compliance review path. Regulatory exposure review for blanket KME endurance claims and MCT:glucose SKU compliance rate remain unresolved under this ID. Placeholder PM entry; successor CS-ID pending linkage.",
+      "source": "ChangeSet measurement (lifecycle sweep retroactive backfill \u2014 fix-plan 2026-04-16)",
+      "source_type": "changeset_outcome",
+      "domain": "operations",
+      "evidence": "Expected: zero blanket KME endurance claims, all MCT:glucose SKUs reviewed by Apr 20. Actual: superseded without measurement captured here. Owner review pending.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-065",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "entry_type": "changeset_outcome",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-07-17",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-038",
+      "date": "2026-04-17",
+      "type": "content_pattern",
+      "learning": "'Stimulant Refugee' (caffeine addiction / Wedge B audience) is now confirmed as the #2 audience segment behind Protocol Class on Facebook, with 6.47%+ average engagement across 22+ posts and 153K+ impressions over 4+ cycles. Cross-domain implications: (1) paid media FB targeting should explicitly weight toward Stimulant Refugee hooks as primary creative direction alongside Protocol Class; (2) lifecycle should map this persona to a Klaviyo segment for dedicated email flow development; (3) content calendar should maintain Stimulant Refugee cadence at minimum 30% of FB output.",
+      "source": "Moe Content PM SYN-20260417-001 \u2014 CP-011 Stimulant Refugee confirmed #2 segment (NEW Apr 2026)",
+      "source_type": "content_pm_bridge",
+      "domain": "content",
+      "evidence": "CP-011: 22+ FB posts, 6.47%+ avg eng, 153K+ impressions, 4+ cycles. 3.3x overall median. Ashton Hall celebrity attribution variant adds named dimension at 1.73x FB median. See SYN-20260417-001.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "bridge_source_id": "CP-011",
+      "bridge_synthesis_id": "SYN-20260417-001",
+      "entry_type": "content_pattern",
+      "reconciled_at": "2026-04-19T23:53:28.056196+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-07-17",
+      "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-07-15"
+  "last_updated": "2026-07-17"
 }
