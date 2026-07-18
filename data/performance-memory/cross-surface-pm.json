@@ -542,7 +542,7 @@
     },
     {
       "id": "L-078",
-      "summary": "When site-wide CVR drops with sessions UP across all devices and a >20% LP-attribution loss, treat as a tracking-instrumentation regression first, not",
+      "summary": "When site-wide CVR drops with sessions UP across all devices and a >20% LP-attribution loss, treat as a tracking-instrumentation regression first, no\u2026",
       "domain": "website",
       "status": "active",
       "date": "2026-05-07"
@@ -946,7 +946,7 @@
     },
     {
       "id": "L-138",
-      "summary": "A mobile-CVR drop with sessions DOWN across devices is an on-site/client-side regression, NOT the L-078/L-096 unattributed-traffic instrumentation pat",
+      "summary": "A mobile-CVR drop with sessions DOWN across devices is an on-site/client-side regression, NOT the L-078/L-096 unattributed-traffic instrumentation pa\u2026",
       "domain": "website",
       "status": "active",
       "date": "2026-06-19"
@@ -1905,8 +1905,8 @@
     },
     {
       "id": "L-276",
-      "summary": "[CS-2026-203] incomplete (n/a): Single-slide homepage hero fix applied live by Katie via Shopify editor (~7/10 sync); script errors fell ~130->27/1k.\u2026",
-      "domain": "DTC-website",
+      "summary": "Single-slide homepage hero fix applied live by Katie via Shopify editor (~7/10 sync); script errors fell ~130->27/1k. CS-proposed change is in produc\u2026",
+      "domain": "website",
       "status": "active",
       "date": "2026-07-15"
     }
@@ -2706,10 +2706,16 @@
       "action_taken": null,
       "skill_files_updated": [],
       "related_entries": [
-        "L-074"
+        "L-074",
+        "L-138",
+        "L-141"
       ],
       "target": "brain/kenetik-brain/playbooks/website-cvr-diagnosis.md (new section: tracking-regression triage flow) OR cgo-daily-pipeline/config/synthesis-instructions.md Synthesis Reasoning \u00a72",
-      "entry_type": "process_change"
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-18T15:50:18.532817+00:00",
+      "archival_state": "active"
     },
     {
       "id": "L-079",
@@ -3909,13 +3915,17 @@
       "related_entries": [
         "L-078",
         "L-096",
-        "L-134"
+        "L-134",
+        "L-141"
       ],
       "target": "synthesis-instructions Framing Guardrails / website RCA playbook \u2014 add sessions-direction discriminator",
       "entry_type": "threshold_calibration",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-18T15:50:18.537453+00:00",
+      "archival_state": "active"
     },
     {
       "id": "L-140",
@@ -5332,7 +5342,7 @@
       "source": "D07 Social & Brand scan + Content dept brief, 2026-07-08-s1",
       "source_type": "operational_signal",
       "domain": "content",
-      "evidence": "Engagement-rate recipe averages across all published assets with no minimum-impression floor, letting phantom/failed-publish posts (Sprout bug) count as zero-engagement. See daily synthesis 2026-07-08-s1.md.",
+      "evidence": "No minimum-impression floor let phantom zero-impression posts (Sprout duplicate-publish bug) skew the per-post mean. See session-handoff-2026-07-08-s1.",
       "confidence": "moderate",
       "action_taken": null,
       "target": "metric-compute-map.json (d07_engagement_rate_per_post recipe: add impressions>0 filter)",
@@ -5353,7 +5363,7 @@
       "source": "Website & CRO dept brief, 2026-07-08-s1",
       "source_type": "domain_contradiction",
       "domain": "website",
-      "evidence": "Registry CVR baseline was validated once (2026-05-25) against a Shopify definition that has since diverged, so scans flag a false 'below-band' drift against a stale target. See daily synthesis 2026-07-08-s1.md.",
+      "evidence": "Registry CVR baseline (~4.75%, validated 2026-05-25) was built on a Shopify definition that has since diverged from live figures. See session-handoff-2026-07-08-s1.",
       "confidence": "moderate",
       "action_taken": null,
       "target": "brain/kenetik-brain/references/metrics-taxonomy.md (d01_site_cvr band governance, route to Devon)",
@@ -5467,7 +5477,7 @@
       "source": "dept-content brief 2026-07-13 (D08 Superfiliate recompute + digest), INS-D-1/ACT-D-1",
       "source_type": "operational_signal",
       "domain": "content",
-      "evidence": "CAC-band logic does not distinguish numerator (idle fixed cost) from denominator (acquisition) drivers, so a pure idle-cost overshoot reads identically to a performance decline. Four paid creators produced $0 in trailing 30d while carrying ~$1,466.63/mo stipend. Spawned CS-2026-232. See daily synthesis 2026-07-13-s1.md.",
+      "evidence": "CAC-band logic doesn't separate idle fixed cost from acquisition efficiency; four zero-revenue creators carried ~$1,466.63/mo in stipend. Spawned CS-2026-232. See session-handoff-2026-07-13-s1.",
       "confidence": "moderate",
       "action_taken": "f78aabe 2026-07-13: Phase 4 close (session 78): dispatch receipt, running-log, handoff, learning signals L-271/L-272, pipeline-runs \u2014 RED (approval gate now unblockable, claims cleared)",
       "target": "ambassador program stipend-review cadence / creator-economics balancing-metric interpretation in metrics-taxonomy",
@@ -5486,7 +5496,7 @@
       "source": "dept-market-intelligence brief 2026-07-13 (VOC cancel reasons + review + IG comments), CSI-MI-1",
       "source_type": "operational_signal",
       "domain": "cross-surface",
-      "evidence": "Churn-reason taxonomy previously treated a price objection as a pricing-lever signal; multi-source corroboration against strong satisfaction reframes it as a value-communication gap, changing the recommended intervention class. See daily synthesis 2026-07-13-s1.md.",
+      "evidence": "Churn taxonomy previously read a price objection as a pricing-lever signal; corroborated against strong satisfaction, it's a value-communication gap. See session-handoff-2026-07-13-s1.",
       "confidence": "moderate",
       "action_taken": "f78aabe 2026-07-13: Phase 4 close (session 78): dispatch receipt, running-log, handoff, learning signals L-271/L-272, pipeline-runs \u2014 RED (approval gate now unblockable, claims cleared)",
       "target": "VOC synthesis interpretation + lifecycle retention messaging playbook",
@@ -5497,7 +5507,9 @@
       "archival_state": "active",
       "id": "L-272",
       "action_stamped_at": "2026-07-17",
-      "related_entries": []
+      "related_entries": [
+        "L-275"
+      ]
     },
     {
       "date": "2026-07-14",
@@ -5505,7 +5517,7 @@
       "source": "D14 Team Intelligence scan (Monday Connect Gemini transcript + tracker), 2026-07-14",
       "source_type": "operational_signal",
       "domain": "operations",
-      "evidence": "Full 111KB transcript grep for ChangeSet/CS-2026/authorize/sign-off returned zero matches; tracker approved-queue 13->16; CS-208 send date 7/13 passed at status approved. See daily synthesis 2026-07-14-s1.md.",
+      "evidence": "Full Monday Connect transcript grep for ChangeSet/authorize/sign-off returned zero hits; approved queue grew 13\u219216. See session-handoff-2026-07-14-s1.",
       "confidence": "moderate",
       "action_taken": "e4492f3 2026-07-14: phase4: 2026-07-14-s1 dispatch close \u2014 running-log s79, handoff, 3 demand signals, L-273, dispatch receipt, pipeline-run (cites L-273)",
       "target": "brain/kenetik-brain meeting-cadence / dispatch: stand up a recurring 15-min CS-authorization slot decoupled from Monday Connect open floor (H-14-1).",
@@ -5524,7 +5536,7 @@
       "source": "Operations & Planning dept brief INV-D-1/INS-D-2 (2026-07-15) + tracker.json",
       "source_type": "operational_signal",
       "domain": "operations",
-      "evidence": "Since session 79 only CS-217 (non-email wholesale) cleared approved->published; the 12-item Katie-owned email batch approved 6/23 sat unchanged through Monday Connect (7/13) and the 7/13 all-hands. Reinforces L-020/L-098/L-273. See daily synthesis 2026-07-15-s1.md.",
+      "evidence": "Approved-CS stall is a routing defect: a Katie-authorizable email/SMS/CRO batch sat behind a Devon-only gate. Reinforces L-020/L-098/L-273. See session-handoff-2026-07-15-s1.",
       "confidence": "moderate",
       "action_taken": "60e9d8b 2026-07-15: phase4: dispatch+close 2026-07-15-s1 (session 80) \u2014 running-log, handoff, L-274/L-275, receipt, pipeline-runs",
       "target": "cgo-daily-pipeline authorization/dispatch routing + team-roles CGO Authority table application in the lifecycle sweep",
@@ -5554,7 +5566,9 @@
       "archival_state": "active",
       "id": "L-275",
       "action_stamped_at": "2026-07-17",
-      "related_entries": []
+      "related_entries": [
+        "L-272"
+      ]
     },
     {
       "date": "2026-07-15",
@@ -5562,7 +5576,7 @@
       "learning": "Single-slide homepage hero fix applied live by Katie via Shopify editor (~7/10 sync); script errors fell ~130->27/1k. CS-proposed change is in production, PR branch redundant. Follow-ups (separate): cw-custom-dev.js 404 hygiene; main PDP now worst-health surface.",
       "source": "ChangeSet tracker close record (CS-2026-203)",
       "source_type": "changeset_outcome",
-      "domain": "DTC-website",
+      "domain": "website",
       "evidence": "Outcome: resolved. Backfilled from tracker.json (CS-2026-203).",
       "confidence": "preliminary",
       "action_taken": null,
@@ -8217,5 +8231,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-07-17"
+  "last_updated": "2026-07-18"
 }
