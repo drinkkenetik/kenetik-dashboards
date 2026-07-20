@@ -1909,6 +1909,13 @@
       "domain": "website",
       "status": "active",
       "date": "2026-07-15"
+    },
+    {
+      "id": "L-277",
+      "summary": "CS-2026-067 significant_variance (98.9%): creator-voice winback drove strong opens/clicks but Cans reframe didn't convert lapsed cohort (1 order/$96 vs $8.5k); don't scale on engagement alone.",
+      "domain": "lifecycle-marketing",
+      "status": "active",
+      "date": "2026-07-20"
     }
   ],
   "entries": [
@@ -5594,6 +5601,24 @@
       "created_at": "2026-07-17T17:26:21.667918+00:00",
       "archival_state": "active",
       "id": "L-276"
+    },
+    {
+      "id": "L-277",
+      "date": "2026-07-20",
+      "type": "changeset_outcome",
+      "learning": "2-touch Roman-voiced Klaviyo campaign pivoting the lapsed Feb tangerine-shot cohort from shots to Cans Variety (Track A free / Track B paid) \u2192 55\u201357% open, 4\u20137% click, but only 1 order / $95.81 across 1,043 recipients (60d repeat rate ~0.1% vs 6\u20138% target); E2 second touch never shipped \u2192 creator voice reliably drives attention on a lapsed cohort, but the Cans product-fit reframe did not convert without a stronger offer mechanic. Do not scale creator-voice winbacks on engagement signal alone.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle-marketing",
+      "evidence": "Projected: $8,500 revenue (expected), repeat_purchase_rate_60d \u22656% (A)/\u22658% (B) from 0%. Actual: $95.81 revenue, 1 order across 1,043 recipients, repeat rate ~0.1%. Variance: 98.9%. Window: 60d (2026-04-29\u21922026-06-28). Margin impact: $47.91 (50% DTC). Opens 55\u201357%, clicks 4\u20137%. Hypothesis (creator-voiced product-fit reframe beats generic): NOT supported for conversion. Execution: E2 second touch never sent (half-shipped sequence).",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-067",
+      "variance_pct": 98.9,
+      "outcome_class": "significant_variance"
     }
   ],
   "archived_entries": [
@@ -8231,5 +8256,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-07-18"
+  "last_updated": "2026-07-20"
 }
