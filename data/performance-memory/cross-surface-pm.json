@@ -1923,6 +1923,13 @@
       "domain": "lifecycle-marketing",
       "status": "active",
       "date": "2026-07-20"
+    },
+    {
+      "id": "L-279",
+      "summary": "CS-2026-186 confirmed: dead winback flow (WYiX2k) was mechanical not structural \u2014 CTA fix took it 0\u21923 conv/$142 (0.58%); recoverable but offer still weak, iterate flagged.",
+      "domain": "lifecycle-marketing",
+      "status": "active",
+      "date": "2026-07-20"
     }
   ],
   "entries": [
@@ -5642,6 +5649,24 @@
       "related_entries": [],
       "changeset_candidate": false,
       "changeset_id": "CS-2026-196",
+      "variance_pct": null,
+      "outcome_class": "confirmed"
+    },
+    {
+      "id": "L-279",
+      "date": "2026-07-20",
+      "type": "changeset_outcome",
+      "learning": "Rebuilt the UE Subscription Winback flow (WYiX2k) \u2014 fixed the broken CTA, refreshed content, led with a skip/frequency offer \u2014 against a flow dead since 2025-09-08 (0 clicks / 0 conversions on 136 recipients at 41% open). Over 30d it went to 4 clicks / 3 conversions / $141.66 on 514 recipients (winback conversion 0.0%\u21920.58%) \u2192 the dead flow was MECHANICAL (broken CTA), not structural; a lapsed-sub winback is recoverable by fixing plumbing. But 0.58% is still weak and open rate fell (41%\u219229%) \u2014 the offer needs strengthening to make this a real lever. Iterate flagged.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle-marketing",
+      "evidence": "Projected: revive dead winback flow WYiX2k, move active_sub_count / sub_churn_active. Actual (30d 6/11-7/11): 514 recipients, 29.2% open, 4 clicks, 3 conversions, $141.66, RPR $0.276, unsub 0.39%; vs pre-rebuild 0 clicks/0 conv on 136 at 41% open. Winback conversion 0.0%\u21920.58%. Margin $70.83 (50% DTC). Hypothesis (dead = mechanical vs structural): SUPPORTED \u2014 mechanical (broken CTA). Follow-up iterate flagged.",
+      "confidence": "moderate",
+      "action_taken": "iterate ChangeSet flagged (REC-CS186-iterate)",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": true,
+      "changeset_id": "CS-2026-186",
       "variance_pct": null,
       "outcome_class": "confirmed"
     }
