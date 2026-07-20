@@ -1930,6 +1930,13 @@
       "domain": "lifecycle-marketing",
       "status": "active",
       "date": "2026-07-20"
+    },
+    {
+      "id": "L-280",
+      "summary": "CS-2026-197 confirmed: reason-branched cancel/winback rebuilt as new flow Sb2ktJ recovers canceled subs (3 conv/$503, 49% open, RPR $1.33) vs old baseline; watch 0-click tracking.",
+      "domain": "lifecycle-marketing",
+      "status": "active",
+      "date": "2026-07-20"
     }
   ],
   "entries": [
@@ -5667,6 +5674,24 @@
       "related_entries": [],
       "changeset_candidate": true,
       "changeset_id": "CS-2026-186",
+      "variance_pct": null,
+      "outcome_class": "confirmed"
+    },
+    {
+      "id": "L-280",
+      "date": "2026-07-20",
+      "type": "changeset_outcome",
+      "learning": "Rebuilt the post-cancel winback as a NEW reason-branched Klaviyo flow (Sb2ktJ, 'UE | Subscription Cancelled / Winback 2026', live 6/11) rather than editing the old S4ng5R (retired to draft). Over 30d: 379 recipients, 49.3% open, 3 conversions / $502.97 (AOV $167.66, RPR $1.33) vs old baseline 1 conv / 161 recipients at 33% open \u2192 a reason-branched post-cancel winback recovers canceled subscribers at a strong RPR and beats the old flow on open + conversion. Note: flow logged 0 tracked clicks despite 3 conversions (orders open-attributed) \u2014 CTA links likely untracked or routing to the account portal; fix click tracking to make the funnel measurable.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle-marketing",
+      "evidence": "Rebuilt post-cancel winback as new flow Sb2ktJ (live 6/11), not old S4ng5R (draft). Actual 30d (6/12-7/12): 379 recipients, 49.3% open, 0 tracked clicks, 3 conversions, $502.97, AOV $167.66, RPR $1.33, unsub 0.26%; vs baseline 1 conv/161 recip at 33% open. Margin $251.49 (50% DTC). Hypothesis (reason-branched post-cancel winback recovers canceled subs): supported. Caveat: 0-click tracking (open-attributed).",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-197",
       "variance_pct": null,
       "outcome_class": "confirmed"
     }
