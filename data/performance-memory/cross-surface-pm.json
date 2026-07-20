@@ -1944,6 +1944,27 @@
       "domain": "lifecycle-marketing",
       "status": "active",
       "date": "2026-07-20"
+    },
+    {
+      "id": "L-282",
+      "summary": "Shipped ChangeSets are not measurement-verified: CS-2026-133 (Auto-Stamp Tracker Timestamps) is status=published (2026-04-30) yet 0 of 30 recent clos\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-07-20"
+    },
+    {
+      "id": "L-283",
+      "summary": "digest m3_repeat_rate and m1_repeat_rate are single-cohort reads (the one cohort at the N-month maturity point), so they are prone to composition art\u2026",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-07-20"
+    },
+    {
+      "id": "L-284",
+      "summary": "The competitor system-of-record has 0 direct-competitor-brand sources configured and captured 0 of 60 brand-level moves for 5+ consecutive weeks; the\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-07-20"
     }
   ],
   "entries": [
@@ -5719,6 +5740,57 @@
       "changeset_id": "CS-2026-202",
       "variance_pct": null,
       "outcome_class": "confirmed"
+    },
+    {
+      "date": "2026-07-20",
+      "learning": "Shipped ChangeSets are not measurement-verified: CS-2026-133 (Auto-Stamp Tracker Timestamps) is status=published (2026-04-30) yet 0 of 30 recent closed CSs carry clean timestamps (missing routed_date 30/30, approved_date 24/30, published_date 25/30) \u2014 the stated outcome was never achieved 2.5 months post-publish.",
+      "source": "Task B synthesis 2026-07-20-s1 Pass B Step 1A audit (tracker.json)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Pass B Step 1A clean_count/30 = 0.00; missing_routed_date 30/30, missing_approved_date 24/30, missing_published_date 25/30. CS-133 notes claim two-half fix (audit+backfill, command hardening). See daily synthesis 2026-07-20-s1.md and rec-330.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "changeset-measurement.md (gate published->closed on outcome verification for system_improvement CSs); reopen/verify CS-2026-133",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-20T16:30:36.558272+00:00",
+      "archival_state": "active",
+      "id": "L-282"
+    },
+    {
+      "date": "2026-07-20",
+      "learning": "digest m3_repeat_rate and m1_repeat_rate are single-cohort reads (the one cohort at the N-month maturity point), so they are prone to composition artifacts when an anomalous cohort passes through the window. m3=0.081 this cycle is the 2026-03 5,899-customer low-quality surge (M1 6.2%), not a retention-mechanism decline.",
+      "source": "Lifecycle Marketing dept brief 2026-07-20-s1 (cohort-state.json), MEM-D-2/INV-D-1",
+      "source_type": "operational_signal",
+      "domain": "lifecycle",
+      "evidence": "cohort-state cohort_repeat_customers: 2026-03 M3=8.1%=digest 0.081, M1=6.2%, size 5899; adjacent cohorts healthy (2026-01 M3 22.8%). Forward cohorts recovering (2026-04 M1 30.3%, 2026-05 M1 17.2%). See daily synthesis 2026-07-20-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "synthesis-instructions.md DS-07 condition + digest recipe for m3_repeat_rate (surface contributing cohort + size before alarm)",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-20T16:30:36.562930+00:00",
+      "archival_state": "active",
+      "id": "L-283"
+    },
+    {
+      "date": "2026-07-20",
+      "learning": "The competitor system-of-record has 0 direct-competitor-brand sources configured and captured 0 of 60 brand-level moves for 5+ consecutive weeks; the only channel seeing competitor brands is ad-hoc D18 web search. Competitive intelligence is anecdotal, not instrumented.",
+      "source": "Market Intelligence dept brief 2026-07-20-s1 (competitor-state.json), INS-D-2/INV-D-1",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "competitor-state.json direct_competitor_brand_sources_configured=0; 0/60 post hits for ketone-iq/hvmn/mcgregor/mac energy/target/circle k/chevron; both Ketone-IQ $100M and MAC Energy surfaced only via D18 websearch. See daily synthesis 2026-07-20-s1.md; ref rec-347.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "competitor-state.json sources config (rec-347) \u2014 standing learning until rec-347 lands",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-20T16:30:36.567228+00:00",
+      "archival_state": "active",
+      "id": "L-284"
     }
   ],
   "archived_entries": [
