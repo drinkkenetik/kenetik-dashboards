@@ -1937,6 +1937,13 @@
       "domain": "lifecycle-marketing",
       "status": "active",
       "date": "2026-07-20"
+    },
+    {
+      "id": "L-281",
+      "summary": "CS-2026-202 confirmed: 4th of July full-funnel takeover + lifecycle arc lifted MER 9.9->12.9 on flat spend (+31% DTC / +87% blended net sales); email Reminder + Meta top contributors.",
+      "domain": "lifecycle-marketing",
+      "status": "active",
+      "date": "2026-07-20"
     }
   ],
   "entries": [
@@ -5692,6 +5699,24 @@
       "related_entries": [],
       "changeset_candidate": false,
       "changeset_id": "CS-2026-197",
+      "variance_pct": null,
+      "outcome_class": "confirmed"
+    },
+    {
+      "id": "L-281",
+      "date": "2026-07-20",
+      "type": "changeset_outcome",
+      "learning": "The 4th of July quarterly beat (homepage hero takeover + lead-capture/welcome/abandoned-cart takeovers + 4-email arc + reminder SMS + Meta ads, 6/26-7/7) drove blended net sales $177,561 (+87% vs prior 12d), Shopify net $103,598 (+31%), orders 1,368 (+19%), AOV $76.22 (+8.7%), blended MER 12.92 vs 9.88 \u2014 on flat marketing spend ($8,782). Klaviyo email+SMS contributed $17,293 (149 orders; Reminder email top at $5,502); Meta $13,837 on $5,075 spend \u2192 a full-funnel takeover + lifecycle arc on a national beat lifts MER hard without added spend; email Reminder and Meta were the biggest paid/owned contributors. (Compared to prior-period proxy, not the prior quarterly beat.)",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle-marketing",
+      "evidence": "Beat 6/26-7/7 vs prior 12d: blended net $177,561 (+87%), Shopify net $103,598 (+31%), orders 1,368 (+19%), AOV $76.22 (+8.7%), MER 12.92 vs 9.88, spend flat $8,782. Klaviyo email+SMS $17,293/149 orders; Meta $13,837 on $5,075. revenue_impact booked conservative DTC-incremental +$24,491 (margin $12,245). Caveats: prior-period proxy; blended lift partly non-DTC.",
+      "confidence": "moderate",
+      "action_taken": "owner reassigned Nick->Katie",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-202",
       "variance_pct": null,
       "outcome_class": "confirmed"
     }
