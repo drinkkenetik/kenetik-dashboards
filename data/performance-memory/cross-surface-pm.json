@@ -1916,6 +1916,13 @@
       "domain": "lifecycle-marketing",
       "status": "active",
       "date": "2026-07-20"
+    },
+    {
+      "id": "L-278",
+      "summary": "CS-2026-196 confirmed: same-price/same-volume SKU migration + proactive email retained ~86 subs (74% open, 0 unsub, 8 reorders); proactive-email playbook works for forced catalog changes.",
+      "domain": "lifecycle-marketing",
+      "status": "active",
+      "date": "2026-07-20"
     }
   ],
   "entries": [
@@ -5619,6 +5626,24 @@
       "changeset_id": "CS-2026-067",
       "variance_pct": 98.9,
       "outcome_class": "significant_variance"
+    },
+    {
+      "id": "L-278",
+      "date": "2026-07-20",
+      "type": "changeset_outcome",
+      "learning": "Retired the WML 6-pack and migrated ~86 active subscribers to the 12-pack at same price/volume, fronted by a proactive Klaviyo notification (67 emailed, rest 1:1 via Gorgias) \u2192 74% open on the main batch, 0 unsubscribes, 8 reorders / $597.39, no protest churn \u2192 a same-price/same-volume SKU migration paired with a clear proactive heads-up retains the subscriber base without churn; the proactive-email playbook works for forced catalog changes. (Cohort churn proxy-measured via email engagement, not a direct Recharge cohort pull.)",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle-marketing",
+      "evidence": "Projected: hold active_sub_count / watch sub_churn_active across ~86 migrated WML 6pk\u219212pk subs. Actual: 67 notified (rest 1:1 Gorgias), 74% open main batch, 0 unsubscribes, 8 reorders/$597.39, no protest churn. Retention held (email-engagement proxy; Recharge cohort churn not directly isolable). Margin $298.70 (50% DTC). Hypothesis (proactive migration email prevents churn on forced SKU change): supported.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-196",
+      "variance_pct": null,
+      "outcome_class": "confirmed"
     }
   ],
   "archived_entries": [
