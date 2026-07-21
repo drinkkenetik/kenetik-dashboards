@@ -1965,6 +1965,20 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-07-20"
+    },
+    {
+      "id": "L-285",
+      "summary": "The demand-signal queue has 0 fresh entries in the last 14 days (fallback last-20 are all expired/processed from March); the queue writers appear to \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-07-21"
+    },
+    {
+      "id": "L-286",
+      "summary": "The paid-media fatigue classifier emits FATIGUED on day-1 ads (7 of 7 FATIGUED ads this run have days_active=1 and $0.08-$63.20 spend); a day-1 ad wi\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-07-21"
     }
   ],
   "entries": [
@@ -5791,6 +5805,40 @@
       "created_at": "2026-07-20T16:30:36.567228+00:00",
       "archival_state": "active",
       "id": "L-284"
+    },
+    {
+      "date": "2026-07-21",
+      "learning": "The demand-signal queue has 0 fresh entries in the last 14 days (fallback last-20 are all expired/processed from March); the queue writers appear to have stopped populating, removing the raw input for new-ChangeSet creation and acting as an upstream cause of the ~50%-under-band CS velocity distinct from the infra and concentration causes.",
+      "source": "Operations dept brief 2026-07-21 (cgo-logs/queues/demand-signals.json); corroborated by Content INS-D-2",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Root cause: the Moe demand-scan / Larry production loop / exec-BI graduation feed touch files (fresh sync timestamps) without appending new rows; append logic appears broken, compounded by the degraded MCP run mode. See daily synthesis 2026-07-21-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "demand-signals.json writer / Moe demand-scan append logic; verify under CS-2026-236",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-21T16:33:57.607325+00:00",
+      "archival_state": "active",
+      "id": "L-285"
+    },
+    {
+      "date": "2026-07-21",
+      "learning": "The paid-media fatigue classifier emits FATIGUED on day-1 ads (7 of 7 FATIGUED ads this run have days_active=1 and $0.08-$63.20 spend); a day-1 ad with no accumulated clicks trips the CTR<0.8% AND CPM>$25 rule but cannot actually be fatigued.",
+      "source": "Paid Media dept brief 2026-07-21 (paid-media-state.json ads[].fatigue_signal)",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "Root cause: the classifier has no minimum-maturity floor (days_active plus a min spend/impression threshold) before it can assign FATIGUED, so immature ads are misclassified while genuine fatigue on mature high-spend ads stays buried in the WATCH bucket. See daily synthesis 2026-07-21-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "paid-media-state build script fatigue_signal logic; fold into CS-2026-236",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-21T16:34:12.197220+00:00",
+      "archival_state": "active",
+      "id": "L-286"
     }
   ],
   "archived_entries": [
@@ -8428,5 +8476,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-07-20"
+  "last_updated": "2026-07-21"
 }
