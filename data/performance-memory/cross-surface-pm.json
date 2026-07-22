@@ -1979,6 +1979,13 @@
       "domain": "paid-media",
       "status": "active",
       "date": "2026-07-21"
+    },
+    {
+      "id": "L-287",
+      "summary": "The stale-approved detector keys only on 30-day approval age, so d12_stale_approved_count reads 0 while 6 approved lifecycle ChangeSets (CS-2026-204/\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-07-22"
     }
   ],
   "entries": [
@@ -5839,6 +5846,23 @@
       "created_at": "2026-07-21T16:34:12.197220+00:00",
       "archival_state": "active",
       "id": "L-286"
+    },
+    {
+      "date": "2026-07-22",
+      "learning": "The stale-approved detector keys only on 30-day approval age, so d12_stale_approved_count reads 0 while 6 approved lifecycle ChangeSets (CS-2026-204/205/206/208/209/210) have passed their scheduled_send_date (7/10-7/19) still unpublished. Elapsed scheduled_send_date is an execution-failure signal the current calculator is blind to.",
+      "source": "Operations & Planning dept brief 2026-07-22-s1 (INV-D-1 + governance note); corroborated by D14 SIG-14-1",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "The 2026-07-08 'future-dated, lifecycle-protected' clearing rule suppresses staleness by approval age only and never re-checks whether the protected scheduled_send_date has since elapsed, so send-date-passed-but-unpublished CSs read as healthy. See daily synthesis 2026-07-22-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "stale-approved calculator (digest recipe) \u2014 add an elapsed-scheduled_send_date check alongside the 30-day approval-age rule (extends rec-331)",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-22T16:29:33.929491+00:00",
+      "archival_state": "active",
+      "id": "L-287"
     }
   ],
   "archived_entries": [
@@ -8476,5 +8500,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-07-21"
+  "last_updated": "2026-07-22"
 }
