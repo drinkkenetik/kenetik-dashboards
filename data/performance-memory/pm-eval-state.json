@@ -1,26 +1,26 @@
 {
   "description": "Structured PM evaluation results. Written by the kgs-weekly-pm-evaluation scheduled task after each run. 'latest' is the most recent eval; 'history' is the time series. composite/components are percentages; grade is the letter (A 90-100, B 80-89, C 70-79, D 60-69, F <60).",
-  "framework": "performance-memory-evaluation-framework-v1.2",
+  "framework": "performance-memory-evaluation-framework-v1.3",
   "thresholds": {
     "alert_grade_below": "C",
     "alert_composite_drop_pp": 5
   },
   "latest": {
-    "date": "2026-07-11",
-    "composite": 68.9,
+    "date": "2026-07-31",
+    "composite": 67.9,
     "grade": "D",
     "components": {
-      "C1_capture": 55.6,
+      "C1_capture": 66.7,
       "C2_quality": 75.0,
-      "C3_hygiene": 60.0,
-      "C4_feedback": 80.0,
-      "C5_trajectory": 66.7
+      "C3_hygiene": 66.7,
+      "C4_feedback": 73.3,
+      "C5_trajectory": 50.0
     },
-    "scorer": "pm_eval-1.0.0",
-    "report": "cgo-logs/evaluations/2026-07-11-pm-evaluation.md",
+    "scorer": "pm_eval-1.1.0",
+    "report": "cgo-logs/evaluations/2026-07-31-pm-evaluation.md",
     "maintenance_freshness_days": {
-      "pm-maintain-outcomes": 1,
-      "pm-maintain-archive": 1,
+      "pm-maintain-outcomes": 0,
+      "pm-maintain-archive": 0,
       "pm-maintain-candidates": 0,
       "pm-maintain-actions": 0
     }
@@ -105,6 +105,20 @@
       },
       "scorer": "pm_eval-1.0.0",
       "report": "cgo-logs/evaluations/2026-07-11-pm-evaluation.md"
+    },
+    {
+      "date": "2026-07-31",
+      "composite": 67.9,
+      "grade": "D",
+      "components": {
+        "C1_capture": 66.7,
+        "C2_quality": 75.0,
+        "C3_hygiene": 66.7,
+        "C4_feedback": 73.3,
+        "C5_trajectory": 50.0
+      },
+      "scorer": "pm_eval-1.1.0",
+      "report": "cgo-logs/evaluations/2026-07-31-pm-evaluation.md"
     }
   ],
   "judgment_cache": {
