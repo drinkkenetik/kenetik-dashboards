@@ -7,8 +7,8 @@
     "scripts/pm_eval.py c4_d5"
   ],
   "migrated_from": "brain/kenetik-brain/roles/content-producer-skill.md \u00a73 @ 2026-07-11",
-  "last_updated": "2026-07-11",
-  "last_synthesis_applied": "SYN-20260710-001",
+  "last_updated": "2026-08-02",
+  "last_synthesis_applied": "SYN-20260802-001",
   "update_policy": {
     "auto_apply_max_single_change_pct": 100,
     "hold_and_escalate": "If ANY single weight change exceeds the auto-apply cap (more than doubling/halving), hold ALL changes in the batch and DM Devon (U06528UQV7H) for CGO approval.",
@@ -87,7 +87,7 @@
       ],
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-03-19",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -95,6 +95,17 @@
           "date": "2026-03-19",
           "resolved": true,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-003",
+            "CP-011"
+          ],
+          "note": "BACKLOG LINKAGE (no weight change). HW-004 problem-agitation is the store home for the caffeine-addiction personal-story hook (CP-003, 10.35% avg FB organic, validated 7 cycles) and the Stimulant Refugee audience segment that hook serves (CP-011, 6.47%+ FB, 5+ cycles). Both queue patterns predate the Phase 5 pattern-id convention and were unlinked at migration; provenance attached, weight revalidated unchanged.",
+          "weight_after": 1.8
         }
       ],
       "rules": [],
@@ -124,11 +135,22 @@
       "platforms": [
         "all"
       ],
-      "confidence": "baseline",
+      "confidence": "high",
       "status": "active",
-      "last_validated": "2026-03-07",
+      "last_validated": "2026-08-02",
       "origin": "initial_baseline",
-      "provenance": [],
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-004"
+          ],
+          "note": "BACKLOG LINKAGE (no weight change). CP-004 (Matt Hughes/UFC authority testimonial, cross-platform, largest organic-to-paid graduation in program history at 1.66M FB paid imp / 4.59-4.60% ER) is the evidence base for the authority-framing weight. Weight held at baseline 1.0 pending a dedicated authority-vs-baseline read; the CP-004 lift historically rode with HW-003/HW-009 rather than authority framing alone.",
+          "weight_after": 1.0
+        }
+      ],
       "rules": [],
       "notes": "Initial \u2014 insufficient sample size for adjustment"
     },
@@ -189,9 +211,9 @@
         "instagram",
         "facebook"
       ],
-      "confidence": "medium",
+      "confidence": "high",
       "status": "active",
-      "last_validated": "2026-03-22",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -199,6 +221,18 @@
           "date": "2026-03-22",
           "resolved": false,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-001",
+            "CP-002",
+            "CP-008"
+          ],
+          "note": "BACKLOG LINKAGE (no weight change). HW-009 storytelling (IG+FB) is the store home for three unlinked confirmed patterns: CP-001 quote-format hooks (2.0x+ FB median), CP-002 aspirational third-person lifestyle framing ('He wakes up at 4am', the #1 FB workhorse at 1.7x+ median), and CP-008 Protocol Class \u2014 the audience segment (4am routines / discipline / ice baths, 7.76% avg) that this hook targets. Confidence raised medium->high: CP-001/CP-002 are HIGH-confidence queue patterns and CP-002 has scaled cleanly into paid.",
+          "weight_after": 1.3
         }
       ],
       "rules": [],
@@ -237,7 +271,7 @@
       ],
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-04-17",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -245,6 +279,16 @@
           "date": "2026-04-17",
           "resolved": true,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-007"
+          ],
+          "note": "BACKLOG LINKAGE (no weight change). CP-007 (contrarian hooks on TikTok, 2.93x TT median, HIGH confidence after 4 consecutive validating cycles) is the direct evidence base for HW-011 and was unlinked at migration.",
+          "weight_after": 1.5
         }
       ],
       "rules": [],
@@ -260,7 +304,7 @@
       ],
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-04-10",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -268,6 +312,16 @@
           "date": "2026-04-10",
           "resolved": true,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-009"
+          ],
+          "note": "BACKLOG LINKAGE (no weight change) + MONITOR. CP-009 (LinkedIn science/research hooks, Cell BHB 22%, Stress Awareness Month 18%, consistently 2x+ LI median across 3 cycles) is HW-012's evidence base. Held at 1.4 rather than upgraded: SYN-20260731 logged a science-distillation LI execution at 16.54% ER, BELOW the ~26.56% structural LI median (NCS 12.9). The format still owns LinkedIn; that execution did not clear the bar. Re-read next cycle before moving the weight in either direction.",
+          "weight_after": 1.4
         }
       ],
       "rules": [],
@@ -307,7 +361,7 @@
       ],
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-05-01",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -315,6 +369,16 @@
           "date": "2026-05-01",
           "resolved": true,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-014"
+          ],
+          "note": "BACKLOG LINKAGE (no weight change). CP-014 (Cleetus motorsports authentication of the 'Day in the Life' format \u2014 'Clean energy for a dirty track' Rockingham NCS 100 / 8.41% TT) is HW-014's direct evidence base and was unlinked at migration.",
+          "weight_after": 1.5
         }
       ],
       "rules": [],
@@ -330,7 +394,7 @@
       ],
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-05-01",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -338,6 +402,17 @@
           "date": "2026-05-01",
           "resolved": true,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-013",
+            "EP-008"
+          ],
+          "note": "BACKLOG LINKAGE (no weight change). CP-013 ('Day in the life' aspirational micro-storytelling, 8.17-8.32% TT = 3.3x median) is HW-015's core evidence. EP-008 (single-line personal-quote discipline hooks, 'Course days > everything else', 6.42% TT / 2.6x median) attaches here as the stripped-down minimal form of the same TikTok micro-storytelling register rather than earning a separate entry.",
+          "weight_after": 1.7
         }
       ],
       "rules": [
@@ -356,7 +431,7 @@
       ],
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-05-01",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -364,6 +439,17 @@
           "date": "2026-05-01",
           "resolved": true,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "EP-006",
+            "EP-011"
+          ],
+          "note": "BACKLOG LINKAGE (no weight change). EP-006 (cultural moment + science credibility on IG/LI) and EP-011 (cultural-moment tie-in + science citation on captioned IG driving the NCS-100 ceiling, 6 IG posts at NCS 100 in one window) are the same family and are HW-016's evidence base. Both unlinked at migration.",
+          "weight_after": 1.5
         }
       ],
       "rules": [
@@ -442,7 +528,7 @@
       ],
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-06-12",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -480,6 +566,16 @@
             "EP-013",
             "EP-014"
           ]
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "EP-017"
+          ],
+          "note": "WITHIN-45d GAP CLOSED (no weight change). EP-017 (UGC 'real reviews' social-proof post, IG 6.96% ER / NCS 100, FB NCS 89) is explicitly a post-date-lock LAUNCH-TAIL beat of the HW-019 launch arc, pairing with the already-linked EP-014 winner-announcement beat. Refined onto the existing arc entry rather than added as a near-duplicate hook: the arc is the mechanism, the UGC review post is an approved tail beat that replaces stale 'it's here' reposts.",
+          "weight_after": 1.8
         }
       ],
       "rules": [
@@ -502,7 +598,7 @@
       ],
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-06-12",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -512,6 +608,17 @@
           "pattern_ids": [
             "EP-015"
           ]
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "EP-011",
+            "EP-015"
+          ],
+          "note": "REVALIDATED (no weight change). SYN-20260731 recorded the cultural-moment cluster REBOUNDING after its SYN-20260710 softening: 4th of July UFC 'honoring the ones who've taken the hits for us' FB NCS 100 / 20,071 imp, 'Happy 4th of July' FB NCS 96.6, July 4 posts FB NCS 79-89, World Cup/summer-travel IG NCS 90.5-100. The moment-plus-Kenetik-narrative rule holds; scoreboard-only tie-ins still underperform. Weight held at 1.5.",
+          "weight_after": 1.5
         }
       ],
       "rules": [
@@ -527,9 +634,9 @@
       "platforms": [
         "facebook"
       ],
-      "confidence": "low",
+      "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-06-19",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -540,6 +647,18 @@
             "AP-008",
             "EP-016"
           ]
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-008",
+            "AP-010",
+            "EP-016"
+          ],
+          "note": "SYN-20260731 CONFIDENCE UPGRADE low->medium (no weight change). EP-016 afternoon cognitive-slump problem-agitation revalidated a 3rd consecutive cycle at reach: FB winners NCS 92.5 / 89.2 / 82.4 on 5,216 / 5,413 / 5,837 imp, one clone reaching 14,958 imp. Weight deliberately HELD at 1.6 rather than raised: the same body was published 40x in the window as same-second FB-reel bulk clones (~16 at NCS<25 / 0 imp), an AP-008 + AP-010 convergence that dragged the FB median to 0.87%. The hook earns the confidence upgrade; the publishing behaviour, not the hook, is the failure. Raising the weight before the dedupe gate ships would amplify the clone flood.",
+          "weight_after": 1.6
         }
       ],
       "rules": [
@@ -586,6 +705,72 @@
         "Owned TikTok is the one untested surface \u2014 test next cycle."
       ],
       "notes": "Performance Memory SYN-20260706 (NEW EP-018): owned IG feed posts that open on a specific named athlete/ambassador + narrate their routine with Kenetik as fuel all hit NCS 100 \u2014 Razo Rob 23.6% ER / 2,451 imp, Derek 8.0% ER / 8,940 imp (highest-reach IG winner), Rio Hawkins 7.6% / 1,819 imp. Generic brand statements without a named protagonist sat at/below the 3.60% IG median. Owned-IG mirror of the TikTok day-in-life (1.7x) + motorsports (CP-012) families. **Instagram (owned) only. MEDIUM-LOW confidence \u2014 1 cycle.** Test the named-individual open on TikTok/FB owned next cycle. **UPDATE SYN-20260710 (2nd cycle): confirmed on IG (NCS 100 / 8,591 imp), EXTENDS to owned FB (NCS 92.6), FALSIFIED on LinkedIn (identical body NCS 14.4) \u2192 confidence MEDIUM. Generalizes from athlete-routine to helper/community narrative (\"Adam sets up a table for everyone else\"). Scope: Instagram + Facebook owned; do NOT route this hook to LinkedIn. Owned TikTok still the one untested surface.**"
+    },
+    {
+      "name": "Emerging/community-sport pre-performance fuel angle (pickleball, golf, gym takeover)",
+      "example": "Pickleball doesn't wait for your brain to catch up. Fuel it right before you step on the court, Kenetik keeps you sharp, point after point.",
+      "weight": 1.2,
+      "platforms": [
+        "facebook",
+        "instagram",
+        "tiktok"
+      ],
+      "confidence": "low",
+      "rules": [
+        "Do NOT route this hook to LinkedIn \u2014 the identical pickleball body scored NCS 34.7 (7.45% ER vs the 26.56% LI structural median) on 2026-07-18. Same LinkedIn register rule as HW-022/EP-018.",
+        "Lead with the sport's cognitive demand (reflex / decision speed), then Kenetik as pre-performance fuel \u2014 not with the product.",
+        "LOW confidence, n=1 cross-post cluster plus the older EP-001 TikTok signal. Confirm a 2nd cycle before treating as reliable."
+      ],
+      "notes": "Performance Memory SYN-20260802 (EP-001 extended). EP-001 logged emerging community-sport signal on TikTok only (golf 5.31%, gym takeover 3.22%, pickleball 2.08%). The 2026-07-18 pickleball cluster extends it cross-platform on a single shared concept: FB reel NCS 56.4 (2.83% ER / 424 imp, ~3.3x the AP-010-depressed 0.87% FB median), IG reel NCS 28.7 (5.61% ER / 659 imp, ~2.0x the 2.83% IG median), LinkedIn NCS 34.7 (7.45% ER / 188 imp \u2014 well BELOW the 26.56% LI median, falsified on LI). Weight set conservatively at 1.2 (mild lift, LOW confidence): the ER multiples are real but reach was small on every surface and the FB comparison rides on an artificially depressed median. This is the THIRD pattern confirming the LinkedIn register rule \u2014 LI accepts institutional/science/community framing (CP-009, EP-019) and rejects consumer-lifestyle/individual framing (EP-018, EP-001-sport).",
+      "id": "HW-023",
+      "status": "active",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "EP-001"
+          ],
+          "note": "NEW HOOK from SYN-20260802. Closes the EP-001 linkage gap by refining/extending the existing emerging community-sport pattern cross-platform rather than opening a new queue pattern id.",
+          "weight_after": 1.2
+        }
+      ],
+      "last_validated": "2026-08-02"
+    },
+    {
+      "name": "Real-world event-activation recap (brand-shows-up-in-community)",
+      "example": "Last week, Kenetik was proud to take part in Windward Wellness, a World Cup watch party...",
+      "weight": 1.4,
+      "platforms": [
+        "linkedin",
+        "facebook"
+      ],
+      "confidence": "low",
+      "rules": [
+        "LinkedIn-FIRST. This is the LinkedIn-native counterpart to HW-022/EP-018 (named-individual storytelling), which is falsified on LinkedIn.",
+        "Ship a recap beat from EVERY attended or sponsored event \u2014 ties to the creative-skill.md event-activation workstream.",
+        "Factual participation recap, NOT a promo. Name the real event. Genuine community presence is the mechanism.",
+        "LOW confidence, n=1 event. Test on IG/TikTok and confirm a 2nd cycle before promoting."
+      ],
+      "notes": "Performance Memory SYN-20260731 (NEW EP-019), applied to the store SYN-20260802. 'Last week, Kenetik was proud to take part in Windward Wellness, a World Cup watch party...' hit LinkedIn NCS 84.1 (36.57% ER / 175 imp, ~1.38x the 26.56% LI structural median) and Facebook NCS 76.8 (3.31% ER / 1,991 imp, ~3.8x the depressed FB median). DNA: brand-in-community narrative + named real event + genuine participation. Sits alongside CP-009 (LI science distillation) and CP-015-LI (launch arc on LI) in the LinkedIn institutional/science/community register.",
+      "id": "HW-024",
+      "status": "active",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "EP-019"
+          ],
+          "note": "WITHIN-45d GAP CLOSED. EP-019 was logged in the queue at SYN-20260731 but never propagated to the store because the Phase 5 apply path had not yet run in production.",
+          "weight_after": 1.4
+        }
+      ],
+      "last_validated": "2026-08-02"
     }
   ],
   "anti_patterns": [
@@ -599,7 +784,7 @@
       "multiplier": 0.47,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-03-22",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -607,6 +792,15 @@
           "date": "2026-03-22",
           "resolved": false,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-002"
+          ],
+          "note": "BACKLOG LINKAGE (no multiplier change). AP-002 (educational / how-to / science-research framing on TikTok at 0.39x TT median) is the same TikTok science-framing failure this entry gates and was unlinked at migration. Note the scope difference for a future cycle: HW-AP-001 is named for the social-proof+science hybrid specifically, while AP-002 covers educational framing on TikTok more broadly."
         }
       ],
       "rules": [],
@@ -691,7 +885,7 @@
       "multiplier": 0.57,
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-04-10",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -705,6 +899,15 @@
           "date": "2026-04-10",
           "resolved": true,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-004"
+          ],
+          "note": "BACKLOG LINKAGE (no multiplier change). AP-004 (endurance content fatigued on Facebook \u2014 Leadville/endurance dropped from 5.69x median in Mar to 0.58x in Apr and stayed there, confirmed 3 consecutive cycles) is HW-AP-005's direct evidence base and was unlinked at migration."
         }
       ],
       "rules": [],
@@ -720,7 +923,7 @@
       "multiplier": 0.0,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-05-22",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -744,6 +947,15 @@
           "pattern_ids": [
             "AP-006"
           ]
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-006"
+          ],
+          "note": "REVALIDATED (no multiplier change). YouTube hard-pause holding: 0 YouTube posts in the SYN-20260731 window and 0 in the 2026-07-18 SYN-20260802 window. Multiplier stays 0.0; no purpose-built YouTube vertical funded, so the automated cross-post remains disabled."
         }
       ],
       "rules": [
@@ -761,7 +973,7 @@
       "multiplier": 0.05,
       "confidence": "high",
       "status": "resolved",
-      "last_validated": "2026-06-19",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -771,6 +983,17 @@
           "pattern_ids": [
             "AP-001"
           ]
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-001",
+            "AP-005",
+            "CP-005"
+          ],
+          "note": "REVALIDATED RESOLVED + BACKLOG LINKAGE (no multiplier change). AP-001 holds RESOLVED for a 5th consecutive clean window: 0 of 12 eligible IG feed/reel posts captionless at SYN-20260731 (all 36 captionless items were IG Stories, caption-free by design), and the single IG reel in the SYN-20260802 window is captioned. CP-005 (captionless posts are dead weight, 90+ cumulative IG posts at 0.11% vs 2.25% captioned) is the confirmed-pattern statement of the same finding, and AP-005 (Amazon product listing text as social captions) is the second half of this entry's name \u2014 both unlinked at migration. SCOPE GAP for a future cycle: AP-005 covers tiktok+instagram, this entry is scoped instagram only."
         }
       ],
       "rules": [
@@ -788,7 +1011,7 @@
       "multiplier": 0.62,
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-05-08",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -798,6 +1021,16 @@
           "pattern_ids": [
             "AP-007"
           ]
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-007",
+            "EP-012"
+          ],
+          "note": "BOUNDARY CONDITION REFINED (no multiplier change). EP-012 (athlete-event giveaway CLOSURE / winner-announcement posts hitting NCS 100 at 2.7-3.9k imp on Instagram) is the explicit counter-case to this anti-pattern: the 0.62x penalty applies to same-day duplicate ENTRY variants of one offer, NOT to closure/winner beats, which are a distinct lifecycle moment and outperform the original entry post. Linking EP-012 here (rather than opening a new hook) records the exception on the rule it qualifies."
         }
       ],
       "rules": [
@@ -816,7 +1049,7 @@
       "multiplier": 0.0,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-05-22",
+      "last_validated": "2026-08-02",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -827,6 +1060,17 @@
             "AP-007",
             "AP-010"
           ]
+        },
+        {
+          "synthesis_id": "SYN-20260802-001",
+          "date": "2026-08-02",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-008",
+            "AP-010",
+            "EP-016"
+          ],
+          "note": "RECONFIRMED 6th CYCLE AND GROWING (multiplier already floored at 0.0). SYN-20260731: 15 'Find Kenetik at QuikTrip!' FB posts all at ER<0.5%, SIX boosted to 166,060 / 119,812 / 62,873 / 54,134 / 31,589 / 20,130 imp at 0.19-0.42% ER against ad 'video__roman quik trip announce__store locator' in campaign 'awareness__quicktrip geo target__cbo' \u2014 paid amplification on dead retail copy is now LARGER than the prior cycle (6 boosted vs 2), and the retailer rotated Dierbergs->QuikTrip. The same mechanic also hit an EDITORIAL hook for the first time (EP-016 published 40x as same-second FB-reel clones, ~16 at NCS<25 / 0 imp), which is why AP-008 and EP-016 are linked here. The dedupe-per-day + block-paid-boost-on-NCS<25 gate remains UNSHIPPED after six logged cycles: re-escalate P0 to Devon. Counter-signal worth recording: the 2026-07-18 SYN-20260802 window was CLEAN \u2014 6 posts, 6 distinct bodies, no same-second clusters, no paid boost on dead copy \u2014 but n=6 on a single day is far too small to read as a fix."
         }
       ],
       "rules": [
