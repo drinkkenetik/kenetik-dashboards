@@ -2035,6 +2035,41 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-08-02"
+    },
+    {
+      "id": "L-295",
+      "summary": "Governance backlog metrics that read status fields can be moved by retroactive stamping without any underlying execution. d12_stale_approved_count fe\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-02"
+    },
+    {
+      "id": "L-296",
+      "summary": "A named claims gate cleared on one ChangeSet does not propagate to sibling ChangeSets carrying the same gate name. TRX-claim-gate-Devon is content-le\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-02"
+    },
+    {
+      "id": "L-297",
+      "summary": "Cross-store date reconciliation failed even though the propagation link exists and is populated. The TRX 8/11 -> 8/18 move was applied to marketing-c\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-02"
+    },
+    {
+      "id": "L-298",
+      "summary": "Google Search Console prior-window values in website-state.json backfill upward by up to +68% after the scan date, so every week-over-week GSC compar\u2026",
+      "domain": "DTC-website",
+      "status": "active",
+      "date": "2026-08-02"
+    },
+    {
+      "id": "L-299",
+      "summary": "superfiliate-state.json per_customer_insights[*].confirmed_revenue is an ALL-TIME field despite the containing object carrying insights_window_days: \u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-08-02"
     }
   ],
   "entries": [
@@ -4340,6 +4375,91 @@
       "created_at": "2026-08-02T17:18:33.888453+00:00",
       "archival_state": "active",
       "id": "L-294"
+    },
+    {
+      "date": "2026-08-02",
+      "learning": "Governance backlog metrics that read status fields can be moved by retroactive stamping without any underlying execution. d12_stale_approved_count fell 13 -> 5 on 2026-08-02 with zero work shipped: CS-204/205/206/208/209/210/214/216 all carry published_date backdated to 2026-07-10..2026-07-30 with last_updated 2026-08-02. That 3-23 day lag IS the defect CS-2026-133 was published to fix and was verified-failed against on 7/29. The department's own governance metric was moved by the failure it exists to detect.",
+      "source": "Operations & Planning dept brief 2026-08-02-s1 (INS-D-3, ACT-D-2), tracker.json inspection",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Status-derived metrics cannot distinguish 'transition happened now' from 'transition field was written now', because the transition is not timestamped at transition time. Until CS-2026-133's writeback lands, every status-derived governance metric is a bookkeeping metric wearing an execution metric's label. Corroborates L-282 and L-294. See daily synthesis 2026-08-02-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/metric-compute-map.json - d12_stale_approved_count and d12_velocity should carry an explicit trust caveat while CS-2026-133 is unfixed",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-02T21:14:29.234793+00:00",
+      "archival_state": "active",
+      "id": "L-295"
+    },
+    {
+      "date": "2026-08-02",
+      "learning": "A named claims gate cleared on one ChangeSet does not propagate to sibling ChangeSets carrying the same gate name. TRX-claim-gate-Devon is content-level and date-independent (standard athletic-performance only; no CHO-fueling; no Frontiers-meta lean) - it constrains language, not timing - yet it was cleared on CS-2026-211 on 2026-07-15 and left standing verbatim on CS-2026-212 and CS-2026-213 for 18 days. The pipeline propagated the stale hold into Layer-1 dispatch on 2026-07-31, paging Brandon and Devon (who had nothing left to sign) while Katie, who could act, was not paged.",
+      "source": "Science & Research dept brief 2026-08-02-s1 (INS-D-2, INV-D-3), corroborated by Market Intelligence INS-D-2 and Operations INS-D-1",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Named gates are stored as per-row strings rather than as shared objects with a single cleared-state. Same class as L-259 (date reconciliation failing to propagate to siblings). Expect recurrence on any gate name appearing on more than one ChangeSet. Verified against cgo-logs/changesets/tracker.json. See daily synthesis 2026-08-02-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-logs/changesets/tracker.json schema - gates should reference a shared id; scripts/build_cs_entry.py should reject free-text gate names duplicating an existing cleared gate",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-02T21:14:29.239092+00:00",
+      "archival_state": "active",
+      "id": "L-296"
+    },
+    {
+      "date": "2026-08-02",
+      "learning": "Cross-store date reconciliation failed even though the propagation link exists and is populated. The TRX 8/11 -> 8/18 move was applied to marketing-calendar-data.json on 2026-07-29 and never to cgo-logs/changesets/tracker.json (CS-212 still 2026-08-10, CS-213 still 2026-08-11). CORRECTION to the Operations dept brief's stated mechanism ('no field on a ChangeSet row references a calendar beat id'): marketing-calendar-data.json TRX-LEM-061526 carries date_start 2026-08-18 and linked_changesets [CS-2026-211, CS-2026-212, CS-2026-213], and all three tracker rows carry linked_calendar_activity TRX-LEM-061526. The link is populated bidirectionally on exactly the three rows at risk. Nothing reads it. Reader defect, not schema defect - same shape as L-290 (writer alive, reader dead).",
+      "source": "Phase 3 collision-check verification of both stores, 2026-08-02-s1; corrects Operations dept brief INS-D-1",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "No pipeline step diffs calendar date_start against the linked ChangeSet's scheduled_send_date. The lifecycle sweep already loads both stores and was positioned to catch this on 7/30, 7/31 and 8/02, and did not. Second-order cause: a department brief inferred a missing-schema root cause without inspecting the field, and four departments' worth of corroboration made the wrong mechanism look confirmed - convergence treated as evidence. Filed as CS-2026-243. See daily synthesis 2026-08-02-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "kenetik-growth-system/commands/changeset-lifecycle-sweep.md Phase 1 - add calendar-vs-tracker date-diff (REFINE, existing fields); backfill linked_calendar_activity on CS-2026-233 and CS-2026-238",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-02T21:14:29.243461+00:00",
+      "archival_state": "active",
+      "id": "L-297"
+    },
+    {
+      "date": "2026-08-02",
+      "learning": "Google Search Console prior-window values in website-state.json backfill upward by up to +68% after the scan date, so every week-over-week GSC comparison computed at scan time is structurally biased negative. Any SEO root-cause analysis run on as-of-scan WoW deltas will find declines that do not exist.",
+      "source": "Website & CRO dept brief 2026-08-02-s1 (memory_updates), data/website/website-state.json snapshot comparison",
+      "source_type": "operational_signal",
+      "domain": "DTC-website",
+      "evidence": "GSC data is provisional for several days after collection, but the state file stores a single value per window rather than an as-of-scan series, so there is no way to compare like with like. Extends L-145. See daily synthesis 2026-08-02-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "data/website/website-state.json schema - store GSC values with an as_of stamp, or require lag-aware comparison in the Website-CRO derivation",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-02T21:14:29.247693+00:00",
+      "archival_state": "active",
+      "id": "L-298"
+    },
+    {
+      "date": "2026-08-02",
+      "learning": "superfiliate-state.json per_customer_insights[*].confirmed_revenue is an ALL-TIME field despite the containing object carrying insights_window_days: 30. Only the per_date_* series honour the window. Summing it as a 30-day figure overstated the Content department's L3 primary 7.9x ($366,817 reported vs $46,458 true), inverting the metric from '64% below band floor, third consecutive month' to '2.4x above target'. Use conversions[] status=finished for windowed creator revenue.",
+      "source": "Content dept brief 2026-08-02-s1 (ACT-C-1, INV-C-1/INV-C-5), corroborated by two independent ledgers: data/creator-roster/superfiliate-state.json conversions[] status=finished ($46,458/30d) and data/creator-roster/superfiliate-history/2026-07.json ($46,713 July)",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "The scanner derivation trusted a field's containing-object window declaration rather than the field's own semantics, and no cross-check existed against the second available ledger (superfiliate-history monthly files) that would have caught a 7.9x divergence immediately. Corrected trajectory May $122,628 -> Jun $66,377 -> Jul $46,713; revenue per active code $1,830 -> $909 -> $806 on a roster down only 13%. See daily synthesis 2026-08-02-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "D08 scanner derivation for d08_creator_confirmed_revenue_monthly; add a magnitude cross-check against superfiliate-history/YYYY-MM.json",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-02T21:14:36.951263+00:00",
+      "archival_state": "active",
+      "id": "L-299"
     }
   ],
   "archived_entries": [
