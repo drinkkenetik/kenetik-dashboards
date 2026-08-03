@@ -2070,6 +2070,55 @@
       "domain": "content",
       "status": "active",
       "date": "2026-08-02"
+    },
+    {
+      "id": "L-300",
+      "summary": "A registry metric identifier ending in _monthly can carry a recipe that computes a ~7-day window, and nothing validates the label against the window.\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-03"
+    },
+    {
+      "id": "L-301",
+      "summary": "A stage-scoped staleness metric reads as improving when the upstream gate stops promoting work into that stage. d12_stale_approved_count fell 4 to 3 \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-03"
+    },
+    {
+      "id": "L-302",
+      "summary": "A performance-memory entry with action_taken null and a named target file, older than 14 days, is an open action masquerading as knowledge. The store\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-03"
+    },
+    {
+      "id": "L-303",
+      "summary": "Kenetik state stores encode rules as schema documentation with no enforcement read, producing two symmetrical failure modes. Rules that never fire: d\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-03"
+    },
+    {
+      "id": "L-304",
+      "summary": "A named-owner decision asked asynchronously inside a digest does not get answered, and the absence of a reply is reliable evidence the decision is no\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-03"
+    },
+    {
+      "id": "L-305",
+      "summary": "In data/paid-media/paid-media-state.json, campaigns[].spend_7d carries FOURTEEN-day totals while ads[].spend_7d carries true 7-day totals, under the \u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-03"
+    },
+    {
+      "id": "L-306",
+      "summary": "published-posts.engagement_rate carries fractions (0.0902) and percentages (5.49) in the same field, so any numeric threshold test on it is invalid. \u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-08-03"
     }
   ],
   "entries": [
@@ -4460,6 +4509,125 @@
       "created_at": "2026-08-02T21:14:36.951263+00:00",
       "archival_state": "active",
       "id": "L-299"
+    },
+    {
+      "date": "2026-08-03",
+      "learning": "A registry metric identifier ending in _monthly can carry a recipe that computes a ~7-day window, and nothing validates the label against the window. d08_creator_confirmed_revenue_monthly read $6,575.92 against $46,458 trailing-30d / $46,713 July actual; d08_creator_roi read 13.88 against 2.85; d08_active_creator_count read 17 against a 58-code roster. Three metrics, one recipe defect, all three publishable as monthly board figures.",
+      "source": "cgo-runtime/digest-2026-08-03.json vs Content dept derivation; flagged by Task A in _scan-complete.json digest_label_window_flag",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "The digest generator computes from recipes in metric-compute-map.json and emits under the registry identifier without asserting that the recipe window matches the identifier's declared window. Same defect class as L-299 in a DIFFERENT store, which makes the class architectural rather than a one-off in superfiliate-state.json. See daily synthesis 2026-08-03-s1.md Theme 4.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/metric-compute-map.json (the three d08 recipes) plus a window-vs-label assertion in the digest producer",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-03T13:40:00.932493+00:00",
+      "archival_state": "active",
+      "id": "L-300"
+    },
+    {
+      "date": "2026-08-03",
+      "learning": "A stage-scoped staleness metric reads as improving when the upstream gate stops promoting work into that stage. d12_stale_approved_count fell 4 to 3 while 13 of 21 drafts aged past 14 days and 10 past 21 days. The approved pool is 4 rows against a band floor of 8, so the metric cannot enter its own band by construction and is structurally incapable of signalling the backlog it was built to signal.",
+      "source": "Operations and Planning dept brief INS-OP-1 and INS-OP-2, 2026-08-03",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Registry formula counts status=approved AND created_age>30d. It measures a stage, not a pipeline, so a bottleneck migrating upstream of that stage makes the metric look better as the problem gets worse. Today's 3 is CS-211/212/213 at 41d; yesterday's true value was 4; CS-233 at 19d was never a member. Proposed refine: lower draft_overflow threshold from >40d to >=21d, moving coverage from 1 of 21 drafts to 10 of 21. See daily synthesis 2026-08-03-s1.md Theme 2 and rec-376.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "data/metrics/metrics-registry.yaml - d12_stale_approved_count basis and draft_overflow threshold",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-03T13:40:00.937242+00:00",
+      "archival_state": "active",
+      "id": "L-301"
+    },
+    {
+      "date": "2026-08-03",
+      "learning": "A performance-memory entry with action_taken null and a named target file, older than 14 days, is an open action masquerading as knowledge. The store has no aging rule distinguishing a recorded learning from an unexecuted instruction, so an entry naming a target file is a task the store treats as a fact.",
+      "source": "Website and CRO dept brief, 2026-08-03 (L-263 at 26 days, L-146 at 31 days)",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "L-263 (site CVR band) and L-146 (AOV basis) each name a target file and each carry action_taken null. Both blocked this department's drift detection for roughly a month while being treated as already known, and both are the reason two of three assigned dept targets are on wrong bases. See daily synthesis 2026-08-03-s1.md and rec-368.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "scripts/pm_maintain.py - surface entries with action_taken null plus populated target plus age>14d as an open-actions queue",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-03T13:40:00.941821+00:00",
+      "archival_state": "active",
+      "id": "L-302"
+    },
+    {
+      "date": "2026-08-03",
+      "learning": "Kenetik state stores encode rules as schema documentation with no enforcement read, producing two symmetrical failure modes. Rules that never fire: demand-signals.json declares tier-based expiry (T1 24-48h, T2 3d, T3 7d) and 87 of 93 pending signals are past their own limit. Rules that fire blind: the lifecycle sweep expiry auto-close closed CS-2026-188, a risk_level=high P1, as expired_unreviewed while its named fault metric listening_count_7d still read 0.",
+      "source": "Market Intelligence dept brief INS-MI-1, 2026-08-03; corroborated by Content INS-C-2 and Science INS-S-1 the same day",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Same family as L-290 and L-297 (a link or rule populated and nothing reading it) but generalized: the store layer documents intent while the reader layer implements a subset, and no test compares the two. Three independent departments surfaced instances on one day - demand-signal expiry, published-posts.json appending nothing while its sync runs, and the total absence of any gates field across 136 tracker rows. See daily synthesis 2026-08-03-s1.md Theme 1.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-logs/changesets/CS-2026-243.md - widen to enforce demand-signal expiry and add a fault-metric precondition to auto-close",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-03T13:40:00.945991+00:00",
+      "archival_state": "active",
+      "id": "L-303"
+    },
+    {
+      "date": "2026-08-03",
+      "learning": "A named-owner decision asked asynchronously inside a digest does not get answered, and the absence of a reply is reliable evidence the decision is not happening rather than that it is happening off-channel. Repeating the ask on the same channel cannot change the outcome.",
+      "source": "pat-017 third instance - Steps 9a, 9a.1 and 9a.2 Slack scans, 2026-08-03; measurement-integrity owner request asked in 6 consecutive sessions",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "A cross-channel search of all IMs, group DMs, private and public channels since 2026-07-31 returned zero team-authored messages other than physical-logistics coordination in #fulfillment. All 7 Layer-1 DM threads from the 2026-08-02 dispatch receipt read clean with zero replies. The CS-236 / CS-133 / CS-242 owner request has now run 6 sessions with zero reply while blocking five named items across five departments. pat-017 promote_to_L_threshold of 3 instances is met. The digest is a broadcast surface with no acknowledgment requirement, so a decision request placed in it has no state and no owner until someone volunteers one.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/dispatch-instructions.md - a decision asked 3+ consecutive sessions must escalate to a synchronous channel, not repeat",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-03T13:40:00.950315+00:00",
+      "archival_state": "active",
+      "id": "L-304"
+    },
+    {
+      "date": "2026-08-03",
+      "learning": "In data/paid-media/paid-media-state.json, campaigns[].spend_7d carries FOURTEEN-day totals while ads[].spend_7d carries true 7-day totals, under the same field name in the same file. Every campaign-level ROAS and CPA in that file is a fortnight blend labelled weekly.",
+      "source": "Paid Media dept brief ACT-PM-3 / INV-PM, 2026-08-03, proven arithmetically against the daily-spend series",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "campaigns[] sums to $6,382.87 (= 6,291.01 + 91.85, 14d) while ads[] sums to $3,130.23 (= 3,038.39 + 91.85, 7d); both reconcile exactly against the daily-spend series. Live consequence: CS-2026-240 was scoped to de-prioritize branded PMAX on a 2.09x read that is the fortnight number; true 7d is 3.84x at $21.98 CPA, above the 2.0 margin floor. Two writers populate one field name at different aggregation levels with different windows and no validator asserts consistency. See daily synthesis 2026-08-03-s1.md Theme 5; scoped in CS-2026-246.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "scripts/ paid-media-state build - rename or re-window campaigns[].spend_7d; CS-2026-240 must be re-scoped before approval",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-03T13:40:35.554584+00:00",
+      "archival_state": "active",
+      "id": "L-305"
+    },
+    {
+      "date": "2026-08-03",
+      "learning": "published-posts.engagement_rate carries fractions (0.0902) and percentages (5.49) in the same field, so any numeric threshold test on it is invalid. This silently zeroes the graduation gate: ready_to_graduate reads 0 while 11 posts cleared the raw threshold. A gate returning nothing-qualifies is indistinguishable from a gate that is broken.",
+      "source": "Content and Creative dept brief, 2026-08-03 - published-posts.json",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "11 posts cleared the raw threshold on 2026-07-27 while ready_to_graduate read 0. Two ingestion paths write the same field in different units with no normalization at write time and no unit assertion at read time. Compounding: the same file's sync ran 2026-08-03 at 10:53Z reporting posts_added 0 with 561 of 843 rows at publish_date null. See daily synthesis 2026-08-03-s1.md Content-Commerce Insights.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "scripts/ published-posts writer - normalize engagement_rate to fraction at write; add a range assertion to the graduation threshold test",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-03T13:40:35.559604+00:00",
+      "archival_state": "active",
+      "id": "L-306"
     }
   ],
   "archived_entries": [
@@ -8987,5 +9155,5 @@
       "entry_type": "changeset_outcome"
     }
   ],
-  "last_updated": "2026-08-02"
+  "last_updated": "2026-08-03"
 }
