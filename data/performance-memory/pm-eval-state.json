@@ -6,23 +6,23 @@
     "alert_composite_drop_pp": 5
   },
   "latest": {
-    "date": "2026-07-31",
-    "composite": 67.9,
-    "grade": "D",
+    "date": "2026-08-07",
+    "composite": 72.6,
+    "grade": "C",
     "components": {
-      "C1_capture": 66.7,
+      "C1_capture": 88.9,
       "C2_quality": 75.0,
-      "C3_hygiene": 66.7,
+      "C3_hygiene": 60.0,
       "C4_feedback": 73.3,
-      "C5_trajectory": 50.0
+      "C5_trajectory": 58.3
     },
     "scorer": "pm_eval-1.1.0",
-    "report": "cgo-logs/evaluations/2026-07-31-pm-evaluation.md",
+    "report": "cgo-logs/evaluations/2026-08-07-pm-evaluation.md",
     "maintenance_freshness_days": {
-      "pm-maintain-outcomes": 0,
+      "pm-maintain-outcomes": 1,
       "pm-maintain-archive": 0,
       "pm-maintain-candidates": 0,
-      "pm-maintain-actions": 0
+      "pm-maintain-actions": 2
     }
   },
   "history": [
@@ -119,6 +119,20 @@
       },
       "scorer": "pm_eval-1.1.0",
       "report": "cgo-logs/evaluations/2026-07-31-pm-evaluation.md"
+    },
+    {
+      "date": "2026-08-07",
+      "composite": 72.6,
+      "grade": "C",
+      "components": {
+        "C1_capture": 88.9,
+        "C2_quality": 75.0,
+        "C3_hygiene": 60.0,
+        "C4_feedback": 73.3,
+        "C5_trajectory": 58.3
+      },
+      "scorer": "pm_eval-1.1.0",
+      "report": "cgo-logs/evaluations/2026-08-07-pm-evaluation.md"
     }
   ],
   "judgment_cache": {
