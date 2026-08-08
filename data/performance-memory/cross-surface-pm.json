@@ -4697,14 +4697,16 @@
       "domain": "paid-media",
       "evidence": "pixel_roas_7d 9.31 vs paid_roas_7d 3.13, plus a ~7% spend discrepancy between summary fields. Part of the CS-2026-236 attribution cluster. See daily synthesis 2026-07-31-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "Closed 2026-08-08. Definition: Polar's account-grain pixel_paid_roas is revenue that TOUCHED paid / total marketing spend \u2014 a paid-influence share, not a return; proven model-invariant across linear/last_click/first_click/u_shaped and 2.73x the spend-weighted sum of its own channel rows (paid_roas reconciles to the cent). At channel grain pixel 4.20 vs platform 4.03 \u2014 inside \u00a73.9's band, no inversion. The 'unidentified quantity' premise is falsified: pixel_roas_7d reproduces Polar's OWN window aggregation to 0.0000%. Inversion began 2026-06-17 as a one-day step, not a drift. Fixed: pixel_cac arithmetic->harmonic mean (was +67-79% vs Polar); window now last 7 COMPLETE days (T+0 row holds 8.6-21.6% of eventual spend, median 13.8% over 22 run dates). _spend_wavg weight unchanged and now test-held against Polar's totalData. Target delivered: weekly_summary.attribution_divergence implements \u00a73.9 rule 4, Slacked to Katie Spaller + Devon from the writer's workflow on always(), warning without failing. Of the three-session widening narrative, 10% was maturation and 74% was two single days. See architecture/paid-media/pixel-roas-metric-definition.md",
       "target": "Add a pixel-vs-platform ROAS divergence flag to paid-media-state weekly_summary; fold into CS-2026-236 scope.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-07-31T13:33:07.782397+00:00",
       "archival_state": "active",
-      "id": "L-293"
+      "id": "L-293",
+      "action_stamped_at": "2026-08-08",
+      "related_entries": []
     },
     {
       "date": "2026-07-15",
@@ -12155,5 +12157,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-08-07"
+  "last_updated": "2026-08-08"
 }
