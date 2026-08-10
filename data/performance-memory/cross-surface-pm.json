@@ -2749,6 +2749,41 @@
       "domain": "paid-media",
       "status": "active",
       "date": "2026-08-07"
+    },
+    {
+      "id": "L-397",
+      "summary": "Five metrics across five departments improved in the same session and at least four improved for reasons unrelated to performance: d01_site_cvr enter\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-10"
+    },
+    {
+      "id": "L-398",
+      "summary": "Task B's pre-flight alerts Devon when fewer than 10 of an expected 16 domain briefs are present, but the 8 structured domains were retired to the dig\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-10"
+    },
+    {
+      "id": "L-399",
+      "summary": "The daily pipeline did not run on 2026-08-08 or 2026-08-09 and no mechanism detected, reported or escalated the two missing days. The gap surfaced on\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-10"
+    },
+    {
+      "id": "L-400",
+      "summary": "Bottom-up pure paid CAC (26.85 dollars, spend divided by GA4 first-user-channel conversions) and top-down pixel paid CAC (27.30 dollars, Polar last-c\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-10"
+    },
+    {
+      "id": "L-401",
+      "summary": "Three departments independently concluded 'no Raspberry Lychee purchase surface exists in any data source' and all three were wrong - the LP has been\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-10"
     }
   ],
   "entries": [
@@ -5392,6 +5427,91 @@
       "created_at": "2026-08-10T13:34:40.651099+00:00",
       "archival_state": "active",
       "id": "L-396"
+    },
+    {
+      "date": "2026-08-10",
+      "learning": "Five metrics across five departments improved in the same session and at least four improved for reasons unrelated to performance: d01_site_cvr entered band on a two-day launch pulse, m3_repeat_rate quadrupled on a 7x-smaller single cohort, calendar_quality_score_14d moved on ZERO writes to its source file, d12_velocity rose because creation outpaced throughput, and pubmed_query_freshness hit an all-time high on a state-loss event. The shared structure is that each reads a STAGE or a SNAPSHOT, and a stage can be emptied or refilled by something other than performance. Treat any favourable move on a stage-reading metric as requiring decomposition before it is reported upward.",
+      "source": "2026-08-10-s1 cross-department synthesis (Website INS-W-1, Lifecycle INS-LM-2, Market Intel INS-MI-2, Operations INS-OP-1, Science INS-S-2)",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Root cause: the registry classifies metrics by what they measure, not by whether their denominator is stable under normal operations. Stage-scoped and snapshot-scoped recipes were never separated from flow-scoped ones, so nothing in the digest or the dept-brief band check distinguishes 'improved' from 'composition changed'. L-301 named this for one metric; today it is observed on five unrelated recipes across five departments. See daily synthesis 2026-08-10-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "brain/kenetik-brain/references/metrics-registry.yaml - add a stability class (flow | stage | snapshot) per metric; require decomposition before reporting a favourable move on stage/snapshot metrics.",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-10T13:45:49.565128+00:00",
+      "archival_state": "active",
+      "id": "L-397"
+    },
+    {
+      "date": "2026-08-10",
+      "learning": "Task B's pre-flight alerts Devon when fewer than 10 of an expected 16 domain briefs are present, but the 8 structured domains were retired to the digest on 2026-06-13 and only 5 scanner briefs (07/08/14/17/18) have existed since - a fact the same instruction file states two sections later. A complete, healthy scan therefore trips the degraded-run alarm on every single run.",
+      "source": "Task B pre-flight, 2026-08-10 (cgo-daily-pipeline/config/task-b-synthesis.md Step 1 vs Phase 2 Step 1)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Root cause: the 2026-06-13 structured-domain retirement updated the Phase 2 input list but not the Phase 0/1 pre-flight gate in the same file. A threshold and the fact it guards were edited by different changes, and nothing cross-checks a count threshold against the count its own file declares expected - the same unreachable/miscalibrated-threshold class as pat-OP-02. The false-alarm DM was deliberately withheld this run. See daily synthesis 2026-08-10-s1.md Data Integrity Note 1.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/task-b-synthesis.md PRE-FLIGHT CHECK Step 1 - expected count 16 to 5, alert floor 10 to 4.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-10T13:45:49.572174+00:00",
+      "archival_state": "active",
+      "id": "L-398"
+    },
+    {
+      "date": "2026-08-10",
+      "learning": "The daily pipeline did not run on 2026-08-08 or 2026-08-09 and no mechanism detected, reported or escalated the two missing days. The gap surfaced only because a human-authored run-mode note mentioned it in prose. Downstream, Task B silently consumed a 5-day-old session handoff as if it were yesterday's.",
+      "source": "Task A/A1 run-mode notes + Task B pre-flight, 2026-08-10",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Root cause: pipeline health is asserted per-run - each run reports its own success - with no across-run continuity check. Nothing compares today's scan-folder date against the previous folder's date, so a missed run is invisible to every consumer. Same structural blind spot as pat-MI-decision-dependency-rot, where no mechanism re-opens a decision when its stated dependency fails. See daily synthesis 2026-08-10-s1.md Data Integrity Note 2.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/task-b-synthesis.md PRE-FLIGHT - add a scan-folder gap check; if the delta exceeds 1 day, state it in the synthesis header and the CGO DM.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-10T13:45:49.578343+00:00",
+      "archival_state": "active",
+      "id": "L-399"
+    },
+    {
+      "date": "2026-08-10",
+      "learning": "Bottom-up pure paid CAC (26.85 dollars, spend divided by GA4 first-user-channel conversions) and top-down pixel paid CAC (27.30 dollars, Polar last-click) agree to within 1.7% on the 8/09 read, while top-down blended reads 18.64. The two paid bases converging is the opposite of the divergence pattern the department reasons about, and it happened on a day when 88% of new customers carried an order-level source. Convergence on high-coverage days is itself the diagnostic: the divergence tracked elsewhere is a coverage artifact, not a model disagreement.",
+      "source": "data/attribution/attribution-state.json (2026-08-09) channel_cac block",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "Root cause: the two CAC models are compared on arbitrary days without conditioning on order-source coverage, so a coverage-driven gap reads as a methodology-driven gap. Nothing in the attribution artifact pairs the divergence figure with the coverage_pct that governs whether the comparison is meaningful. Coded attribution on the same day: order_source coverage_pct 88, engine_new_customers_total 41. See daily synthesis 2026-08-10-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "data/attribution/attribution-state.json channel_cac - report divergence conditioned on order_source.coverage_pct; treat divergence below 80% coverage as uninformative.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-10T13:45:49.584598+00:00",
+      "archival_state": "active",
+      "id": "L-400"
+    },
+    {
+      "date": "2026-08-10",
+      "learning": "Three departments independently concluded 'no Raspberry Lychee purchase surface exists in any data source' and all three were wrong - the LP has been live since 8/07 at 2,015 sessions and 11.02% CVR, the highest-converting page on the site. The false premise was reached from the marketing calendar, which has had no write since 2026-08-05. Independent agreement across departments reading the SAME unwritten record is not corroboration; it is one error counted three times.",
+      "source": "2026-08-10-s1 cross-check of dept-website-cro ACT-W-2 against the 2026-08-05 three-department conclusion",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "Root cause: departments treat cross-department agreement as evidence strength without checking whether the agreeing briefs share a single upstream source. The dept-brief cross_signal_insights format has no field recording which state file a conclusion rests on, so shared-source agreement is indistinguishable from independent confirmation. Corroborating VoC detail: an SMS ticket timestamped 2026-08-07T14:27:50Z reads 'no link to purchase', carried as detractor_driver purchase_link_broken - a routing problem, not an existence problem. See daily synthesis 2026-08-10-s1.md Cross-Domain Theme 4.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/task-a1-departments.md - require cross_signal_insights to name the state file(s) each conclusion rests on; require a live-surface check before any 'does not exist' claim about a customer-facing surface.",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-10T13:45:49.590250+00:00",
+      "archival_state": "active",
+      "id": "L-401"
     }
   ],
   "archived_entries": [
