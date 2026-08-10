@@ -2742,6 +2742,13 @@
       "domain": "paid-media",
       "status": "archived",
       "date": "2026-08-06"
+    },
+    {
+      "id": "L-396",
+      "summary": "[CS-2026-258] incomplete (n/a): A release condition can be satisfied by narrower evidence than the plan it releases: the condition asked for one wedg\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-07"
     }
   ],
   "entries": [
@@ -5360,6 +5367,31 @@
       "created_at": "2026-08-06T20:43:37.135812+00:00",
       "archival_state": "active",
       "id": "L-322"
+    },
+    {
+      "date": "2026-08-07",
+      "type": "changeset_outcome",
+      "learning": "A release condition can be satisfied by narrower evidence than the plan it releases: the condition asked for one wedge below floor, the plan consolidated three. When that happens the honest disposition is the narrower action (pause the one demonstrated sub-floor instrument) recorded as a new row, and the original closes superseded - executing the full plan on one instrument's evidence would repeat the single-window class of error DP-30 exists to stop, one level up.",
+      "source": "ChangeSet tracker close record (CS-2026-258)",
+      "source_type": "changeset_outcome",
+      "domain": "paid-media",
+      "evidence": "Outcome: superseded. Closed without measurement. Backfilled from tracker.json (CS-2026-258).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-258",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-08-10T13:34:40.650809+00:00",
+      "maintain_version": "1.2.0",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-10T13:34:40.651099+00:00",
+      "archival_state": "active",
+      "id": "L-396"
     }
   ],
   "archived_entries": [
@@ -12157,5 +12189,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-08-08"
+  "last_updated": "2026-08-10"
 }
