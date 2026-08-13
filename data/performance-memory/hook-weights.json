@@ -7,8 +7,8 @@
     "scripts/pm_eval.py c4_d5"
   ],
   "migrated_from": "brain/kenetik-brain/roles/content-producer-skill.md \u00a73 @ 2026-07-11",
-  "last_updated": "2026-08-02",
-  "last_synthesis_applied": "SYN-20260802-001",
+  "last_updated": "2026-08-13",
+  "last_synthesis_applied": "SYN-20260813-001",
   "update_policy": {
     "auto_apply_max_single_change_pct": 100,
     "hold_and_escalate": "If ANY single weight change exceeds the auto-apply cap (more than doubling/halving), hold ALL changes in the batch and DM Devon (U06528UQV7H) for CGO approval.",
@@ -298,13 +298,13 @@
       "id": "HW-012",
       "name": "Science distillation",
       "example": "New research in Cell shows BHB...",
-      "weight": 1.4,
+      "weight": 1.5,
       "platforms": [
         "linkedin"
       ],
-      "confidence": "medium",
+      "confidence": "high",
       "status": "active",
-      "last_validated": "2026-08-02",
+      "last_validated": "2026-08-13",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -322,6 +322,18 @@
           ],
           "note": "BACKLOG LINKAGE (no weight change) + MONITOR. CP-009 (LinkedIn science/research hooks, Cell BHB 22%, Stress Awareness Month 18%, consistently 2x+ LI median across 3 cycles) is HW-012's evidence base. Held at 1.4 rather than upgraded: SYN-20260731 logged a science-distillation LI execution at 16.54% ER, BELOW the ~26.56% structural LI median (NCS 12.9). The format still owns LinkedIn; that execution did not clear the bar. Re-read next cycle before moving the weight in either direction.",
           "weight_after": 1.4
+        },
+        {
+          "synthesis_id": "SYN-20260813-001",
+          "date": "2026-08-13",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-009",
+            "EP-006",
+            "EP-011"
+          ],
+          "note": "CP-009 REVALIDATED 4th consecutive cycle and the top LinkedIn post of the window: World Brain Day science carousel ('The brain is the body's most metabolically demanding organ... this carousel breaks down the science behind glucose versus ketones') at 10.22% ER / 225 imp - 1.31x the LI window median (7.81%) and above the 9.81% LI 30d baseline. The two Leadville commerce-ask posts on the same account in the same week landed 6.99-7.81%. 4th confirmation of the LinkedIn register rule, this time from the POSITIVE side: LI rewards institutional/science framing and discounts consumer/commerce framing. Modest +7.1% (1.4->1.5), deliberately conservative because the LI reach base is small (n=3, 128-225 imp). CALIBRATION CORRECTION carried in the same op: the 26.56% 'LI structural median' used since SYN-20260731 is STALE and should be retired - the window median is 7.81% and the 30d graduation baseline is 9.81%. Judging LI posts against 26.56% mislabels every LI winner as a failure.",
+          "weight_after": 1.5
         }
       ],
       "rules": [],
@@ -771,6 +783,41 @@
         }
       ],
       "last_validated": "2026-08-02"
+    },
+    {
+      "name": "Cause-campaign stake-first lede (origin story or gratitude first, ask last)",
+      "example": "The Leadville Trail 100 started for one reason: to keep Leadville alive. The Willow Fire is testing the town again, so we're doing what the race was built to do. [...] Stock your training block. Fund the comeback.",
+      "weight": 1.5,
+      "platforms": [
+        "facebook",
+        "instagram"
+      ],
+      "confidence": "medium",
+      "rules": [
+        "Open with the STAKE (why this place/cause matters, what is at risk) or with GRATITUDE (what it gave us). Never open with the ask.",
+        "Keep the commerce mechanic - it does not depress performance when it sits at the end. Close terse: 'Stock your training block. Fund the comeback.'",
+        "Do NOT open with 'Help us raise $X' / 'Time to give back' + mechanic. Those two ledes were the bottom two performers on the identical offer.",
+        "Scoped facebook/instagram. NOT LinkedIn: LI showed 7.81% (gratitude) vs 6.99% (ask-first), effectively flat at n=1 each - the lede effect did not reproduce there.",
+        "MEDIUM confidence: n=11 posts but ONE campaign. Confirm on the next cause/relief moment before promoting to a confirmed CP."
+      ],
+      "notes": "Performance Memory SYN-20260813-001 (NEW EP-020), window 2026-07-19..2026-07-30. Refines EP-015 (HW-020), which was derived from Memorial Day where the winning variants happened to have no CTA at all. Leadville separates the two variables: offer held constant, lede varied. The FB stake-first post was the single largest organic event of the window at 23,395 imp / 1,752 eng / 7.49% ER - 25x the FB window median. Caveat: paid_status reads organic_only on all 56 queue posts, and paid linkage is known-unreliable upstream (content_links unpopulated in paid-media-state.json), so the 23K reach warrants a paid-linkage spot-check before it is treated as a pure-organic benchmark.",
+      "id": "HW-025",
+      "status": "active",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260813-001",
+          "date": "2026-08-13",
+          "resolved": true,
+          "pattern_ids": [
+            "EP-015",
+            "EP-020"
+          ],
+          "note": "NEW EP-020. Cause-campaign lede ordering, isolated on a single offer. The Leadville/Willow Fire campaign ran ONE identical mechanic (10% of every order + Kenetik dollar-for-dollar match up to $100,000) across 11 posts with five different opening framings, same week, same accounts. Weighted ER by lede: stake-first origin story 7.43% (23,747 imp) > gratitude-first 4.99% > slogan+mechanic 3.08% > ask-first 1.95%. Facebook-controlled: 7.49% (23,395 imp) vs 1.34% (449 imp) = 5.6x. Instagram-controlled: 4.69-5.56% vs 1.70% = 2.8-3.3x. This SHARPENS EP-015: the commerce CTA is not what kills a cause post - putting the ask in the LEDE is. EP-015's rule (drop the CTA on solemn moments) forfeits revenue; this one keeps the mechanic and moves it to the last line.",
+          "weight_after": 1.5
+        }
+      ],
+      "last_validated": "2026-08-13"
     }
   ],
   "anti_patterns": [
@@ -923,7 +970,7 @@
       "multiplier": 0.0,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-08-02",
+      "last_validated": "2026-08-13",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -956,6 +1003,15 @@
             "AP-006"
           ],
           "note": "REVALIDATED (no multiplier change). YouTube hard-pause holding: 0 YouTube posts in the SYN-20260731 window and 0 in the 2026-07-18 SYN-20260802 window. Multiplier stays 0.0; no purpose-built YouTube vertical funded, so the automated cross-post remains disabled."
+        },
+        {
+          "synthesis_id": "SYN-20260813-001",
+          "date": "2026-08-13",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-006"
+          ],
+          "note": "HARD-PAUSE BREACHED. After three consecutive zero-post windows, one YouTube cross-post landed on 2026-07-24T19:25:27Z (the Leadville stage-race body, cross-posted from IG/TT) and returned 0 impressions / 1 engagement - exactly the outcome AP-006 predicts, on its 6th confirmation. The finding is not about the creative: it is that the YouTube 'hard pause' is a CONVENTION, not an enforced gate, so it holds only as long as no one schedules a cross-post. Multiplier stays 0.0. Recommend the pause be implemented as a publish-time platform block rather than a documented agreement."
         }
       ],
       "rules": [
@@ -1049,7 +1105,7 @@
       "multiplier": 0.0,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-08-02",
+      "last_validated": "2026-08-13",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -1071,6 +1127,17 @@
             "EP-016"
           ],
           "note": "RECONFIRMED 6th CYCLE AND GROWING (multiplier already floored at 0.0). SYN-20260731: 15 'Find Kenetik at QuikTrip!' FB posts all at ER<0.5%, SIX boosted to 166,060 / 119,812 / 62,873 / 54,134 / 31,589 / 20,130 imp at 0.19-0.42% ER against ad 'video__roman quik trip announce__store locator' in campaign 'awareness__quicktrip geo target__cbo' \u2014 paid amplification on dead retail copy is now LARGER than the prior cycle (6 boosted vs 2), and the retailer rotated Dierbergs->QuikTrip. The same mechanic also hit an EDITORIAL hook for the first time (EP-016 published 40x as same-second FB-reel clones, ~16 at NCS<25 / 0 imp), which is why AP-008 and EP-016 are linked here. The dedupe-per-day + block-paid-boost-on-NCS<25 gate remains UNSHIPPED after six logged cycles: re-escalate P0 to Devon. Counter-signal worth recording: the 2026-07-18 SYN-20260802 window was CLEAN \u2014 6 posts, 6 distinct bodies, no same-second clusters, no paid boost on dead copy \u2014 but n=6 on a single day is far too small to read as a fix."
+        },
+        {
+          "synthesis_id": "SYN-20260813-001",
+          "date": "2026-08-13",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-008",
+            "AP-010",
+            "EP-016"
+          ],
+          "note": "RECONFIRMED 7th CYCLE. The SYN-20260802 'first clean window in 7 cycles' is now CONFIRMED to have been a sample artifact, exactly as flagged at the time (n=6, one day). This window: the EP-016 'Three o'clock and the doc you opened at noon is still blank' body was published 13 times on Facebook in three same-second bursts - 4 copies at 2026-07-22T04:14:33Z, 3 at 04:14:34Z, 3 at 2026-07-23T17:44:38Z. 8 of the 13 returned ZERO engagement. 13 of 26 Facebook posts in the window (50%) were this one body. FB median 0.88% with the clones vs 1.39% without - the flood cuts the FB median by 37%. One copy captured 2,989 of the cluster's 4,107 impressions; the other twelve split 1,118 between them. MEASUREMENT FINDING attached to this entry: the queue UNDERCOUNTS this anti-pattern. Sprout returned 63 posts for the window; published-posts.json holds 56, and all 7 missing posts have zero impressions or no metrics object. The sync (executive-bi-process-task-2a) appears to filter posts lacking impression data - which is precisely the AP-010 signal. Every AP-010 severity count on record is therefore a FLOOR, not a true count. Dedupe-per-day + block-paid-boost-on-NCS<25 gate remains UNSHIPPED after seven logged cycles."
         }
       ],
       "rules": [
@@ -1105,6 +1172,38 @@
         "Transactional/cart-recovery copy belongs in Klaviyo email/SMS + paid retargeting ONLY \u2014 never organic social; Larry's queue must reject transactional-CTA bodies on organic surfaces."
       ],
       "notes": "Performance Memory SYN-20260531 (NEW AP-011): 3 FB cart-recovery posts at NCS 5 / 0% ER / 10-88 imp. Abandoned-cart and checkout-CTA copy has no social hook and the feed algorithm ignores the hard transactional CTA. **RULE: transactional/cart-recovery copy belongs in Klaviyo email/SMS + paid retargeting ONLY \u2014 never organic social. Larry's queue must reject transactional-CTA bodies on organic surfaces.**"
+    },
+    {
+      "name": "Amazon / PDP listing text published as an organic social caption (TikTok, Facebook)",
+      "example": "Kenetik Brain & Body Performance Shots - Caffeine-Free, Sugar-Free Ketone Supplement Drink, 10g Ketones for Focus, Clarity & Recovery, 2oz On-the-Go Energy",
+      "platforms": [
+        "tiktok",
+        "facebook"
+      ],
+      "multiplier": 0.0,
+      "confidence": "medium",
+      "rules": [
+        "Reject any post body that is a product-detail-page or marketplace listing string (spec-list syntax, dash-delimited attribute runs, size/format callouts) on organic social surfaces.",
+        "Same-body interval cap applies here too: the three TikTok posts went out at exact 30-minute intervals, which is the AP-010 cluster mechanic on a second platform.",
+        "Route listing/PDP copy to marketplace and retail channels only."
+      ],
+      "notes": "Performance Memory SYN-20260813-001. Sibling of HW-AP-009 (bulk-publish identical retail/PR copy on FB) - same root cause class: syndicated commerce copy entering the organic publishing queue. Evidence is partly INVISIBLE in published-posts.json because zero-metric posts are dropped by the sync; these four were recovered only from a direct Sprout get_post_analytics pull.",
+      "id": "HW-AP-011",
+      "status": "active",
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260813-001",
+          "date": "2026-08-13",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-005",
+            "AP-010"
+          ],
+          "note": "NEW. AP-005 (Amazon/PDP listing text as social caption) has RESURFACED on TikTok and Facebook after being closed on Instagram. Three TikTok posts on 2026-07-24 at 16:00:28Z / 16:30:29Z / 17:00:30Z carried raw Amazon listing copy ('Kenetik Brain & Body Performance Shots - Caffeine-Free, Sugar-Free Ketone Supplement Drink, 10g Ketones for Focus, Clarity & Recovery, 2oz On-the-Go Energy') at exact 30-minute intervals, and returned NO metrics object at all from Sprout. On Facebook the same failure mode produced 'Kenetik is the cleanest, smartest way to fuel your brain and body...' (2026-07-29T04:17:04Z) at 0 impressions. Filed as a SEPARATE entry rather than re-opening HW-AP-007: HW-AP-007's 'resolved' status refers to the Instagram captionless problem (AP-001), which is genuinely resolved at 6 consecutive clean windows. Merging a live failure into a resolved entry is how a store rots."
+        }
+      ],
+      "last_validated": "2026-08-13"
     }
   ]
 }
