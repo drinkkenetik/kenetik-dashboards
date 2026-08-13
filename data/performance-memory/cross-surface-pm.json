@@ -579,21 +579,21 @@
       "id": "L-083",
       "summary": "On launch days with overlapping target audiences, A-list creator IG/FB amplification outperforms Klaviyo BIG BEAT email on conversion; recalibrate launch-day channel weights.",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-11"
     },
     {
       "id": "L-084",
       "summary": "Calendar writeback patch L-060 is highest-leverage ops fix; external demand grows without conversion to confirmed activities when patch is undeployed.",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-11"
     },
     {
       "id": "L-085",
       "summary": "A-list creator + product-reveal content = reproducible ~10x organic virality template; second confirming instance across wedges promotes from hypothesis to graduated pattern.",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-11",
       "date_last_corroborated": "2026-05-15"
     },
@@ -1319,7 +1319,7 @@
       "id": "L-192",
       "summary": "[CS-2026-143] incomplete (n/a): TIER-2 PAUSE (CVR -19.2% vs control). Hypothesis disproof condition partially met: subscription-first lifted ATC rate\u2026",
       "domain": "website",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-12"
     },
     {
@@ -2872,80 +2872,6 @@
   ],
   "entries": [
     {
-      "id": "L-083",
-      "date": "2026-05-11",
-      "type": "skill_update",
-      "learning": "On launch-day moments where target audience overlaps significantly, A-list creator IG/FB amplification outperforms Klaviyo BIG BEAT email on conversion. MDay 5/10 Gwen send hit 38.75% OR / 9 conv / $948 on the same audience overlap where Teaser 5/5 hit 36.59% OR / 61 conv / $3,680; in parallel, MDay creator collab beats (BEAT-02..06) ran strong organic IG/FB virality. Recalibrate launch-day channel weights toward creator capture (Charlotte) over email amplification (Katie) for hard-launch days; preserve email for sequencing and audience baseline.",
-      "source": "D02 SIG-02-1 + D08 SIG-08-4 + Content dept brief CROSS-DEPARTMENT FLAG #2 + 2026-05-11-s1 synthesis Cross-Domain Theme C5",
-      "source_type": "domain_contradiction",
-      "domain": "content",
-      "evidence": "A-list creator IG/FB amplification of branded reveal achieves NCS 100 cross-platform. See cgo-logs/queues/performance-memory.json CP-015 + Larry session 2026-05-11.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-078"
-      ],
-      "target": "brain/kenetik-brain/references/launch-day-channel-weights.md (new); refresh cross-surface-pm.json entry recording the pattern. Also informs Memorial Day 5/18 BIG QUARTERLY BEAT channel-mix design.",
-      "reconciliation_notes": [
-        "evidence pruned 274\u2192164 chars (Process 3.8 Step 0c)"
-      ],
-      "entry_type": "skill_update",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-084",
-      "date": "2026-05-11",
-      "type": "process_change",
-      "learning": "External demand can grow indefinitely without translating to confirmed activities when the calendar writeback patch is undeployed. Three external-facing domains (D10 listening 446 Kenetik mentions +6x WoW; D18 4,056 adjacent-audience metabolic-health frame; D17 0 competitor press in 7d) all signal GREEN; D13 calendar discipline (needs_planning 23.9% to 43.3% in 4 days, 15+ consecutive sub-75% sessions) signals RED-degrading. The L-060 calendar writeback patch is the single highest-leverage operational fix because every downstream calendar discipline action burns human time on a calendar that does not persist the work.",
-      "source": "D10 + D13 + D17 + D18 cross-domain convergence (Market Intel CSI-1) + Ops L-081 + 2026-05-11-s1 synthesis Cross-Domain Theme C3 + Priority Stack P4",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "Calendar writeback patch (L-060) is currently the single highest-leverage ops fix; external demand growth outpacing internal calendar throughput. See session-handoff-2026-05-11.",
-      "confidence": "strong",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-060",
-        "L-081"
-      ],
-      "target": "cgo-daily-pipeline/scripts (L-060 calendar writeback patch implementation); operations/playbooks/calendar-discipline.md.",
-      "reconciliation_notes": [
-        "evidence pruned 212\u2192177 chars (Process 3.8 Step 0c)"
-      ],
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-085",
-      "date": "2026-05-11",
-      "type": "skill_update",
-      "learning": "'A-list creator + product-reveal content' is a reproducible approximately 10x-organic-baseline virality template, now validated across 2 distinct creators in 2 distinct wedges (Wedge A looksmaxxing/young-men with Ashton Hall GP teaser; Wedge B age-recovery testimonial with Matt Hughes UFC reel S47 reference). Promotes from hypothesis-grade (S47) to graduated pattern eligible for performance-memory codification. Single-creator patterns fail because they conflate creator-pull with the framework; this is now framework-pull, not idol-pull.",
-      "source": "D07 SIG-07-1 + D08 SIG-08-1 + Content dept SIG-C1 + 2026-05-11-s1 synthesis Pattern Tracker Updates",
-      "source_type": "operational_signal",
-      "domain": "content",
-      "evidence": "Reveal launch (Golden Pear, May 1-6) hit NCS 100 on 4 of 9 posts across IG/FB/TT. See cgo-logs/queues/performance-memory.json CP-015 evidence block.",
-      "confidence": "strong",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-079"
-      ],
-      "target": "data/performance-memory/cross-surface-pm.json (new graduated pattern entry GP-202605-001 or similar in confirmed_patterns section). Replicate framing for Cleetus + Matt Hughes new variant + Dr. Disrespect 5/13 activations.",
-      "date_last_corroborated": "2026-05-15",
-      "reconciliation_notes": [
-        "evidence pruned 241\u2192148 chars (Process 3.8 Step 0c)"
-      ],
-      "entry_type": "skill_update",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
       "id": "L-090",
       "date": "2026-05-15",
       "type": "content_pattern",
@@ -3399,14 +3325,15 @@
       "domain": "operations",
       "evidence": "Step 8a update rule keys off 'degraded quality' but prior sessions read a business-RED dept status as quality degradation; the two are distinct.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "760040e 2026-08-13: Lock: pilot-worker-b (Repair Loop pilot, AUTO doc-reconciliation + instrument-refinement)",
       "skill_files_updated": [],
       "related_entries": [],
       "target": "synthesis-instructions.md Step 8a: clarify consecutive_below_40 tracks scan-quality only; reset on substantive brief regardless of business status.",
       "entry_type": "threshold_calibration",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-08-13"
     },
     {
       "id": "L-119",
@@ -3700,7 +3627,7 @@
       "domain": "operations",
       "evidence": "Complete run committed 5 scanner domains (0 failed), but the count gate keys off the pre-retirement 16-domain model. See daily synthesis 2026-06-15-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "760040e 2026-08-13: Lock: pilot-worker-b (Repair Loop pilot, AUTO doc-reconciliation + instrument-refinement)",
       "skill_files_updated": [],
       "related_entries": [],
       "target": "cgo-daily-pipeline/config/task-b-synthesis.md PRE-FLIGHT Step 1 brief-count expectation + synthesis-instructions.md Inputs/'Domain count is 16' note \u2014 key the count gate off _scan-complete.json.domains_committed/domains_failed (or expected 5 scanner + 7 dept), not 16.",
@@ -3710,7 +3637,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_stamped_at": "2026-08-13"
     },
     {
       "id": "L-134",
@@ -3963,31 +3891,6 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
-    },
-    {
-      "id": "L-192",
-      "date": "2026-05-12",
-      "type": "changeset_outcome",
-      "learning": "TIER-2 PAUSE (CVR -19.2% vs control). Hypothesis disproof condition partially met: subscription-first lifted ATC rate (+5.73% relative, 8.97% -> 9.48%) but cannibalized cart-to-purchase conversion (CVR 2.34% -> 1.89%, -19.2% relative). Bayesian: p(variant>control)=0.788 on ATC (below 95% keep), tier-2 guardrail warning on CVR. Multiple tier1_breach signals fired during measurement (alert-only mode, revert_enabled=false). Pattern: subscription-first option ordering increases buy-button engagemen\u2026",
-      "source": "ChangeSet tracker close record (CS-2026-143)",
-      "source_type": "changeset_outcome",
-      "domain": "website",
-      "evidence": "Outcome: underperformed. Backfilled from tracker.json (CS-2026-143).",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-143",
-      "variance_pct": null,
-      "outcome_class": "incomplete",
-      "entry_type": "changeset_outcome",
-      "backfilled_at": "2026-07-06T03:06:32.986933+00:00",
-      "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review",
-      "reconciliation_notes": [
-        "domain 'DTC-website' -> 'website' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
       ]
     },
     {
@@ -4257,7 +4160,7 @@
       "domain": "paid-media",
       "evidence": "Outcome: inconclusive. Expected revenue: $22,500. Actual revenue: $0. Variance: -100.0%. Backfilled from tracker.json (CS-2026-089).",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "78c94d8 2026-08-05: [PGA-A0] Re-review round 2: fix 5 material stragglers + 8 cosmetic findings from the post-fix review",
       "skill_files_updated": [],
       "related_entries": [],
       "changeset_candidate": false,
@@ -4266,7 +4169,8 @@
       "outcome_class": "significant_variance",
       "entry_type": "changeset_outcome",
       "backfilled_at": "2026-07-06T03:06:32.987049+00:00",
-      "maintain_version": "1.0.0"
+      "maintain_version": "1.0.0",
+      "action_stamped_at": "2026-08-13"
     },
     {
       "id": "L-209",
@@ -4504,7 +4408,7 @@
       "domain": "paid-media",
       "evidence": "pixel_cac ($52.97/7d) vs $34 target compares mismatched denominators \u2014 the target was never specified as all-channel vs digital-only NCA. See daily synthesis 2026-07-06-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "9bda378 2026-08-05: [PGA-A0] Adversarial spec review: 65 raw findings (3 passes), ~29 distinct material errors fixed; parent bumped to v2.9",
       "target": "brain/kenetik-brain/references/metrics-taxonomy.md (digital_cac definition) + metrics-registry.yaml",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
@@ -4515,7 +4419,14 @@
       "reconciliation_notes": [
         "evidence pruned from 333 chars to source-pointer form (Process 3.8 Step 0c, 2026-07-10)"
       ],
-      "type": "process_change"
+      "type": "process_change",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": [
+        "CS-2026-089",
+        "CS-2026-240",
+        "CS-2026-246",
+        "CS-2026-249"
+      ]
     },
     {
       "date": "2026-07-07",
@@ -4525,7 +4436,7 @@
       "domain": "paid-media",
       "evidence": "paid-media-state.json was fresh with roas_validation ok when this fired \u2014 a deliberate spend throttle got flagged as a suspected Polar outage. See daily synthesis 2026-07-07-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "523bef2 2026-08-08: L-293: Pixel ROAS defined, construction fixed, \u00a73.9 rule 4 implemented",
       "target": "paid-media domain/dept scan \u2014 check polar_stale + roas_validation before flagging low spend as an outage.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
@@ -4536,7 +4447,9 @@
       "reconciliation_notes": [
         "evidence pruned from 242 chars to source-pointer form (Process 3.8 Step 0c, 2026-07-10)"
       ],
-      "type": "process_change"
+      "type": "process_change",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": []
     },
     {
       "date": "2026-07-07",
@@ -5274,14 +5187,16 @@
       "domain": "operations",
       "evidence": "Root cause: automated sweeps write sweep_flags, humans write notes, and no reconciliation step compares them. Any human opening the row reads the note, sees HELD, and stops - which is the mechanism behind 18 days of non-movement on the two highest-revenue-density lifecycle assets in the launch arc, against an 8/09 hard deadline. The same class appears inverted on CS-2026-162, where a real owner decision recorded on 7/13 is masked because 'deferred' is not a valid status enum, generating 22 days of false staleness pressure. Two instances, two directions, one root cause. See daily synthesis 2026-08-04-s1.md, new pattern pat-claims-record-split.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "a95b04e 2026-08-11: Phase 2: daily synthesis 2026-08-11-s1 + domain health streaks",
       "target": "cgo-daily-pipeline/config/changeset-instructions.md - reconcile notes against sweep_flags in the lifecycle sweep, or make sweep_flags authoritative for gate state",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-04T13:44:57.213547+00:00",
       "archival_state": "active",
-      "id": "L-313"
+      "id": "L-313",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": []
     },
     {
       "date": "2026-08-04",
@@ -5341,14 +5256,23 @@
       "domain": "operations",
       "evidence": "Root cause: each queue admits entries with no capacity test at the point of admission, and each is read by a metric that counts entries rather than exits. Declining to add to one queue therefore does not change the admission rule - on 2026-08-03 the pipeline correctly declined 15 calendar spawns (EC-2026-011) and the same day four rows entered the same queue by another route. Triple-witnessed across three stores with three different writers on one day. See daily synthesis 2026-08-04-s1.md, new pattern pat-022.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "1199bc1 2026-08-05: phase3: lifecycle sweep + CS-2026-255 (session 89)",
       "target": "cgo-daily-pipeline/config/changeset-instructions.md admission precondition, plus the d12_velocity and demand-signal-queue recipes",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-04T13:46:13.727216+00:00",
       "archival_state": "active",
-      "id": "L-316"
+      "id": "L-316",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": [
+        "CS-2026-127",
+        "CS-2026-162",
+        "CS-2026-221",
+        "CS-2026-234",
+        "CS-2026-253",
+        "CS-2026-255"
+      ]
     },
     {
       "date": "2026-08-05",
@@ -5544,14 +5468,16 @@
       "domain": "operations",
       "evidence": "Root cause: the 2026-06-13 structured-domain retirement updated the Phase 2 input list but not the Phase 0/1 pre-flight gate in the same file. A threshold and the fact it guards were edited by different changes, and nothing cross-checks a count threshold against the count its own file declares expected - the same unreachable/miscalibrated-threshold class as pat-OP-02. The false-alarm DM was deliberately withheld this run. See daily synthesis 2026-08-10-s1.md Data Integrity Note 1.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "0fbbafc 2026-08-10: Phase 4: dispatch close-out 2026-08-10-s1 (session 90)",
       "target": "cgo-daily-pipeline/config/task-b-synthesis.md PRE-FLIGHT CHECK Step 1 - expected count 16 to 5, alert floor 10 to 4.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-10T13:45:49.572174+00:00",
       "archival_state": "active",
-      "id": "L-398"
+      "id": "L-398",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": []
     },
     {
       "date": "2026-08-10",
@@ -5580,14 +5506,16 @@
       "domain": "paid-media",
       "evidence": "Root cause: the two CAC models are compared on arbitrary days without conditioning on order-source coverage, so a coverage-driven gap reads as a methodology-driven gap. Nothing in the attribution artifact pairs the divergence figure with the coverage_pct that governs whether the comparison is meaningful. Coded attribution on the same day: order_source coverage_pct 88, engine_new_customers_total 41. See daily synthesis 2026-08-10-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "a95b04e 2026-08-11: Phase 2: daily synthesis 2026-08-11-s1 + domain health streaks",
       "target": "data/attribution/attribution-state.json channel_cac - report divergence conditioned on order_source.coverage_pct; treat divergence below 80% coverage as uninformative.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-10T13:45:49.584598+00:00",
       "archival_state": "active",
-      "id": "L-400"
+      "id": "L-400",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": []
     },
     {
       "date": "2026-08-10",
@@ -5597,14 +5525,16 @@
       "domain": "operations",
       "evidence": "Root cause: departments treat cross-department agreement as evidence strength without checking whether the agreeing briefs share a single upstream source. The dept-brief cross_signal_insights format has no field recording which state file a conclusion rests on, so shared-source agreement is indistinguishable from independent confirmation. Corroborating VoC detail: an SMS ticket timestamped 2026-08-07T14:27:50Z reads 'no link to purchase', carried as detractor_driver purchase_link_broken - a routing problem, not an existence problem. See daily synthesis 2026-08-10-s1.md Cross-Domain Theme 4.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "0fbbafc 2026-08-10: Phase 4: dispatch close-out 2026-08-10-s1 (session 90)",
       "target": "cgo-daily-pipeline/config/task-a1-departments.md - require cross_signal_insights to name the state file(s) each conclusion rests on; require a live-surface check before any 'does not exist' claim about a customer-facing surface.",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-10T13:45:49.590250+00:00",
       "archival_state": "active",
-      "id": "L-401"
+      "id": "L-401",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": []
     },
     {
       "date": "2026-08-10",
@@ -5756,7 +5686,7 @@
       "domain": "operations",
       "evidence": "Root cause: work_evidence has no enforced shape. It is on the ALLOWED_CS_FIELDS allowlist and build_cs_entry.py does not type-check it, so both a dict (CS-2026-257: repo/branch/commit/files/pr keys) and a list of {hash,date,subject} objects are writable. The actions collector assumes only the latter. Traceback at scripts/pm_maintain.py:1336 in run_actions. Partial-write risk is real: L-276, L-397, L-399 and L-402 were stamped before the crash and those stamps are valid and were retained, but the pass did not complete and reported no failure summary. Not fixed this session. See daily synthesis 2026-08-13-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "13beb68 2026-08-13: Lock: pilot-worker-a claims the AUTO tier's ci-plumbing, stale-data-recovery and figure-reconciliation items",
       "target": "scripts/pm_maintain.py run_actions - normalise work_evidence to a list before iterating; and add work_evidence to the array-typed field checks in build_cs_entry.py so the two shapes cannot both be written.",
       "sources": [
         "Traceback: scripts/pm_maintain.py:1336 in run_actions, AttributeError 'str' object has no attribute 'get' (2026-08-13)",
@@ -5769,7 +5699,9 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-13T15:13:14.015280+00:00",
       "archival_state": "active",
-      "id": "L-410"
+      "id": "L-410",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": []
     },
     {
       "date": "2026-08-13",
@@ -5825,7 +5757,7 @@
       "domain": "operations",
       "evidence": "Root cause: a per-file writer bug with a systemic consequence. The envelope last_updated is frozen at 2026-08-10 and generated_at has been frozen since 2026-05-20, while row-level stamps advance normally. The cost was concrete this session: the Task A1 orchestrator's readiness header reported this file as part of a five-file 84.4h stale cluster, which over-discounted the very file producing that department's L3 primary metric. Demonstrated by direct contrast against content-calendar-data.json, whose writer does bump the envelope. This also partially refutes the five-file cluster framing - four of the five are genuinely one missing write from the 8/11 session, but this one is a separate writer defect. Filed by Task B on the department's behalf; the brief allocated this as L-405 locally and it was never persisted - the gate has since assigned L-405 to an unrelated entry. See daily synthesis 2026-08-13-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "13beb68 2026-08-13: Lock: pilot-worker-a claims the AUTO tier's ci-plumbing, stale-data-recovery and figure-reconciliation items",
       "target": "Fix the marketing-calendar writer to bump envelope last_updated on row writes, and drop or re-derive the dead generated_at / last_enriched fields. Separately: freshness checks across the pipeline should read max(row last_updated) rather than the envelope.",
       "sources": [
         "cgo-logs/department-briefs/2026-08-13-s1/dept-market-intelligence.md INV-M-2 envelope-versus-row contrast",
@@ -5838,7 +5770,9 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-13T15:14:02.366313+00:00",
       "archival_state": "active",
-      "id": "L-413"
+      "id": "L-413",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": []
     }
   ],
   "archived_entries": [
@@ -12688,6 +12622,113 @@
       "created_at": "2026-08-13T13:11:44.839185+00:00",
       "archival_state": "active",
       "id": "L-404"
+    },
+    {
+      "id": "L-083",
+      "date": "2026-05-11",
+      "type": "skill_update",
+      "learning": "On launch-day moments where target audience overlaps significantly, A-list creator IG/FB amplification outperforms Klaviyo BIG BEAT email on conversion. MDay 5/10 Gwen send hit 38.75% OR / 9 conv / $948 on the same audience overlap where Teaser 5/5 hit 36.59% OR / 61 conv / $3,680; in parallel, MDay creator collab beats (BEAT-02..06) ran strong organic IG/FB virality. Recalibrate launch-day channel weights toward creator capture (Charlotte) over email amplification (Katie) for hard-launch days; preserve email for sequencing and audience baseline.",
+      "source": "D02 SIG-02-1 + D08 SIG-08-4 + Content dept brief CROSS-DEPARTMENT FLAG #2 + 2026-05-11-s1 synthesis Cross-Domain Theme C5",
+      "source_type": "domain_contradiction",
+      "domain": "content",
+      "evidence": "A-list creator IG/FB amplification of branded reveal achieves NCS 100 cross-platform. See cgo-logs/queues/performance-memory.json CP-015 + Larry session 2026-05-11.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-078"
+      ],
+      "target": "brain/kenetik-brain/references/launch-day-channel-weights.md (new); refresh cross-surface-pm.json entry recording the pattern. Also informs Memorial Day 5/18 BIG QUARTERLY BEAT channel-mix design.",
+      "reconciliation_notes": [
+        "evidence pruned 274\u2192164 chars (Process 3.8 Step 0c)"
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-08-13",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-084",
+      "date": "2026-05-11",
+      "type": "process_change",
+      "learning": "External demand can grow indefinitely without translating to confirmed activities when the calendar writeback patch is undeployed. Three external-facing domains (D10 listening 446 Kenetik mentions +6x WoW; D18 4,056 adjacent-audience metabolic-health frame; D17 0 competitor press in 7d) all signal GREEN; D13 calendar discipline (needs_planning 23.9% to 43.3% in 4 days, 15+ consecutive sub-75% sessions) signals RED-degrading. The L-060 calendar writeback patch is the single highest-leverage operational fix because every downstream calendar discipline action burns human time on a calendar that does not persist the work.",
+      "source": "D10 + D13 + D17 + D18 cross-domain convergence (Market Intel CSI-1) + Ops L-081 + 2026-05-11-s1 synthesis Cross-Domain Theme C3 + Priority Stack P4",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Calendar writeback patch (L-060) is currently the single highest-leverage ops fix; external demand growth outpacing internal calendar throughput. See session-handoff-2026-05-11.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-060",
+        "L-081"
+      ],
+      "target": "cgo-daily-pipeline/scripts (L-060 calendar writeback patch implementation); operations/playbooks/calendar-discipline.md.",
+      "reconciliation_notes": [
+        "evidence pruned 212\u2192177 chars (Process 3.8 Step 0c)"
+      ],
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-08-13",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-085",
+      "date": "2026-05-11",
+      "type": "skill_update",
+      "learning": "'A-list creator + product-reveal content' is a reproducible approximately 10x-organic-baseline virality template, now validated across 2 distinct creators in 2 distinct wedges (Wedge A looksmaxxing/young-men with Ashton Hall GP teaser; Wedge B age-recovery testimonial with Matt Hughes UFC reel S47 reference). Promotes from hypothesis-grade (S47) to graduated pattern eligible for performance-memory codification. Single-creator patterns fail because they conflate creator-pull with the framework; this is now framework-pull, not idol-pull.",
+      "source": "D07 SIG-07-1 + D08 SIG-08-1 + Content dept SIG-C1 + 2026-05-11-s1 synthesis Pattern Tracker Updates",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "Reveal launch (Golden Pear, May 1-6) hit NCS 100 on 4 of 9 posts across IG/FB/TT. See cgo-logs/queues/performance-memory.json CP-015 evidence block.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-079"
+      ],
+      "target": "data/performance-memory/cross-surface-pm.json (new graduated pattern entry GP-202605-001 or similar in confirmed_patterns section). Replicate framing for Cleetus + Matt Hughes new variant + Dr. Disrespect 5/13 activations.",
+      "date_last_corroborated": "2026-05-15",
+      "reconciliation_notes": [
+        "evidence pruned 241\u2192148 chars (Process 3.8 Step 0c)"
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-08-13",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-192",
+      "date": "2026-05-12",
+      "type": "changeset_outcome",
+      "learning": "TIER-2 PAUSE (CVR -19.2% vs control). Hypothesis disproof condition partially met: subscription-first lifted ATC rate (+5.73% relative, 8.97% -> 9.48%) but cannibalized cart-to-purchase conversion (CVR 2.34% -> 1.89%, -19.2% relative). Bayesian: p(variant>control)=0.788 on ATC (below 95% keep), tier-2 guardrail warning on CVR. Multiple tier1_breach signals fired during measurement (alert-only mode, revert_enabled=false). Pattern: subscription-first option ordering increases buy-button engagemen\u2026",
+      "source": "ChangeSet tracker close record (CS-2026-143)",
+      "source_type": "changeset_outcome",
+      "domain": "website",
+      "evidence": "Outcome: underperformed. Backfilled from tracker.json (CS-2026-143).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-143",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-07-06T03:06:32.986933+00:00",
+      "maintain_version": "1.0.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'DTC-website' -> 'website' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ],
+      "archived_date": "2026-08-13",
+      "archived_reason": "expired_unactioned"
     }
   ],
   "last_updated": "2026-08-13"
