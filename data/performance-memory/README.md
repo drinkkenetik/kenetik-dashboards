@@ -79,6 +79,7 @@ Bad: a 3-line forensic narrative copying information from the session handoff.
 - `cgo-daily-pipeline/config/synthesis-instructions.md` — Step 9a-9c (signal detection + formatting)
 - `cgo-daily-pipeline/config/task-b-synthesis.md` — Step 5b (signal write to JSON)
 - `kenetik-growth-system/commands/synthesize-learnings.md` — Process 3.8 (weekly consolidation + synthesis)
+- `scripts/pm_maintain.py` — the deterministic Friday passes run by `.github/workflows/pm-weekly-cron.yml`: `outcomes` (one `changeset_outcome` entry per closed ChangeSet), `graduate` (DL-T8 wedge-insight graduation — rules in `scripts/insight_graduation.py`; a paid-media hypothesis CONFIRMED at its measured close, or a wedge dossier conclusion past this store's own `config.evidence_thresholds` bar, becomes a `skill_update` entry with `source_type: "wedge_insight"`), `actions` (citation collector), `archive` (Q1 policy) and `candidates` (proposals for the judge above). Every write goes through `scripts/pm_write_gate.py`.
 - `kenetik-growth-system/commands/changeset-lifecycle-sweep.md` — Step 3C (baseline `changeset_outcome` entry on every close, including manual closes since last sweep)
 - `kenetik-growth-system/commands/changeset-measurement.md` — Step 8 (variance-based `LEARNING SIGNAL` emission when |variance| > 20%)
 - `kenetik-growth-system/commands/monthly-calibration.md` — Section 3 (monthly validation)

@@ -2784,6 +2784,27 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-08-10"
+    },
+    {
+      "id": "L-402",
+      "summary": "[CS-2026-266] incomplete (n/a): Measurement-path fact, not a performance learning: a shadow cycle measures its own baseline against the same untouche\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-10"
+    },
+    {
+      "id": "L-403",
+      "summary": "[CS-2026-260] incomplete (n/a): Closed invalid_premise 2026-08-11 on Devon's direction, after Katie's execute attempt surfaced three findings (Slack,\u2026",
+      "domain": "paid-media",
+      "status": "archived",
+      "date": "2026-08-11"
+    },
+    {
+      "id": "L-404",
+      "summary": "[CS-2026-241] incomplete (n/a): Competitive-source hygiene: add direct-competitor feeds + refresh Sprout Listening keywords \u2014 closed as expired_unrev\u2026",
+      "domain": "market-intelligence",
+      "status": "archived",
+      "date": "2026-08-13"
     }
   ],
   "entries": [
@@ -5512,6 +5533,32 @@
       "created_at": "2026-08-10T13:45:49.590250+00:00",
       "archival_state": "active",
       "id": "L-401"
+    },
+    {
+      "date": "2026-08-10",
+      "type": "changeset_outcome",
+      "learning": "Measurement-path fact, not a performance learning: a shadow cycle measures its own baseline against the same untouched series (delta 0.0%), so the only thing a shadow close can teach is that the open\u2192measure\u2192close machinery holds \u2014 which it did, including the DP-19 shape this note is part of.",
+      "source": "ChangeSet tracker close record (CS-2026-266)",
+      "source_type": "changeset_outcome",
+      "domain": "paid-media",
+      "evidence": "Outcome: inconclusive. Backfilled from tracker.json (CS-2026-266).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-266",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-08-13T13:11:44.809301+00:00",
+      "maintain_version": "1.2.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T13:11:44.810774+00:00",
+      "archival_state": "active",
+      "id": "L-402"
     }
   ],
   "archived_entries": [
@@ -12307,7 +12354,61 @@
       ],
       "archived_date": "2026-08-07",
       "archived_reason": "expired_unactioned"
+    },
+    {
+      "date": "2026-08-11",
+      "type": "changeset_outcome",
+      "learning": "Closed invalid_premise 2026-08-11 on Devon's direction, after Katie's execute attempt surfaced three findings (Slack, 2026-08-11): (1) the pause was NEVER APPLIED \u2014 the campaign read ENABLED with live spend for the full three days the row said queued-for-execution, and the verification clause (reads PAUSED, $0 day-2) failed unwatched; (2) the founding premise REVERSED \u2014 window_agreement at decision time (08-07) read 1.88/1.52/2.24 agree_below, and on 2026-08-11 reads 3.10/3.70/3.23 agree_above \u2026",
+      "source": "ChangeSet tracker close record (CS-2026-260)",
+      "source_type": "changeset_outcome",
+      "domain": "paid-media",
+      "evidence": "Outcome: invalid_premise. Closed without measurement. Backfilled from tracker.json (CS-2026-260).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-260",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-08-13T13:11:44.809390+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-08-13",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T13:11:44.825277+00:00",
+      "archival_state": "active",
+      "id": "L-403"
+    },
+    {
+      "date": "2026-08-13",
+      "type": "changeset_outcome",
+      "learning": "Competitive-source hygiene: add direct-competitor feeds + refresh Sprout Listening keywords \u2014 closed as expired_unreviewed on 2026-08-13 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-241)",
+      "source_type": "changeset_outcome",
+      "domain": "market-intelligence",
+      "evidence": "Outcome: expired_unreviewed. Closed without measurement. Backfilled from tracker.json (CS-2026-241).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-241",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-08-13T13:11:44.809437+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-08-13",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T13:11:44.839185+00:00",
+      "archival_state": "active",
+      "id": "L-404"
     }
   ],
-  "last_updated": "2026-08-10"
+  "last_updated": "2026-08-13"
 }
