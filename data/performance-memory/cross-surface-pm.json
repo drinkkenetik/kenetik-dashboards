@@ -2805,6 +2805,69 @@
       "domain": "market-intelligence",
       "status": "archived",
       "date": "2026-08-13"
+    },
+    {
+      "id": "L-405",
+      "summary": "synthesis-instructions Step 9a/9a.2 prescribe a Slack keyword list that returns zero results by construction: the Slack search API treats AND/OR/NOT \u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-406",
+      "summary": "The rec-NNN id allocator reads persisted stores only, so a session that writes synthesis prose without writing state leaves ids allocated-in-narrativ\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-407",
+      "summary": "Department briefs can be invalidated by a governance-config commit landing between the scan and the synthesis that consumes them, and nothing re-read\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-408",
+      "summary": "The L1/L2 focus-gap rule self-silences on the EXISTENCE of an active ChangeSet carrying a metric in expected_impact.metrics_moved, not on whether tha\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-409",
+      "summary": "The Layer 0 pre-spawn collision check only reliably catches near-verbatim restatements. A paraphrased query for an open ChangeSet returned 0 matches \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-410",
+      "summary": "pm_maintain.py actions --apply crashes with AttributeError when a ChangeSet's work_evidence is a dict rather than a list of dicts. The collector iter\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-411",
+      "summary": "A symmetric band gate on a window-slide metric produces false negatives on schedule. calendar_quality_score_14d recovered from 0.6364 to 0.6522 with \u2026",
+      "domain": "campaigns",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-412",
+      "summary": "Bundle width - two to three surfaces under a single owner - rather than urgency, routing or owner identity, is what produces repeated expired_unrevie\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-413",
+      "summary": "Envelope freshness fields are unreliable per-file: some writers stamp individual rows without bumping the file's envelope last_updated, so a freshnes\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-13"
     }
   ],
   "entries": [
@@ -5571,6 +5634,211 @@
       "archival_state": "active",
       "id": "L-402",
       "action_stamped_at": "2026-08-13"
+    },
+    {
+      "date": "2026-08-13",
+      "learning": "synthesis-instructions Step 9a/9a.2 prescribe a Slack keyword list that returns zero results by construction: the Slack search API treats AND/OR/NOT as literal search terms, not operators, so the prescribed OR-list can never match. Verified directly this session - a broad OR query over the last 72h returned 0 results while the same window scanned as single-term queries surfaced three real team corrections. Every prior session reporting '0 correction-shaped messages' may have been measuring the query form rather than the team.",
+      "source": "Task B Phase 2 Step 9a execution, 2026-08-13-s1",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Root cause: the instruction file specifies search TERMS without specifying the query FORM, and the tool contract forbidding boolean operators is documented in the Slack MCP tool description rather than in the instruction. A prescribed input the receiving API cannot parse produces a clean, plausible zero that is indistinguishable from a genuine absence of signal. Corroborating instances found once the form was corrected: Katie Spaller 2026-08-12 in #kgs-paid-media ratifying the diagnose_creative live-asset-group fix; Katie Spaller 2026-08-11 DM reporting CS-2026-260 execution-validation failure; Devon Price 2026-08-12 relaying the autonomy doctrine instruction. Compounds rec-416 (channel-coverage gap) - two independent reasons the same scan finds nothing. See daily synthesis 2026-08-13-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 9a and 9a.2 - replace the OR-list with an explicit single-term query loop, and state the no-boolean-operators constraint inline.",
+      "sources": [
+        "Task B Phase 2 Step 9a execution 2026-08-13-s1: broad OR query over last 72h returned 0 results",
+        "Slack MCP slack_search_public_and_private tool contract: 'no boolean operators (AND/OR/NOT)' - operators are treated as literal keywords",
+        "Single-term re-run of the same window surfaced 3 real corrections (Katie Spaller 2026-08-12 #kgs-paid-media; Katie Spaller 2026-08-11 DM on CS-2026-260; Devon Price 2026-08-12 doctrine instruction)",
+        "cgo-logs/dispatch-receipts/2026-08-10-s1.json inbound_correction_scan.correction_shaped_messages = 0 - prior null result now explained"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T15:13:13.984273+00:00",
+      "archival_state": "active",
+      "id": "L-405"
+    },
+    {
+      "date": "2026-08-13",
+      "learning": "The rec-NNN id allocator reads persisted stores only, so a session that writes synthesis prose without writing state leaves ids allocated-in-narrative and free-in-store. cs_helpers.id_allocator returned rec-416 as next-free this session, but rec-416 through rec-420 were already narrated in the 2026-08-11 synthesis and never persisted to running-log.json or tracker.json. The 27th rec-NNN collision was one call away and was avoided only by manually reserving the range.",
+      "source": "Task B Phase 2 rec-id allocation, 2026-08-13-s1",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Root cause: the guarantee 'always allocate via the allocator' holds only if every allocating session also persists. The allocator has no way to read a synthesis markdown file, so unpersisted ids are invisible to it. This is L-399 (undetected pipeline non-execution) producing a downstream DATA consequence rather than only a visibility one - the 8/11 session's missing writes also produced the 84.4h five-file stale cluster. Verified: grep for rec-416..420 in running-log.json and tracker.json returns 0 hits for 417-420, while all five appear in cgo-logs/daily-syntheses/2026-08-11-s1.md. See daily synthesis 2026-08-13-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/cs_helpers/id_allocator.py - add cgo-logs/daily-syntheses/*.md as a taken-set source scanned for rec-\\d+, or gate synthesis commit on the running-log write.",
+      "sources": [
+        "cs_helpers.id_allocator.allocate_rec_id output 2026-08-13: returned rec-416 as next-free",
+        "cgo-logs/daily-syntheses/2026-08-11-s1.md narrates rec-416 through rec-420",
+        "grep of cgo-logs/running-log.json and cgo-logs/changesets/tracker.json: 0 hits for rec-417..rec-420"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T15:13:13.990800+00:00",
+      "archival_state": "active",
+      "id": "L-406"
+    },
+    {
+      "date": "2026-08-13",
+      "learning": "Department briefs can be invalidated by a governance-config commit landing between the scan and the synthesis that consumes them, and nothing re-reads those surfaces. Two briefs (Paid Media, Science) both state as load-bearing fact that the paid-media doctrine is unsigned and therefore 'the dial binds nothing yet'. It was signed at 13:09:56Z, six minutes after Task A1 finished at 13:03Z, moving creative_swaps to approve_executes. Both briefs sized their top recommendation against a transmit path that had just changed.",
+      "source": "config/paid-media-doctrine.json commit 4d92ca5 vs dept brief timestamps, 2026-08-13",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Root cause: Task A1 department agents read config state at scan time and Task B synthesises 1-3 hours later, but no step re-reads the fast-moving governance surfaces that gate dept recommendations (doctrine signatures, autonomy modes, surface overrides, signed waivers). Confirmed by reading config/paid-media-doctrine.json (signed_by Katie Spaller, signed_at 2026-08-13, trust_dial.creative_swaps.level approve_executes) and shared-config.json autonomous_execution (mode still shadow, surface_overrides.google_ads.enabled false->true today). The consequence is directional, not just cosmetic: the briefs recommend approval as sufficient, when approval now arms execution but mode=shadow still blocks transmission. See daily synthesis 2026-08-13-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/task-b-synthesis.md Phase 2 Step 1 - re-read config/paid-media-doctrine.json and shared-config.json autonomous_execution before synthesising any recommendation whose feasibility depends on them.",
+      "sources": [
+        "config/paid-media-doctrine.json commit 4d92ca5 2026-08-13T13:09:56Z: signed_by Katie Spaller, trust_dial.creative_swaps.level=approve_executes",
+        "cgo-logs/department-briefs/2026-08-13-s1/dept-paid-media.md: states the doctrine is unsigned and the dial binds nothing",
+        "cgo-logs/department-briefs/2026-08-13-s1/dept-science-research.md: same claim independently",
+        "cgo-logs/domain-scans/2026-08-13-s1/_scan-complete.json phase_timings.task_a1_finished_utc 2026-08-13T13:03:00Z - 6 min before the commit"
+      ],
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T15:13:13.997070+00:00",
+      "archival_state": "active",
+      "id": "L-407"
+    },
+    {
+      "date": "2026-08-13",
+      "learning": "The L1/L2 focus-gap rule self-silences on the EXISTENCE of an active ChangeSet carrying a metric in expected_impact.metrics_moved, not on whether that ChangeSet is moving. new_customer_count is 29% below its Q3 milestone with six carriers, and every carrier is draft or approved-and-unpublished (CS-226/252/257/264 draft, CS-233 approved 22 days unpublished). The metric furthest behind therefore produces the least escalation.",
+      "source": "Task B Phase 2 focus-gap check, 2026-08-13-s1",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Root cause: existence-as-truth (L-402) reaching into the governance layer rather than the writers. The dedup predicate tests for the presence of a row where the design intent was to test for work in progress. L-321 already recorded that age-based expiry and the self-silencing focus-gap rule compose into a loop; this is that loop with a measured business cost - new_customer_count has been below floor for four consecutive scans while the rule stayed quiet. Verified against tracker.json: 6 rows carry new_customer_count in metrics_moved, 0 are published-and-executing. See daily synthesis 2026-08-13-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 0 focus-gap rule - require the carrying ChangeSet to be approved or published WITH a forward execution date before it suppresses a gap; a parked draft should not silence an L1/L2 miss.",
+      "sources": [
+        "Task B Phase 2 L1/L2 focus-gap check 2026-08-13-s1: new_customer_count 29% below Q3 milestone, rule fired nothing",
+        "cgo-logs/changesets/tracker.json: 6 rows carry new_customer_count in expected_impact.metrics_moved; CS-226/252/257/264 draft, CS-233 approved-unpublished 22d, CS-224 published",
+        "cross-surface-pm.json L-321: age-based expiry and the self-silencing focus-gap rule compose into a loop",
+        "cross-surface-pm.json L-402: existence-as-truth pattern, four writers in one session"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T15:13:14.003035+00:00",
+      "archival_state": "active",
+      "id": "L-408"
+    },
+    {
+      "date": "2026-08-13",
+      "learning": "The Layer 0 pre-spawn collision check only reliably catches near-verbatim restatements. A paraphrased query for an open ChangeSet returned 0 matches at the documented 0.5 threshold, while a near-verbatim query for the same row matched it at 1.00. Treating a 0-match result as evidence of no collision will duplicate open work.",
+      "source": "Task B Phase 3 pre-spawn collision check, 2026-08-13-s1",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Root cause: rapidfuzz token_set_ratio at threshold 0.5 is calibrated for restatement, not paraphrase. Query 'sprout listening configured topic uuid stale hardcoded' returned 0 open CS matches; query 'Sprout data-pull outage VoC inbox Listening post-analytics' returned CS-2026-242 at 1.00 and L-292 at 0.49. CS-2026-242 is an open draft directly covering the Listening surface, so the paraphrased query would have licensed a duplicate spawn. Separately, pm_maintain requires rapidfuzz and refuses to run without it - it was absent from this session's environment and had to be installed, which is the correct fail-loud behaviour (a difflib fallback silently emptied this same search until DP-26). See daily synthesis 2026-08-13-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "changeset-instructions.md pre-spawn collision check - instruct running BOTH a paraphrased and a near-verbatim query, or lower the threshold for the open-CS leg specifically; and state that a 0-match result is weak evidence.",
+      "sources": [
+        "pm_maintain.py context query 'sprout listening configured topic uuid stale hardcoded' threshold 0.5: 0 open-CS matches",
+        "pm_maintain.py context query 'Sprout data-pull outage VoC inbox Listening post-analytics': CS-2026-242 at 1.00, L-292 at 0.49",
+        "CS-2026-242 is an open draft directly covering the Listening surface - the paraphrased query would have licensed a duplicate spawn"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T15:13:14.009341+00:00",
+      "archival_state": "active",
+      "id": "L-409"
+    },
+    {
+      "date": "2026-08-13",
+      "learning": "pm_maintain.py actions --apply crashes with AttributeError when a ChangeSet's work_evidence is a dict rather than a list of dicts. The collector iterates work_evidence and calls .get() on each element, so a dict yields string keys. CS-2026-257 carries a dict-shaped work_evidence and halted the pass midway, after it had already stamped four learning entries.",
+      "source": "Task B Phase 3 Step 1.3 optional actions pass, 2026-08-13-s1",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Root cause: work_evidence has no enforced shape. It is on the ALLOWED_CS_FIELDS allowlist and build_cs_entry.py does not type-check it, so both a dict (CS-2026-257: repo/branch/commit/files/pr keys) and a list of {hash,date,subject} objects are writable. The actions collector assumes only the latter. Traceback at scripts/pm_maintain.py:1336 in run_actions. Partial-write risk is real: L-276, L-397, L-399 and L-402 were stamped before the crash and those stamps are valid and were retained, but the pass did not complete and reported no failure summary. Not fixed this session. See daily synthesis 2026-08-13-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/pm_maintain.py run_actions - normalise work_evidence to a list before iterating; and add work_evidence to the array-typed field checks in build_cs_entry.py so the two shapes cannot both be written.",
+      "sources": [
+        "Traceback: scripts/pm_maintain.py:1336 in run_actions, AttributeError 'str' object has no attribute 'get' (2026-08-13)",
+        "cgo-logs/changesets/tracker.json CS-2026-257.work_evidence is a dict (repo/branch/commit/files/pr keys), not a list of dicts",
+        "Pass stamped L-276, L-397, L-399, L-402 before halting, then exited without a failure summary",
+        "build_cs_entry.py ARRAY_TYPED_FIELDS does not include work_evidence, so both shapes are writable"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T15:13:14.015280+00:00",
+      "archival_state": "active",
+      "id": "L-410"
+    },
+    {
+      "date": "2026-08-13",
+      "learning": "A symmetric band gate on a window-slide metric produces false negatives on schedule. calendar_quality_score_14d recovered from 0.6364 to 0.6522 with zero forward-window planning writes - four-anchor recomputation shows the entire gain is the 14-day window sliding forward. Because it reads in band by 0.22pp, the drift gate fires nothing exactly as a real collision moves to four days out.",
+      "source": "cgo-logs/department-briefs/2026-08-13-s1/dept-market-intelligence.md (ACT-M-2, INS-M-1, SIG-M-1)",
+      "source_type": "operational_signal",
+      "domain": "campaigns",
+      "evidence": "Root cause: the metric decays roughly 2.4pp/day on window slide alone, so its value is dominated by the clock rather than by planning quality. Four-anchor recomputation 2026-08-10 through 2026-08-13 (0.6522 / 0.6364 / 0.6522 / 0.6522) with the immature set unchanged at 8 rows, 7 of which carry last_updated null. The forward window holds 8 immature rows (4 Back-to-School, BMW, playoffs, McGraw) and the three 8/17 rows alone would move the score to 0.7826. Filed by Task B on the department's behalf - the brief allocated L-403/L-404/L-405 locally and flagged them as likely to collide with the writer's next run, which is exactly what happened. See daily synthesis 2026-08-13-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "brain/kenetik-brain/references/metrics-registry.yaml - calendar_quality_score_14d needs either an asymmetric band or a decomposition that separates window motion from state change before its drift gate can be trusted. Routed to monthly calibration per Q-M-2, not changed unilaterally.",
+      "sources": [
+        "cgo-logs/department-briefs/2026-08-13-s1/dept-market-intelligence.md SIG-M-1 / INS-M-1 four-anchor recomputation",
+        "data/marketing-calendar/marketing-calendar-data.json immature-row census: 8 rows, 7 with last_updated null",
+        "cgo-runtime/digest-2026-08-13.json calendar_quality_score_14d = 0.6522 against band floor 0.65",
+        "Prior instance: 2026-08-11 ACT-D-3 asked for the same row maturation and did not execute"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T15:14:02.353560+00:00",
+      "archival_state": "active",
+      "id": "L-411"
+    },
+    {
+      "date": "2026-08-13",
+      "learning": "Bundle width - two to three surfaces under a single owner - rather than urgency, routing or owner identity, is what produces repeated expired_unreviewed deaths on the same incident. Four consecutive ChangeSets on the Sprout Listening incident have now died unreviewed, the latest being CS-2026-241 today. Each bundled multiple surfaces, which makes them hard to action and easy to defer.",
+      "source": "cgo-logs/department-briefs/2026-08-13-s1/dept-market-intelligence.md (INS-M-3, ACT-M-1)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Root cause: a ticket spanning several surfaces has no single owner who can complete it, so every reviewer can correctly defer their portion; the ticket then ages out with nobody having been wrong. Four confirmed instances on one incident. Today's D17/D18 evidence finally separates the surfaces cleanly - the integration is up (source=sprout_api returned a live topic) and the fault is a single stale hardcoded UUID - so the correct response is splitting scope rather than opening a fifth bundled ticket. Task B acted on this: CS-2026-270 was spawned covering the UUID repoint ONLY, pre-linked to CS-2026-242 which retains the other two surfaces. That row is the falsification test - if a single-surface ticket also expires unreviewed, the cause is review capacity rather than bundle width. Filed by Task B on the department's behalf; the brief allocated this as L-404 locally and it was never persisted. See daily synthesis 2026-08-13-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "CS-2026-270 2026-08-13: single-surface Listening UUID repoint spawned as the scope-split test",
+      "target": "kenetik-growth-system/commands/new-changeset.md - add a scope-width check at authoring time: a ChangeSet naming more than one edit surface should either be split or carry an explicit justification.",
+      "sources": [
+        "cgo-logs/department-briefs/2026-08-13-s1/dept-market-intelligence.md INS-M-3",
+        "cgo-logs/changesets/tracker.json CS-2026-241 closed expired_unreviewed 2026-08-13; CS-2026-242 draft in expiring queue",
+        "cgo-logs/domain-scans/2026-08-13-s1/domain-17.md SIG-17-1: fix open since 6/03, day 71, no successor assigned",
+        "cgo-logs/changesets/work-queue.json transitions[]: CS-2026-241 expire, draft 15d >= 14d expiry"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T15:14:02.360211+00:00",
+      "archival_state": "active",
+      "id": "L-412"
+    },
+    {
+      "date": "2026-08-13",
+      "learning": "Envelope freshness fields are unreliable per-file: some writers stamp individual rows without bumping the file's envelope last_updated, so a freshness gate reading the envelope over-discounts data that is actually current. marketing-calendar-data.json read as 84.4h stale from its envelope while six of its rows were written 2026-08-12 - true staleness about 26h. Freshness gates must check max(row last_updated), not the envelope.",
+      "source": "cgo-logs/department-briefs/2026-08-13-s1/dept-market-intelligence.md (ACT-M-3, INV-M-2)",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "Root cause: a per-file writer bug with a systemic consequence. The envelope last_updated is frozen at 2026-08-10 and generated_at has been frozen since 2026-05-20, while row-level stamps advance normally. The cost was concrete this session: the Task A1 orchestrator's readiness header reported this file as part of a five-file 84.4h stale cluster, which over-discounted the very file producing that department's L3 primary metric. Demonstrated by direct contrast against content-calendar-data.json, whose writer does bump the envelope. This also partially refutes the five-file cluster framing - four of the five are genuinely one missing write from the 8/11 session, but this one is a separate writer defect. Filed by Task B on the department's behalf; the brief allocated this as L-405 locally and it was never persisted - the gate has since assigned L-405 to an unrelated entry. See daily synthesis 2026-08-13-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "Fix the marketing-calendar writer to bump envelope last_updated on row writes, and drop or re-derive the dead generated_at / last_enriched fields. Separately: freshness checks across the pipeline should read max(row last_updated) rather than the envelope.",
+      "sources": [
+        "cgo-logs/department-briefs/2026-08-13-s1/dept-market-intelligence.md INV-M-2 envelope-versus-row contrast",
+        "data/marketing-calendar/marketing-calendar-data.json: envelope last_updated 2026-08-10, 6 rows stamped 2026-08-12, generated_at frozen since 2026-05-20",
+        "cgo-logs/domain-scans/2026-08-13-s1/_scan-complete.json task_a1_notes: readiness header reported the file in the 84.4h stale cluster",
+        "data/content-calendar/content-calendar-data.json: contrasting writer that does bump the envelope"
+      ],
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-13T15:14:02.366313+00:00",
+      "archival_state": "active",
+      "id": "L-413"
     }
   ],
   "archived_entries": [
