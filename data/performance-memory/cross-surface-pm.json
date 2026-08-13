@@ -4601,9 +4601,11 @@
       "domain": "website",
       "evidence": "Outcome: resolved. Backfilled from tracker.json (CS-2026-203).",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "CS-2026-263 2026-08-10: Homepage script-error regression \u2014 re-apply the hero fix and PIN it as a version-controlled PR",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-263"
+      ],
       "changeset_candidate": false,
       "changeset_id": "CS-2026-203",
       "variance_pct": null,
@@ -4615,7 +4617,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-07-17T17:26:21.667918+00:00",
       "archival_state": "active",
-      "id": "L-276"
+      "id": "L-276",
+      "action_stamped_at": "2026-08-13"
     },
     {
       "date": "2026-07-20",
@@ -5457,14 +5460,18 @@
       "domain": "cross-surface",
       "evidence": "Root cause: the registry classifies metrics by what they measure, not by whether their denominator is stable under normal operations. Stage-scoped and snapshot-scoped recipes were never separated from flow-scoped ones, so nothing in the digest or the dept-brief band check distinguishes 'improved' from 'composition changed'. L-301 named this for one metric; today it is observed on five unrelated recipes across five departments. See daily synthesis 2026-08-10-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "CS-2026-269 2026-08-13: lifecycle_engine measurement is written from an existence test \u2014 two distinct defects, both proven \u2026",
       "target": "brain/kenetik-brain/references/metrics-registry.yaml - add a stability class (flow | stage | snapshot) per metric; require decomposition before reporting a favourable move on stage/snapshot metrics.",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-10T13:45:49.565128+00:00",
       "archival_state": "active",
-      "id": "L-397"
+      "id": "L-397",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": [
+        "CS-2026-269"
+      ]
     },
     {
       "date": "2026-08-10",
@@ -5491,14 +5498,16 @@
       "domain": "operations",
       "evidence": "Root cause: pipeline health is asserted per-run - each run reports its own success - with no across-run continuity check. Nothing compares today's scan-folder date against the previous folder's date, so a missed run is invisible to every consumer. Same structural blind spot as pat-MI-decision-dependency-rot, where no mechanism re-opens a decision when its stated dependency fails. See daily synthesis 2026-08-10-s1.md Data Integrity Note 2.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "eb4d200 2026-08-13: Synthesis 2026-08-13-s1: the bottleneck is approval-to-execution",
       "target": "cgo-daily-pipeline/config/task-b-synthesis.md PRE-FLIGHT - add a scan-folder gap check; if the delta exceeds 1 day, state it in the synthesis header and the CGO DM.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-10T13:45:49.578343+00:00",
       "archival_state": "active",
-      "id": "L-399"
+      "id": "L-399",
+      "action_stamped_at": "2026-08-13",
+      "related_entries": []
     },
     {
       "date": "2026-08-10",
@@ -5543,9 +5552,11 @@
       "domain": "paid-media",
       "evidence": "Outcome: inconclusive. Backfilled from tracker.json (CS-2026-266).",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "CS-2026-269 2026-08-13: lifecycle_engine measurement is written from an existence test \u2014 two distinct defects, both proven \u2026",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-269"
+      ],
       "changeset_candidate": false,
       "changeset_id": "CS-2026-266",
       "variance_pct": null,
@@ -5558,7 +5569,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-13T13:11:44.810774+00:00",
       "archival_state": "active",
-      "id": "L-402"
+      "id": "L-402",
+      "action_stamped_at": "2026-08-13"
     }
   ],
   "archived_entries": [
