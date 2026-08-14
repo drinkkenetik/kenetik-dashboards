@@ -2868,6 +2868,13 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-08-13"
+    },
+    {
+      "id": "L-414",
+      "summary": "[CS-2026-242] incomplete (n/a): Moe/Sprout data-pull outage \u2014 VoC inbox + Listening + post-analytics (42d silent, no heartbeat) \u2014 closed as expired_u\u2026",
+      "domain": "operations",
+      "status": "archived",
+      "date": "2026-08-14"
     }
   ],
   "entries": [
@@ -5573,7 +5580,7 @@
       "domain": "cross-surface",
       "evidence": "Root cause: the instruction file specifies search TERMS without specifying the query FORM, and the tool contract forbidding boolean operators is documented in the Slack MCP tool description rather than in the instruction. A prescribed input the receiving API cannot parse produces a clean, plausible zero that is indistinguishable from a genuine absence of signal. Corroborating instances found once the form was corrected: Katie Spaller 2026-08-12 in #kgs-paid-media ratifying the diagnose_creative live-asset-group fix; Katie Spaller 2026-08-11 DM reporting CS-2026-260 execution-validation failure; Devon Price 2026-08-12 relaying the autonomy doctrine instruction. Compounds rec-416 (channel-coverage gap) - two independent reasons the same scan finds nothing. See daily synthesis 2026-08-13-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "a08bbd5 2026-08-14: synthesis(2026-08-14-s1): TRX 4 days out with zero shipped surfaces; provenance not capacity kills the fixes",
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 9a and 9a.2 - replace the OR-list with an explicit single-term query loop, and state the no-boolean-operators constraint inline.",
       "sources": [
         "Task B Phase 2 Step 9a execution 2026-08-13-s1: broad OR query over last 72h returned 0 results",
@@ -5586,7 +5593,11 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-13T15:13:13.984273+00:00",
       "archival_state": "active",
-      "id": "L-405"
+      "id": "L-405",
+      "action_stamped_at": "2026-08-14",
+      "related_entries": [
+        "CS-2026-234"
+      ]
     },
     {
       "date": "2026-08-13",
@@ -12729,7 +12740,34 @@
       ],
       "archived_date": "2026-08-13",
       "archived_reason": "expired_unactioned"
+    },
+    {
+      "date": "2026-08-14",
+      "type": "changeset_outcome",
+      "learning": "Moe/Sprout data-pull outage \u2014 VoC inbox + Listening + post-analytics (42d silent, no heartbeat) \u2014 closed as expired_unreviewed on 2026-08-14 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-242)",
+      "source_type": "changeset_outcome",
+      "domain": "operations",
+      "evidence": "Outcome: expired_unreviewed. Closed without measurement. Backfilled from tracker.json (CS-2026-242).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-242",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-08-14T17:01:29.612775+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-08-14",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:01:29.613005+00:00",
+      "archival_state": "active",
+      "id": "L-414"
     }
   ],
-  "last_updated": "2026-08-13"
+  "last_updated": "2026-08-14"
 }
