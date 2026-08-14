@@ -631,14 +631,14 @@
       "id": "L-090",
       "summary": "High-cadence reposting of identical workhorse copy collapses NCS",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-15"
     },
     {
       "id": "L-091",
       "summary": "Ambassador EMV \u2260 revenue (AP-009) \u2014 reconfirmed at most extreme reading yet (JOSEPH 232K imp/$33.75 vs BREAKTHROUGH 4.1K imp/$2,266)",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-15",
       "date_last_corroborated": "2026-07-10"
     },
@@ -2959,60 +2959,58 @@
       "domain": "campaigns",
       "status": "active",
       "date": "2026-08-14"
+    },
+    {
+      "id": "L-427",
+      "summary": "[Branded__Search__tROAS] window_agreement agree_above: 3 of 3 windows at or above 2 (floor 2x)",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-428",
+      "summary": "[Branded__PMAX__tROAS] window_agreement agree_above: 3 of 3 windows at or above 2 (floor 2x)",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-429",
+      "summary": "[Prospecting__PMAX__Wedge A__tCPA] creative_diagnosis format_coverage_gap: 3 asset group(s) sit under the format minimums \u2014 e.g. Wedge C: The Neuro-E\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-12"
+    },
+    {
+      "id": "L-430",
+      "summary": "[Prospecting__PMAX__Wedge A__tCPA] window_agreement agree_above: 3 of 3 windows at or above 2 (floor 2x)",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-12"
+    },
+    {
+      "id": "L-431",
+      "summary": "[Prospecting__PMAX__Wedge B__tCPA] creative_diagnosis format_coverage_gap: 3 asset group(s) sit under the format minimums \u2014 e.g. Wedge C: The Neuro-E\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-12"
+    },
+    {
+      "id": "L-432",
+      "summary": "[Prospecting__PMAX__Wedge B__tCPA] window_agreement agree_above: 2 of 3 windows at or above 2 (floor 2x)",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-13"
+    },
+    {
+      "id": "L-433",
+      "summary": "[PMAX__Wedge C__tCPA] creative_diagnosis format_coverage_gap: 2 asset group(s) sit under the format minimums \u2014 e.g. Wedge B: The Stimulant Refugee ha\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-12"
     }
   ],
   "entries": [
-    {
-      "id": "L-090",
-      "date": "2026-05-15",
-      "type": "content_pattern",
-      "learning": "BRIDGE AP-008: High-cadence reposting of identical workhorse copy collapses NCS. CP-002 ('He wakes up at 4am...') and CP-003 ('I was addicted to caffeine...') \u2014 the program's two most-validated FB hooks \u2014 each had identical text bodies published 14 times in 14 days. Every one of those 28 reposts scored NCS<5. Frequency, not the hook, is the failure mode. Cross-domain implications: (1) content scheduling must enforce a same-copy cooldown (\u22657 days between identical text bodies on the same platform), (2) paid media amplification should not pair with same-week organic repost saturation, (3) campaign orchestration needs visibility into same-asset reuse cadence across organic + paid.",
-      "source": "Moe Content PM bridge (SYN-20260515-001) \u2014 AP-008",
-      "source_type": "content_pm_bridge",
-      "domain": "content",
-      "evidence": "See cgo-logs/queues/performance-memory.json AP-008.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_note": null,
-      "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260515-001",
-      "negative_signal": true,
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
-    },
-    {
-      "id": "L-091",
-      "date": "2026-05-15",
-      "type": "content_pattern",
-      "learning": "BRIDGE AP-009: Large-reach ambassador 'awareness' posts deliver EMV but trivial revenue \u2014 high-EMV does not equal high-ROI. Reconfirmed across 4 independent weekly cycles, most recently (SYN-20260706) at its most extreme reading yet: JOSEPH 232,108 impressions / 1,335 unique visitors \u2192 1 conversion / $33.75 revenue (0.07% visitor CVR) vs. BREAKTHROUGH 4,139 impressions \u2192 23 conversions / $2,266.54 (6.0% CVR) in the same window \u2014 JOSEPH took ~56x the reach for ~1.5% of BREAKTHROUGH's revenue. Cross-domain implications unchanged and now higher-confidence: (1) creator selection should weight conversion fit over reach, (2) creator-ROI scoring needs a visitor-to-sale rate floor that triggers re-evaluation, (3) ambassador program review should surface awareness-only creators for repositioning or sunset. Moe's PM recommendation: weight conversions/revenue 10:1 over impressions/EMV in all ambassador ROI evaluation.",
-      "source": "Moe Content PM bridge (SYN-20260515-001) \u2014 AP-009",
-      "source_type": "content_pm_bridge",
-      "domain": "content",
-      "evidence": "See cgo-logs/queues/performance-memory.json AP-009.",
-      "confidence": "strong",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_note": null,
-      "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260706-001",
-      "negative_signal": true,
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)",
-        "Refreshed from SYN-20260706-001 reconfirmation (4th independent cycle, most extreme reading); confidence preliminary -> strong (Process 3.8 Step 0e, 2026-07-10)"
-      ]
-    },
     {
       "id": "L-094",
       "date": "2026-05-18",
@@ -6138,6 +6136,328 @@
       "created_at": "2026-08-14T17:14:43.123806+00:00",
       "archival_state": "active",
       "id": "L-426"
+    },
+    {
+      "date": "2026-08-13",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Branded__Search__tROAS (defensive): window_agreement reads 'agree_above' on 16 account days (2026-08-10 \u2192 2026-08-13). 3 of 3 windows at or above 2 (floor 2x)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=22373143427].conclusions[kind=window_agreement] ; instrument: window_agreement.evaluate ; dossier generated_for 2026-08-14, as_of 2026-08-13",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=22373143427].conclusions[kind=window_agreement]",
+        "instrument: window_agreement.evaluate",
+        "dossier generated_for 2026-08-14, as_of 2026-08-13"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 16\u00d7 across 3 day(s) of account time (2026-08-10 \u2192 2026-08-13), clearing the moderate bar of 3 Instrument window_agreement.evaluate; campaign 22373143427.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:22373143427:window_agreement:8af4789886",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 16\u00d7 across 3 day(s) of account time (2026-08-10 \u2192 2026-08-13), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "22373143427",
+        "wedge": "Branded__Search__tROAS",
+        "classification": "defensive",
+        "conclusion_kind": "window_agreement",
+        "conclusion_value": "agree_above",
+        "seen_count": 16,
+        "span_days": 3,
+        "first_seen_as_of": "2026-08-10",
+        "last_seen_as_of": "2026-08-13",
+        "graduated_at": "2026-08-14T18:26:10.555989+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T18:26:10.557528+00:00",
+      "archival_state": "active",
+      "id": "L-427"
+    },
+    {
+      "date": "2026-08-13",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Branded__PMAX__tROAS (defensive): window_agreement reads 'agree_above' on 16 account days (2026-08-10 \u2192 2026-08-13). 3 of 3 windows at or above 2 (floor 2x)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23531688180].conclusions[kind=window_agreement] ; instrument: window_agreement.evaluate ; dossier generated_for 2026-08-14, as_of 2026-08-13",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23531688180].conclusions[kind=window_agreement]",
+        "instrument: window_agreement.evaluate",
+        "dossier generated_for 2026-08-14, as_of 2026-08-13"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 16\u00d7 across 3 day(s) of account time (2026-08-10 \u2192 2026-08-13), clearing the moderate bar of 3 Instrument window_agreement.evaluate; campaign 23531688180.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23531688180:window_agreement:8af4789886",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 16\u00d7 across 3 day(s) of account time (2026-08-10 \u2192 2026-08-13), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23531688180",
+        "wedge": "Branded__PMAX__tROAS",
+        "classification": "defensive",
+        "conclusion_kind": "window_agreement",
+        "conclusion_value": "agree_above",
+        "seen_count": 16,
+        "span_days": 3,
+        "first_seen_as_of": "2026-08-10",
+        "last_seen_as_of": "2026-08-13",
+        "graduated_at": "2026-08-14T18:26:10.556077+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T18:26:10.583743+00:00",
+      "archival_state": "active",
+      "id": "L-428"
+    },
+    {
+      "date": "2026-08-12",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Prospecting__PMAX__Wedge A__tCPA (core): creative_diagnosis reads 'format_coverage_gap' on 14 account days (2026-08-10 \u2192 2026-08-12). 3 asset group(s) sit under the format minimums \u2014 e.g. Wedge C: The Neuro-Edge Competitor has PORTRAIT_MARKETING_IMAGE 0/1, with ad_strength AVERAGE. Fix: a creative brief (a format is missing, not underperforming)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=creative_diagnosis] ; instrument: paid_media_doctrine.diagnose_creative ; dossier generated_for 2026-08-14, as_of 2026-08-13",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=creative_diagnosis]",
+        "instrument: paid_media_doctrine.diagnose_creative",
+        "dossier generated_for 2026-08-14, as_of 2026-08-13"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 14\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3 Instrument paid_media_doctrine.diagnose_creative; campaign 23778599258.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23778599258:creative_diagnosis:31959aa6ea",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 14\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23778599258",
+        "wedge": "Prospecting__PMAX__Wedge A__tCPA",
+        "classification": "core",
+        "conclusion_kind": "creative_diagnosis",
+        "conclusion_value": "format_coverage_gap",
+        "seen_count": 14,
+        "span_days": 2,
+        "first_seen_as_of": "2026-08-10",
+        "last_seen_as_of": "2026-08-12",
+        "graduated_at": "2026-08-14T18:26:10.556137+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T18:26:10.615544+00:00",
+      "archival_state": "active",
+      "id": "L-429"
+    },
+    {
+      "date": "2026-08-12",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Prospecting__PMAX__Wedge A__tCPA (core): window_agreement reads 'agree_above' on 15 account days (2026-08-10 \u2192 2026-08-12). 3 of 3 windows at or above 2 (floor 2x)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=window_agreement] ; instrument: window_agreement.evaluate ; dossier generated_for 2026-08-14, as_of 2026-08-13",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=window_agreement]",
+        "instrument: window_agreement.evaluate",
+        "dossier generated_for 2026-08-14, as_of 2026-08-13"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 15\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3 Instrument window_agreement.evaluate; campaign 23778599258.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23778599258:window_agreement:8af4789886",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 15\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23778599258",
+        "wedge": "Prospecting__PMAX__Wedge A__tCPA",
+        "classification": "core",
+        "conclusion_kind": "window_agreement",
+        "conclusion_value": "agree_above",
+        "seen_count": 15,
+        "span_days": 2,
+        "first_seen_as_of": "2026-08-10",
+        "last_seen_as_of": "2026-08-12",
+        "graduated_at": "2026-08-14T18:26:10.556186+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T18:26:10.631562+00:00",
+      "archival_state": "active",
+      "id": "L-430"
+    },
+    {
+      "date": "2026-08-12",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Prospecting__PMAX__Wedge B__tCPA (core): creative_diagnosis reads 'format_coverage_gap' on 14 account days (2026-08-10 \u2192 2026-08-12). 3 asset group(s) sit under the format minimums \u2014 e.g. Wedge C: The Neuro-Edge Competitor has PORTRAIT_MARKETING_IMAGE 0/1, with ad_strength AVERAGE. Fix: a creative brief (a format is missing, not underperforming)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778467198].conclusions[kind=creative_diagnosis] ; instrument: paid_media_doctrine.diagnose_creative ; dossier generated_for 2026-08-14, as_of 2026-08-13",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778467198].conclusions[kind=creative_diagnosis]",
+        "instrument: paid_media_doctrine.diagnose_creative",
+        "dossier generated_for 2026-08-14, as_of 2026-08-13"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 14\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3 Instrument paid_media_doctrine.diagnose_creative; campaign 23778467198.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23778467198:creative_diagnosis:31959aa6ea",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 14\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23778467198",
+        "wedge": "Prospecting__PMAX__Wedge B__tCPA",
+        "classification": "core",
+        "conclusion_kind": "creative_diagnosis",
+        "conclusion_value": "format_coverage_gap",
+        "seen_count": 14,
+        "span_days": 2,
+        "first_seen_as_of": "2026-08-10",
+        "last_seen_as_of": "2026-08-12",
+        "graduated_at": "2026-08-14T18:26:10.556294+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T18:26:10.646140+00:00",
+      "archival_state": "active",
+      "id": "L-431"
+    },
+    {
+      "date": "2026-08-13",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Prospecting__PMAX__Wedge B__tCPA (core): window_agreement reads 'agree_above' on 6 account days (2026-08-11 \u2192 2026-08-13). 2 of 3 windows at or above 2 (floor 2x)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778467198].conclusions[kind=window_agreement] ; instrument: window_agreement.evaluate ; dossier generated_for 2026-08-14, as_of 2026-08-13",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778467198].conclusions[kind=window_agreement]",
+        "instrument: window_agreement.evaluate",
+        "dossier generated_for 2026-08-14, as_of 2026-08-13"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 6\u00d7 across 2 day(s) of account time (2026-08-11 \u2192 2026-08-13), clearing the moderate bar of 3 Instrument window_agreement.evaluate; campaign 23778467198.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23778467198:window_agreement:321e19c8df",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 6\u00d7 across 2 day(s) of account time (2026-08-11 \u2192 2026-08-13), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23778467198",
+        "wedge": "Prospecting__PMAX__Wedge B__tCPA",
+        "classification": "core",
+        "conclusion_kind": "window_agreement",
+        "conclusion_value": "agree_above",
+        "seen_count": 6,
+        "span_days": 2,
+        "first_seen_as_of": "2026-08-11",
+        "last_seen_as_of": "2026-08-13",
+        "graduated_at": "2026-08-14T18:26:10.556357+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T18:26:10.662437+00:00",
+      "archival_state": "active",
+      "id": "L-432"
+    },
+    {
+      "date": "2026-08-12",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "PMAX__Wedge C__tCPA (core): creative_diagnosis reads 'format_coverage_gap' on 14 account days (2026-08-10 \u2192 2026-08-12). 2 asset group(s) sit under the format minimums \u2014 e.g. Wedge B: The Stimulant Refugee has PORTRAIT_MARKETING_IMAGE 0/1, with ad_strength AVERAGE. Fix: a creative brief (a format is missing, not underperforming)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23168252134].conclusions[kind=creative_diagnosis] ; instrument: paid_media_doctrine.diagnose_creative ; dossier generated_for 2026-08-14, as_of 2026-08-13",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23168252134].conclusions[kind=creative_diagnosis]",
+        "instrument: paid_media_doctrine.diagnose_creative",
+        "dossier generated_for 2026-08-14, as_of 2026-08-13"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 14\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3 Instrument paid_media_doctrine.diagnose_creative; campaign 23168252134.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23168252134:creative_diagnosis:f5e0ed7b50",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 14\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23168252134",
+        "wedge": "PMAX__Wedge C__tCPA",
+        "classification": "core",
+        "conclusion_kind": "creative_diagnosis",
+        "conclusion_value": "format_coverage_gap",
+        "seen_count": 14,
+        "span_days": 2,
+        "first_seen_as_of": "2026-08-10",
+        "last_seen_as_of": "2026-08-12",
+        "graduated_at": "2026-08-14T18:26:10.556416+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T18:26:10.677524+00:00",
+      "archival_state": "active",
+      "id": "L-433"
     }
   ],
   "archived_entries": [
@@ -13121,6 +13441,61 @@
       "created_at": "2026-08-14T17:01:29.613005+00:00",
       "archival_state": "active",
       "id": "L-414"
+    },
+    {
+      "id": "L-090",
+      "date": "2026-05-15",
+      "type": "content_pattern",
+      "learning": "BRIDGE AP-008: High-cadence reposting of identical workhorse copy collapses NCS. CP-002 ('He wakes up at 4am...') and CP-003 ('I was addicted to caffeine...') \u2014 the program's two most-validated FB hooks \u2014 each had identical text bodies published 14 times in 14 days. Every one of those 28 reposts scored NCS<5. Frequency, not the hook, is the failure mode. Cross-domain implications: (1) content scheduling must enforce a same-copy cooldown (\u22657 days between identical text bodies on the same platform), (2) paid media amplification should not pair with same-week organic repost saturation, (3) campaign orchestration needs visibility into same-asset reuse cadence across organic + paid.",
+      "source": "Moe Content PM bridge (SYN-20260515-001) \u2014 AP-008",
+      "source_type": "content_pm_bridge",
+      "domain": "content",
+      "evidence": "See cgo-logs/queues/performance-memory.json AP-008.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260515-001",
+      "negative_signal": true,
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-08-14",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-091",
+      "date": "2026-05-15",
+      "type": "content_pattern",
+      "learning": "BRIDGE AP-009: Large-reach ambassador 'awareness' posts deliver EMV but trivial revenue \u2014 high-EMV does not equal high-ROI. Reconfirmed across 4 independent weekly cycles, most recently (SYN-20260706) at its most extreme reading yet: JOSEPH 232,108 impressions / 1,335 unique visitors \u2192 1 conversion / $33.75 revenue (0.07% visitor CVR) vs. BREAKTHROUGH 4,139 impressions \u2192 23 conversions / $2,266.54 (6.0% CVR) in the same window \u2014 JOSEPH took ~56x the reach for ~1.5% of BREAKTHROUGH's revenue. Cross-domain implications unchanged and now higher-confidence: (1) creator selection should weight conversion fit over reach, (2) creator-ROI scoring needs a visitor-to-sale rate floor that triggers re-evaluation, (3) ambassador program review should surface awareness-only creators for repositioning or sunset. Moe's PM recommendation: weight conversions/revenue 10:1 over impressions/EMV in all ambassador ROI evaluation.",
+      "source": "Moe Content PM bridge (SYN-20260515-001) \u2014 AP-009",
+      "source_type": "content_pm_bridge",
+      "domain": "content",
+      "evidence": "See cgo-logs/queues/performance-memory.json AP-009.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260706-001",
+      "negative_signal": true,
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)",
+        "Refreshed from SYN-20260706-001 reconfirmation (4th independent cycle, most extreme reading); confidence preliminary -> strong (Process 3.8 Step 0e, 2026-07-10)"
+      ],
+      "archived_date": "2026-08-14",
+      "archived_reason": "expired_unactioned"
     }
   ],
   "last_updated": "2026-08-14"
