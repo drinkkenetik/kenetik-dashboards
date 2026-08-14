@@ -2875,6 +2875,90 @@
       "domain": "operations",
       "status": "archived",
       "date": "2026-08-14"
+    },
+    {
+      "id": "L-415",
+      "summary": "A remediation ChangeSet marked published without a platform-state check converts a visible failure into an invisible one. CS-2026-267 flipped to publ\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-416",
+      "summary": "Provenance, not bundle width or reviewer capacity, is what produces expired_unreviewed ChangeSets. Pipeline-authored rows expire at 36% (42/117), hum\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-417",
+      "summary": "A metric pair can be simultaneously in-band and blind. d12_velocity_new_per_week (12, top of [8,12]) counts rows ENTERING the pipeline and d12_stale_\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-418",
+      "summary": "Unsatisfiable-precondition class: a gate whose input file structurally cannot contain the rows it tests for emits a DECISION item that can never clea\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-419",
+      "summary": "Engagement rate is inversely related to reach, so an unweighted per-post mean is the wrong baseline for an anomaly gate. Posts under 200 impressions \u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-420",
+      "summary": "95 of 103 demand signals with status=pending are past their own expires date. The file declares expiry_rules (dynamic, P1 24-48h through P4/P5 14 day\u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-421",
+      "summary": "Google Search Console week-over-week comparison is directionally rigged, not merely noisy. The build reads an unsettled current window against a prio\u2026",
+      "domain": "website",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-422",
+      "summary": "When a department primary crosses its target on a step-change rather than a trend, the brief must state a durability horizon computed from the underl\u2026",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-423",
+      "summary": "The competitor blind spot is one broken dependency with a designed-in single point of failure whose compensating control also failed silently - not t\u2026",
+      "domain": "market-intel",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-424",
+      "summary": "Katie Spaller answered the asset-format question the system asked her - 'Let's stick with 9x16 that can drop to 4x5' - resolving the portrait-minimum\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-425",
+      "summary": "Before escalating a coverage-denominator argument, check whether the un-covered items carry machine identifiers at all. The Full Citation Library hol\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "L-426",
+      "summary": "Parent-only calendar linkage defeats every downstream date check. The TRX parent row links all three lifecycle ChangeSets; the beats those ChangeSets\u2026",
+      "domain": "campaigns",
+      "status": "active",
+      "date": "2026-08-14"
     }
   ],
   "entries": [
@@ -5784,6 +5868,276 @@
       "id": "L-413",
       "action_stamped_at": "2026-08-13",
       "related_entries": []
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "A remediation ChangeSet marked published without a platform-state check converts a visible failure into an invisible one. CS-2026-267 flipped to published at 08:25:27Z while the claims sweep generated 08:28:28Z still listed all three target strings serving:true on ENABLED assets, delta.resolved_strings empty, and 30-day exposure UP $525.23 to $542.37. The status flip retired 96% of the exposure from every open-item view. Diff target artefacts against the sweep's delta before accepting closure.",
+      "source": "dept-science-research 2026-08-14 INV-S-1 / INS-S-1",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "The approval path writes status into tracker.json; the transmit path is autonomous_execution.mode: shadow and writes nothing. claims-sweep.json delta.resolved_strings is the only field in the repo that can evidence transmission and no consumer reads it as a gate - two systems writing with nothing between them. See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "changeset-instructions.md - transmission predicate blocking published while target strings still serve",
+      "sources": [
+        "dept-science-research 2026-08-14 INV-S-1 / INS-S-1",
+        "data/google-ads/claims-sweep.json (input state 2026-08-14T08:28:28Z, delta.resolved_strings empty, 3 assets serving:true)",
+        "cgo-logs/changesets/tracker.json (CS-2026-267 status=published, last_updated 2026-08-14T08:25:27Z)",
+        "data/science/negative-findings-register.json (PMID 40349325 DO_NOT_CITE, highest-priority tension)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.054689+00:00",
+      "archival_state": "active",
+      "id": "L-415"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "Provenance, not bundle width or reviewer capacity, is what produces expired_unreviewed ChangeSets. Pipeline-authored rows expire at 36% (42/117), human-requested at 6% (2/32) - a ~6x separation against ~2x on bundle width, with a majority of deaths single-surface. The quick subtype - cheapest to action - dies fastest of all three at 50%, which inverts the effort explanation and points at demand legitimacy.",
+      "source": "dept-operations-planning 2026-08-14 INS-OP-2, full-population read of 149 tracker rows",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "57 of 95 closed rows died of expiry (44 unreviewed + 13 unexecuted) against 25 measured; only 52 of 149 ever received an approval. A reviewer facing a row nobody requested pays no cost for deferring it and the 14-day clock does the deciding. Refines L-412. See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "new-changeset.md authoring-time refusals; DP-14 spawner_capacity parameters (CS-2026-272)",
+      "sources": [
+        "dept-operations-planning 2026-08-14 INS-OP-2",
+        "cgo-logs/changesets/tracker.json full-population aggregation on source/outcome/subtype (149 rows)",
+        "Task B 2026-08-14-s1 independent recomputation of expiry-by-source (synthesis 27/70, synthesis_priority_stack 18/33, diagnostic 7/14, manual 5/15)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.061299+00:00",
+      "archival_state": "active",
+      "id": "L-416"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "A metric pair can be simultaneously in-band and blind. d12_velocity_new_per_week (12, top of [8,12]) counts rows ENTERING the pipeline and d12_stale_approved_count (3, favourable) counts rows sitting in approved, while all 44 expired_unreviewed deaths occurred strictly between those states, in draft. Second-order defect: stale_approved reads favourably partly because its denominator collapsed - 5 rows in approved against 20 in draft, so the metric improves when nothing reaches approved. Check state-transition coverage, not just band membership.",
+      "source": "dept-operations-planning 2026-08-14 INS-OP-1 / DS-OP-2",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Both metrics measure states, not transitions, and no metric covers the draft-to-approved transition where the failure lives. The absence of drift is itself the finding. See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "brain/kenetik-brain/references/metrics-registry.yaml - redefine d12_velocity as approved-or-published per week",
+      "sources": [
+        "dept-operations-planning 2026-08-14 INS-OP-1 / DS-OP-2",
+        "cgo-runtime/digest-2026-08-14.json operations slice (d12_velocity_new_per_week 12, d12_stale_approved_count 3)",
+        "cgo-logs/changesets/tracker.json status distribution (5 approved vs 20 draft)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.067422+00:00",
+      "archival_state": "active",
+      "id": "L-417"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "Unsatisfiable-precondition class: a gate whose input file structurally cannot contain the rows it tests for emits a DECISION item that can never clear. check_creative_freshness reads paid-media-state.json ads[], which holds 123 rows of which 123 are platform=facebook, so 'no fatigue_signal coverage' is a permanent property of every PMax campaign rather than a condition a creative brief can fix. It fired on Wedge A and Wedge B - the only two campaigns whose window verdicts clear them for more spend.",
+      "source": "dept-paid-media 2026-08-14 INV-PM-1",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "The same phase-g-cycle job writes google-ads-state.json at 08:28:28Z and runs the failing check at 08:29:05Z, 37 seconds later, so the data exists in the same run. Wedge A agree_above 3/3 on 31.07 conversions/14d, Wedge B 2/3 on 24.07 - both above the 15-conversion floor. Extends SIG-PM-7 from a data-quality note to a throughput blocker. See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "autonomous-optimization Rule 1 precondition source - scope Meta-only or repoint at google-ads-state.json asset groups",
+      "sources": [
+        "dept-paid-media 2026-08-14 INV-PM-1",
+        "data/paid-media/paid-media-state.json ads[] (123 rows, 123 platform=facebook)",
+        "data/paid-media/wedge-dossiers.json trajectory.window_agreement (Wedge A agree_above 3/3, Wedge B 2/3)",
+        "data/google-ads/google-ads-state.json (generated 2026-08-14T08:28:28Z, 37s before the failing check)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.074716+00:00",
+      "archival_state": "active",
+      "id": "L-418"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "Engagement rate is inversely related to reach, so an unweighted per-post mean is the wrong baseline for an anomaly gate. Posts under 200 impressions average 5.49% ER while contributing 0.6% of weekly reach; posts over 5,000 average 2.00% but only 1.37% impression-weighted while carrying 78% of reach. Any >5x/<0.2x gate built on the unweighted 3.59% mean classifies every high-reach post as an anomaly - which alone explains two weeks of zero graduation candidates.",
+      "source": "dept-content 2026-08-14 INS-C-2, reach-banded decomposition of 875 posts",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "The digest's canonical d07_engagement_rate_per_post of 0.021 already sits near the impression-weighted 0.017, not near 0.0359. Tested and rejected the alternative: collapsing FB shadow-URL clusters moves the mean only +17bp. Refines L-107. See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "graduation scanner section 3 gate - use platform medians, already stored in PM as platform_medians",
+      "sources": [
+        "dept-content 2026-08-14 INS-C-2",
+        "data/content/published-posts.json reach-banded decomposition (875 posts, 7d/30d windows)",
+        "cgo-runtime/digest-2026-08-14.json content slice (d07_engagement_rate_per_post 0.021 vs unweighted 0.0359)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.080872+00:00",
+      "archival_state": "active",
+      "id": "L-419"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "95 of 103 demand signals with status=pending are past their own expires date. The file declares expiry_rules (dynamic, P1 24-48h through P4/P5 14 days) and neither writer nor the reader applies them, so the reader faces a queue that is 92% dead and a pending status carries no information about whether a signal is live. This is a sufficient mechanical explanation for CREATE's 0-of-19 demand-signal coverage and 0 briefs raised in 11 days.",
+      "source": "Task B synthesis 2026-08-14, cgo-logs/queues/demand-signals.json (208 signals, 103 pending)",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "Expiry is declared as data rather than enforced by a writer; status is set at creation and never revisited. Same existence-as-truth class as L-402. Consequence observed today: the DS-02 carrier for the TRX content gap (cgo-2026-08-10-001) expired 2026-08-13 while still reading pending, so it had to be re-filed rather than bumped. See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-logs/queues/demand-signals.json writers (cgo-pipeline-dispatch, moe-demand-scan) - apply expiry_rules on write",
+      "sources": [
+        "Task B 2026-08-14-s1 count of cgo-logs/queues/demand-signals.json (208 signals, 103 pending, 95 past their own expires date)",
+        "cgo-logs/queues/demand-signals.json expiry_rules block (declared but unenforced)",
+        "dept-content 2026-08-14 CREATE flywheel section (0 briefs in 11 days, demand-signal coverage 0 of 19)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.086940+00:00",
+      "archival_state": "active",
+      "id": "L-420"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "Google Search Console week-over-week comparison is directionally rigged, not merely noisy. The build reads an unsettled current window against a prior window that has had a full extra week to backfill. All 20 overlapping window pairs in the snapshot archive revise upward on re-read, median +23%, extremes +9.8% and +486% (one window went 819 to 4,801 clicks). No GSC decline in this dataset should be escalated at scan time, and no correction factor is honest at that variance - remove the field.",
+      "source": "dept-website-cro 2026-08-14 INS-W-1 / INV-W-2, 20 window pairs in data/website/snapshots/",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "Asymmetric settlement time between the two comparison windows. Today's -27.63% clicks is a property of the measurement. Retro-explains L-145, where a -86% clicks collapse resolved to nothing. Quantifies and upgrades L-298, which named the defect twelve days ago while the field continued to emit. See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/pull_ga4_website_state.py - exclude the unsettled terminal day from BOTH windows (already carried as rec-373)",
+      "sources": [
+        "dept-website-cro 2026-08-14 INS-W-1 / INV-W-2",
+        "data/website/snapshots/ (27 files, 20 overlapping window pairs, all revising upward, median +23%)",
+        "data/performance-memory/cross-surface-pm.json prior entries L-298 and L-145"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.093015+00:00",
+      "archival_state": "active",
+      "id": "L-421"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "When a department primary crosses its target on a step-change rather than a trend, the brief must state a durability horizon computed from the underlying flow rates instead of reporting attainment. active_sub_count hit 2,815 (above the 2,800 L2 target for the first time) on two discrete launch pulses with no change to retention or attach machinery; at July's 320/mo creation against 0.1365 x 2,815 = 384 churned/mo the base sheds ~64/mo and returns below 2,800 by end-September.",
+      "source": "dept-lifecycle-marketing 2026-08-14 INS-LM-1",
+      "source_type": "operational_signal",
+      "domain": "lifecycle",
+      "evidence": "Target-attainment checks compare a level to a band with no test for whether the level was produced by a step or a trend. The corroborating tell was already visible: MRR rose 12.1% while subscriptions rose 14.8%, so revenue per subscription diluted 2.3%. See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "task-a1-departments.md metrics mapping mandate - require a durability horizon on step-change attainment",
+      "sources": [
+        "dept-lifecycle-marketing 2026-08-14 INS-LM-1",
+        "data/subscriptions/subscription-state.json (daily_snapshots, recharge_monthly Apr-Jul churn_rate, MRR series)",
+        "data/klaviyo/klaviyo-state.json new_subscription_daily_count (73 on 08-03, 122 on 08-08 vs 10-12/day baseline)",
+        "cgo-runtime/digest-2026-08-14.json lifecycle slice (active_sub_count 2815, mrr 188455)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.099048+00:00",
+      "archival_state": "active",
+      "id": "L-422"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "The competitor blind spot is one broken dependency with a designed-in single point of failure whose compensating control also failed silently - not two independent gaps. data/competitive/sources.yaml carries a dated 2026-06-03 decision dropping direct-competitor scraping and delegating coverage to Sprout Listening, dark 99 days; the fallback added on purpose for that risk (reddit_kenetik_mentions) reads status: empty, and nothing detected the fallback had failed. Zero brand or competitor mentions across all 53 posts in the 7-day window.",
+      "source": "dept-market-intelligence 2026-08-14 INS-MI-1 / INV-MI-1",
+      "source_type": "domain_contradiction",
+      "evidence": "D17 reported a structural config gap and D18 an instrumentation defect; read against the live files they are the same finding. The right move is a Remove/Refine decision on the existing delegation, not a fourth Add - CS-2026-241 carried exactly that scope and expired unreviewed 2026-08-13, its third death. No consecutive-empty-return counter exists on any source. See daily synthesis 2026-08-14-s1.md.",
+      "domain": "market-intel",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "data/performance-memory - reclassify L-284 root cause; add empty-return persistence counter to the competitor source reader",
+      "sources": [
+        "dept-market-intelligence 2026-08-14 INS-MI-1 / INV-MI-1",
+        "data/competitive/sources.yaml (2026-06-03 delegation decision header + reddit_kenetik_mentions source note naming CS-2026-188)",
+        "data/competitive/competitor-state.json (sources_ok 5, sources_empty 3; 53 posts scanned, zero competitor mentions)",
+        "cgo-logs/domain-scans/2026-08-14-s1/domain-17.md",
+        "cgo-logs/domain-scans/2026-08-14-s1/domain-18.md"
+      ],
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.105247+00:00",
+      "archival_state": "active",
+      "id": "L-423"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "Katie Spaller answered the asset-format question the system asked her - 'Let's stick with 9x16 that can drop to 4x5' - resolving the portrait-minimum item in her signed Google Ads doctrine. Vertical 9:16 is the standing format and satisfies portrait placements by crop, so a separate PORTRAIT_MARKETING_IMAGE minimum is not required. The decision has not been applied to asset_minimums, so the doctrine still carries a minimum its owner has superseded.",
+      "source": "Katie Spaller, Slack #kgs-paid-media doctrine thread, 2026-08-13 17:27 EDT",
+      "source_type": "team_feedback",
+      "domain": "paid-media",
+      "evidence": "Decisions delivered as Slack thread replies have no path into the config they answer - the system asked in Slack and provided no writer for the answer. Found by the Step 9a inbound scan using single-term/author-filtered queries rather than the boolean-OR form that returns zero by construction (L-405). See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "config/paid-media-doctrine.json asset_minimums / required_formats",
+      "sources": [
+        "Katie Spaller, Slack #kgs-paid-media thread reply 2026-08-13 17:27 EDT ('Let's stick with 9x16 that can drop to 4x5')",
+        "Slack #kgs-paid-media doctrine thread parent 2026-08-11 + reply 2026-08-13 16:08 (the question posed, naming asset_minimums and required_formats as the two options)",
+        "config/paid-media-doctrine.json asset_minimums (still carries PORTRAIT_MARKETING_IMAGE, decision unapplied)"
+      ],
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.111560+00:00",
+      "archival_state": "active",
+      "id": "L-424"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "Before escalating a coverage-denominator argument, check whether the un-covered items carry machine identifiers at all. The Full Citation Library holds 38 citation entries, 28 with a year marker and exactly 5 PMIDs, while TRACKED_PMIDS in sync_pubmed.py accepts PMIDs only - so the six-scan-old 11/33 coverage gap is not a queue problem and the ask repeated for four days was unexecutable as stated.",
+      "source": "dept-science-research 2026-08-14 INV-S-3",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "An identifier-keyed tracker was compared against a prose-keyed source without checking key compatibility, converting a mechanical backfill into a six-scan definitional debate. One live leak it exposes: PMID 42021684 (FFAR3) is cited in the authority document, anchors CS-2026-139's published asset, and is absent from tracked_citations - a citation under live content with zero retraction watch. See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "brain/kenetik-brain/references/claims-compliance.md - add PMIDs to the Full Citation Library",
+      "sources": [
+        "dept-science-research 2026-08-14 INV-S-3",
+        "brain/kenetik-brain/references/claims-compliance.md Full Citation Library (38 entries, 28 dated, 5 PMIDs)",
+        "scripts/sync_pubmed.py TRACKED_PMIDS (accepts PMIDs only)",
+        "data/science/pubmed-state.json tracked_citations (11 entries; PMID 42021684 absent while cited under live content)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.117593+00:00",
+      "archival_state": "active",
+      "id": "L-425"
+    },
+    {
+      "date": "2026-08-14",
+      "learning": "Parent-only calendar linkage defeats every downstream date check. The TRX parent row links all three lifecycle ChangeSets; the beats those ChangeSets implement link none, so a date-conflict check comparing CS-212's 8/10 send date against its linked parent - a launch spanning 8/18 - finds nothing wrong. Fix granularity before gates.",
+      "source": "dept-operations-planning 2026-08-14 INS-OP-3 / DS-OP-1",
+      "source_type": "operational_signal",
+      "domain": "campaigns",
+      "evidence": "Linkage exists at campaign-parent grain while the date semantics live at beat grain, so a bidirectional-link existence test passes while carrying no usable information. This is the concrete reason CS-212's own 2026-08-02 flag could read 'the link is populated bidirectionally; nothing read it'. CS-2026-271 hardens the approval gate but would not have caught this - on 2026-06-23 these dates were still in the future. See daily synthesis 2026-08-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "calendar-writeback-protocol.md - require beat-level linked_changesets",
+      "sources": [
+        "dept-operations-planning 2026-08-14 INS-OP-3 / DS-OP-1",
+        "data/marketing-calendar/marketing-calendar-data.json TRX rows and their linked_changesets (parent links 3, beats link 0)",
+        "cgo-logs/changesets/tracker.json CS-2026-212 sweep_flags (2026-08-02 bidirectional-link flag)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-14T17:14:43.123806+00:00",
+      "archival_state": "active",
+      "id": "L-426"
     }
   ],
   "archived_entries": [
