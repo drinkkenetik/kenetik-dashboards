@@ -3036,6 +3036,41 @@
       "domain": "operations",
       "status": "archived",
       "date": "2026-08-17"
+    },
+    {
+      "id": "L-438",
+      "summary": "A ChangeSet whose execution_target_date or scheduled_send_date is in the FUTURE is invisible to every lifecycle queue, not merely exempt from expiry.\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-17"
+    },
+    {
+      "id": "L-439",
+      "summary": "The live Recharge cancellation deflection screen saves ~10% of subscriptions over the trailing 30 days, and its effectiveness is tenure-conditional: \u2026",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-08-17"
+    },
+    {
+      "id": "L-440",
+      "summary": "A metric's canonical BASIS can change inside the same session as the department brief reasoning about it, silently invalidating the brief's conclusio\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-17"
+    },
+    {
+      "id": "L-441",
+      "summary": "A second organic-to-paid creator graduation path is operating with no pipeline representation: TikTok Shop revenue winners are pulled into TRYBE and \u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-08-17"
+    },
+    {
+      "id": "L-442",
+      "summary": "The scheduled-task host's disk exhaustion is a recurring failure that silently suppresses the entire daily dispatch, and the team's first indicator i\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-17"
     }
   ],
   "entries": [
@@ -6486,6 +6521,117 @@
       "created_at": "2026-08-14T18:26:10.677524+00:00",
       "archival_state": "active",
       "id": "L-433"
+    },
+    {
+      "date": "2026-08-17",
+      "learning": "A ChangeSet whose execution_target_date or scheduled_send_date is in the FUTURE is invisible to every lifecycle queue, not merely exempt from expiry. lifecycle_engine.compute() gates visibility and expiry on one boolean: the draft branch does 'if protected: continue', all approved expiry/stale clauses sit inside 'elif not protected:', and the sole branch surviving protection is gated on past_target_days > 0 which is 0 by construction for a future target. Empirically CS-2026-233 (approved, target 2026-08-18) and CS-2026-264 (draft, same target) appear in ZERO queues on the day before the launch they carry, while rows with PASSED targets appear at threshold protected_target_passed. Rule: protection must suppress expiry only, never reporting.",
+      "source": "scripts/lifecycle_engine.py compute() L230/235/284/300/331 verified against cgo-logs/changesets/work-queue.json engine_date 2026-08-17",
+      "sources": [
+        "scripts/lifecycle_engine.py compute() lines 230, 235, 284, 300, 331-349 (read this run)",
+        "cgo-logs/changesets/work-queue.json engine_date 2026-08-17 mode live \u2014 CS-2026-233 and CS-2026-264 absent from stale/expiring/measurement_due/escalations",
+        "cgo-logs/department-briefs/2026-08-17-s1/dept-operations-planning.md ACT-D-1 / INS-D-1",
+        "cgo-logs/changesets/tracker.json \u2014 CS-2026-233 approved 33d and CS-2026-264 draft 7d, both execution_target_date 2026-08-18"
+      ],
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Protection was implemented as a single boolean consumed by both the expiry decision and the reporting decision, and nothing separates the two intents. The engine's own comment at L333-348 documents the sibling calendar-veto case and concludes 'future_dated protection cannot reach this branch' \u2014 correct about expiry, which is exactly why the future-dated reporting gap was never recognised. Cost already paid: CS-2026-238 died expired_unreviewed 2026-08-06 (L-394). See daily synthesis 2026-08-17-s1.md Theme 1; fix filed as CS-2026-273.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/lifecycle_engine.py compute() \u2014 emit stale at threshold protected_future_target when a protected row's in-status age exceeds the ordinary stale threshold",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-17T17:13:35.681444+00:00",
+      "archival_state": "active",
+      "id": "L-438"
+    },
+    {
+      "date": "2026-08-17",
+      "learning": "The live Recharge cancellation deflection screen saves ~10% of subscriptions over the trailing 30 days, and its effectiveness is tenure-conditional: strongest for subscribers with 3+ orders, while subscribers at orders 1-3 remain price/discount motivated. The correct segmentation for save-offer work is order-count tenure, not cancel-reason string.",
+      "source": "Katie Spaller, Slack #marketing 2026-08-17 11:51 EDT",
+      "sources": [
+        "Katie Spaller, Slack #marketing 2026-08-17 11:51 EDT (permalink kenetik.slack.com/archives/C0A7C15B4QP/p1786981875556489)",
+        "cgo-logs/department-briefs/2026-08-17-s1/dept-lifecycle-marketing.md ACT-D-2 / INS-D-2 (the ~0-6% reason-branch estimate this corrects)"
+      ],
+      "source_type": "team_feedback",
+      "domain": "lifecycle",
+      "evidence": "The department brief scoped remediation by cancel-reason branch from a normalized read of CS-2026-230's Recharge survey (Jun 23 - Jul 14, n~241), which cannot express a tenure dimension. subscription-state.json carries no per-subscription tenure x charge-count join, so the store could not have produced this finding at all \u2014 only the operator running the surface had it. Re-scoped as rec-436. See daily synthesis 2026-08-17-s1.md What Worked item 2.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-logs/changesets/CS-2026-234.md re-open scope; data/subscriptions/subscription-state.json tenure join",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-17T17:13:35.690072+00:00",
+      "archival_state": "active",
+      "id": "L-439"
+    },
+    {
+      "date": "2026-08-17",
+      "learning": "A metric's canonical BASIS can change inside the same session as the department brief reasoning about it, silently invalidating the brief's conclusion. The brand_capture split shipped 2026-08-17 removed branded spend from the digital_cac numerator; dept-paid-media INS-D-4, generated the same morning, derived digital_cac = $23.87 from total_spend_7d/new_customer_count and concluded 'below floor, the signature of underspend'. On the new basis July reads $34.39 against a $34 target, in band \u2014 and the derivation also still excluded TikTok's $930.77/7d. Neither the numerator nor the conclusion survives.",
+      "source": "tracker.json pending_recommendations rec-428 resolved 2026-08-17, plus rec-431 and rec-432",
+      "sources": [
+        "cgo-logs/changesets/tracker.json pending_recommendations rec-428 (resolved 2026-08-17), rec-431, rec-432",
+        "cgo-logs/department-briefs/2026-08-17-s1/dept-paid-media.md INS-D-4",
+        "data/paid-media/monthly-history.json monthly[2026-07] estimated_paid_nca 124.02 on the new basis"
+      ],
+      "source_type": "domain_contradiction",
+      "domain": "paid-media",
+      "evidence": "Department briefs derive non-digest metrics locally from digest primitives, and there is no basis-version stamp on either the digest slice or the spend-bucket map for a brief to check. The brief noted its PM store was STALE 88h but had no way to detect that a spend-bucket definition had changed hours earlier. Recomputation is not the fix; a basis identifier the brief can read and cite is. See daily synthesis 2026-08-17-s1.md Theme 2.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-runtime/digest-{date}.json \u2014 surface a basis_version so locally-derived metrics can cite the basis they were computed against",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-17T17:13:35.699013+00:00",
+      "archival_state": "active",
+      "id": "L-440"
+    },
+    {
+      "date": "2026-08-17",
+      "learning": "A second organic-to-paid creator graduation path is operating with no pipeline representation: TikTok Shop revenue winners are pulled into TRYBE and asked to upload iterations of the converting video, with manual content review enabled and no named owner for the review-into-paid gate. The instrumented graduation path simultaneously reports zero measurable rows (content_links null on 100% of ads, 6th session). The org's live flywheel and its measured flywheel are different mechanisms.",
+      "source": "Slack #content thread 2026-08-17 11:06-11:23 EDT (Nick Lacagnina, Katie Spaller, Charlotte Thamm)",
+      "sources": [
+        "Slack #content thread 2026-08-17 11:06-11:23 EDT \u2014 Nick Lacagnina, Katie Spaller, Charlotte Thamm (permalink kenetik.slack.com/archives/C096Y3VEP7F/p1786980154093419)",
+        "cgo-logs/department-briefs/2026-08-17-s1/dept-content.md ACT-D-3 (graduation gate repair on the instrumented path)",
+        "cgo-logs/department-briefs/2026-08-17-s1/dept-paid-media.md \u2014 content_links null on all ads, 6th consecutive session"
+      ],
+      "source_type": "team_feedback",
+      "domain": "content",
+      "evidence": "Graduation was instrumented as a Sprout-to-paid pipeline because that is the surface the scanners read. TikTok Shop and TRYBE appear in no state file, so a path that produces real paid-bound creative is structurally unobservable, and no domain owner was assigned when the mechanism was adopted. Nick asked in-thread who should own the review-into-paid gate and the question is unanswered. Carried as rec-435. See daily synthesis 2026-08-17-s1.md Theme 4.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/task-a-domains.md D07/D08 scope \u2014 decide whether TRYBE and TikTok Shop become scanned surfaces",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-17T17:13:35.706198+00:00",
+      "archival_state": "active",
+      "id": "L-441"
+    },
+    {
+      "date": "2026-08-17",
+      "learning": "The scheduled-task host's disk exhaustion is a recurring failure that silently suppresses the entire daily dispatch, and the team's first indicator is the ABSENCE of alerts rather than any alarm. Task B aborted at Step 0 with 903MB free against a 1GiB floor; the shared volume was 91% full with sixteen sibling session directories dating to 08-14 while this session's own tree held 16MB. A per-task guard that protects the repo from a corrupt-tree commit is not the same thing as a monitor that keeps the cycle running.",
+      "source": "Devon Price to Katie Spaller, Slack DM 2026-08-17 11:38 EDT; this session's Step 0 abort; D14 pipeline_tasks_failed_today = 5",
+      "sources": [
+        "Devon Price to Katie Spaller, Slack DM 2026-08-17 11:38 EDT \u2014 'it's running now. It got hung up on a full disk again'",
+        "Katie Spaller, same DM thread \u2014 'Is the KGS cycle running? Don't have any new alerts this morning'",
+        "This session's Task B Step 0 abort: df reported 924788KB free against the 1048576KB floor; /sessions 91% full, 16 sibling session dirs",
+        "cgo-logs/domain-scans/2026-08-17-s1/domain-14.md key_metrics.pipeline_tasks_failed_today = 5"
+      ],
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "The disk pre-flight guard exists in Task B only and fired correctly, but it converts a host-capacity problem into a per-task abort with no aggregate alarm and no reclamation step. Sibling sessions on the shared volume are never pruned, so free space decays monotonically until every task in the cycle fails on the same morning. Separately rapidfuzz was absent from the VM for the second time, which had disabled the mandatory Layer 0 collision check on 2026-08-14. Carried as rec-437. See daily synthesis 2026-08-17-s1.md Learning Signals.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scheduled-task environment setup \u2014 stale-session reclamation plus a rapidfuzz dependency pin",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-17T17:13:35.713482+00:00",
+      "archival_state": "active",
+      "id": "L-442"
     }
   ],
   "archived_entries": [
