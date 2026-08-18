@@ -3092,6 +3092,41 @@
       "domain": "operations",
       "status": "archived",
       "date": "2026-08-18"
+    },
+    {
+      "id": "L-446",
+      "summary": "Charlotte Thamm authors social/content calendar entries through her Claude sessions into the git staging files, and they do not merge into content-ca\u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-08-18"
+    },
+    {
+      "id": "L-447",
+      "summary": "The Pass B cadence gate is a self-pushing ratchet. It keys off max(updated, created) of the MOST RECENT open process_automation recommendation, so ev\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-18"
+    },
+    {
+      "id": "L-448",
+      "summary": "Six of the seven L3 department-primary metrics are structurally incapable of registering the drift they exist to gate, each by a distinct named mecha\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-18"
+    },
+    {
+      "id": "L-449",
+      "summary": "A campaign can be excluded from diagnosis by its classification rather than by its performance, and the protection doctrine makes the exclusion perma\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-18"
+    },
+    {
+      "id": "L-450",
+      "summary": "The calendar safety net's status filter makes it blind to the rows most in need of it. Step 1.5b filters marketing-calendar activities to status in {\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-18"
     }
   ],
   "entries": [
@@ -6661,6 +6696,118 @@
       "created_at": "2026-08-17T17:13:35.713482+00:00",
       "archival_state": "active",
       "id": "L-442"
+    },
+    {
+      "date": "2026-08-18",
+      "learning": "Charlotte Thamm authors social/content calendar entries through her Claude sessions into the git staging files, and they do not merge into content-calendar-data.json - the file every scan, digest metric and dispatch DM reads. Roughly 128 entries since May never crossed. The merge failure is silent, so four consecutive pipeline sessions reported 'zero forward-dated content rows' as a Content execution failure and DM'd Charlotte to do work she had already done. Nick Lacagnina: 'she said the DMs sent to her from you don't recognize the social calendar posts either.' The 7/29 task to migrate the social-calendar input surface to Supabase is either still open or never landed; there is no content or social calendar table in Supabase.",
+      "source": "Nick Lacagnina to Devon Price, Slack DM 2026-08-17 10:02 EDT (thread ts 1786975350.477969), with follow-ups 13:09 and 13:10 EDT",
+      "sources": [
+        "Nick Lacagnina to Devon Price, Slack DM 2026-08-17 10:02:30 EDT - 'Charlotte's content has been authored into the git staging files all along, but it's not merging into content-calendar-data.json, which is what every scan and report reads off. About 128 entries since May never made it across.' (permalink kenetik.slack.com/archives/D07J22KBTAA/p1786975350477969)",
+        "Devon Price, same thread ts 1786975533.780859 - 'strange - yeah, I thought we had taken care of that. what is she using as the input surface for calendar content?'; Nick ts 1786986581.531409 - 'she is submitting them through her claude sessions'; Nick ts 1786986605.670069 - 'she said the DMs sent to her from you don't recognize the social calendar posts either'",
+        "cgo-logs/department-briefs/2026-08-18-s1/dept-market-intelligence.md INS-MI-3 - content-calendar-data.json regenerated 2026-08-18T09:53Z with max date_publish 2026-08-17, no error state; 1,212 of 1,319 rows status=published",
+        "cgo-logs/department-briefs/2026-08-18-s1/dept-content.md ACT-C-1 - forward content rows 8 on 08-03, 5 on 08-10, 0 on 08-14, 0 on 08-18, reported each time as a Content scheduling failure"
+      ],
+      "source_type": "team_feedback",
+      "domain": "content",
+      "evidence": "The content-calendar generator asserts on the correctness of rows it emits and never on horizon coverage or input reconciliation, so a staging-to-canonical merge that moves zero rows is indistinguishable from a calendar with nothing in it. No producer-side check compares authored staging entries against landed entries, and no error state fires when the forward horizon is empty. Every downstream reader then treats the plausible zero as a finding about the person rather than about the write path. Carried as CS-2026-276 and rec-440. See daily synthesis 2026-08-18-s1.md Theme 1 call site 6 and Priority Stack P2. The ~128 figure is Nick's count, quoted as reported and flagged for verification before the fix is designed.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "the git-staging to content-calendar-data.json merge, or the 7/29 Supabase migration that would supersede it; horizon assertion folded into CS-2026-273 per rec-440",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-18T18:08:56.270330+00:00",
+      "archival_state": "active",
+      "id": "L-446"
+    },
+    {
+      "date": "2026-08-18",
+      "learning": "The Pass B cadence gate is a self-pushing ratchet. It keys off max(updated, created) of the MOST RECENT open process_automation recommendation, so every automation recommendation the pipeline files resets its own 7-day clock and pushes the next deep-analysis date further away. Session 93 computed next = 2026-08-20 from rec-424 (4 days old); rec-437 landing on 2026-08-17 moved it to 2026-08-24. Deep process-step analysis can therefore be deferred indefinitely by exactly the activity it exists to analyze, and the more automation debt the pipeline files, the longer it goes without analyzing it.",
+      "source": "This session's Pass B cadence check, compared against session 93's recorded computation",
+      "sources": [
+        "cgo-daily-pipeline/config/task-b-synthesis.md Step 2.5 Pass B preamble - cadence rule reads the most recent open process_automation entry and computes age from max(updated, created)",
+        "cgo-logs/session-handoffs/2026-08-17-session-93.md deviation 3 - 'Pass B skipped on the >=7-day cadence gate (rec-424 is 4 days old). Next 2026-08-20.'",
+        "cgo-logs/running-log.json pending_recommendations - rec-437 created 2026-08-17, status open, category process_automation, making today's computed age 1 day and the next Pass B date 2026-08-24"
+      ],
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "The predicate was written to answer 'how long since the last deep analysis?' but implemented as 'how long since the last process_automation row was touched?' - two different questions that only agree when Pass B is the sole writer of that category. Pass B Step 1A, Pass B Step 6, the daily backlog one-liner and ad-hoc filings all write the same category, so the sentinel is not specific to Pass B runs. The fix is a dedicated last_pass_b_run timestamp rather than inference from backlog age. Found by executing the rule rather than by reading it. See daily synthesis 2026-08-18-s1.md Process Automation section.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/task-b-synthesis.md Step 2.5 Pass B preamble - replace backlog-age inference with an explicit last_pass_b_run field in running-log.json",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-18T18:08:56.277691+00:00",
+      "archival_state": "active",
+      "id": "L-447"
+    },
+    {
+      "date": "2026-08-18",
+      "learning": "Six of the seven L3 department-primary metrics are structurally incapable of registering the drift they exist to gate, each by a distinct named mechanism: d08_creator_roi (~half the numerator on a zero denominator, plus a commission-vs-full-spend basis split), claims_tier_coverage (hand-seeded 11-PMID denominator omitting a PMID in live circulation), d12_stale_approved_count (computed from the same predicate that suppresses the rows it should count), calendar_quality_score_14d (denominator carries 8 never-requested seeded observance rows), d01_site_cvr (denominator carries 2,014 zero-conversion-by-design sessions, 18.6% of window), aov (two bases disagreeing 17%). The L1 margin metric contribution_margin_pct is in the same condition - absent from the digest with the only figure on record, 0.2667, flagged DISPUTED against the 0.45 the focus block assumes. Only active_sub_count reads on an undisputed basis, and its balancing partner sub_churn_active reconciles to no measured basis at all. The dept-primary layer therefore cannot currently be read as a scoreboard for the breakeven path, which is the one job it has.",
+      "source": "Convergent finding across all 7 department briefs, 2026-08-18-s1",
+      "sources": [
+        "cgo-logs/department-briefs/2026-08-18-s1/dept-content.md ACT-C-4 (d08_creator_roi 13.72 vs [2.5,5.0]); dept-science-research.md ACT-SC-2 (claims_tier_coverage 1.00 on a hand-seeded denominator)",
+        "cgo-logs/department-briefs/2026-08-18-s1/dept-operations-planning.md INS-OP-1 and INS-OP-3 (d12_stale_approved_count predicate-suppressed; d12_velocity 75% instrumentation share); dept-market-intelligence.md INS-MI-1 and INS-MI-2 (calendar_quality_score_14d denominator; the two L3 metrics disagreeing about the same calendar)",
+        "cgo-logs/department-briefs/2026-08-18-s1/dept-website-cro.md ACT-W-2 (d01_site_cvr denominator, 2,014 zero-intent sessions); dept-lifecycle-marketing.md ACT-LM-3 and INS-LM-3 (aov basis split 17%; sub_churn_active band reconciles to no basis)",
+        "cgo-logs/running-log.json cached_metrics.contribution_margin_pct 0.2667 with cached_metrics.contribution_margin_pct_basis flagged 'DISPUTED vs the 0.45 assumed in CURRENT FOCUS - see rec-382'"
+      ],
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Bands were set on definitions that later changed, or on denominators maintained by hand, and no mechanism re-validates a band against its live basis when either moves. The registry stores a target and a band but not the derivation basis, so a basis change is invisible to the band - L-440 is the acute form, where a basis changed inside the same session as the brief reasoning about it. Nothing in the daily cycle asks 'is this metric still measuring what its band was set for?', so instrument defects accumulate silently and are rediscovered one department at a time. See daily synthesis 2026-08-18-s1.md Theme 2.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "brain/kenetik-brain/references/metrics-taxonomy.md plus cgo-daily-pipeline/config/metric-compute-map.json - record the derivation basis alongside each band, and add a basis-drift check to the digest producer",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-18T18:08:56.284459+00:00",
+      "archival_state": "active",
+      "id": "L-448"
+    },
+    {
+      "date": "2026-08-18",
+      "learning": "A campaign can be excluded from diagnosis by its classification rather than by its performance, and the protection doctrine makes the exclusion permanent. PMAX__Shopping Feed Only 4/29/25__tROAS is the account's largest below-floor line - $720.22/7d at 0.60x on 6 purchases, 13.5% of account spend and 32% of Google spend - and it is the only such line with no diagnostic surface: wedge-dossiers.json not_covered[] classifies it 'experimental' so no dossier is kept, and reasoning-queue.json carries margin_floor_below items for campaign ids 23778467198 / 23168252134 / 23778599258 but none for 22500952063. The 'diagnose, never cut' protection presumes a dossier exists, so a campaign with neither dossier nor queue item receives neither diagnosis nor cut, indefinitely, at roughly $1,000/7d of destroyed contribution against the 2.0x margin floor.",
+      "source": "cgo-logs/department-briefs/2026-08-18-s1/dept-paid-media.md ACT-PM-2",
+      "sources": [
+        "cgo-logs/department-briefs/2026-08-18-s1/dept-paid-media.md ACT-PM-2 - the finding, the spend figures and the campaign-id coverage gap",
+        "data/paid-media/wedge-dossiers.json not_covered[] - classifies campaign 22500952063 'experimental', so no dossier is maintained",
+        "data/paid-media/reasoning-queue.json - margin_floor_below items present for Wedges A/B/C (23778467198, 23168252134, 23778599258), absent for 22500952063"
+      ],
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "The doctrine's protective clause and its diagnostic coverage set were designed independently - coverage is opt-in by classification while protection is universal, so the intersection (unclassified AND protected) is a silent hole. Because the exclusion is driven by a static classification field rather than by a performance predicate, no future cycle can surface the campaign either: the thing that would trigger a review is the same thing the classification suppresses. Same shape as the silent-generator class in Theme 1 - a protection mechanism creating a blind spot exactly where the protected thing is worst. See daily synthesis 2026-08-18-s1.md Theme 6.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "data/paid-media/wedge-dossiers.json not_covered[] handling - require a reasoning-queue item for any campaign above a spend threshold regardless of classification, or make the 'experimental' classification expire",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-18T18:08:56.291076+00:00",
+      "archival_state": "active",
+      "id": "L-449"
+    },
+    {
+      "date": "2026-08-18",
+      "learning": "The calendar safety net's status filter makes it blind to the rows most in need of it. Step 1.5b filters marketing-calendar activities to status in {proposed, confirmed, in_progress}, so all 23 needs_planning rows in the 90-day window are structurally invisible to the net - including BTS-SCHOOL-082426, the T-6 20%-off sale that is the only promotional demand event in the forward-14d calendar, and every BACK-TO-SCHOOL-082426-BEAT-* row that already hit its start date unplanned this month. A row at needs_planning is by definition the row that most needs a ChangeSet; the filter admits only rows that have already been planned.",
+      "source": "This session's Step 1.5 calendar safety net scan (15 candidates admitted, 36 excluded by status, of which 23 at needs_planning inside the 90-day window)",
+      "sources": [
+        "cgo-daily-pipeline/config/changeset-instructions.md Step 1.5b - 'Status is one of: proposed, confirmed, in_progress'",
+        "data/marketing-calendar/marketing-calendar-data.json - BTS-SCHOOL-082426 (seasonal, date_start 2026-08-24, status needs_planning, last_updated null, linked_changesets empty) plus 22 further needs_planning rows inside 90 days, none admitted to the scan",
+        "cgo-logs/department-briefs/2026-08-18-s1/dept-market-intelligence.md ACT-MI-1 - the sale had to be surfaced by a human-written department brief because no automated mechanism could see it"
+      ],
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "The filter was written to avoid spawning against rows that are speculative, and needs_planning reads as speculative. But the calendar's own semantics are the opposite: needs_planning means a dated commitment exists with no plan behind it, which is precisely the safety net's stated purpose. The consequence is that the net spawns for rows already being managed and stays silent on rows nobody has touched, so its output correlates negatively with need. Filed as a learning signal rather than a sixth Operations draft, per the Resolution Hierarchy - Operations already carries 5 pipeline-instrumentation drafts against a velocity of 8/wk. See daily synthesis 2026-08-18-s1.md and CS-2026-277 notes.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/changeset-instructions.md Step 1.5b status filter - admit needs_planning when a date_start falls inside a near horizon, or invert the filter to exclude only terminal statuses",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-18T18:08:56.297588+00:00",
+      "archival_state": "active",
+      "id": "L-450"
     }
   ],
   "archived_entries": [
