@@ -3071,6 +3071,27 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-08-17"
+    },
+    {
+      "id": "L-443",
+      "summary": "[CS-2026-252] incomplete (n/a): d01_site_cvr has fallen 57% since May and the decline is real \u2014 it was filed as an instrumentation artifact for two w\u2026",
+      "domain": "DTC-website",
+      "status": "archived",
+      "date": "2026-08-18"
+    },
+    {
+      "id": "L-444",
+      "summary": "[CS-2026-253] incomplete (n/a): 8/07 dual launch-surface readiness \u2014 Golden Pear restock PDP + Raspberry Lychee purchase surface \u2014 closed as supersed\u2026",
+      "domain": "DTC-website",
+      "status": "archived",
+      "date": "2026-08-18"
+    },
+    {
+      "id": "L-445",
+      "summary": "[CS-2026-254] incomplete (n/a): contribution_margin_pct has no measurement surface \u2014 stand one up (L1 focus gap, zero ChangeSet coverage) \u2014 closed as\u2026",
+      "domain": "operations",
+      "status": "archived",
+      "date": "2026-08-18"
     }
   ],
   "entries": [
@@ -3757,9 +3778,11 @@
       "domain": "cross-surface",
       "evidence": "Legitimacy windows handled reactively each year; no calendar pre-stage exists for predictable ADA/device-event triggers. See daily synthesis 2026-06-12-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "CS-2026-276 2026-08-18: Charlotte's authored content never reaches content-calendar-data.json \u2014 repair the staging merge or\u2026",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-276"
+      ],
       "target": "marketing-calendar pre-stage (annual ADA/device trigger) + Science evergreen library",
       "entry_type": "process_change",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
@@ -3767,7 +3790,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_stamped_at": "2026-08-18"
     },
     {
       "id": "L-133",
@@ -4012,14 +4036,15 @@
       "domain": "cross-surface",
       "evidence": "Three independent surfaces (Lifecycle, Website, digest) agree on ~$150-165 measured AOV vs $70 target. See daily synthesis 2026-07-03-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "56b719a 2026-08-18: Task B Phase 2: daily synthesis 2026-08-18-s1 (session 94)",
       "skill_files_updated": [],
       "related_entries": [],
       "target": "brain/kenetik-brain/references/metrics-taxonomy.md (L2 aov lever) + metric registry aov definition",
       "entry_type": "threshold_calibration",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-08-18"
     },
     {
       "id": "L-148",
@@ -4611,7 +4636,7 @@
       "domain": "cross-surface",
       "evidence": "forward_content_entries_7d=0, content_category_null_pct=0.54, calendar empty past 07-06; no forward-completeness gate forces reconciliation. See daily synthesis 2026-07-07-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "CS-2026-276 2026-08-18: Charlotte's authored content never reaches content-calendar-data.json \u2014 repair the staging merge or\u2026",
       "target": "marketing-calendar process / D13 scan \u2014 add a forward-completeness + category-null check that blocks phantom-date propagation.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
@@ -4622,6 +4647,10 @@
       "type": "process_change",
       "reconciliation_notes": [
         "domain 'market-intelligence' -> 'cross-surface' normalized to config.domain_note recommended values (Process 3.8 Step 0d, 2026-07-10)"
+      ],
+      "action_stamped_at": "2026-08-18",
+      "related_entries": [
+        "CS-2026-276"
       ]
     },
     {
@@ -13778,7 +13807,88 @@
       "created_at": "2026-08-17T16:56:48.328999+00:00",
       "archival_state": "active",
       "id": "L-437"
+    },
+    {
+      "date": "2026-08-18",
+      "type": "changeset_outcome",
+      "learning": "d01_site_cvr has fallen 57% since May and the decline is real \u2014 it was filed as an instrumentation artifact for two weeks \u2014 closed as expired_unreviewed on 2026-08-18 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-252)",
+      "source_type": "changeset_outcome",
+      "domain": "DTC-website",
+      "evidence": "Outcome: expired_unreviewed. Closed without measurement. Backfilled from tracker.json (CS-2026-252).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-252",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-08-18T17:55:52.687590+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-08-18",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-18T17:55:52.687919+00:00",
+      "archival_state": "active",
+      "id": "L-443"
+    },
+    {
+      "date": "2026-08-18",
+      "type": "changeset_outcome",
+      "learning": "8/07 dual launch-surface readiness \u2014 Golden Pear restock PDP + Raspberry Lychee purchase surface \u2014 closed as superseded on 2026-08-18 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-253)",
+      "source_type": "changeset_outcome",
+      "domain": "DTC-website",
+      "evidence": "Outcome: superseded. Closed without measurement. Backfilled from tracker.json (CS-2026-253).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-253",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-08-18T17:55:52.687634+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-08-18",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-18T17:55:52.694904+00:00",
+      "archival_state": "active",
+      "id": "L-444"
+    },
+    {
+      "date": "2026-08-18",
+      "type": "changeset_outcome",
+      "learning": "contribution_margin_pct has no measurement surface \u2014 stand one up (L1 focus gap, zero ChangeSet coverage) \u2014 closed as expired_unreviewed on 2026-08-18 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-254)",
+      "source_type": "changeset_outcome",
+      "domain": "operations",
+      "evidence": "Outcome: expired_unreviewed. Closed without measurement. Backfilled from tracker.json (CS-2026-254).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-254",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-08-18T17:55:52.687641+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-08-18",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-18T17:55:52.701428+00:00",
+      "archival_state": "active",
+      "id": "L-445"
     }
   ],
-  "last_updated": "2026-08-17"
+  "last_updated": "2026-08-18"
 }
