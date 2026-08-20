@@ -3211,6 +3211,34 @@
       "domain": "website",
       "status": "active",
       "date": "2026-08-19"
+    },
+    {
+      "id": "L-463",
+      "summary": "A feedback channel measured by the wrong Slack object reads as dead when it is alive, and four sessions of that null were about to be used to retire \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-20"
+    },
+    {
+      "id": "L-464",
+      "summary": "A state file that records what a row became but never why it changed cannot distinguish a governance decision from an abandonment, so every downstrea\u2026",
+      "domain": "campaigns",
+      "status": "active",
+      "date": "2026-08-20"
+    },
+    {
+      "id": "L-465",
+      "summary": "Two independently-derived calculators for the same operational metric are live, disagree by roughly 0.09, and the team is acting on the one the regis\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-20"
+    },
+    {
+      "id": "L-466",
+      "summary": "An ordering rule that protects a downstream store only on the day of the error is not a control, because the error class it protects against is disco\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-20"
     }
   ],
   "entries": [
@@ -7081,6 +7109,100 @@
       "created_at": "2026-08-19T18:34:47.601666+00:00",
       "archival_state": "active",
       "id": "L-462"
+    },
+    {
+      "date": "2026-08-20",
+      "learning": "A feedback channel measured by the wrong Slack object reads as dead when it is alive, and four sessions of that null were about to be used to retire it. The Step 9a.1 dispatch-reply scan calls slack_read_thread on the Layer 1 DM's slack_ts, which returns only THREADED replies - but the default reply affordance in a 1:1 Slack DM is a new channel message, not a thread. On 2026-08-19 the thread scan returned 0 replies across 8 of 8 Layer 1 DMs while Nick Lacagnina sent a substantive correction into his own dispatch DM channel 37 minutes after that DM landed, and Katie Spaller acknowledged hers. Session 95's deviation 10 concluded from the same repeated null that 'the dispatch DM is not a two-way channel and should stop being instrumented as one'. Acting on that would have deleted a working feedback path on the strength of a measurement artifact.",
+      "source": "Task B synthesis 2026-08-20-s1 Step 9a.1, cross-read against inbound DM traffic in the same channels",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Thread scan 2026-08-20: 0 replies on 8/8 Layer 1 DMs from 2026-08-19 (channels D065GQJBUSW, D095PTW5058, D07J22KBTAA, D0928GYV1Q9, D065K8BG0DS, D065VDR30MP, D07PZRD6FEH, D08CSUTPGP5). Same-channel non-thread inbound in the same window: Nick Lacagnina 2026-08-19T15:03:58 EDT ts 1787166238.041989 in D07J22KBTAA, reporting the dashboard-vs-registry calendar-health divergence and a Life Time distribution read, and explicitly inviting correction ('Shout if the framing is off'); Katie Spaller 2026-08-19T16:11:45 EDT acknowledgment. Nick's message independently answered a question dept-market-intelligence 2026-08-20-s1 closed its brief asking (whether the six calendar cancellations were deliberate deload or attrition). Failure class is identical to L-448: a null instrument reading treated as a property of the thing measured rather than of the query. See daily synthesis 2026-08-20-s1.md Learning Signals.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 9a.1 - read subsequent messages in the DM channel since the dispatch ts, not slack_read_thread on it. Carried as rec-456.",
+      "sources": [
+        "Task B synthesis 2026-08-20-s1 Step 9a.1 thread scan: 0 replies across 8 dispatch DM channels",
+        "Slack DM D07J22KBTAA, Nick Lacagnina 2026-08-19T15:03:58 EDT, ts 1787166238.041989 - substantive correction sent as a channel message, not a thread reply",
+        "Slack DM, Katie Spaller 2026-08-19T16:11:45 EDT - acknowledgment, also outside the thread",
+        "cgo-logs/session-handoffs/2026-08-19-session-95.md deviation 10 - the conclusion this entry reverses",
+        "cgo-logs/department-briefs/2026-08-20-s1/dept-market-intelligence.md INV-D-1 closing question, answered by the message the scan could not see"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-20T13:44:54.456433+00:00",
+      "archival_state": "active",
+      "id": "L-463"
+    },
+    {
+      "date": "2026-08-20",
+      "learning": "A state file that records what a row became but never why it changed cannot distinguish a governance decision from an abandonment, so every downstream reader must guess or re-ask. Six forward-window rows in marketing-calendar-data.json moved to status=cancelled on 2026-08-18/19 and raised calendar_quality_score_14d by 27% as a side effect. Market Intelligence closed its 2026-08-20 brief asking whether that was a deliberate deload or attrition, noting 'the rows carry no learning_note and no notes explaining the calls'. The org had already answered it 24 hours earlier: the 2026-08-19 marketing tag-up decided each one with a named reason - no Alzheimer's messaging in Kenetik marketing, the TFC press conference judged an erroneous entry, the cheer/toast video series discontinued. The answer existed in a channel the calendar does not read, and status plus last_updated made a deliberate deload byte-identical to attrition.",
+      "source": "dept-market-intelligence 2026-08-20-s1 INV-D-1 open question, resolved against Nick Lacagnina's tag-up recap in #marketing",
+      "source_type": "team_feedback",
+      "domain": "campaigns",
+      "evidence": "Six rows cancelled with last_updated 2026-08-18/19: GOLF-BMW-CHAMP-082026, GOLF-TOUR-CHAMP-082726, UTMB-082826, ALZHM-MONTH-090126, TFC-PRESSCONF-090126, TIM-MCGRAW-PARTNERSHIP-072926-BEAT-01. calendar_quality_score_14d moved 0.4286 to 0.5455 with the mature numerator frozen at 6 - the entire delta was an 11-to-14 denominator reduction. Nick Lacagnina's recap in #marketing 2026-08-19T15:04:32 EDT (ts 1787166272.122969) records the decisions and their reasons, plus STRONG-NY-092626 promoted needs_planning to confirmed at $6,500. None of that reasoning is present on any row. See daily synthesis 2026-08-20-s1.md Theme 1 and Learning Signals.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "data/marketing-calendar/marketing-calendar-data.json - require a decision_note on any transition into cancelled; cgo-daily-pipeline/config/calendar-writeback-protocol.md",
+      "sources": [
+        "cgo-logs/department-briefs/2026-08-20-s1/dept-market-intelligence.md INV-D-1 and its 'Unanswered for next cycle' section",
+        "Slack #marketing C0A7C15B4QP, Nick Lacagnina 2026-08-19T15:04:32 EDT ts 1787166272.122969 - Weekly Marketing Tag-Up Recap naming each cancellation decision",
+        "data/marketing-calendar/marketing-calendar-data.json - six cancelled rows, all with empty notes and learning_note",
+        "cgo-runtime/digest-2026-08-20.json calendar_quality_score_14d 0.5455 with mature count unchanged at 6"
+      ],
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-20T13:44:54.463915+00:00",
+      "archival_state": "active",
+      "id": "L-464"
+    },
+    {
+      "date": "2026-08-20",
+      "learning": "Two independently-derived calculators for the same operational metric are live, disagree by roughly 0.09, and the team is acting on the one the registry does not recognise - so a pipeline and its operators can hold opposite views of whether a department is recovering while both cite 'the calendar health score'. The portal dashboard reports calendar quality moving 0.538 to 0.636 after the 2026-08-19 decisions; scripts/metric_basis.py:calendar_pipeline_maturity reports 0.4286 to 0.5455 for the same window against a [0.65,0.85] band. Neither is declared canonical anywhere both readers can see. Nick Lacagnina independently reports the dashboard 'not recognizing planned content' as a recurring drag on that score and has tracked it as system_improvement, so the divergence is already visible from the operator side as a defect while reading clean from the pipeline side.",
+      "source": "digest-2026-08-20.json vs the dashboard figure reported by Nick Lacagnina in #marketing and in DM to Devon, both 2026-08-19",
+      "source_type": "team_feedback",
+      "domain": "operations",
+      "evidence": "Registry basis: calendar_pipeline_maturity recomputed against today's file returns 6/11 = 0.5455 at the 08-20 anchor, an exact digest match. Dashboard basis: 0.538 to 0.636 against a 0.75 target, reported identically in Nick's #marketing recap (ts 1787166272.122969) and his DM to Devon (ts 1787166238.041989). The registry version additionally excludes cancelled rows from its denominator, so it rises on deletion - which is how it moved up 27% on a day six campaigns were deleted and nothing was planned. Any calibration or Task B read that compares the two will conclude the planning layer is recovering on the exact day it emptied. See daily synthesis 2026-08-20-s1.md Theme 1.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "Reconcile scripts/metric_basis.py:calendar_pipeline_maturity against the portal dashboard calculator and declare one canonical. Folds into dept-market-intelligence ACT-D-3 (Cliff Morgan).",
+      "sources": [
+        "cgo-runtime/digest-2026-08-20.json calendar_quality_score_14d 0.5455",
+        "Slack #marketing C0A7C15B4QP, Nick Lacagnina 2026-08-19T15:04:32 EDT - dashboard calendar health 0.538 to 0.636",
+        "Slack DM D07J22KBTAA, Nick Lacagnina 2026-08-19T15:03:58 EDT - 'the dashboard not recognizing planned content, it is dragging the calendar health score', tracked as system_improvement",
+        "cgo-logs/department-briefs/2026-08-20-s1/dept-market-intelligence.md INV-D-1 and INS-D-2 - recompute validating the registry figure and naming the cancellation-blindness mechanism"
+      ],
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-20T13:44:54.471202+00:00",
+      "archival_state": "active",
+      "id": "L-465"
+    },
+    {
+      "date": "2026-08-20",
+      "learning": "An ordering rule that protects a downstream store only on the day of the error is not a control, because the error class it protects against is discovered late by construction. Session 95 established that closure corrections must be applied BEFORE pm_maintain outcomes --apply, so false closures do not become durable learning entries. That rule cannot protect a closure found false on any later day: L-443 (CS-2026-252) and L-445 (CS-2026-254) were written into cross-surface-pm.json on 2026-08-18 recording the two false expiries, both are now archived, pm_maintain is idempotent by changeset_id so it will never revisit them, and pm_maintain stamp-action refuses archived entries. Correcting the tracker today changed the ChangeSet rows and left the learning store asserting the opposite. Related: the 2026-08-19 false-expiry event turns out to be weekly-incidence behaviour rather than an incident - the same mechanism ran on 08-06 (13 rows), 08-17 and 08-18 - so late discovery is the normal case, not the exception.",
+      "source": "Task B Phase 3 lifecycle sweep 2026-08-20-s1, correcting CS-2026-252 and CS-2026-254 and finding their PM entries already written and unreachable",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "CS-2026-254 corrected expired_unreviewed to superseded (successor CS-2026-275 already existed in-tracker with spawned_from set); CS-2026-252 corrected to data_needed (expired 2026-08-18, four days INSIDE its own measurement_due of 2026-08-22, artifact still reading Status: draft). Both verified independently by two departments from different files. pm_maintain.py outcomes --apply run after the corrections: outcomes_written 0, status ok, closed_cs_total 229 - the store considers itself complete because L-443 and L-445 exist in archived_entries with entry_type changeset_outcome, learning text 'closed as expired_unreviewed on 2026-08-18 (no learning note recorded)', outcome_class incomplete. stamp-action --id L-443 returns 'ABORT - L-443 is not an active entry'. Weekly incidence per dept-operations-planning INV-D-2. See daily synthesis 2026-08-20-s1.md Theme 3.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/pm_maintain.py - give changeset_outcome entries a correction path when the underlying closure changes outcome, or have the corrector emit a superseding gated entry automatically. Scope candidate for CS-2026-278.",
+      "sources": [
+        "cgo-logs/changesets/tracker.json CS-2026-252 and CS-2026-254, outcome_notes recording both corrections 2026-08-20",
+        "data/performance-memory/cross-surface-pm.json archived_entries L-443 and L-445, written 2026-08-18 with the now-false closure text",
+        "cgo-logs/pm-runs/pm-maintain-outcomes-2026-08-20.json - outcomes_written 0, store reported complete",
+        "cgo-logs/session-handoffs/2026-08-19-session-95.md - the ordering rule this entry bounds",
+        "cgo-logs/department-briefs/2026-08-20-s1/dept-operations-planning.md INV-D-2 - the same mechanism on 08-06, 08-17, 08-18, 08-19"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-20T13:44:54.478366+00:00",
+      "archival_state": "active",
+      "id": "L-466"
     }
   ],
   "archived_entries": [
@@ -14418,5 +14540,5 @@
       "id": "L-456"
     }
   ],
-  "last_updated": "2026-08-19"
+  "last_updated": "2026-08-20"
 }
