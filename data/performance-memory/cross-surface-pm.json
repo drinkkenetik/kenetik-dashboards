@@ -653,7 +653,7 @@
       "id": "L-094",
       "summary": "Klaviyo review-request flow zero on launch day (5/13) AND tail day (5/17); cadence-vs-launch suppression rule may be active or flow broken",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-18"
     },
     {
@@ -667,7 +667,7 @@
       "id": "L-096",
       "summary": "Site-wide CVR shift greater than 100% co-occurring with (not set) LP delta greater than 50% absolute is instrumentation-attribution shift, not organic",
       "domain": "website",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-19"
     },
     {
@@ -681,35 +681,35 @@
       "id": "L-098",
       "summary": "Pat-017 silent-slip is forcing-function-shaped, not capacity-shaped. The same owners (Katie, Charlotte, Nick, Devon) who today have zero observable Sl",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-19"
     },
     {
       "id": "L-099",
       "summary": "Governance-fix CSes (CS-152/153/155) blocked by the L-098 failure mode they target; bootstrapping recursion.",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-21"
     },
     {
       "id": "L-100",
       "summary": "Calendar writeback debt has two independent failure modes: L-060 patch undeployed AND upstream CS lifecycle stall (CS-2026-111/112/161 draft).",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-21"
     },
     {
       "id": "L-101",
       "summary": "Multi-post product launch arc drives cross-platform NCS-100 ceiling",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-22"
     },
     {
       "id": "L-102",
       "summary": "Bulk-publish retail copy suppressed on FB + paid boost landing on dead copy (AP-010) \u2014 5th cycle, dedupe/boost-block fix still unshipped, open P0 to Devon",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-22",
       "date_last_corroborated": "2026-07-10"
     },
@@ -717,7 +717,7 @@
       "id": "L-103",
       "summary": "Endurance content fatigued on Facebook \u2014 implication for paid-media creative mix",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-22"
     },
     {
@@ -1326,7 +1326,7 @@
       "id": "L-193",
       "summary": "[CS-2026-158] incomplete (n/a): [closure_note] Codification CS \u2014 work shipped same-day (doc landed in brain/kenetik-brain/references/lifecycle-playbo\u2026",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-20"
     },
     {
@@ -3239,220 +3239,16 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-08-20"
+    },
+    {
+      "id": "L-467",
+      "summary": "[Prospecting__PMAX__Wedge B__tCPA] window_agreement agree_below: 2 of 3 windows below 2 (floor 2x)",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-18"
     }
   ],
   "entries": [
-    {
-      "id": "L-094",
-      "date": "2026-05-18",
-      "type": "process_change",
-      "learning": "Submitted Review count went to zero on the largest order day of the period (5/13 779 orders \u2192 0 reviews) AND on a normal-volume tail day (5/17 141 orders \u2192 0 reviews). Either the Klaviyo review-request flow is paused around campaigns by design (cadence-vs-launch collision rule), OR the review-request flow is broken. Suppression on 5/12 (pre-launch) and tail days suggests campaign-launch suppression may be active.",
-      "source": "D10 SIG-10-1 + D02 cross-flag + Lifecycle brief Rec 3 (2026-05-18 dept-lifecycle-marketing)",
-      "source_type": "operational_signal",
-      "domain": "lifecycle",
-      "evidence": "No documented rule in D13 marketing calendar for 'review request cadence vs campaign launch timing.' See daily synthesis 2026-05-18-s1.md.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "brain/kenetik-brain/references/lifecycle-cadence-rules.md (new section: review request cadence vs campaign launch); rec-244 ownership Katie Spaller",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-096",
-      "date": "2026-05-19",
-      "type": "threshold_calibration",
-      "learning": "Site-wide CVR shift greater than 100% co-occurring with (not set) LP delta greater than 50% absolute is instrumentation-attribution shift, not organic CRO. Default-first hypothesis must be tracking regression per L-078 precedent before forward-looking magnitude is reported.",
-      "source": "Synthesis 2026-05-19-s1 cross-check against D09 brief + L-074 + L-078",
-      "source_type": "operational_signal",
-      "domain": "website",
-      "evidence": "Site-wide CVR delta >100% co-occurring with (not set) LP delta >50% in GA4 indicates landing-page attribution decay, not user-behavior shift. See session-handoff-2026-05-19 \u00a73.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-074",
-        "L-078",
-        "L-066"
-      ],
-      "target": "synthesis-instructions.md Framing Guardrails #1 - add automatic L-078 trigger when site-wide CVR shift >100% co-occurs with (not set) LP delta >50% absolute",
-      "reconciliation_notes": [
-        "evidence pruned 411\u2192176 chars (Process 3.8 Step 0c)"
-      ],
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-098",
-      "date": "2026-05-18",
-      "type": "skill_update",
-      "learning": "Pat-017 silent-slip is forcing-function-shaped, not capacity-shaped. The same owners (Katie, Charlotte, Nick, Devon) who today have zero observable Slack evidence on 5 deadline items had high-observability coordination on 5/13-5/14 launch. Launch coordination produces a forcing function via traffic/revenue dependence; non-launch deadlines have no equivalent.",
-      "source": "D14 + Operations dept brief 2026-05-19, pat-017 4th corroboration day | Operations & Planning department brief 2026-05-18; D14+D16+D13 cross-signal pattern",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "Same owners hit pat-017 silent-slip across governance, content, and ops work types \u2014 forcing-function-shaped, not capacity-shaped. See session-handoff-2026-05-19 + L-093.",
-      "confidence": "strong",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-086",
-        "L-094"
-      ],
-      "target": "kenetik-growth-system/commands/changeset-execute.md and changeset-review.md - incorporate 'launch-equivalent forcing function' pattern into pre-deadline status gates so non-launch deadlines inherit launch-class observability rhythm",
-      "merged_from": [
-        {
-          "id": "L-093",
-          "merged_at": "2026-05-22T20:00:00Z",
-          "reason": "Same pat-017 silent-slip pattern; L-098 superseded L-093 with forcing-function refinement."
-        }
-      ],
-      "reconciliation_notes": [
-        "evidence pruned 521\u2192228 chars (Process 3.8 Step 0c)",
-        "evidence pruned 228->170 chars (Process 3.8 Step 0c, 2026-06-05)"
-      ],
-      "entry_type": "skill_update",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-099",
-      "date": "2026-05-21",
-      "type": "process_change",
-      "learning": "Governance-fix ChangeSets blocked by the failure mode they target: CS-2026-152 (huddle governance), CS-153 (pre-deadline hardgate), CS-155 (pat-017 promotion) were all designed to install forcing functions for acknowledge-and-defer (L-098), but all three remain draft because they themselves require the very forcing function they would create. Bootstrapping problem.",
-      "source": "Synthesis 2026-05-21-s1 / Ops dept INS-001",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "Governance-fix ChangeSets (CS-2026-152, 153, 155) blocked by the L-098 failure mode they were spawned to fix. See session-handoff-2026-05-21 \u00a72.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-086",
-        "L-093",
-        "L-098"
-      ],
-      "target": "cgo-daily-pipeline/config/changeset-instructions.md \u2014 add a self-bootstrap exception flag for governance/forcing-function CSes such that they advance through an alternate review path (e.g., paired-CS hard-gate or pipeline-level forcing) rather than the owner-discretion path that fails on them.",
-      "reconciliation_notes": [
-        "evidence pruned 273\u2192144 chars (Process 3.8 Step 0c)",
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ],
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-100",
-      "date": "2026-05-21",
-      "type": "skill_update",
-      "learning": "Calendar writeback debt has at least TWO independent failure modes: (a) Foster's writeback patch undeployed (L-060), and (b) upstream ChangeSet lifecycle stall on the linked CSes (CS-2026-111/112/161 all draft for Memorial Day on session 55). Treating L-060 as the sole root cause masks the second mechanism \u2014 observers attribute writeback silence to mechanism-broken rather than CS-lifecycle-stalled.",
-      "source": "Synthesis 2026-05-21-s1 / Market Intel INV-MI-1",
-      "source_type": "domain_contradiction",
-      "domain": "operations",
-      "evidence": "Two independent failure modes in calendar writeback debt: L-060 patch undeployed (capacity) AND L-084 backlog (throughput). See session-handoff-2026-05-21 \u00a73.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-060",
-        "L-084",
-        "L-086"
-      ],
-      "target": "cgo-daily-pipeline/config/calendar-writeback-protocol.md \u2014 add diagnostic precondition: 'before declaring writeback broken, verify the linked CSes' status; if any are draft, the writeback is correctly inactive, not broken.'",
-      "reconciliation_notes": [
-        "evidence pruned 300\u2192158 chars (Process 3.8 Step 0c)",
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ],
-      "entry_type": "skill_update",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-101",
-      "date": "2026-05-22",
-      "type": "content_pattern",
-      "learning": "BRIDGE CP-015: Multi-post product launch arc (mystery teaser \u2192 reveal \u2192 date-lock countdown) drives cross-platform NCS-100 ceiling. Launch arcs deliver 4/9 NCS-100 across IG/FB/TT/LI; cross-domain implication: paid-media should reserve incremental budget for launch-arc amplification windows; campaigns lead should template the 3-beat structure for future launches.",
-      "source": "Moe Content PM synthesis SYN-20260522-001 (CP-015)",
-      "source_type": "content_synthesis_bridge",
-      "domain": "content",
-      "evidence": "9 posts across IG/FB/TT/LI in 5 days hit NCS 100 on 4 of 9 (Golden Pear launch May 1-6). See Moe PM synthesis SYN-20260522-001 CP-015.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_note": null,
-      "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260522-001",
-      "signal_direction": "positive",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e",
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
-    },
-    {
-      "id": "L-102",
-      "date": "2026-05-22",
-      "type": "content_pattern",
-      "learning": "BRIDGE AP-010: Automated bulk-publish of identical retail/PR copy to Facebook gets algorithm-suppressed to near-zero impressions \u2014 AND paid amplification keeps landing on that dead copy. Reconfirmed 5 consecutive cycles (SYN-20260522 through SYN-20260710); most recent window (SYN-20260710): 2 identical 'Find Kenetik at Dierbergs!' FB posts at NCS 51.1/45.5, and the second was boosted to 58,851 impressions at 0.3% ER. The bulk-cluster size has shrunk (2 posts vs. the original 12-14) but the core fix \u2014 dedupe post bodies per-platform per-day before publish, and block paid amplification on any body scoring NCS<25 \u2014 remains unshipped after five logged cycles. Cross-domain implication: content ops needs the dedupe gate; paid media is actively spending on organic-suppressed copy with no proven audience response. Moe's PM has re-escalated P0 to Devon each cycle.",
-      "source": "Moe Content PM synthesis SYN-20260522-001 (AP-010)",
-      "source_type": "content_synthesis_bridge",
-      "domain": "content",
-      "evidence": "12 'Find Kenetik at Dierbergs' FB posts at 0 impressions (2026-05-06); 14 identical Cleetus event posts also 0. See Moe PM AP-010.",
-      "confidence": "strong",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_note": null,
-      "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260710-001",
-      "signal_direction": "negative",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e",
-        "confidence 'moderate' -> 'preliminary' (source_count=1)",
-        "Refreshed from SYN-20260710-001 (5th consecutive reconfirmation); confidence preliminary -> strong; flagged as open P0 needing Devon decision (Process 3.8 Step 0e, 2026-07-10)"
-      ]
-    },
-    {
-      "id": "L-103",
-      "date": "2026-05-22",
-      "type": "content_pattern",
-      "learning": "BRIDGE AP-004: Leadville/endurance hooks fatigued on Facebook (5.69x \u2192 0.58x median across 3 cycles). HYROX Cancun also at near-FB-median. Cross-domain implication: paid-media should de-prioritize endurance creative variants in FB targeting; lifestyle/protocol-class and motorsports/celebrity-attribution variants are now the workhorses.",
-      "source": "Moe Content PM synthesis SYN-20260522-001 (AP-004)",
-      "source_type": "content_synthesis_bridge",
-      "domain": "content",
-      "evidence": "Endurance hook drop: 5.69x (Mar 22) \u2192 0.58x (Apr 3) FB median, stable since. Confirmed 3 consecutive cycles. See Moe PM AP-004.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_note": null,
-      "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260522-001",
-      "signal_direction": "negative",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e",
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
-    },
     {
       "id": "L-106",
       "date": "2026-05-28",
@@ -3563,9 +3359,12 @@
       "domain": "operations",
       "evidence": "Two definitions coexist after the 2026-05-26 redefinition; the deprecated reading was not retired from the D13 scan. See daily synthesis 2026-06-01-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "31529cb 2026-08-21: Task A1 dept brief (2026-08-21-s1): market-intelligence (7/7 complete)",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-270",
+        "CS-2026-276"
+      ],
       "target": "D13 domain-scan instructions (retire deprecated content-calendar reading); metrics-registry.yaml d13 note",
       "entry_type": "process_change",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
@@ -3573,7 +3372,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_stamped_at": "2026-08-21"
     },
     {
       "id": "L-113",
@@ -4164,14 +3964,15 @@
       "domain": "website",
       "evidence": "GSC clicks 982 vs anomalous prior 6,981; mid-June baseline 819-825/wk; CVR up across channels. See daily synthesis 2026-07-02-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "e235292 2026-08-21: Task A1 dept briefs (2026-08-21-s1): website-cro + science-research",
       "skill_files_updated": [],
       "related_entries": [],
       "target": "synthesis-instructions.md Framing Guardrails (Baseline check) \u2014 add explicit reversion-vs-decline test for search-traffic WoW swings.",
       "entry_type": "process_change",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-08-21"
     },
     {
       "id": "L-146",
@@ -4215,31 +4016,6 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
-    },
-    {
-      "id": "L-193",
-      "date": "2026-05-20",
-      "type": "changeset_outcome",
-      "learning": "[closure_note] Codification CS \u2014 work shipped same-day (doc landed in brain/kenetik-brain/references/lifecycle-playbook.md; L-087 graduated active->confirmed in cross-surface-pm.json). No standalone measurement window on this CS: the measurement of the codified L-087 mechanic is delegated to subsequent deployment ChangeSets that fire the template on GP-class drops. Each deployment is its own measurable CS referencing lifecycle-playbook.md#L-087 with the acceptable bands defined therein. If a fu\u2026",
-      "source": "ChangeSet tracker close record (CS-2026-158)",
-      "source_type": "changeset_outcome",
-      "domain": "lifecycle",
-      "evidence": "Outcome: data_needed. Backfilled from tracker.json (CS-2026-158).",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-158",
-      "variance_pct": null,
-      "outcome_class": "incomplete",
-      "entry_type": "changeset_outcome",
-      "backfilled_at": "2026-07-06T03:06:32.986944+00:00",
-      "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review",
-      "reconciliation_notes": [
-        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
       ]
     },
     {
@@ -5403,14 +5179,19 @@
       "domain": "content",
       "evidence": "11 posts cleared the raw threshold on 2026-07-27 while ready_to_graduate read 0. Two ingestion paths write the same field in different units with no normalization at write time and no unit assertion at read time. Compounding: the same file's sync ran 2026-08-03 at 10:53Z reporting posts_added 0 with 561 of 843 rows at publish_date null. See daily synthesis 2026-08-03-s1.md Content-Commerce Insights.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "375cf00 2026-08-21: Task A1 dept brief (2026-08-21-s1): content",
       "target": "scripts/ published-posts writer - normalize engagement_rate to fraction at write; add a range assertion to the graduation threshold test",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-03T13:40:35.559604+00:00",
       "archival_state": "active",
-      "id": "L-306"
+      "id": "L-306",
+      "action_stamped_at": "2026-08-21",
+      "related_entries": [
+        "CS-2026-265",
+        "CS-2026-279"
+      ]
     },
     {
       "id": "L-308",
@@ -6043,7 +5824,7 @@
       "domain": "campaigns",
       "evidence": "Root cause: the metric decays roughly 2.4pp/day on window slide alone, so its value is dominated by the clock rather than by planning quality. Four-anchor recomputation 2026-08-10 through 2026-08-13 (0.6522 / 0.6364 / 0.6522 / 0.6522) with the immature set unchanged at 8 rows, 7 of which carry last_updated null. The forward window holds 8 immature rows (4 Back-to-School, BMW, playoffs, McGraw) and the three 8/17 rows alone would move the score to 0.7826. Filed by Task B on the department's behalf - the brief allocated L-403/L-404/L-405 locally and flagged them as likely to collide with the writer's next run, which is exactly what happened. See daily synthesis 2026-08-13-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "31529cb 2026-08-21: Task A1 dept brief (2026-08-21-s1): market-intelligence (7/7 complete)",
       "target": "brain/kenetik-brain/references/metrics-registry.yaml - calendar_quality_score_14d needs either an asymmetric band or a decomposition that separates window motion from state change before its drift gate can be trusted. Routed to monthly calibration per Q-M-2, not changed unilaterally.",
       "sources": [
         "cgo-logs/department-briefs/2026-08-13-s1/dept-market-intelligence.md SIG-M-1 / INS-M-1 four-anchor recomputation",
@@ -6056,7 +5837,12 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-13T15:14:02.353560+00:00",
       "archival_state": "active",
-      "id": "L-411"
+      "id": "L-411",
+      "action_stamped_at": "2026-08-21",
+      "related_entries": [
+        "CS-2026-270",
+        "CS-2026-276"
+      ]
     },
     {
       "date": "2026-08-13",
@@ -6248,7 +6034,7 @@
       "domain": "website",
       "evidence": "Asymmetric settlement time between the two comparison windows. Today's -27.63% clicks is a property of the measurement. Retro-explains L-145, where a -86% clicks collapse resolved to nothing. Quantifies and upgrades L-298, which named the defect twelve days ago while the field continued to emit. See daily synthesis 2026-08-14-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "e235292 2026-08-21: Task A1 dept briefs (2026-08-21-s1): website-cro + science-research",
       "target": "scripts/pull_ga4_website_state.py - exclude the unsettled terminal day from BOTH windows (already carried as rec-373)",
       "sources": [
         "dept-website-cro 2026-08-14 INS-W-1 / INV-W-2",
@@ -6260,7 +6046,9 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-14T17:14:43.093015+00:00",
       "archival_state": "active",
-      "id": "L-421"
+      "id": "L-421",
+      "action_stamped_at": "2026-08-21",
+      "related_entries": []
     },
     {
       "date": "2026-08-14",
@@ -6868,14 +6656,18 @@
       "domain": "cross-surface",
       "evidence": "Bands were set on definitions that later changed, or on denominators maintained by hand, and no mechanism re-validates a band against its live basis when either moves. The registry stores a target and a band but not the derivation basis, so a basis change is invisible to the band - L-440 is the acute form, where a basis changed inside the same session as the brief reasoning about it. Nothing in the daily cycle asks 'is this metric still measuring what its band was set for?', so instrument defects accumulate silently and are rediscovered one department at a time. See daily synthesis 2026-08-18-s1.md Theme 2.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "13e5d57 2026-08-20: Phase 2 synthesis 2026-08-20-s1 + domain_health_streaks refresh",
       "target": "brain/kenetik-brain/references/metrics-taxonomy.md plus cgo-daily-pipeline/config/metric-compute-map.json - record the derivation basis alongside each band, and add a basis-drift check to the digest producer",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-18T18:08:56.284459+00:00",
       "archival_state": "active",
-      "id": "L-448"
+      "id": "L-448",
+      "action_stamped_at": "2026-08-21",
+      "related_entries": [
+        "CS-2026-256"
+      ]
     },
     {
       "date": "2026-08-18",
@@ -6956,9 +6748,15 @@
       "domain": "lifecycle-marketing",
       "evidence": "Outcome: underperformed. Backfilled from tracker.json (CS-2026-213).",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "00b28e3 2026-08-21: Task A1 dept brief (2026-08-21-s1): operations-planning",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-213",
+        "CS-2026-233",
+        "CS-2026-251",
+        "CS-2026-261",
+        "CS-2026-265"
+      ],
       "changeset_candidate": false,
       "changeset_id": "CS-2026-213",
       "variance_pct": null,
@@ -6971,7 +6769,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-19T18:24:46.312791+00:00",
       "archival_state": "active",
-      "id": "L-453"
+      "id": "L-453",
+      "action_stamped_at": "2026-08-21"
     },
     {
       "date": "2026-08-19",
@@ -7051,7 +6850,7 @@
       "domain": "lifecycle",
       "evidence": "Raspberry Lychee 8/07: Early Access 4,597 delivered @ RPR $1.6986 + General 21,383 @ $0.7157 = 25,980 delivered, 256 conversions, $23,111.18. TRX 8/18: 26,730 delivered, 21 conversions, $2,443.87. Open rate fell to 28.12% against 35.2-41.8% for every other send in the 30-day window with bounce 0.265% and unsubscribe 0.269% both normal, so the loss is audience-expansion dilution rather than list health. The structure's value is now measured rather than assumed. See daily synthesis 2026-08-19-s1.md Theme 4.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "668eff8 2026-08-21: Task A1 dept brief (2026-08-21-s1): lifecycle-marketing",
       "target": "Klaviyo launch send template - carry the two-segment structure as the default rather than per-ChangeSet",
       "sources": [
         "Lifecycle Marketing dept brief 2026-08-19-s1 SIG-D-2",
@@ -7064,7 +6863,13 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-19T18:34:47.588223+00:00",
       "archival_state": "active",
-      "id": "L-460"
+      "id": "L-460",
+      "action_stamped_at": "2026-08-21",
+      "related_entries": [
+        "CS-2026-213",
+        "CS-2026-229",
+        "CS-2026-230"
+      ]
     },
     {
       "date": "2026-08-19",
@@ -7203,6 +7008,52 @@
       "created_at": "2026-08-20T13:44:54.478366+00:00",
       "archival_state": "active",
       "id": "L-466"
+    },
+    {
+      "date": "2026-08-18",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Prospecting__PMAX__Wedge B__tCPA (core): window_agreement reads 'agree_below' on 5 account days (2026-08-15 \u2192 2026-08-18). 2 of 3 windows below 2 (floor 2x)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778467198].conclusions[kind=window_agreement] ; instrument: window_agreement.evaluate ; dossier generated_for 2026-08-21, as_of 2026-08-20",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778467198].conclusions[kind=window_agreement]",
+        "instrument: window_agreement.evaluate",
+        "dossier generated_for 2026-08-21, as_of 2026-08-20"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 5\u00d7 across 3 day(s) of account time (2026-08-15 \u2192 2026-08-18), clearing the moderate bar of 3 Instrument window_agreement.evaluate; campaign 23778467198.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23778467198:window_agreement:0f9fab0ae1",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 5\u00d7 across 3 day(s) of account time (2026-08-15 \u2192 2026-08-18), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23778467198",
+        "wedge": "Prospecting__PMAX__Wedge B__tCPA",
+        "classification": "core",
+        "conclusion_kind": "window_agreement",
+        "conclusion_value": "agree_below",
+        "seen_count": 5,
+        "span_days": 3,
+        "first_seen_as_of": "2026-08-15",
+        "last_seen_as_of": "2026-08-18",
+        "graduated_at": "2026-08-21T17:09:23.115607+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-21T17:09:23.116738+00:00",
+      "archival_state": "active",
+      "id": "L-467"
     }
   ],
   "archived_entries": [
@@ -14538,7 +14389,261 @@
       "created_at": "2026-08-19T18:24:46.332848+00:00",
       "archival_state": "active",
       "id": "L-456"
+    },
+    {
+      "id": "L-094",
+      "date": "2026-05-18",
+      "type": "process_change",
+      "learning": "Submitted Review count went to zero on the largest order day of the period (5/13 779 orders \u2192 0 reviews) AND on a normal-volume tail day (5/17 141 orders \u2192 0 reviews). Either the Klaviyo review-request flow is paused around campaigns by design (cadence-vs-launch collision rule), OR the review-request flow is broken. Suppression on 5/12 (pre-launch) and tail days suggests campaign-launch suppression may be active.",
+      "source": "D10 SIG-10-1 + D02 cross-flag + Lifecycle brief Rec 3 (2026-05-18 dept-lifecycle-marketing)",
+      "source_type": "operational_signal",
+      "domain": "lifecycle",
+      "evidence": "No documented rule in D13 marketing calendar for 'review request cadence vs campaign launch timing.' See daily synthesis 2026-05-18-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/references/lifecycle-cadence-rules.md (new section: review request cadence vs campaign launch); rec-244 ownership Katie Spaller",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-08-21",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-096",
+      "date": "2026-05-19",
+      "type": "threshold_calibration",
+      "learning": "Site-wide CVR shift greater than 100% co-occurring with (not set) LP delta greater than 50% absolute is instrumentation-attribution shift, not organic CRO. Default-first hypothesis must be tracking regression per L-078 precedent before forward-looking magnitude is reported.",
+      "source": "Synthesis 2026-05-19-s1 cross-check against D09 brief + L-074 + L-078",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "Site-wide CVR delta >100% co-occurring with (not set) LP delta >50% in GA4 indicates landing-page attribution decay, not user-behavior shift. See session-handoff-2026-05-19 \u00a73.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-074",
+        "L-078",
+        "L-066"
+      ],
+      "target": "synthesis-instructions.md Framing Guardrails #1 - add automatic L-078 trigger when site-wide CVR shift >100% co-occurs with (not set) LP delta >50% absolute",
+      "reconciliation_notes": [
+        "evidence pruned 411\u2192176 chars (Process 3.8 Step 0c)"
+      ],
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-08-21",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-098",
+      "date": "2026-05-18",
+      "type": "skill_update",
+      "learning": "Pat-017 silent-slip is forcing-function-shaped, not capacity-shaped. The same owners (Katie, Charlotte, Nick, Devon) who today have zero observable Slack evidence on 5 deadline items had high-observability coordination on 5/13-5/14 launch. Launch coordination produces a forcing function via traffic/revenue dependence; non-launch deadlines have no equivalent.",
+      "source": "D14 + Operations dept brief 2026-05-19, pat-017 4th corroboration day | Operations & Planning department brief 2026-05-18; D14+D16+D13 cross-signal pattern",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Same owners hit pat-017 silent-slip across governance, content, and ops work types \u2014 forcing-function-shaped, not capacity-shaped. See session-handoff-2026-05-19 + L-093.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-086",
+        "L-094"
+      ],
+      "target": "kenetik-growth-system/commands/changeset-execute.md and changeset-review.md - incorporate 'launch-equivalent forcing function' pattern into pre-deadline status gates so non-launch deadlines inherit launch-class observability rhythm",
+      "merged_from": [
+        {
+          "id": "L-093",
+          "merged_at": "2026-05-22T20:00:00Z",
+          "reason": "Same pat-017 silent-slip pattern; L-098 superseded L-093 with forcing-function refinement."
+        }
+      ],
+      "reconciliation_notes": [
+        "evidence pruned 521\u2192228 chars (Process 3.8 Step 0c)",
+        "evidence pruned 228->170 chars (Process 3.8 Step 0c, 2026-06-05)"
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-08-21",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-099",
+      "date": "2026-05-21",
+      "type": "process_change",
+      "learning": "Governance-fix ChangeSets blocked by the failure mode they target: CS-2026-152 (huddle governance), CS-153 (pre-deadline hardgate), CS-155 (pat-017 promotion) were all designed to install forcing functions for acknowledge-and-defer (L-098), but all three remain draft because they themselves require the very forcing function they would create. Bootstrapping problem.",
+      "source": "Synthesis 2026-05-21-s1 / Ops dept INS-001",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Governance-fix ChangeSets (CS-2026-152, 153, 155) blocked by the L-098 failure mode they were spawned to fix. See session-handoff-2026-05-21 \u00a72.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-086",
+        "L-093",
+        "L-098"
+      ],
+      "target": "cgo-daily-pipeline/config/changeset-instructions.md \u2014 add a self-bootstrap exception flag for governance/forcing-function CSes such that they advance through an alternate review path (e.g., paired-CS hard-gate or pipeline-level forcing) rather than the owner-discretion path that fails on them.",
+      "reconciliation_notes": [
+        "evidence pruned 273\u2192144 chars (Process 3.8 Step 0c)",
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-08-21",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-100",
+      "date": "2026-05-21",
+      "type": "skill_update",
+      "learning": "Calendar writeback debt has at least TWO independent failure modes: (a) Foster's writeback patch undeployed (L-060), and (b) upstream ChangeSet lifecycle stall on the linked CSes (CS-2026-111/112/161 all draft for Memorial Day on session 55). Treating L-060 as the sole root cause masks the second mechanism \u2014 observers attribute writeback silence to mechanism-broken rather than CS-lifecycle-stalled.",
+      "source": "Synthesis 2026-05-21-s1 / Market Intel INV-MI-1",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "Two independent failure modes in calendar writeback debt: L-060 patch undeployed (capacity) AND L-084 backlog (throughput). See session-handoff-2026-05-21 \u00a73.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-060",
+        "L-084",
+        "L-086"
+      ],
+      "target": "cgo-daily-pipeline/config/calendar-writeback-protocol.md \u2014 add diagnostic precondition: 'before declaring writeback broken, verify the linked CSes' status; if any are draft, the writeback is correctly inactive, not broken.'",
+      "reconciliation_notes": [
+        "evidence pruned 300\u2192158 chars (Process 3.8 Step 0c)",
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-08-21",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-101",
+      "date": "2026-05-22",
+      "type": "content_pattern",
+      "learning": "BRIDGE CP-015: Multi-post product launch arc (mystery teaser \u2192 reveal \u2192 date-lock countdown) drives cross-platform NCS-100 ceiling. Launch arcs deliver 4/9 NCS-100 across IG/FB/TT/LI; cross-domain implication: paid-media should reserve incremental budget for launch-arc amplification windows; campaigns lead should template the 3-beat structure for future launches.",
+      "source": "Moe Content PM synthesis SYN-20260522-001 (CP-015)",
+      "source_type": "content_synthesis_bridge",
+      "domain": "content",
+      "evidence": "9 posts across IG/FB/TT/LI in 5 days hit NCS 100 on 4 of 9 (Golden Pear launch May 1-6). See Moe PM synthesis SYN-20260522-001 CP-015.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260522-001",
+      "signal_direction": "positive",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e",
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-08-21",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-102",
+      "date": "2026-05-22",
+      "type": "content_pattern",
+      "learning": "BRIDGE AP-010: Automated bulk-publish of identical retail/PR copy to Facebook gets algorithm-suppressed to near-zero impressions \u2014 AND paid amplification keeps landing on that dead copy. Reconfirmed 5 consecutive cycles (SYN-20260522 through SYN-20260710); most recent window (SYN-20260710): 2 identical 'Find Kenetik at Dierbergs!' FB posts at NCS 51.1/45.5, and the second was boosted to 58,851 impressions at 0.3% ER. The bulk-cluster size has shrunk (2 posts vs. the original 12-14) but the core fix \u2014 dedupe post bodies per-platform per-day before publish, and block paid amplification on any body scoring NCS<25 \u2014 remains unshipped after five logged cycles. Cross-domain implication: content ops needs the dedupe gate; paid media is actively spending on organic-suppressed copy with no proven audience response. Moe's PM has re-escalated P0 to Devon each cycle.",
+      "source": "Moe Content PM synthesis SYN-20260522-001 (AP-010)",
+      "source_type": "content_synthesis_bridge",
+      "domain": "content",
+      "evidence": "12 'Find Kenetik at Dierbergs' FB posts at 0 impressions (2026-05-06); 14 identical Cleetus event posts also 0. See Moe PM AP-010.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260710-001",
+      "signal_direction": "negative",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e",
+        "confidence 'moderate' -> 'preliminary' (source_count=1)",
+        "Refreshed from SYN-20260710-001 (5th consecutive reconfirmation); confidence preliminary -> strong; flagged as open P0 needing Devon decision (Process 3.8 Step 0e, 2026-07-10)"
+      ],
+      "archived_date": "2026-08-21",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-103",
+      "date": "2026-05-22",
+      "type": "content_pattern",
+      "learning": "BRIDGE AP-004: Leadville/endurance hooks fatigued on Facebook (5.69x \u2192 0.58x median across 3 cycles). HYROX Cancun also at near-FB-median. Cross-domain implication: paid-media should de-prioritize endurance creative variants in FB targeting; lifestyle/protocol-class and motorsports/celebrity-attribution variants are now the workhorses.",
+      "source": "Moe Content PM synthesis SYN-20260522-001 (AP-004)",
+      "source_type": "content_synthesis_bridge",
+      "domain": "content",
+      "evidence": "Endurance hook drop: 5.69x (Mar 22) \u2192 0.58x (Apr 3) FB median, stable since. Confirmed 3 consecutive cycles. See Moe PM AP-004.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260522-001",
+      "signal_direction": "negative",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "Bridged from Moe PM synthesis SYN-20260522-001 per Process 3.8 Step 0e",
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-08-21",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-193",
+      "date": "2026-05-20",
+      "type": "changeset_outcome",
+      "learning": "[closure_note] Codification CS \u2014 work shipped same-day (doc landed in brain/kenetik-brain/references/lifecycle-playbook.md; L-087 graduated active->confirmed in cross-surface-pm.json). No standalone measurement window on this CS: the measurement of the codified L-087 mechanic is delegated to subsequent deployment ChangeSets that fire the template on GP-class drops. Each deployment is its own measurable CS referencing lifecycle-playbook.md#L-087 with the acceptable bands defined therein. If a fu\u2026",
+      "source": "ChangeSet tracker close record (CS-2026-158)",
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle",
+      "evidence": "Outcome: data_needed. Backfilled from tracker.json (CS-2026-158).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-158",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-07-06T03:06:32.986944+00:00",
+      "maintain_version": "1.0.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'lifecycle-marketing' -> 'lifecycle' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ],
+      "archived_date": "2026-08-21",
+      "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-08-20"
+  "last_updated": "2026-08-21"
 }
