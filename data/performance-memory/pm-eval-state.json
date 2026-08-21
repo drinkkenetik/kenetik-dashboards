@@ -6,7 +6,7 @@
     "alert_composite_drop_pp": 5
   },
   "latest": {
-    "date": "2026-08-14",
+    "date": "2026-08-21",
     "composite": 75.0,
     "grade": "C",
     "components": {
@@ -17,7 +17,7 @@
       "C5_trajectory": 75.0
     },
     "scorer": "pm_eval-1.1.0",
-    "report": "cgo-logs/evaluations/2026-08-14-pm-evaluation.md",
+    "report": "cgo-logs/evaluations/2026-08-21-pm-evaluation.md",
     "maintenance_freshness_days": {
       "pm-maintain-outcomes": 0,
       "pm-maintain-archive": 0,
@@ -147,6 +147,20 @@
       },
       "scorer": "pm_eval-1.1.0",
       "report": "cgo-logs/evaluations/2026-08-14-pm-evaluation.md"
+    },
+    {
+      "date": "2026-08-21",
+      "composite": 75.0,
+      "grade": "C",
+      "components": {
+        "C1_capture": 83.3,
+        "C2_quality": 75.0,
+        "C3_hygiene": 66.7,
+        "C4_feedback": 73.3,
+        "C5_trajectory": 75.0
+      },
+      "scorer": "pm_eval-1.1.0",
+      "report": "cgo-logs/evaluations/2026-08-21-pm-evaluation.md"
     }
   ],
   "judgment_cache": {
