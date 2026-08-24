@@ -3260,6 +3260,34 @@
       "domain": "creator-affiliate",
       "status": "archived",
       "date": "2026-08-23"
+    },
+    {
+      "id": "L-470",
+      "summary": "A freshness signal written by the same process that produces the data cannot detect that process failing. Five surfaces exhibited it simultaneously o\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-24"
+    },
+    {
+      "id": "L-471",
+      "summary": "A block-over-block predicate with a trailing-median second reference is structurally quietest during exactly the steady deterioration it would most m\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-24"
+    },
+    {
+      "id": "L-472",
+      "summary": "Task A1's cron start time is earlier than Task A's normal finish time, and A1 is gated on task_a_complete \u2014 so the gate is load-bearing on every sing\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-24"
+    },
+    {
+      "id": "L-473",
+      "summary": "A department brief does not survive a missed Task B. When the single downstream reader does not run, the analysis is not queued \u2014 it silently ages ou\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-24"
     }
   ],
   "entries": [
@@ -7093,6 +7121,74 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-24T03:39:54.517158+00:00",
       "archival_state": "active"
+    },
+    {
+      "date": "2026-08-24",
+      "learning": "A freshness signal written by the same process that produces the data cannot detect that process failing. Five surfaces exhibited it simultaneously on one day: the lifecycle engine's sweep_freshness froze at stale:false inside the file its failed run never committed (dead 5 days, 4 red runs, zero notifications); roster_github.update_blocks() stamps file-level generatedAt on every push while merging only its caller's blocks (5 of 12 blocks bit-identical, all 29 creator posts_delivered=0); the listening writer emits a literal 0 on any empty pull and the digest recipe discards the status:'empty' beside it; the paid fatigue instrument classifies non-delivery as fatigue for want of a sample floor; and marketing-calendar-data.json reads last_updated 2026-08-20 on a file rewritten 1.2 hours earlier.",
+      "source": "Operations and Planning dept brief 2026-08-24 INS-D-1; Content and Creative dept brief 2026-08-24 ACT-C-2; Market Intelligence dept brief 2026-08-24 ACT-M-2; Paid Media dept brief 2026-08-24 SIG-D-12; Task B session 97 direct read of marketing-calendar-data.json and work-queue.json",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Every one of these detectors is downstream of the failure it would need to detect. This is L-413 inverted \u2014 that entry recorded writers stamping individual rows without bumping the envelope; these five bump the envelope without touching the rows, so envelope and content are decoupled in both directions. Verified independently by Task B: work-queue.json engine_date reads 2026-08-20 (4 days behind) while its own sweep_freshness object reports age_days 1, stale false. See daily synthesis 2026-08-24-s1.md, cross-domain connection X-2.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "A shared derive-freshness-from-content helper, plus the named writers. scripts/repair_intake.read_work_queue() is the first concrete instance (Operations ACT-D-2).",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-24T17:12:18.158784+00:00",
+      "archival_state": "active",
+      "id": "L-470"
+    },
+    {
+      "date": "2026-08-24",
+      "learning": "A block-over-block predicate with a trailing-median second reference is structurally quietest during exactly the steady deterioration it would most matter to catch. Detection of TURNS is not detection of DIRECTION.",
+      "source": "Paid Media dept brief 2026-08-24 INS-D-1 (proposed as pat-inflection-blind-to-trend); Task B session 97 corroboration against the 13-block settle-adjusted series",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "Thirteen consecutive settle-adjusted 3-day blocks fell 54% on Google (8.29x to 3.78x) and 51% on Meta (5.10x to 2.51x); performance_inflection fired on two of thirteen. Mechanism: each step sits under the 20% margin AND the trailing-median reference drifts down with the level, so the reference added by v2.28 to suppress spike artifacts also suppresses genuine gradual decline. The console renders only the turn, so its channel rows cannot answer 'is the account getting worse' \u2014 and were read as if they could for four consecutive sessions. See daily synthesis 2026-08-24-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "scripts/wedge_dossiers.py channel_inflection_reads(); a direction/level surface on portal/paid-media.html distinct from the inflection surface. Scope note: deliberately NOT folded into CS-2026-283, which is the settlement-wiring fix only.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-24T17:12:18.185300+00:00",
+      "archival_state": "active",
+      "id": "L-471"
+    },
+    {
+      "date": "2026-08-24",
+      "learning": "Task A1's cron start time is earlier than Task A's normal finish time, and A1 is gated on task_a_complete \u2014 so the gate is load-bearing on every single run and A1's internal retry budget is the only thing between a late Task A and a dark day.",
+      "source": "Task B session 97 direct observation of trigger fire times; claude-code-remote trigger registry (task-a1-dept-briefs cron 10 14 * * 1-5 and last_fired_at 14:13:40Z); cgo-logs/domain-scans/2026-08-24-s1/_scan-complete.json marker timestamps and phase_timings",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Task A1 fired 14:13:40Z; Task A did not finish until 15:27Z (delayed ~3h by an expired GITHUB_TOKEN); A1 committed 4 of 7 briefs, went idle 15:52Z, resumed, and stamped task_a1_complete at 16:23:54Z. Task B's own two-retry pre-flight budget read the marker false at 16:03Z and 16:18Z \u2014 six minutes before it went true \u2014 and a third read is the only reason a synthesis exists today. Two independent retry budgets are being spent to absorb a fixed scheduling offset.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "The task-a1-dept-briefs cron expression (10 14 * * 1-5) and/or its gate; cadence declarations in cgo-daily-pipeline/config/cloud-routines/dependencies.json. Trigger A1 on Task A completion, or move its cron past Task A's p95 finish.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-24T17:12:18.204067+00:00",
+      "archival_state": "active",
+      "id": "L-472"
+    },
+    {
+      "date": "2026-08-24",
+      "learning": "A department brief does not survive a missed Task B. When the single downstream reader does not run, the analysis is not queued \u2014 it silently ages out, and the next day's brief pays to re-derive it while the recommendation it carried can be actively reversed in the gap.",
+      "source": "Content and Creative dept brief 2026-08-24 INS-C-1; Content and Creative dept brief 2026-08-24 ACT-C-3; Paid Media dept brief 2026-08-24 INV-D-5; Paid Media dept brief 2026-08-24 INV-D-7; Lifecycle Marketing dept brief 2026-08-24 headline",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Across the 08-21..08-23 gap four departments had actions expire undispatched (two at urgency 'today'), the domain layer re-asked two questions the department layer had already answered in writing, and one budget recommendation was reversed rather than merely ignored: new arrival__raspberry lychee__abo's 7-day spend rose 22% ($1,164.93 to $1,423.05) after Friday asked for a hold, with CPA going $4.22 to $10.75 on fully-settled blocks. The 08-20 synthesis is part of the causal chain \u2014 it named that line the account's best performer at 9.3 ROAS and a $6 CPA. There is no undispatched-actions carry-forward anywhere in the pipeline.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "A carry-forward of undispatched dept_actions into the next successful synthesis, or a dispatch-independent surface for urgency:today actions.",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-24T17:12:18.221250+00:00",
+      "archival_state": "active",
+      "id": "L-473"
     }
   ],
   "archived_entries": [
