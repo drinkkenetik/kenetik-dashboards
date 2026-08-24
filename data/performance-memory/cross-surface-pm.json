@@ -3246,6 +3246,13 @@
       "domain": "paid-media",
       "status": "active",
       "date": "2026-08-18"
+    },
+    {
+      "id": "L-468",
+      "summary": "lifecycle-playbook.md due for validation (96d since last_validated; threshold 90d). Owner: Devon Price.",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-24"
     }
   ],
   "entries": [
@@ -7054,6 +7061,31 @@
       "created_at": "2026-08-21T17:09:23.116738+00:00",
       "archival_state": "active",
       "id": "L-467"
+    },
+    {
+      "id": "L-468",
+      "date": "2026-08-24",
+      "learning": "lifecycle-playbook.md due for validation (96d since last_validated; threshold 90d). Owner: Devon Price.",
+      "source": "brain/kenetik-brain/references/lifecycle-playbook.md frontmatter: last_validated vs staleness_threshold_days",
+      "source_type": "staleness_alert",
+      "domain": "operations",
+      "confidence": "preliminary",
+      "details": {
+        "file": "brain/kenetik-brain/references/lifecycle-playbook.md",
+        "days_stale": 96,
+        "threshold_days": 90,
+        "owner": "Devon Price",
+        "suggested_actions": [
+          "Review for accuracy",
+          "If still accurate: add 'validated: still accurate, no content change' to version log",
+          "If updates needed: edit + log entry describing change"
+        ]
+      },
+      "entry_type": "staleness_alert",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-24T03:39:54.517158+00:00",
+      "archival_state": "active"
     }
   ],
   "archived_entries": [
@@ -14645,5 +14677,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-08-21"
+  "last_updated": "2026-08-24"
 }
