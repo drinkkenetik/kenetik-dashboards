@@ -3288,6 +3288,13 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-08-24"
+    },
+    {
+      "id": "L-474",
+      "summary": "[CS-2026-250] incomplete (n/a): Renaming a field to match its basis was not what fixed the misread \u2014 stating the basis IN THE BRIEF was. Today's D08 \u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-08-25"
     }
   ],
   "entries": [
@@ -7189,6 +7196,32 @@
       "created_at": "2026-08-24T17:12:18.221250+00:00",
       "archival_state": "active",
       "id": "L-473"
+    },
+    {
+      "date": "2026-08-25",
+      "type": "changeset_outcome",
+      "learning": "Renaming a field to match its basis was not what fixed the misread \u2014 stating the basis IN THE BRIEF was. Today's D08 scan volunteers its derivation in prose ('exclusively from conversions[] filtered to status==finished \u2026 never from per_customer_insights[*] all-time totals') and that sentence, not the field name, is what makes the figure auditable by the next reader. The generalisable lesson: a metric whose basis is inferable but unstated will be re-misread by the next consumer, and the cheap du\u2026",
+      "source": "ChangeSet tracker close record (CS-2026-250)",
+      "source_type": "changeset_outcome",
+      "domain": "content",
+      "evidence": "Outcome: success. Backfilled from tracker.json (CS-2026-250).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-250",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-08-25T18:17:15.669153+00:00",
+      "maintain_version": "1.2.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-25T18:17:15.744951+00:00",
+      "archival_state": "active",
+      "id": "L-474"
     }
   ],
   "archived_entries": [
@@ -14807,5 +14840,5 @@
       "id": "L-469"
     }
   ],
-  "last_updated": "2026-08-24"
+  "last_updated": "2026-08-25"
 }
