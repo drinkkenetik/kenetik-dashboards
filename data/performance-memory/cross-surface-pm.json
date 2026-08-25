@@ -3295,6 +3295,34 @@
       "domain": "content",
       "status": "active",
       "date": "2026-08-25"
+    },
+    {
+      "id": "L-475",
+      "summary": "A correctly-synthesized, correctly-ranked, correctly-addressed action can die three sessions running by three DIFFERENT and non-repeating mechanisms,\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-25"
+    },
+    {
+      "id": "L-476",
+      "summary": "A department's balancing metric read INSIDE its band and below target for the first time in a quarter on the same day its largest non-branded channel\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-25"
+    },
+    {
+      "id": "L-477",
+      "summary": "Two unrelated auto-close mechanisms are writing completion records for work whose completion nobody verified: the marketing-calendar health sweep clo\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-08-25"
+    },
+    {
+      "id": "L-478",
+      "summary": "The ChangeSet close-quality gate contains a reproducible parser defect: the word 'revenue' appearing anywhere in actual_impact.primary_metric_result \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-25"
     }
   ],
   "entries": [
@@ -7222,6 +7250,74 @@
       "created_at": "2026-08-25T18:17:15.744951+00:00",
       "archival_state": "active",
       "id": "L-474"
+    },
+    {
+      "date": "2026-08-25",
+      "learning": "A correctly-synthesized, correctly-ranked, correctly-addressed action can die three sessions running by three DIFFERENT and non-repeating mechanisms, and each session's post-mortem will be accurate about its own day and useless for the next. The claims-register edit died 08-21 because Task B never ran, and 08-24 because dispatch had no transport for Layer 1 (receipt records total_sends 0 against 7 owed).",
+      "source": "Science and Research dept brief 2026-08-25 INS-D-1; dispatch receipt 2026-08-24-s1 total_sends 0 against 7 owed; daily synthesis 2026-08-24-s1 Priority 4; Content and Creative dept brief 2026-08-21; Task A scan notes 2026-08-25 d14_slack_constraint, six pre-fetched Slack searches returning zero hits",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "The pipeline has no notion of an action's DELIVERY STATE that persists across sessions. Each run re-derives the ask from fresh department briefs and re-dispatches it, so a repeatedly-undelivered item is indistinguishable from a newly-raised one and nothing escalates on the count. The owed layers make it certain rather than merely possible: an ask routed to Layer 1 has a delivery probability of zero and the synthesis routing it cannot know that. Science's own remedy was to change the ROUTE, not the wording.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "A delivery-state field on dispatched actions, or an escalation rule that changes the route after the second undelivered attempt.",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-25T18:21:25.870104+00:00",
+      "archival_state": "active",
+      "id": "L-475"
+    },
+    {
+      "date": "2026-08-25",
+      "learning": "A department's balancing metric read INSIDE its band and below target for the first time in a quarter on the same day its largest non-branded channel stopped converting. digital_cac = total_spend_7d 7470.46 over new_customer_count 248 = 30.12 against a [28,42] band and a 34 target \u2014 total spend charged against total acquisition, so the paid slice is flattered by acquisition it did not produce.",
+      "source": "Paid Media dept brief 2026-08-25 INS-D-2; Paid Media dept brief 2026-08-25 ACT-D-1; cgo-runtime/digest-2026-08-25.json; L-258 on the undefined digital_cac denominator; L-448 on dept primaries that cannot register the drift they gate",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "Numerator and denominator are drawn from different populations. Tolerable while channels move together, actively misleading when one breaks, because the healthy channels' acquisition masks the broken one's. This is L-448's defect in the FAVOURABLE direction, which the 2026-08-20 handoff already identified as the more dangerous case because a passing metric ends the conversation.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "Define the digital_cac denominator to the population its numerator covers, or retire it as Paid Media's balancing metric. Canonical change \u2014 routes through /quarterly-target-setting, not a build task.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-25T18:21:25.884689+00:00",
+      "archival_state": "active",
+      "id": "L-476"
+    },
+    {
+      "date": "2026-08-25",
+      "learning": "Two unrelated auto-close mechanisms are writing completion records for work whose completion nobody verified: the marketing-calendar health sweep closing past-dated beats to `complete` with the note 'verify if outcome differs' 25 times in August, and the lifecycle engine's pending restart closing five rows on sight. Both destroy the evidence that would answer the question the close purports to answer.",
+      "source": "Content and Creative dept brief 2026-08-25 ACT-C-2; Operations and Planning dept brief 2026-08-25 ACT-D-1; Market Intelligence dept brief 2026-08-25 INS-M-4 bounding the two as distinct; daily synthesis 2026-08-24-s1 cross-domain finding X-2 and L-470",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Same family as L-470 one level up. L-470 was freshness written by the producing process; this is COMPLETION written by the process that failed to observe it. In both, the artifact a reader would use to audit the work is generated by the thing being audited. The calendar case is sharper because its note admits the uncertainty in prose while the status field asserts the opposite, and only the status field is machine-read.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "The marketing-calendar health sweep close path (rec-466 filed); the lifecycle engine expiry applier, gated behind the disposition ordering.",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-25T18:21:25.899294+00:00",
+      "archival_state": "active",
+      "id": "L-477"
+    },
+    {
+      "date": "2026-08-25",
+      "learning": "The ChangeSet close-quality gate contains a reproducible parser defect: the word 'revenue' appearing anywhere in actual_impact.primary_metric_result reclassifies the parsed quantity as `currency`, so a close with a count-type target whose narrative merely mentions revenue can never satisfy the target-vs-result comparability check.",
+      "source": "Task B session 98 direct observation while closing CS-2026-250; scripts/validate_changeset_tracker.py parse_result() bisected against the failing string; the gate's own error text naming the target a count and the result a currency at the identical value of 2.0",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Confirmed by bisection: the same string truncated at 100 characters parses as `count`, and at 140 characters \u2014 the point at which the word 'revenue' enters \u2014 parses as `currency`, with the numeric value unchanged at 2.0. Cost four rejection rounds on an otherwise valid close. The gate's intent is right and its checks caught three genuine authoring faults in the same sitting; this is a unit-inference bug inside a working gate, not an argument against it.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "The unit inference in parse_result() in scripts/validate_changeset_tracker.py \u2014 infer the unit from the leading quantity's own token, not from currency words anywhere in the trailing narrative.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-25T18:21:25.913204+00:00",
+      "archival_state": "active",
+      "id": "L-478"
     }
   ],
   "archived_entries": [
