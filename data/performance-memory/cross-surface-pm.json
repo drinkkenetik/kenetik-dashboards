@@ -3323,6 +3323,13 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-08-25"
+    },
+    {
+      "id": "L-479",
+      "summary": "[CS-2026-251] incomplete (n/a): Premise inverted on investigation (published 08-04 notes): no GA4 capture defect exists \u2014 d01_site_cvr is single-syst\u2026",
+      "domain": "DTC-website",
+      "status": "archived",
+      "date": "2026-08-25"
     }
   ],
   "entries": [
@@ -14934,7 +14941,34 @@
       "created_at": "2026-08-24T17:03:37.492631+00:00",
       "archival_state": "active",
       "id": "L-469"
+    },
+    {
+      "date": "2026-08-25",
+      "type": "changeset_outcome",
+      "learning": "Premise inverted on investigation (published 08-04 notes): no GA4 capture defect exists \u2014 d01_site_cvr is single-system Shopify sessions/orders, GA4 actually reads HIGHER (2.073% vs 1.875%) and captures 81.8% of web-source orders; the '17-21% capture' divided GA4 purchases by an all-channel order count 65% of which never touched a store session. Devon ruling 2026-08-25: metric AND [5,6]% band both stay (May 4.67% on this exact basis validates the band's construction); the real ~1.9% decline is \u2026",
+      "source": "ChangeSet tracker close record (CS-2026-251)",
+      "source_type": "changeset_outcome",
+      "domain": "DTC-website",
+      "evidence": "Outcome: invalid_premise. Closed without measurement. Backfilled from tracker.json (CS-2026-251).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-251",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-08-26T13:50:41.517721+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-08-26",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-26T13:50:41.579997+00:00",
+      "archival_state": "active",
+      "id": "L-479"
     }
   ],
-  "last_updated": "2026-08-25"
+  "last_updated": "2026-08-26"
 }
