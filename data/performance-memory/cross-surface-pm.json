@@ -3330,6 +3330,27 @@
       "domain": "DTC-website",
       "status": "archived",
       "date": "2026-08-25"
+    },
+    {
+      "id": "L-480",
+      "summary": "Every one of the four ChangeSets expiring in the next 48 hours is a repair for the lifecycle engine, and each repairs a defect that fired in the engi\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-26"
+    },
+    {
+      "id": "L-481",
+      "summary": "A two-block comparison drawn from inside one continuous slide reads as a step change whenever the earlier block happens to sit at a peak, and the rea\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-26"
+    },
+    {
+      "id": "L-482",
+      "summary": "An instruction that failed to be delivered turned out to be protective. The cut asked for across four sessions would have been wrong: prospecting__sc\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-26"
     }
   ],
   "entries": [
@@ -7325,6 +7346,57 @@
       "created_at": "2026-08-25T18:21:25.913204+00:00",
       "archival_state": "active",
       "id": "L-478"
+    },
+    {
+      "date": "2026-08-26",
+      "learning": "Every one of the four ChangeSets expiring in the next 48 hours is a repair for the lifecycle engine, and each repairs a defect that fired in the engine's own run today. The sharpest instance: CS-2026-271, which refuses approval when execution_target_date is null, expires tomorrow \u2014 one day after that exact defect closed CS-2026-259 over.",
+      "source": "Operations and Planning dept brief 2026-08-26 headline; Operations and Planning dept brief 2026-08-26 ACT-D-1; work-queue.json expiring queue showing three rows at expires_in_days 1; the 2026-08-26 engine run closing CS-2026-259; Market Intelligence dept brief 2026-08-26 ACT-M-1 on CS-2026-270",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "The repair queue for a mechanism is governed BY that mechanism, and the two run on different clocks. The engine expires drafts daily and automatically; dispositioning a repair requires a human who is one person and owns 4 of 4 expiring rows and 9 of 12 stale rows. A queue whose consumer is automatic and whose producer is manual drains faster than it fills, and the items lost are disproportionately the ones that would slow the drain.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "Exempt operations ChangeSets whose scope names the lifecycle engine from age-based expiry, or route them to a lane with a human-paced clock. Governance change, not a code change.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-26T13:51:37.887919+00:00",
+      "archival_state": "active",
+      "id": "L-480"
+    },
+    {
+      "date": "2026-08-26",
+      "learning": "A two-block comparison drawn from inside one continuous slide reads as a step change whenever the earlier block happens to sit at a peak, and the reader cannot tell the difference from inside the comparison. Two of Paid Media's last three headline mechanisms had this shape, and one of them became the top priority of a daily synthesis.",
+      "source": "Paid Media dept brief 2026-08-26 INV-D-1 refuting the step; Paid Media dept brief 2026-08-26 INS-D-2 generalising it; daily synthesis 2026-08-25-s1 Priority 1 which was built on the 08-19 date; the settle-adjusted rolling 3-day series extended back to 2026-07-09 showing the peak at the block ending 08-08",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "Block-over-block comparison has no baseline-selection discipline. The window is chosen by recency, not by where the series actually turned, so a peak-adjacent baseline manufactures a step out of a slope. The correction was cheap and available all along: extending the same read back located the turn eleven days earlier in one query. The synthesis layer inherited the error and promoted it, so this is not only a departmental method note.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "A baseline-selection rule inside the window comparison \u2014 locate the local maximum before asserting a step \u2014 plus a synthesis-side check that any step claim cites the extended series it was verified against.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-26T13:51:37.905288+00:00",
+      "archival_state": "active",
+      "id": "L-481"
+    },
+    {
+      "date": "2026-08-26",
+      "learning": "An instruction that failed to be delivered turned out to be protective. The cut asked for across four sessions would have been wrong: prospecting__scaling__cbo flipped to agree_above 2 of 3 on 28 conversions with spend never moving, and Hard Gate 8 now refuses the cut that was requested.",
+      "source": "Paid Media dept brief 2026-08-26 INV-D-6; daily synthesis 2026-08-25-s1 which asked for the cut; the four prior sessions recording agree_below; CS-2026-260 as the priced precedent for a thin-sample below-floor verdict reversing",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "Two things compounded. A below-floor verdict on a sample barely over the 15-conversion evidence gate is unstable, which is the CS-2026-260 class recurring. And the owed dispatch layers do not fail in a consistent direction \u2014 an undelivered instruction produces a RANDOM outcome, not a uniformly bad one, so the harm of the transport gap cannot be measured by counting undelivered asks. The defect is that no decision was made either way, not that a good decision was lost. This corrects how the 2026-08-25 synthesis characterised the owed layers as carrying a casualty list.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "Raise the conversion floor for a CUT verdict above the 15-conversion evidence gate, or require two consecutive agree_below scans on a sample above a higher bar before recommending a cut.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-26T13:51:37.922073+00:00",
+      "archival_state": "active",
+      "id": "L-482"
     }
   ],
   "archived_entries": [
