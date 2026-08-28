@@ -738,7 +738,7 @@
       "id": "L-106",
       "summary": "Resolved-signal-loop: all scheduled alerts need explicit resolution date or auto-TTL \u2014 without these, recurring alerts re-fire and create noise that m",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-28"
     },
     {
@@ -752,14 +752,14 @@
       "id": "L-108",
       "summary": "2026-03 cohort M1 6.2% catastrophe (previously hypothesized as acquisition-quality cliff per L-068) is now hypothesized as FTPP flow-mediated failure  [\u26a0\ufe0f CONTRADICTION: see L-135 \u2014 2026-04 mature cohort M1=30.3% above target undercuts the decline narrative]",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-29"
     },
     {
       "id": "L-110",
       "summary": "Operations department itself is operating on stale state files (215h team-tasks, 9d marketing-calendar) \u2014 reproducing the L-016 anti-pattern it has do",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-05-29"
     },
     {
@@ -3421,85 +3421,44 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-08-28"
+    },
+    {
+      "id": "L-493",
+      "summary": "[Branded__PMAX__tROAS] window_agreement agree_above: 2 of 3 windows at or above 2 (floor 2x)",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-21"
+    },
+    {
+      "id": "L-494",
+      "summary": "[Branded__PMAX__tROAS] window_agreement agree_below: 2 of 3 windows below 2 (floor 2x)",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-26"
+    },
+    {
+      "id": "L-495",
+      "summary": "[Prospecting__PMAX__Wedge A__tCPA] window_agreement agree_above: 2 of 3 windows at or above 2 (floor 2x)",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-21"
+    },
+    {
+      "id": "L-496",
+      "summary": "[Prospecting__PMAX__Wedge A__tCPA] window_agreement agree_below: 3 of 3 windows below 2 (floor 2x)",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-24"
+    },
+    {
+      "id": "L-497",
+      "summary": "[Prospecting__PMAX__Wedge B__tCPA] doctrine_playbook playbook_trigger: Prospecting__PMAX__Wedge B__tCPA read below the margin floor and is core: diag\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-26"
     }
   ],
   "entries": [
-    {
-      "id": "L-106",
-      "date": "2026-05-28",
-      "type": "process_change",
-      "learning": "Resolved-signal-loop: all scheduled alerts need explicit resolution date or auto-TTL \u2014 without these, recurring alerts re-fire and create noise that masks new signals.",
-      "source": "synthesis 2026-05-28-s1 governance observation",
-      "source_type": "domain_contradiction",
-      "domain": "operations",
-      "evidence": "Multiple D17 items appeared in 2+ consecutive session handoffs without resolution timestamps. See daily synthesis 2026-05-28-s1.md.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-099",
-        "L-098"
-      ],
-      "target": "synthesis-instructions.md Step 7a \u2014 extend D17 freshness gate to all alert types",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ]
-    },
-    {
-      "id": "L-108",
-      "date": "2026-05-29",
-      "type": "skill_update",
-      "learning": "2026-03 cohort M1 6.2% catastrophe (previously hypothesized as acquisition-quality cliff per L-068) is now hypothesized as FTPP flow-mediated failure \u2014 same root cause explains BOTH low M1 AND low March sub_attach_rate. Collapses two open hypotheses (H-D02-01 + H-D02-02) into one falsifiable test under CS-2026-180.",
-      "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 Lifecycle dept CSI-LM-1 + Operations dept INS-OP-3",
-      "source_type": "operational_signal",
-      "domain": "lifecycle",
-      "evidence": "D06 + D02 converge: a degraded FTPP flow (1 conv / 1,310 delivered, 0.076%) explains low M1 repeat and low attach simultaneously. See daily synthesis 2026-05-29-s1.",
-      "confidence": "moderate",
-      "action_taken": "067e92c 2026-08-27: Task A1 2026-08-27: lifecycle-marketing brief (4/7)",
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-068",
-        "L-135"
-      ],
-      "target": "data/performance-memory/cross-surface-pm.json L-068 \u2014 flag for status review pending CS-180 outcome; consider transition from 'confirmed' to 'under-review-by-CS-180'.",
-      "reconciliation_notes": [
-        "evidence pruned 280->164 chars (Process 3.8 Step 0c, 2026-06-05)"
-      ],
-      "entry_type": "skill_update",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "action_stamped_at": "2026-08-28"
-    },
-    {
-      "id": "L-110",
-      "date": "2026-05-29",
-      "type": "process_change",
-      "learning": "Operations department itself is operating on stale state files (215h team-tasks, 9d marketing-calendar) \u2014 reproducing the L-016 anti-pattern it has documented. Self-reproduction of a documented failure mode signals the governance check needs to be load-bearing in the dept routine, not optional.",
-      "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 Operations dept INS-OP-5 + freshness-gate violations",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "team-tasks.json 215h stale and marketing-calendar.json 9d stale \u2014 Ops itself reproduces the 'operating on stale state' failure mode (L-016). See daily synthesis 2026-05-29-s1.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-016",
-        "L-018"
-      ],
-      "target": "monthly-calibration checklist + dept-operations-planning.md instruction file \u2014 add explicit 'verify state-file freshness <=24h before issuing brief recommendations' as gate.",
-      "reconciliation_notes": [
-        "evidence pruned 242->175 chars (Process 3.8 Step 0c, 2026-06-05)"
-      ],
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
     {
       "id": "L-111",
       "date": "2026-06-01",
@@ -7674,6 +7633,236 @@
       "created_at": "2026-08-28T14:21:39.038232+00:00",
       "archival_state": "active",
       "id": "L-492"
+    },
+    {
+      "date": "2026-08-21",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Branded__PMAX__tROAS (defensive): window_agreement reads 'agree_above' on 4 account days (2026-08-19 \u2192 2026-08-21). 2 of 3 windows at or above 2 (floor 2x)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23531688180].conclusions[kind=window_agreement] ; instrument: window_agreement.evaluate ; dossier generated_for 2026-08-28, as_of 2026-08-26",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23531688180].conclusions[kind=window_agreement]",
+        "instrument: window_agreement.evaluate",
+        "dossier generated_for 2026-08-28, as_of 2026-08-26"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 4\u00d7 across 2 day(s) of account time (2026-08-19 \u2192 2026-08-21), clearing the moderate bar of 3 Instrument window_agreement.evaluate; campaign 23531688180.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23531688180:window_agreement:321e19c8df",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 4\u00d7 across 2 day(s) of account time (2026-08-19 \u2192 2026-08-21), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23531688180",
+        "wedge": "Branded__PMAX__tROAS",
+        "classification": "defensive",
+        "conclusion_kind": "window_agreement",
+        "conclusion_value": "agree_above",
+        "seen_count": 4,
+        "span_days": 2,
+        "first_seen_as_of": "2026-08-19",
+        "last_seen_as_of": "2026-08-21",
+        "graduated_at": "2026-08-28T20:07:42.666607+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T20:07:42.667113+00:00",
+      "archival_state": "active",
+      "id": "L-493"
+    },
+    {
+      "date": "2026-08-26",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Branded__PMAX__tROAS (defensive): window_agreement reads 'agree_below' on 5 account days (2026-08-22 \u2192 2026-08-26). 2 of 3 windows below 2 (floor 2x)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23531688180].conclusions[kind=window_agreement] ; instrument: window_agreement.evaluate ; dossier generated_for 2026-08-28, as_of 2026-08-26",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23531688180].conclusions[kind=window_agreement]",
+        "instrument: window_agreement.evaluate",
+        "dossier generated_for 2026-08-28, as_of 2026-08-26"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 5\u00d7 across 4 day(s) of account time (2026-08-22 \u2192 2026-08-26), clearing the moderate bar of 3 Instrument window_agreement.evaluate; campaign 23531688180.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23531688180:window_agreement:0f9fab0ae1",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 5\u00d7 across 4 day(s) of account time (2026-08-22 \u2192 2026-08-26), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23531688180",
+        "wedge": "Branded__PMAX__tROAS",
+        "classification": "defensive",
+        "conclusion_kind": "window_agreement",
+        "conclusion_value": "agree_below",
+        "seen_count": 5,
+        "span_days": 4,
+        "first_seen_as_of": "2026-08-22",
+        "last_seen_as_of": "2026-08-26",
+        "graduated_at": "2026-08-28T20:07:42.666628+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T20:07:42.677335+00:00",
+      "archival_state": "active",
+      "id": "L-494"
+    },
+    {
+      "date": "2026-08-21",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Prospecting__PMAX__Wedge A__tCPA (core): window_agreement reads 'agree_above' on 4 account days (2026-08-19 \u2192 2026-08-21). 2 of 3 windows at or above 2 (floor 2x)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=window_agreement] ; instrument: window_agreement.evaluate ; dossier generated_for 2026-08-28, as_of 2026-08-26",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=window_agreement]",
+        "instrument: window_agreement.evaluate",
+        "dossier generated_for 2026-08-28, as_of 2026-08-26"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 4\u00d7 across 2 day(s) of account time (2026-08-19 \u2192 2026-08-21), clearing the moderate bar of 3 Instrument window_agreement.evaluate; campaign 23778599258.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23778599258:window_agreement:321e19c8df",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 4\u00d7 across 2 day(s) of account time (2026-08-19 \u2192 2026-08-21), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23778599258",
+        "wedge": "Prospecting__PMAX__Wedge A__tCPA",
+        "classification": "core",
+        "conclusion_kind": "window_agreement",
+        "conclusion_value": "agree_above",
+        "seen_count": 4,
+        "span_days": 2,
+        "first_seen_as_of": "2026-08-19",
+        "last_seen_as_of": "2026-08-21",
+        "graduated_at": "2026-08-28T20:07:42.666654+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T20:07:42.685255+00:00",
+      "archival_state": "active",
+      "id": "L-495"
+    },
+    {
+      "date": "2026-08-24",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Prospecting__PMAX__Wedge A__tCPA (core): window_agreement reads 'agree_below' on 3 account days (2026-08-22 \u2192 2026-08-24). 3 of 3 windows below 2 (floor 2x)",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=window_agreement] ; instrument: window_agreement.evaluate ; dossier generated_for 2026-08-28, as_of 2026-08-26",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=window_agreement]",
+        "instrument: window_agreement.evaluate",
+        "dossier generated_for 2026-08-28, as_of 2026-08-26"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 3\u00d7 across 2 day(s) of account time (2026-08-22 \u2192 2026-08-24), clearing the moderate bar of 3 Instrument window_agreement.evaluate; campaign 23778599258.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23778599258:window_agreement:262e1095fa",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 3\u00d7 across 2 day(s) of account time (2026-08-22 \u2192 2026-08-24), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23778599258",
+        "wedge": "Prospecting__PMAX__Wedge A__tCPA",
+        "classification": "core",
+        "conclusion_kind": "window_agreement",
+        "conclusion_value": "agree_below",
+        "seen_count": 3,
+        "span_days": 2,
+        "first_seen_as_of": "2026-08-22",
+        "last_seen_as_of": "2026-08-24",
+        "graduated_at": "2026-08-28T20:07:42.666661+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T20:07:42.693348+00:00",
+      "archival_state": "active",
+      "id": "L-496"
+    },
+    {
+      "date": "2026-08-26",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Prospecting__PMAX__Wedge B__tCPA (core): doctrine_playbook reads 'playbook_trigger' on 4 account days (2026-08-21 \u2192 2026-08-26). Prospecting__PMAX__Wedge B__tCPA read below the margin floor and is core: diagnose, do not cut. Creative branch says no_case_indicated \u2014 the instruments read clean: no starved winner, no fed loser, no unmet REQUIRED format minimum. The creative branch is not where this campaign's problem is \u2014 try audience targeting or copy/landing-page mismatch. Next: pull budget back\u2026",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778467198].conclusions[kind=doctrine_playbook] ; instrument: paid_media_doctrine.below_floor_verdict (this run) ; dossier generated_for 2026-08-28, as_of 2026-08-26",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778467198].conclusions[kind=doctrine_playbook]",
+        "instrument: paid_media_doctrine.below_floor_verdict (this run)",
+        "dossier generated_for 2026-08-28, as_of 2026-08-26"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 4\u00d7 across 5 day(s) of account time (2026-08-21 \u2192 2026-08-26), clearing the moderate bar of 3 Instrument paid_media_doctrine.below_floor_verdict (this run); campaign 23778467198.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23778467198:doctrine_playbook:ff0d9f18cc",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 4\u00d7 across 5 day(s) of account time (2026-08-21 \u2192 2026-08-26), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23778467198",
+        "wedge": "Prospecting__PMAX__Wedge B__tCPA",
+        "classification": "core",
+        "conclusion_kind": "doctrine_playbook",
+        "conclusion_value": "playbook_trigger",
+        "seen_count": 4,
+        "span_days": 5,
+        "first_seen_as_of": "2026-08-21",
+        "last_seen_as_of": "2026-08-26",
+        "graduated_at": "2026-08-28T20:07:42.666683+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T20:07:42.701605+00:00",
+      "archival_state": "active",
+      "id": "L-497"
     }
   ],
   "archived_entries": [
@@ -15398,6 +15587,88 @@
       "created_at": "2026-08-28T03:42:25.598329+00:00",
       "archival_state": "active",
       "id": "L-485"
+    },
+    {
+      "id": "L-106",
+      "date": "2026-05-28",
+      "type": "process_change",
+      "learning": "Resolved-signal-loop: all scheduled alerts need explicit resolution date or auto-TTL \u2014 without these, recurring alerts re-fire and create noise that masks new signals.",
+      "source": "synthesis 2026-05-28-s1 governance observation",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "Multiple D17 items appeared in 2+ consecutive session handoffs without resolution timestamps. See daily synthesis 2026-05-28-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-099",
+        "L-098"
+      ],
+      "target": "synthesis-instructions.md Step 7a \u2014 extend D17 freshness gate to all alert types",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-08-28",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-108",
+      "date": "2026-05-29",
+      "type": "skill_update",
+      "learning": "2026-03 cohort M1 6.2% catastrophe (previously hypothesized as acquisition-quality cliff per L-068) is now hypothesized as FTPP flow-mediated failure \u2014 same root cause explains BOTH low M1 AND low March sub_attach_rate. Collapses two open hypotheses (H-D02-01 + H-D02-02) into one falsifiable test under CS-2026-180.",
+      "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 Lifecycle dept CSI-LM-1 + Operations dept INS-OP-3",
+      "source_type": "operational_signal",
+      "domain": "lifecycle",
+      "evidence": "D06 + D02 converge: a degraded FTPP flow (1 conv / 1,310 delivered, 0.076%) explains low M1 repeat and low attach simultaneously. See daily synthesis 2026-05-29-s1.",
+      "confidence": "moderate",
+      "action_taken": "067e92c 2026-08-27: Task A1 2026-08-27: lifecycle-marketing brief (4/7)",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-068",
+        "L-135"
+      ],
+      "target": "data/performance-memory/cross-surface-pm.json L-068 \u2014 flag for status review pending CS-180 outcome; consider transition from 'confirmed' to 'under-review-by-CS-180'.",
+      "reconciliation_notes": [
+        "evidence pruned 280->164 chars (Process 3.8 Step 0c, 2026-06-05)"
+      ],
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-08-28",
+      "archived_date": "2026-08-28",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-110",
+      "date": "2026-05-29",
+      "type": "process_change",
+      "learning": "Operations department itself is operating on stale state files (215h team-tasks, 9d marketing-calendar) \u2014 reproducing the L-016 anti-pattern it has documented. Self-reproduction of a documented failure mode signals the governance check needs to be load-bearing in the dept routine, not optional.",
+      "source": "cgo-daily-pipeline/synthesis-2026-05-29-s1 \u2014 Operations dept INS-OP-5 + freshness-gate violations",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "team-tasks.json 215h stale and marketing-calendar.json 9d stale \u2014 Ops itself reproduces the 'operating on stale state' failure mode (L-016). See daily synthesis 2026-05-29-s1.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-016",
+        "L-018"
+      ],
+      "target": "monthly-calibration checklist + dept-operations-planning.md instruction file \u2014 add explicit 'verify state-file freshness <=24h before issuing brief recommendations' as gate.",
+      "reconciliation_notes": [
+        "evidence pruned 242->175 chars (Process 3.8 Step 0c, 2026-06-05)"
+      ],
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-08-28",
+      "archived_reason": "expired_unactioned"
     }
   ],
   "last_updated": "2026-08-28"
