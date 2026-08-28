@@ -3372,6 +3372,27 @@
       "domain": "operations",
       "status": "archived",
       "date": "2026-08-27"
+    },
+    {
+      "id": "L-486",
+      "summary": "A thirty-day-old appellate holding that reversed the regulatory position under one of the company's four proof-set claims reached this pipeline thirt\u2026",
+      "domain": "market-intelligence",
+      "status": "active",
+      "date": "2026-08-27"
+    },
+    {
+      "id": "L-487",
+      "summary": "The claims framework governs the claims that are hard to make and leaves ungoverned the claims that are easy to make and printed most often. Every he\u2026",
+      "domain": "science",
+      "status": "active",
+      "date": "2026-08-27"
+    },
+    {
+      "id": "L-488",
+      "summary": "A written, dated, correctly-owned prediction of a specific automated loss did not prevent it. The 2026-08-26 synthesis named CS-2026-269, CS-2026-270\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-27"
     }
   ],
   "entries": [
@@ -7418,6 +7439,57 @@
       "created_at": "2026-08-26T13:51:37.922073+00:00",
       "archival_state": "active",
       "id": "L-482"
+    },
+    {
+      "date": "2026-08-27",
+      "learning": "A thirty-day-old appellate holding that reversed the regulatory position under one of the company's four proof-set claims reached this pipeline thirty days late, by inference rather than by any feed, and arrived characterised as a two-defendant novelty when it was a four-suit wave with an FDA position behind it.",
+      "source": "Market Intelligence dept brief 2026-08-27 headline; Market Intelligence dept brief 2026-08-27 ACT-MI-3; Science and Research dept brief 2026-08-27 ACT-D-1; Franco v. Chobani 7th Cir. No. 25-2087 decided 2026-07-27; the nine-source competitor roster which surfaced none of the four filings",
+      "source_type": "domain_contradiction",
+      "domain": "market-intelligence",
+      "evidence": "The competitive-intelligence roster is scoped to COMPETITORS and TRADE PRESS - who is selling what, and what the category is saying. It has no class for the surfaces where claim risk originates: appellate dockets, class-action filings, and regulatory positions taken in litigation. Those are neither competitor news nor trade news, so no amount of repairing the existing three lanes would have caught this. The roster answers 'what are they doing'; the question that mattered was 'what has become unsayable'.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "A regulatory and legal-docket feed class in the source roster (rec-481 filed), plus a claim-surface inventory queryable by claim string rather than brand by brand.",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T03:44:08.386623+00:00",
+      "archival_state": "active",
+      "id": "L-486"
+    },
+    {
+      "date": "2026-08-27",
+      "learning": "The claims framework governs the claims that are hard to make and leaves ungoverned the claims that are easy to make and printed most often. Every health and performance claim carries a tier, a study, a citation and a hard approval gate; three of the four elements of the canonical proof set - Sugar-Free, Caffeine-Free, Nothing Artificial - carry no tier at all.",
+      "source": "Science and Research dept brief 2026-08-27 INS-D-1; the Approved Claims Matrix in claims-compliance.md; the brand-voice proof-set promotion of 2026-04-03; the 21 live listing titles measured in repo state; claims_tier_coverage reading 1.00 in band for a seventh consecutive scan while the department called RED",
+      "source_type": "operational_signal",
+      "domain": "science",
+      "evidence": "The framework was designed around EFFICACY risk, where the failure mode is claiming a benefit you cannot substantiate, and nutrient-content claims were treated as facts about the label rather than as claims. That was defensible while the regulatory definition was stable. It stopped being defensible when a court accepted that the definition of total sugars was itself contested - at which point an ungoverned factual claim became the highest-exposure string in the catalogue, printed on 21 listings and a flagship can, with no tier, no owner and no gate.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "Extend the Approved Claims Matrix to nutrient-content claims with tiers and an owner. Note that claims_tier_coverage cannot register this: it reads 1.00 in band because its denominator is the tracked set and the untiered claims are by definition not in it.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T03:44:08.403770+00:00",
+      "archival_state": "active",
+      "id": "L-487"
+    },
+    {
+      "date": "2026-08-27",
+      "learning": "A written, dated, correctly-owned prediction of a specific automated loss did not prevent it. The 2026-08-26 synthesis named CS-2026-269, CS-2026-270 and CS-2026-271 as engine repairs about to expire, gave the deadline, and routed it to the one person who could act; the engine closed all three the next afternoon. Engine repairs killed by the engine they were written to fix went from five to eight.",
+      "source": "Operations and Planning dept brief 2026-08-27 headline; Operations and Planning dept brief 2026-08-27 ACT-D-1; the 2026-08-27 15:14:31Z lifecycle-engine run; daily synthesis 2026-08-26-s1 Priority 2; L-480 filed 2026-08-26 with action_taken None",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Prediction is not prevention when the predicted event is automatic and the prevention is manual. The loss required no one to act; avoiding it required a specific person to act inside a window, and that person holds every expiring row. L-480 named the exemption as the fix and sat at action_taken None for one day, which was exactly long enough. The corollary matters more than the instance: any finding whose remedy is 'a human disposes of this before the cron runs' fails at a rate set by the human's queue depth, not by the quality of the finding.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "The protected predicate at scripts/lifecycle_engine.py line 236 - a third disjunct for rows whose declared scope names the engine - with the visibility split landed in the same edit. Fix at the predicate, not by flagging rows.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T03:44:08.420638+00:00",
+      "archival_state": "active",
+      "id": "L-488"
     }
   ],
   "archived_entries": [
