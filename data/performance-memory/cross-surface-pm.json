@@ -3393,6 +3393,34 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-08-27"
+    },
+    {
+      "id": "L-489",
+      "summary": "Building the deterministic writer moved the writes but not the clock. After rec_writer.py shipped on 2026-08-14 and the pipeline's instructions were \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-28"
+    },
+    {
+      "id": "L-490",
+      "summary": "A remediation instruction that quotes a longer string than the one it counted is a fix that misses. Content and Creative measured the sugar-negation \u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-08-28"
+    },
+    {
+      "id": "L-491",
+      "summary": "A campaign row cancelled on the belief it was covered by a parent can leave a hole nobody can see, because the parent and the child are owned by diff\u2026",
+      "domain": "market_intelligence",
+      "status": "active",
+      "date": "2026-08-28"
+    },
+    {
+      "id": "L-492",
+      "summary": "The classification data_needed is a retry instruction, so a row that is structurally unmeasurable and correctly diagnosed as such still cannot leave \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-28"
     }
   ],
   "entries": [
@@ -3431,7 +3459,7 @@
       "domain": "lifecycle",
       "evidence": "D06 + D02 converge: a degraded FTPP flow (1 conv / 1,310 delivered, 0.076%) explains low M1 repeat and low attach simultaneously. See daily synthesis 2026-05-29-s1.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "067e92c 2026-08-27: Task A1 2026-08-27: lifecycle-marketing brief (4/7)",
       "skill_files_updated": [],
       "related_entries": [
         "L-068",
@@ -3444,7 +3472,8 @@
       "entry_type": "skill_update",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-08-28"
     },
     {
       "id": "L-110",
@@ -3481,10 +3510,12 @@
       "domain": "cross-surface",
       "evidence": "One label conflates a safety check with a coverage check; consumers read the safe component as the whole, masking the launch-blocking gap. Corroborates rec-262. See daily synthesis 2026-06-19-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "a023074 2026-08-24: Task A1 dept briefs (2026-08-24-s1): science-research + content",
       "skill_files_updated": [],
       "related_entries": [
-        "rec-262"
+        "rec-262",
+        "CS-2026-268",
+        "CS-2026-274"
       ],
       "target": "brain/kenetik-brain/references/metrics-registry.yaml (claims_tier_coverage def \u2014 add tier-completeness sub-metric); cross-surface-pm.json",
       "merged_from": [
@@ -3494,7 +3525,8 @@
       "entry_type": "skill_update",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-08-28"
     },
     {
       "id": "L-112",
@@ -3796,14 +3828,18 @@
       "confidence": "preliminary",
       "target": "task-b-synthesis.md (a re-run after Task A1 completes must re-read fast-changing state files \u2014 marketing-calendar-data.json, team-tasks.json \u2014 not rely solely on briefs authored earlier) + calendar-writeback-protocol.md (refresh generated_at / fast write-back loop so intraday team edits are visible to the next layer). Upstream: gate synthesis on task_a1_complete so the run does not fire before briefs exist.",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-270"
+      ],
       "entry_type": "process_change",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_taken": "28c079e 2026-08-25: Task A1 dept brief (2026-08-25-s1): market-intelligence (7/7 complete)",
+      "action_stamped_at": "2026-08-28"
     },
     {
       "id": "L-129",
@@ -6114,7 +6150,7 @@
       "domain": "paid-media",
       "evidence": "The same phase-g-cycle job writes google-ads-state.json at 08:28:28Z and runs the failing check at 08:29:05Z, 37 seconds later, so the data exists in the same run. Wedge A agree_above 3/3 on 31.07 conversions/14d, Wedge B 2/3 on 24.07 - both above the 15-conversion floor. Extends SIG-PM-7 from a data-quality note to a throughput blocker. See daily synthesis 2026-08-14-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "d8a3af3 2026-08-24: Task A1 dept brief (2026-08-24-s1): paid-media (closes Group 1, 5/5)",
       "target": "autonomous-optimization Rule 1 precondition source - scope Meta-only or repoint at google-ads-state.json asset groups",
       "sources": [
         "dept-paid-media 2026-08-14 INV-PM-1",
@@ -6127,7 +6163,9 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-14T17:14:43.074716+00:00",
       "archival_state": "active",
-      "id": "L-418"
+      "id": "L-418",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": []
     },
     {
       "date": "2026-08-14",
@@ -6205,7 +6243,7 @@
       "domain": "lifecycle",
       "evidence": "Target-attainment checks compare a level to a band with no test for whether the level was produced by a step or a trend. The corroborating tell was already visible: MRR rose 12.1% while subscriptions rose 14.8%, so revenue per subscription diluted 2.3%. See daily synthesis 2026-08-14-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "e064d96 2026-08-24: Task A1 dept briefs (2026-08-24-s1): website-cro + lifecycle-marketing",
       "target": "task-a1-departments.md metrics mapping mandate - require a durability horizon on step-change attainment",
       "sources": [
         "dept-lifecycle-marketing 2026-08-14 INS-LM-1",
@@ -6218,7 +6256,12 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-14T17:14:43.099048+00:00",
       "archival_state": "active",
-      "id": "L-422"
+      "id": "L-422",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-234",
+        "CS-2026-252"
+      ]
     },
     {
       "date": "2026-08-14",
@@ -6274,7 +6317,7 @@
       "domain": "cross-surface",
       "evidence": "An identifier-keyed tracker was compared against a prose-keyed source without checking key compatibility, converting a mechanical backfill into a six-scan definitional debate. One live leak it exposes: PMID 42021684 (FFAR3) is cited in the authority document, anchors CS-2026-139's published asset, and is absent from tracked_citations - a citation under live content with zero retraction watch. See daily synthesis 2026-08-14-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "53bb3da 2026-08-26: Task A1 dept brief (2026-08-26-s1): science-research",
       "target": "brain/kenetik-brain/references/claims-compliance.md - add PMIDs to the Full Citation Library",
       "sources": [
         "dept-science-research 2026-08-14 INV-S-3",
@@ -6287,7 +6330,13 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-14T17:14:43.117593+00:00",
       "archival_state": "active",
-      "id": "L-425"
+      "id": "L-425",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-139",
+        "CS-2026-268",
+        "CS-2026-274"
+      ]
     },
     {
       "date": "2026-08-14",
@@ -6647,14 +6696,23 @@
       "domain": "operations",
       "evidence": "Protection was implemented as a single boolean consumed by both the expiry decision and the reporting decision, and nothing separates the two intents. The engine's own comment at L333-348 documents the sibling calendar-veto case and concludes 'future_dated protection cannot reach this branch' \u2014 correct about expiry, which is exactly why the future-dated reporting gap was never recognised. Cost already paid: CS-2026-238 died expired_unreviewed 2026-08-06 (L-394). See daily synthesis 2026-08-17-s1.md Theme 1; fix filed as CS-2026-273.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "e29b144 2026-08-25: Engine deadlock cleared: six Devon-approved dispositions + the expiry applier writes the null it owes the validator",
       "target": "scripts/lifecycle_engine.py compute() \u2014 emit stale at threshold protected_future_target when a protected row's in-status age exceeds the ordinary stale threshold",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-17T17:13:35.681444+00:00",
       "archival_state": "active",
-      "id": "L-438"
+      "id": "L-438",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-233",
+        "CS-2026-251",
+        "CS-2026-252",
+        "CS-2026-259",
+        "CS-2026-261",
+        "CS-2026-264"
+      ]
     },
     {
       "date": "2026-08-17",
@@ -6668,14 +6726,19 @@
       "domain": "lifecycle",
       "evidence": "The department brief scoped remediation by cancel-reason branch from a normalized read of CS-2026-230's Recharge survey (Jun 23 - Jul 14, n~241), which cannot express a tenure dimension. subscription-state.json carries no per-subscription tenure x charge-count join, so the store could not have produced this finding at all \u2014 only the operator running the surface had it. Re-scoped as rec-436. See daily synthesis 2026-08-17-s1.md What Worked item 2.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "e064d96 2026-08-24: Task A1 dept briefs (2026-08-24-s1): website-cro + lifecycle-marketing",
       "target": "cgo-logs/changesets/CS-2026-234.md re-open scope; data/subscriptions/subscription-state.json tenure join",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-17T17:13:35.690072+00:00",
       "archival_state": "active",
-      "id": "L-439"
+      "id": "L-439",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-234",
+        "CS-2026-252"
+      ]
     },
     {
       "date": "2026-08-17",
@@ -6758,14 +6821,19 @@
       "domain": "content",
       "evidence": "The content-calendar generator asserts on the correctness of rows it emits and never on horizon coverage or input reconciliation, so a staging-to-canonical merge that moves zero rows is indistinguishable from a calendar with nothing in it. No producer-side check compares authored staging entries against landed entries, and no error state fires when the forward horizon is empty. Every downstream reader then treats the plausible zero as a finding about the person rather than about the write path. Carried as CS-2026-276 and rec-440. See daily synthesis 2026-08-18-s1.md Theme 1 call site 6 and Priority Stack P2. The ~128 figure is Nick's count, quoted as reported and flagged for verification before the fix is designed.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "5beeb95 2026-08-26: Task A1 dept brief (2026-08-26-s1): content",
       "target": "the git-staging to content-calendar-data.json merge, or the 7/29 Supabase migration that would supersede it; horizon assertion folded into CS-2026-273 per rec-440",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-18T18:08:56.270330+00:00",
       "archival_state": "active",
-      "id": "L-446"
+      "id": "L-446",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-279",
+        "CS-2026-282"
+      ]
     },
     {
       "date": "2026-08-18",
@@ -6829,14 +6897,16 @@
       "domain": "paid-media",
       "evidence": "The doctrine's protective clause and its diagnostic coverage set were designed independently - coverage is opt-in by classification while protection is universal, so the intersection (unclassified AND protected) is a silent hole. Because the exclusion is driven by a static classification field rather than by a performance predicate, no future cycle can surface the campaign either: the thing that would trigger a review is the same thing the classification suppresses. Same shape as the silent-generator class in Theme 1 - a protection mechanism creating a blind spot exactly where the protected thing is worst. See daily synthesis 2026-08-18-s1.md Theme 6.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "1167993 2026-08-26: Task A1 dept brief (2026-08-26-s1): paid-media (Group 1 now 5/5)",
       "target": "data/paid-media/wedge-dossiers.json not_covered[] handling - require a reasoning-queue item for any campaign above a spend threshold regardless of classification, or make the 'experimental' classification expire",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-18T18:08:56.291076+00:00",
       "archival_state": "active",
-      "id": "L-449"
+      "id": "L-449",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": []
     },
     {
       "date": "2026-08-18",
@@ -6974,7 +7044,7 @@
       "domain": "cross-surface",
       "evidence": "All four links verified in state on 2026-08-19. The live topic (58fec262-76c7-43b7-8c3e-e8851b4035e2, 'Competitive Analysis (Copy)') returns ~13k messages/week of generic #metabolichealth wellness content with no ketone, BHB or Kenetik specificity in a 15-message raw sample, so listening_count_7d = 0 is a wrong-signal problem rather than a zero-volume one. The annotation recording that the destination could not receive the delegation was written into the same file that recorded the delegation, where no reader was required to reconcile the two. Same class as the hand-kept TRACKED_PMIDS dict missing the sole erratum in 349 monitored papers for 54 days. See daily synthesis 2026-08-19-s1.md Theme 5.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "44ab62e 2026-08-26: Task A1 dept brief (2026-08-26-s1): market-intelligence (7/7 complete)",
       "target": "config/sources.yaml plus a destination-liveness check at delegation time",
       "sources": [
         "Market Intelligence dept brief 2026-08-19-s1 INS-MI-2",
@@ -6987,7 +7057,11 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-19T18:34:47.580866+00:00",
       "archival_state": "active",
-      "id": "L-459"
+      "id": "L-459",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-270"
+      ]
     },
     {
       "date": "2026-08-19",
@@ -7140,7 +7214,7 @@
       "domain": "operations",
       "evidence": "CS-2026-254 corrected expired_unreviewed to superseded (successor CS-2026-275 already existed in-tracker with spawned_from set); CS-2026-252 corrected to data_needed (expired 2026-08-18, four days INSIDE its own measurement_due of 2026-08-22, artifact still reading Status: draft). Both verified independently by two departments from different files. pm_maintain.py outcomes --apply run after the corrections: outcomes_written 0, status ok, closed_cs_total 229 - the store considers itself complete because L-443 and L-445 exist in archived_entries with entry_type changeset_outcome, learning text 'closed as expired_unreviewed on 2026-08-18 (no learning note recorded)', outcome_class incomplete. stamp-action --id L-443 returns 'ABORT - L-443 is not an active entry'. Weekly incidence per dept-operations-planning INV-D-2. See daily synthesis 2026-08-20-s1.md Theme 3.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "e29b144 2026-08-25: Engine deadlock cleared: six Devon-approved dispositions + the expiry applier writes the null it owes the validator",
       "target": "scripts/pm_maintain.py - give changeset_outcome entries a correction path when the underlying closure changes outcome, or have the corrector emit a superseding gated entry automatically. Scope candidate for CS-2026-278.",
       "sources": [
         "cgo-logs/changesets/tracker.json CS-2026-252 and CS-2026-254, outcome_notes recording both corrections 2026-08-20",
@@ -7154,7 +7228,16 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-20T13:44:54.478366+00:00",
       "archival_state": "active",
-      "id": "L-466"
+      "id": "L-466",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-233",
+        "CS-2026-251",
+        "CS-2026-252",
+        "CS-2026-259",
+        "CS-2026-261",
+        "CS-2026-264"
+      ]
     },
     {
       "date": "2026-08-18",
@@ -7225,7 +7308,10 @@
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-24T03:39:54.517158+00:00",
-      "archival_state": "active"
+      "archival_state": "active",
+      "action_taken": "6a4afb7 2026-08-24: repair-loop: findings 3, 4 and 5 -- one cause: a found-not-fixed item titled by its SUBJECT states no claim",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": []
     },
     {
       "date": "2026-08-24",
@@ -7235,14 +7321,16 @@
       "domain": "cross-surface",
       "evidence": "Every one of these detectors is downstream of the failure it would need to detect. This is L-413 inverted \u2014 that entry recorded writers stamping individual rows without bumping the envelope; these five bump the envelope without touching the rows, so envelope and content are decoupled in both directions. Verified independently by Task B: work-queue.json engine_date reads 2026-08-20 (4 days behind) while its own sweep_freshness object reports age_days 1, stale false. See daily synthesis 2026-08-24-s1.md, cross-domain connection X-2.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "c919b96 2026-08-24: PM store integrity restored + the staleness checker writes through the gate (unblocks the repair dial's first landing)",
       "target": "A shared derive-freshness-from-content helper, plus the named writers. scripts/repair_intake.read_work_queue() is the first concrete instance (Operations ACT-D-2).",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-24T17:12:18.158784+00:00",
       "archival_state": "active",
-      "id": "L-470"
+      "id": "L-470",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": []
     },
     {
       "date": "2026-08-24",
@@ -7252,14 +7340,16 @@
       "domain": "paid-media",
       "evidence": "Thirteen consecutive settle-adjusted 3-day blocks fell 54% on Google (8.29x to 3.78x) and 51% on Meta (5.10x to 2.51x); performance_inflection fired on two of thirteen. Mechanism: each step sits under the 20% margin AND the trailing-median reference drifts down with the level, so the reference added by v2.28 to suppress spike artifacts also suppresses genuine gradual decline. The console renders only the turn, so its channel rows cannot answer 'is the account getting worse' \u2014 and were read as if they could for four consecutive sessions. See daily synthesis 2026-08-24-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "1167993 2026-08-26: Task A1 dept brief (2026-08-26-s1): paid-media (Group 1 now 5/5)",
       "target": "scripts/wedge_dossiers.py channel_inflection_reads(); a direction/level surface on portal/paid-media.html distinct from the inflection surface. Scope note: deliberately NOT folded into CS-2026-283, which is the settlement-wiring fix only.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-24T17:12:18.185300+00:00",
       "archival_state": "active",
-      "id": "L-471"
+      "id": "L-471",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": []
     },
     {
       "date": "2026-08-24",
@@ -7269,14 +7359,19 @@
       "domain": "operations",
       "evidence": "Task A1 fired 14:13:40Z; Task A did not finish until 15:27Z (delayed ~3h by an expired GITHUB_TOKEN); A1 committed 4 of 7 briefs, went idle 15:52Z, resumed, and stamped task_a1_complete at 16:23:54Z. Task B's own two-retry pre-flight budget read the marker false at 16:03Z and 16:18Z \u2014 six minutes before it went true \u2014 and a third read is the only reason a synthesis exists today. Two independent retry budgets are being spent to absorb a fixed scheduling offset.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "bc807c7 2026-08-25: repair-loop: push the 2026-08-25 lock before the first edit",
       "target": "The task-a1-dept-briefs cron expression (10 14 * * 1-5) and/or its gate; cadence declarations in cgo-daily-pipeline/config/cloud-routines/dependencies.json. Trigger A1 on Task A completion, or move its cron past Task A's p95 finish.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-24T17:12:18.204067+00:00",
       "archival_state": "active",
-      "id": "L-472"
+      "id": "L-472",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-261",
+        "CS-2026-264"
+      ]
     },
     {
       "date": "2026-08-24",
@@ -7329,14 +7424,21 @@
       "domain": "cross-surface",
       "evidence": "The pipeline has no notion of an action's DELIVERY STATE that persists across sessions. Each run re-derives the ask from fresh department briefs and re-dispatches it, so a repeatedly-undelivered item is indistinguishable from a newly-raised one and nothing escalates on the count. The owed layers make it certain rather than merely possible: an ask routed to Layer 1 has a delivery probability of zero and the synthesis routing it cannot know that. Science's own remedy was to change the ROUTE, not the wording.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "977b3a0 2026-08-28: Task A1 2026-08-28: website-cro brief (3/7) \u2014 homepage decline resolved, two self-corrections",
       "target": "A delivery-state field on dispatched actions, or an escalation rule that changes the route after the second undelivered attempt.",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-25T18:21:25.870104+00:00",
       "archival_state": "active",
-      "id": "L-475"
+      "id": "L-475",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-198",
+        "CS-2026-203",
+        "CS-2026-256",
+        "CS-2026-263"
+      ]
     },
     {
       "date": "2026-08-25",
@@ -7363,14 +7465,16 @@
       "domain": "cross-surface",
       "evidence": "Same family as L-470 one level up. L-470 was freshness written by the producing process; this is COMPLETION written by the process that failed to observe it. In both, the artifact a reader would use to audit the work is generated by the thing being audited. The calendar case is sharper because its note admits the uncertainty in prose while the status field asserts the opposite, and only the status field is machine-read.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "0916495 2026-08-27: Task B 2026-08-27: aborted at pre-flight -- and Task A's telemetry says the opposite",
       "target": "The marketing-calendar health sweep close path (rec-466 filed); the lifecycle engine expiry applier, gated behind the disposition ordering.",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-25T18:21:25.899294+00:00",
       "archival_state": "active",
-      "id": "L-477"
+      "id": "L-477",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": []
     },
     {
       "date": "2026-08-25",
@@ -7397,14 +7501,19 @@
       "domain": "operations",
       "evidence": "The repair queue for a mechanism is governed BY that mechanism, and the two run on different clocks. The engine expires drafts daily and automatically; dispositioning a repair requires a human who is one person and owns 4 of 4 expiring rows and 9 of 12 stale rows. A queue whose consumer is automatic and whose producer is manual drains faster than it fills, and the items lost are disproportionately the ones that would slow the drain.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "6fe22ee 2026-08-27: Task A1 2026-08-27: operations brief (7/7) \u2014 RED on governance, set complete",
       "target": "Exempt operations ChangeSets whose scope names the lifecycle engine from age-based expiry, or route them to a lane with a human-paced clock. Governance change, not a code change.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-26T13:51:37.887919+00:00",
       "archival_state": "active",
-      "id": "L-480"
+      "id": "L-480",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-269",
+        "CS-2026-272"
+      ]
     },
     {
       "date": "2026-08-26",
@@ -7414,14 +7523,16 @@
       "domain": "paid-media",
       "evidence": "Block-over-block comparison has no baseline-selection discipline. The window is chosen by recency, not by where the series actually turned, so a peak-adjacent baseline manufactures a step out of a slope. The correction was cheap and available all along: extending the same read back located the turn eleven days earlier in one query. The synthesis layer inherited the error and promoted it, so this is not only a departmental method note.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "3d5d255 2026-08-27: Task A1 2026-08-27: paid-media brief (5/7) \u2014 Group 1 complete",
       "target": "A baseline-selection rule inside the window comparison \u2014 locate the local maximum before asserting a step \u2014 plus a synthesis-side check that any step claim cites the extended series it was verified against.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-26T13:51:37.905288+00:00",
       "archival_state": "active",
-      "id": "L-481"
+      "id": "L-481",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": []
     },
     {
       "date": "2026-08-26",
@@ -7482,14 +7593,87 @@
       "domain": "operations",
       "evidence": "Prediction is not prevention when the predicted event is automatic and the prevention is manual. The loss required no one to act; avoiding it required a specific person to act inside a window, and that person holds every expiring row. L-480 named the exemption as the fix and sat at action_taken None for one day, which was exactly long enough. The corollary matters more than the instance: any finding whose remedy is 'a human disposes of this before the cron runs' fails at a rate set by the human's queue depth, not by the quality of the finding.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "cb55c89 2026-08-28: Task A1 2026-08-28: market-intelligence brief (7/7) \u2014 RED, set complete",
       "target": "The protected predicate at scripts/lifecycle_engine.py line 236 - a third disjunct for rows whose declared scope names the engine - with the visibility split landed in the same edit. Fix at the predicate, not by flagging rows.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-28T03:44:08.420638+00:00",
       "archival_state": "active",
-      "id": "L-488"
+      "id": "L-488",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": [
+        "CS-2026-188",
+        "CS-2026-270"
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "learning": "Building the deterministic writer moved the writes but not the clock. After rec_writer.py shipped on 2026-08-14 and the pipeline's instructions were repointed to call it, findings migrated out of tracker.json changesets[] and into pending_recommendations[] in the same file \u2014 78 rows open, median age 9 days, 18 past 14 days, oldest 39 \u2014 while lifecycle_engine.compute() reads tracker.get('changesets', []) in every pass and never reads the second array. The governance that made the old lane trustworthy did not follow the traffic, and d12_velocity_new_per_week now measures only the lane the findings left.",
+      "source": "Operations and Planning dept brief 2026-08-28 INV-D-5; Operations and Planning dept brief 2026-08-28 ACT-D-2; scripts/lifecycle_engine.py lines 227 526 650 785 827 859 read directly this session; tracker.json pending_recommendations counted directly at 83 rows 78 open; digest-2026-08-28.json d12_velocity_new_per_week 5 against band 8 to 12",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "The third standing rule was applied correctly and only half of it landed. An instruction is not an interface, so a writer was built that owns routing and shape and refuses wrong input \u2014 and it worked, which is why the traffic moved. But a lane earns trust from two things, a writer that constrains what enters it and a clock that constrains how long things stay. Only the first was built. The failure is invisible from the metric side because the metric reads the abandoned lane and reports a shortfall rather than a migration: 5 per week against a band of 8 to 12 looks like a throughput collapse and is in fact a relocation. Generalizes: when a deterministic writer redirects a flow, the governance attached to the old destination is silently detached, and the health metric pointed at the old destination will misreport the change as a decline.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "Any future deterministic writer that redirects a recurring write to a new store or array: check what clock, queue or escalation governed the old destination and move it in the same change, and check which metric reads the old destination before trusting its next reading.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T14:21:11.935486+00:00",
+      "archival_state": "active",
+      "id": "L-489"
+    },
+    {
+      "date": "2026-08-28",
+      "learning": "A remediation instruction that quotes a longer string than the one it counted is a fix that misses. Content and Creative measured the sugar-negation caption surface correctly \u2014 177 posts, and 149 of them sharing one boilerplate sign-off, both figures reproducing to within 0.5% \u2014 but its action quoted the full sentence 'Clarity and focus, on demand. Caffeine-free, sugar-free, nothing artificial.' as the string to strike. That sentence appears in 118 posts carrying 224,826 impressions. The 149 posts and 982,816 impressions belong to the shorter clause alone, because the clause is a sign-off appended to different openers.",
+      "source": "Content and Creative dept brief 2026-08-28 ACT-C-1; Content and Creative dept brief 2026-08-28 INV-C-4; cgo-logs/queues/published-posts.json recounted this session across both caption fields the corpus uses, 571 rows carrying text and 282 carrying caption_excerpt",
+      "source_type": "measurement",
+      "domain": "content",
+      "evidence": "Executing the instruction literally finds 118 posts and leaves 31 posts and 757,990 impressions of live template in place \u2014 77% of the impressions the action was written to remove. The divergence is structural rather than a typo: the largest single carrier is the 'Three o'clock' template at 84 posts, none of which begin with the quoted sentence and all 84 of which end with the clause. The analytical error is quoting the string a human reads as canonical instead of the string the count was taken over. Generalizes to any remediation whose scope is a text match: the search string in the instruction must be the search string in the measurement, and the two diverge whenever the counted pattern is a substring of a longer familiar phrase.",
+      "confidence": "strong",
+      "action_taken": "Corrected in the 2026-08-28-s1 synthesis and written to rec-487 with the clause as the operative string and both counts recorded.",
+      "target": "Any recommendation whose action is to strike, replace or audit a text pattern: verify the quoted pattern reproduces the count attached to it before the row is dispatched.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T14:21:11.965526+00:00",
+      "archival_state": "active",
+      "id": "L-490"
+    },
+    {
+      "date": "2026-08-28",
+      "learning": "A campaign row cancelled on the belief it was covered by a parent can leave a hole nobody can see, because the parent and the child are owned by different departments and only one of them carries a mechanic. LABOR-DAY-090726, a seasonal_sale for 09-07, was marked skipped on 2026-08-05 with the note that it was folded into BACK-TO-SCHOOL-082426. That parent is type social_push, owning_department content_strategy, and carries no offer, no code and no discount field anywhere in the row. The fold-in moved a promotional commitment onto a row that cannot hold one.",
+      "source": "Market Intelligence dept brief 2026-08-28 ACT-MI-1; Market Intelligence dept brief 2026-08-28 INV-MI-1; data/marketing-calendar/marketing-calendar-data.json read directly this session, both rows enumerated field by field and all 611 rows filtered for confirmed promotional mechanics in 2026-08-28 to 2026-10-11",
+      "source_type": "operational_signal",
+      "domain": "market_intelligence",
+      "evidence": "The consequence is a 45-day DTC offer gap starting 08-31 that no department could see. The only confirmed rows carrying a promotional mechanic in that window are TTS-DEAL-090226, TTS-DEAL-090926 and TTS-DEAL-093026, all three channels_affected TikTok Shop. Three departments measured the expiring sale's effect on the same day \u2014 paid media's first qualifying improving channel verdict is 92% branded Search harvesting it, the site lift is +26.4%, the homepage CVR premium collapsed to 1.00x because it is the one always-on surface with no offer \u2014 and none of them could see whether a successor existed, because the calendar belongs to a fourth department. Generalizes: a cancellation justified by coverage should be validated against the covering row's TYPE and mechanic fields, not its date range, and cross-department fold-ins are where that check is skipped.",
+      "confidence": "strong",
+      "action_taken": "Ranked P1 in the 2026-08-28-s1 synthesis and written to rec-488 with the verification recorded.",
+      "target": "Any calendar row moving to status skipped or cancelled with a fold-in note: confirm the named parent carries the same mechanic type the child carried, and flag when parent and child differ in owning_department.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T14:21:39.015288+00:00",
+      "archival_state": "active",
+      "id": "L-491"
+    },
+    {
+      "date": "2026-08-28",
+      "learning": "The classification data_needed is a retry instruction, so a row that is structurally unmeasurable and correctly diagnosed as such still cannot leave it. CS-2026-219, CS-2026-220 and CS-2026-222 were classified data_needed on 2026-08-02 with their own measurement notes recording that retry cannot succeed and that they must not be re-queued for automatic retry. Twenty-six days later all three are still data_needed. The engine models the identical abstention correctly one level up, routing such rows to rows_unmeasurable at sweep level, but the row-level enum offers no terminal state a row itself can occupy.",
+      "source": "cgo-logs/changesets/tracker.json measurement_result fields on CS-2026-219 CS-2026-220 CS-2026-222 read directly this session; data/paid-media/paid-media-state.json counted directly at 0 of 138 ads carrying content_links; Paid Media dept brief 2026-08-28 INV-D-5 establishing the negative is definitive; the 2026-08-26 sweep record of CS-2026-267 and CS-2026-268 routed to rows_unmeasurable",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "The cost is that a permanently blocked row is indistinguishable from a temporarily blocked one in every count that matters, so disposition capacity is spent re-reading rows whose own notes already say re-reading is futile. It compounds here: CS-2026-249 is the published fix for the blocker, its own 2026-08-18 measurement read underperformed at 0 of 119, and it reads 0 of 138 today \u2014 so the retry queue holds three rows waiting on a repair that is itself measured as not working. Generalizes: whenever a sweep-level abstention state exists without a row-level counterpart, the abstention is recorded where it cannot be acted on and the rows accumulate as apparent work.",
+      "confidence": "moderate",
+      "action_taken": "Written to rec-490.",
+      "target": "The outcome enum for measurement_result: whether a terminal unmeasurable state should exist at row level, mirroring the sweep's rows_unmeasurable.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-28T14:21:39.038232+00:00",
+      "archival_state": "active",
+      "id": "L-492"
     }
   ],
   "archived_entries": [
