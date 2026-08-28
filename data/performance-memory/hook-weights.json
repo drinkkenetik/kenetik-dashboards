@@ -7,8 +7,8 @@
     "scripts/pm_eval.py c4_d5"
   ],
   "migrated_from": "brain/kenetik-brain/roles/content-producer-skill.md \u00a73 @ 2026-07-11",
-  "last_updated": "2026-08-21",
-  "last_synthesis_applied": "SYN-20260821-001",
+  "last_updated": "2026-08-28",
+  "last_synthesis_applied": "SYN-20260828-001",
   "update_policy": {
     "auto_apply_max_single_change_pct": 100,
     "hold_and_escalate": "If ANY single weight change exceeds the auto-apply cap (more than doubling/halving), hold ALL changes in the batch and DM Devon (U06528UQV7H) for CGO approval.",
@@ -58,13 +58,13 @@
       "id": "HW-003",
       "name": "Social proof",
       "example": "Why 10,000+ professionals switched",
-      "weight": 1.5,
+      "weight": 1.7,
       "platforms": [
         "all"
       ],
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-03-19",
+      "last_validated": "2026-08-28",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -72,6 +72,17 @@
           "date": "2026-03-19",
           "resolved": true,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260828-001",
+          "date": "2026-08-28",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-015",
+            "EP-017"
+          ],
+          "note": "The social-proof launch TAIL is the cleanest positive result of the window and EP-017 finally generalised off Golden Pear. On the Raspberry Lychee tail, three DISTINCT social-proof bodies cleared their platform median on every metric-bearing copy: EP-017 UGC real-reviews (FB 861 imp/6.16% = 4.43x, IG 3,014/5.84% = 1.93x, TT 200/4.50% = 1.48x but only 9 eng so directional); response/social-proof 'incredible response' (FB 433/2.54% = 1.83x, IG 17,158/3.14% = 1.03x); community-credit 'You spoke, and we listened' (FB 344/5.23% = 3.76x, IG 2,011/4.72% = 1.56x). 7 of 7 scoreable copies at or above median, 5 of 7 above 1.5x. Run simultaneously against the PDP-boilerplate tail on the same product in the same week, which sat at 1.02x median with 22 of 29 FB slots consumed - the launch tail worked exactly where it was written as social proof and failed exactly where it was written as PDP copy. 1.5 -> 1.7 (+13.3%).",
+          "weight_after": 1.7
         }
       ],
       "rules": [],
@@ -298,13 +309,13 @@
       "id": "HW-012",
       "name": "Science distillation",
       "example": "New research in Cell shows BHB...",
-      "weight": 1.5,
+      "weight": 1.8,
       "platforms": [
         "linkedin"
       ],
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-08-21",
+      "last_validated": "2026-08-28",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -344,6 +355,16 @@
           ],
           "note": "REVALIDATION AND SCOPE SHARPENING, 0% weight change, n=1. The LinkedIn Raspberry Lychee launch post (ugcPost:7491478384162705408) matured at 138 imp / 22 eng / 15.94% ER = 2.04x the 7.81% LI working median - the highest LinkedIn ER in this store. It is a COMMERCE post, which the SYN-20260813-001 reading of the register rule ('LI discounts consumer/commerce framing') would have predicted to fail. It separates the variables the way EP-020 separated lede from offer: same commerce subject, institutional register - declarative, no emoji, no 'link in bio', no comment-bait, spec stated plainly, closing on 'We made this one for you.' REVISED RULE: LinkedIn penalises the commerce ASK and the consumer REGISTER, not the commerce SUBJECT; a launch can be announced on LinkedIn and win if it is announced rather than sold. Weight held at n=1 - this is a linkage and scope op, flagged for a second observation before any increase.",
           "weight_after": 1.5
+        },
+        {
+          "synthesis_id": "SYN-20260828-001",
+          "date": "2026-08-28",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-009"
+          ],
+          "note": "CP-009 revalidated 5TH consecutive cycle and set a new store record. The 08-13 'Everyone's talking about how good ketones are for your brain. Here's why. Swipe through...' science carousel hit 23.53% ER on 119 imp / 28 eng = 3.01x the 7.81% LI working median - the highest LinkedIn ER in the store, beating last cycle's 15.94%. This is the pure CP-009 archetype (science distillation, institutional register, swipe-through), not an adjacent case. Two INDEPENDENT identical-body cross-post experiments in the same window isolate the register effect: the science carousel ran LI 23.53% / FB 3.08% / IG 0.71%, and the TRX reveal ran LI 16.41% / FB 7.84% / IG 0.50% - LinkedIn returned ~33x Instagram's ER on identical copy in BOTH cases. LinkedIn was also the only platform where both of its posts cleared 2x its median (window median 19.97% on n=2). 1.5 -> 1.8 (+20%).",
+          "weight_after": 1.8
         }
       ],
       "rules": [],
@@ -520,7 +541,7 @@
       ],
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-08-21",
+      "last_validated": "2026-08-28",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -550,6 +571,16 @@
           ],
           "note": "1.3 -> 1.6 (+23.1%), confidence low -> medium. The teaser beat is now measured mature and it is the ENGAGEMENT PEAK OF THE ENTIRE ARC, not its weak step. FB 'I can't keep this secret much longer. Friday.' 7,928 imp / 729 eng / 9.20% ER = 6.62x the 1.39% FB working median and the highest-ER owned Facebook post in the window; IG p/DbrO2_gjntH 7,008 / 228 / 3.25%; TT 7670594624435637518 411 / 15 / 3.65%. n=3 mature across three platforms, blended 6.33% on 15,347 imp. This supersedes the entry's own note that 'the teaser alone is weak' - that judgement came from a single Konzentrate post (EP-010, SYN-20260508) at 5.29% FB. Confidence moves to medium rather than high because both validations are launch teasers inside a full arc; the teaser has still never been tested standalone.",
           "weight_after": 1.6
+        },
+        {
+          "synthesis_id": "SYN-20260828-001",
+          "date": "2026-08-28",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-015"
+          ],
+          "note": "0% REVALIDATION, held at 1.6. The two TRX curiosity-bait teaser beats cleared the FB working median comfortably ('Something's coming... in the gym with a partner you know' 545 imp/3.12% = 2.24x; 'Things are moving on the production line... this one's a collab' 519/2.89% = 2.08x) which is consistent with the 1.6 weight set last cycle. Deliberately NOT raised: last cycle's 1.3 -> 1.6 rested on FB 9.20% = 6.62x, and this window's teasers ran at a third of that amplitude, while both Instagram copies came in BELOW median (0.36x and 0.13x, the latter on 57,712 imp). Two observations at 2.1-2.2x do not support pushing past 1.6, and the IG side is now the open question for this hook.",
+          "weight_after": 1.6
         }
       ],
       "rules": [
@@ -570,7 +601,7 @@
       ],
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-08-21",
+      "last_validated": "2026-08-28",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -639,6 +670,16 @@
             "EP-017"
           ],
           "note": "1.8 -> 2.0 (+11.1%). First cycle in which the launch arc carries BOTH a matured creative result and an end-to-end commerce result; every prior validation had one or the other. Raspberry Lychee beats 2-4 matured this cycle (fresh Sprout 14d lifetime): beat 2 escalation n=3 15,347 imp / 6.33% blended ER, beat 3 date-lock n=2 10,322 imp / 3.19%, beat 4 launch day n=11 31,327 imp / 3.21%, on top of the 08-07 commerce day already recorded (594 orders / $52,025.92 gross / 5,104 sessions vs a ~130-order, ~$11K, ~2,000-session baseline, discounts flat at 10.6%). NEW STRUCTURAL REFINEMENT carried into the rules: engagement rate peaks at the PENULTIMATE beat while reach and commerce peak on launch day (FB 9.20% -> 4.26% -> 3.25-4.97%), so launch-day creative must be judged on reach and orders, not ER. Modest increase, not a doubling: the arc is now the best-evidenced pattern in the store, but the evidence is two campaigns (Golden Pear, Raspberry Lychee), not ten.",
+          "weight_after": 2.0
+        },
+        {
+          "synthesis_id": "SYN-20260828-001",
+          "date": "2026-08-28",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-015"
+          ],
+          "note": "0% REVALIDATION + REFINEMENT, weight deliberately held at 2.0 (already the store's highest). CP-015 validated on a NEW campaign type - a partnership/collab reveal (Kenetik x TRX) rather than a flavour drop - and the arc structure held: FB beats ran 3.12x -> 2.89x -> 7.84% -> 3.08%, all four above the 1.39% working median, and LinkedIn joined at 2.10x and 3.01x. BUT THE BEAT PROFILE INVERTS versus the flavour-launch profile recorded last cycle. SYN-20260821-001 found ER peaking at the PENULTIMATE beat (RL escalation 6.33% > launch day 3.21%). Here ER peaks at the REVEAL: beat 1 teaser FB 3.12%, beat 2 teaser FB 2.89%, beat 3 REVEAL FB 7.84% (5.64x, the window's top scoreable post), beat 4 science/why FB 3.08%. REFINED RULE: the ER peak sits on the beat that RESOLVES THE WITHHELD INFORMATION, not at a fixed position in the arc. For a flavour drop the flavour identity leaks early so anticipation peaks before launch; for a collab the partner's identity is the withheld fact, so the peak lands on the naming. Deliberately recorded as a refinement of CP-015 rather than a new pattern id - a collab reveal IS a launch arc, and creating EP-021 would add a 6th maintenance surface plus a likely 6th unlinkable entry. Weight held because this is a scope generalisation, not an amplitude increase.",
           "weight_after": 2.0
         }
       ],
@@ -1044,7 +1085,7 @@
       "multiplier": 0.0,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-08-13",
+      "last_validated": "2026-08-28",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -1086,6 +1127,15 @@
             "AP-006"
           ],
           "note": "HARD-PAUSE BREACHED. After three consecutive zero-post windows, one YouTube cross-post landed on 2026-07-24T19:25:27Z (the Leadville stage-race body, cross-posted from IG/TT) and returned 0 impressions / 1 engagement - exactly the outcome AP-006 predicts, on its 6th confirmation. The finding is not about the creative: it is that the YouTube 'hard pause' is a CONVENTION, not an enforced gate, so it holds only as long as no one schedules a cross-post. Multiplier stays 0.0. Recommend the pause be implemented as a publish-time platform block rather than a documented agreement."
+        },
+        {
+          "synthesis_id": "SYN-20260828-001",
+          "date": "2026-08-28",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-006"
+          ],
+          "note": "HARD-PAUSE BREACHED FOR THE 2ND CONSECUTIVE CYCLE. One YouTube cross-post landed 2026-08-09T00:25:29Z, the Raspberry Lychee 'reviews are already in' body cross-posted from FB/IG/TT, and returned no impressions field, 253 video views and 1 engagement. Identical shape to the 07-24 breach logged last cycle. Multiplier already 0.0, confidence already high; this op records that the pause failed again rather than any change in the effect. Two consecutive breaches after three clean windows is the evidence that the YouTube pause cannot hold as a convention. Bundle the publish-time platform block with the HW-AP-011 PDP-copy gate and the HW-AP-009 dedupe gate - all three are the same class of unenforced rule, and all three fired in THIS window."
         }
       ],
       "rules": [
@@ -1179,7 +1229,7 @@
       "multiplier": 0.0,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-08-21",
+      "last_validated": "2026-08-28",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -1223,6 +1273,16 @@
             "CP-015"
           ],
           "note": "8th CYCLE, AND THE MECHANIC IS NOW CONFIRMED ON INSTAGRAM FOR THE FIRST TIME. The Raspberry Lychee launch body 'Talk about an upgrade. / Raspberry Lychee is officially here!' was published TWICE to Instagram 13 minutes 40 seconds apart: copy A (p/DbvUsdkDdXS, 2026-08-07T12:47:33Z) matured at 3,204 imp / 87 eng / 2.72%, copy B (p/DbvWQcsnJQz, 13:01:13Z) returned no impressions field, 0 engagements, 0 reactions. Canonical AP-010 signature - one copy takes the distribution, the duplicate is suppressed to nothing - previously recorded only on Facebook and TikTok. The section 12 gate ('reject >1 identical-body post within 60 min') would have caught it as written: enforcement gap, not rule gap. SCHEMA CONSTRAINT, recorded deliberately: this evidence belongs on an Instagram-scoped rule, but hook_weights.py update_anti cannot edit an entry's platforms field, so it is filed as provenance on this FB-scoped entry rather than manufacturing a fourth platform-specific duplicate rule (HW-AP-008 FB giveaway-scoped 0.62, HW-AP-009 FB retail/PR-scoped 0.0, and now an IG launch-copy instance are all ONE mechanic). The correct fix is a Remove-then-Refine that the current op set cannot express: add platforms to update_anti, then merge HW-AP-008 and HW-AP-009 into a single platform-agnostic 'same-body duplicate publish within 24h' rule. Escalated as P1. ALSO the cleanest confirmation yet of the P0 sync-gap bug: copy B is the ONLY one of the 45 Sprout posts in this window missing from published-posts.json, and the ONLY one lacking an impressions field - 1 of 1 zero-metric posts dropped, 44 of 44 metric-bearing retained, on a window that actually contained a droppable post. SYN-20260814-001's caveat that its clean window proved nothing is vindicated."
+        },
+        {
+          "synthesis_id": "SYN-20260828-001",
+          "date": "2026-08-28",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-008",
+            "AP-010"
+          ],
+          "note": "8TH CONSECUTIVE CYCLE, WORST SCALE ON RECORD, AND THE MECHANIC IS NOT WHAT THE ENTRY SAYS. Counting the sync-dropped rows from a direct Sprout pull, 22 of 29 Facebook posts in the window (76%) are clone copies of just three bodies: 'NEW FLAVOR Raspberry Lychee is here and selling fast' x10, 'Meet your brain's best friend' x6, 'New Flavor Alert: Raspberry Lychee' x5 (all five at 0 impressions), plus one 'Three o'clock' EP-016 body at 0 impressions. *** THE ENTRY DESCRIBES UNIFORM SUPPRESSION TO ZERO. THE ACTUAL BEHAVIOUR IS WINNER-TAKE-ALL. *** Within the 10-copy burst - identical body, 8 of them inside 2 minutes - impressions span 27 to 43,851, a 1,624x spread; the top 2 copies took 86.0% of the body's 94,288 impressions and the bottom 5 took 0.7%. The 6-copy burst spans 2 to 2,645 (1,322x), top 2 = 80.7%. So Facebook is not suppressing the batch, it is selecting one or two copies to deliver and starving the rest. Three consequences that change the fix's rationale: (1) the reach is NOT lost, so the dedupe gate should not be justified as reach recovery - it should be justified as reclaiming 15 of 29 wasted post slots and as stopping median corruption; (2) every FB median we compute is polluted in BOTH directions, because the starved copies manufacture fake sub-median rows AND fake ABOVE-median rows (a 37-impression copy with 2 engagements reads 5.41% = 3.89x median); (3) which copy wins is arbitrary, so no creative conclusion can be drawn from a burst at all. Multiplier already floored at 0.0. Confidence medium -> high. Gate is written and still unenforced - 10th consecutive P0."
         }
       ],
       "rules": [
@@ -1306,9 +1366,18 @@
             "AP-010"
           ],
           "note": "3rd OCCURRENCE, confidence medium -> high, multiplier already floored at 0.0. Now quantified as an opportunity cost rather than only a failure: the three Amazon/PDP listing TikToks on LAUNCH DAY 2026-08-07 at 17:01:54Z / 17:31:55Z / 18:01:57Z (exact 30-minute intervals, same cluster mechanic as the 07-24 trio) matured at 632 imp / 0.00% ER, 293 / 0.34%, 348 / 0.29% - a 0.29% median, 0.09x the 3.05% TT working median. They consumed 1,273 of TikTok's 7,306 launch-day impressions (17.4%) and drag the TikTok window median from 2.26% ex-boilerplate to 1.86% (-18%), interleaved with the launch posts on the same profile inside the same hour. Three independent occurrences across two platforms earns high confidence. NO new rule and no number change is warranted: the content-producer-skill.md section 12 gate already forbids this on both axes and was widened for precisely this case two cycles ago. This is an unenforced gate, not a missing one - the fix is publish-time enforcement."
+        },
+        {
+          "synthesis_id": "SYN-20260828-001",
+          "date": "2026-08-28",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-005"
+          ],
+          "note": "4TH CONSECUTIVE OCCURRENCE, and the 30-minute-interval signature is now diagnostic. Two Amazon listing-copy TikToks published 2026-08-11 at 16:52:43Z and 17:22:44Z - exactly 30 minutes apart, the same cluster interval as the 07-24 trio and the 08-07 launch-day trio. Both returned NO metrics object at all and BOTH were dropped by the queue sync, so this anti-pattern remains invisible to anything reading published-posts.json and is recoverable only from a direct Sprout pull. Multiplier already floored at 0.0 and confidence already high, so this op carries evidence only. The operative point is unchanged and now four cycles old: the content-producer-skill.md section 12 gate forbids this on both axes and has never once fired. It is a convention, not a gate - same finding as AP-006 on YouTube. Recommend both be implemented as publish-time blocks in the same change."
         }
       ],
-      "last_validated": "2026-08-21"
+      "last_validated": "2026-08-28"
     }
   ]
 }
