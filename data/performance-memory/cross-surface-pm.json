@@ -7574,14 +7574,16 @@
       "domain": "operations",
       "evidence": "The third standing rule was applied correctly and only half of it landed. An instruction is not an interface, so a writer was built that owns routing and shape and refuses wrong input \u2014 and it worked, which is why the traffic moved. But a lane earns trust from two things, a writer that constrains what enters it and a clock that constrains how long things stay. Only the first was built. The failure is invisible from the metric side because the metric reads the abandoned lane and reports a shortfall rather than a migration: 5 per week against a band of 8 to 12 looks like a throughput collapse and is in fact a relocation. Generalizes: when a deterministic writer redirects a flow, the governance attached to the old destination is silently detached, and the health metric pointed at the old destination will misreport the change as a decline.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "48b2cf5 2026-08-28: Phase 4 dispatch 2026-08-28-s1: RED, one envelope; Layers 1/1.5/3 owed for a sixth session",
       "target": "Any future deterministic writer that redirects a recurring write to a new store or array: check what clock, queue or escalation governed the old destination and move it in the same change, and check which metric reads the old destination before trusting its next reading.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-28T14:21:11.935486+00:00",
       "archival_state": "active",
-      "id": "L-489"
+      "id": "L-489",
+      "action_stamped_at": "2026-08-28",
+      "related_entries": []
     },
     {
       "date": "2026-08-28",
