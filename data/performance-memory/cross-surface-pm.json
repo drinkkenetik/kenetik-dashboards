@@ -3463,6 +3463,34 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-08-30"
+    },
+    {
+      "id": "L-499",
+      "summary": "A week of cross-department analysis attributed a lift to a discount that was never redeemed. The End of Summer Reset ran 2026-08-24 to 08-30 as 20% o\u2026",
+      "domain": "market_intelligence",
+      "status": "active",
+      "date": "2026-08-31"
+    },
+    {
+      "id": "L-500",
+      "summary": "A circuit breaker whose reference window is blind to promotions halts the system it protects the day after every promotion, deterministically. The li\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-31"
+    },
+    {
+      "id": "L-501",
+      "summary": "Correcting a remediation's search string while leaving its scope at the string is a fix that expires. On 2026-08-28 this seat corrected Content's cap\u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-08-31"
+    },
+    {
+      "id": "L-502",
+      "summary": "A measurement date set at authoring measures the approval queue, not the intervention, whenever execution depends on an approval the author does not \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-08-31"
     }
   ],
   "entries": [
@@ -3530,7 +3558,7 @@
       "domain": "cross-surface",
       "evidence": "Additive economics observation (shared_token_ambiguous=false); flagged for event-type CAC benchmarking. See daily synthesis 2026-06-01-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "9dfd6ca 2026-08-31: Ledger: l-113::learning-action-undiagnosed -> no_work_owed (a business learning for its domain owner)",
       "skill_files_updated": [],
       "related_entries": [],
       "target": "cross-surface-pm.json (event-economics); attribution snapshot 2026-05-30",
@@ -3540,7 +3568,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_stamped_at": "2026-08-31"
     },
     {
       "id": "L-115",
@@ -7896,7 +7925,78 @@
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-30T08:22:20.638234+00:00",
-      "archival_state": "active"
+      "archival_state": "active",
+      "action_taken": "d1938c4 2026-08-31: Task A1 2026-08-31: market-intelligence brief (6/7) \u2014 RED. The offer lapsed by default, not by decision.",
+      "action_stamped_at": "2026-08-31",
+      "related_entries": []
+    },
+    {
+      "date": "2026-08-31",
+      "learning": "A week of cross-department analysis attributed a lift to a discount that was never redeemed. The End of Summer Reset ran 2026-08-24 to 08-30 as 20% off plus free shipping with code RESET; across that week the store's own ledger records the code on ZERO orders, absent from all forty discount codes used, and the offer did not run as an automatic discount either because no-code discounting fell over the same comparison. Store-wide the discount RATE fell from 15.80% to 14.98% during the twenty-percent-off week while orders rose 9.1% and gross rose 25.7%. Four sessions of synthesis, a paid-media decision-layer verdict, a homepage-CVR investigation and a subscription-cohort read were all built on the premise that a price cut was in market.",
+      "source": "Shopify sales ledger pulled 2026-08-31 for 08-24..08-30 and the 08-17..08-23 comparison, store confirmed drinkkenetik.com; marketing-calendar-data.json BTS-SCHOOL-082426 notes naming code RESET; Website and CRO dept brief 2026-08-31 INV-W-2 ex-owned decomposition; Paid Media dept brief 2026-08-31 INS-D-2 settlement-corrected sale receipt; Lifecycle Marketing dept brief 2026-08-31 subscription creation +6.3%",
+      "source_type": "measurement",
+      "domain": "market_intelligence",
+      "evidence": "Nobody checked whether the intervention occurred before measuring its effect. Every department measured the WINDOW correctly and each attributed the movement to something adjacent to the price cut, because the calendar row asserted the mechanic and the calendar row is the system's only record of intent. Redemption is the cheapest possible check and it is not in this repo at all: it took one query against the commerce platform. The general form is that a planned intervention's presence in a planning file is being treated as evidence that it shipped, and every downstream measurement inherits that assumption silently. The test is two independent reads -- code-level attribution and the no-code residual -- because a discount can reach an order without a code.",
+      "confidence": "strong",
+      "action_taken": "Recorded in the 2026-08-31-s1 synthesis as the headline and amended onto rec-488 before the 14:00 ET offer decision.",
+      "target": "Any measurement of a promotion, launch or campaign effect: verify from the commerce or ad platform that the mechanic was actually applied, and how often, before attributing any movement to it. A calendar row is a statement of intent, not evidence of execution.",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-31T14:16:48.797282+00:00",
+      "archival_state": "active",
+      "id": "L-499"
+    },
+    {
+      "date": "2026-08-31",
+      "learning": "A circuit breaker whose reference window is blind to promotions halts the system it protects the day after every promotion, deterministically. The lifecycle engine's revenue_dod_drop breaker compares the prior complete day against the trailing 7-day median; on 2026-08-31 both arms returned the same number because 08-29 was simultaneously the prior complete day and the median, and every day in that baseline sat inside the 20%-off window. Sunday 08-30 read -26.2% day-over-day and tripped the breaker at 11:39:02Z, exit 4. Against a promo-free same-weekday reference the same day is +1.0% ABOVE the trailing nine-Sunday median.",
+      "source": "Operations and Planning dept brief 2026-08-31 INV-D-4 replaying assemble and check_circuit_breakers across 08-27..08-31; Operations and Planning dept brief 2026-08-31 ACT-D-1; lifecycle_engine.py L987-991 read this session; cgo-logs/changesets/work-queue.json still reading engine_date 2026-08-30",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Two independent defects compound and either alone would be survivable. The reference defect makes the breaker fire on an artifact. The scope defect makes that firing catastrophic: _run_live returns before the work-queue is computed, so a REVENUE breaker suppressed read-only governance output that has no revenue dependency at all -- the stale queue, the expiring queue and the owner escalations. It landed on the single day seven drafts entered their expiry window and CS-2026-274 reached its 14-day threshold, which means a SUCCESSFUL run would have closed that row expired_unreviewed. The row survived by breaker failure, which is luck wearing a safety mechanism's clothes. Generalizes: a guard rail's blast radius should be the class of action it protects against, and a guard rail's reference window must be seasonally comparable to the thing it measures or it encodes the business's own calendar as anomaly.",
+      "confidence": "strong",
+      "action_taken": "Filed as rec-495 with both halves scoped separately.",
+      "target": "Every circuit breaker and alarm with a revenue, spend or traffic reference: check whether its baseline can contain a promotion, and check what it halts beyond the action class it exists to prevent.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-31T14:16:48.816870+00:00",
+      "archival_state": "active",
+      "id": "L-500"
+    },
+    {
+      "date": "2026-08-31",
+      "learning": "Correcting a remediation's search string while leaving its scope at the string is a fix that expires. On 2026-08-28 this seat corrected Content's caption remediation from a full sentence to the shorter clause it had actually counted, which was right on the arithmetic and improved the coverage from 118 posts to 149. It was still the wrong altitude: the generator is brain/kenetik-brain/references/brand-voice.md, line 88, where Sugar-Free sits as one of four co-equal proof-set elements, and line 145, the reference proof string; the published sign-off is a mechanical composition of those two lines and the file has not been touched since 2026-08-23. By 08-31 the exposure had migrated off the clause entirely into a new construction, Zero sugar Zero caffeine, with thirteen posts carrying a zero-sugar construction and not one of them carrying the clause.",
+      "source": "Content and Creative dept brief 2026-08-31 INV-C-1 locating the writer; Content and Creative dept brief 2026-08-31 INV-C-2 measuring the migration; brain/kenetik-brain/references/brand-voice.md lines 85-89 and 143-147 read directly this session with git log confirming last commit 2026-08-23; cgo-logs/queues/published-posts.json recounted independently across both caption fields",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "The diagnostic question that would have caught it is one level up from the one asked: not which string carries the volume, but what writes the string. A remediation scoped to an output has a shelf life set by how fast the generator produces variants, and here that was seven days. This is the repo's own third standing rule turned on the seat that cites it -- an instruction is not an interface -- and the tell was available at authorship, because a clause appearing verbatim in 149 posts across 22 caption templates is prima facie evidence of a generator rather than 149 editorial choices. Generalizes: when a defect appears in many artifacts with identical wording, locate and fix the writer, and treat the artifact sweep as cleanup rather than as the repair.",
+      "confidence": "strong",
+      "action_taken": "rec-487 re-scoped in place onto the proof set with the migration evidence recorded, owner moved to Cliff Morgan; ranked P4 in the 2026-08-31-s1 synthesis.",
+      "target": "Any recommendation whose action is to edit, strike or audit repeated text or repeated configuration: identify the writer before scoping the fix, and state in the row why the artifact sweep alone is insufficient.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-31T14:17:22.103194+00:00",
+      "archival_state": "active",
+      "id": "L-501"
+    },
+    {
+      "date": "2026-08-31",
+      "learning": "A measurement date set at authoring measures the approval queue, not the intervention, whenever execution depends on an approval the author does not control. Four rows in two sessions reached measurement_due while still in draft with nothing executed: CS-2026-273 and CS-2026-276 on 2026-08-28, and CS-2026-274 and CS-2026-283 on 2026-08-31. For CS-2026-283 the success test read 0 of 2 against a target of 2 from a baseline of 0 -- unchanged from baseline because the wiring was never done -- and for CS-2026-274 the predicate the row exists to change is verbatim unchanged in a file last committed 2026-08-23.",
+      "source": "cgo-logs/changesets/tracker.json measurement_due and status fields for CS-2026-273, CS-2026-276, CS-2026-274 and CS-2026-283; data/paid-media/wedge-dossiers.json channel_direction rows counted this session; scripts/claims_exposure_report.py L599-609 read directly with git log; the 2026-08-28-s1 sweep record of the first two instances",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "The classification trap is that the obvious outcome is wrong in a way that corrupts the record: underperformed asserts an intervention shipped and missed its bar, and recording it would enter these rows into the learning corpus as evidence that an approach failed when the approach was never tried. The honest outcome is that the row was unexecuted at its due date, which is a governance fact rather than a measurement result. Worth naming that this seat authored CS-2026-283 on 2026-08-24 and set its measurement date seven days out while the row required an approval the seat does not control -- so the author of the finding is one of the authors of the defect. Generalizes: a measurement date should be set from the execution date, not the authoring date, or a row should carry no measurement date until it is approved.",
+      "confidence": "strong",
+      "action_taken": "Both rows recorded data_needed with the reason stated in full rather than underperformed; pattern recorded in the 2026-08-31-s1 sweep notes.",
+      "target": "The measurement_due field's semantics: whether it should be stamped at approval rather than at authoring, so the clock starts when execution becomes possible.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-08-31T14:17:22.122019+00:00",
+      "archival_state": "active",
+      "id": "L-502"
     }
   ],
   "archived_entries": [
@@ -15705,5 +15805,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-08-30"
+  "last_updated": "2026-08-31"
 }
