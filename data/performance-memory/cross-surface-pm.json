@@ -7281,7 +7281,7 @@
       "evidence": "All four links verified in state on 2026-08-19. The live topic (58fec262-76c7-43b7-8c3e-e8851b4035e2, 'Competitive Analysis (Copy)') returns ~13k messages/week of generic #metabolichealth wellness content with no ketone, BHB or Kenetik specificity in a 15-message raw sample, so listening_count_7d = 0 is a wrong-signal problem rather than a zero-volume one. The annotation recording that the destination could not receive the delegation was written into the same file that recorded the delegation, where no reader was required to reconcile the two. Same class as the hand-kept TRACKED_PMIDS dict missing the sole erratum in 349 monitored papers for 54 days. See daily synthesis 2026-08-19-s1.md Theme 5.",
       "confidence": "strong",
       "action_taken": "44ab62e 2026-08-26: Task A1 dept brief (2026-08-26-s1): market-intelligence (7/7 complete)",
-      "target": "config/sources.yaml plus a destination-liveness check at delegation time",
+      "target": "config/sources.yaml plus a destination-liveness check at delegation time, and cgo-daily-pipeline/config/domains/domain-17-instructions.md — the delegation's third party, the reader that was told what to expect (rec-478, enlarged 2026-09-02)",
       "sources": [
         "Market Intelligence dept brief 2026-08-19-s1 INS-MI-2",
         "data/competitive/sources.yaml \u2014 the 2026-06-03 decision header and its 'currently dark' annotation",
