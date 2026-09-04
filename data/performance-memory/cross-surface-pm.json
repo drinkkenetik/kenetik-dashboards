@@ -6060,10 +6060,10 @@
       "source": "data/attribution/attribution-state.json (2026-08-09) channel_cac block",
       "source_type": "operational_signal",
       "domain": "paid-media",
-      "evidence": "Root cause: the two CAC models are compared on arbitrary days without conditioning on order-source coverage, so a coverage-driven gap reads as a methodology-driven gap. Nothing in the attribution artifact pairs the divergence figure with the coverage_pct that governs whether the comparison is meaningful. Coded attribution on the same day: order_source coverage_pct 88, engine_new_customers_total 41. See daily synthesis 2026-08-10-s1.md.",
+      "evidence": "Root cause: the two CAC models are compared on arbitrary days without conditioning on order-source coverage, so a coverage-driven gap reads as a methodology-driven gap. Nothing in the attribution artifact pairs the divergence figure with the coverage_pct that governs whether the comparison is meaningful. Coded attribution on the same day: order_source coverage_pct 88, engine_new_customers_total 41. See daily synthesis 2026-08-10-s1.md. CORRECTION (2026-09-03, rec-472's RCA, architecture/paid-media/rca-2026-09-03-attribution-divergence.md \u00a76): the conclusion that this is not a model disagreement is confirmed (95% CI on the bottom-up/pixel ratio over 23 days is [0.75, 1.13], containing 1.0) but the coverage MECHANISM is refuted \u2014 Pearson r(log(bottom-up/pixel), coverage_pct) = -0.077 (t=-0.36 on 21 df, not significant), and coverage \u226580% days (geometric-mean ratio 0.81) sit FURTHER from parity than coverage <80% days (0.98), the opposite of the predicted direction. The gap is thin-volume noise on a 7-22/day GA4 denominator (overdispersed 3.77x above Poisson), not a coverage artifact.",
       "confidence": "preliminary",
       "action_taken": "a95b04e 2026-08-11: Phase 2: daily synthesis 2026-08-11-s1 + domain health streaks",
-      "target": "data/attribution/attribution-state.json channel_cac - report divergence conditioned on order_source.coverage_pct; treat divergence below 80% coverage as uninformative.",
+      "target": "SUPERSEDED 2026-09-03 (rec-472's RCA, architecture/paid-media/rca-2026-09-03-attribution-divergence.md \u00a76, \u00a78 item 4) \u2014 REMOVE, not condition-on-coverage. Original target read: 'data/attribution/attribution-state.json channel_cac - report divergence conditioned on order_source.coverage_pct; treat divergence below 80% coverage as uninformative.' Measured directly and found not to work: coverage does not predict the gap (r=-0.077, not significant) and high-coverage days sit further from parity than low-coverage days \u2014 the inverse of the predicted direction. Corrected target: stop publishing the daily bottom-up/pixel/blended three-way CAC comparison in data/attribution/attribution-state.json (model_note) and its consumers; keep the component figures, delete the comparison. No conditioning clause, because conditioning was measured not to help.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
@@ -16995,5 +16995,5 @@
       "id": "L-537"
     }
   ],
-  "last_updated": "2026-09-03"
+  "last_updated": "2026-09-04"
 }
