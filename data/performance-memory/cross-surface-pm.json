@@ -3764,6 +3764,34 @@
       "domain": "paid-media",
       "status": "active",
       "date": "2026-08-29"
+    },
+    {
+      "id": "L-542",
+      "summary": "A promotion's liveness was inferred from four platform state files that all read absent while the offer was live and redeeming, and the one artifact \u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-04"
+    },
+    {
+      "id": "L-543",
+      "summary": "The explained_by_offer term fired as causal explanation in six wedge dossiers, two drain closures and one executive message, on a channel where the o\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-09-04"
+    },
+    {
+      "id": "L-544",
+      "summary": "A dedup check that filters on a field nothing writes reports clean because it cannot see, not because there is no overlap. Two of the three overlap-s\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-04"
+    },
+    {
+      "id": "L-545",
+      "summary": "Informed Sport certification is a commercial channel unlock, not only a compliance artifact - Amazon now accepts it as a quality standard and the NHL\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-04"
     }
   ],
   "entries": [
@@ -8885,6 +8913,96 @@
       "created_at": "2026-09-04T17:09:31.542633+00:00",
       "archival_state": "active",
       "id": "L-541"
+    },
+    {
+      "date": "2026-09-04",
+      "learning": "A promotion's liveness was inferred from four platform state files that all read absent while the offer was live and redeeming, and the one artifact that settles it - the order ledger - was consulted by nobody. The absence of a code from a derived code-usage block was treated as evidence the code was not live, when that block committed only the top 50 codes by discount DOLLARS and a new code cannot rank by dollars inside its own launch window. Two successive sessions then mis-refuted the cap by reading its use-count floor as its sort key.",
+      "source": "Task B synthesis 2026-09-04-s1, reading the Shopify discount config and order ledger against three department briefs and Task A1's close-out note",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Code LDW ACTIVE 2026-09-02T13:15:58Z to 2026-09-08T03:59:59Z at 20.0%; nine orders carry it for $935.00 collected and $221.97 discounted. Absent from the committed 50-row discount_codes block because that block ranked top-50 by discount dollars (LDW ~$222 vs a ~$2,646 cutoff), repaired the same day in commit 1049bf1 (15:50Z) which unions every code redeemed in the trailing 14 days onto the dollar ranking. Root cause: every liveness reader in the pipeline reads a configuration or a rollup and none reads a transaction - configuration answers 'was this set up', only redemption answers 'is this in market'. Secondary cause: a rollup whose sort key and floor differ was described by its floor. See daily synthesis 2026-09-04-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md - add order-ledger corroboration to the promo-liveness read",
+      "sources": [
+        "Shopify Admin live read, Task B 2026-09-04-s1: codeDiscountNodeByCode('LDW') config plus nine orders on discount_code:LDW",
+        "dept-paid-media, dept-website-cro and dept-science-research 2026-09-04-s1, all three asserting the code was never switched on",
+        "Task A1 run marker 2026-09-04 task_a1_notes[0] and marker commit 73bee6c9, carrying the same premise forward",
+        "commit 1049bf1 2026-09-04T15:50Z, which names the top-50-by-dollars ranking as the cause and repairs it"
+      ],
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-04T18:13:59.418193+00:00",
+      "archival_state": "active",
+      "id": "L-542"
+    },
+    {
+      "date": "2026-09-04",
+      "learning": "The explained_by_offer term fired as causal explanation in six wedge dossiers, two drain closures and one executive message, on a channel where the offer produced zero orders. An offer's existence was accepted as the cause of a channel's movement without checking whether that channel carried any redemption, which makes the term unfalsifiable.",
+      "source": "paid-media INS-D-1 cross-read against the LDW order attribution pulled live in Task B 2026-09-04-s1",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "All six wedge dossiers carry published_verdict.conditioned = explained_by_offer citing the Labor Day beats; the 09-03 drain closed the Wedge B and Wedge C margin-floor items on 'Labor Day 20%-off'; the 15:19Z executive post stated Meta's 42% jump was the Labor Day discount. Live Shopify read the same day: all nine LDW redemptions were Google-attributed (five last-click google/cpc Branded Search / tCPA), and Meta appears in no first or last visit of any redemption, on 2,323 impressions to 15 clicks and zero purchases. Root cause: the condition tests offer existence in the calendar window rather than offer redemption in the channel, so any live promo explains every channel simultaneously. Second instance of L-499 in five days. Spawned CS-2026-295. See daily synthesis 2026-09-04-s1.md.",
+      "confidence": "strong",
+      "action_taken": "CS-2026-295 spawned 2026-09-04 to gate the predicate on liveness.redemptions",
+      "target": "scripts/wedge_dossiers.py - the explained_by_offer predicate at lines 1275/1357/1416",
+      "sources": [
+        "dept-paid-media 2026-09-04-s1 INS-D-1: six wedge dossiers reading explained_by_offer",
+        "the 2026-09-03 drain session record closing the Wedge B and Wedge C margin-floor items on 'Labor Day 20%-off'",
+        "data/notifications/reads/inbound.json, executive post 2026-09-04T15:19Z attributing Meta's 42% jump to the discount",
+        "Shopify Admin live read of LDW order attribution, Task B 2026-09-04-s1: zero Meta first or last visits"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-04T18:13:59.443946+00:00",
+      "archival_state": "active",
+      "id": "L-543"
+    },
+    {
+      "date": "2026-09-04",
+      "learning": "A dedup check that filters on a field nothing writes reports clean because it cannot see, not because there is no overlap. Two of the three overlap-suppression legs in the weekly process-automation pass have never matched a row.",
+      "source": "Pass B deep automation analysis, Task B 2026-09-04-s1, measured against rec-330's open question",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "category is None on 169 of 169 changesets (170 after today's spawn, which also does not set it), so Pass B Steps 5a and 5b - which filter tracker.json on category in {system_improvement, infrastructure, data_infrastructure, internal_infra} - match zero rows on every run and only leg 5c suppresses anything. build_cs_entry.py DOES accept --category as an optional flag with no enum, so the field is writable and nothing passes it, which makes repointing the legs onto department+subtype the cheapest honest fix. Separately this run answered rec-330's own question with a measurement: clean-timestamp coverage on the 30 most recently closed rows moved from 0 of 30 on 2026-08-02 to 18 of 30 today, so the writeback hardening did deploy; missing approved_date on 12 of 30 and published_date on 9 of 30 are what remain. Filed as rec-564. See daily synthesis 2026-09-04-s1.md.",
+      "confidence": "strong",
+      "action_taken": "rec-564 filed 2026-09-04; evidence bump recorded on rec-330 rather than a new row",
+      "target": "cgo-daily-pipeline/config/task-b-synthesis.md Step 2.5 Pass B Steps 5a/5b",
+      "sources": [
+        "tracker.json census, Task B 2026-09-04-s1: category is None on 169 of 169 changesets",
+        "scripts/build_cs_entry.py signature and --help: --category exists as an optional flag with no enum",
+        "Pass B Step 1A timestamp audit 2026-09-04 (18 of 30 clean) against rec-330's 2026-08-02 measurement (0 of 30)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-04T18:13:59.469438+00:00",
+      "archival_state": "active",
+      "id": "L-544"
+    },
+    {
+      "date": "2026-09-04",
+      "learning": "Informed Sport certification is a commercial channel unlock, not only a compliance artifact - Amazon now accepts it as a quality standard and the NHL will accept it - and the owner states a certification number exists while the document naming scope and expiry is still outstanding.",
+      "source": "Garrett Davis, Slack #ops, 2026-09-03T15:19-15:20Z, read from the committed inbound capture",
+      "source_type": "team_feedback",
+      "domain": "cross-surface",
+      "evidence": "Garrett Davis: 'informed sports now an acceptable quality standard for AMZ', then 'Just happened, waiting on more information', then 'Certification number we have should help with future regulation and growth in AMZ', then 'NHL is now an org who will accept Informed Sports'. Katie Spaller replied 'Anything that helps us avoid the supplement category claims cases is a win'. Root cause: the certificate was tracked only as a compliance dependency, so its commercial value was invisible to the lane that would act on it and its absence read as a low-priority document request rather than a blocked channel. It also gates the ad-copy remediation pass, where a false third-party certification claim is the one exposure in that thread with no arguable defence. Filed as rec-563. See daily synthesis 2026-09-04-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "rec-563 filed 2026-09-04 to Garrett Davis",
+      "target": "brain/kenetik-brain/references/claims-compliance.md",
+      "sources": [
+        "Garrett Davis, Slack #ops 2026-09-03T15:19-15:20Z, four messages, from the committed inbound capture",
+        "Katie Spaller's reply in the same thread 2026-09-03T15:20Z framing it as claims-case avoidance",
+        "dept-science-research 2026-09-04-s1 ACT-D-3, the standing certificate ask now in its second session"
+      ],
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-04T18:13:59.495714+00:00",
+      "archival_state": "active",
+      "id": "L-545"
     }
   ],
   "archived_entries": [
