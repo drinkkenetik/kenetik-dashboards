@@ -766,42 +766,42 @@
       "id": "L-111",
       "summary": "claims_tier_coverage = two metrics under one name: registry scores retraction-safety (GREEN) only; tier-mapping completeness (TRX permission gate) = 0/10, gate non-operational [merged L-139]",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-01"
     },
     {
       "id": "L-112",
       "summary": "d13_calendar_coverage_pct: deprecated content-calendar def (0%) vs canonical planning-discipline (33-44%); same throughput failure",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-01"
     },
     {
       "id": "L-113",
       "summary": "Dave Asprey event coded P&L: 30 new / $5,239 vs $5-10k budget (coded CAC ~$167-333); conference-event benchmark",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-01"
     },
     {
       "id": "L-115",
       "summary": "PubMed sync queries match 'ketone' as a general-chemistry term, returning off-topic papers (organic photocatalysis, dairy-cow blood gas, lung adenoc",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-02"
     },
     {
       "id": "L-116",
       "summary": "Thiessen 2026 (PMID 41650388): acute ketone monoester supplementation decreases cardiac vagal modulation dose-dependently in healthy adults. Adversa",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-02"
     },
     {
       "id": "L-117",
       "summary": "domain_health_streaks.consecutive_below_40 has been incrementing on business-RED status (D13=23, D14=15) rather than the defined scan-quality criteria",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-04"
     },
     {
@@ -815,14 +815,14 @@
       "id": "L-119",
       "summary": "BRIDGE CP-004: Matt Hughes authority-testimonial \u2014 priority paid retargeting + creator amplification frame (rotate <=1x/7d)",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-05"
     },
     {
       "id": "L-120",
       "summary": "BRIDGE AP-011: cart-recovery/transactional copy belongs in Klaviyo+paid retargeting, never organic social (lifecycle<->content-ops boundary)",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-05"
     },
     {
@@ -3757,197 +3757,16 @@
       "domain": "paid-media",
       "status": "active",
       "date": "2026-09-03"
+    },
+    {
+      "id": "L-541",
+      "summary": "[Prospecting__PMAX__Wedge A__tCPA] doctrine_playbook playbook_trigger: Prospecting__PMAX__Wedge A__tCPA read below the margin floor and is core: diag\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-08-29"
     }
   ],
   "entries": [
-    {
-      "id": "L-111",
-      "date": "2026-06-01",
-      "type": "skill_update",
-      "learning": "claims_tier_coverage is two metrics under one name: the registry formula scores only retraction-safety (=1.00 / 10-of-10, GREEN) while tier-mapping completeness \u2014 the actual TRX claims-permission gate \u2014 is 0/10 and unbuilt. Dashboard reads GREEN while the gate is non-operational.",
-      "source": "Science & Research dept brief \u2014 corroborated 2026-06-01 (CS-2026-189 scope) + 2026-06-19",
-      "source_type": "operational_signal",
-      "domain": "cross-surface",
-      "evidence": "One label conflates a safety check with a coverage check; consumers read the safe component as the whole, masking the launch-blocking gap. Corroborates rec-262. See daily synthesis 2026-06-19-s1.md.",
-      "confidence": "strong",
-      "action_taken": "a023074 2026-08-24: Task A1 dept briefs (2026-08-24-s1): science-research + content",
-      "skill_files_updated": [],
-      "related_entries": [
-        "rec-262",
-        "CS-2026-268",
-        "CS-2026-274"
-      ],
-      "target": "brain/kenetik-brain/references/metrics-registry.yaml (claims_tier_coverage def \u2014 add tier-completeness sub-metric); cross-surface-pm.json",
-      "merged_from": [
-        "L-139"
-      ],
-      "merged_date": "2026-06-19",
-      "entry_type": "skill_update",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "action_stamped_at": "2026-08-28"
-    },
-    {
-      "id": "L-112",
-      "date": "2026-06-01",
-      "type": "process_change",
-      "learning": "d13_calendar_coverage_pct has two live readings: the DEPRECATED content-calendar forward-entry definition (0.0%) and the canonical planning-discipline definition (32.6% strict / 44.2% incl in_progress, 30d window). Both indicate the same execution-throughput failure; the canonical metric is in material drift, not contradicted.",
-      "source": "Market Intelligence dept brief (D13 reconciliation), 2026-06-01",
-      "source_type": "domain_contradiction",
-      "domain": "operations",
-      "evidence": "Two definitions coexist after the 2026-05-26 redefinition; the deprecated reading was not retired from the D13 scan. See daily synthesis 2026-06-01-s1.md.",
-      "confidence": "preliminary",
-      "action_taken": "31529cb 2026-08-21: Task A1 dept brief (2026-08-21-s1): market-intelligence (7/7 complete)",
-      "skill_files_updated": [],
-      "related_entries": [
-        "CS-2026-270",
-        "CS-2026-276"
-      ],
-      "target": "D13 domain-scan instructions (retire deprecated content-calendar reading); metrics-registry.yaml d13 note",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ],
-      "action_stamped_at": "2026-08-21"
-    },
-    {
-      "id": "L-113",
-      "date": "2026-06-01",
-      "type": "threshold_calibration",
-      "learning": "Dave Asprey Biohacking Conference event P&L (coded, high-confidence): 30 new / $5,239 coded revenue against a $5,000-$10,000 budget -> coded CAC ~$167-333 (coded undercounts true attribution). A directional benchmark on conference-event acquisition economics.",
-      "source": "attribution-state.json campaign_correlation.event_rollups (5/30, confidence high)",
-      "source_type": "operational_signal",
-      "domain": "cross-surface",
-      "evidence": "Additive economics observation (shared_token_ambiguous=false); flagged for event-type CAC benchmarking. See daily synthesis 2026-06-01-s1.md.",
-      "confidence": "preliminary",
-      "action_taken": "9dfd6ca 2026-08-31: Ledger: l-113::learning-action-undiagnosed -> no_work_owed (a business learning for its domain owner)",
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "cross-surface-pm.json (event-economics); attribution snapshot 2026-05-30",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ],
-      "action_stamped_at": "2026-08-31"
-    },
-    {
-      "id": "L-115",
-      "date": "2026-06-02",
-      "type": "process_change",
-      "learning": "PubMed sync queries match 'ketone' as a general-chemistry term, returning off-topic papers (organic photocatalysis, dairy-cow blood gas, lung adenocarcinoma, pediatric hyperinsulinism) as new_count_this_run. The new-paper signal is systematically unreliable until MeSH/human/species filters are added.",
-      "source": "Science dept brief INS-SR-1, 2026-06-02; daily synthesis 2026-06-02-s1.md",
-      "source_type": "operational_signal",
-      "domain": "cross-surface",
-      "evidence": "4 of today's flagged new papers off-topic. Root cause: scripts/sync_pubmed.py query strings lack MeSH human filters / species limiters.",
-      "confidence": "moderate",
-      "action_taken": "ebd09e0 2026-09-02: Ledger: l-115::learning-action-undiagnosed -> routed_human (the entry's own remedy would break the tool)",
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "scripts/sync_pubmed.py query strings (add MeSH human filter + species limiter)",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "action_stamped_at": "2026-09-02"
-    },
-    {
-      "id": "L-116",
-      "date": "2026-06-02",
-      "type": "skill_update",
-      "learning": "Thiessen 2026 (PMID 41650388): acute ketone monoester supplementation decreases cardiac vagal modulation dose-dependently in healthy adults. Adversarially exploitable framing, not in tracked_citations or the Known Null/Negative Findings register, surfaced ahead of the TRX July launch.",
-      "source": "Science dept brief INS-SR-3 / MEMORY UPDATES, 2026-06-02; daily synthesis 2026-06-02-s1.md",
-      "source_type": "operational_signal",
-      "domain": "content",
-      "evidence": "New adverse-direction literature not auto-routed into claims-compliance negative-findings before launch-content production. Root cause: no auto-route of counter-signal papers pre-launch.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "brain/kenetik-brain/references/claims-compliance.md (Known Null/Negative Findings) \u2014 add Thiessen 2026; route via CS-189/Brandon",
-      "entry_type": "skill_update",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-117",
-      "date": "2026-06-04",
-      "type": "threshold_calibration",
-      "learning": "domain_health_streaks.consecutive_below_40 has been incrementing on business-RED status (D13=23, D14=15) rather than the defined scan-quality criteria; both produced substantive briefs, so the counters should have reset. Reset to 0 this session.",
-      "source": "Synthesis Step 8a streak audit, 2026-06-04; daily synthesis 2026-06-04-s1.md",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "Step 8a update rule keys off 'degraded quality' but prior sessions read a business-RED dept status as quality degradation; the two are distinct.",
-      "confidence": "moderate",
-      "action_taken": "760040e 2026-08-13: Lock: pilot-worker-b (Repair Loop pilot, AUTO doc-reconciliation + instrument-refinement)",
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "synthesis-instructions.md Step 8a: clarify consecutive_below_40 tracks scan-quality only; reset on substantive brief regardless of business status.",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "action_stamped_at": "2026-08-13"
-    },
-    {
-      "id": "L-119",
-      "date": "2026-06-05",
-      "type": "content_pattern",
-      "learning": "BRIDGE CP-004: The Matt Hughes/UFC authority-testimonial format (science + authority + emotional arc) drives engagement across FB/IG/LI/TT and is the strongest organic-to-paid graduation in program history (1.66M FB paid impressions at 4.6% engagement). Cross-domain implication: paid media should treat the authority-testimonial as a priority retargeting/prospecting creative frame, and creator amplification should adopt it as a repeatable structure \u2014 but rotate at <=1x/7d per platform (AP-008) since the hook fatigues on frequency, not content.",
-      "source": "Moe Content PM synthesis SYN-20260605-001 (CP-004)",
-      "source_type": "content_synthesis_bridge",
-      "domain": "content",
-      "evidence": "Revalidated 3rd consecutive cycle: 'rebuilding' testimonial FB 28.12% ER / NCS 51.4, highest editorial ER in window; 2.18x median. See Moe PM CP-004.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_note": null,
-      "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260605-001",
-      "signal_direction": "positive",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e",
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
-    },
-    {
-      "id": "L-120",
-      "date": "2026-06-05",
-      "type": "content_pattern",
-      "learning": "BRIDGE AP-011 (negative): Cart-recovery / transactional email copy ('Forgot something? Check out now\u2026') posted as organic social scores near-zero (NCS 5-44, 0-1.16% ER) \u2014 the feed algorithm ignores hard transactional CTAs. Distinct from AP-010 (bulk-duplication suppression); here the issue is copy register. Cross-domain implication: this is a lifecycle<->content-ops boundary failure \u2014 abandoned-cart/checkout-CTA copy belongs in Klaviyo email/SMS and paid retargeting only, never organic social. Content intake (Larry's queue) should reject transactional-CTA bodies on organic surfaces.",
-      "source": "Moe Content PM synthesis SYN-20260605-001 (AP-011)",
-      "source_type": "content_synthesis_bridge",
-      "domain": "content",
-      "evidence": "Reconfirmed 2nd consecutive cycle: 3 FB cart-recovery posts, NCS 13.6/13.8/44.1, ER 0.18-1.16%, one pushed to 13,788 imp. first_seen 2026-05-31. See Moe PM AP-011.",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_note": null,
-      "entry_type": "content_pattern",
-      "bridge_synthesis_id": "SYN-20260605-001",
-      "signal_direction": "negative",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e",
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ]
-    },
     {
       "id": "L-121",
       "date": "2026-06-08",
@@ -4025,14 +3844,15 @@
       "domain": "cross-surface",
       "evidence": "Prior-session watch item not re-verified against the current domain scan; the framing-guardrail metric-freshness cross-check caught it one cycle late. See daily synthesis 2026-06-11-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "ac40b30 2026-09-03: Ledger: l-125::learning-action-undiagnosed -> proposed (the write site is inside Devon's config gate)",
       "skill_files_updated": [],
       "related_entries": [],
       "target": "synthesis-instructions.md Step 8 metric-freshness cross-check (extend to session-handoff watch items, not only D14-sourced metrics)",
       "entry_type": "threshold_calibration",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-09-04"
     },
     {
       "id": "L-126",
@@ -4044,7 +3864,7 @@
       "domain": "operations",
       "evidence": "tracker CS-189 status=approved, approved_by=None; claims-map shows APPROVED 2026-06-08 by Devon. Same field-gap class as CS-097 (L-035). See 2026-06-11-s2.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "d6e70a4 2026-09-03: Repair loop 2026-09-03: digest + dossier (5 worked \u2014 2 fixed, 2 proposed, 1 no_work_owed)",
       "skill_files_updated": [],
       "related_entries": [],
       "target": "changeset status-transition validation (require approved_by when status=approved) + synthesis ChangeSet cross-check reads approved_by AND claims-map/notes before declaring a co-sign pending",
@@ -4054,7 +3874,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'strong' -> 'moderate' (source_count=2)"
-      ]
+      ],
+      "action_stamped_at": "2026-09-04"
     },
     {
       "id": "L-127",
@@ -4066,9 +3887,11 @@
       "domain": "operations",
       "evidence": "d12_velocity_new_per_week=11.5 (28d) in band[8,12]; measurement_capable=false 8th run; Devon block 48h. See 2026-06-11-s2.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "f2658c2 2026-09-04: l-127::learning-action-undiagnosed -> proposed (rec-534): the ops throughput metrics measure authorship",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-259"
+      ],
       "target": "synthesis-instructions D12 framing \u2014 separate intake-velocity (healthy) from decision/measurement-gate (the actual RED)",
       "entry_type": "threshold_calibration",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
@@ -4076,7 +3899,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_stamped_at": "2026-09-04"
     },
     {
       "id": "L-128",
@@ -4113,14 +3937,19 @@
       "domain": "operations",
       "evidence": "CS-183 15d in draft; gates DS-04 Frontiers hook (expires ~6/18), TRX/July-4 creative, CS-189 claims chain. See daily synthesis 2026-06-12-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "11c50ed 2026-09-04: l-129::learning-action-undiagnosed -> premise_false: the escalation it asks for was built 2026-07-02",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-162",
+        "CS-2026-183",
+        "CS-2026-256"
+      ],
       "target": "changeset-instructions.md decision-aging escalation + dispatch-instructions.md owner Slack hard-gate for N-day-stale gating CSes",
       "entry_type": "process_change",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-09-04"
     },
     {
       "id": "L-130",
@@ -4267,14 +4096,19 @@
       "domain": "operations",
       "evidence": "CS-147 created 2026-05-07, routed_date null, 42d old; (not set) bucket 2.6->9.2->29.5->26.2% across four scans at 0% in-bucket CVR. See daily synthesis 2026-06-18-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "11c50ed 2026-09-04: l-129::learning-action-undiagnosed -> premise_false: the escalation it asks for was built 2026-07-02",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-162",
+        "CS-2026-183",
+        "CS-2026-256"
+      ],
       "target": "synthesis-instructions.md Step 8a-adjacent or changeset-lifecycle-sweep escalation rule",
       "entry_type": "process_change",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-09-04"
     },
     {
       "id": "L-138",
@@ -5910,14 +5744,16 @@
       "domain": "content",
       "evidence": "Root cause: creator economics are recorded per code but never compared against the paid-channel CAC the business actually optimises, so the comparison that would reallocate budget is never made. The roster that would surface it is blind to this creator entirely - creator-roster-data.json keys on a 15-tier campaign_id_map while Superfiliate holds 22 campaigns, and the top earner sits on unmapped bespoke campaign 165690, having enrolled three weeks before the roster's last stamp. See daily synthesis 2026-08-05-s1.md What Worked and DS-06 cgo-2026-08-05-001.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "a3f9158 2026-09-04: Execute rec-472: per-question authoritative-source rule + L-400 correction",
       "target": "data/creator-roster/creator-roster-data.json generator (campaign_id_map coverage) + add a creator-vs-paid CAC comparison to the Content dept primary/balancing pair in metrics-taxonomy.md",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-05T15:28:03.316398+00:00",
       "archival_state": "active",
-      "id": "L-320"
+      "id": "L-320",
+      "action_stamped_at": "2026-09-04",
+      "related_entries": []
     },
     {
       "date": "2026-08-05",
@@ -6347,7 +6183,7 @@
       "domain": "cross-surface",
       "evidence": "The approval path writes status into tracker.json; the transmit path is autonomous_execution.mode: shadow and writes nothing. claims-sweep.json delta.resolved_strings is the only field in the repo that can evidence transmission and no consumer reads it as a gate - two systems writing with nothing between them. See daily synthesis 2026-08-14-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "de46855 2026-08-22: repair-loop: finding 4 -- CS-2026-267's premise is false; the remediation succeeded and the row is stranded",
       "target": "changeset-instructions.md - transmission predicate blocking published while target strings still serve",
       "sources": [
         "dept-science-research 2026-08-14 INV-S-1 / INS-S-1",
@@ -6360,7 +6196,11 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-14T17:14:43.054689+00:00",
       "archival_state": "active",
-      "id": "L-415"
+      "id": "L-415",
+      "action_stamped_at": "2026-09-04",
+      "related_entries": [
+        "CS-2026-267"
+      ]
     },
     {
       "date": "2026-08-14",
@@ -6535,7 +6375,7 @@
       "evidence": "D17 reported a structural config gap and D18 an instrumentation defect; read against the live files they are the same finding. The right move is a Remove/Refine decision on the existing delegation, not a fourth Add - CS-2026-241 carried exactly that scope and expired unreviewed 2026-08-13, its third death. No consecutive-empty-return counter exists on any source. See daily synthesis 2026-08-14-s1.md.",
       "domain": "market-intel",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "8de277b 2026-08-18: Phase 2 (repo half): session lock, pushed first",
       "target": "data/performance-memory - reclassify L-284 root cause; add empty-return persistence counter to the competitor source reader",
       "sources": [
         "dept-market-intelligence 2026-08-14 INS-MI-1 / INV-MI-1",
@@ -6549,7 +6389,9 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-14T17:14:43.105247+00:00",
       "archival_state": "active",
-      "id": "L-423"
+      "id": "L-423",
+      "action_stamped_at": "2026-09-04",
+      "related_entries": []
     },
     {
       "date": "2026-08-14",
@@ -6731,7 +6573,7 @@
       "domain": "paid-media",
       "evidence": "seen 14\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3 Instrument paid_media_doctrine.diagnose_creative; campaign 23778599258.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "db2defc 2026-08-14: rec-427: session lock \u2014 repoint the Google creative-freshness precondition + apply Katie's format decision",
       "skill_files_updated": [],
       "related_entries": [],
       "changeset_candidate": false,
@@ -6760,7 +6602,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-14T18:26:10.615544+00:00",
       "archival_state": "active",
-      "id": "L-429"
+      "id": "L-429",
+      "action_stamped_at": "2026-09-04"
     },
     {
       "date": "2026-08-12",
@@ -6823,7 +6666,7 @@
       "domain": "paid-media",
       "evidence": "seen 14\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3 Instrument paid_media_doctrine.diagnose_creative; campaign 23778467198.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "db2defc 2026-08-14: rec-427: session lock \u2014 repoint the Google creative-freshness precondition + apply Katie's format decision",
       "skill_files_updated": [],
       "related_entries": [],
       "changeset_candidate": false,
@@ -6852,7 +6695,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-14T18:26:10.646140+00:00",
       "archival_state": "active",
-      "id": "L-431"
+      "id": "L-431",
+      "action_stamped_at": "2026-09-04"
     },
     {
       "date": "2026-08-13",
@@ -6915,7 +6759,7 @@
       "domain": "paid-media",
       "evidence": "seen 14\u00d7 across 2 day(s) of account time (2026-08-10 \u2192 2026-08-12), clearing the moderate bar of 3 Instrument paid_media_doctrine.diagnose_creative; campaign 23168252134.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "db2defc 2026-08-14: rec-427: session lock \u2014 repoint the Google creative-freshness precondition + apply Katie's format decision",
       "skill_files_updated": [],
       "related_entries": [],
       "changeset_candidate": false,
@@ -6944,7 +6788,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-14T18:26:10.677524+00:00",
       "archival_state": "active",
-      "id": "L-433"
+      "id": "L-433",
+      "action_stamped_at": "2026-09-04"
     },
     {
       "date": "2026-08-17",
@@ -7039,14 +6884,18 @@
       "domain": "content",
       "evidence": "Graduation was instrumented as a Sprout-to-paid pipeline because that is the surface the scanners read. TikTok Shop and TRYBE appear in no state file, so a path that produces real paid-bound creative is structurally unobservable, and no domain owner was assigned when the mechanism was adopted. Nick asked in-thread who should own the review-into-paid gate and the question is unanswered. Carried as rec-435. See daily synthesis 2026-08-17-s1.md Theme 4.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "bdf81c3 2026-09-03: decisions 2026-09-03: rec-495 mechanic-conditioned breaker, rec-435 graduation owners, CS-2026-246 amend+close (L-500, L-441)",
       "target": "cgo-daily-pipeline/config/task-a-domains.md D07/D08 scope \u2014 decide whether TRYBE and TikTok Shop become scanned surfaces",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-17T17:13:35.706198+00:00",
       "archival_state": "active",
-      "id": "L-441"
+      "id": "L-441",
+      "action_stamped_at": "2026-09-04",
+      "related_entries": [
+        "CS-2026-246"
+      ]
     },
     {
       "date": "2026-08-17",
@@ -7062,14 +6911,16 @@
       "domain": "cross-surface",
       "evidence": "The disk pre-flight guard exists in Task B only and fired correctly, but it converts a host-capacity problem into a per-task abort with no aggregate alarm and no reclamation step. Sibling sessions on the shared volume are never pruned, so free space decays monotonically until every task in the cycle fails on the same morning. Separately rapidfuzz was absent from the VM for the second time, which had disabled the mandatory Layer 0 collision check on 2026-08-14. Carried as rec-437. See daily synthesis 2026-08-17-s1.md Learning Signals.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "cc6858d 2026-08-17: Session lock: phase0-relief-and-heartbeat (Phase 0 of the pipeline re-architecture)",
       "target": "scheduled-task environment setup \u2014 stale-session reclamation plus a rapidfuzz dependency pin",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-17T17:13:35.713482+00:00",
       "archival_state": "active",
-      "id": "L-442"
+      "id": "L-442",
+      "action_stamped_at": "2026-09-04",
+      "related_entries": []
     },
     {
       "date": "2026-08-18",
@@ -7386,7 +7237,7 @@
       "domain": "website",
       "evidence": "Katie: 'Raspberry lychee has been phenomenal for subscription acquisition! And that new buy box i created isn't hurting either.' Three independent sources agree active_sub_count reached 2,884 against a 2,800 target with a 122-subscriber spike on 8/07, the Raspberry Lychee launch date. The buy box is a CRO change with a measurable subscription-acquisition effect and zero pipeline representation. See daily synthesis 2026-08-19-s1.md What Worked item 1.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "dfb7895 2026-09-04: rec-290::process-defect-undiagnosed -> proposed (rec-535): the approval field the gate refuses",
       "target": "a minimal shipped-change registration surface for in-tier CRO edits",
       "sources": [
         "Katie Spaller, #marketing 2026-08-19 09:38 EDT",
@@ -7398,7 +7249,13 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-19T18:34:47.601666+00:00",
       "archival_state": "active",
-      "id": "L-462"
+      "id": "L-462",
+      "action_stamped_at": "2026-09-04",
+      "related_entries": [
+        "CS-2026-189",
+        "CS-2026-285",
+        "CS-2026-292"
+      ]
     },
     {
       "date": "2026-08-20",
@@ -7432,7 +7289,7 @@
       "domain": "campaigns",
       "evidence": "Six rows cancelled with last_updated 2026-08-18/19: GOLF-BMW-CHAMP-082026, GOLF-TOUR-CHAMP-082726, UTMB-082826, ALZHM-MONTH-090126, TFC-PRESSCONF-090126, TIM-MCGRAW-PARTNERSHIP-072926-BEAT-01. calendar_quality_score_14d moved 0.4286 to 0.5455 with the mature numerator frozen at 6 - the entire delta was an 11-to-14 denominator reduction. Nick Lacagnina's recap in #marketing 2026-08-19T15:04:32 EDT (ts 1787166272.122969) records the decisions and their reasons, plus STRONG-NY-092626 promoted needs_planning to confirmed at $6,500. None of that reasoning is present on any row. See daily synthesis 2026-08-20-s1.md Theme 1 and Learning Signals.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "22171a4 2026-09-04: Task A1 2026-09-04: market-intelligence (6/7) \u2014 status-as-truth now SCORES, and my tracker framing hid three executable rows",
       "target": "data/marketing-calendar/marketing-calendar-data.json - require a decision_note on any transition into cancelled; cgo-daily-pipeline/config/calendar-writeback-protocol.md",
       "sources": [
         "cgo-logs/department-briefs/2026-08-20-s1/dept-market-intelligence.md INV-D-1 and its 'Unanswered for next cycle' section",
@@ -7445,7 +7302,15 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-20T13:44:54.463915+00:00",
       "archival_state": "active",
-      "id": "L-464"
+      "id": "L-464",
+      "action_stamped_at": "2026-09-04",
+      "related_entries": [
+        "CS-2026-259",
+        "CS-2026-261",
+        "CS-2026-270",
+        "CS-2026-285",
+        "CS-2026-292"
+      ]
     },
     {
       "date": "2026-08-20",
@@ -7455,7 +7320,7 @@
       "domain": "operations",
       "evidence": "Registry basis: calendar_pipeline_maturity recomputed against today's file returns 6/11 = 0.5455 at the 08-20 anchor, an exact digest match. Dashboard basis: 0.538 to 0.636 against a 0.75 target, reported identically in Nick's #marketing recap (ts 1787166272.122969) and his DM to Devon (ts 1787166238.041989). The registry version additionally excludes cancelled rows from its denominator, so it rises on deletion - which is how it moved up 27% on a day six campaigns were deleted and nothing was planned. Any calibration or Task B read that compares the two will conclude the planning layer is recovering on the exact day it emptied. See daily synthesis 2026-08-20-s1.md Theme 1.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "c2d9542 2026-09-03: console redesign (rec-471; Devon 2026-09-03 portal direction): Overview, panel order, and one list a person can work",
       "target": "Reconcile scripts/metric_basis.py:calendar_pipeline_maturity against the portal dashboard calculator and declare one canonical. Folds into dept-market-intelligence ACT-D-3 (Cliff Morgan).",
       "sources": [
         "cgo-runtime/digest-2026-08-20.json calendar_quality_score_14d 0.5455",
@@ -7468,7 +7333,9 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-20T13:44:54.471202+00:00",
       "archival_state": "active",
-      "id": "L-465"
+      "id": "L-465",
+      "action_stamped_at": "2026-09-04",
+      "related_entries": []
     },
     {
       "date": "2026-08-20",
@@ -8146,7 +8013,7 @@
       "domain": "paid-media",
       "evidence": "seen 4\u00d7 across 5 day(s) of account time (2026-08-21 \u2192 2026-08-26), clearing the moderate bar of 3 Instrument paid_media_doctrine.below_floor_verdict (this run); campaign 23778467198.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "7c3fc13 2026-09-03: rec-494: wire creative-and-audience visibility into the paid-media analysis",
       "skill_files_updated": [],
       "related_entries": [],
       "changeset_candidate": false,
@@ -8175,7 +8042,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-28T20:07:42.701605+00:00",
       "archival_state": "active",
-      "id": "L-497"
+      "id": "L-497",
+      "action_stamped_at": "2026-09-04"
     },
     {
       "id": "L-498",
@@ -8971,6 +8839,52 @@
       "created_at": "2026-09-03T14:19:22.537007+00:00",
       "archival_state": "active",
       "id": "L-540"
+    },
+    {
+      "date": "2026-08-29",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Prospecting__PMAX__Wedge A__tCPA (core): doctrine_playbook reads 'playbook_trigger' on 3 account days (2026-08-27 \u2192 2026-08-29). Prospecting__PMAX__Wedge A__tCPA read below the margin floor and is core: diagnose, do not cut. Creative branch says no_case_indicated \u2014 the instruments read clean: no starved winner, no fed loser, no unmet REQUIRED format minimum. The creative branch is not where this campaign's problem is \u2014 try audience targeting or copy/landing-page mismatch. Next: pull budget back\u2026",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=doctrine_playbook] ; instrument: paid_media_doctrine.below_floor_verdict (this run) ; dossier generated_for 2026-09-04, as_of 2026-09-02",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=doctrine_playbook]",
+        "instrument: paid_media_doctrine.below_floor_verdict (this run)",
+        "dossier generated_for 2026-09-04, as_of 2026-09-02"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 3\u00d7 across 2 day(s) of account time (2026-08-27 \u2192 2026-08-29), clearing the moderate bar of 3 Instrument paid_media_doctrine.below_floor_verdict (this run); campaign 23778599258.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23778599258:doctrine_playbook:e3e395964c",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 3\u00d7 across 2 day(s) of account time (2026-08-27 \u2192 2026-08-29), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23778599258",
+        "wedge": "Prospecting__PMAX__Wedge A__tCPA",
+        "classification": "core",
+        "conclusion_kind": "doctrine_playbook",
+        "conclusion_value": "playbook_trigger",
+        "seen_count": 3,
+        "span_days": 2,
+        "first_seen_as_of": "2026-08-27",
+        "last_seen_as_of": "2026-08-29",
+        "graduated_at": "2026-09-04T17:09:31.541668+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-04T17:09:31.542633+00:00",
+      "archival_state": "active",
+      "id": "L-541"
     }
   ],
   "archived_entries": [
@@ -16993,6 +16907,210 @@
       "created_at": "2026-09-03T14:19:22.458764+00:00",
       "archival_state": "active",
       "id": "L-537"
+    },
+    {
+      "id": "L-111",
+      "date": "2026-06-01",
+      "type": "skill_update",
+      "learning": "claims_tier_coverage is two metrics under one name: the registry formula scores only retraction-safety (=1.00 / 10-of-10, GREEN) while tier-mapping completeness \u2014 the actual TRX claims-permission gate \u2014 is 0/10 and unbuilt. Dashboard reads GREEN while the gate is non-operational.",
+      "source": "Science & Research dept brief \u2014 corroborated 2026-06-01 (CS-2026-189 scope) + 2026-06-19",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "One label conflates a safety check with a coverage check; consumers read the safe component as the whole, masking the launch-blocking gap. Corroborates rec-262. See daily synthesis 2026-06-19-s1.md.",
+      "confidence": "strong",
+      "action_taken": "a023074 2026-08-24: Task A1 dept briefs (2026-08-24-s1): science-research + content",
+      "skill_files_updated": [],
+      "related_entries": [
+        "rec-262",
+        "CS-2026-268",
+        "CS-2026-274"
+      ],
+      "target": "brain/kenetik-brain/references/metrics-registry.yaml (claims_tier_coverage def \u2014 add tier-completeness sub-metric); cross-surface-pm.json",
+      "merged_from": [
+        "L-139"
+      ],
+      "merged_date": "2026-06-19",
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-08-28",
+      "archived_date": "2026-09-04",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-112",
+      "date": "2026-06-01",
+      "type": "process_change",
+      "learning": "d13_calendar_coverage_pct has two live readings: the DEPRECATED content-calendar forward-entry definition (0.0%) and the canonical planning-discipline definition (32.6% strict / 44.2% incl in_progress, 30d window). Both indicate the same execution-throughput failure; the canonical metric is in material drift, not contradicted.",
+      "source": "Market Intelligence dept brief (D13 reconciliation), 2026-06-01",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "Two definitions coexist after the 2026-05-26 redefinition; the deprecated reading was not retired from the D13 scan. See daily synthesis 2026-06-01-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": "31529cb 2026-08-21: Task A1 dept brief (2026-08-21-s1): market-intelligence (7/7 complete)",
+      "skill_files_updated": [],
+      "related_entries": [
+        "CS-2026-270",
+        "CS-2026-276"
+      ],
+      "target": "D13 domain-scan instructions (retire deprecated content-calendar reading); metrics-registry.yaml d13 note",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "action_stamped_at": "2026-08-21",
+      "archived_date": "2026-09-04",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-113",
+      "date": "2026-06-01",
+      "type": "threshold_calibration",
+      "learning": "Dave Asprey Biohacking Conference event P&L (coded, high-confidence): 30 new / $5,239 coded revenue against a $5,000-$10,000 budget -> coded CAC ~$167-333 (coded undercounts true attribution). A directional benchmark on conference-event acquisition economics.",
+      "source": "attribution-state.json campaign_correlation.event_rollups (5/30, confidence high)",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Additive economics observation (shared_token_ambiguous=false); flagged for event-type CAC benchmarking. See daily synthesis 2026-06-01-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": "9dfd6ca 2026-08-31: Ledger: l-113::learning-action-undiagnosed -> no_work_owed (a business learning for its domain owner)",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "cross-surface-pm.json (event-economics); attribution snapshot 2026-05-30",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "action_stamped_at": "2026-08-31",
+      "archived_date": "2026-09-04",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-115",
+      "date": "2026-06-02",
+      "type": "process_change",
+      "learning": "PubMed sync queries match 'ketone' as a general-chemistry term, returning off-topic papers (organic photocatalysis, dairy-cow blood gas, lung adenocarcinoma, pediatric hyperinsulinism) as new_count_this_run. The new-paper signal is systematically unreliable until MeSH/human/species filters are added.",
+      "source": "Science dept brief INS-SR-1, 2026-06-02; daily synthesis 2026-06-02-s1.md",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "4 of today's flagged new papers off-topic. Root cause: scripts/sync_pubmed.py query strings lack MeSH human filters / species limiters.",
+      "confidence": "moderate",
+      "action_taken": "ebd09e0 2026-09-02: Ledger: l-115::learning-action-undiagnosed -> routed_human (the entry's own remedy would break the tool)",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "scripts/sync_pubmed.py query strings (add MeSH human filter + species limiter)",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-09-02",
+      "archived_date": "2026-09-04",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-116",
+      "date": "2026-06-02",
+      "type": "skill_update",
+      "learning": "Thiessen 2026 (PMID 41650388): acute ketone monoester supplementation decreases cardiac vagal modulation dose-dependently in healthy adults. Adversarially exploitable framing, not in tracked_citations or the Known Null/Negative Findings register, surfaced ahead of the TRX July launch.",
+      "source": "Science dept brief INS-SR-3 / MEMORY UPDATES, 2026-06-02; daily synthesis 2026-06-02-s1.md",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "New adverse-direction literature not auto-routed into claims-compliance negative-findings before launch-content production. Root cause: no auto-route of counter-signal papers pre-launch.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/references/claims-compliance.md (Known Null/Negative Findings) \u2014 add Thiessen 2026; route via CS-189/Brandon",
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-09-04",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-117",
+      "date": "2026-06-04",
+      "type": "threshold_calibration",
+      "learning": "domain_health_streaks.consecutive_below_40 has been incrementing on business-RED status (D13=23, D14=15) rather than the defined scan-quality criteria; both produced substantive briefs, so the counters should have reset. Reset to 0 this session.",
+      "source": "Synthesis Step 8a streak audit, 2026-06-04; daily synthesis 2026-06-04-s1.md",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Step 8a update rule keys off 'degraded quality' but prior sessions read a business-RED dept status as quality degradation; the two are distinct.",
+      "confidence": "moderate",
+      "action_taken": "760040e 2026-08-13: Lock: pilot-worker-b (Repair Loop pilot, AUTO doc-reconciliation + instrument-refinement)",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "synthesis-instructions.md Step 8a: clarify consecutive_below_40 tracks scan-quality only; reset on substantive brief regardless of business status.",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-08-13",
+      "archived_date": "2026-09-04",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-119",
+      "date": "2026-06-05",
+      "type": "content_pattern",
+      "learning": "BRIDGE CP-004: The Matt Hughes/UFC authority-testimonial format (science + authority + emotional arc) drives engagement across FB/IG/LI/TT and is the strongest organic-to-paid graduation in program history (1.66M FB paid impressions at 4.6% engagement). Cross-domain implication: paid media should treat the authority-testimonial as a priority retargeting/prospecting creative frame, and creator amplification should adopt it as a repeatable structure \u2014 but rotate at <=1x/7d per platform (AP-008) since the hook fatigues on frequency, not content.",
+      "source": "Moe Content PM synthesis SYN-20260605-001 (CP-004)",
+      "source_type": "content_synthesis_bridge",
+      "domain": "content",
+      "evidence": "Revalidated 3rd consecutive cycle: 'rebuilding' testimonial FB 28.12% ER / NCS 51.4, highest editorial ER in window; 2.18x median. See Moe PM CP-004.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260605-001",
+      "signal_direction": "positive",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e",
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-09-04",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-120",
+      "date": "2026-06-05",
+      "type": "content_pattern",
+      "learning": "BRIDGE AP-011 (negative): Cart-recovery / transactional email copy ('Forgot something? Check out now\u2026') posted as organic social scores near-zero (NCS 5-44, 0-1.16% ER) \u2014 the feed algorithm ignores hard transactional CTAs. Distinct from AP-010 (bulk-duplication suppression); here the issue is copy register. Cross-domain implication: this is a lifecycle<->content-ops boundary failure \u2014 abandoned-cart/checkout-CTA copy belongs in Klaviyo email/SMS and paid retargeting only, never organic social. Content intake (Larry's queue) should reject transactional-CTA bodies on organic surfaces.",
+      "source": "Moe Content PM synthesis SYN-20260605-001 (AP-011)",
+      "source_type": "content_synthesis_bridge",
+      "domain": "content",
+      "evidence": "Reconfirmed 2nd consecutive cycle: 3 FB cart-recovery posts, NCS 13.6/13.8/44.1, ER 0.18-1.16%, one pushed to 13,788 imp. first_seen 2026-05-31. See Moe PM AP-011.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_note": null,
+      "entry_type": "content_pattern",
+      "bridge_synthesis_id": "SYN-20260605-001",
+      "signal_direction": "negative",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "Bridged from Moe PM synthesis SYN-20260605-001 per Process 3.8 Step 0e",
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "archived_date": "2026-09-04",
+      "archived_reason": "expired_unactioned"
     }
   ],
   "last_updated": "2026-09-04"
