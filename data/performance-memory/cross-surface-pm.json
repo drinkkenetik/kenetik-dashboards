@@ -3792,6 +3792,13 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-09-04"
+    },
+    {
+      "id": "L-546",
+      "summary": "market-intelligence.md due for validation (183d since last_validated; threshold 180d). Owner: Devon Price.",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-06"
     }
   ],
   "entries": [
@@ -9003,6 +9010,31 @@
       "created_at": "2026-09-04T18:13:59.495714+00:00",
       "archival_state": "active",
       "id": "L-545"
+    },
+    {
+      "id": "L-546",
+      "date": "2026-09-06",
+      "learning": "market-intelligence.md due for validation (183d since last_validated; threshold 180d). Owner: Devon Price.",
+      "source": "brain/kenetik-brain/references/market-intelligence.md frontmatter: last_validated vs staleness_threshold_days",
+      "source_type": "staleness_alert",
+      "domain": "operations",
+      "confidence": "preliminary",
+      "details": {
+        "file": "brain/kenetik-brain/references/market-intelligence.md",
+        "days_stale": 183,
+        "threshold_days": 180,
+        "owner": "Devon Price",
+        "suggested_actions": [
+          "Review for accuracy",
+          "If still accurate: add 'validated: still accurate, no content change' to version log",
+          "If updates needed: edit + log entry describing change"
+        ]
+      },
+      "entry_type": "staleness_alert",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-06T08:22:43.852002+00:00",
+      "archival_state": "active"
     }
   ],
   "archived_entries": [
@@ -17231,5 +17263,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-09-04"
+  "last_updated": "2026-09-06"
 }
