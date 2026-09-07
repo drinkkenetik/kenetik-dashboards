@@ -3799,6 +3799,13 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-09-06"
+    },
+    {
+      "id": "L-547",
+      "summary": "[p1-destination-split] registered: Pointing paid-search traffic at /collections/kenetik-ketone-products (7.94% CVR) instead of the current Google-sel\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-09-07"
     }
   ],
   "entries": [
@@ -9035,6 +9042,135 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-06T08:22:43.852002+00:00",
       "archival_state": "active"
+    },
+    {
+      "date": "2026-09-07",
+      "entry_type": "threshold_calibration",
+      "learning": "Pre-registered (p1-destination-split): Pointing paid-search traffic at /collections/kenetik-ketone-products (7.94% CVR) instead of the current Google-selected destination raises purchase rate per session by at least +1.0pp, on the site's own best-measured quantity. Unit: google_ads_destination_url. Lever: destination_url_change. MDE 0.009981, required_days 40. Not yet measured.",
+      "source": "hypothesis_lane measurement plan \u2014 read_command: python3 scripts/premise_revalidation.py state data/paid-media/experiments/p1-destination-split-reads.json",
+      "sources": [
+        "measurement plan read_command: python3 scripts/premise_revalidation.py state data/paid-media/experiments/p1-destination-split-reads.json",
+        "registered_on 2026-09-07"
+      ],
+      "source_type": "experiment_registration",
+      "domain": "paid-media",
+      "evidence": "confirm_if `diff_pp >= 0.01`; baseline as_of 2026-09-05; power_gate subject p1_destination_split.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "experiment_ledger": {
+        "schema_version": 1,
+        "plan_id": "p1-destination-split",
+        "unit": "google_ads_destination_url",
+        "lever": "destination_url_change",
+        "prediction": "Pointing paid-search traffic at /collections/kenetik-ketone-products (7.94% CVR) instead of the current Google-selected destination raises purchase rate per session by at least +1.0pp, on the site's own best-measured quantity.",
+        "minimum_detectable_effect": 0.009981,
+        "required_days": 40,
+        "registered_on": "2026-09-07",
+        "status": "registered",
+        "plan": {
+          "read_command": "python3 scripts/premise_revalidation.py state data/paid-media/experiments/p1-destination-split-reads.json",
+          "window_days": 40,
+          "measurement_due": "2026-10-17",
+          "confirm_if": "diff_pp >= 0.01",
+          "refute_if": "diff_pp <= -0.01",
+          "baseline": {
+            "as_of": "2026-09-05",
+            "site_wide_paid_search_rate": 0.0394,
+            "destination_candidates": {
+              "collections/kenetik-ketone-products": {
+                "sessions": 5657,
+                "transactions": 449,
+                "cvr": 0.0794,
+                "wilson_95ci": [
+                  0.0726,
+                  0.0867
+                ]
+              },
+              "products/kenetik-cans-daily-clarity-focus": {
+                "sessions": 15442,
+                "transactions": 379,
+                "cvr": 0.0245,
+                "wilson_95ci": [
+                  0.0222,
+                  0.0271
+                ]
+              }
+            },
+            "source": "scripts/analysis/strategy-2026-09-07/destination_spread.py \u2014 18 GA4 weekly windows, 198149 sessions, 6355 transactions, site rate 3.21%"
+          },
+          "unit": {
+            "kind": "session_binomial",
+            "baseline_rate": 0.0394,
+            "daily_sessions": 334.0,
+            "split": 0.5
+          },
+          "minimum_detectable_effect": 0.009981,
+          "required_days": 40,
+          "decision_rule": {
+            "confirm_if": "diff_pp >= 0.01",
+            "refute_if": "diff_pp <= -0.01",
+            "inconclusive_if": "diff_pp > -0.01 and diff_pp < 0.01"
+          },
+          "power_gate": {
+            "applies": true,
+            "unit_kind": "session_binomial",
+            "subject": "p1_destination_split",
+            "baseline_rate": 0.0394,
+            "daily_sessions": 334.0,
+            "split": 0.5,
+            "effect_pp": 0.01,
+            "minimum_detectable_effect_pp": 0.009981,
+            "required_sessions_per_arm": 6657,
+            "required_days": 40,
+            "required_days_ceiling": 90,
+            "testable": true,
+            "power": 0.8,
+            "alpha_per_day_two_sided": 0.05,
+            "as_of": "2026-09-05",
+            "source": "scripts/hypothesis_lane.two_proportion_required_sessions \u2014 the standard unpooled two-proportion sample-size formula (Fleiss, Levin & Paik 2003 ch.3; Chow, Shao & Wang 2007 ch.4), never the ROAS bootstrap"
+          },
+          "sequential": {
+            "looks": 2,
+            "boundaries": [
+              {
+                "look": 1,
+                "looks": 2,
+                "information_fraction": 0.5,
+                "z": 2.771808,
+                "alpha_spent_at_this_look": 0.005574596680784527,
+                "alpha_spent_through_this_look": 0.005574596680784527,
+                "planned_alpha_two_sided": 0.05,
+                "rule": "O'Brien\u2013Fleming \u03b1-spending (Lan\u2013DeMets): \u03c0_k = \u03b1*(k/K) \u2212 \u03b1*((k\u22121)/K) with \u03b1*(t) = 2[1 \u2212 \u03a6(z_(1\u2212\u03b1/2)/\u221at)]; z_bound = z_(1\u2212\u03c0_k/2). Conservative by the union bound: \u03a3\u03c0_k = \u03b1 exactly, so the total never exceeds the planned \u03b1.",
+                "source": "O'Brien & Fleming 1979 (Biometrics 35:549); Lan & DeMets 1983 (Biometrika 70:659); Jennison & Turnbull 2000 ch. 2\u20134, 19"
+              },
+              {
+                "look": 2,
+                "looks": 2,
+                "information_fraction": 1.0,
+                "z": 2.010055,
+                "alpha_spent_at_this_look": 0.044425403319215476,
+                "alpha_spent_through_this_look": 0.05,
+                "planned_alpha_two_sided": 0.05,
+                "rule": "O'Brien\u2013Fleming \u03b1-spending (Lan\u2013DeMets): \u03c0_k = \u03b1*(k/K) \u2212 \u03b1*((k\u22121)/K) with \u03b1*(t) = 2[1 \u2212 \u03a6(z_(1\u2212\u03b1/2)/\u221at)]; z_bound = z_(1\u2212\u03c0_k/2). Conservative by the union bound: \u03a3\u03c0_k = \u03b1 exactly, so the total never exceeds the planned \u03b1.",
+                "source": "O'Brien & Fleming 1979 (Biometrics 35:549); Lan & DeMets 1983 (Biometrika 70:659); Jennison & Turnbull 2000 ch. 2\u20134, 19"
+              }
+            ],
+            "why": "an O'Brien\u2013Fleming spending boundary over this test's own two-sided alpha (0.05), so a genuinely large effect can stop it early without inflating alpha and everything else runs its planned duration."
+          }
+        },
+        "grade": null,
+        "grade_history": [],
+        "registered_by": "scripts/experiment_ledger.py",
+        "registered_at": "2026-09-07T05:44:29.590382+00:00"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-07T05:44:29.590508+00:00",
+      "archival_state": "active",
+      "id": "L-547"
     }
   ],
   "archived_entries": [
@@ -17263,5 +17399,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-09-06"
+  "last_updated": "2026-09-07"
 }
