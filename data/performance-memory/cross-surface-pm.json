@@ -3806,6 +3806,13 @@
       "domain": "paid-media",
       "status": "active",
       "date": "2026-09-07"
+    },
+    {
+      "id": "L-548",
+      "summary": "[CS-2026-281] incomplete (n/a): Strong NY 9/26 is confirmed at $6,500 with no measurement attached \u2014 stand up lead capture and a sell-through read be\u2026",
+      "domain": "cross-functional",
+      "status": "archived",
+      "date": "2026-09-06"
     }
   ],
   "entries": [
@@ -4965,7 +4972,7 @@
       "domain": "cross-surface",
       "evidence": "0 MAC entries in competitor-state.json; CS-156 ad-library monitor expired_unreviewed 7/2; CS-188 listening dark 3+ weeks with a mart-status timeout. See daily synthesis 2026-07-10-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "d0ae714 2026-09-07: Task A1: market-intelligence brief final \u2014 3 rows filed, 3 cited (2026-09-07-s1)",
       "target": "competitive-response playbook - require an intelligence-profile + monitoring-cadence check distinct from messaging-asset existence",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
@@ -4973,7 +4980,11 @@
       "created_at": "2026-07-10T13:28:18.937321+00:00",
       "archival_state": "active",
       "id": "L-267",
-      "type": "process_change"
+      "type": "process_change",
+      "action_stamped_at": "2026-09-07",
+      "related_entries": [
+        "CS-2026-241"
+      ]
     },
     {
       "date": "2026-07-10",
@@ -17397,6 +17408,33 @@
       ],
       "archived_date": "2026-09-04",
       "archived_reason": "expired_unactioned"
+    },
+    {
+      "date": "2026-09-06",
+      "type": "changeset_outcome",
+      "learning": "Strong NY 9/26 is confirmed at $6,500 with no measurement attached \u2014 stand up lead capture and a sell-through read before the booth ships \u2014 closed as expired_unreviewed on 2026-09-06 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-281)",
+      "source_type": "changeset_outcome",
+      "domain": "cross-functional",
+      "evidence": "Outcome: expired_unreviewed. Closed without measurement. Backfilled from tracker.json (CS-2026-281).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-281",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-07T14:49:47.624111+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-09-07",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-07T14:49:47.626150+00:00",
+      "archival_state": "active",
+      "id": "L-548"
     }
   ],
   "last_updated": "2026-09-07"
