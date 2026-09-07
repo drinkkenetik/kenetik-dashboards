@@ -3813,6 +3813,48 @@
       "domain": "cross-functional",
       "status": "archived",
       "date": "2026-09-06"
+    },
+    {
+      "id": "L-549",
+      "summary": "A code-entry promotion has two independent failure modes and the daily read instruments only one. The prior promotion was configured and never functi\u2026",
+      "domain": "campaigns",
+      "status": "active",
+      "date": "2026-09-07"
+    },
+    {
+      "id": "L-550",
+      "summary": "A refining recommendation declared its predecessor obsolete in its own prose and nothing recorded the supersession as a status, leaving two mutually \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-07"
+    },
+    {
+      "id": "L-551",
+      "summary": "A completeness guard that tests one line item for one failure mode admits a month broken on a different line item. The guard tests whether fixed cost\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-09-07"
+    },
+    {
+      "id": "L-552",
+      "summary": "A save offer deployed only behind cancel intent is invisible as merchandising. The flavour-swap capability is built and shipped inside the cancel-flo\u2026",
+      "domain": "lifecycle",
+      "status": "active",
+      "date": "2026-09-07"
+    },
+    {
+      "id": "L-553",
+      "summary": "Four consumers publish four different acquisition-cost numbers for overlapping periods and none is required to reconcile against, or even name, the o\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-09-07"
+    },
+    {
+      "id": "L-554",
+      "summary": "The recommendation store's lock protects the id and not the finding. Two routines filed rows for the same three department actions inside one ten-min\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-07"
     }
   ],
   "entries": [
@@ -9182,6 +9224,142 @@
       "created_at": "2026-09-07T05:44:29.590508+00:00",
       "archival_state": "active",
       "id": "L-547"
+    },
+    {
+      "date": "2026-09-07",
+      "learning": "A code-entry promotion has two independent failure modes and the daily read instruments only one. The prior promotion was configured and never functioned; the Labor Day code functioned at an 18.15% realised discount rate across 35 redemptions and reached only 16.1% of 218 eligible checkout orders because nobody was told. Testing the mechanic alone produced two OPPOSITE wrong conclusions in five days - 'the discount never went live' on 09-04 and 'the discount failed' on course for 09-08.",
+      "source": "Task B synthesis 2026-09-07-s1 theme X1",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-07-s1/dept-website-cro.md ACT-W-1 / INS-W-1 (16.1% of 218 eligible checkout orders; site CVR -16.8% on matched sale weekdays)",
+        "cgo-logs/department-briefs/2026-09-07-s1/dept-lifecycle-marketing.md ACT-D-1 / INS-D-1 (LDW 35 uses, $970.56 on $4,378.00, 18.15% realised, first_seen 2026-09-03)",
+        "cgo-logs/department-briefs/2026-09-07-s1/dept-market-intelligence.md INS-MI-1 (the price point was reached; the constraint was that almost nobody was told)",
+        "data/performance-memory/cross-surface-pm.json L-499 (the End of Summer Reset: configured, zero redemptions, a lift attributed to a discount never redeemed)",
+        "cgo-logs/daily-syntheses/2026-09-04-s1.md (the 09-04 premise correction, the opposite wrong conclusion on the same offer)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "campaigns",
+      "confidence": "strong",
+      "evidence": "Root cause: the offer-conditioning predicate reads only whether a calendar row states a mechanic on a day and never asks whether anyone used the code or whether anyone was told; redemption and reach are separate quantities and no consumer reads both. See daily synthesis 2026-09-07-s1.md.",
+      "action_taken": "Spawned CS-2026-298 to make both halves required on a promotion's verdict.",
+      "target": "scripts/business_events.py liveness predicate; the promotional verdict's required fields",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-07T15:00:19.185194+00:00",
+      "archival_state": "active",
+      "id": "L-549"
+    },
+    {
+      "date": "2026-09-07",
+      "learning": "A refining recommendation declared its predecessor obsolete in its own prose and nothing recorded the supersession as a status, leaving two mutually exclusive open instructions on one owner for the beat carrying that day's deadline. rec-549 says 'Refines rec-510 (unexecuted, day 3)' and 'instead of enrolling codes into the empty campaign'; rec-510 is nevertheless still open, and the owner's queue reads 10 items with one of them declared obsolete by its own successor three days ago.",
+      "source": "Task B synthesis 2026-09-07-s1 theme X2",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-07-s1/dept-operations-planning.md headline / INS-D-1 / ACT-D-2 (the pat-prose-supersession pattern, one live instance)",
+        "cgo-logs/changesets/tracker.json pending_recommendations rec-510 (status open) and rec-549 (open, declaring the supersession in prose)",
+        "live Superfiliate pull 2026-09-07T11:33Z (574 of 591 enrolled creators at 15.0 across 15 occupied campaigns; campaign 167781 at 20.0 holds 0)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "confidence": "moderate",
+      "evidence": "Root cause: the recommendation writer allocates ids and enforces row shape but has no predecessor-resolution step, so a supersession can only be expressed in prose - and prose is not a status any counter, escalation ladder or console can read. See daily synthesis 2026-09-07-s1.md.",
+      "action_taken": null,
+      "target": "scripts/cs_helpers/rec_writer.py - a predecessor-resolution step in the authorship rule",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-07T15:00:19.205439+00:00",
+      "archival_state": "active",
+      "id": "L-550"
+    },
+    {
+      "date": "2026-09-07",
+      "learning": "A completeness guard that tests one line item for one failure mode admits a month broken on a different line item. The guard tests whether fixed cost is negative; August passes at +$221,654 while its marketing lines carry $87,267 against a $232-285K norm. The result is not a coarse basis but four wrong published numbers, all wrong in the favourable direction, one of which makes a Level 1 cost outcome read as achieved - and recomputing the gap board spread it to the two margin outcomes as well.",
+      "source": "Task B synthesis 2026-09-07-s1 theme X3",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-07-s1/dept-paid-media.md ACT-D-1 / INS-D-4 (the guard, the August lines, and three independent reads of the same month)",
+        "data/metrics/gap-ledger.json recomputed in-session (contribution_margin_pct 0.2358 -> 0.3357 and monthly_fixed_costs $276,888.54 -> $296,096.55 on August entering the clean-month average)",
+        "data/performance-memory/cross-surface-pm.json L-476 (the basis criticism that has now become a live wrong number)",
+        "cgo-logs/department-briefs/2026-09-07-s1/dept-science-research.md ACT-D-1 (the same unbooked month behind the claims-exposure spend figures)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "confidence": "strong",
+      "evidence": "Root cause: completeness was specified as a single named failure mode rather than as a property of the month, so the guard caught exactly what it was built for and nothing adjacent - and every downstream consumer trusts the guard rather than re-checking the inputs. See daily synthesis 2026-09-07-s1.md.",
+      "action_taken": "rec-581 owns the guard refinement; CS-2026-297 owns the uncovered margin gap the contamination hid.",
+      "target": "scripts/leverage_analysis.py parse_qb_pl clean-month guard",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-07T15:00:19.227048+00:00",
+      "archival_state": "active",
+      "id": "L-551"
+    },
+    {
+      "date": "2026-09-07",
+      "learning": "A save offer deployed only behind cancel intent is invisible as merchandising. The flavour-swap capability is built and shipped inside the cancel-flow intercept, and the only customers who can reach it are the ones already leaving - so a subscriber who simply wants a different flavour has to start cancelling to discover the option exists. The count is a first-month, single-SKU number and a second launch flavour enters the same path in eight days.",
+      "source": "Task B synthesis 2026-09-07-s1",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-07-s1/dept-lifecycle-marketing.md ACT-D-3 (the capability is live and gated behind cancel intent; 41 first-month cancellations on one SKU)",
+        "cgo-logs/changesets/tracker.json CS-2026-230 (published 2026-06-22, the live Recharge intercept, offer set skip/swap/pause/downsize/gift)",
+        "data/marketing-calendar/marketing-calendar-data.json ASPREY-BLUEBERRY-LAUNCH-091526 (the second launch flavour, 2026-09-15)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "lifecycle",
+      "confidence": "moderate",
+      "evidence": "Root cause: the capability was scoped by the surface that funded it (cancel deflection) rather than by the need it serves (variety), so its placement was decided by the project rather than by the customer's path. See daily synthesis 2026-09-07-s1.md.",
+      "action_taken": "rec-574 (Katie Spaller) asks for it to move onto the subscriber's own account surface.",
+      "target": "the cancel-flow intercept's offer set, and the subscriber account surface",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-07T15:00:19.247045+00:00",
+      "archival_state": "active",
+      "id": "L-552"
+    },
+    {
+      "date": "2026-09-07",
+      "learning": "Four consumers publish four different acquisition-cost numbers for overlapping periods and none is required to reconcile against, or even name, the others. For 2026-09-06 the attribution cross-cut reads bottom-up pure paid $142.71, top-down pixel $67.20 and top-down blended $48.00 - a factor of three, and expected by construction on 7 conversions, directional only. What is not expected is the fifth number: the published monthly figure reads $3.41 while the executive digest has reported $72.98 for three consecutive days. This is a measurement and attribution learning, not a performance claim.",
+      "source": "Task B synthesis 2026-09-07-s1",
+      "sources": [
+        "data/attribution/attribution-state.json channel_cac for 2026-09-06 (bottom_up_pure_paid_cac 142.71, top_down_pixel_paid_cac 67.20, top_down_blended_cac 48.00, 7 GA4 paid conversions, whitelisting spend 0)",
+        "data/metrics/reporting-state.json digital_cac $3.41 as published, against target $34 and band [$25,$37]",
+        "data/notifications/reads/inbound.json (the executive digest reporting paid CAC $72.98 on 2026-09-06 and twice on 2026-09-07)",
+        "cgo-logs/department-briefs/2026-09-07-s1/dept-paid-media.md INS-D-4 / INS-D-5 (the two independent reads at $13.60 and $15.43, and the mixed spend bases inside one digest slice)"
+      ],
+      "source_type": "domain_contradiction",
+      "domain": "paid-media",
+      "confidence": "moderate",
+      "evidence": "Root cause: each consumer computes acquisition cost from a different denominator over a different window, and no consumer is required to reconcile against or name the others, so the divergence is invisible at every individual read. See daily synthesis 2026-09-07-s1.md.",
+      "action_taken": null,
+      "target": "the metric registry's digital_cac / blended_cac notes, and the digest's cost-per-customer line",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-07T15:00:19.267889+00:00",
+      "archival_state": "active",
+      "id": "L-553"
+    },
+    {
+      "date": "2026-09-07",
+      "learning": "The recommendation store's lock protects the id and not the finding. Two routines filed rows for the same three department actions inside one ten-minute window, each having correctly run a collision check against a checkout that was current when it ran: this synthesis read at 74d378e, found Market Intelligence's actions carrying no rows, and wrote two - while the 14:15Z department sweep had already filed rec-592 and rec-593 for the same findings. Layer 0 as specified cannot see a row that does not exist yet.",
+      "source": "Task B synthesis 2026-09-07-s1",
+      "sources": [
+        "cgo-logs/changesets/tracker.json rec-595 and rec-597 (created and resolved approved_elsewhere in the same session onto rec-593 and rec-592)",
+        "git commits 641aade and d0ae714 (the 14:15Z department sweep filing the same three rows between this session's Layer 0 read and its write)",
+        "cgo-logs/daily-syntheses/2026-09-07-s1.md corrections section (the correction recorded rather than quietly applied)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "confidence": "preliminary",
+      "evidence": "Root cause: the collision check is a read against committed state and the writer's lock is scoped to id allocation, so two concurrent authors of the same finding both pass both gates. Filed preliminary because one observed instance cannot distinguish a routine race from a schedule collision introduced by the sweep routine's own 14:15Z slot. See daily synthesis 2026-09-07-s1.md.",
+      "action_taken": null,
+      "target": "scripts/cs_helpers/rec_writer.py - a same-day provenance/anchor collision warning at write time",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-07T15:00:19.291466+00:00",
+      "archival_state": "active",
+      "id": "L-554"
     }
   ],
   "archived_entries": [
