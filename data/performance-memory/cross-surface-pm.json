@@ -3862,6 +3862,27 @@
       "domain": "DTC-website",
       "status": "archived",
       "date": "2026-09-08"
+    },
+    {
+      "id": "L-556",
+      "summary": "The communication framework's own success metric has no measurable population, and the reason is precisely the layers this runtime cannot send. data/\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-08"
+    },
+    {
+      "id": "L-557",
+      "summary": "An instruction that exists only in a person's memory cannot be distinguished from its own absence, and the row's recorded default then reads as permi\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-08"
+    },
+    {
+      "id": "L-558",
+      "summary": "On a censored or composed input, a FAVOURABLE movement carries no information, and three separate instruments produced one on the same morning. (1) s\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-08"
     }
   ],
   "entries": [
@@ -9367,6 +9388,73 @@
       "created_at": "2026-09-07T15:00:19.291466+00:00",
       "archival_state": "active",
       "id": "L-554"
+    },
+    {
+      "date": "2026-09-08",
+      "learning": "The communication framework's own success metric has no measurable population, and the reason is precisely the layers this runtime cannot send. data/notifications/reads/decision-latency.json reads per_receipt [] and summary_by_class {} on its first run -- correctly and by design, because compute_latency() emits a row only for a receipt carrying an OWNER, and all 11 receipts written to date are owner-less exec_digest posts of class M2. The owner-bearing classes are exactly Layer 1 personal DMs, Layer 1.5 department channel posts and Layer 3 broadcast, all three of which are reported OWED and not sent from this runtime for want of a per-person or per-channel credential. So the metric that would tell anyone whether the pipeline's asks get answered cannot begin reading until the transport gap closes.",
+      "source": "Task B synthesis 2026-09-08-s1, reading data/notifications/reads/decision-latency.json and data/notifications/sent-receipts.json against scripts/notify_reads.py compute_latency",
+      "source_type": "operational_signal",
+      "evidence": "Root cause: the measurement was built against the INTENDED send mix rather than the actual one. Nothing is broken in compute_latency -- the empty artifact is an honest zero over an eligible set of zero, and in_reply_to_receipt is null on all 247 captured messages consistently with that. The risk is misreading: an empty summary_by_class could be taken for a working instrument reporting no delay, or for a broken one, when it is a correct instrument with no input. Same shape as claims_tier_coverage reading 1.00 over a denominator that structurally excludes the exposure (L-487), and the same shape as L-123's zero-returning-source discriminator. Target: state the owner-bearing precondition in data/notifications/reads/README.md where a reader will hit it, and record in architecture/process/notification-altitudes.md that Rule 7 is unmeasurable while Layers 1, 1.5 and 3 are owed. See daily synthesis 2026-09-08-s1.md Learning Signals.",
+      "domain": "operations",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "data/notifications/reads/README.md; architecture/process/notification-altitudes.md",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-08T14:50:57.132672+00:00",
+      "archival_state": "active",
+      "id": "L-556"
+    },
+    {
+      "date": "2026-09-08",
+      "learning": "An instruction that exists only in a person's memory cannot be distinguished from its own absence, and the row's recorded default then reads as permission. A reported 2026-09-07 hold on CS-2026-261 appears in NONE of the three artifact stores this pipeline can read, each searched independently today: the ChangeSet row (zero occurrences of pause/paused/halt/'stand down'/'do not upload'; all 90 'hold' tokens resolve to CS-2026-260, the phrase 'founding condition HOLDS', or a destination question on CS-2026-198; last human note is the 09-03 reassignment), the committed 30-day Slack reads capture (per-channel cursors advanced through 2026-09-07T20:06Z across all nine mapped channels, and zero messages from Devon Price on 09-07 of any kind), and the paid-media reasoning queue (the only relevant item, premise_flip:expired:CS-2026-261:2026-08-15, is withdrawn). The row is approved and armed, its execution target is today, and its own DECISION OWED block records the default as 'Approve as written'.",
+      "source": "Task B synthesis 2026-09-08-s1, corroborating dept-paid-media INV-D-1, dept-operations-planning INV-D-2/ACT-D-2, and D14 H-14-2",
+      "sources": [
+        "cgo-logs/changesets/tracker.json CS-2026-261 (status approved, owner Katie Spaller, last_updated 2026-09-06, execution_target_date 2026-09-08; 90 'hold' tokens none of which is a hold on this row; zero pause/halt/stand-down tokens)",
+        "data/notifications/reads/inbound.json + cursor.json (M7 capture, per-channel cursors advanced through 2026-09-07T20:06Z across all nine mapped channels; zero messages from Devon Price on 2026-09-07)",
+        "data/paid-media/reasoning-queue.json (premise_flip:expired:CS-2026-261:2026-08-15 is withdrawn, not open)",
+        "cgo-logs/department-briefs/2026-09-08-s1/dept-paid-media.md INV-D-1 (independent read of the same row reaching the same conclusion)",
+        "cgo-logs/department-briefs/2026-09-08-s1/dept-operations-planning.md ACT-D-2/INV-D-2 (exhaustive token search of the row)",
+        "cgo-logs/domain-scans/2026-09-08-s1/domain-14.md H-14-2 and SIG-14-1 (the hypothesis this confirms on artifacts)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Root cause: the system has a mechanically-enforced write path for every recurring DATA artifact and none for an executive DECISION. A verbal or Slack-only instruction to hold an armed row has no deterministic path onto that row, so it takes effect only if a person remembers to relay it -- CLAUDE.md's third standing rule (an instruction is not an interface) applied to the governance surface rather than to a data write. This is sharper than L-511 and L-550 because the M7 Slack-reads capture, first committed today, makes the absence MEASURABLE rather than presumed: the pipeline can now prove the instruction is in no store it reads. Three briefs independently asked for the hold and rec-575 carries it in the recommendation store, and the row an uploader opens shows none of them. Target: a hold/stand-down field or note class on tracker.json written by a deterministic writer alongside scripts/cs_helpers/rec_writer.py. See daily synthesis 2026-09-08-s1.md P1.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "cgo-logs/changesets/tracker.json; scripts/cs_helpers/",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-08T14:51:54.133367+00:00",
+      "archival_state": "active",
+      "id": "L-557"
+    },
+    {
+      "date": "2026-09-08",
+      "learning": "On a censored or composed input, a FAVOURABLE movement carries no information, and three separate instruments produced one on the same morning. (1) sentiment_negative_pct improved 0.18 to 0.04 while all 50 returned messages fell inside a 25.4-hour band, the 50-message page cap having been hit six consecutive cycles, and both UNCAPPED lanes moved the opposite way -- subscription cancels citing price went 25 to 28 in the same 7-day window, and review_avg_star reads 4.077 against a 4.8 target for a third consecutive scan. (2) rec-599's predicted refusal cleared with no fitter fix anywhere in the code, because the composed input simply lost the department cause clause that had pushed the metric line over its character cap. (3) m3_repeat_rate reads OFF_TARGET-WIDENING on the executive board while sitting AHEAD of its own Q3 milestone (0.221 against 0.1967), because the reading is one cohort at M3 while the newer cohorts are climbing. Each of the three was read as movement by at least one surface before a department checked the input.",
+      "source": "Task B synthesis 2026-09-08-s1, cross-reading dept-market-intelligence INS-M-1, dept-lifecycle-marketing INS-D-1/INS-D-2, dept-operations-planning INV-D-3",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-08-s1/dept-market-intelligence.md INS-M-1 (sentiment 0.18 -> 0.04 on a 50-message cap hit six consecutive cycles, all 50 inside a 25.4h band, only 24 third-party text)",
+        "cgo-logs/department-briefs/2026-09-08-s1/dept-lifecycle-marketing.md INS-D-1/INV-D-2 (weekly_review.py --check 10/10 exit 0 with no fitter commit in git; the refusal cleared because the input lost its cause clause)",
+        "cgo-logs/department-briefs/2026-09-08-s1/dept-lifecycle-marketing.md INS-D-2 (m3_repeat_rate 0.221 is the 2026-05 cohort at M3: [17.2, 19.5, 22.1], while 2026-06 is 22.9% at M2 and 2026-07 is 23.8% at M1)",
+        "data/metrics/gap-ledger.json m3_repeat_rate (status OFF_WIDENING against the 0.25 target while reading 0.221 against a 0.1967 Q3 milestone -- ahead of milestone, behind destination)",
+        "cgo-runtime/digest-2026-09-08.json (sentiment_negative_pct 0.04, d10_feedback_volume_by_channel_weekly 50, review_avg_star 4.077)",
+        "cgo-logs/department-briefs/2026-09-08-s1/dept-operations-planning.md INV-D-3 (zero ChangeSets or recommendations created after 2026-09-07 name m3_repeat_rate, so the board's widening verdict drove no work)"
+      ],
+      "source_type": "domain_contradiction",
+      "evidence": "Root cause: drift and movement verdicts are computed from a value and a prior value with no predicate on whether the INPUT that produced them was capped, composed, or compositionally shifted. The asymmetry that makes it persist is in the READER, not the instrument: an adverse movement on a censored input gets scrutinised because it demands work, a favourable one is accepted because it demands none. That is why a validator in front of the metric would not fix it -- the discriminator has to travel WITH the reading. Measured today: d10_feedback_volume_by_channel_weekly has read exactly 50 on every non-zero day of 90 days retained (rec-592 owns the pull-side fix); weekly_review.py --check returned 10/10 exit 0 today with no fitter commit in git; the May cohort reads [17.2, 19.5, 22.1] across M1-M3 while June is 22.9% at M2 and July 23.8% at M1. Target: carry an input-integrity flag alongside the movement verdict in data/metrics/gap-ledger.json, and add the discriminator to synthesis-instructions.md Framing Guardrails.",
+      "domain": "cross-surface",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "data/metrics/gap-ledger.json; cgo-daily-pipeline/config/synthesis-instructions.md",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-08T14:51:54.159796+00:00",
+      "archival_state": "active",
+      "id": "L-558"
     }
   ],
   "archived_entries": [
