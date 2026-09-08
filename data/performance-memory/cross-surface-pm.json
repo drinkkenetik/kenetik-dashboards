@@ -3883,6 +3883,20 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-09-08"
+    },
+    {
+      "id": "L-559",
+      "summary": "[CS-2026-224] incomplete (n/a): Shipped PCP-routing fields on the KenetikPro patient Access Request form (Form 1038261) and authored the patient-refe\u2026",
+      "domain": "cross-functional",
+      "status": "active",
+      "date": "2026-09-08"
+    },
+    {
+      "id": "L-560",
+      "summary": "[CS-2026-233] incomplete (n/a): Shipped a dedicated TRX x Kenetik Lemon-Lime Shot PDP plus a launch LP for the 8/18 drop -> /pages/trx read 5.32% CVR\u2026",
+      "domain": "DTC-website",
+      "status": "active",
+      "date": "2026-09-08"
     }
   ],
   "entries": [
@@ -9455,6 +9469,58 @@
       "created_at": "2026-09-08T14:51:54.159796+00:00",
       "archival_state": "active",
       "id": "L-558"
+    },
+    {
+      "date": "2026-09-08",
+      "type": "changeset_outcome",
+      "learning": "Shipped PCP-routing fields on the KenetikPro patient Access Request form (Form 1038261) and authored the patient-referred practitioner application (Form 1061806), the latter never activated -> the only metric wired to the row, site-wide new_customer_count, read 37.0 and could not isolate a KenetikPro B1/B2 triage change from it -> a funnel change needs a segment that exists in the measurement store BEFORE it ships. The measurement_plan asked for `referred-by-patient`-tagged submission counts an\u2026",
+      "source": "ChangeSet tracker close record (CS-2026-224)",
+      "source_type": "changeset_outcome",
+      "domain": "cross-functional",
+      "evidence": "Outcome: measured_no_target. Backfilled from tracker.json (CS-2026-224).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-224",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-08T17:48:13.680869+00:00",
+      "maintain_version": "1.2.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-08T17:48:13.681494+00:00",
+      "archival_state": "active",
+      "id": "L-559"
+    },
+    {
+      "date": "2026-09-08",
+      "type": "changeset_outcome",
+      "learning": "Shipped a dedicated TRX x Kenetik Lemon-Lime Shot PDP plus a launch LP for the 8/18 drop -> /pages/trx read 5.32% CVR on 94 sessions and 5 transactions over 08-24..09-06, which cannot be distinguished from the 4.76% baseline because one transaction moves the reading 1.06pp -> three separate design faults made this row unmeasurable before it ever ran, and each is reusable as a pre-flight check. (1) The metric was site-wide d01_site_cvr but the change is page-level, and cohort-state.json has no L\u2026",
+      "source": "ChangeSet tracker close record (CS-2026-233)",
+      "source_type": "changeset_outcome",
+      "domain": "DTC-website",
+      "evidence": "Outcome: inconclusive. Expected revenue: $20,600. Backfilled from tracker.json (CS-2026-233).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-233",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-08T17:48:13.680958+00:00",
+      "maintain_version": "1.2.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-08T17:48:13.696714+00:00",
+      "archival_state": "active",
+      "id": "L-560"
     }
   ],
   "archived_entries": [
