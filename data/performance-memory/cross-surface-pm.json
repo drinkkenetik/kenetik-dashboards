@@ -3897,6 +3897,27 @@
       "domain": "DTC-website",
       "status": "active",
       "date": "2026-09-08"
+    },
+    {
+      "id": "L-561",
+      "summary": "A store-wide push gate means one row written outside the canonical writer blocks every other writer's delta, including writers with no relationship t\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-09"
+    },
+    {
+      "id": "L-562",
+      "summary": "A recovery artifact with no reader is indistinguishable from a lost write. Task A1 parked ten validated recommendation rows as a replayable git patch\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-09"
+    },
+    {
+      "id": "L-563",
+      "summary": "One conditioning predicate implemented at two grains produced a reasoned decision at one and an unfalsifiable label at the other, in the same artifac\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-09-09"
     }
   ],
   "entries": [
@@ -9521,6 +9542,81 @@
       "created_at": "2026-09-08T17:48:13.696714+00:00",
       "archival_state": "active",
       "id": "L-560"
+    },
+    {
+      "date": "2026-09-09",
+      "learning": "A store-wide push gate means one row written outside the canonical writer blocks every other writer's delta, including writers with no relationship to the defect. CS-2026-256 was moved needs_feedback -> approved by a hand edit at 2026-09-09T10:04Z (commit fdf0631), leaving execution_target_date and approved_date null. validate_changeset_tracker.py rule 13g is unconditional and .githooks/pre-push Stage 1 validates the WHOLE store, so two consecutive pipeline routines then could not land any tracker delta: Task A1 parked ten validated recommendation rows as a replayable patch (ec22ebc) and Task B's Phase 3 sweep writeback is parked behind the same single error. The second gate cannot compensate for a first gate that is optional.",
+      "source": "CS-2026-286's own success test, falsified six days into its 14-day window",
+      "sources": [
+        "cgo-logs/changesets/tracker.json CS-2026-256 (status approved, execution_target_date null, approved_date null)",
+        "commit fdf0631 2026-09-09T10:04:59-0400 (CS-2026-256: answered on deadline -> approved)",
+        "scripts/validate_changeset_tracker.py rule 13g (unconditional except source==experiment), exit 1 on this row",
+        "scripts/build_cs_entry.py:952 _require_future_execution_target and :1570-1579 mutate_cs_entry calling it before any field is written -- both live at HEAD",
+        ".githooks/pre-push Stage 1 (validates the whole store by --path, not the pushed delta)",
+        "commit ec22ebc (Task A1 2026-09-09-s1: park the ten unpushable rec rows as a replayable patch)",
+        "CS-2026-286 (published 2026-09-03; success test: zero approved rows carry a null or past execution target date)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Root cause: the refusal that would have prevented this shape lives inside build_cs_entry.mutate, and BOTH halves of CS-2026-286's repair are built and live at HEAD -- neither is at fault. The row transitioned without going through the writer at all, so this is a ROUTING failure, not a build failure: the deterministic writer exists, owns the shape, refuses wrong input loudly, and nothing makes it the only door. The validator's own comment anticipated it -- 'this is the second gate for a row that reached approved some other way' -- so the design knew the first gate was bypassable and shipped the second gate instead of closing the first. CLAUDE.md's third standing rule in its sharpest form: the instruction to use the builder is prose, and prose lost to a hand edit under deadline pressure. Note the approval decision itself was correct and on time. See daily synthesis 2026-09-09-s1.md P3.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/build_cs_entry.py (mutate as the only path into `approved`) and cgo-daily-pipeline/config/changeset-instructions.md Step 4.0, whose remediation table has no row for 'the blocking error is not in your delta'",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-09T14:51:41.599256+00:00",
+      "archival_state": "active",
+      "id": "L-561"
+    },
+    {
+      "date": "2026-09-09",
+      "learning": "A recovery artifact with no reader is indistinguishable from a lost write. Task A1 parked ten validated recommendation rows as a replayable git patch and documented the replay command in its own commit message; nothing in the pipeline reads that file or that message. Two department briefs already on main cite rec-630..639 in their actions' evidence_anchors, so a session that did not happen to cross-check every cited rec id against the store would have allocated rec-630 to different work and silently invalidated ten anchors. This session found it only because that check was run, and rec_writer then allocated rec-640/rec-641 correctly because the patch had been replayed first.",
+      "source": "the parked patch and the two briefs citing its ids",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-09-s1/_pending-rec-rows-630-639.patch (10 rows, rec-630..639)",
+        "commit ec22ebc's own message naming the id-reissue consequence",
+        "cgo-logs/department-briefs/2026-09-09-s1/dept-market-intelligence.md (ACT-M-1..M-5 evidence_anchors cite rec-630..634)",
+        "cgo-logs/department-briefs/2026-09-09-s1/dept-operations-planning.md (ACT-D-1..D-5 evidence_anchors cite rec-635..639)",
+        "scripts/cs_helpers/rec_writer.py receipts for rec-640 and rec-641 (allocated from the replayed sequence)",
+        "cgo-logs/changesets/tracker.json pending_recommendations at origin/main (max numeric id 629 -- the ten rows absent)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "The same mechanism L-316 and L-420 record for queues, applied to a one-off recovery artifact rather than a recurring queue: an action declared as data (a patch plus a prose instruction) and enforced by nothing. Today's operations brief measured the discriminating variable on the queue case -- of L-316's three never-draining queues, the only one that drained is the only one with an enforcing actor (tracker drafts 22 rows to 8, draft_overflow_gt40d 0) while the two without one grew (demand signals 94 to 119 pending, team-tasks 261 to 454 proposed). The parked patch has no actor at all, not even a stale one. Filed as rec-641. See daily synthesis 2026-09-09-s1.md P3.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/changeset-instructions.md Step 1 (a parked-patch replay step) or scripts/cs_helpers/rec_writer.py (refuse to allocate past an unlanded, brief-cited id)",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-09T14:51:41.627371+00:00",
+      "archival_state": "active",
+      "id": "L-562"
+    },
+    {
+      "date": "2026-09-09",
+      "learning": "One conditioning predicate implemented at two grains produced a reasoned decision at one and an unfalsifiable label at the other, in the same artifact on the same day. The channel row evaluated the Labor Day overlap and DECLINED to downgrade Meta's improving verdict with a stated reason -- current block 2026-09-05..09-07 and reference block 09-02..09-04 are each 100% offer-covered, so the difference between them is not a difference in discounting -- while all six wedge dossiers again carry published_verdict.conditioned 'explained_by_offer' citing the same beats, five days after L-543 filed that term as unfalsifiable. The fix is not a new check: the channel-grain implementation is already the correct one and can be read as the specification.",
+      "source": "the same file disagreeing with itself at two grains",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json channel_direction[facebook].conditioning (conditioned false, current_offer_share 1.0, reference_offer_share 1.0, with its stated reason)",
+        "data/paid-media/wedge-dossiers.json published_verdict.conditioned 'explained_by_offer' on all six wedge dossiers, same generation",
+        "L-543 (the explained_by_offer term filed as unfalsifiable, 2026-09-04)",
+        "cgo-logs/department-briefs/2026-09-09-s1/dept-paid-media.md INS-D-2 and its L-543 memory update",
+        "scripts/window_agreement.py --platform facebook --blend: agree_above, 3 of 3, conv14=298"
+      ],
+      "source_type": "domain_contradiction",
+      "domain": "paid-media",
+      "evidence": "Two implementations of one predicate at two grains, and only the newer channel-grain path carries the offer-share comparison that makes the label falsifiable. The dossier path tests whether an offer overlapped the window at all, which is true of almost every window in this five-week promotional stretch, so it can never fail -- which is exactly L-543's finding, now with the counter-example living inside the same artifact rather than argued from outside it. See daily synthesis 2026-09-09-s1.md Cross-Domain 4.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "the wedge-dossier conditioning path -- align it to channel_direction[].conditioning's offer-share comparison",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-09T14:51:41.648233+00:00",
+      "archival_state": "active",
+      "id": "L-563"
     }
   ],
   "archived_entries": [
@@ -17803,5 +17899,5 @@
       "id": "L-555"
     }
   ],
-  "last_updated": "2026-09-08"
+  "last_updated": "2026-09-09"
 }
