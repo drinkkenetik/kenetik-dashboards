@@ -3918,6 +3918,27 @@
       "domain": "paid-media",
       "status": "active",
       "date": "2026-09-09"
+    },
+    {
+      "id": "L-564",
+      "summary": "A repair validated only against the failure it fixes will silently create the next blind spot. Three of today's five instrument failures were produce\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-10"
+    },
+    {
+      "id": "L-565",
+      "summary": "A queue whose intake reproduces its own concentration ratio cannot be drained by working the backlog. Devon Price and Katie Spaller hold 75.0% of the\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-10"
+    },
+    {
+      "id": "L-566",
+      "summary": "A creator-content graduation lane that ranks on engagement signals and never reads the post's text will promote a competitor's advertisement. TikTok \u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-09-10"
     }
   ],
   "entries": [
@@ -9631,6 +9652,75 @@
       "created_at": "2026-09-09T14:51:41.648233+00:00",
       "archival_state": "active",
       "id": "L-563"
+    },
+    {
+      "date": "2026-09-10",
+      "learning": "A repair validated only against the failure it fixes will silently create the next blind spot. Three of today's five instrument failures were produced this way inside seven days: rec-613's AND NOT clauses killed four PubMed monitors the day after they shipped (300 matches to none, 169 cached records deleted, the parse failure recorded as a real zero); CS-2026-289's burst rule measured 24.5% recall and never measured precision, and now excludes the corpus's two highest-reach Instagram posts at roughly 40x the window median; rec-626 repaired one metric on CS-2026-300 yesterday and left its sibling stated against a baseline that 11 of 31 ordinary archive days already sit below. Recall is naturally measured because it is the thing being fixed; precision is invisible because the excluded set is, by construction, no longer in the artifact the repair is checked against.",
+      "source": "Task B synthesis 2026-09-10-s1, cross-reading three department briefs against their originating repairs",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-10-s1/dept-science-research.md ACT-S-1 (four monitors zero; A/B against the 2026-09-09 pubmed-state.json)",
+        "cgo-logs/department-briefs/2026-09-10-s1/dept-content.md ACT-C-1 and INV-C-1 (16 burst families over 881 posts; 31 cross-network objects excluded)",
+        "cgo-logs/department-briefs/2026-09-10-s1/dept-website-cro.md ACT-W-2 (CS-2026-300 dead_clicks_per_1k against a 426.0 baseline; 31-day median 498.2)",
+        "cgo-logs/changesets/tracker.json CS-2026-289 measurement_result (recall 24.5%, precision absent)",
+        "cgo-logs/daily-syntheses/2026-09-10-s1.md Theme 1"
+      ],
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Root cause: the row schema requires a measurement_plan but never asks what a change REMOVES from a population, so a filter-narrowing repair is graded only on the set it was built to catch. See daily synthesis 2026-09-10-s1.md, Theme 1 and rec-665.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "changeset-common-functions.md section 10b (Resolution Path / measurement_plan), enforced at scripts/build_cs_entry.py",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-10T14:47:03.394538+00:00",
+      "archival_state": "active",
+      "id": "L-564"
+    },
+    {
+      "date": "2026-09-10",
+      "learning": "A queue whose intake reproduces its own concentration ratio cannot be drained by working the backlog. Devon Price and Katie Spaller hold 75.0% of the 76 open recommendation rows (36 and 21), and they received 72.7% of the 22 rows filed by today's seven department briefs (16). The backlog burn ratified in the stabilization direction therefore restores the same distribution it clears. The filing path asks who OWNS a finding and never asks whether the finding needs a person at all: a row carrying machine_doable and a named writer_or_script is routed to a human by default, so the routing is decided by the absence of a rule rather than by a judgment.",
+      "source": "Task B synthesis 2026-09-10-s1, measured directly against the tracker store",
+      "sources": [
+        "cgo-logs/changesets/tracker.json pending_recommendations, 76 rows with status open, counted 2026-09-10",
+        "cgo-logs/changesets/tracker.json rec-642 through rec-663, the 22 rows filed by today's department briefs",
+        "architecture/process/design-direction-stabilization-2026-09.md, cause five (finding generation outrunning two deciders) and task ST-5"
+      ],
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Root cause: routing by owner rather than by whether a person is needed. Filed as rec-664. See daily synthesis 2026-09-10-s1.md, Theme 4.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/cs_helpers/rec_writer.py routing, and the ST-5 backlog-burn scope in architecture/process/design-direction-stabilization-2026-09.md",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-10T14:47:03.421209+00:00",
+      "archival_state": "active",
+      "id": "L-565"
+    },
+    {
+      "date": "2026-09-10",
+      "learning": "A creator-content graduation lane that ranks on engagement signals and never reads the post's text will promote a competitor's advertisement. TikTok video 7681484123990527246 (@jennasenat, posted 2026-09-04) promotes KETONE-IQ by name in its description while tagging @Kenetik; its author is in Kenetik's own Euka/TRYBE roster, GMV Max has already spent $1.33 boosting it against Kenetik's largest product listing, and it clears its 7-day maturity gate on 2026-09-11 -- after which it becomes scoreable by a lane that ranks on hold and click signals alone. Roster membership is being treated as sufficient evidence that a post is Kenetik content, so the content of the post is never examined, and every downstream ranking signal is brand-agnostic by construction.",
+      "source": "Market Intelligence department brief ACT-M-1, cross-read against the creator flywheel state and the TRYBE roster",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-10-s1/dept-market-intelligence.md ACT-M-1",
+        "data/creator-flywheel/creator-content-state.json (turn generated 2026-09-10T10:14:43Z, 15-row graduation_map, all changeset_id UNKNOWN)",
+        "data/creator-flywheel/trybe-state.json and euka-state.json (creator_id 7494177307715406013 present in the Kenetik roster)",
+        "brain/kenetik-brain/references/team-roles.md Creator-Content Graduation Ownership table (rec-435, 2026-09-03)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "Root cause: the candidate filter uses roster membership as a proxy for brand ownership of the content, and no downstream signal reads the description. See daily synthesis 2026-09-10-s1.md, Priority 4.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "the creator-content graduation scan's candidate filter, and the Creator-Content Graduation Ownership table in brain/kenetik-brain/references/team-roles.md",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-10T14:47:03.446387+00:00",
+      "archival_state": "active",
+      "id": "L-566"
     }
   ],
   "archived_entries": [
