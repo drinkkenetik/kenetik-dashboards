@@ -4274,13 +4274,14 @@
       "domain": "website",
       "evidence": "Sessions-direction is the discriminator between on-site break and instrumentation artifact; prior runs defaulted CVR drops toward instrumentation. See daily synthesis 2026-06-19-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "CS-2026-256 2026-08-06: Raspberry Lychee LE dedicated landing page (/pages/raspberry-lychee)",
       "skill_files_updated": [],
       "related_entries": [
         "L-078",
         "L-096",
         "L-134",
-        "L-141"
+        "L-141",
+        "CS-2026-256"
       ],
       "target": "synthesis-instructions Framing Guardrails / website RCA playbook \u2014 add sessions-direction discriminator",
       "entry_type": "threshold_calibration",
@@ -4289,7 +4290,8 @@
       "gate_version": "1.0.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-07-18T15:50:18.537453+00:00",
-      "archival_state": "active"
+      "archival_state": "active",
+      "action_stamped_at": "2026-09-10"
     },
     {
       "id": "L-140",
@@ -4323,19 +4325,21 @@
       "domain": "website",
       "evidence": "Mobile cvr_change -31.9% (6/13) -> -52.6% (6/20) -> -64.2% (6/22); mobile sessions +78%, orders flat 74-93/day; Store-Locator +588%. See synthesis 2026-06-22-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "CS-2026-256 2026-08-06: Raspberry Lychee LE dedicated landing page (/pages/raspberry-lychee)",
       "skill_files_updated": [],
       "related_entries": [
         "L-138",
         "L-078",
         "L-122",
-        "L-134"
+        "L-134",
+        "CS-2026-256"
       ],
       "target": "kenetik-brain CVR-alarm triage / dept-website-cro instructions \u2014 add sessions-direction discriminator.",
       "entry_type": "threshold_calibration",
       "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
       "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-09-10"
     },
     {
       "id": "L-142",
@@ -7293,7 +7297,7 @@
       "domain": "content",
       "evidence": "Natural experiment inside one file: content_source 'sprout_sync' (legacy) = 387 rows at 88% content_category fill; 'sprout-sync' (current, from ~2026-04) = 805 rows at 3%; every human-authored source (manual, charlotte_excel_import, charlotte_cowork_bulk) = 100% filled. Two departments reached this from different files on the same day. Extends L-446, which established the staging-to-content-calendar merge half of the same writer problem. See daily synthesis 2026-08-19-s1.md Theme 2.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "9b30aed 2026-09-10: Add legacy/live field fallback to graduation gate's _publish_date/_platform (rec-600)",
       "target": "the sprout sync writer in scripts/ plus a field-presence contract test between writer and readers",
       "sources": [
         "Content dept brief 2026-08-19-s1 SIG-C-3/INS-C-2",
@@ -7307,7 +7311,9 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-19T18:34:47.573636+00:00",
       "archival_state": "active",
-      "id": "L-458"
+      "id": "L-458",
+      "action_stamped_at": "2026-09-10",
+      "related_entries": []
     },
     {
       "date": "2026-08-19",
@@ -9482,14 +9488,18 @@
       "evidence": "Root cause: drift and movement verdicts are computed from a value and a prior value with no predicate on whether the INPUT that produced them was capped, composed, or compositionally shifted. The asymmetry that makes it persist is in the READER, not the instrument: an adverse movement on a censored input gets scrutinised because it demands work, a favourable one is accepted because it demands none. That is why a validator in front of the metric would not fix it -- the discriminator has to travel WITH the reading. Measured today: d10_feedback_volume_by_channel_weekly has read exactly 50 on every non-zero day of 90 days retained (rec-592 owns the pull-side fix); weekly_review.py --check returned 10/10 exit 0 today with no fitter commit in git; the May cohort reads [17.2, 19.5, 22.1] across M1-M3 while June is 22.9% at M2 and July 23.8% at M1. Target: carry an input-integrity flag alongside the movement verdict in data/metrics/gap-ledger.json, and add the discriminator to synthesis-instructions.md Framing Guardrails.",
       "domain": "cross-surface",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "eefa58f 2026-09-10: chore: voc-state judgment layer refresh 2026-09-10",
       "target": "data/metrics/gap-ledger.json; cgo-daily-pipeline/config/synthesis-instructions.md",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-08T14:51:54.159796+00:00",
       "archival_state": "active",
-      "id": "L-558"
+      "id": "L-558",
+      "action_stamped_at": "2026-09-10",
+      "related_entries": [
+        "CS-2026-242"
+      ]
     },
     {
       "date": "2026-09-08",
@@ -9560,14 +9570,16 @@
       "domain": "operations",
       "evidence": "Root cause: the refusal that would have prevented this shape lives inside build_cs_entry.mutate, and BOTH halves of CS-2026-286's repair are built and live at HEAD -- neither is at fault. The row transitioned without going through the writer at all, so this is a ROUTING failure, not a build failure: the deterministic writer exists, owns the shape, refuses wrong input loudly, and nothing makes it the only door. The validator's own comment anticipated it -- 'this is the second gate for a row that reached approved some other way' -- so the design knew the first gate was bypassable and shipped the second gate instead of closing the first. CLAUDE.md's third standing rule in its sharpest form: the instruction to use the builder is prose, and prose lost to a hand edit under deadline pressure. Note the approval decision itself was correct and on time. See daily synthesis 2026-09-09-s1.md P3.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "1a0873e 2026-09-10: Release session lock: repair loop 2026-09-10 (fire 26)",
       "target": "scripts/build_cs_entry.py (mutate as the only path into `approved`) and cgo-daily-pipeline/config/changeset-instructions.md Step 4.0, whose remediation table has no row for 'the blocking error is not in your delta'",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-09T14:51:41.599256+00:00",
       "archival_state": "active",
-      "id": "L-561"
+      "id": "L-561",
+      "action_stamped_at": "2026-09-10",
+      "related_entries": []
     },
     {
       "date": "2026-09-09",
@@ -9585,14 +9597,16 @@
       "domain": "cross-surface",
       "evidence": "The same mechanism L-316 and L-420 record for queues, applied to a one-off recovery artifact rather than a recurring queue: an action declared as data (a patch plus a prose instruction) and enforced by nothing. Today's operations brief measured the discriminating variable on the queue case -- of L-316's three never-draining queues, the only one that drained is the only one with an enforcing actor (tracker drafts 22 rows to 8, draft_overflow_gt40d 0) while the two without one grew (demand signals 94 to 119 pending, team-tasks 261 to 454 proposed). The parked patch has no actor at all, not even a stale one. Filed as rec-641. See daily synthesis 2026-09-09-s1.md P3.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "1a0873e 2026-09-10: Release session lock: repair loop 2026-09-10 (fire 26)",
       "target": "cgo-daily-pipeline/config/changeset-instructions.md Step 1 (a parked-patch replay step) or scripts/cs_helpers/rec_writer.py (refuse to allocate past an unlanded, brief-cited id)",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-09T14:51:41.627371+00:00",
       "archival_state": "active",
-      "id": "L-562"
+      "id": "L-562",
+      "action_stamped_at": "2026-09-10",
+      "related_entries": []
     },
     {
       "date": "2026-09-09",
@@ -17899,5 +17913,5 @@
       "id": "L-555"
     }
   ],
-  "last_updated": "2026-09-09"
+  "last_updated": "2026-09-10"
 }
