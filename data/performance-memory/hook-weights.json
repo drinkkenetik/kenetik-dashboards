@@ -7,8 +7,8 @@
     "scripts/pm_eval.py c4_d5"
   ],
   "migrated_from": "brain/kenetik-brain/roles/content-producer-skill.md \u00a73 @ 2026-07-11",
-  "last_updated": "2026-08-28",
-  "last_synthesis_applied": "SYN-20260828-001",
+  "last_updated": "2026-09-11",
+  "last_synthesis_applied": "SYN-20260911-001",
   "update_policy": {
     "auto_apply_max_single_change_pct": 100,
     "hold_and_escalate": "If ANY single weight change exceeds the auto-apply cap (more than doubling/halving), hold ALL changes in the batch and DM Devon (U06528UQV7H) for CGO approval.",
@@ -374,14 +374,14 @@
       "id": "HW-013",
       "name": "Named celebrity attribution",
       "example": "\u2014 Ashton Hall",
-      "weight": 2.0,
+      "weight": 1.6,
       "platforms": [
         "linkedin",
         "facebook"
       ],
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-04-17",
+      "last_validated": "2026-09-11",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -389,6 +389,16 @@
           "date": "2026-04-17",
           "resolved": true,
           "pattern_ids": []
+        },
+        {
+          "synthesis_id": "SYN-20260911-001",
+          "date": "2026-09-11",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-010"
+          ],
+          "note": "Reduced 2.0 -> 1.6 (-20%). The Dave Asprey endorsement ran 08-23 on all three platforms this hook names and cleared median on none: LinkedIn 0.94x (327 imp / 24 eng / 7.34%), Instagram 1.29x (5,722 / 223 / 3.90%), Facebook unscoreable at 508 imp / 2 eng (0.39% ER = 0.28x the FB working median) - and Facebook is the platform CP-010 is actually about. A named-celebrity quote is not self-executing; 2.0 was the joint-highest weight in the store on MEDIUM confidence. Still the strongest single-attribute lever available, hence 1.6 not 1.0.",
+          "weight_after": 1.6
         }
       ],
       "rules": [],
@@ -601,7 +611,7 @@
       ],
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-08-28",
+      "last_validated": "2026-09-11",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -680,6 +690,16 @@
             "CP-015"
           ],
           "note": "0% REVALIDATION + REFINEMENT, weight deliberately held at 2.0 (already the store's highest). CP-015 validated on a NEW campaign type - a partnership/collab reveal (Kenetik x TRX) rather than a flavour drop - and the arc structure held: FB beats ran 3.12x -> 2.89x -> 7.84% -> 3.08%, all four above the 1.39% working median, and LinkedIn joined at 2.10x and 3.01x. BUT THE BEAT PROFILE INVERTS versus the flavour-launch profile recorded last cycle. SYN-20260821-001 found ER peaking at the PENULTIMATE beat (RL escalation 6.33% > launch day 3.21%). Here ER peaks at the REVEAL: beat 1 teaser FB 3.12%, beat 2 teaser FB 2.89%, beat 3 REVEAL FB 7.84% (5.64x, the window's top scoreable post), beat 4 science/why FB 3.08%. REFINED RULE: the ER peak sits on the beat that RESOLVES THE WITHHELD INFORMATION, not at a fixed position in the arc. For a flavour drop the flavour identity leaks early so anticipation peaks before launch; for a collab the partner's identity is the withheld fact, so the peak lands on the naming. Deliberately recorded as a refinement of CP-015 rather than a new pattern id - a collab reveal IS a launch arc, and creating EP-021 would add a 6th maintenance surface plus a likely 6th unlinkable entry. Weight held because this is a scope generalisation, not an amplitude increase.",
+          "weight_after": 2.0
+        },
+        {
+          "synthesis_id": "SYN-20260911-001",
+          "date": "2026-09-11",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-015"
+          ],
+          "note": "Revalidation, weight unchanged. The Kenetik x TRX Lemon Lime arc (08-16 teaser -> 08-17 launch-week -> 08-19 post-launch) returned a 1.51x median across 7 scoreable placements, top read 3.61x (FB teaser, 1,595 imp / 80 eng / 5.02%). Holds at 2.0; no evidence for a further increase and none needed.",
           "weight_after": 2.0
         }
       ],
@@ -933,6 +953,36 @@
         }
       ],
       "last_validated": "2026-08-21"
+    },
+    {
+      "name": "Comment-gate CTA (explicit 'Comment X and we'll DM you the link')",
+      "example": "Comment \"TRX\" and we will send you the direct link to the product.",
+      "weight": 1.4,
+      "platforms": [
+        "facebook",
+        "instagram",
+        "tiktok"
+      ],
+      "confidence": "low",
+      "notes": "CONFOUNDED ON FIRST OBSERVATION: 4 of the 6 instances sit inside the TRX launch arc, which already carries HW-019 at 2.0, so part of this lift is arc lift and cannot be separated in this window. Weighted 1.4 rather than the 2.15x median the cohort actually printed, and confidence set low deliberately. Needs one launch-free observation before any increase.",
+      "id": "HW-026",
+      "status": "active",
+      "rules": [],
+      "origin": "performance_memory_synthesis",
+      "provenance": [
+        {
+          "synthesis_id": "SYN-20260911-001",
+          "date": "2026-09-11",
+          "resolved": true,
+          "pattern_ids": [
+            "CP-015",
+            "EP-022"
+          ],
+          "note": "New hook style, n=6, cohort median 2.15x working median, 5 of 6 at or above 1.5x: FB 3.61x, FB 3.00x, TT 2.64x, TT 1.67x, IG 1.51x, IG 0.86x. Clears the store learning threshold on count (5+) and outperformance (>30%) but not on confidence, because of the launch-arc confound. The one instance outside the arc (Cliff at TRX HQ, 08-22, TikTok) still returned 1.67x, which is why this is entered at all rather than deferred.",
+          "weight_after": 1.4
+        }
+      ],
+      "last_validated": "2026-09-11"
     }
   ],
   "anti_patterns": [
@@ -1085,7 +1135,7 @@
       "multiplier": 0.0,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-08-28",
+      "last_validated": "2026-09-11",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -1136,6 +1186,15 @@
             "AP-006"
           ],
           "note": "HARD-PAUSE BREACHED FOR THE 2ND CONSECUTIVE CYCLE. One YouTube cross-post landed 2026-08-09T00:25:29Z, the Raspberry Lychee 'reviews are already in' body cross-posted from FB/IG/TT, and returned no impressions field, 253 video views and 1 engagement. Identical shape to the 07-24 breach logged last cycle. Multiplier already 0.0, confidence already high; this op records that the pause failed again rather than any change in the effect. Two consecutive breaches after three clean windows is the evidence that the YouTube pause cannot hold as a convention. Bundle the publish-time platform block with the HW-AP-011 PDP-copy gate and the HW-AP-009 dedupe gate - all three are the same class of unenforced rule, and all three fired in THIS window."
+        },
+        {
+          "synthesis_id": "SYN-20260911-001",
+          "date": "2026-09-11",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-006"
+          ],
+          "note": "8th and 9th confirmations, and the 3rd and 4th breach of a hard-pause that is still a convention rather than an enforced gate. Two YouTube cross-posts landed in this window - 08-17 (TRX CEO quote, 9 engagements) and 08-19 (TRX launch, 1 engagement) - and neither returned an impressions field at all. Multiplier stays 0.0 / high; the entry is correct and is being ignored at publish time."
         }
       ],
       "rules": [
@@ -1229,7 +1288,7 @@
       "multiplier": 0.0,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-08-28",
+      "last_validated": "2026-09-11",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -1283,6 +1342,16 @@
             "AP-010"
           ],
           "note": "8TH CONSECUTIVE CYCLE, WORST SCALE ON RECORD, AND THE MECHANIC IS NOT WHAT THE ENTRY SAYS. Counting the sync-dropped rows from a direct Sprout pull, 22 of 29 Facebook posts in the window (76%) are clone copies of just three bodies: 'NEW FLAVOR Raspberry Lychee is here and selling fast' x10, 'Meet your brain's best friend' x6, 'New Flavor Alert: Raspberry Lychee' x5 (all five at 0 impressions), plus one 'Three o'clock' EP-016 body at 0 impressions. *** THE ENTRY DESCRIBES UNIFORM SUPPRESSION TO ZERO. THE ACTUAL BEHAVIOUR IS WINNER-TAKE-ALL. *** Within the 10-copy burst - identical body, 8 of them inside 2 minutes - impressions span 27 to 43,851, a 1,624x spread; the top 2 copies took 86.0% of the body's 94,288 impressions and the bottom 5 took 0.7%. The 6-copy burst spans 2 to 2,645 (1,322x), top 2 = 80.7%. So Facebook is not suppressing the batch, it is selecting one or two copies to deliver and starving the rest. Three consequences that change the fix's rationale: (1) the reach is NOT lost, so the dedupe gate should not be justified as reach recovery - it should be justified as reclaiming 15 of 29 wasted post slots and as stopping median corruption; (2) every FB median we compute is polluted in BOTH directions, because the starved copies manufacture fake sub-median rows AND fake ABOVE-median rows (a 37-impression copy with 2 engagements reads 5.41% = 3.89x median); (3) which copy wins is arbitrary, so no creative conclusion can be drawn from a burst at all. Multiplier already floored at 0.0. Confidence medium -> high. Gate is written and still unenforced - 10th consecutive P0."
+        },
+        {
+          "synthesis_id": "SYN-20260911-001",
+          "date": "2026-09-11",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-005",
+            "AP-010"
+          ],
+          "note": "11th consecutive cycle logged, and the largest firing on record. 22 of 35 Facebook objects (63% of the platform's post slots) belong to a 3-or-more-copy same-body burst; 9 of those 22 returned either zero impressions or fewer than 10 engagements. Two bodies dominate: 'Meet your brain's best friend' 9 copies published inside 2h32m on 08-18, impressions 42 to 25,268 (602x spread), top 2 copies take 79.5%; 'NEW FLAVOR Raspberry Lychee' 10 copies across 08-18 to 08-24, 3 at zero impressions, top 2 copies take 91.8%. Multiplier and confidence are already at their limits (0.0 / high) and are left unchanged deliberately - this is an unenforced-gate problem, not a weight problem, and another weight change would not fire the gate. Escalated to Devon for the 11th time."
         }
       ],
       "rules": [
@@ -1375,9 +1444,18 @@
             "AP-005"
           ],
           "note": "4TH CONSECUTIVE OCCURRENCE, and the 30-minute-interval signature is now diagnostic. Two Amazon listing-copy TikToks published 2026-08-11 at 16:52:43Z and 17:22:44Z - exactly 30 minutes apart, the same cluster interval as the 07-24 trio and the 08-07 launch-day trio. Both returned NO metrics object at all and BOTH were dropped by the queue sync, so this anti-pattern remains invisible to anything reading published-posts.json and is recoverable only from a direct Sprout pull. Multiplier already floored at 0.0 and confidence already high, so this op carries evidence only. The operative point is unchanged and now four cycles old: the content-producer-skill.md section 12 gate forbids this on both axes and has never once fired. It is a convention, not a gate - same finding as AP-006 on YouTube. Recommend both be implemented as publish-time blocks in the same change."
+        },
+        {
+          "synthesis_id": "SYN-20260911-001",
+          "date": "2026-09-11",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-005"
+          ],
+          "note": "BOUNDARY CLARIFIED, no value change. This window's two highest-volume Facebook bodies both end in a shop CTA ('Try Kenetik today -> drinkkenetik.com') and could be mistaken for the PDP-copy anti-pattern, but they are written marketing copy and they were the platform's winners (6 of 12 FB wins, up to 3.90x). HW-AP-011 targets verbatim Amazon/PDP LISTING-TITLE boilerplate - attribute strings, not sentences - and it did not fire this cycle. Recording the distinction so the next cycle and Larry's selection path do not over-apply a 0.0 multiplier to ordinary direct-response copy."
         }
       ],
-      "last_validated": "2026-08-28"
+      "last_validated": "2026-09-11"
     }
   ]
 }
