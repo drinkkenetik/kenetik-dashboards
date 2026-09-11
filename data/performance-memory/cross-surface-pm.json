@@ -829,21 +829,21 @@
       "id": "L-121",
       "summary": "paid-media-state build script reports trailing-window spend + no live pause-state, surfacing already-paused campaigns as kill-candidates; also TikTok-blind.",
       "domain": "paid-media",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-08"
     },
     {
       "id": "L-122",
       "summary": "Bot traffic ~38% contaminates shared denominators for both site CVR and paid pixel CAC; neither metric interpretable until bot-filtered.",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-09"
     },
     {
       "id": "L-123",
       "summary": "A data source returning zero results 11 runs straight was re-noted as transient, not auto-escalated; no consecutive-empty-return threshold exists (CS-188 Sprout).",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-10"
     },
     {
@@ -857,56 +857,56 @@
       "id": "L-125",
       "summary": "A directional watch-item metric was carried forward from the prior synthesis ('desktop CVR -21% on +45% sessions') and contradicted by fresher domai",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-11"
     },
     {
       "id": "L-126",
       "summary": "CS-189 status advanced to approved (co-sign 6/08 per claims-map) but the tracker approved_by field was never written, and a synthesis then read the ",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-11"
     },
     {
       "id": "L-127",
       "summary": "The 8-session RED was narrated as a throughput crisis, but intake velocity (11.5/wk) is in-band \u2014 the binding constraint is two human decision/measu",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-11"
     },
     {
       "id": "L-128",
       "summary": "Re-run perpetuated stale July-4 'needs_planning' (Nick scheduled it 15:03Z, after dept briefs 14:54Z); re-run trusted briefs over fresher live calendar. Calendar build stale (2026-05-20).",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-11"
     },
     {
       "id": "L-129",
       "summary": "CS-183 flagged overdue 3 consecutive dept briefs w/o advancing \u2014 re-surfacing is not forcing; needs decision-aging escalation",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-12"
     },
     {
       "id": "L-130",
       "summary": "PMID 42263845 (KME -> brain insulin + cognition, older adults) Tier-A candidate for cognitive-aging lane",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-12"
     },
     {
       "id": "L-131",
       "summary": "PMID 42266620 (Frontiers AD-disease) NOT consumer-usable; cite-collision risk vs CS-177 cognition meta on DS-04 hook",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-12"
     },
     {
       "id": "L-132",
       "summary": "ADA conference + diabetes-device launches = repeatable annual ketone-legitimacy content trigger; pre-stage calendar",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-12"
     },
     {
@@ -3943,253 +3943,6 @@
   ],
   "entries": [
     {
-      "id": "L-121",
-      "date": "2026-06-08",
-      "type": "process_change",
-      "learning": "paid-media-state.json build script reports campaign spend from a trailing 7d window and does not read live pause status, so already-paused campaigns (CS-187 PMAX, paused 6/01) keep surfacing as live kill-candidates every scan; the same pipeline is also TikTok-blind (tiktok_ads:false). This manufactured 2 of 3 'open' paid signals in D04 as state-file artifacts.",
-      "source": "Paid Media dept brief 2026-06-08-s1 (CSI-PM-1) + D04 SIG-04-2/ACT-04-1",
-      "source_type": "operational_signal",
-      "domain": "paid-media",
-      "evidence": "State-build script keys off a rolling 7d spend window with no pause-state field; CS-187 closed invalid_premise 6/04 yet state file still shows $773.85/7d. See daily synthesis 2026-06-08-s1.md.",
-      "confidence": "strong",
-      "action_taken": "CS-2026-246 2026-08-04: resolved by derivation rather than a status read. _campaign_activity() in scripts/executive_bi_process_task_2a.py computes last_spend_date and days_since_spend per campaign from the daily series already present in staging \u2014 no new Polar request, no new credential. Unread status is now reported as 'unknown' instead of defaulting to 'active', and summary carries unknown_status_ads (108/114 on 2026-08-03) so paused_ads: 0 cannot be read as 'nothing is paused'. Verified live: 'whitelisting / cleetus' now reads days_since_spend 9 rather than presenting as a $474 active kill candidate; 'whitelisting / roman' reads 3, a signal that did not previously exist. Candidate had been unacted 57 days.",
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-105",
-        "L-107"
-      ],
-      "changeset_candidate": true,
-      "changeset_note": "Throughput-neutral engineering fix: add live pause-state read + per-campaign status field to paid-media-state build; backfill TikTok ingestion. Held under spawn-freeze; routed as rec.",
-      "target": "scripts/ paid-media-state build pipeline",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "status": "resolved"
-    },
-    {
-      "id": "L-122",
-      "date": "2026-06-09",
-      "type": "threshold_calibration",
-      "learning": "Bot traffic (~38% of site sessions per Clarity 6/08) sits inside shared denominators for BOTH site CVR (sessions/CVR events) and paid pixel ROAS/CAC. Neither the site-CVR drift (3.83%) nor the 3d digital-CAC drift ($52.69) can be cleanly interpreted until a bot-filtered baseline exists; both the 6/14 Father's Day scale-up and the GP scale-down inherit the contamination.",
-      "source": "Operations & Planning dept brief (INS-OP-2) + Website & CRO dept brief (INS-W-01), 2026-06-09",
-      "source_type": "operational_signal",
-      "domain": "cross-surface",
-      "evidence": "Clarity 6/08 shows 38% bot sessions; Website CVR 3.83% (3rd wk below band) with Unassigned +198%; Paid 3d digital CAC $52.69. See daily synthesis 2026-06-09-s1.md.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-118"
-      ],
-      "target": "Add a bot-filtered denominator (or bot-share confidence flag) to website-state.json and paid-media-state.json CVR/CAC computations; gate spend-change recs on bot-share threshold. Tie to CS-2026-147 RCA scope (rec-275).",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-123",
-      "date": "2026-06-10",
-      "type": "threshold_calibration",
-      "learning": "A data source (Sprout listening, Moe mart) returning zero results for 11 consecutive runs was still re-noted each run as a transient miss rather than auto-escalated to an infrastructure emergency; escalation depended on a human (Market Intelligence) finally reframing it on run 11 (CS-188). The system tracks freshness/availability but has no consecutive-empty-return streak counter that flips a source from monitoring-gap to broken-layer with an assigned recovery-ETA owner.",
-      "source": "Market Intelligence & Planning dept brief (D17/D10/D18), 2026-06-10",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "CS-188 Sprout listening 11th consecutive zero-return run; D10/D17/D18 external VoC, competitive, and trend velocity all DATA_UNAVAILABLE. See daily synthesis 2026-06-10-s1.md.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-121"
-      ],
-      "target": "Add a consecutive-empty-return counter to data-pipeline-status.md / anomaly-scan escalation thresholds; auto-escalate a source to infra-emergency with a recovery-ETA owner at N>=5 zero-return runs.",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-125",
-      "date": "2026-06-11",
-      "type": "threshold_calibration",
-      "learning": "A directional watch-item metric was carried forward from the prior synthesis ('desktop CVR -21% on +45% sessions') and contradicted by fresher domain-scan data (sessions -20.7%, desktop -3.6%, CVR -2.4%); it should be retired.",
-      "source": "D01 Revenue scan, 2026-06-11 (memory_updates correction)",
-      "source_type": "domain_contradiction",
-      "domain": "cross-surface",
-      "evidence": "Prior-session watch item not re-verified against the current domain scan; the framing-guardrail metric-freshness cross-check caught it one cycle late. See daily synthesis 2026-06-11-s1.md.",
-      "confidence": "preliminary",
-      "action_taken": "ac40b30 2026-09-03: Ledger: l-125::learning-action-undiagnosed -> proposed (the write site is inside Devon's config gate)",
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "synthesis-instructions.md Step 8 metric-freshness cross-check (extend to session-handoff watch items, not only D14-sourced metrics)",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "action_stamped_at": "2026-09-04"
-    },
-    {
-      "id": "L-126",
-      "date": "2026-06-11",
-      "type": "process_change",
-      "learning": "CS-189 status advanced to approved (co-sign 6/08 per claims-map) but the tracker approved_by field was never written, and a synthesis then read the empty field as 'co-sign pending' \u2014 a phantom decision block.",
-      "source": "Operations + Science dept briefs 2026-06-11 (INV-OP-1 / INV-SR-1)",
-      "source_type": "domain_contradiction",
-      "domain": "operations",
-      "evidence": "tracker CS-189 status=approved, approved_by=None; claims-map shows APPROVED 2026-06-08 by Devon. Same field-gap class as CS-097 (L-035). See 2026-06-11-s2.md.",
-      "confidence": "moderate",
-      "action_taken": "d6e70a4 2026-09-03: Repair loop 2026-09-03: digest + dossier (5 worked \u2014 2 fixed, 2 proposed, 1 no_work_owed)",
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "changeset status-transition validation (require approved_by when status=approved) + synthesis ChangeSet cross-check reads approved_by AND claims-map/notes before declaring a co-sign pending",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'moderate' (source_count=2)"
-      ],
-      "action_stamped_at": "2026-09-04"
-    },
-    {
-      "id": "L-127",
-      "date": "2026-06-11",
-      "type": "threshold_calibration",
-      "learning": "The 8-session RED was narrated as a throughput crisis, but intake velocity (11.5/wk) is in-band \u2014 the binding constraint is two human decision/measurement nodes, not processing speed or 80-draft volume.",
-      "source": "Operations dept brief 2026-06-11 (INS-OP-1)",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "d12_velocity_new_per_week=11.5 (28d) in band[8,12]; measurement_capable=false 8th run; Devon block 48h. See 2026-06-11-s2.md.",
-      "confidence": "preliminary",
-      "action_taken": "f2658c2 2026-09-04: l-127::learning-action-undiagnosed -> proposed (rec-534): the ops throughput metrics measure authorship",
-      "skill_files_updated": [],
-      "related_entries": [
-        "CS-2026-259"
-      ],
-      "target": "synthesis-instructions D12 framing \u2014 separate intake-velocity (healthy) from decision/measurement-gate (the actual RED)",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ],
-      "action_stamped_at": "2026-09-04"
-    },
-    {
-      "id": "L-128",
-      "date": "2026-06-11",
-      "type": "process_change",
-      "domain": "operations",
-      "source_type": "operational_signal",
-      "learning": "A synthesis re-run that rebuilds from upstream department briefs can perpetuate stale state: Nick scheduled the July-4 beats (commit 15:03Z) after the dept briefs were authored (14:54Z), so both the s1 DM and the dept-informed s2 carried 'July-4 needs_planning' even though the live marketing-calendar already read 'planned' by s2 runtime. The re-run trusted the briefs over the fresher state file.",
-      "source": "Investigation of Nick's 2026-06-11 KGS Daily DM vs commit f3cd227",
-      "evidence": "Nick confirmed July-4 planning 15:03Z but the s2 re-run ~15:30Z still cited needs_planning from a stale 5/20 calendar build. See daily synthesis 2026-06-12-s1.md.",
-      "confidence": "preliminary",
-      "target": "task-b-synthesis.md (a re-run after Task A1 completes must re-read fast-changing state files \u2014 marketing-calendar-data.json, team-tasks.json \u2014 not rely solely on briefs authored earlier) + calendar-writeback-protocol.md (refresh generated_at / fast write-back loop so intraday team edits are visible to the next layer). Upstream: gate synthesis on task_a1_complete so the run does not fire before briefs exist.",
-      "skill_files_updated": [],
-      "related_entries": [
-        "CS-2026-270"
-      ],
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ],
-      "action_taken": "28c079e 2026-08-25: Task A1 dept brief (2026-08-25-s1): market-intelligence (7/7 complete)",
-      "action_stamped_at": "2026-08-28"
-    },
-    {
-      "id": "L-129",
-      "date": "2026-06-12",
-      "type": "process_change",
-      "learning": "A strategic decision (CS-183 Q3 cognitive anchor) was flagged overdue in three consecutive dept briefs (6/10,6/11,6/12) without advancing \u2014 re-surfacing is not forcing; it silently gated 4 downstream workstreams.",
-      "source": "Science & Research dept brief (2026-06-12); corroborated Ops+MI",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "CS-183 15d in draft; gates DS-04 Frontiers hook (expires ~6/18), TRX/July-4 creative, CS-189 claims chain. See daily synthesis 2026-06-12-s1.md.",
-      "confidence": "moderate",
-      "action_taken": "11c50ed 2026-09-04: l-129::learning-action-undiagnosed -> premise_false: the escalation it asks for was built 2026-07-02",
-      "skill_files_updated": [],
-      "related_entries": [
-        "CS-2026-162",
-        "CS-2026-183",
-        "CS-2026-256"
-      ],
-      "target": "changeset-instructions.md decision-aging escalation + dispatch-instructions.md owner Slack hard-gate for N-day-stale gating CSes",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "action_stamped_at": "2026-09-04"
-    },
-    {
-      "id": "L-130",
-      "date": "2026-06-12",
-      "type": "skill_update",
-      "learning": "PMID 42263845 (Metabolism 2026, RCT crossover \u2014 ketone monoester improves brain insulin sensitivity + cognition in older overweight adults) is a high-value Tier-A citation candidate for the cognitive-aging lane.",
-      "source": "Science & Research dept brief (2026-06-12)",
-      "source_type": "operational_signal",
-      "domain": "content",
-      "evidence": "New primary literature not yet in claims matrix; cognitive-aging lane under-cited vs TRX/Q3 needs. See daily synthesis 2026-06-12-s1.md.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "brain/kenetik-brain claims matrix (cognitive-aging lane); Brandon review queue",
-      "entry_type": "skill_update",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-131",
-      "date": "2026-06-12",
-      "type": "threshold_calibration",
-      "learning": "PMID 42266620 (Frontiers in Nutrition 2026, IF/neuroprotection in Alzheimer's DISEASE) is disease-context and NOT consumer-usable; high cite-risk if confused with the CS-177 cognition meta (SMD=0.26) when framing the DS-04 Frontiers hook.",
-      "source": "Science & Research dept brief (2026-06-12); MI cross-dept flag",
-      "source_type": "domain_contradiction",
-      "domain": "content",
-      "evidence": "Two Frontiers papers in the same window create a citation-collision risk; no guardrail distinguishes disease- vs performance-context at hook-drafting time. See daily synthesis 2026-06-12-s1.md.",
-      "confidence": "strong",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "claims-check / DS-04 hook citation-verification step (ACT-SR-2)",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-132",
-      "date": "2026-06-12",
-      "type": "process_change",
-      "learning": "ADA annual conference (June) + major diabetes-device launches (Abbott CE Mark dual glucose-ketone sensor, 6/10) form a repeatable annual ketone-legitimacy trigger opening a 5-7 day cognitive-science content window.",
-      "source": "Market Intelligence dept brief (2026-06-12), tag DS-18-001-ADA-anchor",
-      "source_type": "operational_signal",
-      "domain": "cross-surface",
-      "evidence": "Legitimacy windows handled reactively each year; no calendar pre-stage exists for predictable ADA/device-event triggers. See daily synthesis 2026-06-12-s1.md.",
-      "confidence": "preliminary",
-      "action_taken": "CS-2026-276 2026-08-18: Charlotte's authored content never reaches content-calendar-data.json \u2014 repair the staging merge or\u2026",
-      "skill_files_updated": [],
-      "related_entries": [
-        "CS-2026-276"
-      ],
-      "target": "marketing-calendar pre-stage (annual ADA/device trigger) + Science evergreen library",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ],
-      "action_stamped_at": "2026-08-18"
-    },
-    {
       "id": "L-133",
       "date": "2026-06-15",
       "type": "threshold_calibration",
@@ -7219,14 +6972,16 @@
       "domain": "operations",
       "evidence": "The filter was written to avoid spawning against rows that are speculative, and needs_planning reads as speculative. But the calendar's own semantics are the opposite: needs_planning means a dated commitment exists with no plan behind it, which is precisely the safety net's stated purpose. The consequence is that the net spawns for rows already being managed and stays silent on rows nobody has touched, so its output correlates negatively with need. Filed as a learning signal rather than a sixth Operations draft, per the Resolution Hierarchy - Operations already carries 5 pipeline-instrumentation drafts against a velocity of 8/wk. See daily synthesis 2026-08-18-s1.md and CS-2026-277 notes.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "45c4bea 2026-09-10: Disposition pass catch-up, batch 5 of 8: the second re-check and the first nine moved-candidate rows",
       "target": "cgo-daily-pipeline/config/changeset-instructions.md Step 1.5b status filter - admit needs_planning when a date_start falls inside a near horizon, or invert the filter to exclude only terminal statuses",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-18T18:08:56.297588+00:00",
       "archival_state": "active",
-      "id": "L-450"
+      "id": "L-450",
+      "action_stamped_at": "2026-09-11",
+      "related_entries": []
     },
     {
       "date": "2026-08-19",
@@ -7450,7 +7205,7 @@
       "domain": "operations",
       "evidence": "Thread scan 2026-08-20: 0 replies on 8/8 Layer 1 DMs from 2026-08-19 (channels D065GQJBUSW, D095PTW5058, D07J22KBTAA, D0928GYV1Q9, D065K8BG0DS, D065VDR30MP, D07PZRD6FEH, D08CSUTPGP5). Same-channel non-thread inbound in the same window: Nick Lacagnina 2026-08-19T15:03:58 EDT ts 1787166238.041989 in D07J22KBTAA, reporting the dashboard-vs-registry calendar-health divergence and a Life Time distribution read, and explicitly inviting correction ('Shout if the framing is off'); Katie Spaller 2026-08-19T16:11:45 EDT acknowledgment. Nick's message independently answered a question dept-market-intelligence 2026-08-20-s1 closed its brief asking (whether the six calendar cancellations were deliberate deload or attrition). Failure class is identical to L-448: a null instrument reading treated as a property of the thing measured rather than of the query. See daily synthesis 2026-08-20-s1.md Learning Signals.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "e0697eb 2026-09-11: [ST-8] console: rec-424 decision -> declined",
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 9a.1 - read subsequent messages in the DM channel since the dispatch ts, not slack_read_thread on it. Carried as rec-456.",
       "sources": [
         "Task B synthesis 2026-08-20-s1 Step 9a.1 thread scan: 0 replies across 8 dispatch DM channels",
@@ -7464,7 +7219,9 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-20T13:44:54.456433+00:00",
       "archival_state": "active",
-      "id": "L-463"
+      "id": "L-463",
+      "action_stamped_at": "2026-09-11",
+      "related_entries": []
     },
     {
       "date": "2026-08-20",
@@ -8496,7 +8253,7 @@
       "domain": "wholesale",
       "evidence": "Outcome: invalid_premise. Closed without measurement. Backfilled from tracker.json (CS-2026-162).",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "fb400f8 2026-09-10: Disposition pass catch-up, batch 3 of 8: ten of today's filings, and the second row a person must answer",
       "skill_files_updated": [],
       "related_entries": [],
       "changeset_candidate": false,
@@ -8510,7 +8267,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-03T00:00:16.250430+00:00",
       "archival_state": "active",
-      "id": "L-519"
+      "id": "L-519",
+      "action_stamped_at": "2026-09-11"
     },
     {
       "date": "2026-09-03",
@@ -18001,7 +17759,276 @@
       "created_at": "2026-09-08T14:46:16.872532+00:00",
       "archival_state": "active",
       "id": "L-555"
+    },
+    {
+      "id": "L-121",
+      "date": "2026-06-08",
+      "type": "process_change",
+      "learning": "paid-media-state.json build script reports campaign spend from a trailing 7d window and does not read live pause status, so already-paused campaigns (CS-187 PMAX, paused 6/01) keep surfacing as live kill-candidates every scan; the same pipeline is also TikTok-blind (tiktok_ads:false). This manufactured 2 of 3 'open' paid signals in D04 as state-file artifacts.",
+      "source": "Paid Media dept brief 2026-06-08-s1 (CSI-PM-1) + D04 SIG-04-2/ACT-04-1",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "State-build script keys off a rolling 7d spend window with no pause-state field; CS-187 closed invalid_premise 6/04 yet state file still shows $773.85/7d. See daily synthesis 2026-06-08-s1.md.",
+      "confidence": "strong",
+      "action_taken": "CS-2026-246 2026-08-04: resolved by derivation rather than a status read. _campaign_activity() in scripts/executive_bi_process_task_2a.py computes last_spend_date and days_since_spend per campaign from the daily series already present in staging \u2014 no new Polar request, no new credential. Unread status is now reported as 'unknown' instead of defaulting to 'active', and summary carries unknown_status_ads (108/114 on 2026-08-03) so paused_ads: 0 cannot be read as 'nothing is paused'. Verified live: 'whitelisting / cleetus' now reads days_since_spend 9 rather than presenting as a $474 active kill candidate; 'whitelisting / roman' reads 3, a signal that did not previously exist. Candidate had been unacted 57 days.",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-105",
+        "L-107"
+      ],
+      "changeset_candidate": true,
+      "changeset_note": "Throughput-neutral engineering fix: add live pause-state read + per-campaign status field to paid-media-state build; backfill TikTok ingestion. Held under spawn-freeze; routed as rec.",
+      "target": "scripts/ paid-media-state build pipeline",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "status": "resolved",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-122",
+      "date": "2026-06-09",
+      "type": "threshold_calibration",
+      "learning": "Bot traffic (~38% of site sessions per Clarity 6/08) sits inside shared denominators for BOTH site CVR (sessions/CVR events) and paid pixel ROAS/CAC. Neither the site-CVR drift (3.83%) nor the 3d digital-CAC drift ($52.69) can be cleanly interpreted until a bot-filtered baseline exists; both the 6/14 Father's Day scale-up and the GP scale-down inherit the contamination.",
+      "source": "Operations & Planning dept brief (INS-OP-2) + Website & CRO dept brief (INS-W-01), 2026-06-09",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Clarity 6/08 shows 38% bot sessions; Website CVR 3.83% (3rd wk below band) with Unassigned +198%; Paid 3d digital CAC $52.69. See daily synthesis 2026-06-09-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-118"
+      ],
+      "target": "Add a bot-filtered denominator (or bot-share confidence flag) to website-state.json and paid-media-state.json CVR/CAC computations; gate spend-change recs on bot-share threshold. Tie to CS-2026-147 RCA scope (rec-275).",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-123",
+      "date": "2026-06-10",
+      "type": "threshold_calibration",
+      "learning": "A data source (Sprout listening, Moe mart) returning zero results for 11 consecutive runs was still re-noted each run as a transient miss rather than auto-escalated to an infrastructure emergency; escalation depended on a human (Market Intelligence) finally reframing it on run 11 (CS-188). The system tracks freshness/availability but has no consecutive-empty-return streak counter that flips a source from monitoring-gap to broken-layer with an assigned recovery-ETA owner.",
+      "source": "Market Intelligence & Planning dept brief (D17/D10/D18), 2026-06-10",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "CS-188 Sprout listening 11th consecutive zero-return run; D10/D17/D18 external VoC, competitive, and trend velocity all DATA_UNAVAILABLE. See daily synthesis 2026-06-10-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-121"
+      ],
+      "target": "Add a consecutive-empty-return counter to data-pipeline-status.md / anomaly-scan escalation thresholds; auto-escalate a source to infra-emergency with a recovery-ETA owner at N>=5 zero-return runs.",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-125",
+      "date": "2026-06-11",
+      "type": "threshold_calibration",
+      "learning": "A directional watch-item metric was carried forward from the prior synthesis ('desktop CVR -21% on +45% sessions') and contradicted by fresher domain-scan data (sessions -20.7%, desktop -3.6%, CVR -2.4%); it should be retired.",
+      "source": "D01 Revenue scan, 2026-06-11 (memory_updates correction)",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Prior-session watch item not re-verified against the current domain scan; the framing-guardrail metric-freshness cross-check caught it one cycle late. See daily synthesis 2026-06-11-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": "ac40b30 2026-09-03: Ledger: l-125::learning-action-undiagnosed -> proposed (the write site is inside Devon's config gate)",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "synthesis-instructions.md Step 8 metric-freshness cross-check (extend to session-handoff watch items, not only D14-sourced metrics)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-09-04",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-126",
+      "date": "2026-06-11",
+      "type": "process_change",
+      "learning": "CS-189 status advanced to approved (co-sign 6/08 per claims-map) but the tracker approved_by field was never written, and a synthesis then read the empty field as 'co-sign pending' \u2014 a phantom decision block.",
+      "source": "Operations + Science dept briefs 2026-06-11 (INV-OP-1 / INV-SR-1)",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "tracker CS-189 status=approved, approved_by=None; claims-map shows APPROVED 2026-06-08 by Devon. Same field-gap class as CS-097 (L-035). See 2026-06-11-s2.md.",
+      "confidence": "moderate",
+      "action_taken": "d6e70a4 2026-09-03: Repair loop 2026-09-03: digest + dossier (5 worked \u2014 2 fixed, 2 proposed, 1 no_work_owed)",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "changeset status-transition validation (require approved_by when status=approved) + synthesis ChangeSet cross-check reads approved_by AND claims-map/notes before declaring a co-sign pending",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ],
+      "action_stamped_at": "2026-09-04",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-127",
+      "date": "2026-06-11",
+      "type": "threshold_calibration",
+      "learning": "The 8-session RED was narrated as a throughput crisis, but intake velocity (11.5/wk) is in-band \u2014 the binding constraint is two human decision/measurement nodes, not processing speed or 80-draft volume.",
+      "source": "Operations dept brief 2026-06-11 (INS-OP-1)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "d12_velocity_new_per_week=11.5 (28d) in band[8,12]; measurement_capable=false 8th run; Devon block 48h. See 2026-06-11-s2.md.",
+      "confidence": "preliminary",
+      "action_taken": "f2658c2 2026-09-04: l-127::learning-action-undiagnosed -> proposed (rec-534): the ops throughput metrics measure authorship",
+      "skill_files_updated": [],
+      "related_entries": [
+        "CS-2026-259"
+      ],
+      "target": "synthesis-instructions D12 framing \u2014 separate intake-velocity (healthy) from decision/measurement-gate (the actual RED)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "action_stamped_at": "2026-09-04",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-128",
+      "date": "2026-06-11",
+      "type": "process_change",
+      "domain": "operations",
+      "source_type": "operational_signal",
+      "learning": "A synthesis re-run that rebuilds from upstream department briefs can perpetuate stale state: Nick scheduled the July-4 beats (commit 15:03Z) after the dept briefs were authored (14:54Z), so both the s1 DM and the dept-informed s2 carried 'July-4 needs_planning' even though the live marketing-calendar already read 'planned' by s2 runtime. The re-run trusted the briefs over the fresher state file.",
+      "source": "Investigation of Nick's 2026-06-11 KGS Daily DM vs commit f3cd227",
+      "evidence": "Nick confirmed July-4 planning 15:03Z but the s2 re-run ~15:30Z still cited needs_planning from a stale 5/20 calendar build. See daily synthesis 2026-06-12-s1.md.",
+      "confidence": "preliminary",
+      "target": "task-b-synthesis.md (a re-run after Task A1 completes must re-read fast-changing state files \u2014 marketing-calendar-data.json, team-tasks.json \u2014 not rely solely on briefs authored earlier) + calendar-writeback-protocol.md (refresh generated_at / fast write-back loop so intraday team edits are visible to the next layer). Upstream: gate synthesis on task_a1_complete so the run does not fire before briefs exist.",
+      "skill_files_updated": [],
+      "related_entries": [
+        "CS-2026-270"
+      ],
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "action_taken": "28c079e 2026-08-25: Task A1 dept brief (2026-08-25-s1): market-intelligence (7/7 complete)",
+      "action_stamped_at": "2026-08-28",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-129",
+      "date": "2026-06-12",
+      "type": "process_change",
+      "learning": "A strategic decision (CS-183 Q3 cognitive anchor) was flagged overdue in three consecutive dept briefs (6/10,6/11,6/12) without advancing \u2014 re-surfacing is not forcing; it silently gated 4 downstream workstreams.",
+      "source": "Science & Research dept brief (2026-06-12); corroborated Ops+MI",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "CS-183 15d in draft; gates DS-04 Frontiers hook (expires ~6/18), TRX/July-4 creative, CS-189 claims chain. See daily synthesis 2026-06-12-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "11c50ed 2026-09-04: l-129::learning-action-undiagnosed -> premise_false: the escalation it asks for was built 2026-07-02",
+      "skill_files_updated": [],
+      "related_entries": [
+        "CS-2026-162",
+        "CS-2026-183",
+        "CS-2026-256"
+      ],
+      "target": "changeset-instructions.md decision-aging escalation + dispatch-instructions.md owner Slack hard-gate for N-day-stale gating CSes",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-09-04",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-130",
+      "date": "2026-06-12",
+      "type": "skill_update",
+      "learning": "PMID 42263845 (Metabolism 2026, RCT crossover \u2014 ketone monoester improves brain insulin sensitivity + cognition in older overweight adults) is a high-value Tier-A citation candidate for the cognitive-aging lane.",
+      "source": "Science & Research dept brief (2026-06-12)",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "New primary literature not yet in claims matrix; cognitive-aging lane under-cited vs TRX/Q3 needs. See daily synthesis 2026-06-12-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain claims matrix (cognitive-aging lane); Brandon review queue",
+      "entry_type": "skill_update",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-131",
+      "date": "2026-06-12",
+      "type": "threshold_calibration",
+      "learning": "PMID 42266620 (Frontiers in Nutrition 2026, IF/neuroprotection in Alzheimer's DISEASE) is disease-context and NOT consumer-usable; high cite-risk if confused with the CS-177 cognition meta (SMD=0.26) when framing the DS-04 Frontiers hook.",
+      "source": "Science & Research dept brief (2026-06-12); MI cross-dept flag",
+      "source_type": "domain_contradiction",
+      "domain": "content",
+      "evidence": "Two Frontiers papers in the same window create a citation-collision risk; no guardrail distinguishes disease- vs performance-context at hook-drafting time. See daily synthesis 2026-06-12-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "claims-check / DS-04 hook citation-verification step (ACT-SR-2)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-132",
+      "date": "2026-06-12",
+      "type": "process_change",
+      "learning": "ADA annual conference (June) + major diabetes-device launches (Abbott CE Mark dual glucose-ketone sensor, 6/10) form a repeatable annual ketone-legitimacy trigger opening a 5-7 day cognitive-science content window.",
+      "source": "Market Intelligence dept brief (2026-06-12), tag DS-18-001-ADA-anchor",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Legitimacy windows handled reactively each year; no calendar pre-stage exists for predictable ADA/device-event triggers. See daily synthesis 2026-06-12-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": "CS-2026-276 2026-08-18: Charlotte's authored content never reaches content-calendar-data.json \u2014 repair the staging merge or\u2026",
+      "skill_files_updated": [],
+      "related_entries": [
+        "CS-2026-276"
+      ],
+      "target": "marketing-calendar pre-stage (annual ADA/device trigger) + Science evergreen library",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "action_stamped_at": "2026-08-18",
+      "archived_date": "2026-09-11",
+      "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-09-10"
+  "last_updated": "2026-09-11"
 }
