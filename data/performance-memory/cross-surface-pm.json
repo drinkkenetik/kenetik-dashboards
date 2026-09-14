@@ -3939,6 +3939,27 @@
       "domain": "content",
       "status": "active",
       "date": "2026-09-10"
+    },
+    {
+      "id": "L-567",
+      "summary": "A rendered verdict inherits its scope from the loop that built it, and nothing requires the sentence to name the population it speaks for. exec_diges\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-14"
+    },
+    {
+      "id": "L-568",
+      "summary": "A work-claim with no expiry is a one-way door, and a nightly bound applied to work COMPLETED rather than to rows CLAIMED turns that door into a perma\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-14"
+    },
+    {
+      "id": "L-569",
+      "summary": "Every consecutive-reading predicate in the system counts SCANS rather than calendar days, so a skipped day is silently equivalent to a stable one. Th\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-14"
     }
   ],
   "entries": [
@@ -9479,6 +9500,57 @@
       "created_at": "2026-09-10T14:47:03.446387+00:00",
       "archival_state": "active",
       "id": "L-566"
+    },
+    {
+      "date": "2026-09-14",
+      "learning": "A rendered verdict inherits its scope from the loop that built it, and nothing requires the sentence to name the population it speaks for. exec_digest.awaiting_lines() iterates only tracker rows carrying meta.hypothesis_lane with a posted doorbell, and on 2026-09-14 at 08:13Z the executive post therefore read 'Quiet day: system nominal, nothing awaiting approval' on a morning when CS-2026-295 sat at its execution target and CS-2026-298, CS-2026-299, CS-2026-300 and CS-2026-301 were due the next day, none of them carrying a hypothesis_lane block. The same shape appears independently in Science the same day: claims_tier_coverage reads a perfect 1.00 on a tier table of 13 efficacy citations that has no rung a composition claim could occupy, so it is green about a class it cannot represent. Two instruments, two departments, one defect class -- a confident verdict whose population is narrower than the words it renders.",
+      "source": "scripts/exec_digest.py awaiting_lines() read at d64242e; cgo-logs/changesets/tracker.json last_updated 2026-09-14T08:03:55Z; data/notifications/reads/inbound.json 08:13Z executive post; dept-science-research INS-D-2",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "The filter that selects the population and the sentence that reports on it are written in the same function and share no contract, so narrowing the filter silently narrows the claim. Nothing in the executive format contract requires a population statement, and the altitude rules actively remove the qualifiers that would carry one. See daily synthesis 2026-09-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/exec_digest.py (awaiting_lines + build); architecture/process/notification-altitudes.md -- require a population clause on any nothing/none/quiet verdict",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-14T13:43:44.080597+00:00",
+      "archival_state": "active",
+      "id": "L-567"
+    },
+    {
+      "date": "2026-09-14",
+      "learning": "A work-claim with no expiry is a one-way door, and a nightly bound applied to work COMPLETED rather than to rows CLAIMED turns that door into a permanent leak. 22 recommendation rows were claimed in a single 2026-09-10 sweep against a nightly bound of 5; all 24 rows now held carry exactly one work-log entry, the claim itself. rec_writer.NotQueueable then refuses machine re-claim because the row is no longer open or proposed, and lifecycle_engine.py:393 skips working rows so the human escalation ladder cannot raise them either. The result is measurable and total: 0 of 95 open rows qualify for the next sweep and only 1 open row is machine_doable at all, so the lane's throughput is structurally zero and every future machine-doable row joins the frozen set on the night it is filed. Three departments measured this independently in the same session.",
+      "source": "dept-operations-planning ACT-D-1 / INS-D-1 / INS-D-3 / INS-D-4; dept-science-research ACT-D-2; dept-market-intelligence ACT-MI-3; cgo-logs/changesets/tracker.json 2026-09-14T08:03:55Z",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "The bound was placed on the wrong quantity: claiming is cheap and finishing is expensive, so a limit on finishing does not limit claiming, and because releasing was never implemented the claim is the only state transition the lane can make. The ladder's skip of working rows is correct against a live claim and wrong against a dead one, which is why the release must exist before the skip is touched. See daily synthesis 2026-09-14-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/cs_helpers/rec_writer.py sweep_queue_for_machine -- cap the sweep at the nightly bound and auto-release a working row after two nights with no new work_log entry; then scripts/lifecycle_engine.py:393",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-14T13:43:44.104109+00:00",
+      "archival_state": "active",
+      "id": "L-568"
+    },
+    {
+      "date": "2026-09-14",
+      "learning": "Every consecutive-reading predicate in the system counts SCANS rather than calendar days, so a skipped day is silently equivalent to a stable one. The four-day gap hid a flattening rather than a movement: active_subscribers ran 3,076 / 3,078 / 3,077 / 3,082 / 3,079 across 2026-09-10..09-14, which is +3 over four days after +66 over the four before, and at weekly resolution it reads as two consecutive positive weeks and signals nothing. A daily cadence would have surfaced it on 09-12 as a two-day stall. In the same session a three-consecutive-scans-out-of-band escalation on d01_site_cvr now spans four calendar days with no observation between its last two readings. Flattening is the harder thing to see at coarse grain and is exactly what a gap produces.",
+      "source": "dept-lifecycle-marketing INS-D-2 (daily subscription series 2026-09-10..09-14); dept-website-cro INS-W-3 (d01_site_cvr out of band 09-04, 09-07, 09-10, 09-14)",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Predicates were specified against an assumed-daily cadence and reference the observation index rather than the date, so they degrade silently instead of refusing when the cadence breaks. L-399 sees the gapped cadence itself; this is the downstream consequence nothing measures, and per CLAUDE.md a banner that sees the gap is detection rather than repair. See daily synthesis 2026-09-14-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "the escalation predicates in scripts/lifecycle_engine.py and the department band-drift rules -- express consecutive-reading tests in days-with-observations and refuse rather than degrade when the gap exceeds the window",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-14T13:43:44.130767+00:00",
+      "archival_state": "active",
+      "id": "L-569"
     }
   ],
   "archived_entries": [
@@ -18030,5 +18102,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-09-11"
+  "last_updated": "2026-09-14"
 }
