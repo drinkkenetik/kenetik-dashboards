@@ -9526,14 +9526,18 @@
       "domain": "operations",
       "evidence": "The bound was placed on the wrong quantity: claiming is cheap and finishing is expensive, so a limit on finishing does not limit claiming, and because releasing was never implemented the claim is the only state transition the lane can make. The ladder's skip of working rows is correct against a live claim and wrong against a dead one, which is why the release must exist before the skip is touched. See daily synthesis 2026-09-14-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "a9c0aa3 2026-09-15: Task A domain scans 2026-09-15 \u2014 Batch 2 (D14 Team Intelligence)",
       "target": "scripts/cs_helpers/rec_writer.py sweep_queue_for_machine -- cap the sweep at the nightly bound and auto-release a working row after two nights with no new work_log entry; then scripts/lifecycle_engine.py:393",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-14T13:43:44.104109+00:00",
       "archival_state": "active",
-      "id": "L-568"
+      "id": "L-568",
+      "action_stamped_at": "2026-09-15",
+      "related_entries": [
+        "CS-2026-295"
+      ]
     },
     {
       "date": "2026-09-14",
@@ -18102,5 +18106,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-09-14"
+  "last_updated": "2026-09-15"
 }
