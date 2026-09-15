@@ -3960,6 +3960,34 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-09-14"
+    },
+    {
+      "id": "L-570",
+      "summary": "The focus metric furthest from target is the one with no single owner, and its four causal halves each sit inside a department that can only see its \u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-15"
+    },
+    {
+      "id": "L-571",
+      "summary": "Converting a store to a deterministic writer currently stops that store reporting its own age and freezes the prose that explains its status, and a h\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-15"
+    },
+    {
+      "id": "L-572",
+      "summary": "Repairs to measurement instruments lose every prioritisation contest because they carry no quarter-outcome, and each expiry removes an instrument, wh\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-15"
+    },
+    {
+      "id": "L-573",
+      "summary": "A compliance control expressed as prose inside a machine-readable reference file is invisible to every caller of that file, and its presence makes th\u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-09-15"
     }
   ],
   "entries": [
@@ -9555,6 +9583,99 @@
       "created_at": "2026-09-14T13:43:44.130767+00:00",
       "archival_state": "active",
       "id": "L-569"
+    },
+    {
+      "date": "2026-09-15",
+      "learning": "The focus metric furthest from target is the one with no single owner, and its four causal halves each sit inside a department that can only see its own. new_customer_count reads 1,011 against a 3,000/month Level 2 target (-66%); paid media holds the carrier gap (1 of 48 forward calendar rows is paid_media-owned and it is cancelled), market intelligence holds the content gap (0 forward rows, TikTok 1 post/week against 21), lifecycle holds the measurement (79% of the subscriber stall is acquisition, -69 of an -87 swing), and website holds the cheapest lever ($1,950-$3,950/week in the mobile homepage route). Four departments filed four actions; nobody filed the metric. A metric the focus block assigns to all_depts is owned by nobody in the daily run.",
+      "source": "Task B cross-department synthesis 2026-09-15-s1 (dept-paid-media ACT-PM-4, dept-market-intelligence ACT-M-1, dept-lifecycle-marketing INS-D-1, dept-website-cro INS-W-1)",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "The department-brief architecture assigns every Level 3 primary to exactly one department and leaves Level 1 outcomes and Level 2 levers to the synthesis layer, which has a gap check but no owner field. The check is also deduped on whether an active ChangeSet NAMES the metric rather than whether it ACTS on it, so three measurement-plumbing rows (CS-2026-277 draft, CS-2026-280 published and already measured, CS-2026-298 approved and about recording promotion-code redemption) silenced the widest gap on the board. The priority stack had to carry it manually. See daily synthesis 2026-09-15-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md (the L1/L2 focus-gap check)",
+      "sources": [
+        "dept-paid-media.md ACT-PM-4 (2026-09-15-s1)",
+        "dept-market-intelligence.md ACT-M-1 / INS-M-3 (2026-09-15-s1)",
+        "dept-lifecycle-marketing.md INS-D-1 (2026-09-15-s1)",
+        "dept-website-cro.md INS-W-1 / ACT-W-2 (2026-09-15-s1)",
+        "data/metrics/reporting-state.json new_customer_count=1011 (2026-09-15T09:40:37Z)"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-15T13:37:42.993415+00:00",
+      "archival_state": "active",
+      "id": "L-570"
+    },
+    {
+      "date": "2026-09-15",
+      "learning": "Converting a store to a deterministic writer currently stops that store reporting its own age and freezes the prose that explains its status, and a human in the loop does not catch either. Three of eleven atomic_write_json callers set no freshness field; nine tracker rows closed fixed on 2026-09-03 carry resolution text asserting the defect persists, and a1_runtime.render_facts_markdown pipes that text into all seven department FACTS blocks daily, where the stale-verification rule tells each agent to trust it over its own prior brief. The new evidence is the human half: a person edited the Noah Atwood campaign on 2026-09-15 (commit dfed97a, BEAT-03 scheduled for 09-23) while BEAT-01 and BEAT-02 stayed complete with empty actual_outcomes, because nothing in the record presents a swept status as a question.",
+      "source": "Task B cross-department synthesis 2026-09-15-s1 (dept-operations-planning INS-D-1, dept-science-research INS-D-1, dept-content ACT-C-1, dept-market-intelligence INS-M-1), verified independently against commit dfed97a",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "CLAUDE.md's third standing rule specifies that a deterministic writer owns routing and shape. It does not require the writer to own the freshness stamp or the field that explains the status, so both fall back to whatever prose the calling session had in hand. Six recommendations landed in tracker.json at 2026-09-15T11:39:51Z while the file's own last_updated still read 2026-09-14T08:03:55, and klaviyo_lifecycle/core.py uses that same field as an optimistic-concurrency version. Corroborates L-489 and L-413; the rule-level gap is what is new. See daily synthesis 2026-09-15-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "CLAUDE.md (third standing rule) + scripts/cs_helpers/id_allocator.py atomic_write_json",
+      "sources": [
+        "dept-operations-planning.md INS-D-1 / ACT-D-1 (2026-09-15-s1)",
+        "dept-science-research.md INS-D-1 / ACT-D-2 (2026-09-15-s1)",
+        "dept-content.md ACT-C-1 (2026-09-15-s1)",
+        "dept-market-intelligence.md INS-M-1 (2026-09-15-s1)",
+        "commit dfed97a (2026-09-15T13:06Z) verified independently by Task B"
+      ],
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-15T13:37:43.022996+00:00",
+      "archival_state": "active",
+      "id": "L-571"
+    },
+    {
+      "date": "2026-09-15",
+      "learning": "Repairs to measurement instruments lose every prioritisation contest because they carry no quarter-outcome, and each expiry removes an instrument, which makes the affected department generate fewer findings, which reads as improvement. Four expired unreviewed in six weeks: CS-2026-223 (forward scheduling and category tagging, 2026-08-06), CS-2026-241 (direct-competitor feeds, 2026-08-13), CS-2026-276 (the content staging merge, 2026-09-01, no successor filed), with CS-2026-285 the survivor at zero movement in 12 days and a 2026-09-16 target. Measured consequence: 6 of 12 competitive sources producing, the disabled one carrying a config note naming the exact enable-condition that has been met for three windows, and every competitor read this quarter concluding no new direct-competitor activity from instruments that are off.",
+      "source": "Task B synthesis 2026-09-15-s1 quoting dept-market-intelligence INS-M-2 and ACT-M-2",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "The ChangeSet prioritisation surface ranks on expected_impact against focus metrics. An instrument repair's impact is epistemic - it changes what can be known, not what is earned - so it scores null against every focus metric and is structurally unrankable rather than low-ranked. All four rows verified in tracker.json on 2026-09-15. Corroborates L-404, L-423, L-446, L-509. See daily synthesis 2026-09-15-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "kenetik-growth-system/commands/changeset-review.md (prioritisation criteria)",
+      "sources": [
+        "dept-market-intelligence.md INS-M-2 (2026-09-15-s1)",
+        "dept-market-intelligence.md ACT-M-2 (2026-09-15-s1)",
+        "cgo-logs/changesets/tracker.json \u2014 CS-2026-223, CS-2026-241, CS-2026-276, CS-2026-285 read 2026-09-15"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-15T13:37:43.053361+00:00",
+      "archival_state": "active",
+      "id": "L-572"
+    },
+    {
+      "date": "2026-09-15",
+      "learning": "A compliance control expressed as prose inside a machine-readable reference file is invisible to every caller of that file, and its presence makes the absence worse than a plain gap would be: two gates now return positive evidence of compliance on the highest-volume instance of the construction the organisation is worried about. The canonical parser was run against the exact published caption today and returned an empty list, because claims-compliance.md's hard-block list carries only the literal form while the ban on paraphrasing it lives in prose. Separately, three consecutive scans attributed the exposure to organic authorship when all 55 occurrences carry paid_status paid_suspected, which routed the remedy to the wrong owner for three days.",
+      "source": "Task B synthesis 2026-09-15-s1 quoting dept-content ACT-C-2 and INS-C-2",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "claims-compliance.md carries a machine-parsed hard-block list and a human-read prose section, and the ban on paraphrasing the litigated construction lives only in the prose. Nothing tests that the list covers the forms actually published, and no gate reads the paid_status field that would have named the correct owner. The clause ran 55 times in a 16-day window including 4 times on 2026-09-15; cgo-2026-09-14-001 is an open T1 against it. See daily synthesis 2026-09-15-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "brain/kenetik-brain/references/claims-compliance.md (hard-block list)",
+      "sources": [
+        "dept-content.md ACT-C-2 (2026-09-15-s1)",
+        "dept-content.md INS-C-2 (2026-09-15-s1)",
+        "klaviyo_lifecycle.checks.parse_banned_phrases executed against the published caption, 2026-09-15",
+        "cgo-logs/queues/published-posts.json \u2014 55 of 55 occurrences join to paid_suspected rows"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-15T13:37:43.083549+00:00",
+      "archival_state": "active",
+      "id": "L-573"
     }
   ],
   "archived_entries": [
