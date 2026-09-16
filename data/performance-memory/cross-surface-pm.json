@@ -9497,14 +9497,18 @@
       "domain": "operations",
       "evidence": "Root cause: routing by owner rather than by whether a person is needed. Filed as rec-664. See daily synthesis 2026-09-10-s1.md, Theme 4.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "ecdd5bc 2026-09-16: Task A1 2026-09-16: Operations & Planning brief (Group 2) + outbox patches",
       "target": "scripts/cs_helpers/rec_writer.py routing, and the ST-5 backlog-burn scope in architecture/process/design-direction-stabilization-2026-09.md",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-10T14:47:03.421209+00:00",
       "archival_state": "active",
-      "id": "L-565"
+      "id": "L-565",
+      "action_stamped_at": "2026-09-16",
+      "related_entries": [
+        "CS-2026-299"
+      ]
     },
     {
       "date": "2026-09-10",
@@ -18227,5 +18231,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-09-15"
+  "last_updated": "2026-09-16"
 }
