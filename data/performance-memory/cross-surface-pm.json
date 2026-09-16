@@ -3988,6 +3988,34 @@
       "domain": "content",
       "status": "active",
       "date": "2026-09-15"
+    },
+    {
+      "id": "L-574",
+      "summary": "A closed ChangeSet carries no pointer to the live row that replaced it, so readers land on the dead row and conclude the work was abandoned. CS-2026-\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-16"
+    },
+    {
+      "id": "L-575",
+      "summary": "The one surface an executive reads every day defaults to reassurance when its all-clear sentence has no precondition. The executive digest posted 'Qu\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-16"
+    },
+    {
+      "id": "L-576",
+      "summary": "One promotional week became the comparison baseline for three unrelated series at once, and three departments each independently reported the resulti\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-16"
+    },
+    {
+      "id": "L-577",
+      "summary": "Two departments measured the same compliance exposure on two instruments and returned mutually exclusive populations, and the contradiction changed t\u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-09-16"
     }
   ],
   "entries": [
@@ -9680,6 +9708,100 @@
       "created_at": "2026-09-15T13:37:43.083549+00:00",
       "archival_state": "active",
       "id": "L-573"
+    },
+    {
+      "date": "2026-09-16",
+      "learning": "A closed ChangeSet carries no pointer to the live row that replaced it, so readers land on the dead row and conclude the work was abandoned. CS-2026-276 closed expired_unreviewed on 2026-09-01; CS-2026-293 was created 2026-09-04 on the identical subject (Charlotte's authored calendar entries never reaching the file the pipeline reads), is a live draft owned by Nick Lacagnina, and carries execution_target_date 2026-09-17. Neither row names the other: CS-2026-276 has no spawned_changesets entry and CS-2026-293's spawned_from names rec-440 instead. Two independent readers on two consecutive days \u2014 yesterday's session handoff and today's Market Intelligence department brief \u2014 each reported that CS-2026-276 died with no successor, and each proposed re-filing work that already exists and is one day from its own date.",
+      "source": "Task B synthesis 2026-09-16-s1, direct read of cgo-logs/changesets/tracker.json",
+      "sources": [
+        "cgo-logs/changesets/tracker.json (CS-2026-276 status/closed_date/spawned_changesets and CS-2026-293 status/created/execution_target_date/spawned_from, read directly 2026-09-16)",
+        "cgo-logs/department-briefs/2026-09-16-s1/dept-market-intelligence.md (ACT-MI-1: 'closed 2026-09-01 as expired_unreviewed with neither candidate path taken')",
+        "cgo-logs/session-handoffs/2026-09-15-session-111.md ('its repair CS-2026-276 closed expired_unreviewed 09-01 with no successor')",
+        "scripts/build_cs_entry.py (no parameter exists for the row a new ChangeSet replaces)"
+      ],
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "Succession is recorded only in prose \u2014 notes, or spawned_from pointing at a recommendation id \u2014 and never as a typed edge between the two ChangeSet rows. The only artifact a reader lands on is the closed row, and it cannot tell them where the work went. The builder that creates the successor has no argument for the row it replaces. See daily synthesis 2026-09-16-s1.md, Theme 5.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/build_cs_entry.py \u2014 a replaces/superseded_by pair written in both directions",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-16T13:27:53.146607+00:00",
+      "archival_state": "active",
+      "id": "L-574"
+    },
+    {
+      "date": "2026-09-16",
+      "learning": "The one surface an executive reads every day defaults to reassurance when its all-clear sentence has no precondition. The executive digest posted 'Quiet day: system nominal, nothing awaiting approval' to Slack at 2026-09-16T08:12:53Z, on a morning when the engine's own work queue carried 60 escalations, the tracker validator exited 1 with three errors, the repository's unit-test suite had been red for 23 consecutive runs, and both Klaviyo crons were stopped at their pre-cron validator gate. The sentence is computed from a source that cannot see the adjudication queue, the validator's exit code, or the current CI red set \u2014 the three artifacts that actually describe whether anything is awaiting a person.",
+      "source": "data/notifications/reads/inbound.json, digest posted 2026-09-16T08:12:53Z",
+      "sources": [
+        "data/notifications/reads/inbound.json (the digest text, captured verbatim)",
+        "cgo-logs/changesets/work-queue.json (engine_date 2026-09-16: 60 escalations, 55 stale)",
+        "scripts/validate_changeset_tracker.py (run live this session: exit 1, three errors)",
+        "cgo-logs/department-briefs/2026-09-16-s1/dept-paid-media.md (scripts-unit-tests red 23 consecutive runs since 2026-09-14T10:14:51Z)",
+        ".github/workflows/klaviyo-daily-cron.yml (ungated pre-cron validator step before the orchestrator, read directly)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "A summary line with no precondition cannot distinguish a quiet day from a blind one, and on this morning it reported the opposite of the day. See daily synthesis 2026-09-16-s1.md, Cached Metrics Snapshot and Learning Signals.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "the executive digest emitter behind scripts/notify.py",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-16T13:27:53.171352+00:00",
+      "archival_state": "active",
+      "id": "L-575"
+    },
+    {
+      "date": "2026-09-16",
+      "learning": "One promotional week became the comparison baseline for three unrelated series at once, and three departments each independently reported the resulting artifact as genuine news on three consecutive days. The week of 2026-08-31 contained a 20% site-wide Labor Day sale and is anomalous simultaneously on creator revenue (top-3 code revenue spiked to $16,540 against $10,110 and $10,612 in the two weeks before and $10,786 in the week after), on voluntary cancellations (131 against a trailing eight-week mean of 70), and on new subscriptions (peak 179). Against the two pre-promotional weeks the creator move is +6.7% and +1.6% with the rest of the roster flat. Sale-window conditioning exists only on the paid-media grain and is itself block-scoped and one-directional; the creator, subscription and cancellation readers have no conditioning at all, so a promotional week enters their week-over-week comparisons as an ordinary week and manufactures a decline the following week, every time.",
+      "source": "Lifecycle Marketing INS-LM-2, cross-read against three departments",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-16-s1/dept-lifecycle-marketing.md (INS-LM-2, INS-LM-5: the three-series decomposition)",
+        "cgo-logs/department-briefs/2026-09-16-s1/dept-content.md (ACT-C-4, INS-C-3: the same creator move read as broad attrition)",
+        "cgo-logs/department-briefs/2026-09-16-s1/dept-market-intelligence.md (ACT-MI-2: the cancellation half)",
+        "data/marketing-calendar/marketing-calendar-data.json (Labor Day Weekend Sale and 20% site-wide code LDW, 2026-08-31..09-07, status complete)",
+        "cgo-logs/department-briefs/2026-09-16-s1/dept-paid-media.md (INS-PM-3: _offer_conditioning still block-scoped and one-directional)"
+      ],
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "The paid grain already knows about this failure mode and is repairing it under rec-727; the three non-paid series do not know about it at all. See daily synthesis 2026-09-16-s1.md, Theme 3.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "the week-over-week readers behind creator, subscription and cancellation state",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-16T13:27:53.197953+00:00",
+      "archival_state": "active",
+      "id": "L-576"
+    },
+    {
+      "date": "2026-09-16",
+      "learning": "Two departments measured the same compliance exposure on two instruments and returned mutually exclusive populations, and the contradiction changed the owner assignment before it changed anything else. Content, partitioning published-posts.json by its own paid_status field, returns zero organic_only Facebook objects in either the trailing or prior 7-day window. Science, reading sprout-state.json, returns 43 organic Facebook instances since 2026-09-04 carrying 99.3% of trailing-7d organic Facebook impressions. Both departments agree exactly on the offending element and both reproduce the same 88.2% post share, so neither instrument is broken. No artifact is authoritative for paid_status, and the two that carry it disagree on whether paid_suspected on a Sprout-published post means the post was boosted or that it was never organic. D07 routed the remediation to a person whose publishing queue does not contain the objects; the routing failed before the remediation did.",
+      "source": "Content INV-C-1 versus Science INV-SR-3, with Operations INS-D-3 declining to adjudicate",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-16-s1/dept-content.md (INV-C-1, INS-C-1)",
+        "cgo-logs/department-briefs/2026-09-16-s1/dept-science-research.md (INV-SR-3, INS-SR-3)",
+        "cgo-logs/department-briefs/2026-09-16-s1/dept-operations-planning.md (INS-D-3: both internally sound, unreconciled)",
+        "cgo-logs/department-briefs/2026-09-16-s1/dept-market-intelligence.md (cross_dept_flag: the partition changes the size of the risk, not the remedy)"
+      ],
+      "source_type": "domain_contradiction",
+      "domain": "content",
+      "evidence": "Every ownership routing on a social object inherits an unresolved population definition. See daily synthesis 2026-09-16-s1.md, Theme 1.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-logs/queues/published-posts.json versus data/sprout/sprout-state.json \u2014 name one authoritative for paid_status and define paid_suspected",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-16T13:27:53.219025+00:00",
+      "archival_state": "active",
+      "id": "L-577"
     }
   ],
   "archived_entries": [
