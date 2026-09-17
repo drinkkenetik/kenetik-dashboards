@@ -4016,6 +4016,34 @@
       "domain": "content",
       "status": "active",
       "date": "2026-09-16"
+    },
+    {
+      "id": "L-578",
+      "summary": "A post's paid/organic classification is computed correctly and then dropped at every exit, so the same 65 ad objects are counted as organic by three \u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-09-17"
+    },
+    {
+      "id": "L-579",
+      "summary": "An instrument that measures whether a person responded reported silence for ten weekdays while holding zero rows for the messages it claims to measur\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-17"
+    },
+    {
+      "id": "L-580",
+      "summary": "A target can be published without a basis while the metric it governs is published on two, and the two land on opposite sides of the target. The focu\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-17"
+    },
+    {
+      "id": "L-581",
+      "summary": "A count taken from a feed with indexing lag reads as a rate of arrival, and three departments built work on the inferred urgency. The rolling 7-day r\u2026",
+      "domain": "market-intel",
+      "status": "active",
+      "date": "2026-09-17"
     }
   ],
   "entries": [
@@ -9802,6 +9830,102 @@
       "created_at": "2026-09-16T13:27:53.219025+00:00",
       "archival_state": "active",
       "id": "L-577"
+    },
+    {
+      "date": "2026-09-17",
+      "learning": "A post's paid/organic classification is computed correctly and then dropped at every exit, so the same 65 ad objects are counted as organic by three independent readers. Sprout's sync flags burst family 8f41fab1b7 paid_suspected on all 65 objects; those objects carry 710 of 714 (99.4%) of the engagement reported as organic Facebook performance, and 88 of 88 content-calendar entries published in 14 days carry claim_tier and claims_compliance null because the sprout-sync writer creates them null by construction. The contradiction recorded as L-577 on 2026-09-16 is resolved by this: both instruments were counting correctly and the word organic was the artifact. It changes the owner (Katie's ad account, not Charlotte's template) and the remedy (an ad-account pause, not a template edit), not the exposure.",
+      "source": "Content & Creative, Science & Research and Market Intelligence department briefs 2026-09-17-s1; resolves L-577",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-17-s1/dept-content.md (INS-C-1, ACT-C-1/C-2, INV-C-1)",
+        "cgo-logs/department-briefs/2026-09-17-s1/dept-market-intelligence.md (INS-M-3, INS-M-4, ACT-M-2)",
+        "cgo-logs/department-briefs/2026-09-17-s1/dept-science-research.md (INS-D-1)",
+        "cgo-logs/domain-scans/2026-09-17-s1/domain-07.md (SIG-07-1, H-07-1 refuted)",
+        "data/content/content-calendar-data.json (date_publish max 2026-09-16 across 1,522 rows; claim_tier and claims_compliance null on all 88 rows published in 14 days)"
+      ],
+      "source_type": "domain_contradiction",
+      "domain": "content",
+      "evidence": "Root cause: the classification exists as a computed local inside scripts/executive_bi_process_task_2a.py (lines ~1513 and ~1553) and is never promoted onto the SOC-* calendar row the same function builds ~200 lines later. paid_suspected appears in six scripts and in data/metrics/gap-ledger.json and zero times in data/content/content-calendar-data.json. Every downstream consumer therefore re-derives 'organic' from the absence of a paid marker that was never written, which is indistinguishable from genuine organic. See daily synthesis 2026-09-17-s1.md, Theme 1.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/executive_bi_process_task_2a.py (carry paid_status onto the calendar row it already builds from the same post object); data/content/content-calendar-data.json schema",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-17T13:29:35.239736+00:00",
+      "archival_state": "active",
+      "id": "L-578"
+    },
+    {
+      "date": "2026-09-17",
+      "learning": "An instrument that measures whether a person responded reported silence for ten weekdays while holding zero rows for the messages it claims to measure. sent-receipts.json carries 26 receipts (21 M2, 4 M8, 1 M9, and no M3 or M4 at all) because relay_outbox.py's push retry resets onto the tip of main and re-runs a relay whose outbox is already drained, discarding the receipts it had just merged. decision-latency.json computes 0% answered over 4 unrelated rows; M6 deadline escalation joins to sent-receipts by design, so no deadline in this system has ever escalated. Three prior sessions read the silence as a human-engagement finding, and a stand-up action item was raised on 2026-09-16 to repair a delivery path that was already working.",
+      "source": "Operations & Planning department brief 2026-09-17-s1 (INS-D-1, ACT-D-1), verified independently in Task B session 113",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-17-s1/dept-operations-planning.md (INS-D-1, ACT-D-1)",
+        "data/notifications/sent-receipts.json (26 receipts: M2 21, M8 4, M9 1; zero M3, zero M4)",
+        "data/notifications/reads/decision-latency.json (M8 total 4, answered 0, answered_pct 0.0)",
+        "data/notifications/reads/inbound.json (276 messages, 0 carrying in_reply_to_receipt, 0 human-authored messages in any bot DM channel across the 30-day window)",
+        "cgo-logs/domain-scans/2026-09-17-s1/domain-14.md (SIG-14-1, SIG-14-2 \u2014 the reading this inverts)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Root cause: a write whose only durability is a git push inside a retry loop that recomputes its own inputs after reset. The recomputation is correct for the envelopes (already drained) and destroys the receipts (already merged), and nothing downstream distinguishes 'no receipts because nothing was sent' from 'no receipts because they were discarded'. ST-2 family \u2014 git as a shared database with copy-pasted retry loops. See daily synthesis 2026-09-17-s1.md, Theme 2.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/ci/relay_outbox.py commit_and_push",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-17T13:29:35.264337+00:00",
+      "archival_state": "active",
+      "id": "L-579"
+    },
+    {
+      "date": "2026-09-17",
+      "learning": "A target can be published without a basis while the metric it governs is published on two, and the two land on opposite sides of the target. The focus block's m1_repeat_rate leading_indicator_target is 0.20; the daily digest publishes 0.238 (the single latest mature cohort, 2026-07 at 23.8%) and reporting-state, the sole presentation contract the board surfaces render, publishes 0.1967 (the trailing-three-cohort mean of 23.8, 18.0 and 17.2). Both are correct and the divergence is deliberate and documented. A department reading only the digest declared that the reversal the Level-2 lever demanded has happened; on the basis the board publishes it is 0.0033 short.",
+      "source": "Task B synthesis 2026-09-17-s1 \u2014 cross-read of the daily digest against reporting-state and metric_basis.py",
+      "sources": [
+        "cgo-runtime/digest-2026-09-17.json (lifecycle-marketing.m1_repeat_rate 0.238)",
+        "data/metrics/reporting-state.json (metrics.m1_repeat_rate 0.19666666666666666, as_of 2026-09-17T06:04:13Z)",
+        "scripts/metric_basis.py (repeat_rate_latest_cohort docstring: the leverage engine's m1_repeat_rate deliberately uses a trailing-3-cohort MEAN and does NOT route through here)",
+        "data/shopify-cohorts/cohort-state.json (cohort_repeat_customers: 2026-07 23.8, 2026-06 18.0, 2026-05 17.2, 2026-04 30.3)",
+        "brain/kenetik-brain/references/metrics-taxonomy.md (level_2_quarterly_levers leading_indicator_target 0.20, no basis named)"
+      ],
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Root cause: metric_basis.py documents the two bases and explicitly licenses the divergence as 'not drift', which is true of the computation and silent about the comparison. No artifact binds a target to the basis it was set against, so any consumer may pair either number with the one threshold. Same family as L-448 (bands set against bases that later moved) and L-553 (four acquisition-cost numbers, none required to reconcile), one step earlier in the chain: the target, not the band. The focus block is a canonical value, so the repair belongs to the quarterly target-setting path and was deliberately NOT made in this build task. See daily synthesis 2026-09-17-s1.md, Theme 5.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "brain/kenetik-brain/references/metrics-taxonomy.md focus block \u2014 leading_indicator_target needs a named basis (via /quarterly-target-setting)",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-17T13:29:35.287590+00:00",
+      "archival_state": "active",
+      "id": "L-580"
+    },
+    {
+      "date": "2026-09-17",
+      "learning": "A count taken from a feed with indexing lag reads as a rate of arrival, and three departments built work on the inferred urgency. The rolling 7-day regulatory filing count reads 1, 3, 7, 4, 2, 5 across 2026-09-09 to 09-17, so today's 5 sits below the 09-14 peak of 7, and the escalation reported today compares against the week's lowest reading. Decisive: yesterday's file held only filings dated 09-14 and today's adds two dated 09-11, and filings cannot become older as a wave grows. Compounding it, the docket rows carry court, docket number and case name and no case text at all, so the claim class every downstream reader reasoned from is an inference off defendant names, on a query one of whose six OR'd terms is 'ketone'.",
+      "source": "Market Intelligence & Planning department brief 2026-09-17-s1 (INS-M-1, INS-M-2, ACT-M-1), refuting SIG-17-1 on the same feed",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-17-s1/dept-market-intelligence.md (INS-M-1, INS-M-2, ACT-M-1)",
+        "cgo-logs/domain-scans/2026-09-17-s1/domain-17.md (SIG-17-1 \u2014 the reading this refutes)",
+        "data/competitive/competitor-state.json (all five filings share one search-query URL; excerpt is court plus docket number only)",
+        "scripts/competitor_intel_sync.py fetch_courtlistener (absolute_url and snippet never pinned; docstring records that egress was blocked when written)",
+        "cgo-logs/department-briefs/2026-09-17-s1/dept-science-research.md and dept-content.md (the two departments that built work on the inferred class)"
+      ],
+      "source_type": "domain_contradiction",
+      "domain": "market-intel",
+      "evidence": "Root cause: fetch_courtlistener never pinned absolute_url and snippet to the field names the API returns, so every row shares the search-query URL and an excerpt of court plus docket number. With no text a reader can only count rows, and a row count over an index that backfills measures indexing, not filing. The exposure the count was used to justify is real and independent of it \u2014 a caption retired 2026-09-03 is still serving on paid Facebook \u2014 so the correction removes the urgency clock, not the remedy. See daily synthesis 2026-09-17-s1.md, Theme 1.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "scripts/competitor_intel_sync.py:fetch_courtlistener",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-17T13:29:35.309538+00:00",
+      "archival_state": "active",
+      "id": "L-581"
     }
   ],
   "archived_entries": [
@@ -18353,5 +18477,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-09-16"
+  "last_updated": "2026-09-17"
 }
