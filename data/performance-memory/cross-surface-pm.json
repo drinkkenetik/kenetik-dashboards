@@ -913,28 +913,28 @@
       "id": "L-133",
       "summary": "Pre-flight '16 briefs / <10 alert' + synthesis-instructions 'Domain count is 16' stale vs 2026-06-13 scanner-only retirement (5 scanner+7 dept = complete); would false-fire.",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-15"
     },
     {
       "id": "L-134",
       "summary": "(not set) GA4 LP bucket grew 2.6->31.8% over 16d with CVR tracking inversely; auto-escalate RCA CS when (not set)>=10% & rising 2 scans.",
       "domain": "website",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-16"
     },
     {
       "id": "L-135",
       "summary": "m1_repeat decline narrative distorted by 2026-03 promo mega-cohort; latest mature cohort (2026-04) M1=30.3% above target \u2014 partially contradicts L-108",
       "domain": "lifecycle",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-18"
     },
     {
       "id": "L-136",
       "summary": "Draft RCA behind a decision block worsened 42d while only watched; blocked+worsening CS should auto-surface Critical each scan, not stay a watch item",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-18"
     },
     {
@@ -948,14 +948,14 @@
       "id": "L-138",
       "summary": "A mobile-CVR drop with sessions DOWN across devices is an on-site/client-side regression, NOT the L-078/L-096 unattributed-traffic instrumentation pa\u2026",
       "domain": "website",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-19"
     },
     {
       "id": "L-140",
       "summary": "The subscription-state.json week 2026-06-15 'inconsistency' is a field-naming collision, not data corruption \u2014 full-book MRR ($161,199, current_week) ",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-19"
     },
     {
@@ -1347,7 +1347,7 @@
       "id": "L-196",
       "summary": "[CS-2026-128] incomplete (n/a): Time-boxed seasonal content (MHAM=May) must have production capacity confirmed against competing launches at approval\u2026",
       "domain": "content",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-15"
     },
     {
@@ -1368,7 +1368,7 @@
       "id": "L-199",
       "summary": "[CS-2026-154] incomplete (n/a): CYCLE 2 CLOSED \u2014 tier-1 CVR guardrail breach (manual close-out 2026-06-16 after Katie's partial revert 2026-06-15). H\u2026",
       "domain": "website",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-16"
     },
     {
@@ -4079,156 +4079,30 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-09-18"
+    },
+    {
+      "id": "L-587",
+      "summary": "[CS-2026-272] incomplete (n/a): Refusals at authoring time were the mechanism, and intake rose anyway. The measurement plan's own secondary read - a \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-17"
+    },
+    {
+      "id": "L-588",
+      "summary": "[CS-2026-283] incomplete (n/a): digital_cac re-read at close, as the gate requires: the only readable acquisition-cost figure today is the 7-day prox\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-09-17"
+    },
+    {
+      "id": "L-589",
+      "summary": "[CS-2026-286] incomplete (n/a): The mechanism this row built works and is not what failed. Validating the date AT THE APPROVAL TRANSITION cannot stop\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-17"
     }
   ],
   "entries": [
-    {
-      "id": "L-133",
-      "date": "2026-06-15",
-      "type": "threshold_calibration",
-      "learning": "Task B pre-flight 'expect 16 briefs / DM Devon if <10' and synthesis-instructions 'Domain count is 16' are stale vs the 2026-06-13 scanner-domain retirement: a complete run now commits only 5 scanner-domain briefs (07/08/14/17/18) plus 7 dept briefs. The <10 alert would false-fire every healthy run.",
-      "source": "Task B synthesis 2026-06-15-s1 (pre-flight reconciliation)",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "Complete run committed 5 scanner domains (0 failed), but the count gate keys off the pre-retirement 16-domain model. See daily synthesis 2026-06-15-s1.md.",
-      "confidence": "preliminary",
-      "action_taken": "760040e 2026-08-13: Lock: pilot-worker-b (Repair Loop pilot, AUTO doc-reconciliation + instrument-refinement)",
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "cgo-daily-pipeline/config/task-b-synthesis.md PRE-FLIGHT Step 1 brief-count expectation + synthesis-instructions.md Inputs/'Domain count is 16' note \u2014 key the count gate off _scan-complete.json.domains_committed/domains_failed (or expected 5 scanner + 7 dept), not 16.",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ],
-      "action_stamped_at": "2026-08-13"
-    },
-    {
-      "id": "L-134",
-      "date": "2026-06-16",
-      "type": "threshold_calibration",
-      "learning": "The (not set)/blank GA4 landing_page bucket grew monotonically 2.6%->12.0%->32.6%->31.8% over 5/31-6/16 with session CVR tracking inversely (3.33%->4.04%->2.30%->2.08%), confirming the L-096/L-078/L-122 instrumentation-attribution rule on a 4-week observed series; the regression compounded because the RCA ChangeSet (CS-147) was left in draft 40 days. Proposed trigger: when (not set) LP share crosses ~10% and rises 2 consecutive scans, auto-escalate the owning RCA ChangeSet from draft to active.",
-      "source": "Website & CRO dept brief 2026-06-16 (self-sourced, D09 collapsed); memory_update L-NEW-website-1",
-      "source_type": "operational_signal",
-      "domain": "website",
-      "evidence": "Agg CVR -44.9% WoW (0.0377->0.0208); (not set) LP bucket = 3,657 sess @ 99.9% bounce; CS-2026-147 draft since 2026-05-07. See daily synthesis 2026-06-16-s1.md.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-096",
-        "L-078",
-        "L-122"
-      ],
-      "target": "cgo-daily-pipeline/config/changeset-instructions.md (lifecycle sweep) or website-CRO scan instructions \u2014 add the '(not set) >=10% & rising 2 scans -> escalate RCA CS' trigger",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0"
-    },
-    {
-      "id": "L-135",
-      "date": "2026-06-18",
-      "type": "threshold_calibration",
-      "learning": "m1_repeat_rate 'recent 6mo mean 15.5% vs 21%, reversal required' framing is dominated by the single 2026-03 discount mega-cohort (n=5,899, M1=6.2%); most recent MATURE cohort (2026-04) M1=30.3% above target.",
-      "source": "Lifecycle Marketing dept brief INS-LM-1 (cohort-state), 2026-06-18",
-      "source_type": "operational_signal",
-      "domain": "lifecycle",
-      "evidence": "cohort-state M1: 2026-01=17.4, 2026-02=12.9, 2026-03=6.2 (promo), 2026-04=30.3. Unweighted rolling mean blends a promo mega-cohort with organic cohorts. See daily synthesis 2026-06-18-s1.md.",
-      "confidence": "preliminary",
-      "action_taken": "CS-2026-255 2026-08-05: August creator-cohort retention read \u2014 track the 171 STAYCURIOUS-acquired customers as a segment an\u2026",
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-108",
-        "CS-2026-255"
-      ],
-      "target": "metrics-taxonomy.md m1_repeat_rate notes + cross-surface-pm L-068/L-108 re-scoping (exclude 2026-03 promo distortion)",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ],
-      "action_stamped_at": "2026-08-05"
-    },
-    {
-      "id": "L-136",
-      "date": "2026-06-18",
-      "type": "process_change",
-      "learning": "A draft RCA gated behind a decision block (CS-147) worsened silently while only 'watched' \u2014 the (not set) attribution leak grew 2.6%->26%+ across four scans over 42 days. A blocked-but-symptom-worsening diagnostic CS should auto-surface as a Critical dept_action each scan until cleared.",
-      "source": "Website & CRO dept brief (memory_update L-134) + Operations brief, 2026-06-18",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "CS-147 created 2026-05-07, routed_date null, 42d old; (not set) bucket 2.6->9.2->29.5->26.2% across four scans at 0% in-bucket CVR. See daily synthesis 2026-06-18-s1.md.",
-      "confidence": "moderate",
-      "action_taken": "11c50ed 2026-09-04: l-129::learning-action-undiagnosed -> premise_false: the escalation it asks for was built 2026-07-02",
-      "skill_files_updated": [],
-      "related_entries": [
-        "CS-2026-162",
-        "CS-2026-183",
-        "CS-2026-256"
-      ],
-      "target": "synthesis-instructions.md Step 8a-adjacent or changeset-lifecycle-sweep escalation rule",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "action_stamped_at": "2026-09-04"
-    },
-    {
-      "id": "L-138",
-      "date": "2026-06-19",
-      "type": "threshold_calibration",
-      "learning": "A mobile-CVR drop with sessions DOWN across devices is an on-site/client-side regression, NOT the L-078/L-096 unattributed-traffic instrumentation pattern (which requires sessions UP with CVR down). 2026-06-19: mobile CVR -36% (3.34->2.14), sessions -22.9%, homepage script errors 9.8->130/1k.",
-      "source": "Website-CRO dept brief + Clarity/GA4 scan, 2026-06-19",
-      "source_type": "operational_signal",
-      "domain": "website",
-      "evidence": "Sessions-direction is the discriminator between on-site break and instrumentation artifact; prior runs defaulted CVR drops toward instrumentation. See daily synthesis 2026-06-19-s1.md.",
-      "confidence": "moderate",
-      "action_taken": "CS-2026-256 2026-08-06: Raspberry Lychee LE dedicated landing page (/pages/raspberry-lychee)",
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-078",
-        "L-096",
-        "L-134",
-        "L-141",
-        "CS-2026-256"
-      ],
-      "target": "synthesis-instructions Framing Guardrails / website RCA playbook \u2014 add sessions-direction discriminator",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "gate_policy_at_write": "strict",
-      "created_at": "2026-07-18T15:50:18.537453+00:00",
-      "archival_state": "active",
-      "action_stamped_at": "2026-09-10"
-    },
-    {
-      "id": "L-140",
-      "date": "2026-06-19",
-      "type": "process_change",
-      "learning": "The subscription-state.json week 2026-06-15 'inconsistency' is a field-naming collision, not data corruption \u2014 full-book MRR ($161,199, current_week) and NEW-subs incremental MRR ($2,440, weekly_trend) share the label 'mrr'; active 2,370 (mid-week) vs 2,412 (week-start) differ only by net -14 timing (identical new=40/churned=54/charge=276).",
-      "source": "Operations & Planning dept brief, 2026-06-19",
-      "source_type": "operational_signal",
-      "domain": "operations",
-      "evidence": "Two different measures under one field name; consumers treat the definitional collision as a data-quality failure and risk discarding a valid $161k full-book MRR. See daily synthesis 2026-06-19-s1.md.",
-      "confidence": "moderate",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "subscription-state.json \u2014 rename to full_book_mrr vs incremental_mrr",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'strong' -> 'moderate' (source_count=2)"
-      ]
-    },
     {
       "id": "L-141",
       "date": "2026-06-22",
@@ -4289,12 +4163,13 @@
       "domain": "operations",
       "evidence": "Tracker measured status=published; brief narrates built-but-frozen. Same over-assertion pattern as L-039/L-142. See daily synthesis 2026-06-29-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "e0b884f 2026-09-12: Repair loop: land the four 2026-09-12 others-pass verdicts the seat never wrote; worked example notes its kind is now signed",
       "skill_files_updated": [],
       "related_entries": [
         "L-039",
         "L-142",
-        "L-136"
+        "L-136",
+        "CS-2026-267"
       ],
       "target": "task-a1-departments.md \u2014 require a fresh tracker.json status read for any CS cited as blocked/frozen, overriding handoff narrative.",
       "entry_type": "process_change",
@@ -4303,7 +4178,8 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ]
+      ],
+      "action_stamped_at": "2026-09-18"
     },
     {
       "id": "L-145",
@@ -4367,52 +4243,6 @@
       "gate_version": "1.0.0",
       "reconciliation_notes": [
         "confidence 'strong' -> 'preliminary' (source_count=1)"
-      ]
-    },
-    {
-      "id": "L-196",
-      "date": "2026-06-15",
-      "type": "changeset_outcome",
-      "learning": "Time-boxed seasonal content (MHAM=May) must have production capacity confirmed against competing launches at approval, or it silently lapses. Golden Pear launch displaced MHAM with no explicit de-scope decision.",
-      "source": "ChangeSet tracker close record (CS-2026-128)",
-      "source_type": "changeset_outcome",
-      "domain": "content",
-      "evidence": "Outcome: expired_unexecuted. Closed without measurement. Backfilled from tracker.json (CS-2026-128).",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-128",
-      "variance_pct": null,
-      "outcome_class": "incomplete",
-      "entry_type": "changeset_outcome",
-      "backfilled_at": "2026-07-06T03:06:32.986960+00:00",
-      "maintain_version": "1.0.0"
-    },
-    {
-      "id": "L-199",
-      "date": "2026-06-16",
-      "type": "changeset_outcome",
-      "learning": "CYCLE 2 CLOSED \u2014 tier-1 CVR guardrail breach (manual close-out 2026-06-16 after Katie's partial revert 2026-06-15). Hypothesis (reorder buy-box subscribe-first without preselect) was DISPROVED: CVR control 3.47% (n=5339) vs variant 2.56% (n=2496), relative delta -26.0% \u2014 worse than cycle 1's -19.2% tier-2 breach (cycle 1 kept the preselect; cycle 2 only reordered). ATC also degraded: variant 8.13% vs control 9.37%, delta -13.2% \u2014 so the reorder did NOT lift ATC even before considering CVR. Conv\u2026",
-      "source": "ChangeSet tracker close record (CS-2026-154)",
-      "source_type": "changeset_outcome",
-      "domain": "website",
-      "evidence": "Outcome: underperformed. Backfilled from tracker.json (CS-2026-154).",
-      "confidence": "preliminary",
-      "action_taken": null,
-      "skill_files_updated": [],
-      "related_entries": [],
-      "changeset_candidate": false,
-      "changeset_id": "CS-2026-154",
-      "variance_pct": null,
-      "outcome_class": "incomplete",
-      "entry_type": "changeset_outcome",
-      "backfilled_at": "2026-07-06T03:06:32.986980+00:00",
-      "maintain_version": "1.0.0",
-      "sweep_flag": "pm_backfill_needs_owner_review",
-      "reconciliation_notes": [
-        "domain 'DTC-website' -> 'website' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
       ]
     },
     {
@@ -4935,7 +4765,7 @@
       "domain": "content",
       "evidence": "No minimum-impression floor let phantom zero-impression posts (Sprout duplicate-publish bug) skew the per-post mean. See session-handoff-2026-07-08-s1.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "e0b884f 2026-09-12: Repair loop: land the four 2026-09-12 others-pass verdicts the seat never wrote; worked example notes its kind is now signed",
       "target": "metric-compute-map.json (d07_engagement_rate_per_post recipe: add impressions>0 filter)",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
@@ -4946,7 +4776,11 @@
       "reconciliation_notes": [
         "evidence pruned from 260 chars to source-pointer form (Process 3.8 Step 0c, 2026-07-10)"
       ],
-      "type": "process_change"
+      "type": "process_change",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": [
+        "CS-2026-267"
+      ]
     },
     {
       "date": "2026-07-08",
@@ -5602,14 +5436,16 @@
       "domain": "content",
       "evidence": "Root cause: equity partners' core compensation is equity, which appears in no spend feed, so their revenue enters the ROI numerator while their cost never enters the denominator. The primary and its balancing metric are therefore computed on non-overlapping cost bases and can move independently, letting the department post an excellent primary and a flat balancing metric at once. Corroborated by attribution-state creator_economics 2026-08-03, where three of the four equity-partner codes show marginal_cac 0.0 with non-zero revenue. See daily synthesis 2026-08-04-s1.md Content-Commerce Insights.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "018cf08 2026-09-17: Task A1 2026-09-17: Content & Creative brief",
       "target": "brain/kenetik-brain/references/metrics-taxonomy.md content_and_creative L3 pair plus the d08_creator_roi registry recipe",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-04T13:44:57.197658+00:00",
       "archival_state": "active",
-      "id": "L-310"
+      "id": "L-310",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": []
     },
     {
       "date": "2026-08-04",
@@ -6286,7 +6122,7 @@
       "domain": "operations",
       "evidence": "57 of 95 closed rows died of expiry (44 unreviewed + 13 unexecuted) against 25 measured; only 52 of 149 ever received an approval. A reviewer facing a row nobody requested pays no cost for deferring it and the 14-day clock does the deciding. Refines L-412. See daily synthesis 2026-08-14-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "b913685 2026-09-11: kgs-weekly-learning-consolidation: judge pass 2026-09-11 (covers 08-28\u219209-11)",
       "target": "new-changeset.md authoring-time refusals; DP-14 spawner_capacity parameters (CS-2026-272)",
       "sources": [
         "dept-operations-planning 2026-08-14 INS-OP-2",
@@ -6298,7 +6134,9 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-14T17:14:43.061299+00:00",
       "archival_state": "active",
-      "id": "L-416"
+      "id": "L-416",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": []
     },
     {
       "date": "2026-08-14",
@@ -7774,14 +7612,16 @@
       "domain": "market-intelligence",
       "evidence": "The competitive-intelligence roster is scoped to COMPETITORS and TRADE PRESS - who is selling what, and what the category is saying. It has no class for the surfaces where claim risk originates: appellate dockets, class-action filings, and regulatory positions taken in litigation. Those are neither competitor news nor trade news, so no amount of repairing the existing three lanes would have caught this. The roster answers 'what are they doing'; the question that mattered was 'what has become unsayable'.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "6f1c39f 2026-09-17: Task A1 2026-09-17: Group 2 briefs \u2014 market-intelligence + operations-planning (7/7)",
       "target": "A regulatory and legal-docket feed class in the source roster (rec-481 filed), plus a claim-surface inventory queryable by claim string rather than brand by brand.",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-28T03:44:08.386623+00:00",
       "archival_state": "active",
-      "id": "L-486"
+      "id": "L-486",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": []
     },
     {
       "date": "2026-08-27",
@@ -8368,9 +8208,13 @@
       "domain": "content",
       "evidence": "Outcome: invalid_premise. Closed without measurement. Backfilled from tracker.json (CS-2026-139).",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "3c01b3d 2026-09-11: build_cs_entry: close the writer gap on resolution_path/expected_impact CLI, ad_platform_refs, and meta.premise",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-294",
+        "CS-2026-305",
+        "CS-2026-306"
+      ],
       "changeset_candidate": false,
       "changeset_id": "CS-2026-139",
       "variance_pct": null,
@@ -8382,7 +8226,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-03T00:00:16.229937+00:00",
       "archival_state": "active",
-      "id": "L-518"
+      "id": "L-518",
+      "action_stamped_at": "2026-09-18"
     },
     {
       "date": "2026-09-03",
@@ -8829,9 +8674,13 @@
       "domain": "paid-media",
       "evidence": "Outcome: invalid_premise. Closed without measurement. Backfilled from tracker.json (CS-2026-264).",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "fe1c1f5 2026-09-16: Task B Phase 3: lifecycle sweep + CS-2026-290 measurement + BFCM safety-net spawn (CS)",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-290",
+        "CS-2026-295",
+        "CS-2026-721"
+      ],
       "changeset_candidate": false,
       "changeset_id": "CS-2026-264",
       "variance_pct": null,
@@ -8843,7 +8692,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-03T00:00:16.607616+00:00",
       "archival_state": "active",
-      "id": "L-536"
+      "id": "L-536",
+      "action_stamped_at": "2026-09-18"
     },
     {
       "date": "2026-09-03",
@@ -9097,9 +8947,12 @@
       "domain": "paid-media",
       "evidence": "confirm_if `diff_pp >= 0.01`; baseline as_of 2026-09-05; power_gate subject p1_destination_split.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "074d60c 2026-09-11: P1 day-zero records: PMax consolidation as a structural event, the split plan goes active, doctrine proposal for Katie",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-305",
+        "CS-2026-306"
+      ],
       "changeset_candidate": false,
       "experiment_ledger": {
         "schema_version": 1,
@@ -9211,7 +9064,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-07T05:44:29.590508+00:00",
       "archival_state": "active",
-      "id": "L-547"
+      "id": "L-547",
+      "action_stamped_at": "2026-09-18"
     },
     {
       "date": "2026-09-07",
@@ -9250,14 +9104,16 @@
       "domain": "operations",
       "confidence": "moderate",
       "evidence": "Root cause: the recommendation writer allocates ids and enforces row shape but has no predecessor-resolution step, so a supersession can only be expressed in prose - and prose is not a status any counter, escalation ladder or console can read. See daily synthesis 2026-09-07-s1.md.",
-      "action_taken": null,
+      "action_taken": "585c623 2026-09-13: Session lock: repair loop 2026-09-13 (fire 29), diagnosed against 3187ae86a",
       "target": "scripts/cs_helpers/rec_writer.py - a predecessor-resolution step in the authorship rule",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-07T15:00:19.205439+00:00",
       "archival_state": "active",
-      "id": "L-550"
+      "id": "L-550",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": []
     },
     {
       "date": "2026-09-07",
@@ -9382,14 +9238,22 @@
       "domain": "cross-surface",
       "evidence": "Root cause: the system has a mechanically-enforced write path for every recurring DATA artifact and none for an executive DECISION. A verbal or Slack-only instruction to hold an armed row has no deterministic path onto that row, so it takes effect only if a person remembers to relay it -- CLAUDE.md's third standing rule (an instruction is not an interface) applied to the governance surface rather than to a data write. This is sharper than L-511 and L-550 because the M7 Slack-reads capture, first committed today, makes the absence MEASURABLE rather than presumed: the pipeline can now prove the instruction is in no store it reads. Three briefs independently asked for the hold and rec-575 carries it in the recommendation store, and the row an uploader opens shows none of them. Target: a hold/stand-down field or note class on tracker.json written by a deterministic writer alongside scripts/cs_helpers/rec_writer.py. See daily synthesis 2026-09-08-s1.md P1.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "b2b5bac 2026-09-11: S-9: refuse an approved paid-media row with no uploader or due_date",
       "target": "cgo-logs/changesets/tracker.json; scripts/cs_helpers/",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-08T14:51:54.133367+00:00",
       "archival_state": "active",
-      "id": "L-557"
+      "id": "L-557",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": [
+        "CS-2026-259",
+        "CS-2026-261",
+        "CS-2026-286",
+        "CS-2026-294",
+        "CS-2026-295"
+      ]
     },
     {
       "date": "2026-09-08",
@@ -9542,14 +9406,18 @@
       "domain": "paid-media",
       "evidence": "Two implementations of one predicate at two grains, and only the newer channel-grain path carries the offer-share comparison that makes the label falsifiable. The dossier path tests whether an offer overlapped the window at all, which is true of almost every window in this five-week promotional stretch, so it can never fail -- which is exactly L-543's finding, now with the counter-example living inside the same artifact rather than argued from outside it. See daily synthesis 2026-09-09-s1.md Cross-Domain 4.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "0e62819 2026-09-14: Session lock: repair loop 2026-09-14 (fire 30), diagnosed against e7acb9b8f",
       "target": "the wedge-dossier conditioning path -- align it to channel_direction[].conditioning's offer-share comparison",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-09T14:51:41.648233+00:00",
       "archival_state": "active",
-      "id": "L-563"
+      "id": "L-563",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": [
+        "CS-2026-295"
+      ]
     },
     {
       "date": "2026-09-10",
@@ -9566,14 +9434,21 @@
       "domain": "cross-surface",
       "evidence": "Root cause: the row schema requires a measurement_plan but never asks what a change REMOVES from a population, so a filter-narrowing repair is graded only on the set it was built to catch. See daily synthesis 2026-09-10-s1.md, Theme 1 and rec-665.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "cd26056 2026-09-14: Task B Phase 3: lifecycle sweep, calendar safety net, and two store writes with no route",
       "target": "changeset-common-functions.md section 10b (Resolution Path / measurement_plan), enforced at scripts/build_cs_entry.py",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-10T14:47:03.394538+00:00",
       "archival_state": "active",
-      "id": "L-564"
+      "id": "L-564",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": [
+        "CS-2026-129",
+        "CS-2026-259",
+        "CS-2026-261",
+        "CS-2026-295"
+      ]
     },
     {
       "date": "2026-09-10",
@@ -9632,14 +9507,21 @@
       "domain": "cross-surface",
       "evidence": "The filter that selects the population and the sentence that reports on it are written in the same function and share no contract, so narrowing the filter silently narrows the claim. Nothing in the executive format contract requires a population statement, and the altitude rules actively remove the qualifiers that would carry one. See daily synthesis 2026-09-14-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "4e4f2d0 2026-09-16: Session lock: repair loop 2026-09-16 (fire 32), diagnosed against db9b831fb",
       "target": "scripts/exec_digest.py (awaiting_lines + build); architecture/process/notification-altitudes.md -- require a population clause on any nothing/none/quiet verdict",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-14T13:43:44.080597+00:00",
       "archival_state": "active",
-      "id": "L-567"
+      "id": "L-567",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": [
+        "CS-2026-259",
+        "CS-2026-295",
+        "CS-2026-298",
+        "CS-2026-299"
+      ]
     },
     {
       "date": "2026-09-14",
@@ -9687,7 +9569,7 @@
       "domain": "cross-surface",
       "evidence": "The department-brief architecture assigns every Level 3 primary to exactly one department and leaves Level 1 outcomes and Level 2 levers to the synthesis layer, which has a gap check but no owner field. The check is also deduped on whether an active ChangeSet NAMES the metric rather than whether it ACTS on it, so three measurement-plumbing rows (CS-2026-277 draft, CS-2026-280 published and already measured, CS-2026-298 approved and about recording promotion-code redemption) silenced the widest gap on the board. The priority stack had to carry it manually. See daily synthesis 2026-09-15-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "01cc5a1 2026-09-17: Disposition pass 2026-09-17 \u2014 25 of 25 read, zero machine-doable",
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md (the L1/L2 focus-gap check)",
       "sources": [
         "dept-paid-media.md ACT-PM-4 (2026-09-15-s1)",
@@ -9701,7 +9583,11 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-15T13:37:42.993415+00:00",
       "archival_state": "active",
-      "id": "L-570"
+      "id": "L-570",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": [
+        "CS-2026-285"
+      ]
     },
     {
       "date": "2026-09-15",
@@ -9786,14 +9672,18 @@
       "domain": "operations",
       "evidence": "Succession is recorded only in prose \u2014 notes, or spawned_from pointing at a recommendation id \u2014 and never as a typed edge between the two ChangeSet rows. The only artifact a reader lands on is the closed row, and it cannot tell them where the work went. The builder that creates the successor has no argument for the row it replaces. See daily synthesis 2026-09-16-s1.md, Theme 5.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "e2d3b66 2026-09-18: task-a: 2026-09-18-s1 D14 Team Intelligence brief \u2014 RED; batch 2 complete",
       "target": "scripts/build_cs_entry.py \u2014 a replaces/superseded_by pair written in both directions",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-16T13:27:53.146607+00:00",
       "archival_state": "active",
-      "id": "L-574"
+      "id": "L-574",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": [
+        "CS-2026-293"
+      ]
     },
     {
       "date": "2026-09-16",
@@ -9834,14 +9724,16 @@
       "domain": "cross-surface",
       "evidence": "The paid grain already knows about this failure mode and is repairing it under rec-727; the three non-paid series do not know about it at all. See daily synthesis 2026-09-16-s1.md, Theme 3.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "0fb470a 2026-09-18: Task A1 Group 1 complete: Paid Media brief + Website & CRO final (both validated 4/4)",
       "target": "the week-over-week readers behind creator, subscription and cancellation state",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-16T13:27:53.197953+00:00",
       "archival_state": "active",
-      "id": "L-576"
+      "id": "L-576",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": []
     },
     {
       "date": "2026-09-16",
@@ -9857,14 +9749,16 @@
       "domain": "content",
       "evidence": "Every ownership routing on a social object inherits an unresolved population definition. See daily synthesis 2026-09-16-s1.md, Theme 1.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "76ace10 2026-09-17: task-a: 2026-09-17-s1 D07 Social & Brand brief \u2014 YELLOW",
       "target": "cgo-logs/queues/published-posts.json versus data/sprout/sprout-state.json \u2014 name one authoritative for paid_status and define paid_suspected",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-16T13:27:53.219025+00:00",
       "archival_state": "active",
-      "id": "L-577"
+      "id": "L-577",
+      "action_stamped_at": "2026-09-18",
+      "related_entries": []
     },
     {
       "date": "2026-09-17",
@@ -10047,6 +9941,84 @@
       "created_at": "2026-09-18T13:38:50.248219+00:00",
       "archival_state": "active",
       "id": "L-586"
+    },
+    {
+      "date": "2026-09-17",
+      "type": "changeset_outcome",
+      "learning": "Refusals at authoring time were the mechanism, and intake rose anyway. The measurement plan's own secondary read - a non-zero count of recommendation rows written by the refusal branch - is the evidence that would separate 'the guard never fired' from 'the guard fired and was outpaced', and it is not recoverable from the committed artifacts at close. Recorded as underperformed on the honest reading rather than deferred for a count that the row did not arrange to be durable. Sibling reading, sam\u2026",
+      "source": "ChangeSet tracker close record (CS-2026-272)",
+      "source_type": "changeset_outcome",
+      "domain": "operations",
+      "evidence": "Outcome: underperformed. Backfilled from tracker.json (CS-2026-272).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-272",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-18T17:09:17.932264+00:00",
+      "maintain_version": "1.2.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-18T17:09:17.933062+00:00",
+      "archival_state": "active",
+      "id": "L-587"
+    },
+    {
+      "date": "2026-09-17",
+      "type": "changeset_outcome",
+      "learning": "digital_cac re-read at close, as the gate requires: the only readable acquisition-cost figure today is the 7-day proxy ($7,473.46 total paid spend less $640.64 branded Google) / 227 new customers = $30.10, inside the [25, 37] band against a $34 target; monthly-history.json's 2026-09 row is zero-filled at data_quality low and financial-data.json carries no 2026-09 P&L row, so no same-month digital_cac exists. It did not move because of this row and could not have: expected_impact.metrics_moved c\u2026",
+      "source": "ChangeSet tracker close record (CS-2026-283)",
+      "source_type": "changeset_outcome",
+      "domain": "paid-media",
+      "evidence": "Outcome: success. Backfilled from tracker.json (CS-2026-283).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-283",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-18T17:09:17.932326+00:00",
+      "maintain_version": "1.2.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-18T17:09:17.951135+00:00",
+      "archival_state": "active",
+      "id": "L-588"
+    },
+    {
+      "date": "2026-09-17",
+      "type": "changeset_outcome",
+      "learning": "The mechanism this row built works and is not what failed. Validating the date AT THE APPROVAL TRANSITION cannot stop a date passing AFTER approval, and every one of the five is that second case - approved with a valid future date that has since gone by. The row's success test was written as a property of the whole store over 30 days while the repair was a guard on one transition, so the test was never one this repair could pass. Two specific gaps follow and neither is a monitoring gap: nothing\u2026",
+      "source": "ChangeSet tracker close record (CS-2026-286)",
+      "source_type": "changeset_outcome",
+      "domain": "operations",
+      "evidence": "Outcome: underperformed. Backfilled from tracker.json (CS-2026-286).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-286",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-18T17:09:17.932353+00:00",
+      "maintain_version": "1.2.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-18T17:09:17.974219+00:00",
+      "archival_state": "active",
+      "id": "L-589"
     }
   ],
   "archived_entries": [
@@ -18616,6 +18588,218 @@
       "archived_date": "2026-09-18",
       "archived_reason": "merged_into_L-582",
       "resolution_note": "Exact duplicate of L-582. Task B Phase 4, session 114, 2026-09-18-s1 re-ran pm_write_gate.py append on the same payload file in order to read the rejection reasons from the first run, and the gate correctly wrote the one accepted signal a second time. Operator error in this session, not a gate defect: the gate has no idempotency key on payload content and is not expected to have one. The finding itself lives in L-582."
+    },
+    {
+      "id": "L-133",
+      "date": "2026-06-15",
+      "type": "threshold_calibration",
+      "learning": "Task B pre-flight 'expect 16 briefs / DM Devon if <10' and synthesis-instructions 'Domain count is 16' are stale vs the 2026-06-13 scanner-domain retirement: a complete run now commits only 5 scanner-domain briefs (07/08/14/17/18) plus 7 dept briefs. The <10 alert would false-fire every healthy run.",
+      "source": "Task B synthesis 2026-06-15-s1 (pre-flight reconciliation)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Complete run committed 5 scanner domains (0 failed), but the count gate keys off the pre-retirement 16-domain model. See daily synthesis 2026-06-15-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": "760040e 2026-08-13: Lock: pilot-worker-b (Repair Loop pilot, AUTO doc-reconciliation + instrument-refinement)",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "cgo-daily-pipeline/config/task-b-synthesis.md PRE-FLIGHT Step 1 brief-count expectation + synthesis-instructions.md Inputs/'Domain count is 16' note \u2014 key the count gate off _scan-complete.json.domains_committed/domains_failed (or expected 5 scanner + 7 dept), not 16.",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'preliminary' (source_count=1)"
+      ],
+      "action_stamped_at": "2026-08-13",
+      "archived_date": "2026-09-18",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-134",
+      "date": "2026-06-16",
+      "type": "threshold_calibration",
+      "learning": "The (not set)/blank GA4 landing_page bucket grew monotonically 2.6%->12.0%->32.6%->31.8% over 5/31-6/16 with session CVR tracking inversely (3.33%->4.04%->2.30%->2.08%), confirming the L-096/L-078/L-122 instrumentation-attribution rule on a 4-week observed series; the regression compounded because the RCA ChangeSet (CS-147) was left in draft 40 days. Proposed trigger: when (not set) LP share crosses ~10% and rises 2 consecutive scans, auto-escalate the owning RCA ChangeSet from draft to active.",
+      "source": "Website & CRO dept brief 2026-06-16 (self-sourced, D09 collapsed); memory_update L-NEW-website-1",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "Agg CVR -44.9% WoW (0.0377->0.0208); (not set) LP bucket = 3,657 sess @ 99.9% bounce; CS-2026-147 draft since 2026-05-07. See daily synthesis 2026-06-16-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-096",
+        "L-078",
+        "L-122"
+      ],
+      "target": "cgo-daily-pipeline/config/changeset-instructions.md (lifecycle sweep) or website-CRO scan instructions \u2014 add the '(not set) >=10% & rising 2 scans -> escalate RCA CS' trigger",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "archived_date": "2026-09-18",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-135",
+      "date": "2026-06-18",
+      "type": "threshold_calibration",
+      "learning": "m1_repeat_rate 'recent 6mo mean 15.5% vs 21%, reversal required' framing is dominated by the single 2026-03 discount mega-cohort (n=5,899, M1=6.2%); most recent MATURE cohort (2026-04) M1=30.3% above target.",
+      "source": "Lifecycle Marketing dept brief INS-LM-1 (cohort-state), 2026-06-18",
+      "source_type": "operational_signal",
+      "domain": "lifecycle",
+      "evidence": "cohort-state M1: 2026-01=17.4, 2026-02=12.9, 2026-03=6.2 (promo), 2026-04=30.3. Unweighted rolling mean blends a promo mega-cohort with organic cohorts. See daily synthesis 2026-06-18-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": "CS-2026-255 2026-08-05: August creator-cohort retention read \u2014 track the 171 STAYCURIOUS-acquired customers as a segment an\u2026",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-108",
+        "CS-2026-255"
+      ],
+      "target": "metrics-taxonomy.md m1_repeat_rate notes + cross-surface-pm L-068/L-108 re-scoping (exclude 2026-03 promo distortion)",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "action_stamped_at": "2026-08-05",
+      "archived_date": "2026-09-18",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-136",
+      "date": "2026-06-18",
+      "type": "process_change",
+      "learning": "A draft RCA gated behind a decision block (CS-147) worsened silently while only 'watched' \u2014 the (not set) attribution leak grew 2.6%->26%+ across four scans over 42 days. A blocked-but-symptom-worsening diagnostic CS should auto-surface as a Critical dept_action each scan until cleared.",
+      "source": "Website & CRO dept brief (memory_update L-134) + Operations brief, 2026-06-18",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "CS-147 created 2026-05-07, routed_date null, 42d old; (not set) bucket 2.6->9.2->29.5->26.2% across four scans at 0% in-bucket CVR. See daily synthesis 2026-06-18-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "11c50ed 2026-09-04: l-129::learning-action-undiagnosed -> premise_false: the escalation it asks for was built 2026-07-02",
+      "skill_files_updated": [],
+      "related_entries": [
+        "CS-2026-162",
+        "CS-2026-183",
+        "CS-2026-256"
+      ],
+      "target": "synthesis-instructions.md Step 8a-adjacent or changeset-lifecycle-sweep escalation rule",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-09-04",
+      "archived_date": "2026-09-18",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-138",
+      "date": "2026-06-19",
+      "type": "threshold_calibration",
+      "learning": "A mobile-CVR drop with sessions DOWN across devices is an on-site/client-side regression, NOT the L-078/L-096 unattributed-traffic instrumentation pattern (which requires sessions UP with CVR down). 2026-06-19: mobile CVR -36% (3.34->2.14), sessions -22.9%, homepage script errors 9.8->130/1k.",
+      "source": "Website-CRO dept brief + Clarity/GA4 scan, 2026-06-19",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "Sessions-direction is the discriminator between on-site break and instrumentation artifact; prior runs defaulted CVR drops toward instrumentation. See daily synthesis 2026-06-19-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "CS-2026-256 2026-08-06: Raspberry Lychee LE dedicated landing page (/pages/raspberry-lychee)",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-078",
+        "L-096",
+        "L-134",
+        "L-141",
+        "CS-2026-256"
+      ],
+      "target": "synthesis-instructions Framing Guardrails / website RCA playbook \u2014 add sessions-direction discriminator",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-07-18T15:50:18.537453+00:00",
+      "archival_state": "active",
+      "action_stamped_at": "2026-09-10",
+      "archived_date": "2026-09-18",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-140",
+      "date": "2026-06-19",
+      "type": "process_change",
+      "learning": "The subscription-state.json week 2026-06-15 'inconsistency' is a field-naming collision, not data corruption \u2014 full-book MRR ($161,199, current_week) and NEW-subs incremental MRR ($2,440, weekly_trend) share the label 'mrr'; active 2,370 (mid-week) vs 2,412 (week-start) differ only by net -14 timing (identical new=40/churned=54/charge=276).",
+      "source": "Operations & Planning dept brief, 2026-06-19",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Two different measures under one field name; consumers treat the definitional collision as a data-quality failure and risk discarding a valid $161k full-book MRR. See daily synthesis 2026-06-19-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "e0b884f 2026-09-12: Repair loop: land the four 2026-09-12 others-pass verdicts the seat never wrote; worked example notes its kind is now signed",
+      "skill_files_updated": [],
+      "related_entries": [
+        "CS-2026-267"
+      ],
+      "target": "subscription-state.json \u2014 rename to full_book_mrr vs incremental_mrr",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'strong' -> 'moderate' (source_count=2)"
+      ],
+      "action_stamped_at": "2026-09-18",
+      "archived_date": "2026-09-18",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-196",
+      "date": "2026-06-15",
+      "type": "changeset_outcome",
+      "learning": "Time-boxed seasonal content (MHAM=May) must have production capacity confirmed against competing launches at approval, or it silently lapses. Golden Pear launch displaced MHAM with no explicit de-scope decision.",
+      "source": "ChangeSet tracker close record (CS-2026-128)",
+      "source_type": "changeset_outcome",
+      "domain": "content",
+      "evidence": "Outcome: expired_unexecuted. Closed without measurement. Backfilled from tracker.json (CS-2026-128).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-128",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-07-06T03:06:32.986960+00:00",
+      "maintain_version": "1.0.0",
+      "archived_date": "2026-09-18",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-199",
+      "date": "2026-06-16",
+      "type": "changeset_outcome",
+      "learning": "CYCLE 2 CLOSED \u2014 tier-1 CVR guardrail breach (manual close-out 2026-06-16 after Katie's partial revert 2026-06-15). Hypothesis (reorder buy-box subscribe-first without preselect) was DISPROVED: CVR control 3.47% (n=5339) vs variant 2.56% (n=2496), relative delta -26.0% \u2014 worse than cycle 1's -19.2% tier-2 breach (cycle 1 kept the preselect; cycle 2 only reordered). ATC also degraded: variant 8.13% vs control 9.37%, delta -13.2% \u2014 so the reorder did NOT lift ATC even before considering CVR. Conv\u2026",
+      "source": "ChangeSet tracker close record (CS-2026-154)",
+      "source_type": "changeset_outcome",
+      "domain": "website",
+      "evidence": "Outcome: underperformed. Backfilled from tracker.json (CS-2026-154).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-154",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-07-06T03:06:32.986980+00:00",
+      "maintain_version": "1.0.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "reconciliation_notes": [
+        "domain 'DTC-website' -> 'website' (canon normalization, Process 3.8 weekly consolidation 2026-07-06)"
+      ],
+      "archived_date": "2026-09-18",
+      "archived_reason": "expired_unactioned"
     }
   ],
   "last_updated": "2026-09-18"
