@@ -4044,6 +4044,41 @@
       "domain": "market-intel",
       "status": "active",
       "date": "2026-09-17"
+    },
+    {
+      "id": "L-582",
+      "summary": "A circuit breaker tripping on a 19 percent day-over-day revenue drop held two ChangeSet expiries that have nothing to do with revenue, because the bl\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-18"
+    },
+    {
+      "id": "L-583",
+      "summary": "A circuit breaker tripping on a 19 percent day-over-day revenue drop held two ChangeSet expiries that have nothing to do with revenue, because the bl\u2026",
+      "domain": "operations",
+      "status": "archived",
+      "date": "2026-09-18"
+    },
+    {
+      "id": "L-584",
+      "summary": "The demand-signal queue's reader last processed a signal on 2026-04-03. All 46 rows carrying a processed_at fall between 2026-03-19 and 2026-04-03; a\u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-09-18"
+    },
+    {
+      "id": "L-585",
+      "summary": "A department produced four department actions, two of them today-urgency naming Level-2 and Level-3 metrics, and filed zero recommendation rows \u2014 the\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-18"
+    },
+    {
+      "id": "L-586",
+      "summary": "The gate that admits a ChangeSet close and the validator that judges the store read different fields of the same object, so a close cannot fail in th\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-18"
     }
   ],
   "entries": [
@@ -9926,6 +9961,92 @@
       "created_at": "2026-09-17T13:29:35.309538+00:00",
       "archival_state": "active",
       "id": "L-581"
+    },
+    {
+      "date": "2026-09-18",
+      "learning": "A circuit breaker tripping on a 19 percent day-over-day revenue drop held two ChangeSet expiries that have nothing to do with revenue, because the blocked flag gates the entire transition set rather than the class of transitions it was built to guard. The coupling is invisible until the breaker clears, and it inverts the usual reading: repairing the revenue break is what executes the two kill orders.",
+      "source": "data/lifecycle/work-queue.json (engine_date 2026-09-18) and the Operations & Planning department brief, 2026-09-18",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "work-queue.json holds transitions[] = [{CS-2026-259 expire -> closed/expired_unexecuted}, {CS-2026-293 expire -> closed/expired_unreviewed}] and applied neither, because circuit_breakers.passed is false on 'revenue DoD drop 19.0% exceeds threshold 15.0%'. Neither row is on protected_by_open_decision_ids. CS-2026-293's own execution target was today and passed undecided, making it the sixth ticket this incident family has killed per L-574. Extends L-500, which named the breaker's trigger; this is about what the trigger stops. See daily synthesis 2026-09-18-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "scripts/lifecycle_engine.py \u2014 the circuit-breaker gating of transitions[]",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-18T13:37:53.224187+00:00",
+      "archival_state": "active",
+      "id": "L-582"
+    },
+    {
+      "date": "2026-09-18",
+      "learning": "The demand-signal queue's reader last processed a signal on 2026-04-03. All 46 rows carrying a processed_at fall between 2026-03-19 and 2026-04-03; all 125 pending rows were created on or after 2026-04-03 and none has ever been processed. The queue has had writers and no reader for 168 days. The standing remedy asks for an actor to apply each row's expiry, which would retire the 125 rows and leave a tidy queue that still has no reader.",
+      "source": "cgo-logs/queues/demand-signals.json, read directly in Task B synthesis 2026-09-18-s1",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "A queue's health was measured by the age and count of its pending rows, which a writer alone can keep looking healthy. Nothing measured whether the named reader (moe-creative-brief) had ever run, so a reader that stopped is indistinguishable from a reader with nothing to do \u2014 and the first repair reached for was the one that removes the evidence rather than the cause. Corroborates L-316's 94-percent-never-advanced reading with a dated stop. Verified: 230 signals total, 125 pending, 46 with processed_at, 15 distinct brief_ids, newest 2026-04-02. See daily synthesis 2026-09-18-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "cgo-logs/queues/demand-signals.json \u2014 the reader contract, and rec-638's ask",
+      "sources": [
+        "cgo-logs/queues/demand-signals.json \u2014 the processed_at distribution: 46 rows carry one, all between 2026-03-19 and 2026-04-03",
+        "cgo-logs/queues/demand-signals.json \u2014 the created/created_at distribution: all 125 pending rows are dated on or after 2026-04-03",
+        "cgo-logs/queues/demand-signals.json \u2014 the file's own declared reader (moe-creative-brief) and writers (cgo-pipeline-dispatch, moe-demand-scan), with 15 distinct brief_ids none newer than 2026-04-02",
+        "L-316 \u2014 an independent prior reading that three queues each show approximately 94 percent never-advanced entries"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-18T13:38:50.209885+00:00",
+      "archival_state": "active",
+      "id": "L-584"
+    },
+    {
+      "date": "2026-09-18",
+      "learning": "A department produced four department actions, two of them today-urgency naming Level-2 and Level-3 metrics, and filed zero recommendation rows \u2014 the second consecutive day. The close-out check validates the SHAPE of a brief and not its EFFECT, so a brief that is well-formed and ends in nothing passes every check it is given, and a department can go dark in the queue while scoring full marks on validation.",
+      "source": "cgo-logs/department-briefs/2026-09-18-s1/dept-paid-media.md compared against tracker.json pending_recommendations, Task B synthesis 2026-09-18-s1",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Paid Media's ACT-D-1 through ACT-D-4 have no matching row in either store: searches on 'raspberry lychee', campaign id 22860440391, 'ad_name', 'SELF_VERIFYING_PREDICATES' and 'hypothesis_window_closed' across all 163 open and working rows return nothing that matches the four actions. On 2026-09-17 the same department filed zero while the other six filed 21 rows. rec-596 (open, high, 2026-09-07) is the standing request for the close-out check that would catch exactly this, and it did not fire on either day. The synthesis layer filed the four rows itself as outbox patches. See daily synthesis 2026-09-18-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "Task B Phase 2 filed the four missing rows as rec_write outbox patches (tokens 20260918T132146Z-\u2026-5fdc9f5a, \u2026132159Z-\u2026-75321de4, \u2026132225Z-\u2026-67411f07, \u2026132248Z-\u2026-c130f0a6).",
+      "target": "cgo-daily-pipeline/config/task-a1-departments.md close-out check and scripts/a1_runtime.py validate",
+      "sources": [
+        "cgo-logs/department-briefs/2026-09-18-s1/dept-paid-media.md \u2014 four dept_actions, ACT-D-1 through ACT-D-4",
+        "cgo-logs/changesets/tracker.json pending_recommendations \u2014 163 open and working rows searched on five distinctive terms from those actions, zero matches",
+        "cgo-logs/session-handoffs/2026-09-17-session-113.md \u2014 watch item 5 records the same department filing zero on 2026-09-17 while the other six filed 21",
+        "rec-596 (open, high, 2026-09-07) \u2014 the standing request for the close-out check that would catch this"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-18T13:38:50.229521+00:00",
+      "archival_state": "active",
+      "id": "L-585"
+    },
+    {
+      "date": "2026-09-18",
+      "learning": "The gate that admits a ChangeSet close and the validator that judges the store read different fields of the same object, so a close cannot fail in the way the store will later fail it. Measured twice in one session: the tracker's error count tripled overnight from 5 to 14, with all nine new errors coming from three rows closed by last night's own Phase 3 patches, and a close drafted this session passed the writer's gate while failing the validator on three separate fields.",
+      "source": "scripts/validate_changeset_tracker.py run against HEAD a0ca749 and against a scratch store carrying this session's own patches, Task B 2026-09-18-s1",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Overnight: 5 ERRORs became 14; the five pre-existing are the approved-with-past-date class (CS-2026-285/292/295/298/299, unchanged row for row) and the nine new all belong to CS-2026-272, CS-2026-283 and CS-2026-286. The close gate reads the prose field outcome_notes; validate_changeset_tracker.py reads actual_impact. In-session: a first-draft close of CS-2026-290 was accepted by the patch writer's dry run and rejected by the validator for a missing learning_note, for statistical_significance typed as prose rather than boolean, and for reading primary_metric_target from the wrong object; separately the builder accepted primary_metric_target as the string '70' while the validator's parser needs a comparison operator to read it. The error count now measures how recently the store was written rather than how much is wrong. See daily synthesis 2026-09-18-s1.md.",
+      "confidence": "strong",
+      "action_taken": "Every write in this session's Phase 3 was applied to a scratch copy and run through the validator before commit; all four produce zero errors.",
+      "target": "scripts/cs_helpers/outcome.py and the close branch of mutate_cs_entry",
+      "sources": [
+        "scripts/validate_changeset_tracker.py run against HEAD a0ca749 \u2014 14 ERRORs, exit 1",
+        "cgo-logs/session-handoffs/2026-09-17-session-113.md \u2014 5 ERRORs yesterday and the three closes that session made",
+        "In-session experiment: a first-draft close of CS-2026-290 accepted by the patch writer's dry run and rejected by the validator on three fields",
+        "scripts/cs_helpers/outcome.py parse_target \u2014 the builder accepts the string '70' while the parser needs a comparison operator to read it"
+      ],
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-18T13:38:50.248219+00:00",
+      "archival_state": "active",
+      "id": "L-586"
     }
   ],
   "archived_entries": [
@@ -18475,7 +18596,27 @@
       "action_stamped_at": "2026-08-18",
       "archived_date": "2026-09-11",
       "archived_reason": "expired_unactioned"
+    },
+    {
+      "date": "2026-09-18",
+      "learning": "A circuit breaker tripping on a 19 percent day-over-day revenue drop held two ChangeSet expiries that have nothing to do with revenue, because the blocked flag gates the entire transition set rather than the class of transitions it was built to guard. The coupling is invisible until the breaker clears, and it inverts the usual reading: repairing the revenue break is what executes the two kill orders.",
+      "source": "data/lifecycle/work-queue.json (engine_date 2026-09-18) and the Operations & Planning department brief, 2026-09-18",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "work-queue.json holds transitions[] = [{CS-2026-259 expire -> closed/expired_unexecuted}, {CS-2026-293 expire -> closed/expired_unreviewed}] and applied neither, because circuit_breakers.passed is false on 'revenue DoD drop 19.0% exceeds threshold 15.0%'. Neither row is on protected_by_open_decision_ids. CS-2026-293's own execution target was today and passed undecided, making it the sixth ticket this incident family has killed per L-574. Extends L-500, which named the breaker's trigger; this is about what the trigger stops. See daily synthesis 2026-09-18-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "scripts/lifecycle_engine.py \u2014 the circuit-breaker gating of transitions[]",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-18T13:37:58.941611+00:00",
+      "archival_state": "active",
+      "id": "L-583",
+      "archived_date": "2026-09-18",
+      "archived_reason": "merged_into_L-582",
+      "resolution_note": "Exact duplicate of L-582. Task B Phase 4, session 114, 2026-09-18-s1 re-ran pm_write_gate.py append on the same payload file in order to read the rejection reasons from the first run, and the gate correctly wrote the one accepted signal a second time. Operator error in this session, not a gate defect: the gate has no idempotency key on payload content and is not expected to have one. The finding itself lives in L-582."
     }
   ],
-  "last_updated": "2026-09-17"
+  "last_updated": "2026-09-18"
 }
