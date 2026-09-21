@@ -4100,6 +4100,34 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-09-17"
+    },
+    {
+      "id": "L-590",
+      "summary": "A blended revenue headline that mixes a lumpy wholesale channel with a daily direct-to-consumer channel can rise on wholesale timing alone while ever\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-21"
+    },
+    {
+      "id": "L-591",
+      "summary": "The claim that nobody answers the pipeline in Slack was measured at the wrong grain and is false at the right one. The general ask channel has produc\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-21"
+    },
+    {
+      "id": "L-592",
+      "summary": "A queue whose firing conditions are met on most days, which has had writers continuously and no reader for 171 days, is not a degraded routing mechan\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-21"
+    },
+    {
+      "id": "L-593",
+      "summary": "A shipped automation was about to be re-proposed by the very analysis that proposes automations, because the population it is measured against is mos\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-21"
     }
   ],
   "entries": [
@@ -9860,6 +9888,99 @@
       "created_at": "2026-09-18T17:09:17.974219+00:00",
       "archival_state": "active",
       "id": "L-589"
+    },
+    {
+      "date": "2026-09-21",
+      "learning": "A blended revenue headline that mixes a lumpy wholesale channel with a daily direct-to-consumer channel can rise on wholesale timing alone while every direct-to-consumer term falls, and no department catches it, because each department owns one term and none owns the sum. Week 09-14 to 09-20 posted the highest total sales since the August launch week ($165,807 from $71,592) on wholesale of $112,609 against the prior week's $5,402, while store sales fell 26.4%, subscription revenue 15.3%, orders 12.6%, sessions 6.2% and new customers 14.3%.",
+      "source": "Task B synthesis 2026-09-21-s1, reading data/metrics/weekly-trends.json sales_by_channel against the seven department briefs of the same run",
+      "sources": [
+        "data/metrics/weekly-trends.json (sales_by_channel.by_week, 2026-W37 and 2026-W38; generated 2026-09-21T11:02:08Z)",
+        "cgo-runtime/digest-2026-09-21.json (total_orders_7d 744, sessions_7d 10101, new_customer_count 203)",
+        "cgo-logs/department-briefs/2026-09-21-s1/dept-operations-planning.md INS-D-4 (wholesale read correctly in isolation as lumpy, no trend)",
+        "cgo-logs/department-briefs/2026-09-21-s1/dept-website-cro.md INS-W-1 (sessions and orders down across devices)",
+        "data/wholesale/wholesale-state-portal.json daily_revenue (09-15 $76,805 on 4 orders; 09-17 $23,145 on 7)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Root cause: the synthesis layer is the only layer that reads all channels, but the headline metric it reports is a single blended sum with no channel decomposition beside it. Operations correctly declined to read a trend into lumpy wholesale and stopped there; nobody was responsible for the combination. A blended level with no channel split is a metric that can move for reasons opposite to what it appears to say. See daily synthesis 2026-09-21-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md \u2014 the Cached Metrics Snapshot and Executive Summary steps should require a channel decomposition whenever the blended total moves more than 20% week over week",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-21T13:39:21.086845+00:00",
+      "archival_state": "active",
+      "id": "L-590"
+    },
+    {
+      "date": "2026-09-21",
+      "learning": "The claim that nobody answers the pipeline in Slack was measured at the wrong grain and is false at the right one. The general ask channel has produced no replies from the three people carrying open single-person requests for eleven days, but department channels are answered: a request sent 2026-09-18 was answered 2026-09-21 at 12:24Z in the recipient's own department channel, as a plain message rather than a thread, carrying the root cause and an owner. The fix for the two incident families dying on the expiry clock is therefore a routing change, not an escalation.",
+      "source": "data/notifications/reads/inbound.json \u2014 Garrett Davis 2026-09-21T12:24Z in channel C0AN37LH66A, read against D14 SIG-14-1 and the Operations department brief of the same morning",
+      "sources": [
+        "data/notifications/reads/inbound.json (Garrett Davis, ts 1789993465.736319, channel C0AN37LH66A, 'KGS - Variety packs packed incorrectly at Co-man level. Will address with Coman')",
+        "data/notifications/reads/inbound.json (the 2026-09-18T18:29Z Market Intelligence request to the same channel that it answers)",
+        "cgo-logs/domain-scans/2026-09-21-s1/domain-14.md SIG-14-1 (zero replies, streak 11 days)",
+        "cgo-logs/department-briefs/2026-09-21-s1/dept-operations-planning.md INS-D-3 (the single-input-blocker mechanism)"
+      ],
+      "source_type": "team_feedback",
+      "domain": "operations",
+      "evidence": "Root cause: the reply-rate signal was computed over all human replies to the pipeline rather than per channel, so a dead channel and a working one averaged into a single dead-looking number. A per-channel reply rate would have shown the difference weeks ago and would have made the routing fix obvious before six tickets died on it. See daily synthesis 2026-09-21-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "the dispatch routing for single-person requests, and a per-channel reply rate in data/notifications/reads/decision-latency.json",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-21T13:39:21.111122+00:00",
+      "archival_state": "active",
+      "id": "L-591"
+    },
+    {
+      "date": "2026-09-21",
+      "learning": "A queue whose firing conditions are met on most days, which has had writers continuously and no reader for 171 days, is not a degraded routing mechanism but an unowned lane \u2014 and each session that correctly declines to file into it leaves no record that anything was owed. Two consecutive sessions have now suppressed qualifying signals (DS-02 and DS-06 on both days) and carried the work in the priority stack instead, which works but leaves the lane's own disuse invisible to everything that reads the queue.",
+      "source": "cgo-logs/queues/demand-signals.json read in Task B synthesis 2026-09-21-s1; second consecutive session reaching the same conclusion",
+      "sources": [
+        "cgo-logs/queues/demand-signals.json (230 rows; 46 carry processed_at, latest 2026-04-03T08:00:00Z; 184 pending)",
+        "cgo-logs/daily-syntheses/2026-09-18-s1.md (the first session to measure the dated stop rather than infer it)",
+        "cgo-logs/session-handoffs/2026-09-18-session-114.md (Demand Signals Routed: zero, with the same reason)",
+        "cgo-runtime/digest-2026-09-21.json (forward_content_entries_7d = 0, against six dated activations inside seven days)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "Root cause: the queue has a write path, a schema and a firing rule, and no owner for the read side. Nothing measures reader liveness, so a lane can stop being consumed without any surface turning red \u2014 the same detection-without-repair shape the standing rule names, one layer up. See daily synthesis 2026-09-21-s1.md.",
+      "confidence": "strong",
+      "action_taken": null,
+      "target": "cgo-logs/queues/demand-signals.json \u2014 either a named reader or an honest retirement; rec-638 owns the adjacent cleanup question",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-21T13:39:21.135819+00:00",
+      "archival_state": "active",
+      "id": "L-592"
+    },
+    {
+      "date": "2026-09-21",
+      "learning": "A shipped automation was about to be re-proposed by the very analysis that proposes automations, because the population it is measured against is mostly older than its ship date. Of 11 recently-closed rows missing an approval timestamp, only one was created after the auto-stamping repair closed on 2026-09-03, and that one went from created to published in a single day with no approval event to stamp. The repair works; the gap is a legacy backfill population.",
+      "source": "Pass B Step 5 cross-check in Task B synthesis 2026-09-21-s1, testing CS-2026-133 against the 30 most recently closed tracker rows",
+      "sources": [
+        "cgo-logs/changesets/tracker.json (30 most recently closed rows; 19 of 30 carry all four clean timestamps)",
+        "cgo-logs/changesets/tracker.json CS-2026-133 (Auto-Stamp Tracker Timestamps on Status Transitions, closed 2026-09-03)",
+        "cgo-daily-pipeline/config/task-b-synthesis.md Step 2.5 Pass B Step 1A (the data-quality precondition and its standard candidate framing)",
+        "cgo-logs/daily-syntheses/2026-09-21-s1.md (Process Automation section, the per-row test)"
+      ],
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Root cause: the Pass B data-quality precondition reads the 30 most recently CLOSED rows, but a fix to a creation-time stamp can only appear in rows CREATED after it shipped. Sampling by close date against a creation-time repair guarantees a stale read for as long as the close queue still holds pre-ship rows, and the standard candidate framing the step prints on a failed ratio is the already-shipped work itself.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/task-b-synthesis.md Step 2.5 Pass B Step 1A \u2014 partition the sample by created date relative to the most recent relevant repair before computing the clean ratio",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-21T13:39:21.160333+00:00",
+      "archival_state": "active",
+      "id": "L-593"
     }
   ],
   "archived_entries": [
@@ -18915,5 +19036,5 @@
       "resolution_note": "kgs-weekly-learning-consolidation 2026-09-18 judge pass: L-148->L-144, L-313->L-296, L-421->L-298, L-417->L-301, L-416->L-412, L-459->L-423, L-501+L-512->L-490, L-511->L-510, L-575->L-567, L-578->L-577"
     }
   ],
-  "last_updated": "2026-09-18"
+  "last_updated": "2026-09-21"
 }
