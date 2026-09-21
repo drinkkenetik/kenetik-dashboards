@@ -4128,6 +4128,13 @@
       "domain": "cross-surface",
       "status": "active",
       "date": "2026-09-21"
+    },
+    {
+      "id": "L-594",
+      "summary": "CS-2026-230 significant_variance (70%): the cancel-flow intercept could not be measured because the instrument named in its own brief was never built - a measurement plan depending on absent instrumentation must not reach published.",
+      "domain": "lifecycle-marketing",
+      "status": "active",
+      "date": "2026-09-20"
     }
   ],
   "entries": [
@@ -9981,6 +9988,41 @@
       "created_at": "2026-09-21T13:39:21.160333+00:00",
       "archival_state": "active",
       "id": "L-593"
+    },
+    {
+      "id": "L-594",
+      "date": "2026-09-20",
+      "type": "changeset_outcome",
+      "learning": "A ChangeSet whose measurement plan names an instrument that does not exist should not reach published. CS-2026-230 ran its full 91-day window on the live Recharge cancel-flow intercept and could not answer its own learning hypothesis: brief Action 4 (per-option selection tracking, 90-day pause-resume rate, 60-day repeat-cancel rate) was never built, so the second leg of the success gate was unmeasurable from day one. The deflection effect itself is real but non-durable - oversupply cancels fell 47% in month one (38.1 to 20.1 per 1k active subs per 30d) and decayed fully to 37.7 by month three - and with no control arm and an August acquisition spike (972 new subs against 320 in July) loading the low-tenure branch, decay cannot be separated from composition.",
+      "source": "ChangeSet measurement (Process 7.5)",
+      "sources": [
+        "cgo-logs/changesets/tracker.json CS-2026-230 (closed 2026-09-20, outcome inconclusive)",
+        "data/voc/cancellations-corpus.json (n=1258, 2026-06-01..2026-09-20)",
+        "data/subscriptions/subscription-state.json recharge_monthly (active base 2,441 -> 3,084 over the window)"
+      ],
+      "source_type": "changeset_outcome",
+      "domain": "lifecycle-marketing",
+      "evidence": "Projected: $1,128/mo revenue, $347 margin, 20-35% recovery of the oversupply segment. Actual estimate: ~$333/mo revenue, $166.50 margin (249 oversupply cancels x ~6% oversupply-specific save rate x $66.62 mean charge). Variance ~70%. Measurement window: 91 days. Gate leg 1 (count down >=20%) pooled -21.5% but sustained only -1.0% at month three; gate leg 2 (90-day resume rate >=40%) not measurable - no instrumentation. Hypothesis: inconclusive, not disproved. Third entry on this surface after L-439 (no tenure join in the store) and L-552 (swap capability gated behind cancel intent), neither acted on.",
+      "confidence": "moderate",
+      "action_taken": "Instrumentation requirement folded into CS-2026-292 (approved, due 2026-10-16, same Recharge cancel flow) per Resolution Hierarchy Refine - per-branch offer selection, true offer-driven save rate excluding No-Response, trailing-60-day price-reason baseline recorded at execution. Katie Spaller decision 2026-09-21.",
+      "target": "cgo-logs/changesets/CS-2026-292.md scope; data/subscriptions/subscription-state.json tenure + pause/resume join",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-439",
+        "L-552",
+        "L-521",
+        "CS-2026-234",
+        "CS-2026-292"
+      ],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-230",
+      "variance_pct": 70.5,
+      "outcome_class": "significant_variance",
+      "entry_type": "changeset_outcome",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-21T14:52:17.754910+00:00",
+      "archival_state": "active"
     }
   ],
   "archived_entries": [
