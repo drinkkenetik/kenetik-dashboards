@@ -4170,6 +4170,27 @@
       "domain": "operations",
       "status": "archived",
       "date": "2026-09-22"
+    },
+    {
+      "id": "L-600",
+      "summary": "A ratio metric reached its best recorded value in its worst underlying month, because the denominator collapsed faster than the numerator. d08_creato\u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-09-22"
+    },
+    {
+      "id": "L-601",
+      "summary": "The metric that would have classified an outage as drift was itself inside the outage, so a 300-to-zero literature collapse ran 13 days with no drift\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-22"
+    },
+    {
+      "id": "L-602",
+      "summary": "The same defect on the same file has now been filed as a learning three times across 40 days without producing a repair, and the third occurrence is \u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-22"
     }
   ],
   "entries": [
@@ -10136,6 +10157,57 @@
       "created_at": "2026-09-22T13:30:14.135555+00:00",
       "archival_state": "active",
       "id": "L-597"
+    },
+    {
+      "date": "2026-09-22",
+      "learning": "A ratio metric reached its best recorded value in its worst underlying month, because the denominator collapsed faster than the numerator. d08_creator_roi: July 41619/2459 = 16.93; August 119801/8801 = 13.61; September month-to-date 53605/2584 = 20.75. The best-looking ROI month of the three is the worst revenue month. The registry publishes this metric with a target of 3.0 and a band of [2.5, 5.0] and nothing beside it constrains the denominator's direction, so a contracting business renders as an improving department primary.",
+      "source": "Content & Creative department brief 2026-09-22-s1 (INS-C-2), reproduced from superfiliate-history Jul/Aug/Sep",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "An efficiency ratio was given a target and a band but no paired level metric. The digest-canonical September value (20.75) was reproduced exactly from the monthly source files, and the same month's revenue is down 42.7% like-for-like against August. See daily synthesis 2026-09-22-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "brain/kenetik-brain/references/metrics-registry.yaml - d08_creator_roi needs a paired level metric or a denominator-direction guard, the way an L1 outcome carries a balancing_metric.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-22T13:32:57.852606+00:00",
+      "archival_state": "active",
+      "id": "L-600"
+    },
+    {
+      "date": "2026-09-22",
+      "learning": "The metric that would have classified an outage as drift was itself inside the outage, so a 300-to-zero literature collapse ran 13 days with no drift signal and no escalation, and the underlying block ran 101 days. pubmed_query_freshness is the declared gap metric of the recommendation that governs the literature search, and it is blocked in the compute map with a disposition reason naming a source path that has never existed, while the entry's own source field names the path that does exist. A blocked disposition is terminal and silent, and nothing audits blocked entries against their own declared source.",
+      "source": "Science & Research department brief 2026-09-22-s1 (INS-SR-1)",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Distinct from L-470, where the freshness signal is written by the failing process: here the detector is not downstream of the failure, it is disabled by an unrelated path defect and the disablement is unaudited. Both of the department's metrics have been blocked 101 days; claims_tier_coverage reads 0.90 against a [0.95, 1.00] band. See daily synthesis 2026-09-22-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/metric-compute-map.json - blocked entries need an audit that re-tests disposition_reason against the entry's own source field.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-22T13:32:57.876421+00:00",
+      "archival_state": "active",
+      "id": "L-601"
+    },
+    {
+      "date": "2026-09-22",
+      "learning": "The same defect on the same file has now been filed as a learning three times across 40 days without producing a repair, and the third occurrence is the first with a measured cost. The marketing calendar's file-level last_updated is not bumped by any writer that changes its rows. L-413 named it 2026-08-13; L-470 named the same file again 2026-08-24; on 2026-09-21 the lifecycle sweep withheld all 20 calendar safety-net spawns citing a false 155.75h expiry against a file rewritten 19 hours earlier. Two departments found it independently this morning.",
+      "source": "Operations & Planning department brief 2026-09-22-s1 (INS-D-2) and Paid Media department brief 2026-09-22-s1 (ACT-D-4)",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "A learning entry records a diagnosis but carries no obligation on anyone, so a correct structural finding can be filed repeatedly and remain a finding. Nothing reads the learning store for repeat diagnoses and escalates a third filing into owned work. Corroborates and bumps L-413 and L-470 rather than restating them. See daily synthesis 2026-09-22-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "scripts/pm_maintain.py - a repeat-diagnosis pass that escalates an entry filed N times against the same artifact into a recommendation row with an owner.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-22T13:32:57.899032+00:00",
+      "archival_state": "active",
+      "id": "L-602"
     }
   ],
   "archived_entries": [
