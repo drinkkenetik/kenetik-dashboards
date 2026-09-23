@@ -8259,9 +8259,13 @@
       "domain": "lifecycle-marketing",
       "evidence": "Outcome: inconclusive. Expected revenue: $4,860. Backfilled from tracker.json (CS-2026-200).",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "dc4e552 2026-09-21: CS-2026-230 measured close: inconclusive, no rollback (Process 7.5)",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-200",
+        "CS-2026-230",
+        "CS-2026-292"
+      ],
       "changeset_candidate": false,
       "changeset_id": "CS-2026-200",
       "variance_pct": null,
@@ -8274,7 +8278,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-03T00:00:16.289608+00:00",
       "archival_state": "active",
-      "id": "L-521"
+      "id": "L-521",
+      "action_stamped_at": "2026-09-23"
     },
     {
       "date": "2026-09-03",
@@ -9990,14 +9995,16 @@
       "domain": "operations",
       "evidence": "Root cause: the reply-rate signal was computed over all human replies to the pipeline rather than per channel, so a dead channel and a working one averaged into a single dead-looking number. A per-channel reply rate would have shown the difference weeks ago and would have made the routing fix obvious before six tickets died on it. See daily synthesis 2026-09-21-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "2d60853 2026-09-23: disposition pass 2026-09-23: 25 rows annotated, rec-742 + rec-809 queued for the machine",
       "target": "the dispatch routing for single-person requests, and a per-channel reply rate in data/notifications/reads/decision-latency.json",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-21T13:39:21.111122+00:00",
       "archival_state": "active",
-      "id": "L-591"
+      "id": "L-591",
+      "action_stamped_at": "2026-09-23",
+      "related_entries": []
     },
     {
       "date": "2026-09-21",
@@ -19317,5 +19324,5 @@
       "id": "L-599"
     }
   ],
-  "last_updated": "2026-09-22"
+  "last_updated": "2026-09-23"
 }
