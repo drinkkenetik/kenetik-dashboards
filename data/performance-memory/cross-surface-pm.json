@@ -4226,6 +4226,20 @@
       "domain": "DTC-website",
       "status": "archived",
       "date": "2026-09-23"
+    },
+    {
+      "id": "L-608",
+      "summary": "A creator launch's discount code captured about a third of the new customers the launch brought. On 09-23/24 the NOAH code carried 30 new customers w\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-25"
+    },
+    {
+      "id": "L-609",
+      "summary": "A top-five concentration share computed on the platform's identifier (discount code) instead of the person understated the largest single dependency \u2026",
+      "domain": "content",
+      "status": "active",
+      "date": "2026-09-25"
     }
   ],
   "entries": [
@@ -10334,6 +10348,40 @@
       "created_at": "2026-09-25T11:54:13.203676+00:00",
       "archival_state": "active",
       "id": "L-606"
+    },
+    {
+      "date": "2026-09-25",
+      "learning": "A creator launch's discount code captured about a third of the new customers the launch brought. On 09-23/24 the NOAH code carried 30 new customers while store-wide new customers ran about 100 above the prior week's daily run; the rest arrived through branded Google search (spend ~4x), organic search, direct and Meta ads. Judging a creator deal on code uses alone understates a launch several-fold on launch days, and crediting the channels that captured it overstates them.",
+      "source": "Task B synthesis 2026-09-25-s1, cross-reading Content INV-C-4, Lifecycle INS-LM-1, Website INS-W-2, Paid INV-D-3 (2026-09-23/24 data)",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "Each department measures a creator launch with its own instrument (code, session source, ad platform, cohort), and only the code count reaches the creator's row and the retainer decision; no step compares the code count with the store-wide lift. See daily synthesis 2026-09-25-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "attribute_day.creator_economics and the retainer-renewal row for CS-2026-277",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-25T11:55:38.410694+00:00",
+      "archival_state": "active",
+      "id": "L-608"
+    },
+    {
+      "date": "2026-09-25",
+      "learning": "A top-five concentration share computed on the platform's identifier (discount code) instead of the person understated the largest single dependency by half: Roman Atwood reads as two mid-sized codes (20.9% + 19.2%) and is one 40.1% dependency; the Atwood family is 45% of September creator revenue. Any top-N share must group by identity before ranking.",
+      "source": "Content department brief 2026-09-25-s1 (INV-C-1), superfiliate-history 2026-09 + creator-aliases.json",
+      "source_type": "operational_signal",
+      "domain": "content",
+      "evidence": "The digest recipe keys on conversion code because Superfiliate cannot merge a creator's codes; the alias map built to fix this carries a note that the digest never consumed it. See daily synthesis 2026-09-25-s1.md.",
+      "confidence": "moderate",
+      "action_taken": null,
+      "target": "scripts/pipeline_digest.py _r_d08_concentration_top5 / _r_d08_active_creator_count",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-25T11:55:38.434820+00:00",
+      "archival_state": "active",
+      "id": "L-609"
     }
   ],
   "archived_entries": [
