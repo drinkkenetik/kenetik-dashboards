@@ -7,8 +7,8 @@
     "scripts/pm_eval.py c4_d5"
   ],
   "migrated_from": "brain/kenetik-brain/roles/content-producer-skill.md \u00a73 @ 2026-07-11",
-  "last_updated": "2026-09-11",
-  "last_synthesis_applied": "SYN-20260911-001",
+  "last_updated": "2026-09-25",
+  "last_synthesis_applied": "SYN-20260925-001",
   "update_policy": {
     "auto_apply_max_single_change_pct": 100,
     "hold_and_escalate": "If ANY single weight change exceeds the auto-apply cap (more than doubling/halving), hold ALL changes in the batch and DM Devon (U06528UQV7H) for CGO approval.",
@@ -796,14 +796,14 @@
       "id": "HW-022",
       "name": "Named-athlete/individual storytelling on OWNED Instagram + Facebook",
       "example": "Razo Rob said it best\u2026\" / \"Everybody's asking Derek\u2026\" / \"Adam sets up a table for everyone else",
-      "weight": 1.5,
+      "weight": 1.6,
       "platforms": [
         "instagram",
         "facebook"
       ],
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-07-10",
+      "last_validated": "2026-09-25",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -823,6 +823,16 @@
             "CP-012",
             "EP-018"
           ]
+        },
+        {
+          "synthesis_id": "SYN-20260925-001",
+          "date": "2026-09-25",
+          "resolved": true,
+          "pattern_ids": [
+            "EP-018"
+          ],
+          "note": "REVALIDATED, weight 1.5 -> 1.6 (+6.7%). Three independent above-median posts in this window, and they are the only clean creative signal the window produced because Facebook delivery was clone-selected and TikTok reach-confounded: IG 'Cliff at TRX Training HQ' 1,639 imp / 5.25% ER = 1.73x, IG Kenetik x TRX reel 1,211 / 6.19% = 2.04x (same body on TikTok 226 / 6.64% = 2.18x), IG post-run refueling 1,172 / 4.27% = 1.41x. Named individual, shown doing the thing, at organic reach. Small increment deliberately: n=3 in one fortnight on one collab.",
+          "weight_after": 1.6
         }
       ],
       "rules": [
@@ -957,7 +967,7 @@
     {
       "name": "Comment-gate CTA (explicit 'Comment X and we'll DM you the link')",
       "example": "Comment \"TRX\" and we will send you the direct link to the product.",
-      "weight": 1.4,
+      "weight": 1.0,
       "platforms": [
         "facebook",
         "instagram",
@@ -980,9 +990,20 @@
           ],
           "note": "New hook style, n=6, cohort median 2.15x working median, 5 of 6 at or above 1.5x: FB 3.61x, FB 3.00x, TT 2.64x, TT 1.67x, IG 1.51x, IG 0.86x. Clears the store learning threshold on count (5+) and outperformance (>30%) but not on confidence, because of the launch-arc confound. The one instance outside the arc (Cliff at TRX HQ, 08-22, TikTok) still returned 1.67x, which is why this is entered at all rather than deferred.",
           "weight_after": 1.4
+        },
+        {
+          "synthesis_id": "SYN-20260925-001",
+          "date": "2026-09-25",
+          "resolved": true,
+          "pattern_ids": [
+            "EP-013",
+            "EP-022"
+          ],
+          "note": "NARROWED TO LAUNCH-ARC CONTEXT, weight 1.4 -> 1.0 (-28.6%). EP-022 was created last cycle from comment-gate posts that sat inside the TRX Lemon Lime launch arc. This window carries two STANDALONE comment-gate promos on Instagram outside any launch arc and both are the platform's worst posts: 'End of summer reset / Comment LABOR DAY' 4,870 imp / 0.99% ER = 0.33x the 3.03% IG working median, and 'Labor Day Sale / Comment LABOR DAY' 1,900 imp / 1.89% = 0.63x. In the same fortnight, on the same platform, at the same 1.1k-1.9k reach band, creator-led demonstration posts returned 6.19% / 5.25% / 4.27% (2.04x / 1.73x / 1.41x). A 3.5x gap at comparable reach. This is exactly EP-013's existing rule for sweepstakes and giveaway mechanics - the mechanic amplifies inside a launch arc and underperforms standalone - so the fix is to extend EP-013's scope over the comment-gate CTA rather than keep EP-022 as an unconditional lift. Weight returns to baseline 1.0: neutral by default, and only worth reaching for inside an arc.",
+          "weight_after": 1.0
         }
       ],
-      "last_validated": "2026-09-11"
+      "last_validated": "2026-09-25"
     }
   ],
   "anti_patterns": [
@@ -1135,7 +1156,7 @@
       "multiplier": 0.0,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-09-11",
+      "last_validated": "2026-09-25",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -1195,6 +1216,15 @@
             "AP-006"
           ],
           "note": "8th and 9th confirmations, and the 3rd and 4th breach of a hard-pause that is still a convention rather than an enforced gate. Two YouTube cross-posts landed in this window - 08-17 (TRX CEO quote, 9 engagements) and 08-19 (TRX launch, 1 engagement) - and neither returned an impressions field at all. Multiplier stays 0.0 / high; the entry is correct and is being ignored at publish time."
+        },
+        {
+          "synthesis_id": "SYN-20260925-001",
+          "date": "2026-09-25",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-006"
+          ],
+          "note": "HARD-PAUSE HELD, no multiplier change. Zero YouTube cross-posts in the 2026-08-29..09-11 window - the first clean window since the pause was set, after two breaches (2026-07-24 and 2026-08-09). Revalidation by absence, not by a new zero-engagement post."
         }
       ],
       "rules": [
@@ -1288,7 +1318,7 @@
       "multiplier": 0.0,
       "confidence": "high",
       "status": "active",
-      "last_validated": "2026-09-11",
+      "last_validated": "2026-09-25",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -1352,6 +1382,16 @@
             "AP-010"
           ],
           "note": "11th consecutive cycle logged, and the largest firing on record. 22 of 35 Facebook objects (63% of the platform's post slots) belong to a 3-or-more-copy same-body burst; 9 of those 22 returned either zero impressions or fewer than 10 engagements. Two bodies dominate: 'Meet your brain's best friend' 9 copies published inside 2h32m on 08-18, impressions 42 to 25,268 (602x spread), top 2 copies take 79.5%; 'NEW FLAVOR Raspberry Lychee' 10 copies across 08-18 to 08-24, 3 at zero impressions, top 2 copies take 91.8%. Multiplier and confidence are already at their limits (0.0 / high) and are left unchanged deliberately - this is an unenforced-gate problem, not a weight problem, and another weight change would not fire the gate. Escalated to Devon for the 11th time."
+        },
+        {
+          "synthesis_id": "SYN-20260925-001",
+          "date": "2026-09-25",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-010",
+            "EP-021"
+          ],
+          "note": "REVALIDATED AT THE LARGEST SCALE YET, no multiplier change. Facebook carried 93 of the window's 105 feed/reel objects (88.6%) and 338,674 of 354,972 impressions (95.4%), and 86 of those 93 are clone copies of four bodies. The 'Meet your brain's best friend' body alone ran 62 copies across 12 days: top 2 copies took 58.6% of its 250,123 impressions and 5 copies returned zero. The 'NEW FLAVOR Raspberry Lychee' body ran 14 copies, top 2 took 93.8%, 5 returned zero - all five published 08-31 15:48-15:50. The 10g-shot variant ran 4 copies, top 2 took 98.6%. Winner-take-all delivery (SYN-20260828-001's re-diagnosis) is confirmed a second cycle and bulk-publish is now the DEFAULT Facebook publishing mode, not an occasional burst. EP-021 cited because the same delivery concentration is what makes this window's Facebook engagement rates unreadable as creative signal: the five largest Facebook posts (94,700 / 51,762 / 37,275 / 24,073 / 23,705 imp) all land at 0.96x-1.29x, the flat signature of bought reach diluting the denominator."
         }
       ],
       "rules": [
@@ -1370,7 +1410,7 @@
       "multiplier": 0.0,
       "confidence": "medium",
       "status": "active",
-      "last_validated": "2026-05-31",
+      "last_validated": "2026-09-25",
       "origin": "performance_memory_synthesis",
       "provenance": [
         {
@@ -1380,6 +1420,15 @@
           "pattern_ids": [
             "AP-011"
           ]
+        },
+        {
+          "synthesis_id": "SYN-20260925-001",
+          "date": "2026-09-25",
+          "resolved": true,
+          "pattern_ids": [
+            "AP-011"
+          ],
+          "note": "REVALIDATED, no multiplier change. Cart-recovery email copy was published to Facebook again on 2026-09-11 15:15 ('Forgot something? Transform your tomorrow, today. Check out now before your item sells out') and returned 0 impressions and 0 engagements - the same outcome that created this entry. The anti-pattern is understood and is still not enforced at the publishing gate."
         }
       ],
       "rules": [
