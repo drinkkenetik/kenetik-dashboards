@@ -4212,6 +4212,20 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-09-23"
+    },
+    {
+      "id": "L-606",
+      "summary": "[CS-2026-273] incomplete (n/a): lifecycle_engine protected suppresses VISIBILITY as well as EXPIRY \u2014 future-dated rows are invisible to every queue \u2014\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-09-22"
+    },
+    {
+      "id": "L-607",
+      "summary": "[CS-2026-301] incomplete (n/a): Raspberry Lychee LP customizer drift - re-enable the hero scrim, RTB and proof, audit the injected apps block \u2014 close\u2026",
+      "domain": "DTC-website",
+      "status": "archived",
+      "date": "2026-09-23"
     }
   ],
   "entries": [
@@ -5370,14 +5384,16 @@
       "domain": "cross-surface",
       "evidence": "Same defect class as L-299 in a DIFFERENT store, which makes the class architectural rather than a one-off in superfiliate-state.json. See daily synthesis 2026-08-03-s1.md Theme 4.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "0eacfad 2026-09-23: Lock: metrics-consistency census + findings (brief-metrics-consistency-2026-09.md)",
       "target": "cgo-daily-pipeline/config/metric-compute-map.json (the three d08 recipes) plus a window-vs-label assertion in the digest producer",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-03T13:40:00.932493+00:00",
       "archival_state": "active",
-      "id": "L-300"
+      "id": "L-300",
+      "action_stamped_at": "2026-09-25",
+      "related_entries": []
     },
     {
       "date": "2026-08-03",
@@ -9781,14 +9797,16 @@
       "domain": "cross-surface",
       "evidence": "Same family as L-448 (bands set against bases that later moved) and L-553 (four acquisition-cost numbers, none required to reconcile), one step earlier in the chain: the target, not the band. See daily synthesis 2026-09-17-s1.md, Theme 5.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "86b83c0 2026-09-25: Metrics consistency: build spec for the durable fixes (six mechanisms, 18 tasks)",
       "target": "brain/kenetik-brain/references/metrics-taxonomy.md focus block \u2014 leading_indicator_target needs a named basis (via /quarterly-target-setting)",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-17T13:29:35.287590+00:00",
       "archival_state": "active",
-      "id": "L-580"
+      "id": "L-580",
+      "action_stamped_at": "2026-09-25",
+      "related_entries": []
     },
     {
       "date": "2026-09-17",
@@ -10245,14 +10263,16 @@
       "domain": "cross-surface",
       "evidence": "Creator revenue and subscription retention are owned by different departments and measured on different vendors' records, and nothing joins an order's creator code to its subscription status, so a payout-rule change on one campaign rendered as audience decay in one department and as retention success in another. See daily synthesis 2026-09-23-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "849fac8 2026-09-25: disposition pass 2026-09-25: 25 rows annotated, rec-830 queued for the machine (ST-9 \u00a74c steps 1, 2)",
       "target": "brain/kenetik-brain/references/metrics-registry.yaml \u2014 d08_creator_confirmed_revenue_monthly needs a stated basis for renewal orders",
       "entry_type": "skill_update",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-23T12:40:06.893398+00:00",
       "archival_state": "active",
-      "id": "L-603"
+      "id": "L-603",
+      "action_stamped_at": "2026-09-25",
+      "related_entries": []
     },
     {
       "date": "2026-09-23",
@@ -10279,14 +10299,41 @@
       "domain": "operations",
       "evidence": "The matcher encodes the channel the system expected answers in (the owner's DM), not the one the team uses (the department channel) \u2014 the L-591 finding showing up in the instrument meant to measure it. See daily synthesis 2026-09-23-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "849fac8 2026-09-25: disposition pass 2026-09-25: 25 rows annotated, rec-830 queued for the machine (ST-9 \u00a74c steps 1, 2)",
       "target": "scripts/notify_reads.py \u2014 the reply matcher",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-23T12:40:06.957052+00:00",
       "archival_state": "active",
-      "id": "L-605"
+      "id": "L-605",
+      "action_stamped_at": "2026-09-25",
+      "related_entries": []
+    },
+    {
+      "date": "2026-09-22",
+      "type": "changeset_outcome",
+      "learning": "lifecycle_engine protected suppresses VISIBILITY as well as EXPIRY \u2014 future-dated rows are invisible to every queue \u2014 closed as unknown on 2026-09-22 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-273)",
+      "source_type": "changeset_outcome",
+      "domain": "operations",
+      "evidence": "Outcome: unknown. Backfilled from tracker.json (CS-2026-273).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-273",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-25T11:54:13.202441+00:00",
+      "maintain_version": "1.2.0",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-25T11:54:13.203676+00:00",
+      "archival_state": "active",
+      "id": "L-606"
     }
   ],
   "archived_entries": [
@@ -19394,7 +19441,34 @@
       "created_at": "2026-09-22T13:30:14.174209+00:00",
       "archival_state": "active",
       "id": "L-599"
+    },
+    {
+      "date": "2026-09-23",
+      "type": "changeset_outcome",
+      "learning": "Raspberry Lychee LP customizer drift - re-enable the hero scrim, RTB and proof, audit the injected apps block \u2014 closed as superseded on 2026-09-23 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-301)",
+      "source_type": "changeset_outcome",
+      "domain": "DTC-website",
+      "evidence": "Outcome: superseded. Closed without measurement. Backfilled from tracker.json (CS-2026-301).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-301",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-25T11:54:13.202498+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-09-25",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-25T11:54:13.228560+00:00",
+      "archival_state": "active",
+      "id": "L-607"
     }
   ],
-  "last_updated": "2026-09-23"
+  "last_updated": "2026-09-25"
 }
