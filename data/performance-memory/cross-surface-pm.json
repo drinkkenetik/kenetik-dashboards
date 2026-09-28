@@ -4240,6 +4240,20 @@
       "domain": "content",
       "status": "active",
       "date": "2026-09-25"
+    },
+    {
+      "id": "L-610",
+      "summary": "When the metric contract moves a reading to a new window or basis, the next day's department briefs compare the new reading with the old one. On 09-2\u2026",
+      "domain": "cross-surface",
+      "status": "active",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "L-611",
+      "summary": "The Meta retargeting line converts only while outside traffic is arriving: 13 conversions during the raspberry-lychee launch ad (09-15..18), 8 during\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-09-28"
     }
   ],
   "entries": [
@@ -9909,6 +9923,40 @@
       "id": "L-609",
       "action_stamped_at": "2026-09-28",
       "related_entries": []
+    },
+    {
+      "date": "2026-09-28",
+      "learning": "When the metric contract moves a reading to a new window or basis, the next day's department briefs compare the new reading with the old one. On 09-25/26 four readings changed (new customers from seven days to thirty, site conversion from September-to-date to the last complete month, review rating to every review in 30 days, the creator block to August); three departments corrected their own 09-25 statements on the next scan, and the site-conversion reading will show a drop on 10-01 that happened during September.",
+      "source": "Task B synthesis 2026-09-28-s1, cross-reading Website INS-W-1, Paid Media INS-D-3, Lifecycle INS-LM-4 and Content INS-C-1",
+      "source_type": "domain_contradiction",
+      "domain": "cross-surface",
+      "evidence": "The contract records the prior value ('was') on the metric, but nothing tells a reader that yesterday's number was on a different basis, so a comparison across the change reads a definition shift as a move. See daily synthesis 2026-09-28-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "data/metrics/reporting-state.json emit step (a visible definition-change flag) and architecture/process/metric-change-protocol.md",
+      "entry_type": "skill_update",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-28T11:58:16.939899+00:00",
+      "archival_state": "active",
+      "id": "L-610"
+    },
+    {
+      "date": "2026-09-28",
+      "learning": "The Meta retargeting line converts only while outside traffic is arriving: 13 conversions during the raspberry-lychee launch ad (09-15..18), 8 during Noah Atwood's spike (09-23/24), and 0 or 1 in every other block. A recovery read taken inside a traffic surge measures the surge, not the line; the 09-25 synthesis acted on one.",
+      "source": "Paid Media department brief 2026-09-28-s1 (ACT-D-1, INS-D-2), window_agreement as_of 2026-09-27",
+      "source_type": "operational_signal",
+      "domain": "paid-media",
+      "evidence": "All three verdict windows (3d/7d/14d) included the spike days on 09-25, so agree_above was the spike; no step conditions a retargeting read on an outside-traffic event inside its window. See daily synthesis 2026-09-28-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "window_agreement verdicts for retargeting lines; rec-842",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-28T11:58:16.969722+00:00",
+      "archival_state": "active",
+      "id": "L-611"
     }
   ],
   "archived_entries": [
