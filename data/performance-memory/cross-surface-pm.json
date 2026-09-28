@@ -5598,7 +5598,7 @@
       "domain": "cross-surface",
       "evidence": "Root cause: existence-as-truth (L-402) reaching into the governance layer rather than the writers. See daily synthesis 2026-08-13-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "528c8fd 2026-09-27: Gap ledger: the milestone line says the pace, and \"vs last close\" is the ledger's (batch 4b round 3, L1)",
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md Step 0 focus-gap rule - require the carrying ChangeSet to be approved or published WITH a forward execution date before it suppresses a gap; a parked draft should not silence an L1/L2 miss.",
       "sources": [
         "Task B Phase 2 L1/L2 focus-gap check 2026-08-13-s1: new_customer_count 29% below Q3 milestone, rule fired nothing",
@@ -5611,7 +5611,9 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-13T15:13:14.003035+00:00",
       "archival_state": "active",
-      "id": "L-408"
+      "id": "L-408",
+      "action_stamped_at": "2026-09-28",
+      "related_entries": []
     },
     {
       "date": "2026-08-13",
@@ -8736,14 +8738,16 @@
       "domain": "cross-surface",
       "confidence": "preliminary",
       "evidence": "Filed preliminary because one observed instance cannot distinguish a routine race from a schedule collision introduced by the sweep routine's own 14:15Z slot. See daily synthesis 2026-09-07-s1.md.",
-      "action_taken": null,
+      "action_taken": "64c7cec 2026-09-26: Session lock: filing criteria and backlog analysis (L-565, L-554)",
       "target": "scripts/cs_helpers/rec_writer.py - a same-day provenance/anchor collision warning at write time",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-07T15:00:19.291466+00:00",
       "archival_state": "active",
-      "id": "L-554"
+      "id": "L-554",
+      "action_stamped_at": "2026-09-28",
+      "related_entries": []
     },
     {
       "date": "2026-09-08",
@@ -9895,14 +9899,16 @@
       "domain": "content",
       "evidence": "The digest recipe keys on conversion code because Superfiliate cannot merge a creator's codes; the alias map built to fix this carries a note that the digest never consumed it. See daily synthesis 2026-09-25-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "e7cc90e 2026-09-26: disposition pass 2026-09-26: 25 rows annotated, none queued for the machine (ST-9 \u00a74c steps 1, 2)",
       "target": "scripts/pipeline_digest.py _r_d08_concentration_top5 / _r_d08_active_creator_count",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-25T11:55:38.434820+00:00",
       "archival_state": "active",
-      "id": "L-609"
+      "id": "L-609",
+      "action_stamped_at": "2026-09-28",
+      "related_entries": []
     }
   ],
   "archived_entries": [
@@ -19567,5 +19573,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-09-25"
+  "last_updated": "2026-09-28"
 }
