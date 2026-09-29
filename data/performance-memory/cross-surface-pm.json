@@ -9499,9 +9499,12 @@
       "domain": "paid-media",
       "evidence": "Outcome: success. Backfilled from tracker.json (CS-2026-283).",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "f9dd4f9 2026-09-28: CS-2026-261: measure the campaign CPA the hypothesis is about, not company digital_cac",
       "skill_files_updated": [],
-      "related_entries": [],
+      "related_entries": [
+        "CS-2026-261",
+        "CS-2026-283"
+      ],
       "changeset_candidate": false,
       "changeset_id": "CS-2026-283",
       "variance_pct": null,
@@ -9514,7 +9517,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-18T17:09:17.951135+00:00",
       "archival_state": "active",
-      "id": "L-588"
+      "id": "L-588",
+      "action_stamped_at": "2026-09-29"
     },
     {
       "date": "2026-09-17",
@@ -9557,14 +9561,16 @@
       "domain": "cross-surface",
       "evidence": "Root cause: the synthesis layer is the only layer that reads all channels, but the headline metric it reports is a single blended sum with no channel decomposition beside it \u2014 a blended level with no channel split can move for reasons opposite to what it appears to say. See daily synthesis 2026-09-21-s1.md.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "8baeba3 2026-09-28: Session lock: This Week's Total Sales, one row with its parts (L-590)",
       "target": "cgo-daily-pipeline/config/synthesis-instructions.md \u2014 the Cached Metrics Snapshot and Executive Summary steps should require a channel decomposition whenever the blended total moves more than 20% week over week",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-21T13:39:21.086845+00:00",
       "archival_state": "active",
-      "id": "L-590"
+      "id": "L-590",
+      "action_stamped_at": "2026-09-29",
+      "related_entries": []
     },
     {
       "date": "2026-09-21",
@@ -9949,14 +9955,16 @@
       "domain": "paid-media",
       "evidence": "All three verdict windows (3d/7d/14d) included the spike days on 09-25, so agree_above was the spike; no step conditions a retargeting read on an outside-traffic event inside its window. See daily synthesis 2026-09-28-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "a72f4e5 2026-09-29: disposition pass 2026-09-29: digest section + lock release (ST-9 \u00a74c steps 1, 2)",
       "target": "window_agreement verdicts for retargeting lines; rec-842",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-28T11:58:16.969722+00:00",
       "archival_state": "active",
-      "id": "L-611"
+      "id": "L-611",
+      "action_stamped_at": "2026-09-29",
+      "related_entries": []
     }
   ],
   "archived_entries": [
@@ -19621,5 +19629,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-09-28"
+  "last_updated": "2026-09-29"
 }
