@@ -4254,6 +4254,27 @@
       "domain": "paid-media",
       "status": "active",
       "date": "2026-09-28"
+    },
+    {
+      "id": "L-612",
+      "summary": "[CS-2026-302] incomplete (n/a): TikTok Shop September Stock Up (2026-09-16..09-28) \u2014 structured tracking for the creator-coded volume play \u2014 closed a\u2026",
+      "domain": "creator-affiliate",
+      "status": "archived",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "L-613",
+      "summary": "[CS-2026-316] incomplete (n/a): Presidents Cup social moment (2026-09-24) has no tracked content against its named organic surfaces \u2014 closed as expir\u2026",
+      "domain": "social-media",
+      "status": "archived",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "L-614",
+      "summary": "[CS-2026-317] incomplete (n/a): Berlin Marathon social moment (2026-09-27) has no tracked content against its named organic surface \u2014 closed as expir\u2026",
+      "domain": "social-media",
+      "status": "archived",
+      "date": "2026-09-29"
     }
   ],
   "entries": [
@@ -5344,14 +5365,18 @@
       "domain": "operations",
       "evidence": "EC-2026-012 identified the business-value half on 2026-08-04 but not the interaction with focus-gap self-silencing. See daily synthesis 2026-08-05-s1.md cross-domain theme 6.",
       "confidence": "strong",
-      "action_taken": null,
+      "action_taken": "d5d74f9 2026-09-30: synthesis focus-gap check: a gap stays quiet only for a change that acts on the metric (rec-748::process-defect-undiagnosed)",
       "target": "cgo-daily-pipeline/config/changeset-instructions.md expiry rules - exempt rows whose expected_impact.metrics_moved intersects a behind-milestone L1/L2 metric, or route their expiry as a decision rather than a transition",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-08-05T15:28:03.320896+00:00",
       "archival_state": "active",
-      "id": "L-321"
+      "id": "L-321",
+      "action_stamped_at": "2026-09-30",
+      "related_entries": [
+        "CS-2026-280"
+      ]
     },
     {
       "date": "2026-08-05",
@@ -9798,14 +9823,16 @@
       "domain": "operations",
       "evidence": "A learning entry records a diagnosis but carries no obligation on anyone \u2014 nothing reads the store for repeat diagnoses and escalates a third filing into owned work, so a correct structural finding can be filed repeatedly and remain a finding. Corroborates L-413 and L-470. See daily synthesis 2026-09-22-s1.md.",
       "confidence": "moderate",
-      "action_taken": null,
+      "action_taken": "33b6740 2026-09-30: repair loop 2026-09-30: rec-740::process-defect-undiagnosed -> proposed (every store write moves its own date) (L-602)",
       "target": "scripts/pm_maintain.py - a repeat-diagnosis pass that escalates an entry filed N times against the same artifact into a recommendation row with an owner.",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-22T13:32:57.899032+00:00",
       "archival_state": "active",
-      "id": "L-602"
+      "id": "L-602",
+      "action_stamped_at": "2026-09-30",
+      "related_entries": []
     },
     {
       "date": "2026-09-23",
@@ -19627,7 +19654,88 @@
       "sweep_flag": "pm_backfill_needs_owner_review",
       "archived_date": "2026-09-25",
       "archived_reason": "expired_unactioned"
+    },
+    {
+      "date": "2026-09-29",
+      "type": "changeset_outcome",
+      "learning": "TikTok Shop September Stock Up (2026-09-16..09-28) \u2014 structured tracking for the creator-coded volume play \u2014 closed as superseded on 2026-09-29 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-302)",
+      "source_type": "changeset_outcome",
+      "domain": "creator-affiliate",
+      "evidence": "Outcome: superseded. Closed without measurement. Backfilled from tracker.json (CS-2026-302).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-302",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-30T11:55:20.971731+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-09-30",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-30T11:55:21.199933+00:00",
+      "archival_state": "active",
+      "id": "L-612"
+    },
+    {
+      "date": "2026-09-29",
+      "type": "changeset_outcome",
+      "learning": "Presidents Cup social moment (2026-09-24) has no tracked content against its named organic surfaces \u2014 closed as expired_unreviewed on 2026-09-29 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-316)",
+      "source_type": "changeset_outcome",
+      "domain": "social-media",
+      "evidence": "Outcome: expired_unreviewed. Closed without measurement. Backfilled from tracker.json (CS-2026-316).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-316",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-30T11:55:20.971841+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-09-30",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-30T11:55:21.232994+00:00",
+      "archival_state": "active",
+      "id": "L-613"
+    },
+    {
+      "date": "2026-09-29",
+      "type": "changeset_outcome",
+      "learning": "Berlin Marathon social moment (2026-09-27) has no tracked content against its named organic surface \u2014 closed as expired_unexecuted on 2026-09-29 (no learning note recorded).",
+      "source": "ChangeSet tracker close record (CS-2026-317)",
+      "source_type": "changeset_outcome",
+      "domain": "social-media",
+      "evidence": "Outcome: expired_unexecuted. Closed without measurement. Backfilled from tracker.json (CS-2026-317).",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-317",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-30T11:55:20.971872+00:00",
+      "maintain_version": "1.2.0",
+      "archived_date": "2026-09-30",
+      "archived_reason": "closed_without_measurement",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-30T11:55:21.257095+00:00",
+      "archival_state": "active",
+      "id": "L-614"
     }
   ],
-  "last_updated": "2026-09-29"
+  "last_updated": "2026-09-30"
 }
