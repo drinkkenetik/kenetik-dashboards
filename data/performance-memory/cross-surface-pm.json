@@ -4275,6 +4275,13 @@
       "domain": "social-media",
       "status": "archived",
       "date": "2026-09-29"
+    },
+    {
+      "id": "L-615",
+      "summary": "[CS-2026-256] incomplete (n/a): WHAT CHANGED: built and shipped a dedicated Raspberry Lychee LE landing page (7 ks-rl-* sections, one-time-first and \u2026",
+      "domain": "DTC-website",
+      "status": "active",
+      "date": "2026-09-30"
     }
   ],
   "entries": [
@@ -9992,6 +9999,36 @@
       "id": "L-611",
       "action_stamped_at": "2026-09-29",
       "related_entries": []
+    },
+    {
+      "date": "2026-09-30",
+      "type": "changeset_outcome",
+      "learning": "WHAT CHANGED: built and shipped a dedicated Raspberry Lychee LE landing page (7 ks-rl-* sections, one-time-first and preselected buy box, availability-driven subscription) for the 2026-08-07 full launch; merged 08-06 and live eight weeks. WHAT HAPPENED: 423 transactions on 7,982 sessions. 215 of them in launch week at 11.58% CVR on owned email/SMS, then 44 / 34 / 36 / 39 / 23 / 24 / 8 weekly as the traffic mix moved to cold paid and creator. The page stayed the only Raspberry Lychee surface car\u2026",
+      "source": "ChangeSet tracker close record (CS-2026-256)",
+      "source_type": "changeset_outcome",
+      "domain": "DTC-website",
+      "evidence": "Outcome: measured_no_target (Katie's verdict at close was 'success' on delivery; check 13a refuses a measured outcome without a pre-stated target, and expected_impact was null on this row from publish). PROJECTED: nothing - no expected_impact, no primary_metric_target, ever. ACTUAL: 423 transactions on 7,982 sessions over eight weeks (2026-08-06..09-28); weekly CVR 11.58 / 4.63 / 3.74 / 3.31 / 2.69 / 2.66 / 3.75 / 3.56%; current week 8 tx / 211 sessions / 3.79% against a 2.80% baseline frozen 2026-09-09. VARIANCE: not computable - no projection to vary from. CAUSAL CAVEAT, the load-bearing part: the baseline-to-current CVR gain is a denominator effect from a 74% cut to the page's Meta line ($1,426.60 -> $369.60 spend, 574 -> 104 clicks), not a build effect; see L-141. The flat-orders half of that finding has since broken (24 -> 8 tx in the week to 09-27). MEASUREMENT WINDOW: never opened - gated on CS-2026-301, which closed 'superseded' unexecuted 2026-09-23. CONFIGURATION CAVEAT: the approved design was never fully served (scrim off, rl_rtb + rl_proof disabled, unvetted apps block 17860425422dba5bba), so no reading here tests the ks-rl-* pattern. HYPOTHESIS: not tested.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-141",
+        "L-462",
+        "L-607"
+      ],
+      "changeset_candidate": false,
+      "changeset_id": "CS-2026-256",
+      "variance_pct": null,
+      "outcome_class": "incomplete",
+      "entry_type": "changeset_outcome",
+      "backfilled_at": "2026-09-30T13:56:24.225567+00:00",
+      "maintain_version": "1.2.0",
+      "sweep_flag": "pm_backfill_needs_owner_review",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-30T13:56:24.230034+00:00",
+      "archival_state": "active",
+      "id": "L-615"
     }
   ],
   "archived_entries": [
