@@ -4282,6 +4282,13 @@
       "domain": "DTC-website",
       "status": "active",
       "date": "2026-09-30"
+    },
+    {
+      "id": "L-616",
+      "summary": "A console decline is not a refusal: an owner who declines a recommendation because its premise is wrong (Josh on rec-553 and rec-815, 2026-09-30: the\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-10-01"
     }
   ],
   "entries": [
@@ -10034,6 +10041,23 @@
       "archival_state": "active",
       "id": "L-615",
       "action_stamped_at": "2026-10-01"
+    },
+    {
+      "date": "2026-10-01",
+      "learning": "A console decline is not a refusal: an owner who declines a recommendation because its premise is wrong (Josh on rec-553 and rec-815, 2026-09-30: the Longevity Launch Labs aged balance is paid and QuickBooks never applied the payments) is recorded only as 'declined on the console by <name>', so downstream reads treat a premise correction as a refused action and re-file on the same subject. Read a declined row's commit reason before re-filing on it.",
+      "source": "Operations & Planning brief 2026-10-01-s1 (ACT-D-2, INS-D-1, INS-D-2); console commits d8859c37a and 431be6743",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "scripts/apply_console_changes.py apply_rec_decision drops the typed reason on the decline, done and superseded branches; only the commit message keeps it, and no tracker reader sees commit messages. 12 typed reasons lost since 09-10; D14 read Josh's corrections as a HIGH 'refused collection' signal and the pipeline has filed on LLL four times (rec-446, rec-553, rec-746, rec-815). Repair row rec-889. See daily synthesis 2026-10-01-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "scripts/apply_console_changes.py (rec-889)",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-10-01T11:53:34.559406+00:00",
+      "archival_state": "active",
+      "id": "L-616"
     }
   ],
   "archived_entries": [
