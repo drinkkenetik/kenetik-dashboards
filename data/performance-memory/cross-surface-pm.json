@@ -10009,12 +10009,16 @@
       "domain": "DTC-website",
       "evidence": "Outcome: measured_no_target (Katie's verdict at close was 'success' on delivery; check 13a refuses a measured outcome without a pre-stated target, and expected_impact was null on this row from publish). PROJECTED: nothing - no expected_impact, no primary_metric_target, ever. ACTUAL: 423 transactions on 7,982 sessions over eight weeks (2026-08-06..09-28); weekly CVR 11.58 / 4.63 / 3.74 / 3.31 / 2.69 / 2.66 / 3.75 / 3.56%; current week 8 tx / 211 sessions / 3.79% against a 2.80% baseline frozen 2026-09-09. VARIANCE: not computable - no projection to vary from. CAUSAL CAVEAT, the load-bearing part: the baseline-to-current CVR gain is a denominator effect from a 74% cut to the page's Meta line ($1,426.60 -> $369.60 spend, 574 -> 104 clicks), not a build effect; see L-141. The flat-orders half of that finding has since broken (24 -> 8 tx in the week to 09-27). MEASUREMENT WINDOW: never opened - gated on CS-2026-301, which closed 'superseded' unexecuted 2026-09-23. CONFIGURATION CAVEAT: the approved design was never fully served (scrim off, rl_rtb + rl_proof disabled, unvetted apps block 17860425422dba5bba), so no reading here tests the ks-rl-* pattern. HYPOTHESIS: not tested.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "04f1547 2026-09-30: CS-2026-256: close the Raspberry Lychee LP \u2014 delivered, but the CVR gain is denominator",
       "skill_files_updated": [],
       "related_entries": [
         "L-141",
         "L-462",
-        "L-607"
+        "L-607",
+        "CS-2026-256",
+        "CS-2026-261",
+        "CS-2026-291",
+        "CS-2026-301"
       ],
       "changeset_candidate": false,
       "changeset_id": "CS-2026-256",
@@ -10028,7 +10032,8 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-09-30T13:56:24.230034+00:00",
       "archival_state": "active",
-      "id": "L-615"
+      "id": "L-615",
+      "action_stamped_at": "2026-10-01"
     }
   ],
   "archived_entries": [
@@ -19774,5 +19779,5 @@
       "id": "L-614"
     }
   ],
-  "last_updated": "2026-09-30"
+  "last_updated": "2026-10-01"
 }
