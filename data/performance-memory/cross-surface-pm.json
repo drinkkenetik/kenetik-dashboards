@@ -983,21 +983,21 @@
       "id": "L-144",
       "summary": "Dept briefs assert a ChangeSet's status (frozen/blocked, or stale-approved) from prior-handoff narrative instead of re-reading tracker.json's measure\u2026",
       "domain": "operations",
-      "status": "active",
+      "status": "archived",
       "date": "2026-06-29"
     },
     {
       "id": "L-145",
       "summary": "Search-traffic -86% WoW was prior-week-bubble reversion, not a decline; require bubble-check vs multi-week baseline before RCA.",
       "domain": "website",
-      "status": "active",
+      "status": "archived",
       "date": "2026-07-02"
     },
     {
       "id": "L-146",
       "summary": "Measured AOV ($165 digest / ~$150 website net-sales/orders) is >2x the L2 aov focus target of $70; target is stale or on a different definition. Recon",
       "domain": "cross-surface",
-      "status": "active",
+      "status": "archived",
       "date": "2026-07-03"
     },
     {
@@ -4289,84 +4289,16 @@
       "domain": "operations",
       "status": "active",
       "date": "2026-10-01"
+    },
+    {
+      "id": "L-617",
+      "summary": "[Prospecting__PMAX__All Wedges(formerlyWedge A)__tROAS(formerly tCPA)] doctrine_playbook playbook_trigger: Prospecting__PMAX__All Wedges(formerlyWedg\u2026",
+      "domain": "paid-media",
+      "status": "active",
+      "date": "2026-09-30"
     }
   ],
   "entries": [
-    {
-      "id": "L-144",
-      "date": "2026-06-29",
-      "type": "process_change",
-      "learning": "Dept briefs assert a ChangeSet's status (frozen/blocked, or stale-approved) from prior-handoff narrative instead of re-reading tracker.json's measured status. Confirmed twice: CS-200 was narrated 'built but frozen' while tracker showed status=published (06-29), and CS-118/136/031 were recommended for execute-or-retire as stale-approved while already CLOSED (07-03).",
-      "source": "dept-lifecycle-marketing.md 2026-06-29-s1 vs tracker.json (06-29); Operations dept brief ACT-D-2 vs tracker.json cross-check (07-03)",
-      "source_type": "domain_contradiction",
-      "domain": "operations",
-      "evidence": "Tracker measured status is the ground truth in both instances; dept briefs inherited stale narrative instead. Same failure mode as L-039/L-142. See daily synthesis 2026-06-29-s1.md and 2026-07-03-s1.md.",
-      "confidence": "moderate",
-      "action_taken": "e0b884f 2026-09-12: Repair loop: land the four 2026-09-12 others-pass verdicts the seat never wrote; worked example notes its kind is now signed",
-      "skill_files_updated": [],
-      "related_entries": [
-        "L-039",
-        "L-142",
-        "L-136",
-        "CS-2026-267"
-      ],
-      "target": "task-a1-departments.md \u2014 require a fresh tracker.json status read for any CS cited as blocked/frozen/stale-approved, overriding handoff narrative (confirmed on CS-200 and CS-118/136/031).",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "reconciliation_notes": [
-        "confidence 'moderate' -> 'preliminary' (source_count=1)"
-      ],
-      "action_stamped_at": "2026-09-18",
-      "sources": [
-        "dept-lifecycle-marketing.md 2026-06-29-s1 vs cgo-logs/changesets/tracker.json (06-29 09:30Z)",
-        "Operations dept brief ACT-D-2 vs live tracker.json cross-check (Phase 3), 2026-07-03"
-      ],
-      "gate_policy_at_write": "strict",
-      "created_at": "2026-09-18T20:12:48.092127+00:00",
-      "archival_state": "active"
-    },
-    {
-      "id": "L-145",
-      "date": "2026-07-02",
-      "type": "process_change",
-      "learning": "A -86% GSC-clicks / -54% GA4-sessions WoW read as a traffic collapse was actually reversion from an anomalous prior-week traffic bubble back to the mid-June ~800-1000 clicks/wk baseline; CVR rose on nearly every channel as the low-quality bubble drained. WoW search-traffic swings must pass a bubble/anomaly check against a multi-week baseline before an RCA is opened.",
-      "source": "dept-website-cro.md 2026-07-02-s1 (multi-week snapshot series + channel daily)",
-      "source_type": "operational_signal",
-      "domain": "website",
-      "evidence": "GSC clicks 982 vs anomalous prior 6,981; mid-June baseline 819-825/wk; CVR up across channels. See daily synthesis 2026-07-02-s1.md.",
-      "confidence": "moderate",
-      "action_taken": "e235292 2026-08-21: Task A1 dept briefs (2026-08-21-s1): website-cro + science-research",
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "synthesis-instructions.md Framing Guardrails (Baseline check) \u2014 add explicit reversion-vs-decline test for search-traffic WoW swings.",
-      "entry_type": "process_change",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "action_stamped_at": "2026-08-21"
-    },
-    {
-      "id": "L-146",
-      "date": "2026-07-03",
-      "type": "threshold_calibration",
-      "learning": "Measured AOV ($165 digest / ~$150 website net-sales/orders) is >2x the L2 aov focus target of $70; target is stale or on a different definition. Reconcile before treating AOV as a gap.",
-      "source": "Lifecycle dept brief INS-D-1 + Website dept brief INS-D-1 + digest aov=165.44, 2026-07-03",
-      "source_type": "operational_signal",
-      "domain": "cross-surface",
-      "evidence": "Three independent surfaces (Lifecycle, Website, digest) agree on ~$150-165 measured AOV vs $70 target. See daily synthesis 2026-07-03-s1.md.",
-      "confidence": "strong",
-      "action_taken": "56b719a 2026-08-18: Task B Phase 2: daily synthesis 2026-08-18-s1 (session 94)",
-      "skill_files_updated": [],
-      "related_entries": [],
-      "target": "brain/kenetik-brain/references/metrics-taxonomy.md (L2 aov lever) + metric registry aov definition",
-      "entry_type": "threshold_calibration",
-      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
-      "reconciler_version": "1.0.0",
-      "gate_version": "1.0.0",
-      "action_stamped_at": "2026-08-18"
-    },
     {
       "date": "2026-07-06",
       "learning": "digital_cac target ($34, band [28,42]) has no defined denominator, so the measured pixel_cac $52.97 cannot be judged a real band breach versus a definitional artifact. Same failure class as the AOV target (L-146) but on a different metric.",
@@ -10060,6 +9992,52 @@
       "id": "L-616",
       "action_stamped_at": "2026-10-02",
       "related_entries": []
+    },
+    {
+      "date": "2026-09-30",
+      "type": "skill_update",
+      "entry_type": "skill_update",
+      "learning": "Prospecting__PMAX__All Wedges(formerlyWedge A)__tROAS(formerly tCPA) (core): doctrine_playbook reads 'playbook_trigger' on 12 account days (2026-09-24 \u2192 2026-09-30). Prospecting__PMAX__All Wedges(formerlyWedge A)__tROAS(formerly tCPA) read below the margin floor and is core: diagnose, do not cut. Creative branch says no_case_indicated \u2014 the instruments read clean: no starved winner, no fed loser, no unmet REQUIRED format minimum. The creative branch is not where this campaign's problem is \u2014 try\u2026",
+      "source": "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=doctrine_playbook] ; instrument: paid_media_doctrine.below_floor_verdict (this run) ; dossier generated_for 2026-10-02, as_of 2026-09-30",
+      "sources": [
+        "data/paid-media/wedge-dossiers.json dossiers[campaign_id=23778599258].conclusions[kind=doctrine_playbook]",
+        "instrument: paid_media_doctrine.below_floor_verdict (this run)",
+        "dossier generated_for 2026-10-02, as_of 2026-09-30"
+      ],
+      "source_type": "wedge_insight",
+      "domain": "paid-media",
+      "evidence": "seen 12\u00d7 across 6 day(s) of account time (2026-09-24 \u2192 2026-09-30), clearing the moderate bar of 3 Instrument paid_media_doctrine.below_floor_verdict (this run); campaign 23778599258.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "skill_files_updated": [],
+      "related_entries": [],
+      "changeset_candidate": false,
+      "graduation": {
+        "schema_version": 1,
+        "key": "dossier:23778599258:doctrine_playbook:d6f8f5903b",
+        "origin": "wedge_dossier_conclusion",
+        "route": "dossier_repetition",
+        "verdict": "confirmed",
+        "reasons": [
+          "seen 12\u00d7 across 6 day(s) of account time (2026-09-24 \u2192 2026-09-30), clearing the moderate bar of 3"
+        ],
+        "campaign_id": "23778599258",
+        "wedge": "Prospecting__PMAX__All Wedges(formerlyWedge A)__tROAS(formerly tCPA)",
+        "classification": "core",
+        "conclusion_kind": "doctrine_playbook",
+        "conclusion_value": "playbook_trigger",
+        "seen_count": 12,
+        "span_days": 6,
+        "first_seen_as_of": "2026-09-24",
+        "last_seen_as_of": "2026-09-30",
+        "graduated_at": "2026-10-02T17:10:38.055036+00:00",
+        "graduated_by": "scripts/insight_graduation.py (pm_maintain.py graduate)"
+      },
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-10-02T17:10:38.055856+00:00",
+      "archival_state": "active",
+      "id": "L-617"
     }
   ],
   "archived_entries": [
@@ -19803,6 +19781,87 @@
       "created_at": "2026-09-30T11:55:21.257095+00:00",
       "archival_state": "active",
       "id": "L-614"
+    },
+    {
+      "id": "L-144",
+      "date": "2026-06-29",
+      "type": "process_change",
+      "learning": "Dept briefs assert a ChangeSet's status (frozen/blocked, or stale-approved) from prior-handoff narrative instead of re-reading tracker.json's measured status. Confirmed twice: CS-200 was narrated 'built but frozen' while tracker showed status=published (06-29), and CS-118/136/031 were recommended for execute-or-retire as stale-approved while already CLOSED (07-03).",
+      "source": "dept-lifecycle-marketing.md 2026-06-29-s1 vs tracker.json (06-29); Operations dept brief ACT-D-2 vs tracker.json cross-check (07-03)",
+      "source_type": "domain_contradiction",
+      "domain": "operations",
+      "evidence": "Tracker measured status is the ground truth in both instances; dept briefs inherited stale narrative instead. Same failure mode as L-039/L-142. See daily synthesis 2026-06-29-s1.md and 2026-07-03-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "e0b884f 2026-09-12: Repair loop: land the four 2026-09-12 others-pass verdicts the seat never wrote; worked example notes its kind is now signed",
+      "skill_files_updated": [],
+      "related_entries": [
+        "L-039",
+        "L-142",
+        "L-136",
+        "CS-2026-267"
+      ],
+      "target": "task-a1-departments.md \u2014 require a fresh tracker.json status read for any CS cited as blocked/frozen/stale-approved, overriding handoff narrative (confirmed on CS-200 and CS-118/136/031).",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "reconciliation_notes": [
+        "confidence 'moderate' -> 'preliminary' (source_count=1)"
+      ],
+      "action_stamped_at": "2026-09-18",
+      "sources": [
+        "dept-lifecycle-marketing.md 2026-06-29-s1 vs cgo-logs/changesets/tracker.json (06-29 09:30Z)",
+        "Operations dept brief ACT-D-2 vs live tracker.json cross-check (Phase 3), 2026-07-03"
+      ],
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-09-18T20:12:48.092127+00:00",
+      "archival_state": "active",
+      "archived_date": "2026-10-02",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-145",
+      "date": "2026-07-02",
+      "type": "process_change",
+      "learning": "A -86% GSC-clicks / -54% GA4-sessions WoW read as a traffic collapse was actually reversion from an anomalous prior-week traffic bubble back to the mid-June ~800-1000 clicks/wk baseline; CVR rose on nearly every channel as the low-quality bubble drained. WoW search-traffic swings must pass a bubble/anomaly check against a multi-week baseline before an RCA is opened.",
+      "source": "dept-website-cro.md 2026-07-02-s1 (multi-week snapshot series + channel daily)",
+      "source_type": "operational_signal",
+      "domain": "website",
+      "evidence": "GSC clicks 982 vs anomalous prior 6,981; mid-June baseline 819-825/wk; CVR up across channels. See daily synthesis 2026-07-02-s1.md.",
+      "confidence": "moderate",
+      "action_taken": "e235292 2026-08-21: Task A1 dept briefs (2026-08-21-s1): website-cro + science-research",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "synthesis-instructions.md Framing Guardrails (Baseline check) \u2014 add explicit reversion-vs-decline test for search-traffic WoW swings.",
+      "entry_type": "process_change",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-08-21",
+      "archived_date": "2026-10-02",
+      "archived_reason": "expired_unactioned"
+    },
+    {
+      "id": "L-146",
+      "date": "2026-07-03",
+      "type": "threshold_calibration",
+      "learning": "Measured AOV ($165 digest / ~$150 website net-sales/orders) is >2x the L2 aov focus target of $70; target is stale or on a different definition. Reconcile before treating AOV as a gap.",
+      "source": "Lifecycle dept brief INS-D-1 + Website dept brief INS-D-1 + digest aov=165.44, 2026-07-03",
+      "source_type": "operational_signal",
+      "domain": "cross-surface",
+      "evidence": "Three independent surfaces (Lifecycle, Website, digest) agree on ~$150-165 measured AOV vs $70 target. See daily synthesis 2026-07-03-s1.md.",
+      "confidence": "strong",
+      "action_taken": "56b719a 2026-08-18: Task B Phase 2: daily synthesis 2026-08-18-s1 (session 94)",
+      "skill_files_updated": [],
+      "related_entries": [],
+      "target": "brain/kenetik-brain/references/metrics-taxonomy.md (L2 aov lever) + metric registry aov definition",
+      "entry_type": "threshold_calibration",
+      "reconciled_at": "2026-07-06T03:01:32.652673+00:00",
+      "reconciler_version": "1.0.0",
+      "gate_version": "1.0.0",
+      "action_stamped_at": "2026-08-18",
+      "archived_date": "2026-10-02",
+      "archived_reason": "expired_unactioned"
     }
   ],
   "last_updated": "2026-10-02"
