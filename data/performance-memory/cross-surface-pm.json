@@ -10050,14 +10050,16 @@
       "domain": "operations",
       "evidence": "scripts/apply_console_changes.py apply_rec_decision drops the typed reason on the decline, done and superseded branches; only the commit message keeps it, and no tracker reader sees commit messages. 12 typed reasons lost since 09-10; D14 read Josh's corrections as a HIGH 'refused collection' signal and the pipeline has filed on LLL four times (rec-446, rec-553, rec-746, rec-815). Repair row rec-889. See daily synthesis 2026-10-01-s1.md.",
       "confidence": "preliminary",
-      "action_taken": null,
+      "action_taken": "39bb403 2026-10-01: Task B 2026-10-01-s1 Phase 4: running log, handoff, dispatch receipt, pipeline run, L-616",
       "target": "scripts/apply_console_changes.py (rec-889)",
       "entry_type": "process_change",
       "gate_version": "1.1.0",
       "gate_policy_at_write": "strict",
       "created_at": "2026-10-01T11:53:34.559406+00:00",
       "archival_state": "active",
-      "id": "L-616"
+      "id": "L-616",
+      "action_stamped_at": "2026-10-02",
+      "related_entries": []
     }
   ],
   "archived_entries": [
@@ -19803,5 +19805,5 @@
       "id": "L-614"
     }
   ],
-  "last_updated": "2026-10-01"
+  "last_updated": "2026-10-02"
 }
