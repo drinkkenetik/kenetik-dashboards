@@ -4296,6 +4296,13 @@
       "domain": "paid-media",
       "status": "active",
       "date": "2026-09-30"
+    },
+    {
+      "id": "L-618",
+      "summary": "segments-personas.md due for validation (186d since last_validated; threshold 180d). Owner: Devon Price.",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-10-04"
     }
   ],
   "entries": [
@@ -10038,6 +10045,31 @@
       "created_at": "2026-10-02T17:10:38.055856+00:00",
       "archival_state": "active",
       "id": "L-617"
+    },
+    {
+      "id": "L-618",
+      "date": "2026-10-04",
+      "learning": "segments-personas.md due for validation (186d since last_validated; threshold 180d). Owner: Devon Price.",
+      "source": "brain/kenetik-brain/references/segments-personas.md frontmatter: last_validated vs staleness_threshold_days",
+      "source_type": "staleness_alert",
+      "domain": "operations",
+      "confidence": "preliminary",
+      "details": {
+        "file": "brain/kenetik-brain/references/segments-personas.md",
+        "days_stale": 186,
+        "threshold_days": 180,
+        "owner": "Devon Price",
+        "suggested_actions": [
+          "Review for accuracy",
+          "If still accurate: add 'validated: still accurate, no content change' to version log",
+          "If updates needed: edit + log entry describing change"
+        ]
+      },
+      "entry_type": "staleness_alert",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-10-04T10:14:48.290903+00:00",
+      "archival_state": "active"
     }
   ],
   "archived_entries": [
@@ -19864,5 +19896,5 @@
       "archived_reason": "expired_unactioned"
     }
   ],
-  "last_updated": "2026-10-02"
+  "last_updated": "2026-10-04"
 }
