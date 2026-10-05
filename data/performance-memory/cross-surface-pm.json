@@ -4352,6 +4352,13 @@
       "domain": "DTC-website",
       "status": "archived",
       "date": "2026-10-03"
+    },
+    {
+      "id": "L-626",
+      "summary": "The 10-02 session handoff set deadlines for 10-03 and 10-04, both weekend days on which the weekday-only pipeline has no run, so every check those de\u2026",
+      "domain": "operations",
+      "status": "active",
+      "date": "2026-10-05"
     }
   ],
   "entries": [
@@ -10134,6 +10141,23 @@
       "gate_policy_at_write": "strict",
       "created_at": "2026-10-04T10:14:48.290903+00:00",
       "archival_state": "active"
+    },
+    {
+      "date": "2026-10-05",
+      "learning": "The 10-02 session handoff set deadlines for 10-03 and 10-04, both weekend days on which the weekday-only pipeline has no run, so every check those deadlines named fell to Monday and three measurement windows closed unread.",
+      "source": "Operations & Planning department brief INS-D-1, 2026-10-05; config/pipeline-schedule.json",
+      "source_type": "operational_signal",
+      "domain": "operations",
+      "evidence": "The synthesis writes 'before <date>' deadlines from the calendar without reading the declared run schedule, so a dated check can land on a day no reader is due. See daily synthesis 2026-10-05-s1.md.",
+      "confidence": "preliminary",
+      "action_taken": null,
+      "target": "cgo-daily-pipeline/config/synthesis-instructions.md (Session Handoff Notes): state watch dates as the next run day.",
+      "entry_type": "process_change",
+      "gate_version": "1.1.0",
+      "gate_policy_at_write": "strict",
+      "created_at": "2026-10-05T11:59:37.993048+00:00",
+      "archival_state": "active",
+      "id": "L-626"
     }
   ],
   "archived_entries": [
